@@ -388,8 +388,8 @@ class AtEditor:
 		self.editing = gtk.TRUE
 		
 		self.job_id = job_id
-		self.date = self.ParentClass.treemodel.get_value(iter, 8)
-		self.time = self.ParentClass.treemodel.get_value(iter, 11)
+		self.date = self.ParentClass.treemodel.get_value(iter, 9)
+		self.time = self.ParentClass.treemodel.get_value(iter, 12)
 		self.title = self.ParentClass.treemodel.get_value(iter, 0)
 		self.icon = self.ParentClass.treemodel.get_value(iter, 8) 
 		self.class_id = self.ParentClass.treemodel.get_value(iter, 9)
