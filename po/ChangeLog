@@ -1,0 +1,9 @@
+2004-06-17  Christian Rose  <menthos@menthos.com>
+
+	* .cvsignore: Added this.
+	* POTFILES.in: Removed non-existant file entry, added missing ones.
+	* gnome-schedule.gladestrings: There's no point in having this file.
+	intltool does this by itself. Removed this.
+	* gnome-schedule.pot: Generated files are not supposed to be stored
+	in CVS. Removed this.
+

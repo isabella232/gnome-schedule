@@ -1,2 +1,7 @@
-gnome-schedule.gladestrings
-
+# List of source files containing translatable strings.
+# Please keep this file sorted alphabetically.
+src/addWindow.py
+src/addWindowHelp.py
+src/crontab.py
+src/gnome-schedule.glade
+src/mainWindow.py
