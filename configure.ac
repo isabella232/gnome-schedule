@@ -53,11 +53,6 @@ if test x$PYTHON_CONFIG = xno; then
   AC_MSG_ERROR(Please install the application python)
 fi
 
-dnl AC_DEFINE_UNQUOTED (GNOMEHELP_CONFIG, "$GNOMEHELP_CONFIG")
-dnl AC_DEFINE_UNQUOTED (CRONTAB_CONFIG, "$CRONTAB_CONFIG")
-dnl AC_DEFINE_UNQUOTED (AT_CONFIG, "$AT_CONFIG")
-dnl AC_DEFINE_UNQUOTED (PYTHON_CONFIG, "$PYTHON_CONFIG")
-
 
 dnl *******************************
 dnl Internationalization

@@ -38,6 +38,9 @@ freax: Both in the atEditor and crontabEditor
     o. Use fam to detect changes in the config-files of crontab and at?
   * Include a default icon for at, and a default icon for crontab
     and also make it the default-selected icon
+  * Create the fedora consolehelper and pam stuff (dist/fedora/)
+  * Depend on GNOME SuperUser for any other distro
+  * Create packages
 
  Unassigned would make it to the release but are non-blocking it
   * Documentation
