@@ -23,6 +23,7 @@ import gtk
 import string
 import re
 
+
 ##
 ## I18N
 ##
@@ -34,11 +35,13 @@ _ = gettext.gettext
 
 
 class CrontabEditorHelper:
-	def __init__(self, parent, editor):
+	def __init__(self, parent):
 		self.ParentClass = parent
-		self.editor = editor
-		
+			
 		self.xml = self.ParentClass.xml
+		
+		self.NoExpressionEvents = gtk.FALSE
+		self.fieldRegex = self.ParentClass.fieldRegex
 		
 		self.widget = self.xml.get_widget("crontabEditorHelper")
 		self.widget.connect("delete-event", self.btnCancel_clicked)
@@ -74,9 +77,9 @@ class CrontabEditorHelper:
 		self.xml.signal_connect("on_entRangeStart_changed", self.anyEntryChanged)
 		self.xml.signal_connect("on_entRangeEnd_changed", self.anyEntryChanged)
 		self.xml.signal_connect("on_entExpression_changed", self.entExpressionChanged)
-		self.NoExpressionEvents = gtk.FALSE
-		self.fieldRegex = self.ParentClass.editor.fieldRegex
+		
 		return
+
 
 	def populateLabels(self, field):
 		#put the apropiate values in the labels describing entitys, and the 'at' combobox
@@ -97,7 +100,7 @@ class CrontabEditorHelper:
 			self.entRangeEnd.set_text ("7")
 			self.entRangeStart.set_text ("0")
 
-		self.trans_field = self.editor.schedule.translate_frequency (field)
+		self.trans_field = self.ParentClass.schedule.translate_frequency (field)
 
 		self.radAll.set_label(_("Happens all ") + self.trans_field + _("s"))
 		self.lblEveryEntity.set_text(self.trans_field)
@@ -107,6 +110,7 @@ class CrontabEditorHelper:
 		self.do_label_magic ()
 
 		return
+
 
 	def show (self, field, expression):
 		self.field = field
@@ -152,11 +156,12 @@ class CrontabEditorHelper:
 		self.widget.show_all()
 		return
 
+
 	def btnOk_clicked(self, *args):
 		#move expression to field in editor and hide
 		expression = self.entExpression.get_text()
 		try:
-			self.editor.schedule.checkfield (expression, self.field, self.editor.fieldRegex)
+			self.ParentClass.schedule.checkfield (expression, self.field, self.ParentClass.fieldRegex)
 		except Exception, ex:
 			x, y, z = ex
 			self.wrongdialog = gtk.MessageDialog(self.widget, gtk.DIALOG_MODAL|gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_ERROR, gtk.BUTTONS_OK, (_("This is invalid. Reason: %s") % (z)))
@@ -164,19 +169,21 @@ class CrontabEditorHelper:
 			self.wrongdialog.destroy()
 			return
 
-		if self.field == "minute": self.editor.minute_entry.set_text(expression)
-		if self.field == "hour": self.editor.hour_entry.set_text(expression)
-		if self.field == "day": self.editor.day_entry.set_text(expression)
-		if self.field == "month": self.editor.month_entry.set_text(expression)
-		if self.field == "weekday": self.editor.weekday_entry.set_text(expression)
+		if self.field == "minute": self.ParentClass.minute_entry.set_text(expression)
+		if self.field == "hour": self.ParentClass.hour_entry.set_text(expression)
+		if self.field == "day": self.ParentClass.day_entry.set_text(expression)
+		if self.field == "month": self.ParentClass.month_entry.set_text(expression)
+		if self.field == "weekday": self.ParentClass.weekday_entry.set_text(expression)
 		
 		self.widget.hide()
 		return
+
 
 	def btnCancel_clicked(self, *args):
 		#hide
 		self.widget.hide()
 		return gtk.TRUE
+
 
 	def RadioButtonChange(self, widget):
 		self.NoExpressionEvents = gtk.TRUE
@@ -193,6 +200,7 @@ class CrontabEditorHelper:
 				self.entExpression.set_text(self.entFix.get_text())
 		self.NoExpressionEvents = gtk.FALSE
 		return
+
 
 	def do_label_magic (self):
 		try:
@@ -213,9 +221,11 @@ class CrontabEditorHelper:
 		except:
 			pass
 
+
 	def entExpressionChanged(self, *args):
 		if self.NoExpressionEvents == gtk.FALSE:
 			self.radOth.set_active (gtk.TRUE)
+
 
 	def anyEntryChanged(self, *args):
 		self.NoExpressionEvents = gtk.TRUE

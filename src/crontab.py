@@ -18,17 +18,14 @@
 
 #pygtk modules
 import gtk
-#import gobject
 
 #python modules
 import re
 import os
 import tempfile
 import string
-#import sys
 
 #custom modules
-import crontabEditorHelper
 import crontabEditor
 import lang
 import support
@@ -49,8 +46,7 @@ class Crontab:
 		self.ParentClass = parent
 		self.xml = self.ParentClass.xml
 		
-		self.editor = crontabEditor.CrontabEditor (self.ParentClass, self)
-		self.editorhelper = crontabEditorHelper.CrontabEditorHelper(self, self.editor)
+		self.editor = crontabEditor.CrontabEditor(self)
 				
 		self.nooutputtag = ">/dev/null 2>&1"
 		self.crontabRecordRegex = re.compile('([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^#\n$]*)(\s#\s([^\n$]*)|$)')
@@ -344,6 +340,7 @@ class Crontab:
 		self.ParentClass.schedule_reload("crontab")
 		return
 
+
 	def append (self, record, nooutput, title, icon = None):
 		if nooutput:
 			space = " "
@@ -359,9 +356,9 @@ class Crontab:
 
 		self.lines.append (record)
 		self.write ()
-	
+		self.ParentClass.schedule_reload ("crontab")
 
-	#XXX maybe there is a better way
+	
 	def easy (self, minute, hour, day, month, weekday):
 		return lang.translate_crontab_easy (minute, hour, day, month, weekday)
 
@@ -393,7 +390,6 @@ class Crontab:
 				#make the command smaller if the lenght is to long
 				preview = self.make_preview (command)
 				#add task to treemodel in mainWindow
-				#XXX maybe move this to mainWindow
 				iter = self.ParentClass.treemodel.prepend([title, self.easy (minute, hour, day, month, weekday), preview, line, self.linecount, time, icon_pix, self, icon, "", "", "","", "Frequency", "crontab"])
 		
 				##debug

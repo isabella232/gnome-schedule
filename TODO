@@ -38,7 +38,7 @@ Development:
   * Include a default icon for at, and a default icon for crontab
     and also make it the default-selected icon
   * Create the fedora consolehelper and pam stuff (dist/fedora/)
-  * Depend on GNOME SuperUser for any other distro
+  * gnome-schedule --root will start it as root (Depend on GNOME SuperUser for any other distro)
   * Create packages
 
 

@@ -22,20 +22,11 @@ import gobject
 import gconf
 
 #python modules
-import string
-import pwd
-import string
-import os
 import re
-import commands
 import time
 
 #custom modules
-#import mainWindow
-#import schedule
-import config
 import support
-
 
 ##
 ## I18N
@@ -46,22 +37,23 @@ gettext.bindtextdomain(domain)
 gettext.textdomain(domain)
 _ = gettext.gettext
 
-class AtEditor:
-	def __init__(self, parent, schedule):
 
+class AtEditor:
+	def __init__(self, parent):
 		self.ParentClass = parent
-		self.schedule = schedule
 		self.xml = self.ParentClass.xml
+
 		self.widget = self.xml.get_widget("atEditor")
 		self.widget.connect("delete-event", self.on_cancel_button_clicked)
+		
 		self.fieldRegex = re.compile('^(\*)$|^([0-9]+)$|^\*\\\([0-9]+)$|^([0-9]+)-([0-9]+)$|(([0-9]+[|,])+)')
 		self.nooutputRegex = re.compile('([^#\n$]*)>(\s|)/dev/null\s2>&1')
 		self.editing = gtk.FALSE
 		self.noevents = gtk.FALSE
+		self.template_combobox_model = None
+		self.first = 0
+		self.combo_trigger = gtk.FALSE
 	
-		
-		self.template_combobox = self.xml.get_widget ("at_template_combobox")
-		
 		self.save_button = self.xml.get_widget ("at_save_button")
 		self.remove_button = self.xml.get_widget ("at_delete_button")
 		self.title_entry = self.xml.get_widget ("at_title_entry")
@@ -72,11 +64,16 @@ class AtEditor:
 		self.cancel_button = self.xml.get_widget ("at_cancel_button")
 		self.ok_button = self.xml.get_widget ("at_ok_button")
 		self.image_button = self.xml.get_widget ("at_image_button")
+
+		##template combobox config		
 		self.template_combobox = self.xml.get_widget ("at_template_combobox")
+		self.template_combobox_model = gtk.ListStore(gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_PYOBJECT)
+		self.template_combobox.set_model (self.template_combobox_model)
+		##
+		
 		self.template_image = self.xml.get_widget ("at_template_image")
 		self.template_label = self.xml.get_widget ("at_template_label")
-		self.template_combobox_model = None
-
+		
 		self.calendar = self.xml.get_widget ("at_calendar")
 		self.hour_spinbutton = self.xml.get_widget ("at_hour_spinbutton")
 		self.minute_spinbutton= self.xml.get_widget ("at_minute_spinbutton")
@@ -103,19 +100,12 @@ class AtEditor:
 		self.xml.signal_connect("on_at_minute_spinbutton_changed", self.on_minute_spinbutton_changed)
 		self.xml.signal_connect("on_at_combobox_changed", self.on_combobox_changed)
 
-	
-		#for the addwindow to not jump more than one day ahead in time
-		self.first = 0
-		self.combo_trigger = gtk.FALSE
-		self.reset ()
 
-		self.template_combobox_model = gtk.ListStore(gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_PYOBJECT)
-		
-		self.template_combobox.set_model (self.template_combobox_model)
-		#self.template_combobox.set_text_column (0)
+		self.reset ()
 		self.loadicon ()
 		self.reload_templates ()
 
+		#gconf
 		support.gconf_client.add_dir ("/apps/gnome-schedule/presets/at", gconf.CLIENT_PRELOAD_NONE)
 		support.gconf_client.notify_add ("/apps/gnome-schedule/presets/at/installed", self.gconfkey_changed);
 
@@ -144,11 +134,8 @@ class AtEditor:
 		self.title = self.title_entry.get_text()
 		return
 
-
-
 	def on_calendar_day_selected (self, *args):		
 		self.update_time_cal()
-			
 		return
 
 	def on_calendar_month_changed (self, *args):
@@ -159,7 +146,6 @@ class AtEditor:
 		self.update_time_cal()
 		return
 
-
 	def on_hour_spinbutton_changed (self, *args):
 		self.update_time_cal()
 		return
@@ -168,7 +154,6 @@ class AtEditor:
 		self.update_time_cal()
 		return
 	
-
 	def update_time_cal (self):
 
 			(year, month, day) = self.calendar.get_date()
@@ -236,8 +221,7 @@ class AtEditor:
 
 			self.update_textboxes (0)
 
-			
-	
+				
 	def on_combobox_changed (self, *args):
 		
 		if self.noupdate == gtk.FALSE:	
@@ -248,15 +232,13 @@ class AtEditor:
 		return
 
 
-
-
-
 	def on_delete_button_clicked (self, *args):
 		iter = self.template_combobox.get_active_iter ()
 		template = self.template_combobox_model.get_value(iter, 2)
 		icon_uri, runat, title, name, command = template
 		self.template_combobox.set_active (0)
-		self.schedule.removetemplate (name)
+		self.ParentClass.removetemplate (name)
+
 
 	def on_save_button_clicked (self, *args):
 		# Uses SaveTemplate (will call it if OK is pressed)
@@ -266,14 +248,15 @@ class AtEditor:
 		
 	def SaveTemplate (self, template_name):
 		#TODO: validate record
-		self.schedule.savetemplate (template_name, self.runat, self.title, self.icon, self.command)
+		self.ParentClass.savetemplate (template_name, self.runat, self.title, self.icon, self.command)
 		
 
 	def gconfkey_changed (self, client, connection_id, entry, args):
 		self.reload_templates ()
 
+
 	def reload_templates (self):
-		self.template_names = self.schedule.gettemplatenames ()
+		self.template_names = self.ParentClass.gettemplatenames ()
 		if self.template_names == None or len (self.template_names) <= 0:
 			pass
 		else:
@@ -295,7 +278,7 @@ class AtEditor:
 		else:
 			
 			for template_name in self.template_names:
-				thetemplate = self.schedule.gettemplate (template_name)
+				thetemplate = self.ParentClass.gettemplate (template_name)
 				icon_uri, runat, title, name, command = thetemplate
 				self.template_combobox_model.append([name, template_name, thetemplate])
 						
@@ -347,6 +330,7 @@ class AtEditor:
 				self.loadicon ()
 				self.reset ()
 
+
 	def on_image_button_clicked (self, *args):
 		preview = gtk.Image()
 		preview.show()
@@ -382,6 +366,7 @@ class AtEditor:
 			pixbuf = gtk.gdk.pixbuf_new_from_file_at_size ("/usr/share/icons/gnome/48x48/mimetypes/gnome-mime-application.png", 60, 60)
 			self.template_image.set_from_pixbuf(pixbuf)
 			self.icon = "/usr/share/icons/gnome/48x48/mimetypes/gnome-mime-application.png"
+
 	
 	def reset (self):
 		self.title = "Untitled"
@@ -423,18 +408,19 @@ class AtEditor:
 		self.noevents = gtk.FALSE
 		return
 
+
 	def showedit (self, record, job_id, iter, mode):
 		self.reload_templates ()
 		self.editing = gtk.TRUE
 		
 		self.job_id = job_id
-		self.date = self.ParentClass.treemodel.get_value(iter, 9)
-		self.time = self.ParentClass.treemodel.get_value(iter, 12)
-		self.title = self.ParentClass.treemodel.get_value(iter, 0)
-		self.icon = self.ParentClass.treemodel.get_value(iter, 8) 
-		self.class_id = self.ParentClass.treemodel.get_value(iter, 9)
-		self.user = self.ParentClass.treemodel.get_value(iter, 10)
-		self.command = self.ParentClass.treemodel.get_value(iter, 3)
+		self.date = self.ParentClass.ParentClass.treemodel.get_value(iter, 9)
+		self.time = self.ParentClass.ParentClass.treemodel.get_value(iter, 12)
+		self.title = self.ParentClass.ParentClass.treemodel.get_value(iter, 0)
+		self.icon = self.ParentClass.ParentClass.treemodel.get_value(iter, 8) 
+		self.class_id = self.ParentClass.ParentClass.treemodel.get_value(iter, 9)
+		self.user = self.ParentClass.ParentClass.treemodel.get_value(iter, 10)
+		self.command = self.ParentClass.ParentClass.treemodel.get_value(iter, 3)
 		self.runat = self.time + " " + self.date
 		#parse 	
 		(hour, minute, day, month, year) = self.parse_time(self.time, self.date)
@@ -463,6 +449,7 @@ class AtEditor:
 		
 		return hour, minute, day, month, year
 
+
 	def showadd (self, mode):
 		self.reset ()
 		self.title = _("Untitled")
@@ -473,6 +460,7 @@ class AtEditor:
 		self.loadicon ()
 		self.reload_templates ()
 
+
 	def on_help_button_clicked (self, *args):
 		help_page = "file://" + config.getDocdir() + "/addingandediting.html"
 		path = config.getGnomehelpbin ()
@@ -480,9 +468,11 @@ class AtEditor:
 		if not pid:
 			os.execv(path, [path, help_page])
 
+
 	def on_cancel_button_clicked (self, *args):
 		self.widget.hide()
 		return gtk.TRUE
+
 
 	def WrongRecordDialog (self, x):
 		self.wrongdialog = gtk.MessageDialog(self.widget, gtk.DIALOG_MODAL|gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_ERROR, gtk.BUTTONS_OK, (_("This is an invalid record! The problem could be: %s ") % (x)))
@@ -490,20 +480,19 @@ class AtEditor:
 		self.wrongdialog.destroy()
 		return
 
+
 	def on_ok_button_clicked (self, *args):
 		# TODO: Validate record
-		(validate, reason) = self.schedule.checkfield(self.runat)
+		(validate, reason) = self.ParentClass.checkfield(self.runat)
 		if validate == gtk.FALSE:
 			self.WrongRecordDialog (reason)
 			return
 		# TODO: Fill record
 		
 		if self.editing != gtk.FALSE:
-			self.schedule.update (self.job_id, self.runat, self.command, self.title, self.icon)
-			self.ParentClass.schedule_reload ("at")
-	
+			self.ParentClass.update (self.job_id, self.runat, self.command, self.title, self.icon)
+				
 		else:
-			self.schedule.append (self.runat, self.command, self.title, self.icon)
-			self.ParentClass.schedule_reload ("at")
-	
+			self.ParentClass.append (self.runat, self.command, self.title, self.icon)
+			
 		self.widget.hide ()

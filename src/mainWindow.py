@@ -28,8 +28,6 @@ import os
 import re
 import time
 import sys
-#from os import popen
-#import string
 
 #custom modules
 import config
@@ -37,9 +35,8 @@ import support
 import crontab
 import at
 import setuserWindow
-#import schedule
 import addWindow
-#import editor
+
 
 ##
 ## I18N
@@ -83,7 +80,7 @@ class main:
 		self.schedule = None
 		self.haveitem = gtk.FALSE
 
-		#XXX move gconf code to support?
+		#gconf stuff
 		support.gconf_client.add_dir ("/apps/gnome-schedule", gconf.CLIENT_PRELOAD_NONE)
 		
 		##configure the window

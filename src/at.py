@@ -30,11 +30,9 @@ import string
 import time
 
 #custom modules
-#import mainWindow
 import support
 import config
 import atEditor
-#import lang
 
 ##
 ## I18N
@@ -45,13 +43,28 @@ gettext.bindtextdomain(domain)
 gettext.textdomain(domain)
 _ = gettext.gettext
 
+
 class At:
 	def __init__(self, parent):
+		self.ParentClass = parent
+		self.xml = self.ParentClass.xml
+		
+		self.editor = atEditor.AtEditor (self)
+		
 		self.atRecordRegex = re.compile('([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)')
 		self.atRecordRegexAdd = re.compile('([^\s]+)\s([^\s]+)\s')
 		self.atRecordRegexAdded = re.compile('[^\s]+\s([0-9]+)\sat')
+		
+		self.get_pre_len()
 
+		#default preview length
+		self.preview_len = 50
+			
+		return
+
+	def get_pre_len(self):
 		#getting default prepended stuff by at
+		#XXX this doesn't look very nice use the tempfile module instead
 		execute = "echo > /tmp/tmpat && at tomorrow -f /tmp/tmpat && rm /tmp/tmpat"
 		temp = commands.getoutput(execute)
 		startjob = temp.find("job")
@@ -63,20 +76,7 @@ class At:
 		at_pre = commands.getoutput(execute)
 		remjob = commands.getoutput("atrm + " + job_id)
 		self.at_pre_len = len(at_pre) - 1
-
-		#default preview length
-		self.preview_len = 50
-			
-
-		self.ParentClass = parent
-		self.xml = self.ParentClass.xml
-
-		self.editorwidget = self.xml.get_widget("atEditor")
-		self.editor = atEditor.AtEditor (self.ParentClass, self)
-
-		self.editorwidget.hide()
-	
-		return
+		
 
 	def removetemplate (self, template_name):
 		template_name_c = self.replace (template_name)
@@ -105,12 +105,13 @@ class At:
 			support.gconf_client.unset ("/apps/gnome-schedule/presets/at/installed")
 		else:
 			support.gconf_client.set_string("/apps/gnome-schedule/presets/at/installed", newstring)
-	[0-9]
+	
 
 	def replace (self, template_name_c):
 		for a in " ,	;:/\\\"'!@#$%^&*()-_+=|?<>.][{}":
 			template_name_c = string.replace (template_name_c, a, "-")
 		return template_name_c
+
 
 	def savetemplate (self, template_name, runat, title, icon, command):
 		template_name_c = self.replace (template_name)
@@ -137,6 +138,7 @@ class At:
 		support.gconf_client.set_string("/apps/gnome-schedule/presets/at/installed", installed)
 		return
 
+
 	def gettemplatenames (self):
 		#try:
 			strlist = support.gconf_client.get_string("/apps/gnome-schedule/presets/at/installed")
@@ -147,6 +149,7 @@ class At:
 				return None
 		#except:
 		#	return None
+
 
 	def gettemplate (self, template_name):
 		try:
@@ -161,15 +164,13 @@ class At:
 			return ex, ex, ex, ex, ex
 
 
-
-
 	# Pass this to lang.py
 	def translate_frequency (self, frequency):
 		raise 'Not implemented'
 
+
 	def geteditor (self):
 		return self.editor
-
 
 
 	def checkfield (self, runat):
@@ -185,7 +186,6 @@ class At:
 		cday = ctime[2]
 		chour = ctime[3]
 		cminute = ctime[4]
-
 	
 		if runat_g1:
 
@@ -238,7 +238,6 @@ class At:
 			if day < cday:
 				return gtk.FALSE, "day"
 
-
 		else:
 			#lowercase
 			runat = runat.lower()
@@ -288,6 +287,7 @@ class At:
 		execute = config.getAtbin() + " " + runat + " -f " + path
 		temp = commands.getoutput(execute)
 		os.unlink (path)
+		self.ParentClass.schedule_reload ("at")
 
 	def delete (self, jobid, iter):
 		if jobid:
@@ -316,13 +316,14 @@ class At:
 		#print execute
 		#print temp
 		os.unlink (path)
+		self.ParentClass.schedule_reload ("at")
 		return temp
 
 	def read (self):
 		#do 'atq'
 		execute = config.getAtqbin ()
 		self.lines = os.popen(execute).readlines()
-		count = 0
+		#count = 0
 		for line in self.lines:
 			array_or_false = self.parse (line)
 			if array_or_false != gtk.FALSE:
@@ -337,9 +338,6 @@ class At:
 				else:
 					icon_pix = None
 
-
-
-				
 				preview = self.make_preview (lines, prelen)
 				if dangerous == 1:
 						preview = "DANGEROUS PARSE: " + preview
@@ -358,13 +356,14 @@ class At:
 					iter = self.ParentClass.treemodel.append([title, timestring_show, preview, lines, int(job_id), timestring, icon_pix, self, icon, date, class_id, user, time, "Defined", "at"])
 
 				#print "Read at job: " + str(job_id)
-				count = count + 1
+				#count = count + 1
 				#print title + " " + timestring + " " + preview + " " + job_id + " " + date + " " +  class_id + " " + user 
 				# print int(job_id)
 
 		#["None(not suported yet)", "12:50 2004-06-25", "", "35", "", "12:50", icon, at instance, "2004-06-25", "a", "drzap", "at"]
 		#print "-- Total at jobs: " + str(count)
 		return
+
 
 	def ignore (self, testline):
 		found = gtk.FALSE
@@ -373,6 +372,7 @@ class At:
 				found = gtk.TRUE
 				break
 		return found
+
 
 	def prepare_script (self, script):
 	
@@ -502,6 +502,7 @@ class At:
 
 		return script, title, icon, prelen, dangerous
 
+
 	def make_preview (self, lines, prelen, preview_len = 0):
 		if preview_len == 0:
 			preview_len = self.preview_len
@@ -540,6 +541,7 @@ class At:
 			result = result + "..."
 
 		return result
+
 
 	def parse (self, line, output = 0):
 		if output == 0:
