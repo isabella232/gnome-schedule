@@ -117,6 +117,11 @@ class main:
 		self.xml.signal_connect("on_help_button_clicked", self.on_help_button_clicked)
 		self.xml.signal_connect("on_btnExit_clicked", self.quit)
 
+		#hiding setuser button if not root
+		if self.root == 0:
+			self.btnSetUser.hide()
+		else:
+			self.xml.signal_connect("on_btnSetUser_clicked", self.showSetUser)
 
 		
 
@@ -198,7 +203,8 @@ class main:
 
 		if self.root == 0:
 			self.btnSetUser.hide()
-			self.xml.signal_connect("on_btnSetUser_clicked", self.on_set_user_menu_activate)
+		else:
+			self.xml.signal_connect("on_btnSetUser_clicked", self.showSetUser)
 
 		# self.treeview.get_selection().connect("changed", self.onTreeViewSelectRow)
 		self.treeview.get_selection().unselect_all()
@@ -265,9 +271,6 @@ class main:
 		self.addWindow.showAddWindow ()
 		pass
 
-	def on_set_user_menu_activate (self, *args):
-		self.setuserWindow.ShowSetuserWindow ()
-
 	def on_properties_menu_activate (self, *args):
 		store, iter = self.treeview.get_selection().get_selected()
 		if iter != None:
@@ -299,6 +302,6 @@ class main:
 	def on_manual_menu_activate (self, *args):
 		pass
 
-	def showSetUser(self):
+	def showSetUser(self, *args):
 		self.setuserWindow.ShowSetuserWindow()
 		return

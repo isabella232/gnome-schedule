@@ -207,7 +207,6 @@ class AddWindow:
 				if m == None:
 					if self.command[len(self.command)-1] != " ":
 						self.command = self.command + " "
-					self.command = self.command + self.nooutputtag
 					self.command_entry.set_text (self.command)
 			else:
 				if m != None:
