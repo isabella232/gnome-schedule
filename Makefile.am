@@ -1,4 +1,7 @@
 #License: GPL
+# TODO: This Makefile.am is for Fedora Core 2 only
+# TODO: Make this work on all distributions
+# TODO: This is a ASAP item!!!
 
 VERSION=$(shell awk '/Version:/ { print $$2 }' gnome-schedule.spec)
 CVSTAG=RELEASE-$(subst .,-,$(VERSION))-BRANCH
