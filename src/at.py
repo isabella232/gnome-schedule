@@ -133,7 +133,6 @@ class At:
 		if jobid:
 			execute = config.getAtrmbin()+ " " + str(jobid)
 			commands.getoutput(execute)
-			print jobid
 		return
 
 	def append (self, runat, command, title, icon):
@@ -153,7 +152,6 @@ class At:
 		tmp.close ()
 		execute = config.getAtbin() + " " + runat + " -f " + path
 		temp = commands.getoutput(execute)
-		print temp
 		os.unlink (path)
 		return temp
 
@@ -183,7 +181,7 @@ class At:
 				timestring = _("%s%s%s %s%s%s") % (_(""), date, _(""), _(""), time, _(""))
 				iter = self.ParentClass.treemodel.append([title, timestring, preview, lines, int(job_id), time, icon_pix, self, date, class_id, user, "Defined", "at"])
 
-				
+				print "Read at job: " + str(job_id)
 				#print title + " " + timestring + " " + preview + " " + job_id + " " + date + " " +  class_id + " " + user 
 				# print int(job_id)
 
@@ -289,7 +287,6 @@ class At:
 					script = os.popen(execute).read()
 					script, title, icon, prelen = self.prepare_script (script)
 					#removing ending newlines, but keep one
-					print "prelen: " + str(prelen)
 					done = 0
 					while done == 0:
 						if script[-1] == "\n":

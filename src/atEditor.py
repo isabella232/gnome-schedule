@@ -291,7 +291,6 @@ class AtEditor:
 		minute = self.minute_spinbutton.get_text()
 		if self.first == 1:
 			pass
-			print "first = 1"
 		else:	
 			self.calendar.select_day(day+1)
 			self.first = 1
@@ -418,10 +417,9 @@ class AtEditor:
 		if self.editing != gtk.FALSE:
 			self.schedule.update (self.job_id, self.runat, self.command, self.title, self.icon)
 			self.ParentClass.schedule_reload ()
-			print "Edited"		
+	
 		else:
 			self.schedule.append (self.runat, self.command, self.title, self.icon)
 			self.ParentClass.schedule_reload ()
-			print "Added"
 	
 		self.widget.hide ()
