@@ -411,8 +411,8 @@ class AtEditor:
 
 
 	def parse_time (self, time, date):
-		regexp_date = re.compile("([0-9]+)-([0-9]+)-([0-9]+)")
-		regexp_time = re.compile("([0-9]+):([0-9]+)")
+		regexp_date = re.compile("([0-9][0-9][0-9][0-9])-([0-9][0-9])-([0-9][0-9])")
+		regexp_time = re.compile("([0-9][0-9]):([0-9][0-9])")
 
 		time_g = regexp_time.match(time)
 		if time_g:

@@ -176,7 +176,8 @@ class At:
 
 
 	def checkfield (self, field, type, regex):
-		raise Exception('Abstract method please override','','','')
+		
+		return
 
 
 	def update (self, job_id, runat, command, title, icon):
