@@ -10,6 +10,10 @@
 	* PyGTK >= 2.3 is now required (dependency)
 	* Less quirks for translators
 
+2004-06-20 Gaute Hope	<eg@gaute.eu.org>
+	* created the ateditor window
+	* reading and writing to at now works
+
 2004-06-18  Philip Van Hoof <me_NOSPAM@freax.org>
 
 	* More support for crontab-to-human-readable, more cases
@@ -23,6 +27,14 @@
 
 	* Fixed some stuff
 	* Prepared the application for the at support
+
+2004-06-18  Gaute Hope	<eg@gaute.eu.org>
+	* created the at-support-branch and changed the layout of the files
+
+2004-06-18  Gaute Hope <eg@gaute.eu.org>
+	* Added support for reading 'at' records
+	* Added the editor files, but they are just copies of crontabEditor.py, just for debugging and making things look like they should
+	* Copyed src/config.py.in to config.py since i couldn't run it any other way. I suppose this is wrong and it is just temporary
 
 2004-06-18  Gaute Hope	<eg@gaute.eu.org>
 
@@ -43,6 +55,15 @@
 
 	* configure.ac: Changed GETTEXT_PACKAGE from "atomix" to
 	"gnome-schedule". Also added "sv" to ALL_LINGUAS.
+
+2004-06-18  Vincent van Adrighem  <adrighem@gnome.org>
+
+	* nl.po: Translation added by Elros Cyriatan.
+
+2004-06-18  Gustavo Maciel Dias Vieira  <gustavo@sagui.org>
+
+	* pt_BR.po: Added Brazilian Portuguese translation done by Raphael
+	Higino <raphaelh@uai.com.br>.
 
 2004-06-14  Philip Van Hoof  <me_NOSPAM@freax.org>
 

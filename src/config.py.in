@@ -4,6 +4,10 @@ glade_dir = "@prefix@/share/gnome-schedule"
 doc_dir = "@prefix@/share/doc/gnome-schedule-@VERSION@"
 gnomehelpbin = "@GNOMEHELP_CONFIG@"
 crontabbin = "@CRONTAB_CONFIG@"
+atbin = "@AT_CONFIG@"
+
+def getAtbin ():
+	return atbin
 
 def getCrontabbin ():
 	return crontabbin

@@ -19,6 +19,12 @@ if test x$CRONTAB_CONFIG = xno; then
   AC_MSG_ERROR(Please install the application crontab)
 fi
 
+AC_PATH_PROG(AT_CONFIG, at, no)
+if test x$AT_CONFIG = xno; then
+  AC_MSG_ERROR(Please install the application at)
+fi
+
+
 AC_PATH_PROG(PYTHON_CONFIG, python, no)
 if test x$PYTHON_CONFIG = xno; then
   AC_MSG_ERROR(Please install the application python)
@@ -26,6 +32,7 @@ fi
 
 dnl AC_DEFINE_UNQUOTED (GNOMEHELP_CONFIG, "$GNOMEHELP_CONFIG")
 dnl AC_DEFINE_UNQUOTED (CRONTAB_CONFIG, "$CRONTAB_CONFIG")
+dnl AC_DEFINE_UNQUOTED (AT_CONFIG, "$AT_CONFIG")
 dnl AC_DEFINE_UNQUOTED (PYTHON_CONFIG, "$PYTHON_CONFIG")
 
 
