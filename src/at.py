@@ -406,7 +406,7 @@ class At:
 				prelen = prelen + len(icon) + 6
 			
 			else:
-				icon = "None"
+				icon = "/usr/share/icons/gnome/48x48/mimetypes/gnome-mime-application.png"
 
 		elif method == 2:
 			string = " || {\n	 echo 'Execution directory inaccessible' >&2\n	 exit 1\n}\n"
@@ -435,7 +435,7 @@ class At:
 				prelen = prelen + len(icon) + 6
 			
 			else:
-				icon = "None"
+				icon = "/usr/share/icons/gnome/48x48/mimetypes/gnome-mime-application.png"
 		
 		return script, title, icon, prelen
 
