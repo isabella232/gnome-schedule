@@ -320,6 +320,7 @@
 		<atkproperty name="AtkObject::accessible_description" translatable="yes">Shows the records</atkproperty>
 	      </accessibility>
 	      <signal name="key_press_event" handler="on_treeview_key_press_event" last_modification_time="Sun, 11 Jul 2004 12:08:30 GMT"/>
+	      <signal name="button_press_event" handler="on_treeview_button_press_event" last_modification_time="Wed, 01 Dec 2004 16:53:35 GMT"/>
 	    </widget>
 	  </child>
 	</widget>
@@ -560,7 +561,7 @@
 			      <property name="max_length">0</property>
 			      <property name="text" translatable="yes"></property>
 			      <property name="has_frame">True</property>
-			      <property name="invisible_char" translatable="yes">*</property>
+			      <property name="invisible_char">*</property>
 			      <property name="activates_default">False</property>
 			      <signal name="changed" handler="on_anybasic_entry_changed" last_modification_time="Tue, 22 Jun 2004 15:44:32 GMT"/>
 			    </widget>
@@ -684,7 +685,7 @@
 			  <property name="max_length">0</property>
 			  <property name="text" translatable="yes"></property>
 			  <property name="has_frame">True</property>
-			  <property name="invisible_char" translatable="yes">*</property>
+			  <property name="invisible_char">*</property>
 			  <property name="activates_default">False</property>
 			  <signal name="changed" handler="on_anybasic_entry_changed" last_modification_time="Sun, 06 Jun 2004 15:18:25 GMT"/>
 			</widget>
@@ -720,7 +721,6 @@
 
 			  <child>
 			    <widget class="GtkButton" id="save_button">
-			      <property name="height_request">24</property>
 			      <property name="visible">True</property>
 			      <property name="tooltip" translatable="yes">Will save the current information as a preset. You can type the name of the preset in the combobox.</property>
 			      <property name="can_default">True</property>
@@ -740,7 +740,6 @@
 
 			  <child>
 			    <widget class="GtkButton" id="remove_button">
-			      <property name="height_request">24</property>
 			      <property name="visible">True</property>
 			      <property name="tooltip" translatable="yes">Will delete the selected preset</property>
 			      <property name="can_focus">True</property>
@@ -919,7 +918,7 @@
 			  <property name="max_length">0</property>
 			  <property name="text" translatable="yes">0-59</property>
 			  <property name="has_frame">True</property>
-			  <property name="invisible_char" translatable="yes">*</property>
+			  <property name="invisible_char">*</property>
 			  <property name="activates_default">False</property>
 			  <signal name="changed" handler="on_anyadvanced_entry_changed" last_modification_time="Sun, 06 Jun 2004 14:53:17 GMT"/>
 			</widget>
@@ -966,7 +965,7 @@
 			  <property name="max_length">0</property>
 			  <property name="text" translatable="yes">0-23</property>
 			  <property name="has_frame">True</property>
-			  <property name="invisible_char" translatable="yes">*</property>
+			  <property name="invisible_char">*</property>
 			  <property name="activates_default">False</property>
 			  <signal name="changed" handler="on_anyadvanced_entry_changed" last_modification_time="Sun, 06 Jun 2004 14:53:25 GMT"/>
 			</widget>
@@ -1013,7 +1012,7 @@
 			  <property name="max_length">0</property>
 			  <property name="text" translatable="yes">1-31</property>
 			  <property name="has_frame">True</property>
-			  <property name="invisible_char" translatable="yes">*</property>
+			  <property name="invisible_char">*</property>
 			  <property name="activates_default">False</property>
 			  <signal name="changed" handler="on_anyadvanced_entry_changed" last_modification_time="Sun, 06 Jun 2004 14:53:35 GMT"/>
 			</widget>
@@ -1060,7 +1059,7 @@
 			  <property name="max_length">0</property>
 			  <property name="text" translatable="yes">1-12</property>
 			  <property name="has_frame">True</property>
-			  <property name="invisible_char" translatable="yes">*</property>
+			  <property name="invisible_char">*</property>
 			  <property name="activates_default">False</property>
 			  <signal name="changed" handler="on_anyadvanced_entry_changed" last_modification_time="Sun, 06 Jun 2004 14:53:42 GMT"/>
 			</widget>
@@ -1107,7 +1106,7 @@
 			  <property name="max_length">0</property>
 			  <property name="text" translatable="yes">0-7</property>
 			  <property name="has_frame">True</property>
-			  <property name="invisible_char" translatable="yes">*</property>
+			  <property name="invisible_char">*</property>
 			  <property name="activates_default">False</property>
 			  <signal name="changed" handler="on_anyadvanced_entry_changed" last_modification_time="Sun, 06 Jun 2004 14:53:49 GMT"/>
 			</widget>
@@ -1411,7 +1410,7 @@
 	      <property name="max_length">0</property>
 	      <property name="text" translatable="yes">root</property>
 	      <property name="has_frame">True</property>
-	      <property name="invisible_char" translatable="yes">*</property>
+	      <property name="invisible_char">*</property>
 	      <property name="activates_default">False</property>
 	    </widget>
 	    <packing>
@@ -1512,7 +1511,7 @@
 	      <property name="max_length">0</property>
 	      <property name="text" translatable="yes">*</property>
 	      <property name="has_frame">True</property>
-	      <property name="invisible_char" translatable="yes">*</property>
+	      <property name="invisible_char">*</property>
 	      <property name="activates_default">False</property>
 	      <property name="width_chars">8</property>
 	      <signal name="changed" handler="on_entExpression_changed" last_modification_time="Mon, 14 Jun 2004 17:18:20 GMT"/>
@@ -1567,7 +1566,7 @@
 		  <property name="max_length">0</property>
 		  <property name="text" translatable="yes">0</property>
 		  <property name="has_frame">True</property>
-		  <property name="invisible_char" translatable="yes">*</property>
+		  <property name="invisible_char">*</property>
 		  <property name="activates_default">False</property>
 		  <property name="width_chars">3</property>
 		  <signal name="changed" handler="on_entRangeStart_changed" last_modification_time="Thu, 10 Jun 2004 14:03:24 GMT"/>
@@ -1609,7 +1608,7 @@
 		  <property name="max_length">0</property>
 		  <property name="text" translatable="yes">59</property>
 		  <property name="has_frame">True</property>
-		  <property name="invisible_char" translatable="yes">*</property>
+		  <property name="invisible_char">*</property>
 		  <property name="activates_default">False</property>
 		  <property name="width_chars">3</property>
 		  <signal name="changed" handler="on_entRangeEnd_changed" last_modification_time="Thu, 10 Jun 2004 14:03:30 GMT"/>
@@ -1672,7 +1671,7 @@
 		  <property name="max_length">0</property>
 		  <property name="text" translatable="yes">2</property>
 		  <property name="has_frame">True</property>
-		  <property name="invisible_char" translatable="yes">*</property>
+		  <property name="invisible_char">*</property>
 		  <property name="activates_default">False</property>
 		  <property name="width_chars">3</property>
 		  <signal name="changed" handler="on_entEvery_changed" last_modification_time="Thu, 10 Jun 2004 14:02:58 GMT"/>
@@ -1782,7 +1781,7 @@
 		  <property name="max_length">0</property>
 		  <property name="text" translatable="yes">2</property>
 		  <property name="has_frame">True</property>
-		  <property name="invisible_char" translatable="yes">*</property>
+		  <property name="invisible_char">*</property>
 		  <property name="activates_default">False</property>
 		  <property name="width_chars">3</property>
 		  <signal name="changed" handler="on_entFix_changed" last_modification_time="Sun, 13 Jun 2004 12:03:48 GMT"/>
@@ -2285,7 +2284,7 @@
 			  <property name="max_length">0</property>
 			  <property name="text" translatable="yes"></property>
 			  <property name="has_frame">True</property>
-			  <property name="invisible_char" translatable="yes">*</property>
+			  <property name="invisible_char">*</property>
 			  <property name="activates_default">False</property>
 			  <signal name="changed" handler="on_at_title_entry_changed" last_modification_time="Fri, 25 Jun 2004 07:24:31 GMT"/>
 			</widget>
@@ -2321,7 +2320,6 @@
 
 			  <child>
 			    <widget class="GtkButton" id="at_save_button">
-			      <property name="height_request">24</property>
 			      <property name="visible">True</property>
 			      <property name="tooltip" translatable="yes">Will save the current information as a preset. You can type the name of the preset in the combobox.</property>
 			      <property name="can_default">True</property>
@@ -2341,7 +2339,6 @@
 
 			  <child>
 			    <widget class="GtkButton" id="at_delete_button">
-			      <property name="height_request">24</property>
 			      <property name="visible">True</property>
 			      <property name="tooltip" translatable="yes">Will delete the selected preset</property>
 			      <property name="can_focus">True</property>
