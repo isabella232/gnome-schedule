@@ -23,6 +23,8 @@ import string
 import os
 import re
 import gtk.glade
+import support
+import gconf
 # import atEditor
 # import atEditorHelper
 import setuserWindow
@@ -129,6 +131,12 @@ class main:
 		self.xml.signal_connect("on_help_button_clicked", self.on_help_button_clicked)
 		self.xml.signal_connect("on_btnExit_clicked", self.quit)
 
+		support.gconf_client.add_dir ("/apps/gnome-schedule", gconf.CLIENT_PRELOAD_NONE)
+		support.gconf_client.notify_add ("/apps/gnome-schedule/advanced", self.gconfkey_advanced_changed);
+		
+		self.advanced_menu.set_active (support.gconf_client.get_bool ("/apps/gnome-schedule/advanced"))
+		
+		
 		# hiding setuser button if not root
 		if self.root == 0:
 			self.btnSetUser.hide()
@@ -140,6 +148,8 @@ class main:
 
 		#inittializing the treeview
 		self.init_treeview()
+
+		self.gconfkey_advanced_changed (support.gconf_client, None, "/apps/gnome-schedule/advanced", None)
 		
 		#set user window
 		self.setuserwidget = self.xml.get_widget("setuserWindow")
@@ -207,13 +217,16 @@ class main:
 		self.on_manual_menu_activate (self, args)
 		pass
 
-
-	def on_advanced_menu_activate (self, widget):
-		if widget.get_active():
+	def gconfkey_advanced_changed (self, client, connection_id, entry, args):
+		val = support.gconf_client.get_bool ("/apps/gnome-schedule/advanced")
+		if val:
 			self.switchView("advanced")
 		else:
 			self.switchView("simple")
 		return
+
+	def on_advanced_menu_activate (self, widget):
+		support.gconf_client.set_bool ("/apps/gnome-schedule/advanced", widget.get_active())
 
 	def on_about_menu_activate (self, *args):
 		dlg = gnome.ui.About(_("System Schedule"),
