@@ -132,6 +132,15 @@ class At:
 		tmpfile = tempfile.mkstemp ("", "/tmp/at.", "/tmp")
 		fd, path = tmpfile
 		tmp = os.fdopen(fd, 'w')
+		if title:
+			tmp.write("TITLE=" + title + "\n")
+		else:
+			tmp.write("TITLE=Untitled\n")
+		if icon:
+			tmp.write("ICON=" + icon + "\n")
+		else:
+			tmp.write("ICON=None\n")
+
 		tmp.write (command + "\n")
 		tmp.close ()
 		execute = config.getAtbin() + " " + runat + " -f " + path
@@ -146,7 +155,7 @@ class At:
 		for line in self.lines:
 			array_or_false = self.parse (line)
 			if array_or_false != gtk.FALSE:
-				(job_id, date, time, class_id, user, lines, title, icon) = array_or_false
+				(job_id, date, time, class_id, user, lines, title, icon, prelen) = array_or_false
 
 				if icon != None:
 					try:
@@ -157,7 +166,7 @@ class At:
 					icon_pix = None
 
 				
-				preview = self.make_preview (lines)
+				preview = self.make_preview (lines, prelen)
 
 				timestring = _("%s%s%s %s%s%s") % (_(""), date, _(""), _(""), time, _(""))
 				iter = self.ParentClass.treemodel.append([title, timestring, preview, array_or_false, int(job_id), timestring, icon_pix, self, date, class_id, user, "Defined", "at"])
@@ -188,35 +197,61 @@ class At:
 
 		
 
-
+		prelen = 0
 		# If the string contains TITLE=
-		#if line.find ("TITLE=") != -1:
-		#	title = line.split ("=")[1]
+		titlestart = script.find ("TITLE=")
+		if titlestart != -1:
+			titleend = script.find("\n", titlestart)
+			title = script[(titlestart + 6):titleend]
+			#remeber the length to remove this from the preview
+			prelen = len(title) + 6
+		else:
+			title = "Untitled"
 		# If the string contains ICON=
-		#elif line.find ("ICON=") != -1:
-		#	icon =line.split ("=")[1]
+		iconstart = script.find ("ICON=") 
+		if iconstart != -1:
+			iconend = script.find ("\n", iconstart)
+			icon = script[(iconstart + 5):iconend]
+			
+			prelen = prelen + len(icon) + 5
+			
+		else:
+			icon = "None"
+
 		# Else this is a line of the script
 		#else:
 		#	newlines.append (line)
 		#	print line
-		title = ""
-		icon = ""
+		
 		script = script[self.at_pre_len:]
-		return script, title, icon
+		return script, title, icon, prelen
 
-	def make_preview (self, lines):
+	def make_preview (self, lines, prelen):
 		try:
-			result = lines[0:15]
+			if prelen:
+				result = lines[(0 + prelen +1):(15 + prelen)]
+			else:
+				result = lines[0:15]
 		except:
-			result = lines
+			print "short preview"
+			result = lines[prelen:(-1 - prelen)]
 
 		result = result.replace("\n",";")
+		#remove ending newlines
 		done = 0
 		while done == 0:
 			if result[-1] == ";":
 				result = result[0:-1]
 			else:
 				done = 1
+		#remove beginning newlines
+		done = 0
+		while done == 0:
+			if result[0] == ";":
+				result = result[1:]
+			else:
+				done = 1
+
 		if len(result) >= 15 :
 			result = result + "..."
 
@@ -236,8 +271,8 @@ class At:
 					execute = config.getAtbin() + " -c " + job_id
 					# read lines and detect starter
 					script = os.popen(execute).read()
-					script, title, icon = self.prepare_script (script)
-					return job_id, date, time, class_id, user, script, title, icon
+					script, title, icon, prelen = self.prepare_script (script)
+					return job_id, date, time, class_id, user, script, title, icon, prelen
 		else:
 			if len (line) > 1 and line[0] != '#':
 				m = self.atRecordRegexAdd.match(line)
