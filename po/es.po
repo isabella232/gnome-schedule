@@ -1,17 +1,16 @@
+# translation of es.po to 
 # traducción de es.po al Spanish
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
 # Francisco Javier F. Serrador <serrador@cvs.gnome.org>, 2004.
-#: src/at.py:300 src/lang.py:118 src/lang.py:120 src/lang.py:212
-#: src/lang.py:214
 msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-08-21 18:12+0200\n"
-"PO-Revision-Date: 2004-08-21 18:58+0200\n"
-"Last-Translator: Francisco Javier F. Serrador <serrador@cvs.gnome.org>\n"
-"Language-Team: Spanish <traductores@es.gnome.org>\n"
+"POT-Creation-Date: 2004-10-26 23:16+0200\n"
+"PO-Revision-Date: 2004-10-26 23:28+0200\n"
+"Last-Translator: \n"
+"Language-Team:  <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -26,7 +25,7 @@ msgstr "Administrar sus tareas del sistema"
 msgid "Schedule"
 msgstr "Horario"
 
-#: src/at.py:300
+#: src/at.py:303
 #, python-format
 msgid "%s%s%s %s%s%s"
 msgstr "%s%s%s %s%s%s"
@@ -112,7 +111,7 @@ msgstr "No usar un preajuste"
 #: src/crontabEditor.py:260
 #, python-format
 msgid "This is an invalid record! The problem could be at the %s field. Reason: %s"
-msgstr ""
+msgstr "Este es un registro inválido. El problema podría estar en el campo %s. Razón: %s"
 
 #: src/crontabEditor.py:294 src/atEditor.py:372
 msgid "Pick an icon for this scheduled task"
@@ -290,11 +289,13 @@ msgstr "Cada"
 
 #: src/gnome-schedule.glade.h:35
 msgid "For example 1,2,3,4 means happens the first, second, third and fourth minute"
-msgstr "Por ejemplo 1,2,3,4, significa que ocurre el primero, segundo, tercer y cuarto minuto"
+msgstr ""
+"Por ejemplo 1,2,3,4, significa que ocurre el primero, segundo, tercer y "
+"cuarto minuto"
 
 #: src/gnome-schedule.glade.h:36
 msgid "For example at 04:10 tomorrow, next week or in three days."
-msgstr "Por ejemplo, a 04:10 tomorrow, next week o in three days."
+msgstr "Por ejemplo, a 04:10 mañana, la semana que viene o en tres días."
 
 #: src/gnome-schedule.glade.h:37
 msgid "For example every first hour of the day."
@@ -302,25 +303,25 @@ msgstr "Por ejemplo cada primera hora del día."
 
 #: src/gnome-schedule.glade.h:38
 msgid "For experienced users only"
-msgstr "Sólo para usuarios con esperiencia"
+msgstr "Sólo para usuarios con experiencia"
 
 #: src/gnome-schedule.glade.h:40
 msgid ""
 "Happens at a defined occurrence. For example, happens at the second minute, "
 "hour, day, weekday or month"
-msgstr ""
+msgstr "Ocurre con una repetición definida. Por ejemplo, ocure al segundo minuto, hora, día, día de la semana o mes"
 
 #: src/gnome-schedule.glade.h:41
 msgid ""
 "Happens at all occurrence. For example, happens every minute, hour, day, "
 "weekday or month"
-msgstr ""
+msgstr "Ocurre con una repetición. Por ejemplo, cada minuto, hora, día, día de la seman, o mes"
 
 #: src/gnome-schedule.glade.h:42
 msgid ""
 "Happens at every x occurrence. For example every two minutes, hours, days, "
 "weekdays or months"
-msgstr ""
+msgstr "Ocurre cada X tiempo. Por ejemplo, cada 2 minutos, horas, días, días de la seman, o meses"
 
 #: src/gnome-schedule.glade.h:43
 msgid "Happens at the"
@@ -354,7 +355,7 @@ msgstr "Preajuste"
 msgid ""
 "Quit the application. This will not stop the system scheduling. It will, "
 "however, quit this system schedule maintenance tool."
-msgstr ""
+msgstr "Sale de la aplicación. Esto no detendrá el sistema de conteo de tiempo. Simplemente saldrá de esta herramienta de mantenimiento."
 
 #: src/gnome-schedule.glade.h:51
 msgid "Run"
@@ -406,7 +407,7 @@ msgstr "Establecer el día de la semana en el ajuste de frecuencia"
 
 #: src/gnome-schedule.glade.h:63
 msgid "Set user"
-msgstr ""
+msgstr "Establecer usuario"
 
 #: src/gnome-schedule.glade.h:64
 msgid "Show help"
@@ -449,7 +450,7 @@ msgid ""
 "When selected, no output will be generated. When scheduled tasks in the "
 "crontab do have output and this option is not checked, the output will by "
 "default be send to the UNIX mailbox of the user"
-msgstr ""
+msgstr "Cuando se selecciona, no se generará ninguna salida. Cuando las tareas programadas en el crontab hagan cualquier salida y esta opción no esté marcada, la salida se enviará por omisión al buzón UNIX del usuario"
 
 #: src/gnome-schedule.glade.h:74
 msgid "Will delete the selected preset"
@@ -494,6 +495,8 @@ msgid ""
 "tomorrow\n"
 "next week"
 msgstr ""
+"mañana\n"
+"la semana que viene"
 
 #: src/lang.py:69
 msgid ""
@@ -507,138 +510,138 @@ msgstr "cero"
 
 #: src/lang.py:93
 msgid "first"
-msgstr "primero"
+msgstr "1"
 
 #: src/lang.py:93
 msgid "second"
-msgstr "segundo"
+msgstr "2"
 
 #: src/lang.py:93
 msgid "third"
-msgstr "tercero"
+msgstr "3"
 
 #: src/lang.py:93
 msgid "fourth"
-msgstr "cuarto"
+msgstr "4"
 
 #: src/lang.py:93
 msgid "fifth"
-msgstr ""
+msgstr "5"
 
 #: src/lang.py:94
 msgid "sixth"
-msgstr ""
+msgstr "6"
 
 #: src/lang.py:94
 msgid "seventh"
-msgstr ""
+msgstr "7"
 
 #: src/lang.py:94
 msgid "eighth"
-msgstr ""
+msgstr "8"
 
 #: src/lang.py:94
 msgid "ninth"
-msgstr ""
+msgstr "9"
 
 #: src/lang.py:94
 msgid "tenth"
-msgstr ""
+msgstr "10"
 
 #: src/lang.py:95
 msgid "eleventh"
-msgstr ""
+msgstr "11"
 
 #: src/lang.py:95
 msgid "twelfth"
-msgstr ""
+msgstr "12"
 
 #: src/lang.py:95
 msgid "thirteenth"
-msgstr ""
+msgstr "13"
 
 #: src/lang.py:95
 msgid "fourteenth"
-msgstr ""
+msgstr "14"
 
 #: src/lang.py:95
 msgid "fifteenth"
-msgstr ""
+msgstr "15"
 
 #: src/lang.py:96
 msgid "sixteenth"
-msgstr ""
+msgstr "16"
 
 #: src/lang.py:96
 msgid "seventeenth"
-msgstr ""
+msgstr "17"
 
 #: src/lang.py:96
 msgid "eighteenth"
-msgstr ""
+msgstr "18"
 
 #: src/lang.py:96
 msgid "nineteenth"
-msgstr ""
+msgstr "19"
 
 #: src/lang.py:96
 msgid "twentieth"
-msgstr ""
+msgstr "20"
 
 #: src/lang.py:99
 msgid "zero"
-msgstr ""
+msgstr "0"
 
 #: src/lang.py:99
 msgid "ten"
-msgstr ""
+msgstr "10"
 
 #: src/lang.py:99
 msgid "twenty"
-msgstr ""
+msgstr "12"
 
 #: src/lang.py:99
 msgid "thirty"
-msgstr ""
+msgstr "13"
 
 #: src/lang.py:99
 msgid "forty"
-msgstr ""
+msgstr "14"
 
 #: src/lang.py:99
 msgid "fifty"
-msgstr ""
+msgstr "15"
 
 #: src/lang.py:99
 msgid "sixty"
-msgstr ""
+msgstr "16"
 
 #: src/lang.py:99
 msgid "seventy"
-msgstr ""
+msgstr "17"
 
 #: src/lang.py:99
 msgid "eighty"
-msgstr ""
+msgstr "18"
 
 #: src/lang.py:99
 msgid "ninety"
-msgstr ""
+msgstr "19"
 
 #: src/lang.py:106
 #, python-format
 msgid "minus %s"
-msgstr ""
+msgstr "menos %s"
 
 #: src/lang.py:116
 msgid "minus "
-msgstr ""
+msgstr "menos"
 
 #. These are just some table-lookups and translation magic :)
 #: src/lang.py:120
 #, python-format
 msgid "%s%s%s%s%s%s"
-msgstr ""
+msgstr "%s%s%s%s%s%s"
 
 #: src/lang.py:120
 msgid "-"
@@ -647,60 +650,60 @@ msgstr "-"
 #: src/lang.py:123
 #, python-format
 msgid "%sth."
-msgstr ""
+msgstr "%s"
 
 #: src/lang.py:212
 #, python-format
 msgid "%s%s:%s:%s%s"
-msgstr ""
+msgstr "%s%s:%s:%s%s"
 
 #: src/lang.py:214
 #, python-format
 msgid "%s%s:%s%s"
-msgstr ""
+msgstr "%s%s:%s%s"
 
 #: src/lang.py:251
 msgid "Every minute"
-msgstr ""
+msgstr "Cada minuto"
 
 #: src/lang.py:256
 msgid "Every hour"
-msgstr ""
+msgstr "Cada hora"
 
 #: src/lang.py:258
 #, python-format
 msgid "Every %s minute of every hour"
-msgstr ""
+msgstr "Cada %s minuto de cada hora"
 
 #: src/lang.py:263
 #, python-format
 msgid "Every %s hour of the day"
-msgstr ""
+msgstr "Cada %s hora del día"
 
 #: src/lang.py:265
 #, python-format
 msgid "Every day at %s"
-msgstr ""
+msgstr "Cada día a las %s"
 
 #: src/lang.py:267
 #, python-format
 msgid "Every minute during the %s hour"
-msgstr ""
+msgstr "Cada minuto durante las %s horas"
 
 #: src/lang.py:272
 #, python-format
 msgid "Every %s day of the month"
-msgstr ""
+msgstr "Cada día %s  del mes"
 
 #: src/lang.py:274
 #, python-format
 msgid "At %s every %s day of the month"
-msgstr ""
+msgstr "A las %s cada día %s del mes"
 
 #: src/lang.py:276
 #, python-format
 msgid "Every minute of the %s hour every %s day of the month"
-msgstr ""
+msgstr "Cada minuto de la hora %s cada día %s del mes"
 
 #: src/lang.py:278
 #, python-format
@@ -834,7 +837,7 @@ msgstr ""
 #: src/lang.py:354
 #, python-format
 msgid "Every minute, every hour, day: %s, every month"
-msgstr ""
+msgstr "Cada minuto, cada hora,día: %s, cada mes"
 
 #: src/mainWindow.py:298 src/mainWindow.py:329
 msgid "Icon"
@@ -850,7 +853,7 @@ msgstr "Título"
 
 #: src/mainWindow.py:311 src/mainWindow.py:332
 msgid "Frequency or time"
-msgstr ""
+msgstr "Frecuencia o tiempo"
 
 #: src/mainWindow.py:316 src/mainWindow.py:337
 msgid "Preview"
@@ -867,7 +870,7 @@ msgstr ""
 
 #: src/mainWindow.py:464
 msgid "This software is distributed under the GPL. "
-msgstr ""
+msgstr "Este software se distribuye bajo los términos de la GPL."
 
 #: src/mainWindow.py:468
 msgid ""
