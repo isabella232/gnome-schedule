@@ -168,8 +168,9 @@ class CrontabEditor:
 		preview = gtk.Image()
 		preview.show()
 		iconopendialog = gtk.FileChooserDialog(_("Pick an icon for this scheduled task"), self.widget, gtk.FILE_CHOOSER_ACTION_OPEN, (gtk.STOCK_OK, gtk.RESPONSE_ACCEPT, gtk.STOCK_CANCEL, gtk.RESPONSE_REJECT), "")
-		iconopendialog.set_preview_widget(preview)
-		iconopendialog.connect("update-preview", self.update_preview_cb, preview)
+		# Highly unstable :-(
+		# iconopendialog.set_preview_widget(preview)
+		# iconopendialog.connect("update-preview", self.update_preview_cb, preview)
 		iconopendialog.run()
 		self.icon = iconopendialog.get_filename()
 		iconopendialog.destroy ()

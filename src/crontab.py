@@ -58,6 +58,31 @@ class Crontab:
 		self.read()
 		return
 
+	def savetemplate (self, template_name, record, nooutput, title, icon):
+		minute, hour, day, month, weekday, command, title_, icon_ = self.parse (record)
+		frequency = minute + " " + hour + " " + day + " " + month + " " + weekday
+		template_name_c = string.strip (template_name, "\s ,;:/\\\"'!@#$%^&*()-_+=|?<>.][{}")
+		template_name_c = string.replace (template_name_c, " ", "-")
+		support.gconf_client.set_string("/apps/gnome-schedule/templates/crontab/%s/name" % (template_name_c), template_name)
+		support.gconf_client.set_string("/apps/gnome-schedule/templates/crontab/%s/icon_uri" % (template_name_c), icon)
+		support.gconf_client.set_string("/apps/gnome-schedule/templates/crontab/%s/command" % (template_name_c), command)
+		support.gconf_client.set_string("/apps/gnome-schedule/templates/crontab/%s/frequency" % (template_name_c), frequency)
+		support.gconf_client.set_string("/apps/gnome-schedule/templates/crontab/%s/title" % (template_name_c), title)
+		
+		installed = support.gconf_client.get_string("/apps/gnome-schedule/templates/crontab/installed")
+		if installed == None:
+			installed = template_name_c
+		else:
+			found = gtk.FALSE
+			for t in string.split (installed, ", "):
+				if t == template_name_c:
+					found = gtk.TRUE
+
+			if found == gtk.FALSE:
+				installed = installed + ", " + template_name_c
+
+		support.gconf_client.set_string("/apps/gnome-schedule/templates/crontab/installed", installed)
+
 	def gettemplatenames (self):
 		strlist = support.gconf_client.get_string("/apps/gnome-schedule/templates/crontab/installed")
 		if strlist != None:
@@ -71,8 +96,9 @@ class Crontab:
 		command = support.gconf_client.get_string("/apps/gnome-schedule/templates/crontab/%s/command" % (template_name))
 		frequency = support.gconf_client.get_string("/apps/gnome-schedule/templates/crontab/%s/frequency" % (template_name))
 		title = support.gconf_client.get_string("/apps/gnome-schedule/templates/crontab/%s/title" % (template_name))
+		name = support.gconf_client.get_string("/apps/gnome-schedule/templates/crontab/%s/name" % (template_name))
 
-		return icon_uri, command, frequency, title
+		return icon_uri, command, frequency, title, name
 
 	def translate_frequency (self, frequency):
 
