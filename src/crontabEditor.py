@@ -98,11 +98,16 @@ class CrontabEditor:
 		self.xml.signal_connect("on_save_button_clicked", self.on_save_button_clicked)
 		self.xml.signal_connect("on_fieldHelp_clicked", self.on_fieldHelp_clicked)
 		self.template_combobox_model = gtk.ListStore(gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_PYOBJECT)
+		self.template_combobox.set_text_column (0)		
+		self.template_combobox.set_model (self.template_combobox_model)
+		
 		self.nooutput = self.chkNoOutput.get_active()
 		self.loadicon ()
 		self.reload_templates ()
 		support.gconf_client.add_dir ("/apps/gnome-schedule/templates/crontab", gconf.CLIENT_PRELOAD_NONE)
 		support.gconf_client.notify_add ("/apps/gnome-schedule/templates/crontab/installed", self.gconfkey_changed);
+		
+		
 
 	def on_remove_button_clicked (self, *args):
 		iter = self.template_combobox.get_active_iter ()
@@ -143,7 +148,6 @@ class CrontabEditor:
 		self.reload_templates ()
 
 	def reload_templates (self):
-		print "Reloading templates"	
 		self.template_names = self.schedule.gettemplatenames ()
 
 		self.template_combobox_model.clear ()
@@ -151,9 +155,6 @@ class CrontabEditor:
 
 		if self.template_names == None or len (self.template_names) <= 0:
 			self.remove_button.set_sensitive (gtk.FALSE)
-			self.template_combobox.set_text_column (0)
-			self.template_combobox.set_model (self.template_combobox_model)
-			self.template_combobox.set_active (0)
 			self.save_button.set_sensitive (gtk.FALSE)
 			# self.template_combobox.set_sensitive (gtk.FALSE)
 			# self.template_label.set_sensitive (gtk.FALSE)
@@ -165,9 +166,6 @@ class CrontabEditor:
 				self.template_combobox_model.append([name, template_name, thetemplate])
 			try:
 				active = self.template_combobox.get_active ()
-				self.template_combobox.set_text_column (0)
-				self.template_combobox.set_model (self.template_combobox_model)
-				self.template_combobox.set_text_column (0)
 				self.xml.signal_connect("on_template_combobox_changed", self.on_template_combobox_changed)
 				#self.template_combobox.set_sensitive (gtk.TRUE)
 				self.remove_button.set_sensitive (gtk.TRUE)
