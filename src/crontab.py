@@ -392,7 +392,7 @@ class Crontab:
 					icon_pix = gtk.gdk.pixbuf_new_from_file (icon)
 				except:
 					icon_pix = None
-				iter = self.ParentClass.treemodel.append([title, self.easy (minute, hour, day, month, weekday), command, line, self.linecount, time, icon_pix, self])
+				iter = self.ParentClass.treemodel.append([title, self.easy (minute, hour, day, month, weekday), command, line, self.linecount, time, icon_pix, self, ""])
 			self.linecount = self.linecount + 1
 		return
 

@@ -205,7 +205,7 @@ class CrontabEditor:
 #			file_chooser.set_preview_widget_active(have_preview)
 #		return
 
-	def	loadicon (self):
+	def loadicon (self):
 		nautilus_icon = support.nautilus_icon ("i-executable")
 		if nautilus_icon != None:
 			self.template_image.set_from_file(nautilus_icon)
@@ -369,7 +369,7 @@ class CrontabEditor:
 		else:
 			self.schedule.append (record, self.nooutput, self.title, self.icon)
 			self.ParentClass.treemodel.clear ()
-			self.ParentClass.schedule.read ()
+			self.schedule.read ()
 
 		self.widget.hide ()
 
