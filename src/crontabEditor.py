@@ -402,8 +402,32 @@ class CrontabEditor:
 
 
 	def set_frequency_combo (self):
-		index = self.schedule.getfrequency (self.minute, self.hour, self.day, self.month, self.weekday)
+		#index = self.schedule.getfrequency (self.minute, self.hour, self.day, self.month, self.weekday)
+		index = self.getfrequency (self.minute, self.hour, self.day, self.month, self.weekday)
 		self.frequency_combobox.set_active (index)
+		
+	def getfrequency (self, minute, hour, day, month, weekday):
+		# index = _("use advanced")
+		index = 0
+
+		# Must be translatable, it's the actual content of the combobox-entry
+		if minute == "*" and hour == "*" and month == "*" and day == "*" and weekday == "*":
+			# index = self.translate_frequency ("minute")
+			index = 1
+		if minute == "0" and hour == "*" and month == "*" and day == "*" and weekday == "*":
+			# index = self.translate_frequency ("hour")
+			index = 2
+		if minute == "0" and hour == "0" and month == "*" and day == "*" and weekday == "*":
+			# index = self.translate_frequency ("day")
+			index = 3
+		if minute == "0" and hour == "0" and month == "*" and day == "1" and weekday == "*":
+			# index = self.translate_frequency ("month")
+			index = 4
+		if minute == "0" and hour == "0" and month == "*" and day == "*" and weekday == "0":
+			# index = self.translate_frequency ("week")
+			index = 5
+
+		return index
 
 	def reset (self):
 		self.noevents = gtk.TRUE

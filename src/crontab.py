@@ -59,7 +59,10 @@ class Crontab:
 		self.preview_len = 50
 
 		return
-		
+	
+	def geteditor (self):
+		return self.editor
+	
 	def replace (self, template_name_c):
 		for a in " ,	;:/\\\"'!@#$%^&*()-_+=|?<>.][{}":
 			template_name_c = string.replace (template_name_c, a, "-")
@@ -127,6 +130,7 @@ class Crontab:
 		support.gconf_client.unset ("/apps/gnome-schedule/presets/crontab/installed")
 		support.gconf_client.set_string("/apps/gnome-schedule/presets/crontab/installed", installed)
 
+	#list all the templates
 	def gettemplatenames (self):
 		#try:
 			strlist = support.gconf_client.get_string("/apps/gnome-schedule/presets/crontab/installed")
@@ -149,53 +153,15 @@ class Crontab:
 		except Exception, ex:
 			return ex, ex, ex, ex, ex
 
-	def translate_frequency (self, frequency):
-
-		if frequency == "minute":
-			return _("minute")
-		if frequency == "hour":
-			return _("hour")
-		if frequency == "day":
-			return _("day")
-		if frequency == "month":
-			return _("month")
-		if frequency == "weekday":
-			return _("weekday")
-
-		return frequency
-
-	def geteditor (self):
-		return self.editor
 
 	def createpreview (self, minute, hour, day, month, weekday, command):
 		return minute + " " + hour + " " + day + " " + month + " " + weekday + " " + command
 
+
 	def getstandardvalue (self):
 		return "* * * * * "+ _("command")
 
-	def getfrequency (self, minute, hour, day, month, weekday):
-		# index = _("use advanced")
-		index = 0
 
-		# Must be translatable, it's the actual content of the combobox-entry
-		if minute == "*" and hour == "*" and month == "*" and day == "*" and weekday == "*":
-			# index = self.translate_frequency ("minute")
-			index = 1
-		if minute == "0" and hour == "*" and month == "*" and day == "*" and weekday == "*":
-			# index = self.translate_frequency ("hour")
-			index = 2
-		if minute == "0" and hour == "0" and month == "*" and day == "*" and weekday == "*":
-			# index = self.translate_frequency ("day")
-			index = 3
-		if minute == "0" and hour == "0" and month == "*" and day == "1" and weekday == "*":
-			# index = self.translate_frequency ("month")
-			index = 4
-		if minute == "0" and hour == "0" and month == "*" and day == "*" and weekday == "0":
-			# index = self.translate_frequency ("week")
-			index = 5
-
-		return index
-		
 	def checkfield (self, field, type, regex):
 		# print type
 		# print field
@@ -279,6 +245,7 @@ class Crontab:
 		else:
 			raise Exception(_("Unknown"), self.translate_frequency (type), _("Invalid"))
 
+	#create temp file with old tasks and new ones and then updates crontab
 	def write (self):
 		tmpfile = tempfile.mkstemp ("", "/tmp/crontab.", "/tmp")
 		fd, path = tmpfile
@@ -303,6 +270,7 @@ class Crontab:
 
 		tmp.close ()
 
+		#replace crontab config with new one in file
 		if self.ParentClass.root:
 			# print config.getCrontabbin () + " -u " + self.ParentClass.user + " " + path
 			os.system (config.getCrontabbin () +" -u " + self.ParentClass.user + " " + path)
@@ -311,26 +279,16 @@ class Crontab:
 			os.system (config.getCrontabbin () + " " + path)
 
 		os.unlink (path)
+		
+		#TODO needs exception handler
+		
 		return
 
-
+	##XXX check if this still works after my changes
 	def update (self, linenumber, record, parentiter, nooutput, title, icon = None):
 		# The GUI
 		minute, hour, day, month, weekday, command, title_, icon_ = self.parse (record)
 		easystring = self.easy (minute, hour, day, month, weekday)
-
-
-		self.ParentClass.treemodel.set_value (parentiter, 1, easystring)
-		if nooutput:
-			space = " "
-			if command[len(command)-1] == " ":
-				space = ""
-			self.ParentClass.treemodel.set_value (parentiter, 2, self.make_preview (command + space + self.nooutputtag))
-			record = record + space + self.nooutputtag
-		else:
-			self.ParentClass.treemodel.set_value (parentiter, 2, self.make_preview (command))
-			
-		self.ParentClass.treemodel.set_value (parentiter, 5, minute + " " + hour + " " + day + " " + month + " " + weekday)
 
 		if title != None and icon == None:
 			record = record + " # " + title
@@ -340,14 +298,34 @@ class Crontab:
 			title = _("Untitled")
 			record = record + " # " + title + ", " + icon
 
+		if nooutput:
+			record = record + " " + self.nooutputtag
+
+		self.lines[linenumber] = record
+		
+		#TODO let write return if write PASSED
+		#written = self.write()
+		self.write ()
+
+		##if written:
+		self.ParentClass.treemodel.set_value (parentiter, 1, easystring)
+		if nooutput:
+			space = " "
+			if command[len(command)-1] == " ":
+				space = ""
+			self.ParentClass.treemodel.set_value (parentiter, 2, self.make_preview (command + space + self.nooutputtag))
+		else:
+				self.ParentClass.treemodel.set_value (parentiter, 2, self.make_preview (command))
+			
+		self.ParentClass.treemodel.set_value (parentiter, 5, minute + " " + hour + " " + day + " " + month + " " + weekday)
+
 		self.ParentClass.treemodel.set_value (parentiter, 0, title)
 		if icon != None:
 			self.ParentClass.treemodel.set_value (parentiter, 6, gtk.gdk.pixbuf_new_from_file (icon))
 
 		self.ParentClass.treemodel.set_value (parentiter, 3, record)
-		# The crontab itself
-		self.lines[linenumber] = record
-		self.write ()
+		##
+
 
 	def delete (self, linenumber, iter):
 		number = 0
@@ -470,3 +448,18 @@ class Crontab:
 			result = result + "..."
 		return result
 
+	#move to some shared thing between crontab and at
+	def translate_frequency (self, frequency):
+
+		if frequency == "minute":
+			return _("minute")
+		if frequency == "hour":
+			return _("hour")
+		if frequency == "day":
+			return _("day")
+		if frequency == "month":
+			return _("month")
+		if frequency == "weekday":
+			return _("weekday")
+
+		return frequency

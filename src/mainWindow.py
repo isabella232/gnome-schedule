@@ -222,7 +222,7 @@ class main:
 		if event.type == gtk.gdk._2BUTTON_PRESS and self.haveitem == gtk.TRUE:
 			self.on_prop_button_clicked (self, widget)
 	
-	#when the user selects a task buttons get enabled
+	#when the user selects a task, buttons get enabled
 	def onTreeViewSelectRow (self, *args):
 		try:
 			store, iter = self.treeview.get_selection().get_selected()
@@ -410,6 +410,7 @@ class main:
 
 	def on_properties_menu_activate (self, *args):
 		store, iter = self.treeview.get_selection().get_selected()
+		#see what scheduler (at, crontab or ...)
 		self.schedule = self.treemodel.get_value(iter, 7)
 		self.editor = self.schedule.geteditor ()
 		
@@ -423,6 +424,7 @@ class main:
 		store, iter = self.treeview.get_selection().get_selected()
 	
 		if iter != None:
+			#see what scheduler (at, crontab or ...)
 			self.schedule = self.treemodel.get_value(iter, 7)
 			self.editor = self.schedule.geteditor ()
 
