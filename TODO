@@ -15,9 +15,7 @@ Development:
  
  Unassigned release blockers
 
- * Add 'su' check to configure script
- * Add 'chown' check to configure script, or use another way to change the ownership of the file. 
-   Perhaps use tempfile.TemporaryFile or something like that to set the owner at once.
+ * Use the 'chown' feature provided with the os module or something in Python
 
  Unassigned unstable (need a new branch and/or will not be 
  included in the next release)
