@@ -47,7 +47,7 @@ class Crontab:
 		self.ParentClass.treemodel = self.createtreemodel ()
 		self.editorwidget = self.xml.get_widget("crontabEditor")
 		self.editorhelperwidget = self.xml.get_widget("crontabEditorHelper")
-		self.editor = crontabEditor.CrontabEditor (self, self)
+		self.editor = crontabEditor.CrontabEditor (self.ParentClass, self)
 		self.editorhelper = crontabEditorHelper.CrontabEditorHelper(self, self.editor)
 
 		self.editorwidget.hide()

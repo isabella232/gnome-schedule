@@ -61,22 +61,18 @@ def translate_nth_nl (nth):
 		return twenty_nths[nth]
 	elif nth < 0 and nth >= -20:
 		return "min " + twenty_nths[nth]
-	elif nth > -100 and nth < -20:
+	elif (nth > -100 and nth < -20) or (nth > 20 and nth < 100):
 		tennumber = nth / 10
 		remainder = nth - (tennumber*10)
 		if numbers[remainder][len(numbers[remainder])-1] == "e":
 			between = "ën"
 		else:
 			between = "en"
-		return "min " + numbers[remainder]+bewteen+tennumbers [tennumber]+"ste"
-	elif nth > 20 and nth < 100:
-		tennumber = nth / 10
-		remainder = nth - (tennumber*10)
-		if numbers[remainder][len(numbers[remainder])-1] == "e":
-			between = "ën"
+		if nth < 0:
+			add = "min"
 		else:
-			between = "en"
-		return numbers[remainder]+between+tennumbers [tennumber]+"ste"
+			add = ""
+		return add + numbers[remainder]+bewteen+tennumbers [tennumber]+"ste"
 	elif nth > 100 or nth < -100:
 		return string(nth) + "ste"
 

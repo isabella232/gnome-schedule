@@ -40,12 +40,12 @@ class CrontabEditor:
 		self.schedule = schedule
 		
 		self.xml = self.ParentClass.xml
-		self.widget = self.ParentClass.editorwidget
+		self.widget = self.schedule.editorwidget
 		self.widget.connect("delete-event", self.on_cancel_button_clicked)
 
 		self.fieldRegex = re.compile('^(\*)$|^([0-9]+)$|^\*\\\([0-9]+)$|^([0-9]+)-([0-9]+)$|(([0-9]+[|,])+)')
 
-		self.editorhelperwidget = self.ParentClass.editorhelperwidget
+		self.editorhelperwidget = self.schedule.editorhelperwidget
 		self.nooutputRegex = re.compile('([^#\n$]*)>(\s|)/dev/null\s2>&1')
 		
 		self.editing = gtk.FALSE
@@ -313,5 +313,5 @@ class CrontabEditor:
 			field = "weekday"
 			expression = self.weekday_entry.get_text()
 
-		self.ParentClass.editorhelper.show (field, expression)
+		self.schedule.editorhelper.show (field, expression)
 		return
