@@ -153,6 +153,7 @@ class At:
 		tmp.close ()
 		execute = config.getAtbin() + " " + runat + " -f " + path
 		temp = commands.getoutput(execute)
+		print temp
 		os.unlink (path)
 		return temp
 
@@ -208,6 +209,7 @@ class At:
 		# gaute: It now seems like this is incorrect, and may vary upon distribution. I therefore determine the prepended stuff by making a test job and then removing the length of it. at gentoo it adds to newlines at the end of the script
 
 		
+		script = script[self.at_pre_len:]
 
 		prelen = 0
 		# If the string contains TITLE=
@@ -230,12 +232,14 @@ class At:
 		else:
 			icon = "None"
 
+		
+
 		# Else this is a line of the script
 		#else:
 		#	newlines.append (line)
 		#	print line
 		
-		script = script[self.at_pre_len:]
+		
 		return script, title, icon, prelen
 
 	def make_preview (self, lines, prelen):
@@ -285,6 +289,7 @@ class At:
 					script = os.popen(execute).read()
 					script, title, icon, prelen = self.prepare_script (script)
 					#removing ending newlines, but keep one
+					print "prelen: " + str(prelen)
 					done = 0
 					while done == 0:
 						if script[-1] == "\n":

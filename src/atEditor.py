@@ -91,7 +91,9 @@ class AtEditor:
 		self.xml.signal_connect("on_at_combobox_changed", self.on_combobox_changed)
 		self.xml.signal_connect("on_at_control_option_toggled", self.on_control_option_toggled)
 		self.xml.signal_connect("on_at_wording_option_toggled", self.on_wording_option_toggled)
-
+	
+		#for the addwindow to not jump more than one day ahead in time
+		self.first = 0
 				
 	def on_worded_label_event (self, *args):
 		# highlight on mouseover
@@ -287,7 +289,18 @@ class AtEditor:
 		(year, month, day) = self.calendar.get_date()
 		hour = self.hour_spinbutton.get_text()
 		minute = self.minute_spinbutton.get_text()
-		self.runat = hour + ":" + minute + " " + str(year) + "-" + str(month) + "-" + str(day)
+		if self.first == 1:
+			pass
+			print "first = 1"
+		else:	
+			self.calendar.select_day(day+1)
+			self.first = 1
+
+		(year, month, day) = self.calendar.get_date()
+		hour = self.hour_spinbutton.get_text()
+		minute = self.minute_spinbutton.get_text()
+
+		self.runat = hour + ":" + minute + " " + str(year) + "-" + str(month+1) + "-" + str(day)
 		self.update_textboxes()
 		
 
@@ -401,8 +414,7 @@ class AtEditor:
 
 	def on_ok_button_clicked (self, *args):
 		# TODO: Validate record
-		# TODO: Fill recorc
-		self.nooutput = 0 #not even used
+		# TODO: Fill record
 		if self.editing != gtk.FALSE:
 			self.schedule.update (self.job_id, self.runat, self.command, self.title, self.icon)
 			self.ParentClass.schedule_reload ()
