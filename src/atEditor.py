@@ -393,8 +393,6 @@ class AtEditor:
 		self.loadicon ()
 		self.reload_templates ()
 
-
-		
 	def on_help_button_clicked (self, *args):
 		help_page = "file://" + config.getDocdir() + "/addingandediting.html"
 		path = config.getGnomehelpbin ()

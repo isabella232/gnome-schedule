@@ -174,14 +174,6 @@ class At:
 		return self.editor
 
 
-	def createpreview (self, minute, hour, day, month, weekday, command):
-		raise 'Not implemented'
-
-	def getstandardvalue (self):
-		raise 'Not implemented'
-		
-	def getfrequency (self, minute, hour, day, month, weekday):
-		raise 'Not implemented'
 
 	def checkfield (self, field, type, regex):
 		raise Exception('Abstract method please override','','','')
