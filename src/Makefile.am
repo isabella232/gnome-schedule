@@ -10,8 +10,6 @@ gnomeschedule_PYTHON = \
 	crontabEditor.py \
 	setuserWindow.py \
 	crontab.py \
-	editor.py \
-	schedule.py \
 	lang.py \
 	support.py \
 	addWindow.py \
