@@ -5,7 +5,6 @@ URL: http://gnome-schedule.sf.net
 Release: 1
 Copyright: GPL
 Group: Applications/System
-Source: ftp://gaute.eu.org/pub/gnome-schedule/gnome-shcedule-1.0_beta.tar.gz
 Buildroot: /var/tmp/%{name}-buildroot
 Requires: python-conf2
 Requires: python
