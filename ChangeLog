@@ -1,3 +1,7 @@
+2004-09-11  Christophe Merlet  <redfox@redfoxcenter.org>
+
+	* configure.ac: Added "fr" (French) to ALL_LINGUAS.
+
 2004-08-01  Gaute Hope <eg@gaute.eu.org>
 
 	* configure.ac, dist/gentoo/gnome-schedule-0.1.0.ebuild.in: Changed version number to: 0.1.0, changed name of the ebuild
