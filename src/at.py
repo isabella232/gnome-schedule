@@ -170,23 +170,40 @@ class At:
 		startrec = gtk.FALSE
 		entarfnd = gtk.FALSE
 		for line in lines:
+		
+			# If we have a line and we have not yet started recording
+			# So all lines in this if-block are prepended by 'at'
+			
 			if startrec == gtk.FALSE and len(line) > 0:
+			
+				# Find the first newline
+				
 				if line[0] == '\n':
 					entarfnd = gtk.TRUE
+					
+				# Find the second newline and else is the first newline
+				# unimportant (so loose the fact that we found it)
+				
+				if entarfnd == gtk.TRUE and line[0] == '\n':
+					startrec = gtk.TRUE
 				else:
 					entarfnd = gtk.FALSE
-									
-				if entarfnd == gtk.TRUE and len (line) > 0 and line[0] == '\n':
-					startrec = gtk.TRUE
 			elif startrec == gtk.TRUE:
+				
+				# If we are here, it means the line was not prepended by
+				# 'at' but instead added by the user.
+				
 				if line[len(line)-1] == '\n':
 					# chop last last (which is a newline)
 					line = line[:-1]
-					
+				
+				# If the string contains TITLE=
 				if line.find ("TITLE=") != -1:
 					title = line.split ("=")[1]
+				# If the string contains ICON=
 				elif line.find ("ICON=") != -1:
 					icon =line.split ("=")[1]
+				# Else this is a line of the script
 				else:
 					newlines.append (line)
 
