@@ -502,7 +502,7 @@
 		      <child>
 			<widget class="GtkCheckButton" id="chkNoOutput">
 			  <property name="visible">True</property>
-			  <property name="tooltip" translatable="yes">When selected, no output will be generated. When scheduled tasks in the crontab do have output and this option is not checked, the output will by default be send to the UNIX mailbox of the user</property>
+			  <property name="tooltip" translatable="yes">When selected, no output will be generated. When scheduled tasks in the crontab do have output and this option is not checked, the output will by default be send to the UNIX mailbox of the user.</property>
 			  <property name="can_focus">True</property>
 			  <property name="label" translatable="yes">No output</property>
 			  <property name="use_underline">True</property>
@@ -607,7 +607,7 @@
 			  <child>
 			    <widget class="GtkLabel" id="nooutput_label">
 			      <property name="visible">True</property>
-			      <property name="label" translatable="yes"> &gt;/dev/null 2&gt;&amp;1</property>
+			      <property name="label" translatable="no"> &gt;/dev/null 2&gt;&amp;1</property>
 			      <property name="use_underline">False</property>
 			      <property name="use_markup">False</property>
 			      <property name="justify">GTK_JUSTIFY_LEFT</property>
@@ -1552,7 +1552,7 @@
 	  <child>
 	    <widget class="GtkRadioButton" id="radRange">
 	      <property name="visible">True</property>
-	      <property name="tooltip" translatable="yes">Happens each occurrence between x and y</property>
+	      <property name="tooltip" translatable="yes">Execution in a range.</property>
 	      <property name="can_focus">True</property>
 	      <property name="label" translatable="yes">Happens from</property>
 	      <property name="use_underline">True</property>
@@ -1656,9 +1656,9 @@
 	  <child>
 	    <widget class="GtkRadioButton" id="radEvery">
 	      <property name="visible">True</property>
-	      <property name="tooltip" translatable="yes">Happens at every x occurrence. For example every two minutes, hours, days, weekdays or months</property>
+	      <property name="tooltip" translatable="yes">Execution at a step width. For example every five minutes, hours, days, weekdays or months.</property>
 	      <property name="can_focus">True</property>
-	      <property name="label" translatable="yes">Happens every </property>
+	      <property name="label" translatable="yes">Happens every</property>
 	      <property name="use_underline">True</property>
 	      <property name="relief">GTK_RELIEF_NORMAL</property>
 	      <property name="focus_on_click">True</property>
@@ -1740,9 +1740,9 @@
 	  <child>
 	    <widget class="GtkRadioButton" id="radAll">
 	      <property name="visible">True</property>
-	      <property name="tooltip" translatable="yes">Happens at all occurrence. For example, happens every minute, hour, day, weekday or month</property>
+	      <property name="tooltip" translatable="yes">Execution at every minute, hour, day, weekday or month.</property>
 	      <property name="can_focus">True</property>
-	      <property name="label" translatable="yes">Happens all </property>
+	      <property name="label" translatable="yes">Happens all</property>
 	      <property name="use_underline">True</property>
 	      <property name="relief">GTK_RELIEF_NORMAL</property>
 	      <property name="focus_on_click">True</property>
@@ -1766,7 +1766,7 @@
 	  <child>
 	    <widget class="GtkRadioButton" id="radFix">
 	      <property name="visible">True</property>
-	      <property name="tooltip" translatable="yes">Happens at a defined occurrence. For example, happens at the second minute, hour, day, weekday or month</property>
+	      <property name="tooltip" translatable="yes">Execution at a specific minute, hour, day, weekday or month.</property>
 	      <property name="can_focus">True</property>
 	      <property name="label" translatable="yes">Happens at the</property>
 	      <property name="use_underline">True</property>
@@ -1850,7 +1850,7 @@
 	  <child>
 	    <widget class="GtkRadioButton" id="radOth">
 	      <property name="visible">True</property>
-	      <property name="tooltip" translatable="yes">For example 1,2,3,4 means happens the first, second, third and fourth minute</property>
+	      <property name="tooltip" translatable="yes">See &quot;man 5 crontab&quot; for informations about crontab format.</property>
 	      <property name="can_focus">True</property>
 	      <property name="label" translatable="yes">Other expression</property>
 	      <property name="use_underline">True</property>
@@ -2003,7 +2003,7 @@
 		  <property name="visible">True</property>
 		  <property name="tooltip" translatable="yes">For example every first hour of the day.</property>
 		  <property name="can_focus">True</property>
-		  <property name="label" translatable="yes">A scheduled task that will launch at a frequency </property>
+		  <property name="label" translatable="yes">A scheduled task that will launch recurrently.</property>
 		  <property name="use_underline">True</property>
 		  <property name="relief">GTK_RELIEF_NORMAL</property>
 		  <property name="focus_on_click">True</property>
@@ -2023,7 +2023,7 @@
 		  <property name="visible">True</property>
 		  <property name="tooltip" translatable="yes">For example at 04:10 tomorrow, next week or in three days.</property>
 		  <property name="can_focus">True</property>
-		  <property name="label" translatable="yes">A scheduled task that will start at a defined time in the future</property>
+		  <property name="label" translatable="yes">A scheduled task that will launch only one-time in the future.</property>
 		  <property name="use_underline">True</property>
 		  <property name="relief">GTK_RELIEF_NORMAL</property>
 		  <property name="focus_on_click">True</property>
@@ -2720,7 +2720,7 @@ next week</property>
 			      <child>
 				<widget class="GtkLabel" id="label66">
 				  <property name="visible">True</property>
-				  <property name="label" translatable="yes">Time: </property>
+				  <property name="label" translatable="yes">Time:</property>
 				  <property name="use_underline">False</property>
 				  <property name="use_markup">False</property>
 				  <property name="justify">GTK_JUSTIFY_LEFT</property>
@@ -2728,7 +2728,7 @@ next week</property>
 				  <property name="selectable">False</property>
 				  <property name="xalign">0</property>
 				  <property name="yalign">0.5</property>
-				  <property name="xpad">0</property>
+				  <property name="xpad">12</property>
 				  <property name="ypad">0</property>
 				</widget>
 				<packing>
@@ -2762,7 +2762,7 @@ next week</property>
 			      <child>
 				<widget class="GtkLabel" id="label65">
 				  <property name="visible">True</property>
-				  <property name="label" translatable="yes">:</property>
+				  <property name="label" translatable="no">:</property>
 				  <property name="use_underline">False</property>
 				  <property name="use_markup">False</property>
 				  <property name="justify">GTK_JUSTIFY_LEFT</property>
@@ -2770,7 +2770,7 @@ next week</property>
 				  <property name="selectable">False</property>
 				  <property name="xalign">0.5</property>
 				  <property name="yalign">0.5</property>
-				  <property name="xpad">0</property>
+				  <property name="xpad">6</property>
 				  <property name="ypad">0</property>
 				</widget>
 				<packing>

@@ -84,20 +84,28 @@ class CrontabEditorHelper:
 		if field == "minute":
 			self.entRangeEnd.set_text ("59")
 			self.entRangeStart.set_text ("0")
+			self.entFix.set_text("0")
 		if field == "hour":
 			self.entRangeEnd.set_text ("23")
 			self.entRangeStart.set_text ("0")
+			self.entFix.set_text("0")
 		if field == "day":
 			self.entRangeEnd.set_text ("31")
 			self.entRangeStart.set_text ("1")
+			self.entFix.set_text("1")
 		if field == "month":
 			self.entRangeEnd.set_text ("12")
 			self.entRangeStart.set_text ("1")
+			self.entFix.set_text("1")
 		if field == "weekday":
 			self.entRangeEnd.set_text ("7")
 			self.entRangeStart.set_text ("0")
+			self.entFix.set_text("0")
 
-		self.trans_field = self.ParentClass.schedule.translate_frequency (field)
+		self.entEvery.set_text("2")
+		self.entExpression.set_text ("*")
+
+		self.trans_field = self.ParentClass.scheduler.translate_frequency (field)
 
 		self.radAll.set_label(_("Happens all ") + self.trans_field + _("s"))
 		self.lblEveryEntity.set_text(self.trans_field)
@@ -114,9 +122,10 @@ class CrontabEditorHelper:
 		m = self.fieldRegex.match (expression)
 		self.radOth.set_active (gtk.TRUE)
 
+		self.NoExpressionEvents = True
+		self.entExpression.set_text (expression)
+
 		if m != None:
-			self.NoExpressionEvents = True
-			self.entExpression.set_text (expression)
 			if m.groups()[0] != None:
 				self.radAll.set_active (gtk.TRUE)
 			# 10 * * * * command
@@ -140,10 +149,11 @@ class CrontabEditorHelper:
 			# if m.groups()[5] != None:
 				# self.radOth.set_active (gtk.TRUE)
 				# fields = m.groups()[5].split (",")
-			self.NoExpressionEvents = False
+
+		self.NoExpressionEvents = False
 
 		#show the form
-		self.widget.set_title(_("Edit time expression for: ") + self.trans_field)
+		self.widget.set_title(_("Edit time expression for: %s") % (self.trans_field))
 		self.widget.show_all()
 
 
@@ -151,8 +161,8 @@ class CrontabEditorHelper:
 		#move expression to field in editor and hide
 		expression = self.entExpression.get_text()
 		try:
-			self.ParentClass.schedule.checkfield (expression, self.field, self.ParentClass.fieldRegex)
-		except Exception, ex:
+			self.ParentClass.scheduler.checkfield (expression, self.field)
+		except ValueError, ex:
 			x, y, z = ex
 			self.wrongdialog = gtk.MessageDialog(self.widget, gtk.DIALOG_MODAL|gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_ERROR, gtk.BUTTONS_OK, (_("This is invalid. Reason: %s") % (z)))
 			self.wrongdialog.run()

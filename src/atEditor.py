@@ -509,7 +509,7 @@ class AtEditor:
 
 
 	def __WrongRecordDialog__ (self, x):
-		self.wrongdialog = gtk.MessageDialog(self.widget, gtk.DIALOG_MODAL|gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_ERROR, gtk.BUTTONS_OK, (_("This is an invalid record! The problem could be: %s ") % (x)))
+		self.wrongdialog = gtk.MessageDialog(self.widget, gtk.DIALOG_MODAL|gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_ERROR, gtk.BUTTONS_OK, (_("This is an invalid record! The problem could be: %s") % (x)))
 		self.wrongdialog.run()
 		self.wrongdialog.destroy()
 

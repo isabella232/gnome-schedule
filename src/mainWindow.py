@@ -192,7 +192,7 @@ class main:
 			self.at.set_rights(self.user, self.uid, self.gid)
 			#adjust statusbar
 			if self.root == 1:
-				self.statusbar.push(self.statusbarUser, (_("Editing user: ") + self.user))
+				self.statusbar.push(self.statusbarUser, (_("Editing user: %s") % (self.user)))
 		
 			self.schedule_reload ("all")
 	
@@ -291,7 +291,7 @@ class main:
 			self.root = 1
 			self.btnSetUser.show()
 			self.statusbar.show()
-			self.statusbar.push(self.statusbarUser, (_("Editing user: ") + self.user))
+			self.statusbar.push(self.statusbarUser, (_("Editing user: %s") % (self.user)))
 				
 
 	#when the user selects a task, buttons get enabled

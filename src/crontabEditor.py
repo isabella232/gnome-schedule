@@ -249,7 +249,7 @@ class CrontabEditor:
 			self.__check_field_format__ (self.day, "day")
 			self.__check_field_format__ (self.month, "month")
 			self.__check_field_format__ (self.weekday, "weekday")
-		except Exception, ex:
+		except ValueError, ex:
 			print ex
 			x, y, z = ex
 			self.__WrongRecordDialog__ (x, y, z)
@@ -276,8 +276,8 @@ class CrontabEditor:
 	def __check_field_format__ (self, field, type):
 		try:
 			# Type should not be translatable!
-			self.scheduler.checkfield (field, type, self.fieldRegex)
-		except Exception, ex:
+			self.scheduler.checkfield (field, type)
+		except ValueError, ex:
 			raise ex
 
 		
@@ -430,7 +430,7 @@ class CrontabEditor:
 			self.__check_field_format__ (self.day, "day")
 			self.__check_field_format__ (self.month, "month")
 			self.__check_field_format__ (self.weekday, "weekday")
-		except Exception, ex:
+		except ValueError, ex:
 			x, y, z = ex
 			self.__WrongRecordDialog__ (x, y, z)
 			return

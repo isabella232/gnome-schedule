@@ -296,18 +296,19 @@ class At:
 				#chopping of title and icon stuff from script
 				lines = lines[prelen:]
 					
-				timestring = _("%s%s%s %s%s%s") % ("", date, "", "", time, "")
-				timestring_show = _("At ") + timestring #_("%sAt%s%s") % (_(""), _(""), timestring, _(""))
+				timestring = "%s %s" % (date, time)
+				# TODO: localize time and date formats
+				timestring_show = _("On %(date)s at %(time)s") % { "date": date, "time": time }
 				
 				# TODO: looks like it could be one append
 				if self.root == 1:
 					if self.user == user:
-						data.append([title, timestring_show, preview, lines, int(job_id), timestring, self, icon, date, class_id, user, time, _("Defined"), "at"])
+						data.append([title, timestring_show, preview, lines, int(job_id), timestring, self, icon, date, class_id, user, time, _("One-time"), "at"])
 					else: 
 						#print "Record omitted, not current user"
 						pass
 				else:
-					data.append([title, timestring_show, preview, lines, int(job_id), timestring, self, icon, date, class_id, user, time, "Defined", "at"])
+					data.append([title, timestring_show, preview, lines, int(job_id), timestring, self, icon, date, class_id, user, time, _("One-time"), "at"])
 
 				print "added" + job_id	
 			

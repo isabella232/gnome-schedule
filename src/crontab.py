@@ -47,6 +47,48 @@ class Crontab:
 		
 		self.nooutputtag = ">/dev/null 2>&1"
 		self.crontabRecordRegex = re.compile('([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^#\n$]*)(\s#\s([^\n$]*)|$)')
+
+		self.timeranges = { 
+			"minute"   : range(0,60), 
+			"hour"     : range(0,24),
+			"day"      : range(1,32),
+			"month"    : range(1,13),
+			"weekday"  : range(0,8)
+			}
+
+		self.timenames = {
+			"minute"   : _("Minute"),
+			"hour"     : _("Hour"),
+			"day"      : _("Day of Month"),
+			"month"    : _("Month"),
+			"weekday"  : _("Weekday")
+			}
+	
+		self.monthnames = {
+			"1"        : "Jan",
+			"2"        : "Feb",
+			"3"        : "Mar",
+			"4"        : "Apr",
+			"5"        : "May",
+			"6"        : "Jun",
+			"7"        : "Jul",
+			"8"        : "Aug",
+			"9"        : "Sep",
+			"10"       : "Oct",
+			"11"       : "Nov",
+			"12"       : "Dec"
+			}
+
+		self.downames = {
+			"0"        : "Sun",
+			"1"        : "Mon",
+			"2"        : "Tue",
+			"3"        : "Wed",
+			"4"        : "Thu",
+			"5"        : "Fri",
+			"6"        : "Sat",
+			"7"        : "Sun"
+			}
 		
 
 	def set_rights(self,user,uid,gid):
@@ -58,84 +100,62 @@ class Crontab:
 	def get_type (self):
 		return "crontab"
 	
-	
-	def checkfield (self, field, type, regex):
-		m = regex.match (field)
-		num = 0
-		num1 = 0
-		num2 = 0
-		if m != None:
-			# print m.groups()
-			# 10 * * * * command
-			# */2 * * * * command
-			if m.groups()[1] != None or m.groups()[2] != None:
-				if m.groups()[1] != None:
-					num = int (m.groups()[1])
-				else:
-					num = int (m.groups()[2])
-				# Should not be translatable!
-				if type=="minute":
-					if num > 59 or num < 0:
-						raise Exception('fixed', self.translate_frequency (type), _("must be between 0 and 59"))
-				if type=="hour":
-					if num > 23 or num < 0:
-						raise Exception('fixed', self.translate_frequency (type), _("must be between 0 and 23"))
-				if type=="day":
-					if num > 31 or num < 1:
-						raise Exception('fixed', self.translate_frequency (type), _("must be between 1 and 31"))
-				if type=="month":
-					if num > 12 or num < 1:
-						raise Exception('fixed', self.translate_frequency (type), _("must be between 1 and 12"))
-				if type=="weekday":
-					if num > 7 or num < 0:
-						raise Exception('fixed', self.translate_frequency (type), _("must be between 0 and 7"))
+	def checkfield (self, expr, type):
+		"""Verifies format of Crontab timefields
 
-			# 1-10 * * * * command
-			if m.groups()[3] != None and m.groups()[4] != None:
-				num1 = int (m.groups()[3])
-				num2 = int (m.groups()[4])
-				if type=="minute":
-					if num1 > 59 or num1 < 0 or num2 > 59 or num2 < 0:
-						raise Exception('range', self.translate_frequency (type), _("must be between 0 and 59"))
-				if type=="hour":
-					if num1 > 23 or num1 < 0 or num2 > 23 or num2 < 0:
-						raise Exception('range', self.translate_frequency (type), _("must be between 0 and 23"))
-				if type=="day":
-					if num1 > 31 or num1 < 1 or num2 > 31 or num2 < 1:
-						raise Exception('range', self.translate_frequency (type), _("must be between 1 and 31"))
-				if type=="month":
-					if num1 > 12 or num1 < 1 or num2 > 12 or num2 < 1:
-						raise Exception('range', self.translate_frequency (type), _("must be between 1 and 12"))
-				if type=="weekday":
-					if num1 > 7 or num1 < 0 or num2 > 7 or num2 < 0:
-						raise Exception('range', self.translate_frequency (type), _("must be between 0 and 7"))
+		Checks a single Crontab time expression.
+		At first possibly contained alias names will be replaced by their
+		corresponding numbers. After that every asterisk will be replaced by
+		a »first to last« expression. Then the expression will be splitted
+		into the komma separated subexpressions. 
 
-			# 1,2,3,4 * * * * command
-			if m.groups()[5] != None:
-				fields = m.groups()[5].split (",")
-				for fieldx in fields:
-					try:
-						num = int (fieldx)
-					except:
-						raise Exception('steps', self.translate_frequency (type), _("%s is not a number") % (fieldx))
+		Each subexpression will run through: 
+		1. Check for stepwidth in range (if it has one)
+		2. Check for validness of range-expression (if it is one)
+		3. If it is no range: Check for simple numeric
+		4. If it is numeric: Check if it's in range
 
-					if type=="minute":
-						if num > 59 or num < 0:
-							raise Exception('steps', self.translate_frequency (type), _("must be between 0 and 59"))
-					if type=="hour":
-						if num > 23 or num < 0:
-							raise Exception('steps', self.translate_frequency (type), ("must be between 0 and 23"))
-					if type=="day":
-						if num > 31 or num < 1:
-							raise Exception('steps', self.translate_frequency (type), _("must be between 1 and 31"))
-					if type=="month":
-						if num > 12 or num < 1:
-							raise Exception('steps', self.translate_frequency (type), _("must be between 1 and 12"))
-					if type=="weekday":
-						if num > 7 or num < 0:
-							raise Exception('steps', self.translate_frequency (type), _("must be between 0 and 7"))
-		else:
-			raise Exception(_("Unknown"), self.translate_frequency (type), _("Invalid"))
+		If one of this checks failed, an exception is raised. Otherwise it will
+		do nothing. Therefore this function should be used with 
+		a try/except construct.  
+		"""
+
+		timerange = self.timeranges[type]
+
+		# Replace alias names only if no leading and following alphanumeric and 
+		# no leading slash is present. Otherwise terms like »JanJan« or 
+		# »1Feb« would give a valid check. Values after a slash are stepwidths
+		# and shouldn't have an alias.
+ 		if type == "month": alias = self.monthnames.copy()
+		elif type == "weekday": alias = self.downames.copy()
+		else: alias = None
+		if alias != None:
+			while True:
+				try: key,value = alias.popitem()
+				except KeyError: break
+				expr = re.sub("(?<!\w|/)" + value + "(?!\w)", key, expr)
+
+		expr = expr.replace("*", str(min(timerange)) + "-" + str(max(timerange)) )
+ 		
+		list = expr.split(",")
+		rexp_step = re.compile("^(\d+-\d+)/(\d+)$")
+		rexp_range = re.compile("^(\d+)-(\d+)$")
+
+		for field in list:
+			result = rexp_step.match(field)
+			if  result != None:
+				field = result.groups()[0]
+				if int(result.groups()[1]) not in timerange:
+					raise ValueError("stepwidth", self.timenames[type], _("Must be between %s and %s") % ( min(timerange),max(timerange) ) )
+
+			result = rexp_range.match(field)
+			if (result != None): 
+				if (int(result.groups()[0]) not in timerange) or (int(result.groups()[1]) not in timerange):
+					raise ValueError("range", self.timenames[type], _("Must be between %s and %s") % ( min(timerange),max(timerange) ) )
+			elif field.isdigit() != True:
+				raise ValueError("fixed", self.timenames[type], _("%s is not a number") % ( field ) )
+			elif int(field) not in timerange:
+				raise ValueError("fixed", self.timenames[type], _("Must be between %s and %s") % ( min(timerange),max(timerange) ) )
 
 
 	def update (self,minute, hour, day, month, weekday,command, linenumber, parentiter, nooutput, title, icon = None):
@@ -220,7 +240,7 @@ class Crontab:
 				
 				#add task to treemodel in mainWindow
 				
-				data.append([title, self.__easy__ (minute, hour, day, month, weekday), preview, line, linecount, time, self, icon, "", "", "","", _("Frequency"), "crontab"])
+				data.append([title, self.__easy__ (minute, hour, day, month, weekday), preview, line, linecount, time, self, icon, "", "", "","", _("Recurrent"), "crontab"])
 				
 				
 			linecount = linecount + 1	
