@@ -152,20 +152,13 @@ class main:
 		UID = os.geteuid()
 		if UID == 0:
 			self.root = 1
-
+			self.user = "root"
 			if len(sys.argv) == 2:
 				self.user = sys.argv[1]
-			else:
-				self.user = "root"
 		else:
 			self.root = 0
 			self.user = os.environ['USER']
 		return
-
-
-
-
-
 
 
 	def on_add_button_clicked (self, *args):
@@ -216,10 +209,18 @@ class main:
 			record = self.treemodel.get_value(iter, 3)
 			linenumber = self.treemodel.get_value(iter, 4)
 			self.addWindow.showEditWindow (record, linenumber, iter)
-		pass
 
 	def on_delete_menu_activate (self, *args):
-		pass
+		try:
+			store, iter = self.treeview.get_selection().get_selected()
+			if iter != None:
+				record = self.treemodel.get_value(iter, 3)
+				linenumber = self.treemodel.get_value(iter, 4)
+				self.crontab.deleteLine (linenumber)
+				self.treemodel.remove (iter)
+		except:
+			pass
+
 
 	def on_quit_menu_activate (self, *args):
 		pass
