@@ -679,7 +679,7 @@
 			    <widget class="GtkComboBox" id="template_combobox">
 			      <property name="visible">True</property>
 			      <property name="sensitive">False</property>
-			      <property name="items" translatable="yes">Manual</property>
+			      <property name="items" translatable="yes"></property>
 			      <signal name="changed" handler="on_template_combobox_changed" last_modification_time="Tue, 22 Jun 2004 11:13:45 GMT"/>
 			    </widget>
 			    <packing>

@@ -67,6 +67,8 @@ class main:
 			self.xml = gtk.glade.XML ("gnome-schedule.glade", domain="gnome-schedule")
 		else:
 			self.xml = gtk.glade.XML (config.getGladedir() + "/gnome-schedule.glade", domain="gnome-schedule")
+		
+		self.saveWindow = None
 
 		self.widget = self.xml.get_widget("mainWindow")
 		self.treeview = self.xml.get_widget("treeview")
@@ -76,7 +78,7 @@ class main:
 		self.del_button = self.xml.get_widget ("del_button")
 		self.help_button = self.xml.get_widget ("help_button")
 		self.btnSetUser = self.xml.get_widget("btnSetUser")
-
+		
 		#read the user
 		self.readUser()
 
@@ -93,6 +95,10 @@ class main:
 
 		self.editor = self.schedule.geteditor()
 
+		#save window
+		self.savewidget = self.xml.get_widget("saveWindow")
+		self.savewidget.hide()
+		self.saveWindow = saveWindow.SaveWindow (self)
 		
 		self.treeview.set_rules_hint(gtk.TRUE)
 		self.treeview.columns_autosize()
@@ -142,10 +148,6 @@ class main:
 		self.setuserwidget.hide()
 		self.setuserWindow = setuserWindow.SetuserWindow (self)
 
-		#save window
-		self.savewidget = self.xml.get_widget("saveWindow")
-		self.savewidget.hide()
-		self.saveWindow = saveWindow.SaveWindow (self)
 
 		if self.root == 0:
 			# hiding the 'set user' option if not root

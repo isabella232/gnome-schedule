@@ -65,7 +65,7 @@ class CrontabEditor:
 		self.frequency_combobox_model.append([_("month"), ["0", "0", "1", "*", "*"]])
 		self.frequency_combobox_model.append([_("week"), ["0", "0", "*", "*", "1"]])
 		self.frequency_combobox.set_model (self.frequency_combobox_model)
-
+		self.noevents = gtk.FALSE
 		self.basic_table = self.xml.get_widget ("basic_table")
 		self.nooutput_label = self.xml.get_widget ("nooutput_label")
 		self.command_entry = self.xml.get_widget ("command_entry")
@@ -152,8 +152,8 @@ class CrontabEditor:
 		else:
 			self.template_combobox_model = gtk.ListStore(gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_PYOBJECT)
 			self.template_combobox_model.clear ()
-			self.template_combobox_model.append([_("Don't use a template"), None, None])
-			self.template_combobox.set_active (0)
+			self.template_combobox_model.prepend([_("Don't use a template"), None, None])
+			
 			for template_name in self.template_names:
 				thetemplate = self.schedule.gettemplate (template_name)
 				icon_uri, command, frequency, title, name = thetemplate
@@ -162,11 +162,17 @@ class CrontabEditor:
 			try:
 				active = self.template_combobox.get_active ()
 				self.template_combobox.set_model (self.template_combobox_model)
+				
 				self.xml.signal_connect("on_template_combobox_changed", self.on_template_combobox_changed)
 				self.template_combobox.set_sensitive (gtk.TRUE)
 				self.remove_button.set_sensitive (gtk.TRUE)
 				self.template_label.set_sensitive (gtk.TRUE)
-				self.template_combobox.set_active (active)
+				
+				if active != -1:
+					self.template_combobox.set_active (active)
+				else:
+					self.template_combobox.set_active (1)
+				
 			except Exception, ex:
 				print "PyGTK Failure: combobox.set_model (gnome-schedule needs PyGTK 2.4!!!)"
 				print ex
@@ -179,24 +185,25 @@ class CrontabEditor:
 		preview = gtk.Image()
 		preview.show()
 		iconopendialog = gtk.FileChooserDialog(_("Pick an icon for this scheduled task"), self.widget, gtk.FILE_CHOOSER_ACTION_OPEN, (gtk.STOCK_OK, gtk.RESPONSE_ACCEPT, gtk.STOCK_CANCEL, gtk.RESPONSE_REJECT), "")
-		# Highly unstable :-(
+		# Preview stuff appears to be highly unstable :-(
 		# iconopendialog.set_preview_widget(preview)
 		# iconopendialog.connect("update-preview", self.update_preview_cb, preview)
-		iconopendialog.run()
-		self.icon = iconopendialog.get_filename()
+		res = iconopendialog.run()
+		if res != gtk.RESPONSE_REJECT:
+			self.icon = iconopendialog.get_filename()
 		iconopendialog.destroy ()
 		self.update_textboxes ()
 
-	def update_preview_cb(self, file_chooser, preview):
-		filename = file_chooser.get_preview_filename()
-		try:
-			pixbuf = gtk.gdk.pixbuf_new_from_file_at_size(filename, 128, 128)
-			preview.set_from_pixbuf(pixbuf)
-			have_preview = gtk.TRUE
-		except:
-			have_preview = gtk.FALSE
-			file_chooser.set_preview_widget_active(have_preview)
-		return
+#	def update_preview_cb(self, file_chooser, preview):
+#		filename = file_chooser.get_preview_filename()
+#		try:
+#			pixbuf = gtk.gdk.pixbuf_new_from_file_at_size(filename, 128, 128)
+#			preview.set_from_pixbuf(pixbuf)
+#			have_preview = gtk.TRUE
+#		except:
+#			have_preview = gtk.FALSE
+#			file_chooser.set_preview_widget_active(have_preview)
+#		return
 
 	def	loadicon (self):
 		nautilus_icon = support.nautilus_icon ("i-executable")
@@ -279,7 +286,8 @@ class CrontabEditor:
 			if template != None:
 				self.remove_button.set_sensitive (gtk.TRUE)
 				icon_uri, command, frequency, title, name = template
-				self.ParentClass.saveWindow.save_entry.set_text (name)
+				if self.ParentClass.saveWindow != None:
+					self.ParentClass.saveWindow.save_entry.set_text (name)
 				if icon_uri != None:
 					self.template_image.set_from_file (icon_uri)
 					self.icon = icon_uri
