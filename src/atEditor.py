@@ -25,6 +25,7 @@ import re
 import gobject
 import os
 import config
+import commands
 ##
 ## I18N
 ##
@@ -52,11 +53,20 @@ class AtEditor:
 		self.help_button = self.xml.get_widget ("help_button")
 		self.cancel_button = self.xml.get_widget ("cancel_button")
 		self.ok_button = self.xml.get_widget ("ok_button")
-		
 		self.runat_entry = self.xml.get_widget("runat_entry")
-		#this is the buffer
-		self.commands_textview = self.xml.get_widget("commands_textview").get_buffer()
+		self.title_entry = self.xml.get_widget("title_entry")
+		self.date_entry = self.xml.get_widget("date_entry")
+		self.time_entry = self.xml.get_widget("time_entry")
 		
+
+		#this is the buffer for the textviews
+		self.commands_textview_buffer = self.xml.get_widget("commands_textview_advanced").get_buffer()
+		#this is the two textviews
+		self.commands_textview_advanced = self.xml.get_widget("commands_textview_advanced")
+		self.commands_textview_basic = self.xml.get_widget("commands_textview_basic")
+		#they are using the same buffer
+		self.commands_textview_basic.set_buffer(self.commands_textview_buffer)
+
 		self.notebook = self.xml.get_widget("notebook")
 
 		self.xml.signal_connect("on_add_help_button_clicked", self.on_add_help_button_clicked)
@@ -69,22 +79,49 @@ class AtEditor:
 		#self.xml.signal_connect("on_fieldHelp_clicked", self.on_fieldHelp_clicked)
 
 	def reset (self):
-		self.runat_entry.set_text("tomorrow")
-		self.commands_textview.set_text("")
+		self.runat = "tomorrow"
+		self.commands = ""
+		self.title = ""
+		self.date = ""
+		self.time = ""
+		self.update_textboxes()
+		return
 
+	def update_textboxes (self):
+		self.runat_entry.set_text(self.runat)
+		self.commands_textview_buffer.set_text(self.commands)
+		self.title_entry.set_text(self.title)
+		self.date_entry.set_text(self.date)
+		self.time_entry.set_text(self.time)
+		return		
 		
-	def showedit (self, record, job_id, iter, mode):
-		print "not implemented.."
+	def showedit (self, iter, title, date, time, class_id, job_id, user, mode):
 		self.editing = gtk.TRUE
+		self.runat = time + " " + date
+		self.title = title
+		self.date = date
+		self.time = time
+		self.class_id = class_id
 		self.job_id = job_id
+		self.user = user
 		self.widget.set_title(_("Edit a scheduled task"))
 		self.update_textboxes ()
 		self.parentiter = iter
 		self.widget.show_all()
+
+		#get the job
+		execute = "at -c " + job_id
+		job = commands.getoutput(execute)
+
+		#remove env and at common stuff
+		atPreEnd = len(self.schedule.atPre)
+		job = job[atPreEnd:]
+
 		
-
-
-		switch to advanced tab if required
+		self.commands = job
+		self.update_textboxes ()
+		
+		#switch to advanced tab if required
 		if mode == "advanced":
 			self.notebook.set_current_page(1)
 		else:
@@ -100,16 +137,19 @@ class AtEditor:
 
 	def showadd (self, mode):
 		self.reset ()
-
 		self.runat = "tomorrow"
-		self.commands = ""
 		self.title = _("New job")
 		self.editing = gtk.FALSE
 		self.widget.set_title(_("Create a new job"))
 		self.widget.show_all()
 		
-		#switch to advanced tab if, only supported
-		self.notebook.set_current_page(1)
+		self.update_textboxes ()
+
+		#switch to advanced tab if required
+		if mode == "advanced":
+			self.notebook.set_current_page(1)
+		else:
+			self.notebook.set_current_page(0)
 	
 
 
@@ -142,8 +182,14 @@ class AtEditor:
 		#	return
 
 			
-	
-		self.schedule.append (self.runat, self.commands)
+		if self.editing != gtk.TRUE:
+			self.schedule.append (self.runat, self.commands)
+			print "add"
+
+		else:
+			self.schedule.update (self.runat, self.commands, self.job_id)
+			print "edit"
+
 		self.ParentClass.treemodel.clear ()
 		self.ParentClass.schedule.read ()
 
@@ -155,16 +201,16 @@ class AtEditor:
 
 	def on_anyadvanced_entry_changed (self, *args):
 		self.runat = self.runat_entry.get_text ()
-		start = self.commands_textview.get_start_iter()
-		end = self.commands_textview.get_end_iter()
-		self.commands = self.commands_textview.get_text(start, end)
+		start = self.commands_textview_buffer.get_start_iter()
+		end = self.commands_textview_buffer.get_end_iter()
+		self.commands = self.commands_textview_buffer.get_text(start, end)
 		return
 
 	def on_anybasic_entry_changed (self, *args):
 		self.runat = self.runat_entry.get_text ()
-		start = self.commands_textview.get_start_iter()
-		end = self.commands_textview.get_end_iter()
-		self.commands = self.commands_textview.get_text(start, end)
+		start = self.commands_textview_buffer.get_start_iter()
+		end = self.commands_textview_buffer.get_end_iter()
+		self.commands = self.commands_textview_buffer.get_text(start, end)
 		return
 
 	

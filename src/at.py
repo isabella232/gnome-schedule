@@ -157,8 +157,20 @@ class At:
 		raise Exception('Abstract method please override','','','')
 
 
-	def update (self, linenumber, record, nooutput, title):
-		raise 'Not implemented'
+	def update (self, runat, command, job_id):
+		#remove old
+		execute = "atrm " + job_id
+		commands.getoutput(execute)
+		
+		#add new
+		tmpfile = tempfile.mkstemp ("", "/tmp/at.", "/tmp")
+		fd, path = tmpfile
+		tmp = os.fdopen(fd, 'w')
+		tmp.write (command + "\n")
+		tmp.close ()
+		execute = "at " + runat + " -f " + path
+		temp = commands.getoutput(execute)
+		os.unlink (path)
 
 	def delete (self, jobid):
 		if jobid:
@@ -173,13 +185,11 @@ class At:
 		fd, path = tmpfile
 		tmp = os.fdopen(fd, 'w')
 		tmp.write (command + "\n")
-		execute = "at " + runat + " -f " + path
-		commands.getoutput(execute)
 		tmp.close ()
+		execute = "at " + runat + " -f " + path
+		temp = commands.getoutput(execute)
 		os.unlink (path)
-		#reload
-		self.ParentClass.treemodel.clear()
-		self.read()
+
 
 		return
 

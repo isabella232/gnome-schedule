@@ -246,9 +246,13 @@ class main:
 	def on_properties_menu_activate (self, *args):
 		store, iter = self.treeview.get_selection().get_selected()
 		if iter != None:
-			record = self.treemodel.get_value(iter, 3)
-			linenumber = self.treemodel.get_value(iter, 4)
-			self.editor.showedit (record, linenumber, iter, self.edit_mode)
+			title = self.treemodel.get_value(iter, 0)
+			date = self.treemodel.get_value(iter, 1)
+			time = self.treemodel.get_value(iter, 2)
+			class_id = self.treemodel.get_value(iter, 3)
+			job_id = self.treemodel.get_value(iter, 4)
+			user = self.treemodel.get_value(iter, 5)
+			self.editor.showedit (iter, title, date, time, class_id, job_id, user, self.edit_mode)
 
 	def on_delete_menu_activate (self, *args):
 		store, iter = self.treeview.get_selection().get_selected()
