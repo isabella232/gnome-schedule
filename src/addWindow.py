@@ -111,6 +111,9 @@ class AddWindow:
 		num1 = 0
 		num2 = 0
 		if m != None:
+
+			# 10 * * * * command
+			# */2 * * * * command
 			if m.groups()[1] != None or m.groups()[2] != None:
 				if m.groups()[1] != None:
 					num = int (m.groups()[1])
@@ -132,6 +135,7 @@ class AddWindow:
 					if num > 7 or num < 0:
 						raise
 
+			# 1-10 * * * * command
 			if m.groups()[3] != None or m.groups()[4] != None:
 				num1 = int (m.groups()[3])
 				num2 = int (m.groups()[4])
@@ -151,6 +155,7 @@ class AddWindow:
 					if num1 > 7 or num1 < 0 or num2 > 7 or num2 < 0:
 						raise
 
+			# 1,2,3,4 * * * * command
 			if m.groups()[5] != None:
 				thefield = m.groups()[5] + field[len(field)-1]
 				# thefield = "1,2,3,4"
