@@ -379,6 +379,9 @@ class AtEditor:
 	def update_textboxes(self, update_runat = 1):
 		self.noevents = gtk.TRUE
 		self.title_entry.set_text(self.title)
+		print self.command
+		if self.command != str(self.command):
+			print "not string"
 		self.script_textview_buffer.set_text(self.command)
 		if update_runat:
 			self.combobox_entry.set_text(self.runat)
