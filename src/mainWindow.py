@@ -100,6 +100,10 @@ class main:
 		if self.root == 1:
 			self.statusbarUser = self.statusbar.get_context_id("user")
 			self.statusbar.push(self.statusbarUser, "Editing user: " + self.user)
+			self.statusbar.show()
+		else:
+			self.statusbar.hide()
+
 		##
 		
 		##configure the toolbar	
@@ -336,8 +340,8 @@ class main:
 			self.statusbar.push(self.statusbarUser, "Editing user: " + self.user)
 		
 		##debug info	
-		start = time.time()
-		print "###--- start reload: [" + str(start) + "] ---###"
+		#start = time.time()
+		#print "###--- start reload: [" + str(start) + "] ---###"
 		##
 		
 		self.delarray = []
@@ -358,9 +362,9 @@ class main:
 			self.treemodel.remove(iter)
 
 		##debug info
-		end = time.time()
-		diff = end - start
-		print "###--- end reload: [" + str(end) + "] - Duration: " + str(diff) + " ---###"
+		#end = time.time()
+		#diff = end - start
+		#print "###--- end reload: [" + str(end) + "] - Duration: " + str(diff) + " ---###"
 		##
 
 

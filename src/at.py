@@ -352,17 +352,18 @@ class At:
 					if self.ParentClass.user == user:
 						iter = self.ParentClass.treemodel.append([title, timestring_show, preview, lines, int(job_id), timestring, icon_pix, self, icon, date, class_id, user, time, "Defined", "at"])
 					else: 
-						print "Record omitted, not current user"
+						#print "Record omitted, not current user"
+						pass
 				else:
 					iter = self.ParentClass.treemodel.append([title, timestring_show, preview, lines, int(job_id), timestring, icon_pix, self, icon, date, class_id, user, time, "Defined", "at"])
 
-				print "Read at job: " + str(job_id)
+				#print "Read at job: " + str(job_id)
 				count = count + 1
 				#print title + " " + timestring + " " + preview + " " + job_id + " " + date + " " +  class_id + " " + user 
 				# print int(job_id)
 
 		#["None(not suported yet)", "12:50 2004-06-25", "", "35", "", "12:50", icon, at instance, "2004-06-25", "a", "drzap", "at"]
-		print "-- Total at jobs: " + str(count)
+		#print "-- Total at jobs: " + str(count)
 		return
 
 	def ignore (self, testline):
@@ -441,7 +442,7 @@ class At:
 		elif method == 3:
 			string = "TITLE="
 			titlestart = script.find(string)
-			print titlestart
+			#print titlestart
 			if titlestart != -1:
 				script = script[titlestart:]
 
@@ -467,7 +468,7 @@ class At:
 				else:
 					icon = "/usr/share/icons/gnome/48x48/mimetypes/gnome-mime-application.png"
 			else:
-				print "method 2"
+				#print "method 2"
 				dangerous = 1
 				#tries method 2
 

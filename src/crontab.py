@@ -417,10 +417,10 @@ class Crontab:
 				iter = self.ParentClass.treemodel.prepend([title, self.easy (minute, hour, day, month, weekday), preview, line, self.linecount, time, icon_pix, self, icon, "", "", "","", "Frequency", "crontab"])
 		
 				##debug
-				print "Read crontab, line: " + str(self.linecount)
+				#print "Read crontab, line: " + str(self.linecount)
 				count = count + 1
 			self.linecount = self.linecount + 1
-		print "-- Total crontab records: " + str(count)
+		#print "-- Total crontab records: " + str(count)
 		##	
 			
 		return
