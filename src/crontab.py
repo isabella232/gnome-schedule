@@ -348,56 +348,5 @@ class Crontab:
 					return minute, hour, day, month, weekday, command, title
 		return gtk.FALSE
 
-	# Private
-	# def amountApp (self, amount):
-	#	if amount == "1":
-	#		return _("st.")
-	#	else:
-	#		return _("th.")
-
-	# Private
-	def valToTimeVal (self, val):
-		if val == "0" or val == "1" or val == "2" or val == "3" or val == "4" or val == "5" or val == "6" or val == "7" or val == "8" or val == "9":
-			return "0" + val
-		else:
-			return val
-
 	def easy (self, minute, hour, day, month, weekday):
-		if minute == "*" and hour == "*" and month == "*" and day == "*" and weekday == "*":
-			return _("Every minute")
-
-		if minute != "*" and hour == "*" and month == "*" and day == "*" and weekday == "*":
-			return (_("Every %s minute of every hour") % (lang.translate_nth (minute)))
-
-		if hour != "*" and month == "*" and day == "*" and weekday == "*":
-			if minute == "0":
-				return (_("Every %s hour of the day") % (lang.translate_nth (hour)))
-			elif minute != "*":
-				return (_("Every day at %s:%s") % (self.valToTimeVal (hour), self.valToTimeVal (minute)))
-			elif minute == "*":
-				return (_("Every minute during the %s hour") % (lang.translate_nth (hour)))
-		
-		if month == "*" and day != "*" and weekday == "*":
-			if minute == "0" and hour == "0":
-				return (_("Every %s day of the month") % (lang.translate_nth (day)))
-			elif minute != "*" and hour != "*":
-				return (_("At %s:%s every %s day of the month") % (self.valToTimeVal(hour), self.valToTimeVal(minute), lang.translate_nth (day)))
-			elif minute == "*" and hour != "*":
-				return (_("Every minute of the %s hour every %s day of the month") % (lang.translate_nth (hour), lang.translate_nth (day)))
-			elif minute != "*" and hour == "*":
-				return (_("At the %s minute of every hour every %s day of the month") % (lang.translate_nth (minute), lang.translate_nth (day)))
-
-		if month != "*" and weekday == "*":
-			if minute == "0" and hour == "0" and day == "1":
-				return (_("Every %s month of the year") % (lang.translate_nth (month)))
-			elif minute != "*" and hour != "*" and day != "*":
-				return (_("At the %s on %s:%s every %s month of the year") % (lang.translate_nth (day), self.valToTimeVal(hour), self.valToTimeVal(minute), lang.translate_nth (month)))
-
-
-		if month == "*" and day == "*" and weekday != "*":
-			if minute == "0" and hour == "0":
-				return (_("Every %s day of the week") % (lang.translate_nth (weekday)))
-			elif minute != "*" and hour != "*":
-				return (_("Every %s day of the week at %s:%s") % (lang.translate_nth (weekday), self.valToTimeVal (hour), self.valToTimeVal (minute)))
-
-		return minute + " " + hour + " " + day + " " + month + " " + weekday
+		return lang.translate_crontab_easy (minute, hour, day, month, weekday)
