@@ -608,7 +608,7 @@ use advanced</property>
 		  <property name="ypad">0</property>
 		</widget>
 		<packing>
-		  <property name="padding">0</property>
+		  <property name="padding">5</property>
 		  <property name="expand">False</property>
 		  <property name="fill">False</property>
 		</packing>
@@ -888,7 +888,7 @@ use advanced</property>
 		  </child>
 		</widget>
 		<packing>
-		  <property name="padding">5</property>
+		  <property name="padding">0</property>
 		  <property name="expand">False</property>
 		  <property name="fill">False</property>
 		</packing>
@@ -909,7 +909,7 @@ use advanced</property>
 		  <property name="ypad">0</property>
 		</widget>
 		<packing>
-		  <property name="padding">0</property>
+		  <property name="padding">5</property>
 		  <property name="expand">False</property>
 		  <property name="fill">False</property>
 		</packing>

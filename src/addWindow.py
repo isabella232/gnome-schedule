@@ -83,6 +83,7 @@ class AddWindow:
 		(self.minute, self.hour, self.day, self.month, self.weekday, self.command, self.title) = self.crontab.parseRecord (record)
 		self.widget.set_title(_("Edit a scheduled task"))
 		self.update_textboxes ()
+		self.set_frequency_combo ()
 		self.parentiter = iter
 		self.widget.show_all()
 		
@@ -204,7 +205,7 @@ class AddWindow:
 		self.month_entry.set_text (self.month)
 		self.weekday_entry.set_text (self.weekday)
 		self.setting_label.set_text (self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday + " " + self.command)	
-		self.set_frequency_combo()
+		# self.set_frequency_combo()
 		self.noevents = gtk.FALSE
 
 	def on_anyadvanced_entry_changed (self, *args):
@@ -215,7 +216,7 @@ class AddWindow:
 			self.month = self.month_entry.get_text ()
 			self.weekday = self.weekday_entry.get_text ()
 			self.nooutput = self.chkNoOutput.get_active()
-			self.set_frequency_combo ()
+			# self.set_frequency_combo ()
 			self.update_textboxes ()
 
 	def on_anybasic_entry_changed (self, *args):
