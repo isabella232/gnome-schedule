@@ -20,7 +20,7 @@ import gtk
 import pwd
 import mainWindow
 import string
-import ctab
+import crontab
 
 ##
 ## I18N

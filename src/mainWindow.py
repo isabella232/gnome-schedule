@@ -24,7 +24,7 @@ import re
 import gtk.glade
 import addWindow
 import setuserWindow
-import ctab
+import crontab
 import sys
 
 from os import popen
@@ -226,6 +226,3 @@ class main:
 
 	def on_manual_menu_activate (self, *args):
 		pass
-
-
-
