@@ -6,7 +6,7 @@ import gtk
 
 # This file is yours. You people do whatever you wan't with it.
 # You can fix spelling problems, add comments, add code and functionality
-# You don't have to inform be about changes (you can commit if you have
+# You don't have to inform me about changes (you can commit if you have
 # such an account on GNOME) yet you CAN ask the programmers for assistance.
 
 # Yes yours. Really
@@ -15,6 +15,10 @@ import gtk
 # No seriously, yours. Yeah, yours. It's your file. You do with it what
 # you want. I mean it. Yes...
 
+# If you don't have access you can create a diff file and send it to the
+# AUTHORS: cd src/; cvs diff -u lang.py > language.diff
+# and we will weed it out for you. We will provide you with the best
+# assistance possible.
 
 # Most languages will not have to do all this, but some do.
 # http://lists.gnome.org/archives/gnome-i18n/2004-June/msg00089.html
