@@ -1,3 +1,8 @@
+2004-09-28  Gaute Hope <eg@gaute.eu.org>
+
+	* autogen.sh: configure.in should be configure.ac
+	* configure.ac: changed to version 0.1.0
+	
 2004-09-15  Jordi Mallach  <jordi@sindominio.net>
 
 	* configure.ac (ALL_LINGUAS): Added "ca" (Catalan).
