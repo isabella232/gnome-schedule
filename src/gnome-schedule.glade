@@ -502,14 +502,14 @@
 	      </child>
 
 	      <child>
-		<widget class="GtkComboBox" id="frequency_combobox">
+		<widget class="GtkComboBoxEntry" id="frequency_combobox">
 		  <property name="visible">True</property>
 		  <property name="items" translatable="yes">minute
 hour
 day
 month
 use advanced</property>
-		  <signal name="changed" handler="on_frequency_combobox_changed" last_modification_time="Mon, 07 Jun 2004 13:45:53 GMT"/>
+		  <signal name="changed" handler="on_frequency_combobox_changed" last_modification_time="Mon, 07 Jun 2004 17:44:57 GMT"/>
 		</widget>
 		<packing>
 		  <property name="left_attach">1</property>

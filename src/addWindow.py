@@ -131,7 +131,7 @@ class AddWindow:
 			index = 4
 
 		self.frequency = index
-		# self.frequency_combobox.set_active (self.frequency)
+		self.frequency_combobox.set_active (self.frequency)
 
 
 	def reset (self):
@@ -176,7 +176,33 @@ class AddWindow:
 
 	def on_frequency_combobox_changed (self, bin):
 		temp = bin.get_child()
-		print temp.get_name()
-#		self.frequency = self.temp.get_text()
+		temp = temp.get_text()
+		self.frequency = temp
+		if temp == "minute":
+			self.minute = "*"
+			self.hour = "*"
+			self.day = "*"
+			self.month = "*"
+			self.weekday = "*"
+		elif temp == "hour":
+			self.minute = "0"
+			self.hour = "*"
+			self.day = "*"
+			self.month = "*"
+			self.weekday = "*"
+		elif temp == "day":
+			self.minute = "0"
+			self.hour = "0"
+			self.day = "*"
+			self.month = "*"
+			self.weekday = "*"
+		elif temp == "month":
+			self.minute = "0"
+			self.hour = "0"
+			self.day = "1"
+			self.month = "*"
+			self.weekday = "*"
+		else:
+			pass
 
-
+		self.update_textboxes()
