@@ -297,7 +297,7 @@ def translate_crontab_easy_anylang (minute, hour, day, month, weekday):
 	retval = minute + " " + hour + " " + day + " " + month + " " + weekday
 
 	if minute == "*" and hour == "*" and day == "*" and month == "*" and weekday == "*":
-		retval = (_("Every minute"))
+		retval = (_("Every minute, every hour, every day, every month, every weekday"))
 
 	if minute != "*" and hour != "*" and day != "*" and month != "*" and weekday != "*":
 		retval = (_("At minute: %s, hour %s, day: %s, month: %s, weekday: %s") % (minute, hour, day, month, weekday))
