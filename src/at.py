@@ -133,8 +133,8 @@ class At:
 	def delete (self, jobid):
 		if jobid:
 			execute = "atrm " + jobid
-		#execute this
-		#reread or delete from the list(preferably)		
+		commands.getoutput(execute)
+		
 			
 		return
 

@@ -160,8 +160,6 @@ class AtEditor:
 		start = self.commands_textview.get_start_iter()
 		end = self.commands_textview.get_end_iter()
 		self.commands = self.commands_textview.get_text(start, end)
-		print self.runat
-		print self.commands
 		return
 
 	def on_anybasic_entry_changed (self, *args):
@@ -169,8 +167,6 @@ class AtEditor:
 		start = self.commands_textview.get_start_iter()
 		end = self.commands_textview.get_end_iter()
 		self.commands = self.commands_textview.get_text(start, end)
-		print self.runat
-		print self.commands
 		return
 
 	

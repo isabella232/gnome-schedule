@@ -242,12 +242,18 @@ class main:
 	def on_delete_menu_activate (self, *args):
 		store, iter = self.treeview.get_selection().get_selected()
 		if iter != None:
-			record = self.treemodel.get_value(iter, 3)
-			linenumber = self.treemodel.get_value(iter, 4)
-			self.schedule.delete (linenumber)
-			self.treemodel.clear ()		
-			self.schedule.read ()
-
+			if self.crontab_vs_at == "crontab":
+				record = self.treemodel.get_value(iter, 3)
+				linenumber = self.treemodel.get_value(iter, 4)
+				self.schedule.delete (linenumber)
+				self.treemodel.clear ()		
+				self.schedule.read ()
+			else:
+				jobid = self.treemodel.get_value(iter, 4)
+				self.schedule.delete (jobid)
+				self.treemodel.clear ()		
+				self.schedule.read ()
+		
 			#moving to first
 			iter =  self.treemodel.get_iter_first()
 			if iter:
