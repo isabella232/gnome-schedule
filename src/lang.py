@@ -107,8 +107,13 @@ def translate_nth_nl (nth):
 	elif (nth > -100 and nth < -20) or (nth > 20 and nth < 100):
 		tennumber = nth / 10
 		remainder = nth - (tennumber*10)
+		# If the last character before the concatenation is a "e", we
+		# dutch-people write that e a bit different. This "en" is a lot
+		# like the "-" in English. It concatenates the tennumber with the
+		# remainder.
+
 		# Als het laatste karakter voor de middelste "en" een e is dan
-		# moet er een trema op de e, anders niet
+		# moet er een trema op de e, anders niet. 
 		if numbers[remainder][len(numbers[remainder])-1] == "e":
 			between = "ën"
 		else:
@@ -118,6 +123,9 @@ def translate_nth_nl (nth):
 			add = "min "
 		else:
 			add = ""
+		# Our ordering is also different, and we don't use the nth-number
+		# to describe the remainder. We use a normal written version of the
+		# number
 		return add + numbers[remainder]+between+tennumbers [tennumber]+"ste"
 	elif nth > 100 or nth < -100:
 		return string(nth) + "de"
