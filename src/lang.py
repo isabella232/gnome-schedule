@@ -55,7 +55,12 @@ gettext.textdomain(domain)
 _ = gettext.gettext
 gtk.glade.bindtextdomain(domain)
 
-language = os.environ['LANG']
+#fallback to english if the LANG env variable is not present
+try:
+	language = os.environ['LANG']
+except:
+	language = "en"
+
 
 def nothing (nothing):
 	pass

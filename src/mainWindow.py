@@ -149,11 +149,7 @@ class main:
 		self.advanced_menu.set_active (support.gconf_client.get_bool ("/apps/gnome-schedule/advanced"))
 		
 		
-		# hiding setuser button if not root
-		if self.root == 0:
-			self.btnSetUser.hide()
-		else:
-			self.xml.signal_connect("on_btnSetUser_clicked", self.showSetUser)
+
 
 		self.widget.connect("delete_event", self.quit)
 		self.widget.connect("destroy_event", self.quit)

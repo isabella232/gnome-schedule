@@ -35,7 +35,7 @@ try:
 	import gnome.ui
 	gnome.program_init ("gnome-schedule", config.getVersion())
 except:
-	print ("gnome-schedule requires a currently running X server.")
+	print ("An error occured while loading the gtk, gnome and gnome.ui modules.")
 	sys.exit(0)
 
 
