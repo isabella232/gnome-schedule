@@ -34,4 +34,4 @@ setup-gettext
 acinclude.m4
 devbuild.sh
 autom4te.cache
-
+configure.in
