@@ -1,3 +1,8 @@
+2004-06-24  Philip Van Hoof <me_NOSPAM@freax.org>
+
+	* src/crontabEditorHelper.py: Little bugfix
+	* src/gnome-schedule.glade: Small UI changes
+
 2004-07-18  Gaute Hope <eg@gaute.eu.org>
 
 	* Renamed template to preset
