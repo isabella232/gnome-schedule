@@ -33,17 +33,17 @@ def translate_nth_en (nth):
 	if nth <= 20 >= 0:
 		return twenty_nths[nth]
 	elif nth < 0 and nth >= -20:
-		return "minus " + twenty_nths[nth]
+		return (_("minus %s") % (twenty_nths[nth]))
 	elif nth > -100 and nth < -20:
 		tennumber = nth / 10
 		remainder = nth - (tennumber*10)
-		return "minus " + tennumbers [tennumber] + "-" + twenty_nths[remainder]
+		return (_("minus %s-%s") % (tennumbers [tennumber], twenty_nths[remainder]))
 	elif nth > 20 and nth < 100:
 		tennumber = nth / 10
 		remainder = nth - (tennumber*10)
 		return tennumbers [tennumber] + "-" + twenty_nths[remainder]
 	elif nth > 100 or nth < -100:
-		return string(nth) + "th."
+		return (_("%sth.") % (string(nth)))
 
 def translate_nth_nl (nth):
 	nth = int(nth)
