@@ -1,0 +1,831 @@
+# Ukrainian translation of gnome-schedule.
+# Copyright (C) Free Software Foundation Inc., 2005
+# This file is distributed under the same license as the gnome-schedule package.
+# Maxim Dziumanenko <mvd@mylinux.com.ua>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-schedule\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-01-12 16:15+0200\n"
+"PO-Revision-Date: 2005-01-13 16:17+0200\n"
+"Last-Translator: Maxim Dziumanenko <mvd@mylinux.com.ua>\n"
+"Language-Team: Ukrainian <uk@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: desktop/gnome-schedule.desktop.in.h:1
+msgid "Manage your system tasks"
+msgstr "Керування системними завданнями"
+
+#: desktop/gnome-schedule.desktop.in.h:2
+msgid "Schedule"
+msgstr "Розклад"
+
+#. TODO: localize time and date formats
+#: src/at.py:298
+#, python-format
+msgid "On %(date)s at %(time)s"
+msgstr "У %(date)s о %(time)s"
+
+#: src/at.py:303 src/at.py:308
+msgid "One-time"
+msgstr "Один раз"
+
+#: src/crontab.py:58
+msgid "Minute"
+msgstr "Хвилина"
+
+#: src/crontab.py:59
+msgid "Hour"
+msgstr "Година"
+
+#: src/crontab.py:60
+msgid "Day of Month"
+msgstr "День місяця"
+
+#: src/crontab.py:61
+msgid "Month"
+msgstr "Місяць"
+
+#: src/crontab.py:62
+msgid "Weekday"
+msgstr "День тижня"
+
+#: src/crontab.py:147 src/crontab.py:152 src/crontab.py:156
+#, python-format
+msgid "Must be between %s and %s"
+msgstr "Повинно бути від %s до %s"
+
+#: src/crontab.py:154
+#, python-format
+msgid "%s is not a number"
+msgstr "%s - не є числом"
+
+#: src/crontab.py:174 src/crontab.py:209 src/crontab.py:298
+#: src/crontabEditor.py:195 src/atEditor.py:121
+msgid "Untitled"
+msgstr "Без назви"
+
+#. add task to treemodel in mainWindow
+#: src/crontab.py:241
+msgid "Recurrent"
+msgstr "Періодично"
+
+#: src/crontab.py:253 src/crontabEditor.py:89 src/gnome-schedule.glade.h:69
+msgid "minute"
+msgstr "щохвилини"
+
+#: src/crontab.py:255 src/crontabEditor.py:90 src/gnome-schedule.glade.h:68
+msgid "hour"
+msgstr "щогодини"
+
+#: src/crontab.py:257 src/crontabEditor.py:91 src/gnome-schedule.glade.h:67
+msgid "day"
+msgstr "щодня"
+
+#: src/crontab.py:259 src/crontabEditor.py:92 src/gnome-schedule.glade.h:70
+msgid "month"
+msgstr "щомісяця"
+
+#: src/crontab.py:261 src/gnome-schedule.glade.h:74
+msgid "weekday"
+msgstr "кожен день тижня"
+
+#: src/crontabEditor.py:88
+msgid "use advanced"
+msgstr "додатково"
+
+#: src/crontabEditor.py:93
+msgid "week"
+msgstr "щотижня"
+
+#: src/crontabEditor.py:138 src/atEditor.py:123
+msgid "Create a new scheduled task"
+msgstr "Створення запланованого завдання"
+
+#: src/crontabEditor.py:158 src/atEditor.py:153
+msgid "Edit a scheduled task"
+msgstr "Правка запланованого завдання"
+
+#: src/crontabEditor.py:213 src/atEditor.py:325
+msgid "Don't use a preset"
+msgstr "Не використовувати запис"
+
+#: src/crontabEditor.py:269
+#, python-format
+msgid ""
+"This is an invalid record! The problem could be at the %s field. Reason: %s"
+msgstr ""
+"Це - неправильний запис! Помилка у полі %s. Причина: %s"
+
+#: src/crontabEditor.py:301
+msgid "The preset has not been saved"
+msgstr "Запис не збережено"
+
+#: src/crontabEditor.py:303
+msgid "To delete a preset, you first need to select one"
+msgstr "Перш ніж видалити запис, його треба вибрати"
+
+#: src/crontabEditor.py:313
+msgid "To save a preset, you first have to choose a name for it"
+msgstr "Щоб зберегти запис, спочатку потрібно вказати його назву"
+
+#: src/crontabEditor.py:323 src/atEditor.py:398
+msgid "Pick an icon for this scheduled task"
+msgstr "Виберіть значок для цього завдання"
+
+#: src/crontabEditor.py:383
+msgid "command"
+msgstr "команда"
+
+#: src/crontabEditorHelper.py:110
+msgid "Happens all "
+msgstr "Виконується "
+
+#: src/crontabEditorHelper.py:110 src/crontabEditorHelper.py:218
+msgid "s"
+msgstr " "
+
+#: src/crontabEditorHelper.py:113
+msgid "Happens from "
+msgstr "Виконується від "
+
+#. show the form
+#: src/crontabEditorHelper.py:156
+#, python-format
+msgid "Edit time expression for: %s"
+msgstr "Правка часу для: %s"
+
+#: src/crontabEditorHelper.py:169
+#, python-format
+msgid "This is invalid. Reason: %s"
+msgstr "Помилка. Причина: %s"
+
+#: src/crontabEditorHelper.py:209 src/crontabEditorHelper.py:220
+msgid "st. "
+msgstr " "
+
+#: src/crontabEditorHelper.py:211
+msgid "th. "
+msgstr " "
+
+#: src/gnome-schedule.glade.h:1
+msgid "<b>Basic settings</b>"
+msgstr "<b>Основні параметри</b>"
+
+#: src/gnome-schedule.glade.h:2
+msgid "<b>Date setting</b>"
+msgstr "<b>Дата</b>"
+
+#: src/gnome-schedule.glade.h:3
+msgid "<b>Frequency setting</b>"
+msgstr "<b>Частота</b>"
+
+#: src/gnome-schedule.glade.h:4
+msgid "<b>Preview</b>"
+msgstr "<b>Попередній перегляд</b>"
+
+#: src/gnome-schedule.glade.h:5
+msgid "<b>Select the type of the scheduled task</b>"
+msgstr "<b>Виберіть тип запланованого завдання</b>"
+
+#: src/gnome-schedule.glade.h:6
+msgid "A scheduled task that will launch only once in the future."
+msgstr "Завдання запуститься лише один раз у майбутньому."
+
+#: src/gnome-schedule.glade.h:7
+msgid "A scheduled task that will launch recurrently."
+msgstr "Завдання буде запускатись періодично."
+
+#: src/gnome-schedule.glade.h:8
+msgid "A_dvanced"
+msgstr "_Додатково"
+
+#: src/gnome-schedule.glade.h:9
+msgid "About this application"
+msgstr "Про цю програму"
+
+#: src/gnome-schedule.glade.h:10
+msgid "Active user"
+msgstr "Активний користувач"
+
+#: src/gnome-schedule.glade.h:11
+msgid "Add a new scheduled task"
+msgstr "Додати нове завдання"
+
+#: src/gnome-schedule.glade.h:12
+msgid "Add a scheduled task"
+msgstr "Додавання завдання"
+
+#: src/gnome-schedule.glade.h:13
+msgid "Advanced"
+msgstr "Додатково"
+
+#: src/gnome-schedule.glade.h:14
+msgid "Alter a scheduled task"
+msgstr "Змінити завдання"
+
+#: src/gnome-schedule.glade.h:15
+msgid "Basic"
+msgstr "Основне"
+
+#: src/gnome-schedule.glade.h:16
+msgid "Cancel this operation"
+msgstr "Скасувати операцію"
+
+#: src/gnome-schedule.glade.h:17
+msgid "Configure scheduled tasks"
+msgstr "Налаштовування запланованих завдань"
+
+#: src/gnome-schedule.glade.h:18
+msgid "Date and time"
+msgstr "Дата й час"
+
+#: src/gnome-schedule.glade.h:19
+msgid "Delete a scheduled task"
+msgstr "Видалити завдання"
+
+#: src/gnome-schedule.glade.h:20
+msgid "Every"
+msgstr "Періодичність"
+
+#: src/gnome-schedule.glade.h:21
+msgid "Execution at a specific minute, hour, day, weekday or month."
+msgstr "Виконання у вказану хвилину, годину, день, день тижня чи місяць."
+
+#: src/gnome-schedule.glade.h:22
+msgid ""
+"Execution at a step width. For example every five minutes, hours, days, "
+"weekdays or months."
+msgstr ""
+"Виконання з певним періодом. Наприклад кожні п'ять хвилин, годин, днів, днів тижня чи місяців."
+
+#: src/gnome-schedule.glade.h:23
+msgid "Execution at every minute, hour, day, weekday or month."
+msgstr "Виконання кожну хвилину, годину, день, день тижня чи місяць."
+
+#: src/gnome-schedule.glade.h:24
+msgid "Execution in a range."
+msgstr "Виконання у часовому проміжку."
+
+#: src/gnome-schedule.glade.h:25
+msgid "For example at 04:10 tomorrow, next week or in three days."
+msgstr "Наприклад завтра о 04:10, наступного тижня чи через три дні."
+
+#: src/gnome-schedule.glade.h:26
+msgid "For example every first hour of the day."
+msgstr "Наприклад кожну першу годину дня."
+
+#: src/gnome-schedule.glade.h:27
+msgid "For experienced users only"
+msgstr "Лише для досвідчених користувачів"
+
+#: src/gnome-schedule.glade.h:28
+msgid "Happens all"
+msgstr "Виконується кожну"
+
+#: src/gnome-schedule.glade.h:29
+msgid "Happens at the"
+msgstr "Виконується у"
+
+#: src/gnome-schedule.glade.h:30
+msgid "Happens every"
+msgstr "Виконується кожні"
+
+#: src/gnome-schedule.glade.h:31
+msgid "Happens from"
+msgstr "Виконується з"
+
+#: src/gnome-schedule.glade.h:32
+msgid "No output"
+msgstr "Без виводу"
+
+#: src/gnome-schedule.glade.h:33
+msgid "Other expression"
+msgstr "Інший вираз"
+
+#: src/gnome-schedule.glade.h:34
+msgid "Preset"
+msgstr "Запис"
+
+#: src/gnome-schedule.glade.h:35
+msgid ""
+"Quit the application. This will not stop the system scheduling. It will, "
+"however, quit this system schedule maintenance tool."
+msgstr ""
+"Вихід з програми. Це не призводить до зупинення системного планувальника. А лише "
+"завершується програма керування системними завданнями."
+
+#: src/gnome-schedule.glade.h:36
+msgid "Run"
+msgstr "Запускати"
+
+#: src/gnome-schedule.glade.h:37
+msgid "Run at:"
+msgstr "Запустити о:"
+
+#: src/gnome-schedule.glade.h:38
+msgid "Scheduled and active tasks"
+msgstr "Заплановані та активні завдання"
+
+#: src/gnome-schedule.glade.h:39
+msgid "Script"
+msgstr "Сценарій"
+
+#: src/gnome-schedule.glade.h:40
+msgid "See \"man 5 crontab\" for informations about the crontab format."
+msgstr "Додаткову інформацію про формат crontab можна переглянути виконавши \"man 5 crontab\"."
+
+#: src/gnome-schedule.glade.h:41
+msgid "Select a different user"
+msgstr "Виберіть іншого користувача"
+
+#: src/gnome-schedule.glade.h:42
+msgid "Set the day frequency setting"
+msgstr "Встановлює частоту за днями"
+
+#: src/gnome-schedule.glade.h:43
+msgid "Set the hour frequency setting"
+msgstr "Встановлює частоту за годинами"
+
+#: src/gnome-schedule.glade.h:44
+msgid "Set the icon of this scheduled task"
+msgstr "Вибір значка цього завдання"
+
+#: src/gnome-schedule.glade.h:45
+msgid "Set the minute frequency setting"
+msgstr "Встановлює частоту за хвилинами"
+
+#: src/gnome-schedule.glade.h:46
+msgid "Set the month frequency setting"
+msgstr "Встановлює частоту за місяцями"
+
+#: src/gnome-schedule.glade.h:47
+msgid "Set the scheduled task"
+msgstr "Записати завдання"
+
+#: src/gnome-schedule.glade.h:48
+msgid "Set the weekday frequency setting"
+msgstr "Встановлює частоту за днями тижня"
+
+#: src/gnome-schedule.glade.h:49
+msgid "Set user"
+msgstr "Вибрати користувача"
+
+#: src/gnome-schedule.glade.h:50
+msgid "Show help"
+msgstr "Показати довідку"
+
+#: src/gnome-schedule.glade.h:51
+msgid "Show the manual"
+msgstr "Показати посібник"
+
+#: src/gnome-schedule.glade.h:52
+msgid "Shows the records"
+msgstr "Показує записи"
+
+#: src/gnome-schedule.glade.h:53
+msgid "Task title"
+msgstr "Назва завдання "
+
+#: src/gnome-schedule.glade.h:54
+msgid "The date when the script will launch"
+msgstr "Дата запуску сценарію"
+
+#: src/gnome-schedule.glade.h:55
+msgid "Time expression help"
+msgstr "Довідка з часового виразу"
+
+#: src/gnome-schedule.glade.h:56
+msgid "Time:"
+msgstr "Час:"
+
+#: src/gnome-schedule.glade.h:57
+msgid "Treeview"
+msgstr "Показ у вигляді дерева"
+
+#: src/gnome-schedule.glade.h:58
+msgid ""
+"When selected, no output will be generated. When scheduled tasks in the "
+"crontab do have output and this option is not checked, the output will by "
+"default be send to the UNIX mailbox of the user."
+msgstr ""
+"Якщо відмічено, вивід не буде породжуватись. Якщо заплановані завдання у "
+"crontab виводять інформацію та цей параметр не відмічений, вивід зазвичай "
+"надсилатиметься до локальної UNIX-поштової скриньки користувача."
+
+#: src/gnome-schedule.glade.h:59
+msgid "Will delete the selected preset"
+msgstr "Видалення запису"
+
+#: src/gnome-schedule.glade.h:60
+msgid ""
+"Will save the current information as a preset. You can type the name of the "
+"preset in the combobox."
+msgstr ""
+"Збереження поточної інформації у записі. Можна ввести назву запису у розкривному списку."
+
+#: src/gnome-schedule.glade.h:61
+msgid "[Add|Edit] scheduled task"
+msgstr "[Додавання|правка] запланованого завдання"
+
+#: src/gnome-schedule.glade.h:62
+msgid "_Add task"
+msgstr "_Додати завдання"
+
+#: src/gnome-schedule.glade.h:63
+msgid "_Delete"
+msgstr "В_идалити"
+
+#: src/gnome-schedule.glade.h:64
+msgid "_Manual"
+msgstr "_Посібник"
+
+#: src/gnome-schedule.glade.h:65
+msgid "_Select"
+msgstr "Ви_брати"
+
+#: src/gnome-schedule.glade.h:66
+msgid "_Set user"
+msgstr "_Вибрати користувача"
+
+#: src/gnome-schedule.glade.h:71
+msgid "to"
+msgstr "до"
+
+#: src/gnome-schedule.glade.h:72
+msgid ""
+"tomorrow\n"
+"next week"
+msgstr ""
+"завтра\n"
+"наступного тижня"
+
+#. Translators: Date format for expressions like 'January 21'. %B is month, %d is day number.
+#. Run the command 'man strftime' to read more about these and other available specifiers.
+#: src/lang.py:101
+msgid "%B %d"
+msgstr "%d %B"
+
+#. Translators: Date format for expressions like 'January 21, 2005'. %B is month, %d is day number, %Y is year with century.
+#. Run the command 'man strftime' to read more about these and other available specifiers.
+#: src/lang.py:108
+msgid "%B %d, %Y"
+msgstr "%d %B, %Y"
+
+#. Translators: Time without seconds. %H is hour, %M is minute.
+#. Run the command 'man strftime' to read more about these and other available specifiers.
+#: src/lang.py:118
+msgid "%H:%M"
+msgstr "%H:%M"
+
+#: src/lang.py:155
+msgid "At every full hour"
+msgstr "Кожну повну годину"
+
+#: src/lang.py:157
+msgid "At every minute"
+msgstr "Кожну хвилину"
+
+#: src/lang.py:159
+#, python-format
+msgid "At minute %(minute)s of every hour"
+msgstr "О %(minute)s хвилині кожної години"
+
+#: src/lang.py:161
+#, python-format
+msgid "At every minute between %(time_from)s and %(time_to)s"
+msgstr "Щохвилини між %(time_from)s та %(time_to)s"
+
+#: src/lang.py:163
+#, python-format
+msgid "On every day at %(time)s"
+msgstr "Щодня о %(time)s"
+
+#: src/lang.py:168
+#, python-format
+msgid "On day %(monthday)s of every month at every full hour"
+msgstr "У %(monthday)s день кожного місяця о кожній повній годині"
+
+#: src/lang.py:170
+#, python-format
+msgid "On day %(monthday)s of every month at every minute"
+msgstr "У %(monthday)s день кожного місяця щохвилини"
+
+#: src/lang.py:172
+#, python-format
+msgid "On day %(monthday)s of every month at minute %(minute)s of every hour"
+msgstr "У %(monthday)s день кожного місяця о %(minute)s хвилині кожної години"
+
+#: src/lang.py:174
+#, python-format
+msgid ""
+"On day %(monthday)s of every month at every minute between %(time_from)s and "
+"%(time_to)s"
+msgstr ""
+"У %(monthday)s день кожного місяця щохвилини між %(time_from)s та %(time_to)s"
+
+#: src/lang.py:176
+#, python-format
+msgid "On day %(monthday)s of every month at %(time)s"
+msgstr "У %(monthday)s день кожного місяця о %(time)s"
+
+#: src/lang.py:181
+#, python-format
+msgid "On every day in %(month)s at every full hour"
+msgstr "Кожен день у %(month)s кожної повної години"
+
+#: src/lang.py:183
+#, python-format
+msgid "On every day in %(month)s at every minute"
+msgstr "Кожен день у %(month)s щохвилини"
+
+#: src/lang.py:185
+#, python-format
+msgid "On every day in %(month)s at minute %(minute)s of every hour"
+msgstr "Кожен день у %(month)s о %(minute)s хвилині кожної години"
+
+#: src/lang.py:187
+#, python-format
+msgid ""
+"On every day in %(month)s at every minute between %(time_from)s and %"
+"(time_to)s"
+msgstr ""
+"Кожен день у %(month)s щохвилини між %(time_from)s та %(time_to)s"
+
+#: src/lang.py:189
+#, python-format
+msgid "On every day in %(month)s at %(time)s"
+msgstr "Кожен день у %(month)s о %(time)s"
+
+#: src/lang.py:194
+#, python-format
+msgid "Every year on %(date)s at every full hour"
+msgstr "Кожен рік у %(date)s кожної повної години"
+
+#: src/lang.py:196
+#, python-format
+msgid "Every year on %(date)s at every minute"
+msgstr "Кожен рік у %(date)s щохвилини"
+
+#: src/lang.py:198
+#, python-format
+msgid "Every year on %(date)s at minute %(minute)s of every hour"
+msgstr "Кожен рік у %(date)s о кожній %(minute)s хвилині кожної години"
+
+#: src/lang.py:200
+#, python-format
+msgid ""
+"Every year on %(date)s at every minute between %(time_from)s and %(time_to)s"
+msgstr ""
+"Кожен рік у %(date)s щохвилини між %(time_from)s та %(time_to)s"
+
+#: src/lang.py:202
+#, python-format
+msgid "Every year on %(date)s at %(time)s"
+msgstr "Кожен рік у %(date)s о %(time)s"
+
+#: src/lang.py:207
+#, python-format
+msgid "On every %(weekday)s at every full hour"
+msgstr "У кожну %(weekday)s кожної повної години"
+
+#: src/lang.py:209
+#, python-format
+msgid "On every %(weekday)s at every minute"
+msgstr "У кожну %(weekday)s щохвилини"
+
+#: src/lang.py:211
+#, python-format
+msgid "On every %(weekday)s at minute %(minute)s of every hour"
+msgstr "У кожну %(weekday)s о %(minute)s хвилині кожної години"
+
+#: src/lang.py:213
+#, python-format
+msgid ""
+"On every %(weekday)s at every minute between %(time_from)s and %(time_to)s"
+msgstr ""
+"У кожну %(weekday)s щохвилини між %(time_from)s та %(time_to)s"
+
+#: src/lang.py:215
+#, python-format
+msgid "On every %(weekday)s at %(time)s"
+msgstr "У кожну %(weekday)s о %(time)s"
+
+#: src/lang.py:220
+#, python-format
+msgid ""
+"On day %(monthday)s of every month and every %(weekday)s at every full hour"
+msgstr ""
+"У %(monthday)s день кожного місяця та у кожну %(weekday)s кожної повної години"
+
+#: src/lang.py:222
+#, python-format
+msgid ""
+"On day %(monthday)s of every month and every %(weekday)s at every minute"
+msgstr ""
+"У %(monthday)s день кожного місяця та у кожну %(weekday)s щохвилини"
+
+#: src/lang.py:224
+#, python-format
+msgid ""
+"On day %(monthday)s of every month and every %(weekday)s at minute %(minute)"
+"s of every hour"
+msgstr ""
+"У %(monthday)s день кожного місяця та у кожну %(weekday)s о %(minute)s хвилині кожної години"
+
+#: src/lang.py:226
+#, python-format
+msgid ""
+"On day %(monthday)s of every month and every %(weekday)s at every minute "
+"between %(time_from)s and %(time_to)s"
+msgstr ""
+"У %(monthday)s день кожного місяця та у кожну %(weekday)s щохвилини між %(time_from)s та %(time_to)s"
+
+#: src/lang.py:228
+#, python-format
+msgid "On day %(monthday)s of every month and every %(weekday)s at %(time)s"
+msgstr "У %(monthday)s день кожного місяця та у кожну %(weekday)s о %(time)s"
+
+#: src/lang.py:233
+#, python-format
+msgid "On every %(weekday)s in %(month)s at every full hour"
+msgstr "У кожну %(weekday)s у %(month)s кожної повної години"
+
+#: src/lang.py:235
+#, python-format
+msgid "On every %(weekday)s in %(month)s at every minute"
+msgstr "У кожну %(weekday)s у %(month)s щохвилини"
+
+#: src/lang.py:237
+#, python-format
+msgid "On every %(weekday)s in %(month)s at minute %(minute)s of every hour"
+msgstr "У кожну %(weekday)s у %(month)s о %(minute)s хвилині кожної години"
+
+#: src/lang.py:239
+#, python-format
+msgid ""
+"On every %(weekday)s in %(month)s at every minute between %(time_from)s and %"
+"(time_to)s"
+msgstr ""
+"У кожну %(weekday)s у %(month)s щохвилини між %(time_from)s та %(time_to)s"
+
+#: src/lang.py:241
+#, python-format
+msgid "On every %(weekday)s in %(month)s at %(time)s"
+msgstr "У кожну %(weekday)s у %(month)s о %(time)s"
+
+#: src/lang.py:246
+#, python-format
+msgid ""
+"On every %(weekday)s in %(month)s and on %(date)s every year at every full "
+"hour"
+msgstr ""
+"У кожну %(weekday)s у %(month)s кожної та у %(date)s кожного року кожної повної години"
+
+#: src/lang.py:248
+#, python-format
+msgid ""
+"On every %(weekday)s in %(month)s and on %(date)s every year at every minute"
+msgstr ""
+"У кожну %(weekday)s у %(month)s кожної та у %(date)s кожного року щохвилини"
+
+#: src/lang.py:250
+#, python-format
+msgid ""
+"On every %(weekday)s in %(month)s and on %(date)s every year at minute %"
+"(minute)s of every hour"
+msgstr ""
+"У кожну %(weekday)s у %(month)s кожної та у %(date)s кожного року о %(minute)s щогодини"
+
+#: src/lang.py:252
+#, python-format
+msgid ""
+"On every %(weekday)s in %(month)s and on %(date)s every year at every minute "
+"between %(time_from)s and %(time_to)s"
+msgstr ""
+"У кожну %(weekday)s у %(month)s кожної та у %(date)s кожного року щохвилини між %(time_from)s та %(time_to)s"
+
+#: src/lang.py:254
+#, python-format
+msgid ""
+"On every %(weekday)s in %(month)s and on %(date)s every year at %(time)s"
+msgstr ""
+"У кожну %(weekday)s у %(month)s кожної та у %(date)s кожного року о %(time)s"
+
+#: src/lang.py:262
+msgid "every minute"
+msgstr "щохвилини"
+
+#: src/lang.py:264
+#, python-format
+msgid "minute: %s"
+msgstr "хвилини: %s"
+
+#: src/lang.py:267
+msgid "every hour"
+msgstr "щогодини"
+
+#: src/lang.py:269
+#, python-format
+msgid "hour: %s"
+msgstr "година: %s"
+
+#: src/lang.py:272
+msgid "every day of month"
+msgstr "кожного дня місяця"
+
+#: src/lang.py:274
+#, python-format
+msgid "day of month: %s"
+msgstr "день місяця: %s"
+
+#: src/lang.py:277
+msgid "every month"
+msgstr "щомісяця"
+
+#: src/lang.py:279
+#, python-format
+msgid "month: %s"
+msgstr "місяць: %s"
+
+#: src/lang.py:282
+#, python-format
+msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s"
+msgstr "О %(minute)s, %(hour)s, %(monthday)s, %(month)s"
+
+#: src/lang.py:284
+#, python-format
+msgid "weekday: %s"
+msgstr "день тижня: %s"
+
+#: src/lang.py:285
+#, python-format
+msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
+msgstr "О %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
+
+#: src/mainWindow.py:198 src/mainWindow.py:296
+#, python-format
+msgid "Editing user: %s"
+msgstr "Редагування користувача: %s"
+
+#: src/mainWindow.py:331
+msgid "Icon"
+msgstr "Значок"
+
+#: src/mainWindow.py:336 src/mainWindow.py:369
+msgid "Type"
+msgstr "Тип"
+
+#: src/mainWindow.py:340 src/mainWindow.py:365
+msgid "Title"
+msgstr "Заголовок"
+
+#: src/mainWindow.py:344 src/mainWindow.py:356
+msgid "Date and Time Settings"
+msgstr "Дата й час"
+
+#: src/mainWindow.py:348 src/mainWindow.py:360
+msgid "Preview"
+msgstr "Попередній перегляд"
+
+#: src/mainWindow.py:400 src/mainWindow.py:451
+msgid "Please select a task"
+msgstr "Виберіть завдання"
+
+#. TODO: should be using gtkAboutDialog
+#: src/mainWindow.py:494
+msgid "Gnome Schedule"
+msgstr "Планувальник для Gnome"
+
+#: src/mainWindow.py:496
+msgid "Copyright (c) 2004-2005 Gaute Hope."
+msgstr "Авторське право (c) 2004-2005 Gaute Hope."
+
+#: src/mainWindow.py:497
+msgid "This software is distributed under the GPL. "
+msgstr "Ця програма розповсюджується на умовах ліцензії GPL. "
+
+#: src/mainWindow.py:501
+msgid ""
+"Some painfully bad documentation put\n"
+"toghether from the far corners of Gaute Hope's mind."
+msgstr ""
+"Деяка болюче погана документація зібрана\n"
+"воєдино з різних куточків голови Gaute Hope"
+
+#: src/mainWindow.py:501
+msgid "translator-credits"
+msgstr "Максим Дзюманенко <mvd@mylinux.com.ua>"
+
+#. Translators: Separator between hour and minute entry fields
+#: src/atEditor.py:91
+msgid ":"
+msgstr ":"
+
+#: src/atEditor.py:514
+#, python-format
+msgid "This is an invalid record! The problem could be: %s"
+msgstr "Неправильний запис! Можлива проблема: %s"

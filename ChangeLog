@@ -1,3 +1,7 @@
+2005-01-13  Maxim Dziumanenko <mvd@mylinux.com.ua>
+
+	* configure.ac: added uk (Ukrainian) to ALL_LINGUAS
+
 2005-01-10  Frank Arnold <frank@scirocco-5v-turbo.de>
 
 	* src/at.py: Move of hour/minute separator from glade file
