@@ -5,9 +5,19 @@ AC_PROG_INTLTOOL
 
 AM_PATH_PYTHON
 
+
 PKG_CHECK_MODULES(PYGTK, pygtk-2.0 >= 2.3)
 AC_SUBST(PYGTK_CFLAGS)
 AC_SUBST(PYGTK_LIBS)
+
+
+AC_PATH_PROG( PKGCONFIG, pkg-config, no, $PATH:/usr/bin:/usr/local/bin)
+  if test "$PKGCONFIG" != "no" ; then
+    AC_MSG_CHECKING([PYTHONPATH env variable for PyGTK])
+    PYTHONPATH=$($PKGCONFIG --variable=pyexecdir pygtk-2.0)
+    AC_SUBST([PYTHONPATH])
+    AC_MSG_RESULT($PYTHONPATH)
+  fi
 
 AC_PATH_PROG(GNOMEHELP_CONFIG, gnome-help, no)
 if test x$GNOMEHELP_CONFIG = xno; then
