@@ -55,27 +55,13 @@ class At:
 		self.atRecordRegexAdd = re.compile('([^\s]+)\s([^\s]+)\s')
 		self.atRecordRegexAdded = re.compile('[^\s]+\s([0-9]+)\sat')
 		
-		self.get_pre_len()
 
 		#default preview length
 		self.preview_len = 50
 			
 		return
 
-	def get_pre_len(self):
-		#getting default prepended stuff by at
-		#XXX this doesn't look very nice use the tempfile module instead
-		execute = "echo > /tmp/tmpat && at tomorrow -f /tmp/tmpat && rm /tmp/tmpat"
-		temp = commands.getoutput(execute)
-		startjob = temp.find("job")
-		temp = temp[startjob:]
-		m = self.atRecordRegex.match(temp)
-		job = m.groups ()[0]
-		job_id = m.groups ()[1]
-		execute = "at -c " + job_id
-		at_pre = commands.getoutput(execute)
-		remjob = commands.getoutput("atrm + " + job_id)
-		self.at_pre_len = len(at_pre) - 1
+
 		
 
 	def removetemplate (self, template_name):
@@ -384,40 +370,43 @@ class At:
 
 		#Later: It now seems like this is incorrect, and may vary upon distribution. I therefore determine the prepended stuff by making a test job and then removing the length of it. in gentoo it adds to newlines at the end of the script
 
-		method = 3
 		dangerous = 0
-		if method == 1:
-			script = script[self.at_pre_len:]
-	
+		string = "TITLE="
+		titlestart = script.find(string)
+		#print titlestart
+		if titlestart != -1:
+			script = script[titlestart:]
 			prelen = 0
+
 			# If the string contains TITLE=
-			titlestart = script.find ("TITLE=")
+			string = "TITLE="
+			titlestart = script.find(string)
 			if titlestart != -1:
 				titleend = script.find("\n", titlestart)
-				title = script[(titlestart + 6):titleend]
+				title = script[titlestart + len(string):titleend]
 				#remeber the length to remove this from the preview
 				prelen = len(title) + 7
-			else:
-				title = "Untitled"
+
 			# If the string contains ICON=
+			string = "ICON="
 			iconstart = script.find ("ICON=") 
 			if iconstart != -1:
 				iconend = script.find ("\n", iconstart)
-				icon = script[(iconstart + 5):iconend]
-				
+				icon = script[(iconstart + len(string)):iconend]
 				prelen = prelen + len(icon) + 6
 			
 			else:
 				icon = "/usr/share/icons/gnome/48x48/mimetypes/gnome-mime-application.png"
+		else:
+			#print "method 2"
+			dangerous = 1
+			#tries method 2
 
-		elif method == 2:
 			string = " || {\n	 echo 'Execution directory inaccessible' >&2\n	 exit 1\n}\n"
 			string_len = len(string)
 			start = script.find(string)
 			start = start + string_len
-
 			script = script[start:]
-
 			prelen = 0
 			# If the string contains TITLE=
 			titlestart = script.find ("TITLE=")
@@ -428,77 +417,16 @@ class At:
 				prelen = len(title) + 7
 			else:
 				title = "Untitled"
-			# If the string contains ICON=
-			iconstart = script.find ("ICON=") 
+				# If the string contains ICON=
+				iconstart = script.find ("ICON=") 
 			if iconstart != -1:
 				iconend = script.find ("\n", iconstart)
 				icon = script[(iconstart + 5):iconend]
-				
-				prelen = prelen + len(icon) + 6
 			
+				prelen = prelen + len(icon) + 6
+		
 			else:
 				icon = "/usr/share/icons/gnome/48x48/mimetypes/gnome-mime-application.png"
-
-		elif method == 3:
-			string = "TITLE="
-			titlestart = script.find(string)
-			#print titlestart
-			if titlestart != -1:
-				script = script[titlestart:]
-
-				prelen = 0
-
-				# If the string contains TITLE=
-				string = "TITLE="
-				titlestart = script.find(string)
-				if titlestart != -1:
-					titleend = script.find("\n", titlestart)
-					title = script[titlestart + len(string):titleend]
-					#remeber the length to remove this from the preview
-					prelen = len(title) + 7
-
-				# If the string contains ICON=
-				string = "ICON="
-				iconstart = script.find ("ICON=") 
-				if iconstart != -1:
-					iconend = script.find ("\n", iconstart)
-					icon = script[(iconstart + len(string)):iconend]
-					prelen = prelen + len(icon) + 6
-			
-				else:
-					icon = "/usr/share/icons/gnome/48x48/mimetypes/gnome-mime-application.png"
-			else:
-				#print "method 2"
-				dangerous = 1
-				#tries method 2
-
-				string = " || {\n	 echo 'Execution directory inaccessible' >&2\n	 exit 1\n}\n"
-				string_len = len(string)
-				start = script.find(string)
-				start = start + string_len
-	
-				script = script[start:]
-	
-				prelen = 0
-				# If the string contains TITLE=
-				titlestart = script.find ("TITLE=")
-				if titlestart != -1:
-					titleend = script.find("\n", titlestart)
-					title = script[(titlestart + 6):titleend]
-					#remeber the length to remove this from the preview
-					prelen = len(title) + 7
-				else:
-					title = "Untitled"
-					# If the string contains ICON=
-					iconstart = script.find ("ICON=") 
-				if iconstart != -1:
-					iconend = script.find ("\n", iconstart)
-					icon = script[(iconstart + 5):iconend]
-				
-					prelen = prelen + len(icon) + 6
-			
-				else:
-					icon = "/usr/share/icons/gnome/48x48/mimetypes/gnome-mime-application.png"
 
 		return script, title, icon, prelen, dangerous
 
