@@ -43,6 +43,9 @@ class At:
 
 		return
 
+	def translate_frequency (self, frequency):
+		raise 'Not implemented'
+
 	def geteditor (self):
 		raise 'Not implemented'
 

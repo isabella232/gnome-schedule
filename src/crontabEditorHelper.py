@@ -83,25 +83,22 @@ class CrontabEditorHelper:
 		#put the apropiate values in the labels describing entitys, and the 'at' combobox
 
 		if field == "minute":
-			self.trans_field = _("minute")
 			self.entRangeEnd.set_text ("59")
 			self.entRangeStart.set_text ("0")
 		if field == "hour":
-			self.trans_field = _("hour")
 			self.entRangeEnd.set_text ("23")
 			self.entRangeStart.set_text ("0")
 		if field == "day":
-			self.trans_field = _("day")
 			self.entRangeEnd.set_text ("31")
 			self.entRangeStart.set_text ("1")
 		if field == "month":
-			self.trans_field = _("month")
 			self.entRangeEnd.set_text ("12")
 			self.entRangeStart.set_text ("1")
 		if field == "weekday":
-			self.trans_field = _("weekday")
 			self.entRangeEnd.set_text ("7")
 			self.entRangeStart.set_text ("0")
+
+		self.trans_field = self.editor.schedule.translate_frequency (field)
 
 		self.radAll.set_label(_("Happens all ") + self.trans_field + _("s"))
 		self.lblEveryEntity.set_text(self.trans_field)
@@ -168,11 +165,11 @@ class CrontabEditorHelper:
 			self.wrongdialog.destroy()
 			return
 
-		if self.field == _("minute"): self.editor.minute_entry.set_text(expression)
-		if self.field == _("hour"): self.editor.hour_entry.set_text(expression)
-		if self.field == _("day"): self.editor.day_entry.set_text(expression)
-		if self.field == _("month"): self.editor.month_entry.set_text(expression)
-		if self.field == _("weekday"): self.editor.weekday_entry.set_text(expression)
+		if self.field == "minute": self.editor.minute_entry.set_text(expression)
+		if self.field == "hour": self.editor.hour_entry.set_text(expression)
+		if self.field == "day": self.editor.day_entry.set_text(expression)
+		if self.field == "month": self.editor.month_entry.set_text(expression)
+		if self.field == "weekday": self.editor.weekday_entry.set_text(expression)
 		
 		self.widget.hide()
 		return

@@ -55,6 +55,21 @@ class Crontab:
 		self.read()
 		return
 
+	def translate_frequency (self, frequency):
+
+		if frequency == "minute":
+			return _("minute")
+		if frequency == "hour":
+			return _("hour")
+		if frequency == "day":
+			return _("day")
+		if frequency == "month":
+			return _("month")
+		if frequency == "weekday":
+			return _("weekday")
+
+		return frequency
+
 	def geteditor (self):
 		return self.editor
 
@@ -111,33 +126,34 @@ class Crontab:
 		index = _("use advanced")
 		# index = 0
 
+		# Must be translatable, it's the actual content of the combobox-entry
 		if minute == "*" and hour == "*" and month == "*" and day == "*" and weekday == "*":
-			index = _("minute")
+			index = self.translate_frequency ("minute")
 			# index = 1
 		if minute == "0" and hour == "*" and month == "*" and day == "*" and weekday == "*":
-			index = _("hour")
+			index = self.translate_frequency ("hour")
 			# index = 2
 		if minute == "0" and hour == "0" and month == "*" and day == "*" and weekday == "*":
-			index = _("day")
+			index = self.translate_frequency ("day")
 			# index = 3
 		if minute == "0" and hour == "0" and month == "*" and day == "1" and weekday == "*":
-			index = _("month")
+			index = self.translate_frequency ("month")
 			# index = 4
 		if minute == "0" and hour == "0" and month == "*" and day == "*" and weekday == "0":
-			index = _("week")
+			index = self.translate_frequency ("week")
 
 		return index
 		
 	def checkfield (self, field, type, regex):
-		print type
-		print field
+		# print type
+		# print field
 
 		m = regex.match (field)
 		num = 0
 		num1 = 0
 		num2 = 0
 		if m != None:
-			print m.groups()
+			# print m.groups()
 			# 10 * * * * command
 			# */2 * * * * command
 			if m.groups()[1] != None or m.groups()[2] != None:
@@ -148,39 +164,39 @@ class Crontab:
 				# Should not be translatable!
 				if type=="minute":
 					if num > 59 or num < 0:
-						raise Exception('fixed', type, _("must be between 59 and 0"))
+						raise Exception('fixed', self.translate_frequency (type), _("must be between 59 and 0"))
 				if type=="hour":
 					if num > 23 or num < 0:
-						raise Exception('fixed', type, _("must be between 23 and 0"))
+						raise Exception('fixed', self.translate_frequency (type), _("must be between 23 and 0"))
 				if type=="day":
 					if num > 31 or num < 1:
-						raise Exception('fixed', type, _("must be between 31 and 1"))
+						raise Exception('fixed', self.translate_frequency (type), _("must be between 31 and 1"))
 				if type=="month":
 					if num > 12 or num < 1:
-						raise Exception('fixed', type, _("must be between 12 and 1"))
+						raise Exception('fixed', self.translate_frequency (type), _("must be between 12 and 1"))
 				if type=="weekday":
 					if num > 7 or num < 0:
-						raise Exception('fixed', type, _("must be between 7 and 0"))
+						raise Exception('fixed', self.translate_frequency (type), _("must be between 7 and 0"))
 
 			# 1-10 * * * * command
 			if m.groups()[3] != None and m.groups()[4] != None:
 				num1 = int (m.groups()[3])
 				num2 = int (m.groups()[4])
-				if type==_("minute"):
+				if type=="minute":
 					if num1 > 59 or num1 < 0 or num2 > 59 or num2 < 0:
-						raise Exception('range', type, _("must be between 59 and 0"))
-				if type==_("hour"):
+						raise Exception('range', self.translate_frequency (type), _("must be between 59 and 0"))
+				if type=="hour":
 					if num1 > 23 or num1 < 0 or num2 > 23 or num2 < 0:
-						raise Exception('range', type, _("must be between 23 and 0"))
-				if type==_("day"):
+						raise Exception('range', self.translate_frequency (type), _("must be between 23 and 0"))
+				if type=="day":
 					if num1 > 31 or num1 < 1 or num2 > 31 or num2 < 1:
-						raise Exception('range', type, _("must be between 31 and 1"))
-				if type==_("month"):
+						raise Exception('range', self.translate_frequency (type), _("must be between 31 and 1"))
+				if type=="month":
 					if num1 > 12 or num1 < 1 or num2 > 12 or num2 < 1:
-						raise Exception('range', type, _("must be between 12 and 1"))
-				if type==_("weekday"):
+						raise Exception('range', self.translate_frequency (type), _("must be between 12 and 1"))
+				if type=="weekday":
 					if num1 > 7 or num1 < 0 or num2 > 7 or num2 < 0:
-						raise Exception('range', type, _("must be between 7 and 0"))
+						raise Exception('range', self.translate_frequency (type), _("must be between 7 and 0"))
 
 			# 1,2,3,4 * * * * command
 			if m.groups()[5] != None:
@@ -189,24 +205,24 @@ class Crontab:
 				fields = thefield.split (",")
 				for field in fields:
 					num = int (field)
-					print num
-					if type==_("minute"):
+					# print num
+					if type=="minute":
 						if num > 59 or num < 0:
-							raise Exception('steps', type, _("must be between 59 and 0"))
-					if type==_("hour"):
+							raise Exception('steps', self.translate_frequency (type), _("must be between 59 and 0"))
+					if type=="hour":
 						if num > 23 or num < 0:
-							raise Exception('steps', type, ("must be between 23 and 0"))
-					if type==_("day"):
+							raise Exception('steps', self.translate_frequency (type), ("must be between 23 and 0"))
+					if type=="day":
 						if num > 31 or num < 1:
-							raise Exception('steps', type, _("must be between 31 and 1"))
-					if type==_("month"):
+							raise Exception('steps', self.translate_frequency (type), _("must be between 31 and 1"))
+					if type=="month":
 						if num > 12 or num < 1:
-							raise Exception('steps', type, _("must be between 12 and 1"))
-					if type==_("weekday"):
+							raise Exception('steps', self.translate_frequency (type), _("must be between 12 and 1"))
+					if type=="weekday":
 						if num > 7 or num < 0:
-							raise Exception('steps', type, _("must be between 7 and 0"))
+							raise Exception('steps', self.translate_frequency (type), _("must be between 7 and 0"))
 		else:
-			raise Exception('Unknown', type, _("Invalid"))
+			raise Exception(_("Unknown"), self.translate_frequency (type), _("Invalid"))
 
 	def write (self):
 		tmpfile = tempfile.mkstemp ("", "/tmp/crontab.", "/tmp")
@@ -222,7 +238,8 @@ class Crontab:
 			## (Cron version -- $Id$)
 
 			if count < 3 and len(line) > 1 and line[0] == "#":
-				print "Ignored:" + line
+				# print "Ignored:" + line
+				pass
 			else:
 				tmp.write (line)
 				if line[len(line)-1] != '\n':
@@ -232,10 +249,10 @@ class Crontab:
 		tmp.close ()
 
 		if self.ParentClass.root:
-			print config.getCrontabbin () + " -u " + self.ParentClass.user + " " + path
+			# print config.getCrontabbin () + " -u " + self.ParentClass.user + " " + path
 			os.system (config.getCrontabbin () +" -u " + self.ParentClass.user + " " + path)
 		else:
-			print config.getCrontabbin () + " " + path
+			# print config.getCrontabbin () + " " + path
 			os.system (config.getCrontabbin () + " " + path)
 
 		os.unlink (path)
@@ -275,8 +292,8 @@ class Crontab:
 		for line in self.lines:
 			if number != linenumber:
 				newlines.append (line)
-			else:
-				print "remove"
+			#else:
+				# print "remove"
 			number = number + 1
 
 		self.lines = newlines
@@ -286,7 +303,7 @@ class Crontab:
 		if nooutput:
 			space = " "
 			if record[len(record)-1] == " ":
-				space = ""		
+				space = ""
 			record = record + space + self.nooutputtag
 		
 		record = record + " # " + title		
@@ -315,7 +332,7 @@ class Crontab:
 		if len (line) > 1 and line[0] != '#':
 			m = self.crontabRecordRegex.match(line)
 			if m != None:
-					print m.groups()
+					# print m.groups()
 					minute = m.groups ()[0]
 					hour = m.groups ()[1]
 					day = m.groups ()[2]
@@ -324,7 +341,7 @@ class Crontab:
 					command = m.groups ()[5]
 					title = m.groups ()[7]
 					if title == None:
-						title = "Untitled"
+						title = _("Untitled")
 
 					return minute, hour, day, month, weekday, command, title
 		return gtk.FALSE
@@ -344,7 +361,6 @@ class Crontab:
 			return val
 
 	def easy (self, minute, hour, day, month, weekday):
-		print "easy" + minute + hour + day
 		if minute == "*" and hour == "*" and month == "*" and day == "*" and weekday == "*":
 			return _("Every minute")
 

@@ -38,6 +38,9 @@ class Schedule:
 		self.read()
 		return
 
+	def translate_frequency (self, frequency):
+		raise 'Abstract method please override'
+
 	def geteditor (self):
 		raise 'Abstract method please override'
 
