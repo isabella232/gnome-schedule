@@ -149,6 +149,7 @@ class main:
 		self.xml.signal_connect("on_help_button_clicked", self.on_help_button_clicked)
 		self.xml.signal_connect("on_btnExit_clicked", self.quit)
 
+
 		support.gconf_client.add_dir ("/apps/gnome-schedule", gconf.CLIENT_PRELOAD_NONE)
 		support.gconf_client.notify_add ("/apps/gnome-schedule/advanced", self.gconfkey_advanced_changed);
 		
@@ -184,6 +185,9 @@ class main:
 		except:
 			gtk.mainloop()
 		return
+	
+
+		
 
 	def treeview_button_press_event (self, widget, event):
 		if event.type == gtk.gdk._2BUTTON_PRESS and self.haveitem == gtk.TRUE:
