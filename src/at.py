@@ -132,7 +132,7 @@ class At:
 		for line in self.lines:
 			array_or_false = self.parse (line)
 			if array_or_false != gtk.FALSE:
-				(title, date, time, class_id, job_id, user, command) = array_or_false
+				(job_id, date, time, class_id, user, command, title) = array_or_false
 				iter = self.ParentClass.treemodel.append([title, date, time, class_id, job_id, user, command])
 			self.linecount = self.linecount + 1
 		return

@@ -99,6 +99,9 @@ class main:
 		else:
 			print "starting at.."
 			self.schedule = at.At (self)
+
+			self.editorhelperwidget = self.xml.get_widget("crontabEditorHelper") # using these for debugging before i create one for at
+			self.editorhelperwidget.hide()
 			self.editorwidget = self.xml.get_widget("crontabEditor")
 			self.editorwidget.hide()
 			self.editor = atEditor.AtEditor (self, self.schedule)
