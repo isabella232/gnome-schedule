@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-01-10 01:14+0200\n"
-"PO-Revision-Date: 2005-01-10 05:32+0200\n"
+"POT-Creation-Date: 2005-01-11 07:34+0200\n"
+"PO-Revision-Date: 2005-01-11 07:37+0200\n"
 "Last-Translator: Žygimantas Beručka <uid0@akl.lt>\n"
 "Language-Team: Lithuanian <komp_lt@konferencijos.lt>\n"
 "MIME-Version: 1.0\n"
@@ -64,7 +64,7 @@ msgid "%s is not a number"
 msgstr "%s nėra skaičius"
 
 #: src/crontab.py:174 src/crontab.py:209 src/crontab.py:298
-#: src/crontabEditor.py:194 src/atEditor.py:117
+#: src/crontabEditor.py:195 src/atEditor.py:121
 msgid "Untitled"
 msgstr "Nepavadinta"
 
@@ -73,58 +73,70 @@ msgstr "Nepavadinta"
 msgid "Recurrent"
 msgstr "Pasikartojanti"
 
-#: src/crontab.py:253 src/crontabEditor.py:88 src/gnome-schedule.glade.h:83
+#: src/crontab.py:253 src/crontabEditor.py:89 src/gnome-schedule.glade.h:69
 msgid "minute"
 msgstr "minutę"
 
-#: src/crontab.py:255 src/crontabEditor.py:89 src/gnome-schedule.glade.h:82
+#: src/crontab.py:255 src/crontabEditor.py:90 src/gnome-schedule.glade.h:68
 msgid "hour"
 msgstr "valandą"
 
-#: src/crontab.py:257 src/crontabEditor.py:90 src/gnome-schedule.glade.h:81
+#: src/crontab.py:257 src/crontabEditor.py:91 src/gnome-schedule.glade.h:67
 msgid "day"
 msgstr "dieną"
 
-#: src/crontab.py:259 src/crontabEditor.py:91 src/gnome-schedule.glade.h:84
+#: src/crontab.py:259 src/crontabEditor.py:92 src/gnome-schedule.glade.h:70
 msgid "month"
 msgstr "mėnesį"
 
-#: src/crontab.py:261 src/gnome-schedule.glade.h:88
+#: src/crontab.py:261 src/gnome-schedule.glade.h:74
 msgid "weekday"
 msgstr "savaitės dieną"
 
-#: src/crontabEditor.py:87
+#: src/crontabEditor.py:88
 msgid "use advanced"
 msgstr "naudoti sudėtingą"
 
-#: src/crontabEditor.py:92
+#: src/crontabEditor.py:93
 msgid "week"
 msgstr "savaitę"
 
-#: src/crontabEditor.py:137 src/atEditor.py:119
+#: src/crontabEditor.py:138 src/atEditor.py:123
 msgid "Create a new scheduled task"
 msgstr "Sukurti naują suplanuotą užduotį"
 
-#: src/crontabEditor.py:157 src/atEditor.py:149
+#: src/crontabEditor.py:158 src/atEditor.py:153
 msgid "Edit a scheduled task"
 msgstr "Keisti suplanuotą užduotį"
 
-#: src/crontabEditor.py:212 src/atEditor.py:321
+#: src/crontabEditor.py:213 src/atEditor.py:325
 msgid "Don't use a preset"
 msgstr "Nenaudoti trafareto"
 
-#: src/crontabEditor.py:268
+#: src/crontabEditor.py:269
 #, python-format
 msgid ""
 "This is an invalid record! The problem could be at the %s field. Reason: %s"
 msgstr ""
 "Tai yra netinkamas įrašas! Problema gali būti laukelyje %s. Priežastis: %s"
 
-#: src/crontabEditor.py:322 src/atEditor.py:394
+#: src/crontabEditor.py:301
+msgid "The preset has not been saved"
+msgstr "Trafaretas nebuvo išsaugotas"
+
+#: src/crontabEditor.py:303
+msgid "To delete a preset, you first need to select one"
+msgstr "Norėdami ištrinti trafaretą, Jūs pirmiausia turite jį pasirinkti"
+
+#: src/crontabEditor.py:313
+msgid "To save a preset, you first have to choose a name for it"
+msgstr "Norėdami išsaugoti trafdaretą, Jūs pirmiausia turite nurodyti jam vardą"
+
+#: src/crontabEditor.py:323 src/atEditor.py:398
 msgid "Pick an icon for this scheduled task"
 msgstr "Pasirinkite ikoną suplanuotai užduočiai"
 
-#: src/crontabEditor.py:382
+#: src/crontabEditor.py:383
 msgid "command"
 msgstr "komanda"
 
@@ -160,146 +172,90 @@ msgid "th. "
 msgstr " "
 
 #: src/gnome-schedule.glade.h:1
-msgid " "
-msgstr " "
-
-#: src/gnome-schedule.glade.h:2
-msgid "     "
-msgstr "     "
-
-#: src/gnome-schedule.glade.h:3
-msgid " >/dev/null 2>&1"
-msgstr " >/dev/null 2>&1"
-
-#: src/gnome-schedule.glade.h:4
-msgid "*"
-msgstr "*"
-
-#: src/gnome-schedule.glade.h:5
-msgid "* * * * * command"
-msgstr "* * * * * komanda"
-
-#: src/gnome-schedule.glade.h:6
-msgid "0"
-msgstr "0"
-
-#: src/gnome-schedule.glade.h:7
-msgid "0-23"
-msgstr "0-23"
-
-#: src/gnome-schedule.glade.h:8
-msgid "0-59"
-msgstr "0-59"
-
-#: src/gnome-schedule.glade.h:9
-msgid "0-7"
-msgstr "0-7"
-
-#: src/gnome-schedule.glade.h:10
-msgid "1-12"
-msgstr "1-12"
-
-#: src/gnome-schedule.glade.h:11
-msgid "1-31"
-msgstr "1-31"
-
-#: src/gnome-schedule.glade.h:12
-msgid "2"
-msgstr "2"
-
-#: src/gnome-schedule.glade.h:13
-msgid "59"
-msgstr "59"
-
-#: src/gnome-schedule.glade.h:14
-msgid ":"
-msgstr ":"
-
-#: src/gnome-schedule.glade.h:15
 msgid "<b>Basic settings</b>"
 msgstr "<b>Pagrindiniai nustatymai</b>"
 
-#: src/gnome-schedule.glade.h:16
+#: src/gnome-schedule.glade.h:2
 msgid "<b>Date setting</b>"
 msgstr "<b>Datos nustatymai</b>"
 
-#: src/gnome-schedule.glade.h:17
+#: src/gnome-schedule.glade.h:3
 msgid "<b>Frequency setting</b>"
 msgstr "<b>Dažnio nustatymai</b>"
 
-#: src/gnome-schedule.glade.h:18
+#: src/gnome-schedule.glade.h:4
 msgid "<b>Preview</b>"
 msgstr "<b>Peržiūra</b>"
 
-#: src/gnome-schedule.glade.h:19
+#: src/gnome-schedule.glade.h:5
 msgid "<b>Select the type of the scheduled task</b>"
 msgstr "<b>Pasirinkite suplanuotos užduoties tipą</b>"
 
-#: src/gnome-schedule.glade.h:20
-msgid "A scheduled task that will launch only one-time in the future."
+#: src/gnome-schedule.glade.h:6
+msgid "A scheduled task that will launch only once in the future."
 msgstr "Suplanuota užduotis, kuri bus peleista ateityje tik vieną kartą."
 
-#: src/gnome-schedule.glade.h:21
+#: src/gnome-schedule.glade.h:7
 msgid "A scheduled task that will launch recurrently."
 msgstr "Suplanuota užduotis, kuri bus paleidžiama periodiškai."
 
-#: src/gnome-schedule.glade.h:22
+#: src/gnome-schedule.glade.h:8
 msgid "A_dvanced"
 msgstr "Su_dėtingiau"
 
-#: src/gnome-schedule.glade.h:23
+#: src/gnome-schedule.glade.h:9
 msgid "About this application"
 msgstr "Apie šią programą"
 
-#: src/gnome-schedule.glade.h:24
+#: src/gnome-schedule.glade.h:10
 msgid "Active user"
 msgstr "Aktyvus naudotojas"
 
-#: src/gnome-schedule.glade.h:25
+#: src/gnome-schedule.glade.h:11
 msgid "Add a new scheduled task"
 msgstr "Pridėti naują suplanuotą užduotį"
 
-#: src/gnome-schedule.glade.h:26
+#: src/gnome-schedule.glade.h:12
 msgid "Add a scheduled task"
 msgstr "Pridėti suplanuotą užduotį"
 
-#: src/gnome-schedule.glade.h:27
+#: src/gnome-schedule.glade.h:13
 msgid "Advanced"
 msgstr "Sudėtinga"
 
-#: src/gnome-schedule.glade.h:28
+#: src/gnome-schedule.glade.h:14
 msgid "Alter a scheduled task"
 msgstr "Pakeisti suplanuotą užduotį"
 
-#: src/gnome-schedule.glade.h:29
+#: src/gnome-schedule.glade.h:15
 msgid "Basic"
 msgstr "Paprasta"
 
-#: src/gnome-schedule.glade.h:30
+#: src/gnome-schedule.glade.h:16
 msgid "Cancel this operation"
 msgstr "Atšaukti šią operaciją"
 
-#: src/gnome-schedule.glade.h:31
+#: src/gnome-schedule.glade.h:17
 msgid "Configure scheduled tasks"
 msgstr "Konfigūruoti suplanuotas užduotis"
 
-#: src/gnome-schedule.glade.h:32
+#: src/gnome-schedule.glade.h:18
 msgid "Date and time"
 msgstr "Data ir laikas"
 
-#: src/gnome-schedule.glade.h:33
+#: src/gnome-schedule.glade.h:19
 msgid "Delete a scheduled task"
 msgstr "Ištrinti suplanuotą užduotį"
 
-#: src/gnome-schedule.glade.h:34
+#: src/gnome-schedule.glade.h:20
 msgid "Every"
 msgstr "Kiekvieną"
 
-#: src/gnome-schedule.glade.h:35
+#: src/gnome-schedule.glade.h:21
 msgid "Execution at a specific minute, hour, day, weekday or month."
 msgstr "Vykdymas nurodytą minutę, valandą, dieną, savaitės dieną, mėnesį."
 
-#: src/gnome-schedule.glade.h:36
+#: src/gnome-schedule.glade.h:22
 msgid ""
 "Execution at a step width. For example every five minutes, hours, days, "
 "weekdays or months."
@@ -307,55 +263,55 @@ msgstr ""
 "Vykdymas tam tikru žingsniu. Pvz. kas penkias minutes, valandas, dienas, "
 "savaitės dienas ar mėnesius."
 
-#: src/gnome-schedule.glade.h:37
+#: src/gnome-schedule.glade.h:23
 msgid "Execution at every minute, hour, day, weekday or month."
 msgstr "Vykdymas kiekvieną minutė, valandą, dieną, savaitės dieną ar mėnesį."
 
-#: src/gnome-schedule.glade.h:38
+#: src/gnome-schedule.glade.h:24
 msgid "Execution in a range."
 msgstr "Vykdyti ribose."
 
-#: src/gnome-schedule.glade.h:39
+#: src/gnome-schedule.glade.h:25
 msgid "For example at 04:10 tomorrow, next week or in three days."
 msgstr "Pavyzdžiui rytoj 04:10, kitą savaitę arba po trijų dienų."
 
-#: src/gnome-schedule.glade.h:40
+#: src/gnome-schedule.glade.h:26
 msgid "For example every first hour of the day."
 msgstr "Pavyzdžiui kiekvieną pirmąją dienos valandą."
 
-#: src/gnome-schedule.glade.h:41
+#: src/gnome-schedule.glade.h:27
 msgid "For experienced users only"
 msgstr "Tik patyrusiems naudotojams"
 
-#: src/gnome-schedule.glade.h:42
+#: src/gnome-schedule.glade.h:28
 msgid "Happens all"
 msgstr "Nutinka kiekvieną"
 
-#: src/gnome-schedule.glade.h:43
+#: src/gnome-schedule.glade.h:29
 msgid "Happens at the"
 msgstr "Nutinka tiksliu laiku"
 
-#: src/gnome-schedule.glade.h:44
+#: src/gnome-schedule.glade.h:30
 msgid "Happens every"
 msgstr "Nutinka kas"
 
-#: src/gnome-schedule.glade.h:45
+#: src/gnome-schedule.glade.h:31
 msgid "Happens from"
 msgstr "Nutinka nuo"
 
-#: src/gnome-schedule.glade.h:46
+#: src/gnome-schedule.glade.h:32
 msgid "No output"
 msgstr "Nėra išvesties"
 
-#: src/gnome-schedule.glade.h:47
+#: src/gnome-schedule.glade.h:33
 msgid "Other expression"
 msgstr "Kita išraiška"
 
-#: src/gnome-schedule.glade.h:48
+#: src/gnome-schedule.glade.h:34
 msgid "Preset"
 msgstr "Trafaretas"
 
-#: src/gnome-schedule.glade.h:49
+#: src/gnome-schedule.glade.h:35
 msgid ""
 "Quit the application. This will not stop the system scheduling. It will, "
 "however, quit this system schedule maintenance tool."
@@ -363,97 +319,97 @@ msgstr ""
 "Uždaryti programą. Tai nesustabdys suplanuotų užduočių vykdymo. Tiesiog "
 "uždarys šių užduočių priežiūros įrankį."
 
-#: src/gnome-schedule.glade.h:50
+#: src/gnome-schedule.glade.h:36
 msgid "Run"
 msgstr "Paleisti"
 
-#: src/gnome-schedule.glade.h:51
+#: src/gnome-schedule.glade.h:37
 msgid "Run at:"
 msgstr "Paleisti laiku:"
 
-#: src/gnome-schedule.glade.h:52
+#: src/gnome-schedule.glade.h:38
 msgid "Scheduled and active tasks"
 msgstr "Suplanuotos ir aktyvios užduotys"
 
-#: src/gnome-schedule.glade.h:53
+#: src/gnome-schedule.glade.h:39
 msgid "Script"
 msgstr "Scenarijus"
 
-#: src/gnome-schedule.glade.h:54
-msgid "See \"man 5 crontab\" for informations about crontab format."
+#: src/gnome-schedule.glade.h:40
+msgid "See \"man 5 crontab\" for informations about the crontab format."
 msgstr ""
 "Norėdami gauti daugiau informacijos apie crontab formatą, žr. „man 5 "
 "crontab“."
 
-#: src/gnome-schedule.glade.h:55
+#: src/gnome-schedule.glade.h:41
 msgid "Select a different user"
 msgstr "Pasirinkti kitą naudotoją"
 
-#: src/gnome-schedule.glade.h:56
+#: src/gnome-schedule.glade.h:42
 msgid "Set the day frequency setting"
 msgstr "Nustatyti dienų dažnio parametrą"
 
-#: src/gnome-schedule.glade.h:57
+#: src/gnome-schedule.glade.h:43
 msgid "Set the hour frequency setting"
 msgstr "Nustatyti valandų dažnio parametrą"
 
-#: src/gnome-schedule.glade.h:58
+#: src/gnome-schedule.glade.h:44
 msgid "Set the icon of this scheduled task"
 msgstr "Suplanuotai užduočiai pridėti ikoną"
 
-#: src/gnome-schedule.glade.h:59
+#: src/gnome-schedule.glade.h:45
 msgid "Set the minute frequency setting"
 msgstr "Nustatyti minučių dažnio parametrą"
 
-#: src/gnome-schedule.glade.h:60
+#: src/gnome-schedule.glade.h:46
 msgid "Set the month frequency setting"
 msgstr "Nustatyti mėnesių dažnio parametrą"
 
-#: src/gnome-schedule.glade.h:61
+#: src/gnome-schedule.glade.h:47
 msgid "Set the scheduled task"
 msgstr "Nustatyti suplanuotą užduotį"
 
-#: src/gnome-schedule.glade.h:62
+#: src/gnome-schedule.glade.h:48
 msgid "Set the weekday frequency setting"
 msgstr "Nustatyti savaitės dienų dažnio parametrą"
 
-#: src/gnome-schedule.glade.h:63
+#: src/gnome-schedule.glade.h:49
 msgid "Set user"
 msgstr "Nustatyti naudotoją"
 
-#: src/gnome-schedule.glade.h:64
+#: src/gnome-schedule.glade.h:50
 msgid "Show help"
 msgstr "Rodyti pagalbą"
 
-#: src/gnome-schedule.glade.h:65
+#: src/gnome-schedule.glade.h:51
 msgid "Show the manual"
 msgstr "Rodyti žinyną"
 
-#: src/gnome-schedule.glade.h:66
+#: src/gnome-schedule.glade.h:52
 msgid "Shows the records"
 msgstr "Parodo įrašus"
 
-#: src/gnome-schedule.glade.h:67
+#: src/gnome-schedule.glade.h:53
 msgid "Task title"
 msgstr "Užduoties pavadinimas"
 
-#: src/gnome-schedule.glade.h:68
+#: src/gnome-schedule.glade.h:54
 msgid "The date when the script will launch"
 msgstr "Data kada pus įvykdytas scenarijus"
 
-#: src/gnome-schedule.glade.h:69
+#: src/gnome-schedule.glade.h:55
 msgid "Time expression help"
 msgstr "Laiko išraiškos pagalba"
 
-#: src/gnome-schedule.glade.h:70
+#: src/gnome-schedule.glade.h:56
 msgid "Time:"
 msgstr "Laikas:"
 
-#: src/gnome-schedule.glade.h:71
+#: src/gnome-schedule.glade.h:57
 msgid "Treeview"
 msgstr "Medžio vaizdas"
 
-#: src/gnome-schedule.glade.h:72
+#: src/gnome-schedule.glade.h:58
 msgid ""
 "When selected, no output will be generated. When scheduled tasks in the "
 "crontab do have output and this option is not checked, the output will by "
@@ -463,11 +419,11 @@ msgstr ""
 "neturi išvesties ir šis nustatymas yra nepažymėtas, išvestis standartiškai "
 "bus siunčiama į naudotojo UNIX pašto dėžutę."
 
-#: src/gnome-schedule.glade.h:73
+#: src/gnome-schedule.glade.h:59
 msgid "Will delete the selected preset"
 msgstr "Pasirinktas trafaretas bus ištrintas"
 
-#: src/gnome-schedule.glade.h:74
+#: src/gnome-schedule.glade.h:60
 msgid ""
 "Will save the current information as a preset. You can type the name of the "
 "preset in the combobox."
@@ -475,35 +431,35 @@ msgstr ""
 "Išsaugos esamą informaciją kaip trafaretą. Jūs galite sąrašo dėžutėje "
 "nurodyti trafareto pavadinimą."
 
-#: src/gnome-schedule.glade.h:75
+#: src/gnome-schedule.glade.h:61
 msgid "[Add|Edit] scheduled task"
 msgstr "[Pridėti|Keisti] suplanuotas užduotis"
 
-#: src/gnome-schedule.glade.h:76
+#: src/gnome-schedule.glade.h:62
 msgid "_Add task"
 msgstr "_Pridėti užduotį"
 
-#: src/gnome-schedule.glade.h:77
+#: src/gnome-schedule.glade.h:63
 msgid "_Delete"
 msgstr "_Ištrinti"
 
-#: src/gnome-schedule.glade.h:78
+#: src/gnome-schedule.glade.h:64
 msgid "_Manual"
 msgstr "Ž_inynas"
 
-#: src/gnome-schedule.glade.h:79
+#: src/gnome-schedule.glade.h:65
 msgid "_Select"
 msgstr "_Pasirinkti"
 
-#: src/gnome-schedule.glade.h:80
+#: src/gnome-schedule.glade.h:66
 msgid "_Set user"
 msgstr "_Nustatyti naudotoją"
 
-#: src/gnome-schedule.glade.h:85
+#: src/gnome-schedule.glade.h:71
 msgid "to"
 msgstr "iki"
 
-#: src/gnome-schedule.glade.h:86
+#: src/gnome-schedule.glade.h:72
 msgid ""
 "tomorrow\n"
 "next week"
@@ -574,8 +530,8 @@ msgid ""
 "On day %(monthday)s of every month at every minute between %(time_from)s and "
 "%(time_to)s"
 msgstr ""
-"Kiekvieno mėnesio %(monthday)s dieną kiekvieną minutę tarp %(time_from)s ir "
-"%(time_to)s"
+"Kiekvieno mėnesio %(monthday)s dieną kiekvieną minutę tarp %(time_from)s ir %"
+"(time_to)s"
 
 #: src/lang.py:176
 #, python-format
@@ -595,7 +551,8 @@ msgstr "Kiekvieną %(month)s mėnesio dieną kiekvieną minutę"
 #: src/lang.py:185
 #, python-format
 msgid "On every day in %(month)s at minute %(minute)s of every hour"
-msgstr "Kiekvieną %(month)s mėnesio dieną %(minute)s kiekvienos valandos minutę"
+msgstr ""
+"Kiekvieną %(month)s mėnesio dieną %(minute)s kiekvienos valandos minutę"
 
 #: src/lang.py:187
 #, python-format
@@ -603,8 +560,8 @@ msgid ""
 "On every day in %(month)s at every minute between %(time_from)s and %"
 "(time_to)s"
 msgstr ""
-"Kiekvieną %(month)s mėnesio dieną kiekvieną minutę tarp %(time_from)s ir "
-"%(time_to)s"
+"Kiekvieną %(month)s mėnesio dieną kiekvieną minutę tarp %(time_from)s ir %"
+"(time_to)s"
 
 #: src/lang.py:189
 #, python-format
@@ -631,7 +588,8 @@ msgstr "Kiekvienais metais %(date)s kiekvienos valandos %(minute)s minutę"
 msgid ""
 "Every year on %(date)s at every minute between %(time_from)s and %(time_to)s"
 msgstr ""
-"Kiekvienais metais %(date)s kiekvieną minutę tarp %(time_from)s ir %(time_to)s"
+"Kiekvienais metais %(date)s kiekvieną minutę tarp %(time_from)s ir %(time_to)"
+"s"
 
 #: src/lang.py:202
 #, python-format
@@ -659,8 +617,8 @@ msgstr ""
 msgid ""
 "On every %(weekday)s at every minute between %(time_from)s and %(time_to)s"
 msgstr ""
-"Kiekvieną %(weekday)s savaitės dieną kiekvieną minutę tarp %(time_from)s ir "
-"%(time_to)s"
+"Kiekvieną %(weekday)s savaitės dieną kiekvieną minutę tarp %(time_from)s ir %"
+"(time_to)s"
 
 #: src/lang.py:215
 #, python-format
@@ -704,8 +662,9 @@ msgstr ""
 #: src/lang.py:228
 #, python-format
 msgid "On day %(monthday)s of every month and every %(weekday)s at %(time)s"
-msgstr "Kiekvieno mėnesio %(monthday)s dieną ir kiekvieną %(weekday)s savaitės "
-"dieną %(time)s"
+msgstr ""
+"Kiekvieno mėnesio %(monthday)s dieną ir kiekvieną %(weekday)s savaitės dieną "
+"%(time)s"
 
 #: src/lang.py:233
 #, python-format
@@ -715,14 +674,15 @@ msgstr "Kiekviena %(month)s mėnesio %(weekday)s dieną kiekvieną pilną valand
 #: src/lang.py:235
 #, python-format
 msgid "On every %(weekday)s in %(month)s at every minute"
-msgstr "Kiekvieną %(month)s mėnesio %(weekday)s savaitės dieną kiekvieną minutę"
+msgstr ""
+"Kiekvieną %(month)s mėnesio %(weekday)s savaitės dieną kiekvieną minutę"
 
 #: src/lang.py:237
 #, python-format
 msgid "On every %(weekday)s in %(month)s at minute %(minute)s of every hour"
 msgstr ""
-"Kiekvieną %(month)s mėnesio %(weekday)s savaitės dieną kiekvienos valandos "
-"%(minute)s minutę"
+"Kiekvieną %(month)s mėnesio %(weekday)s savaitės dieną kiekvienos valandos %"
+"(minute)s minutę"
 
 #: src/lang.py:239
 #, python-format
@@ -730,8 +690,8 @@ msgid ""
 "On every %(weekday)s in %(month)s at every minute between %(time_from)s and %"
 "(time_to)s"
 msgstr ""
-"Kiekvieną %(month)s mėnesio %(weekday)s savaitės dieną kievieną minutę tarp "
-"%(time_from)s ir %(time_to)s"
+"Kiekvieną %(month)s mėnesio %(weekday)s savaitės dieną kievieną minutę tarp %"
+"(time_from)s ir %(time_to)s"
 
 #: src/lang.py:241
 #, python-format
@@ -778,8 +738,8 @@ msgstr ""
 msgid ""
 "On every %(weekday)s in %(month)s and on %(date)s every year at %(time)s"
 msgstr ""
-"Kiekvienų metų %(date)s ir %(month)s mėnesio kiekvieną %(weekday)s dieną "
-"%(time)s"
+"Kiekvienų metų %(date)s ir %(month)s mėnesio kiekvieną %(weekday)s dieną %"
+"(time)s"
 
 #: src/lang.py:262
 msgid "every minute"
@@ -850,12 +810,16 @@ msgid "Title"
 msgstr "Pavadinimas"
 
 #: src/mainWindow.py:344 src/mainWindow.py:356
-msgid "Frequency or time"
-msgstr "Dažnis arba laikas"
+msgid "Date and Time Settings"
+msgstr "Datos ir laiko nustatymai"
 
 #: src/mainWindow.py:348 src/mainWindow.py:360
 msgid "Preview"
 msgstr "Peržiūra"
+
+#: src/mainWindow.py:400 src/mainWindow.py:451
+msgid "Please select a task"
+msgstr "Prašau pasirinkite užduotį"
 
 #. TODO: should be using gtkAboutDialog
 #: src/mainWindow.py:494
@@ -879,10 +843,15 @@ msgstr ""
 "iš tolimiausių Gaute Hope proto kampelių."
 
 #: src/mainWindow.py:501
-msgid "translator_credits"
+msgid "translator-credits"
 msgstr "Žygimantas Beručka <uid0@akl.lt>"
 
-#: src/atEditor.py:510
+#. Translators: Separator between hour and minute entry fields
+#: src/atEditor.py:91
+msgid ":"
+msgstr ":"
+
+#: src/atEditor.py:514
 #, python-format
 msgid "This is an invalid record! The problem could be: %s"
 msgstr "Netinkamas įrašas! Problema gali būti: %s"
