@@ -263,16 +263,26 @@ class AtEditor:
 
 
 	def on_delete_button_clicked (self, *args):
-		iter = self.template_combobox.get_active_iter ()
-		template = self.template_combobox_model.get_value(iter, 2)
-		icon_uri, command, timeexpression, title, name = template
-		self.template_combobox.set_active (0)
-		self.backend.removetemplate ("at", name)
+		firstiter = self.template_combobox_model.get_iter_first()
+		notemplate = self.template_combobox_model.get_value(firstiter,0)
+		entry = self.template_combobox.get_child().get_text()
+		if notemplate != entry:
+			iter = self.template_combobox.get_active_iter ()
+			template = self.template_combobox_model.get_value(iter, 2)
+			icon_uri, command, timeexpression, title, name = template
+			self.template_combobox.set_active (0)
+			if template != None:
+				self.backend.removetemplate ("at", name)
 
 
 	def on_save_button_clicked (self, *args):
 		# Uses SaveTemplate (will call it if OK is pressed)
-		self.__SaveTemplate__ (self.template_combobox.get_child().get_text())
+		firstiter = self.template_combobox_model.get_iter_first()
+		notemplate = self.template_combobox_model.get_value(firstiter,0)
+		entry = self.template_combobox.get_child().get_text()
+		if notemplate != entry:
+			self.__SaveTemplate__ (self.template_combobox.get_child().get_text())
+
 		
 		
 	def __SaveTemplate__ (self, template_name):
@@ -294,8 +304,8 @@ class AtEditor:
 
 		if self.template_names == None or len (self.template_names) <= 0:
 			active = 0
-			self.remove_button.set_sensitive (gtk.FALSE)
-			self.save_button.set_sensitive (gtk.FALSE)
+			# self.remove_button.set_sensitive (gtk.FALSE)
+			# self.save_button.set_sensitive (gtk.FALSE)
 			self.template_combobox.set_active (0)
 		else:
 			
@@ -309,7 +319,7 @@ class AtEditor:
 				#print "name: " + name
 				self.template_combobox_model.append([name, template_name, thetemplate])
 						
-			self.remove_button.set_sensitive (gtk.TRUE)
+			# self.remove_button.set_sensitive (gtk.TRUE)
 			
 		self.template_combobox.set_active (active)
 		
@@ -319,10 +329,10 @@ class AtEditor:
 			firstiter = self.template_combobox_model.get_iter_first()
 			notemplate = self.template_combobox_model.get_value(firstiter,0)
 			entry = self.template_combobox.get_child().get_text()
-			if notemplate != entry:
-				self.save_button.set_sensitive (gtk.TRUE)
-			else:
-				self.save_button.set_sensitive (gtk.FALSE)
+			# if notemplate != entry:
+				# self.save_button.set_sensitive (gtk.TRUE)
+			# else:
+				# self.save_button.set_sensitive (gtk.FALSE)
 	
 
 	def on_template_combobox_changed (self, *args):
@@ -333,7 +343,7 @@ class AtEditor:
 					return
 				template = self.template_combobox_model.get_value(iter, 2)
 				if template != None:
-					self.remove_button.set_sensitive (gtk.TRUE)
+					# self.remove_button.set_sensitive (gtk.TRUE)
 					icon_uri, command, runat, title, name = template
 					if icon_uri != None:
 						pixbuf = gtk.gdk.pixbuf_new_from_file_at_size (icon_uri, 60, 60)
@@ -352,8 +362,8 @@ class AtEditor:
 					else:		
 						self.__update_textboxes__ ()
 				else:
-					self.remove_button.set_sensitive (gtk.FALSE)
-					self.save_button.set_sensitive (gtk.FALSE)
+					# self.remove_button.set_sensitive (gtk.FALSE)
+					# self.save_button.set_sensitive (gtk.FALSE)
 					self.__loadicon__ ()
 
 					self.__reset__ ()

@@ -198,8 +198,8 @@ class CrontabEditor:
 
 		if self.template_names == None or len (self.template_names) <= 0:
 			active = 0
-			self.remove_button.set_sensitive (gtk.FALSE)
-			self.save_button.set_sensitive (gtk.FALSE)
+			# self.remove_button.set_sensitive (gtk.FALSE)
+			# self.save_button.set_sensitive (gtk.FALSE)
 			self.template_combobox.set_active (0)
 			# self.template_combobox.set_sensitive (gtk.FALSE)
 			# self.template_label.set_sensitive (gtk.FALSE)
@@ -210,7 +210,7 @@ class CrontabEditor:
 				icon_uri, command, frequency, title, name = thetemplate
 				self.template_combobox_model.append([name, template_name, thetemplate])
 						
-			self.remove_button.set_sensitive (gtk.TRUE)
+			# self.remove_button.set_sensitive (gtk.TRUE)
 							
 		self.template_combobox.set_active (active)
 
@@ -272,16 +272,25 @@ class CrontabEditor:
 		
 	#remove template button
 	def on_remove_button_clicked (self, *args):
-		iter = self.template_combobox.get_active_iter ()
-		template = self.template_combobox_model.get_value(iter, 2)
-		icon_uri, command, frequency, title, template_name = template
-		self.template_combobox.set_active (0)
-		self.backend.removetemplate ("crontab",template_name)
+		firstiter = self.template_combobox_model.get_iter_first()
+		notemplate = self.template_combobox_model.get_value(firstiter,0)
+		entry = self.template_combobox.get_child().get_text()
+		if notemplate != entry:
+			iter = self.template_combobox.get_active_iter ()
+			template = self.template_combobox_model.get_value(iter, 2)
+			icon_uri, command, frequency, title, template_name = template
+			self.template_combobox.set_active (0)
+			if template != None:
+				self.backend.removetemplate ("crontab",template_name)
 
 		
 	#save template	button
 	def on_save_button_clicked (self, *args):
-		self.__SaveTemplate__ (self.template_combobox.get_child().get_text())
+		firstiter = self.template_combobox_model.get_iter_first()
+		notemplate = self.template_combobox_model.get_value(firstiter,0)
+		entry = self.template_combobox.get_child().get_text()
+		if notemplate != entry:
+			self.__SaveTemplate__ (self.template_combobox.get_child().get_text())
 		
 
 	def gconfkey_changed (self, client, connection_id, entry, args):
@@ -314,13 +323,14 @@ class CrontabEditor:
 
 
 	def on_template_combobox_entry_changed (self, widget):
-		firstiter = self.template_combobox_model.get_iter_first()
-		notemplate = self.template_combobox_model.get_value(firstiter,0)
-		entry = self.template_combobox.get_child().get_text()
-		if notemplate != entry:
-			self.save_button.set_sensitive (gtk.TRUE)
-		else:
-			self.save_button.set_sensitive (gtk.FALSE)
+		pass
+		#firstiter = self.template_combobox_model.get_iter_first()
+		#notemplate = self.template_combobox_model.get_value(firstiter,0)
+		#entry = self.template_combobox.get_child().get_text()
+		#if notemplate != entry:
+		#	self.save_button.set_sensitive (gtk.TRUE)
+		#else:
+		#	self.save_button.set_sensitive (gtk.FALSE)
 
 
 	def on_template_combobox_changed (self, *args):
@@ -330,7 +340,7 @@ class CrontabEditor:
 				return
 			template = self.template_combobox_model.get_value(iter, 2)
 			if template != None:
-				self.remove_button.set_sensitive (gtk.TRUE)
+				# self.remove_button.set_sensitive (gtk.TRUE)
 				icon_uri, command, frequency, title, name = template
 				#if self.ParentClass.saveWindow != None:
 				#	self.ParentClass.saveWindow.save_entry.set_text (name)
@@ -371,8 +381,8 @@ class CrontabEditor:
 				self.command = command
 				self.__update_textboxes__ ()
 			else:
-				self.remove_button.set_sensitive (gtk.FALSE)
-				self.save_button.set_sensitive (gtk.FALSE)
+				# self.remove_button.set_sensitive (gtk.FALSE)
+				# self.save_button.set_sensitive (gtk.FALSE)
 				self.__loadicon__ ()
 				self.__reset__ ()
 
