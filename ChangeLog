@@ -1,3 +1,9 @@
+2004-07-31  Gaute Hope <eg@gaute.eu.org>
+
+	* at.py: Fixed an error in the checkfield stuff for a day earlier than the one you are in now
+	* crontabEditor.py: The nooutput button is reset properly
+	* atEditor.py: The day + 1 stuff now works at the end of the month aswell, but it should be changed to work with stupid years with even more stupid februaryes.
+
 2004-07-29  Gaute Hope <eg@gaute.eu.org>
 	
 	* at.py: Changed chown into using the os.chown feature, also saving the uid and gid since it is needed

@@ -118,7 +118,7 @@ class AtEditor:
 
 
 	def showedit (self, record, job_id, iter, mode):
-		self.__reload_templates__ ()
+		
 		self.editing = gtk.TRUE
 		
 		self.job_id = job_id
@@ -141,6 +141,7 @@ class AtEditor:
 		self.parentiter = iter
 		self.widget.show ()
 
+		self.__reload_templates__ ()
 
 	def on_worded_label_event (self, *args):
 		#TODO highlight on mouseover
@@ -393,10 +394,29 @@ class AtEditor:
 		hour = ctime[3]
 		minute = ctime[4]
 		
-		#TODO if last day of the month take first day of next month!
-		
+		#Check for last day of month
+		#if month could be divided by 2 it got 30 days, unless february and i don't care about stupid february every forth year some fool desides to use this tool on the 29th of february
+		testmonth = month % 2
+		if testmonth != 0:
+			#Month got 31 days
+			if day >= 31:
+				day = 1
+				month = month + 1
+		else:
+			#month got 30 days
+			#unless february
+			if month == 2:
+				if day >= 28:
+					day = 1
+					month = month + 1				
+			else:	#else some of the other months
+				if day >= 30:
+					day = 1
+					month = month + 1	
+
 		self.runat = str(hour) + ":" + str(minute) + " " + str(year) + "-" + str(month) + "-" + str(day)
 		self.calendar.select_month(month - 1, year)
+		
 		self.calendar.select_day(day)
 		self.hour_spinbutton.set_text(str(hour))
 		self.minute_spinbutton.set_text(str(minute))
@@ -457,7 +477,6 @@ class AtEditor:
 
 
 	def on_ok_button_clicked (self, *args):
-		# TODO: Validate record
 		(validate, reason) = self.ParentClass.checkfield(self.runat)
 		if validate == gtk.FALSE:
 			self.__WrongRecordDialog__ (reason)

@@ -119,7 +119,6 @@ class At:
 		cminute = ctime[4]
 	
 		if runat_g1:
-
 			(hour, minute, year, month, day) =  runat_g1.groups()
 			hour = int(hour)
 			minute = int(minute)
@@ -138,10 +137,12 @@ class At:
 
 			if year < cyear:
 				return gtk.FALSE, "year"
-			if month < cmonth:
+
+			if (month < cmonth and year <= cyear):
 				return gtk.FALSE, "month"
 
-			if day < cday or (plussday == gtk.TRUE and day < cday + 1):
+
+			if (day < cday and month <= cmonth) or (plussday == gtk.TRUE and day < cday + 1 and month <= cmonth):
 				return gtk.FALSE, "day"
 
 		elif runat_g2:

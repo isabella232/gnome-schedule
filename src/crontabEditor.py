@@ -178,7 +178,7 @@ class CrontabEditor:
 		self.weekday = "*"
 		self.command = "ls"
 		self.title = _("Untitled")
-		self.nooutput = gtk.FALSE
+		self.nooutput = gtk.TRUE
 		self.nooutput_label.hide ()
 		self.chkNoOutput.set_active (gtk.TRUE)
 		self.__update_textboxes__ ()
@@ -350,6 +350,7 @@ class CrontabEditor:
 						frequency = "* * * * *"
 					if command == None:
 						command = _("command")
+					record = frequency + " " + command
 			
 				m = self.nooutputRegex.match (command)
 				if (m != None):
