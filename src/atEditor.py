@@ -101,10 +101,6 @@ class AtEditor:
 		self.xml.signal_connect("on_at_minute_spinbutton_changed", self.on_minute_spinbutton_changed)
 		self.xml.signal_connect("on_at_combobox_changed", self.on_combobox_changed)
 
-		#self.__reset__ ()
-		#self.__loadicon__ ()
-		#self.__reload_templates__ ()
-
 		#gconf
 		support.gconf_client.add_dir ("/apps/gnome-schedule/presets/at", gconf.CLIENT_PRELOAD_NONE)
 		support.gconf_client.notify_add ("/apps/gnome-schedule/presets/at/installed", self.gconfkey_changed);
@@ -144,21 +140,19 @@ class AtEditor:
 		self.__update_textboxes__ ()
 		self.parentiter = iter
 		self.widget.show ()
-		#self.__update_textboxes__ ()
 
 
 	def on_worded_label_event (self, *args):
-		# highlight on mouseover
-
+		#TODO highlight on mouseover
 		pass
 
 	def on_defined_label_event (self, *args):
-		# highlight on mouseover
+		#TODO highlight on mouseover
 		# enable control_option on click
 		pass
 
 	def on_script_textview_popup_menu (self, *args):
-		# show at_script_menuons: install t
+		#TODO show at_script_menuons: install t
 		# don't forget to attach eventhandling to this popup
 		pass
 	
@@ -235,7 +229,6 @@ class AtEditor:
 	def __update_time_combo__ (self):
 
 			#update variables, set calendar
-
 			runat = self.combobox_entry.get_text ()
 			self.runat = runat
 			regexp = re.compile("([0-9][0-9]):([0-9][0-9])\ ([0-9][0-9][0-9][0-9])-([0-9][0-9])-([0-9][0-9])")
@@ -255,7 +248,6 @@ class AtEditor:
 
 				
 	def on_combobox_changed (self, *args):
-		
 		if self.noupdate == gtk.FALSE:	
 			self.combo_trigger = gtk.TRUE
 			self.__update_time_combo__()
@@ -272,7 +264,6 @@ class AtEditor:
 
 	def on_save_button_clicked (self, *args):
 		# Uses SaveTemplate (will call it if OK is pressed)
-		# self.ParentClass.saveWindow.ShowSaveWindow(self)
 		self.__SaveTemplate__ (self.template_combobox.get_child().get_text())
 		
 		
@@ -301,8 +292,6 @@ class AtEditor:
 			self.remove_button.set_sensitive (gtk.FALSE)
 			self.save_button.set_sensitive (gtk.FALSE)
 			self.template_combobox.set_active (0)
-			# self.template_combobox.set_sensitive (gtk.FALSE)
-			# self.template_label.set_sensitive (gtk.FALSE)
 		else:
 			
 			for template_name in self.template_names:
@@ -310,10 +299,8 @@ class AtEditor:
 				icon_uri, command, runat, title, name,  = thetemplate
 				self.template_combobox_model.append([name, template_name, thetemplate])
 						
-			#self.template_combobox.set_sensitive (gtk.TRUE)
 			self.remove_button.set_sensitive (gtk.TRUE)
-			#self.template_label.set_sensitive (gtk.TRUE)
-		
+			
 		self.template_combobox.set_active (active)
 		
 
@@ -336,8 +323,6 @@ class AtEditor:
 			if template != None:
 				self.remove_button.set_sensitive (gtk.TRUE)
 				icon_uri, runat, title, name, command = template
-				#if self.ParentClass.saveWindow != None:
-				#	self.ParentClass.saveWindow.save_entry.set_text (name)
 				if icon_uri != None:
 					pixbuf = gtk.gdk.pixbuf_new_from_file_at_size (icon_uri, 60, 60)
 					self.template_image.set_from_pixbuf(pixbuf)
@@ -407,6 +392,9 @@ class AtEditor:
 		day = ctime[2] +1
 		hour = ctime[3]
 		minute = ctime[4]
+		
+		#TODO if last day of the month take first day of next month!
+		
 		self.runat = str(hour) + ":" + str(minute) + " " + str(year) + "-" + str(month) + "-" + str(day)
 		self.calendar.select_month(month - 1, year)
 		self.calendar.select_day(day)

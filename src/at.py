@@ -58,14 +58,50 @@ class At:
 		self.atRecordRegexAdd = re.compile('([^\s]+)\s([^\s]+)\s')
 		self.atRecordRegexAdded = re.compile('[^\s]+\s([0-9]+)\sat')
 	
-		
-	# Pass this to lang.py
-	#def translate_frequency (self, frequency):
-	#	raise 'Not implemented'
-
 
 	def geteditor (self):
 		return self.editor
+
+
+	def parse (self, line, output = 0):
+		if output == 0:
+			if len (line) > 1 and line[0] != '#':
+				m = self.atRecordRegex.match(line)
+				if m != None:
+					# print m.groups()
+					job_id = m.groups ()[0]
+					date = m.groups ()[1]
+					time = m.groups ()[2]
+					class_id = m.groups ()[3]
+					user = m.groups ()[4]
+					execute = config.getAtbin() + " -c " + job_id
+					# read lines and detect starter
+					script = os.popen(execute).read()
+					script, title, icon, prelen, dangerous = self.__prepare_script__ (script)
+					#removing ending newlines, but keep one
+					#if a date before this is selected the record is removed, this creates an error, and generally if the script is of zero length
+					if len(script) < 2:
+						done = 1
+					else:
+						done = 0
+
+					while done == 0:
+						if script[-1] == "\n":
+							script = script[0:-1]
+						else:
+							done = 1
+
+					return job_id, date, time, class_id, user, script, title, icon, prelen, dangerous
+		else:
+			if len (line) > 1 and line[0] != '#':
+				m = self.atRecordRegexAdd.match(line)
+				if m != None:
+					# print m.groups()
+					job = m.groups ()[0]
+					job_id = m.groups ()[1]
+					return job_id
+
+		return gtk.FALSE
 
 
 	def checkfield (self, runat):
@@ -231,8 +267,6 @@ class At:
 			execute = config.getAtbin() + " " + runat + " -f " + path
 			temp = commands.getoutput(execute)
 
-		#print execute
-		#print temp
 		os.unlink (path)
 		self.ParentClass.schedule_reload ("at")
 		return temp
@@ -242,7 +276,6 @@ class At:
 		#do 'atq'
 		execute = config.getAtqbin ()
 		self.lines = os.popen(execute).readlines()
-		#count = 0
 		for line in self.lines:
 			array_or_false = self.parse (line)
 			if array_or_false != gtk.FALSE:
@@ -273,24 +306,6 @@ class At:
 						pass
 				else:
 					iter = self.ParentClass.treemodel.append([title, timestring_show, preview, lines, int(job_id), timestring, icon_pix, self, icon, date, class_id, user, time, "Defined", "at"])
-
-				#print "Read at job: " + str(job_id)
-				#count = count + 1
-				#print title + " " + timestring + " " + preview + " " + job_id + " " + date + " " +  class_id + " " + user 
-				# print int(job_id)
-
-		#["None(not suported yet)", "12:50 2004-06-25", "", "35", "", "12:50", icon, at instance, "2004-06-25", "a", "drzap", "at"]
-		#print "-- Total at jobs: " + str(count)
-	
-
-	#XXX where used?
-	#def __ignore__ (self, testline):
-	#	found = gtk.FALSE
-	#	for line in self.ignore_lines:
-	#		if line == testline:
-	#			found = gtk.TRUE
-	#			break
-	#	return found
 
 
 	def __prepare_script__ (self, script):
@@ -402,48 +417,3 @@ class At:
 			result = result + "..."
 
 		return result
-
-
-	def parse (self, line, output = 0):
-		if output == 0:
-			if len (line) > 1 and line[0] != '#':
-				m = self.atRecordRegex.match(line)
-				if m != None:
-					# print m.groups()
-					job_id = m.groups ()[0]
-					date = m.groups ()[1]
-					time = m.groups ()[2]
-					class_id = m.groups ()[3]
-					user = m.groups ()[4]
-					execute = config.getAtbin() + " -c " + job_id
-					# read lines and detect starter
-					script = os.popen(execute).read()
-					script, title, icon, prelen, dangerous = self.__prepare_script__ (script)
-					#removing ending newlines, but keep one
-					#if a date before this is selected the record is removed, this creates an error, and generally if the script is of zero length
-					if len(script) < 2:
-						done = 1
-					else:
-						done = 0
-
-					while done == 0:
-						if script[-1] == "\n":
-							script = script[0:-1]
-						else:
-							done = 1
-
-					return job_id, date, time, class_id, user, script, title, icon, prelen, dangerous
-		else:
-			if len (line) > 1 and line[0] != '#':
-				m = self.atRecordRegexAdd.match(line)
-				if m != None:
-					# print m.groups()
-					job = m.groups ()[0]
-					job_id = m.groups ()[1]
-					return job_id
-
-		return gtk.FALSE
-
-
-	#def easy (self, minute, hour, day, month, weekday):
-	#	raise 'Not implemented'

@@ -26,7 +26,6 @@ import string
 import support
 
 
-	 
 def removetemplate (type, template_name):
 	template_name_c = __replace__ (template_name)
 	
@@ -42,7 +41,6 @@ def removetemplate (type, template_name):
 					first = gtk.FALSE
 				else:
 					newstring = newstring + ", " + t
-
 		
 	support.gconf_client.unset("/apps/gnome-schedule/presets/" + type + "/%s/name" % (template_name_c))
 	support.gconf_client.unset("/apps/gnome-schedule/presets/" + type + "/%s/icon_uri" % (template_name_c))
@@ -55,8 +53,7 @@ def removetemplate (type, template_name):
 	else:
 		support.gconf_client.set_string("/apps/gnome-schedule/presets/" + type + "/installed", newstring)
 		
-		
-	
+
 def __replace__ (template_name_c):
 	for a in " ,	;:/\\\"'!@#$%^&*()-_+=|?<>.][{}":
 		template_name_c = string.replace (template_name_c, a, "-")
@@ -89,7 +86,6 @@ def savetemplate (type, template_name, timeexpression, title, icon, command):
 	support.gconf_client.set_string("/apps/gnome-schedule/presets/" + type + "/installed", installed)
 		
 		
-	
 def gettemplatenames (type):
 	strlist = support.gconf_client.get_string("/apps/gnome-schedule/presets/" + type + "/installed")
 	if strlist != None:
@@ -110,4 +106,3 @@ def gettemplate (type, template_name):
 	
 	except Exception, ex:
 		return ex, ex, ex, ex, ex
-	

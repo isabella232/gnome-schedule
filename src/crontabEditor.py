@@ -120,10 +120,6 @@ class CrontabEditor:
 		
 		self.editorhelper = crontabEditorHelper.CrontabEditorHelper(self)
 		
-		#self.nooutput = self.chkNoOutput.get_active()
-		#self.loadicon ()
-		#self.reload_templates ()
-		
 		#gconf code
 		support.gconf_client.add_dir ("/apps/gnome-schedule/presets/crontab", gconf.CLIENT_PRELOAD_NONE)
 		support.gconf_client.notify_add ("/apps/gnome-schedule/presets/crontab/installed", self.gconfkey_changed);
@@ -193,9 +189,7 @@ class CrontabEditor:
 		#self.template_combobox.set_active (active)
 		self.template_names = preset.gettemplatenames ("crontab")
 		
-		if self.template_names == None or len (self.template_names) <= 0:
-			pass
-		else:
+		if not (self.template_names == None or len (self.template_names) <= 0):
 			active = self.template_combobox.get_active ()
 			if active == -1:
 				active = 0
@@ -217,10 +211,8 @@ class CrontabEditor:
 				icon_uri, command, frequency, title, name = thetemplate
 				self.template_combobox_model.append([name, template_name, thetemplate])
 						
-			#self.template_combobox.set_sensitive (gtk.TRUE)
 			self.remove_button.set_sensitive (gtk.TRUE)
-			#self.template_label.set_sensitive (gtk.TRUE)
-				
+							
 		self.template_combobox.set_active (active)
 
 
@@ -259,7 +251,6 @@ class CrontabEditor:
 			self.command = self.command + space + self.ParentClass.nooutputtag
 			
 		#record = self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday + " " + self.command
-		#self.ParentClass.savetemplate (template_name, record, self.nooutput, self.title, self.icon)
 		self.frequency = self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday
 		preset.savetemplate ("crontab",template_name, self.frequency, self.title, self.icon, self.command)
 
@@ -421,7 +412,6 @@ class CrontabEditor:
 
 
 	def __set_frequency_combo__ (self):
-		#index = self.schedule.getfrequency (self.minute, self.hour, self.day, self.month, self.weekday)
 		index = self.__getfrequency__ (self.minute, self.hour, self.day, self.month, self.weekday)
 		self.frequency_combobox.set_active (index)
 
