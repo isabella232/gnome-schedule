@@ -416,10 +416,10 @@ class AtEditor:
 		# TODO: Fill record
 		if self.editing != gtk.FALSE:
 			self.schedule.update (self.job_id, self.runat, self.command, self.title, self.icon)
-			self.ParentClass.schedule_reload ()
+			self.ParentClass.schedule_reload ("at")
 	
 		else:
 			self.schedule.append (self.runat, self.command, self.title, self.icon)
-			self.ParentClass.schedule_reload ()
+			self.ParentClass.schedule_reload ("at")
 	
 		self.widget.hide ()

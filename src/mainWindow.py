@@ -274,7 +274,7 @@ class main:
 			#col.set_sizing (gtk.TREE_VIEW_COLUMN_AUTOSIZE)
 			self.treeview.append_column(col)
 
-			col = gtk.TreeViewColumn(_("Type"), gtk.CellRendererText(), text=12)
+			col = gtk.TreeViewColumn(_("Type"), gtk.CellRendererText(), text=13)
 			col.set_resizable (gtk.TRUE)
 			#col.set_sizing (gtk.TREE_VIEW_COLUMN_AUTOSIZE)
 			self.treeview.append_column(col)
@@ -308,15 +308,43 @@ class main:
 
 		return
 
-	def schedule_reload (self):
+	def schedule_reload (self, records = "all"):
 		start = time.time()
 		print "###--- start reload: [" + str(start) + "] ---###"
-		self.treemodel.clear()
-		self.crontab.read ()
-		self.at.read ()
+		self.delarray = []
+		if records == "crontab":
+			self.treemodel.foreach(self.delete_row, "crontab")
+			self.crontab.read()
+
+		elif records == "at":
+			self.treemodel.foreach(self.delete_row, "at")
+			self.at.read()
+
+		elif records == "all":
+			self.treemodel.foreach(self.delete_row, "all")
+			self.crontab.read ()
+			self.at.read ()
+	
+		for iter in self.delarray:
+			self.treemodel.remove(iter)
+
 		end = time.time()
 		diff = end - start
 		print "###--- end reload: [" + str(end) + "] - Duration: " + str(diff) + " ---###"
+
+	def test (self, model, path, iter, userdata):
+		self.testcnt = self.testcnt +1
+		print self.testcnt
+		return
+
+	def delete_row (self, model, path, iter, record_type):
+		current_record_type = self.treemodel.get_value(iter, 13)
+		if current_record_type == record_type or record_type == "all":
+			self.delarray.append(iter)
+			
+		return
+	
+
 
 	def on_add_button_clicked (self, *args):
 		self.on_add_scheduled_task_menu_activate (self, args)
@@ -375,21 +403,17 @@ class main:
 
 	def on_delete_menu_activate (self, *args):
 		store, iter = self.treeview.get_selection().get_selected()
-
-		self.schedule = self.treemodel.get_value(iter, 7)
-		self.editor = self.schedule.geteditor ()
-		
-		
+	
 		if iter != None:
+			self.schedule = self.treemodel.get_value(iter, 7)
+			self.editor = self.schedule.geteditor ()
+
 			record = self.treemodel.get_value(iter, 3)
 			linenumber = self.treemodel.get_value(iter, 4)
 
 			firstiter = self.treemodel.get_iter_first()
 			self.schedule.delete (linenumber, iter)
 			nextiter = self.treemodel.iter_next(iter)
-
-			print nextiter
-			print firstiter
 
 			
 			if nextiter == "None":
