@@ -340,6 +340,7 @@ class Crontab:
 
 		self.lines = newlines
 		self.write ()
+		#reload is needed because the line number change 
 		self.ParentClass.schedule_reload("crontab")
 		return
 
@@ -358,6 +359,7 @@ class Crontab:
 
 		self.lines.append (record)
 		self.write ()
+	
 
 	#XXX maybe there is a better way
 	def easy (self, minute, hour, day, month, weekday):

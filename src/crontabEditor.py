@@ -152,6 +152,7 @@ class CrontabEditor:
 	def SaveTemplate (self, template_name):
 		try:
 			# Type should not be translatable!
+			#XXX do check in crontab savetemplate itself instead of here?
 			self.check_field_format (self.minute, "minute")
 			self.check_field_format (self.hour, "hour")
 			self.check_field_format (self.day, "day")
@@ -393,7 +394,6 @@ class CrontabEditor:
 
 		if self.editing != gtk.FALSE:
 			self.schedule.update (self.linenumber, record, self.parentiter, self.nooutput, self.title, self.icon)
-			self.ParentClass.schedule_reload ("crontab")
 		else:
 			self.schedule.append (record, self.nooutput, self.title, self.icon)
 			self.ParentClass.schedule_reload ("crontab")
