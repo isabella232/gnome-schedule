@@ -36,5 +36,5 @@ devbuild.sh
 autom4te.cache
 configure.in
 system-config-schedule.console
-gnome-schedule.destkop
+gnome-schedule.desktop
 gnome-schedule.spec

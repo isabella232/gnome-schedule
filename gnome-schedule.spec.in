@@ -8,7 +8,7 @@
 
 Summary: Crontab and at configuration tool
 Name: gnome-schedule
-Version: 0.0.1
+Version: @VERSION@
 Release: 1
 URL: http://gnome-schedule.sf.net
 License: GPL
