@@ -13,8 +13,7 @@ gnomeschedule_PYTHON = \
 	editor.py \
 	schedule.py \
 	lang.py \
-	support.py \
-	saveWindow.py
+	support.py
 
 uidir = $(datadir)/gnome-schedule
 ui_DATA = gnome-schedule.glade

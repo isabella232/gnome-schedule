@@ -68,7 +68,7 @@ class main:
 		else:
 			self.xml = gtk.glade.XML (config.getGladedir() + "/gnome-schedule.glade", domain="gnome-schedule")
 		
-		self.saveWindow = None
+		# self.saveWindow = None
 
 		self.widget = self.xml.get_widget("mainWindow")
 		self.treeview = self.xml.get_widget("treeview")
@@ -95,10 +95,10 @@ class main:
 
 		self.editor = self.schedule.geteditor()
 
-		#save window
-		self.savewidget = self.xml.get_widget("saveWindow")
-		self.savewidget.hide()
-		self.saveWindow = saveWindow.SaveWindow (self)
+		# save window (replaced with a entry comboxbox)
+		# self.savewidget = self.xml.get_widget("saveWindow")
+		# self.savewidget.hide()
+		# self.saveWindow = saveWindow.SaveWindow (self)
 		
 		self.treeview.set_rules_hint(gtk.TRUE)
 		self.treeview.columns_autosize()

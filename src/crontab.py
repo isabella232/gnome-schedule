@@ -73,7 +73,6 @@ class Crontab:
 			first = gtk.TRUE
 			newstring = "   "
 			for t in string.split (installed, ", "):
-				print t
 				if t != template_name_c:
 					if first == gtk.TRUE:
 						newstring = t
