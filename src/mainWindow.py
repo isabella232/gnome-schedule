@@ -64,16 +64,20 @@ class main:
 		else:
 			self.xml = gtk.glade.XML ("/usr/share/gnome-schedule/gnome-schedule.glade", domain="gnome-schedule")
 
-		self.readUser()
+
 
 
 		self.widget = self.xml.get_widget("mainWindow")
 		self.treeview = self.xml.get_widget("treeview")
-
+		self.set_user_menu = self.xml.get_widget("self_user_menu")
 		self.add_button = self.xml.get_widget ("add_button")
 		self.prop_button = self.xml.get_widget ("prop_button")
 		self.del_button = self.xml.get_widget ("del_button")
 		self.help_button = self.xml.get_widget ("help_button")
+		self.btnSetUser = self.xml.get_widget("btnSetUser")
+
+		#read the user
+		self.readUser()
 
 		# This will only work with PyGTK 2.4.x
 		try:
@@ -95,7 +99,10 @@ class main:
 		self.quit_menu = self.xml.get_widget ("quit_menu")
 		self.advanced_menu = self.xml.get_widget ("advanced_menu")
 		self.about_menu = self.xml.get_widget ("about_menu")
+		
 
+
+		
 		self.xml.signal_connect("on_advanced_menu_activate", self.on_advanced_menu_activate)
 		self.xml.signal_connect("on_about_menu_activate", self.on_about_menu_activate)
 		self.xml.signal_connect("on_add_scheduled_task_menu_activate", self.on_add_scheduled_task_menu_activate)
@@ -112,7 +119,7 @@ class main:
 		if self.root != 1:
 			self.set_user_menu.visible = gtk.FALSE
 		else:
-			self.xml.signal_connect("on_set_user_menu_activate", self.on_set_user_menu_activate)
+			self.xml.signal_connect("on_btnSetUser_clicked", self.on_set_user_menu_activate)
 
 		self.widget.connect("delete-event", self.quit)
 
@@ -131,7 +138,9 @@ class main:
 		self.setuserwidget.hide()
 		self.setuserWindow = setuserWindow.SetuserWindow (self)
 
-
+		if self.root == 0:
+			#hiding the 'set user' option
+			self.btnSetUser.hide()
 
 
 		gtk.mainloop()
@@ -206,6 +215,9 @@ class main:
 		else:
 			self.root = 0
 			self.user = os.environ['USER']
+
+			
+			
 		return
 
 
@@ -284,3 +296,7 @@ class main:
 
 	def on_manual_menu_activate (self, *args):
 		pass
+
+	def showSetUser(self):
+		self.setuserWindow.ShowSetuserWindow()
+		return

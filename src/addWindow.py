@@ -241,3 +241,5 @@ class AddWindow:
 			pass
 
 		self.update_textboxes()
+	
+		

@@ -40,6 +40,7 @@ class SetuserWindow:
 		self.user_combobox = self.xml.get_widget ("user_combobox")
 		self.cancel_button = self.xml.get_widget ("setuser_cancel_button")
 		self.ok_button = self.xml.get_widget ("setuser_ok_button")
+		self.entUser = self.xml.get_widget("entUser")
 
 		self.xml.signal_connect("on_setuser_cancel_button_clicked", self.on_cancel_button_clicked)
 		self.xml.signal_connect("on_setuser_ok_button_clicked", self.on_ok_button_clicked)
@@ -57,4 +58,10 @@ class SetuserWindow:
 		return gtk.TRUE
 
 	def on_ok_button_clicked (self, *args):
+		#clean treeview, reread crontab
+		self.ParentClass.user = self.entUser.get_text()
+		self.ParentClass.treemodel.clear()
+		self.ParentClass.crontab.readCrontab()
+		self.widget.hide()
+		return gtk.TRUE
 		pass
