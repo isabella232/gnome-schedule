@@ -202,7 +202,7 @@ class AddWindow:
 			m = self.nooutputRegex.match (self.command)
 			if self.nooutput:
 				if m == None:
-					if self.command[len(self.command)-1] != " ":
+					if len (self.command) > 0 and self.command[len(self.command)-1] != " ":
 						self.command = self.command + " "
 					self.command = self.command + self.nooutputtag
 					self.command_entry.set_text (self.command)
