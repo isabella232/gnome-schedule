@@ -18,17 +18,10 @@
 
 #pygtk modules
 import gtk
-#import gobject
 
 #python modules
 import string
 import re
-
-#import pwd
-
-#custom modules
-#import crontab
-#import crontabEditor
 
 ##
 ## I18N
@@ -45,15 +38,14 @@ class CrontabEditorHelper:
 		self.ParentClass = parent
 		self.editor = editor
 		
-		#get some widgets and connect them
-		self.widget = self.ParentClass.editorhelperwidget
 		self.xml = self.ParentClass.xml
-
+		
+		self.widget = self.xml.get_widget("crontabEditorHelper")
 		self.widget.connect("delete-event", self.btnCancel_clicked)
+		
 		self.radAll = self.xml.get_widget("radAll")
 		self.radEvery = self.xml.get_widget("radEvery")
 		self.radRange = self.xml.get_widget("radRange")
-		# self.radAt = self.xml.get_widget("radAt")
 		self.radFix = self.xml.get_widget("radFix")
 		self.radOth = self.xml.get_widget ("radOth")
 

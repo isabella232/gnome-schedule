@@ -49,9 +49,6 @@ class Crontab:
 		self.ParentClass = parent
 		self.xml = self.ParentClass.xml
 		
-		self.editorwidget = self.xml.get_widget("crontabEditor")
-		self.editorhelperwidget = self.xml.get_widget("crontabEditorHelper")
-				
 		self.editor = crontabEditor.CrontabEditor (self.ParentClass, self)
 		self.editorhelper = crontabEditorHelper.CrontabEditorHelper(self, self.editor)
 				

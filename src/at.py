@@ -71,8 +71,6 @@ class At:
 		self.ParentClass = parent
 		self.xml = self.ParentClass.xml
 
-		self.read ()
-
 		self.editorwidget = self.xml.get_widget("atEditor")
 		self.editor = atEditor.AtEditor (self.ParentClass, self)
 

@@ -18,21 +18,17 @@
 
 #pygtk modules
 import gtk
-import gconf
 import gobject
+import gconf
 
 #python modules
 import string
 import re
-#import os
-
-#import pwd
 
 #custom modules
-#import mainWindow
 import config
 import support
-#import schedule
+
 
 ##
 ## I18N
@@ -51,11 +47,11 @@ class CrontabEditor:
 		self.schedule = schedule
 		
 		self.xml = self.ParentClass.xml
-		self.widget = self.schedule.editorwidget
-		
+		#self.widget = self.schedule.editorwidget
+		self.widget = self.xml.get_widget("crontabEditor")
 		self.widget.connect("delete-event", self.on_cancel_button_clicked)
 
-		self.editorhelperwidget = self.schedule.editorhelperwidget
+		#self.editorhelperwidget = self.schedule.editorhelperwidget
 
 		self.fieldRegex = re.compile('^(\*)$|^([0-9]+)$|^\*\\\([0-9]+)$|^([0-9]+)-([0-9]+)$|(([0-9]+[|,])+)')
 		self.nooutputRegex = re.compile('([^#\n$]*)>(\s|)/dev/null\s2>&1')
@@ -135,26 +131,23 @@ class CrontabEditor:
 		support.gconf_client.notify_add ("/apps/gnome-schedule/templates/crontab/installed", self.gconfkey_changed);
 		
 		
-	#remove template
+	#remove template button
 	def on_remove_button_clicked (self, *args):
 		iter = self.template_combobox.get_active_iter ()
 		template = self.template_combobox_model.get_value(iter, 2)
 		icon_uri, command, frequency, title, name = template
 		self.template_combobox.set_active (0)
 		self.schedule.removetemplate (name)
+
 		
-		
+	#save template	button
 	def on_save_button_clicked (self, *args):
 		# Uses SaveTemplate (will call it if OK is pressed)
 		# self.ParentClass.saveWindow.ShowSaveWindow(self)
 		self.SaveTemplate (self.template_combobox.get_child().get_text())
 
 
-	def WrongRecordDialog (self, x, y, z):
-		self.wrongdialog = gtk.MessageDialog(self.widget, gtk.DIALOG_MODAL|gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_ERROR, gtk.BUTTONS_OK, (_("This is an invalid record! The problem could be at the %s field. Reason: %s") % (y, z)))
-		self.wrongdialog.run()
-		self.wrongdialog.destroy()
-
+	#save template
 	def SaveTemplate (self, template_name):
 		try:
 			# Type should not be translatable!
@@ -170,6 +163,14 @@ class CrontabEditor:
 
 		record = self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday + " " + self.command
 		self.schedule.savetemplate (template_name, record, self.nooutput, self.title, self.icon)
+
+
+	#error dialog box 
+	def WrongRecordDialog (self, x, y, z):
+		self.wrongdialog = gtk.MessageDialog(self.widget, gtk.DIALOG_MODAL|gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_ERROR, gtk.BUTTONS_OK, (_("This is an invalid record! The problem could be at the %s field. Reason: %s") % (y, z)))
+		self.wrongdialog.run()
+		self.wrongdialog.destroy()
+
 
 	def gconfkey_changed (self, client, connection_id, entry, args):
 		self.reload_templates ()

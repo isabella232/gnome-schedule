@@ -180,11 +180,6 @@ class main:
 		##
 
 		
-		##debug info
-		start = time.time()
-		print "###--- start load: [" + str(start) + "] ---###"
-		##
-		
 		##create crontab
 		self.crontab = crontab.Crontab(self)
 		self.crontab_editor = self.crontab.geteditor ()
@@ -194,21 +189,14 @@ class main:
 		self.at = at.At(self)
 		self.at_editor = self.at.geteditor ()
 	   ##
-	    	
-
-		##debug info
-		end = time.time()
-		diff = end - start
-		print "###--- end load: [" + str(end) + "] - Duration: " + str(diff) + " ---###"
-		##	
-
-	
+  
 		#set user window
 		self.setuserWindow = setuserWindow.SetuserWindow (self)
 		
 		#set add window
 		self.addWindow = addWindow.AddWindow (self)
 		
+		#load the treeview with the tasks
 		self.schedule_reload ("all")
 			
 		try:
