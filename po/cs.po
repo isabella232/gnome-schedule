@@ -4,21 +4,29 @@
 # This file is distributed under the same license as the gnome-schedule package.
 # Miloslav Trmac <mitr@volny.cz>, 2004
 #
-#: src/at.py:186 src/lang.py:116 src/lang.py:118 src/lang.py:210
+#: src/at.py:187 src/lang.py:116 src/lang.py:118 src/lang.py:210
 #: src/lang.py:212
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-07-10 15:23+0200\n"
-"PO-Revision-Date: 2004-07-10 21:20+0200\n"
+"POT-Creation-Date: 2004-07-11 04:15+0200\n"
+"PO-Revision-Date: 2004-07-11 15:55+0200\n"
 "Last-Translator: Miloslav Trmac <mitr@volny.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/at.py:186
+#: desktop/gnome-schedule.desktop.in.h:1
+msgid "Manage your system tasks"
+msgstr "Spravovat vaše systémové úlohy"
+
+#: desktop/gnome-schedule.desktop.in.h:2
+msgid "Schedule"
+msgstr "Plán"
+
+#: src/at.py:187
 #, python-format
 msgid "%s%s%s %s%s%s"
 msgstr "%s%s%s %s%s%s"
@@ -81,7 +89,7 @@ msgstr "Neznámé"
 msgid "Invalid"
 msgstr "Neplatné"
 
-#: src/crontab.py:357 src/crontab.py:393 src/crontab.py:449
+#: src/crontab.py:357 src/crontab.py:395 src/crontab.py:451
 #: src/crontabEditor.py:270 src/crontabEditor.py:383 src/atEditor.py:341
 msgid "Untitled"
 msgstr "Nepojmenovaný"
@@ -306,19 +314,25 @@ msgstr "Jen pro pokročilé uživatele"
 msgid ""
 "Happens at a defined occurrence. For example, happens at the second minute, "
 "hour, day, weekday or month"
-msgstr "Je spouštěna při určeném výskytu. Například je spouštěna druhou minutu, hodinu, den, den v týdnu nebo měsíc"
+msgstr ""
+"Je spouštěna při určeném výskytu. Například je spouštěna druhou minutu, "
+"hodinu, den, den v týdnu nebo měsíc"
 
 #: src/gnome-schedule.glade.h:41
 msgid ""
 "Happens at all occurrence. For example, happens every minute, hour, day, "
 "weekday or month"
-msgstr "Je spouštěna při všech výskytech. Například je spouštěna každou minutu, hodinu, den, den v týdnu nebo měsíc"
+msgstr ""
+"Je spouštěna při všech výskytech. Například je spouštěna každou minutu, "
+"hodinu, den, den v týdnu nebo měsíc"
 
 #: src/gnome-schedule.glade.h:42
 msgid ""
 "Happens at every x occurrence. For example every two minutes, hours, days, "
 "weekdays or months"
-msgstr "Je spouštěna každých x výskytů. Například každé dvě minuty, hodiny, dny, dny v týdnu nebo měsíce"
+msgstr ""
+"Je spouštěna každých x výskytů. Například každé dvě minuty, hodiny, dny, dny "
+"v týdnu nebo měsíce"
 
 #: src/gnome-schedule.glade.h:43
 msgid "Happens at the"
@@ -348,7 +362,9 @@ msgstr "Jiný výraz"
 msgid ""
 "Quit the application. This will not stop the system scheduling. It will, "
 "however, quit this system schedule maintenance tool."
-msgstr "Ukončit aplikaci. To nezastaví systémové plánování, ale ukončí tento nástroj pro správu plánu systému."
+msgstr ""
+"Ukončit aplikaci. To nezastaví systémové plánování, ale ukončí tento nástroj "
+"pro správu plánu systému."
 
 #: src/gnome-schedule.glade.h:50
 msgid "Run"
@@ -443,7 +459,10 @@ msgid ""
 "When selected, no output will be generated. When scheduled tasks in the "
 "crontab do have output and this option is not checked, the output will by "
 "default be send to the UNIX mailbox of the user"
-msgstr "Je-li zvoleno, nebude generován žádný výstup. Když mají plánované úlohy v crontab výstup a tato volba není zaškrtnuta, výstup bude implicitně poslán do unixové poštovní schránky uživatele"
+msgstr ""
+"Je-li zvoleno, nebude generován žádný výstup. Když mají plánované úlohy v "
+"crontab výstup a tato volba není zaškrtnuta, výstup bude implicitně poslán "
+"do unixové poštovní schránky uživatele"
 
 #: src/gnome-schedule.glade.h:73
 msgid "Will delete the selected template"
@@ -453,7 +472,9 @@ msgstr "Odstraní zvolenou šablonu"
 msgid ""
 "Will save the current information as a template. You can type the name of "
 "the template in the combobox."
-msgstr "Uloží aktuální informace jako šablonu. Název šablony můžete zadat do kombinovaného pole."
+msgstr ""
+"Uloží aktuální informace jako šablonu. Název šablony můžete zadat do "
+"kombinovaného pole."
 
 #: src/gnome-schedule.glade.h:75
 msgid "Worded date and time setting"
@@ -500,7 +521,9 @@ msgstr ""
 msgid ""
 "To the translator: Read src/lang.py !!! (yeah it's for you, not for the "
 "user. YES FOR YOU, the translator. YES:) really!"
-msgstr "To the translator: Read src/lang.py !!! (yeah it's for you, not for the user. YES FOR YOU, the translator. YES:) really!"
+msgstr ""
+"To the translator: Read src/lang.py !!! (yeah it's for you, not for the "
+"user. YES FOR YOU, the translator. YES:) really!"
 
 #: src/lang.py:90
 msgid "zeroth"
@@ -760,7 +783,8 @@ msgstr "Každý %s den v týdnu každou minutu"
 
 #: src/lang.py:316
 msgid "Every minute, every hour, every day, every month, every weekday"
-msgstr "Každou minutu, každou hodinu, každý den, každý měsíc, každý den v týdnu"
+msgstr ""
+"Každou minutu, každou hodinu, každý den, každý měsíc, každý den v týdnu"
 
 #: src/lang.py:319
 #, python-format
@@ -839,41 +863,41 @@ msgstr "Každou minutu, každou hodinu, den: %s, každý měsíc"
 
 #. col = gtk.TreeViewColumn(_("Icon"), gtk.CellRendererText(), text=6)
 #. self.treeview.append_column(col)
-#: src/mainWindow.py:225 src/mainWindow.py:266
+#: src/mainWindow.py:229 src/mainWindow.py:270
 msgid "Type"
 msgstr "Typ"
 
-#: src/mainWindow.py:229 src/mainWindow.py:261
+#: src/mainWindow.py:233 src/mainWindow.py:265
 msgid "Title"
 msgstr "Nadpis"
 
 # ???
 #. col = gtk.TreeViewColumn(_("Icon"), gtk.CellRendererText(), text=6)
 #. self.treeview.append_column(col)
-#: src/mainWindow.py:233 src/mainWindow.py:249
+#: src/mainWindow.py:237 src/mainWindow.py:253
 msgid "Frequency or time"
 msgstr "Frekvence času"
 
-#: src/mainWindow.py:237 src/mainWindow.py:254
+#: src/mainWindow.py:241 src/mainWindow.py:258
 msgid "Preview"
 msgstr "Náhled"
 
-#: src/mainWindow.py:338
+#: src/mainWindow.py:342
 msgid "System Schedule"
 msgstr "Plánování systému"
 
-#: src/mainWindow.py:340
+#: src/mainWindow.py:344
 msgid "Copyright (c) 2004-2005 Gaute Hope."
 msgstr "Copyright © 2004-2005 Gaute Hope."
 
-#: src/mainWindow.py:341
+#: src/mainWindow.py:345
 msgid "This software is distributed under the GPL. "
 msgstr "Toto software je šířeno pod podmínkami GPL. "
 
-#: src/mainWindow.py:344
+#: src/mainWindow.py:348
 msgid "documented_by"
 msgstr "documented_by"
 
-#: src/mainWindow.py:345
+#: src/mainWindow.py:349
 msgid "translator_credits"
 msgstr "Miloslav Trmač <mitr@volny.cz>"
