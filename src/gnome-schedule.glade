@@ -270,26 +270,17 @@
 	  </child>
 
 	  <child>
-	    <widget class="GtkToolItem" id="toolitem1">
+	    <widget class="GtkToolButton" id="btnExit">
 	      <property name="visible">True</property>
+	      <property name="stock_id">gtk-quit</property>
 	      <property name="visible_horizontal">True</property>
 	      <property name="visible_vertical">True</property>
 	      <property name="is_important">False</property>
-
-	      <child>
-		<widget class="GtkToolButton" id="btnExit">
-		  <property name="visible">True</property>
-		  <property name="stock_id">gtk-quit</property>
-		  <property name="visible_horizontal">True</property>
-		  <property name="visible_vertical">True</property>
-		  <property name="is_important">True</property>
-		  <signal name="clicked" handler="on_btnExit_clicked" last_modification_time="Mon, 07 Jun 2004 12:38:02 GMT"/>
-		</widget>
-	      </child>
+	      <signal name="clicked" handler="on_btnExit_clicked" last_modification_time="Mon, 07 Jun 2004 23:11:05 GMT"/>
 	    </widget>
 	    <packing>
 	      <property name="expand">False</property>
-	      <property name="homogeneous">False</property>
+	      <property name="homogeneous">True</property>
 	    </packing>
 	  </child>
 	</widget>

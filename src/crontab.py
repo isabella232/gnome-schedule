@@ -138,15 +138,33 @@ class Crontab:
 			return "th."
 
 	def easyString (self, minute, hour, day, month, weekday):
-		if minute != "*" and hour == "*" and month == "*" and day == "*" and weekday == "*":
-			return "Every " + minute + self.amountApp (minute) + " minute of every hour"
-		if minute == "*" and hour != "*" and month == "*" and day == "*" and weekday == "*":
-			return "Every " + hour + self.amountApp (hour) + " hour of the day"
-		if minute == "*" and hour == "*" and month == "*" and day != "*" and weekday == "*":
-			return "Every " + day + self.amountApp (day) + " day of the month"
-		if minute == "*" and hour == "*" and month != "*" and day == "*" and weekday == "*":
-			return "Every " + month + self.amountApp (month) + " month of the year"
-		if minute == "*" and hour == "*" and month == "*" and day == "*" and weekday != "*":
-			return "Every " + weekday + self.amountApp (weekday) + " day of the week"
+		if minute == "*" and hour == "*" and month == "*" and day == "*" and weekday == "*":
+			return "Every minute"
+
+		if hour != "*" and month == "*" and day == "*" and weekday == "*":
+			if minute == "0":
+				return "Every " + hour + self.amountApp (hour) + " hour of the day"
+			elif minute != "*":
+				return "At " + hour + ":" + minute + " every day"
+		
+		if month == "*" and day != "*" and weekday == "*":
+			if minute == "0" and hour == "0":
+				return "Every " + day + self.amountApp (day) + " day of the month"
+			elif minute != "*" and hour != "*":
+				return "At " + hour + ":" + minute + " every " + day + self.amountApp (day) + " day of the month"
+
+
+		if month != "*" and weekday == "*":
+			if minute == "0" and hour == "0" and day == "1":
+				return "Every " + month + self.amountApp (month) + " month of the year"
+			elif minute != "*" and hour != "*" and day != "*":
+				return "At the " + day + self.amountApp(day) + " " + hour + ":" + minute + " every " + month + self.amountApp(month) + " month of the year"
+
+
+		if month == "*" and day == "*" and weekday != "*":
+			if minute == "0" and hour == "0":
+				return "Every " + weekday + self.amountApp (weekday) + " day of the week"
+			elif minute != "*" and hour != "*":
+				return "Every " + weekday + self.amountApp(weekday) + " at " + hour + ":" + minute
 
 		return minute + " " + hour + " " + day + " " + month + " " + weekday
