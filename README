@@ -20,11 +20,20 @@ Dependencies
 Support
 -------
 
-  You can talk to the developers and some other users of gnome-schedule
-  here:
+  o. Mailinglists: You can talk to the developers and some other users
+     of gnome-schedule here:
  
 	o. http://lists.sourceforge.net/mailman/listinfo/gnome-schedule-users
 
+  o. An unstable PyGTK? Why?!
+
+  The reason why we are using an unstable version of PyGTK is because
+  the stable version of PyGTK is to incomplete for serious GNOME -and
+  Gtk >= 2.4 application development. You can try proving me wrong... 
+  However, I won't listen to your whining. So to answer the question 
+  that will probably get asked most: No we will not backport to a stable 
+  version of PyGTK. You are free to wait for the major distributions to
+  include PyGTK >= 2.4 or install an unstable version of PyGTK.
 
 Compiling and HACKING
 ---------------------
