@@ -43,8 +43,10 @@ class CrontabEditor:
 		self.widget = self.ParentClass.editorwidget
 		self.widget.connect("delete-event", self.on_cancel_button_clicked)
 
-		self.editorhelperwidget = self.ParentClass.editorhelperwidget
+		self.fieldRegex = re.compile('^(\*)$|^([0-9]+)$|^\*\\\([0-9]+)$|^([0-9]+)-([0-9]+)$|(([0-9]+[|,])+)')
 
+		self.editorhelperwidget = self.ParentClass.editorhelperwidget
+		self.nooutputRegex = re.compile('([^#\n$]*)>(\s|)/dev/null\s2>&1')
 		
 		self.editing = gtk.FALSE
 		self.help_button = self.xml.get_widget ("help_button")
@@ -79,9 +81,7 @@ class CrontabEditor:
 		self.xml.signal_connect("on_fieldHelp_clicked", self.on_fieldHelp_clicked)
 
 		self.nooutput = self.chkNoOutput.get_active()
-		self.nooutputRegex = re.compile('([^#\n$]*)>(\s|)/dev/null\s2>&1')
-		self.fieldRegex = re.compile('^(\*)$|^([0-9]+)$|^\*\\\([0-9]+)$|^([0-9]+)-([0-9]+)$|(([0-9]+[|,])+)')
-
+		
 	def showedit (self, record, linenumber, iter, mode):
 		self.editing = gtk.TRUE
 		self.linenumber = linenumber
@@ -118,7 +118,7 @@ class CrontabEditor:
 
 	def check_field_format (self, field, type):
 		try:
-			self.schedule.checkfield (field, type)
+			self.schedule.checkfield (field, type, self.fieldRegex)
 		except Exception, ex:
 			raise ex
 
@@ -166,24 +166,21 @@ class CrontabEditor:
 			self.check_field_format (self.month, _("month"))
 			self.check_field_format (self.weekday, _("weekday"))
 		except Exception, ex:
-			x, y, z = ex
+			#x, y, z = ex
+			x=""
+			y=""
+			z=""
 			self.wrongdialog = gtk.MessageDialog(self.widget, gtk.DIALOG_MODAL|gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_ERROR, gtk.BUTTONS_OK, _("This is an invalid record! The problem could be at the ") + y + _(" field. Reason: ")+ z)
 			self.wrongdialog.run()
 			self.wrongdialog.destroy()
 			return
 
-		space = " "
-		if self.nooutput:
-			if self.command[len(self.command)-1] == " ":
-				space = ""
-			record = self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday + " " + self.command + space + self.nooutputtag + " # " + self.title
-		else:
-			record = self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday + " " + self.command + " # " + self.title
+		record = self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday + " " + self.command
 
 		if self.editing != gtk.FALSE:
-			self.schedule.update (self.linenumber, record, self.parentiter, self.nooutput)		
+			self.schedule.update (self.linenumber, record, self.parentiter, self.nooutput, self.title)
 		else:
-			self.schedule.append (record)
+			self.schedule.append (record, self.nooutput, self.title)
 			self.ParentClass.treemodel.clear ()
 			self.ParentClass.schedule.read ()
 
@@ -312,5 +309,5 @@ class CrontabEditor:
 			name = _("weekday")
 			expression = self.weekday_entry.get_text()
 
-		self.ParentClass.crontabEditorHelper.show (name, expression)
+		self.ParentClass.editorhelper.show (name, expression)
 		return

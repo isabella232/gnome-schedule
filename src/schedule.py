@@ -53,19 +53,19 @@ class Schedule:
 	def getfrequency (self, minute, hour, day, month, weekday):
 		raise 'Abstract method please override'
 
-	def checkfield (self, field, type):
+	def checkfield (self, field, type, regex):
 		raise Exception('Abstract method please override','','','')
 
 	def write (self):
 		raise 'Abstract method, please override' 
 
-	def update (self, linenumber, record, parentiter, nooutput):
+	def update (self, linenumber, record, parentiter, nooutput, title):
 		raise 'Abstract method, please override' 
 
 	def delete (self, linenumber):
 		raise 'Abstract method, please override' 
 
-	def append (self, record):
+	def append (self, record, nooutput, title):
 		raise 'Abstract method, please override' 
 
 	def read (self):

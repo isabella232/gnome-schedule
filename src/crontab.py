@@ -36,6 +36,7 @@ gtk.glade.bindtextdomain(domain)
 class Crontab:
 	def __init__(self, parent):
 		self.crontabRecordRegex = re.compile('([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^#\n$]*)(\s#\s([^\n$]*)|$)')
+		
 		self.ParentClass = parent
 		self.nooutputtag = ">/dev/null 2>&1"
 		self.ParentClass.treemodel = self.createtreemodel ()
@@ -112,8 +113,11 @@ class Crontab:
 
 		return index
 		
-	def checkfield (self, field, type):
-		m = self.fieldRegex.match (field)
+	def checkfield (self, field, type, regex):
+		print type
+		print field
+
+		m = regex.match (field)
 		num = 0
 		num1 = 0
 		num2 = 0
@@ -221,20 +225,30 @@ class Crontab:
 		os.unlink (path)
 		return
 
-	def update (self, linenumber, record, parentiter, nooutput):
+	def update (self, linenumber, record, parentiter, nooutput, title):
 		# The GUI
 		minute, hour, day, month, weekday, command, title = self.parse (record)
-		self.ParentClass.treemodel.set_value (parentiter, 3, record)
+		
 		self.ParentClass.treemodel.set_value (parentiter, 0, title)
-		easystring = self.schedule.easy (self.minute, self.hour, day, month, weekday)
+		easystring = self.easy (minute, hour, day, month, weekday)
+
+
 		
 		self.ParentClass.treemodel.set_value (parentiter, 1, easystring)
 		if nooutput:
+			space = " "
+			if command[len(command)-1] == " ":
+				space = ""		
 			self.ParentClass.treemodel.set_value (parentiter, 2, command + space + self.nooutputtag)
+			record = record + space + self.nooutputtag
 		else:
 			self.ParentClass.treemodel.set_value (parentiter, 2, command)
-		self.ParentClass.treemodel.set_value (self.parentiter, 5, minute + " " + hour + " " + day + " " + month + " " + weekday)
+			
+		self.ParentClass.treemodel.set_value (parentiter, 5, minute + " " + hour + " " + day + " " + month + " " + weekday)
 
+		record = record + " # " + title	
+		
+		self.ParentClass.treemodel.set_value (parentiter, 3, record)
 		# The crontab itself
 		self.lines[linenumber] = record
 		self.write ()
@@ -252,7 +266,14 @@ class Crontab:
 		self.lines = newlines
 		self.write ()
 
-	def append (self, record):
+	def append (self, record, nooutput, title):
+		if nooutput:
+			space = " "
+			if record[len(record)-1] == " ":
+				space = ""		
+			record = record + space + self.nooutputtag
+		
+		record = record + " # " + title		
 		self.lines.append (record)
 		self.write ()
 

@@ -1,5 +1,9 @@
+2004-06-18  Philip Van Hoof Mne_NOSPAM@freax.org>
+	* Fixed some stuff
+	* Prepared the application for the at support
+
 2004-06-18  Gaute Hope	<eg@gaute.eu.org>
-	*created the at-support-branch and changed the layout of the files
+	* created the at-support-branch and changed the layout of the files
 
 2004-06-18  Philip Van Hoof  <me_NOSPAM@freax.org>
 	* configure.ac, autogen.sh, Makefile.am: Reconfiguration of the build

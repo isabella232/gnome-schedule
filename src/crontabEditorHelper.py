@@ -16,7 +16,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 
-import addWindow
+import crontabEditor
 import gtk
 import pwd
 import string
@@ -33,13 +33,13 @@ domain = 'gnome-schedule'
 translate.textdomain (domain)
 gtk.glade.bindtextdomain(domain)
 
-class AddWindowHelp:
-	def __init__(self, parent, addwindow):
+class CrontabEditorHelper:
+	def __init__(self, parent, editor):
 		self.ParentClass = parent
-		self.AddWindow = addwindow
+		self.editor = editor
 		
 		#get some widgets and connect them
-		self.widget = self.ParentClass.addhelpwidget
+		self.widget = self.ParentClass.editorhelperwidget
 		self.xml = self.ParentClass.xml
 
 		self.widget.connect("delete-event", self.btnCancel_clicked)
@@ -76,7 +76,7 @@ class AddWindowHelp:
 		self.xml.signal_connect("on_entRangeEnd_changed", self.anyEntryChanged)
 		self.xml.signal_connect("on_entExpression_changed", self.entExpressionChanged)
 		self.NoExpressionEvents = gtk.FALSE
-		self.fieldRegex = self.ParentClass.addWindow.fieldRegex
+		self.fieldRegex = self.ParentClass.editor.fieldRegex
 		return
 
 	def populateLabels(self, field):
@@ -105,7 +105,7 @@ class AddWindowHelp:
 
 		return
 
-	def showAll(self, field, expression):
+	def show (self, field, expression):
 		self.field = field
 		self.populateLabels(field)
 
@@ -147,13 +147,13 @@ class AddWindowHelp:
 		return
 
 	def btnOk_clicked(self, *args):
-		#move expression to field in addwindow and hide
+		#move expression to field in editor and hide
 		expression = self.entExpression.get_text()
-		if self.field == _("minute"): self.AddWindow.minute_entry.set_text(expression)
-		if self.field == _("hour"): self.AddWindow.hour_entry.set_text(expression)
-		if self.field == _("day"): self.AddWindow.day_entry.set_text(expression)
-		if self.field == _("month"): self.AddWindow.month_entry.set_text(expression)
-		if self.field == _("weekday"): self.AddWindow.weekday_entry.set_text(expression)
+		if self.field == _("minute"): self.editor.minute_entry.set_text(expression)
+		if self.field == _("hour"): self.editor.hour_entry.set_text(expression)
+		if self.field == _("day"): self.editor.day_entry.set_text(expression)
+		if self.field == _("month"): self.editor.month_entry.set_text(expression)
+		if self.field == _("weekday"): self.editor.weekday_entry.set_text(expression)
 		
 		self.widget.hide()
 		return

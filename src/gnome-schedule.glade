@@ -314,7 +314,7 @@
   </child>
 </widget>
 
-<widget class="GtkWindow" id="addWindow">
+<widget class="GtkWindow" id="crontabEditor">
   <property name="title" translatable="yes">[Add|Edit] scheduled task</property>
   <property name="type">GTK_WINDOW_TOPLEVEL</property>
   <property name="window_position">GTK_WIN_POS_NONE</property>
@@ -1264,7 +1264,7 @@ use advanced</property>
   </child>
 </widget>
 
-<widget class="GtkWindow" id="addWindowHelp">
+<widget class="GtkWindow" id="crontabEditorHelper">
   <property name="visible">True</property>
   <property name="title" translatable="yes">Time expression help</property>
   <property name="type">GTK_WINDOW_TOPLEVEL</property>

@@ -57,13 +57,13 @@ class At:
 	def getfrequency (self, minute, hour, day, month, weekday):
 		raise 'Not implemented'
 
-	def checkfield (self, field, type):
+	def checkfield (self, field, type, regex):
 		raise Exception('Abstract method please override','','','')
 
 	def write (self):
 		raise 'Not implemented'
 
-	def update (self, linenumber, record):
+	def update (self, linenumber, record, nooutput, title):
 		raise 'Not implemented'
 
 	def delete (self, jobid):
@@ -74,7 +74,7 @@ class At:
 			
 		return
 
-	def append (self, record):
+	def append (self, record, nooutput, title):
 		raise 'Not implemented'
 
 	def read (self):

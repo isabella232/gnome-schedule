@@ -23,14 +23,18 @@ import string
 import os
 import re
 import gtk.glade
-import addWindow
+import crontabEditorHelper
+import crontabEditor
+# import atEditor
+# import atEditorHelper
 import setuserWindow
+import schedule
 import crontab
-import addWindowHelp
+# import at
 import sys
 import time
 import config
-
+import editor
 from os import popen
 
 ##
@@ -54,22 +58,17 @@ except:
 	pass
 
 
-
-
 ##
 ## The MainWindow class
 ##
 class main:
 	def __init__(self, debug_flag=None):
 		self.debug_flag = debug_flag
-		# Setting up the glade stuff
+
 		if os.access("gnome-schedule.glade", os.F_OK):
 			self.xml = gtk.glade.XML ("gnome-schedule.glade", domain="gnome-schedule")
 		else:
 			self.xml = gtk.glade.XML (config.getGladedir() + "/gnome-schedule.glade", domain="gnome-schedule")
-
-
-
 
 		self.widget = self.xml.get_widget("mainWindow")
 		self.treeview = self.xml.get_widget("treeview")
@@ -82,7 +81,27 @@ class main:
 
 		#read the user
 		self.readUser()
+		
+		self.crontab_vs_at = "crontab"
+		if self.crontab_vs_at == "crontab":
 
+			self.schedule = crontab.Crontab(self)
+			# Happens during crontab creation:
+			# self.treemodel = self.schedule.createtreemodel ()
+
+			self.editorwidget = self.xml.get_widget("crontabEditor")
+			self.editorwidget.hide()
+			self.editorhelperwidget = self.xml.get_widget("crontabEditorHelper")
+			self.editorhelperwidget.hide()
+		
+			self.editor = crontabEditor.CrontabEditor (self, self.schedule)
+			self.editorhelper = crontabEditorHelper.CrontabEditorHelper(self, self.editor)
+		else:
+			raise 'Not implemented'
+			# self.schedule = at.At (self)
+			# self.editorwidget = self.xml.get_widget("atEditor")
+			# self.editorwidget.hide()
+			# self.editor = atEditor.AtEditor (self, self.schedule)
 		# This will only work with PyGTK 2.4.x
 		try:
 			# this tries to fix a bug in libglade (the homogeneous propery ain't working)
@@ -94,6 +113,7 @@ class main:
 		except:
 			pass
 
+		
 		self.treeview.set_rules_hint(gtk.TRUE)
 		self.treeview.columns_autosize()
 		self.add_scheduled_task_menu = self.xml.get_widget ("add_scheduled_task_menu")
@@ -117,7 +137,7 @@ class main:
 		self.xml.signal_connect("on_help_button_clicked", self.on_help_button_clicked)
 		self.xml.signal_connect("on_btnExit_clicked", self.quit)
 
-		#hiding setuser button if not root
+		# hiding setuser button if not root
 		if self.root == 0:
 			self.btnSetUser.hide()
 		else:
@@ -125,31 +145,17 @@ class main:
 
 		self.widget.connect("delete_event", self.quit)
 		self.widget.connect("destroy_event", self.quit)
-		# self.widget.connect("close", self.quit)
 
 		#inittializing the treeview
 		self.init_treeview()
-
-		#initializing the crontab
-		self.crontab = crontab.Crontab(self)
-
-		#add window
-		self.addwidget = self.xml.get_widget("addWindow")
-		self.addwidget.hide()
-		self.addWindow = addWindow.AddWindow (self, self.crontab)
-
-		#add window help
-		self.addhelpwidget = self.xml.get_widget("addWindowHelp")
-		self.addhelpwidget.hide()
-		self.addHelpWindow = addWindowHelp.AddWindowHelp(self, self.addWindow)
-
+		
 		#set user window
 		self.setuserwidget = self.xml.get_widget("setuserWindow")
 		self.setuserwidget.hide()
 		self.setuserWindow = setuserWindow.SetuserWindow (self)
 
 		if self.root == 0:
-			#hiding the 'set user' option
+			# hiding the 'set user' option if not root
 			self.btnSetUser.hide()
 		else:
 			self.xml.signal_connect("on_btnSetUser_clicked", self.showSetUser)
@@ -158,54 +164,13 @@ class main:
 		return
 
 	def init_treeview(self, mode = "simple", init = 0):
-		# [0 Title, 1 Frequency, 2 Command, 3 Crontab record, 4 Line number, 5 Time]
-		# ["Restart app", "Every day", "/opt/bin/restart.pl", "* 1 * * * /opt/bin/restart.pl # Title=Restart App", 3, 0 * * * *]
-		self.treemodel = gtk.ListStore(gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_INT, gobject.TYPE_STRING)
 		self.treeview.set_model (self.treemodel)
-
 		self.switchView("simple", 1)
-
-
 		return
 	
 	def switchView(self, mode = "simple", init = 0):
-		if mode == "simple":
-			#cleaning up columns
-			if init != 1:
-				i = 2
-				while i > - 1:
-					temp = self.treeview.get_column(i)
-					self.treeview.remove_column(temp)
-					i = i -1
-				
-			# Setting up the columns
-			self.col = gtk.TreeViewColumn(_("Title"), gtk.CellRendererText(), text=0)
-			self.treeview.append_column(self.col)
-			self.col = gtk.TreeViewColumn(_("Frequency"), gtk.CellRendererText(), text=1)
-			self.treeview.append_column(self.col)
-			self.col = gtk.TreeViewColumn(_("Command"), gtk.CellRendererText(), text=2)
-			self.col.set_spacing(235)
-			self.treeview.append_column(self.col)
-
-		elif mode == "advanced":
-			#cleaning up columns
-			if init != 1:
-				i = 2
-				while i > - 1:
-					temp = self.treeview.get_column(i)
-					self.treeview.remove_column(temp)
-					i = i -1
-			
-			# Setting up the columns
-			self.col = gtk.TreeViewColumn(_("Frequency"), gtk.CellRendererText(), text=5)
-			self.treeview.append_column(self.col)
-			self.col = gtk.TreeViewColumn(_("Command"), gtk.CellRendererText(), text=2)
-			self.treeview.append_column(self.col)
-			self.col = gtk.TreeViewColumn(_("Title"), gtk.CellRendererText(), text=0)
-			self.col.set_spacing(235)
-			self.treeview.append_column(self.col)	
+		self.schedule.switchview (mode, init)
 		
-
 		self.widget.show_all()
 
 		if self.root == 0:
@@ -213,10 +178,8 @@ class main:
 		else:
 			self.xml.signal_connect("on_btnSetUser_clicked", self.showSetUser)
 
-		# self.treeview.get_selection().connect("changed", self.onTreeViewSelectRow)
 		self.treeview.get_selection().unselect_all()
 		self.edit_mode = mode
-		return
 
 
 	def quit (self, *args):
@@ -233,8 +196,6 @@ class main:
 			self.root = 0
 			self.user = os.environ['USER']
 
-			
-			
 		return
 
 
@@ -278,7 +239,7 @@ class main:
 		dlg.show()
 
 	def on_add_scheduled_task_menu_activate (self, *args):
-		self.addWindow.showAddWindow (self.edit_mode)
+		self.editor.showadd (self.edit_mode)
 		pass
 
 	def on_properties_menu_activate (self, *args):
@@ -286,24 +247,22 @@ class main:
 		if iter != None:
 			record = self.treemodel.get_value(iter, 3)
 			linenumber = self.treemodel.get_value(iter, 4)
-			self.addWindow.showEditWindow (record, linenumber, iter, self.edit_mode)
+			self.editor.showedit (record, linenumber, iter, self.edit_mode)
 
 	def on_delete_menu_activate (self, *args):
 		store, iter = self.treeview.get_selection().get_selected()
 		if iter != None:
 			record = self.treemodel.get_value(iter, 3)
 			linenumber = self.treemodel.get_value(iter, 4)
-			
-			self.crontab.deleteLine (linenumber)
-
+			self.schedule.delete (linenumber)
 			self.treemodel.clear ()		
-			self.crontab.readCrontab ()
+			self.schedule.read ()
 
-		#moving to first
-		iter =  self.treemodel.get_iter_first()
-		if iter:
-			selection = self.treeview.get_selection()
-			selection.select_iter(iter)
+			#moving to first
+			iter =  self.treemodel.get_iter_first()
+			if iter:
+				selection = self.treeview.get_selection()
+				selection.select_iter(iter)
 		return
 
 	def on_quit_menu_activate (self, *args):

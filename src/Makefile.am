@@ -3,12 +3,15 @@ bin_SCRIPTS = gnome-schedule
 gnomescheduledir = $(prefix)/share/gnome-schedule
 gnomeschedule_PYTHON = \
 	gnome-schedule.py \
+	at.py \
 	config.py \
 	mainWindow.py \
-	addWindow.py \
-	addWindowHelp.py \
+	crontabEditorHelper.py \
+	crontabEditor.py \
 	setuserWindow.py \
-	crontab.py
+	crontab.py \
+	editor.py \
+	schedule.py
 
 uidir = $(datadir)/gnome-schedule
 ui_DATA = gnome-schedule.glade
