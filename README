@@ -74,19 +74,19 @@ o. The following script will install gnome-schedule on a system that has
      make install
      popd
      pushd pygtk
-     ./autogen.sh --prefix=/opt/pygtk/
+     ./autogen.sh --prefix=/usr/local/
      make
      make install
      popd
      pushd gnome-schedule
      export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:/usr/lib/pkgconfig
-     ./autogen.sh --prefix=/opt/gnome-schedule/
+     ./autogen.sh --prefix=/usr/local/
      make
      make install
 
      # and use .. to start gnome-schedule:
 
-     /opt/gnome-schedule/bin/gnome-schedule
+     /usr/local/bin/gnome-schedule
 
      # You can read the script to know how to start the Python-script
      # manually. If PyGTK is not installed in your default prefix,
