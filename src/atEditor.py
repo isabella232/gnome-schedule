@@ -52,6 +52,9 @@ class AtEditor:
 		
 		self.fieldRegex = re.compile('^(\*)$|^([0-9]+)$|^\*\\\([0-9]+)$|^([0-9]+)-([0-9]+)$|(^([0-9]+[,])+([0-9]+)$)')
 		self.nooutputRegex = re.compile('([^#\n$]*)>(\s|)/dev/null\s2>&1')
+		
+		self.defaultIcon = "/usr/share/icons/gnome/48x48/mimetypes/gnome-mime-application.png"
+		
 		#self.editing = gtk.FALSE
 		self.noevents = False
 		self.NOACTION = False	#getting alot of these now.. this is for abosultely noactions of the syncing and templates stuff
@@ -414,15 +417,15 @@ class AtEditor:
 			self.template_image.set_from_pixbuf(pixbuf)
 			self.icon = nautilus_icon
 		else:
-			pixbuf = gtk.gdk.pixbuf_new_from_file_at_size ("/usr/share/icons/gnome/48x48/mimetypes/gnome-mime-application.png", 60, 60)
+			pixbuf = gtk.gdk.pixbuf_new_from_file_at_size (self.defaultIcon, 60, 60)
 			self.template_image.set_from_pixbuf(pixbuf)
-			self.icon = "/usr/share/icons/gnome/48x48/mimetypes/gnome-mime-application.png"
+			self.icon = self.defaultIcon
 
 	
 	def __reset__ (self):
 		self.title = "Untitled"
 		self.command = ""
-		self.icon = "/usr/share/icons/gnome/48x48/mimetypes/gnome-mime-application.png"
+		self.icon = self.defaultIcon
 
 		ctime = time.gmtime()
 		year = ctime[0]

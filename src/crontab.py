@@ -42,16 +42,22 @@ class Crontab:
 		self.preview_len = 50
 		self.root =	0
 		
+		# TODO: shouldn't be gnome specific
+		self.defaultIcon = "/usr/share/icons/gnome/48x48/mimetypes/gnome-mime-application.png"
+		
 		self.nooutputtag = ">/dev/null 2>&1"
 		self.crontabRecordRegex = re.compile('([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^#\n$]*)(\s#\s([^\n$]*)|$)')
 		
+
 	def set_rights(self,user,uid,gid):
 		self.user = user
 		self.uid = uid
 		self.gid = gid
 
+
 	def get_type (self):
 		return "crontab"
+	
 	
 	def checkfield (self, field, type, regex):
 		m = regex.match (field)
@@ -156,26 +162,7 @@ class Crontab:
 		# TODO: let write trow an exception if failed
 		self.__write__ ()
 	
-		##if written:
-		#self.ParentClass.treemodel.set_value (parentiter, 1, easystring)
-		#if nooutput:
-		#	space = " "
-		#	if command[len(command)-1] == " ":
-		#		space = ""
-		#	self.ParentClass.treemodel.set_value (parentiter, 2, self.__make_preview__ (command + space + self.nooutputtag))
-		#else:
-		#		self.ParentClass.treemodel.set_value (parentiter, 2, self.__make_preview__ (command))
-			
-		#self.ParentClass.treemodel.set_value (parentiter, 5, minute + " " + hour + " " + day + " " + month + " " + weekday)
-
-		#self.ParentClass.treemodel.set_value (parentiter, 0, title)
-		#if icon != None:
-		#	self.ParentClass.treemodel.set_value (parentiter, 6, gtk.gdk.pixbuf_new_from_file_at_size (icon, 21, 21))
-
-		#self.ParentClass.treemodel.set_value (parentiter, 3, record)
-		##
-
-
+	
 	def delete (self, linenumber, iter):
 		number = 0
 		newlines = list ()
@@ -189,8 +176,6 @@ class Crontab:
 		self.__write__ ()
 		
 		
-		
-
 	def append (self, minute, hour, day, month, weekday, command, nooutput, title, icon = None):
 		record = minute + " " + hour + " " + day + " " + month + " " + weekday + " " + command
 		if nooutput:
@@ -216,7 +201,6 @@ class Crontab:
 		
 		data = []
 
-		# TODO: getRoot withit
 		if self.root:
 			execute = config.getCrontabbin () + " -l -u " + self.user
 		else:
@@ -231,7 +215,6 @@ class Crontab:
 				(minute, hour, day, month, weekday, command, title, icon) = array_or_false
 				time = minute + " " + hour + " " + day + " " + month + " " + weekday
 
-		
 				#make the command smaller if the lenght is to long
 				preview = self.__make_preview__ (command)
 				
@@ -244,6 +227,7 @@ class Crontab:
 		
 		print data
 		return data
+
 
 	def translate_frequency (self, frequency):
 
@@ -280,8 +264,7 @@ class Crontab:
 					command = m.groups ()[5]
 
 					#icon path is in comment of the task, this is the default
-					# TODO: shouldn't be gnome specific
-					icon = "/usr/share/icons/gnome/48x48/mimetypes/gnome-mime-application.png"
+					icon = self.defaultIcon
 					
 					#title is in comment of the task
 					title = None
@@ -301,10 +284,12 @@ class Crontab:
 			else:
 				print "ERROR: Failed to parse crontab record"
 		return False
+		# TODO: throw exception
 
 	
 	def __easy__ (self, minute, hour, day, month, weekday):
 		return lang.translate_crontab_easy (minute, hour, day, month, weekday)
+
 
 	#create temp file with old tasks and new ones and then updates crontab
 	def __write__ (self):
@@ -336,15 +321,11 @@ class Crontab:
 			# print config.getCrontabbin () + " " + path
 			os.system (config.getCrontabbin () + " " + path)
 
-
 		os.unlink (path)
 		
-		#TODO needs exception handler
 		
-
+	#TODO: check into
 	#if a command his lenght is to long the last part is removed 
-	#XXX if the beginning is just a long path it's maybe better to cut there
-	#XXX instead of in the front .../bin/updatedb instead of /dfdffd/bin/upda...
 	def __make_preview__ (self, str, preview_len = 0):
 		if preview_len == 0:
 			preview_len = self.preview_len

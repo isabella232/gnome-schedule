@@ -29,6 +29,8 @@ gettext.bindtextdomain(domain)
 gettext.textdomain(domain)
 _ = gettext.gettext
 
+
+# TODO: remove this class and let mainWindow generate this dialogbox
 class AddWindow:
 	def __init__(self, parent):
 		self.ParentClass = parent
@@ -42,8 +44,7 @@ class AddWindow:
 		self.xml.signal_connect("on_select_cancel_button_clicked", self.on_cancel_button_clicked)
 		self.xml.signal_connect("on_select_ok_button_clicked", self.on_ok_button_clicked)
 
-
-		# TODO: make them add themself remove from glade
+		
 		self.at_radio = self.xml.get_widget("at_radio")
 		self.crontab_radio = self.xml.get_widget("crontab_radio")
 		self.crontab_radio.set_active (gtk.TRUE)
@@ -58,9 +59,7 @@ class AddWindow:
 	def on_ok_button_clicked (self, *args):
 		self.widget.hide()
 
-		# TODO: make them add themself
 		if self.crontab_radio.get_active ():
-			# TODO: necessary?
 			self.ParentClass.editor = self.ParentClass.crontab_editor
 			self.ParentClass.editor.showadd (self.ParentClass.edit_mode)
 		else:

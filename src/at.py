@@ -47,6 +47,9 @@ class At:
 		self.root =	root
 		self.set_rights(user,uid,gid)
 
+		# TODO: shouldn't be gnome specific
+		self.defaultIcon = "/usr/share/icons/gnome/48x48/mimetypes/gnome-mime-application.png"
+
 		self.atRecordRegex = re.compile('([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)')
 		self.atRecordRegexAdd = re.compile('([^\s]+)\s([^\s]+)\s')
 		self.atRecordRegexAdded = re.compile('[^\s]+\s([0-9]+)\sat')
@@ -59,6 +62,7 @@ class At:
 	
 	def get_type (self):
 		return "at"
+
 
 	def parse (self, line, output = 0):
 		if output == 0:
@@ -99,7 +103,7 @@ class At:
 					return job_id
 
 		return False
-
+		# TODO: throw exception
 
 	def checkfield (self, runat):
 		#TODO: fix bug $0:19 2004-12-8$ not valid by regexp
@@ -194,6 +198,7 @@ class At:
 				return False, "other"
 
 		return True, "ok"
+
 	
 	#TODO merge code of append and update	
 	def append (self, runat, command, title, icon):
@@ -214,7 +219,6 @@ class At:
 		
 		temp = None
 
-		# TODO: get this info
 		if self.root == 1:
 			if self.user != "root":
 				#changes the ownership
@@ -252,7 +256,6 @@ class At:
 		tmp.write (command + "\n")
 		tmp.close ()
 
-		# TODO: get this info
 		if self.root == 1:
 			if self.user != "root":
 				#changes the ownership
@@ -273,7 +276,6 @@ class At:
 			commands.getoutput(execute)
 			
 				
-	
 	def read (self):
 		
 		data = []
@@ -287,15 +289,7 @@ class At:
 			if array_or_false != False:
 				(job_id, date, time, class_id, user, lines, title, icon, prelen, dangerous) = array_or_false
 
-				#if icon != None:
-				#	try:
-				#		icon_pix = gtk.gdk.pixbuf_new_from_file_at_size (icon, 21, 21)
-				#		
-				#	except:
-				#		icon_pix = None
-				#else:
-				#	icon_pix = None
-
+			
 				preview = self.__make_preview__ (lines, prelen)
 				if dangerous == 1:
 						preview = "DANGEROUS PARSE: " + preview
@@ -319,8 +313,7 @@ class At:
 			
 		return data
 
-			
-
+	
 	def __prepare_script__ (self, script):
 	
 		# It looks like at prepends a bunch of stuff to each script
@@ -357,8 +350,8 @@ class At:
 				prelen = prelen + len(icon) + 6
 			
 			else:
-				# TODO: shouldn't be gnome specific
-				icon = "/usr/share/icons/gnome/48x48/mimetypes/gnome-mime-application.png"
+				
+				icon = self.defaultIcon
 		else:
 			#print "method 2"
 			dangerous = 1
@@ -388,8 +381,7 @@ class At:
 				prelen = prelen + len(icon) + 6
 		
 			else:
-				# TODO: shouldn't be gnome specific
-				icon = "/usr/share/icons/gnome/48x48/mimetypes/gnome-mime-application.png"
+				icon = self.defaultIcon
 
 		return script, title, icon, prelen, dangerous
 

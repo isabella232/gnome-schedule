@@ -450,7 +450,7 @@ class main:
 			self.dialog.run ()
 			self.dialog.destroy ()
 
-	def	on_set_user_menu_activate(self, *args):
+	def on_set_user_menu_activate(self, *args):
 		self.setuserWindow.ShowSetuserWindow()
 
 

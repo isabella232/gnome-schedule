@@ -23,7 +23,6 @@ import gobject
 
 
 #python modules
-#import string
 import re
 import os
 
@@ -46,7 +45,6 @@ class CrontabEditor:
 	def __init__(self, parent, backend, scheduler):
 
 		self.ParentClass = parent
-		#self.schedule = self.ParentClass	#needed for the crontabeditorhelper
 		self.backend = backend
 		self.scheduler = scheduler
 		
@@ -54,11 +52,17 @@ class CrontabEditor:
 		self.widget = self.xml.get_widget("crontabEditor")
 		self.widget.connect("delete-event", self.on_cancel_button_clicked)
 		
+		
+		# TODO: move to crontab?
 		self.fieldRegex = re.compile('^(\*)$|^([0-9]+)$|^\*\/([0-9]+)$|^([0-9]+)-([0-9]+)$|(^([0-9]+[,])+([0-9]+)$)')
 		self.nooutputRegex = re.compile('([^#\n$]*)>(\s|)/dev/null\s2>&1')
 		
+		
+		self.defaultIcon = "/usr/share/icons/gnome/48x48/mimetypes/gnome-mime-application.png"
+		
 		#self.editing = gtk.FALSE
 		self.noevents = False
+		
 		
 		##simple tab	
 		self.notebook = self.xml.get_widget("notebook")
@@ -72,7 +76,6 @@ class CrontabEditor:
 		
 		self.template_combobox = self.xml.get_widget ("template_combobox")
 		self.template_combobox_model = gtk.ListStore(gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_PYOBJECT)
-		#self.template_combobox.set_text_column (0)		
 		self.template_combobox.set_model (self.template_combobox_model)
 		
 		self.title_entry = self.xml.get_widget ("title_entry")
@@ -96,6 +99,7 @@ class CrontabEditor:
 		self.ok_button = self.xml.get_widget ("ok_button")
 		
 		self.template_combobox.get_child().connect ("changed", self.on_template_combobox_entry_changed)
+		
 		self.xml.signal_connect("on_remove_button_clicked", self.on_remove_button_clicked)
 		self.xml.signal_connect("on_add_help_button_clicked", self.on_add_help_button_clicked)
 		self.xml.signal_connect("on_cancel_button_clicked", self.on_cancel_button_clicked)
@@ -120,9 +124,10 @@ class CrontabEditor:
 		self.setting_label = self.xml.get_widget ("setting_label")
 		##
 		
+		
 		self.editorhelper = crontabEditorHelper.CrontabEditorHelper(self)
-	
 		self.backend.add_scheduler_type("crontab")
+		
 		
 	def showadd (self, mode):
 		self.__loadicon__ ()
@@ -133,6 +138,12 @@ class CrontabEditor:
 		self.widget.show ()
 		self.__reload_templates__ ()
 		self.chkNoOutput.set_active (gtk.TRUE)
+		
+		#switch to advanced tab if required
+		if mode == "advanced":
+			self.notebook.set_current_page(1)
+		else:
+			self.notebook.set_current_page(0)
 	
 	
 	def showedit (self, record, linenumber, iter, mode):
@@ -223,9 +234,9 @@ class CrontabEditor:
 			self.icon = nautilus_icon
 			
 		else:
-			pixbuf = gtk.gdk.pixbuf_new_from_file_at_size ("/usr/share/icons/gnome/48x48/mimetypes/gnome-mime-application.png", 60, 60)
+			pixbuf = gtk.gdk.pixbuf_new_from_file_at_size (self.defaultIcon, 60, 60)
 			self.template_image.set_from_pixbuf(pixbuf)
-			self.icon = "/usr/share/icons/gnome/48x48/mimetypes/gnome-mime-application.png"
+			self.icon = self.defaultIcon
 			
 
 	#save template
