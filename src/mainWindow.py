@@ -374,7 +374,7 @@ class main:
 			linenumber = self.treemodel.get_value(iter, 4)
 
 			self.schedule.delete (linenumber)
-			self.schedule_reload()
+			self.treemodel.remove(iter)
 
 			#moving to first
 			iter =  self.treemodel.get_iter_first()
