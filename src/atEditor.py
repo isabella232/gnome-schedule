@@ -24,6 +24,7 @@ import gconf
 #python modules
 import re
 import time
+import calender
 
 #custom modules
 import support
@@ -390,30 +391,18 @@ class AtEditor:
 		ctime = time.gmtime()
 		year = ctime[0]
 		month = ctime[1]
-		day = ctime[2] +1
+		day = ctime[2]
 		hour = ctime[3]
 		minute = ctime[4]
 		
-		#Check for last day of month
-		#if month could be divided by 2 it got 30 days, unless february and i don't care about stupid february every forth year some fool desides to use this tool on the 29th of february
-		testmonth = month % 2
-		if testmonth != 0:
-			#Month got 31 days
-			if day >= 31:
-				day = 1
-				month = month + 1
+		firstday, ndays = calender.monthrange(month,year)
+		
+		if day == ndays:
+			month = month + 1
+			day = 1
 		else:
-			#month got 30 days
-			#unless february
-			if month == 2:
-				if day >= 28:
-					day = 1
-					month = month + 1				
-			else:	#else some of the other months
-				if day >= 30:
-					day = 1
-					month = month + 1	
-
+			day = day + 1
+		
 		self.runat = str(hour) + ":" + str(minute) + " " + str(year) + "-" + str(month) + "-" + str(day)
 		self.calendar.select_month(month - 1, year)
 		
