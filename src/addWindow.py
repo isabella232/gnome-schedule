@@ -78,8 +78,6 @@ class AddWindow:
 		self.parentiter = iter
 		self.widget.show_all()
 		
-		# disable nooutput box if editing, perhaps a parse function in the future makes this obsolete..
-		# self.chkNoOutput.hide()
 		
 		m = self.nooutputRegex.match (self.command)
 		if (m != None):
@@ -172,13 +170,7 @@ class AddWindow:
 		self.day_entry.set_text (self.day)
 		self.month_entry.set_text (self.month)
 		self.weekday_entry.set_text (self.weekday)
-		if self.editing == gtk.FALSE:
-			if self.nooutput:
-				self.setting_label.set_text (self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday + " " + self.command + " " + self.nooutputtag)
-			else:
-				self.setting_label.set_text (self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday + " " + self.command)
-		else:
-			self.setting_label.set_text (self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday + " " + self.command)		
+		self.setting_label.set_text (self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday + " " + self.command)		
 				
 		self.noevents = gtk.FALSE
 
@@ -207,6 +199,7 @@ class AddWindow:
 				if m == None:
 					if self.command[len(self.command)-1] != " ":
 						self.command = self.command + " "
+					self.command = self.command + self.nooutputtag
 					self.command_entry.set_text (self.command)
 			else:
 				if m != None:
