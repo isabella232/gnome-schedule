@@ -232,7 +232,9 @@ class CrontabEditor:
 				if (m != None):
 					self.nooutput_label.show ()
 					command = m.groups()[0]
+					self.noevents = gtk.TRUE
 					self.chkNoOutput.set_active (gtk.TRUE)
+					self.noevents = gtk.FALSE
 					self.nooutput = gtk.TRUE
 				else:
 					self.nooutput_label.hide ()
@@ -240,6 +242,7 @@ class CrontabEditor:
 					self.nooutput = gtk.FALSE
 			
 				self.minute, self.hour, self.day, self.month, self.weekday, self.command, self.title = self.schedule.parse (record)
+				self.command = command
 				self.update_textboxes ()
 			else:
 				self.loadicon ()
