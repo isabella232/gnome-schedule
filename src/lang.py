@@ -228,6 +228,12 @@ def translate_crontab_easy_en (minute, hour, day, month, weekday):
 			return (_("Every %s month of the year") % (translate_nth (month)))
 		elif minute != "*" and hour != "*" and day != "*":
 			return (_("At the %s day on %s every %s month of the year") % (translate_nth (day), timeval (hour, minute), translate_nth (month)))
+		elif minute == "*" and hour != "*" and day != "*":
+			return (_("At the %s day every % hour every %s month of the year") % (translate_nth (day), translate_nth (hour), translate_nth (month)))
+		elif minute != "*" and hour == "*" and day == "*":
+			return (_("Every day and every hour at the %s minute every %s month of the year") % (translate_nth (minute), translate_nth (month)))
+		elif minute != "*" and hour != "*" and day == "*":
+			return (_("Every day on %s every %s month of the year") % (timeval (hour, minute), translate_nth (month)))
 
 
 	if month == "*" and day == "*" and weekday != "*":
@@ -235,5 +241,7 @@ def translate_crontab_easy_en (minute, hour, day, month, weekday):
 			return (_("Every %s day of the week") % (translate_nth (weekday)))
 		elif minute != "*" and hour != "*":
 			return (_("Every %s day of the week at %s") % (translate_nth (weekday), timeval  (hour, minute)))
+		# All other cases are strange, why define a day of the month if you are already defining the day of the week? :)
+		# They are possible, yes, but I don't think that translations for such stuff is needed ...
 
 	return minute + " " + hour + " " + day + " " + month + " " + weekday
