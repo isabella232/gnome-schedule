@@ -81,19 +81,10 @@ class SetuserWindow:
 
 
 	def on_ok_button_clicked (self, *args):
+		
+		user = self.entry.get_text()
 		try:
-			user = self.entry.get_text()
-			userdb = pwd.getpwnam(user)
-
-			if user != self.ParentClass.user:
-				#uid/gid
-				self.ParentClass.uid = userdb[2]
-				self.ParentClass.gid = userdb[3]
-				self.ParentClass.user = user
-
-				# clean treeview, reread crontab
-				self.ParentClass.schedule_reload ()
-			
+			self.ParentClass.changeUser(user)						
 			self.widget.hide()
 			
 		except Exception, ex:

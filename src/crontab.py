@@ -37,19 +37,19 @@ _ = gettext.gettext
 
 
 class Crontab:
-	def __init__(self):
+	def __init__(self,root,user,uid,gid):
 		#default preview length
 		self.preview_len = 50
+		self.root =	0
 		
 		self.nooutputtag = ">/dev/null 2>&1"
 		self.crontabRecordRegex = re.compile('([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^#\n$]*)(\s#\s([^\n$]*)|$)')
 		
-	def set_rights(self, root, user, uid, gid):
-		self.root =	root
+	def set_rights(self,user,uid,gid):
 		self.user = user
 		self.uid = uid
 		self.gid = gid
-	
+
 	def get_type (self):
 		return "crontab"
 	

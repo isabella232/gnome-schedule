@@ -40,21 +40,23 @@ _ = gettext.gettext
 
 
 class At:
-	def __init__(self):
+	def __init__(self,root,user,uid,gid):
 	
 		#default preview length
 		self.preview_len = 50
+		self.root =	root
+		self.set_rights(user,uid,gid)
 
 		self.atRecordRegex = re.compile('([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)')
 		self.atRecordRegexAdd = re.compile('([^\s]+)\s([^\s]+)\s')
 		self.atRecordRegexAdded = re.compile('[^\s]+\s([0-9]+)\sat')
 		
-	def set_rights(self, root, user, uid, gid):
-		self.root =	root
+	def set_rights(self,user,uid,gid):
 		self.user = user
 		self.uid = uid
 		self.gid = gid
 
+	
 	def get_type (self):
 		return "at"
 
@@ -271,7 +273,7 @@ class At:
 			commands.getoutput(execute)
 			
 				
-	# TODO: remove gui parts
+	
 	def read (self):
 		
 		data = []
@@ -302,6 +304,8 @@ class At:
 					
 				timestring = _("%s%s%s %s%s%s") % ("", date, "", "", time, "")
 				timestring_show = _("At ") + timestring #_("%sAt%s%s") % (_(""), _(""), timestring, _(""))
+				
+				# TODO: looks like it could be one append
 				if self.root == 1:
 					if self.user == user:
 						data.append([title, timestring_show, preview, lines, int(job_id), timestring, self, icon, date, class_id, user, time, _("Defined"), "at"])
@@ -310,9 +314,11 @@ class At:
 						pass
 				else:
 					data.append([title, timestring_show, preview, lines, int(job_id), timestring, self, icon, date, class_id, user, time, "Defined", "at"])
+
 				print "added" + job_id	
 			
 		return data
+
 			
 
 	def __prepare_script__ (self, script):
@@ -351,6 +357,7 @@ class At:
 				prelen = prelen + len(icon) + 6
 			
 			else:
+				# TODO: shouldn't be gnome specific
 				icon = "/usr/share/icons/gnome/48x48/mimetypes/gnome-mime-application.png"
 		else:
 			#print "method 2"

@@ -27,6 +27,7 @@ import gnome
 
 #python modules
 import os
+import pwd
 
 #custom modules
 import config
@@ -60,8 +61,8 @@ class main:
 		
 		self.editor = None
 		self.schedule = None
-		#self.haveitem = False
-
+		
+		
 		#start the backend where all the user configuration is stored
 		self.backend = preset.ConfigBackend(self, "gconf")
 		
@@ -98,10 +99,7 @@ class main:
 		self.xml.signal_connect("on_btnSetUser_clicked", self.on_btnSetUser_clicked)
 		self.xml.signal_connect("on_btnExit_clicked", self.__quit__)
 		
-		#get user
-		self.__readUser__()
-		
-		
+				
 		##inittializing the treeview
 		## [0 Title, 1 Frequency, 2 Command, 3 Crontab record, 4 ID, 5 Time, 6 Icon, 7 scheduled instance, 8 icon path, 9 date, 10 class_id, 11 user, 12 time, 13 type, 14 crontab/at]
 		##for at this would be like: ["untitled", "12:50 2004-06-25", "", "35", "", "12:50", icon, at instance, icon_path, "2004-06-25", "a", "drzap", "at"]
@@ -159,21 +157,16 @@ class main:
 		else:
 			self.switchView("simple")
 		
-		#setuser only shown if user = root		
-		if self.root == 0:
-			self.btnSetUser.hide()
-			self.set_user_menu.hide()	
-			self.statusbar.hide()
-		else:
-			self.statusbar.show()
+		
+		self.__initUser__()
 		
 		##create crontab
-		self.crontab = crontab.Crontab()
+		self.crontab = crontab.Crontab(self.root,self.user, self.uid, self.gid)
 		self.crontab_editor = crontabEditor.CrontabEditor(self,self.backend, self.crontab)
 		##
 		
 		##create at
-		self.at = at.At()
+		self.at = at.At(self.root,self.user, self.uid, self.gid)
 		self.at_editor = atEditor.AtEditor (self, self.backend, self.at)
 		##
 		
@@ -183,28 +176,54 @@ class main:
 		#set add window
 		self.addWindow = addWindow.AddWindow (self)
 		
-		#load the treeview with the tasks
-		self.schedule_reload ("all")
-		
 		# TODO: select first task from list
-			
+
+		self.schedule_reload ("all")
+
 		gtk.main()
 
-	
-	
+
+	def __initUser__(self):
+		self.setUser(os.environ['USER'])
+		
+		if self.uid != 0:
+			self.btnSetUser.hide()
+			self.set_user_menu.hide()	
+			self.statusbar.hide()
+			self.root = 0
+		else:
+			self.root = 1
+			self.statusbar.show()
+			self.statusbar.push(self.statusbarUser, (_("Editing user: ") + self.user))
+		
+
+	def setUser(self,user):
+		userdb = pwd.getpwnam(user)
+		self.user = user
+		self.uid = userdb[2]
+		self.gid = userdb[3]
+			
+		
+	def changeUser(self,user):
+		
+		if user != self.user:
+			
+				self.setUser(user)
+				#change user for the 
+				self.crontab.set_rights(self.user, self.uid, self.gid)
+				self.at.set_rights(self.user, self.uid, self.gid)
+				#adjust statusbar
+				if self.root == 1:
+					self.statusbar.push(self.statusbarUser, (_("Editing user: ") + self.user))
+		
+				self.schedule_reload ("all")
+		
+						
 	## TODO: 2 times a loop looks to mutch
 	def schedule_reload (self, records = "all"):
 		
 		self.delarray = []
-		
-		self.crontab.set_rights(self.root, self.user, self.uid, self.gid)
-		self.at.set_rights(self.root, self.user, self.uid, self.gid)
-		
-		#adjust statusbar
-		if self.root == 1:
-			self.statusbar.push(self.statusbarUser, (_("Editing user: ") + self.user))
-			
-		
+					
 		if records == "crontab":
 			self.treemodel.foreach(self.__delete_row__, "crontab")
 			
@@ -287,8 +306,7 @@ class main:
 		self.del_button.set_sensitive (value)
 		self.properties_menu.set_sensitive (value)
 		self.delete_menu.set_sensitive (value)
-		#self.haveitem = value
-
+		
 	
 	#clean existing columns
 	def __cleancolumns__ (self):
@@ -391,7 +409,7 @@ class main:
 			#see what scheduler (at, crontab or ...)
 			self.schedule = self.treemodel.get_value(iter, 7)
 			
-			# TODO: dirty hacky 
+			# TODO: dirty hacky (is broken)
 			if self.schedule.get_type() == "crontab":
 				self.editor = self.crontab_editor
 			elif self.schedule.get_type() == "at":
@@ -469,18 +487,6 @@ class main:
 		if event.type == gtk.gdk._2BUTTON_PRESS:
 			self.on_properties_menu_activate(self, widget)
 
-
-	#see if root and get user
-	def __readUser__(self):
-		self.uid = os.geteuid()
-		self.gid = os.getegid()
-		
-		if self.uid == 0:
-			self.root = 1
-			self.user = "root"
-		else:
-			self.root = 0
-			self.user = os.environ['USER']
 
  	#about box
  	def on_about_menu_activate (self, *args):
