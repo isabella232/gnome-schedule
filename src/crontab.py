@@ -56,7 +56,9 @@ class Crontab:
 
 		self.editorwidget.hide()
 		self.editorhelperwidget.hide()
-
+		
+		#default preview length
+		self.preview_len = 50
 
 		self.read()
 		return
@@ -315,14 +317,16 @@ class Crontab:
 		return
 
 
-	def make_preview (self, str):
+	def make_preview (self, str, preview_len = 0):
+		if preview_len == 0:
+			preview_len = self.preview_len
 		cnt = 0
 		result = ""
 		for a in str:
-			if cnt <= 15:
+			if cnt <= preview_len:
 				result = result + a
 			cnt = cnt + 1
-		if cnt > 15:
+		if cnt > preview_len:
 			result = result + "..."
 		return result
 
@@ -414,7 +418,7 @@ class Crontab:
 					icon_pix = None
 				
 				preview = self.make_preview (command)
-				iter = self.ParentClass.treemodel.append([title, self.easy (minute, hour, day, month, weekday), preview, line, self.linecount, time, icon_pix, self, "", "", "", "Frequency", "crontab"])
+				iter = self.ParentClass.treemodel.append([title, self.easy (minute, hour, day, month, weekday), preview, line, self.linecount, time, icon_pix, self, "", "", "","", "Frequency", "crontab"])
 				print "Read crontab record: " + str(self.linecount)
 			self.linecount = self.linecount + 1
 		return

@@ -59,6 +59,9 @@ class At:
 		at_pre = commands.getoutput(execute)
 		remjob = commands.getoutput("atrm + " + job_id)
 		self.at_pre_len = len(at_pre) - 1
+
+		#default preview length
+		self.preview_len = 50
 			
 
 		self.ParentClass = parent
@@ -179,7 +182,7 @@ class At:
 				lines = lines[prelen:]
 					
 				timestring = _("%s%s%s %s%s%s") % (_(""), date, _(""), _(""), time, _(""))
-				iter = self.ParentClass.treemodel.append([title, timestring, preview, lines, int(job_id), time, icon_pix, self, date, class_id, user, "Defined", "at"])
+				iter = self.ParentClass.treemodel.append([title, timestring, preview, lines, int(job_id), timestring, icon_pix, self, date, class_id, user, time, "Defined", "at"])
 
 				print "Read at job: " + str(job_id)
 				#print title + " " + timestring + " " + preview + " " + job_id + " " + date + " " +  class_id + " " + user 
@@ -240,12 +243,14 @@ class At:
 		
 		return script, title, icon, prelen
 
-	def make_preview (self, lines, prelen):
+	def make_preview (self, lines, prelen, preview_len = 0):
+		if preview_len == 0:
+			preview_len = self.preview_len
 		try:
 			if prelen:
-				result = lines[(0 + prelen):(15 + prelen)]
+				result = lines[(0 + prelen):(preview_len + prelen)]
 			else:
-				result = lines[0:15]
+				result = lines[0:preview_len]
 		except:
 			print "short preview"
 			result = lines[prelen:(-1 - prelen)]
@@ -266,7 +271,7 @@ class At:
 			else:
 				done = 1
 
-		if len(result) >= 15 :
+		if len(result) >= preview_len :
 			result = result + "..."
 
 		return result

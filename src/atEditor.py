@@ -320,7 +320,7 @@ class AtEditor:
 		
 		self.job_id = job_id
 		self.date = self.ParentClass.treemodel.get_value(iter, 8)
-		self.time = self.ParentClass.treemodel.get_value(iter, 5)
+		self.time = self.ParentClass.treemodel.get_value(iter, 11)
 		self.title = self.ParentClass.treemodel.get_value(iter, 0)
 		#self.icon = self.ParentClass.treemodel.get_value(iter, 6) #need the path to the icon somewhere
 		self.icon = "None"
