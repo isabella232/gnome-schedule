@@ -419,7 +419,7 @@ class Crontab:
 					command = m.groups ()[5]
 
 					#icon path is in comment of the task
-					icon = None
+					icon = "/usr/share/icons/gnome/48x48/mimetypes/gnome-mime-application.png"
 					
 					#title is in comment of the task
 					title = None
