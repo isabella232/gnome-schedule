@@ -1,7 +1,9 @@
 2004-07-11 Gaute Hope <eg@gaute.eu.org>
 	* Keyboard shortcuts(escape, enter, ctrl + enter, delete) in the treeview and the editors
 	* The reloading of tasks is only done on the required type of record
-	* Shows icons for crontab records, they must be resized though..
+	* Shows icons for crontab records
+	* Default icon for at
+	* Resizing icons aswell(done when read)
 
 2004-07-10  Kristof Vansant  <de_lupus@pandora.be>
 

@@ -413,7 +413,7 @@ class Crontab:
 
 				if icon != None:
 					try:
-						icon_pix = gtk.gdk.pixbuf_new_from_file (icon)
+						icon_pix = gtk.gdk.pixbuf_new_from_file_at_size (icon, 21, 21)
 					except:
 						icon_pix = None
 				else:
