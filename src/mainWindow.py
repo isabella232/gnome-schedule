@@ -25,12 +25,12 @@ import re
 import gtk.glade
 import crontabEditorHelper
 import crontabEditor
-# import atEditor
+import atEditor
 # import atEditorHelper
 import setuserWindow
 import schedule
 import crontab
-# import at
+import at
 import sys
 import time
 import config
@@ -62,7 +62,7 @@ except:
 ## The MainWindow class
 ##
 class main:
-	def __init__(self, debug_flag=None):
+	def __init__(self, debug_flag=None, mode="crontab"):
 		self.debug_flag = debug_flag
 
 		if os.access("gnome-schedule.glade", os.F_OK):
@@ -82,7 +82,7 @@ class main:
 		#read the user
 		self.readUser()
 		
-		self.crontab_vs_at = "crontab"
+		self.crontab_vs_at = mode
 		if self.crontab_vs_at == "crontab":
 
 			self.schedule = crontab.Crontab(self)
@@ -97,11 +97,11 @@ class main:
 			self.editor = crontabEditor.CrontabEditor (self, self.schedule)
 			self.editorhelper = crontabEditorHelper.CrontabEditorHelper(self, self.editor)
 		else:
-			raise 'Not implemented'
-			# self.schedule = at.At (self)
-			# self.editorwidget = self.xml.get_widget("atEditor")
-			# self.editorwidget.hide()
-			# self.editor = atEditor.AtEditor (self, self.schedule)
+			print "starting at.."
+			self.schedule = at.At (self)
+			self.editorwidget = self.xml.get_widget("crontabEditor")
+			self.editorwidget.hide()
+			self.editor = atEditor.AtEditor (self, self.schedule)
 		# This will only work with PyGTK 2.4.x
 		try:
 			# this tries to fix a bug in libglade (the homogeneous propery ain't working)

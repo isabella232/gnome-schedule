@@ -22,6 +22,7 @@ import re
 import os
 import sys
 import tempfile
+import gobject
 
 
 ##
@@ -37,7 +38,7 @@ class At:
 	def __init__(self, parent):
 		self.atRecordRegex = re.compile('([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)')
 		self.ParentClass = parent
-
+		self.ParentClass.treemodel = self.createtreemodel ()
 		#reading at
 		self.read ()
 
@@ -45,11 +46,7 @@ class At:
 	def createtreemodel (self):
 		# [0 Title, 1 date, 2 time, 3 class, 4 id, 5 user, 6 command preview(?)]
 		# ["get file", "2004-06-17", "20:17", "a", 24, "wget http://..."]
-		self.treemodel = gtk.ListStore(gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_INT, gobject.TYPE_STRING)
-		self.treeview.set_model (self.treemodel)
-
-		self.switchView("simple", 1)
-		return
+		return gtk.ListStore(gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING)
 		
 	def switchview (self, mode = "simple", init = 0):
 		if mode == "simple":
@@ -57,20 +54,20 @@ class At:
 			if init != 1:
 				i = 4
 				while i > - 1:
-					temp = self.treeview.get_column(i)
-					self.treeview.remove_column(temp)
+					temp = self.ParentClass.treeview.get_column(i)
+					self.ParentClass.treeview.remove_column(temp)
 					i = i -1
 				
 			# Setting up the columns
 			self.col = gtk.TreeViewColumn(_("Title"), gtk.CellRendererText(), text=0)
-			self.treeview.append_column(self.col)
+			self.ParentClass.treeview.append_column(self.col)
 			self.col = gtk.TreeViewColumn(_("Date"), gtk.CellRendererText(), text=1)
-			self.treeview.append_column(self.col)
+			self.ParentClass.treeview.append_column(self.col)
 			self.col = gtk.TreeViewColumn(_("Time"), gtk.CellRendererText(), text=2)
-			self.treeview.append_column(self.col)
+			self.ParentClass.treeview.append_column(self.col)
 			self.col = gtk.TreeViewColumn(_("Preview"), gtk.CellRendererText(), text=6)
 			self.col.set_spacing(235)
-			self.treeview.append_column(self.col)
+			self.ParentClass.treeview.append_column(self.col)
 
 
 		elif mode == "advanced":
@@ -78,33 +75,24 @@ class At:
 			if init != 1:
 				i = 3
 				while i > - 1:
-					temp = self.treeview.get_column(i)
-					self.treeview.remove_column(temp)
+					temp = self.ParentClass.treeview.get_column(i)
+					self.ParentClass.treeview.remove_column(temp)
 					i = i -1
 			
 			# Setting up the columns
 			self.col = gtk.TreeViewColumn(_("Date"), gtk.CellRendererText(), text=1)
-			self.treeview.append_column(self.col)
+			self.ParentClass.treeview.append_column(self.col)
 			self.col = gtk.TreeViewColumn(_("Time"), gtk.CellRendererText(), text=2)
-			self.treeview.append_column(self.col)
+			self.ParentClass.treeview.append_column(self.col)
 			self.col = gtk.TreeViewColumn(_("Id"), gtk.CellRendererText(), text=4)
-			self.treeview.append_column(self.col)	
+			self.ParentClass.treeview.append_column(self.col)	
 			self.col = gtk.TreeViewColumn(_("Class"), gtk.CellRendererText(), text=3)
-			self.treeview.append_column(self.col)	
+			self.ParentClass.treeview.append_column(self.col)	
 			self.col = gtk.TreeViewColumn(_("Preview"), gtk.CellRendererText(), text=6)
 			self.col.set_spacing(235)
-			self.treeview.append_column(self.col)
+			self.ParentClass.treeview.append_column(self.col)
 
-		self.widget.show_all()
-
-		if self.root == 0:
-			self.btnSetUser.hide()
-		else:
-			self.xml.signal_connect("on_btnSetUser_clicked", self.showSetUser)
-
-		# self.treeview.get_selection().connect("changed", self.onTreeViewSelectRow)
-		self.treeview.get_selection().unselect_all()
-		self.edit_mode = mode
+		
 		return
 		
 	def createpreview (self, minute, hour, day, month, weekday, command):
@@ -142,7 +130,7 @@ class At:
 		self.linecount = 0
 		self.lines = os.popen(execute).readlines()
 		for line in self.lines:
-			array_or_false = self.parseRecord (line)
+			array_or_false = self.parse (line)
 			if array_or_false != gtk.FALSE:
 				(title, date, time, class_id, job_id, user, command) = array_or_false
 				iter = self.ParentClass.treemodel.append([title, date, time, class_id, job_id, user, command])
@@ -154,17 +142,15 @@ class At:
 			m = self.atRecordRegex.match(line)
 			if m != None:
 					print m.groups()
-					minute = m.groups ()[0]
-					hour = m.groups ()[1]
-					day = m.groups ()[2]
-					month = m.groups ()[3]
-					weekday = m.groups ()[4]
-					command = m.groups ()[5]
-					title = m.groups ()[7]
-					if title == None:
-						title = "Untitled"
+					job_id = m.groups ()[0]
+					date = m.groups ()[1]
+					time = m.groups ()[2]
+					class_id = m.groups ()[3]
+					user = m.groups ()[4]
+					command = "no"
+					title = "no"
 
-					return minute, hour, day, month, weekday, command, title
+					return job_id, date, time, class_id, user, command, title
 		#left unchanged, the fields should be: user, job title, and id
 		#would probably have to do a specific job check for each job 
 		return gtk.FALSE
