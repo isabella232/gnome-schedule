@@ -99,6 +99,7 @@ class AtEditor:
 	
 		#for the addwindow to not jump more than one day ahead in time
 		self.first = 0
+		self.combo_trigger = gtk.FALSE
 		self.reset ()
 		self.template_combobox_model = gtk.ListStore(gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_PYOBJECT)
 		self.template_combobox.set_text_column (0)		
@@ -160,6 +161,7 @@ class AtEditor:
 	
 
 	def update_time_cal (self):
+
 			(year, month, day) = self.calendar.get_date()
 			hour = self.hour_spinbutton.get_text()
 			minute = self.minute_spinbutton.get_text()
@@ -197,12 +199,17 @@ class AtEditor:
 
 			self.runat = hour + ":" + minute + " " + year + "-" + month + "-" + day
 			self.noupdate = gtk.TRUE
-			self.update_textboxes()
+			if self.combo_trigger == gtk.FALSE:
+				self.update_textboxes()
+
 			self.noupdate = gtk.FALSE
+
 			return
 
 	def update_time_combo (self):
+
 			#update variables, set calendar
+
 			runat = self.combobox_entry.get_text ()
 			self.runat = runat
 			regexp = re.compile("([0-9][0-9]):([0-9][0-9])\ ([0-9][0-9][0-9][0-9])-([0-9][0-9])-([0-9][0-9])")
@@ -219,12 +226,15 @@ class AtEditor:
 				self.minute_spinbutton.set_text(minute)
 
 			self.update_textboxes (0)
+
 			
 	
 	def on_combobox_changed (self, *args):
-		if self.noupdate == gtk.FALSE:	self.update_time_combo()
-			
-
+		
+		if self.noupdate == gtk.FALSE:	
+			self.combo_trigger = gtk.TRUE
+			self.update_time_combo()
+		
 		return
 
 
@@ -379,12 +389,10 @@ class AtEditor:
 	def update_textboxes(self, update_runat = 1):
 		self.noevents = gtk.TRUE
 		self.title_entry.set_text(self.title)
-		print self.command
-		if self.command != str(self.command):
-			print "not string"
 		self.script_textview_buffer.set_text(self.command)
 		if update_runat:
-			self.combobox_entry.set_text(self.runat)
+			if self.combobox_entry.get_text() != self.runat:
+				self.combobox_entry.set_text(self.runat)
 
 		if self.icon != None:
 			self.template_image.set_from_file(self.icon)
