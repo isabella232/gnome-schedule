@@ -99,7 +99,6 @@ class CrontabEditor:
 		support.gconf_client.notify_add ("/apps/gnome-schedule/templates/crontab/installed", self.gconfkey_changed);
 
 	def gconfkey_changed (self, client, connection_id, entry, args):
-		print "Reloading templates"
 		self.reload_templates ()
 
 	def reload_templates (self):
@@ -209,17 +208,42 @@ class CrontabEditor:
 
 
 	def on_template_combobox_changed (self, *args):
-		iter = self.template_combobox.get_active_iter ()
-		template = self.template_combobox_model.get_value(iter, 1)
-		if template != None:
-			icon_uri, command, frequency, title = template
-			self.template_image.set_from_file (icon_uri)
-			record = frequency + " " + command + " # " + title
-			self.minute, self.hour, self.day, self.month, self.weekday, self.command, self.title = self.schedule.parse (record)
-			self.update_textboxes ()
-		else:
-			self.loadicon ()
-			self.reset ()
+		if self.noevents == gtk.FALSE:
+			iter = self.template_combobox.get_active_iter ()
+			template = self.template_combobox_model.get_value(iter, 1)
+			if template != None:
+				icon_uri, command, frequency, title = template
+				if icon_uri != None:
+					self.template_image.set_from_file (icon_uri)
+				else:
+					self.loadicon ()
+				if frequency != None and command != None:
+					if title != None:
+						record = frequency + " " + command + " # " + title
+					else:
+						record = frequency + " " + command
+				else:
+					if frequency == None:
+						frequency = "* * * * *"
+					if command == None:
+						command = _("command")
+			
+				m = self.nooutputRegex.match (command)
+				if (m != None):
+					self.nooutput_label.show ()
+					command = m.groups()[0]
+					self.chkNoOutput.set_active (gtk.TRUE)
+					self.nooutput = gtk.TRUE
+				else:
+					self.nooutput_label.hide ()
+					self.chkNoOutput.set_active (gtk.FALSE)
+					self.nooutput = gtk.FALSE
+			
+				self.minute, self.hour, self.day, self.month, self.weekday, self.command, self.title = self.schedule.parse (record)
+				self.update_textboxes ()
+			else:
+				self.loadicon ()
+				self.reset ()
 
 	def on_add_help_button_clicked (self, *args):
 		help_page = "file://" + config.getDocdir() + "/addingandediting.html"
@@ -272,6 +296,7 @@ class CrontabEditor:
 		self.day_entry.set_text ("")
 		self.month_entry.set_text ("")
 		self.weekday_entry.set_text ("")
+		self.chkNoOutput.set_active (gtk.FALSE)
 		self.setting_label.set_text (self.schedule.getstandardvalue())
 		self.noevents = gtk.FALSE
 
@@ -287,7 +312,9 @@ class CrontabEditor:
 		self.weekday_entry.set_text (self.weekday)
 		
 		self.setting_label.set_text (self.schedule.createpreview(self.minute, self.hour, self.day, self.month, self.weekday, self.command))
-		# self.set_frequency_combo()
+		self.set_frequency_combo()
+		
+		
 		self.noevents = gtk.FALSE
 
 	def on_anyadvanced_entry_changed (self, *args):
@@ -299,6 +326,7 @@ class CrontabEditor:
 			self.weekday = self.weekday_entry.get_text ()
 			self.nooutput = self.chkNoOutput.get_active()
 			# self.set_frequency_combo ()
+			self.template_combobox.set_active (0)
 			self.update_textboxes ()
 
 	def on_anybasic_entry_changed (self, *args):
