@@ -259,7 +259,7 @@
 		  <property name="stock_id">gtk-dialog-authentication</property>
 		  <property name="visible_horizontal">True</property>
 		  <property name="visible_vertical">True</property>
-		  <property name="is_important">False</property>
+		  <property name="is_important">True</property>
 		  <signal name="clicked" handler="on_btnSetUser_clicked" last_modification_time="Wed, 09 Jun 2004 15:09:39 GMT"/>
 		</widget>
 		<packing>
