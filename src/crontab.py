@@ -49,21 +49,21 @@ class Crontab:
 			print "sorry.. no support for writing other users crontabs yet.."
 		else:
 			crontab_w = os.popen('crontab', 'w')
-			for line in self.lines
+			for line in self.lines:
 				crontab_w.write(line + "\n")
 
 			crontab_w.close()
 		return
 
-	def updateLine (linenumber, record)
+	def updateLine (linenumber, record):
 		self.lines[linenumber] = record
 		self.writeCrontab ()
 
-	def deleteLine (linenumber)
+	def deleteLine (linenumber):
 		self.lines.removeline (linenumber)
 		self.writeCrontab ()
 
-	def appendLine (record)
+	def appendLine (record):
 		self.lines.add (record)
 		self.writeCrontab ()
 
