@@ -21,6 +21,7 @@ Development:
 
  Unassigned unstable (need a new branch and/or will not be 
  included in the next release)
+  * Show the next-run time for crontab records
   * Unification of the atEditor and crontabEditor GUI
     One editor to rule them all!
   * Support for mail direction in both cron and at
