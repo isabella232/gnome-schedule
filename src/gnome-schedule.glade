@@ -720,6 +720,7 @@
 
 			  <child>
 			    <widget class="GtkButton" id="save_button">
+			      <property name="height_request">24</property>
 			      <property name="visible">True</property>
 			      <property name="tooltip" translatable="yes">Will save the current information as a preset. You can type the name of the preset in the combobox.</property>
 			      <property name="can_default">True</property>
@@ -739,6 +740,7 @@
 
 			  <child>
 			    <widget class="GtkButton" id="remove_button">
+			      <property name="height_request">24</property>
 			      <property name="visible">True</property>
 			      <property name="tooltip" translatable="yes">Will delete the selected preset</property>
 			      <property name="can_focus">True</property>
