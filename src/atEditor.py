@@ -262,6 +262,13 @@ class AtEditor:
 				self.combo_trigger = False
 
 
+	def template_doesnot_exist (self, message):
+		box = gtk.MessageDialog(self.widget, gtk.DIALOG_MODAL, gtk.MESSAGE_INFO, gtk.BUTTONS_OK, message)
+		box.set_response_sensitive(gtk.RESPONSE_OK, gtk.TRUE)
+		run = box.run()
+		box.hide()
+
+			
 	def on_delete_button_clicked (self, *args):
 		firstiter = self.template_combobox_model.get_iter_first()
 		notemplate = self.template_combobox_model.get_value(firstiter,0)
@@ -273,6 +280,10 @@ class AtEditor:
 			self.template_combobox.set_active (0)
 			if template != None:
 				self.backend.removetemplate ("at", name)
+			else: 
+				self.template_doesnot_exist("The template has not been saved")
+		else:
+			self.template_doesnot_exist("You have to type in another name to be able to save the template")
 
 
 	def on_save_button_clicked (self, *args):
@@ -282,7 +293,8 @@ class AtEditor:
 		entry = self.template_combobox.get_child().get_text()
 		if notemplate != entry:
 			self.__SaveTemplate__ (self.template_combobox.get_child().get_text())
-
+		else:
+			self.template_doesnot_exist("You have to type in another name to be able to save the template")
 		
 		
 	def __SaveTemplate__ (self, template_name):

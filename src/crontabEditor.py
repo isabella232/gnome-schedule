@@ -270,6 +270,12 @@ class CrontabEditor:
 			raise ex
 
 		
+	def template_doesnot_exist (self, message):
+		box = gtk.MessageDialog(self.widget, gtk.DIALOG_MODAL, gtk.MESSAGE_INFO, gtk.BUTTONS_OK, message)
+		box.set_response_sensitive(gtk.RESPONSE_OK, gtk.TRUE)
+		run = box.run()
+		box.hide()
+
 	#remove template button
 	def on_remove_button_clicked (self, *args):
 		firstiter = self.template_combobox_model.get_iter_first()
@@ -282,7 +288,10 @@ class CrontabEditor:
 			self.template_combobox.set_active (0)
 			if template != None:
 				self.backend.removetemplate ("crontab",template_name)
-
+			else: 
+				self.template_doesnot_exist("The template has not been saved")
+		else:
+			self.template_doesnot_exist("You have to type in another name to be able to save the template")
 		
 	#save template	button
 	def on_save_button_clicked (self, *args):
@@ -291,6 +300,8 @@ class CrontabEditor:
 		entry = self.template_combobox.get_child().get_text()
 		if notemplate != entry:
 			self.__SaveTemplate__ (self.template_combobox.get_child().get_text())
+		else:
+			self.template_doesnot_exist("You have to type in another name to be able to save the template")
 		
 
 	def gconfkey_changed (self, client, connection_id, entry, args):
