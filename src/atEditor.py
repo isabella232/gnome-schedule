@@ -27,6 +27,7 @@ import time
 
 #custom modules
 import support
+import template
 
 ##
 ## I18N
@@ -237,7 +238,7 @@ class AtEditor:
 		template = self.template_combobox_model.get_value(iter, 2)
 		icon_uri, runat, title, name, command = template
 		self.template_combobox.set_active (0)
-		self.ParentClass.removetemplate (name)
+		template.removetemplate ("at", name)
 
 
 	def on_save_button_clicked (self, *args):
@@ -248,7 +249,7 @@ class AtEditor:
 		
 	def SaveTemplate (self, template_name):
 		#TODO: validate record
-		self.ParentClass.savetemplate (template_name, self.runat, self.title, self.icon, self.command)
+		template.savetemplate ("at", template_name, self.runat, self.title, self.icon, self.command)
 		
 
 	def gconfkey_changed (self, client, connection_id, entry, args):
@@ -256,7 +257,7 @@ class AtEditor:
 
 
 	def reload_templates (self):
-		self.template_names = self.ParentClass.gettemplatenames ()
+		self.template_names = template.gettemplatenames ("at")
 		if self.template_names == None or len (self.template_names) <= 0:
 			pass
 		else:
@@ -278,7 +279,7 @@ class AtEditor:
 		else:
 			
 			for template_name in self.template_names:
-				thetemplate = self.ParentClass.gettemplate (template_name)
+				thetemplate = template.gettemplate ("at",template_name)
 				icon_uri, runat, title, name, command = thetemplate
 				self.template_combobox_model.append([name, template_name, thetemplate])
 						

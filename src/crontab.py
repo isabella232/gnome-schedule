@@ -58,91 +58,6 @@ class Crontab:
 	def geteditor (self):
 		return self.editor
 	
-	def replace (self, template_name_c):
-		for a in " ,	;:/\\\"'!@#$%^&*()-_+=|?<>.][{}":
-			template_name_c = string.replace (template_name_c, a, "-")
-			
-		return template_name_c
-	
-	def removetemplate (self, template_name):
-		template_name_c = self.replace (template_name)
-		
-		installed = support.gconf_client.get_string("/apps/gnome-schedule/presets/crontab/installed")
-		newstring = installed
-		if installed != None:
-			first = gtk.TRUE
-			newstring = "   "
-			for t in string.split (installed, ", "):
-				if t != template_name_c:
-					if first == gtk.TRUE:
-						newstring = t
-						first = gtk.FALSE
-					else:
-						newstring = newstring + ", " + t
-
-		support.gconf_client.unset("/apps/gnome-schedule/presets/crontab/%s/name" % (template_name_c))
-		support.gconf_client.unset("/apps/gnome-schedule/presets/crontab/%s/icon_uri" % (template_name_c))
-		support.gconf_client.unset("/apps/gnome-schedule/presets/crontab/%s/command" % (template_name_c))
-		support.gconf_client.unset("/apps/gnome-schedule/presets/crontab/%s/frequency" % (template_name_c))
-		support.gconf_client.unset("/apps/gnome-schedule/presets/crontab/%s/title" % (template_name_c))
-		
-		if newstring == "   ":
-			support.gconf_client.unset ("/apps/gnome-schedule/presets/crontab/installed")
-		else:
-			support.gconf_client.set_string("/apps/gnome-schedule/presets/crontab/installed", newstring)
-	
-		
-	
-	#def savetemplate (self, template_name, record, nooutput, title, icon):
-	#	minute, hour, day, month, weekday, command, title_, icon_ = self.parse (record)
-	#	frequency = minute + " " + hour + " " + day + " " + month + " " + weekday
-	def savetemplate (self, template_name, frequency, title, icon, command):
-		template_name_c = self.replace (template_name)
-		
-		support.gconf_client.set_string("/apps/gnome-schedule/presets/crontab/%s/name" % (template_name_c), template_name)
-		support.gconf_client.set_string("/apps/gnome-schedule/presets/crontab/%s/icon_uri" % (template_name_c), icon)
-		support.gconf_client.set_string("/apps/gnome-schedule/presets/crontab/%s/command" % (template_name_c), command)
-		support.gconf_client.set_string("/apps/gnome-schedule/presets/crontab/%s/frequency" % (template_name_c), frequency)
-		support.gconf_client.set_string("/apps/gnome-schedule/presets/crontab/%s/title" % (template_name_c), title)
-		
-		installed = support.gconf_client.get_string("/apps/gnome-schedule/presets/crontab/installed")
-		if installed == None:
-			installed = template_name_c
-		else:
-			found = gtk.FALSE
-			for t in string.split (installed, ", "):
-				if t == template_name_c:
-					found = gtk.TRUE
-
-			if found == gtk.FALSE:
-				installed = installed + ", " + template_name_c
-
-		support.gconf_client.unset ("/apps/gnome-schedule/presets/crontab/installed")
-		support.gconf_client.set_string("/apps/gnome-schedule/presets/crontab/installed", installed)
-
-	#list all the templates
-	def gettemplatenames (self):
-		#try:
-			strlist = support.gconf_client.get_string("/apps/gnome-schedule/presets/crontab/installed")
-			if strlist != None:
-				list = string.split (strlist, ", ")
-				return list
-			else:
-				return None
-		#except:
-		#	return None
-
-	def gettemplate (self, template_name):
-		try:
-			icon_uri = support.gconf_client.get_string("/apps/gnome-schedule/presets/crontab/%s/icon_uri" % (template_name))
-			command = support.gconf_client.get_string("/apps/gnome-schedule/presets/crontab/%s/command" % (template_name))
-			frequency = support.gconf_client.get_string("/apps/gnome-schedule/presets/crontab/%s/frequency" % (template_name))
-			title = support.gconf_client.get_string("/apps/gnome-schedule/presets/crontab/%s/title" % (template_name))
-			name = support.gconf_client.get_string("/apps/gnome-schedule/presets/crontab/%s/name" % (template_name))
-			return icon_uri, command, frequency, title, name
-		except Exception, ex:
-			return ex, ex, ex, ex, ex
-
 	#XXX used where?
 	def createpreview (self, minute, hour, day, month, weekday, command):
 		return minute + " " + hour + " " + day + " " + month + " " + weekday + " " + command
@@ -234,6 +149,7 @@ class Crontab:
 							raise Exception('steps', self.translate_frequency (type), _("must be between 0 and 7"))
 		else:
 			raise Exception(_("Unknown"), self.translate_frequency (type), _("Invalid"))
+
 
 	#create temp file with old tasks and new ones and then updates crontab
 	def write (self):
@@ -335,7 +251,6 @@ class Crontab:
 		self.ParentClass.schedule_reload("crontab")
 		
 
-
 	def append (self, record, nooutput, title, icon = None):
 		if nooutput:
 			space = " "
@@ -360,7 +275,6 @@ class Crontab:
 
 	#read tasks in crontab
 	def read (self):
-
 
 		if self.ParentClass.root:
 			execute = config.getCrontabbin () + " -l -u " + self.ParentClass.user

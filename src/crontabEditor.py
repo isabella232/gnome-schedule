@@ -29,8 +29,7 @@ import os
 #custom modules
 import config
 import support
-
-#custom modules
+import template
 import crontabEditorHelper
 
 ##
@@ -136,7 +135,7 @@ class CrontabEditor:
 		template = self.template_combobox_model.get_value(iter, 2)
 		icon_uri, command, frequency, title, name = template
 		self.template_combobox.set_active (0)
-		self.ParentClass.removetemplate (name)
+		template.removetemplate ("crontab",name)
 
 		
 	#save template	button
@@ -169,7 +168,7 @@ class CrontabEditor:
 		#record = self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday + " " + self.command
 		#self.ParentClass.savetemplate (template_name, record, self.nooutput, self.title, self.icon)
 		self.frequency = self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday
-		self.ParentClass.savetemplate (template_name, self.frequency, self.title, self.icon, self.command)
+		template.savetemplate ("crontab",template_name, self.frequency, self.title, self.icon, self.command)
 
 	#error dialog box 
 	def WrongRecordDialog (self, x, y, z):
@@ -184,7 +183,7 @@ class CrontabEditor:
 
 	def reload_templates (self):
 
-		self.template_names = self.ParentClass.gettemplatenames ()
+		self.template_names = template.gettemplatenames ("crontab")
 		
 		if self.template_names == None or len (self.template_names) <= 0:
 			pass
@@ -206,7 +205,7 @@ class CrontabEditor:
 		else:
 			
 			for template_name in self.template_names:
-				thetemplate = self.ParentClass.gettemplate (template_name)
+				thetemplate = template.gettemplate ("crontab", template_name)
 				icon_uri, command, frequency, title, name = thetemplate
 				self.template_combobox_model.append([name, template_name, thetemplate])
 						
