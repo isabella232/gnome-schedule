@@ -81,6 +81,7 @@ class CrontabEditor:
 		self.title_entry = self.xml.get_widget ("title_entry")
 		self.command_entry = self.xml.get_widget ("command_entry")
 		self.nooutput_label = self.xml.get_widget ("nooutput_label")
+		self.nooutput_label.set_label(" >/dev/null 2>&1")
 
 		self.frequency_combobox = self.xml.get_widget ("frequency_combobox")
 		self.frequency_combobox_model = gtk.ListStore (gobject.TYPE_STRING, gobject.TYPE_PYOBJECT)
@@ -297,9 +298,9 @@ class CrontabEditor:
 				self.template_combobox.set_active (0)
 				self.backend.removetemplate ("crontab",template_name)
 			else: 
-				self.template_doesnot_exist("The preset has not been saved")
+				self.template_doesnot_exist(_("The preset has not been saved"))
 		else:
-			self.template_doesnot_exist("To delete a preset, you first need to select one")
+			self.template_doesnot_exist(_("To delete a preset, you first need to select one"))
 		
 	#save template	button
 	def on_save_button_clicked (self, *args):
@@ -309,7 +310,7 @@ class CrontabEditor:
 		if notemplate != entry:
 			self.__SaveTemplate__ (self.template_combobox.get_child().get_text())
 		else:
-			self.template_doesnot_exist("To save a preset, you first have to choose a name for it")
+			self.template_doesnot_exist(_("To save a preset, you first have to choose a name for it"))
 		
 
 	def gconfkey_changed (self, client, connection_id, entry, args):

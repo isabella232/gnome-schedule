@@ -85,7 +85,11 @@ class AtEditor:
 		
 		self.calendar = self.xml.get_widget ("at_calendar")
 		self.hour_spinbutton = self.xml.get_widget ("at_hour_spinbutton")
-		self.minute_spinbutton= self.xml.get_widget ("at_minute_spinbutton")
+		self.minute_spinbutton = self.xml.get_widget ("at_minute_spinbutton")
+		self.time_separator = self.xml.get_widget ("at_time_separator")
+		# Translators: Separator between hour and minute entry fields
+		self.time_separator.set_label (_(":"))
+
 		self.combobox = self.xml.get_widget ("at_combobox")
 		self.combobox_entry = self.combobox.get_child()	
 			

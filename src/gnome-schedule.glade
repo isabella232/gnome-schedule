@@ -9,7 +9,7 @@
   <property name="title" translatable="yes">Configure scheduled tasks</property>
   <property name="type">GTK_WINDOW_TOPLEVEL</property>
   <property name="window_position">GTK_WIN_POS_NONE</property>
-  <property name="modal">True</property>
+  <property name="modal">False</property>
   <property name="default_width">600</property>
   <property name="default_height">400</property>
   <property name="resizable">True</property>
@@ -593,7 +593,7 @@
 			      <property name="max_length">0</property>
 			      <property name="text" translatable="yes"></property>
 			      <property name="has_frame">True</property>
-			      <property name="invisible_char" translatable="yes">*</property>
+			      <property name="invisible_char">*</property>
 			      <property name="activates_default">False</property>
 			      <signal name="changed" handler="on_anybasic_entry_changed" last_modification_time="Tue, 22 Jun 2004 15:44:32 GMT"/>
 			    </widget>
@@ -607,7 +607,7 @@
 			  <child>
 			    <widget class="GtkLabel" id="nooutput_label">
 			      <property name="visible">True</property>
-			      <property name="label" translatable="yes"> &gt;/dev/null 2&gt;&amp;1</property>
+			      <property name="label"> &gt;/dev/null 2&gt;&amp;1</property>
 			      <property name="use_underline">False</property>
 			      <property name="use_markup">False</property>
 			      <property name="justify">GTK_JUSTIFY_LEFT</property>
@@ -717,7 +717,7 @@
 			  <property name="max_length">0</property>
 			  <property name="text" translatable="yes"></property>
 			  <property name="has_frame">True</property>
-			  <property name="invisible_char" translatable="yes">*</property>
+			  <property name="invisible_char">*</property>
 			  <property name="activates_default">False</property>
 			  <signal name="changed" handler="on_anybasic_entry_changed" last_modification_time="Sun, 06 Jun 2004 15:18:25 GMT"/>
 			</widget>
@@ -948,9 +948,9 @@
 			  <property name="editable">True</property>
 			  <property name="visibility">True</property>
 			  <property name="max_length">0</property>
-			  <property name="text" translatable="yes">0-59</property>
+			  <property name="text"></property>
 			  <property name="has_frame">True</property>
-			  <property name="invisible_char" translatable="yes">*</property>
+			  <property name="invisible_char">*</property>
 			  <property name="activates_default">False</property>
 			  <signal name="changed" handler="on_anyadvanced_entry_changed" last_modification_time="Sun, 06 Jun 2004 14:53:17 GMT"/>
 			</widget>
@@ -995,9 +995,9 @@
 			  <property name="editable">True</property>
 			  <property name="visibility">True</property>
 			  <property name="max_length">0</property>
-			  <property name="text" translatable="yes">0-23</property>
+			  <property name="text"></property>
 			  <property name="has_frame">True</property>
-			  <property name="invisible_char" translatable="yes">*</property>
+			  <property name="invisible_char">*</property>
 			  <property name="activates_default">False</property>
 			  <signal name="changed" handler="on_anyadvanced_entry_changed" last_modification_time="Sun, 06 Jun 2004 14:53:25 GMT"/>
 			</widget>
@@ -1042,9 +1042,9 @@
 			  <property name="editable">True</property>
 			  <property name="visibility">True</property>
 			  <property name="max_length">0</property>
-			  <property name="text" translatable="yes">1-31</property>
+			  <property name="text"></property>
 			  <property name="has_frame">True</property>
-			  <property name="invisible_char" translatable="yes">*</property>
+			  <property name="invisible_char">*</property>
 			  <property name="activates_default">False</property>
 			  <signal name="changed" handler="on_anyadvanced_entry_changed" last_modification_time="Sun, 06 Jun 2004 14:53:35 GMT"/>
 			</widget>
@@ -1089,9 +1089,9 @@
 			  <property name="editable">True</property>
 			  <property name="visibility">True</property>
 			  <property name="max_length">0</property>
-			  <property name="text" translatable="yes">1-12</property>
+			  <property name="text"></property>
 			  <property name="has_frame">True</property>
-			  <property name="invisible_char" translatable="yes">*</property>
+			  <property name="invisible_char">*</property>
 			  <property name="activates_default">False</property>
 			  <signal name="changed" handler="on_anyadvanced_entry_changed" last_modification_time="Sun, 06 Jun 2004 14:53:42 GMT"/>
 			</widget>
@@ -1136,9 +1136,9 @@
 			  <property name="editable">True</property>
 			  <property name="visibility">True</property>
 			  <property name="max_length">0</property>
-			  <property name="text" translatable="yes">0-7</property>
+			  <property name="text"></property>
 			  <property name="has_frame">True</property>
-			  <property name="invisible_char" translatable="yes">*</property>
+			  <property name="invisible_char">*</property>
 			  <property name="activates_default">False</property>
 			  <signal name="changed" handler="on_anyadvanced_entry_changed" last_modification_time="Sun, 06 Jun 2004 14:53:49 GMT"/>
 			</widget>
@@ -1245,7 +1245,7 @@
 			<widget class="GtkLabel" id="setting_label">
 			  <property name="visible">True</property>
 			  <property name="can_focus">True</property>
-			  <property name="label" translatable="yes">* * * * * command</property>
+			  <property name="label"></property>
 			  <property name="use_underline">False</property>
 			  <property name="use_markup">True</property>
 			  <property name="justify">GTK_JUSTIFY_LEFT</property>
@@ -1275,7 +1275,7 @@
 	      <child>
 		<widget class="GtkLabel" id="label28">
 		  <property name="visible">True</property>
-		  <property name="label" translatable="yes">     </property>
+		  <property name="label">     </property>
 		  <property name="use_underline">False</property>
 		  <property name="use_markup">False</property>
 		  <property name="justify">GTK_JUSTIFY_LEFT</property>
@@ -1532,9 +1532,9 @@
 	      <property name="editable">True</property>
 	      <property name="visibility">True</property>
 	      <property name="max_length">0</property>
-	      <property name="text" translatable="yes">*</property>
+	      <property name="text"></property>
 	      <property name="has_frame">True</property>
-	      <property name="invisible_char" translatable="yes">*</property>
+	      <property name="invisible_char">*</property>
 	      <property name="activates_default">False</property>
 	      <property name="width_chars">8</property>
 	      <signal name="changed" handler="on_entExpression_changed" last_modification_time="Mon, 14 Jun 2004 17:18:20 GMT"/>
@@ -1587,9 +1587,9 @@
 		  <property name="editable">True</property>
 		  <property name="visibility">True</property>
 		  <property name="max_length">0</property>
-		  <property name="text" translatable="yes">0</property>
+		  <property name="text"></property>
 		  <property name="has_frame">True</property>
-		  <property name="invisible_char" translatable="yes">*</property>
+		  <property name="invisible_char">*</property>
 		  <property name="activates_default">False</property>
 		  <property name="width_chars">3</property>
 		  <signal name="changed" handler="on_entRangeStart_changed" last_modification_time="Thu, 10 Jun 2004 14:03:24 GMT"/>
@@ -1629,9 +1629,9 @@
 		  <property name="editable">True</property>
 		  <property name="visibility">True</property>
 		  <property name="max_length">0</property>
-		  <property name="text" translatable="yes">59</property>
+		  <property name="text"></property>
 		  <property name="has_frame">True</property>
-		  <property name="invisible_char" translatable="yes">*</property>
+		  <property name="invisible_char">*</property>
 		  <property name="activates_default">False</property>
 		  <property name="width_chars">3</property>
 		  <signal name="changed" handler="on_entRangeEnd_changed" last_modification_time="Thu, 10 Jun 2004 14:03:30 GMT"/>
@@ -1692,9 +1692,9 @@
 		  <property name="editable">True</property>
 		  <property name="visibility">True</property>
 		  <property name="max_length">0</property>
-		  <property name="text" translatable="yes">2</property>
+		  <property name="text"></property>
 		  <property name="has_frame">True</property>
-		  <property name="invisible_char" translatable="yes">*</property>
+		  <property name="invisible_char">*</property>
 		  <property name="activates_default">False</property>
 		  <property name="width_chars">3</property>
 		  <signal name="changed" handler="on_entEvery_changed" last_modification_time="Thu, 10 Jun 2004 14:02:58 GMT"/>
@@ -1802,9 +1802,9 @@
 		  <property name="editable">True</property>
 		  <property name="visibility">True</property>
 		  <property name="max_length">0</property>
-		  <property name="text" translatable="yes">2</property>
+		  <property name="text"></property>
 		  <property name="has_frame">True</property>
-		  <property name="invisible_char" translatable="yes">*</property>
+		  <property name="invisible_char">*</property>
 		  <property name="activates_default">False</property>
 		  <property name="width_chars">3</property>
 		  <signal name="changed" handler="on_entFix_changed" last_modification_time="Sun, 13 Jun 2004 12:03:48 GMT"/>
@@ -1850,7 +1850,7 @@
 	  <child>
 	    <widget class="GtkRadioButton" id="radOth">
 	      <property name="visible">True</property>
-	      <property name="tooltip" translatable="yes">See &quot;man 5 crontab&quot; for informations about crontab format.</property>
+	      <property name="tooltip" translatable="yes">See &quot;man 5 crontab&quot; for informations about the crontab format.</property>
 	      <property name="can_focus">True</property>
 	      <property name="label" translatable="yes">Other expression</property>
 	      <property name="use_underline">True</property>
@@ -2023,7 +2023,7 @@
 		  <property name="visible">True</property>
 		  <property name="tooltip" translatable="yes">For example at 04:10 tomorrow, next week or in three days.</property>
 		  <property name="can_focus">True</property>
-		  <property name="label" translatable="yes">A scheduled task that will launch only one-time in the future.</property>
+		  <property name="label" translatable="yes">A scheduled task that will launch only once in the future.</property>
 		  <property name="use_underline">True</property>
 		  <property name="relief">GTK_RELIEF_NORMAL</property>
 		  <property name="focus_on_click">True</property>
@@ -2307,7 +2307,7 @@
 			  <property name="max_length">0</property>
 			  <property name="text" translatable="yes"></property>
 			  <property name="has_frame">True</property>
-			  <property name="invisible_char" translatable="yes">*</property>
+			  <property name="invisible_char">*</property>
 			  <property name="activates_default">False</property>
 			  <signal name="changed" handler="on_at_title_entry_changed" last_modification_time="Fri, 25 Jun 2004 07:24:31 GMT"/>
 			</widget>
@@ -2514,7 +2514,7 @@
 		  <child>
 		    <widget class="GtkLabel" id="label73">
 		      <property name="visible">True</property>
-		      <property name="label" translatable="yes"> </property>
+		      <property name="label"> </property>
 		      <property name="use_underline">False</property>
 		      <property name="use_markup">False</property>
 		      <property name="justify">GTK_JUSTIFY_LEFT</property>
@@ -2760,9 +2760,9 @@ next week</property>
 			      </child>
 
 			      <child>
-				<widget class="GtkLabel" id="label65">
+				<widget class="GtkLabel" id="at_time_separator">
 				  <property name="visible">True</property>
-				  <property name="label" translatable="yes">:</property>
+				  <property name="label"></property>
 				  <property name="use_underline">False</property>
 				  <property name="use_markup">False</property>
 				  <property name="justify">GTK_JUSTIFY_LEFT</property>
@@ -2838,7 +2838,7 @@ next week</property>
 		  <child>
 		    <widget class="GtkLabel" id="label74">
 		      <property name="visible">True</property>
-		      <property name="label" translatable="yes"> </property>
+		      <property name="label"> </property>
 		      <property name="use_underline">False</property>
 		      <property name="use_markup">False</property>
 		      <property name="justify">GTK_JUSTIFY_LEFT</property>

@@ -341,7 +341,7 @@ class main:
 			col.set_resizable (gtk.TRUE)
 			self.treeview.append_column(col)
 
-			col = gtk.TreeViewColumn(_("Frequency or time"), gtk.CellRendererText(), text=1)
+			col = gtk.TreeViewColumn(_("Date and Time Settings"), gtk.CellRendererText(), text=1)
 			col.set_resizable (gtk.TRUE)
 			self.treeview.append_column(col)
 
@@ -353,7 +353,7 @@ class main:
 
 		elif mode == "advanced":
 	
-			col = gtk.TreeViewColumn(_("Frequency or time"), gtk.CellRendererText(), text=5)
+			col = gtk.TreeViewColumn(_("Date and Time Settings"), gtk.CellRendererText(), text=5)
 			col.set_resizable (gtk.TRUE)
 			self.treeview.append_column(col)
 
@@ -397,7 +397,7 @@ class main:
 
 		except Exception, ex:
 			print ex
-			self.dialog = gtk.MessageDialog(self.widget, gtk.DIALOG_MODAL|gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_ERROR, gtk.BUTTONS_OK, "Please select a task")
+			self.dialog = gtk.MessageDialog(self.widget, gtk.DIALOG_MODAL|gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_ERROR, gtk.BUTTONS_OK, _("Please select a task"))
 			self.dialog.run ()
 			self.dialog.destroy ()			
 			
@@ -448,7 +448,7 @@ class main:
 						
 		except Exception, ex:
 			print ex
-			self.dialog = gtk.MessageDialog(self.widget, gtk.DIALOG_MODAL|gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_ERROR, gtk.BUTTONS_OK, "Please select a task")
+			self.dialog = gtk.MessageDialog(self.widget, gtk.DIALOG_MODAL|gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_ERROR, gtk.BUTTONS_OK, _("Please select a task"))
 			self.dialog.run ()
 			self.dialog.destroy ()
 
@@ -498,7 +498,7 @@ class main:
  			["Philip Van Hoof <me at freax dot org>",
  			"Kristof Vansant <de_lupus at pandora dot be>",
  			"Gaute Hope <eg at gaute dot eu dot org>"], 
- 			[_("Some painfully bad documentation put\ntoghether from the far corners of Gaute Hope's mind.")],_("translator_credits"),self.iconPixbuf)
+ 			[_("Some painfully bad documentation put\ntoghether from the far corners of Gaute Hope's mind.")],_("translator-credits"),self.iconPixbuf)
  
  		dlg.set_transient_for(self.widget)
  		dlg.set_position (gtk.WIN_POS_CENTER_ON_PARENT)

@@ -1,3 +1,12 @@
+2005-01-10  Frank Arnold <frank@scirocco-5v-turbo.de>
+
+	* src/at.py: Move of hour/minute separator from glade file
+	* src/crontabEditor.py: Move of no output label from glade file
+	* src/crontabEditor.py: Marked strings for translation
+	* src/gnome-schedule.glade: Removed useless and not translatable strings, marked some as not translatable
+	* src/gnome-schedule.glade: Set main window as not modal, corrected two sentences
+	* src/mainWindow.py: Changed three strings, marked two strings for translation
+
 2005-01-10  Žygimantas Beručka  <uid0@akl.lt>
 
 	* configure.ac: Added Lithuanian (lt) to ALL_LINGUAS.
