@@ -1,4 +1,6 @@
 2004-10-31  Frank Arnold <frank@scirocco-5v-turbo.de>
+
+	* Note: committed by Philip Van Hoof <pvanhoof_NOSPAM@gnome.org>
 	* at.py: Made "Defined" and "At " for treeview translatable
 	* configure.ac: Added "de" (German) to ALL_LINGUAS.
 	* crontab.py: Made "Frequency" for treeview translatable
