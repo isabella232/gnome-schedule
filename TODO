@@ -15,16 +15,7 @@ Development:
  
  Unassigned release blockers
 
-freax: small problem in the preset system
-freax: when you remove the t of preset
-freax: and type a new t
-freax: then the save button is enabled
-freax: you can save it and that will work, however
-freax: when you select it
-freax: the save button wont ever get enabled again
-freax: but the delete but will
-freax: (luckily)
-freax: Both in the atEditor and crontabEditor
+ * None!
 
  Unassigned unstable (need a new branch and/or will not be 
  included in the next release)

@@ -307,7 +307,13 @@ class AtEditor:
 		
 
 	def on_template_combobox_entry_changed (self, widget):
-		self.save_button.set_sensitive (gtk.TRUE)
+		firstiter = self.template_combobox_model.get_iter_first()
+		notemplate = self.template_combobox_model.get_value(firstiter,0)
+		entry = self.template_combobox.get_child().get_text()
+		if notemplate != entry:
+			self.save_button.set_sensitive (gtk.TRUE)
+		else:
+			self.save_button.set_sensitive (gtk.FALSE)
 	
 
 	def on_template_combobox_changed (self, *args):

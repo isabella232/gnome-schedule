@@ -1,3 +1,8 @@
+2004-07-20  Gaute Hope <eg@gaute.eu.org>
+
+	* crontabEditor.py: The save button is now not active if the entered text is equal to the no preset text
+	* atEditor.py: The save button is now not active if the entered text is equal to the no preset text
+
 2004-06-24  Philip Van Hoof <me_NOSPAM@freax.org>
 
 	* src/crontabEditorHelper.py: Little bugfix
