@@ -387,7 +387,7 @@ class main:
 			# TODO: dirty hacky 
 			if self.schedule.get_type() == "crontab":
 				self.editor = self.crontab_editor
-			else:
+			elif self.schedule.get_type() == "at":
 				self.editor = self.at_editor
 
 			record = self.treemodel.get_value(iter, 3)
@@ -446,6 +446,7 @@ class main:
 		#remove task from list with DEL key
 		if key == "Delete" or key == "KP_Delete":
 			self.on_delete_menu_activate()
+		#display properties with ENTER key
 		if (key == "Return" or key == "KP_Return") and self.haveitem == True:
  			self.on_properties_menu_activate(self, widget)
 
@@ -458,11 +459,10 @@ class main:
 
 	#see if root and get user
 	def __readUser__(self):
-		UID = os.geteuid()
-		self.uid = UID
+		self.uid = os.geteuid()
 		self.gid = os.getegid()
 		
-		if UID == 0:
+		if self.uid == 0:
 			self.root = 1
 			self.user = "root"
 		else:
