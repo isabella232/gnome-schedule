@@ -141,25 +141,26 @@ class AtEditor:
 		return
 
 	def on_calendar_day_selected (self, *args):		
-		self.update_time()
+		if self.control_option.get_active(): self.update_time()
 			
 		return
 
 	def on_calendar_month_changed (self, *args):
-		self.update_time()
+		if self.control_option.get_active(): self.update_time()
 		return
 	
 	def on_calendar_year_changed (self, *args):
-		self.update_time()
+		if self.control_option.get_active(): self.update_time()
 		return
 
 
 	def on_hour_spinbutton_changed (self, *args):
-		self.update_time()
+		if self.control_option.get_active(): self.update_time()
 		return
 
 	def on_minute_spinbutton_changed (self, *args):
-		self.update_time()
+		if self.control_option.get_active():
+			self.update_time()
 		return
 	
 	def update_time (self):
@@ -206,18 +207,11 @@ class AtEditor:
 			runat = self.combobox_entry.get_text ()
 			# validate runat
 			self.runat = runat
-			self.update_textboxes (0)
-			
-	
-	def on_combobox_changed (self, *args):
-		# In this combobox for example "tomorrow" should be checked
-		# for being possible or not
-		if self.wording_option.get_active():
-			self.update_time()
-			#set the calendar
+#set the calendar
 			regexp = re.compile("([0-9][0-9]):([0-9][0-9])\ ([0-9][0-9][0-9][0-9])-([0-9][0-9])-([0-9][0-9])")
 			runat_g = regexp.match(self.runat)
 			if runat_g:
+
 				(hour, minute, year, month, day) =  runat_g.groups()
 				year = int(year)
 				month = int(month)
@@ -226,6 +220,16 @@ class AtEditor:
 				self.calendar.select_day(day)
 				self.hour_spinbutton.set_text(hour)
 				self.minute_spinbutton.set_text(minute)
+
+			self.update_textboxes (0)
+			
+	
+	def on_combobox_changed (self, *args):
+		# In this combobox for example "tomorrow" should be checked
+		# for being possible or not
+		if self.wording_option.get_active():
+			self.update_time()
+			
 
 		return
 
@@ -319,10 +323,14 @@ class AtEditor:
 					self.loadicon ()
 		
 				if runat != None:
-					self.wording_option.set_active(gtk.TRUE)
 					self.runat = runat
-				self.title = title
-				self.update_textboxes ()
+					self.title = title
+					self.update_textboxes ()
+					self.wording_option.set_active(gtk.TRUE)
+					self.on_combobox_changed()
+				else:					
+					self.title = title
+					self.update_textboxes ()
 			else:
 				self.remove_button.set_sensitive (gtk.FALSE)
 				self.save_button.set_sensitive (gtk.FALSE)
@@ -392,6 +400,7 @@ class AtEditor:
 			self.template_image.set_from_file(self.icon)
 		else:
 			self.loadicon ()
+
 		self.noevents = gtk.FALSE
 		return
 

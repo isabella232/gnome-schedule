@@ -13,9 +13,6 @@ Development:
   * release minors  twice a week
   * release majors once a month
 
-  * Templates should set the datetime gui in atEditor
-  * Filling in the combobox should set the datetime gui
-    (the other way around is working indeed)  
 
  Unassigned release blockers
   * Completion of atEditor 
