@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-01-21 21:36+0100\n"
-"PO-Revision-Date: 2005-01-21 21:40+0100\n"
+"PO-Revision-Date: 2005-02-02 20:41+0100\n"
 "Last-Translator: Francisco Javier F. Serrador <serrador@cvs.gnome.org>\n"
 "Language-Team: Spanish <traductores@es.gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -132,7 +132,7 @@ msgstr "Para borrar una preconfiguración, primero debe seleccionar una"
 
 #: src/crontabEditor.py:313
 msgid "To save a preset, you first have to choose a name for it"
-msgstr "Para guardar una preconfiguración, primiero tiene que elegir un nombre para ella"
+msgstr "Para guardar una preconfiguración, primero tiene que elegir un nombre para ella"
 
 #: src/crontabEditor.py:323 src/atEditor.py:398
 msgid "Pick an icon for this scheduled task"
@@ -359,7 +359,7 @@ msgstr "Establecer el icono de esta tarea programada"
 
 #: src/gnome-schedule.glade.h:45
 msgid "Set the minute frequency setting"
-msgstr "Establcer la frecuencia del minuto"
+msgstr "Establecer la frecuencia del minuto"
 
 #: src/gnome-schedule.glade.h:46
 msgid "Set the month frequency setting"
