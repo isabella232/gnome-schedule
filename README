@@ -1,0 +1,35 @@
+############################
+#  gnome-schedule  #
+#  (C) Gaute Hope, 2004    #
+#  http://gaute.eu.org     #
+#  eg@gaute.eu.org         #
+############################
+See the file COPYING for license.
+
+Introducion:
+(Not that is going to be anything more than an introduction)
+This is the first python or gtk application i write, have only known it for three days.
+So bear with me.
+
+
+
+Installation:
+run as root:
+# make install 
+
+It should work with most crontabs since it doesn't edit the crontab itself but creates a file and runs 'crontab' with the file as an argument. To get the current crontab it reads 'crontab -l' into a file and reads the file line for line.
+
+At configuration works pretty much the same way.
+
+All the temporary files is located in /tmp and is deleted afterwards.
+
+Help on features:
+Writing out crontab. This writes out the crontab to the file /tmp/crontab
+It is meant to be used in case the crontab is to be installed on another machine and you want to configure it with this tool
+
+
+Download:
+You can, for now, get the latest version at: http://gaute.eu.org/stasj/cronconf/
+
+---
+31.05.2004, 01:07

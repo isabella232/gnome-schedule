@@ -1,0 +1,4 @@
+USER=root
+PROGRAM=/usr/share/gnome-schedule/gnome-schedule.py
+SESSION=true
+FALLBACK=true
