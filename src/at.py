@@ -181,7 +181,8 @@ class At:
 
 				print lines
 				preview = self.make_preview (lines)
-				iter = self.ParentClass.treemodel.append([title, time + " " + date, preview, array_or_false, int(job_id), time, icon_pix, self, date, class_id, user, "Defined", "at"])
+				timestring = _("%s%s%s %s%s%s") % (_(""), date, _(""), _(""), time, _(""))
+				iter = self.ParentClass.treemodel.append([title, timestring, preview, array_or_false, int(job_id), timestring, icon_pix, self, date, class_id, user, "Defined", "at"])
 				# print int(job_id)
 
 		#["None(not suported yet)", "12:50 2004-06-25", "", "35", "", "12:50", icon, at instance, "2004-06-25", "a", "drzap", "at"]
@@ -216,7 +217,6 @@ class At:
 		for line in lines:
 			if len (line) > 0 and line[0] != "#":
 				lcnt = 0
-				result = ""
 				for a in line:
 					if a == "\n":
 						a = ";"
