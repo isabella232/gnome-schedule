@@ -1,3 +1,7 @@
+2004-12-07	Amanpreet Singh Alam <amanpreetalam@yahoo.com>
+
+	*configure.ac: pa is added to ALL_LINGUAS
+
 2004-12-01  Kristof Vansant <de_lupus@pandora.be>
 	
 	* moved all gconf code to a seperate class (someone could easily replace it with a xml backend now)
