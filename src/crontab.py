@@ -56,6 +56,9 @@ class Crontab:
 	def geteditor (self):
 		return self.editor
 	
+	def get_type (self):
+		return "crontab"
+	
 	def checkfield (self, field, type, regex):
 		m = regex.match (field)
 		num = 0
@@ -159,6 +162,8 @@ class Crontab:
 		#TODO let write return if write PASSED
 		#written = self.write()
 		self.__write__ ()
+	
+		# TODO: remove GUI stuff
 
 		##if written:
 		self.ParentClass.treemodel.set_value (parentiter, 1, easystring)
@@ -191,7 +196,7 @@ class Crontab:
 		self.lines = newlines
 		self.__write__ ()
 		#reload is needed because the line number change 
-		self.ParentClass.schedule_reload("crontab")
+		
 		
 
 	def append (self, minute, hour, day, month, weekday, command, nooutput, title, icon = None):
@@ -210,7 +215,7 @@ class Crontab:
 
 		self.lines.append (record)
 		self.__write__ ()
-		self.ParentClass.schedule_reload ("crontab")
+		#self.ParentClass.schedule_reload ("crontab")
 
 
 	#read tasks in crontab
@@ -288,8 +293,8 @@ class Crontab:
 						lastpiece = m.groups ()[7]
 						keep = lastpiece.split (", ")
 						title = keep[0]
-						if len (lastpiece) > 1:
-							icon = lastpiece[1]
+						if len (keep) > 1:
+							icon = keep[1]
 
 					if title == None:
 						title = _("Untitled")
@@ -339,7 +344,7 @@ class Crontab:
 		
 		#TODO needs exception handler
 		
-	
+
    #if a command his lenght is to long the last part is removed 
    #XXX if the beginning is just a long path it's maybe better to cut there
    #XXX instead of in the front .../bin/updatedb instead of /dfdffd/bin/upda...

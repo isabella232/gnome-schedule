@@ -494,8 +494,9 @@ class AtEditor:
 		
 		if self.editing != gtk.FALSE:
 			self.ParentClass.update (self.job_id, self.runat, self.command, self.title, self.icon)
-				
 		else:
 			self.ParentClass.append (self.runat, self.command, self.title, self.icon)
+		
+		self.ParentClass.ParentClass.schedule_reload ("at")
 			
 		self.widget.hide ()

@@ -60,6 +60,8 @@ class At:
 	def geteditor (self):
 		return self.editor
 
+	def get_type (self):
+		return "at"
 
 	def parse (self, line, output = 0):
 		if output == 0:
@@ -227,7 +229,7 @@ class At:
 			temp = commands.getoutput(execute)
 
 		os.unlink (path)
-		self.ParentClass.schedule_reload ("at")
+		#self.ParentClass.schedule_reload ("at")
 		return temp
 
 
@@ -264,16 +266,16 @@ class At:
 
 
 		os.unlink (path)
-		self.ParentClass.schedule_reload ("at")
+		#self.ParentClass.schedule_reload ("at")
 
 
 	def delete (self, jobid, iter):
 		if jobid:
 			execute = config.getAtrmbin()+ " " + str(jobid)
 			commands.getoutput(execute)
-			result = self.ParentClass.treemodel.remove(iter)
+			#result = self.ParentClass.treemodel.remove(iter)
 	
-
+	# TODO: remove gui parts
 	def read (self):
 		#do 'atq'
 		execute = config.getAtqbin ()

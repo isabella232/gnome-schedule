@@ -20,7 +20,6 @@
 import gtk
 
 #python modules
-import string
 import re
 
 

@@ -218,11 +218,12 @@ class CrontabEditor:
 			pixbuf = gtk.gdk.pixbuf_new_from_file_at_size (nautilus_icon, 60, 60)
 			self.template_image.set_from_pixbuf(pixbuf)
 			self.icon = nautilus_icon
+			
 		else:
 			pixbuf = gtk.gdk.pixbuf_new_from_file_at_size ("/usr/share/icons/gnome/48x48/mimetypes/gnome-mime-application.png", 60, 60)
 			self.template_image.set_from_pixbuf(pixbuf)
 			self.icon = "/usr/share/icons/gnome/48x48/mimetypes/gnome-mime-application.png"
-
+			
 
 	#save template
 	def __SaveTemplate__ (self, template_name):
@@ -249,7 +250,7 @@ class CrontabEditor:
 		#record = self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday + " " + self.command
 		self.frequency = self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday
 		self.ParentClass.ParentClass.backend.savetemplate ("crontab",template_name, self.frequency, self.title, self.icon, self.command)
-
+		
 
 	#error dialog box 
 	def __WrongRecordDialog__ (self, x, y, z):
@@ -334,6 +335,7 @@ class CrontabEditor:
 					pixbuf = gtk.gdk.pixbuf_new_from_file_at_size (icon_uri, 60, 60)
 					self.template_image.set_from_pixbuf(pixbuf)
 					self.icon = icon_uri
+					
 				else:
 					self.__loadicon__ ()
 				if frequency != None and command != None:
@@ -406,7 +408,7 @@ class CrontabEditor:
 			
 		else:
 			self.ParentClass.append (self.minute, self.hour, self.day, self.month, self.weekday, self.command, self.nooutput, self.title, self.icon)
-			
+			self.ParentClass.ParentClass.schedule_reload ("crontab")
 	
 		self.widget.hide ()
 

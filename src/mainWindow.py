@@ -162,9 +162,11 @@ class main:
 		#setuser only shown if user = root		
 		if self.root == 0:
 			self.btnSetUser.hide()
-			self.set_user_menu.hide()		
-		##
-
+			self.set_user_menu.hide()	
+			self.statusbar.hide()
+		else:
+			self.statusbar.show()
+		
 		##create crontab
 		self.crontab = crontab.Crontab(self)
 		self.crontab_editor = self.crontab.geteditor ()
@@ -196,11 +198,8 @@ class main:
 		#adjust statusbar
 		if self.root == 1:
 			self.statusbar.push(self.statusbarUser, (_("Editing user: ") + self.user))
-			self.statusbar.show()	
-		else:
-			self.statusbar.hide()	
-			
-					
+				
+		
 		if records == "crontab":
 			self.treemodel.foreach(self.__delete_row__, "crontab")
 			self.crontab.read()
@@ -357,6 +356,7 @@ class main:
 			backpath = (pathint - 1,)
 
 			self.schedule.delete (linenumber, iter)
+			self.schedule_reload(self.schedule.get_type())
 			firstiter = self.treemodel.get_iter_first()
 			try:
 				nextiter = self.treemodel.get_iter(path)

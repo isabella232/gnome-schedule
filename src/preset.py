@@ -22,7 +22,6 @@ import gtk
 import gconf
 
 #python modules
-#import string
 import os
 
 class ConfigBackend:
@@ -54,7 +53,6 @@ class ConfigBackend:
 
 
 	def add_scheduler_type(self,type):
-		#crontab
 		self.gconf_client.add_dir ("/apps/gnome-schedule/presets/" + type, gconf.CLIENT_PRELOAD_NONE)
 		self.gconf_client.notify_add ("/apps/gnome-schedule/presets/" + type + "/installed", self.on_gconfkey_editor_changed);
 
@@ -74,7 +72,6 @@ class ConfigBackend:
 			first = gtk.TRUE
 			newstring = "   "
 			# TODO: test this code
-			#for t in string.split (installed, ", "):
 			for t in installed.split (", "):
 				if t != template_name_c:
 					if first == gtk.TRUE:
@@ -152,7 +149,7 @@ class ConfigBackend:
 			return ex, ex, ex, ex, ex
 			
 	def nautilus_icon (self, type):
-		#XXX I don't like this fixed paths maybe put them in config.py?
+		# TODO: I don't like this fixed paths maybe put them in config.py?
 		_nautdir = "/usr/share/pixmaps/nautilus"
 		_pixdir = "/usr/share/pixmaps"
 		theme = self.gconf_client.get_string("/desktop/gnome/file_views/icon_theme")
