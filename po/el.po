@@ -1,0 +1,854 @@
+# translation of el.po to Greek
+# translation of gnome-schedule to Greek
+# This file is distributed under the same license as the el package.
+# Copyright (C) 2004 THE el'S COPYRIGHT HOLDER.
+# Kostas Papadimas <pkst@gnome.org>, 2004, 2005.
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: el\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-01-03 12:37+0200\n"
+"PO-Revision-Date: 2005-01-03 12:40+0200\n"
+"Last-Translator: Kostas Papadimas <pkst@gnome.org>\n"
+"Language-Team: Greek <nls@tux.hellug.gr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+"X-Generator: KBabel 1.3.1\n"
+
+#: desktop/gnome-schedule.desktop.in.h:1
+msgid "Manage your system tasks"
+msgstr "Διαχείριση του εργασιών συστήματος"
+
+#: desktop/gnome-schedule.desktop.in.h:2
+msgid "Schedule"
+msgstr "Πρoγραμματισμός"
+
+#: src/at.py:299
+#, python-format
+msgid "%s%s%s %s%s%s"
+msgstr "%s%s%s %s%s%s"
+
+#: src/at.py:300
+msgid "At "
+msgstr "σε"
+
+#: src/at.py:305
+msgid "Defined"
+msgstr "Ορισμένο"
+
+#: src/crontab.py:79 src/crontab.py:99 src/crontab.py:124
+msgid "must be between 0 and 59"
+msgstr "πρέπει να είναι ανάμεσα σε 0 και 59"
+
+#: src/crontab.py:82 src/crontab.py:102
+msgid "must be between 0 and 23"
+msgstr "πρέπει να είναι ανάμεσα σε 0 και 23"
+
+#: src/crontab.py:85 src/crontab.py:105 src/crontab.py:130
+msgid "must be between 1 and 31"
+msgstr "πρέπει να είναι ανάμεσα σε 1 και 31"
+
+#: src/crontab.py:88 src/crontab.py:108 src/crontab.py:133
+msgid "must be between 1 and 12"
+msgstr "πρέπει να είναι ανάμεσα σε 1 και 12"
+
+#: src/crontab.py:91 src/crontab.py:111 src/crontab.py:136
+msgid "must be between 0 and 7"
+msgstr "πρέπει να είναι ανάμεσα σε 0 και 7"
+
+#: src/crontab.py:120
+#, python-format
+msgid "%s is not a number"
+msgstr "το %s δεν είναι αριθμός"
+
+#: src/crontab.py:138
+msgid "Unknown"
+msgstr "Άγνωστο"
+
+#: src/crontab.py:138
+msgid "Invalid"
+msgstr "Μη έγκυρο"
+
+#: src/crontab.py:156 src/crontab.py:191 src/crontab.py:280
+#: src/crontabEditor.py:190 src/atEditor.py:117
+msgid "Untitled"
+msgstr "Ανώνυμο"
+
+#. add task to treemodel in mainWindow
+#: src/crontab.py:223
+msgid "Frequency"
+msgstr "Συχνότητα"
+
+#: src/crontab.py:235 src/crontabEditor.py:88 src/gnome-schedule.glade.h:83
+msgid "minute"
+msgstr "λεπτό"
+
+#: src/crontab.py:237 src/crontabEditor.py:89 src/gnome-schedule.glade.h:82
+msgid "hour"
+msgstr "ώρα"
+
+#: src/crontab.py:239 src/crontabEditor.py:90 src/gnome-schedule.glade.h:81
+msgid "day"
+msgstr "ημέρα"
+
+#: src/crontab.py:241 src/crontabEditor.py:91 src/gnome-schedule.glade.h:84
+msgid "month"
+msgstr "μήνας"
+
+#: src/crontab.py:243 src/gnome-schedule.glade.h:88
+msgid "weekday"
+msgstr "εργάσιμη ημέρα"
+
+#: src/crontabEditor.py:87
+msgid "use advanced"
+msgstr "χρήση προχωρημένων"
+
+#: src/crontabEditor.py:92
+msgid "week"
+msgstr "εβδομάδα"
+
+#: src/crontabEditor.py:137 src/atEditor.py:119
+msgid "Create a new scheduled task"
+msgstr "Δημιουργία μιας νέας προγραμματισμένης εργασίας"
+
+#: src/crontabEditor.py:155 src/atEditor.py:147
+msgid "Edit a scheduled task"
+msgstr "Επεξεργασία μιας προγραμματισμένης·εργασίας"
+
+#: src/crontabEditor.py:208 src/atEditor.py:317
+msgid "Don't use a preset"
+msgstr "Να μην χρησιμοποιηθεί μια προκαθορισμένη ρύθμιση"
+
+#: src/crontabEditor.py:271
+#, python-format
+msgid "This is an invalid record! The problem could be at the %s field. Reason: %s"
+msgstr "Αυτή δεν είναι μια έγκυρη εγγραφή! Το πρόβλημα πιθανόν να βρίσκεται στο πεδίο %s. Λόγος: %s"
+
+#: src/crontabEditor.py:325 src/atEditor.py:390
+msgid "Pick an icon for this scheduled task"
+msgstr "Επιλέξτε ένα εικονίδιο για αυτή την προγραμματισμένη εργασία"
+
+#: src/crontabEditor.py:385
+msgid "command"
+msgstr "εντολή"
+
+#: src/crontabEditorHelper.py:102 src/gnome-schedule.glade.h:39
+msgid "Happens all "
+msgstr "Συμβαίνει κάθε"
+
+#: src/crontabEditorHelper.py:102 src/crontabEditorHelper.py:206
+msgid "s"
+msgstr ""
+
+#: src/crontabEditorHelper.py:105
+msgid "Happens from "
+msgstr "Συμβαίνει από"
+
+#. show the form
+#: src/crontabEditorHelper.py:146
+msgid "Edit time expression for: "
+msgstr "Επεξεργασία χρονικής έκφρασης για:"
+
+#: src/crontabEditorHelper.py:157
+#, python-format
+msgid "This is invalid. Reason: %s"
+msgstr "Αυτό δεν είναι έγκυρο. Λόγος:·%s "
+
+#: src/crontabEditorHelper.py:197 src/crontabEditorHelper.py:208
+msgid "st. "
+msgstr ""
+
+#: src/crontabEditorHelper.py:199
+msgid "th. "
+msgstr ""
+
+#: src/gnome-schedule.glade.h:1
+msgid " "
+msgstr " "
+
+#: src/gnome-schedule.glade.h:2
+msgid "     "
+msgstr "     "
+
+#: src/gnome-schedule.glade.h:3
+msgid " >/dev/null 2>&1"
+msgstr " >/dev/null 2>&1"
+
+#: src/gnome-schedule.glade.h:4
+msgid "*"
+msgstr "*"
+
+#: src/gnome-schedule.glade.h:5
+msgid "* * * * * command"
+msgstr "* * * * * εντολή"
+
+#: src/gnome-schedule.glade.h:6
+msgid "0"
+msgstr "0"
+
+#: src/gnome-schedule.glade.h:7
+msgid "0-23"
+msgstr "0-23"
+
+#: src/gnome-schedule.glade.h:8
+msgid "0-59"
+msgstr "0-59"
+
+#: src/gnome-schedule.glade.h:9
+msgid "0-7"
+msgstr "0-7"
+
+#: src/gnome-schedule.glade.h:10
+msgid "1-12"
+msgstr "1-12"
+
+#: src/gnome-schedule.glade.h:11
+msgid "1-31"
+msgstr "1-31"
+
+#: src/gnome-schedule.glade.h:12
+msgid "2"
+msgstr "2"
+
+#: src/gnome-schedule.glade.h:13
+msgid "59"
+msgstr "59"
+
+#: src/gnome-schedule.glade.h:14
+msgid ":"
+msgstr ":"
+
+#: src/gnome-schedule.glade.h:15
+msgid "<b>Basic settings</b>"
+msgstr "<b> Βασικές ρυθμίσεις</b>"
+
+#: src/gnome-schedule.glade.h:16
+msgid "<b>Date setting</b>"
+msgstr "<b>Ρύθμιση ημερομηνίας</b>"
+
+#: src/gnome-schedule.glade.h:17
+msgid "<b>Frequency setting</b>"
+msgstr "<b>Ρύθμιση συχνότητας</b>"
+
+#: src/gnome-schedule.glade.h:18
+msgid "<b>Preview</b>"
+msgstr "<b>Προεπισκόπηση</b>"
+
+#: src/gnome-schedule.glade.h:19
+msgid "<b>Select the type of the scheduled task</b>"
+msgstr "<b>Επιλέξτε το είδος της προγραμματισμένης εργασίαςk</b>"
+
+#: src/gnome-schedule.glade.h:20
+msgid "A scheduled task that will launch at a frequency "
+msgstr "Μια προγρεαμματισμένη εργασία θα ξεκινήσει με συχνότητα"
+
+#: src/gnome-schedule.glade.h:21
+msgid "A scheduled task that will start at a defined time in the future"
+msgstr "Μια προγραμματισμένη εργασία που θα ξεκινήσει σε καθορισμένο χρόνο στο μέλλον"
+
+#: src/gnome-schedule.glade.h:22
+msgid "A_dvanced"
+msgstr "Για προ_χωρημένους"
+
+#: src/gnome-schedule.glade.h:23
+msgid "About this application"
+msgstr "Περί αυτής της εφαρμογής"
+
+#: src/gnome-schedule.glade.h:24
+msgid "Active user"
+msgstr "Ενεργός χρήστης"
+
+#: src/gnome-schedule.glade.h:25
+msgid "Add a new scheduled task"
+msgstr "Προσθήκη μιας νέας προγραμματισμένης εργασίας"
+
+#: src/gnome-schedule.glade.h:26
+msgid "Add a scheduled task"
+msgstr "Προσθήκη μιας προγραμματισμένης εργασίας"
+
+#: src/gnome-schedule.glade.h:27
+msgid "Advanced"
+msgstr "Για προχωρημένους"
+
+#: src/gnome-schedule.glade.h:28
+msgid "Alter a scheduled task"
+msgstr "Αλλαγή μιας προγραμματισμένης εργασίας"
+
+#: src/gnome-schedule.glade.h:29
+msgid "Basic"
+msgstr "Βασικές"
+
+#: src/gnome-schedule.glade.h:30
+msgid "Cancel this operation"
+msgstr "Ακύρωση αυτής της λειτουργίας"
+
+#: src/gnome-schedule.glade.h:31
+msgid "Configure scheduled tasks"
+msgstr "Ρύθμιση προγραμματισμένων εργασιών"
+
+#: src/gnome-schedule.glade.h:32
+msgid "Date and time"
+msgstr "Ημερομηνία και ώρα"
+
+#: src/gnome-schedule.glade.h:33
+msgid "Delete a scheduled task"
+msgstr "Διαγραφή μιας προγραμματισμένης εργασίας"
+
+#: src/gnome-schedule.glade.h:34
+msgid "Every"
+msgstr "Κάθε"
+
+#: src/gnome-schedule.glade.h:35
+msgid "For example 1,2,3,4 means happens the first, second, third and fourth minute"
+msgstr ""
+"Για παράδειγμα 1,2,3,4·σημαίνει ότι συμβαίνει το πρώτο, δεύτερο, τρίτο και "
+"τέταρτο λεπτό"
+
+#: src/gnome-schedule.glade.h:36
+msgid "For example at 04:10 tomorrow, next week or in three days."
+msgstr "Για παράδειγμα στις 04:10 αύριο, την επόμενη εβδομάδα ή σε τρείς μέρες."
+
+#: src/gnome-schedule.glade.h:37
+msgid "For example every first hour of the day."
+msgstr "Για παράδειγμα κάθε πρώτη ώρα της ημέρας."
+
+#: src/gnome-schedule.glade.h:38
+msgid "For experienced users only"
+msgstr "Για προχωρημένους χρήστες μόνο"
+
+#: src/gnome-schedule.glade.h:40
+msgid ""
+"Happens at a defined occurrence. For example, happens at the second minute, "
+"hour, day, weekday or month"
+msgstr ""
+"Συμβαίνει με καθορισμένη επανάληψη. Για παράδειγμα, συμβαίνει στο δεύτερο "
+"λεπτό, ώραημέρα ή μήνα."
+
+#: src/gnome-schedule.glade.h:41
+msgid ""
+"Happens at all occurrence. For example, happens every minute, hour, day, "
+"weekday or month"
+msgstr "Συμβαίνει συνέχεια. Για παράδειγμα, συμβαίνει κάθε λεπτό, ώρα. ημέρα,ή μήνα."
+
+#: src/gnome-schedule.glade.h:42
+msgid ""
+"Happens at every x occurrence. For example every two minutes, hours, days, "
+"weekdays or months"
+msgstr ""
+"Συμβαίνει σε κάθε x επανάληψη. Για παράδειγμα κάιε δύο λεπτά, ώρες, ημέρες,"
+"εργάσιμες ημέρες ή μήνες."
+
+#: src/gnome-schedule.glade.h:43
+msgid "Happens at the"
+msgstr "Συμβαίνει στις"
+
+#: src/gnome-schedule.glade.h:44
+msgid "Happens each occurrence between x and y"
+msgstr "και Συμβαίνει σε κάθε επανάληψη ανάμεσα σε x και y"
+
+#: src/gnome-schedule.glade.h:45
+msgid "Happens every "
+msgstr "Συμβαίνει κάθε"
+
+#: src/gnome-schedule.glade.h:46
+msgid "Happens from"
+msgstr "Συμβαίνει από"
+
+#: src/gnome-schedule.glade.h:47
+msgid "No output"
+msgstr "Χωρίς αποτέλεσμα"
+
+#: src/gnome-schedule.glade.h:48
+msgid "Other expression"
+msgstr "Άλλη έκφραση"
+
+#: src/gnome-schedule.glade.h:49
+msgid "Preset"
+msgstr "Προκαθορισμένη ρύθμιση"
+
+#: src/gnome-schedule.glade.h:50
+msgid ""
+"Quit the application. This will not stop the system scheduling. It will, "
+"however, quit this system schedule maintenance tool."
+msgstr ""
+"Έξοδος από την  εφαρμογή. Αυτό δεν θα σταματήσει το προγραμματισμό "
+"συστήματος. Θα σταματήσειμόνο το εργαλείο ρύθμισης προγραμματισμού "
+"συστήματος."
+
+#: src/gnome-schedule.glade.h:51
+msgid "Run"
+msgstr "Εκτέλεση"
+
+#: src/gnome-schedule.glade.h:52
+msgid "Run at:"
+msgstr "Εκτέλεση στις:"
+
+#: src/gnome-schedule.glade.h:53
+msgid "Scheduled and active tasks"
+msgstr "Προγραμματισμένες και ενεργές εργασίες"
+
+#: src/gnome-schedule.glade.h:54
+msgid "Script"
+msgstr "Δέσμη ενεργειών"
+
+#: src/gnome-schedule.glade.h:55
+msgid "Select a different user"
+msgstr "Επιλογή ενός διαφορετικού χρήση"
+
+#: src/gnome-schedule.glade.h:56
+msgid "Set the day frequency setting"
+msgstr "Ορισμός της ρύθμισης ημερήσιας συνότητας"
+
+#: src/gnome-schedule.glade.h:57
+msgid "Set the hour frequency setting"
+msgstr "Ορισμός·της·ρύθμισης·ωριαίας·συνότητας"
+
+#: src/gnome-schedule.glade.h:58
+msgid "Set the icon of this scheduled task"
+msgstr "Ορισμός του εικονιδίου αυτής της προγραμματισμένης εργασίας"
+
+#: src/gnome-schedule.glade.h:59
+msgid "Set the minute frequency setting"
+msgstr ""
+
+#: src/gnome-schedule.glade.h:60
+msgid "Set the month frequency setting"
+msgstr "Ορισμός της ρύθμισης μηνιαίας συχνότητας"
+
+#: src/gnome-schedule.glade.h:61
+msgid "Set the scheduled task"
+msgstr "Ορισμός της προγραμματισμένης εργασίας"
+
+#: src/gnome-schedule.glade.h:62
+msgid "Set the weekday frequency setting"
+msgstr ""
+
+#: src/gnome-schedule.glade.h:63
+msgid "Set user"
+msgstr "Ορισμός χρήστη"
+
+#: src/gnome-schedule.glade.h:64
+msgid "Show help"
+msgstr "Εμφάνιση βοήθειας"
+
+#: src/gnome-schedule.glade.h:65
+msgid "Show the manual"
+msgstr "Εμφάνιση του εγχειριδίου"
+
+#: src/gnome-schedule.glade.h:66
+msgid "Shows the records"
+msgstr "Εμφάνιση των εγγραφών"
+
+#: src/gnome-schedule.glade.h:67
+msgid "Task title"
+msgstr "Τίτλος εργασίας"
+
+#: src/gnome-schedule.glade.h:68
+msgid "The date when the script will launch"
+msgstr "Η ημερομηνία όταν θα εκκινηθεί η δέσμη ενεργειών"
+
+#: src/gnome-schedule.glade.h:69
+msgid "Time expression help"
+msgstr "Βοήθεια χρονικής έκφρασης"
+
+#: src/gnome-schedule.glade.h:70
+msgid "Time: "
+msgstr "Ώρα "
+
+#: src/gnome-schedule.glade.h:71
+msgid "Treeview"
+msgstr "Προβολή δένδρου"
+
+#: src/gnome-schedule.glade.h:72
+msgid ""
+"When selected, no output will be generated. When scheduled tasks in the "
+"crontab do have output and this option is not checked, the output will by "
+"default be send to the UNIX mailbox of the user"
+msgstr ""
+
+#: src/gnome-schedule.glade.h:73
+msgid "Will delete the selected preset"
+msgstr "Θα διαγράψει την επιλεγμένη προκαθορισμένη ρύθμιση"
+
+#: src/gnome-schedule.glade.h:74
+msgid ""
+"Will save the current information as a preset. You can type the name of the "
+"preset in the combobox."
+msgstr ""
+"Θα αποθηκεύσει τις τρέχουσες πληροφορίες ως προκαθορισμένη·ρύθμιση. Μπορείτε "
+"να πληκτρολογήσετετο όνομα της προκαθορισμένης ρύθμισης στο combobox."
+
+#: src/gnome-schedule.glade.h:75
+msgid "[Add|Edit] scheduled task"
+msgstr "[Προσθήκη|Επεξεργασία] προγραμματισμένης εργασίας"
+
+#: src/gnome-schedule.glade.h:76
+msgid "_Add task"
+msgstr "Προσ_θήκη εργασίας"
+
+#: src/gnome-schedule.glade.h:77
+msgid "_Delete"
+msgstr "_Διαγραφή"
+
+#: src/gnome-schedule.glade.h:78
+msgid "_Manual"
+msgstr "_Χειροκίνητα"
+
+#: src/gnome-schedule.glade.h:79
+msgid "_Select"
+msgstr "Επιλο_γή"
+
+#: src/gnome-schedule.glade.h:80
+msgid "_Set user"
+msgstr "Ο_ρισμός χρήστη"
+
+#: src/gnome-schedule.glade.h:85
+msgid "to"
+msgstr "σε"
+
+#: src/gnome-schedule.glade.h:86
+msgid ""
+"tomorrow\n"
+"next week"
+msgstr ""
+"σήμερα\n"
+"επόμενη εβδομάδα"
+
+#: src/lang.py:77
+msgid ""
+"To the translator: Read src/lang.py !!! (yeah it's for you, not for the "
+"user. YES FOR YOU, the translator. YES:) really!"
+msgstr ""
+
+#. Translators: Date format for expressions like "January 21"
+#: src/lang.py:104
+msgid "%B %d"
+msgstr "%B %d"
+
+#. Translators: Date format for expressions like "January 21, 2005"
+#: src/lang.py:110
+msgid "%B %d, %Y"
+msgstr "%B %d, %Y"
+
+#. Translators: Time format without seconds
+#: src/lang.py:119
+msgid "%H:%M"
+msgstr "%H:%M"
+
+#. Translators: Format of numeric ordinal numbers. If this is not applicable for you read lang.py.
+#: src/lang.py:217
+#, python-format
+msgid "%d."
+msgstr "%d."
+
+#: src/lang.py:249
+msgid "At every full hour"
+msgstr "Κάθε πλήρης ώρα"
+
+#: src/lang.py:251
+msgid "At every minute"
+msgstr "Κάθε λεπτό"
+
+#: src/lang.py:253
+#, python-format
+msgid "At the %(minute)s minute of every hour"
+msgstr ""
+
+#: src/lang.py:255
+#, python-format
+msgid "At every minute between %(time_from)s and %(time_to)s"
+msgstr ""
+
+#: src/lang.py:257
+#, python-format
+msgid "On every day at %(time)s"
+msgstr ""
+
+#: src/lang.py:262
+#, python-format
+msgid "On the %(monthday)s of every month at every full hour"
+msgstr ""
+
+#: src/lang.py:264
+#, python-format
+msgid "On the %(monthday)s of every month at every minute"
+msgstr ""
+
+#: src/lang.py:266
+#, python-format
+msgid "On the %(monthday)s of every month at the %(minute)s minute of every hour"
+msgstr ""
+
+#: src/lang.py:268
+#, python-format
+msgid ""
+"On the %(monthday)s of every month at every minute between %(time_from)s and "
+"%(time_to)s"
+msgstr ""
+
+#: src/lang.py:270
+#, python-format
+msgid "On the %(monthday)s of every month at %(time)s"
+msgstr ""
+
+#: src/lang.py:275
+#, python-format
+msgid "On every day in %(month)s at every full hour"
+msgstr ""
+
+#: src/lang.py:277
+#, python-format
+msgid "On every day in %(month)s at every minute"
+msgstr ""
+
+#: src/lang.py:279
+#, python-format
+msgid "On every day in %(month)s at the %(minute)s minute of every hour"
+msgstr ""
+
+#: src/lang.py:281
+#, python-format
+msgid ""
+"On every day in %(month)s at every minute between %(time_from)s and %"
+"(time_to)s"
+msgstr ""
+
+#: src/lang.py:283
+#, python-format
+msgid "On every day in %(month)s at %(time)s"
+msgstr ""
+
+#: src/lang.py:288
+#, python-format
+msgid "Every year on %(date)s at every full hour"
+msgstr ""
+
+#: src/lang.py:290
+#, python-format
+msgid "Every year on %(date)s at every minute"
+msgstr ""
+
+#: src/lang.py:292
+#, python-format
+msgid "Every year on %(date)s at the %(minute)s minute of every hour"
+msgstr ""
+
+#: src/lang.py:294
+#, python-format
+msgid "Every year on %(date)s at every minute between %(time_from)s and %(time_to)s"
+msgstr ""
+
+#: src/lang.py:296
+#, python-format
+msgid "Every year on %(date)s at %(time)s"
+msgstr ""
+
+#: src/lang.py:301
+#, python-format
+msgid "On every %(weekday)s at every full hour"
+msgstr ""
+
+#: src/lang.py:303
+#, python-format
+msgid "On every %(weekday)s at every minute"
+msgstr ""
+
+#: src/lang.py:305
+#, python-format
+msgid "On every %(weekday)s at the %(minute)s minute of every hour"
+msgstr ""
+
+#: src/lang.py:307
+#, python-format
+msgid "On every %(weekday)s at every minute between %(time_from)s and %(time_to)s"
+msgstr ""
+
+#: src/lang.py:309
+#, python-format
+msgid "On every %(weekday)s at %(time)s"
+msgstr ""
+
+#: src/lang.py:314
+#, python-format
+msgid "On the %(monthday)s of every month and every %(weekday)s at every full hour"
+msgstr ""
+
+#: src/lang.py:316
+#, python-format
+msgid "On the %(monthday)s of every month and every %(weekday)s at every minute"
+msgstr ""
+
+#: src/lang.py:318
+#, python-format
+msgid ""
+"On the %(monthday)s of every month and every %(weekday)s at the %(minute)s "
+"minute of every hour"
+msgstr ""
+
+#: src/lang.py:320
+#, python-format
+msgid ""
+"On the %(monthday)s of every month and every %(weekday)s at every minute "
+"between %(time_from)s and %(time_to)s"
+msgstr ""
+
+#: src/lang.py:322
+#, python-format
+msgid "On the %(monthday)s of every month and every %(weekday)s at %(time)s"
+msgstr ""
+
+#: src/lang.py:327
+#, python-format
+msgid "On every %(weekday)s in %(month)s at every full hour"
+msgstr ""
+
+#: src/lang.py:329
+#, python-format
+msgid "On every %(weekday)s in %(month)s at every minute"
+msgstr ""
+
+#: src/lang.py:331
+#, python-format
+msgid "On every %(weekday)s in %(month)s at the %(minute)s minute of every hour"
+msgstr ""
+
+#: src/lang.py:333
+#, python-format
+msgid ""
+"On every %(weekday)s in %(month)s at every minute between %(time_from)s and %"
+"(time_to)s"
+msgstr ""
+
+#: src/lang.py:335
+#, python-format
+msgid "On every %(weekday)s in %(month)s at %(time)s"
+msgstr ""
+
+#: src/lang.py:340
+#, python-format
+msgid ""
+"On every %(weekday)s in %(month)s and on %(date)s every year at every full "
+"hour"
+msgstr ""
+
+#: src/lang.py:342
+#, python-format
+msgid "On every %(weekday)s in %(month)s and on %(date)s every year at every minute"
+msgstr ""
+
+#: src/lang.py:344
+#, python-format
+msgid ""
+"On every %(weekday)s in %(month)s and on %(date)s every year at the %(minute)"
+"s minute of every hour"
+msgstr ""
+
+#: src/lang.py:346
+#, python-format
+msgid ""
+"On every %(weekday)s in %(month)s and on %(date)s every year at every minute "
+"between %(time_from)s and %(time_to)s"
+msgstr ""
+
+#: src/lang.py:348
+#, python-format
+msgid "On every %(weekday)s in %(month)s and on %(date)s every year at %(time)s"
+msgstr ""
+
+#: src/lang.py:356
+msgid "every minute"
+msgstr "κάθε λεπτό"
+
+#: src/lang.py:358
+msgid "minute: "
+msgstr "λεπτό:"
+
+#: src/lang.py:361
+msgid "every hour"
+msgstr "κάθε ώρα"
+
+#: src/lang.py:363
+msgid "hour: "
+msgstr "ώρα: "
+
+#: src/lang.py:366
+msgid "every day of the month"
+msgstr "κάθε μέρα του μήνα"
+
+#: src/lang.py:368
+msgid "day of the month: "
+msgstr "ημέρα του μήνα:"
+
+#: src/lang.py:371
+msgid "every month"
+msgstr "κάθε μήνα"
+
+#: src/lang.py:373
+msgid "month: "
+msgstr "μήνας:"
+
+#: src/lang.py:378
+msgid ", weekday: "
+msgstr ""
+
+#: src/lang.py:380
+#, python-format
+msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s%(weekday)s"
+msgstr ""
+
+#: src/mainWindow.py:195 src/mainWindow.py:294
+msgid "Editing user: "
+msgstr ""
+
+#: src/mainWindow.py:329
+msgid "Icon"
+msgstr "Εικονίδιο"
+
+#: src/mainWindow.py:334 src/mainWindow.py:367
+msgid "Type"
+msgstr "Είδος"
+
+#: src/mainWindow.py:338 src/mainWindow.py:363
+msgid "Title"
+msgstr "Τίτλος"
+
+#: src/mainWindow.py:342 src/mainWindow.py:354
+msgid "Frequency or time"
+msgstr "Συχνότητα ή χρόνος"
+
+#: src/mainWindow.py:346 src/mainWindow.py:358
+msgid "Preview"
+msgstr "Προεπισκόπηση"
+
+#. TODO: should be using gtkAboutDialog
+#: src/mainWindow.py:492
+msgid "Gnome Schedule"
+msgstr "Gnome Schedule"
+
+#: src/mainWindow.py:494
+msgid "Copyright (c) 2004-2005 Gaute Hope."
+msgstr "Πνευματικά δικαιώματα (c)·2004-2005·Gaute·Hope."
+
+#: src/mainWindow.py:495
+msgid "This software is distributed under the GPL. "
+msgstr "Αυτό το λογισμικό διανέμετια κάτω από την GPL.·"
+
+#: src/mainWindow.py:499
+msgid ""
+"Some painfully bad documentation put\n"
+"toghether from the far corners of Gaute Hope's mind."
+msgstr ""
+
+#: src/mainWindow.py:499
+msgid "translator_credits"
+msgstr "Κώστας Παπαδήμας <pkst@gnome.org>"
+
+#: src/atEditor.py:512
+#, python-format
+msgid "This is an invalid record! The problem could be: %s "
+msgstr "Αυτή δεν είναι μια έγκυρη εγγραφή!, Το πρόβλημα μπορεί να βρίσκεται :·%s·"
+
