@@ -64,6 +64,13 @@ class AddWindow:
 		self.xml.signal_connect("on_anybasic_entry_changed", self.on_anybasic_entry_changed)
 		self.xml.signal_connect("on_frequency_combobox_changed", self.on_frequency_combobox_changed)
 		self.xml.signal_connect("on_chkNoOutput_toggled", self.on_anybasic_entry_changed)
+
+		self.xml.signal_connect("on_lblMinute_button_press_event", self.on_anytitle_clicked)
+		self.xml.signal_connect("on_lblHour_button_press_event", self.on_anytitle_clicked)
+		self.xml.signal_connect("on_lblDay_button_press_event", self.on_anytitle_clicked)
+		self.xml.signal_connect("on_lblMonth_button_press_event", self.on_anytitle_clicked)
+		self.xml.signal_connect("on_lblWeekday_button_press_event", self.on_anytitle_clicked)
+
 		
 		self.nooutput = self.chkNoOutput.get_active()
 		self.nooutputRegex = re.compile('([^#\n$]*)>(\s|)/dev/null\s2>&1')
@@ -170,7 +177,8 @@ class AddWindow:
 		self.day_entry.set_text (self.day)
 		self.month_entry.set_text (self.month)
 		self.weekday_entry.set_text (self.weekday)
-		self.setting_label.set_text (self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday + " " + self.command)		
+		self.setting_label.set_text (self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday + " " + self.command)	
+		self.set_frequency_combo()	
 				
 		self.noevents = gtk.FALSE
 
@@ -239,3 +247,25 @@ class AddWindow:
 			pass
 
 		self.update_textboxes()
+
+	def on_anytitle_clicked(self, widget, *args):
+		name = widget.get_name()
+		return
+
+class AddWindowHelp:
+	def __init__(self, parent, field):
+		self.ParentClass = parent
+		self.field = field
+		return
+
+	def showAll():
+		#show the form
+		return
+
+	def btnOk_clicked(self, *args):
+		#move to field in addwindow and hide
+		return
+
+	def btnCancel_clicked(self, *args):
+		#hide
+		return
