@@ -17,7 +17,7 @@ Development:
 
  * Add 'su' check to configure script
  * Add 'chown' check to configure script, or use another way to change the ownership of the file. 
-   Perhaps use tempfile.TemporaryFile or something alike to set the owner at once.
+   Perhaps use tempfile.TemporaryFile or something like that to set the owner at once.
 
  Unassigned unstable (need a new branch and/or will not be 
  included in the next release)
