@@ -59,7 +59,7 @@ AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, "$GETTEXT_PACKAGE")
 AC_SUBST(GETTEXT_PACKAGE)
 
 dnl Add the languages which your application supports here.
-ALL_LINGUAS="nl pt pt_BR sv"
+ALL_LINGUAS="en_CA nl pt pt_BR sv"
 
 AM_GLIB_GNU_GETTEXT
 

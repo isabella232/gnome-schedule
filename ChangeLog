@@ -1,3 +1,7 @@
+2004-06-25  Adam Weinberger  <adamw@gnome.org>
+
+	* configure.ac: Added en_CA to ALL_LINGUAS.
+
 2004-06-24  Gaute Hope <eg@gaute.eu.org>
 	* at.py: implemented reading and deleting of jobs, and puts them in
 	the treeview
