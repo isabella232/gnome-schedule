@@ -319,6 +319,7 @@
 		<atkproperty name="AtkObject::accessible_name" translatable="yes">Treeview</atkproperty>
 		<atkproperty name="AtkObject::accessible_description" translatable="yes">Shows the records</atkproperty>
 	      </accessibility>
+	      <signal name="key_press_event" handler="on_treeview_key_press_event" last_modification_time="Sun, 11 Jul 2004 12:08:30 GMT"/>
 	    </widget>
 	  </child>
 	</widget>

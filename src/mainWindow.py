@@ -148,7 +148,7 @@ class main:
 		self.xml.signal_connect("on_del_button_clicked", self.on_del_button_clicked)
 		self.xml.signal_connect("on_help_button_clicked", self.on_help_button_clicked)
 		self.xml.signal_connect("on_btnExit_clicked", self.quit)
-
+		self.xml.signal_connect("on_treeview_key_press_event", self.on_treeview_key_pressed)
 
 		support.gconf_client.add_dir ("/apps/gnome-schedule", gconf.CLIENT_PRELOAD_NONE)
 		support.gconf_client.notify_add ("/apps/gnome-schedule/advanced", self.gconfkey_advanced_changed);
@@ -188,6 +188,13 @@ class main:
 	
 
 		
+
+	def on_treeview_key_pressed (self, widget, event):
+		key = gtk.gdk.keyval_name(event.keyval)
+		print key
+		if key == "Delete" or key == "KP_Delete":
+			self.on_delete_menu_activate()
+		return
 
 	def treeview_button_press_event (self, widget, event):
 		if event.type == gtk.gdk._2BUTTON_PRESS and self.haveitem == gtk.TRUE:
@@ -377,19 +384,23 @@ class main:
 			record = self.treemodel.get_value(iter, 3)
 			linenumber = self.treemodel.get_value(iter, 4)
 
-			nextiter = self.treemodel.iter_next(iter)
 			firstiter = self.treemodel.get_iter_first()
 			self.schedule.delete (linenumber, iter)
-			
+			nextiter = self.treemodel.iter_next(iter)
 
-			#moving to next
-			if nextiter:
-				selection = self.treeview.get_selection()
-				selection.select_iter(nextiter)
-			elif firstiter: 
+			print nextiter
+			print firstiter
+
+			
+			if nextiter == "None":
 			#go first
 				selection = self.treeview.get_selection()
 				selection.select_iter(firstiter)
+			else:
+			#go next
+				selection = self.treeview.get_selection()
+				selection.select_iter(firstiter)
+			
 				
 
 		return
