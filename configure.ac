@@ -1,8 +1,6 @@
 AC_INIT(src/gnome-schedule.py)
 AM_INIT_AUTOMAKE(gnome-schedule, 1.0)
 
-AC_PROG_INTLTOOL
-
 AM_PATH_PYTHON
 
 
@@ -72,6 +70,7 @@ dnl Add the languages which your application supports here.
 ALL_LINGUAS="en_CA en_GB nl pt pt_BR sv"
 
 AM_GLIB_GNU_GETTEXT
+AC_PROG_INTLTOOL
 
 AC_OUTPUT([
 Makefile

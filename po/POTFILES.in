@@ -5,6 +5,7 @@
 # written numerics. If you as a translator have some
 # basic coding skills, you can get numeric translations
 # supported in your language this way.
+gnome-schedule.desktop.in
 src/at.py
 src/crontab.py
 src/crontabEditor.py
