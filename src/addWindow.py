@@ -382,7 +382,7 @@ class AddWindow:
 		if name == "btnMinuteHelp" : name = _("minute")
 		if name == "btnHourHelp" : name = _("hour")
 		if name == "btnDayHelp" : name = _("day")
-		if name == "btnMonthHelp" : name = -("month")
+		if name == "btnMonthHelp" : name = _("month")
 		if name == "btnWeekdayHelp" : name = _("weekday")
 
 		self.ParentClass.addHelpWindow.showAll(name)
