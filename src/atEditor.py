@@ -295,7 +295,6 @@ class AtEditor:
 		self.title_entry.set_text(self.title)
 		self.script_textview_buffer.set_text(self.command)
 		self.combobox_entry.set_text(self.runat)
-		
 		return
 
 	def showedit (self, record, job_id, iter, mode):

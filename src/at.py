@@ -205,7 +205,11 @@ class At:
 		return script, title, icon
 
 	def make_preview (self, lines):
-		result = lines[0:15]
+		try:
+			result = lines[0:15]
+		except:
+			result = lines
+
 		result = result.replace("\n",";")
 		done = 0
 		while done == 0:
@@ -213,7 +217,8 @@ class At:
 				result = result[0:-1]
 			else:
 				done = 1
-		result = result + "..."
+		if len(result) >= 15 :
+			result = result + "..."
 
 		return result
 
