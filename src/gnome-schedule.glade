@@ -2609,6 +2609,8 @@
 			  <property name="display_options">GTK_CALENDAR_SHOW_HEADING|GTK_CALENDAR_SHOW_DAY_NAMES|GTK_CALENDAR_SHOW_WEEK_NUMBERS</property>
 			  <signal name="day_selected" handler="on_at_calendar_day_selected" last_modification_time="Thu, 24 Jun 2004 08:24:10 GMT"/>
 			  <signal name="month_changed" handler="on_at_calendar_month_changed" last_modification_time="Thu, 24 Jun 2004 08:24:15 GMT"/>
+			  <signal name="next_year" handler="on_at_calendar_year_changed" last_modification_time="Thu, 08 Jul 2004 13:59:22 GMT"/>
+			  <signal name="prev_year" handler="on_at_calendar_year_changed" last_modification_time="Thu, 08 Jul 2004 13:59:32 GMT"/>
 			</widget>
 			<packing>
 			  <property name="padding">0</property>

@@ -69,7 +69,7 @@ class AtEditor:
 		self.minute_spinbutton= self.xml.get_widget ("at_minute_spinbutton")
 		self.combobox = self.xml.get_widget ("at_combobox")
 		self.combobox_entry = self.combobox.get_child()	
-	
+			
 		self.xml.signal_connect("on_at_help_button_clicked", self.on_help_button_clicked)
 		self.xml.signal_connect("on_at_cancel_button_clicked", self.on_cancel_button_clicked)
 		self.xml.signal_connect("on_at_ok_button_clicked", self.on_ok_button_clicked)
@@ -85,6 +85,7 @@ class AtEditor:
 		self.xml.signal_connect("on_at_image_button_clicked", self.on_image_button_clicked)
 		self.xml.signal_connect("on_at_calendar_day_selected", self.on_calendar_day_selected)
 		self.xml.signal_connect("on_at_calendar_month_changed", self.on_calendar_month_changed)
+		self.xml.signal_connect("on_at_calendar_year_changed", self.on_calendar_year_changed)
 		self.xml.signal_connect("on_at_hour_spinbutton_changed", self.on_hour_spinbutton_changed)
 		self.xml.signal_connect("on_at_minute_spinbutton_changed", self.on_minute_spinbutton_changed)
 		self.xml.signal_connect("on_at_combobox_changed", self.on_combobox_changed)
@@ -120,11 +121,28 @@ class AtEditor:
 		# I don't know if this is needed at all
 		pass
 
-	def on_calendar_day_selected (self, *args):
-		pass
+	def on_calendar_day_selected (self, *args):		
+		if self.control_option.get_active():
+			(year, month, day) = self.calendar.get_date()
+			self.runat = str(year) + "-" + str(month) + "-" + str(day)
+			print self.runat
+			self.update_textboxes()
+		return
 
 	def on_calendar_month_changed (self, *args):
-		pass
+		if self.control_option.get_active():
+			(year, month, day) = self.calendar.get_date()
+			self.runat = str(year) + "-" + str(month) + "-" + str(day)
+			self.update_textboxes()
+		return
+	
+	def on_calendar_year_changed (self, *args):
+		if self.control_option.get_active():
+			(year, month, day) = self.calendar.get_date()
+			self.runat = str(year) + "-" + str(month) + "-" + str(day)
+			self.update_textboxes()
+		return
+
 
 	def on_hour_spinbutton_changed (self, *args):
 		pass
@@ -135,14 +153,19 @@ class AtEditor:
 	def on_combobox_changed (self, *args):
 		# In this combobox for example "tomorrow" should be checked
 		# for being possible or not
-		self.runat = self.combobox.get_text()
+		if self.wording_option.get_active():
+			self.runat = self.combobox.get_text()
 
 		pass
 
 	def on_control_option_toggled (self, *args):
 		# Disable combobox
 		# enable the calendar en spinbuttons
-		pass
+		if self.control_option.get_active():
+			(year, month, day) = self.calendar.get_date()
+			self.runat = str(year) + "-" + str(month) + "-" + str(day)
+			self.update_textboxes()
+
 
 	def on_wording_option_toggled (self, *args):
 		# Disable the calendar
