@@ -4,6 +4,8 @@
 	python package for translations
 	* README: Fixed some minor documentation problems
 
+	* Patch revised and merged by Philip Van Hoof  <me_NOSPAM@freax.org>
+
 2004-06-25  Adam Weinberger  <adamw@gnome.org>
 
 	* src/lang.py: Correct the spelling of "forty" and "fifty"
