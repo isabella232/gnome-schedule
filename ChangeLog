@@ -1,3 +1,7 @@
+2005-02-02  Alexander Shopov  <ash@contact.bg>
+
+	* configure.ac (ALL_LINGUAS): Added "bg" (Bulgarian)
+
 2005-01-19  Alessio Frusciante  <algol@firenze.linux.it>
 
 	* configure.ac: Added "it" (Italian) to ALL_LINGUAS.
