@@ -37,7 +37,7 @@ class SetuserWindow:
 	def __init__(self, parent):
 		self.ParentClass = parent
 		self.xml = self.ParentClass.xml
-		self.widget = self.ParentClass.setuserwidget
+		self.widget = self.xml.get_widget("setuserWindow")
 		self.widget.connect("delete-event", self.on_cancel_button_clicked)
 
 		self.cancel_button = self.xml.get_widget ("setuser_cancel_button")

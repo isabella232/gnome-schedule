@@ -200,20 +200,12 @@ class main:
 		##	
 
 	
-		##set user window
-		self.setuserwidget = self.xml.get_widget("setuserWindow")
-		self.setuserwidget.hide()
+		#set user window
 		self.setuserWindow = setuserWindow.SetuserWindow (self)
-		##
-
-
-		##set add window
-		self.addwidget = self.xml.get_widget ("addWindow")
-		self.addwidget.hide ()
-		self.addWindow = addWindow.AddWindow (self)
-		##
-
 		
+		#set add window
+		self.addWindow = addWindow.AddWindow (self)
+				
 		try:
 			gtk.main ()
 		except:

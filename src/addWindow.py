@@ -35,7 +35,7 @@ class AddWindow:
 	def __init__(self, parent):
 		self.ParentClass = parent
 		self.xml = self.ParentClass.xml
-		self.widget = self.ParentClass.addwidget
+		self.widget = self.xml.get_widget ("addWindow")
 		self.widget.connect("delete-event", self.on_cancel_button_clicked)
 
 		self.cancel_button = self.xml.get_widget ("select_cancel_button")
