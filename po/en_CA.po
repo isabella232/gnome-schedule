@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-11-02 15:30-0500\n"
-"PO-Revision-Date: 2004-11-02 17:03-0400\n"
+"POT-Creation-Date: 2004-12-03 00:48-0500\n"
+"PO-Revision-Date: 2004-12-03 17:03-0400\n"
 "Last-Translator: Adam Weinberger <adamw@gnome.org>\n"
 "Language-Team: English/Canada <adamw@FreeBSD.org>\n"
 "MIME-Version: 1.0\n"
@@ -24,114 +24,114 @@ msgstr "Manage your system tasks"
 msgid "Schedule"
 msgstr "Schedule"
 
-#: src/at.py:303
+#: src/at.py:302
 #, python-format
 msgid "%s%s%s %s%s%s"
 msgstr "%s%s%s %s%s%s"
 
-#: src/at.py:304
+#: src/at.py:303
 msgid "At "
 msgstr "At "
 
-#: src/at.py:307
+#: src/at.py:306
 msgid "Defined"
 msgstr "Defined"
 
-#: src/crontab.py:78 src/crontab.py:98 src/crontab.py:125
+#: src/crontab.py:77 src/crontab.py:97 src/crontab.py:122
 msgid "must be between 0 and 59"
 msgstr "must be between 0 and 59"
 
-#: src/crontab.py:81 src/crontab.py:101
+#: src/crontab.py:80 src/crontab.py:100
 msgid "must be between 0 and 23"
 msgstr "must be between 0 and 23"
 
-#: src/crontab.py:84 src/crontab.py:104 src/crontab.py:131
+#: src/crontab.py:83 src/crontab.py:103 src/crontab.py:128
 msgid "must be between 1 and 31"
 msgstr "must be between 1 and 31"
 
-#: src/crontab.py:87 src/crontab.py:107 src/crontab.py:134
+#: src/crontab.py:86 src/crontab.py:106 src/crontab.py:131
 msgid "must be between 1 and 12"
 msgstr "must be between 1 and 12"
 
-#: src/crontab.py:90 src/crontab.py:110 src/crontab.py:137
+#: src/crontab.py:89 src/crontab.py:109 src/crontab.py:134
 msgid "must be between 0 and 7"
 msgstr "must be between 0 and 7"
 
-#: src/crontab.py:121
+#: src/crontab.py:118
 #, python-format
 msgid "%s is not a number"
 msgstr "%s is not a number"
 
-#: src/crontab.py:139
+#: src/crontab.py:136
 msgid "Unknown"
 msgstr "Unknown"
 
-#: src/crontab.py:139
+#: src/crontab.py:136
 msgid "Invalid"
 msgstr "Invalid"
 
-#: src/crontab.py:157 src/crontab.py:213 src/crontab.py:297
-#: src/crontabEditor.py:180 src/atEditor.py:115
+#: src/crontab.py:154 src/crontab.py:210 src/crontab.py:294
+#: src/crontabEditor.py:176 src/atEditor.py:110
 msgid "Untitled"
 msgstr "Untitled"
 
 #. add task to treemodel in mainWindow
-#: src/crontab.py:248
+#: src/crontab.py:245
 msgid "Frequency"
 msgstr "Frequency"
 
-#: src/crontab.py:254 src/crontabEditor.py:83 src/gnome-schedule.glade.h:83
+#: src/crontab.py:251 src/crontabEditor.py:82 src/gnome-schedule.glade.h:84
 msgid "minute"
 msgstr "minute"
 
-#: src/crontab.py:256 src/crontabEditor.py:84 src/gnome-schedule.glade.h:82
+#: src/crontab.py:253 src/crontabEditor.py:83 src/gnome-schedule.glade.h:83
 msgid "hour"
 msgstr "hour"
 
-#: src/crontab.py:258 src/crontabEditor.py:85 src/gnome-schedule.glade.h:81
+#: src/crontab.py:255 src/crontabEditor.py:84 src/gnome-schedule.glade.h:82
 msgid "day"
 msgstr "day"
 
-#: src/crontab.py:260 src/crontabEditor.py:86 src/gnome-schedule.glade.h:84
+#: src/crontab.py:257 src/crontabEditor.py:85 src/gnome-schedule.glade.h:85
 msgid "month"
 msgstr "month"
 
-#: src/crontab.py:262 src/gnome-schedule.glade.h:89
+#: src/crontab.py:259 src/gnome-schedule.glade.h:90
 msgid "weekday"
 msgstr "weekday"
 
-#: src/crontabEditor.py:82
+#: src/crontabEditor.py:81
 msgid "use advanced"
 msgstr "use advanced"
 
-#: src/crontabEditor.py:87
+#: src/crontabEditor.py:86
 msgid "week"
 msgstr "week"
 
-#: src/crontabEditor.py:133 src/atEditor.py:117
+#: src/crontabEditor.py:129 src/atEditor.py:112
 msgid "Create a new scheduled task"
 msgstr "Create a new scheduled task"
 
-#: src/crontabEditor.py:145 src/atEditor.py:145
+#: src/crontabEditor.py:141 src/atEditor.py:140
 msgid "Edit a scheduled task"
 msgstr "Edit a scheduled task"
 
-#: src/crontabEditor.py:198 src/atEditor.py:299
+#: src/crontabEditor.py:194 src/atEditor.py:288
 msgid "Don't use a preset"
 msgstr "Don't use a preset"
 
-#: src/crontabEditor.py:260
+#: src/crontabEditor.py:256
 #, python-format
 msgid ""
 "This is an invalid record! The problem could be at the %s field. Reason: %s"
 msgstr ""
 "This is an invalid record! The problem could be at the %s field. Reason: %s"
 
-#: src/crontabEditor.py:294 src/atEditor.py:372
+#: src/crontabEditor.py:290 src/atEditor.py:361
 msgid "Pick an icon for this scheduled task"
 msgstr "Pick an icon for this scheduled task"
 
-#: src/crontabEditor.py:352
+#: src/crontabEditor.py:348
 msgid "command"
 msgstr "command"
 
@@ -139,7 +139,7 @@ msgstr "command"
 msgid "Happens all "
 msgstr "Happens all "
 
-#: src/crontabEditorHelper.py:103 src/crontabEditorHelper.py:211
+#: src/crontabEditorHelper.py:103 src/crontabEditorHelper.py:207
 msgid "s"
 msgstr "s"
 
@@ -148,20 +148,20 @@ msgid "Happens from "
 msgstr "Happens from "
 
 #. show the form
-#: src/crontabEditorHelper.py:151
+#: src/crontabEditorHelper.py:147
 msgid "Edit time expression for: "
 msgstr "Edit time expression for: "
 
-#: src/crontabEditorHelper.py:162
+#: src/crontabEditorHelper.py:158
 #, python-format
 msgid "This is invalid. Reason: %s"
 msgstr "This is invalid. Reason: %s"
 
-#: src/crontabEditorHelper.py:202 src/crontabEditorHelper.py:213
+#: src/crontabEditorHelper.py:198 src/crontabEditorHelper.py:209
 msgid "st. "
 msgstr "st. "
 
-#: src/crontabEditorHelper.py:204
+#: src/crontabEditorHelper.py:200
 msgid "th. "
 msgstr "th. "
 
@@ -509,15 +509,19 @@ msgstr "_Manual"
 msgid "_Select"
 msgstr "_Select"
 
-#: src/gnome-schedule.glade.h:85
+#: src/gnome-schedule.glade.h:81
+msgid "_Set user"
+msgstr "_Set user"
+
+#: src/gnome-schedule.glade.h:86
 msgid "root"
 msgstr "root"
 
-#: src/gnome-schedule.glade.h:86
+#: src/gnome-schedule.glade.h:87
 msgid "to"
 msgstr "to"
 
-#: src/gnome-schedule.glade.h:87
+#: src/gnome-schedule.glade.h:88
 msgid ""
 "tomorrow\n"
 "next week"
@@ -525,506 +529,360 @@ msgstr ""
 "tomorrow\n"
 "next week"
 
-#: src/lang.py:69
+#: src/lang.py:77
 msgid ""
-"To the translator: Please DO NOT TRANSLATE anything from src/lang.py until "
-"this message disappears. There will be some changes in the next days or "
-"weeks!"
+"To the translator: Read src/lang.py !!! (yeah it's for you, not for the "
+"user. YES FOR YOU, the translator. YES:) really!"
 msgstr ""
-"."
+"To the translator: Read src/lang.py !!! (yeah it's for you, not for the "
+"user. YES FOR YOU, the translator. YES:) really!"
 
-#: src/lang.py:93
-msgid "zeroth"
-msgstr "zeroth"
+#. Translators: Date format for expressions like "January 21"
+#: src/lang.py:104
+msgid "%B %d"
+msgstr "%d %B"
 
-#: src/lang.py:94
-msgid "first"
-msgstr "first"
+#. Translators: Date format for expressions like "January 21, 2005"
+#: src/lang.py:110
+msgid "%B %d, %Y"
+msgstr "%d %B, %Y"
 
-#: src/lang.py:94
-msgid "second"
-msgstr "second"
+#. Translators: Time format without seconds
+#: src/lang.py:119
+msgid "%H:%M"
+msgstr "%H:%M"
 
-#: src/lang.py:94
-msgid "third"
-msgstr "third"
-
-#: src/lang.py:94
-msgid "fourth"
-msgstr "fourth"
-
-#: src/lang.py:94
-msgid "fifth"
-msgstr "fifth"
-
-#: src/lang.py:95
-msgid "sixth"
-msgstr "sixth"
-
-#: src/lang.py:95
-msgid "seventh"
-msgstr "seventh"
-
-#: src/lang.py:95
-msgid "eighth"
-msgstr "eighth"
-
-#: src/lang.py:95
-msgid "ninth"
-msgstr "ninth"
-
-#: src/lang.py:95
-msgid "tenth"
-msgstr "tenth"
-
-#: src/lang.py:96
-msgid "eleventh"
-msgstr "eleventh"
-
-#: src/lang.py:96
-msgid "twelfth"
-msgstr "twelfth"
-
-#: src/lang.py:96
-msgid "thirteenth"
-msgstr "thirteenth"
-
-#: src/lang.py:96
-msgid "fourteenth"
-msgstr "fourteenth"
-
-#: src/lang.py:96
-msgid "fifteenth"
-msgstr "fifteenth"
-
-#: src/lang.py:97
-msgid "sixteenth"
-msgstr "sixteenth"
-
-#: src/lang.py:97
-msgid "seventeenth"
-msgstr "seventeenth"
-
-#: src/lang.py:97
-msgid "eighteenth"
-msgstr "eighteenth"
-
-#: src/lang.py:97
-msgid "nineteenth"
-msgstr "nineteenth"
-
-#: src/lang.py:97
-msgid "twentieth"
-msgstr "twentieth"
-
-#: src/lang.py:100
-msgid "zero"
-msgstr "zero"
-
-#: src/lang.py:100
-msgid "ten"
-msgstr "ten"
-
-#: src/lang.py:100
-msgid "twenty"
-msgstr "twenty"
-
-#: src/lang.py:100
-msgid "thirty"
-msgstr "thirty"
-
-#: src/lang.py:100
-msgid "forty"
-msgstr "forty"
-
-#: src/lang.py:100
-msgid "fifty"
-msgstr "fifty"
-
-#: src/lang.py:100
-msgid "sixty"
-msgstr "sixty"
-
-#: src/lang.py:100
-msgid "seventy"
-msgstr "seventy"
-
-#: src/lang.py:100
-msgid "eighty"
-msgstr "eighty"
-
-#: src/lang.py:100
-msgid "ninety"
-msgstr "ninety"
-
-#: src/lang.py:107
-#, python-format
-msgid "minus %s"
-msgstr "minus %s"
-
-#: src/lang.py:117
-msgid "minus "
-msgstr "minus "
-
-#. These are just some table-lookups and translation magic :)
-#: src/lang.py:121
-#, python-format
-msgid "%s%s%s%s%s%s"
-msgstr "%s%s%s%s%s%s"
-
-#: src/lang.py:121
-msgid "-"
-msgstr "-"
-
-#: src/lang.py:124
-#, python-format
-msgid "%sth."
-msgstr "%sth."
-
-#: src/lang.py:215
-#, python-format
-msgid "%s%s:%s:%s%s"
-msgstr "%s%s:%s:%s%s"
-
+#. Translators: Format of numeric ordinal numbers. If this is not applicable for you read lang.py.
 #: src/lang.py:217
 #, python-format
-msgid "%s%s:%s%s"
-msgstr "%s%s:%s%s"
+msgid "%d."
+msgstr "%d."
 
-#: src/lang.py:256
-msgid "Every minute"
-msgstr "Every minute"
+#: src/lang.py:249
+msgid "At every full hour"
+msgstr "At every full hour"
 
-#: src/lang.py:261
-msgid "Every hour"
-msgstr "Every hour"
+#: src/lang.py:251
+msgid "At every minute"
+msgstr "At every minute"
 
-#: src/lang.py:263
+#: src/lang.py:253
 #, python-format
-msgid "Every %s minute of every hour"
-msgstr "Every %s minute of every hour"
+msgid "At the %(minute)s minute of every hour"
+msgstr "At the %(minute)s minute of every hour"
+
+#: src/lang.py:255
+#, python-format
+msgid "At every minute between %(time_from)s and %(time_to)s"
+msgstr "At every minute between %(time_from)s and %(time_to)s"
+
+#: src/lang.py:257
+#, python-format
+msgid "On every day at %(time)s"
+msgstr "On every day at %(time)s"
+
+#: src/lang.py:262
+#, python-format
+msgid "On the %(monthday)s of every month at every full hour"
+msgstr "On the %(monthday)s of every month at every full hour"
+
+#: src/lang.py:264
+#, python-format
+msgid "On the %(monthday)s of every month at every minute"
+msgstr "On the %(monthday)s of every month at every minute"
+
+#: src/lang.py:266
+#, python-format
+msgid ""
+"On the %(monthday)s of every month at the %(minute)s minute of every hour"
+msgstr ""
+"On the %(monthday)s of every month at the %(minute)s minute of every hour"
 
 #: src/lang.py:268
 #, python-format
-msgid "Every %s hour of the day"
-msgstr "Every %s hour of the day"
+msgid ""
+"On the %(monthday)s of every month at every minute between %(time_from)s and "
+"%(time_to)s"
+msgstr ""
+"On the %(monthday)s of every month at every minute between %(time_from)s and "
+"%(time_to)s"
 
 #: src/lang.py:270
 #, python-format
-msgid "Every day at %s"
-msgstr "Every day at %s"
+msgid "On the %(monthday)s of every month at %(time)s"
+msgstr "On the %(monthday)s of every month at %(time)s"
 
-#: src/lang.py:272
+#: src/lang.py:275
 #, python-format
-msgid "Every minute during the %s hour"
-msgstr "Every minute during the %s hour"
+msgid "On every day in %(month)s at every full hour"
+msgstr "On every day in %(month)s at every full hour"
 
 #: src/lang.py:277
 #, python-format
-msgid "Every %s day of the month"
-msgstr "Every %s day of the month"
+msgid "On every day in %(month)s at every minute"
+msgstr "On every day in %(month)s at every minute"
 
 #: src/lang.py:279
 #, python-format
-msgid "At %s every %s day of the month"
-msgstr "At %s every %s day of the month"
+msgid "On every day in %(month)s at the %(minute)s minute of every hour"
+msgstr "On every day in %(month)s at the %(minute)s minute of every hour"
 
 #: src/lang.py:281
 #, python-format
-msgid "Every minute of the %s hour every %s day of the month"
-msgstr "Every minute of the %s hour every %s day of the month"
+msgid ""
+"On every day in %(month)s at every minute between %(time_from)s and %"
+"(time_to)s"
+msgstr ""
+"On every day in %(month)s at every minute between %(time_from)s and %"
+"(time_to)s"
 
 #: src/lang.py:283
 #, python-format
-msgid "At the %s minute of every hour every %s day of the month"
-msgstr "At the %s minute of every hour every %s day of the month"
+msgid "On every day in %(month)s at %(time)s"
+msgstr "On every day in %(month)s at %(time)s"
 
-#: src/lang.py:285
+#: src/lang.py:288
 #, python-format
-msgid "Every minute at every %s day of the month"
-msgstr "Every minute at every %s day of the month"
+msgid "Every year on %(date)s at every full hour"
+msgstr "Every year on %(date)s at every full hour"
 
 #: src/lang.py:290
 #, python-format
-msgid "Every %s month of the year"
-msgstr "Every %s month of the year"
+msgid "Every year on %(date)s at every minute"
+msgstr "Every year on %(date)s at every minute"
 
 #: src/lang.py:292
 #, python-format
-msgid "At the %s day on %s every %s month of the year"
-msgstr "At the %s day on %s every %s month of the year"
+msgid "Every year on %(date)s at the %(minute)s minute of every hour"
+msgstr "Every year on %(date)s at the %(minute)s minute of every hour"
 
 #: src/lang.py:294
 #, python-format
-msgid "At the %s day every minute of every %s hour every %s month of the year"
+msgid ""
+"Every year on %(date)s at every minute between %(time_from)s and %(time_to)s"
 msgstr ""
-"At the %s day, every minute of every %s hour, every %s month of the year"
+"Every year on %(date)s at every minute between %(time_from)s and %(time_to)s"
 
 #: src/lang.py:296
 #, python-format
-msgid "Every day and every hour at the %s minute every %s month of the year"
-msgstr "Every day and every hour at the %s minute every %s month of the year"
+msgid "Every year on %(date)s at %(time)s"
+msgstr "Every year on %(date)s at %(time)s"
 
-#: src/lang.py:298
+#: src/lang.py:301
 #, python-format
-msgid "Every day on %s every %s month of the year"
-msgstr "Every day on %s every %s month of the year"
+msgid "On every %(weekday)s at every full hour"
+msgstr "On every %(weekday)s at every full hour"
 
-#: src/lang.py:300
+#: src/lang.py:303
 #, python-format
-msgid "Every minute at the %s day every %s month of the year"
-msgstr "Every minute at the %s day every %s month of the year"
+msgid "On every %(weekday)s at every minute"
+msgstr "On every %(weekday)s at every minute"
 
-#: src/lang.py:302
+#: src/lang.py:305
 #, python-format
-msgid "Every minute every %s month of the year"
-msgstr "Every minute every %s month of the year"
+msgid "On every %(weekday)s at the %(minute)s minute of every hour"
+msgstr "On every %(weekday)s at the %(minute)s minute of every hour"
 
-#: src/lang.py:304
+#: src/lang.py:307
 #, python-format
-msgid "Every %s minute of every hour at the %s day of the %s month of the year"
+msgid ""
+"On every %(weekday)s at every minute between %(time_from)s and %(time_to)s"
 msgstr ""
-"Every %s minute of every hour at the %s day of the %s month of the year"
+"On every %(weekday)s at every minute between %(time_from)s and %(time_to)s"
 
-#: src/lang.py:306
+#: src/lang.py:309
 #, python-format
-msgid "Every minute of every %s hour in the %s month of the year"
-msgstr "Every minute of every %s hour in the %s month of the year"
-
-#: src/lang.py:312
-#, python-format
-msgid "Every %s day of the week"
-msgstr "Every %s day of the week"
+msgid "On every %(weekday)s at %(time)s"
+msgstr "On every %(weekday)s at %(time)s"
 
 #: src/lang.py:314
 #, python-format
-msgid "Every %s day of the week at %s"
-msgstr "Every %s day of the week at %s"
+msgid ""
+"On the %(monthday)s of every month and every %(weekday)s at every full hour"
+msgstr ""
+"On the %(monthday)s of every month and every %(weekday)s at every full hour"
 
 #: src/lang.py:316
 #, python-format
-msgid "Every %s day of the week every minute of the %s hour"
-msgstr "Every %s day of the week every minute of the %s hour"
+msgid ""
+"On the %(monthday)s of every month and every %(weekday)s at every minute"
+msgstr ""
+"On the %(monthday)s of every month and every %(weekday)s at every minute"
 
 #: src/lang.py:318
 #, python-format
-msgid "Every %s day of the week the %s minute of every hour"
-msgstr "Every %s day of the week the %s minute of every hour"
+msgid ""
+"On the %(monthday)s of every month and every %(weekday)s at the %(minute)s "
+"minute of every hour"
+msgstr ""
+"On the %(monthday)s of every month and every %(weekday)s at the %(minute)s "
+"minute of every hour"
 
 #: src/lang.py:320
 #, python-format
-msgid "Every %s day of the week every minute"
-msgstr "Every %s day of the week every minute"
+msgid ""
+"On the %(monthday)s of every month and every %(weekday)s at every minute "
+"between %(time_from)s and %(time_to)s"
+msgstr ""
+"On the %(monthday)s of every month and every %(weekday)s at every minute "
+"between %(time_from)s and %(time_to)s"
 
-#: src/lang.py:325
+#: src/lang.py:322
 #, python-format
-msgid "Every minute at the %s day of the month and the %s day of the week"
-msgstr "Every minute at the %s day of the month and the %s day of the week"
+msgid "On the %(monthday)s of every month and every %(weekday)s at %(time)s"
+msgstr "On the %(monthday)s of every month and every %(weekday)s at %(time)s"
 
 #: src/lang.py:327
 #, python-format
-msgid ""
-"Every minute at the %s hour every %s day of the month and every %s day of "
-"the week"
-msgstr ""
-"Every minute at the %s hour every %s day of the month and every %s day of "
-"the week"
+msgid "On every %(weekday)s in %(month)s at every full hour"
+msgstr "On every %(weekday)s in %(month)s at every full hour"
 
 #: src/lang.py:329
 #, python-format
-msgid ""
-"Every %s minute of every hour every %s day of the month and every %s day of "
-"the week"
-msgstr ""
-"Every %s minute of every hour every %s day of the month and every %s day of "
-"the week"
+msgid "On every %(weekday)s in %(month)s at every minute"
+msgstr "On every %(weekday)s in %(month)s at every minute"
 
 #: src/lang.py:331
 #, python-format
-msgid "Every %s day of the month and every %s day of the week at %s"
-msgstr "Every %s day of the month and every %s day of the week at %s"
+msgid ""
+"On every %(weekday)s in %(month)s at the %(minute)s minute of every hour"
+msgstr ""
+"On every %(weekday)s in %(month)s at the %(minute)s minute of every hour"
 
-#: src/lang.py:336
-#, python-format
-msgid "Every minute every %s day of the week every %s month of the year"
-msgstr "Every minute every %s day of the week every %s month of the year"
-
-#: src/lang.py:338
+#: src/lang.py:333
 #, python-format
 msgid ""
-"Every %s minute of every hour at the %s day of the week every %s month of "
-"the year"
+"On every %(weekday)s in %(month)s at every minute between %(time_from)s and %"
+"(time_to)s"
 msgstr ""
-"Every %s minute of every hour at the %s day of the week every %s month of "
-"the year"
+"On every %(weekday)s in %(month)s at every minute between %(time_from)s and %"
+"(time_to)s"
+
+#: src/lang.py:335
+#, python-format
+msgid "On every %(weekday)s in %(month)s at %(time)s"
+msgstr "On every %(weekday)s in %(month)s at %(time)s"
 
 #: src/lang.py:340
 #, python-format
 msgid ""
-"Every minute at the %s hour every %s day of the week every %s month of the "
-"year"
+"On every %(weekday)s in %(month)s and on %(date)s every year at every full "
+"hour"
 msgstr ""
-"Every minute at the %s hour every %s day of the week every %s month of the "
-"year"
+"On every %(weekday)s in %(month)s and on %(date)s every year at every full "
+"hour"
 
 #: src/lang.py:342
 #, python-format
-msgid "Every %s day of the week every %s month of the year at %s"
-msgstr "Every %s day of the week every %s month of the year at %s"
+msgid ""
+"On every %(weekday)s in %(month)s and on %(date)s every year at every minute"
+msgstr ""
+"On every %(weekday)s in %(month)s and on %(date)s every year at every minute"
 
-#: src/lang.py:347
+#: src/lang.py:344
 #, python-format
 msgid ""
-"Every minute at the %s day of the week and at the %s day of the month every %"
-"s month of the year"
+"On every %(weekday)s in %(month)s and on %(date)s every year at the %(minute)"
+"s minute of every hour"
 msgstr ""
-"Every minute at the %s day of the week and at the %s day of the month every %"
-"s month of the year"
+"On every %(weekday)s in %(month)s and on %(date)s every year at the %(minute)"
+"s minute of every hour"
 
-#: src/lang.py:349
+#: src/lang.py:346
 #, python-format
 msgid ""
-"Every %s minute of every hour every %s day of the week and every %s day of "
-"the month every %s month of the year"
+"On every %(weekday)s in %(month)s and on %(date)s every year at every minute "
+"between %(time_from)s and %(time_to)s"
 msgstr ""
-"Every %s minute of every hour every %s day of the week and every %s day of "
-"the month every %s month of the year"
+"On every %(weekday)s in %(month)s and on %(date)s every year at every minute "
+"between %(time_from)s and %(time_to)s"
 
-#: src/lang.py:351
+#: src/lang.py:348
 #, python-format
 msgid ""
-"Every minute at the %s hour of every %s day of the week and every %s day of "
-"the month every %s month of the year"
+"On every %(weekday)s in %(month)s and on %(date)s every year at %(time)s"
 msgstr ""
-"Every minute at the %s hour of every %s day of the week and every %s day of "
-"the month every %s month of the year"
+"On every %(weekday)s in %(month)s and on %(date)s every year at %(time)s"
 
-#: src/lang.py:353
-#, python-format
-msgid ""
-"At %s every %s day of the week and every %s day of the month every %s month "
-"of the year"
-msgstr ""
-"At %s every %s day of the week and every %s day of the month every %s month "
-"of the year"
+#: src/lang.py:356
+msgid "every minute"
+msgstr "every minute"
+
+#: src/lang.py:358
+msgid "minute: "
+msgstr "minute: "
+
+#: src/lang.py:361
+msgid "every hour"
+msgstr "every hour"
+
+#: src/lang.py:363
+msgid "hour: "
+msgstr "hour: "
 
 #: src/lang.py:366
-msgid "Every minute, every hour, every day, every month, every weekday"
-msgstr "Every minute, every hour, every day, every month, every weekday"
+msgid "every day of the month"
+msgstr "every day of the month"
 
-#: src/lang.py:369
+#: src/lang.py:368
+msgid "day of the month: "
+msgstr "day of the month: "
+
+#: src/lang.py:371
+msgid "every month"
+msgstr "every month"
+
+#: src/lang.py:373
+msgid "month: "
+msgstr "month: "
+
+#: src/lang.py:378
+msgid ", weekday: "
+msgstr ", weekday: "
+
+#: src/lang.py:380
 #, python-format
-msgid "At minute: %s, hour %s, day: %s, month: %s, weekday: %s"
-msgstr "At minute: %s, hour %s, day: %s, month: %s, weekday: %s"
+msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s%(weekday)s"
+msgstr "At %(minute)s, %(hour)s, %(monthday)s, %(month)s%(weekday)s"
 
-#: src/lang.py:372
-#, python-format
-msgid "At minute: %s, hour %s, day: %s, month: %s"
-msgstr "At minute: %s, hour %s, day: %s, month: %s"
-
-#: src/lang.py:375
-#, python-format
-msgid "At minute: %s, hour %s, day: %s, every month"
-msgstr "At minute: %s, hour %s, day: %s, every month"
-
-#: src/lang.py:377
-#, python-format
-msgid "At minute: %s, hour %s, every day, month: %s"
-msgstr "At minute: %s, hour %s, every day, month: %s"
-
-#: src/lang.py:379
-#, python-format
-msgid "At minute: %s, every hour, day: %s, month: %s"
-msgstr "At minute: %s, every hour, day: %s, month: %s"
-
-#: src/lang.py:382
-#, python-format
-msgid "At minute: %s, hour %s, every day, every month"
-msgstr "At minute: %s, hour %s, every day, every month"
-
-#: src/lang.py:384
-#, python-format
-msgid "At minute: %s, every hour, day: %s, every month"
-msgstr "At minute: %s, every hour, day: %s, every month"
-
-#: src/lang.py:386
-#, python-format
-msgid "At minute: %s, every hour, every day, month: %s"
-msgstr "At minute: %s, every hour, every day, month: %s"
-
-#: src/lang.py:388
-#, python-format
-msgid "At minute: %s, every hour, every day, every month"
-msgstr "At minute: %s, every hour, every day, every month"
-
-#: src/lang.py:391
-#, python-format
-msgid "Every minute, hour: %s, day: %s, month %s"
-msgstr "Every minute, hour: %s, day: %s, month %s"
-
-#: src/lang.py:393
-#, python-format
-msgid "Every minute, hour %s, day: %s, every month"
-msgstr "Every minute, hour %s, day: %s, every month"
-
-#: src/lang.py:395
-#, python-format
-msgid "Every minute, hour %s, every day, month: %s"
-msgstr "Every minute, hour %s, every day, month: %s"
-
-#: src/lang.py:397
-#, python-format
-msgid "Every minute, hour %s, every day, every month"
-msgstr "Every minute, hour %s, every day, every month"
-
-#: src/lang.py:400
-#, python-format
-msgid "Every minute, every hour, day: %s, month: %s"
-msgstr "Every minute, every hour, day: %s, month: %s"
-
-#: src/lang.py:402
-#, python-format
-msgid "Every minute, every hour, day: %s, every month"
-msgstr "Every minute, every hour, day: %s, every month"
-
-#: src/mainWindow.py:85 src/mainWindow.py:199
+#: src/mainWindow.py:197
 msgid "Editing user: "
 msgstr "Editing user: "
 
-#: src/mainWindow.py:298 src/mainWindow.py:329
+#: src/mainWindow.py:280
 msgid "Icon"
 msgstr "Icon"
 
-#: src/mainWindow.py:301 src/mainWindow.py:349
+#: src/mainWindow.py:285 src/mainWindow.py:318
 msgid "Type"
 msgstr "Type"
 
-#: src/mainWindow.py:306 src/mainWindow.py:344
+#: src/mainWindow.py:289 src/mainWindow.py:314
 msgid "Title"
 msgstr "Title"
 
-#: src/mainWindow.py:311 src/mainWindow.py:332
+#: src/mainWindow.py:293 src/mainWindow.py:305
 msgid "Frequency or time"
 msgstr "Frequency or time"
 
-#: src/mainWindow.py:316 src/mainWindow.py:337
+#: src/mainWindow.py:297 src/mainWindow.py:309
 msgid "Preview"
 msgstr "Preview"
 
-#. TODO if about gets into gtk this has to be changed
-#: src/mainWindow.py:461
+#. TODO: should be using gtkAboutDialog
+#: src/mainWindow.py:427
 msgid "Gnome Schedule"
 msgstr "Gnome Schedule"
 
-#: src/mainWindow.py:463
+#: src/mainWindow.py:429
 msgid "Copyright (c) 2004-2005 Gaute Hope."
 msgstr "Copyright (c) 2004-2005 Gaute Hope."
 
-#: src/mainWindow.py:464
+#: src/mainWindow.py:430
 msgid "This software is distributed under the GPL. "
 msgstr "This software is distributed under the GPL. "
 
-#: src/mainWindow.py:468
+#: src/mainWindow.py:434
 msgid ""
 "Some painfully bad documentation put\n"
 "toghether from the far corners of Gaute Hope's mind."
@@ -1032,18 +890,11 @@ msgstr ""
 "Some painfully bad documentation put\n"
 "toghether from the far corners of Gaute Hope's mind."
 
-#: src/mainWindow.py:468
+#: src/mainWindow.py:434
 msgid "translator_credits"
 msgstr "Adam Weinberger <adamw@gnome.org>"
 
-#: src/atEditor.py:494
+#: src/atEditor.py:483
 #, python-format
 msgid "This is an invalid record! The problem could be: %s "
 msgstr "This is an invalid record! The problem could be: %s "
-
-#~ msgid ""
-#~ "To the translator: Read src/lang.py !!! (yeah it's for you, not for the "
-#~ "user. YES FOR YOU, the translator. YES:) really!"
-#~ msgstr ""
-#~ "To the translator: Read src/lang.py !!! (yeah it's for you, not for the "
-#~ "user. YES FOR YOU, the translator. YES:) really!"
