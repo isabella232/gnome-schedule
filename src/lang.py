@@ -74,7 +74,7 @@ def translate_nth_nl (nth):
 			add = ""
 		return add + numbers[remainder]+between+tennumbers [tennumber]+"ste"
 	elif nth > 100 or nth < -100:
-		return string(nth) + "ste"
+		return string(nth) + "de"
 
 #def translate_nth_whatever (nth):
 #	pass
