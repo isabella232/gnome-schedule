@@ -229,7 +229,6 @@ class main:
 	def switchView(self, mode = "simple", init = 0):
 		# TODO: Show the icon
 		if mode == "simple":
-			print "columns"
 			self.cleancolumns (init)
 
 			cell = gtk.CellRendererPixbuf()
