@@ -2832,8 +2832,7 @@
 			<widget class="GtkComboBoxEntry" id="at_combobox">
 			  <property name="visible">True</property>
 			  <property name="items" translatable="yes">tomorrow
-next week
-</property>
+next week</property>
 			  <signal name="key_release_event" handler="on_at_combobox_changed" last_modification_time="Sun, 11 Jul 2004 18:39:38 GMT"/>
 			</widget>
 			<packing>

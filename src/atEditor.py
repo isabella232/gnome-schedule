@@ -48,6 +48,7 @@ _ = gettext.gettext
 
 class AtEditor:
 	def __init__(self, parent, schedule):
+
 		self.ParentClass = parent
 		self.schedule = schedule
 		self.xml = self.ParentClass.xml
@@ -58,7 +59,9 @@ class AtEditor:
 		self.editing = gtk.FALSE
 		self.noevents = gtk.FALSE
 	
+		
 		self.template_combobox = self.xml.get_widget ("at_template_combobox")
+		
 		self.save_button = self.xml.get_widget ("at_save_button")
 		self.remove_button = self.xml.get_widget ("at_delete_button")
 		self.title_entry = self.xml.get_widget ("at_title_entry")
@@ -105,15 +108,17 @@ class AtEditor:
 		self.first = 0
 		self.combo_trigger = gtk.FALSE
 		self.reset ()
+
 		self.template_combobox_model = gtk.ListStore(gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_PYOBJECT)
-		self.template_combobox.set_text_column (0)		
+		
 		self.template_combobox.set_model (self.template_combobox_model)
+		#self.template_combobox.set_text_column (0)
 		self.loadicon ()
 		self.reload_templates ()
 
 		support.gconf_client.add_dir ("/apps/gnome-schedule/templates/at", gconf.CLIENT_PRELOAD_NONE)
 		support.gconf_client.notify_add ("/apps/gnome-schedule/templates/at/installed", self.gconfkey_changed);
-				
+
 	def on_worded_label_event (self, *args):
 		# highlight on mouseover
 

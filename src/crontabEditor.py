@@ -42,6 +42,7 @@ _ = gettext.gettext
 
 class CrontabEditor:
 	def __init__(self, parent, schedule):
+
 		self.ParentClass = parent
 		#crontab in this case
 		self.schedule = schedule
@@ -73,7 +74,7 @@ class CrontabEditor:
 		
 		self.template_combobox = self.xml.get_widget ("template_combobox")
 		self.template_combobox_model = gtk.ListStore(gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_PYOBJECT)
-		self.template_combobox.set_text_column (0)		
+		#self.template_combobox.set_text_column (0)		
 		self.template_combobox.set_model (self.template_combobox_model)
 		
 		self.title_entry = self.xml.get_widget ("title_entry")
@@ -176,6 +177,7 @@ class CrontabEditor:
 		self.reload_templates ()
 
 	def reload_templates (self):
+		self.noevents = gtk.TRUE
 		self.template_names = self.schedule.gettemplatenames ()
 		
 		if self.template_names == None or len (self.template_names) <= 0:
@@ -184,6 +186,7 @@ class CrontabEditor:
 			active = self.template_combobox.get_active ()
 			if active == -1:
 				active = 0
+			
 	
 		self.template_combobox_model.clear ()
 		self.template_combobox_model.append ([_("Don't use a template"), None, None])
@@ -207,6 +210,7 @@ class CrontabEditor:
 			#self.template_label.set_sensitive (gtk.TRUE)
 				
 		self.template_combobox.set_active (active)
+		self.noevents = gtk.FALSE
 
 	def on_image_button_clicked (self, *args):
 		preview = gtk.Image()
@@ -346,6 +350,7 @@ class CrontabEditor:
 					self.chkNoOutput.set_active (gtk.FALSE)
 					self.nooutput = gtk.FALSE
 
+
 				self.minute, self.hour, self.day, self.month, self.weekday, self.command, self.title, icon_ = self.schedule.parse (record)
 				self.command = command
 				self.update_textboxes ()
@@ -398,6 +403,7 @@ class CrontabEditor:
 		self.frequency_combobox.set_active (index)
 
 	def reset (self):
+		self.noevents = gtk.TRUE
 		self.minute = "*"
 		self.hour = "*"
 		self.day = "*"
@@ -409,6 +415,7 @@ class CrontabEditor:
 		self.nooutput_label.hide ()
 		self.chkNoOutput.set_active (gtk.TRUE)
 		self.update_textboxes ()
+		self.noevents = gtk.FALSE
 		
 	def update_textboxes (self):
 		self.noevents = gtk.TRUE
