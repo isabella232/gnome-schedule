@@ -81,6 +81,95 @@ class AtEditor:
 		
 		#self.xml.signal_connect("on_fieldHelp_clicked", self.on_fieldHelp_clicked)
 
+
+	def on_remove_button_clicked (self, *args):
+		iter = self.template_combobox.get_active_iter ()
+		template = self.template_combobox_model.get_value(iter, 2)
+		icon_uri, command, frequency, title, name = template
+		self.template_combobox.set_active (0)
+		self.schedule.removetemplate (name)
+		
+	def on_save_button_clicked (self, *args):
+		# Uses SaveTemplate (will call it if OK is pressed)
+		# self.ParentClass.saveWindow.ShowSaveWindow(self)
+		self.SaveTemplate (self.template_combobox.get_child().get_text())
+		
+	def SaveTemplate (self, template_name):
+		# TODO: Validate record
+
+		# TODO: Fill record something like: [script, time, date]
+		self.schedule.savetemplate (template_name, record, self.nooutput, self.title, self.icon)
+
+	def gconfkey_changed (self, client, connection_id, entry, args):
+		self.reload_templates ()
+
+	def reload_templates (self):
+		self.template_names = self.schedule.gettemplatenames ()
+		
+		if self.template_names == None or len (self.template_names) <= 0:
+			pass
+		else:
+			active = self.template_combobox.get_active ()
+			if active == -1:
+				active = 0
+	
+		self.template_combobox_model.clear ()
+		self.template_combobox_model.append ([_("Don't use a template"), None, None])
+
+		if self.template_names == None or len (self.template_names) <= 0:
+			active = 0
+			self.remove_button.set_sensitive (gtk.FALSE)
+			self.save_button.set_sensitive (gtk.FALSE)
+			self.template_combobox.set_active (0)
+			# self.template_combobox.set_sensitive (gtk.FALSE)
+			# self.template_label.set_sensitive (gtk.FALSE)
+		else:
+			
+			for template_name in self.template_names:
+				thetemplate = self.schedule.gettemplate (template_name)
+				icon_uri, command, frequency, title, name = thetemplate
+				self.template_combobox_model.append([name, template_name, thetemplate])
+						
+			#self.template_combobox.set_sensitive (gtk.TRUE)
+			self.remove_button.set_sensitive (gtk.TRUE)
+			#self.template_label.set_sensitive (gtk.TRUE)
+				
+		self.template_combobox.set_active (active)
+
+	def on_image_button_clicked (self, *args):
+		preview = gtk.Image()
+		preview.show()
+		iconopendialog = gtk.FileChooserDialog(_("Pick an icon for this scheduled task"), self.widget, gtk.FILE_CHOOSER_ACTION_OPEN, (gtk.STOCK_OK, gtk.RESPONSE_ACCEPT, gtk.STOCK_CANCEL, gtk.RESPONSE_REJECT), "")
+		# Preview stuff appears to be highly unstable :-(
+		# iconopendialog.set_preview_widget(preview)
+		# iconopendialog.connect("update-preview", self.update_preview_cb, preview)
+		res = iconopendialog.run()
+		if res != gtk.RESPONSE_REJECT:
+			self.icon = iconopendialog.get_filename()
+		iconopendialog.destroy ()
+		self.update_textboxes ()
+
+#	def update_preview_cb(self, file_chooser, preview):
+#		filename = file_chooser.get_preview_filename()
+#		try:
+#			pixbuf = gtk.gdk.pixbuf_new_from_file_at_size(filename, 128, 128)
+#			preview.set_from_pixbuf(pixbuf)
+#			have_preview = gtk.TRUE
+#		except:
+#			have_preview = gtk.FALSE
+#			file_chooser.set_preview_widget_active(have_preview)
+#		return
+
+
+	def loadicon (self):
+		nautilus_icon = support.nautilus_icon ("i-executable")
+		if nautilus_icon != None:
+			self.template_image.set_from_file(nautilus_icon)
+			self.icon = nautilus_icon
+		else:
+			self.template_image.set_from_file("/usr/share/icons/gnome/48x48/mimetypes/gnome-mime-application.png")
+			self.icon = "/usr/share/icons/gnome/48x48/mimetypes/gnome-mime-application.png"
+
 	def reset (self):
 		self.runat = "tomorrow"
 		self.commands = ""
@@ -91,37 +180,21 @@ class AtEditor:
 		return
 
 	def update_textboxes (self):
-		self.runat_entry.set_text(self.runat)
-		self.commands_textview_buffer.set_text(self.commands)
-		self.title_entry.set_text(self.title)
-		self.date_entry.set_text(self.date)
-		self.time_entry.set_text(self.time)
+		# TODO
 		return		
-		
-	def showedit (self, iter, title, date, time, class_id, job_id, user, mode):
+
+			
+	def showedit (self, record, job_id, iter, mode):
+		self.reload_templates ()
 		self.editing = gtk.TRUE
-		self.runat = time + " " + date
-		self.title = title
-		self.date = date
-		self.time = time
-		self.class_id = class_id
-		self.job_id = job_id
-		self.user = user
+		
+		(self.script, self.title, self.icon, self.date, self.time) = record
+		
 		self.widget.set_title(_("Edit a scheduled task"))
 		self.update_textboxes ()
+		self.set_frequency_combo ()
 		self.parentiter = iter
-		self.widget.show_all()
-
-		#get the job
-		execute = "at -c " + job_id
-		job = commands.getoutput(execute)
-
-		#remove env and at common stuff
-		atPreEnd = len(self.schedule.atPre)
-		job = job[atPreEnd:]
-
-		
-		self.commands = job
+		self.widget.show ()
 		self.update_textboxes ()
 		
 		#switch to advanced tab if required
@@ -141,19 +214,66 @@ class AtEditor:
 	def showadd (self, mode):
 		self.reset ()
 		self.runat = "tomorrow"
-		self.title = _("New job")
+		self.title = _("Untitled")
 		self.editing = gtk.FALSE
-		self.widget.set_title(_("Create a new job"))
+		self.widget.set_title(_("Create a new scheduled task"))
 		self.widget.show_all()
 		
 		self.update_textboxes ()
 
-		#switch to advanced tab if required
-		if mode == "advanced":
-			self.notebook.set_current_page(1)
-		else:
-			self.notebook.set_current_page(0)
-	
+
+	def on_template_combobox_entry_changed (self, *args):
+		self.save_button.set_sensitive (gtk.TRUE)
+
+	def on_template_combobox_changed (self, *args):
+		if self.noevents == gtk.FALSE:
+			iter = self.template_combobox.get_active_iter ()
+			if iter == None:
+				return
+			template = self.template_combobox_model.get_value(iter, 2)
+			if template != None:
+				self.remove_button.set_sensitive (gtk.TRUE)
+				icon_uri, command, frequency, title, name = template
+				#if self.ParentClass.saveWindow != None:
+				#	self.ParentClass.saveWindow.save_entry.set_text (name)
+				if icon_uri != None:
+					self.template_image.set_from_file (icon_uri)
+					self.icon = icon_uri
+				else:
+					self.loadicon ()
+				if frequency != None and command != None:
+					if title != None:
+						record = frequency + " " + command + " # " + title
+					else:
+						record = frequency + " " + command
+				else:
+					if frequency == None:
+						frequency = "* * * * *"
+					if command == None:
+						command = _("command")
+			
+				m = self.nooutputRegex.match (command)
+				if (m != None):
+					self.nooutput_label.show ()
+					command = m.groups()[0]
+					self.noevents = gtk.TRUE
+					self.chkNoOutput.set_active (gtk.TRUE)
+					self.noevents = gtk.FALSE
+					self.nooutput = gtk.TRUE
+				else:
+					self.nooutput_label.hide ()
+					self.chkNoOutput.set_active (gtk.FALSE)
+					self.nooutput = gtk.FALSE
+
+				self.minute, self.hour, self.day, self.month, self.weekday, self.command, self.title, icon_ = self.schedule.parse (record)
+				self.command = command
+				self.update_textboxes ()
+			else:
+				self.remove_button.set_sensitive (gtk.FALSE)
+				self.save_button.set_sensitive (gtk.FALSE)
+				self.loadicon ()
+				self.reset ()
+		
 
 
 	def on_add_help_button_clicked (self, *args):
@@ -166,52 +286,16 @@ class AtEditor:
 	def on_cancel_button_clicked (self, *args):
 		self.widget.hide()
 		return gtk.TRUE
-
-	def on_ok_button_clicked (self, *args):
-		#try:
-		#	self.check_field_format (self.minute, _("minute"))
-		#	self.check_field_format (self.hour, _("hour"))
-		#	self.check_field_format (self.day, _("day"))
-		#	self.check_field_format (self.month, _("month"))
-		#	self.check_field_format (self.weekday, _("weekday"))
-		#except Exception, ex:
-			#x, y, z = ex
-		#	x=""
-		#	y=""
-		#	z=""
-		#	self.wrongdialog = gtk.MessageDialog(self.widget, gtk.DIALOG_MODAL|gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_ERROR, gtk.BUTTONS_OK, _("This is an invalid record! The problem could be at the ") + y + _(" field. Reason: ")+ z)
-		#	self.wrongdialog.run()
-		#	self.wrongdialog.destroy()
-		#	return
-
-			
-		if self.editing != gtk.TRUE:
-			self.schedule.append (self.runat, self.commands)
-			print "add"
-
-		else:
-			self.schedule.update (self.runat, self.commands, self.job_id)
-			print "edit"
-
-		self.ParentClass.treemodel.clear ()
-		self.ParentClass.schedule.read ()
-
-		self.widget.hide ()
-
-
-
 	
-
-	def on_anyadvanced_entry_changed (self, *args):
-		self.runat = self.runat_entry.get_text ()
-		start = self.commands_textview_buffer.get_start_iter()
-		end = self.commands_textview_buffer.get_end_iter()
-		self.commands = self.commands_textview_buffer.get_text(start, end)
-		return
-
-	def on_anybasic_entry_changed (self, *args):
-		self.runat = self.runat_entry.get_text ()
-		start = self.commands_textview_buffer.get_start_iter()
-		end = self.commands_textview_buffer.get_end_iter()
-		self.commands = self.commands_textview_buffer.get_text(start, end)
-		return
+	def on_ok_button_clicked (self, *args):
+		# TODO: Validate record
+		# TODO: Fill recorc
+		if self.editing != gtk.FALSE:
+			self.schedule.update (self.job_id, record, self.parentiter, self.nooutput, self.title, self.icon)
+			print "Edited"		
+		else:
+			self.schedule.append (record, self.nooutput, self.title, self.icon)
+			self.ParentClass.schedule_reload ()
+			print "Added"
+	
+		self.widget.hide ()
