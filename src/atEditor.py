@@ -275,7 +275,7 @@ class AtEditor:
 			template = self.template_combobox_model.get_value(iter, 2)
 			if template != None:
 				self.remove_button.set_sensitive (gtk.TRUE)
-				icon_uri, command, frequency, title, name = template
+				icon_uri, runat, title, name = template
 				#if self.ParentClass.saveWindow != None:
 				#	self.ParentClass.saveWindow.save_entry.set_text (name)
 				if icon_uri != None:
@@ -283,32 +283,11 @@ class AtEditor:
 					self.icon = icon_uri
 				else:
 					self.loadicon ()
-				if frequency != None and command != None:
-					if title != None:
-						record = frequency + " " + command + " # " + title
-					else:
-						record = frequency + " " + command
-				else:
-					if frequency == None:
-						frequency = "* * * * *"
-					if command == None:
-						command = _("command")
+				if runat != None:
+					self.runat = runat
 			
-				m = self.nooutputRegex.match (command)
-				if (m != None):
-					self.nooutput_label.show ()
-					command = m.groups()[0]
-					self.noevents = gtk.TRUE
-					self.chkNoOutput.set_active (gtk.TRUE)
-					self.noevents = gtk.FALSE
-					self.nooutput = gtk.TRUE
-				else:
-					self.nooutput_label.hide ()
-					self.chkNoOutput.set_active (gtk.FALSE)
-					self.nooutput = gtk.FALSE
+				self.title = title
 
-				self.minute, self.hour, self.day, self.month, self.weekday, self.command, self.title, icon_ = self.schedule.parse (record)
-				self.command = command
 				self.update_textboxes ()
 			else:
 				self.remove_button.set_sensitive (gtk.FALSE)
@@ -411,7 +390,8 @@ class AtEditor:
 		self.widget.set_title(_("Create a new scheduled task"))
 		self.widget.show_all()
 		
-		self.update_textboxes ()
+		self.loadicon ()
+		self.reload_templates ()
 
 
 		
