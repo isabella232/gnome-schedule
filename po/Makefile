@@ -12,7 +12,7 @@
 # - Modified by jacob berkman <jacob@ximian.com> to install
 #   Makefile.in.in and po2tbl.sed.in for use with glib-gettextize
 
-GETTEXT_PACKAGE = gnome-schedule
+GETTEXT_PACKAGE = atomix
 PACKAGE = gnome-schedule
 VERSION = 1.0
 
