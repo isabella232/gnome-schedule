@@ -1,13 +1,7 @@
 # List of source files containing translatable strings.
 # Please keep this file sorted alphabetically.
-src/at.py
-src/crontabEditorHelper.py
-src/schedule.py
-src/config.py
-src/editor.py
-src/setuserWindow.py
+src/addWindow.py
+src/addWindowHelp.py
 src/crontab.py
-src/gnome-schedule.py
-src/crontabEditor.py
-src/mainWindow.py
 src/gnome-schedule.glade
+src/mainWindow.py
