@@ -1,3 +1,9 @@
+2004-06-21  Christian Rose  <menthos@menthos.com>
+
+	* POTFILES.in: Removed the nonexistant src/config.py entry that
+	was breaking the build. Also sorted the file (don't people read
+	comments?)
+
 2004-06-18  Vincent van Adrighem  <adrighem@gnome.org>
 
 	* nl.po: Translation added by Elros Cyriatan.
