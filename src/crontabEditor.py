@@ -179,7 +179,7 @@ class CrontabEditor:
 		self.command = "ls"
 		self.title = _("Untitled")
 		self.nooutput = gtk.TRUE
-		self.nooutput_label.hide ()
+		self.nooutput_label.show ()
 		self.chkNoOutput.set_active (gtk.TRUE)
 		self.__update_textboxes__ ()
 		self.noevents = gtk.FALSE
@@ -404,10 +404,13 @@ class CrontabEditor:
 
 		record = self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday + " " + self.command
 
+		
 		if self.editing != gtk.FALSE:
-			self.ParentClass.update (self.linenumber, record, self.parentiter, self.nooutput, self.title, self.icon)
+			self.ParentClass.update (self.minute, self.hour, self.day, self.month, self.weekday, self.command, self.linenumber, self.parentiter, self.nooutput, self.title, self.icon)
+			
 		else:
-			self.ParentClass.append (record, self.nooutput, self.title, self.icon)
+			self.ParentClass.append (self.minute, self.hour, self.day, self.month, self.weekday, self.command, self.nooutput, self.title, self.icon)
+			
 	
 		self.widget.hide ()
 

@@ -139,9 +139,11 @@ class Crontab:
 			raise Exception(_("Unknown"), self.translate_frequency (type), _("Invalid"))
 
 
-	def update (self, linenumber, record, parentiter, nooutput, title, icon = None):
-		# The GUI
-		minute, hour, day, month, weekday, command, title_, icon_ = self.parse (record)
+	def update (self,minute, hour, day, month, weekday,command, linenumber, parentiter, nooutput, title, icon = None):
+		# update crontab
+		record = minute + " " + hour + " " + day + " " + month + " " + weekday + " " + command
+		print "crontab:update:record=" + record
+		
 		easystring = self.__easy__ (minute, hour, day, month, weekday)
 
 		if nooutput:
@@ -196,7 +198,8 @@ class Crontab:
 		self.ParentClass.schedule_reload("crontab")
 		
 
-	def append (self, record, nooutput, title, icon = None):
+	def append (self, minute, hour, day, month, weekday, command, nooutput, title, icon = None):
+		record = minute + " " + hour + " " + day + " " + month + " " + weekday + " " + command
 		if nooutput:
 			space = " "
 			if record[len(record)-1] == " ":
@@ -264,9 +267,13 @@ class Crontab:
 	#get info out of task line
 	def parse (self, line):
 		if len (line) > 1 and line[0] != '#':
-			m = self.crontabRecordRegex.match(line)
+			"""
+			The regexp:	('([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^#\n$]*)(\s#\s([^\n$]*)|$)')
+			A record:	* * * * * echo $a >/dev/null 2>&1 # Untitled, /usr/share/icons/gnome/48x48/mimetypes/gnome-mime-application.png
+			"""
+			m = self.crontabRecordRegex.match(line)	
 			if m != None:
-					# print m.groups()
+					#print m.groups()
 					minute = m.groups ()[0]
 					hour = m.groups ()[1]
 					day = m.groups ()[2]
@@ -274,7 +281,7 @@ class Crontab:
 					weekday = m.groups ()[4]
 					command = m.groups ()[5]
 
-					#icon path is in comment of the task
+					#icon path is in comment of the task, this is the default
 					icon = "/usr/share/icons/gnome/48x48/mimetypes/gnome-mime-application.png"
 					
 					#title is in comment of the task
