@@ -80,7 +80,8 @@ src/gnome-schedule
 doc/Makefile
 pixmaps/Makefile
 po/Makefile.in
-system-config-schedule.console
-gnome-schedule.desktop
-gnome-schedule.spec
+desktop/Makefile
+desktop/gnome-schedule.desktop
+dist/fedora/2/gnome-schedule.spec
+dist/fedora/2/system-config-schedule.console 
 ])

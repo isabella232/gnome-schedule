@@ -17,7 +17,6 @@ Development:
   * Completion of atEditor 
   * Rename template to preset or a more convenient name
 
-
  Unassigned unstable (need a new branch and/or will not be 
  included in the next release)
   * Unification of the atEditor and crontabEditor GUI
@@ -33,3 +32,6 @@ Documentation:
 Translations:
   * Virtually any possible language 
   * Also checkout the lang.py file!
+
+Build System
+  * remove mkinstalldirs when not needed anymore
