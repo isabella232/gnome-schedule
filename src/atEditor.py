@@ -28,6 +28,7 @@ import config
 import commands
 import gettext
 import support
+import gconf
 ##
 ## I18N
 ##
@@ -106,6 +107,9 @@ class AtEditor:
 		self.template_combobox.set_model (self.template_combobox_model)
 		self.loadicon ()
 		self.reload_templates ()
+
+		support.gconf_client.add_dir ("/apps/gnome-schedule/templates/at", gconf.CLIENT_PRELOAD_NONE)
+		support.gconf_client.notify_add ("/apps/gnome-schedule/templates/at/installed", self.gconfkey_changed);
 				
 	def on_worded_label_event (self, *args):
 		# highlight on mouseover
@@ -229,7 +233,7 @@ class AtEditor:
 	def on_delete_button_clicked (self, *args):
 		iter = self.template_combobox.get_active_iter ()
 		template = self.template_combobox_model.get_value(iter, 2)
-		icon_uri, command, frequency, title, name = template
+		icon_uri, runat, title, name = template
 		self.template_combobox.set_active (0)
 		self.schedule.removetemplate (name)
 
@@ -237,6 +241,7 @@ class AtEditor:
 		# Uses SaveTemplate (will call it if OK is pressed)
 		# self.ParentClass.saveWindow.ShowSaveWindow(self)
 		self.SaveTemplate (self.template_combobox.get_child().get_text())
+		
 		
 	def SaveTemplate (self, template_name):
 		# TODO: Validate record
@@ -277,8 +282,9 @@ class AtEditor:
 			#self.template_combobox.set_sensitive (gtk.TRUE)
 			self.remove_button.set_sensitive (gtk.TRUE)
 			#self.template_label.set_sensitive (gtk.TRUE)
-				
+		
 		self.template_combobox.set_active (active)
+		
 
 	def on_template_combobox_entry_changed (self, widget):
 		self.save_button.set_sensitive (gtk.TRUE)
@@ -300,9 +306,10 @@ class AtEditor:
 					self.icon = icon_uri
 				else:
 					self.loadicon ()
+		
 				if runat != None:
+					self.wording_option.set_active(gtk.TRUE)
 					self.runat = runat
-			
 				self.title = title
 				self.update_textboxes ()
 			else:
@@ -358,12 +365,13 @@ class AtEditor:
 		else:	
 			self.calendar.select_day(day+1)
 			self.first = 1
-
+		self.control_option.set_active(gtk.TRUE)
 		self.update_time () #update_textboxes inside
 		return
 		
 
 	def update_textboxes(self, update_runat = 1):
+		self.noevents = gtk.TRUE
 		self.title_entry.set_text(self.title)
 		self.script_textview_buffer.set_text(self.command)
 		if update_runat:
@@ -373,6 +381,7 @@ class AtEditor:
 			self.template_image.set_from_file(self.icon)
 		else:
 			self.loadicon ()
+		self.noevents = gtk.FALSE
 		return
 
 	def showedit (self, record, job_id, iter, mode):
