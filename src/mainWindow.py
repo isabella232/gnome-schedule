@@ -17,6 +17,7 @@
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 
 import gtk
+import gnome
 import gobject
 import string
 import os
@@ -37,6 +38,7 @@ import rhpl.translate as translate
 domain = 'gnome-schedule'
 translate.textdomain (domain)
 gtk.glade.bindtextdomain(domain)
+
 
 ##
 ## Icon for windows

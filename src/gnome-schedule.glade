@@ -186,108 +186,101 @@
       </child>
 
       <child>
-	<widget class="GtkToolbar" id="toolbar">
+	<widget class="GtkHandleBox" id="handlebox1">
 	  <property name="visible">True</property>
-	  <property name="orientation">GTK_ORIENTATION_HORIZONTAL</property>
-	  <property name="toolbar_style">GTK_TOOLBAR_BOTH</property>
-	  <property name="tooltips">True</property>
-	  <property name="show_arrow">True</property>
+	  <property name="shadow_type">GTK_SHADOW_OUT</property>
+	  <property name="handle_position">GTK_POS_LEFT</property>
+	  <property name="snap_edge">GTK_POS_TOP</property>
 
 	  <child>
-	    <widget class="GtkToolButton" id="add_button">
+	    <widget class="GtkToolbar" id="toolbar">
 	      <property name="visible">True</property>
-	      <property name="stock_id">gtk-add</property>
-	      <property name="visible_horizontal">True</property>
-	      <property name="visible_vertical">True</property>
-	      <property name="is_important">False</property>
-	      <accessibility>
-		<atkproperty name="AtkObject::accessible_name" translatable="yes">Add</atkproperty>
-		<atkproperty name="AtkObject::accessible_description" translatable="yes">Adds a record</atkproperty>
-	      </accessibility>
-	      <signal name="clicked" handler="on_add_button_clicked" last_modification_time="Sat, 05 Jun 2004 23:27:32 GMT"/>
-	    </widget>
-	    <packing>
-	      <property name="expand">False</property>
-	      <property name="homogeneous">True</property>
-	    </packing>
-	  </child>
+	      <property name="orientation">GTK_ORIENTATION_HORIZONTAL</property>
+	      <property name="toolbar_style">GTK_TOOLBAR_BOTH</property>
+	      <property name="tooltips">True</property>
+	      <property name="show_arrow">False</property>
 
-	  <child>
-	    <widget class="GtkToolButton" id="prop_button">
-	      <property name="visible">True</property>
-	      <property name="stock_id">gtk-properties</property>
-	      <property name="visible_horizontal">True</property>
-	      <property name="visible_vertical">True</property>
-	      <property name="is_important">False</property>
-	      <accessibility>
-		<atkproperty name="AtkObject::accessible_name" translatable="yes">Properties</atkproperty>
-		<atkproperty name="AtkObject::accessible_description" translatable="yes">Changes a record</atkproperty>
-	      </accessibility>
-	      <signal name="clicked" handler="on_prop_button_clicked" last_modification_time="Sat, 05 Jun 2004 23:27:38 GMT"/>
-	    </widget>
-	    <packing>
-	      <property name="expand">False</property>
-	      <property name="homogeneous">True</property>
-	    </packing>
-	  </child>
+	      <child>
+		<widget class="GtkToolButton" id="add_button">
+		  <property name="visible">True</property>
+		  <property name="stock_id">gtk-add</property>
+		  <property name="visible_horizontal">True</property>
+		  <property name="visible_vertical">True</property>
+		  <property name="is_important">True</property>
+		  <signal name="clicked" handler="on_add_button_clicked" last_modification_time="Sat, 05 Jun 2004 23:27:32 GMT"/>
+		</widget>
+		<packing>
+		  <property name="expand">False</property>
+		  <property name="homogeneous">True</property>
+		</packing>
+	      </child>
 
-	  <child>
-	    <widget class="GtkToolButton" id="del_button">
-	      <property name="visible">True</property>
-	      <property name="stock_id">gtk-delete</property>
-	      <property name="visible_horizontal">True</property>
-	      <property name="visible_vertical">True</property>
-	      <property name="is_important">False</property>
-	      <accessibility>
-		<atkproperty name="AtkObject::accessible_name" translatable="yes">Delete</atkproperty>
-		<atkproperty name="AtkObject::accessible_description" translatable="yes">Deletes a record</atkproperty>
-	      </accessibility>
-	      <signal name="clicked" handler="on_del_button_clicked" last_modification_time="Sat, 05 Jun 2004 23:27:42 GMT"/>
-	    </widget>
-	    <packing>
-	      <property name="expand">False</property>
-	      <property name="homogeneous">True</property>
-	    </packing>
-	  </child>
+	      <child>
+		<widget class="GtkToolButton" id="prop_button">
+		  <property name="visible">True</property>
+		  <property name="stock_id">gtk-properties</property>
+		  <property name="visible_horizontal">True</property>
+		  <property name="visible_vertical">True</property>
+		  <property name="is_important">True</property>
+		  <signal name="clicked" handler="on_prop_button_clicked" last_modification_time="Sat, 05 Jun 2004 23:27:38 GMT"/>
+		</widget>
+		<packing>
+		  <property name="expand">False</property>
+		  <property name="homogeneous">True</property>
+		</packing>
+	      </child>
 
-	  <child>
-	    <widget class="GtkToolButton" id="help_button">
-	      <property name="visible">True</property>
-	      <property name="stock_id">gtk-help</property>
-	      <property name="visible_horizontal">True</property>
-	      <property name="visible_vertical">True</property>
-	      <property name="is_important">False</property>
-	      <accessibility>
-		<atkproperty name="AtkObject::accessible_name" translatable="yes">Help</atkproperty>
-		<atkproperty name="AtkObject::accessible_description" translatable="yes">Displays help</atkproperty>
-	      </accessibility>
-	      <signal name="clicked" handler="on_help_button_clicked" last_modification_time="Sat, 05 Jun 2004 23:27:45 GMT"/>
-	    </widget>
-	    <packing>
-	      <property name="expand">False</property>
-	      <property name="homogeneous">True</property>
-	    </packing>
-	  </child>
+	      <child>
+		<widget class="GtkToolButton" id="del_button">
+		  <property name="visible">True</property>
+		  <property name="stock_id">gtk-delete</property>
+		  <property name="visible_horizontal">True</property>
+		  <property name="visible_vertical">True</property>
+		  <property name="is_important">True</property>
+		  <signal name="clicked" handler="on_del_button_clicked" last_modification_time="Sat, 05 Jun 2004 23:27:42 GMT"/>
+		</widget>
+		<packing>
+		  <property name="expand">False</property>
+		  <property name="homogeneous">True</property>
+		</packing>
+	      </child>
 
-	  <child>
-	    <widget class="GtkToolButton" id="btnExit">
-	      <property name="visible">True</property>
-	      <property name="stock_id">gtk-quit</property>
-	      <property name="visible_horizontal">True</property>
-	      <property name="visible_vertical">True</property>
-	      <property name="is_important">False</property>
-	      <signal name="clicked" handler="on_btnExit_clicked" last_modification_time="Mon, 07 Jun 2004 23:11:05 GMT"/>
+	      <child>
+		<widget class="GtkToolButton" id="help_button">
+		  <property name="visible">True</property>
+		  <property name="stock_id">gtk-help</property>
+		  <property name="visible_horizontal">True</property>
+		  <property name="visible_vertical">True</property>
+		  <property name="is_important">True</property>
+		  <signal name="clicked" handler="on_help_button_clicked" last_modification_time="Sat, 05 Jun 2004 23:27:45 GMT"/>
+		</widget>
+		<packing>
+		  <property name="expand">False</property>
+		  <property name="homogeneous">True</property>
+		</packing>
+	      </child>
+
+	      <child>
+		<widget class="GtkToolButton" id="btnExit">
+		  <property name="visible">True</property>
+		  <property name="stock_id">gtk-quit</property>
+		  <property name="visible_horizontal">True</property>
+		  <property name="visible_vertical">True</property>
+		  <property name="is_important">True</property>
+		  <signal name="clicked" handler="on_btnExit_clicked" last_modification_time="Mon, 07 Jun 2004 23:11:05 GMT"/>
+		</widget>
+		<packing>
+		  <property name="expand">False</property>
+		  <property name="homogeneous">True</property>
+		</packing>
+	      </child>
 	    </widget>
-	    <packing>
-	      <property name="expand">False</property>
-	      <property name="homogeneous">True</property>
-	    </packing>
 	  </child>
 	</widget>
 	<packing>
 	  <property name="padding">0</property>
 	  <property name="expand">False</property>
-	  <property name="fill">False</property>
+	  <property name="fill">True</property>
 	</packing>
       </child>
 
