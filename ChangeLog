@@ -1,3 +1,7 @@
+2005-01-10  Žygimantas Beručka  <uid0@akl.lt>
+
+	* configure.ac: Added Lithuanian (lt) to ALL_LINGUAS.
+
 2005-01-09	Gaute Hope <eg@gaute.eu.org>
 
 	* src/*Window.py: Made the window that opens them the parent of them and places them in the center of the parent.

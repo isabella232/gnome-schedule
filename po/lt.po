@@ -1,0 +1,888 @@
+# Lithuanian translation of gnome-schedule.
+# Copyright (C) 2005 Free Software Foundation, Inc.
+# This file is distributed under the same license as the gnome-schedule package.
+# Žygimantas Beručka <uid0@akl.lt>, 2005.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-schedule HEAD\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-01-10 01:14+0200\n"
+"PO-Revision-Date: 2005-01-10 05:32+0200\n"
+"Last-Translator: Žygimantas Beručka <uid0@akl.lt>\n"
+"Language-Team: Lithuanian <komp_lt@konferencijos.lt>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: desktop/gnome-schedule.desktop.in.h:1
+msgid "Manage your system tasks"
+msgstr "Valdykit Jūsų sistemos užduotis"
+
+#: desktop/gnome-schedule.desktop.in.h:2
+msgid "Schedule"
+msgstr "Tvarkaraštis"
+
+#. TODO: localize time and date formats
+#: src/at.py:298
+#, python-format
+msgid "On %(date)s at %(time)s"
+msgstr "%(date)s  %(time)s"
+
+#: src/at.py:303 src/at.py:308
+msgid "One-time"
+msgstr "Vieną kartą"
+
+#: src/crontab.py:58
+msgid "Minute"
+msgstr "Minutė"
+
+#: src/crontab.py:59
+msgid "Hour"
+msgstr "Valanda"
+
+#: src/crontab.py:60
+msgid "Day of Month"
+msgstr "Mėnesio diena"
+
+#: src/crontab.py:61
+msgid "Month"
+msgstr "Mėnuo"
+
+#: src/crontab.py:62
+msgid "Weekday"
+msgstr "Savaitės diena"
+
+#: src/crontab.py:147 src/crontab.py:152 src/crontab.py:156
+#, python-format
+msgid "Must be between %s and %s"
+msgstr "Turi būti tarp %s ir %s"
+
+#: src/crontab.py:154
+#, python-format
+msgid "%s is not a number"
+msgstr "%s nėra skaičius"
+
+#: src/crontab.py:174 src/crontab.py:209 src/crontab.py:298
+#: src/crontabEditor.py:194 src/atEditor.py:117
+msgid "Untitled"
+msgstr "Nepavadinta"
+
+#. add task to treemodel in mainWindow
+#: src/crontab.py:241
+msgid "Recurrent"
+msgstr "Pasikartojanti"
+
+#: src/crontab.py:253 src/crontabEditor.py:88 src/gnome-schedule.glade.h:83
+msgid "minute"
+msgstr "minutę"
+
+#: src/crontab.py:255 src/crontabEditor.py:89 src/gnome-schedule.glade.h:82
+msgid "hour"
+msgstr "valandą"
+
+#: src/crontab.py:257 src/crontabEditor.py:90 src/gnome-schedule.glade.h:81
+msgid "day"
+msgstr "dieną"
+
+#: src/crontab.py:259 src/crontabEditor.py:91 src/gnome-schedule.glade.h:84
+msgid "month"
+msgstr "mėnesį"
+
+#: src/crontab.py:261 src/gnome-schedule.glade.h:88
+msgid "weekday"
+msgstr "savaitės dieną"
+
+#: src/crontabEditor.py:87
+msgid "use advanced"
+msgstr "naudoti sudėtingą"
+
+#: src/crontabEditor.py:92
+msgid "week"
+msgstr "savaitę"
+
+#: src/crontabEditor.py:137 src/atEditor.py:119
+msgid "Create a new scheduled task"
+msgstr "Sukurti naują suplanuotą užduotį"
+
+#: src/crontabEditor.py:157 src/atEditor.py:149
+msgid "Edit a scheduled task"
+msgstr "Keisti suplanuotą užduotį"
+
+#: src/crontabEditor.py:212 src/atEditor.py:321
+msgid "Don't use a preset"
+msgstr "Nenaudoti trafareto"
+
+#: src/crontabEditor.py:268
+#, python-format
+msgid ""
+"This is an invalid record! The problem could be at the %s field. Reason: %s"
+msgstr ""
+"Tai yra netinkamas įrašas! Problema gali būti laukelyje %s. Priežastis: %s"
+
+#: src/crontabEditor.py:322 src/atEditor.py:394
+msgid "Pick an icon for this scheduled task"
+msgstr "Pasirinkite ikoną suplanuotai užduočiai"
+
+#: src/crontabEditor.py:382
+msgid "command"
+msgstr "komanda"
+
+#: src/crontabEditorHelper.py:110
+msgid "Happens all "
+msgstr "Nutinka kiekvieną "
+
+#: src/crontabEditorHelper.py:110 src/crontabEditorHelper.py:218
+msgid "s"
+msgstr " "
+
+#: src/crontabEditorHelper.py:113
+msgid "Happens from "
+msgstr "Nutinka nuo "
+
+#. show the form
+#: src/crontabEditorHelper.py:156
+#, python-format
+msgid "Edit time expression for: %s"
+msgstr "Keisti laiko išraišką: %s"
+
+#: src/crontabEditorHelper.py:169
+#, python-format
+msgid "This is invalid. Reason: %s"
+msgstr "Netinkama. Priežastis: %s"
+
+#: src/crontabEditorHelper.py:209 src/crontabEditorHelper.py:220
+msgid "st. "
+msgstr " "
+
+#: src/crontabEditorHelper.py:211
+msgid "th. "
+msgstr " "
+
+#: src/gnome-schedule.glade.h:1
+msgid " "
+msgstr " "
+
+#: src/gnome-schedule.glade.h:2
+msgid "     "
+msgstr "     "
+
+#: src/gnome-schedule.glade.h:3
+msgid " >/dev/null 2>&1"
+msgstr " >/dev/null 2>&1"
+
+#: src/gnome-schedule.glade.h:4
+msgid "*"
+msgstr "*"
+
+#: src/gnome-schedule.glade.h:5
+msgid "* * * * * command"
+msgstr "* * * * * komanda"
+
+#: src/gnome-schedule.glade.h:6
+msgid "0"
+msgstr "0"
+
+#: src/gnome-schedule.glade.h:7
+msgid "0-23"
+msgstr "0-23"
+
+#: src/gnome-schedule.glade.h:8
+msgid "0-59"
+msgstr "0-59"
+
+#: src/gnome-schedule.glade.h:9
+msgid "0-7"
+msgstr "0-7"
+
+#: src/gnome-schedule.glade.h:10
+msgid "1-12"
+msgstr "1-12"
+
+#: src/gnome-schedule.glade.h:11
+msgid "1-31"
+msgstr "1-31"
+
+#: src/gnome-schedule.glade.h:12
+msgid "2"
+msgstr "2"
+
+#: src/gnome-schedule.glade.h:13
+msgid "59"
+msgstr "59"
+
+#: src/gnome-schedule.glade.h:14
+msgid ":"
+msgstr ":"
+
+#: src/gnome-schedule.glade.h:15
+msgid "<b>Basic settings</b>"
+msgstr "<b>Pagrindiniai nustatymai</b>"
+
+#: src/gnome-schedule.glade.h:16
+msgid "<b>Date setting</b>"
+msgstr "<b>Datos nustatymai</b>"
+
+#: src/gnome-schedule.glade.h:17
+msgid "<b>Frequency setting</b>"
+msgstr "<b>Dažnio nustatymai</b>"
+
+#: src/gnome-schedule.glade.h:18
+msgid "<b>Preview</b>"
+msgstr "<b>Peržiūra</b>"
+
+#: src/gnome-schedule.glade.h:19
+msgid "<b>Select the type of the scheduled task</b>"
+msgstr "<b>Pasirinkite suplanuotos užduoties tipą</b>"
+
+#: src/gnome-schedule.glade.h:20
+msgid "A scheduled task that will launch only one-time in the future."
+msgstr "Suplanuota užduotis, kuri bus peleista ateityje tik vieną kartą."
+
+#: src/gnome-schedule.glade.h:21
+msgid "A scheduled task that will launch recurrently."
+msgstr "Suplanuota užduotis, kuri bus paleidžiama periodiškai."
+
+#: src/gnome-schedule.glade.h:22
+msgid "A_dvanced"
+msgstr "Su_dėtingiau"
+
+#: src/gnome-schedule.glade.h:23
+msgid "About this application"
+msgstr "Apie šią programą"
+
+#: src/gnome-schedule.glade.h:24
+msgid "Active user"
+msgstr "Aktyvus naudotojas"
+
+#: src/gnome-schedule.glade.h:25
+msgid "Add a new scheduled task"
+msgstr "Pridėti naują suplanuotą užduotį"
+
+#: src/gnome-schedule.glade.h:26
+msgid "Add a scheduled task"
+msgstr "Pridėti suplanuotą užduotį"
+
+#: src/gnome-schedule.glade.h:27
+msgid "Advanced"
+msgstr "Sudėtinga"
+
+#: src/gnome-schedule.glade.h:28
+msgid "Alter a scheduled task"
+msgstr "Pakeisti suplanuotą užduotį"
+
+#: src/gnome-schedule.glade.h:29
+msgid "Basic"
+msgstr "Paprasta"
+
+#: src/gnome-schedule.glade.h:30
+msgid "Cancel this operation"
+msgstr "Atšaukti šią operaciją"
+
+#: src/gnome-schedule.glade.h:31
+msgid "Configure scheduled tasks"
+msgstr "Konfigūruoti suplanuotas užduotis"
+
+#: src/gnome-schedule.glade.h:32
+msgid "Date and time"
+msgstr "Data ir laikas"
+
+#: src/gnome-schedule.glade.h:33
+msgid "Delete a scheduled task"
+msgstr "Ištrinti suplanuotą užduotį"
+
+#: src/gnome-schedule.glade.h:34
+msgid "Every"
+msgstr "Kiekvieną"
+
+#: src/gnome-schedule.glade.h:35
+msgid "Execution at a specific minute, hour, day, weekday or month."
+msgstr "Vykdymas nurodytą minutę, valandą, dieną, savaitės dieną, mėnesį."
+
+#: src/gnome-schedule.glade.h:36
+msgid ""
+"Execution at a step width. For example every five minutes, hours, days, "
+"weekdays or months."
+msgstr ""
+"Vykdymas tam tikru žingsniu. Pvz. kas penkias minutes, valandas, dienas, "
+"savaitės dienas ar mėnesius."
+
+#: src/gnome-schedule.glade.h:37
+msgid "Execution at every minute, hour, day, weekday or month."
+msgstr "Vykdymas kiekvieną minutė, valandą, dieną, savaitės dieną ar mėnesį."
+
+#: src/gnome-schedule.glade.h:38
+msgid "Execution in a range."
+msgstr "Vykdyti ribose."
+
+#: src/gnome-schedule.glade.h:39
+msgid "For example at 04:10 tomorrow, next week or in three days."
+msgstr "Pavyzdžiui rytoj 04:10, kitą savaitę arba po trijų dienų."
+
+#: src/gnome-schedule.glade.h:40
+msgid "For example every first hour of the day."
+msgstr "Pavyzdžiui kiekvieną pirmąją dienos valandą."
+
+#: src/gnome-schedule.glade.h:41
+msgid "For experienced users only"
+msgstr "Tik patyrusiems naudotojams"
+
+#: src/gnome-schedule.glade.h:42
+msgid "Happens all"
+msgstr "Nutinka kiekvieną"
+
+#: src/gnome-schedule.glade.h:43
+msgid "Happens at the"
+msgstr "Nutinka tiksliu laiku"
+
+#: src/gnome-schedule.glade.h:44
+msgid "Happens every"
+msgstr "Nutinka kas"
+
+#: src/gnome-schedule.glade.h:45
+msgid "Happens from"
+msgstr "Nutinka nuo"
+
+#: src/gnome-schedule.glade.h:46
+msgid "No output"
+msgstr "Nėra išvesties"
+
+#: src/gnome-schedule.glade.h:47
+msgid "Other expression"
+msgstr "Kita išraiška"
+
+#: src/gnome-schedule.glade.h:48
+msgid "Preset"
+msgstr "Trafaretas"
+
+#: src/gnome-schedule.glade.h:49
+msgid ""
+"Quit the application. This will not stop the system scheduling. It will, "
+"however, quit this system schedule maintenance tool."
+msgstr ""
+"Uždaryti programą. Tai nesustabdys suplanuotų užduočių vykdymo. Tiesiog "
+"uždarys šių užduočių priežiūros įrankį."
+
+#: src/gnome-schedule.glade.h:50
+msgid "Run"
+msgstr "Paleisti"
+
+#: src/gnome-schedule.glade.h:51
+msgid "Run at:"
+msgstr "Paleisti laiku:"
+
+#: src/gnome-schedule.glade.h:52
+msgid "Scheduled and active tasks"
+msgstr "Suplanuotos ir aktyvios užduotys"
+
+#: src/gnome-schedule.glade.h:53
+msgid "Script"
+msgstr "Scenarijus"
+
+#: src/gnome-schedule.glade.h:54
+msgid "See \"man 5 crontab\" for informations about crontab format."
+msgstr ""
+"Norėdami gauti daugiau informacijos apie crontab formatą, žr. „man 5 "
+"crontab“."
+
+#: src/gnome-schedule.glade.h:55
+msgid "Select a different user"
+msgstr "Pasirinkti kitą naudotoją"
+
+#: src/gnome-schedule.glade.h:56
+msgid "Set the day frequency setting"
+msgstr "Nustatyti dienų dažnio parametrą"
+
+#: src/gnome-schedule.glade.h:57
+msgid "Set the hour frequency setting"
+msgstr "Nustatyti valandų dažnio parametrą"
+
+#: src/gnome-schedule.glade.h:58
+msgid "Set the icon of this scheduled task"
+msgstr "Suplanuotai užduočiai pridėti ikoną"
+
+#: src/gnome-schedule.glade.h:59
+msgid "Set the minute frequency setting"
+msgstr "Nustatyti minučių dažnio parametrą"
+
+#: src/gnome-schedule.glade.h:60
+msgid "Set the month frequency setting"
+msgstr "Nustatyti mėnesių dažnio parametrą"
+
+#: src/gnome-schedule.glade.h:61
+msgid "Set the scheduled task"
+msgstr "Nustatyti suplanuotą užduotį"
+
+#: src/gnome-schedule.glade.h:62
+msgid "Set the weekday frequency setting"
+msgstr "Nustatyti savaitės dienų dažnio parametrą"
+
+#: src/gnome-schedule.glade.h:63
+msgid "Set user"
+msgstr "Nustatyti naudotoją"
+
+#: src/gnome-schedule.glade.h:64
+msgid "Show help"
+msgstr "Rodyti pagalbą"
+
+#: src/gnome-schedule.glade.h:65
+msgid "Show the manual"
+msgstr "Rodyti žinyną"
+
+#: src/gnome-schedule.glade.h:66
+msgid "Shows the records"
+msgstr "Parodo įrašus"
+
+#: src/gnome-schedule.glade.h:67
+msgid "Task title"
+msgstr "Užduoties pavadinimas"
+
+#: src/gnome-schedule.glade.h:68
+msgid "The date when the script will launch"
+msgstr "Data kada pus įvykdytas scenarijus"
+
+#: src/gnome-schedule.glade.h:69
+msgid "Time expression help"
+msgstr "Laiko išraiškos pagalba"
+
+#: src/gnome-schedule.glade.h:70
+msgid "Time:"
+msgstr "Laikas:"
+
+#: src/gnome-schedule.glade.h:71
+msgid "Treeview"
+msgstr "Medžio vaizdas"
+
+#: src/gnome-schedule.glade.h:72
+msgid ""
+"When selected, no output will be generated. When scheduled tasks in the "
+"crontab do have output and this option is not checked, the output will by "
+"default be send to the UNIX mailbox of the user."
+msgstr ""
+"Pasirinkus, nebus rodoma jokia išvestis. Kai suplanuotos užduotys crontab "
+"neturi išvesties ir šis nustatymas yra nepažymėtas, išvestis standartiškai "
+"bus siunčiama į naudotojo UNIX pašto dėžutę."
+
+#: src/gnome-schedule.glade.h:73
+msgid "Will delete the selected preset"
+msgstr "Pasirinktas trafaretas bus ištrintas"
+
+#: src/gnome-schedule.glade.h:74
+msgid ""
+"Will save the current information as a preset. You can type the name of the "
+"preset in the combobox."
+msgstr ""
+"Išsaugos esamą informaciją kaip trafaretą. Jūs galite sąrašo dėžutėje "
+"nurodyti trafareto pavadinimą."
+
+#: src/gnome-schedule.glade.h:75
+msgid "[Add|Edit] scheduled task"
+msgstr "[Pridėti|Keisti] suplanuotas užduotis"
+
+#: src/gnome-schedule.glade.h:76
+msgid "_Add task"
+msgstr "_Pridėti užduotį"
+
+#: src/gnome-schedule.glade.h:77
+msgid "_Delete"
+msgstr "_Ištrinti"
+
+#: src/gnome-schedule.glade.h:78
+msgid "_Manual"
+msgstr "Ž_inynas"
+
+#: src/gnome-schedule.glade.h:79
+msgid "_Select"
+msgstr "_Pasirinkti"
+
+#: src/gnome-schedule.glade.h:80
+msgid "_Set user"
+msgstr "_Nustatyti naudotoją"
+
+#: src/gnome-schedule.glade.h:85
+msgid "to"
+msgstr "iki"
+
+#: src/gnome-schedule.glade.h:86
+msgid ""
+"tomorrow\n"
+"next week"
+msgstr ""
+"rytoj\n"
+"kitą savaitę"
+
+#. Translators: Date format for expressions like 'January 21'. %B is month, %d is day number.
+#. Run the command 'man strftime' to read more about these and other available specifiers.
+#: src/lang.py:101
+msgid "%B %d"
+msgstr "%B %d"
+
+#. Translators: Date format for expressions like 'January 21, 2005'. %B is month, %d is day number, %Y is year with century.
+#. Run the command 'man strftime' to read more about these and other available specifiers.
+#: src/lang.py:108
+msgid "%B %d, %Y"
+msgstr "%Y %B %d"
+
+#. Translators: Time without seconds. %H is hour, %M is minute.
+#. Run the command 'man strftime' to read more about these and other available specifiers.
+#: src/lang.py:118
+msgid "%H:%M"
+msgstr "%H:%M"
+
+#: src/lang.py:155
+msgid "At every full hour"
+msgstr "Kiekvieną valandą"
+
+#: src/lang.py:157
+msgid "At every minute"
+msgstr "Kiekvieną minutę"
+
+#: src/lang.py:159
+#, python-format
+msgid "At minute %(minute)s of every hour"
+msgstr "Kiekvienos valandos %(minute)s minutę"
+
+#: src/lang.py:161
+#, python-format
+msgid "At every minute between %(time_from)s and %(time_to)s"
+msgstr "Kiekvieną minutę tarp %(time_from)s ir %(time_to)s"
+
+#: src/lang.py:163
+#, python-format
+msgid "On every day at %(time)s"
+msgstr "Kasdien %(time)s"
+
+#: src/lang.py:168
+#, python-format
+msgid "On day %(monthday)s of every month at every full hour"
+msgstr "Kiekvieno mėnesio %(monthday)s dieną kiekvieną pilną valandą"
+
+#: src/lang.py:170
+#, python-format
+msgid "On day %(monthday)s of every month at every minute"
+msgstr "Kiekvieno mėnesio %(monthday)s dieną kiekvieną minutę"
+
+#: src/lang.py:172
+#, python-format
+msgid "On day %(monthday)s of every month at minute %(minute)s of every hour"
+msgstr ""
+"Kiekvieno mėnesio %(monthday)s dieną kiekvienos valandos %(minute)s minutę"
+
+#: src/lang.py:174
+#, python-format
+msgid ""
+"On day %(monthday)s of every month at every minute between %(time_from)s and "
+"%(time_to)s"
+msgstr ""
+"Kiekvieno mėnesio %(monthday)s dieną kiekvieną minutę tarp %(time_from)s ir "
+"%(time_to)s"
+
+#: src/lang.py:176
+#, python-format
+msgid "On day %(monthday)s of every month at %(time)s"
+msgstr "%(monthday)s kiekvieno mėnesio dieną %(time)s"
+
+#: src/lang.py:181
+#, python-format
+msgid "On every day in %(month)s at every full hour"
+msgstr "Kiekvieną %(month)s mėnesio dieną kiekvieną pilną valandą"
+
+#: src/lang.py:183
+#, python-format
+msgid "On every day in %(month)s at every minute"
+msgstr "Kiekvieną %(month)s mėnesio dieną kiekvieną minutę"
+
+#: src/lang.py:185
+#, python-format
+msgid "On every day in %(month)s at minute %(minute)s of every hour"
+msgstr "Kiekvieną %(month)s mėnesio dieną %(minute)s kiekvienos valandos minutę"
+
+#: src/lang.py:187
+#, python-format
+msgid ""
+"On every day in %(month)s at every minute between %(time_from)s and %"
+"(time_to)s"
+msgstr ""
+"Kiekvieną %(month)s mėnesio dieną kiekvieną minutę tarp %(time_from)s ir "
+"%(time_to)s"
+
+#: src/lang.py:189
+#, python-format
+msgid "On every day in %(month)s at %(time)s"
+msgstr "Kiekvieną %(month)s mėnesio dieną %(time)s"
+
+#: src/lang.py:194
+#, python-format
+msgid "Every year on %(date)s at every full hour"
+msgstr "Kiekvienais metais %(date)s kiekvieną pilną valandą"
+
+#: src/lang.py:196
+#, python-format
+msgid "Every year on %(date)s at every minute"
+msgstr "Kiekvienais metais %(date)s kiekvieną minutę"
+
+#: src/lang.py:198
+#, python-format
+msgid "Every year on %(date)s at minute %(minute)s of every hour"
+msgstr "Kiekvienais metais %(date)s kiekvienos valandos %(minute)s minutę"
+
+#: src/lang.py:200
+#, python-format
+msgid ""
+"Every year on %(date)s at every minute between %(time_from)s and %(time_to)s"
+msgstr ""
+"Kiekvienais metais %(date)s kiekvieną minutę tarp %(time_from)s ir %(time_to)s"
+
+#: src/lang.py:202
+#, python-format
+msgid "Every year on %(date)s at %(time)s"
+msgstr "Kiekvienais metais %(date)s %(time)s"
+
+#: src/lang.py:207
+#, python-format
+msgid "On every %(weekday)s at every full hour"
+msgstr "Kiekvieną %(weekday)s savaitės dieną kiekvieną pilną valandą"
+
+#: src/lang.py:209
+#, python-format
+msgid "On every %(weekday)s at every minute"
+msgstr "Kiekvieną %(weekday)s savaitės dieną kiekvieną minutę"
+
+#: src/lang.py:211
+#, python-format
+msgid "On every %(weekday)s at minute %(minute)s of every hour"
+msgstr ""
+"Kiekvieną %(weekday)s savaitės dieną kiekvienos valandos %(minute)s minutę"
+
+#: src/lang.py:213
+#, python-format
+msgid ""
+"On every %(weekday)s at every minute between %(time_from)s and %(time_to)s"
+msgstr ""
+"Kiekvieną %(weekday)s savaitės dieną kiekvieną minutę tarp %(time_from)s ir "
+"%(time_to)s"
+
+#: src/lang.py:215
+#, python-format
+msgid "On every %(weekday)s at %(time)s"
+msgstr "Kiekvieną %(weekday)s savaitės dieną %(time)s"
+
+#: src/lang.py:220
+#, python-format
+msgid ""
+"On day %(monthday)s of every month and every %(weekday)s at every full hour"
+msgstr ""
+"Kiekvieno mėnesio %(monthday)s dieną ir kiekvieną %(weekday)s savaitės dieną "
+"kiekvieną pilną valandą"
+
+#: src/lang.py:222
+#, python-format
+msgid ""
+"On day %(monthday)s of every month and every %(weekday)s at every minute"
+msgstr ""
+"Kiekvieno mėnesio %(monthday)s dieną ir kiekvieną %(weekday)s savaitės dieną "
+"kiekvieną minutę"
+
+#: src/lang.py:224
+#, python-format
+msgid ""
+"On day %(monthday)s of every month and every %(weekday)s at minute %(minute)"
+"s of every hour"
+msgstr ""
+"Kiekvieno mėnesio %(monthday)s dieną ir kiekvieną %(weekday)s savaitės dieną "
+"kiekvienos valandos %(minute)s minutę"
+
+#: src/lang.py:226
+#, python-format
+msgid ""
+"On day %(monthday)s of every month and every %(weekday)s at every minute "
+"between %(time_from)s and %(time_to)s"
+msgstr ""
+"Kiekvieno mėnesio %(monthday)s dieną ir kiekvieną %(weekday)s kiekvieną "
+"minutę tarp %(time_from)s ir %(time_to)s"
+
+#: src/lang.py:228
+#, python-format
+msgid "On day %(monthday)s of every month and every %(weekday)s at %(time)s"
+msgstr "Kiekvieno mėnesio %(monthday)s dieną ir kiekvieną %(weekday)s savaitės "
+"dieną %(time)s"
+
+#: src/lang.py:233
+#, python-format
+msgid "On every %(weekday)s in %(month)s at every full hour"
+msgstr "Kiekviena %(month)s mėnesio %(weekday)s dieną kiekvieną pilną valandą"
+
+#: src/lang.py:235
+#, python-format
+msgid "On every %(weekday)s in %(month)s at every minute"
+msgstr "Kiekvieną %(month)s mėnesio %(weekday)s savaitės dieną kiekvieną minutę"
+
+#: src/lang.py:237
+#, python-format
+msgid "On every %(weekday)s in %(month)s at minute %(minute)s of every hour"
+msgstr ""
+"Kiekvieną %(month)s mėnesio %(weekday)s savaitės dieną kiekvienos valandos "
+"%(minute)s minutę"
+
+#: src/lang.py:239
+#, python-format
+msgid ""
+"On every %(weekday)s in %(month)s at every minute between %(time_from)s and %"
+"(time_to)s"
+msgstr ""
+"Kiekvieną %(month)s mėnesio %(weekday)s savaitės dieną kievieną minutę tarp "
+"%(time_from)s ir %(time_to)s"
+
+#: src/lang.py:241
+#, python-format
+msgid "On every %(weekday)s in %(month)s at %(time)s"
+msgstr "Kiekvieną %(month)s mėnesio %(weekday)s savaitės dieną %(time)s"
+
+#: src/lang.py:246
+#, python-format
+msgid ""
+"On every %(weekday)s in %(month)s and on %(date)s every year at every full "
+"hour"
+msgstr ""
+"Kiekvienų metų %(date)s ir %(month)s mėnesio kiekvieną %(weekday)s savaitės "
+"dieną kiekvieną pilną valandą"
+
+#: src/lang.py:248
+#, python-format
+msgid ""
+"On every %(weekday)s in %(month)s and on %(date)s every year at every minute"
+msgstr ""
+"Kiekvienų metų %(date)s ir %(month)s mėnesio kiekvieną %(weekday)s dieną "
+"kiekvieną minutę"
+
+#: src/lang.py:250
+#, python-format
+msgid ""
+"On every %(weekday)s in %(month)s and on %(date)s every year at minute %"
+"(minute)s of every hour"
+msgstr ""
+"Kiekvienų metų %(date)s ir %(month)s mėnesio kiekvieną %(weekday)s savaitės "
+"dieną kiekvienos valandos %(minute)s minutę"
+
+#: src/lang.py:252
+#, python-format
+msgid ""
+"On every %(weekday)s in %(month)s and on %(date)s every year at every minute "
+"between %(time_from)s and %(time_to)s"
+msgstr ""
+"Kiekvienų metų %(date)s ir %(month)s mėnesio kiekvieną %(weekday)s savaitės "
+"dieną kiekvieną minutę tarp %(time_from)s ir %(time_to)s"
+
+#: src/lang.py:254
+#, python-format
+msgid ""
+"On every %(weekday)s in %(month)s and on %(date)s every year at %(time)s"
+msgstr ""
+"Kiekvienų metų %(date)s ir %(month)s mėnesio kiekvieną %(weekday)s dieną "
+"%(time)s"
+
+#: src/lang.py:262
+msgid "every minute"
+msgstr "kiekvieną minutę"
+
+#: src/lang.py:264
+#, python-format
+msgid "minute: %s"
+msgstr "minutė: %s"
+
+#: src/lang.py:267
+msgid "every hour"
+msgstr "kiekvieną valandą"
+
+#: src/lang.py:269
+#, python-format
+msgid "hour: %s"
+msgstr "valanda: %s"
+
+#: src/lang.py:272
+msgid "every day of month"
+msgstr "kiekvieną mėnesio dieną"
+
+#: src/lang.py:274
+#, python-format
+msgid "day of month: %s"
+msgstr "mėnesio diena: %s"
+
+#: src/lang.py:277
+msgid "every month"
+msgstr "kiekvieną mėnesį"
+
+#: src/lang.py:279
+#, python-format
+msgid "month: %s"
+msgstr "mėnuo: %s"
+
+#: src/lang.py:282
+#, python-format
+msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s"
+msgstr "%(minute)s, %(hour)s, %(monthday)s, %(month)s"
+
+#: src/lang.py:284
+#, python-format
+msgid "weekday: %s"
+msgstr "savaitės diena: %s"
+
+#: src/lang.py:285
+#, python-format
+msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
+msgstr "%(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
+
+#: src/mainWindow.py:198 src/mainWindow.py:296
+#, python-format
+msgid "Editing user: %s"
+msgstr "Keičiamas naudotojas: %s"
+
+#: src/mainWindow.py:331
+msgid "Icon"
+msgstr "Ikona"
+
+#: src/mainWindow.py:336 src/mainWindow.py:369
+msgid "Type"
+msgstr "Tipas"
+
+#: src/mainWindow.py:340 src/mainWindow.py:365
+msgid "Title"
+msgstr "Pavadinimas"
+
+#: src/mainWindow.py:344 src/mainWindow.py:356
+msgid "Frequency or time"
+msgstr "Dažnis arba laikas"
+
+#: src/mainWindow.py:348 src/mainWindow.py:360
+msgid "Preview"
+msgstr "Peržiūra"
+
+#. TODO: should be using gtkAboutDialog
+#: src/mainWindow.py:494
+msgid "Gnome Schedule"
+msgstr "Gnome tvarkaraštis"
+
+#: src/mainWindow.py:496
+msgid "Copyright (c) 2004-2005 Gaute Hope."
+msgstr "Autorinės teisės (c) 2004-2005 Gaute Hope."
+
+#: src/mainWindow.py:497
+msgid "This software is distributed under the GPL. "
+msgstr "Ši programa yra platinama GPL licencijos sąlygomis. "
+
+#: src/mainWindow.py:501
+msgid ""
+"Some painfully bad documentation put\n"
+"toghether from the far corners of Gaute Hope's mind."
+msgstr ""
+"Iki skausmo bloga dokumentacija surinkta\n"
+"iš tolimiausių Gaute Hope proto kampelių."
+
+#: src/mainWindow.py:501
+msgid "translator_credits"
+msgstr "Žygimantas Beručka <uid0@akl.lt>"
+
+#: src/atEditor.py:510
+#, python-format
+msgid "This is an invalid record! The problem could be: %s"
+msgstr "Netinkamas įrašas! Problema gali būti: %s"
