@@ -74,6 +74,8 @@ nothing (_("To the translator: Read src/lang.py !!! (yeah it's for you, not for 
 def translate_nth (nth):
 	if language.find ("nl") != -1:
 		return translate_nth_nl (nth)
+	elif language.find ("de") != -1:
+		return translate_nth_de (nth)
 	#elif lang.find ("whatever") != -1:
 	#	return translate_nth_whatever (nth)
 	else:
@@ -120,7 +122,7 @@ def translate_nth_en (nth):
 		return (_("%s%s%s%s%s%s") % ("", add, tennumbers [tennumber], _("-"), twenty_nths[remainder], ""))
 	# Any other case (in this application this should never happen)
 	elif nth > 100 or nth < -100:
-		return (_("%sth.") % (string(nth)))
+		return (_("%sth.") % (str(nth)))
 
 # Dutch is pretty much the same as English, except that there are some
 # special cases in spelling and that the ordering to form the word is
@@ -172,7 +174,7 @@ def translate_nth_nl (nth):
 		# the number.
 		return add + numbers[remainder]+between+tennumbers [tennumber]+"ste"
 	elif nth > 100 or nth < -100:
-		return string(nth) + "de"
+		return str(nth) + "de"
 
 # Add your language here:
 #def translate_nth_whatever (nth):
@@ -190,10 +192,12 @@ def translate_nth_nl (nth):
 # Still I am making it possible to translate this using both po-files
 # and by defining your own version of it.
 def timeval (hour, minute, seconds = None):
-	#if language.find ("whatever") != -1:
+	if language.find ("de") != -1:
+		return timeval_de (hour, minute, seconds)
+	#elif language.find ("whatever") != -1:
 	#	return timeval_whatever (hour, minute, seconds)
-	#else:
-	return timeval_en (hour, minute, seconds)
+	else:
+	    return timeval_en (hour, minute, seconds)
 
 # So this is the English version. It will return "hh:mm:ss". As you can
 # see I have added an empty translatable string at the beginning and end
@@ -203,12 +207,12 @@ def timeval (hour, minute, seconds = None):
 # use the functions below to create a version for your language.
 def timeval_en (hour, minute, seconds):
 	if int (minute) < 10:
-		minute = "0" + minute
+		minute = "0" + str(minute)
 	if int (hour) < 10:
-		hour = "0" + hour
+		hour = "0" + str(hour)
 	if seconds != None:
 		if int (seconds) < 10:
-			seconds = "0" + seconds
+			seconds = "0" + str(seconds)
 		return (_("%s%s:%s:%s%s") % ("", hour, minute, seconds, ""))
 	else:
 		return (_("%s%s:%s%s") % ("", hour, minute, ""))
@@ -222,10 +226,12 @@ def translate_crontab_easy (minute, hour, day, month, weekday):
 	
 	# Add support for your language here
 	
-	if language.find ("en") != -1 or language == "C" or language.find ("us"):
+	if language.find ("en") != -1 or language == "C" or language.find ("us") != -1:
 		return translate_crontab_easy_en (minute, hour, day, month, weekday)
-	elif language.find ("nl") != -1:
-		return translate_crontab_easy_nl (minute, hour, day, month, weekday)
+#	elif language.find ("nl") != -1:
+#		return translate_crontab_easy_nl (minute, hour, day, month, weekday)
+	elif language.find ("de") != -1:
+		return translate_crontab_easy_de (minute, hour, day, month, weekday)
 	else:
 		return translate_crontab_easy_anylang (minute, hour, day, month, weekday)
 
@@ -233,11 +239,11 @@ def translate_crontab_easy_en (minute, hour, day, month, weekday):
 	# * means "every"
 	# x-y means happens every instance between x and y (not yet supported correctly)
 	# x means happens at
-	# *\x means happens every xth (not yet supported correctly)
+	# */x means happens every xth (not yet supported correctly)
 	# 1,2,3,4 means happens the 1st, 2e, 3th and 4th
 	
 	# These are the two unsupported cases
-	if minute.find ("\\") != -1 or hour.find ("\\") != -1 or day.find ("\\") != -1 or month.find ("\\") != -1 or weekday.find ("\\") != -1:
+	if minute.find ("/") != -1 or hour.find ("/") != -1 or day.find ("/") != -1 or month.find ("/") != -1 or weekday.find ("/") != -1:
 		return translate_crontab_easy_anylang (minute, hour, day, month, weekday)
 	if minute.find ("-") != -1 or hour.find ("-") != -1 or day.find ("-") != -1 or month.find ("-") != -1 or weekday.find ("-") != -1:
 		return translate_crontab_easy_anylang (minute, hour, day, month, weekday)
@@ -276,6 +282,8 @@ def translate_crontab_easy_en (minute, hour, day, month, weekday):
 			return (_("Every minute of the %s hour every %s day of the month") % (translate_nth (hour), translate_nth (day)))
 		elif minute != "*" and hour == "*":
 			return (_("At the %s minute of every hour every %s day of the month") % (translate_nth (minute), translate_nth (day)))
+		elif minute == "*" and hour == "*":
+			return (_("Every minute at every %s day of the month") % (translate_nth (day)))
 
 	# Day, minute, hour and month cases
 	if month != "*" and weekday == "*":
@@ -284,11 +292,19 @@ def translate_crontab_easy_en (minute, hour, day, month, weekday):
 		elif minute != "*" and hour != "*" and day != "*":
 			return (_("At the %s day on %s every %s month of the year") % (translate_nth (day), timeval (hour, minute), translate_nth (month)))
 		elif minute == "*" and hour != "*" and day != "*":
-			return (_("At the %s day every %s hour every %s month of the year") % (translate_nth (day), translate_nth (hour), translate_nth (month)))
+			return (_("At the %s day every minute of every %s hour every %s month of the year") % (translate_nth (day), translate_nth (hour), translate_nth (month)))
 		elif minute != "*" and hour == "*" and day == "*":
 			return (_("Every day and every hour at the %s minute every %s month of the year") % (translate_nth (minute), translate_nth (month)))
 		elif minute != "*" and hour != "*" and day == "*":
 			return (_("Every day on %s every %s month of the year") % (timeval (hour, minute), translate_nth (month)))
+		elif minute == "*" and hour == "*" and day != "*":
+			return (_("Every minute at the %s day every %s month of the year") % (translate_nth (day), translate_nth (month)))
+		elif minute == "*" and hour == "*" and day == "*":
+			return (_("Every minute every %s month of the year") % (translate_nth (month)))
+		elif minute != "*" and hour == "*" and day != "*":
+			return (_("Every %s minute of every hour at the %s day of the %s month of the year") % (translate_nth (minute), translate_nth (day), translate_nth (month)))
+		elif minute == "*" and hour != "*" and day == "*":
+			return (_("Every minute of every %s hour in the %s month of the year") % (translate_nth (hour), translate_nth (month)))
 
 
 	# Weekday cases
@@ -298,11 +314,44 @@ def translate_crontab_easy_en (minute, hour, day, month, weekday):
 		elif minute != "*" and hour != "*":
 			return (_("Every %s day of the week at %s") % (translate_nth (weekday), timeval  (hour, minute)))
 		elif minute == "*" and hour != "*":
-			return (_("Every %s day of the week the %s hour") % (translate_nth (weekday), translate_nth (hour)))
+			return (_("Every %s day of the week every minute of the %s hour") % (translate_nth (weekday), translate_nth (hour)))
 		elif minute != "*" and hour == "*":
 			return (_("Every %s day of the week the %s minute of every hour") % (translate_nth (weekday), translate_nth (minute)))
 		elif minute == "*" and hour == "*":
 			return (_("Every %s day of the week every minute") % (translate_nth (weekday)))
+
+	# Day and weekday cases
+	if day != "*" and month == "*" and weekday != "*":
+		if minute == "*" and hour == "*":
+			return (_("Every minute at the %s day of the month and the %s day of the week") % (translate_nth (day), translate_nth (weekday)))
+		elif minute == "*" and hour != "*":
+			return (_("Every minute at the %s hour every %s day of the month and every %s day of the week") % (translate_nth (hour), translate_nth (day), translate_nth (weekday)))
+		elif minute != "*" and hour == "*":
+			return (_("Every %s minute of every hour every %s day of the month and every %s day of the week") % (translate_nth (minute), translate_nth (day), translate_nth (weekday)))
+		elif minute != "*" and hour != "*":
+			return (_("Every %s day of the month and every %s day of the week at %s") % (translate_nth (day), translate_nth (weekday), timeval (hour, minute)))
+
+	# Month and weekday cases
+	if day == "*" and month != "*" and weekday != "*":
+		if minute == "*" and hour == "*":
+			return (_("Every minute every %s day of the week every %s month of the year") % (translate_nth (weekday), translate_nth (month)))
+		elif minute != "*" and hour == "*":
+			return (_("Every %s minute of every hour at the %s day of the week every %s month of the year") % (translate_nth (minute), translate_nth (weekday), translate_nth (month)))
+		elif minute == "*" and hour != "*":
+			return (_("Every minute at the %s hour every %s day of the week every %s month of the year") % (translate_nth (hour), translate_nth (weekday), translate_nth (month)))
+		elif minute != "*" and hour != "*":
+			return (_("Every %s day of the week every %s month of the year at %s") % (translate_nth (weekday), translate_nth (month), timeval (hour, minute)))
+
+	# Day, month and weekday cases
+	if day != "*" and month != "*" and weekday != "*":
+		if minute == "*" and hour == "*":
+			return (_("Every minute at the %s day of the week and at the %s day of the month every %s month of the year") % (translate_nth (weekday), translate_nth (day), translate_nth (month)))
+		elif minute != "*" and hour == "*":
+			return (_("Every %s minute of every hour every %s day of the week and every %s day of the month every %s month of the year") % (translate_nth (minute), translate_nth (weekday), translate_nth (day), translate_nth (month)))
+		elif minute == "*" and hour != "*":
+			return (_("Every minute at the %s hour of every %s day of the week and every %s day of the month every %s month of the year") % (translate_nth (hour), translate_nth (weekday), translate_nth (day), translate_nth (month)))
+		elif minute != "*" and hour != "*":
+			return (_("At %s every %s day of the week and every %s day of the month every %s month of the year") % (timeval (hour, minute), translate_nth (weekday), translate_nth (day), translate_nth (month)))
 
 	# If nothing got translated, we fall back to ...
 	return translate_crontab_easy_anylang (minute, hour, day, month, weekday)
@@ -357,3 +406,194 @@ def translate_crontab_easy_anylang (minute, hour, day, month, weekday):
 	# TODO: Add more combinations
 	
 	return retval
+
+# <-- START of German Translation -->
+#
+# Added by:
+# Frank Arnold <frank at scirocco-5v-turbo dot de>
+# German Language-Team <gnome-de at gnome dot org>
+#
+# Translate nth values
+# The function translate_nth_de is only there for compatibility 
+# if it's used outside lang.py. 
+# Inside lang.py translate_nth_extended_de will be used.
+def translate_nth_de (nth):
+	try:
+		nth = int(nth)
+	except:
+		return nth
+	return str(nth) + "."
+
+def translate_nth_extended_de (nth, timevalue = None, Case = None):
+	try:
+		nth = int(nth)
+	except:
+		return nth
+
+	weekdays_long =     [ "Sonntag", "Montag", "Dienstag", "Mittwoch", 
+							"Donnerstag", "Freitag", "Samstag", "Sonntag" ]
+	weekdays_short =     [ "So", "Mo", "Di", "Mi", 
+							"Do", "Fr", "Sa", "So" ]
+	months_long =  { 1: "Januar", 2: "Februar", 3: "März", 4: "April", 5: "Mai", 
+						6: "Juni", 7: "Juli", 8: "August", 9: "September", 
+						10: "Oktober", 11: "November", 12: "Dezember" }
+	months_short = { 1: "Jan", 2: "Feb", 3: "Mär", 4: "Apr", 5: "Mai", 6: "Jun", 
+						7: "Jul", 8: "Aug", 9: "Sep", 10: "Okt", 11: "Nov", 12: "Dez" }
+	numbers =      { 1: "erst", 2: "zweit", 3: "dritt", 4: "viert", 
+						5: "fünft", 6: "sechst", 7: "siebent", 8: "acht", 
+						9: "neunt", 10: "zehnt", 11: "elft", 12: "zwölft" }
+
+	if timevalue == "weekday_short":
+		return weekdays_short[nth]
+	if timevalue == "weekday_long":
+		return weekdays_long[nth]
+	elif timevalue == "month_short":
+		return months_short[nth]
+	elif timevalue == "month_long":
+		return months_long[nth]
+	elif (nth >= 1 and nth <= 12) or (nth <= -1 and nth >= -12):
+		add = ""
+		if nth < 0: 
+			add = "minus "
+		if Case == "d" or ( Case == "a" and timevalue == "day" ):
+			return add + numbers[nth] + "en"
+		elif Case == "a" and ( timevalue == "minute" or timevalue == "hour" ):
+			return add + numbers[nth] + "e"
+	else: 
+		return str(nth) + "."
+
+# Time format
+# Format with seconds: hh:mm.ss
+# Format without seconds: hh.mm Uhr 
+def timeval_de (hour, minute, seconds):
+	if int (minute) < 10:
+		minute = "0" + str(minute)
+	if int (hour) < 10:
+		hour = "0" + str(hour)
+	if seconds != None:
+		if int (seconds) < 10:
+			seconds = "0" + str(seconds)
+		return hour + ":" + minute + "." + seconds
+	else:
+		return str(hour) + "." + str(minute) + " Uhr"
+
+# Translate Crontab expressions to human readable ones  
+def translate_crontab_easy_de (minute, hour, day, month, weekday):
+	# These are unsupported cases
+	if minute.find ("/") != -1 or hour.find ("/") != -1 or day.find ("/") != -1 or month.find ("/") != -1 or weekday.find ("/") != -1:
+		return translate_crontab_easy_anylang (minute, hour, day, month, weekday)
+	if minute.find ("-") != -1 or hour.find ("-") != -1 or day.find ("-") != -1 or month.find ("-") != -1 or weekday.find ("-") != -1:
+		return translate_crontab_easy_anylang (minute, hour, day, month, weekday)
+	if minute.find (",") != -1 or hour.find (",") != -1 or day.find (",") != -1 or month.find (",") != -1 or weekday.find (",") != -1:
+		return translate_crontab_easy_anylang (minute, hour, day, month, weekday)
+		
+	# So if our case is supported:
+
+	# Minute and hour cases
+	if month == "*" and day == "*" and weekday == "*":
+		if minute == "0" and hour == "*":
+			return "Jede volle Stunde"
+		elif minute == "*" and hour == "*":
+			return "Jede Minute"
+		elif minute != "*" and hour == "*":
+			return ("Jede Stunde zur %s Minute" % (translate_nth_extended_de (minute,"minute","d")))
+		elif minute == "*" and hour != "*":
+			return ("Jede Minute zwischen %s und %s" % (timeval (hour, 0), timeval (hour, 59)))
+		elif hour != "*" and minute != "*":
+			return ("Jeden Tag um %s" % (timeval (hour, minute)))
+
+	# Day cases
+	if month == "*" and day != "*" and weekday == "*":
+		if minute == "0" and hour == "*":
+			return ("Am %s jedes Monats zu jeder vollen Stunde" % (translate_nth_extended_de (day, "day", "d")))
+		elif minute == "*" and hour == "*":
+			return ("Am %s jedes Monats zu jeder Minute" % (translate_nth_extended_de (day, "day", "d")))
+		elif minute == "*" and hour != "*":
+			return ("Am %s jedes Monats, jede Minute zwischen %s und %s" % (translate_nth_extended_de (day, "day", "d"), timeval (hour, 0),timeval (hour, 59)))
+		elif minute != "*" and hour == "*":
+			return ("Am %s jedes Monats zur %s Minute jeder Stunde" % (translate_nth_extended_de (day, "day", "d"), translate_nth_extended_de (minute, "minute", "d")))
+		elif minute != "*" and hour != "*":
+			return ("Am %s jedes Monats um %s" % (translate_nth_extended_de (day, "day", "d"), timeval (hour, minute)))
+
+	# Month cases
+	if month != "*" and weekday == "*" and day == "*":
+		if minute == "0" and hour == "*":
+			return ("Jeden Tag im %s zu jeder vollen Stunde" % (translate_nth_extended_de (month, "month_long")))
+		elif minute == "*" and hour == "*":
+			return ("Jeden Tag im %s zu jeder Minute" % (translate_nth_extended_de (month, "month_long")))
+		elif minute != "*" and hour == "*":
+			return ("Jeden Tag im %s zur %s Minute jeder Stunde" % (translate_nth_extended_de (month, "month_long"), translate_nth_extended_de (minute, "minute", "d")))
+		elif minute == "*" and hour != "*":
+			return ("Jeden Tag im %s, jede Minute zwischen %s und %s" % (translate_nth_extended_de (month, "month_long"), timeval (hour, 0), timeval (hour, 59)))
+		elif minute != "*" and hour != "*":
+			return ("Jeden Tag im %s um %s" % (translate_nth_extended_de (month, "month_long"), timeval (hour, minute)))
+
+	# Day and month cases
+	if month != "*" and weekday == "*" and day != "*":
+		if minute == "0" and hour == "*":
+			return ("Jedes Jahr am %s %s zu jeder vollen Stunde" % (translate_nth_extended_de (day, "day", "d"), translate_nth_extended_de (month, "month_long")))
+		elif minute == "*" and hour == "*":
+			return ("Jedes Jahr am %s %s zu jeder Minute" % (translate_nth_extended_de (day, "day", "d"), translate_nth_extended_de (month, "month_long")))
+		elif minute != "*" and hour == "*":
+			return ("Jedes Jahr am %s %s zur %s Minute jeder Stunde" % (translate_nth_extended_de (day, "day", "d"), translate_nth_extended_de (month, "month_long"), translate_nth_extended_de (minute, "minute", "d")))
+		elif minute == "*" and hour != "*":
+			return ("Jedes Jahr am %s %s, jede Minute zwischen %s und %s" % (translate_nth_extended_de (day, "day", "d"), translate_nth_extended_de (month, "month_long"), timeval (hour, 0), timeval (hour, 59)))
+		elif minute != "*" and hour != "*":
+			return ("Jedes Jahr am %s %s um %s" % (translate_nth_extended_de (day, "day", "d"), translate_nth_extended_de (month, "month_long"), timeval (hour, minute)))
+
+	# Weekday cases
+	if month == "*" and day == "*" and weekday != "*":
+		if minute == "0" and hour == "*":
+			return ("Am %s zu jeder vollen Stunde" % (translate_nth_extended_de (weekday, "weekday_long")))
+		elif minute == "*" and hour == "*":
+			return ("Am %s zu jeder Minute" % (translate_nth_extended_de (weekday, "weekday_long")))
+		elif minute != "*" and hour == "*":
+			return ("Jeden %s zur %s Minute jeder Stunde" % (translate_nth_extended_de (weekday, "weekday_long"), translate_nth_extended_de (minute, "minute", "d")))
+		elif minute == "*" and hour != "*":
+			return ("Jeden %s, jede Minute zwischen %s und %s" % (translate_nth_extended_de (weekday, "weekday_long"), timeval  (hour, 0), timeval  (hour, 59)))
+		elif minute != "*" and hour != "*":
+			return ("Jeden %s um %s" % (translate_nth_extended_de (weekday, "weekday_long"), timeval  (hour, minute)))
+
+	# Day and weekday cases
+	if day != "*" and month == "*" and weekday != "*":
+		if minute == "0" and hour == "*":
+			return ("Am %s jedes Monats und jeden %s zu jeder vollen Stunde" % (translate_nth_extended_de (day, "day", "d"), translate_nth_extended_de (weekday, "weekday_long")))
+		elif minute == "*" and hour == "*":
+			return ("Am %s jedes Monats und jeden %s zu jeder Minute" % (translate_nth_extended_de (day, "day", "d"), translate_nth_extended_de (weekday, "weekday_long")))
+		elif minute != "*" and hour == "*":
+			return ("Am %s jedes Monats und jeden %s zur %s Minute jeder Stunde" % (translate_nth_extended_de (day, "day", "d"), translate_nth_extended_de (weekday, "weekday_long"), translate_nth_extended_de (minute, "minute", "d")))
+		elif minute == "*" and hour != "*":
+			return ("Am %s jedes Monats und jeden %s, jede Minute zwischen %s und %s" % (translate_nth_extended_de (day, "day", "d"), translate_nth_extended_de (weekday, "weekday_long"), timeval  (hour, 0), timeval  (hour, 59)))
+		elif minute != "*" and hour != "*":
+			return ("Am %s jedes Monats und jeden %s um %s" % (translate_nth_extended_de (day, "day", "d"), translate_nth_extended_de (weekday, "weekday_long"), timeval (hour, minute)))
+
+	# Month and weekday cases
+	if day == "*" and month != "*" and weekday != "*":
+		if minute == "0" and hour == "*":
+			return ("Jeden %s im %s zu jeder vollen Stunde" % (translate_nth_extended_de (weekday, "weekday_long"), translate_nth_extended_de (month, "month_long")))
+		elif minute == "*" and hour == "*":
+			return ("Jeden %s im %s zu jeder Minute" % (translate_nth_extended_de (weekday, "weekday_long"), translate_nth_extended_de (month, "month_long")))
+		elif minute != "*" and hour == "*":
+			return ("Jeden %s im %s zur %s Minute jeder Stunde" % (translate_nth_extended_de (weekday, "weekday_long"), translate_nth_extended_de (month, "month_long"), translate_nth_extended_de (minute, "minute", "d")))
+		elif minute == "*" and hour != "*":
+			return ("Jeden %s im %s, jede Minute zwischen %s und %s" % (translate_nth_extended_de (weekday, "weekday_long"), translate_nth_extended_de (month, "month_long"), timeval  (hour, 0), timeval  (hour, 59)))
+		elif minute != "*" and hour != "*":
+			return ("Jeden %s im %s um %s" % (translate_nth_extended_de (weekday, "weekday_long"), translate_nth_extended_de (month, "month_long"), timeval (hour, minute)))
+
+	# Day, month and weekday cases
+	if day != "*" and month != "*" and weekday != "*":
+		if minute == "0" and hour == "*":
+			return ("Jeden %s im %s und am %s %s zu jeder vollen Stunde" % (translate_nth_extended_de (weekday, "weekday_long"), translate_nth_extended_de (month, "month_long"), translate_nth_extended_de (day, "day", "d"), translate_nth_extended_de (month, "month_long")))
+		elif minute == "*" and hour == "*":
+			return ("Jeden %s im %s und am %s %s zu jeder Minute" % (translate_nth_extended_de (weekday, "weekday_long"), translate_nth_extended_de (month, "month_long"), translate_nth_extended_de (day, "day", "d"), translate_nth_extended_de (month, "month_long")))
+		elif minute != "*" and hour == "*":
+			return ("Jeden %s im %s und am %s %s zur %s Minute jeder Stunde" % (translate_nth_extended_de (weekday, "weekday_long"), translate_nth_extended_de (month, "month_long"), translate_nth_extended_de (day, "day", "d"), translate_nth_extended_de (month, "month_long"), translate_nth_extended_de (minute, "minute", "d")))
+		elif minute == "*" and hour != "*":
+			return ("Jeden %s im %s und am %s %s, jede Minute zwischen %s und %s" % (translate_nth_extended_de (weekday, "weekday_long"), translate_nth_extended_de (month, "month_long"), translate_nth_extended_de (day, "day", "d"), translate_nth_extended_de (month, "month_long"), timeval  (hour, 0), timeval  (hour, 59)))
+		elif minute != "*" and hour != "*":
+			return ("Jeden %s im %s und am %s %s um %s" % (translate_nth_extended_de (weekday, "weekday_long"), translate_nth_extended_de (month, "month_long"), translate_nth_extended_de (day, "day", "d"), translate_nth_extended_de (month, "month_long"), timeval (hour, minute)))
+
+	# If nothing got translated, we fall back to ...
+	return translate_crontab_easy_anylang (minute, hour, day, month, weekday)
+
+# <-- END of German Translation -->

@@ -1,3 +1,22 @@
+2004-10-31  Frank Arnold <frank@scirocco-5v-turbo.de>
+	* at.py: Made "Defined" and "At " for treeview translatable
+	* configure.ac: Added "de" (German) to ALL_LINGUAS.
+	* crontab.py: Made "Frequency" for treeview translatable
+	* crontabEditor.py: Replaced string to find "\\\" with "\/" in regular
+	  expression (simple slash for terms like "*/2")
+	* de.po: Updated German translation
+	* lang.py: Added German translation
+	* lang.py: Replaced function calls string() with str()
+	* lang.py: Changed "if ... language.find("us"):" to "if ...
+	  "language.find("us") != -1:"
+	* lang.py: Commented out "if... return translate_crontab_easy_nl" -
+	  function not exists
+	* lang.py: Replaced backslashes with slashes for terms like "*/2"
+	* lang.py: Corrected expressions for terms like "* 2 4 5 *" and "* 2 * *
+	  5 " (missing "every minute")
+	* lang.py: Added all missing expressions to complete simple cases
+	* mainWindow.py: Made "Editing user: " for statusbar translatable
+
 2004-09-28  Gaute Hope <eg@gaute.eu.org>
 
 	* autogen.sh: configure.in should be configure.ac

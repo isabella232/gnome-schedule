@@ -301,10 +301,10 @@ class At:
 				lines = lines[prelen:]
 					
 				timestring = _("%s%s%s %s%s%s") % ("", date, "", "", time, "")
-				timestring_show = "At " + timestring #_("%sAt%s%s") % (_(""), _(""), timestring, _(""))
+				timestring_show = _("At ") + timestring #_("%sAt%s%s") % (_(""), _(""), timestring, _(""))
 				if self.ParentClass.root == 1:
 					if self.ParentClass.user == user:
-						iter = self.ParentClass.treemodel.append([title, timestring_show, preview, lines, int(job_id), timestring, icon_pix, self, icon, date, class_id, user, time, "Defined", "at"])
+						iter = self.ParentClass.treemodel.append([title, timestring_show, preview, lines, int(job_id), timestring, icon_pix, self, icon, date, class_id, user, time, _("Defined"), "at"])
 					else: 
 						#print "Record omitted, not current user"
 						pass

@@ -245,7 +245,7 @@ class Crontab:
 				#make the command smaller if the lenght is to long
 				preview = self.__make_preview__ (command)
 				#add task to treemodel in mainWindow
-				iter = self.ParentClass.treemodel.prepend([title, self.__easy__ (minute, hour, day, month, weekday), preview, line, self.linecount, time, icon_pix, self, icon, "", "", "","", "Frequency", "crontab"])
+				iter = self.ParentClass.treemodel.prepend([title, self.__easy__ (minute, hour, day, month, weekday), preview, line, self.linecount, time, icon_pix, self, icon, "", "", "","", _("Frequency"), "crontab"])
 			self.linecount = self.linecount + 1
 
 	def translate_frequency (self, frequency):
