@@ -1,6 +1,26 @@
 # -*- coding: UTF-8 -*-
 import os
 import gtk
+
+# Dear translators,
+# Most languages will not have to do all this, but some do.
+# http://lists.gnome.org/archives/gnome-i18n/2004-June/msg00089.html
+
+# To get numeric nth translation correct some languages need to get
+# things like the gender and wording correct. The only way to do
+# this is to code it. Often it can't be done using the po-files
+
+# Therefor I am making it possible for those languages to code it, in
+# this file.
+
+# Read through the comments of the implementations for other languages
+# and don't touch the implementations for English unless you know what
+# you are doing.
+
+# If you language can get correctly translated by using only the po files,
+# it means that you don't have to touch these files at all.
+
+
 ##
 ## I18N
 ##
@@ -11,6 +31,8 @@ translate.textdomain (domain)
 gtk.glade.bindtextdomain(domain)
 language = os.environ['LANG']
 
+# To get numeric nth values translated add an elif statement for your
+# language here
 def translate_nth (nth):
 	if language.find ("nl") != -1:
 		return translate_nth_nl (nth)
@@ -19,6 +41,10 @@ def translate_nth (nth):
 	else:
 		return translate_nth_en (nth)
 
+# Create a function like this for your method below, you can checkout
+# the implementation for dutch below: translate_nth_nl (nth)
+# nth is a number (like 1, 2, 3). The function will return 'first'
+# 'second' 'third', ...
 def translate_nth_en (nth):
 	nth = int(nth)
 
@@ -55,6 +81,11 @@ def translate_nth_en (nth):
 	elif nth > 100 or nth < -100:
 		return (_("%sth.") % (string(nth)))
 
+# Dutch is pretty much the same as English, except that there are some
+# special cases in spelling and that the ordering to form the word is
+# a bit different. Dutch is also not using the 'nth' numeric to describe
+# the (for example) 3 of 43, in stead it's using a normal written numeric.
+# So I had to add a new table with the written version of tne numbers
 def translate_nth_nl (nth):
 	nth = int(nth)
 
@@ -76,7 +107,6 @@ def translate_nth_nl (nth):
 	elif (nth > -100 and nth < -20) or (nth > 20 and nth < 100):
 		tennumber = nth / 10
 		remainder = nth - (tennumber*10)
-
 		# Als het laatste karakter voor de middelste "en" een e is dan
 		# moet er een trema op de e, anders niet
 		if numbers[remainder][len(numbers[remainder])-1] == "e":
@@ -92,22 +122,38 @@ def translate_nth_nl (nth):
 	elif nth > 100 or nth < -100:
 		return string(nth) + "de"
 
+# Add your language here:
 #def translate_nth_whatever (nth):
 #	pass
 
 
+# These are a bit more difficult and are only here for the languages that
+# have to adjust gender and other specifics to the sentence when using
+# nth numeric values in sentences. If it's not needed for your language
+# (for example, it's not needed for dutch), then don't change anything and
+# do your translation in the po-files only.
 def translate_crontab_easy (minute, hour, day, month, weekday):
 	#if language.find ("whatever") != -1:
 	#	return translate_crontab_easy_whatever (minute, hour, day, month, weekday)
 	#else:
 	return translate_crontab_easy_en (minute, hour, day, month, weekday)
 
+# This translates a hour, minute and seconds to a digital-clock-display
+# hour. As far as I know is the format internationally standarized.
+# Still I am making it possible to translate this using both po-files and
+# by defining your own version of it.
 def timeval (hour, minute, seconds = None):
 	#if language.find ("whatever") != -1:
 	#	return timeval_whatever (hour, minute, seconds)
 	#else:
 	return timeval_en (hour, minute, seconds)
 
+# So this is the English version. It will return "hh:mm:ss". As you can
+# see I have added an empty translatable string at the beginning and end
+# of what will be returned. You can use that in your language to append
+# or prepend something. If the gender of words in your sentences change
+# cause of or nth numeric written values or these date values, use the
+# functions below to create a version for your language.
 def timeval_en (hour, minute, seconds):
 	if int (minute) < 10:
 		minute = "0" + minute
@@ -120,6 +166,11 @@ def timeval_en (hour, minute, seconds):
 	else:
 		return (_("%s%s:%s%s") % (_(""), hour, minute, _("")))
 
+# So this is for the really really hard languages that have changing
+# genders and word-ordering depending on the nth-numeric value.
+# You can copy-and-paste the whole block and start adjusting it for your
+# language. If you need assistance, read the AUTHORS file and try to
+# contact us or use the mailinglists.
 def translate_crontab_easy_en (minute, hour, day, month, weekday):
 	# * means "every"
 	# x-y means happens every instance between x and y
