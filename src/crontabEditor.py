@@ -215,6 +215,7 @@ class CrontabEditor:
 			self.icon = "/usr/share/icons/gnome/48x48/mimetypes/gnome-mime-application.png"
 
 	def showedit (self, record, linenumber, iter, mode):
+		self.reload_templates ()
 		self.editing = gtk.TRUE
 		self.linenumber = linenumber
 		self.record = record
@@ -224,7 +225,7 @@ class CrontabEditor:
 		self.set_frequency_combo ()
 		self.parentiter = iter
 		self.widget.show ()
-		self.reload_templates ()
+		
 		
 		m = self.nooutputRegex.match (self.command)
 		if (m != None):
