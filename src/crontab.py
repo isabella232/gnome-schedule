@@ -97,6 +97,12 @@ class Crontab:
 		frequency = minute + " " + hour + " " + day + " " + month + " " + weekday
 		template_name_c = self.replace (template_name)
 		
+		if nooutput:
+			space = " "
+			if command[len(command)-1] == " ":
+				space = ""
+			command = command + space + self.nooutputtag
+
 		support.gconf_client.set_string("/apps/gnome-schedule/templates/crontab/%s/name" % (template_name_c), template_name)
 		support.gconf_client.set_string("/apps/gnome-schedule/templates/crontab/%s/icon_uri" % (template_name_c), icon)
 		support.gconf_client.set_string("/apps/gnome-schedule/templates/crontab/%s/command" % (template_name_c), command)
