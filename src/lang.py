@@ -241,7 +241,10 @@ def translate_crontab_easy_en (minute, hour, day, month, weekday):
 
 	# If only minute is filled in
 	if minute != "*" and hour == "*" and month == "*" and day == "*" and weekday == "*":
-		return (_("Every %s minute of every hour") % (translate_nth (minute)))
+		if minute == "0":
+			return _("Every hour")
+		else:
+			return (_("Every %s minute of every hour") % (translate_nth (minute)))
 
 	# Minute and hour cases
 	if hour != "*" and month == "*" and day == "*" and weekday == "*":
