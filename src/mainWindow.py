@@ -235,18 +235,22 @@ class main:
 			
 			col = gtk.TreeViewColumn(_("Type"), gtk.CellRendererText(), text=12)
 			col.set_sizing (gtk.TREE_VIEW_COLUMN_AUTOSIZE)
+			col.set_resizable (gtk.TRUE)
 			self.treeview.append_column(col)
 
 			col = gtk.TreeViewColumn(_("Title"), gtk.CellRendererText(), text=0)
 			col.set_sizing (gtk.TREE_VIEW_COLUMN_AUTOSIZE)
+			col.set_resizable (gtk.TRUE)
 			self.treeview.append_column(col)
 
 			col = gtk.TreeViewColumn(_("Frequency or time"), gtk.CellRendererText(), text=1)
 			col.set_sizing (gtk.TREE_VIEW_COLUMN_AUTOSIZE)
+			col.set_resizable (gtk.TRUE)
 			self.treeview.append_column(col)
 
 			col = gtk.TreeViewColumn(_("Preview"), gtk.CellRendererText(), text=2)
 			col.set_sizing (gtk.TREE_VIEW_COLUMN_AUTOSIZE)
+			col.set_resizable (gtk.TRUE)
 			#col.set_spacing(235)
 			col.set_expand (gtk.TRUE)
 			self.treeview.append_column(col)
