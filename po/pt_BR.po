@@ -1,0 +1,383 @@
+# Brazilian Portuguese translation of gnome-schedule.
+# Copyright (C) 2004 Free Software Foundation, Inc.
+# This file is distributed under the same license as the gnome-schedule package.
+# Raphael Higino <raphaelh@uai.com.br>, 2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-schedule\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-06-18 03:53+0200\n"
+"PO-Revision-Date: 2004-06-18 14:06-0300\n"
+"Last-Translator: Raphael Higino <raphaelh@uai.com.br>\n"
+"Language-Team: Brazilian Portuguese <gnome-l10-br@listas.cipsga.org.br>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/addWindow.py:87
+msgid "Edit a scheduled task"
+msgstr "Editar um tarefa agendada"
+
+#: src/addWindow.py:130 src/addWindow.py:150 src/addWindow.py:174
+#: src/addWindow.py:236 src/addWindow.py:281 src/addWindow.py:364
+#: src/addWindow.py:402 src/addWindowHelp.py:89 src/addWindowHelp.py:153
+#: src/gnome-schedule.glade.h:42
+msgid "minute"
+msgstr "minuto"
+
+#: src/addWindow.py:132 src/addWindow.py:152 src/addWindow.py:176
+msgid "must be between 59 and 0"
+msgstr "deve estar entre 59 e 0"
+
+#: src/addWindow.py:133 src/addWindow.py:153 src/addWindow.py:177
+#: src/addWindow.py:237 src/addWindow.py:284 src/addWindow.py:370
+#: src/addWindow.py:405 src/addWindowHelp.py:92 src/addWindowHelp.py:154
+#: src/gnome-schedule.glade.h:41
+msgid "hour"
+msgstr "hora"
+
+#: src/addWindow.py:135 src/addWindow.py:155
+msgid "must be between 23 and 0"
+msgstr "deve estar entre 23 e 0"
+
+#: src/addWindow.py:136 src/addWindow.py:156 src/addWindow.py:180
+#: src/addWindow.py:238 src/addWindow.py:287 src/addWindow.py:376
+#: src/addWindow.py:408 src/addWindowHelp.py:95 src/addWindowHelp.py:155
+#: src/gnome-schedule.glade.h:40
+msgid "day"
+msgstr "dia"
+
+#: src/addWindow.py:138 src/addWindow.py:158 src/addWindow.py:182
+msgid "must be between 31 and 1"
+msgstr "deve estar entre 31 e 1"
+
+#: src/addWindow.py:139 src/addWindow.py:159 src/addWindow.py:183
+#: src/addWindow.py:239 src/addWindow.py:290 src/addWindow.py:382
+#: src/addWindow.py:411 src/addWindowHelp.py:98 src/addWindowHelp.py:156
+#: src/gnome-schedule.glade.h:49
+msgid "month"
+msgstr "mês"
+
+#: src/addWindow.py:141 src/addWindow.py:161 src/addWindow.py:185
+msgid "must be between 12 and 1"
+msgstr "deve estar entre 12 e 1"
+
+#: src/addWindow.py:142 src/addWindow.py:162 src/addWindow.py:186
+#: src/addWindow.py:240 src/addWindow.py:414 src/addWindowHelp.py:101
+#: src/addWindowHelp.py:157 src/gnome-schedule.glade.h:52
+msgid "weekday"
+msgstr "dia da semana"
+
+#: src/addWindow.py:144 src/addWindow.py:164 src/addWindow.py:188
+msgid "must be between 7 and 0"
+msgstr "deve estar entre 7 e 0"
+
+#: src/addWindow.py:204
+msgid "New scheduled task"
+msgstr "Nova tarefa agendada"
+
+#: src/addWindow.py:208
+msgid "Create a new scheduled task"
+msgstr "Cria uma nova tarefa agendada"
+
+#: src/addWindow.py:243
+msgid "This is an invalid record! The problem could be at the "
+msgstr ""
+
+#: src/addWindow.py:243
+msgid " field. Reason: "
+msgstr ""
+
+#: src/addWindow.py:277
+msgid "use advanced"
+msgstr "usar avançado"
+
+#: src/addWindow.py:293 src/addWindow.py:388
+msgid "week"
+msgstr "semana"
+
+#: src/addWindow.py:309
+msgid "command"
+msgstr "comando"
+
+#. put the apropiate values in the labels describing entitys, and the 'at' combobox
+#: src/addWindowHelp.py:85 src/gnome-schedule.glade.h:24
+msgid "Happens all "
+msgstr "Acontece todo "
+
+#: src/addWindowHelp.py:85 src/addWindowHelp.py:196
+msgid "s"
+msgstr "s"
+
+#: src/addWindowHelp.py:88
+msgid "Happens from "
+msgstr "Acontece de "
+
+#. show the form
+#: src/addWindowHelp.py:146
+msgid "Edit timeexpression for: "
+msgstr "Editar timeexpression para: "
+
+#: src/addWindowHelp.py:187 src/addWindowHelp.py:198
+msgid "st. "
+msgstr "º "
+
+#: src/addWindowHelp.py:189
+msgid "th. "
+msgstr "º "
+
+#: src/crontab.py:137
+msgid "st."
+msgstr "º"
+
+#: src/crontab.py:139
+msgid "th."
+msgstr "º"
+
+#: src/crontab.py:149
+msgid "Every minute"
+msgstr "A cada minuto"
+
+#: src/crontab.py:152 src/crontab.py:156 src/crontab.py:162 src/crontab.py:169
+#: src/crontab.py:176 src/crontab.py:178
+msgid "Every "
+msgstr "A cada"
+
+#: src/crontab.py:152
+msgid " minute of every hour"
+msgstr " minuto de cada hora"
+
+#: src/crontab.py:156
+msgid " hour of the day"
+msgstr " hora do dia"
+
+#: src/crontab.py:158 src/crontab.py:164
+msgid "At "
+msgstr "Às "
+
+#: src/crontab.py:158
+msgid " every day"
+msgstr " a cada dia"
+
+#: src/crontab.py:164 src/crontab.py:171
+msgid " every "
+msgstr " a cada "
+
+#: src/crontab.py:164
+msgid " day of the month"
+msgstr " dia do mês"
+
+#: src/crontab.py:169 src/crontab.py:171
+msgid " month of the year"
+msgstr " mês do ano"
+
+#: src/crontab.py:171
+msgid "At the "
+msgstr "No "
+
+#: src/crontab.py:176
+msgid " day of the week"
+msgstr " dia da semana"
+
+#: src/crontab.py:178
+msgid " day of the week at "
+msgstr " dia da semana às "
+
+#: src/gnome-schedule.glade.h:1
+msgid "     "
+msgstr "     "
+
+#: src/gnome-schedule.glade.h:2
+msgid "         "
+msgstr "         "
+
+#: src/gnome-schedule.glade.h:3
+msgid "          "
+msgstr "          "
+
+#: src/gnome-schedule.glade.h:4
+msgid "*"
+msgstr "*"
+
+#: src/gnome-schedule.glade.h:5
+msgid "* * * * * command"
+msgstr "* * * * * comando"
+
+#: src/gnome-schedule.glade.h:6
+msgid "0"
+msgstr "0"
+
+#: src/gnome-schedule.glade.h:7
+msgid "0-23"
+msgstr "0-23"
+
+#: src/gnome-schedule.glade.h:8
+msgid "0-59"
+msgstr "0-59"
+
+#: src/gnome-schedule.glade.h:9
+msgid "0-7"
+msgstr "0-7"
+
+#: src/gnome-schedule.glade.h:10
+msgid "1-12"
+msgstr "1-12"
+
+#: src/gnome-schedule.glade.h:11
+msgid "1-31"
+msgstr "1-31"
+
+#: src/gnome-schedule.glade.h:12
+msgid "2"
+msgstr "2"
+
+#: src/gnome-schedule.glade.h:13
+msgid "59"
+msgstr "59"
+
+#: src/gnome-schedule.glade.h:14
+msgid "<b>Basic settings</b>"
+msgstr "<b>Configurações Básicas</b>"
+
+#: src/gnome-schedule.glade.h:15
+msgid "<b>Frequency setting</b>"
+msgstr "<b>Configurações de Freqüência</b>"
+
+#: src/gnome-schedule.glade.h:16
+msgid "<b>Preview</b>"
+msgstr "<b>Visualização</b>"
+
+#: src/gnome-schedule.glade.h:17
+msgid ">/dev/null 2>&1"
+msgstr ">/dev/null 2>&1"
+
+#: src/gnome-schedule.glade.h:18
+msgid "A_dvanced"
+msgstr "Avança_do"
+
+#: src/gnome-schedule.glade.h:19
+msgid "Active user"
+msgstr "Usuário ativo"
+
+#: src/gnome-schedule.glade.h:20
+msgid "Advanced"
+msgstr "Avançado"
+
+#: src/gnome-schedule.glade.h:21
+msgid "Basic"
+msgstr "Básico"
+
+#: src/gnome-schedule.glade.h:22
+msgid "Configure scheduled tasks"
+msgstr "Configurar tarefas agendadas"
+
+#: src/gnome-schedule.glade.h:23
+msgid "Every"
+msgstr "A cada"
+
+#: src/gnome-schedule.glade.h:25
+msgid "Happens at the"
+msgstr "Acontece no"
+
+#: src/gnome-schedule.glade.h:26
+msgid "Happens every "
+msgstr "Acontece a cada"
+
+#: src/gnome-schedule.glade.h:27
+msgid "Happens from"
+msgstr "Acontece de"
+
+#: src/gnome-schedule.glade.h:28
+msgid "No output"
+msgstr "Sem saída"
+
+#: src/gnome-schedule.glade.h:29
+msgid "Other expression"
+msgstr "Outra expressão"
+
+#: src/gnome-schedule.glade.h:30
+msgid "Run"
+msgstr "Executar"
+
+#: src/gnome-schedule.glade.h:31
+msgid "Set user"
+msgstr "Definir usuário"
+
+#: src/gnome-schedule.glade.h:32
+msgid "Shows the records"
+msgstr "Mostra os registros"
+
+#: src/gnome-schedule.glade.h:33
+msgid "Time expression help"
+msgstr "Ajuda em expressões de hora"
+
+#. Setting up the columns
+#: src/gnome-schedule.glade.h:34 src/mainWindow.py:180 src/mainWindow.py:202
+msgid "Title"
+msgstr "Título"
+
+#: src/gnome-schedule.glade.h:35
+msgid "Treeview"
+msgstr "Visão em árvore"
+
+#: src/gnome-schedule.glade.h:36
+msgid "[Add|Edit] scheduled task"
+msgstr "[Adicionar|Editar] tarefa agendada"
+
+#: src/gnome-schedule.glade.h:37
+msgid "_Add task"
+msgstr "_Adicionar tarefa"
+
+#: src/gnome-schedule.glade.h:38
+msgid "_Delete"
+msgstr "E_xcluir"
+
+#: src/gnome-schedule.glade.h:39
+msgid "_Manual"
+msgstr "_Manual"
+
+#: src/gnome-schedule.glade.h:43
+msgid ""
+"minute\n"
+"hour\n"
+"day\n"
+"week\n"
+"month\n"
+"use advanced"
+msgstr ""
+"minuto\n"
+"hora\n"
+"dia\n"
+"semana\n"
+"mês\n"
+"usar avançado"
+
+#: src/gnome-schedule.glade.h:50
+msgid "root"
+msgstr ""
+
+#: src/gnome-schedule.glade.h:51
+msgid "to"
+msgstr "até"
+
+#. Setting up the columns
+#: src/mainWindow.py:182 src/mainWindow.py:198
+msgid "Frequency"
+msgstr "Freqüência"
+
+#: src/mainWindow.py:184 src/mainWindow.py:200
+msgid "Command"
+msgstr "Comando"
+
+#: src/mainWindow.py:264
+msgid "System Schedule"
+msgstr "Agenda do Sistema"
+
+#: src/mainWindow.py:265
+msgid "Copyright (c) 2004-2005 Gaute Hope."
+msgstr "Copyright (c) 2004-2005 Gaute Hope."
+
+#: src/mainWindow.py:266
+msgid "This software is distributed under the GPL. "
+msgstr "Este software é distribuido sob a GPL. "
