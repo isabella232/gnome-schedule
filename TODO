@@ -1,0 +1,4 @@
+TODO:
+
+* The regexp doesn't work, when i add the command wall "blah blah" it just shows up the command 'wall' and no title..
+possibly because of the quotes.
