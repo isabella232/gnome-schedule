@@ -140,11 +140,6 @@ def translate_nth_nl (nth):
 # nth numeric values in sentences. If it's not needed for your language
 # (for example, it's not needed for dutch), then don't change anything and
 # do your translation in the po-files only.
-def translate_crontab_easy (minute, hour, day, month, weekday):
-	#if language.find ("whatever") != -1:
-	#	return translate_crontab_easy_whatever (minute, hour, day, month, weekday)
-	#else:
-	return translate_crontab_easy_en (minute, hour, day, month, weekday)
 
 # This translates a hour, minute and seconds to a digital-clock-display
 # hour. As far as I know is the format internationally standarized.
@@ -179,6 +174,13 @@ def timeval_en (hour, minute, seconds):
 # You can copy-and-paste the whole block and start adjusting it for your
 # language. If you need assistance, read the AUTHORS file and try to
 # contact us or use the mailinglists.
+
+def translate_crontab_easy (minute, hour, day, month, weekday):
+	#if language.find ("whatever") != -1:
+	#	return translate_crontab_easy_whatever (minute, hour, day, month, weekday)
+	#else:
+	return translate_crontab_easy_en (minute, hour, day, month, weekday)
+
 def translate_crontab_easy_en (minute, hour, day, month, weekday):
 	# * means "every"
 	# x-y means happens every instance between x and y
