@@ -594,7 +594,7 @@
 			      <property name="max_length">0</property>
 			      <property name="text" translatable="yes"></property>
 			      <property name="has_frame">True</property>
-			      <property name="invisible_char">*</property>
+			      <property name="invisible_char" translatable="yes">*</property>
 			      <property name="activates_default">False</property>
 			      <signal name="changed" handler="on_anybasic_entry_changed" last_modification_time="Tue, 22 Jun 2004 15:44:32 GMT"/>
 			    </widget>
@@ -718,7 +718,7 @@
 			  <property name="max_length">0</property>
 			  <property name="text" translatable="yes"></property>
 			  <property name="has_frame">True</property>
-			  <property name="invisible_char">*</property>
+			  <property name="invisible_char" translatable="yes">*</property>
 			  <property name="activates_default">False</property>
 			  <signal name="changed" handler="on_anybasic_entry_changed" last_modification_time="Sun, 06 Jun 2004 15:18:25 GMT"/>
 			</widget>
@@ -927,7 +927,7 @@
 			  <property name="can_focus">True</property>
 			  <property name="label" translatable="yes">minute</property>
 			  <property name="use_underline">True</property>
-			  <property name="relief">GTK_RELIEF_NONE</property>
+			  <property name="relief">GTK_RELIEF_NORMAL</property>
 			  <property name="focus_on_click">True</property>
 			  <signal name="clicked" handler="on_fieldHelp_clicked" last_modification_time="Thu, 10 Jun 2004 14:52:59 GMT"/>
 			</widget>
@@ -951,7 +951,7 @@
 			  <property name="max_length">0</property>
 			  <property name="text" translatable="yes">0-59</property>
 			  <property name="has_frame">True</property>
-			  <property name="invisible_char">*</property>
+			  <property name="invisible_char" translatable="yes">*</property>
 			  <property name="activates_default">False</property>
 			  <signal name="changed" handler="on_anyadvanced_entry_changed" last_modification_time="Sun, 06 Jun 2004 14:53:17 GMT"/>
 			</widget>
@@ -974,7 +974,7 @@
 			  <property name="can_focus">True</property>
 			  <property name="label" translatable="yes">hour</property>
 			  <property name="use_underline">True</property>
-			  <property name="relief">GTK_RELIEF_NONE</property>
+			  <property name="relief">GTK_RELIEF_NORMAL</property>
 			  <property name="focus_on_click">True</property>
 			  <signal name="clicked" handler="on_fieldHelp_clicked" last_modification_time="Thu, 10 Jun 2004 14:52:46 GMT"/>
 			</widget>
@@ -998,7 +998,7 @@
 			  <property name="max_length">0</property>
 			  <property name="text" translatable="yes">0-23</property>
 			  <property name="has_frame">True</property>
-			  <property name="invisible_char">*</property>
+			  <property name="invisible_char" translatable="yes">*</property>
 			  <property name="activates_default">False</property>
 			  <signal name="changed" handler="on_anyadvanced_entry_changed" last_modification_time="Sun, 06 Jun 2004 14:53:25 GMT"/>
 			</widget>
@@ -1021,7 +1021,7 @@
 			  <property name="can_focus">True</property>
 			  <property name="label" translatable="yes">day</property>
 			  <property name="use_underline">True</property>
-			  <property name="relief">GTK_RELIEF_NONE</property>
+			  <property name="relief">GTK_RELIEF_NORMAL</property>
 			  <property name="focus_on_click">True</property>
 			  <signal name="clicked" handler="on_fieldHelp_clicked" last_modification_time="Thu, 10 Jun 2004 14:55:26 GMT"/>
 			</widget>
@@ -1045,7 +1045,7 @@
 			  <property name="max_length">0</property>
 			  <property name="text" translatable="yes">1-31</property>
 			  <property name="has_frame">True</property>
-			  <property name="invisible_char">*</property>
+			  <property name="invisible_char" translatable="yes">*</property>
 			  <property name="activates_default">False</property>
 			  <signal name="changed" handler="on_anyadvanced_entry_changed" last_modification_time="Sun, 06 Jun 2004 14:53:35 GMT"/>
 			</widget>
@@ -1068,7 +1068,7 @@
 			  <property name="can_focus">True</property>
 			  <property name="label" translatable="yes">month</property>
 			  <property name="use_underline">True</property>
-			  <property name="relief">GTK_RELIEF_NONE</property>
+			  <property name="relief">GTK_RELIEF_NORMAL</property>
 			  <property name="focus_on_click">True</property>
 			  <signal name="clicked" handler="on_fieldHelp_clicked" last_modification_time="Thu, 10 Jun 2004 14:55:35 GMT"/>
 			</widget>
@@ -1092,7 +1092,7 @@
 			  <property name="max_length">0</property>
 			  <property name="text" translatable="yes">1-12</property>
 			  <property name="has_frame">True</property>
-			  <property name="invisible_char">*</property>
+			  <property name="invisible_char" translatable="yes">*</property>
 			  <property name="activates_default">False</property>
 			  <signal name="changed" handler="on_anyadvanced_entry_changed" last_modification_time="Sun, 06 Jun 2004 14:53:42 GMT"/>
 			</widget>
@@ -1115,7 +1115,7 @@
 			  <property name="can_focus">True</property>
 			  <property name="label" translatable="yes">weekday</property>
 			  <property name="use_underline">True</property>
-			  <property name="relief">GTK_RELIEF_NONE</property>
+			  <property name="relief">GTK_RELIEF_NORMAL</property>
 			  <property name="focus_on_click">True</property>
 			  <signal name="clicked" handler="on_fieldHelp_clicked" last_modification_time="Thu, 10 Jun 2004 14:55:44 GMT"/>
 			</widget>
@@ -1139,7 +1139,7 @@
 			  <property name="max_length">0</property>
 			  <property name="text" translatable="yes">0-7</property>
 			  <property name="has_frame">True</property>
-			  <property name="invisible_char">*</property>
+			  <property name="invisible_char" translatable="yes">*</property>
 			  <property name="activates_default">False</property>
 			  <signal name="changed" handler="on_anyadvanced_entry_changed" last_modification_time="Sun, 06 Jun 2004 14:53:49 GMT"/>
 			</widget>
@@ -1535,7 +1535,7 @@
 	      <property name="max_length">0</property>
 	      <property name="text" translatable="yes">*</property>
 	      <property name="has_frame">True</property>
-	      <property name="invisible_char">*</property>
+	      <property name="invisible_char" translatable="yes">*</property>
 	      <property name="activates_default">False</property>
 	      <property name="width_chars">8</property>
 	      <signal name="changed" handler="on_entExpression_changed" last_modification_time="Mon, 14 Jun 2004 17:18:20 GMT"/>
@@ -1590,7 +1590,7 @@
 		  <property name="max_length">0</property>
 		  <property name="text" translatable="yes">0</property>
 		  <property name="has_frame">True</property>
-		  <property name="invisible_char">*</property>
+		  <property name="invisible_char" translatable="yes">*</property>
 		  <property name="activates_default">False</property>
 		  <property name="width_chars">3</property>
 		  <signal name="changed" handler="on_entRangeStart_changed" last_modification_time="Thu, 10 Jun 2004 14:03:24 GMT"/>
@@ -1632,7 +1632,7 @@
 		  <property name="max_length">0</property>
 		  <property name="text" translatable="yes">59</property>
 		  <property name="has_frame">True</property>
-		  <property name="invisible_char">*</property>
+		  <property name="invisible_char" translatable="yes">*</property>
 		  <property name="activates_default">False</property>
 		  <property name="width_chars">3</property>
 		  <signal name="changed" handler="on_entRangeEnd_changed" last_modification_time="Thu, 10 Jun 2004 14:03:30 GMT"/>
@@ -1695,7 +1695,7 @@
 		  <property name="max_length">0</property>
 		  <property name="text" translatable="yes">2</property>
 		  <property name="has_frame">True</property>
-		  <property name="invisible_char">*</property>
+		  <property name="invisible_char" translatable="yes">*</property>
 		  <property name="activates_default">False</property>
 		  <property name="width_chars">3</property>
 		  <signal name="changed" handler="on_entEvery_changed" last_modification_time="Thu, 10 Jun 2004 14:02:58 GMT"/>
@@ -1805,7 +1805,7 @@
 		  <property name="max_length">0</property>
 		  <property name="text" translatable="yes">2</property>
 		  <property name="has_frame">True</property>
-		  <property name="invisible_char">*</property>
+		  <property name="invisible_char" translatable="yes">*</property>
 		  <property name="activates_default">False</property>
 		  <property name="width_chars">3</property>
 		  <signal name="changed" handler="on_entFix_changed" last_modification_time="Sun, 13 Jun 2004 12:03:48 GMT"/>
@@ -2308,7 +2308,7 @@
 			  <property name="max_length">0</property>
 			  <property name="text" translatable="yes"></property>
 			  <property name="has_frame">True</property>
-			  <property name="invisible_char">*</property>
+			  <property name="invisible_char" translatable="yes">*</property>
 			  <property name="activates_default">False</property>
 			  <signal name="changed" handler="on_at_title_entry_changed" last_modification_time="Fri, 25 Jun 2004 07:24:31 GMT"/>
 			</widget>
