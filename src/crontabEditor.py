@@ -239,10 +239,12 @@ class CrontabEditor:
 	def loadicon (self):
 		nautilus_icon = support.nautilus_icon ("i-executable")
 		if nautilus_icon != None:
-			self.template_image.set_from_file(nautilus_icon)
+			pixbuf = gtk.gdk.pixbuf_new_from_file_at_size (nautilus_icon, 60, 60)
+			self.template_image.set_from_pixbuf(pixbuf)
 			self.icon = nautilus_icon
 		else:
-			self.template_image.set_from_file("/usr/share/icons/gnome/48x48/mimetypes/gnome-mime-application.png")
+			pixbuf = gtk.gdk.pixbuf_new_from_file_at_size ("/usr/share/icons/gnome/48x48/mimetypes/gnome-mime-application.png", 60, 60)
+			self.template_image.set_from_pixbuf(pixbuf)
 			self.icon = "/usr/share/icons/gnome/48x48/mimetypes/gnome-mime-application.png"
 
 	def showedit (self, record, linenumber, iter, mode):
@@ -322,7 +324,8 @@ class CrontabEditor:
 				#if self.ParentClass.saveWindow != None:
 				#	self.ParentClass.saveWindow.save_entry.set_text (name)
 				if icon_uri != None:
-					self.template_image.set_from_file (icon_uri)
+					pixbuf = gtk.gdk.pixbuf_new_from_file_at_size (icon_uri, 60, 60)
+					self.template_image.set_from_pixbuf(pixbuf)
 					self.icon = icon_uri
 				else:
 					self.loadicon ()
@@ -428,7 +431,9 @@ class CrontabEditor:
 		self.month_entry.set_text (self.month)
 		self.weekday_entry.set_text (self.weekday)
 		if self.icon != None:
-			self.template_image.set_from_file(self.icon)
+			pixbuf = gtk.gdk.pixbuf_new_from_file_at_size (self.icon, 60, 60)
+			self.template_image.set_from_pixbuf(pixbuf)
+
 		else:
 			self.loadicon ()
 		self.setting_label.set_text (self.schedule.createpreview(self.minute, self.hour, self.day, self.month, self.weekday, self.command))
