@@ -1,8 +1,9 @@
 2004-06-18  Philip Van Hoof  <me_NOSPAM@freax.org>
-	* Reconfiguration of the build environment. This build environment used
-	to be Fedora-only. From now on this build environment needs to be suitable
-	for any Unix platform on which GNOME has been implemented. The status of
-	this is unfinished and yes, I can use some help with all this :).
+	* Reconfiguration of the build environment. This build environment
+	used to be Fedora-only. From now on this build environment needs
+	to be suitable for any Unix platform on which GNOME has been 
+	implemented. The status of this is unfinished and yes, I can use some
+	help with all this :).
 
 2004-06-18  Christian Rose  <menthos@menthos.com>
 
@@ -17,24 +18,22 @@
 
 	* Added translatable string stuff _("translate this") at various places
 
-	* addWindow.py
-	* ------------
-	* Regexp stuff to check if the values entered in the advaced add form is correct.
-	* No '> /dev/null..' stuff in the command entry (used a label)
-	* Redesign of the 'Setting' label 
-	* the combobox 'Every' is now read-only
+	* addWindow.py: Regexp stuff to check if the values entered in the 
+	advaced add form is correct. No '> /dev/null..' stuff in the 
+	command entry (used a label). Redesign of the 'Setting' label. 
+	The combobox 'Every' is now read-only
 
-	* addWindowHelp.py
-	* ----------------	
-	* if >1 is selected in the select every field is written then change the label to 'dayS' or appropiate
-	* and 'Happends from' is changed to 'Happends from day' [ ] to [ ]
-	* 'happends all days' is 'happends every day'
-	* Redesign of the 'Expression' label
+	* addWindowHelp.py: if >1 is selected in the select every field is 
+	written then change the label to 'dayS' or  appropiate and 
+	'Happends from' is changed to 'Happends from day' [ ] to [ ] 
+	'happends all days' is 'happends every day'. Redesign of the 
+	'Expression' label
 
 2004-06-08  Philip Van Hoof  <me_NOSPAM@freax.org>
 
 	* Implemented writing the crontab
-	* This means that, yes, the application is doing something usefull from now on
+	* This means that, yes, the application is doing something usefull 
+	from now on
 
 2004-06-06  Philip Van Hoof  <me_NOSPAM@freax.org>
 
@@ -57,32 +56,46 @@
 
 2004-06-03  Gaute Hope  <eg_NOSPAM@gaute.eu.org>
 
-	* used the environment provided by Philip Van Hoof, modified the makefile a bit(changed project directory) and the claen now cleans the *~ files in the src/ dir aswell
-	* you may change to advanced mode at the settings menu, simple is default
+	* used the environment provided by Philip Van Hoof, modified the 
+	makefile a bit(changed project directory) and the claen now 
+	cleans the *~ files in the src/ dir aswell
+	* you may change to advanced mode at the settings menu, simple 
+	is default
 	* created the simple model
 	* created the update function, and some simple parse function
 	* changed the name to Crontab manager
 	* created the simple add form
-	* added a viewport and a slide pane and hides the cronjob_edit frame when simple mode is selected.
+	* added a viewport and a slide pane and hides the cronjob_edit frame 
+	when simple mode is selected.
 	* made simple add work
-	* made simple remove work, should be sufficient for editing for now. If you want to do that you should switch to advanced mode.
+	* made simple remove work, should be sufficient for editing for now. 
+	If you want to do that you should switch to advanced mode.
 
 2004-06-01  Gaute Hope  <eg_NOSPAM@gaute.eu.org>
 
-	* Fixed the user selecting with commandline argument, it now only works if the UID = 0
+	* Fixed the user selecting with commandline argument, it now only 
+	works if the UID = 0
 	* Bug: Made it work with other users than root :)
 
 2004-05-31  Gaute Hope  <eg_NOSPAM@gaute.eu.org>
 
-	* Added support for editing crontab for other users. It now checks for the first arguement uses it for the username. Otherwise it users the USER environment variable.
-	* Made it possible to just write out the crontab file without installing it, so that it can be installed on another machine(ie: a server without X)
+	* Added support for editing crontab for other users. It now checks for 
+	the first arguement uses it for the username. Otherwise it users the 
+	USER environment variable.
+	* Made it possible to just write out the crontab file without 
+	installing it, so that it can be installed on another machine
+	(ie: a server without X)
 	* Fixed some version numbers.
-	* realized you had to be root to use the 'crontab -u' command, so now it only works if you are modifying root's crontab.. i tend to fix it to use the environment variable to check for user id or something.
+	* realized you had to be root to use the 'crontab -u' command, so now 
+	it only works if you are modifying root's crontab.. i tend to fix it 
+	to use the environment variable to check for user id or something.
 
 2004-05-30  Gaute Hope  <eg_NOSPAM@gaute.eu.org>
 
-	* Made it interfere with crontab using the crontab command to list and write crontabs
-	* New add dialog with features for customizing the execution time expressions
+	* Made it interfere with crontab using the crontab command to list 
+	and write crontabs
+	* New add dialog with features for customizing the execution time 
+	expressions
 	* About dialog
 	* Hints dialog for the add dialog
 
