@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-07-14 12:03-0400\n"
-"PO-Revision-Date: 2004-07-10 13:40-0300\n"
+"POT-Creation-Date: 2004-07-14 15:51-0400\n"
+"PO-Revision-Date: 2004-07-13 19:49-0300\n"
 "Last-Translator: Raphael Higino <raphaelh@uai.com.br>\n"
 "Language-Team: Brazilian Portuguese <gnome-l10-br@listas.cipsga.org.br>\n"
 "MIME-Version: 1.0\n"
@@ -19,12 +19,11 @@ msgstr ""
 
 #: desktop/gnome-schedule.desktop.in.h:1
 msgid "Manage your system tasks"
-msgstr ""
+msgstr "Gerencie suas tarefas do sistema"
 
 #: desktop/gnome-schedule.desktop.in.h:2
-#, fuzzy
 msgid "Schedule"
-msgstr "Agenda do Sistema"
+msgstr "Agenda"
 
 #: src/at.py:297
 #, python-format
@@ -212,11 +211,11 @@ msgstr ":"
 
 #: src/gnome-schedule.glade.h:15
 msgid "<b>Basic settings</b>"
-msgstr "<b>Configurações Básicas</b>"
+msgstr "<b>Configurações básicas</b>"
 
 #: src/gnome-schedule.glade.h:16
 msgid "<b>Frequency setting</b>"
-msgstr "<b>Configurações de Freqüência</b>"
+msgstr "<b>Configurações de freqüência</b>"
 
 #: src/gnome-schedule.glade.h:17
 msgid "<b>Preview</b>"
@@ -233,7 +232,7 @@ msgstr "Uma tarefa agendada que executará com uma freqüência (CRONTAB)"
 #: src/gnome-schedule.glade.h:20
 msgid "A scheduled task that will start at a defined time in the future (AT)"
 msgstr ""
-"Uma tarefa agendada que iniciará em um determinado horário no futuro (AT)"
+"Uma tarefa agendada que iniciará num determinado horário no futuro (AT)"
 
 #: src/gnome-schedule.glade.h:21
 msgid "A_dvanced"
@@ -860,7 +859,7 @@ msgstr "Todo minuto, toda hora, do dia: %s, todo mês"
 
 #: src/mainWindow.py:239 src/mainWindow.py:272
 msgid "Icon"
-msgstr ""
+msgstr "Ícone"
 
 #: src/mainWindow.py:243 src/mainWindow.py:292
 msgid "Type"
@@ -879,9 +878,8 @@ msgid "Preview"
 msgstr "Visualização"
 
 #: src/mainWindow.py:392
-#, fuzzy
 msgid "Gnome Schedule"
-msgstr "Agenda do Sistema"
+msgstr "Gnome Schedule"
 
 #: src/mainWindow.py:394
 msgid "Copyright (c) 2004-2005 Gaute Hope."
@@ -892,10 +890,13 @@ msgid "This software is distributed under the GPL. "
 msgstr "Este software é distribuido sob a GPL. "
 
 #: src/mainWindow.py:398
+#, fuzzy
 msgid ""
 "Some pain fully bad documentation put\n"
 "toghether from the far corners of Gaute Hope's mind."
 msgstr ""
+"Alguma documentação dolorosamente ruim reunida\n"
+"a partir dos confins da mente de Gaute Hope."
 
 #: src/mainWindow.py:398
 msgid "translator_credits"
