@@ -36,6 +36,8 @@ freax: Both in the atEditor and crontabEditor
     o. For example detect when an at-record will expire
     o. Check for crontab records every minute?
     o. Use fam to detect changes in the config-files of crontab and at?
+  * Include a default icon for at, and a default icon for crontab
+    and also make it the default-selected icon
 
  Unassigned would make it to the release but are non-blocking it
   * Documentation
