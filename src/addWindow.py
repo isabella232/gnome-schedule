@@ -251,6 +251,12 @@ class AddWindow:
 	def on_anytitle_clicked(self, widget, *args):
 		print "help"
 		name = widget.get_name()
+		if name == "lblMinute" : name = "minute"
+		if name == "lblHour" : name = "hour"
+		if name == "lblDay" : name = "day"
+		if name == "lblMonth" : name = "month"
+		if name == "lblWeekday" : name = "weekday"
+ 
 		self.ParentClass.addHelpWindow.showAll(name)
 		return
 
@@ -274,22 +280,35 @@ class AddWindowHelp:
 		self.entRangeStart = self.xml.get_widget("entRangeStart")
 		self.entRangeEnd = self.xml.get_widget("entRangeEnd")
 		self.cmbAt = self.xml.get_widget("cmbAt")
+
+		self.lblAllEntity = self.xml.get_widget("lblAllEntity")
+		self.lblEveryEntity = self.xml.get_widget("lblEveryEntity")
 		
+		#connect the radiobuttons toggle
 		self.xml.signal_connect("on_btnCancel_clicked", self.btnCancel_clicked)
 		self.xml.signal_connect("on_btnOk_clicked", self.btnOk_clicked)
+		self.xml.signal_connect("on_radAll_toggled", self.RadioButtonChange)
+		self.xml.signal_connect("on_radEvery_toggled", self.RadioButtonChange)
+		self.xml.signal_connect("on_radRange_toggled", self.RadioButtonChange)
+		self.xml.signal_connect("on_radAt_toggled", self.RadioButtonChange)
 		
 		#connect the changes of a combo or entry
 		
+		
+
 		return
 
-	def populateLabels(field):
+	def populateLabels(self, field):
 		#put the apropiate values in the labels describing entitys, and the 'at' combobox
+		self.lblAllEntity.set_text(field + "s")
+		self.lblEveryEntity.set_text(field)
 		return
 
 	def showAll(self, field):
 		self.field = field
 		#show the form
 		self.widget.set_title(_("Edit timeexpression for: " + field))
+		self.populateLabels(field)
 		self.widget.show_all()
 		return
 
@@ -302,6 +321,13 @@ class AddWindowHelp:
 		self.widget.hide()
 		return gtk.TRUE
 
+	def RadioButtonChange(self, widget):
+		print widget.get_name()
+		return
+
 	def anyEntryChanged(self, *args):
 		#create a easy read line for the expression view, put the command into the edit box
+		return
+
+	def parseExpression(self, mode, value):
 		return
