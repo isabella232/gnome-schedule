@@ -276,15 +276,21 @@ class main:
 			self.addWindow.showEditWindow (record, linenumber, iter)
 
 	def on_delete_menu_activate (self, *args):
-		try:
-			store, iter = self.treeview.get_selection().get_selected()
-			if iter != None:
-				record = self.treemodel.get_value(iter, 3)
-				linenumber = self.treemodel.get_value(iter, 4)
-				self.crontab.deleteLine (linenumber)
-				self.treemodel.remove (iter)
-		except:
-			pass
+		store, iter = self.treeview.get_selection().get_selected()
+		if iter != None:
+			record = self.treemodel.get_value(iter, 3)
+			linenumber = self.treemodel.get_value(iter, 4)
+			self.crontab.deleteLine (linenumber)
+			self.treemodel.remove (iter)
+				
+			# Reset all linenumbers that came after this line 
+			iterloop = self.treemodel.get_iter_first ()
+			while iterloop != None:
+				linenumberloop = self.treemodel.get_value (iterloop, 4)
+				if linenumberloop > linenumber:
+					self.treemodel.set_value (iterloop, 4, linenumberloop - 1)
+				iterloop = self.treemodel.iter_next (iterloop)
+		
 
 		#moving to first
 		iter =  self.treemodel.get_iter_first()
