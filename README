@@ -94,6 +94,14 @@ o. The following script will install gnome-schedule on a system that has
      # script, however, will do all this for you (if you use the 
      # script).
 
+Important notes
+---------------
+If you have previous records in at, gnome-schedule may have problems reading them. 
+They are marked as DANGROUS PARSE in the list if a unsecure method was used. This will not damage
+the record, and if you open one pressing cancel in the script editor will not change anything.
+
+Some comments right after existing records in crontab may return weird results for title and icon, this should not damage anything.
+
 
 Compiling and HACKING
 ---------------------
