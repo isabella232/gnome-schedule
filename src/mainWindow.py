@@ -303,7 +303,11 @@ class main:
 		pass
 
 	def on_manual_menu_activate (self, *args):
-		pass
+		help_page = "file:///usr/share/doc/gnome-schedule-" + "@VERSION@" + "/index.html"
+		path = "/usr/bin/gnome-help"
+		pid = os.fork()
+		if not pid:
+			os.execv(path, [path, help_page])
 
 	def showSetUser(self, *args):
 		self.setuserWindow.ShowSetuserWindow()

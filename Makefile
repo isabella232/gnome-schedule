@@ -1,5 +1,4 @@
 #License: GPL
-#Copyright Red Hat Inc.  Jan 2001
 
 VERSION=$(shell awk '/Version:/ { print $$2 }' gnome-schedule.spec)
 CVSTAG=RELEASE-$(subst .,-,$(VERSION))-BRANCH
@@ -11,6 +10,7 @@ MANDIR=${DATADIR}/man
 PKGNAME = gnome-schedule
 PKGDATADIR=${DATADIR}/${PKGNAME}
 PKGIMAGEDIR=${PKGDATADIR}/pixmaps
+DOCDIR=${PREFIX}/share/doc/gnome-schedule-$(VERSION)/
 
 PAMD_DIR        = /etc/pam.d
 SECURITY_DIR    =/etc/security/console.apps
@@ -26,6 +26,7 @@ install:
 	mkdir -p $(INSTROOT)$(PKGIMAGEDIR)
 	mkdir -p $(INSTROOT)$(PAMD_DIR)
 	mkdir -p $(INSTROOT)$(SECURITY_DIR)
+	mkdir -p $(INSTROOT)$(DOCDIR)
 	mkdir -p $(INSTROOT)/usr/share/pixmaps
 	mkdir -p $(INSTROOT)/usr/share/applications
 	mkdir -p $(INSTROOT)/usr/share/icons/hicolor/48x48/apps
@@ -34,6 +35,7 @@ install:
 		sed -e s,@VERSION@,$(VERSION),g $${py} > $(INSTROOT)$(PKGDATADIR)/`basename $${py}` ; \
 	done
 	install src/*.glade $(INSTROOT)$(PKGDATADIR)
+	install doc/* $(INSTROOT)$(DOCDIR)
 	install $(PKGNAME).pam $(INSTROOT)$(PAMD_DIR)/$(PKGNAME)
 	install $(PKGNAME).console $(INSTROOT)$(SECURITY_DIR)/$(PKGNAME)
 	install pixmaps/*.png $(INSTROOT)$(PKGIMAGEDIR)

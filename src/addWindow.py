@@ -23,6 +23,7 @@ import string
 import crontab
 import re
 import gobject
+import os
 ##
 ## I18N
 ##
@@ -204,8 +205,12 @@ class AddWindow:
 		self.chkNoOutput.set_active (gtk.FALSE)
 
 	def on_help_button_clicked (self, *args):
-		# self.check_field_format (self.minute_entry.get_text(), _("minute"))
-		print "Help"
+		help_page = "file:///usr/share/doc/gnome-schedule-" + "@VERSION@" + "/addingandediting.html"
+		path = "/usr/bin/gnome-help"
+		pid = os.fork()
+		if not pid:
+			os.execv(path, [path, help_page])
+
 
 	def on_cancel_button_clicked (self, *args):
 		self.widget.hide()

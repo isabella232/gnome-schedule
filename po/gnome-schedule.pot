@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-06-12 17:19+0200\n"
+"POT-Creation-Date: 2004-06-15 16:22+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,12 +16,173 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../src/addWindow.py:84
+#. put the apropiate values in the labels describing entitys, and the 'at' combobox
+#: ../src/addWindowHelp.py:85
+msgid "Happens all "
+msgstr ""
+
+#: ../src/addWindowHelp.py:85 ../src/addWindowHelp.py:196
+msgid "s"
+msgstr ""
+
+#: ../src/addWindowHelp.py:88
+msgid "Happens from "
+msgstr ""
+
+#: ../src/addWindowHelp.py:89 ../src/addWindowHelp.py:153
+#: ../src/addWindow.py:122 ../src/addWindow.py:142 ../src/addWindow.py:166
+#: ../src/addWindow.py:217 ../src/addWindow.py:262 ../src/addWindow.py:345
+#: ../src/addWindow.py:383
+msgid "minute"
+msgstr ""
+
+#: ../src/addWindowHelp.py:92 ../src/addWindowHelp.py:154
+#: ../src/addWindow.py:125 ../src/addWindow.py:145 ../src/addWindow.py:169
+#: ../src/addWindow.py:218 ../src/addWindow.py:265 ../src/addWindow.py:351
+#: ../src/addWindow.py:386
+msgid "hour"
+msgstr ""
+
+#: ../src/addWindowHelp.py:95 ../src/addWindowHelp.py:155
+#: ../src/addWindow.py:128 ../src/addWindow.py:148 ../src/addWindow.py:172
+#: ../src/addWindow.py:219 ../src/addWindow.py:268 ../src/addWindow.py:357
+#: ../src/addWindow.py:389
+msgid "day"
+msgstr ""
+
+#: ../src/addWindowHelp.py:98 ../src/addWindowHelp.py:156
+#: ../src/addWindow.py:131 ../src/addWindow.py:151 ../src/addWindow.py:175
+#: ../src/addWindow.py:220 ../src/addWindow.py:271 ../src/addWindow.py:363
+#: ../src/addWindow.py:392
+msgid "month"
+msgstr ""
+
+#: ../src/addWindowHelp.py:101 ../src/addWindowHelp.py:157
+#: ../src/addWindow.py:134 ../src/addWindow.py:154 ../src/addWindow.py:178
+#: ../src/addWindow.py:221 ../src/addWindow.py:395
+msgid "weekday"
+msgstr ""
+
+#. show the form
+#: ../src/addWindowHelp.py:146
+msgid "Edit timeexpression for: "
+msgstr ""
+
+#: ../src/addWindowHelp.py:187 ../src/addWindowHelp.py:198
+msgid "st. "
+msgstr ""
+
+#: ../src/addWindowHelp.py:189
+msgid "th. "
+msgstr ""
+
+#: ../src/addWindow.py:85
 msgid "Edit a scheduled task"
 msgstr ""
 
-#: ../src/addWindow.py:120
+#: ../src/addWindow.py:124 ../src/addWindow.py:144 ../src/addWindow.py:168
+msgid "must be between 59 and 0"
+msgstr ""
+
+#: ../src/addWindow.py:127 ../src/addWindow.py:147
+msgid "must be between 23 and 0"
+msgstr ""
+
+#: ../src/addWindow.py:130 ../src/addWindow.py:150 ../src/addWindow.py:174
+msgid "must be between 31 and 1"
+msgstr ""
+
+#: ../src/addWindow.py:133 ../src/addWindow.py:153 ../src/addWindow.py:177
+msgid "must be between 12 and 1"
+msgstr ""
+
+#: ../src/addWindow.py:136 ../src/addWindow.py:156 ../src/addWindow.py:180
+msgid "must be between 7 and 0"
+msgstr ""
+
+#: ../src/addWindow.py:196
+msgid "New scheduled task"
+msgstr ""
+
+#: ../src/addWindow.py:200
 msgid "Create a new scheduled task"
+msgstr ""
+
+#: ../src/addWindow.py:224
+msgid "This is an invalid record! The problem could be at the "
+msgstr ""
+
+#: ../src/addWindow.py:224
+msgid " field. Reason: "
+msgstr ""
+
+#: ../src/addWindow.py:258
+msgid "use advanced"
+msgstr ""
+
+#: ../src/addWindow.py:274 ../src/addWindow.py:369
+msgid "week"
+msgstr ""
+
+#: ../src/addWindow.py:290
+msgid "command"
+msgstr ""
+
+#: ../src/crontab.py:137
+msgid "st."
+msgstr ""
+
+#: ../src/crontab.py:139
+msgid "th."
+msgstr ""
+
+#: ../src/crontab.py:149
+msgid "Every minute"
+msgstr ""
+
+#: ../src/crontab.py:152 ../src/crontab.py:156 ../src/crontab.py:162
+#: ../src/crontab.py:169 ../src/crontab.py:176 ../src/crontab.py:178
+msgid "Every "
+msgstr ""
+
+#: ../src/crontab.py:152
+msgid " minute of every hour"
+msgstr ""
+
+#: ../src/crontab.py:156
+msgid " hour of the day"
+msgstr ""
+
+#: ../src/crontab.py:158 ../src/crontab.py:164
+msgid "At "
+msgstr ""
+
+#: ../src/crontab.py:158
+msgid " every day"
+msgstr ""
+
+#: ../src/crontab.py:164 ../src/crontab.py:171
+msgid " every "
+msgstr ""
+
+#: ../src/crontab.py:164
+msgid " day of the month"
+msgstr ""
+
+#: ../src/crontab.py:169 ../src/crontab.py:171
+msgid " month of the year"
+msgstr ""
+
+#: ../src/crontab.py:171
+msgid "At the "
+msgstr ""
+
+#: ../src/crontab.py:176
+msgid " day of the week"
+msgstr ""
+
+#: ../src/crontab.py:178
+msgid " day of the week at "
 msgstr ""
 
 #. Setting up the columns
@@ -29,21 +190,29 @@ msgstr ""
 msgid "Title"
 msgstr ""
 
-#: ../src/mainWindow.py:182 ../src/mainWindow.py:200
+#. Setting up the columns
+#: ../src/mainWindow.py:182 ../src/mainWindow.py:198
 msgid "Frequency"
 msgstr ""
 
-#. Setting up the columns
-#: ../src/mainWindow.py:184 ../src/mainWindow.py:198
+#: ../src/mainWindow.py:184 ../src/mainWindow.py:200
 msgid "Command"
 msgstr ""
 
+#: ../src/mainWindow.py:263
+msgid "System Schedule"
+msgstr ""
+
 #: ../src/mainWindow.py:264
-msgid "Copyright (c) 2001-2003 Gaute Hope."
+msgid "Copyright (c) 2004-2005 Gaute Hope."
 msgstr ""
 
 #: ../src/mainWindow.py:265
 msgid "This software is distributed under the GPL. "
+msgstr ""
+
+#: ../src/mainWindow.py:311
+msgid "Help is not available."
 msgstr ""
 
 #.
