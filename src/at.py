@@ -81,7 +81,7 @@ class At:
 	def removetemplate (self, template_name):
 		template_name_c = self.replace (template_name)
 		
-		installed = support.gconf_client.get_string("/apps/gnome-schedule/templates/at/installed")
+		installed = support.gconf_client.get_string("/apps/gnome-schedule/presets/at/installed")
 		newstring = installed
 		if installed != None:
 			first = gtk.TRUE
@@ -94,17 +94,17 @@ class At:
 					else:
 						newstring = newstring + ", " + t
 
-		support.gconf_client.unset("/apps/gnome-schedule/templates/at/%s/name" % (template_name_c))
-		support.gconf_client.unset("/apps/gnome-schedule/templates/at/%s/icon_uri" % (template_name_c))
+		support.gconf_client.unset("/apps/gnome-schedule/presets/at/%s/name" % (template_name_c))
+		support.gconf_client.unset("/apps/gnome-schedule/presets/at/%s/icon_uri" % (template_name_c))
 
-		support.gconf_client.unset("/apps/gnome-schedule/templates/at/%s/runat" % (template_name_c))
-		support.gconf_client.unset("/apps/gnome-schedule/templates/at/%s/title" % (template_name_c))
-		support.gconf_client.unset("/apps/gnome-schedule/templates/at/%s/command" % (template_name_c))
+		support.gconf_client.unset("/apps/gnome-schedule/presets/at/%s/runat" % (template_name_c))
+		support.gconf_client.unset("/apps/gnome-schedule/presets/at/%s/title" % (template_name_c))
+		support.gconf_client.unset("/apps/gnome-schedule/presets/at/%s/command" % (template_name_c))
 		
 		if newstring == "   ":
-			support.gconf_client.unset ("/apps/gnome-schedule/templates/at/installed")
+			support.gconf_client.unset ("/apps/gnome-schedule/presets/at/installed")
 		else:
-			support.gconf_client.set_string("/apps/gnome-schedule/templates/at/installed", newstring)
+			support.gconf_client.set_string("/apps/gnome-schedule/presets/at/installed", newstring)
 	[0-9]
 
 	def replace (self, template_name_c):
@@ -115,13 +115,13 @@ class At:
 	def savetemplate (self, template_name, runat, title, icon, command):
 		template_name_c = self.replace (template_name)
 		
-		support.gconf_client.set_string("/apps/gnome-schedule/templates/at/%s/name" % (template_name_c), template_name)
-		support.gconf_client.set_string("/apps/gnome-schedule/templates/at/%s/icon_uri" % (template_name_c), icon)
-		support.gconf_client.set_string("/apps/gnome-schedule/templates/at/%s/runat" % (template_name_c), runat)
-		support.gconf_client.set_string("/apps/gnome-schedule/templates/at/%s/title" % (template_name_c), title)
-		support.gconf_client.set_string("/apps/gnome-schedule/templates/at/%s/command" % (template_name_c), command)
+		support.gconf_client.set_string("/apps/gnome-schedule/presets/at/%s/name" % (template_name_c), template_name)
+		support.gconf_client.set_string("/apps/gnome-schedule/presets/at/%s/icon_uri" % (template_name_c), icon)
+		support.gconf_client.set_string("/apps/gnome-schedule/presets/at/%s/runat" % (template_name_c), runat)
+		support.gconf_client.set_string("/apps/gnome-schedule/presets/at/%s/title" % (template_name_c), title)
+		support.gconf_client.set_string("/apps/gnome-schedule/presets/at/%s/command" % (template_name_c), command)
 		
-		installed = support.gconf_client.get_string("/apps/gnome-schedule/templates/at/installed")
+		installed = support.gconf_client.get_string("/apps/gnome-schedule/presets/at/installed")
 		if installed == None:
 			installed = template_name_c
 		else:
@@ -133,13 +133,13 @@ class At:
 			if found == gtk.FALSE:
 				installed = installed + ", " + template_name_c
 
-		support.gconf_client.unset ("/apps/gnome-schedule/templates/at/installed")
-		support.gconf_client.set_string("/apps/gnome-schedule/templates/at/installed", installed)
+		support.gconf_client.unset ("/apps/gnome-schedule/presets/at/installed")
+		support.gconf_client.set_string("/apps/gnome-schedule/presets/at/installed", installed)
 		return
 
 	def gettemplatenames (self):
 		#try:
-			strlist = support.gconf_client.get_string("/apps/gnome-schedule/templates/at/installed")
+			strlist = support.gconf_client.get_string("/apps/gnome-schedule/presets/at/installed")
 			if strlist != None:
 				list = string.split (strlist, ", ")
 				return list
@@ -150,12 +150,12 @@ class At:
 
 	def gettemplate (self, template_name):
 		try:
-			icon_uri = support.gconf_client.get_string("/apps/gnome-schedule/templates/at/%s/icon_uri" % (template_name))
+			icon_uri = support.gconf_client.get_string("/apps/gnome-schedule/presets/at/%s/icon_uri" % (template_name))
 			
-			runat = support.gconf_client.get_string("/apps/gnome-schedule/templates/at/%s/runat" % (template_name))
-			title = support.gconf_client.get_string("/apps/gnome-schedule/templates/at/%s/title" % (template_name))
-			name = support.gconf_client.get_string("/apps/gnome-schedule/templates/at/%s/name" % (template_name))
-			command = support.gconf_client.get_string("/apps/gnome-schedule/templates/at/%s/command" % (template_name))
+			runat = support.gconf_client.get_string("/apps/gnome-schedule/presets/at/%s/runat" % (template_name))
+			title = support.gconf_client.get_string("/apps/gnome-schedule/presets/at/%s/title" % (template_name))
+			name = support.gconf_client.get_string("/apps/gnome-schedule/presets/at/%s/name" % (template_name))
+			command = support.gconf_client.get_string("/apps/gnome-schedule/presets/at/%s/command" % (template_name))
 			return icon_uri,  runat, title, name, command
 		except Exception, ex:
 			return ex, ex, ex, ex, ex
@@ -408,7 +408,7 @@ class At:
 				prelen = prelen + len(icon) + 6
 			
 			else:
-				icon = "/pygtk2reference/class-gtktreestore.html#method-gtktreestore--appendusr/share/icons/gnome/48x48/mimetypes/gnome-mime-application.png"
+				icon = "/usr/share/icons/gnome/48x48/mimetypes/gnome-mime-application.png"
 
 		elif method == 2:
 			string = " || {\n	 echo 'Execution directory inaccessible' >&2\n	 exit 1\n}\n"

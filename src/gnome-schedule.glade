@@ -625,7 +625,7 @@
 		      <child>
 			<widget class="GtkLabel" id="template_label">
 			  <property name="visible">True</property>
-			  <property name="label" translatable="yes">Template</property>
+			  <property name="label" translatable="yes">Preset</property>
 			  <property name="use_underline">False</property>
 			  <property name="use_markup">False</property>
 			  <property name="justify">GTK_JUSTIFY_LEFT</property>
@@ -721,7 +721,7 @@
 			  <child>
 			    <widget class="GtkButton" id="save_button">
 			      <property name="visible">True</property>
-			      <property name="tooltip" translatable="yes">Will save the current information as a template. You can type the name of the template in the combobox.</property>
+			      <property name="tooltip" translatable="yes">Will save the current information as a preset. You can type the name of the preset in the combobox.</property>
 			      <property name="can_default">True</property>
 			      <property name="can_focus">True</property>
 			      <property name="label">gtk-save</property>
@@ -740,7 +740,7 @@
 			  <child>
 			    <widget class="GtkButton" id="remove_button">
 			      <property name="visible">True</property>
-			      <property name="tooltip" translatable="yes">Will delete the selected template</property>
+			      <property name="tooltip" translatable="yes">Will delete the selected preset</property>
 			      <property name="can_focus">True</property>
 			      <property name="label">gtk-delete</property>
 			      <property name="use_stock">True</property>
@@ -1975,26 +1975,6 @@
 	      <property name="spacing">0</property>
 
 	      <child>
-		<widget class="GtkRadioButton" id="at_radio">
-		  <property name="visible">True</property>
-		  <property name="tooltip" translatable="yes">For example at 04:10 tomorrow, next week or in three days.</property>
-		  <property name="can_focus">True</property>
-		  <property name="label" translatable="yes">A scheduled task that will start at a defined time in the future</property>
-		  <property name="use_underline">True</property>
-		  <property name="relief">GTK_RELIEF_NORMAL</property>
-		  <property name="focus_on_click">True</property>
-		  <property name="active">True</property>
-		  <property name="inconsistent">False</property>
-		  <property name="draw_indicator">True</property>
-		</widget>
-		<packing>
-		  <property name="padding">5</property>
-		  <property name="expand">False</property>
-		  <property name="fill">False</property>
-		</packing>
-	      </child>
-
-	      <child>
 		<widget class="GtkRadioButton" id="crontab_radio">
 		  <property name="visible">True</property>
 		  <property name="tooltip" translatable="yes">For example every first hour of the day.</property>
@@ -2006,7 +1986,27 @@
 		  <property name="active">False</property>
 		  <property name="inconsistent">False</property>
 		  <property name="draw_indicator">True</property>
-		  <property name="group">at_radio</property>
+		</widget>
+		<packing>
+		  <property name="padding">5</property>
+		  <property name="expand">False</property>
+		  <property name="fill">False</property>
+		</packing>
+	      </child>
+
+	      <child>
+		<widget class="GtkRadioButton" id="at_radio">
+		  <property name="visible">True</property>
+		  <property name="tooltip" translatable="yes">For example at 04:10 tomorrow, next week or in three days.</property>
+		  <property name="can_focus">True</property>
+		  <property name="label" translatable="yes">A scheduled task that will start at a defined time in the future</property>
+		  <property name="use_underline">True</property>
+		  <property name="relief">GTK_RELIEF_NORMAL</property>
+		  <property name="focus_on_click">True</property>
+		  <property name="active">True</property>
+		  <property name="inconsistent">False</property>
+		  <property name="draw_indicator">True</property>
+		  <property name="group">crontab_radio</property>
 		</widget>
 		<packing>
 		  <property name="padding">5</property>
@@ -2224,7 +2224,7 @@
 		      <child>
 			<widget class="GtkLabel" id="at_template_label">
 			  <property name="visible">True</property>
-			  <property name="label" translatable="yes">Template</property>
+			  <property name="label" translatable="yes">Preset</property>
 			  <property name="use_underline">False</property>
 			  <property name="use_markup">False</property>
 			  <property name="justify">GTK_JUSTIFY_LEFT</property>
@@ -2320,7 +2320,7 @@
 			  <child>
 			    <widget class="GtkButton" id="at_save_button">
 			      <property name="visible">True</property>
-			      <property name="tooltip" translatable="yes">Will save the current information as a template. You can type the name of the template in the combobox.</property>
+			      <property name="tooltip" translatable="yes">Will save the current information as a preset. You can type the name of the preset in the combobox.</property>
 			      <property name="can_default">True</property>
 			      <property name="can_focus">True</property>
 			      <property name="label">gtk-save</property>
@@ -2339,7 +2339,7 @@
 			  <child>
 			    <widget class="GtkButton" id="at_delete_button">
 			      <property name="visible">True</property>
-			      <property name="tooltip" translatable="yes">Will delete the selected template</property>
+			      <property name="tooltip" translatable="yes">Will delete the selected preset</property>
 			      <property name="can_focus">True</property>
 			      <property name="label">gtk-delete</property>
 			      <property name="use_stock">True</property>

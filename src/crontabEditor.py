@@ -128,8 +128,8 @@ class CrontabEditor:
 		self.reload_templates ()
 		
 		#gconf code
-		support.gconf_client.add_dir ("/apps/gnome-schedule/templates/crontab", gconf.CLIENT_PRELOAD_NONE)
-		support.gconf_client.notify_add ("/apps/gnome-schedule/templates/crontab/installed", self.gconfkey_changed);
+		support.gconf_client.add_dir ("/apps/gnome-schedule/presets/crontab", gconf.CLIENT_PRELOAD_NONE)
+		support.gconf_client.notify_add ("/apps/gnome-schedule/presets/crontab/installed", self.gconfkey_changed);
 		
 		
 	#remove template button
@@ -189,7 +189,7 @@ class CrontabEditor:
 			
 	
 		self.template_combobox_model.clear ()
-		self.template_combobox_model.append ([_("Don't use a template"), None, None])
+		self.template_combobox_model.append ([_("Don't use a preset"), None, None])
 
 		if self.template_names == None or len (self.template_names) <= 0:
 			active = 0

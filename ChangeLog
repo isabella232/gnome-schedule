@@ -1,3 +1,8 @@
+2004-07-18  Gaute Hope <eg@gaute.eu.org>
+
+	* Renamed template to preset
+	* gnome-schedule.glade: Switched crontab and at radiobuttons in the addwindow
+
 2004-07-17  Gaute Hope  <eg@gaute.eu.org>
 
 	* most of them.py: Removed debugging messages

@@ -116,8 +116,8 @@ class AtEditor:
 		self.loadicon ()
 		self.reload_templates ()
 
-		support.gconf_client.add_dir ("/apps/gnome-schedule/templates/at", gconf.CLIENT_PRELOAD_NONE)
-		support.gconf_client.notify_add ("/apps/gnome-schedule/templates/at/installed", self.gconfkey_changed);
+		support.gconf_client.add_dir ("/apps/gnome-schedule/presets/at", gconf.CLIENT_PRELOAD_NONE)
+		support.gconf_client.notify_add ("/apps/gnome-schedule/presets/at/installed", self.gconfkey_changed);
 
 	def on_worded_label_event (self, *args):
 		# highlight on mouseover
@@ -282,7 +282,7 @@ class AtEditor:
 				active = 0
 	
 		self.template_combobox_model.clear ()
-		self.template_combobox_model.append ([_("Don't use a template"), None, None])
+		self.template_combobox_model.append ([_("Don't use a preset"), None, None])
 		
 
 		if self.template_names == None or len (self.template_names) <= 0:
@@ -478,12 +478,17 @@ class AtEditor:
 		self.widget.hide()
 		return gtk.TRUE
 
+	def WrongRecordDialog (self, x):
+		self.wrongdialog = gtk.MessageDialog(self.widget, gtk.DIALOG_MODAL|gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_ERROR, gtk.BUTTONS_OK, (_("This is an invalid record! The problem could be: %s ") % (x)))
+		self.wrongdialog.run()
+		self.wrongdialog.destroy()
+		return
+
 	def on_ok_button_clicked (self, *args):
 		# TODO: Validate record
 		(validate, reason) = self.schedule.checkfield(self.runat)
 		if validate == gtk.FALSE:
-			print "Schedule time validation failed because of: " + reason
-			#make this a popupdialog
+			self.WrongRecordDialog (reason)
 			return
 		# TODO: Fill record
 		

@@ -69,7 +69,7 @@ class Crontab:
 	def removetemplate (self, template_name):
 		template_name_c = self.replace (template_name)
 		
-		installed = support.gconf_client.get_string("/apps/gnome-schedule/templates/crontab/installed")
+		installed = support.gconf_client.get_string("/apps/gnome-schedule/presets/crontab/installed")
 		newstring = installed
 		if installed != None:
 			first = gtk.TRUE
@@ -82,16 +82,16 @@ class Crontab:
 					else:
 						newstring = newstring + ", " + t
 
-		support.gconf_client.unset("/apps/gnome-schedule/templates/crontab/%s/name" % (template_name_c))
-		support.gconf_client.unset("/apps/gnome-schedule/templates/crontab/%s/icon_uri" % (template_name_c))
-		support.gconf_client.unset("/apps/gnome-schedule/templates/crontab/%s/command" % (template_name_c))
-		support.gconf_client.unset("/apps/gnome-schedule/templates/crontab/%s/frequency" % (template_name_c))
-		support.gconf_client.unset("/apps/gnome-schedule/templates/crontab/%s/title" % (template_name_c))
+		support.gconf_client.unset("/apps/gnome-schedule/presets/crontab/%s/name" % (template_name_c))
+		support.gconf_client.unset("/apps/gnome-schedule/presets/crontab/%s/icon_uri" % (template_name_c))
+		support.gconf_client.unset("/apps/gnome-schedule/presets/crontab/%s/command" % (template_name_c))
+		support.gconf_client.unset("/apps/gnome-schedule/presets/crontab/%s/frequency" % (template_name_c))
+		support.gconf_client.unset("/apps/gnome-schedule/presets/crontab/%s/title" % (template_name_c))
 		
 		if newstring == "   ":
-			support.gconf_client.unset ("/apps/gnome-schedule/templates/crontab/installed")
+			support.gconf_client.unset ("/apps/gnome-schedule/presets/crontab/installed")
 		else:
-			support.gconf_client.set_string("/apps/gnome-schedule/templates/crontab/installed", newstring)
+			support.gconf_client.set_string("/apps/gnome-schedule/presets/crontab/installed", newstring)
 	
 		
 	
@@ -106,13 +106,13 @@ class Crontab:
 				space = ""
 			command = command + space + self.nooutputtag
 
-		support.gconf_client.set_string("/apps/gnome-schedule/templates/crontab/%s/name" % (template_name_c), template_name)
-		support.gconf_client.set_string("/apps/gnome-schedule/templates/crontab/%s/icon_uri" % (template_name_c), icon)
-		support.gconf_client.set_string("/apps/gnome-schedule/templates/crontab/%s/command" % (template_name_c), command)
-		support.gconf_client.set_string("/apps/gnome-schedule/templates/crontab/%s/frequency" % (template_name_c), frequency)
-		support.gconf_client.set_string("/apps/gnome-schedule/templates/crontab/%s/title" % (template_name_c), title)
+		support.gconf_client.set_string("/apps/gnome-schedule/presets/crontab/%s/name" % (template_name_c), template_name)
+		support.gconf_client.set_string("/apps/gnome-schedule/presets/crontab/%s/icon_uri" % (template_name_c), icon)
+		support.gconf_client.set_string("/apps/gnome-schedule/presets/crontab/%s/command" % (template_name_c), command)
+		support.gconf_client.set_string("/apps/gnome-schedule/presets/crontab/%s/frequency" % (template_name_c), frequency)
+		support.gconf_client.set_string("/apps/gnome-schedule/presets/crontab/%s/title" % (template_name_c), title)
 		
-		installed = support.gconf_client.get_string("/apps/gnome-schedule/templates/crontab/installed")
+		installed = support.gconf_client.get_string("/apps/gnome-schedule/presets/crontab/installed")
 		if installed == None:
 			installed = template_name_c
 		else:
@@ -124,12 +124,12 @@ class Crontab:
 			if found == gtk.FALSE:
 				installed = installed + ", " + template_name_c
 
-		support.gconf_client.unset ("/apps/gnome-schedule/templates/crontab/installed")
-		support.gconf_client.set_string("/apps/gnome-schedule/templates/crontab/installed", installed)
+		support.gconf_client.unset ("/apps/gnome-schedule/presets/crontab/installed")
+		support.gconf_client.set_string("/apps/gnome-schedule/presets/crontab/installed", installed)
 
 	def gettemplatenames (self):
 		#try:
-			strlist = support.gconf_client.get_string("/apps/gnome-schedule/templates/crontab/installed")
+			strlist = support.gconf_client.get_string("/apps/gnome-schedule/presets/crontab/installed")
 			if strlist != None:
 				list = string.split (strlist, ", ")
 				return list
@@ -140,11 +140,11 @@ class Crontab:
 
 	def gettemplate (self, template_name):
 		try:
-			icon_uri = support.gconf_client.get_string("/apps/gnome-schedule/templates/crontab/%s/icon_uri" % (template_name))
-			command = support.gconf_client.get_string("/apps/gnome-schedule/templates/crontab/%s/command" % (template_name))
-			frequency = support.gconf_client.get_string("/apps/gnome-schedule/templates/crontab/%s/frequency" % (template_name))
-			title = support.gconf_client.get_string("/apps/gnome-schedule/templates/crontab/%s/title" % (template_name))
-			name = support.gconf_client.get_string("/apps/gnome-schedule/templates/crontab/%s/name" % (template_name))
+			icon_uri = support.gconf_client.get_string("/apps/gnome-schedule/presets/crontab/%s/icon_uri" % (template_name))
+			command = support.gconf_client.get_string("/apps/gnome-schedule/presets/crontab/%s/command" % (template_name))
+			frequency = support.gconf_client.get_string("/apps/gnome-schedule/presets/crontab/%s/frequency" % (template_name))
+			title = support.gconf_client.get_string("/apps/gnome-schedule/presets/crontab/%s/title" % (template_name))
+			name = support.gconf_client.get_string("/apps/gnome-schedule/presets/crontab/%s/name" % (template_name))
 			return icon_uri, command, frequency, title, name
 		except Exception, ex:
 			return ex, ex, ex, ex, ex
