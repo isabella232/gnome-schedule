@@ -1,3 +1,7 @@
+2004-06-24  Duarte Loreto <happyguy_pt@hotmail.com>
+
+	* configure.ac: Added Portuguese (pt) to ALL_LINGUAS.
+
 2004-06-22  Philip Van Hoof <me_NOSPAM@freax.org>
 
 	* Template support (temporary gconf backend)
