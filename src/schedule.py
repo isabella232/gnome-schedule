@@ -23,13 +23,17 @@ import sys
 import tempfile
 import config
 import mainWindow
+import gettext
 ##
 ## I18N
 ##
-from rhpl.translate import _, N_
-import rhpl.translate as translate
+#from rhpl.translate import _, N_
+#import rhpl.translate as translate
 domain = 'gnome-schedule'
-translate.textdomain (domain)
+#translate.textdomain (domain)
+gettext.bindtextdomain(domain)
+gettext.textdomain(domain)
+_ = gettext.gettext
 gtk.glade.bindtextdomain(domain)
 
 class Schedule:

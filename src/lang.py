@@ -5,7 +5,7 @@
 
 import os
 import gtk
-
+import gettext
 # Dear translators,
 
 # This file is yours. YOU people do whatever you wan't with it. You can
@@ -46,11 +46,15 @@ import gtk
 
 
 # This is some I18n init stuff (don't touch it)
-from rhpl.translate import _, N_
-import rhpl.translate as translate
+#from rhpl.translate import _, N_
+#import rhpl.translate as translate
 domain = 'gnome-schedule'
-translate.textdomain (domain)
+#translate.textdomain (domain)
+gettext.bindtextdomain(domain)
+gettext.textdomain(domain)
+_ = gettext.gettext
 gtk.glade.bindtextdomain(domain)
+
 language = os.environ['LANG']
 
 def nothing (nothing):

@@ -1,3 +1,9 @@
+2004-06-29  Kristof Vansant  <de_lupus_NOSPAM@pandora.be>
+
+	* src/*py: Replaced the rhpl dependency with the standard gettext
+	python package for translations
+	* README: Fixed some minor documentation problems
+
 2004-06-25  Adam Weinberger  <adamw@gnome.org>
 
 	* src/lang.py: Correct the spelling of "forty" and "fifty"

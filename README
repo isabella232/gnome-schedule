@@ -64,26 +64,25 @@ o. If you want to use the sources pulled from the CVS server, you will have
 o. The following script will install gnome-schedule on a system that has
    Python and automake-1.7 and some tools like gmake installed.
 
-     export CVSROOT=":pserver:anonymous@cvs.gnome.org:/cvs/gnome/" 
+     export CVSROOT=":pserver:anonymous@anoncvs.gnome.org:/cvs/gnome" 
      cvs login
      # Password: [press enter]
      cvs -z3 checkout gnome-common gnome-schedule pygtk
      pushd gnome-common
-     ./autogen.sh --prefix=/usr/
+     ./autogen.sh --prefix=/usr
      make
      make install
      popd
      pushd pygtk
-     ./autogen.sh --prefix=/usr/local/
+     ./autogen.sh --prefix=/usr/local
      make
      make install
      popd
-     pushd gnome-schedule
+     pushd gnome-schedule 
      export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:/usr/lib/pkgconfig
-     ./autogen.sh --prefix=/usr/local/
+     ./autogen.sh --prefix=/usr/local
      make
      make install
-
      # and use .. to start gnome-schedule:
 
      /usr/local/bin/gnome-schedule
