@@ -75,6 +75,7 @@ class AtEditor:
 		self.xml.signal_connect("on_worded_label_event", self.on_worded_label_event)
 		self.xml.signal_connect("on_defined_label_event", self.on_defined_label_event)
 		self.xml.signal_connect("on_at_script_textview_popup_menu", self.on_script_textview_popup_menu)
+		self.xml.signal_connect("on_at_script_textview_key_release_event", self.on_script_textview_change)
 		self.xml.signal_connect("on_at_template_combobox_changed", self.on_template_combobox_changed)
 		self.xml.signal_connect("on_at_title_entry_changed", self.on_title_entry_changed)
 		self.xml.signal_connect("on_at_nooutput_checkbutton_toggled", self.on_nooutput_checkbutton_toggled)
@@ -103,9 +104,16 @@ class AtEditor:
 		# show at_script_menu
 		# don't forget to attach eventhandling to this popup
 		pass
+	
+	def on_script_textview_change (self, *args):
+		start = self.script_textview_buffer.get_start_iter()
+		end = self.script_textview_buffer.get_end_iter()
+		self.command = self.script_textview_buffer.get_text(start, end)
+		return
 
 	def on_title_entry_changed (self, *args):
-		pass
+		self.title = self.title_entry.get_text()
+		return
 
 	def on_nooutput_checkbutton_toggled (self, *args):
 		# I don't know if this is needed at all
@@ -126,6 +134,8 @@ class AtEditor:
 	def on_combobox_changed (self, *args):
 		# In this combobox for example "tomorrow" should be checked
 		# for being possible or not
+		self.runat = self.combobox.get_text()
+
 		pass
 
 	def on_control_option_toggled (self, *args):
@@ -227,8 +237,18 @@ class AtEditor:
 			self.icon = "/usr/share/icons/gnome/48x48/mimetypes/gnome-mime-application.png"
 	
 	def reset (self):
-		self.title_entry.set_text("")
-		self.script_textview_buffer.set_text("")
+		self.title = "Untitled"
+		self.runat = "tomorrow"
+		self.command = ""
+		self.icon = "None"
+		
+		self.update_textboxes()
+		
+
+	def update_textboxes(self):
+		self.title_entry.set_text(self.title)
+		self.script_textview_buffer.set_text(self.command)
+		return
 
 	def showedit (self, record, job_id, iter, mode):
 		self.reload_templates ()
@@ -328,7 +348,7 @@ class AtEditor:
 			self.schedule.update (self.job_id, record, self.parentiter, self.nooutput, self.title, self.icon)
 			print "Edited"		
 		else:
-			self.schedule.append (record, self.nooutput, self.title, self.icon)
+			self.schedule.append (self.runat, self.command, self.title, self.icon)
 			self.ParentClass.schedule_reload ()
 			print "Added"
 	

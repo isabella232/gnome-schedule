@@ -62,7 +62,6 @@ class AddWindow:
 		return gtk.TRUE
 
 	def on_ok_button_clicked (self, *args):
-		
 		self.widget.hide()
 		if self.crontab_radio.get_active ():
 			self.ParentClass.editor = self.ParentClass.crontab_editor

@@ -114,7 +114,7 @@ class At:
 		commands.getoutput(execute)
 		return
 
-	def append (self, runat, command):
+	def append (self, runat, command, title, icon):
 		tmpfile = tempfile.mkstemp ("", "/tmp/at.", "/tmp")
 		fd, path = tmpfile
 		tmp = os.fdopen(fd, 'w')
