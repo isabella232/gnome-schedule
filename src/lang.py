@@ -37,17 +37,17 @@ def translate_nth_en (nth):
 	elif nth > -100 and nth < -20:
 		tennumber = nth / 10
 		remainder = nth - (tennumber*10)
-		return (_("minus %s%s%s") % (tennumbers [tennumber], _("-"), twenty_nths[remainder]))
+		return (_("minus %s%s%s%s%s") % (_(""), tennumbers [tennumber], _("-"), twenty_nths[remainder], _("")))
 	elif nth > 20 and nth < 100:
 		tennumber = nth / 10
 		remainder = nth - (tennumber*10)
-		return (_("%s%s%s") % (tennumbers [tennumber], _("-"), twenty_nths[remainder]))
+		return (_("%s%s%s%s%s") % (_(""), tennumbers [tennumber], _("-"), twenty_nths[remainder], _("")))
 	elif nth > 100 or nth < -100:
 		return (_("%sth.") % (string(nth)))
 
 def translate_nth_nl (nth):
 	nth = int(nth)
-	numbers = [ "één", "twee", "drie", "vier", "vijf", "zes", "zeven", "acht", "negen" ]
+	numbers = [ "nul", "één", "twee", "drie", "vier", "vijf", "zes", "zeven", "acht", "negen" ]
 	twenty_nths = [ "nulde",
 					"eerste", "tweede", "derde", "vierde", "vijfde", 
 					"zesde", "zevende", "achste", "negende", "tiende",
@@ -64,11 +64,11 @@ def translate_nth_nl (nth):
 	elif nth > -100 and nth < -20:
 		tennumber = nth / 10
 		remainder = nth - (tennumber*10)
-		return "min " + numbers[remainder]+"en"+tennumbers [tennumber]+"ste"
+		return "min " + numbers[remainder]+"ën"+tennumbers [tennumber]+"ste"
 	elif nth > 20 and nth < 100:
 		tennumber = nth / 10
 		remainder = nth - (tennumber*10)
-		return numbers[remainder]+"en"+tennumbers [tennumber]+"ste"
+		return numbers[remainder]+"ën"+tennumbers [tennumber]+"ste"
 	elif nth > 100 or nth < -100:
 		return string(nth) + "ste"
 
