@@ -117,7 +117,7 @@ msgstr "Δημιουργία μιας νέας προγραμματισμένη�
 
 #: src/crontabEditor.py:155 src/atEditor.py:147
 msgid "Edit a scheduled task"
-msgstr "Επεξεργασία μιας προγραμματισμένης·εργασίας"
+msgstr "Επεξεργασία μιας προγραμματισμένης εργασίας"
 
 #: src/crontabEditor.py:208 src/atEditor.py:317
 msgid "Don't use a preset"
@@ -156,7 +156,7 @@ msgstr "Επεξεργασία χρονικής έκφρασης για:"
 #: src/crontabEditorHelper.py:157
 #, python-format
 msgid "This is invalid. Reason: %s"
-msgstr "Αυτό δεν είναι έγκυρο. Λόγος:·%s "
+msgstr "Αυτό δεν είναι έγκυρο. Λόγος: %s "
 
 #: src/crontabEditorHelper.py:197 src/crontabEditorHelper.py:208
 msgid "st. "
@@ -305,7 +305,7 @@ msgstr "Κάθε"
 #: src/gnome-schedule.glade.h:35
 msgid "For example 1,2,3,4 means happens the first, second, third and fourth minute"
 msgstr ""
-"Για παράδειγμα 1,2,3,4·σημαίνει ότι συμβαίνει το πρώτο, δεύτερο, τρίτο και "
+"Για παράδειγμα 1,2,3,4 σημαίνει ότι συμβαίνει το πρώτο, δεύτερο, τρίτο και "
 "τέταρτο λεπτό"
 
 #: src/gnome-schedule.glade.h:36
@@ -405,7 +405,7 @@ msgstr "Ορισμός της ρύθμισης ημερήσιας συνότητ
 
 #: src/gnome-schedule.glade.h:57
 msgid "Set the hour frequency setting"
-msgstr "Ορισμός·της·ρύθμισης·ωριαίας·συνότητας"
+msgstr "Ορισμός της ρύθμισης ωριαίας συνότητας"
 
 #: src/gnome-schedule.glade.h:58
 msgid "Set the icon of this scheduled task"
@@ -479,7 +479,7 @@ msgid ""
 "Will save the current information as a preset. You can type the name of the "
 "preset in the combobox."
 msgstr ""
-"Θα αποθηκεύσει τις τρέχουσες πληροφορίες ως προκαθορισμένη·ρύθμιση. Μπορείτε "
+"Θα αποθηκεύσει τις τρέχουσες πληροφορίες ως προκαθορισμένη ρύθμιση. Μπορείτε "
 "να πληκτρολογήσετετο όνομα της προκαθορισμένης ρύθμισης στο combobox."
 
 #: src/gnome-schedule.glade.h:75
@@ -831,11 +831,11 @@ msgstr "Gnome Schedule"
 
 #: src/mainWindow.py:494
 msgid "Copyright (c) 2004-2005 Gaute Hope."
-msgstr "Πνευματικά δικαιώματα (c)·2004-2005·Gaute·Hope."
+msgstr "Πνευματικά δικαιώματα (c) 2004-2005 Gaute Hope."
 
 #: src/mainWindow.py:495
 msgid "This software is distributed under the GPL. "
-msgstr "Αυτό το λογισμικό διανέμετια κάτω από την GPL.·"
+msgstr "Αυτό το λογισμικό διανέμετια κάτω από την GPL. "
 
 #: src/mainWindow.py:499
 msgid ""
@@ -850,5 +850,5 @@ msgstr "Κώστας Παπαδήμας <pkst@gnome.org>"
 #: src/atEditor.py:512
 #, python-format
 msgid "This is an invalid record! The problem could be: %s "
-msgstr "Αυτή δεν είναι μια έγκυρη εγγραφή!, Το πρόβλημα μπορεί να βρίσκεται :·%s·"
+msgstr "Αυτή δεν είναι μια έγκυρη εγγραφή!, Το πρόβλημα μπορεί να βρίσκεται : %s "
 
