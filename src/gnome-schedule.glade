@@ -1837,7 +1837,7 @@ use advanced</property>
 		      <property name="right_margin">0</property>
 		      <property name="indent">0</property>
 		      <property name="text" translatable="yes"></property>
-		      <signal name="button_press_event" handler="on_anyadvanced_entry_changed" last_modification_time="Sun, 20 Jun 2004 12:59:00 GMT"/>
+		      <signal name="key_press_event" handler="on_anyadvanced_entry_changed" last_modification_time="Sun, 20 Jun 2004 13:41:51 GMT"/>
 		    </widget>
 		  </child>
 		</widget>

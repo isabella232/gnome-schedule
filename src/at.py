@@ -27,6 +27,7 @@ import crontabEditorHelper
 import crontabEditor
 import lang
 import atEditor
+import commands
 
 
 
@@ -125,8 +126,6 @@ class At:
 	def checkfield (self, field, type, regex):
 		raise Exception('Abstract method please override','','','')
 
-	def write (self):
-		raise 'Not implemented'
 
 	def update (self, linenumber, record, nooutput, title):
 		raise 'Not implemented'
@@ -139,8 +138,23 @@ class At:
 			
 		return
 
-	def append (self, runat, commands):
-		raise 'Not implemented'
+	def append (self, runat, command):
+		print "adding"
+		print command
+		tmpfile = tempfile.mkstemp ("", "/tmp/at.", "/tmp")
+		fd, path = tmpfile
+		tmp = os.fdopen(fd, 'w')
+		tmp.write (command + "\n")
+		execute = "at " + runat + " -f " + path
+		print path
+		commands.getoutput(execute)
+		tmp.close ()
+		os.unlink (path)
+		#reload
+		self.ParentClass.treemodel.clear()
+		self.read()
+
+		return
 
 	def read (self):
 		#do 'atq'

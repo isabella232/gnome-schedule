@@ -54,7 +54,8 @@ class AtEditor:
 		self.ok_button = self.xml.get_widget ("ok_button")
 		
 		self.runat_entry = self.xml.get_widget("runat_entry")
-		self.commands_textview = self.xml.get_widget("commands_textview")
+		#this is the buffer
+		self.commands_textview = self.xml.get_widget("commands_textview").get_buffer()
 		
 		self.notebook = self.xml.get_widget("notebook")
 
@@ -69,8 +70,7 @@ class AtEditor:
 
 	def reset (self):
 		self.runat_entry.set_text("tomorrow")
-		tmpbuffer = self.commands_textview.get_buffer()
-		tmpbuffer.set_text("")
+		self.commands_textview.set_text("")
 
 		
 	def showedit (self, record, linenumber, iter, mode):
@@ -92,10 +92,7 @@ class AtEditor:
 		#else:
 		#	self.notebook.set_current_page(0)
 
-	def frequency_combobox_keypress (self, *args):
-		# Returning true will tell gtk that the signal has been processed
-		# This basically makes the entry read-only
-		return gtk.TRUE
+
 
 	def check_field_format (self, field, type):
 		try:
@@ -159,16 +156,22 @@ class AtEditor:
 	
 
 	def on_anyadvanced_entry_changed (self, *args):
-		if self.noevents == gtk.FALSE:
-			self.runat = self.runat_entry.get_text ()
-			tmpbuffer = self.commands_textview.get_buffer()
-			self.commands = tmpbuffer.get_text(self.commands.get_start_iter(), self.commands.get_end_iter())
-	
-	def on_anybasic_entry_changed (self, *args):
-		if self.noevents == gtk.FALSE:
-			self.runat = self.runat_entry.get_text ()
-			self.commands = self.commands_textview.get_buffer ()
+		self.runat = self.runat_entry.get_text ()
+		start = self.commands_textview.get_start_iter()
+		end = self.commands_textview.get_end_iter()
+		self.commands = self.commands_textview.get_text(start, end)
+		print self.runat
+		print self.commands
+		return
 
+	def on_anybasic_entry_changed (self, *args):
+		self.runat = self.runat_entry.get_text ()
+		start = self.commands_textview.get_start_iter()
+		end = self.commands_textview.get_end_iter()
+		self.commands = self.commands_textview.get_text(start, end)
+		print self.runat
+		print self.commands
+		return
 
 	
 
