@@ -92,6 +92,7 @@ class AtEditor:
 		self.xml.signal_connect("on_at_control_option_toggled", self.on_control_option_toggled)
 		self.xml.signal_connect("on_at_wording_option_toggled", self.on_wording_option_toggled)
 
+				
 	def on_worded_label_event (self, *args):
 		# highlight on mouseover
 		# enable wording_option on click
@@ -126,7 +127,7 @@ class AtEditor:
 			(year, month, day) = self.calendar.get_date()
 			hour = self.hour_spinbutton.get_text()
 			minute = self.minute_spinbutton.get_text()
-			self.runat = hour + ":" + minute + " " + str(year) + "-" + str(month) + "-" + str(day)
+			self.runat = hour + ":" + minute + " " + str(year) + "-" + str(month + 1) + "-" + str(day)
 			self.update_textboxes()
 		return
 
@@ -135,7 +136,7 @@ class AtEditor:
 			(year, month, day) = self.calendar.get_date()
 			hour = self.hour_spinbutton.get_text()
 			minute = self.minute_spinbutton.get_text()
-			self.runat = hour + ":" + minute + " " + str(year) + "-" + str(month) + "-" + str(day)
+			self.runat = hour + ":" + minute + " " + str(year) + "-" + str(month + 1) + "-" + str(day)
 			self.update_textboxes()
 		return
 	
@@ -144,7 +145,7 @@ class AtEditor:
 			(year, month, day) = self.calendar.get_date()
 			hour = self.hour_spinbutton.get_text()
 			minute = self.minute_spinbutton.get_text()
-			self.runat = hour + ":" + minute + " " + str(year) + "-" + str(month) + "-" + str(day)
+			self.runat = hour + ":" + minute + " " + str(year) + "-" + str(month + 1) + "-" + str(day)
 			self.update_textboxes()
 		return
 
@@ -154,7 +155,7 @@ class AtEditor:
 			(year, month, day) = self.calendar.get_date()
 			hour = self.hour_spinbutton.get_text()
 			minute = self.minute_spinbutton.get_text()
-			self.runat = hour + ":" + minute + " " + str(year) + "-" + str(month) + "-" + str(day)
+			self.runat = hour + ":" + minute + " " + str(year) + "-" + str(month + 1) + "-" + str(day)
 			self.update_textboxes()
 		return
 
@@ -163,15 +164,15 @@ class AtEditor:
 			(year, month, day) = self.calendar.get_date()
 			hour = self.hour_spinbutton.get_text()
 			minute = self.minute_spinbutton.get_text()
-			self.runat = hour + ":" + minute + " " + str(year) + "-" + str(month) + "-" + str(day)
-			self.update_textboxes()
+			self.runat = hour + ":" + minute + " " + str(year) + "-" + str(month + 1) + "-" + str(day)
+			self.update_textboxes() 
 		return
 
 	def on_combobox_changed (self, *args):
 		# In this combobox for example "tomorrow" should be checked
 		# for being possible or not
 		if self.wording_option.get_active():
-			self.runat = self.combobox.get_text()
+			self.runat = self.combobox_entry.get_text()
 
 		pass
 
@@ -180,7 +181,9 @@ class AtEditor:
 		# enable the calendar en spinbuttons
 		if self.control_option.get_active():
 			(year, month, day) = self.calendar.get_date()
-			self.runat = str(year) + "-" + str(month) + "-" + str(day)
+			hour = self.hour_spinbutton.get_text()
+			minute = self.minute_spinbutton.get_text()
+			self.runat = hour + ":" + minute + " " + str(year) + "-" + str(month + 1) + "-" + str(day)
 			self.update_textboxes()
 
 
@@ -279,10 +282,12 @@ class AtEditor:
 	
 	def reset (self):
 		self.title = "Untitled"
-		self.runat = "tomorrow"
 		self.command = ""
 		self.icon = "None"
-		
+		(year, month, day) = self.calendar.get_date()
+		hour = self.hour_spinbutton.get_text()
+		minute = self.minute_spinbutton.get_text()
+		self.runat = hour + ":" + minute + " " + str(year) + "-" + str(month) + "-" + str(day)
 		self.update_textboxes()
 		
 
@@ -290,6 +295,7 @@ class AtEditor:
 		self.title_entry.set_text(self.title)
 		self.script_textview_buffer.set_text(self.command)
 		self.combobox_entry.set_text(self.runat)
+		
 		return
 
 	def showedit (self, record, job_id, iter, mode):
@@ -309,7 +315,6 @@ class AtEditor:
 
 	def showadd (self, mode):
 		self.reset ()
-		self.runat = "tomorrow"
 		self.title = _("Untitled")
 		self.editing = gtk.FALSE
 		self.widget.set_title(_("Create a new scheduled task"))
