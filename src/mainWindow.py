@@ -232,7 +232,7 @@ class main:
 			self.cleancolumns (init)
 
 			cell = gtk.CellRendererPixbuf()
-			cell.set_fixed_size(10,10)	
+			cell.set_fixed_size(21,21)	
 			cell.set_property('stock-size',10)
 
 			col = gtk.TreeViewColumn(_("Icon"), cell, pixbuf=6)
@@ -267,7 +267,7 @@ class main:
 			self.cleancolumns (init)		
 	
 			cell = gtk.CellRendererPixbuf()
-			cell.set_fixed_size(10,10)		
+			cell.set_fixed_size(21,21)		
 			col = gtk.TreeViewColumn(_("Icon"), cell, pixbuf=6)
 			self.treeview.append_column(col)
 
