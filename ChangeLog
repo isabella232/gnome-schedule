@@ -1,3 +1,9 @@
+2004-06-18  Philip Van Hoof  <me_NOSPAM@freax.org>
+	* Reconfiguration of the build environment. This build environment used
+	to be Fedora-only. From now on this build environment needs to be suitable
+	for any Unix platform on which GNOME has been implemented. The status of
+	this is unfinished and yes, I can use some help with all this :).
+
 2004-06-18  Christian Rose  <menthos@menthos.com>
 
 	* configure.ac: Changed GETTEXT_PACKAGE from "atomix" to
