@@ -1,3 +1,8 @@
+2005-01-09	Gaute Hope <eg@gaute.eu.org>
+
+	* src/*Window.py: Made the window that opens them the parent of them and places them in the center of the parent.
+	* src/mainWindow.py: Some unknown character seems to have slipped in, I rewrote line and it seems to work fine.
+
 2005-01-07  Frank Arnold <frank@scirocco-5v-turbo.de>
 
 	* Note: committed by Philip Van Hoof <pvanhoof_NOSPAM@gnome.org>

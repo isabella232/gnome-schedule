@@ -135,6 +135,8 @@ class CrontabEditor:
 		self.__set_frequency_combo__()
 		self.editing = False
 		self.widget.set_title(_("Create a new scheduled task"))
+		self.widget.set_transient_for(self.ParentClass.widget)
+		self.widget.set_position(gtk.WIN_POS_CENTER_ON_PARENT)
 		self.widget.show ()
 		self.__reload_templates__ ()
 		self.chkNoOutput.set_active (gtk.TRUE)
@@ -156,6 +158,8 @@ class CrontabEditor:
 		self.__update_textboxes__ ()
 		self.__set_frequency_combo__ ()
 		self.parentiter = iter
+		self.widget.set_transient_for(self.ParentClass.widget)
+		self.widget.set_position(gtk.WIN_POS_CENTER_ON_PARENT)
 		self.widget.show ()
 		
 		m = self.nooutputRegex.match (self.command)

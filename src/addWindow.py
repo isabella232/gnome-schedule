@@ -51,7 +51,10 @@ class AddWindow:
 		
 		
 	def ShowAddWindow (self):
+		self.widget.set_transient_for(self.ParentClass.widget)
+		self.widget.set_position(gtk.WIN_POS_CENTER_ON_PARENT)
 		self.widget.show_all()
+		print self.widget
 
 	def on_cancel_button_clicked (self, *args):
 		self.widget.hide()

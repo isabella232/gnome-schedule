@@ -1,4 +1,4 @@
-# addWindow.py - UI code for adding a crontab record
+# addWindow.py - UI code for adding an at record
 # Copyright (C) 2004, 2005 Philip Van Hoof <me at freax dot org>
 # Copyright (C) 2004, 2005 Gaute Hope <eg at gaute dot eu dot org>
 # Copyright (C) 2004, 2005 Kristof Vansant <de_lupus at pandora dot be>
@@ -117,6 +117,8 @@ class AtEditor:
 		self.title = _("Untitled")
 		self.editing = False
 		self.widget.set_title(_("Create a new scheduled task"))
+		self.widget.set_transient_for(self.ParentClass.widget)
+		self.widget.set_position(gtk.WIN_POS_CENTER_ON_PARENT)
 		self.widget.show_all()
 		
 		self.__loadicon__ ()
@@ -147,6 +149,8 @@ class AtEditor:
 		self.widget.set_title(_("Edit a scheduled task"))
 		self.__update_textboxes__ ()
 		self.parentiter = iter
+		self.widget.set_transient_for(self.ParentClass.widget)
+		self.widget.set_position(gtk.WIN_POS_CENTER_ON_PARENT)
 		self.widget.show ()
 		self.__reload_templates__ ()
 		self.NOACTION = False
