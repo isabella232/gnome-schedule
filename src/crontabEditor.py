@@ -291,7 +291,7 @@ class CrontabEditor:
 			else: 
 				self.template_doesnot_exist("The preset has not been saved")
 		else:
-			self.template_doesnot_exist("In order to delete a preset, you first need to select one")
+			self.template_doesnot_exist("To delete a preset, you first need to select one")
 		
 	#save template	button
 	def on_save_button_clicked (self, *args):
