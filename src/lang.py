@@ -66,8 +66,7 @@ except:
 
 def nothing (nothing):
 	pass
-nothing (_("To the translator: Read src/lang.py !!! (yeah it's for you, not for the user. YES FOR YOU, the translator. YES:) really!"))
-
+nothing (_("To the translator: Please DO NOT TRANSLATE anything from src/lang.py until this message disappears. There will be some changes in the next days or weeks!"))
 
 # To get numeric nth values translated add an elif statement for your
 # language here
