@@ -111,7 +111,7 @@ class AddWindow:
 		num1 = 0
 		num2 = 0
 		if m != None:
-
+			print m.groups()
 			# 10 * * * * command
 			# */2 * * * * command
 			if m.groups()[1] != None or m.groups()[2] != None:
@@ -120,40 +120,40 @@ class AddWindow:
 				else:
 					num = int (m.groups()[2])
 				if type=="minute":
-					if num > 60 or num < 0:
-						raise
+					if num > 59 or num < 0:
+						raise Exception('fixed', type, 'must be between 59 and 0')
 				if type=="hour":
-					if num > 24 or num < 0:
-						raise
+					if num > 23 or num < 0:
+						raise Exception('fixed', type, 'must be between 23 and 0')
 				if type=="day":
-					if num > 31 or num < 0:
-						raise
+					if num > 31 or num < 1:
+						raise Exception('fixed', type, 'must be between 31 and 1')
 				if type=="month":
-					if num > 31 or num < 0:
-						raise
+					if num > 12 or num < 1:
+						raise Exception('fixed', type, 'must be between 12 and 1')
 				if type=="weekday":
 					if num > 7 or num < 0:
-						raise
+						raise Exception('fixed', type, 'must be between 7 and 0')
 
 			# 1-10 * * * * command
 			if m.groups()[3] != None or m.groups()[4] != None:
 				num1 = int (m.groups()[3])
 				num2 = int (m.groups()[4])
 				if type=="minute":
-					if num1 > 60 or num1 < 0 or num2 > 60 or num2 < 0:
-						raise
+					if num1 > 59 or num1 < 0 or num2 > 59 or num2 < 0:
+						raise Exception('range', type, 'must be between 59 and 0')
 				if type=="hour":
-					if num1 > 24 or num1 < 0 or num2 > 24 or num2 < 0:
-						raise
+					if num1 > 23 or num1 < 0 or num2 > 23 or num2 < 0:
+						raise Exception('range', type, 'must be between 23 and 0')
 				if type=="day":
-					if num1 > 31 or num1 < 0 or num2 > 31 or num2 < 0:
-						raise
+					if num1 > 31 or num1 < 1 or num2 > 31 or num2 < 1:
+						raise Exception('range', type, 'must be between 31 and 1')
 				if type=="month":
-					if num1 > 31 or num1 < 0 or num2 > 31 or num2 < 0:
-						raise
+					if num1 > 12 or num1 < 1 or num2 > 12 or num2 < 1:
+						raise Exception('range', type, 'must be between 12 and 1')
 				if type=="weekday":
 					if num1 > 7 or num1 < 0 or num2 > 7 or num2 < 0:
-						raise
+						raise Exception('range', type, 'must be between 7 and 0')
 
 			# 1,2,3,4 * * * * command
 			if m.groups()[5] != None:
@@ -162,21 +162,22 @@ class AddWindow:
 				fields = thefield.split (",")
 				for field in fields:
 					num = int (field)
+					print num
 					if type=="minute":
-						if num > 60 or num < 0:
-							raise
+						if num > 59 or num < 0:
+							raise Exception('steps', type, 'must be between 59 and 0')
 					if type=="hour":
-						if num > 24 or num < 0:
-							raise
+						if num > 23 or num < 0:
+							raise Exception('steps', type, 'must be between 23 and 0')
 					if type=="day":
-						if num > 31 or num < 0:
-							raise
+						if num > 31 or num < 1:
+							raise Exception('steps', type, 'must be between 31 and 1')
 					if type=="month":
-						if num > 31 or num < 0:
-							raise
+						if num > 12 or num < 1:
+							raise Exception('steps', type, 'must be between 12 and 1')
 					if type=="weekday":
 						if num > 7 or num < 0:
-							raise
+							raise Exception('steps', type, 'must be between 7 and 0')
 
 
 
@@ -213,14 +214,18 @@ class AddWindow:
 	def on_ok_button_clicked (self, *args):
 
 		try:
-			check_field_format (self.minute, "minute")
-			check_field_format (self.hour, "hour")
-			check_field_format (self.day, "day")
-			check_field_format (self.month, "month")
-			check_field_format (self.weekday, "weekday")
-		except:
-			print "WARNING"
-			pass
+			self.check_field_format (self.minute, "minute")
+			self.check_field_format (self.hour, "hour")
+			self.check_field_format (self.day, "day")
+			self.check_field_format (self.month, "month")
+			self.check_field_format (self.weekday, "weekday")
+		except Exception, ex:
+			x, y, z = ex
+			self.wrongdialog = gtk.MessageDialog(self.widget, gtk.DIALOG_MODAL|gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_ERROR, gtk.BUTTONS_OK, "This is an invalid record! The problem could be at the " + y + " field. Reason: "+ z)
+			self.wrongdialog.run()
+			self.wrongdialog.destroy()
+			return
+
 
 		space = " "
 		if self.nooutput:
