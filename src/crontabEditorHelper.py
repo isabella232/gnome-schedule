@@ -149,7 +149,7 @@ class CrontabEditorHelper:
 			self.NoExpressionEvents = gtk.FALSE
 
 		#show the form
-		self.widget.set_title(_("Edit timeexpression for: ") + self.trans_field)
+		self.widget.set_title(_("Edit time expression for: ") + self.trans_field)
 		self.widget.show_all()
 		return
 

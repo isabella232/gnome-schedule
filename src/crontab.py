@@ -213,19 +213,19 @@ class Crontab:
 				# Should not be translatable!
 				if type=="minute":
 					if num > 59 or num < 0:
-						raise Exception('fixed', self.translate_frequency (type), _("must be between 59 and 0"))
+						raise Exception('fixed', self.translate_frequency (type), _("must be between 0 and 59"))
 				if type=="hour":
 					if num > 23 or num < 0:
-						raise Exception('fixed', self.translate_frequency (type), _("must be between 23 and 0"))
+						raise Exception('fixed', self.translate_frequency (type), _("must be between 0 and 23"))
 				if type=="day":
 					if num > 31 or num < 1:
-						raise Exception('fixed', self.translate_frequency (type), _("must be between 31 and 1"))
+						raise Exception('fixed', self.translate_frequency (type), _("must be between 1 and 31"))
 				if type=="month":
 					if num > 12 or num < 1:
-						raise Exception('fixed', self.translate_frequency (type), _("must be between 12 and 1"))
+						raise Exception('fixed', self.translate_frequency (type), _("must be between 1 and 12"))
 				if type=="weekday":
 					if num > 7 or num < 0:
-						raise Exception('fixed', self.translate_frequency (type), _("must be between 7 and 0"))
+						raise Exception('fixed', self.translate_frequency (type), _("must be between 0 and 7"))
 
 			# 1-10 * * * * command
 			if m.groups()[3] != None and m.groups()[4] != None:
@@ -233,19 +233,19 @@ class Crontab:
 				num2 = int (m.groups()[4])
 				if type=="minute":
 					if num1 > 59 or num1 < 0 or num2 > 59 or num2 < 0:
-						raise Exception('range', self.translate_frequency (type), _("must be between 59 and 0"))
+						raise Exception('range', self.translate_frequency (type), _("must be between 0 and 59"))
 				if type=="hour":
 					if num1 > 23 or num1 < 0 or num2 > 23 or num2 < 0:
-						raise Exception('range', self.translate_frequency (type), _("must be between 23 and 0"))
+						raise Exception('range', self.translate_frequency (type), _("must be between 0 and 23"))
 				if type=="day":
 					if num1 > 31 or num1 < 1 or num2 > 31 or num2 < 1:
-						raise Exception('range', self.translate_frequency (type), _("must be between 31 and 1"))
+						raise Exception('range', self.translate_frequency (type), _("must be between 1 and 31"))
 				if type=="month":
 					if num1 > 12 or num1 < 1 or num2 > 12 or num2 < 1:
-						raise Exception('range', self.translate_frequency (type), _("must be between 12 and 1"))
+						raise Exception('range', self.translate_frequency (type), _("must be between 1 and 12"))
 				if type=="weekday":
 					if num1 > 7 or num1 < 0 or num2 > 7 or num2 < 0:
-						raise Exception('range', self.translate_frequency (type), _("must be between 7 and 0"))
+						raise Exception('range', self.translate_frequency (type), _("must be between 0 and 7"))
 
 			# 1,2,3,4 * * * * command
 			if m.groups()[5] != None:
@@ -260,19 +260,19 @@ class Crontab:
 
 					if type=="minute":
 						if num > 59 or num < 0:
-							raise Exception('steps', self.translate_frequency (type), _("must be between 59 and 0"))
+							raise Exception('steps', self.translate_frequency (type), _("must be between 0 and 59"))
 					if type=="hour":
 						if num > 23 or num < 0:
-							raise Exception('steps', self.translate_frequency (type), ("must be between 23 and 0"))
+							raise Exception('steps', self.translate_frequency (type), ("must be between 0 and 23"))
 					if type=="day":
 						if num > 31 or num < 1:
-							raise Exception('steps', self.translate_frequency (type), _("must be between 31 and 1"))
+							raise Exception('steps', self.translate_frequency (type), _("must be between 1 and 31"))
 					if type=="month":
 						if num > 12 or num < 1:
-							raise Exception('steps', self.translate_frequency (type), _("must be between 12 and 1"))
+							raise Exception('steps', self.translate_frequency (type), _("must be between 1 and 12"))
 					if type=="weekday":
 						if num > 7 or num < 0:
-							raise Exception('steps', self.translate_frequency (type), _("must be between 7 and 0"))
+							raise Exception('steps', self.translate_frequency (type), _("must be between 0 and 7"))
 		else:
 			raise Exception(_("Unknown"), self.translate_frequency (type), _("Invalid"))
 
