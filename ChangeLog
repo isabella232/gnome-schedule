@@ -13,6 +13,7 @@
 
 2004-07-10  Kristof Vansant  <de_lupus@pandora.be>
 
+	* Note: merged by Philip Van Hoof <pvanhoof_NOSPAM@gnome.org>
 	* Makefile.am: Buildscript fixes
 	* configure.ac: Buildscript fixes
 	* gnome-schedule.desktop.in: Buildscript fixes
