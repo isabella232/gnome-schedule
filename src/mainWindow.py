@@ -195,9 +195,9 @@ class main:
 					i = i -1
 			
 			# Setting up the columns
-			self.col = gtk.TreeViewColumn(_("Command"), gtk.CellRendererText(), text=2)
-			self.treeview.append_column(self.col)
 			self.col = gtk.TreeViewColumn(_("Frequency"), gtk.CellRendererText(), text=5)
+			self.treeview.append_column(self.col)
+			self.col = gtk.TreeViewColumn(_("Command"), gtk.CellRendererText(), text=2)
 			self.treeview.append_column(self.col)
 			self.col = gtk.TreeViewColumn(_("Title"), gtk.CellRendererText(), text=0)
 			self.col.set_spacing(235)
