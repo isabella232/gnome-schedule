@@ -29,6 +29,7 @@ import setuserWindow
 import saveWindow
 import schedule
 import crontab
+import addWindow
 import sys
 import time
 import config
@@ -82,24 +83,22 @@ class main:
 		#read the user
 		self.readUser()
 
-		# It should be possible to switch these during run
-		# Remember it while developing this!
-		# the schedule.py defines the abstract interface for it
-		self.crontab_vs_at = "crontab"
+		self.editor = None
+		self.schedule = None
 
-		if self.crontab_vs_at == "crontab":
-			self.schedule = crontab.Crontab(self)
-		else:
-			raise 'Not implemented'
-			self.schedule = at.At(self)
-
-		self.editor = self.schedule.geteditor()
-
-		# save window (replaced with a entry comboxbox)
-		# self.savewidget = self.xml.get_widget("saveWindow")
-		# self.savewidget.hide()
-		# self.saveWindow = saveWindow.SaveWindow (self)
+		#inittializing the treeview
+		# [0 Title, 1 Frequency, 2 Command, 3 Crontab record, 4 Line number, 5 Time, 6 Icon, 7 scheduled instance]
+		self.treemodel = gtk.ListStore(gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_INT, gobject.TYPE_STRING, gobject.TYPE_PYOBJECT, gobject.TYPE_PYOBJECT)
+		self.treeview.set_model (self.treemodel)
+		self.switchView("simple", 1)
+		self.treeview.get_selection().connect("changed", self.onTreeViewSelectRow)
+		self.treeview.get_selection().unselect_all()
 		
+		self.crontab = crontab.Crontab(self)
+		# self.at = at.At(self)
+		self.crontab_editor = self.crontab.geteditor ()
+		# self.at_editor = self.at.geteditor ()
+				
 		self.treeview.set_rules_hint(gtk.TRUE)
 		self.treeview.columns_autosize()
 		self.add_scheduled_task_menu = self.xml.get_widget ("add_scheduled_task_menu")
@@ -138,9 +137,8 @@ class main:
 		self.widget.connect("delete_event", self.quit)
 		self.widget.connect("destroy_event", self.quit)
 
-		#inittializing the treeview
-		self.init_treeview()
-
+		
+		
 		self.gconfkey_advanced_changed (support.gconf_client, None, "/apps/gnome-schedule/advanced", None)
 		
 		#set user window
@@ -148,7 +146,10 @@ class main:
 		self.setuserwidget.hide()
 		self.setuserWindow = setuserWindow.SetuserWindow (self)
 
-
+		self.addwidget = self.xml.get_widget ("addWindow")
+		self.addwidget.hide ()
+		self.addWindow = addWindow.AddWindow (self)
+	
 		if self.root == 0:
 			# hiding the 'set user' option if not root
 			self.btnSetUser.hide()
@@ -161,15 +162,48 @@ class main:
 			gtk.mainloop()
 		return
 
-	def init_treeview(self, mode = "simple", init = 0):
-		self.treeview.set_model (self.treemodel)
-		self.switchView("simple", 1)
-		return
+	def onTreeViewSelectRow (self, *args):
+		try:
+			store, iter = self.treeview.get_selection().get_selected()
+			self.schedule = self.treemodel.get_value(iter, 7)
+			self.editor = self.schedule.geteditor ()
+		except:
+			pass
 	
+	def cleancolumns (self, init):
+		#cleaning up columns
+		if init != 1:
+			i = 2
+			while i > - 1:
+				temp = self.treeview.get_column(i)
+				self.treeview.remove_column(temp)
+				i = i -1
+				
 	def switchView(self, mode = "simple", init = 0):
-		self.schedule.switchview (mode, init)
-		
-		self.widget.show_all()
+		# TODO: Show the icon
+		if mode == "simple":
+			self.cleancolumns (init)		
+			#col = gtk.TreeViewColumn(_("Icon"), gtk.CellRendererText(), text=6)
+			#self.ParentClass.treeview.append_column(col)
+			col = gtk.TreeViewColumn(_("Title"), gtk.CellRendererText(), text=0)
+			self.treeview.append_column(col)
+			col = gtk.TreeViewColumn(_("Frequency or time"), gtk.CellRendererText(), text=1)
+			self.treeview.append_column(col)
+			col = gtk.TreeViewColumn(_("Preview"), gtk.CellRendererText(), text=2)
+			col.set_spacing(235)
+			self.treeview.append_column(col)
+
+		elif mode == "advanced":
+			self.cleancolumns (init)		
+			# col = gtk.TreeViewColumn(_("Icon"), gtk.CellRendererText(), text=6)
+			# self.ParentClass.treeview.append_column(col)
+			col = gtk.TreeViewColumn(_("Frequency or time"), gtk.CellRendererText(), text=5)
+			self.treeview.append_column(col)
+			col = gtk.TreeViewColumn(_("Preview"), gtk.CellRendererText(), text=2)
+			self.treeview.append_column(col)
+			col = gtk.TreeViewColumn(_("Title"), gtk.CellRendererText(), text=0)
+			col.set_spacing(235)
+			self.treeview.append_column(col)
 
 		if self.root == 0:
 			self.btnSetUser.hide()
@@ -178,7 +212,6 @@ class main:
 
 		self.treeview.get_selection().unselect_all()
 		self.edit_mode = mode
-
 
 	def quit (self, *args):
 		try:
@@ -243,11 +276,14 @@ class main:
 		dlg.show()
 
 	def on_add_scheduled_task_menu_activate (self, *args):
-		self.editor.showadd (self.edit_mode)
-		pass
+		self.addWindow.ShowAddWindow ()
 
 	def on_properties_menu_activate (self, *args):
 		store, iter = self.treeview.get_selection().get_selected()
+		
+		self.schedule = self.treemodel.get_value(iter, 7)
+		self.editor = self.schedule.geteditor ()
+		
 		if iter != None:
 			record = self.treemodel.get_value(iter, 3)
 			linenumber = self.treemodel.get_value(iter, 4)
@@ -255,6 +291,10 @@ class main:
 
 	def on_delete_menu_activate (self, *args):
 		store, iter = self.treeview.get_selection().get_selected()
+
+		self.schedule = self.treemodel.get_value(iter, 7)
+		self.editor = self.schedule.geteditor ()
+		
 		if iter != None:
 			record = self.treemodel.get_value(iter, 3)
 			linenumber = self.treemodel.get_value(iter, 4)
@@ -270,7 +310,7 @@ class main:
 		return
 
 	def on_quit_menu_activate (self, *args):
-		pass
+		self.quit ()
 
 	def on_manual_menu_activate (self, *args):
 		help_page = "file://" + config.getDocdir() + "/index.html"

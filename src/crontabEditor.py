@@ -273,12 +273,15 @@ class CrontabEditor:
 		self.loadicon ()
 		self.reload_templates ()
 		self.chkNoOutput.set_active (gtk.FALSE)
-		#switch to advanced tab if required
-		if mode == "advanced":
-			self.notebook.set_current_page(1)
-		else:
-			self.notebook.set_current_page(0)
+		
+		# switch to advanced tab if required
+		# Nah, I dislike this idea Gaute
+		#if mode == "advanced":
+		#	self.notebook.set_current_page(1)
+		#else:
+		#	self.notebook.set_current_page(0)
 
+		# When "Use advanced" is selected, this should happen
 
 	def on_template_combobox_entry_changed (self, *args):
 		self.save_button.set_sensitive (gtk.TRUE)
