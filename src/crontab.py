@@ -299,7 +299,7 @@ class Crontab:
 
 	#create temp file with old tasks and new ones and then updates crontab
 	def __write__ (self):
-		tmpfile = tempfile.mkstemp ("", "/tmp/crontab.", "/tmp")
+		tmpfile = tempfile.mkstemp ()
 		fd, path = tmpfile
 		tmp = os.fdopen(fd, 'w')
 		count = 0

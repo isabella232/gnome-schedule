@@ -195,6 +195,39 @@ class At:
 				return gtk.FALSE, "other"
 
 		return gtk.TRUE, "ok"
+	
+	#TODO merge code of append and update	
+	def append (self, runat, command, title, icon):
+		tmpfile = tempfile.mkstemp ()
+		fd, path = tmpfile
+		tmp = os.fdopen(fd, 'w')
+		if title:
+			tmp.write("TITLE=" + title + "\n")
+		else:
+			tmp.write("TITLE=Untitled\n")
+		if icon:
+			tmp.write("ICON=" + icon + "\n")
+		else:
+			tmp.write("ICON=None\n")
+
+		tmp.write (command + "\n")
+		tmp.close ()
+		
+		temp = None
+
+		if self.ParentClass.root == 1:
+			if self.ParentClass.user != "root":
+				#changes the ownership
+				os.chown(path, self.ParentClass.uid, self.ParentClass.gid)
+				execute = config.getSubin() + " " + self.ParentClass.user + " -c \"" + config.getAtbin() + " " + runat + " -f " + path + " && exit\""
+				temp = commands.getoutput(execute)
+		else:
+			execute = config.getAtbin() + " " + runat + " -f " + path
+			temp = commands.getoutput(execute)
+
+		os.unlink (path)
+		self.ParentClass.schedule_reload ("at")
+		return temp
 
 
 	def update (self, job_id, runat, command, title, icon):
@@ -203,7 +236,7 @@ class At:
 		commands.getoutput(execute)
 		
 		#add new
-		tmpfile = tempfile.mkstemp ("", "/tmp/at.", "/tmp")
+		tmpfile = tempfile.mkstemp ()
 		fd, path = tmpfile
 		tmp = os.fdopen(fd, 'w')
 		if title:
@@ -239,39 +272,6 @@ class At:
 			commands.getoutput(execute)
 			result = self.ParentClass.treemodel.remove(iter)
 	
-
-	def append (self, runat, command, title, icon):
-		tmpfile = tempfile.mkstemp ("", "/tmp/at.", "/tmp")
-		fd, path = tmpfile
-		tmp = os.fdopen(fd, 'w')
-		if title:
-			tmp.write("TITLE=" + title + "\n")
-		else:
-			tmp.write("TITLE=Untitled\n")
-		if icon:
-			tmp.write("ICON=" + icon + "\n")
-		else:
-			tmp.write("ICON=None\n")
-
-		tmp.write (command + "\n")
-		tmp.close ()
-		
-		temp = None
-
-		if self.ParentClass.root == 1:
-			if self.ParentClass.user != "root":
-				#changes the ownership
-				os.chown(path, self.ParentClass.uid, self.ParentClass.gid)
-				execute = config.getSubin() + " " + self.ParentClass.user + " -c \"" + config.getAtbin() + " " + runat + " -f " + path + " && exit\""
-				temp = commands.getoutput(execute)
-		else:
-			execute = config.getAtbin() + " " + runat + " -f " + path
-			temp = commands.getoutput(execute)
-
-		os.unlink (path)
-		self.ParentClass.schedule_reload ("at")
-		return temp
-
 
 	def read (self):
 		#do 'atq'
