@@ -1,3 +1,7 @@
+2004-07-17  Gaute Hope <eg@gaute.eu.org>
+
+	* most of them.py: Removed debugging messages
+
 2004-07-15  Kristof Vansant <de_lupus@pandora.be>
 
 	* mainWindow.py: made code better readable + added comments + removed some not used code
