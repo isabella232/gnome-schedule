@@ -162,6 +162,7 @@ class At:
 		#do 'atq'
 		execute = config.getAtqbin ()
 		self.lines = os.popen(execute).readlines()
+		count = 0
 		for line in self.lines:
 			array_or_false = self.parse (line)
 			if array_or_false != gtk.FALSE:
@@ -185,10 +186,12 @@ class At:
 				iter = self.ParentClass.treemodel.append([title, timestring, preview, lines, int(job_id), timestring, icon_pix, self, date, class_id, user, time, "Defined", "at"])
 
 				print "Read at job: " + str(job_id)
+				count = count + 1
 				#print title + " " + timestring + " " + preview + " " + job_id + " " + date + " " +  class_id + " " + user 
 				# print int(job_id)
 
 		#["None(not suported yet)", "12:50 2004-06-25", "", "35", "", "12:50", icon, at instance, "2004-06-25", "a", "drzap", "at"]
+		print "-- Total at jobs: " + str(count)
 		return
 
 	def ignore (self, testline):

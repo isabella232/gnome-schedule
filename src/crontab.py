@@ -421,6 +421,7 @@ class Crontab:
 				iter = self.ParentClass.treemodel.append([title, self.easy (minute, hour, day, month, weekday), preview, line, self.linecount, time, icon_pix, self, "", "", "","", "Frequency", "crontab"])
 				print "Read crontab, line: " + str(self.linecount)
 			self.linecount = self.linecount + 1
+		print "-- Total crontab records: " + str(self.linecount -3)
 		return
 
 	def parse (self, line):

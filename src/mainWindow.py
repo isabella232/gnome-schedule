@@ -35,6 +35,7 @@ import time
 import config
 import editor
 import gettext
+import time
 from os import popen
 
 ##
@@ -104,9 +105,14 @@ class main:
 		self.treeview.get_selection().connect("changed", self.onTreeViewSelectRow)
 		self.treeview.get_selection().unselect_all()
 		
-		
+		start = time.time()
+		print "###--- start load: [" + str(start) + "] ---###"
 		self.crontab = crontab.Crontab(self)
 		self.at = at.At(self)
+		end = time.time()
+		diff = end - start
+		print "###--- end load: [" + str(end) + "] - Duration: " + str(diff) + " ---###"
+
 		
 		self.crontab_editor = self.crontab.geteditor ()
 		self.at_editor = self.at.geteditor ()
@@ -292,9 +298,14 @@ class main:
 		return
 
 	def schedule_reload (self):
+		start = time.time()
+		print "###--- start reload: [" + str(start) + "] ---###"
 		self.treemodel.clear()
 		self.crontab.read ()
 		self.at.read ()
+		end = time.time()
+		diff = end - start
+		print "###--- end reload: [" + str(end) + "] - Duration: " + str(diff) + " ---###"
 
 	def on_add_button_clicked (self, *args):
 		self.on_add_scheduled_task_menu_activate (self, args)
