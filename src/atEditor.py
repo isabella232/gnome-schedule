@@ -111,7 +111,7 @@ class AtEditor:
 				
 	def on_worded_label_event (self, *args):
 		# highlight on mouseover
-		# enable wording_option on click
+
 		pass
 
 	def on_defined_label_event (self, *args):
