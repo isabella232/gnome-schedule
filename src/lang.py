@@ -230,7 +230,9 @@ def translate_crontab_easy_en (minute, hour, day, month, weekday):
 		return translate_crontab_easy_anylang (minute, hour, day, month, weekday)
 	if minute.find ("-") != -1 or hour.find ("-") != -1 or day.find ("-") != -1 or month.find ("-") != -1 or weekday.find ("-") != -1:
 		return translate_crontab_easy_anylang (minute, hour, day, month, weekday)
-
+	if minute.find (",") != -1 or hour.find (",") != -1 or day.find (",") != -1 or month.find (",") != -1 or weekday.find (",") != -1:
+		return translate_crontab_easy_anylang (minute, hour, day, month, weekday)
+		
 	# So if our case is supported:
 
 	# If all are asterix, it means every minute :)
