@@ -74,7 +74,7 @@ class Crontab:
 			execute = "crontab -l"
 
 		p = re.compile('^(.*)\s(.*)\s(.*)\s(.*)\s(.*)\s(.*)[\s#\s(.*)|]$')
-		linecount = 0
+		self.linecount = 0
 		self.lines = os.popen(execute).readlines()
 		for line in self.lines:
 			array_or_false = self.parseRecord (line)
