@@ -396,7 +396,13 @@ class AtEditor:
 		self.class_id = self.ParentClass.treemodel.get_value(iter, 9)
 		self.user = self.ParentClass.treemodel.get_value(iter, 10)
 		self.command = self.ParentClass.treemodel.get_value(iter, 3)
-		self.runat = self.time + " " + self.date	
+		self.runat = self.time + " " + self.date
+		#parse 	
+		(hour, minute, day, month, year) = self.parse_time(self.time, self.date)
+		self.calendar.select_month(int(month) - 1, int(year))
+		self.calendar.select_day(int(day))
+		self.hour_spinbutton.set_text(hour)
+		self.minute_spinbutton.set_text(minute)
 		self.widget.set_title(_("Edit a scheduled task"))
 		self.update_textboxes ()
 		self.parentiter = iter
@@ -404,6 +410,19 @@ class AtEditor:
 		self.update_textboxes ()
 
 
+	def parse_time (self, time, date):
+		regexp_date = re.compile("([0-9]+)-([0-9]+)-([0-9]+)")
+		regexp_time = re.compile("([0-9]+):([0-9]+)")
+
+		time_g = regexp_time.match(time)
+		if time_g:
+			(hour, minute) = time_g.groups()
+
+		date_g = regexp_date.match(date)
+		if date_g:
+			(year, month, day) = date_g.groups()	
+		
+		return hour, minute, day, month, year
 
 	def showadd (self, mode):
 		self.reset ()
