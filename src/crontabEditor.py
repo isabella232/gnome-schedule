@@ -245,6 +245,7 @@ class CrontabEditor:
 		else:
 			self.notebook.set_current_page(0)
 
+		self.template_combobox.set_active (0)
 	
 	def check_field_format (self, field, type):
 		try:

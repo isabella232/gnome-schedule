@@ -15,12 +15,18 @@ if test x$GNOMEHELP_CONFIG = xno; then
 fi
 
 AC_PATH_PROG(CRONTAB_CONFIG, crontab, no)
-if test x$crontab_CONFIG = xno; then
+if test x$CRONTAB_CONFIG = xno; then
   AC_MSG_ERROR(Please install the application crontab)
+fi
+
+AC_PATH_PROG(PYTHON_CONFIG, python, no)
+if test x$PYTHON_CONFIG = xno; then
+  AC_MSG_ERROR(Please install the application python)
 fi
 
 dnl AC_DEFINE_UNQUOTED (GNOMEHELP_CONFIG, "$GNOMEHELP_CONFIG")
 dnl AC_DEFINE_UNQUOTED (CRONTAB_CONFIG, "$CRONTAB_CONFIG")
+dnl AC_DEFINE_UNQUOTED (PYTHON_CONFIG, "$PYTHON_CONFIG")
 
 
 dnl *******************************

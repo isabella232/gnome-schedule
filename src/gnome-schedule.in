@@ -1,2 +1,2 @@
 #! /bin/sh
-python @prefix@/share/gnome-schedule/gnome-schedule.py
+@PYTHON_CONFIG@ @prefix@/share/gnome-schedule/gnome-schedule.py

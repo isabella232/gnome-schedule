@@ -45,7 +45,6 @@ class Crontab:
 		self.xml = self.ParentClass.xml
 		self.nooutputtag = ">/dev/null 2>&1"
 
-		self.ParentClass.treemodel = self.createtreemodel ()
 		self.editorwidget = self.xml.get_widget("crontabEditor")
 		self.editorhelperwidget = self.xml.get_widget("crontabEditorHelper")
 		self.editor = crontabEditor.CrontabEditor (self.ParentClass, self)
@@ -158,53 +157,6 @@ class Crontab:
 
 	def geteditor (self):
 		return self.editor
-
-	def createtreemodel (self):
-		# [0 Title, 1 Frequency, 2 Command, 3 Crontab record, 4 Line number, 5 Time, 6 Icon]
-		# ["Restart app", "Every day", "/opt/bin/restart.pl", "* 1 * * * /opt/bin/restart.pl[ # Restart App[, Icon_uri]]", 3, 0 * * * *]
-		return gtk.ListStore(gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_INT, gobject.TYPE_STRING, gobject.TYPE_PYOBJECT)
-
-	def switchview (self, mode = "simple", init = 0):
-		if mode == "simple":
-			#cleaning up columns
-			if init != 1:
-				i = 2
-				while i > - 1:
-					temp = self.ParentClass.treeview.get_column(i)
-					self.ParentClass.treeview.remove_column(temp)
-					i = i -1
-				
-			# Setting up the columns
-			#col = gtk.TreeViewColumn(_("Icon"), gtk.CellRendererText(), text=6)
-			#self.ParentClass.treeview.append_column(col)
-			col = gtk.TreeViewColumn(_("Title"), gtk.CellRendererText(), text=0)
-			self.ParentClass.treeview.append_column(col)
-			col = gtk.TreeViewColumn(_("Frequency"), gtk.CellRendererText(), text=1)
-			self.ParentClass.treeview.append_column(col)
-			col = gtk.TreeViewColumn(_("Command"), gtk.CellRendererText(), text=2)
-			col.set_spacing(235)
-			self.ParentClass.treeview.append_column(col)
-
-		elif mode == "advanced":
-			#cleaning up columns
-			if init != 1:
-				i = 2
-				while i > - 1:
-					temp = self.ParentClass.treeview.get_column(i)
-					self.ParentClass.treeview.remove_column(temp)
-					i = i -1
-			
-			# Setting up the columns
-			#col = gtk.TreeViewColumn(_("Icon"), gtk.CellRendererText(), text=6)
-			#self.ParentClass.treeview.append_column(col)
-			col = gtk.TreeViewColumn(_("Frequency"), gtk.CellRendererText(), text=5)
-			self.ParentClass.treeview.append_column(col)
-			col = gtk.TreeViewColumn(_("Command"), gtk.CellRendererText(), text=2)
-			self.ParentClass.treeview.append_column(col)
-			col = gtk.TreeViewColumn(_("Title"), gtk.CellRendererText(), text=0)
-			col.set_spacing(235)
-			self.ParentClass.treeview.append_column(col)	
-		return
 
 	def createpreview (self, minute, hour, day, month, weekday, command):
 		return minute + " " + hour + " " + day + " " + month + " " + weekday + " " + command
@@ -434,7 +386,7 @@ class Crontab:
 					icon_pix = gtk.gdk.pixbuf_new_from_file (icon)
 				except:
 					icon_pix = None
-				iter = self.ParentClass.treemodel.append([title, self.easy (minute, hour, day, month, weekday), command, line, self.linecount, time, icon_pix])
+				iter = self.ParentClass.treemodel.append([title, self.easy (minute, hour, day, month, weekday), command, line, self.linecount, time, icon_pix, self])
 			self.linecount = self.linecount + 1
 		return
 

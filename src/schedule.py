@@ -56,9 +56,6 @@ class Schedule:
 	def geteditor (self):
 		raise 'Abstract method please override'
 
-	def createtreemodel (self):
-		raise 'Abstract method please override'
-
 	def switchview (self, mode = "simple", init = 0):
 		raise 'Abstract method please override'
 
