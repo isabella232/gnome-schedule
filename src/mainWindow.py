@@ -158,7 +158,7 @@ class main:
 		#inittializing the treeview
 		self.init_treeview()
 
-
+		self.gconf_init = 1
 		self.gconfkey_advanced_changed (support.gconf_client, None, "/apps/gnome-schedule/advanced", None)
 
 		#set user window
@@ -180,7 +180,6 @@ class main:
 
 	def init_treeview(self, mode = "simple", init = 0):
 		self.treeview.set_model (self.treemodel)
-		self.switchView("simple", 1)
 		return
 	
 	def switchView(self, mode = "simple", init = 0):
@@ -236,9 +235,10 @@ class main:
 	def gconfkey_advanced_changed (self, client, connection_id, entry, args):
 		val = support.gconf_client.get_bool ("/apps/gnome-schedule/advanced")
 		if val:
-			self.switchView("advanced")
+			self.switchView("advanced", self.gconf_init)
 		else:
-			self.switchView("simple")
+			self.switchView("simple", self.gconf_init)
+		self.gconf_init = 0
 		return
 
 	def on_advanced_menu_activate (self, widget):
