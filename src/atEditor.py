@@ -137,58 +137,75 @@ class AtEditor:
 		return
 
 	def on_calendar_day_selected (self, *args):		
-		if self.control_option.get_active():
-			(year, month, day) = self.calendar.get_date()
-			hour = self.hour_spinbutton.get_text()
-			minute = self.minute_spinbutton.get_text()
-			self.runat = hour + ":" + minute + " " + str(year) + "-" + str(month + 1) + "-" + str(day)
-			self.update_textboxes()
+		self.update_time()
+			
 		return
 
 	def on_calendar_month_changed (self, *args):
-		if self.control_option.get_active():
-			(year, month, day) = self.calendar.get_date()
-			hour = self.hour_spinbutton.get_text()
-			minute = self.minute_spinbutton.get_text()
-			self.runat = hour + ":" + minute + " " + str(year) + "-" + str(month + 1) + "-" + str(day)
-			self.update_textboxes()
+		self.update_time()
 		return
 	
 	def on_calendar_year_changed (self, *args):
-		if self.control_option.get_active():
-			(year, month, day) = self.calendar.get_date()
-			hour = self.hour_spinbutton.get_text()
-			minute = self.minute_spinbutton.get_text()
-			self.runat = hour + ":" + minute + " " + str(year) + "-" + str(month + 1) + "-" + str(day)
-			self.update_textboxes()
+		self.update_time()
 		return
 
 
 	def on_hour_spinbutton_changed (self, *args):
-		if self.control_option.get_active():
-			(year, month, day) = self.calendar.get_date()
-			hour = self.hour_spinbutton.get_text()
-			minute = self.minute_spinbutton.get_text()
-			self.runat = hour + ":" + minute + " " + str(year) + "-" + str(month + 1) + "-" + str(day)
-			print "hour"
-			self.update_textboxes()
+		self.update_time()
 		return
 
 	def on_minute_spinbutton_changed (self, *args):
+		self.update_time()
+		return
+	
+	def update_time (self):
 		if self.control_option.get_active():
 			(year, month, day) = self.calendar.get_date()
 			hour = self.hour_spinbutton.get_text()
 			minute = self.minute_spinbutton.get_text()
-			self.runat = hour + ":" + minute + " " + str(year) + "-" + str(month + 1) + "-" + str(day)
-			print "minute"
-			self.update_textboxes() 
-		return
+			month = month + 1 #months start at 0
+			year = str(year)
+			if hour:
+				hour = int(hour)
+			else:
+				return
 
+			if minute:
+				minute = int(minute)
+			else:
+				return
+	
+			if hour < 10:
+				hour = "0" + str(hour)
+	
+			if minute < 10:
+				minute = "0" + str(minute)
+			
+			if month < 10:
+				month = "0" + str(month)
+			else:
+				month = str(month)
+
+			if day < 10:
+				day = "0" + str(day)
+			else:
+				day = str(day)
+
+			self.runat = hour + ":" + minute + " " + year + "-" + month + "-" + day
+			self.update_textboxes()
+
+		else: #word option active
+			runat = self.combobox_entry.get_text ()
+			# validate runat
+			self.runat = runat
+			self.update_textboxes (0)
+			
+	
 	def on_combobox_changed (self, *args):
 		# In this combobox for example "tomorrow" should be checked
 		# for being possible or not
 		if self.wording_option.get_active():
-			self.runat = self.combobox_entry.get_text()
+			self.update_time()
 
 
 		pass
@@ -196,17 +213,13 @@ class AtEditor:
 	def on_control_option_toggled (self, *args):
 		# Disable combobox
 		# enable the calendar en spinbuttons
-		if self.control_option.get_active():
-			(year, month, day) = self.calendar.get_date()
-			hour = self.hour_spinbutton.get_text()
-			minute = self.minute_spinbutton.get_text()
-			self.runat = hour + ":" + minute + " " + str(year) + "-" + str(month + 1) + "-" + str(day)
-			self.update_textboxes()
+		self.update_time ()
 
 
 	def on_wording_option_toggled (self, *args):
 		# Disable the calendar
 		# enable the combobox
+		self.update_time ()
 		pass
 
 	def on_delete_button_clicked (self, *args):
@@ -287,7 +300,6 @@ class AtEditor:
 					self.runat = runat
 			
 				self.title = title
-
 				self.update_textboxes ()
 			else:
 				self.remove_button.set_sensitive (gtk.FALSE)
@@ -334,8 +346,7 @@ class AtEditor:
 		self.command = ""
 		self.icon = "/usr/share/icons/gnome/48x48/mimetypes/gnome-mime-application.png"
 		(year, month, day) = self.calendar.get_date()
-		hour = self.hour_spinbutton.get_text()
-		minute = self.minute_spinbutton.get_text()
+
 		self.nooutput_checkbutton.set_active (gtk.FALSE)
 		self.nooutput = self.nooutput_checkbutton.get_active()
 		if self.first == 1:
@@ -344,18 +355,16 @@ class AtEditor:
 			self.calendar.select_day(day+1)
 			self.first = 1
 
-		(year, month, day) = self.calendar.get_date()
-		hour = self.hour_spinbutton.get_text()
-		minute = self.minute_spinbutton.get_text()
-
-		self.runat = hour + ":" + minute + " " + str(year) + "-" + str(month+1) + "-" + str(day)
-		self.update_textboxes()
+		self.update_time () #update_textboxes inside
+		return
 		
 
-	def update_textboxes(self):
+	def update_textboxes(self, update_runat = 1):
 		self.title_entry.set_text(self.title)
 		self.script_textview_buffer.set_text(self.command)
-		self.combobox_entry.set_text(self.runat)
+		if update_runat:
+			self.combobox_entry.set_text(self.runat)
+
 		if self.icon != None:
 			self.template_image.set_from_file(self.icon)
 		else:
