@@ -47,7 +47,11 @@ class AddWindow:
 		self.cancel_button = self.xml.get_widget ("cancel_button")
 		self.ok_button = self.xml.get_widget ("ok_button")
 		self.title_entry = self.xml.get_widget ("title_entry")
+		# Note that this is the entry inside the combobox
 		self.frequency_combobox = self.xml.get_widget ("frequency_combobox").get_child()
+		self.frequency_combobox.connect("key_press_event", self.frequency_combobox_keypress)
+
+		self.basic_table = self.xml.get_widget ("basic_table")
 
 		self.command_entry = self.xml.get_widget ("command_entry")
 		self.minute_entry = self.xml.get_widget ("minute_entry")
@@ -89,7 +93,9 @@ class AddWindow:
 			self.chkNoOutput.set_active (gtk.TRUE)
 		else:
 			self.chkNoOutput.set_active (gtk.FALSE)
-		
+
+	def frequency_combobox_keypress (self, *args):
+		return gtk.TRUE
 
 	def showAddWindow (self):
 		self.reset ()
@@ -137,18 +143,24 @@ class AddWindow:
 
 	def set_frequency_combo (self):
 		index = "use advanced"
+		# index = 0
 
 		if self.minute == "*" and self.hour == "*" and self.month == "*" and self.day == "*" and self.weekday == "*":
 			index = "minute"
+			# index = 1
 		if self.minute == "0" and self.hour == "*" and self.month == "*" and self.day == "*" and self.weekday == "*":
 			index = "hour"
+			# index = 2
 		if self.minute == "0" and self.hour == "0" and self.month == "*" and self.day == "*" and self.weekday == "*":
 			index = "day"
+			# index = 3
 		if self.minute == "0" and self.hour == "0" and self.month == "*" and self.day == "1" and self.weekday == "*":
 			index = "month"
+			# index = 4
 
 
 		self.frequency_combobox.set_text (index)
+		# self.frequency_combobox.set_active (index)
 
 
 	def reset (self):
@@ -253,6 +265,6 @@ class AddWindow:
 		if name == "btnDayHelp" : name = "day"
 		if name == "btnMonthHelp" : name = "month"
 		if name == "btnWeekdayHelp" : name = "weekday"
- 
+
 		self.ParentClass.addHelpWindow.showAll(name)
 		return
