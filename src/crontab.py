@@ -17,12 +17,12 @@
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 
 import gtk
-import cronconf
 import re
 import os
 import sys
 import tempfile
-
+import config
+import mainWindow
 ##
 ## I18N
 ##
@@ -66,11 +66,11 @@ class Crontab:
 		tmp.close ()
 
 		if self.ParentClass.root:
-			print "crontab -u " + self.ParentClass.user + " " + path
-			os.system ("crontab -u " + self.ParentClass.user + " " + path)
+			print config.getCrontabbin () + " -u " + self.ParentClass.user + " " + path
+			os.system (config.getCrontabbin () +" -u " + self.ParentClass.user + " " + path)
 		else:
-			print "crontab " + path
-			os.system ("crontab " + path)
+			print config.getCrontabbin () + " " + path
+			os.system (config.getCrontabbin () + " " + path)
 
 		os.unlink (path)
 		return
@@ -98,9 +98,9 @@ class Crontab:
 
 	def readCrontab(self):
 		if self.ParentClass.root:
-			execute = "crontab -l -u " + self.ParentClass.user
+			execute = config.getCrontabbin () + " -l -u " + self.ParentClass.user
 		else:
-			execute = "crontab -l"
+			execute = config.getCrontabbin () + " -l"
 
 		p = re.compile('^(.*)\s(.*)\s(.*)\s(.*)\s(.*)\s(.*)[\s#\s(.*)|]$')
 		self.linecount = 0

@@ -1,4 +1,4 @@
-# atconf.py - mainWindow of the at configuration tool
+# mainWindow.py - mainWindow of the crontab configuration tool
 # Copyright (C) 2004, 2005 Philip Van Hoof <me at freax dot org>
 # Copyright (C) 2004, 2005 Gaute Hope <eg at gaute dot eu dot org>
 
@@ -25,10 +25,11 @@ import re
 import gtk.glade
 import addWindow
 import setuserWindow
-import at
+import crontab
 import addWindowHelp
 import sys
 import time
+import config
 
 from os import popen
 
@@ -47,7 +48,8 @@ gtk.glade.bindtextdomain(domain)
 ##
 iconPixbuf = None
 try:
-	iconPixbuf = gtk.gdk.pixbuf_new_from_file("/usr/share/gnome-schedule/pixmaps/gnome-schedule.png")
+	# print config.getImagedir() + "/gnome-schedule.png"
+	iconPixbuf = gtk.gdk.pixbuf_new_from_file(config.getImagedir() + "/gnome-schedule.png")
 except:
 	pass
 
@@ -64,7 +66,7 @@ class main:
 		if os.access("gnome-schedule.glade", os.F_OK):
 			self.xml = gtk.glade.XML ("gnome-schedule.glade", domain="gnome-schedule")
 		else:
-			self.xml = gtk.glade.XML ("/usr/share/gnome-schedule/gnome-schedule.glade", domain="gnome-schedule")
+			self.xml = gtk.glade.XML (config.getGladedir() + "/gnome-schedule.glade", domain="gnome-schedule")
 
 
 
@@ -78,8 +80,6 @@ class main:
 		self.help_button = self.xml.get_widget ("help_button")
 		self.btnSetUser = self.xml.get_widget("btnSetUser")
 
-		#set title:
-		self.widget.set_title("Configure scheduled tasks: at")
 		#read the user
 		self.readUser()
 
@@ -131,12 +131,12 @@ class main:
 		self.init_treeview()
 
 		#initializing the crontab
-		self.at = at.At(self)
+		self.crontab = crontab.Crontab(self)
 
 		#add window
 		self.addwidget = self.xml.get_widget("addWindow")
 		self.addwidget.hide()
-		self.addWindow = addWindow.AddWindow (self, self.at)
+		self.addWindow = addWindow.AddWindow (self, self.crontab)
 
 		#add window help
 		self.addhelpwidget = self.xml.get_widget("addWindowHelp")
@@ -158,8 +158,8 @@ class main:
 		return
 
 	def init_treeview(self, mode = "simple", init = 0):
-		# [0 Title, 1 date, 2 time, 3 class, 4 id, 5 user, 6 command preview(?)]
-		# ["get file", "2004-06-17", "20:17", "a", 24, "wget http://..."]
+		# [0 Title, 1 Frequency, 2 Command, 3 Crontab record, 4 Line number, 5 Time]
+		# ["Restart app", "Every day", "/opt/bin/restart.pl", "* 1 * * * /opt/bin/restart.pl # Title=Restart App", 3, 0 * * * *]
 		self.treemodel = gtk.ListStore(gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_INT, gobject.TYPE_STRING)
 		self.treeview.set_model (self.treemodel)
 
@@ -172,7 +172,7 @@ class main:
 		if mode == "simple":
 			#cleaning up columns
 			if init != 1:
-				i = 4
+				i = 2
 				while i > - 1:
 					temp = self.treeview.get_column(i)
 					self.treeview.remove_column(temp)
@@ -181,36 +181,30 @@ class main:
 			# Setting up the columns
 			self.col = gtk.TreeViewColumn(_("Title"), gtk.CellRendererText(), text=0)
 			self.treeview.append_column(self.col)
-			self.col = gtk.TreeViewColumn(_("Date"), gtk.CellRendererText(), text=1)
+			self.col = gtk.TreeViewColumn(_("Frequency"), gtk.CellRendererText(), text=1)
 			self.treeview.append_column(self.col)
-			self.col = gtk.TreeViewColumn(_("Time"), gtk.CellRendererText(), text=2)
-			self.treeview.append_column(self.col)
-			self.col = gtk.TreeViewColumn(_("Preview"), gtk.CellRendererText(), text=6)
+			self.col = gtk.TreeViewColumn(_("Command"), gtk.CellRendererText(), text=2)
 			self.col.set_spacing(235)
 			self.treeview.append_column(self.col)
-
 
 		elif mode == "advanced":
 			#cleaning up columns
 			if init != 1:
-				i = 3
+				i = 2
 				while i > - 1:
 					temp = self.treeview.get_column(i)
 					self.treeview.remove_column(temp)
 					i = i -1
 			
 			# Setting up the columns
-			self.col = gtk.TreeViewColumn(_("Date"), gtk.CellRendererText(), text=1)
+			self.col = gtk.TreeViewColumn(_("Frequency"), gtk.CellRendererText(), text=5)
 			self.treeview.append_column(self.col)
-			self.col = gtk.TreeViewColumn(_("Time"), gtk.CellRendererText(), text=2)
+			self.col = gtk.TreeViewColumn(_("Command"), gtk.CellRendererText(), text=2)
 			self.treeview.append_column(self.col)
-			self.col = gtk.TreeViewColumn(_("Id"), gtk.CellRendererText(), text=4)
-			self.treeview.append_column(self.col)	
-			self.col = gtk.TreeViewColumn(_("Class"), gtk.CellRendererText(), text=3)
-			self.treeview.append_column(self.col)	
-			self.col = gtk.TreeViewColumn(_("Preview"), gtk.CellRendererText(), text=6)
+			self.col = gtk.TreeViewColumn(_("Title"), gtk.CellRendererText(), text=0)
 			self.col.set_spacing(235)
-			self.treeview.append_column(self.col)
+			self.treeview.append_column(self.col)	
+		
 
 		self.widget.show_all()
 
@@ -269,12 +263,16 @@ class main:
 		return
 
 	def on_about_menu_activate (self, *args):
-		dlg = gnome.ui.About(_("System Schedule"), "@VERSION@",
+		dlg = gnome.ui.About(_("System Schedule"),
+			config.getVersion(),
 			_("Copyright (c) 2004-2005 Gaute Hope."),
 			_("This software is distributed under the GPL. "),
 			["Philip Van Hoof <me at freax dot org>",
-			"Gaute Hope <eg at gaute dot eu dot org>"
-			])
+			"Gaute Hope <eg at gaute dot eu dot org>"], 
+			[_("documented_by")],
+			_("translator_credits"),
+			iconPixbuf)
+
 		dlg.set_transient_for(self.widget)
 		dlg.set_position (gtk.WIN_POS_CENTER_ON_PARENT)
 		dlg.show()
@@ -296,10 +294,10 @@ class main:
 			record = self.treemodel.get_value(iter, 3)
 			linenumber = self.treemodel.get_value(iter, 4)
 			
-			self.at.deleteJob (linenumber)
+			self.crontab.deleteLine (linenumber)
 
 			self.treemodel.clear ()		
-			self.at.readAt ()
+			self.crontab.readCrontab ()
 
 		#moving to first
 		iter =  self.treemodel.get_iter_first()
@@ -312,8 +310,8 @@ class main:
 		pass
 
 	def on_manual_menu_activate (self, *args):
-		help_page = "file:///usr/share/doc/gnome-schedule-" + "@VERSION@" + "/index.html"
-		path = "/usr/bin/gnome-help"
+		help_page = "file://" + config.getDocdir() + "/index.html"
+		path = config.getGnomehelpbin ()
 		pid = os.fork()
 		if not pid:
 			os.execv(path, [path, help_page])
@@ -321,4 +319,3 @@ class main:
 	def showSetUser(self, *args):
 		self.setuserWindow.ShowSetuserWindow()
 		return
-

@@ -18,7 +18,6 @@
 
 import gtk
 import pwd
-import cronconf
 import string
 import pwd
 

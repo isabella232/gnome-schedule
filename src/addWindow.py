@@ -221,7 +221,7 @@ class AddWindow:
 
 	def on_add_help_button_clicked (self, *args):
 		help_page = "file://" + config.getDocdir() + "/addingandediting.html"
-		path = "/usr/bin/gnome-help"
+		path = config.getGnomehelpbin ()
 		pid = os.fork()
 		if not pid:
 			os.execv(path, [path, help_page])
