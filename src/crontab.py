@@ -142,6 +142,9 @@ class Crontab:
 		if minute == "*" and hour == "*" and month == "*" and day == "*" and weekday == "*":
 			return "Every minute"
 
+		if minute != "*" and hour == "*" and month == "*" and day == "*" and weekday == "*":
+			return "Every " + minute + self.amountApp (minute) + " minute of every hour"
+
 		if hour != "*" and month == "*" and day == "*" and weekday == "*":
 			if minute == "0":
 				return "Every " + hour + self.amountApp (hour) + " hour of the day"

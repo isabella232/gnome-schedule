@@ -115,30 +115,19 @@ class AddWindow:
 	def on_ok_button_clicked (self, *args):
 		record = self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday + " " + self.command + " # " + self.title
 		
-		if self.editing == gtk.FALSE:
-			self.parentiter = self.ParentClass.treemodel.append()
-			self.crontab.appendLine (record)
-		else:
+		if self.editing != gtk.FALSE:
 			self.crontab.updateLine (self.linenumber, record)
-
-		self.ParentClass.treemodel.set_value (self.parentiter, 3, record)
-		self.ParentClass.treemodel.set_value (self.parentiter, 0, self.title)
-		easystring = self.crontab.easyString (self.minute, self.hour, self.day, self.month, self.weekday)
-		self.ParentClass.treemodel.set_value (self.parentiter, 1, easystring)
-
-		if self.editing == gtk.FALSE:
-			if self.nooutput:
-				self.ParentClass.treemodel.set_value (self.parentiter, 2, self.command + " " + self.nooutputtag)
-			else:
-				self.ParentClass.treemodel.set_value (self.parentiter, 2, self.command)
-
-
-		else:
+			self.ParentClass.treemodel.set_value (self.parentiter, 3, record)
+			self.ParentClass.treemodel.set_value (self.parentiter, 0, self.title)
+			easystring = self.crontab.easyString (self.minute, self.hour, self.day, self.month, self.weekday)
+			self.ParentClass.treemodel.set_value (self.parentiter, 1, easystring)
 			self.ParentClass.treemodel.set_value (self.parentiter, 2, self.command)
-
-
-		self.ParentClass.treemodel.set_value (self.parentiter, 2, self.command)
-		self.ParentClass.treemodel.set_value (self.parentiter, 5, self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday)
+			self.ParentClass.treemodel.set_value (self.parentiter, 2, self.command)
+			self.ParentClass.treemodel.set_value (self.parentiter, 5, self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday)
+		else:
+			self.crontab.appendLine (record)
+			self.ParentClass.treemodel.clear ()		
+			self.ParentClass.crontab.readCrontab ()
 
 		self.widget.hide ()
 
