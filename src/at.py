@@ -349,7 +349,9 @@ class At:
 				lines = lines[prelen:]
 					
 				timestring = _("%s%s%s %s%s%s") % (_(""), date, _(""), _(""), time, _(""))
-				iter = self.ParentClass.treemodel.append([title, timestring, preview, lines, int(job_id), timestring, icon_pix, self, icon, date, class_id, user, time, "Defined", "at"])
+				timestring_show = "At " + timestring #_("%sAt%s%s") % (_(""), _(""), timestring, _(""))
+
+				iter = self.ParentClass.treemodel.append([title, timestring_show, preview, lines, int(job_id), timestring, icon_pix, self, icon, date, class_id, user, time, "Defined", "at"])
 
 				print "Read at job: " + str(job_id)
 				count = count + 1
