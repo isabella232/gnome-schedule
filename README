@@ -1,7 +1,46 @@
 gnome-schedule
 --------------
 
-* See the file COPYING for the license.
-* See the AUTHORS file for the authors of this tool
-* See the INSTALL file for information about installing this tool
-* Checkout the doc/ directory for user documentation
+	o. See the file COPYING for the license.
+	o. See the AUTHORS file for the authors of this tool
+	o. See the INSTALL file for information about installing this tool
+	o. Checkout the doc/ directory for user documentation
+
+Dependencies
+------------
+
+ Gnome Schedule will need
+ 
+	o. at,  batch,  atq, atrm, queue
+	o. crontab
+	o. Python
+	o. PyGTK >= 2.3
+	o. Python GConf
+
+Compiling and HACKING
+---------------------
+
+  To compile Gnome Schedule from CVS you will also need
+
+	o. A CVS client
+	o. autoconf and the other auto* tools (version >= 1.7)
+	o. gnome-common which you can pull from the cvs.gnome.org
+  	o. You can get the latest version of PyGTK from cvs.gnome.org.
+	o. You will need the latest version of PyGTK to get the version
+	   in CVS compiled.
+
+  To make contributions you should first read
+
+	o. HACKING
+	o. README.cvs
+	o. AUTHORS
+	o. The source code itself :-)
+
+  To help with translations
+
+	o. Check out the po/ directory. You can use gTranslator and
+	   the other intl tools for translations. You should contact
+	   the GNOME Translation team as they are the responsible
+	   organisation for the translation of the GNOME desktop
+	o. Other than only the generated po-files you should also
+	   check out the file src/lang.py
