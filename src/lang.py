@@ -58,7 +58,6 @@ def translate_nth_nl (nth):
 
 	tennumbers = [ "nul", "tien", "twintig", "dertig", "veertig", "vijftig", "zestig", "zeventig", "tachtig", "negentig" ]
 
-	print nth
 	if nth <= 20 >= 0:
 		return twenty_nths[nth]
 	elif nth < 0 and nth >= -20:
