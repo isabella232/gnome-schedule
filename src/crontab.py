@@ -366,7 +366,7 @@ class Crontab:
 		self.lines[linenumber] = record
 		self.write ()
 
-	def delete (self, linenumber):
+	def delete (self, linenumber, iter):
 		number = 0
 		newlines = list ()
 		for line in self.lines:
@@ -378,6 +378,8 @@ class Crontab:
 
 		self.lines = newlines
 		self.write ()
+		self.ParentClass.schedule_reload()
+		return
 
 	def append (self, record, nooutput, title, icon = None):
 		if nooutput:

@@ -133,10 +133,11 @@ class At:
 		temp = commands.getoutput(execute)
 		os.unlink (path)
 
-	def delete (self, jobid):
+	def delete (self, jobid, iter):
 		if jobid:
 			execute = config.getAtrmbin()+ " " + str(jobid)
 			commands.getoutput(execute)
+			result = self.ParentClass.treemodel.remove(iter)
 		return
 
 	def append (self, runat, command, title, icon):

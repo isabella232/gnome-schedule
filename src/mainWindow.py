@@ -379,8 +379,8 @@ class main:
 
 			nextiter = self.treemodel.iter_next(iter)
 			firstiter = self.treemodel.get_iter_first()
-			self.schedule.delete (linenumber)
-			result = self.treemodel.remove(iter)
+			self.schedule.delete (linenumber, iter)
+			
 
 			#moving to next
 			if nextiter:
