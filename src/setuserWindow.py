@@ -18,7 +18,7 @@
 
 import gtk
 import pwd
-import mainWindow
+import cronconf
 import string
 import pwd
 

@@ -39,5 +39,10 @@ except:
 	sys.exit(0)
 
 
-import mainWindow
-mainWindow = mainWindow.main(debug_flag)
+#choose wheter at or cron should be edited, perhaps from an argument or the name of the executed file argv[0] i belive(symlinks)
+if 'at' in sys.argv:
+	import atconf
+	atconf = atconf.main(debug_flag)
+else:
+	import cronconf
+	cronconf = cronconf.main(debug_flag)
