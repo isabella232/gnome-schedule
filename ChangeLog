@@ -1,5 +1,6 @@
 2004-06-24  Gaute Hope <eg@gaute.eu.org>
-	* at.py: implemented reading and deleting of jobs, and puts them in the treeview
+	* at.py: implemented reading and deleting of jobs, and puts them in
+	the treeview
 	* mainWindow.py: changed the liststore model to work with at aswell
 	
 2004-06-24  Philip Van Hoof <me_NOSPAM@freax.org>
@@ -20,6 +21,9 @@
 	* configure.ac: Merging of the AT-SUPPORT-BRANCH
 	* Makefile.am: Added some files to the DISTCLEAN section
 	* .cvsignore: See above files that have been added and removed
+
+	* src/at.py: Finished/fixed some important aspects of the
+	at-support
 
 2004-06-24  Duarte Loreto <happyguy_pt@hotmail.com>
 

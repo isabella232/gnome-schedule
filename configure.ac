@@ -24,6 +24,21 @@ if test x$AT_CONFIG = xno; then
   AC_MSG_ERROR(Please install the application at)
 fi
 
+AC_PATH_PROG(ATQ_CONFIG, atq, no)
+if test x$ATQ_CONFIG = xno; then
+  AC_MSG_ERROR(Please install the application atq)
+fi
+
+AC_PATH_PROG(ATRM_CONFIG, atrm, no)
+if test x$ATRM_CONFIG = xno; then
+  AC_MSG_ERROR(Please install the application atrm)
+fi
+
+AC_PATH_PROG(BATCH_CONFIG, batch, no)
+if test x$BATCH_CONFIG = xno; then
+  AC_MSG_ERROR(Please install the application batch)
+fi
+
 
 AC_PATH_PROG(PYTHON_CONFIG, python, no)
 if test x$PYTHON_CONFIG = xno; then

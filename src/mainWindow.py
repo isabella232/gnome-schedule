@@ -344,7 +344,7 @@ class main:
 
 	def on_properties_menu_activate (self, *args):
 		store, iter = self.treeview.get_selection().get_selected()
-		
+
 		self.schedule = self.treemodel.get_value(iter, 7)
 		self.editor = self.schedule.geteditor ()
 		
@@ -363,17 +363,16 @@ class main:
 		if iter != None:
 			record = self.treemodel.get_value(iter, 3)
 			linenumber = self.treemodel.get_value(iter, 4)
-			print linenumber
+
 			self.schedule.delete (linenumber)
-			self.treemodel.clear ()		
-			
+			self.schedule_reload()
 
 			#moving to first
 			iter =  self.treemodel.get_iter_first()
 			if iter:
 				selection = self.treeview.get_selection()
 				selection.select_iter(iter)
-		self.schedule_reload()
+
 		return
 
 	def on_quit_menu_activate (self, *args):

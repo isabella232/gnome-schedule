@@ -54,12 +54,8 @@ class At:
 			execute = config.getAtbin() + " -c " + m.groups()[0]
 			self.ignore_lines = os.popen(execute).readlines()
 			self.delete (m.groups()[0])
-			# print self.ignore_lines
 		else:
-			print "Problem learning the lines to ignore"
-
-		#init at
-		self.init ()
+			print _("Problem while learning the lines that are to be ignored")
 
 		#reading at
 		self.read ()
@@ -73,29 +69,6 @@ class At:
 		self.editorwidget.hide()
 	
 		return
-
-	def init (self):
-		#find common start of all scripts with a test job
-		runat = "tomorrow"
-		command = ""
-		tmpfile = tempfile.mkstemp ("", "/tmp/at.", "/tmp")
-		fd, path = tmpfile
-		tmp = os.fdopen(fd, 'w')
-		tmp.write (command + "\n")
-		execute = "at " + runat + " -f " + path
-		line = commands.getoutput(execute)
-		tmp.close ()
-		os.unlink (path)
-		#get output and jobid
-		job_id = self.parse(line, 1)
-		
-		#get the job
-		execute = "at -c " + job_id
-		self.atPre = commands.getoutput(execute)
-				
-		#delete it
-		execute = "atrm " + job_id
-		commands.getoutput(execute)
 
 	def removetemplate (self, template_name):
 		raise 'Not implemented'
