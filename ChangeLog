@@ -1,3 +1,7 @@
+2004-06-29  Gareth Owen  <gowen72@yahoo.com>
+
+	* configure.ac: Added en_GB to ALL_LINGUAS
+
 2004-06-29  Kristof Vansant  <de_lupus_NOSPAM@pandora.be>
 
 	* src/*py: Replaced the rhpl dependency with the standard gettext

@@ -1,0 +1,889 @@
+# English/GB translation of gnome-schedule.
+# Copyright (C) 2004 THE gnome-schedule'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the gnome-schedule package.
+# David Lodge <dave@cirt.net>, 2004.
+# 
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-schedule HEAD\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-06-29 20:52+0200\n"
+"PO-Revision-Date: 2004-06-29 21:46+0100\n"
+"Last-Translator: David Lodge <dave@cirt.net>\n"
+"Language-Team: English/GB <en@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit"
+
+#: src/at.py:147
+#, python-format
+msgid "%s%s%s %s%s%s"
+msgstr "%s%s%s %s%s%s"
+
+#: src/crontab.py:156 src/crontabEditor.py:66 src/gnome-schedule.glade.h:83
+msgid "minute"
+msgstr "minute"
+
+#: src/crontab.py:158 src/crontabEditor.py:67 src/gnome-schedule.glade.h:82
+msgid "hour"
+msgstr "hour"
+
+#: src/crontab.py:160 src/crontabEditor.py:68 src/gnome-schedule.glade.h:81
+msgid "day"
+msgstr "day"
+
+#: src/crontab.py:162 src/crontabEditor.py:69 src/gnome-schedule.glade.h:84
+msgid "month"
+msgstr "month"
+
+#: src/crontab.py:164 src/gnome-schedule.glade.h:90
+msgid "weekday"
+msgstr "weekday"
+
+#: src/crontab.py:175 src/crontabEditor.py:310 src/atEditor.py:282
+msgid "command"
+msgstr "command"
+
+#: src/crontab.py:220 src/crontab.py:240 src/crontab.py:267
+msgid "must be between 0 and 59"
+msgstr "must be between 0 and 59"
+
+#: src/crontab.py:223 src/crontab.py:243
+msgid "must be between 0 and 23"
+msgstr "must be between 0 and 23"
+
+#: src/crontab.py:226 src/crontab.py:246 src/crontab.py:273
+msgid "must be between 1 and 31"
+msgstr "must be between 1 and 31"
+
+#: src/crontab.py:229 src/crontab.py:249 src/crontab.py:276
+msgid "must be between 1 and 12"
+msgstr "must be between 1 and 12"
+
+#: src/crontab.py:232 src/crontab.py:252 src/crontab.py:279
+msgid "must be between 0 and 7"
+msgstr "must be between 0 and 7"
+
+#: src/crontab.py:263
+#, python-format
+msgid "%s is not a number"
+msgstr "%s is not a number"
+
+#: src/crontab.py:281
+msgid "Unknown"
+msgstr "Unknown"
+
+#: src/crontab.py:281
+msgid "Invalid"
+msgstr "Invalid"
+
+#: src/crontab.py:353 src/crontab.py:389 src/crontab.py:442
+#: src/crontabEditor.py:270 src/crontabEditor.py:383 src/atEditor.py:246
+msgid "Untitled"
+msgstr "Untitled"
+
+#: src/crontabEditor.py:65
+msgid "use advanced"
+msgstr "use advanced"
+
+#: src/crontabEditor.py:70
+msgid "week"
+msgstr "week"
+
+#: src/crontabEditor.py:132
+#, python-format
+msgid ""
+"This is an invalid record! The problem could be at the %s field. Reason: %s"
+msgstr ""
+"This is an invalid record! The problem could be at the %s field. Reason: %s"
+
+#: src/crontabEditor.py:166 src/atEditor.py:172
+msgid "Don't use a template"
+msgstr "Don't use a template"
+
+#: src/crontabEditor.py:191 src/atEditor.py:197
+msgid "Pick an icon for this scheduled task"
+msgstr "Pick an icon for this scheduled task"
+
+#: src/crontabEditor.py:227 src/atEditor.py:234
+msgid "Edit a scheduled task"
+msgstr "Edit a scheduled task"
+
+#: src/crontabEditor.py:274 src/atEditor.py:248
+msgid "Create a new scheduled task"
+msgstr "Create a new scheduled task"
+
+#: src/crontabEditorHelper.py:106 src/gnome-schedule.glade.h:40
+msgid "Happens all "
+msgstr "Happens all "
+
+#: src/crontabEditorHelper.py:106 src/crontabEditorHelper.py:214
+msgid "s"
+msgstr "s"
+
+#: src/crontabEditorHelper.py:109
+msgid "Happens from "
+msgstr "Happens from "
+
+#. show the form
+#: src/crontabEditorHelper.py:155
+msgid "Edit time expression for: "
+msgstr "Edit time expression for: "
+
+#: src/crontabEditorHelper.py:166
+#, python-format
+msgid "This is invalid. Reason: %s"
+msgstr "This is invalid. Reason: %s"
+
+#: src/crontabEditorHelper.py:205 src/crontabEditorHelper.py:216
+msgid "st. "
+msgstr "st. "
+
+#: src/crontabEditorHelper.py:207
+msgid "th. "
+msgstr "th. "
+
+#: src/gnome-schedule.glade.h:1
+msgid " "
+msgstr " "
+
+#: src/gnome-schedule.glade.h:2
+msgid "     "
+msgstr "     "
+
+#: src/gnome-schedule.glade.h:3
+msgid " >/dev/null 2>&1"
+msgstr " >/dev/null 2>&1"
+
+#: src/gnome-schedule.glade.h:4
+msgid "*"
+msgstr "*"
+
+#: src/gnome-schedule.glade.h:5
+msgid "* * * * * command"
+msgstr "* * * * * command"
+
+#: src/gnome-schedule.glade.h:6
+msgid "0"
+msgstr "0"
+
+#: src/gnome-schedule.glade.h:7
+msgid "0-23"
+msgstr "0-23"
+
+#: src/gnome-schedule.glade.h:8
+msgid "0-59"
+msgstr "0-59"
+
+#: src/gnome-schedule.glade.h:9
+msgid "0-7"
+msgstr "0-7"
+
+#: src/gnome-schedule.glade.h:10
+msgid "1-12"
+msgstr "1-12"
+
+#: src/gnome-schedule.glade.h:11
+msgid "1-31"
+msgstr "1-31"
+
+#: src/gnome-schedule.glade.h:12
+msgid "2"
+msgstr "2"
+
+#: src/gnome-schedule.glade.h:13
+msgid "59"
+msgstr "59"
+
+#: src/gnome-schedule.glade.h:14
+msgid ":"
+msgstr ":"
+
+#: src/gnome-schedule.glade.h:15
+msgid "<b>Basic settings</b>"
+msgstr "<b>Basic settings</b>"
+
+#: src/gnome-schedule.glade.h:16
+msgid "<b>Defined date and time setting</b>"
+msgstr "<b>Defined date and time setting</b>"
+
+#: src/gnome-schedule.glade.h:17
+msgid "<b>Frequency setting</b>"
+msgstr "<b>Frequency setting</b>"
+
+#: src/gnome-schedule.glade.h:18
+msgid "<b>Preview</b>"
+msgstr "<b>Preview</b>"
+
+#: src/gnome-schedule.glade.h:19
+msgid "<b>Select the type of the scheduled task</b>"
+msgstr "<b>Select the type of the scheduled task</b>"
+
+#: src/gnome-schedule.glade.h:20
+msgid "<b>Worded date and time setting</b>"
+msgstr "<b>Worded date and time setting</b>"
+
+#: src/gnome-schedule.glade.h:21
+msgid "A scheduled task that will launch at a frequency"
+msgstr "A scheduled task that will launch at a frequency"
+
+#: src/gnome-schedule.glade.h:22
+msgid "A scheduled task that will start at a defined time in the future"
+msgstr "A scheduled task that will start at a defined time in the future"
+
+#: src/gnome-schedule.glade.h:23
+msgid "A_dvanced"
+msgstr "A_dvanced"
+
+#: src/gnome-schedule.glade.h:24
+msgid "About this application"
+msgstr "About this application"
+
+#: src/gnome-schedule.glade.h:25
+msgid "Active user"
+msgstr "Active user"
+
+#: src/gnome-schedule.glade.h:26
+msgid "Add a new scheduled task"
+msgstr "Add a new scheduled task"
+
+#: src/gnome-schedule.glade.h:27
+msgid "Add a scheduled task"
+msgstr "Add a scheduled task"
+
+#: src/gnome-schedule.glade.h:28
+msgid "Advanced"
+msgstr "Advanced"
+
+#: src/gnome-schedule.glade.h:29
+msgid "Alter a scheduled task"
+msgstr "Alter a scheduled task"
+
+#: src/gnome-schedule.glade.h:30
+msgid "Basic"
+msgstr "Basic"
+
+#: src/gnome-schedule.glade.h:31
+msgid "Cancel this operation"
+msgstr "Cancel this operation"
+
+#: src/gnome-schedule.glade.h:32
+msgid "Configure scheduled tasks"
+msgstr "Configure scheduled tasks"
+
+#: src/gnome-schedule.glade.h:33
+msgid "Date and time"
+msgstr "Date and time"
+
+#: src/gnome-schedule.glade.h:34
+msgid "Delete a scheduled task"
+msgstr "Delete a scheduled task"
+
+#: src/gnome-schedule.glade.h:35
+msgid "Every"
+msgstr "Every"
+
+#: src/gnome-schedule.glade.h:36
+msgid ""
+"For example 1,2,3,4 means happens the first, second, third and fourth minute"
+msgstr ""
+"For example 1,2,3,4 means happens the first, second, third and fourth minute"
+
+#: src/gnome-schedule.glade.h:37
+msgid "For example at 04:10 tomorrow, next week or in three days."
+msgstr "For example at 04:10 tomorrow, next week or in three days."
+
+#: src/gnome-schedule.glade.h:38
+msgid "For example every first hour of the day."
+msgstr "For example every first hour of the day."
+
+#: src/gnome-schedule.glade.h:39
+msgid "For experienced users only"
+msgstr "For experienced users only"
+
+#: src/gnome-schedule.glade.h:41
+msgid ""
+"Happens at a defined occurrence. For example, happens at the second minute, "
+"hour, day, weekday or month"
+msgstr ""
+"Happens at a defined occurrence. For example, happens at the second minute, "
+"hour, day, weekday or month"
+
+#: src/gnome-schedule.glade.h:42
+msgid ""
+"Happens at all occurrence. For example, happens every minute, hour, day, "
+"weekday or month"
+msgstr ""
+"Happens at all occurrence. For example, happens every minute, hour, day, "
+"weekday or month"
+
+#: src/gnome-schedule.glade.h:43
+msgid ""
+"Happens at every x occurrence. For example every two minutes, hours, days, "
+"weekdays or months"
+msgstr ""
+"Happens at every x occurrence. For example every two minutes, hours, days, "
+"weekdays or months"
+
+#: src/gnome-schedule.glade.h:44
+msgid "Happens at the"
+msgstr "Happens at the"
+
+#: src/gnome-schedule.glade.h:45
+msgid "Happens each occurrence between x and y"
+msgstr "Happens each occurrence between x and y"
+
+#: src/gnome-schedule.glade.h:46
+msgid "Happens every "
+msgstr "Happens every "
+
+#: src/gnome-schedule.glade.h:47
+msgid "Happens from"
+msgstr "Happens from"
+
+#: src/gnome-schedule.glade.h:48
+msgid "No output"
+msgstr "No output"
+
+#: src/gnome-schedule.glade.h:49
+msgid "Other expression"
+msgstr "Other expression"
+
+#: src/gnome-schedule.glade.h:50
+msgid ""
+"Quit the application. This will not stop the system scheduling. It will, "
+"however, quit this system schedule maintenance tool."
+msgstr ""
+"Quit the application. This will not stop the system scheduling. It will, "
+"however, quit this system schedule maintenance tool."
+
+#: src/gnome-schedule.glade.h:51
+msgid "Run"
+msgstr "Run"
+
+#: src/gnome-schedule.glade.h:52
+msgid "Scheduled and active tasks"
+msgstr "Scheduled and active tasks"
+
+#: src/gnome-schedule.glade.h:53
+msgid "Script"
+msgstr "Script"
+
+#: src/gnome-schedule.glade.h:54
+msgid "Select a different user"
+msgstr "Select a different user"
+
+#: src/gnome-schedule.glade.h:55
+msgid "Set the day frequency setting"
+msgstr "Set the day frequency setting"
+
+#: src/gnome-schedule.glade.h:56
+msgid "Set the hour frequency setting"
+msgstr "Set the hour frequency setting"
+
+#: src/gnome-schedule.glade.h:57
+msgid "Set the icon of this scheduled task"
+msgstr "Set the icon of this scheduled task"
+
+#: src/gnome-schedule.glade.h:58
+msgid "Set the minute frequency setting"
+msgstr "Set the minute frequency setting"
+
+#: src/gnome-schedule.glade.h:59
+msgid "Set the month frequency setting"
+msgstr "Set the month frequency setting"
+
+#: src/gnome-schedule.glade.h:60
+msgid "Set the scheduled task"
+msgstr "Set the scheduled task"
+
+#: src/gnome-schedule.glade.h:61
+msgid "Set the weekday frequency setting"
+msgstr "Set the weekday frequency setting"
+
+#: src/gnome-schedule.glade.h:62
+msgid "Set user"
+msgstr "Set user"
+
+#: src/gnome-schedule.glade.h:63
+msgid "Show help"
+msgstr "Show help"
+
+#: src/gnome-schedule.glade.h:64
+msgid "Show the manual"
+msgstr "Show the manual"
+
+#: src/gnome-schedule.glade.h:65
+msgid "Shows the records"
+msgstr "Shows the records"
+
+#: src/gnome-schedule.glade.h:66
+msgid "Task title"
+msgstr "Task title"
+
+#: src/gnome-schedule.glade.h:67
+msgid "Template"
+msgstr "Template"
+
+#: src/gnome-schedule.glade.h:68
+msgid "The date when the script will launch"
+msgstr "The date when the script will launch"
+
+#: src/gnome-schedule.glade.h:69
+msgid "The username"
+msgstr "The username"
+
+#: src/gnome-schedule.glade.h:70
+msgid "Time expression help"
+msgstr "Time expression help"
+
+#: src/gnome-schedule.glade.h:71
+msgid "Time: "
+msgstr "Time: "
+
+#: src/gnome-schedule.glade.h:72
+msgid "Treeview"
+msgstr "Treeview"
+
+#: src/gnome-schedule.glade.h:73
+msgid ""
+"When selected, no output will be generated. When scheduled tasks in the "
+"crontab do have output and this option is not checked, the output will by "
+"default be send to the UNIX mailbox of the user"
+msgstr ""
+"When selected, no output will be generated. When scheduled tasks in the "
+"crontab do have output and this option is not checked, the output will by "
+"default be send to the UNIX mailbox of the user"
+
+#: src/gnome-schedule.glade.h:74
+msgid "Will delete the selected template"
+msgstr "Will delete the selected template"
+
+#: src/gnome-schedule.glade.h:75
+msgid ""
+"Will save the current information as a template. You can type the name of "
+"the template in the combobox."
+msgstr ""
+"Will save the current information as a template. You can type the name of "
+"the template in the combobox."
+
+#: src/gnome-schedule.glade.h:76
+msgid "[Add|Edit] scheduled task"
+msgstr "[Add|Edit] scheduled task"
+
+#: src/gnome-schedule.glade.h:77
+msgid "_Add task"
+msgstr "_Add task"
+
+#: src/gnome-schedule.glade.h:78
+msgid "_Delete"
+msgstr "_Delete"
+
+#: src/gnome-schedule.glade.h:79
+msgid "_Manual"
+msgstr "_Manual"
+
+#: src/gnome-schedule.glade.h:80
+msgid "_Select"
+msgstr "_Select"
+
+#: src/gnome-schedule.glade.h:85
+msgid "root"
+msgstr "root"
+
+#: src/gnome-schedule.glade.h:86
+msgid "to"
+msgstr "to"
+
+#: src/gnome-schedule.glade.h:87
+msgid ""
+"tomorrow\n"
+"next week\n"
+msgstr ""
+"tomorrow\n"
+"next week\n"
+
+#: src/lang.py:62
+msgid ""
+"To the translator: Read src/lang.py !!! (yeah it's for you, not for the "
+"user. YES FOR YOU, the translator. YES:) really!"
+msgstr ""
+"To the translator: Read src/lang.py !!! (yeah it's for you, not for the "
+"user. YES FOR YOU, the translator. YES:) really!"
+
+#: src/lang.py:85
+msgid "zeroth"
+msgstr "zeroth"
+
+#: src/lang.py:86
+msgid "first"
+msgstr "first"
+
+#: src/lang.py:86
+msgid "second"
+msgstr "second"
+
+#: src/lang.py:86
+msgid "third"
+msgstr "third"
+
+#: src/lang.py:86
+msgid "fourth"
+msgstr "fourth"
+
+#: src/lang.py:86
+msgid "fifth"
+msgstr "fifth"
+
+#: src/lang.py:87
+msgid "sixth"
+msgstr "sixth"
+
+#: src/lang.py:87
+msgid "seventh"
+msgstr "seventh"
+
+#: src/lang.py:87
+msgid "eighth"
+msgstr "eighth"
+
+#: src/lang.py:87
+msgid "ninth"
+msgstr "ninth"
+
+#: src/lang.py:87
+msgid "tenth"
+msgstr "tenth"
+
+#: src/lang.py:88
+msgid "eleventh"
+msgstr "eleventh"
+
+#: src/lang.py:88
+msgid "twelfth"
+msgstr "twelfth"
+
+#: src/lang.py:88
+msgid "thirteenth"
+msgstr "thirteenth"
+
+#: src/lang.py:88
+msgid "fourteenth"
+msgstr "fourteenth"
+
+#: src/lang.py:88
+msgid "fifteenth"
+msgstr "fifteenth"
+
+#: src/lang.py:89
+msgid "sixteenth"
+msgstr "sixteenth"
+
+#: src/lang.py:89
+msgid "seventeenth"
+msgstr "seventeenth"
+
+#: src/lang.py:89
+msgid "eighteenth"
+msgstr "eighteenth"
+
+#: src/lang.py:89
+msgid "nineteenth"
+msgstr "nineteenth"
+
+#: src/lang.py:89
+msgid "twentieth"
+msgstr "twentieth"
+
+#: src/lang.py:92
+msgid "zero"
+msgstr "zero"
+
+#: src/lang.py:92
+msgid "ten"
+msgstr "ten"
+
+#: src/lang.py:92
+msgid "twenty"
+msgstr "twenty"
+
+#: src/lang.py:92
+msgid "thirty"
+msgstr "thirty"
+
+#: src/lang.py:92
+msgid "forty"
+msgstr "forty"
+
+#: src/lang.py:92
+msgid "fifty"
+msgstr "fifty"
+
+#: src/lang.py:92
+msgid "sixty"
+msgstr "sixty"
+
+#: src/lang.py:92
+msgid "seventy"
+msgstr "seventy"
+
+#: src/lang.py:92
+msgid "eighty"
+msgstr "eighty"
+
+#: src/lang.py:92
+msgid "ninety"
+msgstr "ninety"
+
+#: src/lang.py:99
+#, python-format
+msgid "minus %s"
+msgstr "minus %s"
+
+#: src/lang.py:109
+msgid "minus "
+msgstr "minus "
+
+#. These are just some table-lookups and translation magic :)
+#: src/lang.py:113
+#, python-format
+msgid "%s%s%s%s%s%s"
+msgstr "%s%s%s%s%s%s"
+
+#: src/lang.py:113
+msgid "-"
+msgstr "-"
+
+#: src/lang.py:116
+#, python-format
+msgid "%sth."
+msgstr "%sth."
+
+#: src/lang.py:205
+#, python-format
+msgid "%s%s:%s:%s%s"
+msgstr "%s%s:%s:%s%s"
+
+#: src/lang.py:207
+#, python-format
+msgid "%s%s:%s%s"
+msgstr "%s%s:%s%s"
+
+#: src/lang.py:244
+msgid "Every minute"
+msgstr "Every minute"
+
+#: src/lang.py:249
+msgid "Every hour"
+msgstr "Every hour"
+
+#: src/lang.py:251
+#, python-format
+msgid "Every %s minute of every hour"
+msgstr "Every %s minute of every hour"
+
+#: src/lang.py:256
+#, python-format
+msgid "Every %s hour of the day"
+msgstr "Every %s hour of the day"
+
+#: src/lang.py:258
+#, python-format
+msgid "Every day at %s"
+msgstr "Every day at %s"
+
+#: src/lang.py:260
+#, python-format
+msgid "Every minute during the %s hour"
+msgstr "Every minute during the %s hour"
+
+#: src/lang.py:265
+#, python-format
+msgid "Every %s day of the month"
+msgstr "Every %s day of the month"
+
+#: src/lang.py:267
+#, python-format
+msgid "At %s every %s day of the month"
+msgstr "At %s every %s day of the month"
+
+#: src/lang.py:269
+#, python-format
+msgid "Every minute of the %s hour every %s day of the month"
+msgstr "Every minute of the %s hour every %s day of the month"
+
+#: src/lang.py:271
+#, python-format
+msgid "At the %s minute of every hour every %s day of the month"
+msgstr "At the %s minute of every hour every %s day of the month"
+
+#: src/lang.py:276
+#, python-format
+msgid "Every %s month of the year"
+msgstr "Every %s month of the year"
+
+#: src/lang.py:278
+#, python-format
+msgid "At the %s day on %s every %s month of the year"
+msgstr "At the %s day on %s every %s month of the year"
+
+#: src/lang.py:280
+#, python-format
+msgid "At the %s day every %s hour every %s month of the year"
+msgstr "At the %s day every %s hour every %s month of the year"
+
+#: src/lang.py:282
+#, python-format
+msgid "Every day and every hour at the %s minute every %s month of the year"
+msgstr "Every day and every hour at the %s minute every %s month of the year"
+
+#: src/lang.py:284
+#, python-format
+msgid "Every day on %s every %s month of the year"
+msgstr "Every day on %s every %s month of the year"
+
+#: src/lang.py:290
+#, python-format
+msgid "Every %s day of the week"
+msgstr "Every %s day of the week"
+
+#: src/lang.py:292
+#, python-format
+msgid "Every %s day of the week at %s"
+msgstr "Every %s day of the week at %s"
+
+#: src/lang.py:294
+#, python-format
+msgid "Every %s day of the week the %s hour"
+msgstr "Every %s day of the week the %s hour"
+
+#: src/lang.py:296
+#, python-format
+msgid "Every %s day of the week the %s minute of every hour"
+msgstr "Every %s day of the week the %s minute of every hour"
+
+#: src/lang.py:298
+#, python-format
+msgid "Every %s day of the week every minute"
+msgstr "Every %s day of the week every minute"
+
+#: src/lang.py:311
+msgid "Every minute, every hour, every day, every month, every weekday"
+msgstr "Every minute, every hour, every day, every month, every weekday"
+
+#: src/lang.py:314
+#, python-format
+msgid "At minute: %s, hour %s, day: %s, month: %s, weekday: %s"
+msgstr "At minute: %s, hour %s, day: %s, month: %s, weekday: %s"
+
+#: src/lang.py:317
+#, python-format
+msgid "At minute: %s, hour %s, day: %s, month: %s"
+msgstr "At minute: %s, hour %s, day: %s, month: %s"
+
+#: src/lang.py:320
+#, python-format
+msgid "At minute: %s, hour %s, day: %s, every month"
+msgstr "At minute: %s, hour %s, day: %s, every month"
+
+#: src/lang.py:322
+#, python-format
+msgid "At minute: %s, hour %s, every day, month: %s"
+msgstr "At minute: %s, hour %s, every day, month: %s"
+
+#: src/lang.py:324
+#, python-format
+msgid "At minute: %s, every hour, day: %s, month: %s"
+msgstr "At minute: %s, every hour, day: %s, month: %s"
+
+#: src/lang.py:327
+#, python-format
+msgid "At minute: %s, hour %s, every day, every month"
+msgstr "At minute: %s, hour %s, every day, every month"
+
+#: src/lang.py:329
+#, python-format
+msgid "At minute: %s, every hour, day: %s, every month"
+msgstr "At minute: %s, every hour, day: %s, every month"
+
+#: src/lang.py:331
+#, python-format
+msgid "At minute: %s, every hour, every day, month: %s"
+msgstr "At minute: %s, every hour, every day, month: %s"
+
+#: src/lang.py:333
+#, python-format
+msgid "At minute: %s, every hour, every day, every month"
+msgstr "At minute: %s, every hour, every day, every month"
+
+#: src/lang.py:336
+#, python-format
+msgid "Every minute, hour: %s, day: %s, month %s"
+msgstr "Every minute, hour: %s, day: %s, month %s"
+
+#: src/lang.py:338
+#, python-format
+msgid "Every minute, hour %s, day: %s, every month"
+msgstr "Every minute, hour %s, day: %s, every month"
+
+#: src/lang.py:340
+#, python-format
+msgid "Every minute, hour %s, every day, month: %s"
+msgstr "Every minute, hour %s, every day, month: %s"
+
+#: src/lang.py:342
+#, python-format
+msgid "Every minute, hour %s, every day, every month"
+msgstr "Every minute, hour %s, every day, every month"
+
+#: src/lang.py:345
+#, python-format
+msgid "Every minute, every hour, day: %s, month: %s"
+msgstr "Every minute, every hour, day: %s, month: %s"
+
+#: src/lang.py:347
+#, python-format
+msgid "Every minute, every hour, day: %s, every month"
+msgstr "Every minute, every hour, day: %s, every month"
+
+#. col = gtk.TreeViewColumn(_("Icon"), gtk.CellRendererText(), text=6)
+#. self.ParentClass.treeview.append_column(col)
+#: src/mainWindow.py:222 src/mainWindow.py:263
+msgid "Type"
+msgstr "Type"
+
+#: src/mainWindow.py:226 src/mainWindow.py:258
+msgid "Title"
+msgstr "Title"
+
+#. col = gtk.TreeViewColumn(_("Icon"), gtk.CellRendererText(), text=6)
+#. self.ParentClass.treeview.append_column(col)
+#: src/mainWindow.py:230 src/mainWindow.py:246
+msgid "Frequency or time"
+msgstr "Frequency or time"
+
+#: src/mainWindow.py:234 src/mainWindow.py:251
+msgid "Preview"
+msgstr "Preview"
+
+#: src/mainWindow.py:330
+msgid "System Schedule"
+msgstr "System Schedule"
+
+#: src/mainWindow.py:332
+msgid "Copyright (c) 2004-2005 Gaute Hope."
+msgstr "Copyright (c) 2004-2005 Gaute Hope."
+
+#: src/mainWindow.py:333
+msgid "This software is distributed under the GPL. "
+msgstr "This software is distributed under the GPL. "
+
+#: src/mainWindow.py:336
+msgid "documented_by"
+msgstr "documented_by"
+
+#: src/mainWindow.py:337
+msgid "translator_credits"
+msgstr "David Lodge <dave@cirt.net>"
+
