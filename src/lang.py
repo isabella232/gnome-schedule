@@ -31,6 +31,11 @@ translate.textdomain (domain)
 gtk.glade.bindtextdomain(domain)
 language = os.environ['LANG']
 
+def nothing (nothing):
+	pass
+nothing (_("To the translator: Read src/lang.py !!! (yeah it's for you, not for the user. YES FOR YOU, the translator. YES:) really!"))
+
+
 # To get numeric nth values translated add an elif statement for your
 # language here
 def translate_nth (nth):
