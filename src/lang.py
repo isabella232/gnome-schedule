@@ -270,7 +270,7 @@ def translate_crontab_easy_en (minute, hour, day, month, weekday):
 		elif minute != "*" and hour != "*" and day != "*":
 			return (_("At the %s day on %s every %s month of the year") % (translate_nth (day), timeval (hour, minute), translate_nth (month)))
 		elif minute == "*" and hour != "*" and day != "*":
-			return (_("At the %s day every % hour every %s month of the year") % (translate_nth (day), translate_nth (hour), translate_nth (month)))
+			return (_("At the %s day every %s hour every %s month of the year") % (translate_nth (day), translate_nth (hour), translate_nth (month)))
 		elif minute != "*" and hour == "*" and day == "*":
 			return (_("Every day and every hour at the %s minute every %s month of the year") % (translate_nth (minute), translate_nth (month)))
 		elif minute != "*" and hour != "*" and day == "*":
