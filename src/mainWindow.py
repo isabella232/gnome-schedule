@@ -185,14 +185,16 @@ class main:
 		print "###--- start load: [" + str(start) + "] ---###"
 		##
 		
-		##create crontab and at
+		##create crontab
 		self.crontab = crontab.Crontab(self)
-		self.crontab.read()
-		self.at = at.At(self)
-	
 		self.crontab_editor = self.crontab.geteditor ()
-		self.at_editor = self.at.geteditor ()
 		##
+		
+		##create at
+		self.at = at.At(self)
+		self.at_editor = self.at.geteditor ()
+	   ##
+	    	
 
 		##debug info
 		end = time.time()
@@ -206,7 +208,9 @@ class main:
 		
 		#set add window
 		self.addWindow = addWindow.AddWindow (self)
-				
+		
+		self.schedule_reload ("all")
+			
 		try:
 			gtk.main ()
 		except:
