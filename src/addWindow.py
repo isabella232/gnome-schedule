@@ -65,11 +65,8 @@ class AddWindow:
 		self.xml.signal_connect("on_frequency_combobox_changed", self.on_frequency_combobox_changed)
 		self.xml.signal_connect("on_chkNoOutput_toggled", self.on_anybasic_entry_changed)
 
-		self.xml.signal_connect("on_lblHour_button_press_event", self.on_anytitle_clicked)
-		self.xml.signal_connect("on_lblDay_button_press_event", self.on_anytitle_clicked)
-		self.xml.signal_connect("on_lblMonth_button_press_event", self.on_anytitle_clicked)
-		self.xml.signal_connect("on_lblWeekday_button_press_event", self.on_anytitle_clicked)
-		self.xml.signal_connect("on_lblMinute_button_press_event", self.on_anytitle_clicked)
+		self.xml.signal_connect("on_fieldHelp_clicked", self.on_fieldHelp_clicked)
+
 
 		
 		self.nooutput = self.chkNoOutput.get_active()
@@ -248,17 +245,18 @@ class AddWindow:
 
 		self.update_textboxes()
 
-	def on_anytitle_clicked(self, widget, *args):
+	def on_fieldHelp_clicked(self, widget, *args):
 		print "help"
 		name = widget.get_name()
-		if name == "lblMinute" : name = "minute"
-		if name == "lblHour" : name = "hour"
-		if name == "lblDay" : name = "day"
-		if name == "lblMonth" : name = "month"
-		if name == "lblWeekday" : name = "weekday"
+		if name == "btnMinuteHelp" : name = "minute"
+		if name == "btnHourHelp" : name = "hour"
+		if name == "btnDayHelp" : name = "day"
+		if name == "btnMonthHelp" : name = "month"
+		if name == "btnWeekdayHelp" : name = "weekday"
  
 		self.ParentClass.addHelpWindow.showAll(name)
 		return
+
 
 class AddWindowHelp:
 	def __init__(self, parent):
