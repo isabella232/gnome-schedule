@@ -6,12 +6,12 @@ AC_PROG_INTLTOOL
 dnl *******************************
 dnl Internationalization
 dnl ******************************* 
-GETTEXT_PACKAGE=atomix
+GETTEXT_PACKAGE=gnome-schedule
 AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, "$GETTEXT_PACKAGE")
 AC_SUBST(GETTEXT_PACKAGE)
 
 dnl Add the languages which your application supports here.
-ALL_LINGUAS=""
+ALL_LINGUAS="sv"
 
 AM_GLIB_GNU_GETTEXT
 

@@ -1,3 +1,8 @@
+2004-06-18  Christian Rose  <menthos@menthos.com>
+
+	* configure.ac: Changed GETTEXT_PACKAGE from "atomix" to
+	"gnome-schedule". Also added "sv" to ALL_LINGUAS.
+
 2004-06-14  Philip Van Hoof  <me_NOSPAM@freax.org>
 
 	* Parsing of the field to the addWindowHelp.py window
