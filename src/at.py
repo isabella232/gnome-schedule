@@ -26,6 +26,7 @@ import gobject
 import crontabEditorHelper
 import crontabEditor
 import lang
+import atEditor
 
 
 
@@ -48,11 +49,12 @@ class At:
 		self.read ()
 
 
-		#just for debugging
-		self.editorwidget = self.xml.get_widget("crontabEditor")
-		self.editorhelperwidget = self.xml.get_widget("crontabEditorHelper")
-		self.editor = crontabEditor.CrontabEditor (self.ParentClass, self)
-		self.editorhelper = crontabEditorHelper.CrontabEditorHelper(self, self.editor)
+		self.editorwidget = self.xml.get_widget("atEditor")
+#		self.editorhelperwidget = self.xml.get_widget("crontabEditorHelper")
+		self.editor = atEditor.AtEditor (self.ParentClass, self)
+		#self.editorhelper = crontabEditorHelper.CrontabEditorHelper(self, self.editor)
+
+		self.editorwidget.hide()
 
 		return
 
@@ -137,7 +139,7 @@ class At:
 			
 		return
 
-	def append (self, record, nooutput, title):
+	def append (self, runat, commands):
 		raise 'Not implemented'
 
 	def read (self):
