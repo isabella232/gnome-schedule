@@ -77,8 +77,6 @@ class CrontabEditorHelper:
 		self.xml.signal_connect("on_entRangeStart_changed", self.anyEntryChanged)
 		self.xml.signal_connect("on_entRangeEnd_changed", self.anyEntryChanged)
 		self.xml.signal_connect("on_entExpression_changed", self.entExpressionChanged)
-		
-		return
 
 
 	def populateLabels(self, field):
@@ -108,8 +106,6 @@ class CrontabEditorHelper:
 		self.radRange.set_label (_("Happens from ") + self.trans_field)
 
 		self.do_label_magic ()
-
-		return
 
 
 	def show (self, field, expression):
@@ -154,7 +150,6 @@ class CrontabEditorHelper:
 		#show the form
 		self.widget.set_title(_("Edit time expression for: ") + self.trans_field)
 		self.widget.show_all()
-		return
 
 
 	def btnOk_clicked(self, *args):
@@ -176,7 +171,6 @@ class CrontabEditorHelper:
 		if self.field == "weekday": self.ParentClass.weekday_entry.set_text(expression)
 		
 		self.widget.hide()
-		return
 
 
 	def btnCancel_clicked(self, *args):
@@ -199,7 +193,6 @@ class CrontabEditorHelper:
 			elif name == "radFix":
 				self.entExpression.set_text(self.entFix.get_text())
 		self.NoExpressionEvents = gtk.FALSE
-		return
 
 
 	def do_label_magic (self):
@@ -240,4 +233,3 @@ class CrontabEditorHelper:
 		if self.radFix.get_active ():
 				self.entExpression.set_text(self.entFix.get_text())
 		self.NoExpressionEvents = gtk.FALSE
-		return

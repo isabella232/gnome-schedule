@@ -468,7 +468,7 @@ class CrontabEditor:
 
 		else:
 			self.loadicon ()
-		self.setting_label.set_text (self.ParentClass.createpreview(self.minute, self.hour, self.day, self.month, self.weekday, self.command))
+		self.setting_label.set_text (self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday + " " + self.command)
 		self.set_frequency_combo()
 		self.noevents = gtk.FALSE
 
@@ -527,4 +527,3 @@ class CrontabEditor:
 			expression = self.weekday_entry.get_text()
 
 		self.editorhelper.show (field, expression)
-		return

@@ -49,20 +49,19 @@ class At:
 		self.ParentClass = parent
 		self.xml = self.ParentClass.xml
 		
+		#default preview length
+		self.preview_len = 50
+		
 		self.editor = atEditor.AtEditor (self)
 		
 		self.atRecordRegex = re.compile('([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)')
 		self.atRecordRegexAdd = re.compile('([^\s]+)\s([^\s]+)\s')
 		self.atRecordRegexAdded = re.compile('[^\s]+\s([0-9]+)\sat')
-		
-
-		#default preview length
-		self.preview_len = 50
-			
+	
 		
 	# Pass this to lang.py
-	def translate_frequency (self, frequency):
-		raise 'Not implemented'
+	#def translate_frequency (self, frequency):
+	#	raise 'Not implemented'
 
 
 	def geteditor (self):
@@ -196,12 +195,13 @@ class At:
 		os.unlink (path)
 		self.ParentClass.schedule_reload ("at")
 
+
 	def delete (self, jobid, iter):
 		if jobid:
 			execute = config.getAtrmbin()+ " " + str(jobid)
 			commands.getoutput(execute)
 			result = self.ParentClass.treemodel.remove(iter)
-		return
+	
 
 	def append (self, runat, command, title, icon):
 		tmpfile = tempfile.mkstemp ("", "/tmp/at.", "/tmp")
@@ -218,6 +218,8 @@ class At:
 
 		tmp.write (command + "\n")
 		tmp.close ()
+		
+		temp = None
 
 		if self.ParentClass.root == 1:
 			if self.ParentClass.user != "root":
@@ -234,6 +236,7 @@ class At:
 		os.unlink (path)
 		self.ParentClass.schedule_reload ("at")
 		return temp
+
 
 	def read (self):
 		#do 'atq'
@@ -254,7 +257,7 @@ class At:
 				else:
 					icon_pix = None
 
-				preview = self.make_preview (lines, prelen)
+				preview = self.__make_preview__ (lines, prelen)
 				if dangerous == 1:
 						preview = "DANGEROUS PARSE: " + preview
 				#chopping of title and icon stuff from script
@@ -278,19 +281,19 @@ class At:
 
 		#["None(not suported yet)", "12:50 2004-06-25", "", "35", "", "12:50", icon, at instance, "2004-06-25", "a", "drzap", "at"]
 		#print "-- Total at jobs: " + str(count)
-		return
+	
+
+	#XXX where used?
+	#def __ignore__ (self, testline):
+	#	found = gtk.FALSE
+	#	for line in self.ignore_lines:
+	#		if line == testline:
+	#			found = gtk.TRUE
+	#			break
+	#	return found
 
 
-	def ignore (self, testline):
-		found = gtk.FALSE
-		for line in self.ignore_lines:
-			if line == testline:
-				found = gtk.TRUE
-				break
-		return found
-
-
-	def prepare_script (self, script):
+	def __prepare_script__ (self, script):
 	
 		# It looks like at prepends a bunch of stuff to each script
 		# Luckily it delimits that using two newlines
@@ -361,7 +364,7 @@ class At:
 		return script, title, icon, prelen, dangerous
 
 
-	def make_preview (self, lines, prelen, preview_len = 0):
+	def __make_preview__ (self, lines, prelen, preview_len = 0):
 		if preview_len == 0:
 			preview_len = self.preview_len
 		try:
@@ -415,7 +418,7 @@ class At:
 					execute = config.getAtbin() + " -c " + job_id
 					# read lines and detect starter
 					script = os.popen(execute).read()
-					script, title, icon, prelen, dangerous = self.prepare_script (script)
+					script, title, icon, prelen, dangerous = self.__prepare_script__ (script)
 					#removing ending newlines, but keep one
 					#if a date before this is selected the record is removed, this creates an error, and generally if the script is of zero length
 					if len(script) < 2:
@@ -442,5 +445,5 @@ class At:
 		return gtk.FALSE
 
 
-	def easy (self, minute, hour, day, month, weekday):
-		raise 'Not implemented'
+	#def easy (self, minute, hour, day, month, weekday):
+	#	raise 'Not implemented'

@@ -46,25 +46,25 @@ class Crontab:
 		self.ParentClass = parent
 		self.xml = self.ParentClass.xml
 		
+		#default preview length
+		self.preview_len = 50
+		
 		self.editor = crontabEditor.CrontabEditor(self)
 				
 		self.nooutputtag = ">/dev/null 2>&1"
 		self.crontabRecordRegex = re.compile('([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^#\n$]*)(\s#\s([^\n$]*)|$)')
 				
-		#default preview length
-		self.preview_len = 50
-
 
 	def geteditor (self):
 		return self.editor
 	
 	#XXX used where?
-	def createpreview (self, minute, hour, day, month, weekday, command):
-		return minute + " " + hour + " " + day + " " + month + " " + weekday + " " + command
+	#def createpreview (self, minute, hour, day, month, weekday, command):
+	#	return minute + " " + hour + " " + day + " " + month + " " + weekday + " " + command
 
 	#XXX used where?
-	def getstandardvalue (self):
-		return "* * * * * "+ _("command")
+	#def getstandardvalue (self):
+	#	return "* * * * * "+ _("command")
 
 
 	def checkfield (self, field, type, regex):
@@ -152,7 +152,7 @@ class Crontab:
 
 
 	#create temp file with old tasks and new ones and then updates crontab
-	def write (self):
+	def __write__ (self):
 		tmpfile = tempfile.mkstemp ("", "/tmp/crontab.", "/tmp")
 		fd, path = tmpfile
 		tmp = os.fdopen(fd, 'w')
@@ -165,10 +165,7 @@ class Crontab:
 			## (/tmp/crontab.XXXXXX installed on Xxx Xxx  x xx:xx:xx xxxx)
 			## (Cron version -- $Id$)
 
-			if count < 3 and len(line) > 1 and line[0] == "#":
-				# print "Ignored:" + line
-				pass
-			else:
+			if not (count < 3 and len(line) > 1 and line[0] == "#"):
 				tmp.write (line)
 				if line[len(line)-1] != '\n':
 					tmp.write ("\n")
@@ -191,11 +188,10 @@ class Crontab:
 		#TODO needs exception handler
 		
 		
-	##XXX check if this still works after my changes
 	def update (self, linenumber, record, parentiter, nooutput, title, icon = None):
 		# The GUI
 		minute, hour, day, month, weekday, command, title_, icon_ = self.parse (record)
-		easystring = self.easy (minute, hour, day, month, weekday)
+		easystring = self.__easy__ (minute, hour, day, month, weekday)
 
 		if nooutput:
 			record = record + " " + self.nooutputtag
@@ -213,7 +209,7 @@ class Crontab:
 		
 		#TODO let write return if write PASSED
 		#written = self.write()
-		self.write ()
+		self.__write__ ()
 
 		##if written:
 		self.ParentClass.treemodel.set_value (parentiter, 1, easystring)
@@ -221,9 +217,9 @@ class Crontab:
 			space = " "
 			if command[len(command)-1] == " ":
 				space = ""
-			self.ParentClass.treemodel.set_value (parentiter, 2, self.make_preview (command + space + self.nooutputtag))
+			self.ParentClass.treemodel.set_value (parentiter, 2, self.__make_preview__ (command + space + self.nooutputtag))
 		else:
-				self.ParentClass.treemodel.set_value (parentiter, 2, self.make_preview (command))
+				self.ParentClass.treemodel.set_value (parentiter, 2, self.__make_preview__ (command))
 			
 		self.ParentClass.treemodel.set_value (parentiter, 5, minute + " " + hour + " " + day + " " + month + " " + weekday)
 
@@ -246,7 +242,7 @@ class Crontab:
 			number = number + 1
 
 		self.lines = newlines
-		self.write ()
+		self.__write__ ()
 		#reload is needed because the line number change 
 		self.ParentClass.schedule_reload("crontab")
 		
@@ -265,11 +261,11 @@ class Crontab:
 			record = record + " # " + _("Untitled") + ", " + icon
 
 		self.lines.append (record)
-		self.write ()
+		self.__write__ ()
 		self.ParentClass.schedule_reload ("crontab")
 
 	
-	def easy (self, minute, hour, day, month, weekday):
+	def __easy__ (self, minute, hour, day, month, weekday):
 		return lang.translate_crontab_easy (minute, hour, day, month, weekday)
 
 
@@ -299,9 +295,9 @@ class Crontab:
 					icon_pix = None
 				
 				#make the command smaller if the lenght is to long
-				preview = self.make_preview (command)
+				preview = self.__make_preview__ (command)
 				#add task to treemodel in mainWindow
-				iter = self.ParentClass.treemodel.prepend([title, self.easy (minute, hour, day, month, weekday), preview, line, self.linecount, time, icon_pix, self, icon, "", "", "","", "Frequency", "crontab"])
+				iter = self.ParentClass.treemodel.prepend([title, self.__easy__ (minute, hour, day, month, weekday), preview, line, self.linecount, time, icon_pix, self, icon, "", "", "","", "Frequency", "crontab"])
 		
 				##debug
 				#print "Read crontab, line: " + str(self.linecount)
@@ -347,7 +343,7 @@ class Crontab:
    #if a command his lenght is to long the last part is removed 
    #XXX if the beginning is just a long path it's maybe better to cut there
    #XXX instead of in the front .../bin/updatedb instead of /dfdffd/bin/upda...
-	def make_preview (self, str, preview_len = 0):
+	def __make_preview__ (self, str, preview_len = 0):
 		if preview_len == 0:
 			preview_len = self.preview_len
 		cnt = 0
@@ -360,7 +356,6 @@ class Crontab:
 			result = result + "..."
 		return result
 
-	#move to some shared thing between crontab and at
 	def translate_frequency (self, frequency):
 
 		if frequency == "minute":
