@@ -27,7 +27,8 @@ import gobject
 import crontabEditorHelper
 import crontabEditor
 import lang
-
+import support
+import string
 ##
 ## I18N
 ##
@@ -56,6 +57,22 @@ class Crontab:
 
 		self.read()
 		return
+
+	def gettemplatenames (self):
+		strlist = support.gconf_client.get_string("/apps/gnome-schedule/templates/crontab/installed")
+		if strlist != None:
+			list = string.split (strlist, ", ")
+			return list
+		else:
+			return None
+
+	def gettemplate (self, template_name):
+		icon_uri = support.gconf_client.get_string("/apps/gnome-schedule/templates/crontab/%s/icon" % (template_name))
+		command = support.gconf_client.get_string("/apps/gnome-schedule/templates/crontab/%s/command" % (template_name))
+		frequency = support.gconf_client.get_string("/apps/gnome-schedule/templates/crontab/%s/crontab_frequency" % (template_name))
+		title = support.gconf_client.get_string("/apps/gnome-schedule/templates/crontab/%s/title" % (template_name))
+
+		return icon_uri, command, frequency, title
 
 	def translate_frequency (self, frequency):
 

@@ -38,6 +38,12 @@ class Schedule:
 		self.read()
 		return
 
+	def gettemplatenames (self):
+		raise 'Abstract method please override'
+
+	def gettemplate (self, template_name):
+		raise 'Abstract method please override'
+
 	def translate_frequency (self, frequency):
 		raise 'Abstract method please override'
 

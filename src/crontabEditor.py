@@ -25,6 +25,8 @@ import re
 import gobject
 import os
 import config
+import support
+import gconf
 ##
 ## I18N
 ##
@@ -70,6 +72,11 @@ class CrontabEditor:
 		self.chkNoOutput = self.xml.get_widget("chkNoOutput")
 		self.notebook = self.xml.get_widget("notebook")
 
+		# Note that this NOT is the entry inside the combobox
+		self.template_combobox = self.xml.get_widget ("template_combobox")
+		self.template_image = self.xml.get_widget ("template_image")
+		self.template_label = self.xml.get_widget ("template_label")
+										
 		self.xml.signal_connect("on_add_help_button_clicked", self.on_add_help_button_clicked)
 		self.xml.signal_connect("on_cancel_button_clicked", self.on_cancel_button_clicked)
 		self.xml.signal_connect("on_ok_button_clicked", self.on_ok_button_clicked)
@@ -81,6 +88,48 @@ class CrontabEditor:
 		self.xml.signal_connect("on_fieldHelp_clicked", self.on_fieldHelp_clicked)
 
 		self.nooutput = self.chkNoOutput.get_active()
+		self.loadicon ()
+		self.reload_templates ()
+		support.gconf_client.add_dir ("/apps/gnome-schedule/templates/crontab", gconf.CLIENT_PRELOAD_NONE)
+		support.gconf_client.notify_add ("/apps/gnome-schedule/templates/crontab/installed", self.gconfkey_changed);
+
+	def gconfkey_changed (self, client, connection_id, entry, args):
+		print "Reloading templates"
+		self.reload_templates ()
+
+	def reload_templates (self):
+		self.template_names = self.schedule.gettemplatenames ()
+		if self.template_names == None or len (self.template_names) <= 0:
+			self.template_combobox.hide ()
+			self.template_label.hide()
+			self.template_combobox.set_sensitive (gtk.FALSE)
+			self.template_label.set_sensitive (gtk.FALSE)			
+		else:
+			self.template_combobox_model = gtk.ListStore(gobject.TYPE_STRING, gobject.TYPE_PYOBJECT)
+			self.template_combobox_model.clear ()
+			for template_name in self.template_names:
+				self.template_combobox_model.append([template_name, self.schedule.gettemplate (template_name)])
+				
+			try:
+				self.template_combobox.set_model (self.template_combobox.model)
+				self.xml.signal_connect("on_template_combobox_changed", self.on_template_combobox_changed)				
+				self.template_combobox.show ()
+				self.template_label.show()
+				self.template_combobox.set_sensitive (gtk.TRUE)
+				self.template_label.set_sensitive (gtk.TRUE)				
+			except:
+				# Not PyGTK 2.4 :-(
+				self.template_combobox.hide ()
+				self.template_label.hide()
+				self.template_combobox.set_sensitive (gtk.FALSE)
+				self.template_label.set_sensitive (gtk.FALSE)
+
+	def	loadicon (self):
+		nautilus_icon = support.nautilus_icon ("i-executable")
+		if nautilus_icon != None:
+			self.template_image.set_from_file(nautilus_icon)
+		else:
+			self.template_image.set_from_file("/usr/share/icons/gnome/48x48/mimetypes/gnome-mime-application.png")
 		
 	def showedit (self, record, linenumber, iter, mode):
 		self.editing = gtk.TRUE
@@ -91,7 +140,9 @@ class CrontabEditor:
 		self.update_textboxes ()
 		self.set_frequency_combo ()
 		self.parentiter = iter
-		self.widget.show_all()
+		self.loadicon ()
+		self.widget.show ()
+		self.reload_templates ()
 		
 		m = self.nooutputRegex.match (self.command)
 		if (m != None):
@@ -137,9 +188,11 @@ class CrontabEditor:
 		self.set_frequency_combo()
 		self.editing = gtk.FALSE
 		self.widget.set_title(_("Create a new scheduled task"))
-		self.widget.show_all()
+		self.widget.show ()
 		self.nooutput_label.hide ()
 		self.nooutput = gtk.FALSE
+		self.loadicon ()
+		self.reload_templates ()
 		self.chkNoOutput.set_active (gtk.FALSE)
 		#switch to advanced tab if required
 		if mode == "advanced":
@@ -147,6 +200,15 @@ class CrontabEditor:
 		else:
 			self.notebook.set_current_page(0)
 
+
+	def on_template_combobox_changed (self, *args):
+		iter = self.template_combobox.get_active_iter ()
+		template = iter.get_value(iter, 1)
+		icon_uri, command, frequency, title = template
+		self.template_image.set_from_file (icon_uri)
+		record = frequency + " " + command + " # " + title
+		self.minute, self.hour, self.day, self.month, self.weekday, self.command, self.title = self.schedule.parse (record)
+		self.update_textboxes ()
 
 	def on_add_help_button_clicked (self, *args):
 		help_page = "file://" + config.getDocdir() + "/addingandediting.html"
