@@ -46,7 +46,10 @@ def translate_nth (nth):
 # nth is a number (like 1, 2, 3). The function will return 'first'
 # 'second' 'third', ...
 def translate_nth_en (nth):
-	nth = int(nth)
+	try:
+		nth = int(nth)
+	except:
+		return nth
 
 	twenty_nths = [ _("zeroth"),
 					_("first"), _("second"), _("third"), _("fourth"), _("fifth"), 
@@ -87,7 +90,10 @@ def translate_nth_en (nth):
 # the (for example) 3 of 43, in stead it's using a normal written numeric.
 # So I had to add a new table with the written version of tne numbers
 def translate_nth_nl (nth):
-	nth = int(nth)
+	try:
+		nth = int(nth)
+	except:
+		return nth
 
 	numbers = [ "nul", "één", "twee", "drie", "vier", "vijf", "zes", "zeven", "acht", "negen" ]
 
@@ -185,7 +191,7 @@ def translate_crontab_easy_en (minute, hour, day, month, weekday):
 	# * means "every"
 	# x-y means happens every instance between x and y
 	# x means happens at
-	# */x means happens every xth 
+	# *\x means happens every xth (not yet supported correctly)
 	# 1,2,3,4 means happens the 1st, 2e, 3th and 4th
 	if minute == "*" and hour == "*" and month == "*" and day == "*" and weekday == "*":
 		return _("Every minute")
