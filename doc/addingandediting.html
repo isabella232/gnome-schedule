@@ -4,7 +4,35 @@
 <title>Documentation about adding or editing a crontab using the gnome-schedule tool</title>
 </head>
 <body>
-<h1>Adding or editing a crontab</h1>
-<p>google.com: crontab :)</p>
+<h1>Adding or editing scheduled tasks<h1><br>
+<h2>Adding or editing a crontab</h2><br>
+<p>
+To add a new record for crontab press the 'Add' button, select 'A scheduled task that will launch at a frequency'. And press 'OK'<br><br>
+You are then presented with a window where you can select 'Basic' and 'Advanced' view.<br>
+</p>
+<h3>Basic:<h3>
+<p>
+If you want to add a simple task you do not need to care about templates, they are just in case you want to add similar tasks later.<br>
+In 'Task title' you select the title for your task, this is saved as a comment in the crontab file and does not affect anything. This is just for this tool.<br>
+The 'Select' button is for selecting an icon for your task, this is also just for this tool.<br>
+The 'Run' box is where you put your command. As an example 'ls'.<br>
+The 'Every' combobox is for selecting how often this task should be executed. If the provided options are not enough you have to create a timeexpression manually in the 'Advanced' tab.<br>
+The 'No output' checkbox adds a '>/dev/null 2>&1' to the record, this hides any output the command may have produced. Otherwise you would get an email every time it is run.<br>
+</p>
+<h3>Advanced:</h3>
+<p>
+Here you have a box for every field in the crontab record. You should now crontab to use this, but you can click the titles for some help on creating the expressions.<br>
+If you click the 'minute' button you get a form showing some radiobuttons:<br>
+- Happends all minutes<br>
+- Happends every: [ ] minutes, means if you put in '2' it would happend at 0,2,4,6,8... if you put in '3': 0,3,6,9,12..<br>
+- Happends from minute [ ] to minute [ ], if you put in 20 and 30 it would happend every minute from 20 to 30(20,21..29.30)<br>
+- Happends at the [ ] th minute, means it will only happend at that minute.<br>
+<br>
+The other expression changes as you select radiobutton, you may click that radiobutton and create an expression yourself. Like combining expressions as: 20-30\2, which means every other minute from 20-30: (20,22,24,26,28,30)<br>
+</p>
+<br>
+<br>
+<h2>Adding or editing at records</h2><br>
+
 </body>
 </html>

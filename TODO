@@ -7,7 +7,6 @@ Development:
   * set up a bugzilla
 
  Gaute Hope
-  * Blend at support in the application
   * Finish editing of at records (atEditor)
   * create a RPM package, using the spec file.
   * better screenshots, default fedora theme
@@ -16,8 +15,6 @@ Development:
 
  Unassigned release blockers
   * Completion of atEditor 
-  * Moving of the template GUI to addWindow
-  * Completion of at-support
   * Rename template to preset or a more convenient name
 
  Unassigned unstable (need a new branch and/or will not be 
