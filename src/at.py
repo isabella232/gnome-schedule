@@ -99,6 +99,7 @@ class At:
 
 		support.gconf_client.unset("/apps/gnome-schedule/templates/at/%s/runat" % (template_name_c))
 		support.gconf_client.unset("/apps/gnome-schedule/templates/at/%s/title" % (template_name_c))
+		support.gconf_client.unset("/apps/gnome-schedule/templates/at/%s/command" % (template_name_c))
 		
 		if newstring == "   ":
 			support.gconf_client.unset ("/apps/gnome-schedule/templates/at/installed")
@@ -111,19 +112,14 @@ class At:
 			template_name_c = string.replace (template_name_c, a, "-")
 		return template_name_c
 
-	def savetemplate (self, template_name, runat, nooutput, title, icon):
+	def savetemplate (self, template_name, runat, title, icon, command):
 		template_name_c = self.replace (template_name)
 		
-		if nooutput:
-			space = " "
-			if command[len(command)-1] == " ":
-				space = ""
-			command = command + space + self.nooutputtag
-
 		support.gconf_client.set_string("/apps/gnome-schedule/templates/at/%s/name" % (template_name_c), template_name)
 		support.gconf_client.set_string("/apps/gnome-schedule/templates/at/%s/icon_uri" % (template_name_c), icon)
 		support.gconf_client.set_string("/apps/gnome-schedule/templates/at/%s/runat" % (template_name_c), runat)
 		support.gconf_client.set_string("/apps/gnome-schedule/templates/at/%s/title" % (template_name_c), title)
+		support.gconf_client.set_string("/apps/gnome-schedule/templates/at/%s/command" % (template_name_c), command)
 		
 		installed = support.gconf_client.get_string("/apps/gnome-schedule/templates/at/installed")
 		if installed == None:
@@ -159,7 +155,8 @@ class At:
 			runat = support.gconf_client.get_string("/apps/gnome-schedule/templates/at/%s/runat" % (template_name))
 			title = support.gconf_client.get_string("/apps/gnome-schedule/templates/at/%s/title" % (template_name))
 			name = support.gconf_client.get_string("/apps/gnome-schedule/templates/at/%s/name" % (template_name))
-			return icon_uri,  runat, title, name
+			command = support.gconf_client.get_string("/apps/gnome-schedule/templates/at/%s/command" % (template_name))
+			return icon_uri,  runat, title, name, command
 		except Exception, ex:
 			return ex, ex, ex, ex, ex
 

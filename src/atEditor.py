@@ -29,6 +29,7 @@ import commands
 import gettext
 import support
 import gconf
+import time
 ##
 ## I18N
 ##
@@ -98,7 +99,7 @@ class AtEditor:
 	
 		#for the addwindow to not jump more than one day ahead in time
 		self.first = 0
-
+		self.reset ()
 		self.template_combobox_model = gtk.ListStore(gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_PYOBJECT)
 		self.template_combobox.set_text_column (0)		
 		self.template_combobox.set_model (self.template_combobox_model)
@@ -221,8 +222,7 @@ class AtEditor:
 			
 	
 	def on_combobox_changed (self, *args):
-		if self.noupdate == gtk.FALSE:
-			self.update_time_combo()
+		if self.noupdate == gtk.FALSE:	self.update_time_combo()
 			
 
 		return
@@ -234,7 +234,7 @@ class AtEditor:
 	def on_delete_button_clicked (self, *args):
 		iter = self.template_combobox.get_active_iter ()
 		template = self.template_combobox_model.get_value(iter, 2)
-		icon_uri, runat, title, name = template
+		icon_uri, runat, title, name, command = template
 		self.template_combobox.set_active (0)
 		self.schedule.removetemplate (name)
 
@@ -245,10 +245,9 @@ class AtEditor:
 		
 		
 	def SaveTemplate (self, template_name):
-		# TODO: Validate record
-
-		# TODO: Fill record something like: [script, time, date]
-		self.schedule.savetemplate (template_name, self.runat, self.nooutput, self.title, self.icon)
+		#TODO: validate record
+		self.schedule.savetemplate (template_name, self.runat, self.title, self.icon, self.command)
+		
 
 	def gconfkey_changed (self, client, connection_id, entry, args):
 		self.reload_templates ()
@@ -277,7 +276,7 @@ class AtEditor:
 			
 			for template_name in self.template_names:
 				thetemplate = self.schedule.gettemplate (template_name)
-				icon_uri, runat, title, name = thetemplate
+				icon_uri, runat, title, name, command = thetemplate
 				self.template_combobox_model.append([name, template_name, thetemplate])
 						
 			#self.template_combobox.set_sensitive (gtk.TRUE)
@@ -299,7 +298,7 @@ class AtEditor:
 			template = self.template_combobox_model.get_value(iter, 2)
 			if template != None:
 				self.remove_button.set_sensitive (gtk.TRUE)
-				icon_uri, runat, title, name = template
+				icon_uri, runat, title, name, command = template
 				#if self.ParentClass.saveWindow != None:
 				#	self.ParentClass.saveWindow.save_entry.set_text (name)
 				if icon_uri != None:
@@ -307,14 +306,13 @@ class AtEditor:
 					self.icon = icon_uri
 				else:
 					self.loadicon ()
-		
+				self.title = title
+				self.command = command
 				if runat != None:
 					self.runat = runat
-					self.title = title
 					self.update_textboxes ()
 					self.on_combobox_changed()
 				else:					
-					self.title = title
 					self.update_textboxes ()
 			else:
 				self.remove_button.set_sensitive (gtk.FALSE)
@@ -360,15 +358,19 @@ class AtEditor:
 		self.title = "Untitled"
 		self.command = ""
 		self.icon = "/usr/share/icons/gnome/48x48/mimetypes/gnome-mime-application.png"
-		(year, month, day) = self.calendar.get_date()
 
-		
-		if self.first == 1:
-			pass
-		else:	
-			self.calendar.select_day(day+1)
-			self.first = 1
-		self.update_time_cal()		
+		ctime = time.gmtime()
+		year = ctime[0]
+		month = ctime[1] +1
+		day = ctime[2] +1
+		hour = ctime[3]
+		minute = ctime[4]
+		self.runat = str(hour) + ":" + str(minute) + " " + str(year) + "-" + str(month) + "-" + str(day)
+		self.calendar.select_month(month - 1, year)
+		self.calendar.select_day(day)
+		self.hour_spinbutton.set_text(str(hour))
+		self.minute_spinbutton.set_text(str(minute))
+	
 		self.update_textboxes () #update_textboxes inside
 		
 		return
