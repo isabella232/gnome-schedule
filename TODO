@@ -8,10 +8,9 @@ General:
 
 
 Add window:
-* Move the value from the advaced form into the advanced help form when shown
-	- Try to parse the values and select a radiobutton if possible
-
 * if 'use advanced' is selected then jumb to advaced adding
+
+General:
 * set up a bugzilla
 
 

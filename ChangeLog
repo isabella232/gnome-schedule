@@ -1,3 +1,6 @@
+2004-06-14  Philip Van Hoof <me at freax dot org>
+	* Parsing of the field to the addWindowHelp.py window
+
 2004-06-13  Philip Van Hoof <me at freax dot org>
 	* Added translatable string stuff _("translate this") at various places
 
