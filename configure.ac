@@ -56,5 +56,5 @@ src/gnome-schedule
 doc/Makefile
 pixmaps/Makefile
 po/Makefile.in
-gnome-schedule.console
+system-config-schedule.console
 ])
