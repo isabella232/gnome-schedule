@@ -13,8 +13,6 @@ config.h.in
 config.log
 config.status
 configure
-gcm.desktop
-gcm-config
 install-sh
 libtool
 ltconfig
