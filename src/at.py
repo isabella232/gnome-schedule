@@ -23,6 +23,10 @@ import os
 import sys
 import tempfile
 import gobject
+import crontabEditorHelper
+import crontabEditor
+import lang
+
 
 
 ##
@@ -39,10 +43,22 @@ class At:
 		self.atRecordRegex = re.compile('([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)')
 		self.ParentClass = parent
 		self.ParentClass.treemodel = self.createtreemodel ()
+		self.xml = self.ParentClass.xml
 		#reading at
 		self.read ()
 
+
+		#just for debugging
+		self.editorwidget = self.xml.get_widget("crontabEditor")
+		self.editorhelperwidget = self.xml.get_widget("crontabEditorHelper")
+		self.editor = crontabEditor.CrontabEditor (self.ParentClass, self)
+		self.editorhelper = crontabEditorHelper.CrontabEditorHelper(self, self.editor)
+
 		return
+
+	def geteditor (self):
+		return self.editor
+
 	def createtreemodel (self):
 		# [0 Title, 1 date, 2 time, 3 class, 4 id, 5 user, 6 command preview(?)]
 		# ["get file", "2004-06-17", "20:17", "a", 24, "wget http://..."]

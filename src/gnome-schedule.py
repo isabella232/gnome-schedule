@@ -39,10 +39,10 @@ except:
 	sys.exit(0)
 
 
-mode = sys.argv[1]
-if mode:
-	pass
+if 'at' in sys.argv: 
+	mode = "at"
 else:
 	mode = "crontab"
+
 import mainWindow
 mainWindow = mainWindow.main(debug_flag, mode)

@@ -11,7 +11,8 @@ gnomeschedule_PYTHON = \
 	setuserWindow.py \
 	crontab.py \
 	editor.py \
-	schedule.py
+	schedule.py \
+	lang.py
 
 uidir = $(datadir)/gnome-schedule
 ui_DATA = gnome-schedule.glade

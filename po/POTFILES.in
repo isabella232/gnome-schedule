@@ -1,5 +1,11 @@
 # List of source files containing translatable strings.
 # Please keep this file sorted alphabetically.
+
+# The src/lang.py file contains translation routines for
+# written numberings. If you as a translator have some
+# basic coding skills, you can get numbering translations
+# supported in your language this way
+
 src/at.py
 src/crontabEditorHelper.py
 src/schedule.py
@@ -11,3 +17,4 @@ src/gnome-schedule.py
 src/crontabEditor.py
 src/mainWindow.py
 src/gnome-schedule.glade
+src/lang.py

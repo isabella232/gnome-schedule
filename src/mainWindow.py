@@ -33,7 +33,7 @@ import crontab
 import at
 import sys
 import time
-import config
+# import config
 import editor
 from os import popen
 
@@ -86,28 +86,15 @@ class main:
 		if self.crontab_vs_at == "crontab":
 
 			self.schedule = crontab.Crontab(self)
-			# Happens during crontab creation:
-			# self.treemodel = self.schedule.createtreemodel ()
-
-			self.editorwidget = self.xml.get_widget("crontabEditor")
-			self.editorwidget.hide()
-			self.editorhelperwidget = self.xml.get_widget("crontabEditorHelper")
-			self.editorhelperwidget.hide()
-		
-			self.editor = crontabEditor.CrontabEditor (self, self.schedule)
-			self.editorhelper = crontabEditorHelper.CrontabEditorHelper(self, self.editor)
 		else:
 			print "starting at.."
 			self.schedule = at.At (self)
 
-			self.editorhelperwidget = self.xml.get_widget("crontabEditorHelper") # using these for debugging before i create one for at
-			self.editorhelperwidget.hide()
-			self.editorwidget = self.xml.get_widget("crontabEditor")
-			self.editorwidget.hide()
-			self.editor = atEditor.AtEditor (self, self.schedule)
+		self.editor = self.schedule.geteditor()
+
 		# This will only work with PyGTK 2.4.x
 		try:
-			# this tries to fix a bug in libglade (the homogeneous propery ain't working)
+			# this tries to fix a bug in libglade (the homogeneous property ain't working)
 			self.toolbar = self.xml.get_widget ("toolbar")
 			self.toolbar.get_nth_item (0).set_homogeneous (gtk.TRUE)
 			self.toolbar.get_nth_item (1).set_homogeneous (gtk.TRUE)

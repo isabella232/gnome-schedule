@@ -1,3 +1,17 @@
+2004-06-18  Philip Van Hoof <me_NOSPAM@freax.org>
+
+	* More support for crontab-to-human-readable, more cases
+	* Support for written numeric nth values
+
+2004-06-18  Gustavo Maciel Dias Vieira  <gustavo@sagui.org>
+
+	* configure.ac: Added pt_BR to ALL_LINGUAS.
+
+2004-06-18  Philip Van Hoof <me_NOSPAM@freax.org>
+
+	* Fixed some stuff
+	* Prepared the application for the at support
+
 2004-06-18  Gaute Hope <eg@gaute.eu.org>
 	* Added support for reading 'at' records
 	* Added the editor files, but they are just copies of crontabEditor.py, just for debugging and making things look like they should

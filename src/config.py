@@ -1,9 +1,9 @@
-version = "@VERSION@"
-image_dir = "@prefix@/share/pixmaps"
-glade_dir = "@prefix@/share/gnome-schedule"
-doc_dir = "@prefix@/share/doc/gnome-schedule-@VERSION@"
-gnomehelpbin = "@GNOMEHELP_CONFIG@"
-crontabbin = "@CRONTAB_CONFIG@"
+version = "1.0"
+image_dir = "/usr/local/share/pixmaps"
+glade_dir = "/usr/local/share/gnome-schedule"
+doc_dir = "/usr/local/share/doc/gnome-schedule-1.0"
+gnomehelpbin = "/usr/bin/gnome-help"
+crontabbin = "/usr/bin/crontab"
 
 def getCrontabbin ():
 	return crontabbin

@@ -81,25 +81,29 @@ class CrontabEditorHelper:
 
 	def populateLabels(self, field):
 		#put the apropiate values in the labels describing entitys, and the 'at' combobox
-		self.radAll.set_label(_("Happens all ") + field + _("s"))
-		self.lblEveryEntity.set_text(field)
-		self.lblFixEntity.set_text(field)
-		self.radRange.set_label (_("Happens from ") + field)
-		if field == _("minute"):
+
+		if field == "minute":
 			self.entRangeEnd.set_text ("59")
 			self.entRangeStart.set_text ("0")
-		if field == _("hour"):
+		if field == "hour":
 			self.entRangeEnd.set_text ("23")
 			self.entRangeStart.set_text ("0")
-		if field == _("day"):
+		if field == "day":
 			self.entRangeEnd.set_text ("31")
 			self.entRangeStart.set_text ("1")
-		if field == _("month"):
+		if field == "month":
 			self.entRangeEnd.set_text ("12")
 			self.entRangeStart.set_text ("1")
-		if field == _("weekday"):
+		if field == "weekday":
 			self.entRangeEnd.set_text ("7")
 			self.entRangeStart.set_text ("0")
+
+		self.trans_field = self.editor.schedule.translate_frequency (field)
+
+		self.radAll.set_label(_("Happens all ") + self.trans_field + _("s"))
+		self.lblEveryEntity.set_text(self.trans_field)
+		self.lblFixEntity.set_text(self.trans_field)
+		self.radRange.set_label (_("Happens from ") + self.trans_field)
 
 		self.do_label_magic ()
 
@@ -133,27 +137,39 @@ class CrontabEditorHelper:
 				self.entRangeStart.set_text(m.groups()[3])
 				self.entRangeEnd.set_text (m.groups()[4])
 
+			# Unused
 			# 1,2,3,4 * * * * command
-			if m.groups()[5] != None:
-				self.radOth.set_active (gtk.TRUE)
-				thefield = m.groups()[5] + field[len(field)-1]
+			# if m.groups()[5] != None:
+				# self.radOth.set_active (gtk.TRUE)
+				# For some reason it's not grouping the last char :(
+				# So we'll just append it, bah!
+				# thefield = m.groups()[5] + expression[len(expression)-1]
 				# thefield = "1,2,3,4"
-				fields = thefield.split (",")
+				# fields = thefield.split (",")
 			self.NoExpressionEvents = gtk.FALSE
 
 		#show the form
-		self.widget.set_title(_("Edit timeexpression for: ") + field)
+		self.widget.set_title(_("Edit timeexpression for: ") + self.trans_field)
 		self.widget.show_all()
 		return
 
 	def btnOk_clicked(self, *args):
 		#move expression to field in editor and hide
 		expression = self.entExpression.get_text()
-		if self.field == _("minute"): self.editor.minute_entry.set_text(expression)
-		if self.field == _("hour"): self.editor.hour_entry.set_text(expression)
-		if self.field == _("day"): self.editor.day_entry.set_text(expression)
-		if self.field == _("month"): self.editor.month_entry.set_text(expression)
-		if self.field == _("weekday"): self.editor.weekday_entry.set_text(expression)
+		try:
+			self.ParentClass.ParentClass.schedule.checkfield (expression, self.field, self.editor.fieldRegex)
+		except Exception, ex:
+			x, y, z = ex
+			self.wrongdialog = gtk.MessageDialog(self.widget, gtk.DIALOG_MODAL|gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_ERROR, gtk.BUTTONS_OK, (_("This is invalid. Reason: %s") % (z)))
+			self.wrongdialog.run()
+			self.wrongdialog.destroy()
+			return
+
+		if self.field == "minute": self.editor.minute_entry.set_text(expression)
+		if self.field == "hour": self.editor.hour_entry.set_text(expression)
+		if self.field == "day": self.editor.day_entry.set_text(expression)
+		if self.field == "month": self.editor.month_entry.set_text(expression)
+		if self.field == "weekday": self.editor.weekday_entry.set_text(expression)
 		
 		self.widget.hide()
 		return
@@ -183,18 +199,18 @@ class CrontabEditorHelper:
 		try:
 			entFixValue = int (self.entFix.get_text())
 			if entFixValue == 1:
-				self.lblFixEntity.set_label (_("st. ") + self.field)
+				self.lblFixEntity.set_label (_("st. ") + self.trans_field)
 			else:
-				self.lblFixEntity.set_label (_("th. ") + self.field)
+				self.lblFixEntity.set_label (_("th. ") + self.trans_field)
 		except:
 			pass
 
 		try:
 			entEveryValue = int (self.entEvery.get_text())
 			if entEveryValue > 1:
-				self.lblEveryEntity.set_label (self.field + _("s"))
+				self.lblEveryEntity.set_label (self.trans_field + _("s"))
 			else:
-				self.lblEveryEntity.set_label (_("st. ") + self.field)
+				self.lblEveryEntity.set_label (_("st. ") + self.trans_field)
 		except:
 			pass
 
