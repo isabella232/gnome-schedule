@@ -109,7 +109,8 @@ class Crontab:
 			array_or_false = self.parseRecord (line)
 			if array_or_false != gtk.FALSE:
 				(minute, hour, day, month, weekday, command, title) = array_or_false
-				iter = self.ParentClass.treemodel.append([title, self.easyString (minute, hour, day, month, weekday), command, line, self.linecount])
+				time = minute + " " + hour + " " + day + " " + month + " " + weekday
+				iter = self.ParentClass.treemodel.append([title, self.easyString (minute, hour, day, month, weekday), command, line, self.linecount, time])
 			self.linecount = self.linecount + 1
 		return
 

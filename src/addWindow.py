@@ -110,6 +110,7 @@ class AddWindow:
 		easystring = self.crontab.easyString (self.minute, self.hour, self.day, self.month, self.weekday)
 		self.ParentClass.treemodel.set_value (self.parentiter, 1, easystring)
 		self.ParentClass.treemodel.set_value (self.parentiter, 2, self.command)
+		self.ParentClass.treemodel.set_value (self.parentiter, 5, self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday)
 
 		self.widget.hide ()
 

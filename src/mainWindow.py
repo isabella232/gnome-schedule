@@ -102,6 +102,7 @@ class main:
 
 		self.widget.connect("delete-event", self.quit)
 
+		#inittializing the treeview
 		self.init_treeview()
 
 		#initializing the crontab
@@ -122,26 +123,59 @@ class main:
 		gtk.mainloop()
 		return
 
-	def init_treeview(self):
-		# [0 Title, 1 Frequency, 2 Command, 3 Crontab record, 4 Line number]
-		# ["Restart app", "Every day", "/opt/bin/restart.pl", "* 1 * * * /opt/bin/restart.pl # Title=Restart App", 3]
-		self.treemodel = gtk.ListStore(gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_INT)
+	def init_treeview(self, mode = "simple", init = 0):
+		# [0 Title, 1 Frequency, 2 Command, 3 Crontab record, 4 Line number, 5 Time]
+		# ["Restart app", "Every day", "/opt/bin/restart.pl", "* 1 * * * /opt/bin/restart.pl # Title=Restart App", 3, 0 * * * *]
+		self.treemodel = gtk.ListStore(gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_INT, gobject.TYPE_STRING)
 		self.treeview.set_model (self.treemodel)
 
-		# Setting up the columns
-		self.col = gtk.TreeViewColumn(_("Title"), gtk.CellRendererText(), text=0)
-		self.treeview.append_column(self.col)
-		self.col = gtk.TreeViewColumn(_("Frequency"), gtk.CellRendererText(), text=1)
-		self.treeview.append_column(self.col)
-		self.col = gtk.TreeViewColumn(_("Command"), gtk.CellRendererText(), text=2)
-		self.col.set_spacing(235)
-		self.treeview.append_column(self.col)
+		self.switchView("advanced", 1)
+
+
+		return
+	
+	def switchView(self, mode = "simple", init = 0):
+		if mode == "simple":
+			#cleaning up columns
+			if init != 1:
+				i = 2
+				while i > - 1:
+					temp = self.treeview.get_column(i)
+					self.treeview.remove_column(temp)
+					i = i -1
+				
+			# Setting up the columns
+			self.col = gtk.TreeViewColumn(_("Title"), gtk.CellRendererText(), text=0)
+			self.treeview.append_column(self.col)
+			self.col = gtk.TreeViewColumn(_("Frequency"), gtk.CellRendererText(), text=1)
+			self.treeview.append_column(self.col)
+			self.col = gtk.TreeViewColumn(_("Command"), gtk.CellRendererText(), text=2)
+			self.col.set_spacing(235)
+			self.treeview.append_column(self.col)
+
+		elif mode == "advanced":
+			#cleaning up columns
+			if init != 1:
+				i = 2
+				while i > - 1:
+					temp = self.treeview.get_column(i)
+					self.treeview.remove_column(temp)
+					i = i -1
+			
+			# Setting up the columns
+			self.col = gtk.TreeViewColumn(_("Command"), gtk.CellRendererText(), text=2)
+			self.treeview.append_column(self.col)
+			self.col = gtk.TreeViewColumn(_("Frequency"), gtk.CellRendererText(), text=5)
+			self.treeview.append_column(self.col)
+			self.col = gtk.TreeViewColumn(_("Title"), gtk.CellRendererText(), text=0)
+			self.col.set_spacing(235)
+			self.treeview.append_column(self.col)	
+		
 
 		self.widget.show_all()
 
 		# self.treeview.get_selection().connect("changed", self.onTreeViewSelectRow)
 		self.treeview.get_selection().unselect_all()
-
 		return
 
 
@@ -178,9 +212,12 @@ class main:
 		pass
 
 
-	def on_advanced_menu_activate (self, *args):
-		print "TODO: Advanced"
-		pass
+	def on_advanced_menu_activate (self, widget):
+		if widget.get_active():
+			self.switchView("advanced")
+		else:
+			self.switchView("simple")
+		return
 
 	def on_about_menu_activate (self, *args):
 		dlg = gtk.MessageDialog (None, 0, gtk.MESSAGE_INFO, gtk.BUTTONS_OK,
