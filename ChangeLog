@@ -1,3 +1,7 @@
+2004-06-20 Gaute Hope	<eg@gaute.eu.org>
+	* created the ateditor window
+	* reading and writing to at now works
+
 2004-06-18  Philip Van Hoof <me_NOSPAM@freax.org>
 
 	* More support for crontab-to-human-readable, more cases
