@@ -267,8 +267,7 @@ class main:
 	def schedule_reload (self):
 		self.treemodel.clear()
 		self.crontab.read ()
-		# TODO for at
-		# self.at.read ()
+		self.at.read ()
 
 	def on_add_button_clicked (self, *args):
 		self.on_add_scheduled_task_menu_activate (self, args)

@@ -369,7 +369,7 @@ class CrontabEditor:
 		else:
 			self.schedule.append (record, self.nooutput, self.title, self.icon)
 			self.ParentClass.treemodel.clear ()
-			self.schedule.read ()
+			self.ParentClass.schedule_reload ()
 
 		self.widget.hide ()
 

@@ -156,17 +156,17 @@ class At:
 		return
 
 	def read (self):
-		return
 		#do 'atq'
 		execute = "atq"
-		self.linecount = 0
 		self.lines = os.popen(execute).readlines()
 		for line in self.lines:
 			array_or_false = self.parse (line)
 			if array_or_false != gtk.FALSE:
-				(job_id, date, time, class_id, user, command, title) = array_or_false
-				iter = self.ParentClass.treemodel.append([title, date, time, class_id, job_id, user, command])
-			self.linecount = self.linecount + 1
+				(job_id, date, time, class_id, user, title, command) = array_or_false
+				icon_pix = None
+				iter = self.ParentClass.treemodel.append([title, time + " " + date, command, "", 0, time, icon_pix, self, date, job_id, class_id, user])
+
+		#["None(not suported yet)", "12:50 2004-06-25", "", "", "", "12:50", icon, at instance, "2004-06-25", "35", "a", "drzap"]
 		return
 
 	def parse (self, line, output = 0):
@@ -180,9 +180,9 @@ class At:
 					time = m.groups ()[2]
 					class_id = m.groups ()[3]
 					user = m.groups ()[4]
-					command = "no"
-					title = "no"
-					return job_id, date, time, class_id, user, command, title
+					command = "Not supported"
+					title = "Not supported"
+					return job_id, date, time, class_id, user, title, command
 		else:
 			if len (line) > 1 and line[0] != '#':
 				m = self.atRecordRegexAdd.match(line)
