@@ -117,13 +117,8 @@ class main:
 		self.xml.signal_connect("on_help_button_clicked", self.on_help_button_clicked)
 		self.xml.signal_connect("on_btnExit_clicked", self.quit)
 
-		try:
-			if self.root != 1:
-				self.set_user_menu.visible = gtk.FALSE
-			else:
-				self.xml.signal_connect("on_btnSetUser_clicked", self.on_set_user_menu_activate)
-		except:
-			pass
+
+		
 
 		self.widget.connect("delete-event", self.quit)
 
@@ -200,6 +195,10 @@ class main:
 		
 
 		self.widget.show_all()
+
+		if self.root == 0:
+			self.btnSetUser.hide()
+			self.xml.signal_connect("on_btnSetUser_clicked", self.on_set_user_menu_activate)
 
 		# self.treeview.get_selection().connect("changed", self.onTreeViewSelectRow)
 		self.treeview.get_selection().unselect_all()
