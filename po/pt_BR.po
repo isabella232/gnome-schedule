@@ -2,16 +2,17 @@
 # Copyright (C) 2004 Free Software Foundation, Inc.
 # This file is distributed under the same license as the gnome-schedule package.
 # Raphael Higino <raphaelh@uai.com.br>, 2004.
+# Welther José O. Esteves <weltherjoe@yahoo.com.br>, 2004.
 #
-#: src/at.py:349 src/lang.py:118 src/lang.py:120 src/lang.py:212
+#: src/at.py:300 src/lang.py:118 src/lang.py:120 src/lang.py:212
 #: src/lang.py:214
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-07-20 15:05+0200\n"
-"PO-Revision-Date: 2004-07-20 15:24-0300\n"
-"Last-Translator: Raphael Higino <raphaelh@uai.com.br>\n"
+"POT-Creation-Date: 2004-08-29 11:47+0200\n"
+"PO-Revision-Date: 2004-08-29 17:23-0300\n"
+"Last-Translator: Welther José O. Esteves <weltherjoe@yahoo.com.br>\n"
 "Language-Team: Brazilian Portuguese <gnome-l10-br@listas.cipsga.org.br>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -25,113 +26,113 @@ msgstr "Gerencie suas tarefas do sistema"
 msgid "Schedule"
 msgstr "Agenda"
 
-#: src/at.py:349
+#: src/at.py:300
 #, python-format
 msgid "%s%s%s %s%s%s"
 msgstr "%s%s%s %s%s%s"
 
-#: src/crontab.py:162 src/crontabEditor.py:343
-msgid "command"
-msgstr "comando"
-
-#: src/crontab.py:185 src/crontab.py:205 src/crontab.py:232
+#: src/crontab.py:78 src/crontab.py:98 src/crontab.py:125
 msgid "must be between 0 and 59"
 msgstr "deve ser entre 0 e 59"
 
-#: src/crontab.py:188 src/crontab.py:208
+#: src/crontab.py:81 src/crontab.py:101
 msgid "must be between 0 and 23"
 msgstr "deve ser entre 0 e 23"
 
-#: src/crontab.py:191 src/crontab.py:211 src/crontab.py:238
+#: src/crontab.py:84 src/crontab.py:104 src/crontab.py:131
 msgid "must be between 1 and 31"
 msgstr "deve ser entre 1 e 31"
 
-#: src/crontab.py:194 src/crontab.py:214 src/crontab.py:241
+#: src/crontab.py:87 src/crontab.py:107 src/crontab.py:134
 msgid "must be between 1 and 12"
 msgstr "deve ser entre 1 e 12"
 
-#: src/crontab.py:197 src/crontab.py:217 src/crontab.py:244
+#: src/crontab.py:90 src/crontab.py:110 src/crontab.py:137
 msgid "must be between 0 and 7"
 msgstr "deve ser entre 0 e 7"
 
-#: src/crontab.py:228
+#: src/crontab.py:121
 #, python-format
 msgid "%s is not a number"
 msgstr "%s não é um número"
 
-#: src/crontab.py:246
+#: src/crontab.py:139
 msgid "Unknown"
 msgstr "Desconhecido"
 
-#: src/crontab.py:246
+#: src/crontab.py:139
 msgid "Invalid"
 msgstr "Inválido"
 
-#: src/crontab.py:301 src/crontab.py:358 src/crontab.py:433
-#: src/crontabEditor.py:301 src/crontabEditor.py:442 src/atEditor.py:462
+#: src/crontab.py:157 src/crontab.py:213 src/crontab.py:297
+#: src/crontabEditor.py:180 src/atEditor.py:115
 msgid "Untitled"
 msgstr "Sem Título"
 
-#: src/crontab.py:458 src/crontabEditor.py:87 src/gnome-schedule.glade.h:83
+#: src/crontab.py:254 src/crontabEditor.py:83 src/gnome-schedule.glade.h:83
 msgid "minute"
 msgstr "minuto"
 
-#: src/crontab.py:460 src/crontabEditor.py:88 src/gnome-schedule.glade.h:82
+#: src/crontab.py:256 src/crontabEditor.py:84 src/gnome-schedule.glade.h:82
 msgid "hour"
 msgstr "hora"
 
-#: src/crontab.py:462 src/crontabEditor.py:89 src/gnome-schedule.glade.h:81
+#: src/crontab.py:258 src/crontabEditor.py:85 src/gnome-schedule.glade.h:81
 msgid "day"
 msgstr "dia"
 
-#: src/crontab.py:464 src/crontabEditor.py:90 src/gnome-schedule.glade.h:84
+#: src/crontab.py:260 src/crontabEditor.py:86 src/gnome-schedule.glade.h:84
 msgid "month"
 msgstr "mês"
 
-#: src/crontab.py:466 src/gnome-schedule.glade.h:89
+#: src/crontab.py:262 src/gnome-schedule.glade.h:89
 msgid "weekday"
 msgstr "dia da semana"
 
-#: src/crontabEditor.py:86
+#: src/crontabEditor.py:82
 msgid "use advanced"
 msgstr "usar avançado"
 
-#: src/crontabEditor.py:91
+#: src/crontabEditor.py:87
 msgid "week"
 msgstr "semana"
 
-#: src/crontabEditor.py:173
+#: src/crontabEditor.py:133 src/atEditor.py:117
+msgid "Create a new scheduled task"
+msgstr "Cria uma nova tarefa agendada"
+
+#: src/crontabEditor.py:145 src/atEditor.py:145
+msgid "Edit a scheduled task"
+msgstr "Editar um tarefa agendada"
+
+#: src/crontabEditor.py:198 src/atEditor.py:299
+msgid "Don't use a preset"
+msgstr "Não usar uma predefinição"
+
+#: src/crontabEditor.py:260
 #, python-format
 msgid ""
 "This is an invalid record! The problem could be at the %s field. Reason: %s"
 msgstr ""
 "Esse é um registro inválido! O problema pode estar no campo %s. Razão: %s"
 
-#: src/crontabEditor.py:194 src/atEditor.py:285
-msgid "Don't use a preset"
-msgstr "Não usar uma predefinição"
-
-#: src/crontabEditor.py:220 src/atEditor.py:347
+#: src/crontabEditor.py:294 src/atEditor.py:372
 msgid "Pick an icon for this scheduled task"
 msgstr "Escolha um ícone para essa tarefa agendada"
 
-#: src/crontabEditor.py:258 src/atEditor.py:439
-msgid "Edit a scheduled task"
-msgstr "Editar um tarefa agendada"
+#: src/crontabEditor.py:352
+msgid "command"
+msgstr "comando"
 
-#: src/crontabEditor.py:305 src/atEditor.py:464
-msgid "Create a new scheduled task"
-msgstr "Cria uma nova tarefa agendada"
-
-#: src/crontabEditorHelper.py:102 src/gnome-schedule.glade.h:39
+#: src/crontabEditorHelper.py:103 src/gnome-schedule.glade.h:39
 msgid "Happens all "
 msgstr "Acontece todo "
 
-#: src/crontabEditorHelper.py:102 src/crontabEditorHelper.py:210
+#: src/crontabEditorHelper.py:103 src/crontabEditorHelper.py:211
 msgid "s"
 msgstr "s"
 
-#: src/crontabEditorHelper.py:105
+#: src/crontabEditorHelper.py:106
 msgid "Happens from "
 msgstr "Acontece de "
 
@@ -145,11 +146,11 @@ msgstr "Editar a expressão de hora para: "
 msgid "This is invalid. Reason: %s"
 msgstr "Isso é inválido. Razão: %s"
 
-#: src/crontabEditorHelper.py:201 src/crontabEditorHelper.py:212
+#: src/crontabEditorHelper.py:202 src/crontabEditorHelper.py:213
 msgid "st. "
 msgstr "º "
 
-#: src/crontabEditorHelper.py:203
+#: src/crontabEditorHelper.py:204
 msgid "th. "
 msgstr "º "
 
@@ -474,7 +475,9 @@ msgstr "Excluirei a predefinição selecionada"
 msgid ""
 "Will save the current information as a preset. You can type the name of the "
 "preset in the combobox."
-msgstr "Salvarei as informações atuais como uma predefinição. Você pode digitar o nome da predefinição na caixa de combinação."
+msgstr ""
+"Salvarei as informações atuais como uma predefinição. Você pode digitar o "
+"nome da predefinição na caixa de combinação."
 
 #: src/gnome-schedule.glade.h:76
 msgid "[Add|Edit] scheduled task"
@@ -522,127 +525,127 @@ msgstr ""
 
 #: src/lang.py:92
 msgid "zeroth"
-msgstr ""
+msgstr "zero"
 
 #: src/lang.py:93
 msgid "first"
-msgstr ""
+msgstr "primeiro"
 
 #: src/lang.py:93
 msgid "second"
-msgstr ""
+msgstr "segundo"
 
 #: src/lang.py:93
 msgid "third"
-msgstr ""
+msgstr "terceiro"
 
 #: src/lang.py:93
 msgid "fourth"
-msgstr ""
+msgstr "quarto"
 
 #: src/lang.py:93
 msgid "fifth"
-msgstr ""
+msgstr "quinto"
 
 #: src/lang.py:94
 msgid "sixth"
-msgstr ""
+msgstr "sexto"
 
 #: src/lang.py:94
 msgid "seventh"
-msgstr ""
+msgstr "sétimo"
 
 #: src/lang.py:94
 msgid "eighth"
-msgstr ""
+msgstr "oitavo"
 
 #: src/lang.py:94
 msgid "ninth"
-msgstr ""
+msgstr "nono"
 
 #: src/lang.py:94
 msgid "tenth"
-msgstr ""
+msgstr "décimo"
 
 #: src/lang.py:95
 msgid "eleventh"
-msgstr ""
+msgstr "décimo primeiro"
 
 #: src/lang.py:95
 msgid "twelfth"
-msgstr ""
+msgstr "décimo segundo"
 
 #: src/lang.py:95
 msgid "thirteenth"
-msgstr ""
+msgstr "décimo terceiro"
 
 #: src/lang.py:95
 msgid "fourteenth"
-msgstr ""
+msgstr "décimo quarto"
 
 #: src/lang.py:95
 msgid "fifteenth"
-msgstr ""
+msgstr "décimo quinto"
 
 #: src/lang.py:96
 msgid "sixteenth"
-msgstr ""
+msgstr "décimo sexto"
 
 #: src/lang.py:96
 msgid "seventeenth"
-msgstr ""
+msgstr "décimo sétimo"
 
 #: src/lang.py:96
 msgid "eighteenth"
-msgstr ""
+msgstr "décimo oitavo"
 
 #: src/lang.py:96
 msgid "nineteenth"
-msgstr ""
+msgstr "décimo nono"
 
 #: src/lang.py:96
 msgid "twentieth"
-msgstr ""
+msgstr "vigésimo"
 
 #: src/lang.py:99
 msgid "zero"
-msgstr ""
+msgstr "zero"
 
 #: src/lang.py:99
 msgid "ten"
-msgstr ""
+msgstr "dez"
 
 #: src/lang.py:99
 msgid "twenty"
-msgstr ""
+msgstr "vinte"
 
 #: src/lang.py:99
 msgid "thirty"
-msgstr ""
+msgstr "trinta"
 
 #: src/lang.py:99
 msgid "forty"
-msgstr ""
+msgstr "quarenta"
 
 #: src/lang.py:99
 msgid "fifty"
-msgstr ""
+msgstr "cinquenta"
 
 #: src/lang.py:99
 msgid "sixty"
-msgstr ""
+msgstr "sessenta"
 
 #: src/lang.py:99
 msgid "seventy"
-msgstr ""
+msgstr "setenta"
 
 #: src/lang.py:99
 msgid "eighty"
-msgstr ""
+msgstr "oitenta"
 
 #: src/lang.py:99
 msgid "ninety"
-msgstr ""
+msgstr "noventa"
 
 #: src/lang.py:106
 #, python-format
@@ -739,7 +742,7 @@ msgstr "No %s dia às %s, todo %s mês do ano"
 #: src/lang.py:287
 #, python-format
 msgid "At the %s day every %s hour every %s month of the year"
-msgstr ""
+msgstr "No %s dia, toda %s hora, todo %s mês do ano"
 
 #: src/lang.py:289
 #, python-format
@@ -856,40 +859,40 @@ msgstr "Todo minuto, toda hora, do dia: %s, do mês: %s"
 msgid "Every minute, every hour, day: %s, every month"
 msgstr "Todo minuto, toda hora, do dia: %s, todo mês"
 
-#: src/mainWindow.py:265 src/mainWindow.py:296
+#: src/mainWindow.py:298 src/mainWindow.py:329
 msgid "Icon"
 msgstr "Ícone"
 
-#: src/mainWindow.py:268 src/mainWindow.py:316
+#: src/mainWindow.py:301 src/mainWindow.py:349
 msgid "Type"
 msgstr "Tipo"
 
-#: src/mainWindow.py:273 src/mainWindow.py:311
+#: src/mainWindow.py:306 src/mainWindow.py:344
 msgid "Title"
 msgstr "Título"
 
-#: src/mainWindow.py:278 src/mainWindow.py:299
+#: src/mainWindow.py:311 src/mainWindow.py:332
 msgid "Frequency or time"
 msgstr "Freqüência ou hora"
 
-#: src/mainWindow.py:283 src/mainWindow.py:304
+#: src/mainWindow.py:316 src/mainWindow.py:337
 msgid "Preview"
 msgstr "Visualização"
 
 #. TODO if about gets into gtk this has to be changed
-#: src/mainWindow.py:474
+#: src/mainWindow.py:461
 msgid "Gnome Schedule"
 msgstr "Gnome Schedule"
 
-#: src/mainWindow.py:476
+#: src/mainWindow.py:463
 msgid "Copyright (c) 2004-2005 Gaute Hope."
 msgstr "Copyright (c) 2004-2005 Gaute Hope."
 
-#: src/mainWindow.py:477
+#: src/mainWindow.py:464
 msgid "This software is distributed under the GPL. "
 msgstr "Este software é distribuido sob a GPL. "
 
-#: src/mainWindow.py:481
+#: src/mainWindow.py:468
 msgid ""
 "Some painfully bad documentation put\n"
 "toghether from the far corners of Gaute Hope's mind."
@@ -897,11 +900,13 @@ msgstr ""
 "Alguma documentação dolorosamente ruim reunida\n"
 "a partir dos confins da mente de Gaute Hope."
 
-#: src/mainWindow.py:481
+#: src/mainWindow.py:468
 msgid "translator_credits"
-msgstr "Raphael Higino <raphaelh@uai.com.br>"
+msgstr ""
+"Raphael Higino <raphaelh@uai.com.br>\n"
+"Welther José O. Esteves <weltherjoe@yahoo.com.br>"
 
-#: src/atEditor.py:482
+#: src/atEditor.py:494
 #, python-format
 msgid "This is an invalid record! The problem could be: %s "
 msgstr "Esse é um registro inválido! O problema pode ser: %s "
