@@ -361,6 +361,7 @@ class CrontabEditor:
 
 		if self.editing != gtk.FALSE:
 			self.schedule.update (self.linenumber, record, self.parentiter, self.nooutput, self.title, self.icon)
+			self.ParentClass.schedule_reload ("crontab")
 		else:
 			self.schedule.append (record, self.nooutput, self.title, self.icon)
 			self.ParentClass.schedule_reload ("crontab")

@@ -21,6 +21,7 @@ Development:
  included in the next release)
   * Unification of the atEditor and crontabEditor GUI
     One editor to rule them all!
+  * The icons in the editors must be sized as they should
 
  Unassigned would make it to the release but are non-blocking it
   * Documentation
