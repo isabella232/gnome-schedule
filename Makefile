@@ -35,7 +35,7 @@ install:
 		sed -e s,@VERSION@,$(VERSION),g $${py} > $(INSTROOT)$(PKGDATADIR)/`basename $${py}` ; \
 	done
 	install src/*.glade $(INSTROOT)$(PKGDATADIR)
-	install doc/* $(INSTROOT)$(DOCDIR)
+	install doc/*.html $(INSTROOT)$(DOCDIR)
 	install $(PKGNAME).pam $(INSTROOT)$(PAMD_DIR)/$(PKGNAME)
 	install $(PKGNAME).console $(INSTROOT)$(SECURITY_DIR)/$(PKGNAME)
 	install pixmaps/*.png $(INSTROOT)$(PKGIMAGEDIR)
