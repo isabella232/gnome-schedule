@@ -1,16 +1,22 @@
-TODO:
+TODO
+----
 
-General:
-* create a RPM package, using the spec file.
-* better screenshots, default fedora theme
-* release minors  twice a week
-* release majors once a month
+Development:
 
+ Philip Van Hoof
+  * Redo the build environment (I can use help here)
+  * set up a bugzilla
+  * Set up a CVS repository on cvs.gnome.org (this is done)
 
-General:
-* set up a bugzilla
-
+ Gaute Hope
+  * create a RPM package, using the spec file.
+  * better screenshots, default fedora theme
+  * release minors  twice a week
+  * release majors once a month
 
 Documentation:
-* Write it
+  * Write it (we can use some help here)
+
+Translations:
+  * Virtually any possible language 
 
