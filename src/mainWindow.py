@@ -92,6 +92,17 @@ class main:
 
 		self.editor = self.schedule.geteditor()
 
+		#hiding the editors and help windows
+		crontabEditor = self.xml.get_widget("crontabEditor")
+		crontabEditorHelper = self.xml.get_widget("crontabEditorHelper")
+		atEditor = self.xml.get_widget("atEditor")
+		#atEditorHelper = self.xml.get_widget("atEditorHelper")
+		crontabEditor.hide()
+		crontabEditorHelper.hide()
+		atEditor.hide()
+		#atEditorHelper.hide()
+		
+
 		# This will only work with PyGTK 2.4.x
 		try:
 			# this tries to fix a bug in libglade (the homogeneous property ain't working)

@@ -73,24 +73,22 @@ class AtEditor:
 		self.commands_textview.set_text("")
 
 		
-	def showedit (self, record, linenumber, iter, mode):
+	def showedit (self, record, job_id, iter, mode):
 		print "not implemented.."
-#	self.editing = gtk.TRUE
-#		self.linenumber = linenumber
-#		self.record = record
-#		self.widget.set_title(_("Edit a scheduled task"))
-#		self.update_textboxes ()
-#		self.set_frequency_combo ()
-#		self.parentiter = iter
-#		self.widget.show_all()
+		self.editing = gtk.TRUE
+		self.job_id = job_id
+		self.widget.set_title(_("Edit a scheduled task"))
+		self.update_textboxes ()
+		self.parentiter = iter
+		self.widget.show_all()
 		
 
 
-		#switch to advanced tab if required
-		#if mode == "advanced":
-		#	self.notebook.set_current_page(1)
-		#else:
-		#	self.notebook.set_current_page(0)
+		switch to advanced tab if required
+		if mode == "advanced":
+			self.notebook.set_current_page(1)
+		else:
+			self.notebook.set_current_page(0)
 
 
 

@@ -43,9 +43,15 @@ gtk.glade.bindtextdomain(domain)
 class At:
 	def __init__(self, parent):
 		self.atRecordRegex = re.compile('([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)')
+		self.atRecordRegexAdd = re.compile('([^\s]+)\s([^\s]+)\s')
+
 		self.ParentClass = parent
 		self.ParentClass.treemodel = self.createtreemodel ()
 		self.xml = self.ParentClass.xml
+
+		#init at
+		self.init ()
+
 		#reading at
 		self.read ()
 
@@ -56,8 +62,32 @@ class At:
 		#self.editorhelper = crontabEditorHelper.CrontabEditorHelper(self, self.editor)
 
 		self.editorwidget.hide()
-
+	
 		return
+
+	def init (self):
+		#find common start of all scripts with a test job
+		runat = "tomorrow"
+		command = ""
+		tmpfile = tempfile.mkstemp ("", "/tmp/at.", "/tmp")
+		fd, path = tmpfile
+		tmp = os.fdopen(fd, 'w')
+		tmp.write (command + "\n")
+		execute = "at " + runat + " -f " + path
+		line = commands.getoutput(execute)
+		tmp.close ()
+		os.unlink (path)
+		#get output and jobid
+		job_id = self.parse(line, 1)
+		
+		#get the job
+		execute = "at -c " + job_id
+		self.atPre = commands.getoutput(execute)
+				
+		#delete it
+		execute = "atrm " + job_id
+		commands.getoutput(execute)
+		
 
 	def geteditor (self):
 		return self.editor
@@ -166,10 +196,11 @@ class At:
 			self.linecount = self.linecount + 1
 		return
 
-	def parse (self, line):
-		if len (line) > 1 and line[0] != '#':
-			m = self.atRecordRegex.match(line)
-			if m != None:
+	def parse (self, line, output = 0):
+		if output == 0:
+			if len (line) > 1 and line[0] != '#':
+				m = self.atRecordRegex.match(line)
+				if m != None:
 					print m.groups()
 					job_id = m.groups ()[0]
 					date = m.groups ()[1]
@@ -178,8 +209,15 @@ class At:
 					user = m.groups ()[4]
 					command = "no"
 					title = "no"
-
 					return job_id, date, time, class_id, user, command, title
+		else:
+			if len (line) > 1 and line[0] != '#':
+				m = self.atRecordRegexAdd.match(line)
+				if m != None:
+					print m.groups()
+					job = m.groups ()[0]
+					job_id = m.groups ()[1]
+					return job_id
 		#left unchanged, the fields should be: user, job title, and id
 		#would probably have to do a specific job check for each job 
 		return gtk.FALSE
