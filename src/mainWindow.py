@@ -89,13 +89,13 @@ class main:
 		self.schedule = None
 
 		#inittializing the treeview
-		# [0 Title, 1 Frequency, 2 Command, 3 Crontab record, 4 ID, 5 Time, 6 Icon, 7 scheduled instance, 8 date, 9 class_id, 10 user, 11 type]
+		# [0 Title, 1 Frequency, 2 Command, 3 Crontab record, 4 ID, 5 Time, 6 Icon, 7 scheduled instance, 8 date, 9 class_id, 10 user, 11 type, 12 crontab/at]
 
 		#for at this would be like: ["None(not suported yet)", "12:50 2004-06-25", "", "35", "", "12:50", icon, at instance, "2004-06-25", "a", "drzap", "at"]
 
 		#for crontab it would be: ["untitled", "every hour", "ls /", "0 * * * * ls / # untitled", "5", "0 * * * *", icon, crontab instance, "", "", "", "crontab"]
 
-		self.treemodel = gtk.ListStore(gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_INT, gobject.TYPE_STRING, gobject.TYPE_PYOBJECT, gobject.TYPE_PYOBJECT, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING)
+		self.treemodel = gtk.ListStore(gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_INT, gobject.TYPE_STRING, gobject.TYPE_PYOBJECT, gobject.TYPE_PYOBJECT, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING)
 
 		self.treeview.set_model (self.treemodel)
 		self.switchView("simple", 1)
@@ -217,16 +217,22 @@ class main:
 			self.cleancolumns (init)		
 			#col = gtk.TreeViewColumn(_("Icon"), gtk.CellRendererText(), text=6)
 			#self.ParentClass.treeview.append_column(col)
-			col = gtk.TreeViewColumn(_("Title"), gtk.CellRendererText(), text=0)
-			self.treeview.append_column(col)
-			col = gtk.TreeViewColumn(_("Frequency or time"), gtk.CellRendererText(), text=1)
+			col = gtk.TreeViewColumn(_("Type"), gtk.CellRendererText(), text=11)
+			col.set_sizing (gtk.TREE_VIEW_COLUMN_AUTOSIZE)
 			self.treeview.append_column(col)
 
-			col = gtk.TreeViewColumn(_("Type"), gtk.CellRendererText(), text=11)
+			col = gtk.TreeViewColumn(_("Title"), gtk.CellRendererText(), text=0)
+			col.set_sizing (gtk.TREE_VIEW_COLUMN_AUTOSIZE)
+			self.treeview.append_column(col)
+
+			col = gtk.TreeViewColumn(_("Frequency or time"), gtk.CellRendererText(), text=1)
+			col.set_sizing (gtk.TREE_VIEW_COLUMN_AUTOSIZE)
 			self.treeview.append_column(col)
 
 			col = gtk.TreeViewColumn(_("Preview"), gtk.CellRendererText(), text=2)
-			col.set_spacing(235)
+			col.set_sizing (gtk.TREE_VIEW_COLUMN_AUTOSIZE)
+			#col.set_spacing(235)
+			col.set_expand (gtk.TRUE)
 			self.treeview.append_column(col)
 
 
@@ -236,16 +242,25 @@ class main:
 			# col = gtk.TreeViewColumn(_("Icon"), gtk.CellRendererText(), text=6)
 			# self.ParentClass.treeview.append_column(col)
 			col = gtk.TreeViewColumn(_("Frequency or time"), gtk.CellRendererText(), text=5)
-			self.treeview.append_column(col)
-			col = gtk.TreeViewColumn(_("Type"), gtk.CellRendererText(), text=11)
+			col.set_resizable (gtk.TRUE)
+			#col.set_sizing (gtk.TREE_VIEW_COLUMN_AUTOSIZE)
 			self.treeview.append_column(col)
 
-			
 			col = gtk.TreeViewColumn(_("Preview"), gtk.CellRendererText(), text=2)
+			col.set_resizable (gtk.TRUE)
+			col.set_expand (gtk.TRUE)
+			#col.set_sizing (gtk.TREE_VIEW_COLUMN_AUTOSIZE)
+			#col.set_spacing(235)
 			self.treeview.append_column(col)
 
 			col = gtk.TreeViewColumn(_("Title"), gtk.CellRendererText(), text=0)
-			col.set_spacing(235)
+			col.set_resizable (gtk.TRUE)
+			#col.set_sizing (gtk.TREE_VIEW_COLUMN_AUTOSIZE)
+			self.treeview.append_column(col)
+
+			col = gtk.TreeViewColumn(_("Type"), gtk.CellRendererText(), text=12)
+			col.set_resizable (gtk.TRUE)
+			#col.set_sizing (gtk.TREE_VIEW_COLUMN_AUTOSIZE)
 			self.treeview.append_column(col)
 
 

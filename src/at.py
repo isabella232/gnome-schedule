@@ -164,13 +164,24 @@ class At:
 			if array_or_false != gtk.FALSE:
 				(job_id, date, time, class_id, user, title, command) = array_or_false
 				icon_pix = None
-				iter = self.ParentClass.treemodel.append([title, time + " " + date, command, "", int(job_id), time, icon_pix, self, date, class_id, user, "Defined"])
+				iter = self.ParentClass.treemodel.append([title, time + " " + date, command, "", int(job_id), time, icon_pix, self, date, class_id, user, "Defined", "at"])
 				print int(job_id)
 
 		#["None(not suported yet)", "12:50 2004-06-25", "", "35", "", "12:50", icon, at instance, "2004-06-25", "a", "drzap", "at"]
 		
 		return
-	
+
+	def make_preview (self, str):
+		cnt = 0
+		result = ""
+		for a in str:
+			if cnt <= 15:
+				result = result + a
+			cnt = cnt + 1
+		if cnt > 15:
+			result = result + "..."
+		return result
+
 	def parse (self, line, output = 0):
 		if output == 0:
 			if len (line) > 1 and line[0] != '#':

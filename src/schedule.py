@@ -38,7 +38,7 @@ class Schedule:
 		self.read()
 		return
 
-	def removetemplate (self, template_name):
+	def make_preview (self, str):
 		raise 'Abstract method please override'
 
 	def savetemplate (self, template_name, record, nooutput, title, icon):
@@ -54,6 +54,9 @@ class Schedule:
 		raise 'Abstract method please override'
 
 	def geteditor (self):
+		raise 'Abstract method please override'
+
+	def createtreemodel (self):
 		raise 'Abstract method please override'
 
 	def switchview (self, mode = "simple", init = 0):

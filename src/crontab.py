@@ -310,6 +310,18 @@ class Crontab:
 		os.unlink (path)
 		return
 
+
+	def make_preview (self, str):
+		cnt = 0
+		result = ""
+		for a in str:
+			if cnt <= 15:
+				result = result + a
+			cnt = cnt + 1
+		if cnt > 15:
+			result = result + "..."
+		return result
+
 	def update (self, linenumber, record, parentiter, nooutput, title, icon = None):
 		# The GUI
 		minute, hour, day, month, weekday, command, title_, icon_ = self.parse (record)
@@ -322,10 +334,10 @@ class Crontab:
 			space = " "
 			if command[len(command)-1] == " ":
 				space = ""
-			self.ParentClass.treemodel.set_value (parentiter, 2, command + space + self.nooutputtag)
+			self.ParentClass.treemodel.set_value (parentiter, 2, self.make_preview (command + space + self.nooutputtag))
 			record = record + space + self.nooutputtag
 		else:
-			self.ParentClass.treemodel.set_value (parentiter, 2, command)
+			self.ParentClass.treemodel.set_value (parentiter, 2, self.make_preview (command))
 			
 		self.ParentClass.treemodel.set_value (parentiter, 5, minute + " " + hour + " " + day + " " + month + " " + weekday)
 
@@ -392,7 +404,8 @@ class Crontab:
 					icon_pix = gtk.gdk.pixbuf_new_from_file (icon)
 				except:
 					icon_pix = None
-				iter = self.ParentClass.treemodel.append([title, self.easy (minute, hour, day, month, weekday), command, line, self.linecount, time, icon_pix, self, "", "", "", "Frequency"])
+				preview = self.make_preview (command)
+				iter = self.ParentClass.treemodel.append([title, self.easy (minute, hour, day, month, weekday), preview, line, self.linecount, time, icon_pix, self, "", "", "", "Frequency", "crontab"])
 			self.linecount = self.linecount + 1
 		return
 
