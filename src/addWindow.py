@@ -136,7 +136,7 @@ class AddWindow:
 						raise Exception('fixed', type, _("must be between 7 and 0"))
 
 			# 1-10 * * * * command
-			if m.groups()[3] != None or m.groups()[4] != None:
+			if m.groups()[3] != None and m.groups()[4] != None:
 				num1 = int (m.groups()[3])
 				num2 = int (m.groups()[4])
 				if type==_("minute"):
@@ -379,11 +379,21 @@ class AddWindow:
 
 	def on_fieldHelp_clicked(self, widget, *args):
 		name = widget.get_name()
-		if name == "btnMinuteHelp" : name = _("minute")
-		if name == "btnHourHelp" : name = _("hour")
-		if name == "btnDayHelp" : name = _("day")
-		if name == "btnMonthHelp" : name = _("month")
-		if name == "btnWeekdayHelp" : name = _("weekday")
+		if name == "btnMinuteHelp" :
+			name = _("minute")
+			expression = self.minute_entry.get_text()
+		if name == "btnHourHelp" :
+			name = _("hour")
+			expression = self.hour_entry.get_text()
+		if name == "btnDayHelp" :
+			name = _("day")
+			expression = self.day_entry.get_text()
+		if name == "btnMonthHelp" :
+			name = _("month")
+			expression = self.month_entry.get_text()
+		if name == "btnWeekdayHelp" :
+			name = _("weekday")
+			expression = self.weekday_entry.get_text()
 
-		self.ParentClass.addHelpWindow.showAll(name)
+		self.ParentClass.addHelpWindow.showAll(name, expression)
 		return

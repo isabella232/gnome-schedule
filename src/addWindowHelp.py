@@ -47,8 +47,9 @@ class AddWindowHelp:
 		self.radAll = self.xml.get_widget("radAll")
 		self.radEvery = self.xml.get_widget("radEvery")
 		self.radRange = self.xml.get_widget("radRange")
-		self.radAt = self.xml.get_widget("radAt")
+		# self.radAt = self.xml.get_widget("radAt")
 		self.radFix = self.xml.get_widget("radFix")
+		self.radOth = self.xml.get_widget ("radOth")
 
 		self.entExpression = self.xml.get_widget("entExpression")
 		self.entEvery = self.xml.get_widget("entEvery")
@@ -67,13 +68,16 @@ class AddWindowHelp:
 		self.xml.signal_connect("on_radEvery_toggled", self.RadioButtonChange)
 		self.xml.signal_connect("on_radRange_toggled", self.RadioButtonChange)
 		self.xml.signal_connect("on_radFix_toggled", self.RadioButtonChange)
+		self.xml.signal_connect("on_radOth_toggled", self.RadioButtonChange)
 
 		#connect the changes of a combo or entry
 		self.xml.signal_connect("on_entFix_changed", self.anyEntryChanged)
 		self.xml.signal_connect("on_entEvery_changed", self.anyEntryChanged)
 		self.xml.signal_connect("on_entRangeStart_changed", self.anyEntryChanged)
 		self.xml.signal_connect("on_entRangeEnd_changed", self.anyEntryChanged)
-
+		self.xml.signal_connect("on_entExpression_changed", self.entExpressionChanged)
+		self.NoExpressionEvents = gtk.FALSE
+		self.fieldRegex = self.ParentClass.addWindow.fieldRegex
 		return
 
 	def populateLabels(self, field):
@@ -102,11 +106,44 @@ class AddWindowHelp:
 
 		return
 
-	def showAll(self, field):
+	def showAll(self, field, expression):
 		self.field = field
+		self.populateLabels(field)
+
+		m = self.fieldRegex.match (expression)
+		self.radOth.set_active (gtk.TRUE)
+
+		if m != None:
+			self.NoExpressionEvents = gtk.TRUE
+			self.entExpression.set_text (expression)
+			if m.groups()[0] != None:
+				self.radAll.set_active (gtk.TRUE)
+			# 10 * * * * command
+			# */2 * * * * command
+			if m.groups()[1] != None or m.groups()[2] != None:
+				if m.groups()[1] != None:
+					self.radFix.set_active (gtk.TRUE)
+					self.entFix.set_text (m.groups()[1])
+				else:
+					self.radEvery.set_active (gtk.TRUE)
+					self.entEvery.set_text (m.groups()[2])
+
+			# 1-10 * * * * command
+			if m.groups()[3] != None and m.groups()[4] != None:
+				self.radRange.set_active (gtk.TRUE)
+				self.entRangeStart.set_text(m.groups()[3])
+				self.entRangeEnd.set_text (m.groups()[4])
+
+			# 1,2,3,4 * * * * command
+			if m.groups()[5] != None:
+				self.radOth.set_active (gtk.TRUE)
+				thefield = m.groups()[5] + field[len(field)-1]
+				# thefield = "1,2,3,4"
+				fields = thefield.split (",")
+			self.NoExpressionEvents = gtk.FALSE
+
 		#show the form
 		self.widget.set_title(_("Edit timeexpression for: ") + field)
-		self.populateLabels(field)
 		self.widget.show_all()
 		return
 
@@ -128,6 +165,7 @@ class AddWindowHelp:
 		return gtk.TRUE
 
 	def RadioButtonChange(self, widget):
+		self.NoExpressionEvents = gtk.TRUE
 		self.do_label_magic ()
 		name = widget.get_name()
 		if widget.get_active():
@@ -139,7 +177,7 @@ class AddWindowHelp:
 				self.entExpression.set_text(self.entRangeStart.get_text() + "-" + self.entRangeEnd.get_text())
 			elif name == "radFix":
 				self.entExpression.set_text(self.entFix.get_text())
-
+		self.NoExpressionEvents = gtk.FALSE
 		return
 
 	def do_label_magic (self):
@@ -161,7 +199,12 @@ class AddWindowHelp:
 		except:
 			pass
 
+	def entExpressionChanged(self, *args):
+		if self.NoExpressionEvents == gtk.FALSE:
+			self.radOth.set_active (gtk.TRUE)
+
 	def anyEntryChanged(self, *args):
+		self.NoExpressionEvents = gtk.TRUE
 		self.do_label_magic ()
 		#create a easy read line for the expression view, put the command into the edit box
 		if self.radAll.get_active():
@@ -172,6 +215,5 @@ class AddWindowHelp:
 				self.entExpression.set_text(self.entRangeStart.get_text() + "-" + self.entRangeEnd.get_text())
 		if self.radFix.get_active ():
 				self.entExpression.set_text(self.entFix.get_text())
-
-			
+		self.NoExpressionEvents = gtk.FALSE
 		return
