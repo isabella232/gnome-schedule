@@ -301,7 +301,7 @@ class CrontabEditor:
 		if notemplate != entry:
 			self.__SaveTemplate__ (self.template_combobox.get_child().get_text())
 		else:
-			self.template_doesnot_exist("You have to type in another name to be able to save the preset")
+			self.template_doesnot_exist("To save a preset, you first have to choose a name for it")
 		
 
 	def gconfkey_changed (self, client, connection_id, entry, args):
