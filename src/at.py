@@ -48,24 +48,10 @@ class At:
 		self.ParentClass = parent
 		self.xml = self.ParentClass.xml
 
-	#	rem = self.append ("tomorrow", "")
-	#	m = self.atRecordRegexAdded.match (rem)
-	#	if m != None:
-	#		execute = config.getAtbin() + " -c " + m.groups()[0]
-	#		self.ignore_lines = os.popen(execute).readlines()
-	#		for a in ignore_lines
-	#		self.delete (m.groups()[0])
-	#	else:
-	#		print _("Problem while learning the lines that are to be ignored")
-
-		#reading at
 		self.read ()
 
-
 		self.editorwidget = self.xml.get_widget("atEditor")
-#		self.editorhelperwidget = self.xml.get_widget("crontabEditorHelper")
 		self.editor = atEditor.AtEditor (self.ParentClass, self)
-		#self.editorhelper = crontabEditorHelper.CrontabEditorHelper(self, self.editor)
 
 		self.editorwidget.hide()
 	
