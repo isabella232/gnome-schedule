@@ -9,7 +9,7 @@ gnome-schedule
 Dependencies
 ------------
 
- Gnome Schedule will need
+ Gnome Schedule needs
  
 	o. at,  batch,  atq, atrm, queue
 	o. crontab
