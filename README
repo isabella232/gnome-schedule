@@ -14,8 +14,7 @@ So bear with me.
 
 
 Installation:
-run as root:
-# make install 
+
 
 It should work with most crontabs since it doesn't edit the crontab itself but creates a file and runs 'crontab' with the file as an argument. To get the current crontab it reads 'crontab -l' into a file and reads the file line for line.
 
