@@ -1,0 +1,437 @@
+# Swedish messages for gnome-schedule.
+# Copyright (C) 2004 Free Software Foundation, Inc.
+# Christian Rose <menthos@menthos.com>, 2004.
+#
+# $Id$
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-schedule\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-06-17 23:52+0200\n"
+"PO-Revision-Date: 2004-06-17 23:52+0200\n"
+"Last-Translator: Christian Rose <menthos@menthos.com>\n"
+"Language-Team: Swedish <sv@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/addWindow.py:87
+#, fuzzy
+msgid "Edit a scheduled task"
+msgstr "Redigera uppgiften"
+
+#: src/addWindow.py:130 src/addWindow.py:150 src/addWindow.py:174
+#: src/addWindow.py:236 src/addWindow.py:281 src/addWindow.py:364
+#: src/addWindow.py:402 src/addWindowHelp.py:89 src/addWindowHelp.py:153
+#: src/gnome-schedule.glade.h:42
+msgid "minute"
+msgstr "minut"
+
+#: src/addWindow.py:132 src/addWindow.py:152 src/addWindow.py:176
+msgid "must be between 59 and 0"
+msgstr ""
+
+#: src/addWindow.py:133 src/addWindow.py:153 src/addWindow.py:177
+#: src/addWindow.py:237 src/addWindow.py:284 src/addWindow.py:370
+#: src/addWindow.py:405 src/addWindowHelp.py:92 src/addWindowHelp.py:154
+#: src/gnome-schedule.glade.h:41
+msgid "hour"
+msgstr "timme"
+
+#: src/addWindow.py:135 src/addWindow.py:155
+msgid "must be between 23 and 0"
+msgstr ""
+
+#: src/addWindow.py:136 src/addWindow.py:156 src/addWindow.py:180
+#: src/addWindow.py:238 src/addWindow.py:287 src/addWindow.py:376
+#: src/addWindow.py:408 src/addWindowHelp.py:95 src/addWindowHelp.py:155
+#: src/gnome-schedule.glade.h:40
+msgid "day"
+msgstr "dag"
+
+#: src/addWindow.py:138 src/addWindow.py:158 src/addWindow.py:182
+#, fuzzy
+msgid "must be between 31 and 1"
+msgstr "Prioriteten måste vara mellan 1 och 9"
+
+#: src/addWindow.py:139 src/addWindow.py:159 src/addWindow.py:183
+#: src/addWindow.py:239 src/addWindow.py:290 src/addWindow.py:382
+#: src/addWindow.py:411 src/addWindowHelp.py:98 src/addWindowHelp.py:156
+#: src/gnome-schedule.glade.h:49
+msgid "month"
+msgstr "månad"
+
+#: src/addWindow.py:141 src/addWindow.py:161 src/addWindow.py:185
+#, fuzzy
+msgid "must be between 12 and 1"
+msgstr "Prioriteten måste vara mellan 1 och 9"
+
+#: src/addWindow.py:142 src/addWindow.py:162 src/addWindow.py:186
+#: src/addWindow.py:240 src/addWindow.py:414 src/addWindowHelp.py:101
+#: src/addWindowHelp.py:157 src/gnome-schedule.glade.h:52
+msgid "weekday"
+msgstr "veckodag"
+
+#: src/addWindow.py:144 src/addWindow.py:164 src/addWindow.py:188
+#, fuzzy
+msgid "must be between 7 and 0"
+msgstr "Prioriteten måste vara mellan 1 och 9"
+
+#: src/addWindow.py:204
+#, fuzzy
+msgid "New scheduled task"
+msgstr "Ta bort markerade uppgifter"
+
+#: src/addWindow.py:208
+#, fuzzy
+msgid "Create a new scheduled task"
+msgstr "Skapa en ny uppgift"
+
+#: src/addWindow.py:243
+msgid "This is an invalid record! The problem could be at the "
+msgstr ""
+
+#: src/addWindow.py:243
+msgid " field. Reason: "
+msgstr ""
+
+#: src/addWindow.py:277
+#, fuzzy
+msgid "use advanced"
+msgstr " _Avancerad"
+
+#: src/addWindow.py:293 src/addWindow.py:388
+msgid "week"
+msgstr "vecka"
+
+#: src/addWindow.py:309
+msgid "command"
+msgstr "kommando"
+
+#. put the apropiate values in the labels describing entitys, and the 'at' combobox
+#: src/addWindowHelp.py:85 src/gnome-schedule.glade.h:24
+#, fuzzy
+msgid "Happens all "
+msgstr "Glens Falls"
+
+#: src/addWindowHelp.py:85 src/addWindowHelp.py:196
+#, fuzzy
+msgid "s"
+msgstr ":a"
+
+#: src/addWindowHelp.py:88
+#, fuzzy
+msgid "Happens from "
+msgstr "Öppnar meddelanden från \"%s\""
+
+#. show the form
+#: src/addWindowHelp.py:146
+msgid "Edit timeexpression for: "
+msgstr ""
+
+#: src/addWindowHelp.py:187 src/addWindowHelp.py:198
+#, fuzzy
+msgid "st. "
+msgstr ":a"
+
+#: src/addWindowHelp.py:189
+#, fuzzy
+msgid "th. "
+msgstr ":e"
+
+#: src/crontab.py:137
+#, fuzzy
+msgid "st."
+msgstr ":a"
+
+#: src/crontab.py:139
+#, fuzzy
+msgid "th."
+msgstr ":e"
+
+#: src/crontab.py:149
+#, fuzzy
+msgid "Every minute"
+msgstr "Varje vecka"
+
+#: src/crontab.py:152 src/crontab.py:156 src/crontab.py:162 src/crontab.py:169
+#: src/crontab.py:176 src/crontab.py:178
+#, fuzzy
+msgid "Every "
+msgstr "Var"
+
+#: src/crontab.py:152
+#, fuzzy
+msgid " minute of every hour"
+msgstr "minuter innan de sker."
+
+#: src/crontab.py:156
+#, fuzzy
+msgid " hour of the day"
+msgstr "Dagens citat"
+
+#: src/crontab.py:158 src/crontab.py:164
+#, fuzzy
+msgid "At "
+msgstr "Alt"
+
+#: src/crontab.py:158
+#, fuzzy
+msgid " every day"
+msgstr "Varje dag"
+
+#: src/crontab.py:164 src/crontab.py:171
+#, fuzzy
+msgid " every "
+msgstr "_var"
+
+#: src/crontab.py:164
+#, fuzzy
+msgid " day of the month"
+msgstr ":e dagen i månaden"
+
+#: src/crontab.py:169 src/crontab.py:171
+#, fuzzy
+msgid " month of the year"
+msgstr "bredd på sidopanelen"
+
+#: src/crontab.py:171
+#, fuzzy
+msgid "At the "
+msgstr "_Bifogad"
+
+#: src/crontab.py:176
+#, fuzzy
+msgid " day of the week"
+msgstr "F_örsta dagen i veckan:"
+
+#: src/crontab.py:178
+#, fuzzy
+msgid " day of the week at "
+msgstr ":e dagen i månaden"
+
+#: src/gnome-schedule.glade.h:1
+#, fuzzy
+msgid "     "
+msgstr "      "
+
+#: src/gnome-schedule.glade.h:2
+#, fuzzy
+msgid "         "
+msgstr "      "
+
+#: src/gnome-schedule.glade.h:3
+#, fuzzy
+msgid "          "
+msgstr ""
+"\n"
+"  Anknytning:    "
+
+#: src/gnome-schedule.glade.h:4
+msgid "*"
+msgstr "*"
+
+#: src/gnome-schedule.glade.h:5
+msgid "* * * * * command"
+msgstr ""
+
+#: src/gnome-schedule.glade.h:6
+#, fuzzy
+msgid "0"
+msgstr "0%"
+
+#: src/gnome-schedule.glade.h:7
+msgid "0-23"
+msgstr ""
+
+#: src/gnome-schedule.glade.h:8
+msgid "0-59"
+msgstr ""
+
+#: src/gnome-schedule.glade.h:9
+msgid "0-7"
+msgstr ""
+
+#: src/gnome-schedule.glade.h:10
+#, fuzzy
+msgid "1-12"
+msgstr "12"
+
+#: src/gnome-schedule.glade.h:11
+msgid "1-31"
+msgstr ""
+
+#: src/gnome-schedule.glade.h:12
+#, fuzzy
+msgid "2"
+msgstr "24"
+
+#: src/gnome-schedule.glade.h:13
+msgid "59"
+msgstr ""
+
+#: src/gnome-schedule.glade.h:14
+#, fuzzy
+msgid "<b>Basic settings</b>"
+msgstr "Grundläggande inställningar"
+
+#: src/gnome-schedule.glade.h:15
+#, fuzzy
+msgid "<b>Frequency setting</b>"
+msgstr "<b>Profilinställningar</b>"
+
+#: src/gnome-schedule.glade.h:16
+#, fuzzy
+msgid "<b>Preview</b>"
+msgstr "Förhandsgranska"
+
+#: src/gnome-schedule.glade.h:17
+msgid ">/dev/null 2>&1"
+msgstr ""
+
+#: src/gnome-schedule.glade.h:18
+msgid "A_dvanced"
+msgstr "A_vancerat"
+
+#: src/gnome-schedule.glade.h:19
+#, fuzzy
+msgid "Active user"
+msgstr "Aktiv"
+
+#: src/gnome-schedule.glade.h:20
+msgid "Advanced"
+msgstr "Avancerat"
+
+#: src/gnome-schedule.glade.h:21
+msgid "Basic"
+msgstr "Grundläggande"
+
+#: src/gnome-schedule.glade.h:22
+#, fuzzy
+msgid "Configure scheduled tasks"
+msgstr "Färg för uppgifter som skulle ha gjorts"
+
+#: src/gnome-schedule.glade.h:23
+msgid "Every"
+msgstr "Var"
+
+#: src/gnome-schedule.glade.h:25
+msgid "Happens at the"
+msgstr ""
+
+#: src/gnome-schedule.glade.h:26
+#, fuzzy
+msgid "Happens every "
+msgstr "Uppdatera var "
+
+#: src/gnome-schedule.glade.h:27
+msgid "Happens from"
+msgstr ""
+
+#: src/gnome-schedule.glade.h:28
+#, fuzzy
+msgid "No output"
+msgstr "Telefonutmatning"
+
+#: src/gnome-schedule.glade.h:29
+#, fuzzy
+msgid "Other expression"
+msgstr "Uttryck"
+
+#: src/gnome-schedule.glade.h:30
+#, fuzzy
+msgid "Run"
+msgstr "_Kör"
+
+#: src/gnome-schedule.glade.h:31
+#, fuzzy
+msgid "Set user"
+msgstr "Ställ in _användar-ID"
+
+#: src/gnome-schedule.glade.h:32
+#, fuzzy
+msgid "Shows the records"
+msgstr "Välj färg"
+
+#: src/gnome-schedule.glade.h:33
+#, fuzzy
+msgid "Time expression help"
+msgstr "Uttryck"
+
+#. Setting up the columns
+#: src/gnome-schedule.glade.h:34 src/mainWindow.py:180 src/mainWindow.py:202
+msgid "Title"
+msgstr "Titel"
+
+#: src/gnome-schedule.glade.h:35
+#, fuzzy
+msgid "Treeview"
+msgstr "Förhandsgranska"
+
+#: src/gnome-schedule.glade.h:36
+#, fuzzy
+msgid "[Add|Edit] scheduled task"
+msgstr "Redigera uppgiften"
+
+#: src/gnome-schedule.glade.h:37
+#, fuzzy
+msgid "_Add task"
+msgstr "Inga uppgifter"
+
+#: src/gnome-schedule.glade.h:38
+msgid "_Delete"
+msgstr "_Ta bort"
+
+#: src/gnome-schedule.glade.h:39
+#, fuzzy
+msgid "_Manual"
+msgstr "Manuell"
+
+#: src/gnome-schedule.glade.h:43
+msgid ""
+"minute\n"
+"hour\n"
+"day\n"
+"week\n"
+"month\n"
+"use advanced"
+msgstr ""
+
+#: src/gnome-schedule.glade.h:50
+#, fuzzy
+msgid "root"
+msgstr "Start"
+
+#: src/gnome-schedule.glade.h:51
+msgid "to"
+msgstr "till"
+
+#. Setting up the columns
+#: src/mainWindow.py:182 src/mainWindow.py:198
+msgid "Frequency"
+msgstr "Frekvens"
+
+#: src/mainWindow.py:184 src/mainWindow.py:200
+msgid "Command"
+msgstr "Kommando"
+
+#: src/mainWindow.py:264
+#, fuzzy
+msgid "System Schedule"
+msgstr "Schema"
+
+#: src/mainWindow.py:265
+#, fuzzy
+msgid "Copyright (c) 2004-2005 Gaute Hope."
+msgstr "Copyright © 2000 Helix Code, Inc."
+
+#: src/mainWindow.py:266
+msgid "This software is distributed under the GPL. "
+msgstr ""
+
+#~ msgid "months"
+#~ msgstr "månader"
+
+#~ msgid "Commands"
+#~ msgstr "Kommandon"

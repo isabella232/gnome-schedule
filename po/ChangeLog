@@ -1,5 +1,9 @@
 2004-06-17  Christian Rose  <menthos@menthos.com>
 
+	* sv.po: Added the start of a Swedish translation.
+
+2004-06-17  Christian Rose  <menthos@menthos.com>
+
 	* .cvsignore: Added this.
 	* POTFILES.in: Removed non-existant file entry, added missing ones.
 	* gnome-schedule.gladestrings: There's no point in having this file.
