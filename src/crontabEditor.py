@@ -177,7 +177,7 @@ class CrontabEditor:
 		self.reload_templates ()
 
 	def reload_templates (self):
-		self.noevents = gtk.TRUE
+
 		self.template_names = self.schedule.gettemplatenames ()
 		
 		if self.template_names == None or len (self.template_names) <= 0:
@@ -210,7 +210,7 @@ class CrontabEditor:
 			#self.template_label.set_sensitive (gtk.TRUE)
 				
 		self.template_combobox.set_active (active)
-		self.noevents = gtk.FALSE
+
 
 	def on_image_button_clicked (self, *args):
 		preview = gtk.Image()
