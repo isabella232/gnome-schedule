@@ -121,7 +121,9 @@ class main:
 		else:
 			self.xml.signal_connect("on_btnSetUser_clicked", self.showSetUser)
 
-		self.widget.connect("delete-event", self.quit)
+		self.widget.connect("delete_event", self.quit)
+		self.widget.connect("destroy_event", self.quit)
+		# self.widget.connect("close", self.quit)
 
 		#inittializing the treeview
 		self.init_treeview()
