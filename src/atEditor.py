@@ -119,7 +119,7 @@ class AtEditor:
 		pass
 
 	def on_script_textview_popup_menu (self, *args):
-		# show at_script_menu
+		# show at_script_menuons: install t
 		# don't forget to attach eventhandling to this popup
 		pass
 	
@@ -201,10 +201,9 @@ class AtEditor:
 			return
 
 	def update_time_combo (self):
+			#update variables, set calendar
 			runat = self.combobox_entry.get_text ()
-			# validate runat
 			self.runat = runat
-#set the calendar
 			regexp = re.compile("([0-9][0-9]):([0-9][0-9])\ ([0-9][0-9][0-9][0-9])-([0-9][0-9])-([0-9][0-9])")
 			runat_g = regexp.match(self.runat)
 			if runat_g:
@@ -222,8 +221,6 @@ class AtEditor:
 			
 	
 	def on_combobox_changed (self, *args):
-		# In this combobox for example "tomorrow" should be checked
-		# for being possible or not
 		if self.noupdate == gtk.FALSE:
 			self.update_time_combo()
 			
