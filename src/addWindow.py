@@ -49,6 +49,7 @@ class AddWindow:
 		self.title_entry = self.xml.get_widget ("title_entry")
 		# Note that this is the entry inside the combobox
 		self.frequency_combobox = self.xml.get_widget ("frequency_combobox").get_child()
+		# Trick to make it read-only
 		self.frequency_combobox.connect("key_press_event", self.frequency_combobox_keypress)
 
 		self.basic_table = self.xml.get_widget ("basic_table")
@@ -98,6 +99,8 @@ class AddWindow:
 			self.nooutput = gtk.FALSE
 
 	def frequency_combobox_keypress (self, *args):
+		# Returning true will tell gtk that the signal has been processed
+		# This basically makes the entry read-only
 		return gtk.TRUE
 
 	def showAddWindow (self):
