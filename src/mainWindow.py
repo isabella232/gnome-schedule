@@ -29,6 +29,7 @@ import crontabEditorHelper
 import crontabEditor
 import atEditor
 # import atEditorHelper
+import saveWindow
 import setuserWindow
 import schedule
 import crontab
@@ -140,6 +141,9 @@ class main:
 		self.xml.signal_connect("on_help_button_clicked", self.on_help_button_clicked)
 		self.xml.signal_connect("on_btnExit_clicked", self.quit)
 
+		self.xml.signal_connect("on_at1_activate", self.switchMode)
+		self.xml.signal_connect("on_crontab1_activate", self.switchMode)
+
 		support.gconf_client.add_dir ("/apps/gnome-schedule", gconf.CLIENT_PRELOAD_NONE)
 		support.gconf_client.notify_add ("/apps/gnome-schedule/advanced", self.gconfkey_advanced_changed);
 		
@@ -176,6 +180,8 @@ class main:
 			gtk.main ()
 		except:
 			gtk.mainloop()
+		return
+	def switchMode(self, widget):
 		return
 
 	def init_treeview(self, mode = "simple", init = 0):
