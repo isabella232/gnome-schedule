@@ -95,16 +95,12 @@ class main:
 		self.xml.signal_connect("on_del_button_clicked", self.on_del_button_clicked)
 		self.xml.signal_connect("on_help_button_clicked", self.on_help_button_clicked)
 		self.xml.signal_connect("on_btnSetUser_clicked", self.on_btnSetUser_clicked)
-		self.xml.signal_connect("on_btnExit_clicked", self.on_btnExit_clicked_clicked)
+		self.xml.signal_connect("on_btnExit_clicked", self.__quit__)
 		
 		#get user
 		self.__readUser__()
 		
-		#setuser only shown if user = root		
-		if self.root == 0:
-			self.btnSetUser.hide()		
-		##
-
+		
 		##inittializing the treeview
 		## [0 Title, 1 Frequency, 2 Command, 3 Crontab record, 4 ID, 5 Time, 6 Icon, 7 scheduled instance, 8 icon path, 9 date, 10 class_id, 11 user, 12 time, 13 type, 14 crontab/at]
 		##for at this would be like: ["untitled", "12:50 2004-06-25", "", "35", "", "12:50", icon, at instance, icon_path, "2004-06-25", "a", "drzap", "at"]
@@ -129,6 +125,7 @@ class main:
 		self.add_scheduled_task_menu = self.xml.get_widget ("add_scheduled_task_menu")
 		self.properties_menu = self.xml.get_widget ("properties_menu")
 		self.delete_menu = self.xml.get_widget ("delete_menu")
+		self.set_user_menu = self.xml.get_widget ("set_user_menu")
 		self.quit_menu = self.xml.get_widget ("quit_menu")
 		
 		self.advanced_menu = self.xml.get_widget ("advanced_menu")
@@ -140,6 +137,20 @@ class main:
 		self.properties_menu.set_sensitive (gtk.FALSE)
 		self.delete_menu.set_sensitive (gtk.FALSE)
 
+		self.xml.signal_connect("on_add_scheduled_task_menu_activate", self.on_add_scheduled_task_menu_activate)
+		self.xml.signal_connect("on_properties_menu_activate", self.on_properties_menu_activate)
+		self.xml.signal_connect("on_delete_menu_activate", self.on_delete_menu_activate)
+		self.xml.signal_connect("on_set_user_menu_activate",self.on_set_user_menu_activate)
+		
+		self.xml.signal_connect("on_quit_menu_activate", self.__quit__)
+		
+		self.xml.signal_connect("on_advanced_menu_activate", self.on_advanced_menu_activate)
+	
+		self.xml.signal_connect("on_manual_menu_activate", self.on_manual_menu_activate)
+		self.xml.signal_connect("on_about_menu_activate", self.on_about_menu_activate)
+		##
+
+
 		#enable or disable advanced depending on user config
 		self.advanced_menu.set_active (self.backend.get_advanced_option())
 		if self.backend.get_advanced_option():
@@ -147,16 +158,10 @@ class main:
 		else:
 			self.switchView("simple")
 		
-		
-		self.xml.signal_connect("on_add_scheduled_task_menu_activate", self.on_add_scheduled_task_menu_activate)
-		self.xml.signal_connect("on_properties_menu_activate", self.on_properties_menu_activate)
-		self.xml.signal_connect("on_delete_menu_activate", self.on_delete_menu_activate)
-		self.xml.signal_connect("on_quit_menu_activate", self.__quit__)
-		
-		self.xml.signal_connect("on_advanced_menu_activate", self.on_advanced_menu_activate)
-	
-		self.xml.signal_connect("on_manual_menu_activate", self.on_manual_menu_activate)
-		self.xml.signal_connect("on_about_menu_activate", self.on_about_menu_activate)
+		#setuser only shown if user = root		
+		if self.root == 0:
+			self.btnSetUser.hide()
+			self.set_user_menu.hide()		
 		##
 
 		##create crontab
@@ -193,8 +198,8 @@ class main:
 			self.statusbar.show()	
 		else:
 			self.statusbar.hide()	
-		
-		
+			
+					
 		if records == "crontab":
 			self.treemodel.foreach(self.__delete_row__, "crontab")
 			self.crontab.read()
@@ -371,11 +376,13 @@ class main:
 						selection = self.treeview.get_selection()
 						selection.select_iter(firstiter)
 
+	def	on_set_user_menu_activate(self, *args):
+		self.setuserWindow.ShowSetuserWindow()
 
-	#TODO: create menu item for this too
+
 	def on_btnSetUser_clicked(self, *args):
-		self.__showSetUser__()
-
+		self.on_set_user_menu_activate(self, args)
+			
 	def on_add_button_clicked (self, *args):
 		self.on_add_scheduled_task_menu_activate (self, args)
 
@@ -387,6 +394,7 @@ class main:
 
 	def on_help_button_clicked (self, *args):
 		self.on_manual_menu_activate (self, args)
+
 
 	#remove task from list with DEL key
 	def on_treeview_key_pressed (self, widget, event):
@@ -413,17 +421,6 @@ class main:
 			self.root = 0
 			self.user = os.environ['USER']
 
-
-  	def on_quit_menu_activate (self, *args):
-  		self.__quit__()
- 		 
-	def on_btnExit_clicked_clicked(self, *args):		
-		self.__quit__()
- 		
-  	#change user
- 	def __showSetUser__(self):
- 		self.setuserWindow.ShowSetuserWindow()
- 
  	#about box
  	def on_about_menu_activate (self, *args):
  		# TODO: should be using gtkAboutDialog
