@@ -26,7 +26,6 @@ import os
 import sys
 import tempfile
 import commands
-import string
 import time
 
 #custom modules

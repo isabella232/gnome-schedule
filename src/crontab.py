@@ -23,7 +23,6 @@ import gtk
 import re
 import os
 import tempfile
-import string
 
 #custom modules
 import crontabEditor
@@ -285,8 +284,10 @@ class Crontab:
 					#title is in comment of the task
 					title = None
 					if m.groups ()[7] != None:
-						lastpiece = string.split (m.groups ()[7], ", ")
-						title = lastpiece[0]
+						# TODO: check if works
+						lastpiece = m.groups ()[7]
+						keep = lastpiece.split (", ")
+						title = keep[0]
 						if len (lastpiece) > 1:
 							icon = lastpiece[1]
 

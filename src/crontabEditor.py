@@ -22,7 +22,7 @@ import gobject
 
 
 #python modules
-import string
+#import string
 import re
 import os
 

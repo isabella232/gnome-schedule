@@ -22,7 +22,7 @@ import gtk
 import gconf
 
 #python modules
-import string
+#import string
 import os
 
 class ConfigBackend:
@@ -63,8 +63,7 @@ class ConfigBackend:
 		# TODO: dirty hack
 		self.parent.at_editor.__reload_templates__ ()
 		self.parent.crontab_editor.__reload_templates__ ()
-		#pass
-
+		
 
 	def removetemplate (self,type, template_name):
 		template_name_c = self.__replace__ (template_name)
@@ -74,7 +73,9 @@ class ConfigBackend:
 		if installed != None:
 			first = gtk.TRUE
 			newstring = "   "
-			for t in string.split (installed, ", "):
+			# TODO: test this code
+			#for t in string.split (installed, ", "):
+			for t in installed.split (", "):
 				if t != template_name_c:
 					if first == gtk.TRUE:
 						newstring = t
@@ -96,7 +97,8 @@ class ConfigBackend:
 
 	def __replace__ (self, template_name_c):
 		for a in " ,	;:/\\\"'!@#$%^&*()-_+=|?<>.][{}":
-			template_name_c = string.replace (template_name_c, a, "-")
+			# TODO: test this code
+			template_name_c = template_name_c.replace (a, "-")
 			
 		return template_name_c
 	
@@ -115,7 +117,8 @@ class ConfigBackend:
 			installed = template_name_c
 		else:
 			found = gtk.FALSE
-			for t in string.split (installed, ", "):
+			# TODO: test this code
+			for t in installed.split (", "):
 				if t == template_name_c:
 					found = gtk.TRUE
 		
@@ -129,7 +132,8 @@ class ConfigBackend:
 	def gettemplatenames (self,type):
 		strlist = self.gconf_client.get_string("/apps/gnome-schedule/presets/" + type + "/installed")
 		if strlist != None:
-			list = string.split (strlist, ", ")
+			# TODO: test this code
+			list = strlist.split (", ")
 			return list
 		else:
 			return None

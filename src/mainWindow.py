@@ -33,6 +33,7 @@ import config
 import crontab
 import crontabEditor
 import at
+import atEditor
 import setuserWindow
 import addWindow
 import preset
