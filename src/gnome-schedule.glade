@@ -41,6 +41,7 @@
 		  <child>
 		    <widget class="GtkImageMenuItem" id="add_scheduled_task_menu">
 		      <property name="visible">True</property>
+		      <property name="tooltip" translatable="yes">Add a new scheduled task</property>
 		      <property name="label" translatable="yes">_Add task</property>
 		      <property name="use_underline">True</property>
 		      <signal name="activate" handler="on_add_scheduled_task_menu_activate" last_modification_time="Sat, 05 Jun 2004 23:20:51 GMT"/>
@@ -62,6 +63,7 @@
 		  <child>
 		    <widget class="GtkImageMenuItem" id="properties_menu">
 		      <property name="visible">True</property>
+		      <property name="tooltip" translatable="yes">Alter a scheduled task</property>
 		      <property name="stock_item">GNOMEUIINFO_MENU_PROPERTIES_ITEM</property>
 		      <signal name="activate" handler="on_properties_menu_activate" last_modification_time="Sun, 06 Jun 2004 14:13:01 GMT"/>
 		    </widget>
@@ -70,6 +72,7 @@
 		  <child>
 		    <widget class="GtkImageMenuItem" id="delete_menu">
 		      <property name="visible">True</property>
+		      <property name="tooltip" translatable="yes">Delete a scheduled task</property>
 		      <property name="label" translatable="yes">_Delete</property>
 		      <property name="use_underline">True</property>
 		      <signal name="activate" handler="on_delete_menu_activate" last_modification_time="Sat, 05 Jun 2004 23:20:51 GMT"/>
@@ -117,6 +120,7 @@
 		  <child>
 		    <widget class="GtkCheckMenuItem" id="advanced_menu">
 		      <property name="visible">True</property>
+		      <property name="tooltip" translatable="yes">For experienced users only</property>
 		      <property name="label" translatable="yes">A_dvanced</property>
 		      <property name="use_underline">True</property>
 		      <property name="active">False</property>
@@ -139,6 +143,7 @@
 		  <child>
 		    <widget class="GtkMenuItem" id="manual_menu">
 		      <property name="visible">True</property>
+		      <property name="tooltip" translatable="yes">Show the manual</property>
 		      <property name="label" translatable="yes">_Manual</property>
 		      <property name="use_underline">True</property>
 		      <signal name="activate" handler="on_manual_menu_activate" last_modification_time="Sun, 06 Jun 2004 14:14:47 GMT"/>
@@ -148,6 +153,7 @@
 		  <child>
 		    <widget class="GtkImageMenuItem" id="about_menu">
 		      <property name="visible">True</property>
+		      <property name="tooltip" translatable="yes">About this application</property>
 		      <property name="stock_item">GNOMEUIINFO_MENU_ABOUT_ITEM</property>
 		      <signal name="activate" handler="on_about_menu_activate" last_modification_time="Sun, 06 Jun 2004 14:12:37 GMT"/>
 		    </widget>
@@ -182,6 +188,7 @@
 	      <child>
 		<widget class="GtkToolButton" id="add_button">
 		  <property name="visible">True</property>
+		  <property name="tooltip" translatable="yes">Add a new scheduled task</property>
 		  <property name="stock_id">gtk-add</property>
 		  <property name="visible_horizontal">True</property>
 		  <property name="visible_vertical">True</property>
@@ -197,6 +204,7 @@
 	      <child>
 		<widget class="GtkToolButton" id="prop_button">
 		  <property name="visible">True</property>
+		  <property name="tooltip" translatable="yes">Alter a scheduled task</property>
 		  <property name="stock_id">gtk-properties</property>
 		  <property name="visible_horizontal">True</property>
 		  <property name="visible_vertical">True</property>
@@ -212,6 +220,7 @@
 	      <child>
 		<widget class="GtkToolButton" id="del_button">
 		  <property name="visible">True</property>
+		  <property name="tooltip" translatable="yes">Delete a scheduled task</property>
 		  <property name="stock_id">gtk-delete</property>
 		  <property name="visible_horizontal">True</property>
 		  <property name="visible_vertical">True</property>
@@ -227,6 +236,7 @@
 	      <child>
 		<widget class="GtkToolButton" id="help_button">
 		  <property name="visible">True</property>
+		  <property name="tooltip" translatable="yes">Show help</property>
 		  <property name="stock_id">gtk-help</property>
 		  <property name="visible_horizontal">True</property>
 		  <property name="visible_vertical">True</property>
@@ -242,6 +252,7 @@
 	      <child>
 		<widget class="GtkToolButton" id="btnExit">
 		  <property name="visible">True</property>
+		  <property name="tooltip" translatable="yes">Quit the application</property>
 		  <property name="stock_id">gtk-quit</property>
 		  <property name="visible_horizontal">True</property>
 		  <property name="visible_vertical">True</property>
@@ -257,9 +268,10 @@
 	      <child>
 		<widget class="GtkToolButton" id="btnSetUser">
 		  <property name="visible">True</property>
+		  <property name="tooltip" translatable="yes">Select a different user</property>
 		  <property name="label" translatable="yes">Set user</property>
 		  <property name="use_underline">True</property>
-		  <property name="stock_id">gtk-justify-fill</property>
+		  <property name="stock_id">gtk-dialog-authentication</property>
 		  <property name="visible_horizontal">True</property>
 		  <property name="visible_vertical">True</property>
 		  <property name="is_important">False</property>
@@ -292,6 +304,7 @@
 	  <child>
 	    <widget class="GtkTreeView" id="treeview">
 	      <property name="visible">True</property>
+	      <property name="tooltip" translatable="yes">Scheduled and active tasks</property>
 	      <property name="can_focus">True</property>
 	      <property name="headers_visible">True</property>
 	      <property name="rules_hint">False</property>
@@ -406,6 +419,7 @@
 		      <child>
 			<widget class="GtkButton" id="image_button">
 			  <property name="visible">True</property>
+			  <property name="tooltip" translatable="yes">Set the icon</property>
 			  <property name="can_focus">True</property>
 			  <property name="label" translatable="yes">_Select</property>
 			  <property name="use_underline">True</property>
@@ -691,6 +705,7 @@
 			  <child>
 			    <widget class="GtkButton" id="save_button">
 			      <property name="visible">True</property>
+			      <property name="tooltip" translatable="yes">Will save the information as a template</property>
 			      <property name="can_default">True</property>
 			      <property name="can_focus">True</property>
 			      <property name="label">gtk-save</property>
@@ -709,6 +724,7 @@
 			  <child>
 			    <widget class="GtkButton" id="remove_button">
 			      <property name="visible">True</property>
+			      <property name="tooltip" translatable="yes">Will delete the selected template</property>
 			      <property name="can_focus">True</property>
 			      <property name="label">gtk-delete</property>
 			      <property name="use_stock">True</property>
@@ -857,6 +873,7 @@
 		      <child>
 			<widget class="GtkButton" id="btnMinuteHelp">
 			  <property name="visible">True</property>
+			  <property name="tooltip" translatable="yes">Set the minute frequency setting</property>
 			  <property name="can_focus">True</property>
 			  <property name="label" translatable="yes">minute</property>
 			  <property name="use_underline">True</property>
@@ -903,6 +920,7 @@
 		      <child>
 			<widget class="GtkButton" id="btnHourHelp">
 			  <property name="visible">True</property>
+			  <property name="tooltip" translatable="yes">Set the hour frequency setting</property>
 			  <property name="can_focus">True</property>
 			  <property name="label" translatable="yes">hour</property>
 			  <property name="use_underline">True</property>
@@ -949,6 +967,7 @@
 		      <child>
 			<widget class="GtkButton" id="btnDayHelp">
 			  <property name="visible">True</property>
+			  <property name="tooltip" translatable="yes">Set the day frequency setting</property>
 			  <property name="can_focus">True</property>
 			  <property name="label" translatable="yes">day</property>
 			  <property name="use_underline">True</property>
@@ -995,6 +1014,7 @@
 		      <child>
 			<widget class="GtkButton" id="btnMonthHelp">
 			  <property name="visible">True</property>
+			  <property name="tooltip" translatable="yes">Set the month frequency setting</property>
 			  <property name="can_focus">True</property>
 			  <property name="label" translatable="yes">month</property>
 			  <property name="use_underline">True</property>
@@ -1041,6 +1061,7 @@
 		      <child>
 			<widget class="GtkButton" id="btnWeekdayHelp">
 			  <property name="visible">True</property>
+			  <property name="tooltip" translatable="yes">Set the weekday frequency setting</property>
 			  <property name="can_focus">True</property>
 			  <property name="label" translatable="yes">weekday</property>
 			  <property name="use_underline">True</property>
@@ -1265,6 +1286,7 @@
 	  <child>
 	    <widget class="GtkButton" id="help_button">
 	      <property name="visible">True</property>
+	      <property name="tooltip" translatable="yes">Show help</property>
 	      <property name="can_default">True</property>
 	      <property name="can_focus">True</property>
 	      <property name="label">gtk-help</property>
@@ -1278,6 +1300,7 @@
 	  <child>
 	    <widget class="GtkButton" id="cancel_button">
 	      <property name="visible">True</property>
+	      <property name="tooltip" translatable="yes">Cancel this operation</property>
 	      <property name="can_default">True</property>
 	      <property name="can_focus">True</property>
 	      <property name="label">gtk-cancel</property>
@@ -1291,6 +1314,7 @@
 	  <child>
 	    <widget class="GtkButton" id="ok_button">
 	      <property name="visible">True</property>
+	      <property name="tooltip" translatable="yes">Set the scheduled task</property>
 	      <property name="can_default">True</property>
 	      <property name="can_focus">True</property>
 	      <property name="label">gtk-ok</property>
@@ -1360,6 +1384,7 @@
 	  <child>
 	    <widget class="GtkEntry" id="entUser">
 	      <property name="visible">True</property>
+	      <property name="tooltip" translatable="yes">The username</property>
 	      <property name="can_focus">True</property>
 	      <property name="editable">True</property>
 	      <property name="visibility">True</property>
@@ -1393,6 +1418,7 @@
 	  <child>
 	    <widget class="GtkButton" id="setuser_cancel_button">
 	      <property name="visible">True</property>
+	      <property name="tooltip" translatable="yes">Cancel this operation</property>
 	      <property name="can_default">True</property>
 	      <property name="can_focus">True</property>
 	      <property name="label">gtk-cancel</property>
@@ -1406,6 +1432,7 @@
 	  <child>
 	    <widget class="GtkButton" id="setuser_ok_button">
 	      <property name="visible">True</property>
+	      <property name="tooltip" translatable="yes">Set user</property>
 	      <property name="can_default">True</property>
 	      <property name="can_focus">True</property>
 	      <property name="label">gtk-ok</property>
@@ -1482,6 +1509,7 @@
 	  <child>
 	    <widget class="GtkRadioButton" id="radRange">
 	      <property name="visible">True</property>
+	      <property name="tooltip" translatable="yes">Happens each occurrence between x and y</property>
 	      <property name="can_focus">True</property>
 	      <property name="label" translatable="yes">Happens from</property>
 	      <property name="use_underline">True</property>
@@ -1585,6 +1613,7 @@
 	  <child>
 	    <widget class="GtkRadioButton" id="radEvery">
 	      <property name="visible">True</property>
+	      <property name="tooltip" translatable="yes">Happens every x</property>
 	      <property name="can_focus">True</property>
 	      <property name="label" translatable="yes">Happens every </property>
 	      <property name="use_underline">True</property>
@@ -1668,6 +1697,7 @@
 	  <child>
 	    <widget class="GtkRadioButton" id="radAll">
 	      <property name="visible">True</property>
+	      <property name="tooltip" translatable="yes">Happens all occurrences</property>
 	      <property name="can_focus">True</property>
 	      <property name="label" translatable="yes">Happens all </property>
 	      <property name="use_underline">True</property>
@@ -1693,6 +1723,7 @@
 	  <child>
 	    <widget class="GtkRadioButton" id="radFix">
 	      <property name="visible">True</property>
+	      <property name="tooltip" translatable="yes">Happens at a defined occurrence</property>
 	      <property name="can_focus">True</property>
 	      <property name="label" translatable="yes">Happens at the</property>
 	      <property name="use_underline">True</property>
@@ -1776,6 +1807,7 @@
 	  <child>
 	    <widget class="GtkRadioButton" id="radOth">
 	      <property name="visible">True</property>
+	      <property name="tooltip" translatable="yes">For example 1,2,3,4 means happens the first, second, third and fourth minute</property>
 	      <property name="can_focus">True</property>
 	      <property name="label" translatable="yes">Other expression</property>
 	      <property name="use_underline">True</property>
