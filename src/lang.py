@@ -196,6 +196,9 @@ def translate_crontab_easy_en (minute, hour, day, month, weekday):
 	if minute.find ("\\") != -1 or hour.find ("\\") != -1 or day.find ("\\") != -1 or month.find ("\\") != -1 or weekday.find ("\\") != -1:
 		return minute + " " + hour + " " + day + " " + month + " " + weekday
 
+	if minute.find ("-") != -1 or hour.find ("-") != -1 or day.find ("-") != -1 or month.find ("-") != -1 or weekday.find ("-") != -1:
+		return minute + " " + hour + " " + day + " " + month + " " + weekday
+
 	if minute == "*" and hour == "*" and month == "*" and day == "*" and weekday == "*":
 		return _("Every minute")
 
