@@ -83,7 +83,9 @@ class CrontabEditor:
 		self.template_image = self.xml.get_widget ("template_image")
 		self.template_label = self.xml.get_widget ("template_label")
 		self.image_button = self.xml.get_widget ("image_button")
-
+		self.save_button = self.xml.get_widget ("save_button")
+		self.noentryevents = gtk.FALSE
+		self.template_combobox.get_child().connect ("changed", self.on_template_combobox_entry_changed)
 		self.xml.signal_connect("on_remove_button_clicked", self.on_remove_button_clicked)
 		self.xml.signal_connect("on_add_help_button_clicked", self.on_add_help_button_clicked)
 		self.xml.signal_connect("on_cancel_button_clicked", self.on_cancel_button_clicked)
@@ -95,7 +97,7 @@ class CrontabEditor:
 		self.xml.signal_connect("on_image_button_clicked", self.on_image_button_clicked)
 		self.xml.signal_connect("on_save_button_clicked", self.on_save_button_clicked)
 		self.xml.signal_connect("on_fieldHelp_clicked", self.on_fieldHelp_clicked)
-
+		self.template_combobox_model = gtk.ListStore(gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_PYOBJECT)
 		self.nooutput = self.chkNoOutput.get_active()
 		self.loadicon ()
 		self.reload_templates ()
@@ -112,7 +114,8 @@ class CrontabEditor:
 		
 	def on_save_button_clicked (self, *args):
 		# Uses SaveTemplate (will call it if OK is pressed)
-		self.ParentClass.saveWindow.ShowSaveWindow(self)
+		# self.ParentClass.saveWindow.ShowSaveWindow(self)
+		self.SaveTemplate (self.template_combobox.get_child().get_text())
 
 
 	def WrongRecordDialog (self, x, y, z):
@@ -140,46 +143,51 @@ class CrontabEditor:
 		self.reload_templates ()
 
 	def reload_templates (self):
-		print "Reloading templates"
+		print "Reloading templates"	
 		self.template_names = self.schedule.gettemplatenames ()
-		
+
+		self.template_combobox_model.clear ()
+		self.template_combobox_model.append ([_("Don't use a template"), None, None])
+
 		if self.template_names == None or len (self.template_names) <= 0:
-			if self.template_combobox_model != None:
-				self.template_combobox_model.clear ()
 			self.remove_button.set_sensitive (gtk.FALSE)
-			self.template_combobox.set_sensitive (gtk.FALSE)
-			self.template_label.set_sensitive (gtk.FALSE)
+			self.template_combobox.set_text_column (0)
+			self.template_combobox.set_model (self.template_combobox_model)
+			self.template_combobox.set_active (0)
+			self.save_button.set_sensitive (gtk.FALSE)
+			# self.template_combobox.set_sensitive (gtk.FALSE)
+			# self.template_label.set_sensitive (gtk.FALSE)
 		else:
-			self.template_combobox_model = gtk.ListStore(gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_PYOBJECT)
-			self.template_combobox_model.clear ()
-			self.template_combobox_model.prepend([_("Don't use a template"), None, None])
-			
+
 			for template_name in self.template_names:
 				thetemplate = self.schedule.gettemplate (template_name)
 				icon_uri, command, frequency, title, name = thetemplate
 				self.template_combobox_model.append([name, template_name, thetemplate])
-
 			try:
 				active = self.template_combobox.get_active ()
+				self.template_combobox.set_text_column (0)
 				self.template_combobox.set_model (self.template_combobox_model)
-				
+				self.template_combobox.set_text_column (0)
 				self.xml.signal_connect("on_template_combobox_changed", self.on_template_combobox_changed)
-				self.template_combobox.set_sensitive (gtk.TRUE)
+				#self.template_combobox.set_sensitive (gtk.TRUE)
 				self.remove_button.set_sensitive (gtk.TRUE)
-				self.template_label.set_sensitive (gtk.TRUE)
+				#self.template_label.set_sensitive (gtk.TRUE)
 				
 				if active != -1:
 					self.template_combobox.set_active (active)
 				else:
-					self.template_combobox.set_active (1)
+					self.template_combobox.set_active (0)
 				
 			except Exception, ex:
 				print "PyGTK Failure: combobox.set_model (gnome-schedule needs PyGTK 2.4!!!)"
 				print ex
 				# Not PyGTK 2.4 ? :-(
+				self.template_combobox.get_child().set_text (_("PyGTK < 2.3 is not supported!"))
 				self.remove_button.set_sensitive (gtk.FALSE)
 				self.template_combobox.set_sensitive (gtk.FALSE)
 				self.template_label.set_sensitive (gtk.FALSE)
+				self.remove_button.set_sensitive (gtk.FALSE)
+				self.save_button.set_sensitive (gtk.FALSE)
 
 	def on_image_button_clicked (self, *args):
 		preview = gtk.Image()
@@ -279,15 +287,20 @@ class CrontabEditor:
 			self.notebook.set_current_page(0)
 
 
+	def on_template_combobox_entry_changed (self, *args):
+		self.save_button.set_sensitive (gtk.TRUE)
+
 	def on_template_combobox_changed (self, *args):
 		if self.noevents == gtk.FALSE:
 			iter = self.template_combobox.get_active_iter ()
+			if iter == None:
+				return
 			template = self.template_combobox_model.get_value(iter, 2)
 			if template != None:
 				self.remove_button.set_sensitive (gtk.TRUE)
 				icon_uri, command, frequency, title, name = template
-				if self.ParentClass.saveWindow != None:
-					self.ParentClass.saveWindow.save_entry.set_text (name)
+				#if self.ParentClass.saveWindow != None:
+				#	self.ParentClass.saveWindow.save_entry.set_text (name)
 				if icon_uri != None:
 					self.template_image.set_from_file (icon_uri)
 					self.icon = icon_uri
@@ -322,8 +335,11 @@ class CrontabEditor:
 				self.update_textboxes ()
 			else:
 				self.remove_button.set_sensitive (gtk.FALSE)
+				self.save_button.set_sensitive (gtk.FALSE)
 				self.loadicon ()
 				self.reset ()
+		
+
 
 	def on_add_help_button_clicked (self, *args):
 		help_page = "file://" + config.getDocdir() + "/addingandediting.html"
