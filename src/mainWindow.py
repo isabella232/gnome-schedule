@@ -54,12 +54,14 @@ gtk.glade.bindtextdomain(domain)
 ## Icon for windows
 ##
 iconPixbuf = None
-try:
-	# print config.getImagedir() + "/gnome-schedule.png"
-	iconPixbuf = gtk.gdk.pixbuf_new_from_file(config.getImagedir() + "/gnome-schedule.png")
-except:
-	pass
+if os.access("../pixmaps/gnome-schedule.png", os.F_OK):
+	iconPixbuf = gtk.gdk.pixbuf_new_from_file ("../pixmaps/gnome-schedule.png")
+else:
+	try:
+		iconPixbuf = gtk.gdk.pixbuf_new_from_file (config.getImagedir() + "/gnome-schedule.png")
 
+	except:
+		print "ERROR: Could not load icon"
 
 ##
 ## The MainWindow class
@@ -387,20 +389,13 @@ class main:
 		support.gconf_client.set_bool ("/apps/gnome-schedule/advanced", widget.get_active())
 
 	def on_about_menu_activate (self, *args):
-		if os.access("../pixmaps/gnome-schedule.png", os.F_OK):
-			icon_path = "../pixmaps/gnome-schedule.png"
-		else:
-			icon_path = config.getImagedir() + "/gnome-schedule.png"
-
-		iconPixbuf = gtk.gdk.pixbuf_new_from_file (icon_path)
-
 		dlg = gnome.ui.About(_("Gnome Schedule"),
 			config.getVersion(),
 			_("Copyright (c) 2004-2005 Gaute Hope."),
 			_("This software is distributed under the GPL. "),
 			["Philip Van Hoof <me at freax dot org>",
 			"Gaute Hope <eg at gaute dot eu dot org>"], 
-			[_("Some painfully bad documentation put\ntoghether from the far corners of Gaute Hope's mind.")],_("translator_credits"),iconPixbuf)
+			[_("Some pain fully bad documentation put\ntoghether from the far corners of Gaute Hope's mind.")],_("translator_credits"),iconPixbuf)
 
 		dlg.set_transient_for(self.widget)
 		dlg.set_position (gtk.WIN_POS_CENTER_ON_PARENT)

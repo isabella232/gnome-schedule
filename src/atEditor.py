@@ -177,9 +177,13 @@ class AtEditor:
 	
 			if hour < 10:
 				hour = "0" + str(hour)
+			else:
+				hour = str(hour)
 	
 			if minute < 10:
 				minute = "0" + str(minute)
+			else:
+				minute = str(minute)
 			
 			if month < 10:
 				month = "0" + str(month)
