@@ -136,7 +136,7 @@ class At:
 
 	def delete (self, jobid):
 		if jobid:
-			execute = "atrm " + jobid
+			execute = "atrm " + str(jobid)
 		commands.getoutput(execute)
 		
 			
@@ -164,7 +164,7 @@ class At:
 			if array_or_false != gtk.FALSE:
 				(job_id, date, time, class_id, user, title, command) = array_or_false
 				icon_pix = None
-				iter = self.ParentClass.treemodel.append([title, time + " " + date, command, int(job_id), 0, time, icon_pix, self, date, class_id, user, "Defined"])
+				iter = self.ParentClass.treemodel.append([title, time + " " + date, command, "", int(job_id), time, icon_pix, self, date, class_id, user, "Defined"])
 				print int(job_id)
 
 		#["None(not suported yet)", "12:50 2004-06-25", "", "35", "", "12:50", icon, at instance, "2004-06-25", "a", "drzap", "at"]
