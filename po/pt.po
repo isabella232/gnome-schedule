@@ -1,20 +1,29 @@
-# acme Portuguese translation.
-# Copyright (C) 2003 Gnome 2.2
-# This file is distributed under the same license as the acme package.
-# Duarte Loreto <happyguy_pt@hotmail.com>, 2003.
+# gnome-schedule's Portuguese translation.
+# Copyright © 2004 gnome-schedule
+# This file is distributed under the same license as the gnome-schedule package.
+# Duarte Loreto <happyguy_pt@hotmail.com>, 2004.
 #
-#: src/lang.py:107 src/lang.py:109 src/lang.py:201 src/lang.py:203
+#: src/at.py:300 src/lang.py:118 src/lang.py:120 src/lang.py:212
+#: src/lang.py:214
 msgid ""
 msgstr ""
-"Project-Id-Version: 2.6\n"
+"Project-Id-Version: 2.8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-06-24 01:52+0100\n"
-"PO-Revision-Date: 2003-12-25 04:50+0000\n"
+"POT-Creation-Date: 2004-08-08 14:29+0100\n"
+"PO-Revision-Date: 2004-08-08 14:50+0000\n"
 "Last-Translator: Duarte Loreto <happyguy_pt@hotmail.com>\n"
-"Language-Team: pt <gnome_pt@yahoogroups.com>\n"
+"Language-Team: Portuguese <gnome_pt@yahoogroups.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: desktop/gnome-schedule.desktop.in.h:1
+msgid "Manage your system tasks"
+msgstr "Efectue a gestão das tarefas do seu sistema"
+
+#: desktop/gnome-schedule.desktop.in.h:2
+msgid "Schedule"
+msgstr "Calendarizar"
 
 #. at.py - code to interfere with at
 #. Copyright (C) 2004, 2005 Philip Van Hoof <me at freax dot org>
@@ -32,25 +41,52 @@ msgstr ""
 #. You should have received a copy of the GNU General Public License
 #. along with this program; if not, write to the Free Software
 #. Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+#. pygtk modules
+#. python modules
+#. custom modules
 #. #
 #. # I18N
 #. #
-#. reading at
-#. execute this
-#. reread or delete from the list(preferably)
+#. default preview length
+#. print m.groups()
+#. read lines and detect starter
+#. removing ending newlines, but keep one
+#. if a date before this is selected the record is removed, this creates an error, and generally if the script is of zero length
+#. print m.groups()
+#. lowercase
+#. some timespecs:
+#. TODO merge code of append and update
+#. changes the ownership
+#. remove old
+#. add new
+#. changes the ownership
 #. do 'atq'
-#. left unchanged, the fields should be: user, job title, and id
-#. would probably have to do a specific job check for each job
-#: src/at.py:122
-#, fuzzy
-msgid "st."
-msgstr "Srª."
+#. chopping of title and icon stuff from script
+#: src/at.py:300
+#, python-format
+msgid "%s%s%s %s%s%s"
+msgstr "%s%s%s %s%s%s"
 
-#: src/at.py:124
-#, fuzzy
-msgid "th."
-msgstr "9º"
-
+#. _("%sAt%s%s") % (_(""), _(""), timestring, _(""))
+#. print "Record omitted, not current user"
+#. It looks like at prepends a bunch of stuff to each script
+#. Luckily it delimits that using two newlines
+#. So assuming that at never prepends two newlines unless
+#. it's done prepending, we will start recording the custom commands
+#. once the first two lines have been found
+#. Later: It now seems like this is incorrect, and may vary upon distribution. I therefore determine the prepended stuff by making a test job and then removing the length of it. in gentoo it adds to newlines at the end of the script
+#. print titlestart
+#. If the string contains TITLE=
+#. remeber the length to remove this from the preview
+#. If the string contains ICON=
+#. print "method 2"
+#. tries method 2
+#. If the string contains TITLE=
+#. remeber the length to remove this from the preview
+#. If the string contains ICON=
+#. print "short preview"
+#. remove ending newlines, not if result len = 0
+#. remove beginning newlines
 #. crontab.py - code to interfere with crontab
 #. Copyright (C) 2004, 2005 Philip Van Hoof <me at freax dot org>
 #. Copyright (C) 2004, 2005 Gaute Hope <eg at gaute dot eu dot org>
@@ -67,113 +103,94 @@ msgstr "9º"
 #. You should have received a copy of the GNU General Public License
 #. along with this program; if not, write to the Free Software
 #. Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+#. pygtk modules
+#. python modules
+#. custom modules
 #. #
 #. # I18N
 #. #
-#. try:
-#. except:
-#. return None
-#: src/crontab.py:146 src/crontabEditor.py:62 src/gnome-schedule.glade.h:75
-msgid "minute"
-msgstr "minuto"
-
-#: src/crontab.py:148 src/crontabEditor.py:63 src/gnome-schedule.glade.h:74
-msgid "hour"
-msgstr "hora"
-
-#: src/crontab.py:150 src/crontabEditor.py:64 src/gnome-schedule.glade.h:73
-msgid "day"
-msgstr "dia"
-
-#: src/crontab.py:152 src/crontabEditor.py:65 src/gnome-schedule.glade.h:76
-msgid "month"
-msgstr "mês"
-
-#: src/crontab.py:154 src/gnome-schedule.glade.h:79
-#, fuzzy
-msgid "weekday"
-msgstr "Dia da semana:"
-
-#. switch to advanced tab if required
-#. Nah, I dislike this idea Gaute
-#. if mode == "advanced":
-#. self.notebook.set_current_page(1)
-#. else:
-#. self.notebook.set_current_page(0)
-#. When "Use advanced" is selected, this should happen
-#. if self.ParentClass.saveWindow != None:
-#. self.ParentClass.saveWindow.save_entry.set_text (name)
-#: src/crontab.py:165 src/crontabEditor.py:315
-#, fuzzy
-msgid "command"
-msgstr "Comando"
-
-#. index = _("use advanced")
-#. Must be translatable, it's the actual content of the combobox-entry
-#. index = self.translate_frequency ("minute")
-#. index = self.translate_frequency ("hour")
-#. index = self.translate_frequency ("day")
-#. index = self.translate_frequency ("month")
-#. index = self.translate_frequency ("week")
-#. print type
-#. print field
+#. default preview length
 #. print m.groups()
 #. 10 * * * * command
 #. */2 * * * * command
 #. Should not be translatable!
-#: src/crontab.py:210 src/crontab.py:230 src/crontab.py:257
-#, fuzzy
-msgid "must be between 59 and 0"
-msgstr "Inteiro entre %d e %d"
+#: src/crontab.py:78 src/crontab.py:98 src/crontab.py:125
+msgid "must be between 0 and 59"
+msgstr "tem de ser entre 0 e 59"
 
-#: src/crontab.py:213 src/crontab.py:233
-#, fuzzy
-msgid "must be between 23 and 0"
-msgstr "Inteiro entre %d e %d"
+#: src/crontab.py:81 src/crontab.py:101
+msgid "must be between 0 and 23"
+msgstr "tem de ser entre 0 e 23"
 
-#: src/crontab.py:216 src/crontab.py:236 src/crontab.py:263
-#, fuzzy
-msgid "must be between 31 and 1"
-msgstr "Factor constante entre 0 e 1"
+#: src/crontab.py:84 src/crontab.py:104 src/crontab.py:131
+msgid "must be between 1 and 31"
+msgstr "tem de ser entre 1 e 31"
 
-#: src/crontab.py:219 src/crontab.py:239 src/crontab.py:266
-#, fuzzy
-msgid "must be between 12 and 1"
-msgstr "Factor constante entre 0 e 1"
+#: src/crontab.py:87 src/crontab.py:107 src/crontab.py:134
+msgid "must be between 1 and 12"
+msgstr "tem de ser entre 1 e 12"
 
-#: src/crontab.py:222 src/crontab.py:242 src/crontab.py:269
-#, fuzzy
-msgid "must be between 7 and 0"
-msgstr "Inteiro entre %d e %d"
+#: src/crontab.py:90 src/crontab.py:110 src/crontab.py:137
+msgid "must be between 0 and 7"
+msgstr "tem de ser entre 0 e 7"
 
 #. 1,2,3,4 * * * * command
 #. thefield = "1,2,3,4"
-#: src/crontab.py:253
-#, fuzzy, python-format
+#: src/crontab.py:121
+#, python-format
 msgid "%s is not a number"
-msgstr "`%s' não é um ficheiro de caixa de correio."
+msgstr "%s não é um número"
 
-#: src/crontab.py:271
+#: src/crontab.py:139
 msgid "Unknown"
 msgstr "Desconhecido"
 
-#: src/crontab.py:271
+#: src/crontab.py:139
 msgid "Invalid"
 msgstr "Inválido"
 
+#. update crontab
+#: src/crontab.py:157 src/crontab.py:213 src/crontab.py:297
+#: src/crontabEditor.py:180 src/atEditor.py:115
+msgid "Untitled"
+msgstr "Sem título"
+
+#. read tasks in crontab
+#. read line and get info
+#. make the command smaller if the lenght is to long
+#. add task to treemodel in mainWindow
+#: src/crontab.py:254 src/crontabEditor.py:83 src/gnome-schedule.glade.h:83
+msgid "minute"
+msgstr "minuto"
+
+#: src/crontab.py:256 src/crontabEditor.py:84 src/gnome-schedule.glade.h:82
+msgid "hour"
+msgstr "hora"
+
+#: src/crontab.py:258 src/crontabEditor.py:85 src/gnome-schedule.glade.h:81
+msgid "day"
+msgstr "dia"
+
+#: src/crontab.py:260 src/crontabEditor.py:86 src/gnome-schedule.glade.h:84
+msgid "month"
+msgstr "mês"
+
+#: src/crontab.py:262 src/gnome-schedule.glade.h:89
+msgid "weekday"
+msgstr "dia da semana"
+
+#. create temp file with old tasks and new ones and then updates crontab
 #. # Ignore the first three comments:
 #. # DO NOT EDIT THIS FILE - edit the master and reinstall.
 #. # (/tmp/crontab.XXXXXX installed on Xxx Xxx  x xx:xx:xx xxxx)
 #. # (Cron version -- $Id$)
-#. print "Ignored:" + line
+#. replace crontab config with new one in file
 #. print config.getCrontabbin () + " -u " + self.ParentClass.user + " " + path
 #. print config.getCrontabbin () + " " + path
-#. The GUI
-#: src/crontab.py:331 src/crontab.py:367 src/crontab.py:414
-#: src/crontabEditor.py:266 src/crontabEditor.py:388
-msgid "Untitled"
-msgstr "Sem título"
-
+#. TODO needs exception handler
+#. if a command his lenght is to long the last part is removed
+#. XXX if the beginning is just a long path it's maybe better to cut there
+#. XXX instead of in the front .../bin/updatedb instead of /dfdffd/bin/upda...
 #. addWindow.py - UI code for adding a crontab record
 #. Copyright (C) 2004, 2005 Philip Van Hoof <me at freax dot org>
 #. Copyright (C) 2004, 2005 Gaute Hope <eg at gaute dot eu dot org>
@@ -190,40 +207,62 @@ msgstr "Sem título"
 #. You should have received a copy of the GNU General Public License
 #. along with this program; if not, write to the Free Software
 #. Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+#. pygtk modules
+#. python modules
+#. custom modules
 #. #
 #. # I18N
 #. #
-#: src/crontabEditor.py:61
-#, fuzzy
+#. needed for the crontabeditorhelper
+#. self.editing = gtk.FALSE
+#. #simple tab
+#. self.template_combobox.set_text_column (0)
+#: src/crontabEditor.py:82
 msgid "use advanced"
-msgstr "Avançado"
+msgstr "utilizar avançado"
 
-#: src/crontabEditor.py:66
+#: src/crontabEditor.py:87
 msgid "week"
 msgstr "semana"
 
-#. Uses SaveTemplate (will call it if OK is pressed)
-#. self.ParentClass.saveWindow.ShowSaveWindow(self)
-#: src/crontabEditor.py:128
+#. #
+#. #advanced tab
+#. #
+#. gconf code
+#: src/crontabEditor.py:133 src/atEditor.py:117
+msgid "Create a new scheduled task"
+msgstr "Criar uma nova tarefa calendarizada"
+
+#. parse
+#: src/crontabEditor.py:145 src/atEditor.py:145
+msgid "Edit a scheduled task"
+msgstr "Editar uma tarefa calendarizada"
+
+#. self.template_combobox.set_active (active)
+#: src/crontabEditor.py:198 src/atEditor.py:299
+msgid "Don't use a preset"
+msgstr "Não utilizar uma pré-definição"
+
+#. self.template_combobox.set_sensitive (gtk.FALSE)
+#. self.template_label.set_sensitive (gtk.FALSE)
+#. save template
+#. Type should not be translatable!
+#. XXX do check in crontab savetemplate itself instead of here?
+#. record = self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday + " " + self.command
+#. error dialog box
+#: src/crontabEditor.py:260
 #, python-format
 msgid ""
 "This is an invalid record! The problem could be at the %s field. Reason: %s"
 msgstr ""
+"Este é um registo inválido! O problema poderá estar no campo %s. Motivo: %s"
 
 #. Type should not be translatable!
-#: src/crontabEditor.py:162
-#, fuzzy
-msgid "Don't use a template"
-msgstr "_Não actualizar"
-
-#. self.template_combobox.set_sensitive (gtk.FALSE)
-#. self.template_label.set_sensitive (gtk.FALSE)
-#. self.template_combobox.set_sensitive (gtk.TRUE)
-#. self.template_label.set_sensitive (gtk.TRUE)
-#: src/crontabEditor.py:187
-#, fuzzy
+#. remove template button
+#. save template	button
+#: src/crontabEditor.py:294 src/atEditor.py:372
 msgid "Pick an icon for this scheduled task"
-msgstr "Seleccione uma fonte para a nota"
+msgstr "Seleccione um ícone para esta tarefa calendarizada"
 
 #. Preview stuff appears to be highly unstable :-(
 #. iconopendialog.set_preview_widget(preview)
@@ -238,16 +277,20 @@ msgstr "Seleccione uma fonte para a nota"
 #. have_preview = gtk.FALSE
 #. file_chooser.set_preview_widget_active(have_preview)
 #. return
-#: src/crontabEditor.py:223
-#, fuzzy
-msgid "Edit a scheduled task"
-msgstr "Cortar a tarefa seleccionada"
+#. if self.ParentClass.saveWindow != None:
+#. self.ParentClass.saveWindow.save_entry.set_text (name)
+#: src/crontabEditor.py:352
+msgid "command"
+msgstr "comando"
 
-#: src/crontabEditor.py:270
-#, fuzzy
-msgid "Create a new scheduled task"
-msgstr "Criar uma nova tarefa"
-
+#. Type should not be translatable!
+#. index = _("use advanced")
+#. Must be translatable, it's the actual content of the combobox-entry
+#. index = self.translate_frequency ("minute")
+#. index = self.translate_frequency ("hour")
+#. index = self.translate_frequency ("day")
+#. index = self.translate_frequency ("month")
+#. index = self.translate_frequency ("week")
 #. self.set_frequency_combo ()
 #. addWindowhelp.py - UI code for help window for adding a crontab record
 #. Copyright (C) 2004, 2005 Philip Van Hoof <me at freax dot org>
@@ -265,27 +308,25 @@ msgstr "Criar uma nova tarefa"
 #. You should have received a copy of the GNU General Public License
 #. along with this program; if not, write to the Free Software
 #. Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+#. pygtk modules
+#. python modules
 #. #
 #. # I18N
 #. #
-#. get some widgets and connect them
-#. self.radAt = self.xml.get_widget("radAt")
 #. connect the radiobuttons toggle
 #. connect the changes of a combo or entry
 #. put the apropiate values in the labels describing entitys, and the 'at' combobox
-#: src/crontabEditorHelper.py:103 src/gnome-schedule.glade.h:35
-#, fuzzy
+#: src/crontabEditorHelper.py:103 src/gnome-schedule.glade.h:39
 msgid "Happens all "
-msgstr "Glens Falls"
+msgstr "Ocorre todos "
 
 #: src/crontabEditorHelper.py:103 src/crontabEditorHelper.py:211
 msgid "s"
 msgstr "s"
 
 #: src/crontabEditorHelper.py:106
-#, fuzzy
 msgid "Happens from "
-msgstr "Abrir a partir de URI"
+msgstr "Ocorre a partir de "
 
 #. 10 * * * * command
 #. */2 * * * * command
@@ -300,27 +341,27 @@ msgstr "Abrir a partir de URI"
 #. thefield = "1,2,3,4"
 #. fields = thefield.split (",")
 #. show the form
-#: src/crontabEditorHelper.py:152
-msgid "Edit timeexpression for: "
-msgstr ""
+#: src/crontabEditorHelper.py:151
+msgid "Edit time expression for: "
+msgstr "Editar expressão temporal para: "
 
 #. move expression to field in editor and hide
-#: src/crontabEditorHelper.py:163
-#, fuzzy, python-format
+#: src/crontabEditorHelper.py:162
+#, python-format
 msgid "This is invalid. Reason: %s"
-msgstr "Este é o %s, versão %s"
+msgstr "Isto é inválido. Motivo: %s"
 
 #. hide
 #: src/crontabEditorHelper.py:202 src/crontabEditorHelper.py:213
 msgid "st. "
-msgstr ""
+msgstr "º "
 
 #: src/crontabEditorHelper.py:204
-#, fuzzy
 msgid "th. "
-msgstr "Eth. %1"
+msgstr "º "
 
 #. create a easy read line for the expression view, put the command into the edit box
+#. # IS NOT USED YET
 #. addWindow.py - UI code for adding a crontab record
 #. Copyright (C) 2004, 2005 Philip Van Hoof <me at freax dot org>
 #. Copyright (C) 2004, 2005 Gaute Hope <eg at gaute dot eu dot org>
@@ -341,354 +382,364 @@ msgstr "Eth. %1"
 #. # I18N
 #. #
 #: src/gnome-schedule.glade.h:1
+msgid " "
+msgstr " "
+
+#: src/gnome-schedule.glade.h:2
 msgid "     "
 msgstr "     "
 
-#: src/gnome-schedule.glade.h:2
-msgid " >/dev/null 2>&1"
-msgstr ""
-
 #: src/gnome-schedule.glade.h:3
+msgid " >/dev/null 2>&1"
+msgstr " >/dev/null 2>&1"
+
+#: src/gnome-schedule.glade.h:4
 msgid "*"
 msgstr "*"
 
-#: src/gnome-schedule.glade.h:4
-#, fuzzy
-msgid "* * * * * command"
-msgstr "Executar um comando"
-
 #: src/gnome-schedule.glade.h:5
+msgid "* * * * * command"
+msgstr "* * * * * comando"
+
+#: src/gnome-schedule.glade.h:6
 msgid "0"
 msgstr "0"
 
-#: src/gnome-schedule.glade.h:6
-#, fuzzy
-msgid "0-23"
-msgstr "-2"
-
 #: src/gnome-schedule.glade.h:7
-msgid "0-59"
-msgstr ""
+msgid "0-23"
+msgstr "0-23"
 
 #: src/gnome-schedule.glade.h:8
-msgid "0-7"
-msgstr ""
+msgid "0-59"
+msgstr "0-59"
 
 #: src/gnome-schedule.glade.h:9
-#, fuzzy
-msgid "1-12"
-msgstr "112"
+msgid "0-7"
+msgstr "0-7"
 
 #: src/gnome-schedule.glade.h:10
-#, fuzzy
-msgid "1-31"
-msgstr "-1"
+msgid "1-12"
+msgstr "1-12"
 
 #: src/gnome-schedule.glade.h:11
+msgid "1-31"
+msgstr "1-31"
+
+#: src/gnome-schedule.glade.h:12
 msgid "2"
 msgstr "2"
 
-#: src/gnome-schedule.glade.h:12
-#, fuzzy
-msgid "59"
-msgstr "9"
-
 #: src/gnome-schedule.glade.h:13
-#, fuzzy
-msgid "<b>Basic settings</b>"
-msgstr "<b>Definições de margem</b>"
+msgid "59"
+msgstr "59"
 
 #: src/gnome-schedule.glade.h:14
-#, fuzzy
-msgid "<b>Frequency setting</b>"
-msgstr "<b>Definições de margem</b>"
+msgid ":"
+msgstr ":"
 
 #: src/gnome-schedule.glade.h:15
+msgid "<b>Basic settings</b>"
+msgstr "<b>Definições básicas</b>"
+
+#: src/gnome-schedule.glade.h:16
+msgid "<b>Date setting</b>"
+msgstr "<b>Definições de data</b>"
+
+#: src/gnome-schedule.glade.h:17
+msgid "<b>Frequency setting</b>"
+msgstr "<b>Definições de frequência</b>"
+
+#: src/gnome-schedule.glade.h:18
 msgid "<b>Preview</b>"
 msgstr "<b>Antever</b>"
 
-#: src/gnome-schedule.glade.h:16
-#, fuzzy
-msgid "<b>Select the type of the scheduled task</b>"
-msgstr "Seleccione o tema para o ambiente de trabalho"
-
-#: src/gnome-schedule.glade.h:17
-msgid "A scheduled task that will launch at a frequency"
-msgstr ""
-
-#: src/gnome-schedule.glade.h:18
-msgid "A scheduled task that will start at a defined time in the future"
-msgstr ""
-
 #: src/gnome-schedule.glade.h:19
-#, fuzzy
-msgid "A_dvanced"
-msgstr "Avançado"
+msgid "<b>Select the type of the scheduled task</b>"
+msgstr "<b>Seleccione o tipo de tarefa calendarizada</b>"
 
 #: src/gnome-schedule.glade.h:20
+msgid "A scheduled task that will launch at a frequency "
+msgstr "Uma tarefa calendarizada que se irá iniciar com uma frequência de "
+
+#: src/gnome-schedule.glade.h:21
+msgid "A scheduled task that will start at a defined time in the future"
+msgstr "Uma tarefa calendarizada que se irá iniciar numa altura definida no futuro"
+
+#: src/gnome-schedule.glade.h:22
+msgid "A_dvanced"
+msgstr "A_vançado"
+
+#: src/gnome-schedule.glade.h:23
 msgid "About this application"
 msgstr "Sobre esta aplicação"
 
-#: src/gnome-schedule.glade.h:21
-#, fuzzy
-msgid "Active user"
-msgstr "Activar %s"
-
-#: src/gnome-schedule.glade.h:22
-#, fuzzy
-msgid "Add a new scheduled task"
-msgstr "Adicionar um novo canal"
-
-#: src/gnome-schedule.glade.h:23
-#, fuzzy
-msgid "Add a scheduled task"
-msgstr "Executar trabalhos calendarizados"
-
 #: src/gnome-schedule.glade.h:24
+msgid "Active user"
+msgstr "Utilizador activo"
+
+#: src/gnome-schedule.glade.h:25
+msgid "Add a new scheduled task"
+msgstr "Adicionar uma nova tarefa calendarizada"
+
+#: src/gnome-schedule.glade.h:26
+msgid "Add a scheduled task"
+msgstr "Adicionar uma tarefa calendarizada"
+
+#: src/gnome-schedule.glade.h:27
 msgid "Advanced"
 msgstr "Avançado"
 
-#: src/gnome-schedule.glade.h:25
-#, fuzzy
+#: src/gnome-schedule.glade.h:28
 msgid "Alter a scheduled task"
-msgstr "Apagar a tarefa seleccionada"
+msgstr "Alterar uma tarefa calendarizada"
 
-#: src/gnome-schedule.glade.h:26
+#: src/gnome-schedule.glade.h:29
 msgid "Basic"
 msgstr "Básico"
 
-#: src/gnome-schedule.glade.h:27
-#, fuzzy
-msgid "Cancel this operation"
-msgstr "Cancelar a operação de email actual"
-
-#: src/gnome-schedule.glade.h:28
-#, fuzzy
-msgid "Configure scheduled tasks"
-msgstr "Cor para as tarefas atrasadas"
-
-#: src/gnome-schedule.glade.h:29
-#, fuzzy
-msgid "Delete a scheduled task"
-msgstr "Apagar a tarefa seleccionada"
-
 #: src/gnome-schedule.glade.h:30
-msgid "Every"
-msgstr "A Cada"
+msgid "Cancel this operation"
+msgstr "Cancelar esta operação"
 
 #: src/gnome-schedule.glade.h:31
+msgid "Configure scheduled tasks"
+msgstr "Configurar tarefas calendarizadas"
+
+#: src/gnome-schedule.glade.h:32
+msgid "Date and time"
+msgstr "Data e hora"
+
+#: src/gnome-schedule.glade.h:33
+msgid "Delete a scheduled task"
+msgstr "Apagar uma tarefa calendarizada"
+
+#: src/gnome-schedule.glade.h:34
+msgid "Every"
+msgstr "A cada"
+
+#: src/gnome-schedule.glade.h:35
 msgid ""
 "For example 1,2,3,4 means happens the first, second, third and fourth minute"
 msgstr ""
-
-#: src/gnome-schedule.glade.h:32
-msgid "For example at 04:10 tomorrow, next week or in three days."
-msgstr ""
-
-#: src/gnome-schedule.glade.h:33
-#, fuzzy
-msgid "For example every first hour of the day."
-msgstr "%s existe, remova-o."
-
-#: src/gnome-schedule.glade.h:34
-msgid "For experienced users only"
-msgstr ""
+"Por exemplo 1,2,3,4 significa que acontece ao primeiro, segundo, terceiro e quarto minutos"
 
 #: src/gnome-schedule.glade.h:36
+msgid "For example at 04:10 tomorrow, next week or in three days."
+msgstr "Por exemplo às 04:10 de amanhã, da próxima semana ou daqui a três dias."
+
+#: src/gnome-schedule.glade.h:37
+msgid "For example every first hour of the day."
+msgstr "Por exemplo a cada primeira hora do dia."
+
+#: src/gnome-schedule.glade.h:38
+msgid "For experienced users only"
+msgstr "Apenas para utilizadores experientes"
+
+#: src/gnome-schedule.glade.h:40
 msgid ""
 "Happens at a defined occurrence. For example, happens at the second minute, "
 "hour, day, weekday or month"
 msgstr ""
+"Ocorre numa altura específica. Por exemplo, ocorre ao segundo minuto, "
+"hora, dia, dia da semana ou mês"
 
-#: src/gnome-schedule.glade.h:37
+#: src/gnome-schedule.glade.h:41
 msgid ""
 "Happens at all occurrence. For example, happens every minute, hour, day, "
 "weekday or month"
 msgstr ""
+"Ocorre em todas as alturas. Por exemplo, ocorre em todos os minutos, horas, "
+"dias, dias da semana ou meses"
 
-#: src/gnome-schedule.glade.h:38
+#: src/gnome-schedule.glade.h:42
 msgid ""
 "Happens at every x occurrence. For example every two minutes, hours, days, "
 "weekdays or months"
 msgstr ""
-
-#: src/gnome-schedule.glade.h:39
-#, fuzzy
-msgid "Happens at the"
-msgstr "Tem paleta"
-
-#: src/gnome-schedule.glade.h:40
-#, fuzzy
-msgid "Happens each occurrence between x and y"
-msgstr "Factor constante entre 0 e 1"
-
-#: src/gnome-schedule.glade.h:41
-#, fuzzy
-msgid "Happens every "
-msgstr "Hayes River"
-
-#: src/gnome-schedule.glade.h:42
-#, fuzzy
-msgid "Happens from"
-msgstr "Abrir a partir de URI"
+"Ocorre a cada x ocorrências. Por exemplo a cada dois minutos, horas, dias, "
+"dias da semana ou meses"
 
 #: src/gnome-schedule.glade.h:43
-#, fuzzy
-msgid "No output"
-msgstr "Saída audio"
+msgid "Happens at the"
+msgstr "Ocorre ao"
 
 #: src/gnome-schedule.glade.h:44
-#, fuzzy
-msgid "Other expression"
-msgstr "Expressão"
+msgid "Happens each occurrence between x and y"
+msgstr "Ocorre a cada altura entre x e y"
 
 #: src/gnome-schedule.glade.h:45
+msgid "Happens every "
+msgstr "Ocorre todos "
+
+#: src/gnome-schedule.glade.h:46
+msgid "Happens from"
+msgstr "Ocorre a partir de"
+
+#: src/gnome-schedule.glade.h:47
+msgid "No output"
+msgstr "Sem saída"
+
+#: src/gnome-schedule.glade.h:48
+msgid "Other expression"
+msgstr "Outra expressão"
+
+#: src/gnome-schedule.glade.h:49
+msgid "Preset"
+msgstr "Pré-definir"
+
+#: src/gnome-schedule.glade.h:50
 msgid ""
 "Quit the application. This will not stop the system scheduling. It will, "
 "however, quit this system schedule maintenance tool."
 msgstr ""
+"Sair da aplicação. Não irá parar a calendarização do sistema. Irá, no "
+"entanto, sair desta ferramenta de manutenção da calendarização de sistema."
 
-#: src/gnome-schedule.glade.h:46
+#: src/gnome-schedule.glade.h:51
 msgid "Run"
 msgstr "Executar"
 
-#: src/gnome-schedule.glade.h:47
-#, fuzzy
-msgid "Scheduled and active tasks"
-msgstr "Eventos agendados"
-
-#: src/gnome-schedule.glade.h:48
-#, fuzzy
-msgid "Select a different user"
-msgstr "Seleccionar um jogo diferente"
-
-#: src/gnome-schedule.glade.h:49
-#, fuzzy
-msgid "Set the day frequency setting"
-msgstr "Configurar as definições de página"
-
-#: src/gnome-schedule.glade.h:50
-#, fuzzy
-msgid "Set the hour frequency setting"
-msgstr "Definir a percentagem de frequência de corte"
-
-#: src/gnome-schedule.glade.h:51
-#, fuzzy
-msgid "Set the icon of this scheduled task"
-msgstr "Obter o nome do esquema aplicado a esta chave"
-
 #: src/gnome-schedule.glade.h:52
-#, fuzzy
-msgid "Set the minute frequency setting"
-msgstr "Definir a percentagem de frequência de corte"
+msgid "Run at:"
+msgstr "Executar a:"
 
 #: src/gnome-schedule.glade.h:53
-#, fuzzy
-msgid "Set the month frequency setting"
-msgstr "Definir a percentagem de frequência de corte"
+msgid "Scheduled and active tasks"
+msgstr "Tarefas agendadas e activas"
 
 #: src/gnome-schedule.glade.h:54
-#, fuzzy
-msgid "Set the scheduled task"
-msgstr "Ver a tarefa seleccionada"
+msgid "Script"
+msgstr "Script"
 
 #: src/gnome-schedule.glade.h:55
-#, fuzzy
-msgid "Set the weekday frequency setting"
-msgstr "Definir a percentagem de frequência de corte"
+msgid "Select a different user"
+msgstr "Seleccionar um utilizador diferente"
 
 #: src/gnome-schedule.glade.h:56
-#, fuzzy
-msgid "Set user"
-msgstr "Definir ID de _utilizador"
+msgid "Set the day frequency setting"
+msgstr "Configurar as definições de frequência diária"
 
 #: src/gnome-schedule.glade.h:57
-#, fuzzy
-msgid "Show help"
-msgstr "Mostrar Ajuda"
+msgid "Set the hour frequency setting"
+msgstr "Configurar as definições de frequência horária"
 
 #: src/gnome-schedule.glade.h:58
-#, fuzzy
-msgid "Show the manual"
-msgstr "Mostar/esconder os menus"
+msgid "Set the icon of this scheduled task"
+msgstr "Configurar o ícone desta tarefa calendarizada"
 
 #: src/gnome-schedule.glade.h:59
-#, fuzzy
-msgid "Shows the records"
-msgstr "Apresenta a página anterior"
+msgid "Set the minute frequency setting"
+msgstr "Configurar as definições de frequência ao minuto"
 
 #: src/gnome-schedule.glade.h:60
-#, fuzzy
-msgid "Task title"
-msgstr "um título"
+msgid "Set the month frequency setting"
+msgstr "Configurar as definições de frequência mensal"
 
 #: src/gnome-schedule.glade.h:61
-msgid "Template"
-msgstr "Modelo"
+msgid "Set the scheduled task"
+msgstr "Configurar a tarefa calendarizada"
 
 #: src/gnome-schedule.glade.h:62
+msgid "Set the weekday frequency setting"
+msgstr "Configurar as definições de frequência semanal"
+
+#: src/gnome-schedule.glade.h:63
+msgid "Set user"
+msgstr "Configurar o utilizador"
+
+#: src/gnome-schedule.glade.h:64
+msgid "Show help"
+msgstr "Apresentar a ajuda"
+
+#: src/gnome-schedule.glade.h:65
+msgid "Show the manual"
+msgstr "Apresentar o manual"
+
+#: src/gnome-schedule.glade.h:66
+msgid "Shows the records"
+msgstr "Apresenta os registos"
+
+#: src/gnome-schedule.glade.h:67
+msgid "Task title"
+msgstr "Título da tarefa"
+
+#: src/gnome-schedule.glade.h:68
+msgid "The date when the script will launch"
+msgstr "A data em que o script será iniciado"
+
+#: src/gnome-schedule.glade.h:69
 msgid "The username"
 msgstr "O utilizador"
 
-#: src/gnome-schedule.glade.h:63
-#, fuzzy
+#: src/gnome-schedule.glade.h:70
 msgid "Time expression help"
-msgstr "Expressão de consulta a avaliar"
+msgstr "Ajuda de expressão temporal"
 
-#: src/gnome-schedule.glade.h:64
-#, fuzzy
+#: src/gnome-schedule.glade.h:71
+msgid "Time: "
+msgstr "Hora: "
+
+#: src/gnome-schedule.glade.h:72
 msgid "Treeview"
-msgstr "vista em árvore"
+msgstr "Vista em árvore"
 
-#: src/gnome-schedule.glade.h:65
+#: src/gnome-schedule.glade.h:73
 msgid ""
 "When selected, no output will be generated. When scheduled tasks in the "
 "crontab do have output and this option is not checked, the output will by "
 "default be send to the UNIX mailbox of the user"
 msgstr ""
+"Quando seleccionado, não será gerado resultado de saída. Quando as tarefas "
+"calendarizadas no crontab produzem resultados e esta opção não está assinalada, "
+"o resultado será, por omissão, enviado para o email do utilizador UNIX"
 
-#: src/gnome-schedule.glade.h:66
-#, fuzzy
-msgid "Will delete the selected template"
-msgstr "Apagar o texto seleccionado"
+#: src/gnome-schedule.glade.h:74
+msgid "Will delete the selected preset"
+msgstr "Irá apagar a pré-definição seleccionada"
 
-#: src/gnome-schedule.glade.h:67
+#: src/gnome-schedule.glade.h:75
 msgid ""
-"Will save the current information as a template. You can type the name of "
-"the template in the combobox."
+"Will save the current information as a preset. You can type the name of the "
+"preset in the combobox."
 msgstr ""
+"Irá gravar a informação actual como uma pré-definição. Pode introduzir o nome "
+"da pré-definição na caixa de selecção."
 
-#: src/gnome-schedule.glade.h:68
+#: src/gnome-schedule.glade.h:76
 msgid "[Add|Edit] scheduled task"
-msgstr ""
+msgstr "[Adicionar|Editar] tarefa calendarizada"
 
-#: src/gnome-schedule.glade.h:69
-#, fuzzy
+#: src/gnome-schedule.glade.h:77
 msgid "_Add task"
-msgstr "%d tarefa"
+msgstr "_Adicionar tarefa"
 
-#: src/gnome-schedule.glade.h:70
+#: src/gnome-schedule.glade.h:78
 msgid "_Delete"
 msgstr "_Apagar"
 
-#: src/gnome-schedule.glade.h:71
-#, fuzzy
+#: src/gnome-schedule.glade.h:79
 msgid "_Manual"
-msgstr "Manual"
+msgstr "_Manual"
 
-#: src/gnome-schedule.glade.h:72
+#: src/gnome-schedule.glade.h:80
 msgid "_Select"
 msgstr "_Seleccionar"
 
-#: src/gnome-schedule.glade.h:77
-#, fuzzy
+#: src/gnome-schedule.glade.h:85
 msgid "root"
-msgstr "robots"
+msgstr "root"
 
-#: src/gnome-schedule.glade.h:78
-#, fuzzy
+#: src/gnome-schedule.glade.h:86
 msgid "to"
-msgstr "para:"
+msgstr "para"
+
+#: src/gnome-schedule.glade.h:87
+msgid ""
+"tomorrow\n"
+"next week"
+msgstr ""
+"amanhã\n"
+"para a semana"
 
 #. !/usr/bin/python2
 #. gnome-schedule.py - Contains the startup script for gnome-schedule
@@ -705,10 +756,19 @@ msgstr "para:"
 #. You should have received a copy of the GNU General Public License
 #. along with this program; if not, write to the Free Software
 #. Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#. python modules
+#. custom modules
+#. #
+#. # I18N
+#. #
+#. tell pyGTK, if possible, that we want GTKv2
+#. Some distributions come with GTK2, but not pyGTK
 #. -*- coding: UTF-8 -*-
 #. Don't touch the first line :-) unless you know why and you need to touch
 #. it for your language. Also if you changed the formatting using your
 #. editor (and tested everything, haha)
+#. pygtk modules
+#. python modules
 #. Dear translators,
 #. This file is yours. YOU people do whatever you wan't with it. You can
 #. fix spelling problems, add comments, add code and functionality. You
@@ -736,12 +796,17 @@ msgstr "para:"
 #. If your language 'can' get correctly translated by using only the po
 #. files, it means that you don't have to touch these files at all. In
 #. that case the advice is simple: don't touch it. hehe :)
-#. This is some I18n init stuff (don't touch it)
-#: src/lang.py:58
+#. #
+#. # I18N
+#. #
+#. fallback to english if the LANG env variable is not present
+#: src/lang.py:69
 msgid ""
 "To the translator: Read src/lang.py !!! (yeah it's for you, not for the "
 "user. YES FOR YOU, the translator. YES:) really!"
 msgstr ""
+"Para o tradutor: Consulte src/lang.py !!! (sim, é para si, não para o "
+"utilizador. SIM, PARA SI, o tradutor. SIM:) é mesmo!"
 
 #. To get numeric nth values translated add an elif statement for your
 #. language here
@@ -751,188 +816,161 @@ msgstr ""
 #. the implementation for dutch below: translate_nth_nl (nth)
 #. nth is a number (like 1, 2, 3). The function will return 'first'
 #. 'second' 'third', ...
-#: src/lang.py:81
-#, fuzzy
+#: src/lang.py:92
 msgid "zeroth"
-msgstr "Perth"
+msgstr "zero"
 
-#: src/lang.py:82
+#: src/lang.py:93
 msgid "first"
 msgstr "primeiro"
 
-#: src/lang.py:82
+#: src/lang.py:93
 msgid "second"
 msgstr "segundo"
 
-#: src/lang.py:82
+#: src/lang.py:93
 msgid "third"
 msgstr "terceiro"
 
-#: src/lang.py:82
+#: src/lang.py:93
 msgid "fourth"
 msgstr "quarto"
 
-#: src/lang.py:82
-#, fuzzy
+#: src/lang.py:93
 msgid "fifth"
-msgstr "com"
+msgstr "quinto"
 
-#: src/lang.py:83
-#, fuzzy
+#: src/lang.py:94
 msgid "sixth"
-msgstr "seis"
+msgstr "sexto"
 
-#: src/lang.py:83
-#, fuzzy
+#: src/lang.py:94
 msgid "seventh"
-msgstr "sete"
+msgstr "sétimo"
 
-#: src/lang.py:83
-#, fuzzy
+#: src/lang.py:94
 msgid "eighth"
-msgstr "oito"
+msgstr "oitavo"
 
-#: src/lang.py:83
-#, fuzzy
+#: src/lang.py:94
 msgid "ninth"
-msgstr "com"
+msgstr "nono"
 
-#: src/lang.py:83
-#, fuzzy
+#: src/lang.py:94
 msgid "tenth"
-msgstr "dez"
+msgstr "décimo"
 
-#: src/lang.py:84
-#, fuzzy
+#: src/lang.py:95
 msgid "eleventh"
-msgstr "Prevenir"
+msgstr "décimo primeiro"
 
-#: src/lang.py:84
-#, fuzzy
+#: src/lang.py:95
 msgid "twelfth"
-msgstr "o próprio"
+msgstr "décimo segundo"
 
-#: src/lang.py:84
-#, fuzzy
+#: src/lang.py:95
 msgid "thirteenth"
-msgstr "Treze"
+msgstr "décimo terceiro"
 
-#: src/lang.py:84
-#, fuzzy
+#: src/lang.py:95
 msgid "fourteenth"
-msgstr "Quatorze"
+msgstr "décimo quarto"
 
-#: src/lang.py:84
-#, fuzzy
+#: src/lang.py:95
 msgid "fifteenth"
-msgstr "Um dezasseis avos de nota"
+msgstr "décimo quinto"
 
-#: src/lang.py:85
-#, fuzzy
+#: src/lang.py:96
 msgid "sixteenth"
-msgstr "Um dezasseis avos de nota"
+msgstr "décimo sexto"
 
-#: src/lang.py:85
-#, fuzzy
+#: src/lang.py:96
 msgid "seventeenth"
-msgstr "sete"
+msgstr "décimo sétimo"
 
-#: src/lang.py:85
-#, fuzzy
+#: src/lang.py:96
 msgid "eighteenth"
-msgstr "Pedido de altura"
+msgstr "décimo oitavo"
 
-#: src/lang.py:85
-#, fuzzy
+#: src/lang.py:96
 msgid "nineteenth"
-msgstr "Desindentar"
+msgstr "décimo nono"
 
-#: src/lang.py:85
-#, fuzzy
+#: src/lang.py:96
 msgid "twentieth"
-msgstr "Centímetro"
+msgstr "vigésimo"
 
-#: src/lang.py:88
-#, fuzzy
+#: src/lang.py:99
 msgid "zero"
-msgstr "Retro"
+msgstr "zero"
 
-#: src/lang.py:88
+#: src/lang.py:99
 msgid "ten"
 msgstr "dez"
 
-#: src/lang.py:88
-#, fuzzy
+#: src/lang.py:99
 msgid "twenty"
-msgstr "dez"
+msgstr "vinte"
 
-#: src/lang.py:88
-#, fuzzy
+#: src/lang.py:99
 msgid "thirty"
-msgstr "terceiro"
+msgstr "trinta"
 
-#: src/lang.py:88
-#, fuzzy
-msgid "fourthy"
-msgstr "quarto"
+#: src/lang.py:99
+msgid "forty"
+msgstr "quarenta"
 
-#: src/lang.py:88
-#, fuzzy
-msgid "fifthy"
-msgstr "com"
+#: src/lang.py:99
+msgid "fifty"
+msgstr "cinquenta"
 
-#: src/lang.py:88
-#, fuzzy
+#: src/lang.py:99
 msgid "sixty"
-msgstr "seis"
+msgstr "sessenta"
 
-#: src/lang.py:88
-#, fuzzy
+#: src/lang.py:99
 msgid "seventy"
-msgstr "sete"
+msgstr "setenta"
 
-#: src/lang.py:88
-#, fuzzy
+#: src/lang.py:99
 msgid "eighty"
-msgstr "oito"
+msgstr "oitenta"
 
-#: src/lang.py:88
-#, fuzzy
+#: src/lang.py:99
 msgid "ninety"
-msgstr "nove"
+msgstr "noventa"
 
 #. If between 0 and 20 (this means that we already have it in a table)
 #. Same as above but negative
-#: src/lang.py:95
-#, fuzzy, python-format
+#: src/lang.py:106
+#, python-format
 msgid "minus %s"
-msgstr "menos"
+msgstr "menos %s"
 
 #. If between -100 and -20 or between 20 and 100
 #. Divide by ten to get the "2" out of the "23"
 #. To get the three just multiply the division result with 10
 #. and subtract that value with the original value
 #. If the number is negative, add a minus
-#: src/lang.py:105
-#, fuzzy
+#: src/lang.py:116
 msgid "minus "
-msgstr "menos"
+msgstr "menos "
 
 #. These are just some table-lookups and translation magic :)
-#: src/lang.py:109
-#, fuzzy, python-format
+#: src/lang.py:120
+#, python-format
 msgid "%s%s%s%s%s%s"
-msgstr "%s %s %s"
+msgstr "%s%s%s%s%s%s"
 
-#: src/lang.py:109
+#: src/lang.py:120
 msgid "-"
 msgstr "-"
 
 #. Any other case (in this application this should never happen)
-#: src/lang.py:112
-#, fuzzy, python-format
+#: src/lang.py:123
+#, python-format
 msgid "%sth."
-msgstr "%s..."
+msgstr "%sº"
 
 #. Dutch is pretty much the same as English, except that there are some
 #. special cases in spelling and that the ordering to form the word is
@@ -969,15 +1007,15 @@ msgstr "%s..."
 #. append or prepend something. If the gender of words in your sentences
 #. changes cause of or nth numeric written values or these date values,
 #. use the functions below to create a version for your language.
-#: src/lang.py:201
-#, fuzzy, python-format
+#: src/lang.py:212
+#, python-format
 msgid "%s%s:%s:%s%s"
-msgstr "%s %s %s"
+msgstr "%s%s:%s:%s%s"
 
-#: src/lang.py:203
-#, fuzzy, python-format
+#: src/lang.py:214
+#, python-format
 msgid "%s%s:%s%s"
-msgstr "%s%s, %s"
+msgstr "%s%s:%s%s"
 
 #. So this is for the really really hard languages that have changing
 #. genders and word-ordering depending on the nth-numeric value.
@@ -993,189 +1031,192 @@ msgstr "%s%s, %s"
 #. These are the two unsupported cases
 #. So if our case is supported:
 #. If all are asterix, it means every minute :)
-#: src/lang.py:240
-#, fuzzy
+#: src/lang.py:251
 msgid "Every minute"
-msgstr "Sempre"
+msgstr "A cada minuto"
 
 #. If only minute is filled in
-#: src/lang.py:244
+#: src/lang.py:256
+msgid "Every hour"
+msgstr "A cada hora"
+
+#: src/lang.py:258
 #, python-format
 msgid "Every %s minute of every hour"
-msgstr ""
+msgstr "A cada %s minuto de cada hora"
 
 #. Minute and hour cases
-#: src/lang.py:249
+#: src/lang.py:263
 #, python-format
 msgid "Every %s hour of the day"
-msgstr ""
+msgstr "A cada %s hora do dia"
 
-#: src/lang.py:251
-#, fuzzy, python-format
+#: src/lang.py:265
+#, python-format
 msgid "Every day at %s"
-msgstr "Todos os dias"
+msgstr "Todos os dias às %s"
 
-#: src/lang.py:253
+#: src/lang.py:267
 #, python-format
 msgid "Every minute during the %s hour"
-msgstr ""
+msgstr "A cada minuto durante a %s hora"
 
 #. Day, minute and hour cases
-#: src/lang.py:258
-#, fuzzy, python-format
+#: src/lang.py:272
+#, python-format
 msgid "Every %s day of the month"
-msgstr "O %s dia de "
+msgstr "A cada %s dia do mês"
 
-#: src/lang.py:260
+#: src/lang.py:274
 #, python-format
 msgid "At %s every %s day of the month"
-msgstr ""
+msgstr "Às %s a cada %s dia do mês"
 
-#: src/lang.py:262
+#: src/lang.py:276
 #, python-format
 msgid "Every minute of the %s hour every %s day of the month"
-msgstr ""
+msgstr "A cada minuto da %s hora a cada %s dia do mês"
 
-#: src/lang.py:264
+#: src/lang.py:278
 #, python-format
 msgid "At the %s minute of every hour every %s day of the month"
-msgstr ""
+msgstr "Ao %s minuto de cada hora a cada %s dia do mês"
 
 #. Day, minute, hour and month cases
-#: src/lang.py:269
+#: src/lang.py:283
 #, python-format
 msgid "Every %s month of the year"
-msgstr ""
-
-#: src/lang.py:271
-#, python-format
-msgid "At the %s day on %s every %s month of the year"
-msgstr ""
-
-#: src/lang.py:273
-#, python-format
-msgid "At the %s day every %s hour every %s month of the year"
-msgstr ""
-
-#: src/lang.py:275
-#, python-format
-msgid "Every day and every hour at the %s minute every %s month of the year"
-msgstr ""
-
-#: src/lang.py:277
-#, python-format
-msgid "Every day on %s every %s month of the year"
-msgstr ""
-
-#. Weekday cases
-#: src/lang.py:283
-#, fuzzy, python-format
-msgid "Every %s day of the week"
-msgstr "O %s dia de "
+msgstr "A cada %s mês do ano"
 
 #: src/lang.py:285
-#, fuzzy, python-format
-msgid "Every %s day of the week at %s"
-msgstr "Dia da semana em que se inicia a semana"
+#, python-format
+msgid "At the %s day on %s every %s month of the year"
+msgstr "Ao %s dia às %s de cada %s mês do ano"
 
 #: src/lang.py:287
 #, python-format
-msgid "Every %s day of the week the %s hour"
-msgstr ""
+msgid "At the %s day every %s hour every %s month of the year"
+msgstr "Ao %s dia a cada %s hora a cada %s mês do ano"
 
 #: src/lang.py:289
 #, python-format
-msgid "Every %s day of the week the %s minute of every hour"
-msgstr ""
+msgid "Every day and every hour at the %s minute every %s month of the year"
+msgstr "Todos os dias e a todas as horas ao %s minuto de cada %s mês do ano"
 
 #: src/lang.py:291
 #, python-format
+msgid "Every day on %s every %s month of the year"
+msgstr "Todos os dias às %s a cada %s mês do ano"
+
+#. Weekday cases
+#: src/lang.py:297
+#, python-format
+msgid "Every %s day of the week"
+msgstr "A cada %s dia da semana"
+
+#: src/lang.py:299
+#, python-format
+msgid "Every %s day of the week at %s"
+msgstr "A cada %s dia da semana às %s"
+
+#: src/lang.py:301
+#, python-format
+msgid "Every %s day of the week the %s hour"
+msgstr "A cada %s dia da semana à %s hora"
+
+#: src/lang.py:303
+#, python-format
+msgid "Every %s day of the week the %s minute of every hour"
+msgstr "A cada %s dia da semana ao %s minuto de cada hora"
+
+#: src/lang.py:305
+#, python-format
 msgid "Every %s day of the week every minute"
-msgstr ""
+msgstr "A cada %s dia da semana em todos os minutos"
 
 #. If nothing got translated, we fall back to ...
 #. It's in English but it's not used in the application if English is the
 #. language. This is for the non-supported languages. It should make it perfectly
 #. possible to translate these using po-files only. If not, feel free to
 #. modify the strings.
-#: src/lang.py:304
+#: src/lang.py:318
 msgid "Every minute, every hour, every day, every month, every weekday"
-msgstr ""
+msgstr "A cada minuto, a cada hora, a cada dia, a cada mês, a cada dia da semana"
 
-#: src/lang.py:307
+#: src/lang.py:321
 #, python-format
 msgid "At minute: %s, hour %s, day: %s, month: %s, weekday: %s"
-msgstr ""
-
-#: src/lang.py:310
-#, python-format
-msgid "At minute: %s, hour %s, day: %s, month: %s"
-msgstr ""
-
-#: src/lang.py:313
-#, python-format
-msgid "At minute: %s, hour %s, day: %s, every month"
-msgstr ""
-
-#: src/lang.py:315
-#, python-format
-msgid "At minute: %s, hour %s, every day, month: %s"
-msgstr ""
-
-#: src/lang.py:317
-#, python-format
-msgid "At minute: %s, every hour, day: %s, month: %s"
-msgstr ""
-
-#: src/lang.py:320
-#, python-format
-msgid "At minute: %s, hour %s, every day, every month"
-msgstr ""
-
-#: src/lang.py:322
-#, python-format
-msgid "At minute: %s, every hour, day: %s, every month"
-msgstr ""
+msgstr "Ao %s minuto, %s hora; %s dia; %s mês; %s dia da semana"
 
 #: src/lang.py:324
 #, python-format
-msgid "At minute: %s, every hour, every day, month: %s"
-msgstr ""
+msgid "At minute: %s, hour %s, day: %s, month: %s"
+msgstr "Ao %s minuto, %s hora; %s dia; %s mês"
 
-#: src/lang.py:326
+#: src/lang.py:327
 #, python-format
-msgid "At minute: %s, every hour, every day, every month"
-msgstr ""
+msgid "At minute: %s, hour %s, day: %s, every month"
+msgstr "Ao %s minuto, %s hora; %s dia; todos os meses"
 
 #: src/lang.py:329
 #, python-format
-msgid "Every minute, hour: %s, day: %s, month %s"
-msgstr ""
+msgid "At minute: %s, hour %s, every day, month: %s"
+msgstr "Ao %s minuto, %s hora; todos os dias; %s mês"
 
 #: src/lang.py:331
 #, python-format
-msgid "Every minute, hour %s, day: %s, every month"
-msgstr ""
+msgid "At minute: %s, every hour, day: %s, month: %s"
+msgstr "Ao %s minuto, todas as horas; %s dia; %s mês"
 
-#: src/lang.py:333
+#: src/lang.py:334
 #, python-format
-msgid "Every minute, hour %s, every day, month: %s"
-msgstr ""
+msgid "At minute: %s, hour %s, every day, every month"
+msgstr "Ao %s minuto, %s hora; todos os dias; todos os meses"
 
-#: src/lang.py:335
+#: src/lang.py:336
 #, python-format
-msgid "Every minute, hour %s, every day, every month"
-msgstr ""
+msgid "At minute: %s, every hour, day: %s, every month"
+msgstr "Ao %s minuto, todas as horas; %s dia; todos os meses"
 
 #: src/lang.py:338
 #, python-format
-msgid "Every minute, every hour, day: %s, month: %s"
-msgstr ""
+msgid "At minute: %s, every hour, every day, month: %s"
+msgstr "Ao %s minuto, todas as horas; tods os dias; %s mês"
 
 #: src/lang.py:340
 #, python-format
+msgid "At minute: %s, every hour, every day, every month"
+msgstr "Ao %s minuto, todas as horas; todos os dias; todos os meses"
+
+#: src/lang.py:343
+#, python-format
+msgid "Every minute, hour: %s, day: %s, month %s"
+msgstr "Todos os minutos, %s hora; %s dia; %s mês"
+
+#: src/lang.py:345
+#, python-format
+msgid "Every minute, hour %s, day: %s, every month"
+msgstr "Todos os minutos, %s hora; %s dia; todos os meses"
+
+#: src/lang.py:347
+#, python-format
+msgid "Every minute, hour %s, every day, month: %s"
+msgstr "Todos os minutos, %s hora; todos os dias; %s mês"
+
+#: src/lang.py:349
+#, python-format
+msgid "Every minute, hour %s, every day, every month"
+msgstr "Todos os minutos, %s hora; todos os dias; todos os meses"
+
+#: src/lang.py:352
+#, python-format
+msgid "Every minute, every hour, day: %s, month: %s"
+msgstr "Todos os minutos, todas as horas; %s dia; %s mês"
+
+#: src/lang.py:354
+#, python-format
 msgid "Every minute, every hour, day: %s, every month"
-msgstr ""
+msgstr "Todos os minutos, todas as horas; %s dia; todos os meses"
 
 #. TODO: Add more combinations
 #. mainWindow.py - mainWindow of the crontab configuration tool
@@ -1194,67 +1235,126 @@ msgstr ""
 #. You should have received a copy of the GNU General Public License
 #. along with this program; if not, write to the Free Software
 #. Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+#. pygtk modules
+#. python modules
+#. custom modules
 #. #
 #. # I18N
 #. #
 #. #
-#. # Icon for windows
-#. #
-#. print config.getImagedir() + "/gnome-schedule.png"
-#. #
 #. # The MainWindow class
 #. #
-#. self.saveWindow = None
-#. read the user
-#. inittializing the treeview
-#. [0 Title, 1 Frequency, 2 Command, 3 Crontab record, 4 Line number, 5 Time, 6 Icon, 7 scheduled instance]
-#. TODO for at
-#. self.at = at.At(self)
-#. self.at_editor = self.at.geteditor ()
-#. hiding setuser button if not root
-#. set user window
+#. get user
+#. gconf stuff
+#. #configure the window
+#. #
+#. #configure statusbar
+#. #
+#. #configure the toolbar
 #. hiding the 'set user' option if not root
-#. cleaning up columns
+#. #
+#. #inittializing the treeview
+#. # [0 Title, 1 Frequency, 2 Command, 3 Crontab record, 4 ID, 5 Time, 6 Icon, 7 scheduled instance, 8 icon path, 9 date, 10 class_id, 11 user, 12 time, 13 type, 14 crontab/at]
+#. #for at this would be like: ["untitled", "12:50 2004-06-25", "", "35", "", "12:50", icon, at instance, icon_path, "2004-06-25", "a", "drzap", "at"]
+#. #for crontab it would be: ["untitled", "every hour", "ls /", "0 * * * * ls / # untitled", "5", "0 * * * *", icon, crontab instance,icon_path, "", "", "", "crontab"]
+#. user selects another task
+#. XXX move in glade?
+#. #
+#. #configure the menu
+#. ask gconf for config of advanced
+#. #
+#. #create crontab
+#. #
+#. #create at
+#. #
+#. set user window
+#. set add window
+#. load the treeview with the tasks
+#. public function
+#. adjust statusbar
+#. iconPixbuf = None
+#. remove task from list with DEL key
+#. double click on task to get properties
+#. when the user selects a task, buttons get enabled
+#. self.editor = self.schedule.geteditor ()
+#. if nothing to select
+#. clean existing columns
+#. switch between advanced and simple mode
 #. TODO: Show the icon
-#. col = gtk.TreeViewColumn(_("Icon"), gtk.CellRendererText(), text=6)
-#. self.ParentClass.treeview.append_column(col)
-#: src/mainWindow.py:189 src/mainWindow.py:205
+#: src/mainWindow.py:298 src/mainWindow.py:329
+msgid "Icon"
+msgstr "Ícone"
+
+#. col.set_sizing (gtk.TREE_VIEW_COLUMN_AUTOSIZE)
+#: src/mainWindow.py:301 src/mainWindow.py:349
+msgid "Type"
+msgstr "Tipo"
+
+#. col.set_sizing (gtk.TREE_VIEW_COLUMN_AUTOSIZE)
+#. col.set_spacing(235)
+#: src/mainWindow.py:306 src/mainWindow.py:344
 msgid "Title"
 msgstr "Título"
 
-#. col = gtk.TreeViewColumn(_("Icon"), gtk.CellRendererText(), text=6)
-#. self.ParentClass.treeview.append_column(col)
-#: src/mainWindow.py:191 src/mainWindow.py:201
-#, fuzzy
+#: src/mainWindow.py:311 src/mainWindow.py:332
 msgid "Frequency or time"
-msgstr "Conversor de frequência"
+msgstr "Frequência ou hora"
 
-#: src/mainWindow.py:193 src/mainWindow.py:203
+#. col.set_sizing (gtk.TREE_VIEW_COLUMN_AUTOSIZE)
+#: src/mainWindow.py:316 src/mainWindow.py:337
 msgid "Preview"
-msgstr "Reproduzir uma antevisão"
+msgstr "Antever"
 
-#. TODO for at
-#. self.at.read ()
-#: src/mainWindow.py:270
-#, fuzzy
-msgid "System Schedule"
-msgstr "Menu de sistema"
+#. col.set_sizing (gtk.TREE_VIEW_COLUMN_AUTOSIZE)
+#. see if root and get user
+#. see what scheduler (at, crontab or ...)
+#. see what scheduler (at, crontab or ...)
+#. self.editor = self.schedule.geteditor ()
+#. go next
+#. go back
+#. go first
+#. change user
+#. about box
+#. TODO if about gets into gtk this has to be changed
+#: src/mainWindow.py:461
+msgid "Gnome Schedule"
+msgstr "Calendarização Gnome"
 
-#: src/mainWindow.py:272
-#, fuzzy
+#: src/mainWindow.py:463
 msgid "Copyright (c) 2004-2005 Gaute Hope."
-msgstr "Copyright © 2003 Ole Laursen"
+msgstr "Copyright © 2004-2005 Gaute Hope."
 
-#: src/mainWindow.py:273
-#, fuzzy
+#: src/mainWindow.py:464
 msgid "This software is distributed under the GPL. "
-msgstr "Esta aplicação tem copyright sob a GPL GNU"
+msgstr "Esta aplicação é distribuida sob a GPL. "
 
-#: src/mainWindow.py:276
-#, fuzzy
-msgid "documented_by"
-msgstr "Documentado por"
+#: src/mainWindow.py:468
+msgid ""
+"Some painfully bad documentation put\n"
+"toghether from the far corners of Gaute Hope's mind."
+msgstr ""
+"Alguma documentação sofrível criada\n"
+"nos mais escuros recantos da mente do Gaute Hope."
 
-#: src/mainWindow.py:277
+#: src/mainWindow.py:468
 msgid "translator_credits"
 msgstr "Duarte Loreto <happyguy_pt@hotmail.com>"
+
+#. Preview stuff appears to be highly unstable :-(
+#. iconopendialog.set_preview_widget(preview)
+#. iconopendialog.connect("update-preview", self.update_preview_cb, preview)
+#. def update_preview_cb(self, file_chooser, preview):
+#. filename = file_chooser.get_preview_filename()
+#. try:
+#. pixbuf = gtk.gdk.pixbuf_new_from_file_at_size(filename, 128, 128)
+#. preview.set_from_pixbuf(pixbuf)
+#. have_preview = gtk.TRUE
+#. except:
+#. have_preview = gtk.FALSE
+#. file_chooser.set_preview_widget_active(have_preview)
+#. return
+#. update_textboxes inside
+#: src/atEditor.py:494
+#, python-format
+msgid "This is an invalid record! The problem could be: %s "
+msgstr "Este é um registo inválido! O problema poderá ser: %s "
