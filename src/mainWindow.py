@@ -214,7 +214,8 @@ class main:
 		if mode == "simple":
 			self.cleancolumns (init)		
 			#col = gtk.TreeViewColumn(_("Icon"), gtk.CellRendererText(), text=6)
-			#self.ParentClass.treeview.append_column(col)
+			#self.treeview.append_column(col)
+			
 			col = gtk.TreeViewColumn(_("Type"), gtk.CellRendererText(), text=11)
 			col.set_sizing (gtk.TREE_VIEW_COLUMN_AUTOSIZE)
 			self.treeview.append_column(col)
@@ -238,7 +239,7 @@ class main:
 		elif mode == "advanced":
 			self.cleancolumns (init)		
 			# col = gtk.TreeViewColumn(_("Icon"), gtk.CellRendererText(), text=6)
-			# self.ParentClass.treeview.append_column(col)
+			# self.treeview.append_column(col)
 			col = gtk.TreeViewColumn(_("Frequency or time"), gtk.CellRendererText(), text=5)
 			col.set_resizable (gtk.TRUE)
 			#col.set_sizing (gtk.TREE_VIEW_COLUMN_AUTOSIZE)
