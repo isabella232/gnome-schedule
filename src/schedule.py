@@ -38,6 +38,9 @@ class Schedule:
 		self.read()
 		return
 
+	def savetemplate (self, template_name, record, nooutput, title, icon):
+		raise 'Abstract method please override'
+
 	def gettemplatenames (self):
 		raise 'Abstract method please override'
 

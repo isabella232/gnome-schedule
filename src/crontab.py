@@ -253,9 +253,12 @@ class Crontab:
 				thefield = m.groups()[5] + field[len(field)-1]
 				# thefield = "1,2,3,4"
 				fields = thefield.split (",")
-				for field in fields:
-					num = int (field)
-					# print num
+				for fieldx in fields:
+					try:
+						num = int (fieldx)
+					except:
+						raise Exception('steps', self.translate_frequency (type), _("%s is not a number") % (fieldx))
+
 					if type=="minute":
 						if num > 59 or num < 0:
 							raise Exception('steps', self.translate_frequency (type), _("must be between 59 and 0"))

@@ -30,23 +30,25 @@ domain = 'gnome-schedule'
 translate.textdomain (domain)
 gtk.glade.bindtextdomain(domain)
 
-class SetuserWindow:
+class SaveWindow:
 	def __init__(self, parent):
 		self.ParentClass = parent
 		self.xml = self.ParentClass.xml
-		self.widget = self.ParentClass.setuserwidget
+		self.editor = self.ParentClass.editor
+		self.widget = self.ParentClass.savewidget
 		self.widget.connect("delete-event", self.on_cancel_button_clicked)
 
-		self.cancel_button = self.xml.get_widget ("setuser_cancel_button")
-		self.ok_button = self.xml.get_widget ("setuser_ok_button")
-		self.entUser = self.xml.get_widget("entUser")
+		self.cancel_button = self.xml.get_widget ("save_cancel_button")
+		self.ok_button = self.xml.get_widget ("save_ok_button")
+		self.save_entry = self.xml.get_widget("save_entry")
 
-		self.xml.signal_connect("on_setuser_cancel_button_clicked", self.on_cancel_button_clicked)
-		self.xml.signal_connect("on_setuser_ok_button_clicked", self.on_ok_button_clicked)
+		self.xml.signal_connect("on_save_cancel_button_clicked", self.on_cancel_button_clicked)
+		self.xml.signal_connect("on_save_ok_button_clicked", self.on_ok_button_clicked)
 
 		self.populateCombobox ()
 
-	def ShowSetuserWindow (self):
+	def ShowSaveWindow (self, editor):
+		self.editor = editor
 		self.widget.show_all()
 
 	def populateCombobox (self):
@@ -57,17 +59,6 @@ class SetuserWindow:
 		return gtk.TRUE
 
 	def on_ok_button_clicked (self, *args):
-		try:
-			user = self.entUser.get_text()
-			pwd.getpwnam(user)
-
-			# clean treeview, reread crontab
-			self.ParentClass.user = user
-			self.ParentClass.treemodel.clear()
-			self.ParentClass.schedule.read()
-			self.widget.hide()
-		except:
-			self.dialog = gtk.MessageDialog(self.widget, gtk.DIALOG_MODAL|gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_ERROR, gtk.BUTTONS_OK, "No such user")
-			self.dialog.run ()
-			self.dialog.destroy ()
+		self.editor.SaveTemplate (self.save_entry.get_text())
+		self.widget.hide ()
 		return gtk.TRUE

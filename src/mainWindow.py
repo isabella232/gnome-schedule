@@ -25,12 +25,10 @@ import re
 import gtk.glade
 import support
 import gconf
-# import atEditor
-# import atEditorHelper
 import setuserWindow
+import saveWindow
 import schedule
 import crontab
-# import at
 import sys
 import time
 import config
@@ -143,6 +141,11 @@ class main:
 		self.setuserwidget = self.xml.get_widget("setuserWindow")
 		self.setuserwidget.hide()
 		self.setuserWindow = setuserWindow.SetuserWindow (self)
+
+		#save window
+		self.savewidget = self.xml.get_widget("saveWindow")
+		self.savewidget.hide()
+		self.saveWindow = saveWindow.SaveWindow (self)
 
 		if self.root == 0:
 			# hiding the 'set user' option if not root

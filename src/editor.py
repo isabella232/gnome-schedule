@@ -38,8 +38,11 @@ class Editor:
 	def __init__(self, parent, schedule):
 		pass
 
+	def SaveTemplate (self, template_name):
+		raise 'Abstract method please override'
+
 	def showedit (self, record, linenumber, iter, mode):
 		raise 'Abstract method please override'
-		
+
 	def showadd (self, mode):
 		raise 'Abstract method please override'
