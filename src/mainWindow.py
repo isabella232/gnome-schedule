@@ -26,6 +26,7 @@ import gtk.glade
 import addWindow
 import setuserWindow
 import crontab
+import addWindowHelp
 import sys
 import time
 
@@ -141,7 +142,7 @@ class main:
 		#add window help
 		self.addhelpwidget = self.xml.get_widget("addWindowHelp")
 		self.addhelpwidget.hide()
-		self.addHelpWindow = addWindow.AddWindowHelp(self, self.addWindow)
+		self.addHelpWindow = addWindowHelp.AddWindowHelp(self, self.addWindow)
 
 		#set user window
 		self.setuserwidget = self.xml.get_widget("setuserWindow")
