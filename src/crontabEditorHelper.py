@@ -81,25 +81,32 @@ class CrontabEditorHelper:
 
 	def populateLabels(self, field):
 		#put the apropiate values in the labels describing entitys, and the 'at' combobox
-		self.radAll.set_label(_("Happens all ") + field + _("s"))
-		self.lblEveryEntity.set_text(field)
-		self.lblFixEntity.set_text(field)
-		self.radRange.set_label (_("Happens from ") + field)
-		if field == _("minute"):
+
+		if field == "minute":
+			self.trans_field = _("minute")
 			self.entRangeEnd.set_text ("59")
 			self.entRangeStart.set_text ("0")
-		if field == _("hour"):
+		if field == "hour":
+			self.trans_field = _("hour")
 			self.entRangeEnd.set_text ("23")
 			self.entRangeStart.set_text ("0")
-		if field == _("day"):
+		if field == "day":
+			self.trans_field = _("day")
 			self.entRangeEnd.set_text ("31")
 			self.entRangeStart.set_text ("1")
-		if field == _("month"):
+		if field == "month":
+			self.trans_field = _("month")
 			self.entRangeEnd.set_text ("12")
 			self.entRangeStart.set_text ("1")
-		if field == _("weekday"):
+		if field == "weekday":
+			self.trans_field = _("weekday")
 			self.entRangeEnd.set_text ("7")
 			self.entRangeStart.set_text ("0")
+
+		self.radAll.set_label(_("Happens all ") + self.trans_field + _("s"))
+		self.lblEveryEntity.set_text(self.trans_field)
+		self.lblFixEntity.set_text(self.trans_field)
+		self.radRange.set_label (_("Happens from ") + self.trans_field)
 
 		self.do_label_magic ()
 
@@ -142,7 +149,7 @@ class CrontabEditorHelper:
 			self.NoExpressionEvents = gtk.FALSE
 
 		#show the form
-		self.widget.set_title(_("Edit timeexpression for: ") + field)
+		self.widget.set_title(_("Edit timeexpression for: ") + self.trans_field)
 		self.widget.show_all()
 		return
 
@@ -183,18 +190,18 @@ class CrontabEditorHelper:
 		try:
 			entFixValue = int (self.entFix.get_text())
 			if entFixValue == 1:
-				self.lblFixEntity.set_label (_("st. ") + self.field)
+				self.lblFixEntity.set_label (_("st. ") + self.trans_field)
 			else:
-				self.lblFixEntity.set_label (_("th. ") + self.field)
+				self.lblFixEntity.set_label (_("th. ") + self.trans_field)
 		except:
 			pass
 
 		try:
 			entEveryValue = int (self.entEvery.get_text())
 			if entEveryValue > 1:
-				self.lblEveryEntity.set_label (self.field + _("s"))
+				self.lblEveryEntity.set_label (self.trans_field + _("s"))
 			else:
-				self.lblEveryEntity.set_label (_("st. ") + self.field)
+				self.lblEveryEntity.set_label (_("st. ") + self.trans_field)
 		except:
 			pass
 
