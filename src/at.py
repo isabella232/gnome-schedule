@@ -300,7 +300,7 @@ class At:
 				#chopping of title and icon stuff from script
 				lines = lines[prelen:]
 					
-				timestring = _("%s%s%s %s%s%s") % (_(""), date, _(""), _(""), time, _(""))
+				timestring = _("%s%s%s %s%s%s") % ("", date, "", "", time, "")
 				timestring_show = "At " + timestring #_("%sAt%s%s") % (_(""), _(""), timestring, _(""))
 				if self.ParentClass.root == 1:
 					if self.ParentClass.user == user:

@@ -115,9 +115,9 @@ def translate_nth_en (nth):
 		if nth < 0:
 			add = _("minus ")
 		else:
-			add = _("")
+			add = ""
 		# These are just some table-lookups and translation magic :)
-		return (_("%s%s%s%s%s%s") % (_(""), add, tennumbers [tennumber], _("-"), twenty_nths[remainder], _("")))
+		return (_("%s%s%s%s%s%s") % ("", add, tennumbers [tennumber], _("-"), twenty_nths[remainder], ""))
 	# Any other case (in this application this should never happen)
 	elif nth > 100 or nth < -100:
 		return (_("%sth.") % (string(nth)))
@@ -209,9 +209,9 @@ def timeval_en (hour, minute, seconds):
 	if seconds != None:
 		if int (seconds) < 10:
 			seconds = "0" + seconds
-		return (_("%s%s:%s:%s%s") % (_(""), hour, minute, seconds, _("")))
+		return (_("%s%s:%s:%s%s") % ("", hour, minute, seconds, ""))
 	else:
-		return (_("%s%s:%s%s") % (_(""), hour, minute, _("")))
+		return (_("%s%s:%s%s") % ("", hour, minute, ""))
 
 # So this is for the really really hard languages that have changing
 # genders and word-ordering depending on the nth-numeric value.
