@@ -1,5 +1,9 @@
 2004-06-25  Adam Weinberger  <adamw@gnome.org>
 
+	* src/lang.py: Correct the spelling of "forty" and "fifty"
+
+2004-06-25  Adam Weinberger  <adamw@gnome.org>
+
 	* configure.ac: Added en_CA to ALL_LINGUAS.
 
 2004-06-24  Gaute Hope <eg@gaute.eu.org>

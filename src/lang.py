@@ -85,7 +85,7 @@ def translate_nth_en (nth):
 					_("sixteenth"), _("seventeenth"), _("eighteenth"), _("nineteenth"), _("twentieth")
 				]
 
-	tennumbers = [ _("zero"), _("ten"), _("twenty"), _("thirty"), _("fourthy"), _("fifthy"), _("sixty"), _("seventy"), _("eighty"), _("ninety") ]
+	tennumbers = [ _("zero"), _("ten"), _("twenty"), _("thirty"), _("forty"), _("fifty"), _("sixty"), _("seventy"), _("eighty"), _("ninety") ]
 
 	# If between 0 and 20 (this means that we already have it in a table)
 	if nth <= 20 >= 0:
