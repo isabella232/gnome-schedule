@@ -1,3 +1,22 @@
+2004-06-24  Philip Van Hoof <me_NOSPAM@freax.org>
+
+	* src/at.py: Merging of the AT-SUPPORT-BRANCH
+	* src/atEditor.py: Merging of the AT-SUPPORT-BRANCH
+	* src/mainWindow.py: Merging of the AT-SUPPORT-BRANCH
+	* src/gnome-schedule.glade: Merging of the AT-SUPPORT-BRANCH
+	* src/config.py.in: Meging of the AT-SUPPORT-BRANCH
+	* gnome-schedule.desktop: Removed
+	* gnome-schedule.desktop.in: Added
+	* gnome-schedule.console: Removed
+	* system-config-schedule.console.in: Added
+	* gnome-schedule.spec: Removed
+	* gnome-schedule.spec.in: Added
+	* README: Rewrote this piece of documentation
+	* configure.ac: See above that have been added and removed
+	* configure.ac: Merging of the AT-SUPPORT-BRANCH
+	* Makefile.am: Added some files to the DISTCLEAN section
+	* .cvsignore: See above files that have been added and removed
+
 2004-06-24  Duarte Loreto <happyguy_pt@hotmail.com>
 
 	* configure.ac: Added Portuguese (pt) to ALL_LINGUAS.
