@@ -463,7 +463,7 @@ class main:
  			_("Copyright (c) 2004-2005 Gaute Hope."),
  			_("This software is distributed under the GPL. "),
  			["Philip Van Hoof <me at freax dot org>",
- 			"Kristof Vansant <de_lupus at pandora dot be",
+ 			"Kristof Vansant <de_lupus at pandora dot be>",
  			"Gaute Hope <eg at gaute dot eu dot org>"], 
  			[_("Some painfully bad documentation put\ntoghether from the far corners of Gaute Hope's mind.")],_("translator_credits"),self.iconPixbuf)
  
