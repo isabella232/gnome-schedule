@@ -29,6 +29,7 @@ import crontab
 import addWindowHelp
 import sys
 import time
+import config
 
 from os import popen
 
@@ -47,7 +48,8 @@ gtk.glade.bindtextdomain(domain)
 ##
 iconPixbuf = None
 try:
-	iconPixbuf = gtk.gdk.pixbuf_new_from_file("/usr/share/gnome-schedule/pixmaps/gnome-schedule.png")
+	# print config.getImagedir() + "/gnome-schedule.png"
+	iconPixbuf = gtk.gdk.pixbuf_new_from_file(config.getImagedir() + "/gnome-schedule.png")
 except:
 	pass
 
@@ -64,7 +66,7 @@ class main:
 		if os.access("gnome-schedule.glade", os.F_OK):
 			self.xml = gtk.glade.XML ("gnome-schedule.glade", domain="gnome-schedule")
 		else:
-			self.xml = gtk.glade.XML ("/usr/share/gnome-schedule/gnome-schedule.glade", domain="gnome-schedule")
+			self.xml = gtk.glade.XML (config.getGladedir() + "/gnome-schedule.glade", domain="gnome-schedule")
 
 
 
@@ -261,12 +263,16 @@ class main:
 		return
 
 	def on_about_menu_activate (self, *args):
-		dlg = gnome.ui.About(_("System Schedule"), "@VERSION@",
+		dlg = gnome.ui.About(_("System Schedule"),
+			config.getVersion(),
 			_("Copyright (c) 2004-2005 Gaute Hope."),
 			_("This software is distributed under the GPL. "),
 			["Philip Van Hoof <me at freax dot org>",
-			"Gaute Hope <eg at gaute dot eu dot org>"
-			])
+			"Gaute Hope <eg at gaute dot eu dot org>"], 
+			[_("documented_by")],
+			_("translator_credits"),
+			iconPixbuf)
+
 		dlg.set_transient_for(self.widget)
 		dlg.set_position (gtk.WIN_POS_CENTER_ON_PARENT)
 		dlg.show()
@@ -304,7 +310,7 @@ class main:
 		pass
 
 	def on_manual_menu_activate (self, *args):
-		help_page = "file:///usr/share/doc/gnome-schedule-" + "@VERSION@" + "/index.html"
+		help_page = "file://" + config.getDocdir() + "/index.html"
 		path = "/usr/bin/gnome-help"
 		pid = os.fork()
 		if not pid:

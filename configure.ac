@@ -1,8 +1,14 @@
-AC_INIT(configure.ac)
+AC_INIT(src/gnome-schedule.py)
 AM_INIT_AUTOMAKE(gnome-schedule, 1.0)
 
 AC_PROG_INTLTOOL
 
+AM_PATH_PYTHON
+
+PKG_CHECK_MODULES(PYGTK, pygtk-2.0)
+AC_SUBST(PYGTK_CFLAGS)
+AC_SUBST(PYGTK_LIBS)
+				
 dnl *******************************
 dnl Internationalization
 dnl ******************************* 
@@ -17,9 +23,9 @@ AM_GLIB_GNU_GETTEXT
 
 AC_OUTPUT([
 Makefile
+src/config.py
+src/Makefile
+src/gnome-schedule
+doc/Makefile
+pixmaps/Makefile
 po/Makefile.in])
-
-dnl src/Makefile
-dnl doc/Makefile
-dnl pixmaps/Makefile
-

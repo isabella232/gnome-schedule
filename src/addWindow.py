@@ -24,6 +24,7 @@ import crontab
 import re
 import gobject
 import os
+import config
 ##
 ## I18N
 ##
@@ -219,7 +220,7 @@ class AddWindow:
 
 
 	def on_add_help_button_clicked (self, *args):
-		help_page = "file:///usr/share/doc/gnome-schedule-" + "@VERSION@" + "/addingandediting.html"
+		help_page = "file://" + config.getDocdir() + "/addingandediting.html"
 		path = "/usr/bin/gnome-help"
 		pid = os.fork()
 		if not pid:

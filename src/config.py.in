@@ -1,0 +1,16 @@
+version = "@VERSION@"
+image_dir = "@prefix@/share/pixmaps"
+glade_dir = "@prefix@/share/gnome-schedule"
+doc_dir = "@prefix@/share/doc/gnome-schedule-@VERSION@"
+
+def getVersion ():
+	return version
+
+def getImagedir ():
+	return image_dir
+
+def getGladedir ():
+	return glade_dir
+
+def getDocdir ():
+	return doc_dir

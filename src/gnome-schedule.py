@@ -20,6 +20,7 @@
 
 import sys
 import signal
+import config
 
 if __name__ == "__main__":
 	signal.signal (signal.SIGINT, signal.SIG_DFL)
@@ -32,7 +33,7 @@ try:
 	import gtk
 	import gnome
 	import gnome.ui
-	gnome.program_init ("gnome-schedule", "@VERSION@")
+	gnome.program_init ("gnome-schedule", config.getVersion())
 except:
 	print ("gnome-schedule requires a currently running X server.")
 	sys.exit(0)
