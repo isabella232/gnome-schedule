@@ -26,6 +26,7 @@ import string
 import support
 
 
+	 
 def removetemplate (type, template_name):
 	template_name_c = __replace__ (template_name)
 	
@@ -106,7 +107,7 @@ def gettemplate (type, template_name):
 		name = support.gconf_client.get_string("/apps/gnome-schedule/presets/" + type + "/%s/name" % (template_name))
 		timeexpression = support.gconf_client.get_string("/apps/gnome-schedule/presets/" + type + "/%s/timeexpression" % (template_name))
 		return icon_uri, command, timeexpression, title, name
-
+	
 	except Exception, ex:
 		return ex, ex, ex, ex, ex
 	

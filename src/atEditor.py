@@ -27,7 +27,7 @@ import time
 
 #custom modules
 import support
-import template
+import preset
 
 ##
 ## I18N
@@ -49,7 +49,7 @@ class AtEditor:
 		
 		self.fieldRegex = re.compile('^(\*)$|^([0-9]+)$|^\*\\\([0-9]+)$|^([0-9]+)-([0-9]+)$|(([0-9]+[|,])+)')
 		self.nooutputRegex = re.compile('([^#\n$]*)>(\s|)/dev/null\s2>&1')
-		self.editing = gtk.FALSE
+		#self.editing = gtk.FALSE
 		self.noevents = gtk.FALSE
 		self.template_combobox_model = None
 		self.first = 0
@@ -101,14 +101,51 @@ class AtEditor:
 		self.xml.signal_connect("on_at_minute_spinbutton_changed", self.on_minute_spinbutton_changed)
 		self.xml.signal_connect("on_at_combobox_changed", self.on_combobox_changed)
 
-
-		self.reset ()
-		self.loadicon ()
-		self.reload_templates ()
+		#self.__reset__ ()
+		#self.__loadicon__ ()
+		#self.__reload_templates__ ()
 
 		#gconf
 		support.gconf_client.add_dir ("/apps/gnome-schedule/presets/at", gconf.CLIENT_PRELOAD_NONE)
 		support.gconf_client.notify_add ("/apps/gnome-schedule/presets/at/installed", self.gconfkey_changed);
+
+
+	def showadd (self, mode):
+		self.__reset__ ()
+		self.title = _("Untitled")
+		self.editing = gtk.FALSE
+		self.widget.set_title(_("Create a new scheduled task"))
+		self.widget.show_all()
+		
+		self.__loadicon__ ()
+		self.__reload_templates__ ()
+
+
+	def showedit (self, record, job_id, iter, mode):
+		self.__reload_templates__ ()
+		self.editing = gtk.TRUE
+		
+		self.job_id = job_id
+		self.date = self.ParentClass.ParentClass.treemodel.get_value(iter, 9)
+		self.time = self.ParentClass.ParentClass.treemodel.get_value(iter, 12)
+		self.title = self.ParentClass.ParentClass.treemodel.get_value(iter, 0)
+		self.icon = self.ParentClass.ParentClass.treemodel.get_value(iter, 8) 
+		self.class_id = self.ParentClass.ParentClass.treemodel.get_value(iter, 9)
+		self.user = self.ParentClass.ParentClass.treemodel.get_value(iter, 10)
+		self.command = self.ParentClass.ParentClass.treemodel.get_value(iter, 3)
+		self.runat = self.time + " " + self.date
+		#parse 	
+		(hour, minute, day, month, year) = self.__parse_time__(self.time, self.date)
+		self.calendar.select_month(int(month) - 1, int(year))
+		self.calendar.select_day(int(day))
+		self.hour_spinbutton.set_text(hour)
+		self.minute_spinbutton.set_text(minute)
+		self.widget.set_title(_("Edit a scheduled task"))
+		self.__update_textboxes__ ()
+		self.parentiter = iter
+		self.widget.show ()
+		#self.__update_textboxes__ ()
+
 
 	def on_worded_label_event (self, *args):
 		# highlight on mouseover
@@ -129,33 +166,28 @@ class AtEditor:
 		start = self.script_textview_buffer.get_start_iter()
 		end = self.script_textview_buffer.get_end_iter()
 		self.command = self.script_textview_buffer.get_text(start, end)
-		return
+
 
 	def on_title_entry_changed (self, *args):
 		self.title = self.title_entry.get_text()
-		return
 
 	def on_calendar_day_selected (self, *args):		
-		self.update_time_cal()
-		return
+		self.__update_time_cal__()
 
 	def on_calendar_month_changed (self, *args):
-		self.update_time_cal()
-		return
+		self.__update_time_cal__()
 	
 	def on_calendar_year_changed (self, *args):
-		self.update_time_cal()
-		return
+		self.__update_time_cal__()
 
 	def on_hour_spinbutton_changed (self, *args):
-		self.update_time_cal()
-		return
+		self.__update_time_cal__()
 
 	def on_minute_spinbutton_changed (self, *args):
-		self.update_time_cal()
-		return
+		self.__update_time_cal__()
+
 	
-	def update_time_cal (self):
+	def __update_time_cal__ (self):
 
 			(year, month, day) = self.calendar.get_date()
 			hour = self.hour_spinbutton.get_text()
@@ -195,13 +227,12 @@ class AtEditor:
 			self.runat = hour + ":" + minute + " " + year + "-" + month + "-" + day
 			self.noupdate = gtk.TRUE
 			if self.combo_trigger == gtk.FALSE:
-				self.update_textboxes()
+				self.__update_textboxes__()
 
 			self.noupdate = gtk.FALSE
 
-			return
 
-	def update_time_combo (self):
+	def __update_time_combo__ (self):
 
 			#update variables, set calendar
 
@@ -220,47 +251,43 @@ class AtEditor:
 				self.hour_spinbutton.set_text(hour)
 				self.minute_spinbutton.set_text(minute)
 
-			self.update_textboxes (0)
+			self.__update_textboxes__ (0)
 
 				
 	def on_combobox_changed (self, *args):
 		
 		if self.noupdate == gtk.FALSE:	
 			self.combo_trigger = gtk.TRUE
-			self.update_time_combo()
+			self.__update_time_combo__()
 			self.combo_trigger = gtk.FALSE
-		
-		return
 
 
 	def on_delete_button_clicked (self, *args):
 		iter = self.template_combobox.get_active_iter ()
 		template = self.template_combobox_model.get_value(iter, 2)
-		icon_uri, runat, title, name, command = template
+		icon_uri, command, timeexpression, title, name = template
 		self.template_combobox.set_active (0)
-		template.removetemplate ("at", name)
+		preset.removetemplate ("at", name)
 
 
 	def on_save_button_clicked (self, *args):
 		# Uses SaveTemplate (will call it if OK is pressed)
 		# self.ParentClass.saveWindow.ShowSaveWindow(self)
-		self.SaveTemplate (self.template_combobox.get_child().get_text())
+		self.__SaveTemplate__ (self.template_combobox.get_child().get_text())
 		
 		
-	def SaveTemplate (self, template_name):
+	def __SaveTemplate__ (self, template_name):
 		#TODO: validate record
-		template.savetemplate ("at", template_name, self.runat, self.title, self.icon, self.command)
-		
+		preset.savetemplate ("at", template_name, self.runat, self.title, self.icon, self.command)
+			
 
 	def gconfkey_changed (self, client, connection_id, entry, args):
-		self.reload_templates ()
+		self.__reload_templates__ ()
 
 
-	def reload_templates (self):
-		self.template_names = template.gettemplatenames ("at")
-		if self.template_names == None or len (self.template_names) <= 0:
-			pass
-		else:
+	def __reload_templates__ (self):
+		self.template_names = preset.gettemplatenames ("at")
+		if not (self.template_names == None or len (self.template_names) <= 0):
 			active = self.template_combobox.get_active ()
 			if active == -1:
 				active = 0
@@ -279,8 +306,8 @@ class AtEditor:
 		else:
 			
 			for template_name in self.template_names:
-				thetemplate = template.gettemplate ("at",template_name)
-				icon_uri, runat, title, name, command = thetemplate
+				thetemplate = preset.gettemplate ("at",template_name)
+				icon_uri, command, runat, title, name,  = thetemplate
 				self.template_combobox_model.append([name, template_name, thetemplate])
 						
 			#self.template_combobox.set_sensitive (gtk.TRUE)
@@ -316,20 +343,20 @@ class AtEditor:
 					self.template_image.set_from_pixbuf(pixbuf)
 					self.icon = icon_uri
 				else:
-					self.loadicon ()
+					self.__loadicon__ ()
 				self.title = title
 				self.command = command
 				if runat != None:
 					self.runat = runat
-					self.update_textboxes ()
+					self.__update_textboxes__ ()
 					self.on_combobox_changed()
 				else:					
-					self.update_textboxes ()
+					self.__update_textboxes__ ()
 			else:
 				self.remove_button.set_sensitive (gtk.FALSE)
 				self.save_button.set_sensitive (gtk.FALSE)
-				self.loadicon ()
-				self.reset ()
+				self.__loadicon__ ()
+				self.__reset__ ()
 
 
 	def on_image_button_clicked (self, *args):
@@ -343,7 +370,7 @@ class AtEditor:
 		if res != gtk.RESPONSE_REJECT:
 			self.icon = iconopendialog.get_filename()
 		iconopendialog.destroy ()
-		self.update_textboxes ()
+		self.__update_textboxes__ ()
 
 #	def update_preview_cb(self, file_chooser, preview):
 #		filename = file_chooser.get_preview_filename()
@@ -357,7 +384,7 @@ class AtEditor:
 #		return
 
 
-	def loadicon (self):
+	def __loadicon__ (self):
 		nautilus_icon = support.nautilus_icon ("i-executable")
 		if nautilus_icon != None:
 			pixbuf = gtk.gdk.pixbuf_new_from_file_at_size (nautilus_icon, 60, 60)
@@ -369,7 +396,7 @@ class AtEditor:
 			self.icon = "/usr/share/icons/gnome/48x48/mimetypes/gnome-mime-application.png"
 
 	
-	def reset (self):
+	def __reset__ (self):
 		self.title = "Untitled"
 		self.command = ""
 		self.icon = "/usr/share/icons/gnome/48x48/mimetypes/gnome-mime-application.png"
@@ -386,12 +413,10 @@ class AtEditor:
 		self.hour_spinbutton.set_text(str(hour))
 		self.minute_spinbutton.set_text(str(minute))
 	
-		self.update_textboxes () #update_textboxes inside
-		
-		return
+		self.__update_textboxes__ () #update_textboxes inside
 		
 
-	def update_textboxes(self, update_runat = 1):
+	def __update_textboxes__(self, update_runat = 1):
 		self.noevents = gtk.TRUE
 		self.title_entry.set_text(self.title)
 		self.script_textview_buffer.set_text(self.command)
@@ -404,39 +429,12 @@ class AtEditor:
 			self.template_image.set_from_pixbuf(pixbuf)
 
 		else:
-			self.loadicon ()
+			self.__loadicon__ ()
 
 		self.noevents = gtk.FALSE
-		return
 
 
-	def showedit (self, record, job_id, iter, mode):
-		self.reload_templates ()
-		self.editing = gtk.TRUE
-		
-		self.job_id = job_id
-		self.date = self.ParentClass.ParentClass.treemodel.get_value(iter, 9)
-		self.time = self.ParentClass.ParentClass.treemodel.get_value(iter, 12)
-		self.title = self.ParentClass.ParentClass.treemodel.get_value(iter, 0)
-		self.icon = self.ParentClass.ParentClass.treemodel.get_value(iter, 8) 
-		self.class_id = self.ParentClass.ParentClass.treemodel.get_value(iter, 9)
-		self.user = self.ParentClass.ParentClass.treemodel.get_value(iter, 10)
-		self.command = self.ParentClass.ParentClass.treemodel.get_value(iter, 3)
-		self.runat = self.time + " " + self.date
-		#parse 	
-		(hour, minute, day, month, year) = self.parse_time(self.time, self.date)
-		self.calendar.select_month(int(month) - 1, int(year))
-		self.calendar.select_day(int(day))
-		self.hour_spinbutton.set_text(hour)
-		self.minute_spinbutton.set_text(minute)
-		self.widget.set_title(_("Edit a scheduled task"))
-		self.update_textboxes ()
-		self.parentiter = iter
-		self.widget.show ()
-		self.update_textboxes ()
-
-
-	def parse_time (self, time, date):
+	def __parse_time__ (self, time, date):
 		regexp_date = re.compile("([0-9][0-9][0-9][0-9])-([0-9][0-9])-([0-9][0-9])")
 		regexp_time = re.compile("([0-9][0-9]):([0-9][0-9])")
 
@@ -449,17 +447,6 @@ class AtEditor:
 			(year, month, day) = date_g.groups()	
 		
 		return hour, minute, day, month, year
-
-
-	def showadd (self, mode):
-		self.reset ()
-		self.title = _("Untitled")
-		self.editing = gtk.FALSE
-		self.widget.set_title(_("Create a new scheduled task"))
-		self.widget.show_all()
-		
-		self.loadicon ()
-		self.reload_templates ()
 
 
 	def on_help_button_clicked (self, *args):
@@ -475,18 +462,17 @@ class AtEditor:
 		return gtk.TRUE
 
 
-	def WrongRecordDialog (self, x):
+	def __WrongRecordDialog__ (self, x):
 		self.wrongdialog = gtk.MessageDialog(self.widget, gtk.DIALOG_MODAL|gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_ERROR, gtk.BUTTONS_OK, (_("This is an invalid record! The problem could be: %s ") % (x)))
 		self.wrongdialog.run()
 		self.wrongdialog.destroy()
-		return
 
 
 	def on_ok_button_clicked (self, *args):
 		# TODO: Validate record
 		(validate, reason) = self.ParentClass.checkfield(self.runat)
 		if validate == gtk.FALSE:
-			self.WrongRecordDialog (reason)
+			self.__WrongRecordDialog__ (reason)
 			return
 		# TODO: Fill record
 		

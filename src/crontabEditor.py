@@ -29,7 +29,7 @@ import os
 #custom modules
 import config
 import support
-import template
+import preset
 import crontabEditorHelper
 
 ##
@@ -55,7 +55,7 @@ class CrontabEditor:
 		self.fieldRegex = re.compile('^(\*)$|^([0-9]+)$|^\*\\\([0-9]+)$|^([0-9]+)-([0-9]+)$|(([0-9]+[|,])+)')
 		self.nooutputRegex = re.compile('([^#\n$]*)>(\s|)/dev/null\s2>&1')
 		
-		self.editing = gtk.FALSE
+		#self.editing = gtk.FALSE
 		self.noevents = gtk.FALSE
 		
 		##simple tab	
@@ -120,70 +120,78 @@ class CrontabEditor:
 		
 		self.editorhelper = crontabEditorHelper.CrontabEditorHelper(self)
 		
-		self.nooutput = self.chkNoOutput.get_active()
-		self.loadicon ()
-		self.reload_templates ()
+		#self.nooutput = self.chkNoOutput.get_active()
+		#self.loadicon ()
+		#self.reload_templates ()
 		
 		#gconf code
 		support.gconf_client.add_dir ("/apps/gnome-schedule/presets/crontab", gconf.CLIENT_PRELOAD_NONE)
 		support.gconf_client.notify_add ("/apps/gnome-schedule/presets/crontab/installed", self.gconfkey_changed);
+
 		
+	def showadd (self, mode):
+		self.__loadicon__ ()
+		self.__reset__ ()
+		self.__set_frequency_combo__()
+		self.editing = gtk.FALSE
+		self.widget.set_title(_("Create a new scheduled task"))
+		self.widget.show ()
+		self.__reload_templates__ ()
+		self.chkNoOutput.set_active (gtk.TRUE)
+	
+	
+	def showedit (self, record, linenumber, iter, mode):
+		self.__reload_templates__ ()
+		self.editing = gtk.TRUE
+		self.linenumber = linenumber
+		self.record = record
+		(self.minute, self.hour, self.day, self.month, self.weekday, self.command, self.title, self.icon) = self.ParentClass.parse (record)
+		self.widget.set_title(_("Edit a scheduled task"))
+		self.__update_textboxes__ ()
+		self.__set_frequency_combo__ ()
+		self.parentiter = iter
+		self.widget.show ()
 		
-	#remove template button
-	def on_remove_button_clicked (self, *args):
-		iter = self.template_combobox.get_active_iter ()
-		template = self.template_combobox_model.get_value(iter, 2)
-		icon_uri, command, frequency, title, name = template
+		m = self.nooutputRegex.match (self.command)
+		if (m != None):
+			self.nooutput_label.show ()
+			self.command = m.groups()[0]
+			self.command_entry.set_text (self.command)
+			self.chkNoOutput.set_active (gtk.TRUE)
+			self.nooutput = gtk.TRUE
+		else:
+			self.nooutput_label.hide ()
+			self.chkNoOutput.set_active (gtk.FALSE)
+			self.nooutput = gtk.FALSE
+
+		#switch to advanced tab if required
+		if mode == "advanced":
+			self.notebook.set_current_page(1)
+		else:
+			self.notebook.set_current_page(0)
+
 		self.template_combobox.set_active (0)
-		template.removetemplate ("crontab",name)
-
-		
-	#save template	button
-	def on_save_button_clicked (self, *args):
-		self.SaveTemplate (self.template_combobox.get_child().get_text())
-		
-
-	#save template
-	def SaveTemplate (self, template_name):
-		try:
-			# Type should not be translatable!
-			#XXX do check in crontab savetemplate itself instead of here?
-			self.check_field_format (self.minute, "minute")
-			self.check_field_format (self.hour, "hour")
-			self.check_field_format (self.day, "day")
-			self.check_field_format (self.month, "month")
-			self.check_field_format (self.weekday, "weekday")
-		except Exception, ex:
-			print ex
-			x, y, z = ex
-			self.WrongRecordDialog (x, y, z)
-			return
-
-		if self.nooutput:
-			space = " "
-			if self.command[len(self.command)-1] == " ":
-				space = ""
-			self.command = self.command + space + self.ParentClass.nooutputtag
-			
-		#record = self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday + " " + self.command
-		#self.ParentClass.savetemplate (template_name, record, self.nooutput, self.title, self.icon)
-		self.frequency = self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday
-		template.savetemplate ("crontab",template_name, self.frequency, self.title, self.icon, self.command)
-
-	#error dialog box 
-	def WrongRecordDialog (self, x, y, z):
-		self.wrongdialog = gtk.MessageDialog(self.widget, gtk.DIALOG_MODAL|gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_ERROR, gtk.BUTTONS_OK, (_("This is an invalid record! The problem could be at the %s field. Reason: %s") % (y, z)))
-		self.wrongdialog.run()
-		self.wrongdialog.destroy()
 
 
-	def gconfkey_changed (self, client, connection_id, entry, args):
-		self.reload_templates ()
+	def __reset__ (self):
+		self.noevents = gtk.TRUE
+		self.minute = "*"
+		self.hour = "*"
+		self.day = "*"
+		self.month = "*"
+		self.weekday = "*"
+		self.command = "ls"
+		self.title = _("Untitled")
+		self.nooutput = gtk.FALSE
+		self.nooutput_label.hide ()
+		self.chkNoOutput.set_active (gtk.TRUE)
+		self.__update_textboxes__ ()
+		self.noevents = gtk.FALSE
 
 
-	def reload_templates (self):
-
-		self.template_names = template.gettemplatenames ("crontab")
+	def __reload_templates__ (self):
+		#self.template_combobox.set_active (active)
+		self.template_names = preset.gettemplatenames ("crontab")
 		
 		if self.template_names == None or len (self.template_names) <= 0:
 			pass
@@ -205,7 +213,7 @@ class CrontabEditor:
 		else:
 			
 			for template_name in self.template_names:
-				thetemplate = template.gettemplate ("crontab", template_name)
+				thetemplate = preset.gettemplate ("crontab", template_name)
 				icon_uri, command, frequency, title, name = thetemplate
 				self.template_combobox_model.append([name, template_name, thetemplate])
 						
@@ -214,6 +222,79 @@ class CrontabEditor:
 			#self.template_label.set_sensitive (gtk.TRUE)
 				
 		self.template_combobox.set_active (active)
+
+
+	def __loadicon__ (self):
+		nautilus_icon = support.nautilus_icon ("i-executable")
+		if nautilus_icon != None:
+			pixbuf = gtk.gdk.pixbuf_new_from_file_at_size (nautilus_icon, 60, 60)
+			self.template_image.set_from_pixbuf(pixbuf)
+			self.icon = nautilus_icon
+		else:
+			pixbuf = gtk.gdk.pixbuf_new_from_file_at_size ("/usr/share/icons/gnome/48x48/mimetypes/gnome-mime-application.png", 60, 60)
+			self.template_image.set_from_pixbuf(pixbuf)
+			self.icon = "/usr/share/icons/gnome/48x48/mimetypes/gnome-mime-application.png"
+
+
+	#save template
+	def __SaveTemplate__ (self, template_name):
+		try:
+			# Type should not be translatable!
+			#XXX do check in crontab savetemplate itself instead of here?
+			self.__check_field_format__ (self.minute, "minute")
+			self.__check_field_format__ (self.hour, "hour")
+			self.__check_field_format__ (self.day, "day")
+			self.__check_field_format__ (self.month, "month")
+			self.__check_field_format__ (self.weekday, "weekday")
+		except Exception, ex:
+			print ex
+			x, y, z = ex
+			self.__WrongRecordDialog__ (x, y, z)
+			return
+
+		if self.nooutput:
+			space = " "
+			if self.command[len(self.command)-1] == " ":
+				space = ""
+			self.command = self.command + space + self.ParentClass.nooutputtag
+			
+		#record = self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday + " " + self.command
+		#self.ParentClass.savetemplate (template_name, record, self.nooutput, self.title, self.icon)
+		self.frequency = self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday
+		preset.savetemplate ("crontab",template_name, self.frequency, self.title, self.icon, self.command)
+
+
+	#error dialog box 
+	def __WrongRecordDialog__ (self, x, y, z):
+		self.wrongdialog = gtk.MessageDialog(self.widget, gtk.DIALOG_MODAL|gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_ERROR, gtk.BUTTONS_OK, (_("This is an invalid record! The problem could be at the %s field. Reason: %s") % (y, z)))
+		self.wrongdialog.run()
+		self.wrongdialog.destroy()
+
+		
+	def __check_field_format__ (self, field, type):
+		try:
+			# Type should not be translatable!
+			self.ParentClass.checkfield (field, type, self.fieldRegex)
+		except Exception, ex:
+			raise ex
+
+		
+	#remove template button
+	def on_remove_button_clicked (self, *args):
+		iter = self.template_combobox.get_active_iter ()
+		template = self.template_combobox_model.get_value(iter, 2)
+		icon_uri, command, frequency, title, template_name = template
+		self.template_combobox.set_active (0)
+		preset.removetemplate ("crontab",template_name)
+
+		
+	#save template	button
+	def on_save_button_clicked (self, *args):
+		self.__SaveTemplate__ (self.template_combobox.get_child().get_text())
+		
+
+	def gconfkey_changed (self, client, connection_id, entry, args):
+		self.__reload_templates__ ()
 
 
 	def on_image_button_clicked (self, *args):
@@ -227,7 +308,7 @@ class CrontabEditor:
 		if res != gtk.RESPONSE_REJECT:
 			self.icon = iconopendialog.get_filename()
 		iconopendialog.destroy ()
-		self.update_textboxes ()
+		self.__update_textboxes__ ()
 
 #	def update_preview_cb(self, file_chooser, preview):
 #		filename = file_chooser.get_preview_filename()
@@ -241,89 +322,6 @@ class CrontabEditor:
 #		return
 
 
-	def loadicon (self):
-		nautilus_icon = support.nautilus_icon ("i-executable")
-		if nautilus_icon != None:
-			pixbuf = gtk.gdk.pixbuf_new_from_file_at_size (nautilus_icon, 60, 60)
-			self.template_image.set_from_pixbuf(pixbuf)
-			self.icon = nautilus_icon
-		else:
-			pixbuf = gtk.gdk.pixbuf_new_from_file_at_size ("/usr/share/icons/gnome/48x48/mimetypes/gnome-mime-application.png", 60, 60)
-			self.template_image.set_from_pixbuf(pixbuf)
-			self.icon = "/usr/share/icons/gnome/48x48/mimetypes/gnome-mime-application.png"
-
-
-	def showedit (self, record, linenumber, iter, mode):
-		self.reload_templates ()
-		self.editing = gtk.TRUE
-		self.linenumber = linenumber
-		self.record = record
-		(self.minute, self.hour, self.day, self.month, self.weekday, self.command, self.title, self.icon) = self.ParentClass.parse (record)
-		self.widget.set_title(_("Edit a scheduled task"))
-		self.update_textboxes ()
-		self.set_frequency_combo ()
-		self.parentiter = iter
-		self.widget.show ()
-		
-		m = self.nooutputRegex.match (self.command)
-		if (m != None):
-			self.nooutput_label.show ()
-			self.command = m.groups()[0]
-			self.command_entry.set_text (self.command)
-			self.chkNoOutput.set_active (gtk.TRUE)
-			self.nooutput = gtk.TRUE
-		else:
-			self.nooutput_label.hide ()
-			self.chkNoOutput.set_active (gtk.FALSE)
-			self.nooutput = gtk.FALSE
-
-
-		#switch to advanced tab if required
-		if mode == "advanced":
-			self.notebook.set_current_page(1)
-		else:
-			self.notebook.set_current_page(0)
-
-		self.template_combobox.set_active (0)
-
-	
-	def check_field_format (self, field, type):
-		try:
-			# Type should not be translatable!
-			self.ParentClass.checkfield (field, type, self.fieldRegex)
-		except Exception, ex:
-			raise ex
-
-
-	def showadd (self, mode):
-		
-		self.reset ()
-		self.set_frequency_combo()
-		self.editing = gtk.FALSE
-		self.widget.set_title(_("Create a new scheduled task"))
-		self.widget.show ()
-		self.loadicon ()
-		self.reload_templates ()
-		#TODO try to find out why this is needed
-		self.chkNoOutput.set_active (gtk.TRUE)
-		
-			
-	def reset (self):
-		self.noevents = gtk.TRUE
-		self.minute = "*"
-		self.hour = "*"
-		self.day = "*"
-		self.month = "*"
-		self.weekday = "*"
-		self.command = "ls"
-		self.title = _("Untitled")
-		self.nooutput = gtk.FALSE
-		self.nooutput_label.hide ()
-		self.chkNoOutput.set_active (gtk.TRUE)
-		self.update_textboxes ()
-		self.noevents = gtk.FALSE
-
-		
 	def on_template_combobox_entry_changed (self, widget):
 		firstiter = self.template_combobox_model.get_iter_first()
 		notemplate = self.template_combobox_model.get_value(firstiter,0)
@@ -350,7 +348,7 @@ class CrontabEditor:
 					self.template_image.set_from_pixbuf(pixbuf)
 					self.icon = icon_uri
 				else:
-					self.loadicon ()
+					self.__loadicon__ ()
 				if frequency != None and command != None:
 					if title != None:
 						record = frequency + " " + command + " # " + title
@@ -378,12 +376,12 @@ class CrontabEditor:
 
 				self.minute, self.hour, self.day, self.month, self.weekday, self.command, self.title, icon_ = self.ParentClass.parse (record)
 				self.command = command
-				self.update_textboxes ()
+				self.__update_textboxes__ ()
 			else:
 				self.remove_button.set_sensitive (gtk.FALSE)
 				self.save_button.set_sensitive (gtk.FALSE)
-				self.loadicon ()
-				self.reset ()
+				self.__loadicon__ ()
+				self.__reset__ ()
 
 
 	def on_add_help_button_clicked (self, *args):
@@ -402,14 +400,14 @@ class CrontabEditor:
 	def on_ok_button_clicked (self, *args):
 		try:
 			# Type should not be translatable!
-			self.check_field_format (self.minute, "minute")
-			self.check_field_format (self.hour, "hour")
-			self.check_field_format (self.day, "day")
-			self.check_field_format (self.month, "month")
-			self.check_field_format (self.weekday, "weekday")
+			self.__check_field_format__ (self.minute, "minute")
+			self.__check_field_format__ (self.hour, "hour")
+			self.__check_field_format__ (self.day, "day")
+			self.__check_field_format__ (self.month, "month")
+			self.__check_field_format__ (self.weekday, "weekday")
 		except Exception, ex:
 			x, y, z = ex
-			self.WrongRecordDialog (x, y, z)
+			self.__WrongRecordDialog__ (x, y, z)
 			return
 
 		record = self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday + " " + self.command
@@ -422,13 +420,13 @@ class CrontabEditor:
 		self.widget.hide ()
 
 
-	def set_frequency_combo (self):
+	def __set_frequency_combo__ (self):
 		#index = self.schedule.getfrequency (self.minute, self.hour, self.day, self.month, self.weekday)
-		index = self.getfrequency (self.minute, self.hour, self.day, self.month, self.weekday)
+		index = self.__getfrequency__ (self.minute, self.hour, self.day, self.month, self.weekday)
 		self.frequency_combobox.set_active (index)
 
 		
-	def getfrequency (self, minute, hour, day, month, weekday):
+	def __getfrequency__ (self, minute, hour, day, month, weekday):
 		# index = _("use advanced")
 		index = 0
 
@@ -452,7 +450,7 @@ class CrontabEditor:
 		return index
 
 		
-	def update_textboxes (self):
+	def __update_textboxes__ (self):
 		self.noevents = gtk.TRUE
 		self.chkNoOutput.set_active (self.nooutput)
 		self.command_entry.set_text (self.command)
@@ -467,9 +465,9 @@ class CrontabEditor:
 			self.template_image.set_from_pixbuf(pixbuf)
 
 		else:
-			self.loadicon ()
+			self.__loadicon__ ()
 		self.setting_label.set_text (self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday + " " + self.command)
-		self.set_frequency_combo()
+		self.__set_frequency_combo__()
 		self.noevents = gtk.FALSE
 
 
@@ -483,7 +481,7 @@ class CrontabEditor:
 			self.nooutput = self.chkNoOutput.get_active()
 			# self.set_frequency_combo ()
 			self.template_combobox.set_active (0)
-			self.update_textboxes ()
+			self.__update_textboxes__ ()
 
 
 	def on_anybasic_entry_changed (self, *args):
@@ -491,7 +489,7 @@ class CrontabEditor:
 			self.command = self.command_entry.get_text ()
 			self.title = self.title_entry.get_text ()
 			self.nooutput = self.chkNoOutput.get_active()
-			self.update_textboxes ()
+			self.__update_textboxes__ ()
 
 			if self.nooutput:
 				self.nooutput_label.show ()
@@ -504,7 +502,7 @@ class CrontabEditor:
 		frequency = self.frequency_combobox_model.get_value(iter, 1)
 		if frequency != None:
 			self.minute, self.hour, self.day, self.month, self.weekday = frequency
-			self.update_textboxes()
+			self.__update_textboxes__()
 
 
 	def on_fieldHelp_clicked(self, widget, *args):
