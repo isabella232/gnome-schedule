@@ -208,10 +208,15 @@ def timeval_en (hour, minute, seconds):
 # language. If you need assistance, read the AUTHORS file and try to
 # contact us or use the mailinglists.
 def translate_crontab_easy (minute, hour, day, month, weekday):
-	#if language.find ("whatever") != -1:
-	#	return translate_crontab_easy_whatever (minute, hour, day, month, weekday)
-	#else:
-	return translate_crontab_easy_en (minute, hour, day, month, weekday)
+	
+	# Add support for your language here
+	
+	if language.find ("en") != -1:
+		return translate_crontab_easy_en (minute, hour, day, month, weekday)
+	elif language.find ("nl") != -1:
+		return translate_crontab_easy_nl (minute, hour, day, month, weekday)
+	else:
+		return translate_crontab_easy_anylang (minute, hour, day, month, weekday)
 
 def translate_crontab_easy_en (minute, hour, day, month, weekday):
 	# * means "every"
@@ -222,9 +227,9 @@ def translate_crontab_easy_en (minute, hour, day, month, weekday):
 	
 	# These are the two unsupported cases
 	if minute.find ("\\") != -1 or hour.find ("\\") != -1 or day.find ("\\") != -1 or month.find ("\\") != -1 or weekday.find ("\\") != -1:
-		return minute + " " + hour + " " + day + " " + month + " " + weekday
+		return translate_crontab_easy_anylang (minute, hour, day, month, weekday)
 	if minute.find ("-") != -1 or hour.find ("-") != -1 or day.find ("-") != -1 or month.find ("-") != -1 or weekday.find ("-") != -1:
-		return minute + " " + hour + " " + day + " " + month + " " + weekday
+		return translate_crontab_easy_anylang (minute, hour, day, month, weekday)
 
 	# So if our case is supported:
 
@@ -282,4 +287,55 @@ def translate_crontab_easy_en (minute, hour, day, month, weekday):
 		# stuff is needed ...
 
 	# If nothing got translated, we fall back to ...
-	return minute + " " + hour + " " + day + " " + month + " " + weekday
+	return translate_crontab_easy_anylang (minute, hour, day, month, weekday)
+
+# It's in English but it's not used in the application if English is the
+# language. This is for the non-supported languages. It should make it perfectly
+# possible to translate these using po-files only. If not, feel free to
+# modify the strings.
+def translate_crontab_easy_anylang (minute, hour, day, month, weekday):
+	retval = minute + " " + hour + " " + day + " " + month + " " + weekday
+
+	if minute == "*" and hour == "*" and day == "*" and month == "*" and weekday == "*":
+		retval = (_("Every minute"))
+
+	if minute != "*" and hour != "*" and day != "*" and month != "*" and weekday != "*":
+		retval = (_("At minute: %s, hour %s, day: %s, month: %s, weekday: %s") % (minute, hour, day, month, weekday))
+
+	if minute != "*" and hour != "*" and day != "*" and month != "*" and weekday == "*":
+		retval = (_("At minute: %s, hour %s, day: %s, month: %s") % (minute, hour, day, month))
+		
+	if minute != "*" and hour != "*" and day != "*" and month == "*" and weekday == "*":
+		retval = (_("At minute: %s, hour %s, day: %s, every month") % (minute, hour, day))
+	if minute != "*" and hour != "*" and day == "*" and month != "*" and weekday == "*":
+		retval = (_("At minute: %s, hour %s, every day, month: %s") % (minute, hour, month))
+	if minute != "*" and hour == "*" and day != "*" and month != "*" and weekday == "*":
+		retval = (_("At minute: %s, every hour, day: %s, month: %s") % (minute, day, month))
+		
+	if minute != "*" and hour != "*" and day == "*" and month == "*" and weekday == "*":
+		retval = (_("At minute: %s, hour %s, every day, every month") % (minute, hour))
+	if minute != "*" and hour == "*" and day != "*" and month == "*" and weekday == "*":
+		retval = (_("At minute: %s, every hour, day: %s, every month") % (minute, day))
+	if minute != "*" and hour == "*" and day == "*" and month != "*" and weekday == "*":
+		retval = (_("At minute: %s, every hour, every day, month: %s") % (minute, month))
+	if minute != "*" and hour == "*" and day == "*" and month == "*" and weekday == "*":
+		retval = (_("At minute: %s, every hour, every day, every month") % (minute))
+	
+	if hour != "*" and minute == "*" and day != "*" and month == "*" and weekday == "*":
+		retval = (_("Every minute, hour: %s, day: %s, month %s") % (hour, day, month))
+	if hour != "*" and minute == "*" and day != "*" and month == "*" and weekday == "*":
+		retval = (_("Every minute, hour %s, day: %s, every month") % (hour, day))
+	if hour != "*" and minute == "*" and day == "*" and month != "*" and weekday == "*":
+		retval = (_("Every minute, hour %s, every day, month: %s") % (hour, month))		
+	if hour != "*" and minute == "*" and day == "*" and month == "*" and weekday == "*":
+		retval = (_("Every minute, hour %s, every day, every month") % (hour))
+
+	if day != "*" and minute == "*" and hour == "*" and month != "*" and weekday == "*":
+		retval = (_("Every minute, every hour, day: %s, month: %s") % (day, month))
+	if day != "*" and minute == "*" and hour == "*" and month == "*" and weekday == "*":
+		retval = (_("Every minute, every hour, day: %s, every month") % (day))
+
+
+	# TODO: Add more combinations
+	
+	return retval
