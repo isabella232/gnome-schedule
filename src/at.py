@@ -278,7 +278,9 @@ class At:
 		#do 'atq'
 		execute = config.getAtqbin ()
 		self.lines = os.popen(execute).readlines()
+		print self.lines
 		for line in self.lines:
+			
 			array_or_false = self.parse (line)
 			if array_or_false != False:
 				(job_id, date, time, class_id, user, lines, title, icon, prelen, dangerous) = array_or_false
@@ -308,9 +310,9 @@ class At:
 						pass
 				else:
 					data.append([title, timestring_show, preview, lines, int(job_id), timestring, self, icon, date, class_id, user, time, "Defined", "at"])
-					
-			print data
-			return data
+				print "added" + job_id	
+			
+		return data
 			
 
 	def __prepare_script__ (self, script):
