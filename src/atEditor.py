@@ -398,7 +398,11 @@ class AtEditor:
 		firstday, ndays = calender.monthrange(month,year)
 		
 		if day == ndays:
-			month = month + 1
+			if month != 12
+				month = month + 1
+			else:
+				month = 1
+				year = year + 1
 			day = 1
 		else:
 			day = day + 1
