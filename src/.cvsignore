@@ -2,3 +2,6 @@
 *gladep
 gnome-schedule
 config.py
+Makefile
+Makefile.in
+

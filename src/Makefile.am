@@ -14,8 +14,8 @@ uidir = $(datadir)/gnome-schedule
 ui_DATA = gnome-schedule.glade
 
 DISTCLEANFILES = \
-	$(ui_DATA) \
-	$(bin_SCRIPTS)
+	$(bin_SCRIPTS) \
+	config.py
 
 EXTRA_DIST =  \
 	$(bin_SCRIPTS) \
