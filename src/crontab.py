@@ -138,6 +138,12 @@ class Crontab:
 		else:
 			return "th."
 
+	def valToTimeVal (self, val):
+		if val == "0" or val == "1" or val == "2" or val == "3" or val == "4" or val == "5" or val == "6" or val == "7" or val == "8" or val == "9":
+			return "0" + val
+		else:
+			return val
+
 	def easyString (self, minute, hour, day, month, weekday):
 		if minute == "*" and hour == "*" and month == "*" and day == "*" and weekday == "*":
 			return "Every minute"
@@ -162,13 +168,13 @@ class Crontab:
 			if minute == "0" and hour == "0" and day == "1":
 				return "Every " + month + self.amountApp (month) + " month of the year"
 			elif minute != "*" and hour != "*" and day != "*":
-				return "At the " + day + self.amountApp(day) + " " + hour + ":" + minute + " every " + month + self.amountApp(month) + " month of the year"
+				return "At the " + day + self.amountApp(day) + " " + self.valToTimeVal(hour) + ":" + self.valToTimeVal(minute) + " every " + month + self.amountApp(month) + " month of the year"
 
 
 		if month == "*" and day == "*" and weekday != "*":
 			if minute == "0" and hour == "0":
 				return "Every " + weekday + self.amountApp (weekday) + " day of the week"
 			elif minute != "*" and hour != "*":
-				return "Every " + weekday + self.amountApp(weekday) + " at " + hour + ":" + minute
+				return "Every " + weekday + self.amountApp(weekday) + " day of the week at " + self.valToTimeVal (hour) + ":" + self.valToTimeVal (minute) + ""
 
 		return minute + " " + hour + " " + day + " " + month + " " + weekday

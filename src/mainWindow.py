@@ -101,10 +101,7 @@ class main:
 		self.quit_menu = self.xml.get_widget ("quit_menu")
 		self.advanced_menu = self.xml.get_widget ("advanced_menu")
 		self.about_menu = self.xml.get_widget ("about_menu")
-		
 
-
-		
 		self.xml.signal_connect("on_advanced_menu_activate", self.on_advanced_menu_activate)
 		self.xml.signal_connect("on_about_menu_activate", self.on_about_menu_activate)
 		self.xml.signal_connect("on_add_scheduled_task_menu_activate", self.on_add_scheduled_task_menu_activate)
@@ -123,8 +120,6 @@ class main:
 			self.btnSetUser.hide()
 		else:
 			self.xml.signal_connect("on_btnSetUser_clicked", self.showSetUser)
-
-		
 
 		self.widget.connect("delete-event", self.quit)
 

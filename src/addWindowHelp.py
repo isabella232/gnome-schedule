@@ -86,7 +86,7 @@ class AddWindowHelp:
 		expression = self.entExpression.get_text()
 		if self.field == "minute": self.AddWindow.minute_entry.set_text(expression)
 		if self.field == "hour": self.AddWindow.hour_entry.set_text(expression)
-		if self.field == "day": self.AddWindow.day_entry.set_text(expression)		
+		if self.field == "day": self.AddWindow.day_entry.set_text(expression)
 		if self.field == "month": self.AddWindow.month_entry.set_text(expression)
 		if self.field == "weekday": self.AddWindow.weekday_entry.set_text(expression)
 		
