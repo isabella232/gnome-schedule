@@ -3,186 +3,155 @@
 # This file is distributed under the same license as the gnome-schedule package.
 # Raphael Higino <raphaelh@uai.com.br>, 2004.
 #
+#: src/lang.py:107 src/lang.py:109 src/lang.py:201 src/lang.py:203
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-06-18 03:53+0200\n"
-"PO-Revision-Date: 2004-06-18 14:06-0300\n"
+"POT-Creation-Date: 2004-06-22 04:50+0200\n"
+"PO-Revision-Date: 2004-06-22 11:11-0300\n"
 "Last-Translator: Raphael Higino <raphaelh@uai.com.br>\n"
 "Language-Team: Brazilian Portuguese <gnome-l10-br@listas.cipsga.org.br>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/addWindow.py:87
-msgid "Edit a scheduled task"
-msgstr "Editar um tarefa agendada"
+#: src/at.py:122
+msgid "st."
+msgstr "º"
 
-#: src/addWindow.py:130 src/addWindow.py:150 src/addWindow.py:174
-#: src/addWindow.py:236 src/addWindow.py:281 src/addWindow.py:364
-#: src/addWindow.py:402 src/addWindowHelp.py:89 src/addWindowHelp.py:153
-#: src/gnome-schedule.glade.h:42
+#: src/at.py:124
+msgid "th."
+msgstr "º"
+
+#. Here it should be translatable!
+#. This is checking the actual content of the
+#. entry of the combobox, which is translated content
+#: src/crontab.py:63 src/crontabEditor.py:262 src/gnome-schedule.glade.h:42
 msgid "minute"
 msgstr "minuto"
 
-#: src/addWindow.py:132 src/addWindow.py:152 src/addWindow.py:176
-msgid "must be between 59 and 0"
-msgstr "deve estar entre 59 e 0"
-
-#: src/addWindow.py:133 src/addWindow.py:153 src/addWindow.py:177
-#: src/addWindow.py:237 src/addWindow.py:284 src/addWindow.py:370
-#: src/addWindow.py:405 src/addWindowHelp.py:92 src/addWindowHelp.py:154
-#: src/gnome-schedule.glade.h:41
+#: src/crontab.py:65 src/crontabEditor.py:268 src/gnome-schedule.glade.h:41
 msgid "hour"
 msgstr "hora"
 
-#: src/addWindow.py:135 src/addWindow.py:155
-msgid "must be between 23 and 0"
-msgstr "deve estar entre 23 e 0"
-
-#: src/addWindow.py:136 src/addWindow.py:156 src/addWindow.py:180
-#: src/addWindow.py:238 src/addWindow.py:287 src/addWindow.py:376
-#: src/addWindow.py:408 src/addWindowHelp.py:95 src/addWindowHelp.py:155
-#: src/gnome-schedule.glade.h:40
+#: src/crontab.py:67 src/crontabEditor.py:274 src/gnome-schedule.glade.h:40
 msgid "day"
 msgstr "dia"
 
-#: src/addWindow.py:138 src/addWindow.py:158 src/addWindow.py:182
-msgid "must be between 31 and 1"
-msgstr "deve estar entre 31 e 1"
-
-#: src/addWindow.py:139 src/addWindow.py:159 src/addWindow.py:183
-#: src/addWindow.py:239 src/addWindow.py:290 src/addWindow.py:382
-#: src/addWindow.py:411 src/addWindowHelp.py:98 src/addWindowHelp.py:156
-#: src/gnome-schedule.glade.h:49
+#: src/crontab.py:69 src/crontabEditor.py:280 src/gnome-schedule.glade.h:49
 msgid "month"
 msgstr "mês"
 
-#: src/addWindow.py:141 src/addWindow.py:161 src/addWindow.py:185
-msgid "must be between 12 and 1"
-msgstr "deve estar entre 12 e 1"
-
-#: src/addWindow.py:142 src/addWindow.py:162 src/addWindow.py:186
-#: src/addWindow.py:240 src/addWindow.py:414 src/addWindowHelp.py:101
-#: src/addWindowHelp.py:157 src/gnome-schedule.glade.h:52
+#: src/crontab.py:71 src/gnome-schedule.glade.h:52
 msgid "weekday"
 msgstr "dia da semana"
 
-#: src/addWindow.py:144 src/addWindow.py:164 src/addWindow.py:188
-msgid "must be between 7 and 0"
-msgstr "deve estar entre 7 e 0"
+#. Setting up the columns
+#: src/crontab.py:94 src/crontab.py:116 src/gnome-schedule.glade.h:34
+msgid "Title"
+msgstr "Título"
 
-#: src/addWindow.py:204
-msgid "New scheduled task"
-msgstr "Nova tarefa agendada"
+#. Setting up the columns
+#: src/crontab.py:96 src/crontab.py:112
+msgid "Frequency"
+msgstr "Freqüência"
 
-#: src/addWindow.py:208
-msgid "Create a new scheduled task"
-msgstr "Cria uma nova tarefa agendada"
+#: src/crontab.py:98 src/crontab.py:114
+msgid "Command"
+msgstr "Comando"
 
-#: src/addWindow.py:243
-msgid "This is an invalid record! The problem could be at the "
-msgstr ""
-
-#: src/addWindow.py:243
-msgid " field. Reason: "
-msgstr ""
-
-#: src/addWindow.py:277
-msgid "use advanced"
-msgstr "usar avançado"
-
-#: src/addWindow.py:293 src/addWindow.py:388
-msgid "week"
-msgstr "semana"
-
-#: src/addWindow.py:309
+#: src/crontab.py:125
 msgid "command"
 msgstr "comando"
 
-#. put the apropiate values in the labels describing entitys, and the 'at' combobox
-#: src/addWindowHelp.py:85 src/gnome-schedule.glade.h:24
+#: src/crontab.py:128
+msgid "use advanced"
+msgstr "usar avançado"
+
+#: src/crontab.py:169 src/crontab.py:189 src/crontab.py:213
+msgid "must be between 59 and 0"
+msgstr "deve ser entre 59 e 0"
+
+#: src/crontab.py:172 src/crontab.py:192
+msgid "must be between 23 and 0"
+msgstr "deve ser entre 23 e 0"
+
+#: src/crontab.py:175 src/crontab.py:195 src/crontab.py:219
+msgid "must be between 31 and 1"
+msgstr "deve ser entre 31 e 1"
+
+#: src/crontab.py:178 src/crontab.py:198 src/crontab.py:222
+msgid "must be between 12 and 1"
+msgstr "deve ser entre 12 e 1"
+
+#: src/crontab.py:181 src/crontab.py:201 src/crontab.py:225
+msgid "must be between 7 and 0"
+msgstr "deve ser entre 7 e 0"
+
+#: src/crontab.py:227
+msgid "Unknown"
+msgstr "Desconhecido"
+
+#: src/crontab.py:227
+msgid "Invalid"
+msgstr "Inválido"
+
+#: src/crontab.py:346
+msgid "Untitled"
+msgstr "Sem Título"
+
+#: src/crontabEditor.py:90
+msgid "Edit a scheduled task"
+msgstr "Editar um tarefa agendada"
+
+#: src/crontabEditor.py:135
+msgid "New scheduled task"
+msgstr "Nova tarefa agendada"
+
+#: src/crontabEditor.py:139
+msgid "Create a new scheduled task"
+msgstr "Cria uma nova tarefa agendada"
+
+#: src/crontabEditor.py:172
+#, python-format
+msgid ""
+"This is an invalid record! The problem could be at the %s field. Reason: %s"
+msgstr "Esse é um registro inválido! O problema pode estar no campo %s. Razão: %s"
+
+#: src/crontabEditor.py:286
+msgid "week"
+msgstr "semana"
+
+#: src/crontabEditorHelper.py:103 src/gnome-schedule.glade.h:24
 msgid "Happens all "
 msgstr "Acontece todo "
 
-#: src/addWindowHelp.py:85 src/addWindowHelp.py:196
+#: src/crontabEditorHelper.py:103 src/crontabEditorHelper.py:211
 msgid "s"
 msgstr "s"
 
-#: src/addWindowHelp.py:88
+#: src/crontabEditorHelper.py:106
 msgid "Happens from "
 msgstr "Acontece de "
 
 #. show the form
-#: src/addWindowHelp.py:146
+#: src/crontabEditorHelper.py:152
 msgid "Edit timeexpression for: "
 msgstr "Editar timeexpression para: "
 
-#: src/addWindowHelp.py:187 src/addWindowHelp.py:198
+#: src/crontabEditorHelper.py:163
+#, python-format
+msgid "This is invalid. Reason: %s"
+msgstr "Isso é inválido. Razão: %s"
+
+#: src/crontabEditorHelper.py:202 src/crontabEditorHelper.py:213
 msgid "st. "
 msgstr "º "
 
-#: src/addWindowHelp.py:189
+#: src/crontabEditorHelper.py:204
 msgid "th. "
 msgstr "º "
-
-#: src/crontab.py:137
-msgid "st."
-msgstr "º"
-
-#: src/crontab.py:139
-msgid "th."
-msgstr "º"
-
-#: src/crontab.py:149
-msgid "Every minute"
-msgstr "A cada minuto"
-
-#: src/crontab.py:152 src/crontab.py:156 src/crontab.py:162 src/crontab.py:169
-#: src/crontab.py:176 src/crontab.py:178
-msgid "Every "
-msgstr "A cada"
-
-#: src/crontab.py:152
-msgid " minute of every hour"
-msgstr " minuto de cada hora"
-
-#: src/crontab.py:156
-msgid " hour of the day"
-msgstr " hora do dia"
-
-#: src/crontab.py:158 src/crontab.py:164
-msgid "At "
-msgstr "Às "
-
-#: src/crontab.py:158
-msgid " every day"
-msgstr " a cada dia"
-
-#: src/crontab.py:164 src/crontab.py:171
-msgid " every "
-msgstr " a cada "
-
-#: src/crontab.py:164
-msgid " day of the month"
-msgstr " dia do mês"
-
-#: src/crontab.py:169 src/crontab.py:171
-msgid " month of the year"
-msgstr " mês do ano"
-
-#: src/crontab.py:171
-msgid "At the "
-msgstr "No "
-
-#: src/crontab.py:176
-msgid " day of the week"
-msgstr " dia da semana"
-
-#: src/crontab.py:178
-msgid " day of the week at "
-msgstr " dia da semana às "
 
 #: src/gnome-schedule.glade.h:1
 msgid "     "
@@ -312,11 +281,6 @@ msgstr "Mostra os registros"
 msgid "Time expression help"
 msgstr "Ajuda em expressões de hora"
 
-#. Setting up the columns
-#: src/gnome-schedule.glade.h:34 src/mainWindow.py:180 src/mainWindow.py:202
-msgid "Title"
-msgstr "Título"
-
 #: src/gnome-schedule.glade.h:35
 msgid "Treeview"
 msgstr "Visão em árvore"
@@ -361,23 +325,371 @@ msgstr ""
 msgid "to"
 msgstr "até"
 
-#. Setting up the columns
-#: src/mainWindow.py:182 src/mainWindow.py:198
-msgid "Frequency"
-msgstr "Freqüência"
+#: src/lang.py:58
+msgid ""
+"To the translator: Read src/lang.py !!! (yeah it's for you, not for the "
+"user. YES FOR YOU, the translator. YES:) really!"
+msgstr ""
 
-#: src/mainWindow.py:184 src/mainWindow.py:200
-msgid "Command"
-msgstr "Comando"
+#: src/lang.py:81
+msgid "zeroth"
+msgstr ""
 
-#: src/mainWindow.py:264
+#: src/lang.py:82
+msgid "first"
+msgstr ""
+
+#: src/lang.py:82
+msgid "second"
+msgstr ""
+
+#: src/lang.py:82
+msgid "third"
+msgstr ""
+
+#: src/lang.py:82
+msgid "fourth"
+msgstr ""
+
+#: src/lang.py:82
+msgid "fifth"
+msgstr ""
+
+#: src/lang.py:83
+msgid "sixth"
+msgstr ""
+
+#: src/lang.py:83
+msgid "seventh"
+msgstr ""
+
+#: src/lang.py:83
+msgid "eighth"
+msgstr ""
+
+#: src/lang.py:83
+msgid "ninth"
+msgstr ""
+
+#: src/lang.py:83
+msgid "tenth"
+msgstr ""
+
+#: src/lang.py:84
+msgid "eleventh"
+msgstr ""
+
+#: src/lang.py:84
+msgid "twelfth"
+msgstr ""
+
+#: src/lang.py:84
+msgid "thirteenth"
+msgstr ""
+
+#: src/lang.py:84
+msgid "fourteenth"
+msgstr ""
+
+#: src/lang.py:84
+msgid "fifteenth"
+msgstr ""
+
+#: src/lang.py:85
+msgid "sixteenth"
+msgstr ""
+
+#: src/lang.py:85
+msgid "seventeenth"
+msgstr ""
+
+#: src/lang.py:85
+msgid "eighteenth"
+msgstr ""
+
+#: src/lang.py:85
+msgid "nineteenth"
+msgstr ""
+
+#: src/lang.py:85
+msgid "twentieth"
+msgstr ""
+
+#: src/lang.py:88
+msgid "zero"
+msgstr ""
+
+#: src/lang.py:88
+msgid "ten"
+msgstr ""
+
+#: src/lang.py:88
+msgid "twenty"
+msgstr ""
+
+#: src/lang.py:88
+msgid "thirty"
+msgstr ""
+
+#: src/lang.py:88
+msgid "fourthy"
+msgstr ""
+
+#: src/lang.py:88
+msgid "fifthy"
+msgstr ""
+
+#: src/lang.py:88
+msgid "sixty"
+msgstr ""
+
+#: src/lang.py:88
+msgid "seventy"
+msgstr ""
+
+#: src/lang.py:88
+msgid "eighty"
+msgstr ""
+
+#: src/lang.py:88
+msgid "ninety"
+msgstr ""
+
+#: src/lang.py:95
+#, python-format
+msgid "minus %s"
+msgstr "menos %s"
+
+#: src/lang.py:105
+msgid "minus "
+msgstr "menos "
+
+#. These are just some table-lookups and translation magic :)
+#: src/lang.py:109
+#, python-format
+msgid "%s%s%s%s%s%s"
+msgstr "%s%s%s%s%s%s"
+
+#: src/lang.py:109
+msgid "-"
+msgstr "-"
+
+#: src/lang.py:112
+#, python-format
+msgid "%sth."
+msgstr "%sº"
+
+#: src/lang.py:201
+#, python-format
+msgid "%s%s:%s:%s%s"
+msgstr "%s%s:%s:%s%s"
+
+#: src/lang.py:203
+#, python-format
+msgid "%s%s:%s%s"
+msgstr "%s%s:%s%s"
+
+#: src/lang.py:240
+msgid "Every minute"
+msgstr "Todo minuto"
+
+#: src/lang.py:244
+#, python-format
+msgid "Every %s minute of every hour"
+msgstr "Todo %s minuto de cada hora"
+
+#: src/lang.py:249
+#, python-format
+msgid "Every %s hour of the day"
+msgstr "Todo %s hora do dia"
+
+#: src/lang.py:251
+#, python-format
+msgid "Every day at %s"
+msgstr "Todo dia às %s"
+
+#: src/lang.py:253
+#, python-format
+msgid "Every minute during the %s hour"
+msgstr "Todo minuto durante a %s hora"
+
+#: src/lang.py:258
+#, python-format
+msgid "Every %s day of the month"
+msgstr "Todo %s dia do mês"
+
+#: src/lang.py:260
+#, python-format
+msgid "At %s every %s day of the month"
+msgstr "Às %s todo %s dia do mês"
+
+#: src/lang.py:262
+#, python-format
+msgid "Every minute of the %s hour every %s day of the month"
+msgstr "Todo minuto da %s hora, todo %s dia do mês"
+
+#: src/lang.py:264
+#, python-format
+msgid "At the %s minute of every hour every %s day of the month"
+msgstr "No %s minuto de cada hora, todo %s dia do mês"
+
+#: src/lang.py:269
+#, python-format
+msgid "Every %s month of the year"
+msgstr "Todo %s mês do ano"
+
+#: src/lang.py:271
+#, python-format
+msgid "At the %s day on %s every %s month of the year"
+msgstr "No %s dia às %s, todo %s mês do ano"
+
+#: src/lang.py:273
+#, python-format
+msgid "At the %s day every %s hour every %s month of the year"
+msgstr ""
+
+#: src/lang.py:275
+#, python-format
+msgid "Every day and every hour at the %s minute every %s month of the year"
+msgstr ""
+
+#: src/lang.py:277
+#, python-format
+msgid "Every day on %s every %s month of the year"
+msgstr "Todo dia às %s, todo %s mês do ano"
+
+#: src/lang.py:283
+#, python-format
+msgid "Every %s day of the week"
+msgstr "Todo %s dia da semana"
+
+#: src/lang.py:285
+#, python-format
+msgid "Every %s day of the week at %s"
+msgstr "Todo %s dia da semana às %s"
+
+#: src/lang.py:287
+#, python-format
+msgid "Every %s day of the week the %s hour"
+msgstr "Todo %s dia da semana, na %s hora "
+
+#: src/lang.py:289
+#, python-format
+msgid "Every %s day of the week the %s minute of every hour"
+msgstr ""
+
+#: src/lang.py:291
+#, python-format
+msgid "Every %s day of the week every minute"
+msgstr "Todo %s dia da semana, a todo minuto"
+
+#: src/lang.py:304
+msgid "Every minute, every hour, every day, every month, every weekday"
+msgstr ""
+
+#: src/lang.py:307
+#, python-format
+msgid "At minute: %s, hour %s, day: %s, month: %s, weekday: %s"
+msgstr ""
+
+#: src/lang.py:310
+#, python-format
+msgid "At minute: %s, hour %s, day: %s, month: %s"
+msgstr ""
+
+#: src/lang.py:313
+#, python-format
+msgid "At minute: %s, hour %s, day: %s, every month"
+msgstr ""
+
+#: src/lang.py:315
+#, python-format
+msgid "At minute: %s, hour %s, every day, month: %s"
+msgstr ""
+
+#: src/lang.py:317
+#, python-format
+msgid "At minute: %s, every hour, day: %s, month: %s"
+msgstr ""
+
+#: src/lang.py:320
+#, python-format
+msgid "At minute: %s, hour %s, every day, every month"
+msgstr ""
+
+#: src/lang.py:322
+#, python-format
+msgid "At minute: %s, every hour, day: %s, every month"
+msgstr ""
+
+#: src/lang.py:324
+#, python-format
+msgid "At minute: %s, every hour, every day, month: %s"
+msgstr ""
+
+#: src/lang.py:326
+#, python-format
+msgid "At minute: %s, every hour, every day, every month"
+msgstr ""
+
+#: src/lang.py:329
+#, python-format
+msgid "Every minute, hour: %s, day: %s, month %s"
+msgstr ""
+
+#: src/lang.py:331
+#, python-format
+msgid "Every minute, hour %s, day: %s, every month"
+msgstr ""
+
+#: src/lang.py:333
+#, python-format
+msgid "Every minute, hour %s, every day, month: %s"
+msgstr ""
+
+#: src/lang.py:335
+#, python-format
+msgid "Every minute, hour %s, every day, every month"
+msgstr ""
+
+#: src/lang.py:338
+#, python-format
+msgid "Every minute, every hour, day: %s, month: %s"
+msgstr ""
+
+#: src/lang.py:340
+#, python-format
+msgid "Every minute, every hour, day: %s, every month"
+msgstr ""
+
+#: src/mainWindow.py:219
 msgid "System Schedule"
 msgstr "Agenda do Sistema"
 
-#: src/mainWindow.py:265
+#: src/mainWindow.py:221
 msgid "Copyright (c) 2004-2005 Gaute Hope."
 msgstr "Copyright (c) 2004-2005 Gaute Hope."
 
-#: src/mainWindow.py:266
+#: src/mainWindow.py:222
 msgid "This software is distributed under the GPL. "
 msgstr "Este software é distribuido sob a GPL. "
+
+#: src/mainWindow.py:225
+msgid "documented_by"
+msgstr ""
+
+#: src/mainWindow.py:226
+msgid "translator_credits"
+msgstr "Raphael Higino <raphaelh@uai.com.br>"
+
+#~ msgid "Every "
+#~ msgstr "A cada"
+
+#~ msgid "At "
+#~ msgstr "Às "
+
+#~ msgid " every "
+#~ msgstr " a cada "
+
+#~ msgid "At the "
+#~ msgstr "No "
