@@ -105,7 +105,7 @@ class main:
 		self.init_treeview()
 
 		#initializing the crontab
-		self.crontab = ctab.Crontab(self)
+		self.crontab = crontab.Crontab(self)
 
 		#add window
 		self.addwidget = self.xml.get_widget("addWindow")

@@ -101,7 +101,7 @@ class AddWindow:
 
 		if self.editing == gtk.FALSE:
 			self.parentiter = self.ParentClass.treemodel.append()
-			self.crontab.appendLine (self.linenumber, record)
+			self.crontab.appendLine (record)
 		else:
 			self.crontab.updateLine (self.linenumber, record)
 

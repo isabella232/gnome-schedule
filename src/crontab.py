@@ -55,15 +55,15 @@ class Crontab:
 			crontab_w.close()
 		return
 
-	def updateLine (linenumber, record):
+	def updateLine (self, linenumber, record):
 		self.lines[linenumber] = record
 		self.writeCrontab ()
 
-	def deleteLine (linenumber):
+	def deleteLine (self, linenumber):
 		self.lines.removeline (linenumber)
 		self.writeCrontab ()
 
-	def appendLine (record):
+	def appendLine (self, record):
 		self.lines.add (record)
 		self.writeCrontab ()
 
