@@ -317,7 +317,6 @@ class Crontab:
 	def update (self, linenumber, record, parentiter, nooutput, title, icon = None):
 		# The GUI
 		minute, hour, day, month, weekday, command, title_, icon_ = self.parse (record)
-
 		easystring = self.easy (minute, hour, day, month, weekday)
 
 
