@@ -75,6 +75,7 @@ class AddWindow:
 
 		self.nooutput = self.chkNoOutput.get_active()
 		self.nooutputRegex = re.compile('([^#\n$]*)>(\s|)/dev/null\s2>&1')
+		self.fieldRegex = re.compile('^(\*)$|^([0-9]+)$|^\*\\\([0-9]+)$|^([0-9]+)-([0-9]+)$|(([0-9]+[|,])+)')
 
 	def showEditWindow (self, record, linenumber, iter):
 		self.editing = gtk.TRUE
@@ -104,6 +105,60 @@ class AddWindow:
 		# This basically makes the entry read-only
 		return gtk.TRUE
 
+	def check_field_format (self, field, type):
+		m = self.fieldRegex.match (field)
+		num = 0
+		num1 = 0
+		num2 = 0
+		if m != None:
+			if m.groups()[1] != None or m.groups()[2] != None:
+				if m.groups()[1] != None:
+					num = int (m.groups()[1])
+				else:
+					num = int (m.groups()[2])
+				if type=="minute":
+					if num > 60 or num < 0:
+						raise
+				if type=="hour":
+					if num > 24 or num < 0:
+						raise
+				if type=="day":
+					if num > 31 or num < 0:
+						raise
+				if type=="month":
+					if num > 31 or num < 0:
+						raise
+				if type=="weekday":
+					if num > 7 or num < 0:
+						raise
+
+			if m.groups()[3] != None or m.groups()[4] != None:
+				num1 = int (m.groups()[3])
+				num2 = int (m.groups()[4])
+				if type=="minute":
+					if num1 > 60 or num1 < 0 or num2 > 60 or num2 < 0:
+						raise
+				if type=="hour":
+					if num1 > 24 or num1 < 0 or num2 > 24 or num2 < 0:
+						raise
+				if type=="day":
+					if num1 > 31 or num1 < 0 or num2 > 31 or num2 < 0:
+						raise
+				if type=="month":
+					if num1 > 31 or num1 < 0 or num2 > 31 or num2 < 0:
+						raise
+				if type=="weekday":
+					if num1 > 7 or num1 < 0 or num2 > 7 or num2 < 0:
+						raise
+
+			if m.groups()[5] != None:
+				thefield = m.groups()[5] + field[len(field)-1]
+				# Todo: parse and check a 'manual steps'-field
+				print thefield
+
+				#(*, 0, '2', 10, 10, '1,2,', 1)
+				# print m.groups()
+
 	def showAddWindow (self):
 		self.reset ()
 
@@ -124,6 +179,7 @@ class AddWindow:
 		self.chkNoOutput.set_active (gtk.FALSE)
 
 	def on_help_button_clicked (self, *args):
+		self.check_field_format (self.minute_entry.get_text(), "minute")
 		print "Help"
 
 	def on_cancel_button_clicked (self, *args):
@@ -131,6 +187,17 @@ class AddWindow:
 		return gtk.TRUE
 
 	def on_ok_button_clicked (self, *args):
+
+		try:
+			check_field_format (self.minute, "minute")
+			check_field_format (self.hour, "hour")
+			check_field_format (self.day, "day")
+			check_field_format (self.month, "month")
+			check_field_format (self.weekday, "weekday")
+		except:
+			print "WARNING"
+			pass
+
 		space = " "
 		if self.nooutput:
 			if self.command[len(self.command)-1] == " ":
