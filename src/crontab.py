@@ -54,8 +54,7 @@ class Crontab:
 		#default preview length
 		self.preview_len = 50
 
-		return
-	
+
 	def geteditor (self):
 		return self.editor
 	
@@ -94,17 +93,12 @@ class Crontab:
 	
 		
 	
-	def savetemplate (self, template_name, record, nooutput, title, icon):
-		minute, hour, day, month, weekday, command, title_, icon_ = self.parse (record)
-		frequency = minute + " " + hour + " " + day + " " + month + " " + weekday
+	#def savetemplate (self, template_name, record, nooutput, title, icon):
+	#	minute, hour, day, month, weekday, command, title_, icon_ = self.parse (record)
+	#	frequency = minute + " " + hour + " " + day + " " + month + " " + weekday
+	def savetemplate (self, template_name, frequency, title, icon, command):
 		template_name_c = self.replace (template_name)
 		
-		if nooutput:
-			space = " "
-			if command[len(command)-1] == " ":
-				space = ""
-			command = command + space + self.nooutputtag
-
 		support.gconf_client.set_string("/apps/gnome-schedule/presets/crontab/%s/name" % (template_name_c), template_name)
 		support.gconf_client.set_string("/apps/gnome-schedule/presets/crontab/%s/icon_uri" % (template_name_c), icon)
 		support.gconf_client.set_string("/apps/gnome-schedule/presets/crontab/%s/command" % (template_name_c), command)
@@ -149,11 +143,11 @@ class Crontab:
 		except Exception, ex:
 			return ex, ex, ex, ex, ex
 
-
+	#XXX used where?
 	def createpreview (self, minute, hour, day, month, weekday, command):
 		return minute + " " + hour + " " + day + " " + month + " " + weekday + " " + command
 
-
+	#XXX used where?
 	def getstandardvalue (self):
 		return "* * * * * "+ _("command")
 
@@ -280,8 +274,7 @@ class Crontab:
 		
 		#TODO needs exception handler
 		
-		return
-
+		
 	##XXX check if this still works after my changes
 	def update (self, linenumber, record, parentiter, nooutput, title, icon = None):
 		# The GUI
@@ -340,7 +333,7 @@ class Crontab:
 		self.write ()
 		#reload is needed because the line number change 
 		self.ParentClass.schedule_reload("crontab")
-		return
+		
 
 
 	def append (self, record, nooutput, title, icon = None):
@@ -403,7 +396,7 @@ class Crontab:
 		#print "-- Total crontab records: " + str(count)
 		##	
 
-		return
+		
 
 	#get info out of task line
 	def parse (self, line):

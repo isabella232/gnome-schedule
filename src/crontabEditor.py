@@ -160,9 +160,16 @@ class CrontabEditor:
 			self.WrongRecordDialog (x, y, z)
 			return
 
-		record = self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday + " " + self.command
-		self.ParentClass.savetemplate (template_name, record, self.nooutput, self.title, self.icon)
-
+		if self.nooutput:
+			space = " "
+			if self.command[len(self.command)-1] == " ":
+				space = ""
+			self.command = self.command + space + self.ParentClass.nooutputtag
+			
+		#record = self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday + " " + self.command
+		#self.ParentClass.savetemplate (template_name, record, self.nooutput, self.title, self.icon)
+		self.frequency = self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday
+		self.ParentClass.savetemplate (template_name, self.frequency, self.title, self.icon, self.command)
 
 	#error dialog box 
 	def WrongRecordDialog (self, x, y, z):
