@@ -1,7 +1,7 @@
 2004-07-08 Gaute Hope <eg@gaute.eu.org>
 
 	* enabled the at editor
-	* atEditor.py: the calendar now works, except from the hour/minute spinbuttons
+	* atEditor.py: the calendar now works
 	* atEditor.py: the combobox works
 
 2004-06-29  Gareth Owen  <gowen72@yahoo.com>

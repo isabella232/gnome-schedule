@@ -124,31 +124,48 @@ class AtEditor:
 	def on_calendar_day_selected (self, *args):		
 		if self.control_option.get_active():
 			(year, month, day) = self.calendar.get_date()
-			self.runat = str(year) + "-" + str(month) + "-" + str(day)
-			print self.runat
+			hour = self.hour_spinbutton.get_text()
+			minute = self.minute_spinbutton.get_text()
+			self.runat = hour + ":" + minute + " " + str(year) + "-" + str(month) + "-" + str(day)
 			self.update_textboxes()
 		return
 
 	def on_calendar_month_changed (self, *args):
 		if self.control_option.get_active():
 			(year, month, day) = self.calendar.get_date()
-			self.runat = str(year) + "-" + str(month) + "-" + str(day)
+			hour = self.hour_spinbutton.get_text()
+			minute = self.minute_spinbutton.get_text()
+			self.runat = hour + ":" + minute + " " + str(year) + "-" + str(month) + "-" + str(day)
 			self.update_textboxes()
 		return
 	
 	def on_calendar_year_changed (self, *args):
 		if self.control_option.get_active():
 			(year, month, day) = self.calendar.get_date()
-			self.runat = str(year) + "-" + str(month) + "-" + str(day)
+			hour = self.hour_spinbutton.get_text()
+			minute = self.minute_spinbutton.get_text()
+			self.runat = hour + ":" + minute + " " + str(year) + "-" + str(month) + "-" + str(day)
 			self.update_textboxes()
 		return
 
 
 	def on_hour_spinbutton_changed (self, *args):
-		pass
+		if self.control_option.get_active():
+			(year, month, day) = self.calendar.get_date()
+			hour = self.hour_spinbutton.get_text()
+			minute = self.minute_spinbutton.get_text()
+			self.runat = hour + ":" + minute + " " + str(year) + "-" + str(month) + "-" + str(day)
+			self.update_textboxes()
+		return
 
 	def on_minute_spinbutton_changed (self, *args):
-		pass
+		if self.control_option.get_active():
+			(year, month, day) = self.calendar.get_date()
+			hour = self.hour_spinbutton.get_text()
+			minute = self.minute_spinbutton.get_text()
+			self.runat = hour + ":" + minute + " " + str(year) + "-" + str(month) + "-" + str(day)
+			self.update_textboxes()
+		return
 
 	def on_combobox_changed (self, *args):
 		# In this combobox for example "tomorrow" should be checked
