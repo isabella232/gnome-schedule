@@ -220,7 +220,7 @@ class main:
 	def cleancolumns (self, init):
 		#cleaning up columns
 		if init != 1:
-			i = 3
+			i = 4
 			while i > - 1:
 				temp = self.treeview.get_column(i)
 				self.treeview.remove_column(temp)

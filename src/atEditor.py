@@ -414,6 +414,7 @@ class AtEditor:
 	def on_ok_button_clicked (self, *args):
 		# TODO: Validate record
 		# TODO: Fill record
+		self.icon = "/usr/share/icons/gnome/48x48/mimetypes/gnome-mime-application.png"
 		if self.editing != gtk.FALSE:
 			self.schedule.update (self.job_id, self.runat, self.command, self.title, self.icon)
 			self.ParentClass.schedule_reload ("at")
