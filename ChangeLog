@@ -1,3 +1,18 @@
+2005-01-07  Frank Arnold <frank@scirocco-5v-turbo.de>
+
+	* Note: committed by Philip Van Hoof <pvanhoof_NOSPAM@gnome.org>
+	* at.py: String fixes
+	* atEditor.py: Removed trailing space
+	* crontab.py: New checkfield function, changed string
+	* crontab.py: Fixed bug with user settings
+	* crontabEditor.py: Minor changes for new checkfield function
+	* crontabEditorHelper.py: Added some missing default values to populateLabels
+	* crontabEditorHelper.py: Replaced all occurences of self.ParentClass.schedule with self.ParentClass.scheduler
+	* crontabEditorHelper.py: Minor changes for new checkfield function
+	* gnome-schedule.glade: Removed trailing spaces and changed some strings
+	* lang.py: Eliminated ordinals, changed translator comments and some strings
+	* mainWindow.py: Removed trailing spaces
+
 2005-01-04  Martin Willemoes Hansen  <mwh@sysrq.dk>
 
 	* configure.ac: Added Danish (da) to ALL_LINGUAS.
