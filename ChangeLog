@@ -1,7 +1,9 @@
-2004-06-14	Philip Van Hoof <me at freax dot org>
+2004-06-14  Philip Van Hoof   <me at freax dot org>
+
 	* Parsing of the field to the addWindowHelp.py window
 
 2004-06-13  Philip Van Hoof <me at freax dot org>
+
 	* Added translatable string stuff _("translate this") at various places
 
 	* addWindow.py
@@ -19,15 +21,18 @@
 	* Redesign of the 'Expression' label
 
 2004-06-08  Philip Van Hoof <me at freax dot org>
+
 	* Implemented writing the crontab
 	* This means that, yes, the application is doing something usefull from now on
 
 2004-06-06  Philip Van Hoof <me at freax dot org>
+
 	* Recreated the project from scratch using Gaute's sourcecode
 	* Redesign of the GUI
 	* Uses popen to read the crontab (not a temporary file)
 
 2004-06-06  Gaute Hope <eg at gaute dot eu dot org>
+
 	* started the at support development.
 	* reading current jobs
 	* lists them in both simple and advanced mode
@@ -40,6 +45,7 @@
 	* Removed most of the debugging messages i used before.
 
 2004-06-03  Gaute Hope <eg at gaute dot eu dot org>
+
 	* used the environment provided by Philip Van Hoof, modified the makefile a bit(changed project directory) and the claen now cleans the *~ files in the src/ dir aswell
 	* you may change to advanced mode at the settings menu, simple is default
 	* created the simple model
@@ -51,21 +57,25 @@
 	* made simple remove work, should be sufficient for editing for now. If you want to do that you should switch to advanced mode.
 
 2004-06-01  Gaute Hope <eg at gaute dot eu dot org>
+
 	* Fixed the user selecting with commandline argument, it now only works if the UID = 0
 	* Bug: Made it work with other users than root :)
 
 2004-05-31  Gaute Hope <eg at gaute dot eu dot org>
+
 	* Added support for editing crontab for other users. It now checks for the first arguement uses it for the username. Otherwise it users the USER environment variable.
 	* Made it possible to just write out the crontab file without installing it, so that it can be installed on another machine(ie: a server without X)
 	* Fixed some version numbers.
 	* realized you had to be root to use the 'crontab -u' command, so now it only works if you are modifying root's crontab.. i tend to fix it to use the environment variable to check for user id or something.
 
 2004-05-30  Gaute Hope <eg at gaute dot eu dot org>
+
 	* Made it interfere with crontab using the crontab command to list and write crontabs
 	* New add dialog with features for customizing the execution time expressions
 	* About dialog
 	* Hints dialog for the add dialog
 
 2004-05-28  Gaute Hope <eg at gaute dot eu dot org>
+
 	* Created the main GUI.
 	* Created the add and remove functions
