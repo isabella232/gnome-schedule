@@ -64,7 +64,7 @@ class AddWindow:
 		self.setting_label = self.xml.get_widget ("setting_label")
 		self.chkNoOutput = self.xml.get_widget("chkNoOutput")
 
-		self.xml.signal_connect("on_help_button_clicked", self.on_help_button_clicked)
+		self.xml.signal_connect("on_add_help_button_clicked", self.on_add_help_button_clicked)
 		self.xml.signal_connect("on_cancel_button_clicked", self.on_cancel_button_clicked)
 		self.xml.signal_connect("on_ok_button_clicked", self.on_ok_button_clicked)
 		self.xml.signal_connect("on_anyadvanced_entry_changed", self.on_anyadvanced_entry_changed)
@@ -204,7 +204,7 @@ class AddWindow:
 		self.nooutput = gtk.FALSE
 		self.chkNoOutput.set_active (gtk.FALSE)
 
-	def on_help_button_clicked (self, *args):
+	def on_add_help_button_clicked (self, *args):
 		help_page = "file:///usr/share/doc/gnome-schedule-" + "@VERSION@" + "/addingandediting.html"
 		path = "/usr/bin/gnome-help"
 		pid = os.fork()
