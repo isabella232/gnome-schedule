@@ -60,7 +60,7 @@ class CrontabEditor:
 		
 		self.defaultIcon = defaultIcon
 		
-		#self.editing = gtk.FALSE
+		#self.editing = False
 		self.noevents = False
 		
 		
@@ -140,7 +140,7 @@ class CrontabEditor:
 		self.widget.set_position(gtk.WIN_POS_CENTER_ON_PARENT)
 		self.widget.show ()
 		self.__reload_templates__ ()
-		self.chkNoOutput.set_active (gtk.TRUE)
+		self.chkNoOutput.set_active (True)
 		
 		#switch to advanced tab if required
 		if mode == "advanced":
@@ -168,11 +168,11 @@ class CrontabEditor:
 			self.nooutput_label.show ()
 			self.command = m.groups()[0]
 			self.command_entry.set_text (self.command)
-			self.chkNoOutput.set_active (gtk.TRUE)
+			self.chkNoOutput.set_active (True)
 			self.nooutput = True
 		else:
 			self.nooutput_label.hide ()
-			self.chkNoOutput.set_active (gtk.FALSE)
+			self.chkNoOutput.set_active (False)
 			self.nooutput = False
 
 		#switch to advanced tab if required
@@ -195,7 +195,7 @@ class CrontabEditor:
 		self.title = _("Untitled")
 		self.nooutput = True
 		self.nooutput_label.show ()
-		self.chkNoOutput.set_active (gtk.TRUE)
+		self.chkNoOutput.set_active (True)
 		self.__update_textboxes__ ()
 		self.noevents = False
 
@@ -214,11 +214,11 @@ class CrontabEditor:
 
 		if self.template_names == None or len (self.template_names) <= 0:
 			active = 0
-			# self.remove_button.set_sensitive (gtk.FALSE)
-			# self.save_button.set_sensitive (gtk.FALSE)
+			# self.remove_button.set_sensitive (False)
+			# self.save_button.set_sensitive (False)
 			self.template_combobox.set_active (0)
-			# self.template_combobox.set_sensitive (gtk.FALSE)
-			# self.template_label.set_sensitive (gtk.FALSE)
+			# self.template_combobox.set_sensitive (False)
+			# self.template_label.set_sensitive (False)
 		else:
 			
 			for template_name in self.template_names:
@@ -226,7 +226,7 @@ class CrontabEditor:
 				icon_uri, command, frequency, title, name = thetemplate
 				self.template_combobox_model.append([name, template_name, thetemplate])
 						
-			# self.remove_button.set_sensitive (gtk.TRUE)
+			# self.remove_button.set_sensitive (True)
 							
 		self.template_combobox.set_active (active)
 
@@ -281,7 +281,7 @@ class CrontabEditor:
 		
 	def template_doesnot_exist (self, message):
 		box = gtk.MessageDialog(self.widget, gtk.DIALOG_MODAL, gtk.MESSAGE_INFO, gtk.BUTTONS_OK, message)
-		box.set_response_sensitive(gtk.RESPONSE_OK, gtk.TRUE)
+		box.set_response_sensitive(gtk.RESPONSE_OK, True)
 		run = box.run()
 		box.hide()
 
@@ -335,9 +335,9 @@ class CrontabEditor:
 #		try:
 #			pixbuf = gtk.gdk.pixbuf_new_from_file_at_size(filename, 128, 128)
 #			preview.set_from_pixbuf(pixbuf)
-#			have_preview = gtk.TRUE
+#			have_preview = True
 #		except:
-#			have_preview = gtk.FALSE
+#			have_preview = False
 #			file_chooser.set_preview_widget_active(have_preview)
 #		return
 
@@ -348,9 +348,9 @@ class CrontabEditor:
 		#notemplate = self.template_combobox_model.get_value(firstiter,0)
 		#entry = self.template_combobox.get_child().get_text()
 		#if notemplate != entry:
-		#	self.save_button.set_sensitive (gtk.TRUE)
+		#	self.save_button.set_sensitive (True)
 		#else:
-		#	self.save_button.set_sensitive (gtk.FALSE)
+		#	self.save_button.set_sensitive (False)
 
 
 	def on_template_combobox_changed (self, *args):
@@ -360,7 +360,7 @@ class CrontabEditor:
 				return
 			template = self.template_combobox_model.get_value(iter, 2)
 			if template != None:
-				# self.remove_button.set_sensitive (gtk.TRUE)
+				# self.remove_button.set_sensitive (True)
 				icon_uri, command, frequency, title, name = template
 				#if self.ParentClass.saveWindow != None:
 				#	self.ParentClass.saveWindow.save_entry.set_text (name)
@@ -388,12 +388,12 @@ class CrontabEditor:
 					self.nooutput_label.show ()
 					command = m.groups()[0]
 					self.noevents = True
-					self.chkNoOutput.set_active (gtk.TRUE)
+					self.chkNoOutput.set_active (True)
 					self.noevents = False
 					self.nooutput = True
 				else:
 					self.nooutput_label.hide ()
-					self.chkNoOutput.set_active (gtk.FALSE)
+					self.chkNoOutput.set_active (False)
 					self.nooutput = False
 
 
@@ -401,8 +401,8 @@ class CrontabEditor:
 				self.command = command
 				self.__update_textboxes__ ()
 			else:
-				# self.remove_button.set_sensitive (gtk.FALSE)
-				# self.save_button.set_sensitive (gtk.FALSE)
+				# self.remove_button.set_sensitive (False)
+				# self.save_button.set_sensitive (False)
 				self.__loadicon__ ()
 				self.__reset__ ()
 
@@ -417,7 +417,7 @@ class CrontabEditor:
 
 	def on_cancel_button_clicked (self, *args):
 		self.widget.hide()
-		#return gtk.TRUE
+		#return True
 
 
 	def on_ok_button_clicked (self, *args):

@@ -92,8 +92,8 @@ class main:
 		self.btnSetUser = self.xml.get_widget("btnSetUser")
 		self.btnExit = self.xml.get_widget("btnExit")
 
-		self.prop_button.set_sensitive (gtk.FALSE)
-		self.del_button.set_sensitive (gtk.FALSE)
+		self.prop_button.set_sensitive (False)
+		self.del_button.set_sensitive (False)
 		
 		self.xml.signal_connect("on_add_button_clicked", self.on_add_button_clicked)
 		self.xml.signal_connect("on_prop_button_clicked", self.on_prop_button_clicked)
@@ -120,7 +120,7 @@ class main:
 		self.treeview.get_selection().connect("changed", self.on_TreeViewSelectRow)
 		
 		# TODO: enable?
-		#self.treeview.set_rules_hint(gtk.TRUE)
+		#self.treeview.set_rules_hint(True)
 		##
 
 		##configure the menu
@@ -136,8 +136,8 @@ class main:
 		self.about_menu = self.xml.get_widget ("about_menu")
 		
 
-		self.properties_menu.set_sensitive (gtk.FALSE)
-		self.delete_menu.set_sensitive (gtk.FALSE)
+		self.properties_menu.set_sensitive (False)
+		self.delete_menu.set_sensitive (False)
 
 		self.xml.signal_connect("on_add_scheduled_task_menu_activate", self.on_add_scheduled_task_menu_activate)
 		self.xml.signal_connect("on_properties_menu_activate", self.on_properties_menu_activate)
@@ -299,9 +299,9 @@ class main:
 	#when the user selects a task, buttons get enabled
 	def on_TreeViewSelectRow (self, *args):
 		if self.treeview.get_selection().count_selected_rows() > 0 :
-			value = gtk.TRUE
+			value = True
 		else:
-			value = gtk.FALSE
+			value = False
 			
 		self.prop_button.set_sensitive (value)
 		self.del_button.set_sensitive (value)
@@ -334,40 +334,40 @@ class main:
 		if mode == "simple":
 
 			col = gtk.TreeViewColumn(_("Type"), gtk.CellRendererText(), text=13)
-			col.set_resizable (gtk.TRUE)
+			col.set_resizable (True)
 			self.treeview.append_column(col)
 
 			col = gtk.TreeViewColumn(_("Title"), gtk.CellRendererText(), text=0)
-			col.set_resizable (gtk.TRUE)
+			col.set_resizable (True)
 			self.treeview.append_column(col)
 
 			col = gtk.TreeViewColumn(_("Date and Time Settings"), gtk.CellRendererText(), text=1)
-			col.set_resizable (gtk.TRUE)
+			col.set_resizable (True)
 			self.treeview.append_column(col)
 
 			col = gtk.TreeViewColumn(_("Preview"), gtk.CellRendererText(), text=2)
-			col.set_resizable (gtk.TRUE)
-			col.set_expand (gtk.TRUE)
+			col.set_resizable (True)
+			col.set_expand (True)
 			self.treeview.append_column(col)
 
 
 		elif mode == "advanced":
 	
 			col = gtk.TreeViewColumn(_("Date and Time Settings"), gtk.CellRendererText(), text=5)
-			col.set_resizable (gtk.TRUE)
+			col.set_resizable (True)
 			self.treeview.append_column(col)
 
 			col = gtk.TreeViewColumn(_("Preview"), gtk.CellRendererText(), text=2)
-			col.set_resizable (gtk.TRUE)
-			col.set_expand (gtk.TRUE)
+			col.set_resizable (True)
+			col.set_expand (True)
 			self.treeview.append_column(col)
 
 			col = gtk.TreeViewColumn(_("Title"), gtk.CellRendererText(), text=0)
-			col.set_resizable (gtk.TRUE)
+			col.set_resizable (True)
 			self.treeview.append_column(col)
 
 			col = gtk.TreeViewColumn(_("Type"), gtk.CellRendererText(), text=14)
-			col.set_resizable (gtk.TRUE)
+			col.set_resizable (True)
 			self.treeview.append_column(col)
 	
 

@@ -55,7 +55,7 @@ class AtEditor:
 		
 		self.defaultIcon = defaultIcon
 		
-		#self.editing = gtk.FALSE
+		#self.editing = False
 		self.noevents = False
 		self.NOACTION = False	#getting alot of these now.. this is for abosultely noactions of the syncing and templates stuff
 		self.noupdate = False
@@ -275,7 +275,7 @@ class AtEditor:
 
 	def template_doesnot_exist (self, message):
 		box = gtk.MessageDialog(self.widget, gtk.DIALOG_MODAL, gtk.MESSAGE_INFO, gtk.BUTTONS_OK, message)
-		box.set_response_sensitive(gtk.RESPONSE_OK, gtk.TRUE)
+		box.set_response_sensitive(gtk.RESPONSE_OK, True)
 		run = box.run()
 		box.hide()
 
@@ -327,8 +327,8 @@ class AtEditor:
 
 		if self.template_names == None or len (self.template_names) <= 0:
 			active = 0
-			# self.remove_button.set_sensitive (gtk.FALSE)
-			# self.save_button.set_sensitive (gtk.FALSE)
+			# self.remove_button.set_sensitive (False)
+			# self.save_button.set_sensitive (False)
 			self.template_combobox.set_active (0)
 		else:
 			
@@ -342,7 +342,7 @@ class AtEditor:
 				#print "name: " + name
 				self.template_combobox_model.append([name, template_name, thetemplate])
 						
-			# self.remove_button.set_sensitive (gtk.TRUE)
+			# self.remove_button.set_sensitive (True)
 			
 		self.template_combobox.set_active (active)
 		
@@ -353,9 +353,9 @@ class AtEditor:
 			notemplate = self.template_combobox_model.get_value(firstiter,0)
 			entry = self.template_combobox.get_child().get_text()
 			# if notemplate != entry:
-				# self.save_button.set_sensitive (gtk.TRUE)
+				# self.save_button.set_sensitive (True)
 			# else:
-				# self.save_button.set_sensitive (gtk.FALSE)
+				# self.save_button.set_sensitive (False)
 	
 
 	def on_template_combobox_changed (self, *args):
@@ -366,7 +366,7 @@ class AtEditor:
 					return
 				template = self.template_combobox_model.get_value(iter, 2)
 				if template != None:
-					# self.remove_button.set_sensitive (gtk.TRUE)
+					# self.remove_button.set_sensitive (True)
 					icon_uri, command, runat, title, name = template
 					if icon_uri != None:
 						pixbuf = gtk.gdk.pixbuf_new_from_file_at_size (icon_uri, 60, 60)
@@ -385,8 +385,8 @@ class AtEditor:
 					else:		
 						self.__update_textboxes__ ()
 				else:
-					# self.remove_button.set_sensitive (gtk.FALSE)
-					# self.save_button.set_sensitive (gtk.FALSE)
+					# self.remove_button.set_sensitive (False)
+					# self.save_button.set_sensitive (False)
 					self.__loadicon__ ()
 
 					self.__reset__ ()
@@ -411,9 +411,9 @@ class AtEditor:
 #		try:
 #			pixbuf = gtk.gdk.pixbuf_new_from_file_at_size(filename, 128, 128)
 #			preview.set_from_pixbuf(pixbuf)
-#			have_preview = gtk.TRUE
+#			have_preview = True
 #		except:
-#			have_preview = gtk.FALSE
+#			have_preview = False
 #			file_chooser.set_preview_widget_active(have_preview)
 #		return
 
@@ -507,7 +507,7 @@ class AtEditor:
 
 	def on_cancel_button_clicked (self, *args):
 		self.widget.hide()
-		#return gtk.TRUE
+		#return True
 
 
 	def __WrongRecordDialog__ (self, x):

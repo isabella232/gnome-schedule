@@ -120,34 +120,34 @@ class CrontabEditorHelper:
 		self.populateLabels(field)
 
 		m = self.fieldRegex.match (expression)
-		self.radOth.set_active (gtk.TRUE)
+		self.radOth.set_active (True)
 
 		self.NoExpressionEvents = True
 		self.entExpression.set_text (expression)
 
 		if m != None:
 			if m.groups()[0] != None:
-				self.radAll.set_active (gtk.TRUE)
+				self.radAll.set_active (True)
 			# 10 * * * * command
 			# */2 * * * * command
 			if m.groups()[1] != None or m.groups()[2] != None:
 				if m.groups()[1] != None:
-					self.radFix.set_active (gtk.TRUE)
+					self.radFix.set_active (True)
 					self.entFix.set_text (m.groups()[1])
 				else:
-					self.radEvery.set_active (gtk.TRUE)
+					self.radEvery.set_active (True)
 					self.entEvery.set_text (m.groups()[2])
 
 			# 1-10 * * * * command
 			if m.groups()[3] != None and m.groups()[4] != None:
-				self.radRange.set_active (gtk.TRUE)
+				self.radRange.set_active (True)
 				self.entRangeStart.set_text(m.groups()[3])
 				self.entRangeEnd.set_text (m.groups()[4])
 
 			# Unused
 			# 1,2,3,4 * * * * command
 			# if m.groups()[5] != None:
-				# self.radOth.set_active (gtk.TRUE)
+				# self.radOth.set_active (True)
 				# fields = m.groups()[5].split (",")
 
 		self.NoExpressionEvents = False
@@ -183,7 +183,7 @@ class CrontabEditorHelper:
 	def btnCancel_clicked(self, *args):
 		#hide
 		self.widget.hide()
-		#return gtk.TRUE
+		#return True
 
 
 	def RadioButtonChange(self, widget):
@@ -224,7 +224,7 @@ class CrontabEditorHelper:
 
 	def entExpressionChanged(self, *args):
 		if self.NoExpressionEvents == False:
-			self.radOth.set_active (gtk.TRUE)
+			self.radOth.set_active (True)
 
 
 	def anyEntryChanged(self, *args):

@@ -47,7 +47,7 @@ class AddWindow:
 		
 		self.at_radio = self.xml.get_widget("at_radio")
 		self.crontab_radio = self.xml.get_widget("crontab_radio")
-		self.crontab_radio.set_active (gtk.TRUE)
+		self.crontab_radio.set_active (True)
 		
 		
 	def ShowAddWindow (self):
