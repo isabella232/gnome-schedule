@@ -33,7 +33,7 @@ try:
 	import gtk
 	import gnome
 	import gnome.ui
-	gnome.program_init ("gnome-schedule", config.getVersion())
+	#gnome.program_init ("gnome-schedule", config.getVersion())
 except:
 	print ("gnome-schedule requires a currently running X server.")
 	sys.exit(0)

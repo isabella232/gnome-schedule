@@ -23,6 +23,8 @@ import string
 import os
 import re
 import gtk.glade
+import support
+import gconf
 import crontabEditorHelper
 import crontabEditor
 import atEditor
@@ -33,8 +35,9 @@ import crontab
 import at
 import sys
 import time
-# import config
 import editor
+import config
+
 from os import popen
 
 ##
@@ -84,7 +87,7 @@ class main:
 		
 		self.crontab_vs_at = mode
 		if self.crontab_vs_at == "crontab":
-
+			print "starting cron.."
 			self.schedule = crontab.Crontab(self)
 		else:
 			print "starting at.."
@@ -113,7 +116,6 @@ class main:
 			self.toolbar.get_nth_item (3).set_homogeneous (gtk.TRUE)
 		except:
 			pass
-
 		
 		self.treeview.set_rules_hint(gtk.TRUE)
 		self.treeview.columns_autosize()
@@ -138,6 +140,12 @@ class main:
 		self.xml.signal_connect("on_help_button_clicked", self.on_help_button_clicked)
 		self.xml.signal_connect("on_btnExit_clicked", self.quit)
 
+		support.gconf_client.add_dir ("/apps/gnome-schedule", gconf.CLIENT_PRELOAD_NONE)
+		support.gconf_client.notify_add ("/apps/gnome-schedule/advanced", self.gconfkey_advanced_changed);
+		
+		self.advanced_menu.set_active (support.gconf_client.get_bool ("/apps/gnome-schedule/advanced"))
+		
+		
 		# hiding setuser button if not root
 		if self.root == 0:
 			self.btnSetUser.hide()
@@ -149,7 +157,10 @@ class main:
 
 		#inittializing the treeview
 		self.init_treeview()
-		
+
+
+		self.gconfkey_advanced_changed (support.gconf_client, None, "/apps/gnome-schedule/advanced", None)
+
 		#set user window
 		self.setuserwidget = self.xml.get_widget("setuserWindow")
 		self.setuserwidget.hide()
@@ -161,7 +172,10 @@ class main:
 		else:
 			self.xml.signal_connect("on_btnSetUser_clicked", self.showSetUser)
 
-		gtk.mainloop()
+		try:
+			gtk.main ()
+		except:
+			gtk.mainloop()
 		return
 
 	def init_treeview(self, mode = "simple", init = 0):
@@ -184,7 +198,10 @@ class main:
 
 
 	def quit (self, *args):
-		gtk.mainquit()
+		try:
+			gtk.main_quit ()
+		except:
+			gtk.mainquit()
 
 	def readUser (self):
 		UID = os.geteuid()
@@ -216,13 +233,16 @@ class main:
 		self.on_manual_menu_activate (self, args)
 		pass
 
-
-	def on_advanced_menu_activate (self, widget):
-		if widget.get_active():
+	def gconfkey_advanced_changed (self, client, connection_id, entry, args):
+		val = support.gconf_client.get_bool ("/apps/gnome-schedule/advanced")
+		if val:
 			self.switchView("advanced")
 		else:
 			self.switchView("simple")
 		return
+
+	def on_advanced_menu_activate (self, widget):
+		support.gconf_client.set_bool ("/apps/gnome-schedule/advanced", widget.get_active())
 
 	def on_about_menu_activate (self, *args):
 		dlg = gnome.ui.About(_("System Schedule"),
@@ -246,13 +266,18 @@ class main:
 	def on_properties_menu_activate (self, *args):
 		store, iter = self.treeview.get_selection().get_selected()
 		if iter != None:
-			title = self.treemodel.get_value(iter, 0)
-			date = self.treemodel.get_value(iter, 1)
-			time = self.treemodel.get_value(iter, 2)
-			class_id = self.treemodel.get_value(iter, 3)
-			job_id = self.treemodel.get_value(iter, 4)
-			user = self.treemodel.get_value(iter, 5)
-			self.editor.showedit (iter, title, date, time, class_id, job_id, user, self.edit_mode)
+			if self.crontab_vs_at == "crontab":
+				record = self.treemodel.get_value(iter, 3)
+				linenumber = self.treemodel.get_value(iter, 4)
+				self.editor.showedit (record, linenumber, iter, self.edit_mode)
+			elif self.crontab_vs_at == "at":
+				title = self.treemodel.get_value(iter, 0)
+				date = self.treemodel.get_value(iter, 1)
+				time = self.treemodel.get_value(iter, 2)
+				class_id = self.treemodel.get_value(iter, 3)
+				job_id = self.treemodel.get_value(iter, 4)
+				user = self.treemodel.get_value(iter, 5)
+				self.editor.showedit (iter, title, date, time, class_id, job_id, user, self.edit_mode)
 
 	def on_delete_menu_activate (self, *args):
 		store, iter = self.treeview.get_selection().get_selected()
@@ -274,6 +299,7 @@ class main:
 			if iter:
 				selection = self.treeview.get_selection()
 				selection.select_iter(iter)
+
 		return
 
 	def on_quit_menu_activate (self, *args):

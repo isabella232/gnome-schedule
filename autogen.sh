@@ -4,6 +4,14 @@
 srcdir=`dirname $0`
 test -z "$srcdir" && srcdir=.
 
+# SIGH! pozilla only reads configure.in
+if test -e configure.in
+then
+	echo "No symlink needed for pozilla"
+else
+	ln -s configure.ac configure.in
+fi
+
 ORIGDIR=`pwd`
 cd $srcdir
 PROJECT=gnome-schedule

@@ -27,7 +27,8 @@ import gobject
 import crontabEditorHelper
 import crontabEditor
 import lang
-
+import support
+import string
 ##
 ## I18N
 ##
@@ -45,7 +46,8 @@ class Crontab:
 		self.nooutputtag = ">/dev/null 2>&1"
 
 		self.ParentClass.treemodel = self.createtreemodel ()
-
+		self.editorwidget = self.xml.get_widget("crontabEditor")
+		self.editorhelperwidget = self.xml.get_widget("crontabEditorHelper")
 		self.editor = crontabEditor.CrontabEditor (self.ParentClass, self)
 		self.editorhelper = crontabEditorHelper.CrontabEditorHelper(self, self.editor)
 
@@ -55,6 +57,48 @@ class Crontab:
 
 		self.read()
 		return
+
+	def savetemplate (self, template_name, record, nooutput, title, icon):
+		minute, hour, day, month, weekday, command, title_, icon_ = self.parse (record)
+		frequency = minute + " " + hour + " " + day + " " + month + " " + weekday
+		template_name_c = string.strip (template_name, "\s ,;:/\\\"'!@#$%^&*()-_+=|?<>.][{}")
+		template_name_c = string.replace (template_name_c, " ", "-")
+		support.gconf_client.set_string("/apps/gnome-schedule/templates/crontab/%s/name" % (template_name_c), template_name)
+		support.gconf_client.set_string("/apps/gnome-schedule/templates/crontab/%s/icon_uri" % (template_name_c), icon)
+		support.gconf_client.set_string("/apps/gnome-schedule/templates/crontab/%s/command" % (template_name_c), command)
+		support.gconf_client.set_string("/apps/gnome-schedule/templates/crontab/%s/frequency" % (template_name_c), frequency)
+		support.gconf_client.set_string("/apps/gnome-schedule/templates/crontab/%s/title" % (template_name_c), title)
+		
+		installed = support.gconf_client.get_string("/apps/gnome-schedule/templates/crontab/installed")
+		if installed == None:
+			installed = template_name_c
+		else:
+			found = gtk.FALSE
+			for t in string.split (installed, ", "):
+				if t == template_name_c:
+					found = gtk.TRUE
+
+			if found == gtk.FALSE:
+				installed = installed + ", " + template_name_c
+
+		support.gconf_client.set_string("/apps/gnome-schedule/templates/crontab/installed", installed)
+
+	def gettemplatenames (self):
+		strlist = support.gconf_client.get_string("/apps/gnome-schedule/templates/crontab/installed")
+		if strlist != None:
+			list = string.split (strlist, ", ")
+			return list
+		else:
+			return None
+
+	def gettemplate (self, template_name):
+		icon_uri = support.gconf_client.get_string("/apps/gnome-schedule/templates/crontab/%s/icon_uri" % (template_name))
+		command = support.gconf_client.get_string("/apps/gnome-schedule/templates/crontab/%s/command" % (template_name))
+		frequency = support.gconf_client.get_string("/apps/gnome-schedule/templates/crontab/%s/frequency" % (template_name))
+		title = support.gconf_client.get_string("/apps/gnome-schedule/templates/crontab/%s/title" % (template_name))
+		name = support.gconf_client.get_string("/apps/gnome-schedule/templates/crontab/%s/name" % (template_name))
+
+		return icon_uri, command, frequency, title, name
 
 	def translate_frequency (self, frequency):
 
@@ -75,9 +119,9 @@ class Crontab:
 		return self.editor
 
 	def createtreemodel (self):
-		# [0 Title, 1 Frequency, 2 Command, 3 Crontab record, 4 Line number, 5 Time]
-		# ["Restart app", "Every day", "/opt/bin/restart.pl", "* 1 * * * /opt/bin/restart.pl # Title=Restart App", 3, 0 * * * *]
-		return gtk.ListStore(gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_INT, gobject.TYPE_STRING)
+		# [0 Title, 1 Frequency, 2 Command, 3 Crontab record, 4 Line number, 5 Time, 6 Icon]
+		# ["Restart app", "Every day", "/opt/bin/restart.pl", "* 1 * * * /opt/bin/restart.pl[ # Restart App[, Icon_uri]]", 3, 0 * * * *]
+		return gtk.ListStore(gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_INT, gobject.TYPE_STRING, gobject.TYPE_PYOBJECT)
 
 	def switchview (self, mode = "simple", init = 0):
 		if mode == "simple":
@@ -90,6 +134,8 @@ class Crontab:
 					i = i -1
 				
 			# Setting up the columns
+			#col = gtk.TreeViewColumn(_("Icon"), gtk.CellRendererText(), text=6)
+			#self.ParentClass.treeview.append_column(col)
 			col = gtk.TreeViewColumn(_("Title"), gtk.CellRendererText(), text=0)
 			self.ParentClass.treeview.append_column(col)
 			col = gtk.TreeViewColumn(_("Frequency"), gtk.CellRendererText(), text=1)
@@ -108,6 +154,8 @@ class Crontab:
 					i = i -1
 			
 			# Setting up the columns
+			#col = gtk.TreeViewColumn(_("Icon"), gtk.CellRendererText(), text=6)
+			#self.ParentClass.treeview.append_column(col)
 			col = gtk.TreeViewColumn(_("Frequency"), gtk.CellRendererText(), text=5)
 			self.ParentClass.treeview.append_column(col)
 			col = gtk.TreeViewColumn(_("Command"), gtk.CellRendererText(), text=2)
@@ -124,24 +172,25 @@ class Crontab:
 		return "* * * * * "+ _("command")
 
 	def getfrequency (self, minute, hour, day, month, weekday):
-		index = _("use advanced")
-		# index = 0
+		# index = _("use advanced")
+		index = 0
 
 		# Must be translatable, it's the actual content of the combobox-entry
 		if minute == "*" and hour == "*" and month == "*" and day == "*" and weekday == "*":
-			index = self.translate_frequency ("minute")
-			# index = 1
+			# index = self.translate_frequency ("minute")
+			index = 1
 		if minute == "0" and hour == "*" and month == "*" and day == "*" and weekday == "*":
-			index = self.translate_frequency ("hour")
-			# index = 2
+			# index = self.translate_frequency ("hour")
+			index = 2
 		if minute == "0" and hour == "0" and month == "*" and day == "*" and weekday == "*":
-			index = self.translate_frequency ("day")
-			# index = 3
+			# index = self.translate_frequency ("day")
+			index = 3
 		if minute == "0" and hour == "0" and month == "*" and day == "1" and weekday == "*":
-			index = self.translate_frequency ("month")
-			# index = 4
+			# index = self.translate_frequency ("month")
+			index = 4
 		if minute == "0" and hour == "0" and month == "*" and day == "*" and weekday == "0":
-			index = self.translate_frequency ("week")
+			# index = self.translate_frequency ("week")
+			index = 5
 
 		return index
 		
@@ -259,20 +308,18 @@ class Crontab:
 		os.unlink (path)
 		return
 
-	def update (self, linenumber, record, parentiter, nooutput, title):
+	def update (self, linenumber, record, parentiter, nooutput, title, icon = None):
 		# The GUI
-		minute, hour, day, month, weekday, command, title = self.parse (record)
-		
-		self.ParentClass.treemodel.set_value (parentiter, 0, title)
+		minute, hour, day, month, weekday, command, title_, icon_ = self.parse (record)
+
 		easystring = self.easy (minute, hour, day, month, weekday)
 
 
-		
 		self.ParentClass.treemodel.set_value (parentiter, 1, easystring)
 		if nooutput:
 			space = " "
 			if command[len(command)-1] == " ":
-				space = ""		
+				space = ""
 			self.ParentClass.treemodel.set_value (parentiter, 2, command + space + self.nooutputtag)
 			record = record + space + self.nooutputtag
 		else:
@@ -280,8 +327,18 @@ class Crontab:
 			
 		self.ParentClass.treemodel.set_value (parentiter, 5, minute + " " + hour + " " + day + " " + month + " " + weekday)
 
-		record = record + " # " + title	
-		
+		if title != None and icon == None:
+			record = record + " # " + title
+		elif title != None and icon != None:
+			record = record + " # " + title + ", " + icon
+		elif title == None and icon != None:
+			title = _("Untitled")
+			record = record + " # " + title + ", " + icon
+
+		self.ParentClass.treemodel.set_value (parentiter, 0, title)
+		if icon != None:
+			self.ParentClass.treemodel.set_value (parentiter, 6, gtk.gdk.pixbuf_new_from_file (icon))
+
 		self.ParentClass.treemodel.set_value (parentiter, 3, record)
 		# The crontab itself
 		self.lines[linenumber] = record
@@ -300,14 +357,19 @@ class Crontab:
 		self.lines = newlines
 		self.write ()
 
-	def append (self, record, nooutput, title):
+	def append (self, record, nooutput, title, icon = None):
 		if nooutput:
 			space = " "
 			if record[len(record)-1] == " ":
 				space = ""
 			record = record + space + self.nooutputtag
-		
-		record = record + " # " + title		
+		if title != None and icon == None:
+			record = record + " # " + title
+		elif title != None and icon != None:
+			record = record + " # " + title + ", " + icon
+		elif title == None and icon != None:
+			record = record + " # " + _("Untitled") + ", " + icon
+
 		self.lines.append (record)
 		self.write ()
 
@@ -317,15 +379,18 @@ class Crontab:
 		else:
 			execute = config.getCrontabbin () + " -l"
 
-		p = re.compile('^(.*)\s(.*)\s(.*)\s(.*)\s(.*)\s(.*)[\s#\s(.*)|]$')
 		self.linecount = 0
 		self.lines = os.popen(execute).readlines()
 		for line in self.lines:
 			array_or_false = self.parse (line)
 			if array_or_false != gtk.FALSE:
-				(minute, hour, day, month, weekday, command, title) = array_or_false
+				(minute, hour, day, month, weekday, command, title, icon) = array_or_false
 				time = minute + " " + hour + " " + day + " " + month + " " + weekday
-				iter = self.ParentClass.treemodel.append([title, self.easy (minute, hour, day, month, weekday), command, line, self.linecount, time])
+				try:
+					icon_pix = gtk.gdk.pixbuf_new_from_file (icon)
+				except:
+					icon_pix = None
+				iter = self.ParentClass.treemodel.append([title, self.easy (minute, hour, day, month, weekday), command, line, self.linecount, time, icon_pix])
 			self.linecount = self.linecount + 1
 		return
 
@@ -340,11 +405,19 @@ class Crontab:
 					month = m.groups ()[3]
 					weekday = m.groups ()[4]
 					command = m.groups ()[5]
-					title = m.groups ()[7]
+
+					icon = None
+					title = None
+					if m.groups ()[7] != None:
+						lastpiece = string.split (m.groups ()[7], ", ")
+						title = lastpiece[0]
+						if len (lastpiece) > 1:
+							icon = lastpiece[1]
+
 					if title == None:
 						title = _("Untitled")
 
-					return minute, hour, day, month, weekday, command, title
+					return minute, hour, day, month, weekday, command, title, icon
 		return gtk.FALSE
 
 	def easy (self, minute, hour, day, month, weekday):

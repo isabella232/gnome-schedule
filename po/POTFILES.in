@@ -1,5 +1,13 @@
 # List of source files containing translatable strings.
 # Please keep this file sorted alphabetically.
+<<<<<<< POTFILES.in
+#
+# The src/lang.py file contains translation routines for
+# written numerics. If you as a translator have some
+# basic coding skills, you can get numeric translations
+# supported in your language this way.
+src/at.py
+=======
 
 # The src/lang.py file contains translation routines for
 # written numberings. If you as a translator have some
@@ -12,9 +20,25 @@ src/schedule.py
 src/config.py
 src/editor.py
 src/setuserWindow.py
+>>>>>>> 1.2.2.2
 src/crontab.py
+<<<<<<< POTFILES.in
+src/crontabEditor.py
+src/crontabEditorHelper.py
+src/editor.py
+=======
 src/gnome-schedule.py
 src/crontabEditor.py
 src/mainWindow.py
+>>>>>>> 1.2.2.2
 src/gnome-schedule.glade
+<<<<<<< POTFILES.in
+src/gnome-schedule.py
 src/lang.py
+src/mainWindow.py
+src/schedule.py
+src/setuserWindow.py
+src/support.py
+=======
+src/lang.py
+>>>>>>> 1.2.2.2

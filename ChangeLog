@@ -2,6 +2,32 @@
 	* created the ateditor window
 	* reading and writing to at now works
 
+2004-06-22  Philip Van Hoof <me_NOSPAM@freax.org>
+
+	* Template support (temporary gconf backend)
+	* Icon support: together with the title stored as metadata at the crontab
+	itself (* * * * * command[ # Title, icon_uri]])
+	* PyGTK >= 2.3 is now required (dependency)
+	* Less quirks for translators
+
+2004-06-18  Philip Van Hoof <me_NOSPAM@freax.org>
+
+	* More support for crontab-to-human-readable, more cases
+	* Support for written numeric nth values
+
+2004-06-18  Gustavo Maciel Dias Vieira  <gustavo@sagui.org>
+
+	* configure.ac: Added pt_BR to ALL_LINGUAS.
+
+2004-06-18  Philip Van Hoof <me_NOSPAM@freax.org>
+
+	* Fixed some stuff
+	* Prepared the application for the at support
+
+2004-06-18  Gaute Hope	<eg@gaute.eu.org>
+
+	* created the at-support-branch and changed the layout of the files
+
 2004-06-18  Philip Van Hoof <me_NOSPAM@freax.org>
 
 	* More support for crontab-to-human-readable, more cases
@@ -32,7 +58,9 @@
 2004-06-18  Gaute Hope	<eg@gaute.eu.org>
 	* created the at-support-branch and changed the layout of the files
 
+>>>>>>> 1.15.2.4
 2004-06-18  Philip Van Hoof  <me_NOSPAM@freax.org>
+
 	* configure.ac, autogen.sh, Makefile.am: Reconfiguration of the build
 	environment. This build environment used to be Fedora-only. From now
 	on this build environment needs to be suitable for any Unix platform
