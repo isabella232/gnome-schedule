@@ -68,7 +68,8 @@ class AtEditor:
 		self.hour_spinbutton = self.xml.get_widget ("at_hour_spinbutton")
 		self.minute_spinbutton= self.xml.get_widget ("at_minute_spinbutton")
 		self.combobox = self.xml.get_widget ("at_combobox")
-
+		self.combobox_entry = self.combobox.get_child()	
+	
 		self.xml.signal_connect("on_at_help_button_clicked", self.on_help_button_clicked)
 		self.xml.signal_connect("on_at_cancel_button_clicked", self.on_cancel_button_clicked)
 		self.xml.signal_connect("on_at_ok_button_clicked", self.on_ok_button_clicked)
@@ -248,6 +249,7 @@ class AtEditor:
 	def update_textboxes(self):
 		self.title_entry.set_text(self.title)
 		self.script_textview_buffer.set_text(self.command)
+		self.combobox_entry.set_text(self.runat)
 		return
 
 	def showedit (self, record, job_id, iter, mode):
