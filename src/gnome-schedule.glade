@@ -318,7 +318,7 @@
   <property name="title" translatable="yes">[Add|Edit] scheduled task</property>
   <property name="type">GTK_WINDOW_TOPLEVEL</property>
   <property name="window_position">GTK_WIN_POS_NONE</property>
-  <property name="modal">True</property>
+  <property name="modal">False</property>
   <property name="resizable">True</property>
   <property name="destroy_with_parent">False</property>
   <property name="decorated">True</property>
@@ -701,17 +701,18 @@ use advanced</property>
 		  <child>
 		    <widget class="GtkLabel" id="lblMinute">
 		      <property name="visible">True</property>
+		      <property name="can_focus">True</property>
 		      <property name="label" translatable="yes">minute</property>
 		      <property name="use_underline">False</property>
 		      <property name="use_markup">False</property>
 		      <property name="justify">GTK_JUSTIFY_LEFT</property>
 		      <property name="wrap">False</property>
-		      <property name="selectable">False</property>
+		      <property name="selectable">True</property>
 		      <property name="xalign">0</property>
 		      <property name="yalign">0.5</property>
 		      <property name="xpad">0</property>
 		      <property name="ypad">0</property>
-		      <signal name="button_press_event" handler="on_lblMinute_button_press_event" last_modification_time="Thu, 10 Jun 2004 12:42:14 GMT"/>
+		      <signal name="button_press_event" handler="on_lblMinute_button_press_event" last_modification_time="Thu, 10 Jun 2004 14:17:41 GMT"/>
 		    </widget>
 		    <packing>
 		      <property name="left_attach">1</property>
@@ -728,12 +729,13 @@ use advanced</property>
 		  <child>
 		    <widget class="GtkLabel" id="lblHour">
 		      <property name="visible">True</property>
+		      <property name="can_focus">True</property>
 		      <property name="label" translatable="yes">hour</property>
 		      <property name="use_underline">False</property>
 		      <property name="use_markup">False</property>
 		      <property name="justify">GTK_JUSTIFY_LEFT</property>
 		      <property name="wrap">False</property>
-		      <property name="selectable">False</property>
+		      <property name="selectable">True</property>
 		      <property name="xalign">0</property>
 		      <property name="yalign">0.5</property>
 		      <property name="xpad">0</property>
@@ -755,12 +757,13 @@ use advanced</property>
 		  <child>
 		    <widget class="GtkLabel" id="lblDay">
 		      <property name="visible">True</property>
+		      <property name="can_focus">True</property>
 		      <property name="label" translatable="yes">day</property>
 		      <property name="use_underline">False</property>
 		      <property name="use_markup">False</property>
 		      <property name="justify">GTK_JUSTIFY_LEFT</property>
 		      <property name="wrap">False</property>
-		      <property name="selectable">False</property>
+		      <property name="selectable">True</property>
 		      <property name="xalign">0</property>
 		      <property name="yalign">0.5</property>
 		      <property name="xpad">0</property>
@@ -782,12 +785,13 @@ use advanced</property>
 		  <child>
 		    <widget class="GtkLabel" id="lblMonth">
 		      <property name="visible">True</property>
+		      <property name="can_focus">True</property>
 		      <property name="label" translatable="yes">month</property>
 		      <property name="use_underline">False</property>
 		      <property name="use_markup">False</property>
 		      <property name="justify">GTK_JUSTIFY_LEFT</property>
 		      <property name="wrap">False</property>
-		      <property name="selectable">False</property>
+		      <property name="selectable">True</property>
 		      <property name="xalign">0</property>
 		      <property name="yalign">0.5</property>
 		      <property name="xpad">0</property>
@@ -809,12 +813,13 @@ use advanced</property>
 		  <child>
 		    <widget class="GtkLabel" id="lblWeekday">
 		      <property name="visible">True</property>
+		      <property name="can_focus">True</property>
 		      <property name="label" translatable="yes">weekday</property>
 		      <property name="use_underline">False</property>
 		      <property name="use_markup">False</property>
 		      <property name="justify">GTK_JUSTIFY_LEFT</property>
 		      <property name="wrap">False</property>
-		      <property name="selectable">False</property>
+		      <property name="selectable">True</property>
 		      <property name="xalign">0</property>
 		      <property name="yalign">0.5</property>
 		      <property name="xpad">0</property>
@@ -1148,7 +1153,7 @@ use advanced</property>
   <property name="title" translatable="yes">Time expression help</property>
   <property name="type">GTK_WINDOW_TOPLEVEL</property>
   <property name="window_position">GTK_WIN_POS_NONE</property>
-  <property name="modal">False</property>
+  <property name="modal">True</property>
   <property name="resizable">True</property>
   <property name="destroy_with_parent">False</property>
   <property name="decorated">True</property>
@@ -1187,7 +1192,7 @@ use advanced</property>
       <child>
 	<widget class="GtkTable" id="table4">
 	  <property name="visible">True</property>
-	  <property name="n_rows">7</property>
+	  <property name="n_rows">4</property>
 	  <property name="n_columns">2</property>
 	  <property name="homogeneous">False</property>
 	  <property name="row_spacing">0</property>
@@ -1204,6 +1209,7 @@ use advanced</property>
 	      <property name="active">False</property>
 	      <property name="inconsistent">False</property>
 	      <property name="draw_indicator">True</property>
+	      <signal name="toggled" handler="on_radAll_toggled" last_modification_time="Thu, 10 Jun 2004 14:03:10 GMT"/>
 	    </widget>
 	    <packing>
 	      <property name="left_attach">0</property>
@@ -1251,6 +1257,7 @@ use advanced</property>
 	      <property name="inconsistent">False</property>
 	      <property name="draw_indicator">True</property>
 	      <property name="group">radAll</property>
+	      <signal name="toggled" handler="on_radEvery_toggled" last_modification_time="Thu, 10 Jun 2004 14:03:16 GMT"/>
 	    </widget>
 	    <packing>
 	      <property name="left_attach">0</property>
@@ -1280,6 +1287,7 @@ use advanced</property>
 		  <property name="invisible_char" translatable="yes">*</property>
 		  <property name="activates_default">False</property>
 		  <property name="width_chars">3</property>
+		  <signal name="changed" handler="on_entEvery_changed" last_modification_time="Thu, 10 Jun 2004 14:02:58 GMT"/>
 		</widget>
 		<packing>
 		  <property name="padding">0</property>
@@ -1331,6 +1339,7 @@ use advanced</property>
 	      <property name="inconsistent">False</property>
 	      <property name="draw_indicator">True</property>
 	      <property name="group">radAll</property>
+	      <signal name="toggled" handler="on_radRange_toggled" last_modification_time="Thu, 10 Jun 2004 14:03:20 GMT"/>
 	    </widget>
 	    <packing>
 	      <property name="left_attach">0</property>
@@ -1360,6 +1369,7 @@ use advanced</property>
 		  <property name="invisible_char" translatable="yes">*</property>
 		  <property name="activates_default">False</property>
 		  <property name="width_chars">3</property>
+		  <signal name="changed" handler="on_entRangeStart_changed" last_modification_time="Thu, 10 Jun 2004 14:03:24 GMT"/>
 		</widget>
 		<packing>
 		  <property name="padding">0</property>
@@ -1401,6 +1411,7 @@ use advanced</property>
 		  <property name="invisible_char" translatable="yes">*</property>
 		  <property name="activates_default">False</property>
 		  <property name="width_chars">3</property>
+		  <signal name="changed" handler="on_entRangeEnd_changed" last_modification_time="Thu, 10 Jun 2004 14:03:30 GMT"/>
 		</widget>
 		<packing>
 		  <property name="padding">0</property>
@@ -1431,6 +1442,7 @@ use advanced</property>
 	      <property name="inconsistent">False</property>
 	      <property name="draw_indicator">True</property>
 	      <property name="group">radAll</property>
+	      <signal name="toggled" handler="on_radAt_toggled" last_modification_time="Thu, 10 Jun 2004 14:03:36 GMT"/>
 	    </widget>
 	    <packing>
 	      <property name="left_attach">0</property>
@@ -1452,7 +1464,8 @@ use advanced</property>
 5
 6
 7
-8</property>
+</property>
+	      <signal name="changed" handler="on_cmbAt_changed" last_modification_time="Thu, 10 Jun 2004 14:03:41 GMT"/>
 	    </widget>
 	    <packing>
 	      <property name="left_attach">1</property>
@@ -1472,55 +1485,44 @@ use advanced</property>
       </child>
 
       <child>
-	<widget class="GtkHBox" id="hbox7">
+	<widget class="GtkLabel" id="label23">
 	  <property name="visible">True</property>
-	  <property name="homogeneous">False</property>
-	  <property name="spacing">0</property>
-
-	  <child>
-	    <widget class="GtkLabel" id="label23">
-	      <property name="visible">True</property>
-	      <property name="label" translatable="yes">Expression:</property>
-	      <property name="use_underline">False</property>
-	      <property name="use_markup">False</property>
-	      <property name="justify">GTK_JUSTIFY_LEFT</property>
-	      <property name="wrap">False</property>
-	      <property name="selectable">False</property>
-	      <property name="xalign">0.5</property>
-	      <property name="yalign">0.5</property>
-	      <property name="xpad">0</property>
-	      <property name="ypad">0</property>
-	    </widget>
-	    <packing>
-	      <property name="padding">0</property>
-	      <property name="expand">False</property>
-	      <property name="fill">False</property>
-	    </packing>
-	  </child>
-
-	  <child>
-	    <widget class="GtkEntry" id="entExpression">
-	      <property name="visible">True</property>
-	      <property name="can_focus">True</property>
-	      <property name="editable">True</property>
-	      <property name="visibility">True</property>
-	      <property name="max_length">0</property>
-	      <property name="text" translatable="yes">*</property>
-	      <property name="has_frame">True</property>
-	      <property name="invisible_char" translatable="yes">*</property>
-	      <property name="activates_default">False</property>
-	    </widget>
-	    <packing>
-	      <property name="padding">0</property>
-	      <property name="expand">True</property>
-	      <property name="fill">True</property>
-	    </packing>
-	  </child>
+	  <property name="label" translatable="yes">Expression:</property>
+	  <property name="use_underline">False</property>
+	  <property name="use_markup">False</property>
+	  <property name="justify">GTK_JUSTIFY_LEFT</property>
+	  <property name="wrap">False</property>
+	  <property name="selectable">False</property>
+	  <property name="xalign">0.5</property>
+	  <property name="yalign">0.5</property>
+	  <property name="xpad">0</property>
+	  <property name="ypad">0</property>
 	</widget>
 	<packing>
 	  <property name="padding">0</property>
-	  <property name="expand">True</property>
-	  <property name="fill">True</property>
+	  <property name="expand">False</property>
+	  <property name="fill">False</property>
+	</packing>
+      </child>
+
+      <child>
+	<widget class="GtkLabel" id="lblExpression">
+	  <property name="visible">True</property>
+	  <property name="label" translatable="yes"></property>
+	  <property name="use_underline">False</property>
+	  <property name="use_markup">False</property>
+	  <property name="justify">GTK_JUSTIFY_LEFT</property>
+	  <property name="wrap">True</property>
+	  <property name="selectable">False</property>
+	  <property name="xalign">0.5</property>
+	  <property name="yalign">0.5</property>
+	  <property name="xpad">0</property>
+	  <property name="ypad">0</property>
+	</widget>
+	<packing>
+	  <property name="padding">0</property>
+	  <property name="expand">False</property>
+	  <property name="fill">False</property>
 	</packing>
       </child>
 
@@ -1539,6 +1541,7 @@ use advanced</property>
 	      <property name="use_stock">True</property>
 	      <property name="relief">GTK_RELIEF_NORMAL</property>
 	      <property name="focus_on_click">True</property>
+	      <signal name="clicked" handler="on_btnCancel_clicked" last_modification_time="Thu, 10 Jun 2004 14:16:42 GMT"/>
 	    </widget>
 	  </child>
 
@@ -1551,6 +1554,7 @@ use advanced</property>
 	      <property name="use_stock">True</property>
 	      <property name="relief">GTK_RELIEF_NORMAL</property>
 	      <property name="focus_on_click">True</property>
+	      <signal name="clicked" handler="on_btnOk_clicked" last_modification_time="Thu, 10 Jun 2004 14:16:47 GMT"/>
 	    </widget>
 	  </child>
 	</widget>

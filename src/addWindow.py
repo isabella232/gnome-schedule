@@ -56,7 +56,7 @@ class AddWindow:
 		self.weekday_entry = self.xml.get_widget ("weekday_entry")
 		self.setting_label = self.xml.get_widget ("setting_label")
 		self.chkNoOutput = self.xml.get_widget("chkNoOutput")
-
+		
 		self.xml.signal_connect("on_help_button_clicked", self.on_help_button_clicked)
 		self.xml.signal_connect("on_cancel_button_clicked", self.on_cancel_button_clicked)
 		self.xml.signal_connect("on_ok_button_clicked", self.on_ok_button_clicked)
@@ -65,11 +65,11 @@ class AddWindow:
 		self.xml.signal_connect("on_frequency_combobox_changed", self.on_frequency_combobox_changed)
 		self.xml.signal_connect("on_chkNoOutput_toggled", self.on_anybasic_entry_changed)
 
-		self.xml.signal_connect("on_lblMinute_button_press_event", self.on_anytitle_clicked)
 		self.xml.signal_connect("on_lblHour_button_press_event", self.on_anytitle_clicked)
 		self.xml.signal_connect("on_lblDay_button_press_event", self.on_anytitle_clicked)
 		self.xml.signal_connect("on_lblMonth_button_press_event", self.on_anytitle_clicked)
 		self.xml.signal_connect("on_lblWeekday_button_press_event", self.on_anytitle_clicked)
+		self.xml.signal_connect("on_lblMinute_button_press_event", self.on_anytitle_clicked)
 
 		
 		self.nooutput = self.chkNoOutput.get_active()
@@ -249,23 +249,59 @@ class AddWindow:
 		self.update_textboxes()
 
 	def on_anytitle_clicked(self, widget, *args):
+		print "help"
 		name = widget.get_name()
+		self.ParentClass.addHelpWindow.showAll(name)
 		return
 
 class AddWindowHelp:
-	def __init__(self, parent, field):
+	def __init__(self, parent):
 		self.ParentClass = parent
-		self.field = field
+		
+		#get some widgets and connect them
+		self.widget = self.ParentClass.addhelpwidget
+		self.xml = self.ParentClass.xml
+
+		self.widget.connect("delete-event", self.btnCancel_clicked)
+		self.radAll = self.xml.get_widget("radAll")
+		self.radEvery = self.xml.get_widget("radEvery")
+		self.radRange = self.xml.get_widget("radRange")
+		self.radAt = self.xml.get_widget("radAt")
+
+		self.lblExpression = self.xml.get_widget("lblExpression")
+
+		self.entEvery = self.xml.get_widget("entEvery")
+		self.entRangeStart = self.xml.get_widget("entRangeStart")
+		self.entRangeEnd = self.xml.get_widget("entRangeEnd")
+		self.cmbAt = self.xml.get_widget("cmbAt")
+		
+		self.xml.signal_connect("on_btnCancel_clicked", self.btnCancel_clicked)
+		self.xml.signal_connect("on_btnOk_clicked", self.btnOk_clicked)
+		
+		#connect the changes of a combo or entry
+		
 		return
 
-	def showAll():
+	def populateLabels(field):
+		#put the apropiate values in the labels describing entitys, and the 'at' combobox
+		return
+
+	def showAll(self, field):
+		self.field = field
 		#show the form
+		self.widget.set_title(_("Edit timeexpression for: " + field))
+		self.widget.show_all()
 		return
 
 	def btnOk_clicked(self, *args):
-		#move to field in addwindow and hide
+		#move expression to field in addwindow and hide
 		return
 
 	def btnCancel_clicked(self, *args):
 		#hide
+		self.widget.hide()
+		return gtk.TRUE
+
+	def anyEntryChanged(self, *args):
+		#create a easy read line for the expression view, put the command into the edit box
 		return

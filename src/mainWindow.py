@@ -138,6 +138,12 @@ class main:
 		self.addwidget.hide()
 		self.addWindow = addWindow.AddWindow (self, self.crontab)
 
+		#add window help
+		self.addhelpwidget = self.xml.get_widget("addWindowHelp")
+		self.addhelpwidget.hide()
+		self.addHelpWindow = addWindow.AddWindowHelp(self)
+
+		#set user window
 		self.setuserwidget = self.xml.get_widget("setuserWindow")
 		self.setuserwidget.hide()
 		self.setuserWindow = setuserWindow.SetuserWindow (self)
@@ -145,7 +151,8 @@ class main:
 		if self.root == 0:
 			#hiding the 'set user' option
 			self.btnSetUser.hide()
-
+		else:
+			self.xml.signal_connect("on_btnSetUser_clicked", self.showSetUser)
 
 		gtk.mainloop()
 		return
