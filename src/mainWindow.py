@@ -91,6 +91,7 @@ class main:
 
 		self.widget.connect("delete_event", self.quit)
 		self.widget.connect("destroy_event", self.quit)
+		self.widget.set_icon(iconPixbuf)
 		##		
 
 
