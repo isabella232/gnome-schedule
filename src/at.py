@@ -39,37 +39,34 @@ class At:
 		self.ParentClass = parent
 
 		#reading at
-		self.readAt()
+		self.read ()
 
 		return
+	def createtreemodel (self):
+		raise 'Not implemented'
+		
+	def switchview (self, mode = "simple", init = 0):
+		raise 'Not implemented'
+		
+	def createpreview (self, minute, hour, day, month, weekday, command):
+		raise 'Not implemented'
 
-	def writeAt(self):
-		#a template from crontab
-		#tmpfile = tempfile.mkstemp ("", "/tmp/at.", "/tmp")
-		#fd, path = tmpfile
-		#tmp = os.fdopen(fd, 'w')
-		#count = 0
-		#for line in self.lines:
+	def getstandardvalue (self):
+		raise 'Not implemented'
+		
+	def getfrequency (self, minute, hour, day, month, weekday):
+		raise 'Not implemented'
 
-			## Ignore lines before mark
-			
+	def checkfield (self, field, type):
+		raise Exception('Abstract method please override','','','')
 
-		#tmp.close ()
+	def write (self):
+		raise 'Not implemented'
 
-		#if self.ParentClass.root:
-			#install for user
-		#else:
-			#install for locked user
+	def update (self, linenumber, record):
+		raise 'Not implemented'
 
-		#os.unlink (path)
-		return
-
-	def updateLine (self, linenumber, record):
-		#delete the job
-		#add new
-		#reread or add to the list(preferably)
-
-	def deleteLine (self, jobid):
+	def delete (self, jobid):
 		if jobid:
 			execute = "atrm " + jobid
 		#execute this
@@ -77,11 +74,10 @@ class At:
 			
 		return
 
-	def appendLine (self, record):
-		#add new
-		#reread or add to the list(preferably)
+	def append (self, record):
+		raise 'Not implemented'
 
-	def readAt(self):
+	def read (self):
 		#do 'atq'
 		execute = "atq"
 		self.linecount = 0
@@ -94,7 +90,7 @@ class At:
 			self.linecount = self.linecount + 1
 		return
 
-	def parseRecord (self, line):
+	def parse (self, line):
 		if len (line) > 1 and line[0] != '#':
 			m = self.atRecordRegex.match(line)
 			if m != None:
@@ -126,6 +122,5 @@ class At:
 		else:
 			return val
 
-	def easyString (self, minute, hour, day, month, weekday):
-		#not sure if this should even be used, they seem pretty straight forward from atq
-		return
+	def easy (self, minute, hour, day, month, weekday):
+		raise 'Not implemented'

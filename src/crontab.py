@@ -23,6 +23,7 @@ import sys
 import tempfile
 import config
 import mainWindow
+import gobject
 ##
 ## I18N
 ##
@@ -36,13 +37,158 @@ class Crontab:
 	def __init__(self, parent):
 		self.crontabRecordRegex = re.compile('([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^#\n$]*)(\s#\s([^\n$]*)|$)')
 		self.ParentClass = parent
-
-		#reading crontab
-		self.readCrontab()
-
+		self.nooutputtag = ">/dev/null 2>&1"
+		self.ParentClass.treemodel = self.createtreemodel ()
+		self.read()
 		return
 
-	def writeCrontab(self):
+	def createtreemodel (self):
+		# [0 Title, 1 Frequency, 2 Command, 3 Crontab record, 4 Line number, 5 Time]
+		# ["Restart app", "Every day", "/opt/bin/restart.pl", "* 1 * * * /opt/bin/restart.pl # Title=Restart App", 3, 0 * * * *]
+		return gtk.ListStore(gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_INT, gobject.TYPE_STRING)
+
+	def switchview (self, mode = "simple", init = 0):
+		if mode == "simple":
+			#cleaning up columns
+			if init != 1:
+				i = 2
+				while i > - 1:
+					temp = self.ParentClass.treeview.get_column(i)
+					self.ParentClass.treeview.remove_column(temp)
+					i = i -1
+				
+			# Setting up the columns
+			col = gtk.TreeViewColumn(_("Title"), gtk.CellRendererText(), text=0)
+			self.ParentClass.treeview.append_column(col)
+			col = gtk.TreeViewColumn(_("Frequency"), gtk.CellRendererText(), text=1)
+			self.ParentClass.treeview.append_column(col)
+			col = gtk.TreeViewColumn(_("Command"), gtk.CellRendererText(), text=2)
+			col.set_spacing(235)
+			self.ParentClass.treeview.append_column(col)
+
+		elif mode == "advanced":
+			#cleaning up columns
+			if init != 1:
+				i = 2
+				while i > - 1:
+					temp = self.ParentClass.treeview.get_column(i)
+					self.ParentClass.treeview.remove_column(temp)
+					i = i -1
+			
+			# Setting up the columns
+			col = gtk.TreeViewColumn(_("Frequency"), gtk.CellRendererText(), text=5)
+			self.ParentClass.treeview.append_column(col)
+			col = gtk.ParentClass.TreeViewColumn(_("Command"), gtk.CellRendererText(), text=2)
+			self.ParentClass.treeview.append_column(col)
+			col = gtk.TreeViewColumn(_("Title"), gtk.CellRendererText(), text=0)
+			col.set_spacing(235)
+			self.ParentClass.treeview.append_column(col)	
+		return
+
+	def createpreview (self, minute, hour, day, month, weekday, command):
+		return minute + " " + hour + " " + day + " " + month + " " + weekday + " " + command
+
+	def getstandardvalue (self):
+		return "* * * * * "+ _("command")
+
+	def getfrequency (self, minute, hour, day, month, weekday):
+		index = _("use advanced")
+		# index = 0
+
+		if minute == "*" and hour == "*" and month == "*" and day == "*" and weekday == "*":
+			index = _("minute")
+			# index = 1
+		if minute == "0" and hour == "*" and month == "*" and day == "*" and weekday == "*":
+			index = _("hour")
+			# index = 2
+		if minute == "0" and hour == "0" and month == "*" and day == "*" and weekday == "*":
+			index = _("day")
+			# index = 3
+		if minute == "0" and hour == "0" and month == "*" and day == "1" and weekday == "*":
+			index = _("month")
+			# index = 4
+		if minute == "0" and hour == "0" and month == "*" and day == "*" and weekday == "0":
+			index = _("week")
+
+		return index
+		
+	def checkfield (self, field, type):
+		m = self.fieldRegex.match (field)
+		num = 0
+		num1 = 0
+		num2 = 0
+		if m != None:
+			print m.groups()
+			# 10 * * * * command
+			# */2 * * * * command
+			if m.groups()[1] != None or m.groups()[2] != None:
+				if m.groups()[1] != None:
+					num = int (m.groups()[1])
+				else:
+					num = int (m.groups()[2])
+				if type==_("minute"):
+					if num > 59 or num < 0:
+						raise Exception('fixed', type, _("must be between 59 and 0"))
+				if type==_("hour"):
+					if num > 23 or num < 0:
+						raise Exception('fixed', type, _("must be between 23 and 0"))
+				if type==_("day"):
+					if num > 31 or num < 1:
+						raise Exception('fixed', type, _("must be between 31 and 1"))
+				if type==_("month"):
+					if num > 12 or num < 1:
+						raise Exception('fixed', type, _("must be between 12 and 1"))
+				if type==_("weekday"):
+					if num > 7 or num < 0:
+						raise Exception('fixed', type, _("must be between 7 and 0"))
+
+			# 1-10 * * * * command
+			if m.groups()[3] != None and m.groups()[4] != None:
+				num1 = int (m.groups()[3])
+				num2 = int (m.groups()[4])
+				if type==_("minute"):
+					if num1 > 59 or num1 < 0 or num2 > 59 or num2 < 0:
+						raise Exception('range', type, _("must be between 59 and 0"))
+				if type==_("hour"):
+					if num1 > 23 or num1 < 0 or num2 > 23 or num2 < 0:
+						raise Exception('range', type, _("must be between 23 and 0"))
+				if type==_("day"):
+					if num1 > 31 or num1 < 1 or num2 > 31 or num2 < 1:
+						raise Exception('range', type, _("must be between 31 and 1"))
+				if type==_("month"):
+					if num1 > 12 or num1 < 1 or num2 > 12 or num2 < 1:
+						raise Exception('range', type, _("must be between 12 and 1"))
+				if type==_("weekday"):
+					if num1 > 7 or num1 < 0 or num2 > 7 or num2 < 0:
+						raise Exception('range', type, _("must be between 7 and 0"))
+
+			# 1,2,3,4 * * * * command
+			if m.groups()[5] != None:
+				thefield = m.groups()[5] + field[len(field)-1]
+				# thefield = "1,2,3,4"
+				fields = thefield.split (",")
+				for field in fields:
+					num = int (field)
+					print num
+					if type==_("minute"):
+						if num > 59 or num < 0:
+							raise Exception('steps', type, _("must be between 59 and 0"))
+					if type==_("hour"):
+						if num > 23 or num < 0:
+							raise Exception('steps', type, ("must be between 23 and 0"))
+					if type==_("day"):
+						if num > 31 or num < 1:
+							raise Exception('steps', type, _("must be between 31 and 1"))
+					if type==_("month"):
+						if num > 12 or num < 1:
+							raise Exception('steps', type, _("must be between 12 and 1"))
+					if type==_("weekday"):
+						if num > 7 or num < 0:
+							raise Exception('steps', type, _("must be between 7 and 0"))
+		else:
+			raise Exception('Unknown', type, _("Invalid"))
+
+	def write (self):
 		tmpfile = tempfile.mkstemp ("", "/tmp/crontab.", "/tmp")
 		fd, path = tmpfile
 		tmp = os.fdopen(fd, 'w')
@@ -75,11 +221,25 @@ class Crontab:
 		os.unlink (path)
 		return
 
-	def updateLine (self, linenumber, record):
-		self.lines[linenumber] = record
-		self.writeCrontab ()
+	def update (self, linenumber, record, parentiter, nooutput):
+		# The GUI
+		minute, hour, day, month, weekday, command, title = self.parse (record)
+		self.ParentClass.treemodel.set_value (parentiter, 3, record)
+		self.ParentClass.treemodel.set_value (parentiter, 0, title)
+		easystring = self.schedule.easy (self.minute, self.hour, day, month, weekday)
+		
+		self.ParentClass.treemodel.set_value (parentiter, 1, easystring)
+		if nooutput:
+			self.ParentClass.treemodel.set_value (parentiter, 2, command + space + self.nooutputtag)
+		else:
+			self.ParentClass.treemodel.set_value (parentiter, 2, command)
+		self.ParentClass.treemodel.set_value (self.parentiter, 5, minute + " " + hour + " " + day + " " + month + " " + weekday)
 
-	def deleteLine (self, linenumber):
+		# The crontab itself
+		self.lines[linenumber] = record
+		self.write ()
+
+	def delete (self, linenumber):
 		number = 0
 		newlines = list ()
 		for line in self.lines:
@@ -90,13 +250,13 @@ class Crontab:
 			number = number + 1
 
 		self.lines = newlines
-		self.writeCrontab ()
+		self.write ()
 
-	def appendLine (self, record):
+	def append (self, record):
 		self.lines.append (record)
-		self.writeCrontab ()
+		self.write ()
 
-	def readCrontab(self):
+	def read (self):
 		if self.ParentClass.root:
 			execute = config.getCrontabbin () + " -l -u " + self.ParentClass.user
 		else:
@@ -106,15 +266,15 @@ class Crontab:
 		self.linecount = 0
 		self.lines = os.popen(execute).readlines()
 		for line in self.lines:
-			array_or_false = self.parseRecord (line)
+			array_or_false = self.parse (line)
 			if array_or_false != gtk.FALSE:
 				(minute, hour, day, month, weekday, command, title) = array_or_false
 				time = minute + " " + hour + " " + day + " " + month + " " + weekday
-				iter = self.ParentClass.treemodel.append([title, self.easyString (minute, hour, day, month, weekday), command, line, self.linecount, time])
+				iter = self.ParentClass.treemodel.append([title, self.easy (minute, hour, day, month, weekday), command, line, self.linecount, time])
 			self.linecount = self.linecount + 1
 		return
 
-	def parseRecord (self, line):
+	def parse (self, line):
 		if len (line) > 1 and line[0] != '#':
 			m = self.crontabRecordRegex.match(line)
 			if m != None:
@@ -132,19 +292,21 @@ class Crontab:
 					return minute, hour, day, month, weekday, command, title
 		return gtk.FALSE
 
+	# Private
 	def amountApp (self, amount):
 		if amount == "1":
 			return _("st.")
 		else:
 			return _("th.")
 
+	# Private
 	def valToTimeVal (self, val):
 		if val == "0" or val == "1" or val == "2" or val == "3" or val == "4" or val == "5" or val == "6" or val == "7" or val == "8" or val == "9":
 			return "0" + val
 		else:
 			return val
 
-	def easyString (self, minute, hour, day, month, weekday):
+	def easy (self, minute, hour, day, month, weekday):
 		if minute == "*" and hour == "*" and month == "*" and day == "*" and weekday == "*":
 			return _("Every minute")
 
