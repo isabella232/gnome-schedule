@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-01-04 01:08+0100\n"
-"PO-Revision-Date: 2005-01-04 01:08+0100\n"
+"POT-Creation-Date: 2005-01-05 00:40+0100\n"
+"PO-Revision-Date: 2005-01-05 00:40+0100\n"
 "Last-Translator: Christian Rose <menthos@menthos.com>\n"
 "Language-Team: Swedish <sv@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -495,45 +495,45 @@ msgid ""
 "crontab do have output and this option is not checked, the output will by "
 "default be send to the UNIX mailbox of the user"
 msgstr ""
+"Då detta är valt kommer ingen utmatning att genereras. När schemalagda "
+"uppgifter i crontab har utmatning och detta alternativ inte är ikryssat "
+"kommer utmatningen att som standard skickas till användarens UNIX-brevlåda"
 
 #: src/gnome-schedule.glade.h:73
 msgid "Will delete the selected preset"
-msgstr ""
+msgstr "Kommer att ta bort det valda förvalet"
 
 #: src/gnome-schedule.glade.h:74
 msgid ""
 "Will save the current information as a preset. You can type the name of the "
 "preset in the combobox."
 msgstr ""
+"Kommer att spara aktuell information som ett förval. Du kan ange namnet på "
+"förvalet i comboboxen."
 
 #: src/gnome-schedule.glade.h:75
-#, fuzzy
 msgid "[Add|Edit] scheduled task"
-msgstr "Redigera uppgiften"
+msgstr "[Lägg till|Redigera schemalagd uppgift"
 
 #: src/gnome-schedule.glade.h:76
-#, fuzzy
 msgid "_Add task"
-msgstr "Inga uppgifter"
+msgstr "_Lägg till uppgift"
 
 #: src/gnome-schedule.glade.h:77
 msgid "_Delete"
 msgstr "_Ta bort"
 
 #: src/gnome-schedule.glade.h:78
-#, fuzzy
 msgid "_Manual"
-msgstr "Manuell"
+msgstr "_Manuell"
 
 #: src/gnome-schedule.glade.h:79
-#, fuzzy
 msgid "_Select"
-msgstr "_Ta bort"
+msgstr "_Markera"
 
 #: src/gnome-schedule.glade.h:80
-#, fuzzy
 msgid "_Set user"
-msgstr "Ställ in _användar-ID"
+msgstr "_Ställ in användare"
 
 #: src/gnome-schedule.glade.h:85
 msgid "to"
@@ -544,68 +544,74 @@ msgid ""
 "tomorrow\n"
 "next week"
 msgstr ""
+"imorgon\n"
+"nästa vecka"
 
+# Felrapporterat som http://bugzilla.gnome.org/show_bug.cgi?id=162945
+#
 #: src/lang.py:77
 msgid ""
 "To the translator: Read src/lang.py !!! (yeah it's for you, not for the "
 "user. YES FOR YOU, the translator. YES:) really!"
 msgstr ""
+"Till översättaren: Läs src/lang.py !!! (ja, den är till för dig, inte för "
+"användaren. JA, FÖR DIG, översättaren. JA:) verkligen!"
 
 #. Translators: Date format for expressions like "January 21"
 #: src/lang.py:104
 msgid "%B %d"
-msgstr ""
+msgstr "%d %B"
 
 #. Translators: Date format for expressions like "January 21, 2005"
 #: src/lang.py:110
 msgid "%B %d, %Y"
-msgstr ""
+msgstr "%d %B %Y"
 
 #. Translators: Time format without seconds
 #: src/lang.py:119
 msgid "%H:%M"
-msgstr ""
+msgstr "%H.%M"
 
+# Felrapporterat som http://bugzilla.gnome.org/show_bug.cgi?id=162948
+#
 #. Translators: Format of numeric ordinal numbers. If this is not applicable for you read lang.py.
 #: src/lang.py:217
 #, python-format
 msgid "%d."
-msgstr ""
+msgstr "%d:e"
 
 #: src/lang.py:249
-#, fuzzy
 msgid "At every full hour"
-msgstr "minuter innan de sker."
+msgstr "Varje hel timme"
 
 #: src/lang.py:251
-#, fuzzy
 msgid "At every minute"
-msgstr "Varje vecka"
+msgstr "Varje minut"
 
 #: src/lang.py:253
-#, fuzzy, python-format
+#, python-format
 msgid "At the %(minute)s minute of every hour"
-msgstr "minuter innan de sker."
+msgstr "Var %(minute)s minut i varje timme"
 
 #: src/lang.py:255
 #, python-format
 msgid "At every minute between %(time_from)s and %(time_to)s"
-msgstr ""
+msgstr "Varje minut mellan %(time_from)s och %(time_to)s"
 
 #: src/lang.py:257
 #, python-format
 msgid "On every day at %(time)s"
-msgstr ""
+msgstr "Varje dag klockan %(time)s"
 
 #: src/lang.py:262
 #, python-format
 msgid "On the %(monthday)s of every month at every full hour"
-msgstr ""
+msgstr "På %(monthday)s i varje månad varje hel timme"
 
 #: src/lang.py:264
 #, python-format
 msgid "On the %(monthday)s of every month at every minute"
-msgstr ""
+msgstr "På %(monthday)s i varje månad under varje minut"
 
 #: src/lang.py:266
 #, python-format
@@ -897,6 +903,9 @@ msgstr ""
 #, python-format
 msgid "This is an invalid record! The problem could be: %s "
 msgstr ""
+
+#~ msgid "Manual"
+#~ msgstr "Manuell"
 
 #~ msgid "must be between %d and %d"
 #~ msgstr "måste vara mellan %d och %d"
