@@ -315,6 +315,7 @@
 </widget>
 
 <widget class="GtkWindow" id="crontabEditor">
+  <property name="visible">True</property>
   <property name="title" translatable="yes">[Add|Edit] scheduled task</property>
   <property name="type">GTK_WINDOW_TOPLEVEL</property>
   <property name="window_position">GTK_WIN_POS_NONE</property>
@@ -592,6 +593,7 @@
 
 		      <child>
 			<widget class="GtkLabel" id="template_label">
+			  <property name="visible">True</property>
 			  <property name="sensitive">False</property>
 			  <property name="label" translatable="yes">Template</property>
 			  <property name="use_underline">False</property>
@@ -643,24 +645,6 @@
 		      </child>
 
 		      <child>
-			<widget class="GtkComboBox" id="template_combobox">
-			  <property name="sensitive">False</property>
-			  <property name="items" translatable="yes">Manual</property>
-			  <signal name="changed" handler="on_template_combobox_changed" last_modification_time="Tue, 22 Jun 2004 11:13:45 GMT"/>
-			</widget>
-			<packing>
-			  <property name="left_attach">1</property>
-			  <property name="right_attach">2</property>
-			  <property name="top_attach">0</property>
-			  <property name="bottom_attach">1</property>
-			  <property name="x_padding">5</property>
-			  <property name="y_padding">5</property>
-			  <property name="x_options">fill</property>
-			  <property name="y_options">fill</property>
-			</packing>
-		      </child>
-
-		      <child>
 			<widget class="GtkEntry" id="title_entry">
 			  <property name="width_request">255</property>
 			  <property name="visible">True</property>
@@ -682,6 +666,53 @@
 			  <property name="x_padding">5</property>
 			  <property name="y_padding">5</property>
 			  <property name="y_options"></property>
+			</packing>
+		      </child>
+
+		      <child>
+			<widget class="GtkHBox" id="hbox13">
+			  <property name="visible">True</property>
+			  <property name="homogeneous">False</property>
+			  <property name="spacing">0</property>
+
+			  <child>
+			    <widget class="GtkComboBox" id="template_combobox">
+			      <property name="visible">True</property>
+			      <property name="sensitive">False</property>
+			      <property name="items" translatable="yes">Manual</property>
+			      <signal name="changed" handler="on_template_combobox_changed" last_modification_time="Tue, 22 Jun 2004 11:13:45 GMT"/>
+			    </widget>
+			    <packing>
+			      <property name="padding">5</property>
+			      <property name="expand">True</property>
+			      <property name="fill">True</property>
+			    </packing>
+			  </child>
+
+			  <child>
+			    <widget class="GtkButton" id="remove_button">
+			      <property name="visible">True</property>
+			      <property name="can_focus">True</property>
+			      <property name="label" translatable="yes">_Remove</property>
+			      <property name="use_underline">True</property>
+			      <property name="relief">GTK_RELIEF_NORMAL</property>
+			      <property name="focus_on_click">True</property>
+			      <signal name="clicked" handler="on_remove_button_clicked" last_modification_time="Wed, 23 Jun 2004 08:50:33 GMT"/>
+			    </widget>
+			    <packing>
+			      <property name="padding">5</property>
+			      <property name="expand">False</property>
+			      <property name="fill">False</property>
+			    </packing>
+			  </child>
+			</widget>
+			<packing>
+			  <property name="left_attach">1</property>
+			  <property name="right_attach">2</property>
+			  <property name="top_attach">0</property>
+			  <property name="bottom_attach">1</property>
+			  <property name="x_options">fill</property>
+			  <property name="y_options">fill</property>
 			</packing>
 		      </child>
 		    </widget>

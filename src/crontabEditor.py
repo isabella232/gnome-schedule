@@ -77,12 +77,14 @@ class CrontabEditor:
 		self.setting_label = self.xml.get_widget ("setting_label")
 		self.chkNoOutput = self.xml.get_widget("chkNoOutput")
 		self.notebook = self.xml.get_widget("notebook")
-
+		self.template_combobox_model = None
+		self.remove_button = self.xml.get_widget("remove_button")
 		self.template_combobox = self.xml.get_widget ("template_combobox")
 		self.template_image = self.xml.get_widget ("template_image")
 		self.template_label = self.xml.get_widget ("template_label")
 		self.image_button = self.xml.get_widget ("image_button")
 
+		self.xml.signal_connect("on_remove_button_clicked", self.on_remove_button_clicked)
 		self.xml.signal_connect("on_add_help_button_clicked", self.on_add_help_button_clicked)
 		self.xml.signal_connect("on_cancel_button_clicked", self.on_cancel_button_clicked)
 		self.xml.signal_connect("on_ok_button_clicked", self.on_ok_button_clicked)
@@ -100,6 +102,14 @@ class CrontabEditor:
 		support.gconf_client.add_dir ("/apps/gnome-schedule/templates/crontab", gconf.CLIENT_PRELOAD_NONE)
 		support.gconf_client.notify_add ("/apps/gnome-schedule/templates/crontab/installed", self.gconfkey_changed);
 
+	def on_remove_button_clicked (self, *args):
+		iter = self.template_combobox.get_active_iter ()
+		template = self.template_combobox_model.get_value(iter, 2)
+		icon_uri, command, frequency, title, name = template
+		self.template_combobox.set_active (0)
+		self.schedule.removetemplate (name)
+		
+		
 	def on_save_button_clicked (self, *args):
 		# Uses SaveTemplate (will call it if OK is pressed)
 		self.ParentClass.saveWindow.ShowSaveWindow(self)
@@ -130,17 +140,20 @@ class CrontabEditor:
 		self.reload_templates ()
 
 	def reload_templates (self):
+		print "Reloading templates"
 		self.template_names = self.schedule.gettemplatenames ()
 		
 		if self.template_names == None or len (self.template_names) <= 0:
-			self.template_combobox.hide ()
-			self.template_label.hide()
+			if self.template_combobox_model != None:
+				self.template_combobox_model.clear ()
+			self.remove_button.set_sensitive (gtk.FALSE)
 			self.template_combobox.set_sensitive (gtk.FALSE)
 			self.template_label.set_sensitive (gtk.FALSE)
 		else:
 			self.template_combobox_model = gtk.ListStore(gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_PYOBJECT)
 			self.template_combobox_model.clear ()
 			self.template_combobox_model.append([_("Don't use a template"), None, None])
+			self.template_combobox.set_active (0)
 			for template_name in self.template_names:
 				thetemplate = self.schedule.gettemplate (template_name)
 				icon_uri, command, frequency, title, name = thetemplate
@@ -150,17 +163,15 @@ class CrontabEditor:
 				active = self.template_combobox.get_active ()
 				self.template_combobox.set_model (self.template_combobox_model)
 				self.xml.signal_connect("on_template_combobox_changed", self.on_template_combobox_changed)
-				self.template_combobox.show ()
-				self.template_label.show()
 				self.template_combobox.set_sensitive (gtk.TRUE)
+				self.remove_button.set_sensitive (gtk.TRUE)
 				self.template_label.set_sensitive (gtk.TRUE)
 				self.template_combobox.set_active (active)
 			except Exception, ex:
 				print "PyGTK Failure: combobox.set_model (gnome-schedule needs PyGTK 2.4!!!)"
 				print ex
-				# Not PyGTK 2.4 :-(
-				self.template_combobox.hide ()
-				self.template_label.hide()
+				# Not PyGTK 2.4 ? :-(
+				self.remove_button.set_sensitive (gtk.FALSE)
 				self.template_combobox.set_sensitive (gtk.FALSE)
 				self.template_label.set_sensitive (gtk.FALSE)
 
@@ -266,6 +277,7 @@ class CrontabEditor:
 			iter = self.template_combobox.get_active_iter ()
 			template = self.template_combobox_model.get_value(iter, 2)
 			if template != None:
+				self.remove_button.set_sensitive (gtk.TRUE)
 				icon_uri, command, frequency, title, name = template
 				self.ParentClass.saveWindow.save_entry.set_text (name)
 				if icon_uri != None:
@@ -301,6 +313,7 @@ class CrontabEditor:
 				self.command = command
 				self.update_textboxes ()
 			else:
+				self.remove_button.set_sensitive (gtk.FALSE)
 				self.loadicon ()
 				self.reset ()
 
