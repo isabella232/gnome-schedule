@@ -1,3 +1,8 @@
+2004-07-14  Gaute Hope  <eg@gaute.eu.org>
+	
+	* atEditor.py: Time validation, selects the accurate date in the calendar when editing
+	* at.py: Time validation
+
 2004-07-12  Gaute Hope  <eg@gaute.eu.org>
 
 	* Icons in at
