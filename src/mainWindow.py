@@ -343,7 +343,6 @@ class main:
 
 	def on_properties_menu_activate (self, *args):
 		store, iter = self.treeview.get_selection().get_selected()
-
 		self.schedule = self.treemodel.get_value(iter, 7)
 		self.editor = self.schedule.geteditor ()
 		

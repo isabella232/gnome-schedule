@@ -298,14 +298,23 @@ class AtEditor:
 		return
 
 	def showedit (self, record, job_id, iter, mode):
-		self.reload_templates ()
+		#self.reload_templates ()
 		self.editing = gtk.TRUE
-		
-		(self.script, self.title, self.icon, self.date, self.time) = record
-		
+		#print record
+		#(self.script, self.title, self.icon, self.date, self.time) = record
+		#(self.job_id, self.date, self.time, self.class_id, self.user, self.script, self.title, self.icon) = record
+
+		self.job_id = job_id
+		self.date = self.ParentClass.treemodel.get_value(iter, 8)
+		self.time = self.ParentClass.treemodel.get_value(iter, 5)
+		self.title = self.ParentClass.treemodel.get_value(iter, 0)
+		self.icon = self.ParentClass.treemodel.get_value(iter, 6)
+		self.class_id = self.ParentClass.treemodel.get_value(iter, 9)
+		self.user = self.ParentClass.treemodel.get_value(iter, 10)
+		self.command = self.ParentClass.treemodel.get_value(iter, 3)
+		self.runat = self.time + " " + self.date	
 		self.widget.set_title(_("Edit a scheduled task"))
 		self.update_textboxes ()
-		self.set_frequency_combo ()
 		self.parentiter = iter
 		self.widget.show ()
 		self.update_textboxes ()
@@ -390,8 +399,10 @@ class AtEditor:
 	def on_ok_button_clicked (self, *args):
 		# TODO: Validate record
 		# TODO: Fill recorc
+		self.nooutput = 0 #not even used
 		if self.editing != gtk.FALSE:
-			self.schedule.update (self.job_id, record, self.parentiter, self.nooutput, self.title, self.icon)
+			self.schedule.update (self.job_id, self.runat, self.command, self.title, self.icon)
+			self.ParentClass.schedule_reload ()
 			print "Edited"		
 		else:
 			self.schedule.append (self.runat, self.command, self.title, self.icon)

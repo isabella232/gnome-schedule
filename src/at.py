@@ -106,15 +106,23 @@ class At:
 		raise Exception('Abstract method please override','','','')
 
 
-	def update (self, runat, command, job_id):
+	def update (self, job_id, runat, command, title, icon):
 		#remove old
-		execute = "atrm " + job_id
+		execute = "atrm " + str(job_id)
 		commands.getoutput(execute)
 		
 		#add new
 		tmpfile = tempfile.mkstemp ("", "/tmp/at.", "/tmp")
 		fd, path = tmpfile
 		tmp = os.fdopen(fd, 'w')
+		if title:
+			tmp.write("TITLE=" + title + "\n")
+		else:
+			tmp.write("TITLE=Untitled\n")
+		if icon:
+			tmp.write("ICON=" + icon + "\n")
+		else:
+			tmp.write("ICON=None\n")
 		tmp.write (command + "\n")
 		tmp.close ()
 		execute = config.getAtbin() + " " + runat + " -f " + path
@@ -167,9 +175,13 @@ class At:
 
 				
 				preview = self.make_preview (lines, prelen)
-
+				
+				#chopping of title and icon stuff from script
+				lines = lines[prelen:]
+					
 				timestring = _("%s%s%s %s%s%s") % (_(""), date, _(""), _(""), time, _(""))
-				iter = self.ParentClass.treemodel.append([title, timestring, preview, array_or_false, int(job_id), timestring, icon_pix, self, date, class_id, user, "Defined", "at"])
+				iter = self.ParentClass.treemodel.append([title, timestring, preview, lines, int(job_id), time, icon_pix, self, date, class_id, user, "Defined", "at"])
+
 				
 				#print title + " " + timestring + " " + preview + " " + job_id + " " + date + " " +  class_id + " " + user 
 				# print int(job_id)
@@ -204,7 +216,7 @@ class At:
 			titleend = script.find("\n", titlestart)
 			title = script[(titlestart + 6):titleend]
 			#remeber the length to remove this from the preview
-			prelen = len(title) + 6
+			prelen = len(title) + 7
 		else:
 			title = "Untitled"
 		# If the string contains ICON=
@@ -213,7 +225,7 @@ class At:
 			iconend = script.find ("\n", iconstart)
 			icon = script[(iconstart + 5):iconend]
 			
-			prelen = prelen + len(icon) + 5
+			prelen = prelen + len(icon) + 6
 			
 		else:
 			icon = "None"
@@ -229,7 +241,7 @@ class At:
 	def make_preview (self, lines, prelen):
 		try:
 			if prelen:
-				result = lines[(0 + prelen +1):(15 + prelen)]
+				result = lines[(0 + prelen):(15 + prelen)]
 			else:
 				result = lines[0:15]
 		except:
