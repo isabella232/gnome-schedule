@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-06-11 17:45+0200\n"
+"POT-Creation-Date: 2004-06-12 17:19+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,36 +16,34 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../src/addWindow.py:81
+#: ../src/addWindow.py:84
 msgid "Edit a scheduled task"
 msgstr ""
 
-#: ../src/addWindow.py:107
+#: ../src/addWindow.py:120
 msgid "Create a new scheduled task"
 msgstr ""
 
 #. Setting up the columns
-#: ../src/mainWindow.py:183 ../src/mainWindow.py:205
+#: ../src/mainWindow.py:180 ../src/mainWindow.py:202
 msgid "Title"
 msgstr ""
 
-#: ../src/mainWindow.py:185 ../src/mainWindow.py:203
+#: ../src/mainWindow.py:182 ../src/mainWindow.py:200
 msgid "Frequency"
 msgstr ""
 
 #. Setting up the columns
-#: ../src/mainWindow.py:187 ../src/mainWindow.py:201
+#: ../src/mainWindow.py:184 ../src/mainWindow.py:198
 msgid "Command"
 msgstr ""
 
-#: ../src/mainWindow.py:267
-msgid ""
-"System Schedule @VERSION@\n"
-" A graphical interface for configuring the system schedule"
+#: ../src/mainWindow.py:264
+msgid "Copyright (c) 2001-2003 Gaute Hope."
 msgstr ""
 
-#: ../src/mainWindow.py:268
-msgid "About"
+#: ../src/mainWindow.py:265
+msgid "This software is distributed under the GPL. "
 msgstr ""
 
 #.

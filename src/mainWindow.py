@@ -260,17 +260,15 @@ class main:
 		return
 
 	def on_about_menu_activate (self, *args):
-		dlg = gtk.MessageDialog (None, 0, gtk.MESSAGE_INFO, gtk.BUTTONS_OK,
-			_("System Schedule @VERSION@\n A graphical interface for configuring the system schedule"))
-		dlg.set_title(_("About"))
-		dlg.set_default_size(100, 100)
-		dlg.set_position (gtk.WIN_POS_CENTER)
-		dlg.set_border_width(2)
-		dlg.set_modal(gtk.TRUE)
-		dlg.set_icon(iconPixbuf)
-		rc = dlg.run()
-		dlg.destroy()
-
+		dlg = gnome.ui.About("System Schedule", "@VERSION@",
+			_("Copyright (c) 2001-2003 Gaute Hope."),
+			_("This software is distributed under the GPL. "),
+			["Philip Van Hoof <me at freax dot org>",
+			"Gaute Hope <eg at gaute dot eu dot org>"
+			])
+		dlg.set_transient_for(self.widget)
+		dlg.set_position (gtk.WIN_POS_CENTER_ON_PARENT)
+		dlg.show()
 
 	def on_add_scheduled_task_menu_activate (self, *args):
 		self.addWindow.showAddWindow ()
