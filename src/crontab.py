@@ -43,9 +43,6 @@ class Crontab:
 		self.root = root
 		self.set_rights(user,uid,gid)
 		
-		# TODO: shouldn't be gnome specific
-		self.defaultIcon = "/usr/share/icons/gnome/48x48/mimetypes/gnome-mime-application.png"
-		
 		self.nooutputtag = ">/dev/null 2>&1"
 		self.crontabRecordRegex = re.compile('([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^#\n$]*)(\s#\s([^\n$]*)|$)')
 
@@ -285,7 +282,7 @@ class Crontab:
 					command = m.groups ()[5]
 
 					#icon path is in comment of the task, this is the default
-					icon = self.defaultIcon
+					icon = None
 					
 					#title is in comment of the task
 					title = None

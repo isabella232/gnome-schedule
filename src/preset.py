@@ -147,8 +147,9 @@ class ConfigBackend:
 		except Exception, ex:
 			return ex, ex, ex, ex, ex
 			
-	def nautilus_icon (self, type):
+	def getDefaultIcon (self):
 		# TODO: I don't like this fixed paths maybe put them in config.py?
+		type = "i-executable"
 		_nautdir = "/usr/share/pixmaps/nautilus"
 		_pixdir = "/usr/share/pixmaps"
 		theme = self.gconf_client.get_string("/desktop/gnome/file_views/icon_theme")
@@ -175,5 +176,7 @@ class ConfigBackend:
 						newicon = "%s/document-icons/gnome-%s.png" % (_nautdir,icontmp)
 						if os.path.isfile(newicon):
 							return newicon
-			return None
+			return "/usr/share/icons/gnome/48x48/mimetypes/gnome-mime-application.png"
 
+		
+	

@@ -47,9 +47,6 @@ class At:
 		self.root =	root
 		self.set_rights(user,uid,gid)
 
-		# TODO: shouldn't be gnome specific
-		self.defaultIcon = "/usr/share/icons/gnome/48x48/mimetypes/gnome-mime-application.png"
-
 		self.atRecordRegex = re.compile('([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)')
 		self.atRecordRegexAdd = re.compile('([^\s]+)\s([^\s]+)\s')
 		self.atRecordRegexAdded = re.compile('[^\s]+\s([0-9]+)\sat')
@@ -351,8 +348,7 @@ class At:
 				prelen = prelen + len(icon) + 6
 			
 			else:
-				
-				icon = self.defaultIcon
+				icon = None
 		else:
 			#print "method 2"
 			dangerous = 1
@@ -382,7 +378,7 @@ class At:
 				prelen = prelen + len(icon) + 6
 		
 			else:
-				icon = self.defaultIcon
+				icon = None 
 
 		return script, title, icon, prelen, dangerous
 

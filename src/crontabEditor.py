@@ -42,7 +42,7 @@ _ = gettext.gettext
 
 
 class CrontabEditor:
-	def __init__(self, parent, backend, scheduler):
+	def __init__(self, parent, backend, scheduler, defaultIcon):
 
 		self.ParentClass = parent
 		self.backend = backend
@@ -58,7 +58,7 @@ class CrontabEditor:
 		self.nooutputRegex = re.compile('([^#\n$]*)>(\s|)/dev/null\s2>&1')
 		
 		
-		self.defaultIcon = "/usr/share/icons/gnome/48x48/mimetypes/gnome-mime-application.png"
+		self.defaultIcon = defaultIcon
 		
 		#self.editing = gtk.FALSE
 		self.noevents = False
@@ -227,16 +227,9 @@ class CrontabEditor:
 
 	# TODO: to gnome specific
 	def __loadicon__ (self):
-		nautilus_icon = self.backend.nautilus_icon ("i-executable")
-		if nautilus_icon != None:
-			pixbuf = gtk.gdk.pixbuf_new_from_file_at_size (nautilus_icon, 60, 60)
-			self.template_image.set_from_pixbuf(pixbuf)
-			self.icon = nautilus_icon
-			
-		else:
-			pixbuf = gtk.gdk.pixbuf_new_from_file_at_size (self.defaultIcon, 60, 60)
-			self.template_image.set_from_pixbuf(pixbuf)
-			self.icon = self.defaultIcon
+		pixbuf = gtk.gdk.pixbuf_new_from_file_at_size (self.defaultIcon, 60, 60)
+		self.template_image.set_from_pixbuf(pixbuf)
+		self.icon = self.defaultIcon
 			
 
 	#save template

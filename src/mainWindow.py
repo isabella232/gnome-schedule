@@ -62,9 +62,12 @@ class main:
 		self.editor = None
 		self.schedule = None
 		
-		
+			
 		#start the backend where all the user configuration is stored
 		self.backend = preset.ConfigBackend(self, "gconf")
+		
+		
+		self.defaultIcon = self.backend.getDefaultIcon()
 		
 		##configure the window
 		self.widget = self.xml.get_widget("mainWindow")
@@ -162,12 +165,12 @@ class main:
 		
 		##create crontab
 		self.crontab = crontab.Crontab(self.root,self.user, self.uid, self.gid)
-		self.crontab_editor = crontabEditor.CrontabEditor(self,self.backend, self.crontab)
+		self.crontab_editor = crontabEditor.CrontabEditor(self,self.backend, self.crontab, self.defaultIcon)
 		##
 		
 		##create at
 		self.at = at.At(self.root,self.user, self.uid, self.gid)
-		self.at_editor = atEditor.AtEditor (self, self.backend, self.at)
+		self.at_editor = atEditor.AtEditor (self, self.backend, self.at, self.defaultIcon)
 		##
 		
 		#set user window
@@ -284,7 +287,6 @@ class main:
 		self.__setUser__(os.environ['USER'])
 		
 		if self.uid != 0:
-			# TODO: make this default in glade file, so we don't get the animation?
 			self.set_user_menu.hide()	
 			self.root = 0
 		else:
