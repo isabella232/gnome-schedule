@@ -262,8 +262,8 @@ class At:
 		tmp.close ()
 		execute = config.getAtbin() + " " + runat + " -f " + path
 		temp = commands.getoutput(execute)
-		print execute
-		print temp
+		#print execute
+		#print temp
 		os.unlink (path)
 		return temp
 
@@ -367,7 +367,7 @@ class At:
 			else:
 				result = lines[0:preview_len]
 		except:
-			print "short preview"
+			#print "short preview"
 			result = lines[prelen:(-1 - prelen)]
 
 		result = result.replace("\n",";")
