@@ -211,7 +211,7 @@ def translate_crontab_easy (minute, hour, day, month, weekday):
 	
 	# Add support for your language here
 	
-	if language.find ("en") != -1 or language == "C":
+	if language.find ("en") != -1 or language == "C" or language.find ("us"):
 		return translate_crontab_easy_en (minute, hour, day, month, weekday)
 	elif language.find ("nl") != -1:
 		return translate_crontab_easy_nl (minute, hour, day, month, weekday)
