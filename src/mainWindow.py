@@ -80,6 +80,7 @@ class main:
 		self.help_button = self.xml.get_widget ("help_button")
 		self.btnSetUser = self.xml.get_widget("btnSetUser")
 		
+
 		#read the user
 		self.readUser()
 
@@ -102,6 +103,9 @@ class main:
 				
 		self.treeview.set_rules_hint(gtk.TRUE)
 		self.treeview.columns_autosize()
+		#self.widget.add_mask (GDK.BUTTON_PRESS_EVENT)
+		self.treeview.connect ("button_press_event", self.treeview_button_press_event)
+		
 		self.add_scheduled_task_menu = self.xml.get_widget ("add_scheduled_task_menu")
 		self.properties_menu = self.xml.get_widget ("properties_menu")
 		self.delete_menu = self.xml.get_widget ("delete_menu")
@@ -110,6 +114,12 @@ class main:
 		self.advanced_menu = self.xml.get_widget ("advanced_menu")
 		self.about_menu = self.xml.get_widget ("about_menu")
 
+		self.prop_button.set_sensitive (gtk.FALSE)
+		self.del_button.set_sensitive (gtk.FALSE)
+		self.properties_menu.set_sensitive (gtk.FALSE)
+		self.delete_menu.set_sensitive (gtk.FALSE)
+		self.haveitem = gtk.FALSE
+		
 		self.xml.signal_connect("on_advanced_menu_activate", self.on_advanced_menu_activate)
 		self.xml.signal_connect("on_about_menu_activate", self.on_about_menu_activate)
 		self.xml.signal_connect("on_add_scheduled_task_menu_activate", self.on_add_scheduled_task_menu_activate)
@@ -163,13 +173,26 @@ class main:
 			gtk.mainloop()
 		return
 
+	def treeview_button_press_event (self, widget, event):
+		if event.type == gtk.gdk._2BUTTON_PRESS and self.haveitem == gtk.TRUE:
+			self.on_prop_button_clicked (self, widget)
+			
 	def onTreeViewSelectRow (self, *args):
 		try:
 			store, iter = self.treeview.get_selection().get_selected()
 			self.schedule = self.treemodel.get_value(iter, 7)
 			self.editor = self.schedule.geteditor ()
+			self.prop_button.set_sensitive (gtk.TRUE)
+			self.del_button.set_sensitive (gtk.TRUE)
+			self.properties_menu.set_sensitive (gtk.TRUE)
+			self.delete_menu.set_sensitive (gtk.TRUE)
+			self.haveitem = gtk.TRUE
 		except:
-			pass
+			self.prop_button.set_sensitive (gtk.FALSE)
+			self.del_button.set_sensitive (gtk.FALSE)
+			self.properties_menu.set_sensitive (gtk.FALSE)
+			self.delete_menu.set_sensitive (gtk.FALSE)
+			self.haveitem = gtk.FALSE
 	
 	def cleancolumns (self, init):
 		#cleaning up columns
