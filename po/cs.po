@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-12-07 12:26+0100\n"
-"PO-Revision-Date: 2004-12-07 18:11+0100\n"
+"POT-Creation-Date: 2004-12-11 20:27+0100\n"
+"PO-Revision-Date: 2004-12-11 22:31+0100\n"
 "Last-Translator: Miloslav Trmac <mitr@volny.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -38,100 +38,100 @@ msgid "Defined"
 msgstr "Definováno"
 
 # Never heard of printf?
-#: src/crontab.py:72 src/crontab.py:92 src/crontab.py:117
+#: src/crontab.py:73 src/crontab.py:93 src/crontab.py:118
 msgid "must be between 0 and 59"
 msgstr "musí být mezi 0 a 58"
 
-#: src/crontab.py:75 src/crontab.py:95
+#: src/crontab.py:76 src/crontab.py:96
 msgid "must be between 0 and 23"
 msgstr "musí být mezi 0 a 23"
 
-#: src/crontab.py:78 src/crontab.py:98 src/crontab.py:123
+#: src/crontab.py:79 src/crontab.py:99 src/crontab.py:124
 msgid "must be between 1 and 31"
 msgstr "musí být mezi 1 a 31"
 
-#: src/crontab.py:81 src/crontab.py:101 src/crontab.py:126
+#: src/crontab.py:82 src/crontab.py:102 src/crontab.py:127
 msgid "must be between 1 and 12"
 msgstr "musí být mezi 1 a 12"
 
-#: src/crontab.py:84 src/crontab.py:104 src/crontab.py:129
+#: src/crontab.py:85 src/crontab.py:105 src/crontab.py:130
 msgid "must be between 0 and 7"
 msgstr "musí být mezi 0 a 7"
 
-#: src/crontab.py:113
+#: src/crontab.py:114
 #, python-format
 msgid "%s is not a number"
 msgstr "%s není číslo"
 
-#: src/crontab.py:131
+#: src/crontab.py:132
 msgid "Unknown"
 msgstr "Neznámé"
 
-#: src/crontab.py:131
+#: src/crontab.py:132
 msgid "Invalid"
 msgstr "Neplatné"
 
-#: src/crontab.py:149 src/crontab.py:207 src/crontab.py:293
-#: src/crontabEditor.py:178 src/atEditor.py:113
+#: src/crontab.py:150 src/crontab.py:206 src/crontab.py:297
+#: src/crontabEditor.py:179 src/atEditor.py:114
 msgid "Untitled"
 msgstr "Nepojmenovaný"
 
 #. add task to treemodel in mainWindow
-#: src/crontab.py:242
+#: src/crontab.py:240
 msgid "Frequency"
 msgstr "Frekvence"
 
-#: src/crontab.py:248 src/crontabEditor.py:84 src/gnome-schedule.glade.h:83
+#: src/crontab.py:251 src/crontabEditor.py:85 src/gnome-schedule.glade.h:83
 msgid "minute"
 msgstr "minuta"
 
-#: src/crontab.py:250 src/crontabEditor.py:85 src/gnome-schedule.glade.h:82
+#: src/crontab.py:253 src/crontabEditor.py:86 src/gnome-schedule.glade.h:82
 msgid "hour"
 msgstr "hodina"
 
-#: src/crontab.py:252 src/crontabEditor.py:86 src/gnome-schedule.glade.h:81
+#: src/crontab.py:255 src/crontabEditor.py:87 src/gnome-schedule.glade.h:81
 msgid "day"
 msgstr "den"
 
-#: src/crontab.py:254 src/crontabEditor.py:87 src/gnome-schedule.glade.h:84
+#: src/crontab.py:257 src/crontabEditor.py:88 src/gnome-schedule.glade.h:84
 msgid "month"
 msgstr "měsíc"
 
-#: src/crontab.py:256 src/gnome-schedule.glade.h:88
+#: src/crontab.py:259 src/gnome-schedule.glade.h:88
 msgid "weekday"
 msgstr "den v týdnu"
 
-#: src/crontabEditor.py:83
+#: src/crontabEditor.py:84
 msgid "use advanced"
 msgstr "používat pokročilé"
 
-#: src/crontabEditor.py:88
+#: src/crontabEditor.py:89
 msgid "week"
 msgstr "týden"
 
-#: src/crontabEditor.py:131 src/atEditor.py:115
+#: src/crontabEditor.py:132 src/atEditor.py:116
 msgid "Create a new scheduled task"
 msgstr "Vytvořit plánovanou úlohu"
 
-#: src/crontabEditor.py:143 src/atEditor.py:143
+#: src/crontabEditor.py:144 src/atEditor.py:144
 msgid "Edit a scheduled task"
 msgstr "Upravit plánovanou úlohu"
 
-#: src/crontabEditor.py:196 src/atEditor.py:291
+#: src/crontabEditor.py:197 src/atEditor.py:292
 msgid "Don't use a preset"
 msgstr "Nepoužívat šablonu"
 
-#: src/crontabEditor.py:259
+#: src/crontabEditor.py:260
 #, python-format
 msgid ""
 "This is an invalid record! The problem could be at the %s field. Reason: %s"
 msgstr "Toto není platný záznam! Problém je možná v poli %s. Důvod: %s"
 
-#: src/crontabEditor.py:293 src/atEditor.py:364
+#: src/crontabEditor.py:294 src/atEditor.py:365
 msgid "Pick an icon for this scheduled task"
 msgstr "Zvolte ikonu pro tuto plánovanou úlohu"
 
-#: src/crontabEditor.py:352
+#: src/crontabEditor.py:353
 msgid "command"
 msgstr "příkaz"
 
@@ -562,9 +562,9 @@ msgid "At every minute"
 msgstr "Každou minutu"
 
 #: src/lang.py:253
-#, fuzzy, python-format
+#, python-format
 msgid "At the %(minute)s minute of every hour"
-msgstr "Každou %s minutu každé hodiny"
+msgstr "V minutu %(minute)s každé hodiny"
 
 #: src/lang.py:255
 #, python-format
@@ -572,208 +572,208 @@ msgid "At every minute between %(time_from)s and %(time_to)s"
 msgstr "Každou minutu mezi %(time_from)s a %(time_to)s"
 
 #: src/lang.py:257
-#, fuzzy, python-format
+#, python-format
 msgid "On every day at %(time)s"
-msgstr "Každý den v %s"
+msgstr "Každý den v %(time)s"
 
 #: src/lang.py:262
 #, python-format
 msgid "On the %(monthday)s of every month at every full hour"
-msgstr ""
+msgstr "%(monthday)s každý měsíc každou celou hodinu"
 
 #: src/lang.py:264
 #, python-format
 msgid "On the %(monthday)s of every month at every minute"
-msgstr ""
+msgstr "%(monthday)s každý měsíc každou minutu"
 
 #: src/lang.py:266
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "On the %(monthday)s of every month at the %(minute)s minute of every hour"
-msgstr "Každý %s den v týdnu %s minutu každé hodiny"
+msgstr "V %(monthday)s každého měsíce v minutu %(minute)s každé hodiny"
 
 #: src/lang.py:268
 #, python-format
 msgid ""
 "On the %(monthday)s of every month at every minute between %(time_from)s and "
 "%(time_to)s"
-msgstr ""
+msgstr "%(monthday)s každý měsíc každou minutu mezi %(time_from)s a %(time_to)s"
 
 #: src/lang.py:270
 #, python-format
 msgid "On the %(monthday)s of every month at %(time)s"
-msgstr ""
+msgstr "%(monthday)s každý měsíc v %(time)s"
 
 #: src/lang.py:275
 #, python-format
 msgid "On every day in %(month)s at every full hour"
-msgstr ""
+msgstr "Každý den v měsíci %(month)s každou celou hodinu"
 
 #: src/lang.py:277
-#, fuzzy, python-format
+#, python-format
 msgid "On every day in %(month)s at every minute"
-msgstr "Každý %s den v týdnu každou minutu"
+msgstr "Každý den v měsíci %(month)s každou minutu"
 
 #: src/lang.py:279
-#, fuzzy, python-format
+#, python-format
 msgid "On every day in %(month)s at the %(minute)s minute of every hour"
-msgstr "Každý %s den v týdnu %s minutu každé hodiny"
+msgstr "Každý den v měsíci %(month)s v minutu %(minute)s každé hodiny"
 
 #: src/lang.py:281
 #, python-format
 msgid ""
 "On every day in %(month)s at every minute between %(time_from)s and %"
 "(time_to)s"
-msgstr ""
+msgstr "Každý den v měsíci %(month)s každou minutu mezi %(time_from)s a %(time_to)s"
 
 #: src/lang.py:283
 #, python-format
 msgid "On every day in %(month)s at %(time)s"
-msgstr ""
+msgstr "Každý den v měsíci %(month)s v %(time)s"
 
 #: src/lang.py:288
-#, fuzzy, python-format
+#, python-format
 msgid "Every year on %(date)s at every full hour"
-msgstr "Každou %s minutu každé hodiny"
+msgstr "Každý rok %(date)s každou celou hodinu"
 
 #: src/lang.py:290
-#, fuzzy, python-format
+#, python-format
 msgid "Every year on %(date)s at every minute"
-msgstr "Každý %s den v týdnu každou minutu"
+msgstr "Každý rok %(date)s každou minutu"
 
 #: src/lang.py:292
-#, fuzzy, python-format
+#, python-format
 msgid "Every year on %(date)s at the %(minute)s minute of every hour"
-msgstr "Každý %s den v týdnu %s minutu každé hodiny"
+msgstr "Každý rok %(date)s v minutu %(minute)s každé hodiny"
 
 #: src/lang.py:294
 #, python-format
 msgid ""
 "Every year on %(date)s at every minute between %(time_from)s and %(time_to)s"
-msgstr ""
+msgstr "Každý rok %(date)s každou minutu mezi %(time_from)s a %(time_to)s"
 
 #: src/lang.py:296
 #, python-format
 msgid "Every year on %(date)s at %(time)s"
-msgstr ""
+msgstr "Každý rok %(date)s v %(time)s"
 
 #: src/lang.py:301
 #, python-format
 msgid "On every %(weekday)s at every full hour"
-msgstr ""
+msgstr "Každý %(weekday)s každou celou hodinu"
 
 #: src/lang.py:303
-#, fuzzy, python-format
+#, python-format
 msgid "On every %(weekday)s at every minute"
-msgstr "Každý %s den v týdnu každou minutu"
+msgstr "Každý %(weekday)s každou minutu"
 
 #: src/lang.py:305
-#, fuzzy, python-format
+#, python-format
 msgid "On every %(weekday)s at the %(minute)s minute of every hour"
-msgstr "Každý %s den v týdnu %s minutu každé hodiny"
+msgstr "Každý %(weekday)s v minutu %(minute)s každé hodiny"
 
 #: src/lang.py:307
 #, python-format
 msgid ""
 "On every %(weekday)s at every minute between %(time_from)s and %(time_to)s"
-msgstr ""
+msgstr "Každý %(weekday)s každou minutu mezi %(time_from)s a %(time_to)s"
 
 #: src/lang.py:309
 #, python-format
 msgid "On every %(weekday)s at %(time)s"
-msgstr ""
+msgstr "Každý %(weekday)s v %(time)s"
 
 #: src/lang.py:314
 #, python-format
 msgid ""
 "On the %(monthday)s of every month and every %(weekday)s at every full hour"
-msgstr ""
+msgstr "Každého %(monthday)s každého měsíce a každý %(weekday)s každou celou hodinu"
 
 #: src/lang.py:316
 #, python-format
 msgid ""
 "On the %(monthday)s of every month and every %(weekday)s at every minute"
-msgstr ""
+msgstr "Každého %(monthday)s každého měsíce a každý %(weekday)s každou minutu"
 
 #: src/lang.py:318
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "On the %(monthday)s of every month and every %(weekday)s at the %(minute)s "
 "minute of every hour"
-msgstr "Každý %s den v týdnu %s minutu každé hodiny"
+msgstr "%(monthday)s každého měsíce a každý %(weekday)s v minutu %(minute)s každé hodiny"
 
 #: src/lang.py:320
 #, python-format
 msgid ""
 "On the %(monthday)s of every month and every %(weekday)s at every minute "
 "between %(time_from)s and %(time_to)s"
-msgstr ""
+msgstr "%(monthday)s každý měsíc a každý %(weekday)s každou minutu mezi %(time_from)s a %(time_to)s"
 
 #: src/lang.py:322
-#, fuzzy, python-format
+#, python-format
 msgid "On the %(monthday)s of every month and every %(weekday)s at %(time)s"
-msgstr "Každý %s den měsíce a každý %s den v týdnu v %s"
+msgstr "%(monthday)s každého měsíce a každý %(weekday)s v %(time)s"
 
 #: src/lang.py:327
 #, python-format
 msgid "On every %(weekday)s in %(month)s at every full hour"
-msgstr ""
+msgstr "Každý %(weekday)s v měsíci %(month)s každou celou hodinu"
 
 #: src/lang.py:329
-#, fuzzy, python-format
+#, python-format
 msgid "On every %(weekday)s in %(month)s at every minute"
-msgstr "Každý %s den v týdnu každou minutu"
+msgstr "Každý %(weekday)s v měsíci %(month)s každou minutu"
 
 #: src/lang.py:331
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "On every %(weekday)s in %(month)s at the %(minute)s minute of every hour"
-msgstr "Každý %s den v týdnu %s minutu každé hodiny"
+msgstr "Každý %(weekday)s v měsíci %(month)s v minutu %(minute)s každé hodiny"
 
 #: src/lang.py:333
 #, python-format
 msgid ""
 "On every %(weekday)s in %(month)s at every minute between %(time_from)s and %"
 "(time_to)s"
-msgstr ""
+msgstr "Každý %(weekday)s v měsíci %(month)s každou minutu mezi %(time_from)s a %(time_to)s"
 
 #: src/lang.py:335
 #, python-format
 msgid "On every %(weekday)s in %(month)s at %(time)s"
-msgstr ""
+msgstr "Každý %(weekday)s v měsíci %(month)s v %(time)s"
 
 #: src/lang.py:340
 #, python-format
 msgid ""
 "On every %(weekday)s in %(month)s and on %(date)s every year at every full "
 "hour"
-msgstr ""
+msgstr "Každý %(weekday)s v měsíci %(month)s a %(date)s každý rok každou celou hodinu"
 
 #: src/lang.py:342
 #, python-format
 msgid ""
 "On every %(weekday)s in %(month)s and on %(date)s every year at every minute"
-msgstr ""
+msgstr "Každý %(weekday)s v měsíci %(month)s a %(date)s každý rok každou minutu"
 
 #: src/lang.py:344
 #, python-format
 msgid ""
 "On every %(weekday)s in %(month)s and on %(date)s every year at the %(minute)"
 "s minute of every hour"
-msgstr ""
+msgstr "Každý %(weekday)s v měsíci %(month)s a %(date)s každý rok v minutu %(minute)s každou hodinu"
 
 #: src/lang.py:346
 #, python-format
 msgid ""
 "On every %(weekday)s in %(month)s and on %(date)s every year at every minute "
 "between %(time_from)s and %(time_to)s"
-msgstr ""
+msgstr "Každý %(weekday)s v měsíci %(month)s a %(date)s každý rok každou minutu mezi %(time_from)s a %(time_to)s"
 
 #: src/lang.py:348
 #, python-format
 msgid ""
 "On every %(weekday)s in %(month)s and on %(date)s every year at %(time)s"
-msgstr ""
+msgstr "Každý %(weekday)s v měsíci %(month)s a %(date)s každý rok v %(time)s"
 
 #: src/lang.py:356
 msgid "every minute"
@@ -812,49 +812,49 @@ msgid ", weekday: "
 msgstr ", den v týdnu: "
 
 #: src/lang.py:380
-#, fuzzy, python-format
+#, python-format
 msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s%(weekday)s"
-msgstr "V minutě: %s, hodině %s, den: %s, měsíc: %s, den v týdnu: %s"
+msgstr "V %(minute)s, %(hour)s, %(monthday)s, %(month)s%(weekday)s"
 
-#: src/mainWindow.py:200
+#: src/mainWindow.py:205
 msgid "Editing user: "
 msgstr "Upravuji uživatele: "
 
-#: src/mainWindow.py:280
+#: src/mainWindow.py:312
 msgid "Icon"
 msgstr "Ikona"
 
-#: src/mainWindow.py:285 src/mainWindow.py:318
+#: src/mainWindow.py:317 src/mainWindow.py:350
 msgid "Type"
 msgstr "Typ"
 
-#: src/mainWindow.py:289 src/mainWindow.py:314
+#: src/mainWindow.py:321 src/mainWindow.py:346
 msgid "Title"
 msgstr "Nadpis"
 
 # ???
-#: src/mainWindow.py:293 src/mainWindow.py:305
+#: src/mainWindow.py:325 src/mainWindow.py:337
 msgid "Frequency or time"
 msgstr "Frekvence času"
 
-#: src/mainWindow.py:297 src/mainWindow.py:309
+#: src/mainWindow.py:329 src/mainWindow.py:341
 msgid "Preview"
 msgstr "Náhled"
 
 #. TODO: should be using gtkAboutDialog
-#: src/mainWindow.py:440
+#: src/mainWindow.py:475
 msgid "Gnome Schedule"
 msgstr "Gnome Schedule"
 
-#: src/mainWindow.py:442
+#: src/mainWindow.py:477
 msgid "Copyright (c) 2004-2005 Gaute Hope."
 msgstr "Copyright © 2004-2005 Gaute Hope."
 
-#: src/mainWindow.py:443
+#: src/mainWindow.py:478
 msgid "This software is distributed under the GPL. "
 msgstr "Toto software je šířeno pod podmínkami GPL. "
 
-#: src/mainWindow.py:447
+#: src/mainWindow.py:482
 msgid ""
 "Some painfully bad documentation put\n"
 "toghether from the far corners of Gaute Hope's mind."
@@ -862,180 +862,11 @@ msgstr ""
 "Trocha zoufale špatné dokumentace sestavena\n"
 "z temných zákoutí mysli Gaute Hope."
 
-#: src/mainWindow.py:447
+#: src/mainWindow.py:482
 msgid "translator_credits"
 msgstr "Miloslav Trmač <mitr@volny.cz>"
 
-#: src/atEditor.py:486
+#: src/atEditor.py:487
 #, python-format
 msgid "This is an invalid record! The problem could be: %s "
 msgstr "Toto není platný záznam! Problém je možná: %s "
-
-#~ msgid "The username"
-#~ msgstr "Jméno uživatele"
-
-#~ msgid "minus %s"
-#~ msgstr "mínus %s"
-
-#~ msgid "minus "
-#~ msgstr "mínus "
-
-#~ msgid "Every %s hour of the day"
-#~ msgstr "Každou %s. hodinu dne"
-
-#~ msgid "Every minute during the %s hour"
-#~ msgstr "Každou minutu v %s hodině"
-
-#~ msgid "At %s every %s day of the month"
-#~ msgstr "V %s každý %s den měsíce"
-
-#~ msgid "Every minute of the %s hour every %s day of the month"
-#~ msgstr "Každou minutu %s hodiny každý %s den měsíce"
-
-#~ msgid "At the %s minute of every hour every %s day of the month"
-#~ msgstr "%s minutu každé hodiny každého %s dne měsíce"
-
-#~ msgid "Every minute at every %s day of the month"
-#~ msgstr "Každou minutu každý %s den měsíce"
-
-#~ msgid "Every %s month of the year"
-#~ msgstr "Každý %s měsíc roku"
-
-#~ msgid "At the %s day on %s every %s month of the year"
-#~ msgstr "%s dne v %s každý %s měsíc roku"
-
-#~ msgid ""
-#~ "At the %s day every minute of every %s hour every %s month of the year"
-#~ msgstr "%s dne každou minutu každou %s hodinu každý %s měsíc roku"
-
-#~ msgid "Every day and every hour at the %s minute every %s month of the year"
-#~ msgstr "Každý den a každou hodinu v %s minutu každý %s měsíc roku"
-
-#~ msgid "Every day on %s every %s month of the year"
-#~ msgstr "Každý den v %s každý %s měsíc roku"
-
-#~ msgid "Every minute at the %s day every %s month of the year"
-#~ msgstr "Každou minutu dne v %s každý %s měsíc roku"
-
-#~ msgid "Every minute every %s month of the year"
-#~ msgstr "Každou minutu každý %s měsíc roku"
-
-#~ msgid ""
-#~ "Every %s minute of every hour at the %s day of the %s month of the year"
-#~ msgstr "Každou %s minutu každou hodinu v %s den každý %s měsíc roku"
-
-#~ msgid "Every minute of every %s hour in the %s month of the year"
-#~ msgstr "Každou minutu každou %s hodinu každý %s měsíc roku"
-
-#~ msgid "Every %s day of the week"
-#~ msgstr "Každý %s den v týdnu"
-
-#~ msgid "Every %s day of the week at %s"
-#~ msgstr "Každý %s den v týdnu v %s"
-
-#~ msgid "Every %s day of the week every minute of the %s hour"
-#~ msgstr "Každý %s den v týdnu každou minutu každé %s hodiny"
-
-#~ msgid "Every minute at the %s day of the month and the %s day of the week"
-#~ msgstr "Každou minutu každý %s den měsíce a %s den v týdnu"
-
-#~ msgid ""
-#~ "Every minute at the %s hour every %s day of the month and every %s day of "
-#~ "the week"
-#~ msgstr "Každou minutu %s hodiny každý %s den měsíce a každý %s den v týdnu"
-
-#~ msgid ""
-#~ "Every %s minute of every hour every %s day of the month and every %s day "
-#~ "of the week"
-#~ msgstr "%s minutu každé hodiny každého %s dne měsíce a každý %s den v týdnu"
-
-#~ msgid "Every minute every %s day of the week every %s month of the year"
-#~ msgstr "Každou minutu každý %s den v týdnu každý %s měsíc roku"
-
-#~ msgid ""
-#~ "Every %s minute of every hour at the %s day of the week every %s month of "
-#~ "the year"
-#~ msgstr ""
-#~ "Každou %s minutu každé hodiny každý %s den v týdnu každý %s měsíc roku"
-
-#~ msgid ""
-#~ "Every minute at the %s hour every %s day of the week every %s month of "
-#~ "the year"
-#~ msgstr "Každou minutu %s hodiny každý %s den v týdnu každý %s měsíc roku"
-
-#~ msgid "Every %s day of the week every %s month of the year at %s"
-#~ msgstr "Každý %s den v týdnu každý %s měsíc roku v %s"
-
-#~ msgid ""
-#~ "Every minute at the %s day of the week and at the %s day of the month "
-#~ "every %s month of the year"
-#~ msgstr ""
-#~ "Každou minutu každý %s den v týdnu a %s den měsíce každý %s měsíc roku"
-
-#~ msgid ""
-#~ "Every %s minute of every hour every %s day of the week and every %s day "
-#~ "of the month every %s month of the year"
-#~ msgstr ""
-#~ "Každou %s minutu každé hodiny každý %s den v týdnu a každý % s den měsíce "
-#~ "%s měsíc roku"
-
-#~ msgid ""
-#~ "Every minute at the %s hour of every %s day of the week and every %s day "
-#~ "of the month every %s month of the year"
-#~ msgstr ""
-#~ "Každou minutu každou %s hodinu každý %s den v týdnu a každý %s den měsíce "
-#~ "každý %s měsíc roku"
-
-#~ msgid ""
-#~ "At %s every %s day of the week and every %s day of the month every %s "
-#~ "month of the year"
-#~ msgstr "V %s každý %s den v týdnu a každý %s den měsíce každý %s měsíc roku"
-
-#~ msgid "Every minute, every hour, every day, every month, every weekday"
-#~ msgstr ""
-#~ "Každou minutu, každou hodinu, každý den, každý měsíc, každý den v týdnu"
-
-#~ msgid "At minute: %s, hour %s, day: %s, month: %s"
-#~ msgstr "V minutě: %s, hodině %s, den: %s, měsíc: %s"
-
-#~ msgid "At minute: %s, hour %s, day: %s, every month"
-#~ msgstr "V minutě: %s, hodině %s, den: %s, každý měsíc"
-
-#~ msgid "At minute: %s, hour %s, every day, month: %s"
-#~ msgstr "V minutě: %s, hodině %s, každý den, měsíc: %s"
-
-#~ msgid "At minute: %s, every hour, day: %s, month: %s"
-#~ msgstr "V minutě: %s, každou hodinu, den: %s, měsíc: %s"
-
-#~ msgid "At minute: %s, hour %s, every day, every month"
-#~ msgstr "V minutě: %s, hodinu %s, každý den, každý měsíc"
-
-#~ msgid "At minute: %s, every hour, day: %s, every month"
-#~ msgstr "V minutě: %s, každou hodinu, den: %s, každý měsíc"
-
-#~ msgid "At minute: %s, every hour, every day, month: %s"
-#~ msgstr "V minutě: %s, každou hodinu, každý den, měsíc: %s"
-
-#~ msgid "At minute: %s, every hour, every day, every month"
-#~ msgstr "V minutě: %s, každou hodinu, každý den, každý měsíc"
-
-#~ msgid "Every minute, hour: %s, day: %s, month %s"
-#~ msgstr "Každou minutu, hodina: %s, den: %s, měsíc: %s"
-
-#~ msgid "Every minute, hour %s, day: %s, every month"
-#~ msgstr "Každou minutu, hodina: %s, den: %s, každý měsíc"
-
-#~ msgid "Every minute, hour %s, every day, month: %s"
-#~ msgstr "Každou minutu, hodina: %s, každý den, měsíc: %s"
-
-#~ msgid "Every minute, hour %s, every day, every month"
-#~ msgstr "Každou minutu, hodina: %s, každý den, každý měsíc"
-
-#~ msgid "Every minute, every hour, day: %s, month: %s"
-#~ msgstr "Každou minutu, každou hodinu, den: %s, měsíc: %s"
-
-#~ msgid "Every minute, every hour, day: %s, every month"
-#~ msgstr "Každou minutu, každou hodinu, den: %s, každý měsíc"
-
-#~ msgid "Every %s day of the week the %s hour"
-#~ msgstr "Každý %s den v týdnu %s hodinu"
