@@ -55,6 +55,7 @@ class AtEditor:
 		self.delete_button = self.xml.get_widget ("at_delete_button")
 		self.title_entry = self.xml.get_widget ("at_title_entry")
 		self.script_textview = self.xml.get_widget ("at_script_textview")
+		self.script_textview_buffer = self.script_textview.get_buffer()
 		self.nooutput_checkbutton = self.xml.get_widget ("at_nooutput_checkbutton")
 		self.help_button = self.xml.get_widget ("at_help_button")
 		self.cancel_button = self.xml.get_widget ("at_cancel_button")
@@ -224,6 +225,10 @@ class AtEditor:
 		else:
 			self.template_image.set_from_file("/usr/share/icons/gnome/48x48/mimetypes/gnome-mime-application.png")
 			self.icon = "/usr/share/icons/gnome/48x48/mimetypes/gnome-mime-application.png"
+	
+	def reset (self):
+		self.title_entry.set_text("")
+		self.script_textview_buffer.set_text("")
 
 	def showedit (self, record, job_id, iter, mode):
 		self.reload_templates ()
