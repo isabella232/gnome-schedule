@@ -21,7 +21,7 @@ import pwd
 import mainWindow
 import string
 import crontab
-
+import re
 ##
 ## I18N
 ##
@@ -66,6 +66,7 @@ class AddWindow:
 		self.xml.signal_connect("on_chkNoOutput_toggled", self.on_anybasic_entry_changed)
 		
 		self.nooutput = self.chkNoOutput.get_active()
+		self.nooutputRegex = re.compile('([^#\n$]*)>(\s|)/dev/null\s2>&1')
 
 	def showEditWindow (self, record, linenumber, iter):
 		self.editing = gtk.TRUE
@@ -76,8 +77,16 @@ class AddWindow:
 		self.update_textboxes ()
 		self.parentiter = iter
 		self.widget.show_all()
-		#disable nooutput box if editing, perhaps a parse function in the future makes this obsolete..
-		self.chkNoOutput.hide()
+		
+		# disable nooutput box if editing, perhaps a parse function in the future makes this obsolete..
+		# self.chkNoOutput.hide()
+		
+		m = self.nooutputRegex.match (self.command)
+		if (m != None):
+			self.chkNoOutput.set_active (gtk.TRUE)
+		else:
+			self.chkNoOutput.set_active (gtk.FALSE)
+		
 
 	def showAddWindow (self):
 		self.reset ()
@@ -103,17 +112,8 @@ class AddWindow:
 		return gtk.TRUE
 
 	def on_ok_button_clicked (self, *args):
-		self.nooutput = self.chkNoOutput.get_active()
-		if self.editing == gtk.FALSE:
-			if self.nooutput:
-				record = self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday + " " + self.command + " " + self.nooutputtag + " # " + self.title
-			else:
-				record = self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday + " " + self.command + " # " + self.title
-		else:
-			record = self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday + " " + self.command + " # " + self.title
-
-		#record = self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday + " " + self.command + " # " + self.title
-
+		record = self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday + " " + self.command + " # " + self.title
+		
 		if self.editing == gtk.FALSE:
 			self.parentiter = self.ParentClass.treemodel.append()
 			self.crontab.appendLine (record)
@@ -209,6 +209,22 @@ class AddWindow:
 			self.title = self.title_entry.get_text ()
 			self.output = self.chkNoOutput.get_active()
 			self.update_textboxes ()
+			self.nooutput = self.chkNoOutput.get_active()
+		
+			self.noevents = gtk.TRUE
+			m = self.nooutputRegex.match (self.command)
+			if self.nooutput:
+				if m == None:
+					if self.command[len(self.command)-1] != " ":
+						self.command = self.command + " "
+					self.command = self.command + self.nooutputtag
+					self.command_entry.set_text (self.command)
+			else:
+				if m != None:
+					self.command = m.groups()[0]
+					self.command_entry.set_text (self.command)
+			self.noevents = gtk.FALSE
+
 
 	def on_frequency_combobox_changed (self, bin):
 		temp = 	self.frequency_combobox.get_text()
@@ -241,5 +257,3 @@ class AddWindow:
 			pass
 
 		self.update_textboxes()
-	
-		
