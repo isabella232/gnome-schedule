@@ -34,7 +34,7 @@ gtk.glade.bindtextdomain(domain)
 
 class Crontab:
 	def __init__(self, parent):
-		self.crontabRecordRegex  = re.compile('([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)(\s#\s(.*)|)')
+		self.crontabRecordRegex = re.compile('([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^#\n$]*)(\s#\s([^\n$]*)|$)')
 		self.ParentClass = parent
 
 		#reading crontab
