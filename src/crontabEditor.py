@@ -19,7 +19,7 @@
 #pygtk modules
 import gtk
 import gobject
-import gconf
+
 
 #python modules
 import string
@@ -28,7 +28,6 @@ import os
 
 #custom modules
 import config
-import support
 import preset
 import crontabEditorHelper
 
@@ -119,11 +118,8 @@ class CrontabEditor:
 		##
 		
 		self.editorhelper = crontabEditorHelper.CrontabEditorHelper(self)
-		
-		#gconf code
-		support.gconf_client.add_dir ("/apps/gnome-schedule/presets/crontab", gconf.CLIENT_PRELOAD_NONE)
-		support.gconf_client.notify_add ("/apps/gnome-schedule/presets/crontab/installed", self.gconfkey_changed);
-
+	
+		self.ParentClass.ParentClass.backend.add_scheduler_type("crontab")
 		
 	def showadd (self, mode):
 		self.__loadicon__ ()
@@ -187,7 +183,7 @@ class CrontabEditor:
 
 	def __reload_templates__ (self):
 		#self.template_combobox.set_active (active)
-		self.template_names = preset.gettemplatenames ("crontab")
+		self.template_names = self.ParentClass.ParentClass.backend.gettemplatenames ("crontab")
 		
 		if not (self.template_names == None or len (self.template_names) <= 0):
 			active = self.template_combobox.get_active ()
@@ -207,7 +203,7 @@ class CrontabEditor:
 		else:
 			
 			for template_name in self.template_names:
-				thetemplate = preset.gettemplate ("crontab", template_name)
+				thetemplate = self.ParentClass.ParentClass.backend.gettemplate ("crontab", template_name)
 				icon_uri, command, frequency, title, name = thetemplate
 				self.template_combobox_model.append([name, template_name, thetemplate])
 						
@@ -215,9 +211,9 @@ class CrontabEditor:
 							
 		self.template_combobox.set_active (active)
 
-
+	# TODO: to gnome specific
 	def __loadicon__ (self):
-		nautilus_icon = support.nautilus_icon ("i-executable")
+		nautilus_icon = self.ParentClass.ParentClass.backend.nautilus_icon ("i-executable")
 		if nautilus_icon != None:
 			pixbuf = gtk.gdk.pixbuf_new_from_file_at_size (nautilus_icon, 60, 60)
 			self.template_image.set_from_pixbuf(pixbuf)
@@ -252,7 +248,7 @@ class CrontabEditor:
 			
 		#record = self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday + " " + self.command
 		self.frequency = self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday
-		preset.savetemplate ("crontab",template_name, self.frequency, self.title, self.icon, self.command)
+		self.ParentClass.ParentClass.backend.savetemplate ("crontab",template_name, self.frequency, self.title, self.icon, self.command)
 
 
 	#error dialog box 
@@ -276,7 +272,7 @@ class CrontabEditor:
 		template = self.template_combobox_model.get_value(iter, 2)
 		icon_uri, command, frequency, title, template_name = template
 		self.template_combobox.set_active (0)
-		preset.removetemplate ("crontab",template_name)
+		self.ParentClass.ParentClass.backend.removetemplate ("crontab",template_name)
 
 		
 	#save template	button

@@ -40,7 +40,7 @@ class SetuserWindow:
 		self.widget = self.xml.get_widget("setuserWindow")
 		self.widget.connect("delete-event", self.on_cancel_button_clicked)
 
-		#TODO replace with comboBox
+		# TODO: replace with comboBox
 		self.entUser = self.xml.get_widget("entUser")
 
 		self.cancel_button = self.xml.get_widget ("setuser_cancel_button")

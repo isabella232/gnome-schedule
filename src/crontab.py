@@ -28,7 +28,6 @@ import string
 #custom modules
 import crontabEditor
 import lang
-import support
 import config
 
 ##

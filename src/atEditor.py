@@ -19,7 +19,6 @@
 #pygtk modules
 import gtk
 import gobject
-import gconf
 
 #python modules
 import re
@@ -27,7 +26,6 @@ import time
 import calendar
 
 #custom modules
-import support
 import preset
 
 ##
@@ -104,10 +102,7 @@ class AtEditor:
 		self.xml.signal_connect("on_at_minute_spinbutton_changed", self.on_minute_spinbutton_changed)
 		self.xml.signal_connect("on_at_combobox_changed", self.on_combobox_changed)
 
-		#gconf
-		support.gconf_client.add_dir ("/apps/gnome-schedule/presets/at", gconf.CLIENT_PRELOAD_NONE)
-		support.gconf_client.notify_add ("/apps/gnome-schedule/presets/at/installed", self.gconfkey_changed);
-
+		self.ParentClass.ParentClass.backend.add_scheduler_type("at")
 
 	def showadd (self, mode):
 		self.NOACTION = gtk.TRUE
@@ -268,7 +263,7 @@ class AtEditor:
 		template = self.template_combobox_model.get_value(iter, 2)
 		icon_uri, command, timeexpression, title, name = template
 		self.template_combobox.set_active (0)
-		preset.removetemplate ("at", name)
+		self.ParentClass.ParentClass.backend.removetemplate ("at", name)
 
 
 	def on_save_button_clicked (self, *args):
@@ -278,18 +273,12 @@ class AtEditor:
 		
 	def __SaveTemplate__ (self, template_name):
 		#TODO: validate record
-		preset.savetemplate ("at", template_name, self.runat, self.title, self.icon, self.command)
+		self.ParentClass.ParentClass.backend.savetemplate ("at", template_name, self.runat, self.title, self.icon, self.command)
 			
-
-	def gconfkey_changed (self, client, connection_id, entry, args):
-		if self.NOACTION != gtk.TRUE:
-
-			self.__reload_templates__ ()
-
-
+	
 	def __reload_templates__ (self):
 
-		self.template_names = preset.gettemplatenames ("at")
+		self.template_names = self.ParentClass.ParentClass.backend.gettemplatenames ("at")
 		if not (self.template_names == None or len (self.template_names) <= 0):
 			active = self.template_combobox.get_active ()
 			if active == -1:
@@ -307,7 +296,7 @@ class AtEditor:
 		else:
 			
 			for template_name in self.template_names:
-				thetemplate = preset.gettemplate ("at",template_name)
+				thetemplate = self.ParentClass.ParentClass.backend.gettemplate ("at",template_name)
 				icon_uri, command, runat, title, name  = thetemplate
 				#print "icon_uri: " + icon_uri
 				#print "command: " + command
@@ -393,7 +382,7 @@ class AtEditor:
 
 
 	def __loadicon__ (self):
-		nautilus_icon = support.nautilus_icon ("i-executable")
+		nautilus_icon = self.ParentClass.ParentClass.backend.nautilus_icon ("i-executable")
 		if nautilus_icon != None:
 			pixbuf = gtk.gdk.pixbuf_new_from_file_at_size (nautilus_icon, 60, 60)
 			self.template_image.set_from_pixbuf(pixbuf)

@@ -55,6 +55,7 @@ except:
 try:
   import gtk
   import gtk.glade
+  # TODO: Gnome specific
   import gnome
   import gnome.ui
 	
@@ -64,6 +65,7 @@ except:
   print ("try: export PYTHONPATH= ")
   sys.exit(1)
 
+# TODO: Gnome specific
 gnome.program_init ("gnome-schedule", config.getVersion())
 
 mainWindow = mainWindow.main(debug_flag)

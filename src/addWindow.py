@@ -1,6 +1,7 @@
 # setuserWindow.py - UI code for changing user
 # Copyright (C) 2004, 2005 Philip Van Hoof <me at freax dot org>
 # Copyright (C) 2004, 2005 Gaute Hope <eg at gaute dot eu dot org>
+# Copyright (C) 2004, 2005 Kristof Vansant <de_lupus at pandora dot be>
 
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -35,14 +36,17 @@ class AddWindow:
 		self.widget = self.xml.get_widget ("addWindow")
 		self.widget.connect("delete-event", self.on_cancel_button_clicked)
 
+		self.cancel_button = self.xml.get_widget ("select_cancel_button")
+		self.ok_button = self.xml.get_widget ("select_ok_button")
+
+		self.xml.signal_connect("on_select_cancel_button_clicked", self.on_cancel_button_clicked)
+		self.xml.signal_connect("on_select_ok_button_clicked", self.on_ok_button_clicked)
+
+
+		# TODO: make them add themself remove from glade
 		self.at_radio = self.xml.get_widget("at_radio")
 		self.crontab_radio = self.xml.get_widget("crontab_radio")
 		self.crontab_radio.set_active (gtk.TRUE)
-		
-		self.cancel_button = self.xml.get_widget ("select_cancel_button")
-		self.ok_button = self.xml.get_widget ("select_ok_button")
-		self.xml.signal_connect("on_select_cancel_button_clicked", self.on_cancel_button_clicked)
-		self.xml.signal_connect("on_select_ok_button_clicked", self.on_ok_button_clicked)
 		
 		
 	def ShowAddWindow (self):
@@ -53,7 +57,10 @@ class AddWindow:
 		
 	def on_ok_button_clicked (self, *args):
 		self.widget.hide()
+
+		# TODO: make them add themself
 		if self.crontab_radio.get_active ():
+			# TODO: necessary?
 			self.ParentClass.editor = self.ParentClass.crontab_editor
 			self.ParentClass.editor.showadd (self.ParentClass.edit_mode)
 		else:

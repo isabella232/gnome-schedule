@@ -30,7 +30,6 @@ import string
 import time
 
 #custom modules
-import support
 import config
 import atEditor
 

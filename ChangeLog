@@ -1,3 +1,9 @@
+2004-12-01  Kristof Vansant <de_lupus@pandora.be>
+	
+	* moved all gconf code to a seperate class (someone could easily replace it with a xml backend now)
+	* cleant a lot of code in mainWindow.py
+	* added a lot of TODO's in the code 
+
 2004-10-31  Frank Arnold <frank@scirocco-5v-turbo.de>
 
 	* Note: committed by Philip Van Hoof <pvanhoof_NOSPAM@gnome.org>
