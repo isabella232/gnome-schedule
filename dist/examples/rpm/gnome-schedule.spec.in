@@ -1,21 +1,42 @@
 Summary: A graphical tool for configuring at and crontab
 Name: gnome-schedule
-Version: 1.0_beta
+Version: @VERSION@
+URL: http://gnome-schedule.sf.net
 Release: 1
 Copyright: GPL
 Group: Applications/System
 Source: ftp://gaute.eu.org/pub/gnome-schedule/gnome-shcedule-1.0_beta.tar.gz
 Buildroot: /var/tmp/%{name}-buildroot
+Requires: python-conf2
+Requires: python
+Requires: crontab
+Requires: pygtk2 >= 2.3
+Requires: pygtk2-libglade
 
 %description
 Gnome-schedule is a GNOME GUI for configuring a users crontab. It was made for Vixie cron whom comes with Fedora Linux, but should work with other cron servers aswell if the format of the config file is similar.
 
 %prep
-%setup 
+%setup -q
 
 %build
-./configure --prefix=/usr
 make
 
 %install
-make install
+make INSTROOT=$RPM_BUILD_ROOT install
+
+%preun
+if [ -d /usr/share/gnome-schedule ] ; then
+  rm -rf /usr/share/gnome-schedule/*.pyc
+fi
+
+%clean
+rm -rf $RPM_BUILD_ROOT
+
+%find_lang %name
+
+%changelog
+2004-07-18  Gaute Hope <eg@gaute.eu.org>
+
+	* Intial spec file
+
