@@ -16,25 +16,29 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 
-import crontabEditor
+#pygtk modules
 import gtk
-import pwd
+#import gobject
+
+#python modules
 import string
-import crontab
 import re
-import gobject
-import gettext
+
+#import pwd
+
+#custom modules
+#import crontab
+#import crontabEditor
+
 ##
 ## I18N
 ##
-#from rhpl.translate import _, N_
-#import rhpl.translate as translate
+import gettext
 domain = 'gnome-schedule'
-#translate.textdomain (domain)
 gettext.bindtextdomain(domain)
 gettext.textdomain(domain)
 _ = gettext.gettext
-gtk.glade.bindtextdomain(domain)
+
 
 class CrontabEditorHelper:
 	def __init__(self, parent, editor):

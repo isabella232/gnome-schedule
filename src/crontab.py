@@ -16,46 +16,55 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 
+#pygtk modules
 import gtk
+#import gobject
+
+#python modules
 import re
 import os
-import sys
 import tempfile
-import config
-import mainWindow
-import gobject
+import string
+#import sys
+
+#custom modules
 import crontabEditorHelper
 import crontabEditor
 import lang
 import support
-import string
-import gettext
+import config
+#import mainWindow
+
 ##
 ## I18N
 ##
-#from rhpl.translate import _, N_
-#import rhpl.translate as translate
+import gettext
 domain = 'gnome-schedule'
-#translate.textdomain (domain)
 gettext.bindtextdomain(domain)
 gettext.textdomain(domain)
 _ = gettext.gettext
-gtk.glade.bindtextdomain(domain)
+
 
 class Crontab:
 	def __init__(self, parent):
-		self.crontabRecordRegex = re.compile('([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^#\n$]*)(\s#\s([^\n$]*)|$)')
 		self.ParentClass = parent
+		
+		#get glade file
 		self.xml = self.ParentClass.xml
+		
 		self.nooutputtag = ">/dev/null 2>&1"
-
+		self.crontabRecordRegex = re.compile('([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^#\n$]*)(\s#\s([^\n$]*)|$)')
+		
+		#crontab Editor Window
 		self.editorwidget = self.xml.get_widget("crontabEditor")
+		self.editorwidget.hide()
+		
+		#crontab Editor Helper Window
 		self.editorhelperwidget = self.xml.get_widget("crontabEditorHelper")
+		self.editorhelperwidget.hide()
+		
 		self.editor = crontabEditor.CrontabEditor (self.ParentClass, self)
 		self.editorhelper = crontabEditorHelper.CrontabEditorHelper(self, self.editor)
-
-		self.editorwidget.hide()
-		self.editorhelperwidget.hide()
 		
 		#default preview length
 		self.preview_len = 50

@@ -16,23 +16,21 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 
+#pygtk modules
 import gtk
-import pwd
+
+#python modules
+#import pwd
 import string
-import pwd
-import gettext
 
 ##
 ## I18N
 ##
-#from rhpl.translate import _, N_
-#import rhpl.translate as translate
+import gettext
 domain = 'gnome-schedule'
-#translate.textdomain (domain)
 gettext.bindtextdomain(domain)
 gettext.textdomain(domain)
 _ = gettext.gettext
-gtk.glade.bindtextdomain(domain)
 
 class AddWindow:
 	def __init__(self, parent):

@@ -1,5 +1,9 @@
+#pygtk modules
 import gconf
+
+#python modules
 import os
+
 gconf_client = gconf.client_get_default()
 
 # gtk.gdk.pixbuf_new_from_file (filename)

@@ -16,32 +16,34 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 
+#pygtk modules
 import gtk
-import mainWindow
+import gobject
+
+#python modules
 import re
 import os
 import sys
 import tempfile
-import gobject
-import lang
-import atEditor
 import commands
-import config
 import string
-import gettext
 import time
+
+#custom modules
+#import mainWindow
 import support
+import config
+import atEditor
+#import lang
+
 ##
 ## I18N
 ##
-#from rhpl.translate import _, N_
-#import rhpl.translate as translate
+import gettext
 domain = 'gnome-schedule'
-#translate.textdomain (domain)
 gettext.bindtextdomain(domain)
 gettext.textdomain(domain)
 _ = gettext.gettext
-gtk.glade.bindtextdomain(domain)
 
 class At:
 	def __init__(self, parent):

@@ -16,25 +16,28 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 
-import gtk
-import re
-import os
-import sys
-import tempfile
-import config
-import mainWindow
-import gettext
+#pygtk modules
+#import gtk
+
+#python modules
+#import re
+#import sys
+#import os
+#import tempfile
+#import config
+
+
+#custom modules
+#import mainWindow
+
 ##
 ## I18N
 ##
-#from rhpl.translate import _, N_
-#import rhpl.translate as translate
+import gettext
 domain = 'gnome-schedule'
-#translate.textdomain (domain)
 gettext.bindtextdomain(domain)
 gettext.textdomain(domain)
 _ = gettext.gettext
-gtk.glade.bindtextdomain(domain)
 
 class Schedule:
 	def __init__(self, parent):

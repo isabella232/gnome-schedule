@@ -3,9 +3,12 @@
 # it for your language. Also if you changed the formatting using your
 # editor (and tested everything, haha)
 
-import os
+#pygtk modules
 import gtk
-import gettext
+
+#python modules
+import os
+
 # Dear translators,
 
 # This file is yours. YOU people do whatever you wan't with it. You can
@@ -44,16 +47,15 @@ import gettext
 # files, it means that you don't have to touch these files at all. In
 # that case the advice is simple: don't touch it. hehe :)
 
-
-# This is some I18n init stuff (don't touch it)
-#from rhpl.translate import _, N_
-#import rhpl.translate as translate
+##
+## I18N
+##
+import gettext
 domain = 'gnome-schedule'
-#translate.textdomain (domain)
 gettext.bindtextdomain(domain)
 gettext.textdomain(domain)
 _ = gettext.gettext
-gtk.glade.bindtextdomain(domain)
+
 
 #fallback to english if the LANG env variable is not present
 try:

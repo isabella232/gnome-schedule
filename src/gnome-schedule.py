@@ -18,9 +18,23 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 
+#python modules
 import sys
 import signal
+
+#custom modules
 import config
+import mainWindow
+
+##
+## I18N
+##
+import gettext
+domain = 'gnome-schedule'
+gettext.bindtextdomain(domain)
+gettext.textdomain(domain)
+_ = gettext.gettext
+
 
 if __name__ == "__main__":
 	signal.signal (signal.SIGINT, signal.SIG_DFL)
@@ -30,14 +44,26 @@ if '--debug' in sys.argv:
 	debug_flag = 1
 
 try:
-	import gtk
-	import gnome
-	import gnome.ui
-	gnome.program_init ("gnome-schedule", config.getVersion())
+	import pygtk
+  	#tell pyGTK, if possible, that we want GTKv2
+  	pygtk.require("2.0")
+  
 except:
-	print ("An error occured while loading the gtk, gnome and gnome.ui modules.")
-	sys.exit(0)
+  #Some distributions come with GTK2, but not pyGTK
+  pass
 
+try:
+  import gtk
+  import gtk.glade
+  import gnome
+  import gnome.ui
+	
+except:
+  print ("You need to install pyGTK or GTKv2, ")
+  print ("or set your PYTHONPATH correctly.")
+  print ("try: export PYTHONPATH= ")
+  sys.exit(1)
 
-import mainWindow
+gnome.program_init ("gnome-schedule", config.getVersion())
+
 mainWindow = mainWindow.main(debug_flag)
