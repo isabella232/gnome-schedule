@@ -1,3 +1,7 @@
+2004-06-18  Gustavo Maciel Dias Vieira  <gustavo@sagui.org>
+
+	* configure.ac: Added pt_BR to ALL_LINGUAS.
+
 2004-06-18  Philip Van Hoof Mne_NOSPAM@freax.org>
 	* Fixed some stuff
 	* Prepared the application for the at support
