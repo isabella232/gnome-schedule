@@ -5,6 +5,8 @@
 	* atEditor.py: Added commands to templates aswell
 	* at.py: Support for alot more special time expressions like: next week, tomorrow, noon...
 	* at.py: Added commands to templates aswell
+	* at.py: Parsing of the script seems to work better now, using the last commands added by at
+	* at.py: Only reading the selected users at records if you are root
 	* mainWindow.py: A new record is now selected as it should when you delete one
 
 2004-07-14  Gaute Hope  <eg@gaute.eu.org>

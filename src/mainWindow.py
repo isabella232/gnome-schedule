@@ -347,10 +347,7 @@ class main:
 		diff = end - start
 		print "###--- end reload: [" + str(end) + "] - Duration: " + str(diff) + " ---###"
 
-	def test (self, model, path, iter, userdata):
-		self.testcnt = self.testcnt +1
-		print self.testcnt
-		return
+
 
 	def delete_row (self, model, path, iter, record_type):
 		current_record_type = self.treemodel.get_value(iter, 14)

@@ -347,8 +347,13 @@ class At:
 					
 				timestring = _("%s%s%s %s%s%s") % (_(""), date, _(""), _(""), time, _(""))
 				timestring_show = "At " + timestring #_("%sAt%s%s") % (_(""), _(""), timestring, _(""))
-
-				iter = self.ParentClass.treemodel.append([title, timestring_show, preview, lines, int(job_id), timestring, icon_pix, self, icon, date, class_id, user, time, "Defined", "at"])
+				if self.ParentClass.root == 1:
+					if self.ParentClass.user == user:
+						iter = self.ParentClass.treemodel.append([title, timestring_show, preview, lines, int(job_id), timestring, icon_pix, self, icon, date, class_id, user, time, "Defined", "at"])
+					else: 
+						print "Record omitted, not current user"
+				else:
+					iter = self.ParentClass.treemodel.append([title, timestring_show, preview, lines, int(job_id), timestring, icon_pix, self, icon, date, class_id, user, time, "Defined", "at"])
 
 				print "Read at job: " + str(job_id)
 				count = count + 1
@@ -377,37 +382,60 @@ class At:
 
 		#Later: It now seems like this is incorrect, and may vary upon distribution. I therefore determine the prepended stuff by making a test job and then removing the length of it. in gentoo it adds to newlines at the end of the script
 
-		
-		script = script[self.at_pre_len:]
+		method = 2
 
-		prelen = 0
-		# If the string contains TITLE=
-		titlestart = script.find ("TITLE=")
-		if titlestart != -1:
-			titleend = script.find("\n", titlestart)
-			title = script[(titlestart + 6):titleend]
-			#remeber the length to remove this from the preview
-			prelen = len(title) + 7
-		else:
-			title = "Untitled"
-		# If the string contains ICON=
-		iconstart = script.find ("ICON=") 
-		if iconstart != -1:
-			iconend = script.find ("\n", iconstart)
-			icon = script[(iconstart + 5):iconend]
+		if method == 1:
+			script = script[self.at_pre_len:]
+	
+			prelen = 0
+			# If the string contains TITLE=
+			titlestart = script.find ("TITLE=")
+			if titlestart != -1:
+				titleend = script.find("\n", titlestart)
+				title = script[(titlestart + 6):titleend]
+				#remeber the length to remove this from the preview
+				prelen = len(title) + 7
+			else:
+				title = "Untitled"
+			# If the string contains ICON=
+			iconstart = script.find ("ICON=") 
+			if iconstart != -1:
+				iconend = script.find ("\n", iconstart)
+				icon = script[(iconstart + 5):iconend]
+				
+				prelen = prelen + len(icon) + 6
 			
-			prelen = prelen + len(icon) + 6
+			else:
+				icon = "None"
+
+		elif method == 2:
+			string = " || {\n	 echo 'Execution directory inaccessible' >&2\n	 exit 1\n}\n"
+			string_len = len(string)
+			start = script.find(string)
+			start = start + string_len
+
+			script = script[start:]
+
+			prelen = 0
+			# If the string contains TITLE=
+			titlestart = script.find ("TITLE=")
+			if titlestart != -1:
+				titleend = script.find("\n", titlestart)
+				title = script[(titlestart + 6):titleend]
+				#remeber the length to remove this from the preview
+				prelen = len(title) + 7
+			else:
+				title = "Untitled"
+			# If the string contains ICON=
+			iconstart = script.find ("ICON=") 
+			if iconstart != -1:
+				iconend = script.find ("\n", iconstart)
+				icon = script[(iconstart + 5):iconend]
+				
+				prelen = prelen + len(icon) + 6
 			
-		else:
-			icon = "None"
-
-		
-
-		# Else this is a line of the script
-		#else:
-		#	newlines.append (line)
-		#	print line
-		
+			else:
+				icon = "None"
 		
 		return script, title, icon, prelen
 
