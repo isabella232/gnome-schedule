@@ -103,6 +103,7 @@ class AddWindow:
 		self.editing = gtk.FALSE
 		self.widget.set_title(_("Create a new scheduled task"))
 		self.widget.show_all()
+		self.chkNoOutput.set_active (gtk.FALSE)
 
 	def on_help_button_clicked (self, *args):
 		print "Help"

@@ -315,7 +315,6 @@
 </widget>
 
 <widget class="GtkWindow" id="addWindow">
-  <property name="visible">True</property>
   <property name="title" translatable="yes">[Add|Edit] scheduled task</property>
   <property name="type">GTK_WINDOW_TOPLEVEL</property>
   <property name="window_position">GTK_WIN_POS_NONE</property>
@@ -1025,7 +1024,6 @@ use advanced</property>
 </widget>
 
 <widget class="GtkWindow" id="setuserWindow">
-  <property name="visible">True</property>
   <property name="title" translatable="yes">Set user</property>
   <property name="type">GTK_WINDOW_TOPLEVEL</property>
   <property name="window_position">GTK_WIN_POS_NONE</property>
