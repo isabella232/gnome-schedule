@@ -234,6 +234,7 @@ class AtEditor:
 		if self.noupdate == gtk.FALSE:	
 			self.combo_trigger = gtk.TRUE
 			self.update_time_combo()
+			self.combo_trigger = gtk.FALSE
 		
 		return
 
