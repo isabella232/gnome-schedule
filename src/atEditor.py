@@ -254,7 +254,7 @@ class AtEditor:
 			
 			for template_name in self.template_names:
 				thetemplate = self.schedule.gettemplate (template_name)
-				icon_uri, command, runat, title, name = thetemplate
+				icon_uri, runat, title, name = thetemplate
 				self.template_combobox_model.append([name, template_name, thetemplate])
 						
 			#self.template_combobox.set_sensitive (gtk.TRUE)
@@ -384,7 +384,7 @@ class AtEditor:
 		return
 
 	def showedit (self, record, job_id, iter, mode):
-		#self.reload_templates () # not supported yet
+		self.reload_templates ()
 		self.editing = gtk.TRUE
 		
 		self.job_id = job_id
