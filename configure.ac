@@ -1,5 +1,5 @@
 AC_INIT(src/gnome-schedule.py)
-AM_INIT_AUTOMAKE(gnome-schedule, 0.1.0)
+AM_INIT_AUTOMAKE(gnome-schedule, 0.0.1)
 
 AM_PATH_PYTHON
 
@@ -84,5 +84,5 @@ desktop/Makefile
 desktop/gnome-schedule.desktop
 dist/fedora/2/gnome-schedule.spec
 dist/fedora/2/system-config-schedule.console 
-dist/gentoo/gnome-schedule-0.1.0.ebuild
+dist/gentoo/gnome-schedule-0.0.1.ebuild
 ])

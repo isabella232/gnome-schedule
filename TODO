@@ -3,11 +3,12 @@ TODO
 
 Development:
 
+  * create a RPM package, using the spec file.
+
  Philip Van Hoof
   * set up a bugzilla
 
  Gaute Hope
-  * create a RPM package, using the spec file.
   * better screenshots, in default gnome theme
   * release minors  twice a week
   * release majors once a month

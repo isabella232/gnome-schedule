@@ -221,6 +221,9 @@ class At:
 				os.chown(path, self.ParentClass.uid, self.ParentClass.gid)
 				execute = config.getSubin() + " " + self.ParentClass.user + " -c \"" + config.getAtbin() + " " + runat + " -f " + path + " && exit\""
 				temp = commands.getoutput(execute)
+			else:
+				execute = config.getAtbin() + " " + runat + " -f " + path
+				temp = commands.getoutput(execute)
 		else:
 			execute = config.getAtbin() + " " + runat + " -f " + path
 			temp = commands.getoutput(execute)
