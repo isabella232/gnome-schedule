@@ -214,9 +214,20 @@ class AtEditor:
 		# for being possible or not
 		if self.wording_option.get_active():
 			self.update_time()
+			#set the calendar
+			regexp = re.compile("([0-9][0-9]):([0-9][0-9])\ ([0-9][0-9][0-9][0-9])-([0-9][0-9])-([0-9][0-9])")
+			runat_g = regexp.match(self.runat)
+			if runat_g:
+				(hour, minute, year, month, day) =  runat_g.groups()
+				year = int(year)
+				month = int(month)
+				day = int(day)
+				self.calendar.select_month(month - 1, year)
+				self.calendar.select_day(day)
+				self.hour_spinbutton.set_text(hour)
+				self.minute_spinbutton.set_text(minute)
 
-
-		pass
+		return
 
 	def on_control_option_toggled (self, *args):
 		# Disable combobox
