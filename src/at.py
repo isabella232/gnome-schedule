@@ -23,8 +23,6 @@ import os
 import sys
 import tempfile
 import gobject
-import crontabEditorHelper
-import crontabEditor
 import lang
 import atEditor
 import commands
@@ -46,7 +44,7 @@ class At:
 		self.atRecordRegexAdd = re.compile('([^\s]+)\s([^\s]+)\s')
 
 		self.ParentClass = parent
-		self.ParentClass.treemodel = self.createtreemodel ()
+		
 		self.xml = self.ParentClass.xml
 
 		#init at
@@ -87,63 +85,27 @@ class At:
 		#delete it
 		execute = "atrm " + job_id
 		commands.getoutput(execute)
-		
+
+	def removetemplate (self, template_name):
+		raise 'Not implemented'
+
+	def savetemplate (self, template_name, record, nooutput, title, icon):
+		raise 'Not implemented'
+
+	def gettemplatenames (self):
+		raise 'Not implemented'
+
+	def gettemplate (self, template_name):
+		raise 'Not implemented'
+
+	# Pass this to lang.py
+	def translate_frequency (self, frequency):
+		raise 'Not implemented'
 
 	def geteditor (self):
 		return self.editor
 
-	def createtreemodel (self):
-		# [0 Title, 1 date, 2 time, 3 class, 4 id, 5 user, 6 command preview(?)]
-		# ["get file", "2004-06-17", "20:17", "a", 24, "wget http://..."]
-		return gtk.ListStore(gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING)
-		
-	def switchview (self, mode = "simple", init = 0):
-		if mode == "simple":
-			#cleaning up columns
-			if init != 1:
-				i = 4
-				while i > - 1:
-					temp = self.ParentClass.treeview.get_column(i)
-					self.ParentClass.treeview.remove_column(temp)
-					i = i -1
-				
-			# Setting up the columns
-			self.col = gtk.TreeViewColumn(_("Title"), gtk.CellRendererText(), text=0)
-			self.ParentClass.treeview.append_column(self.col)
-			self.col = gtk.TreeViewColumn(_("Date"), gtk.CellRendererText(), text=1)
-			self.ParentClass.treeview.append_column(self.col)
-			self.col = gtk.TreeViewColumn(_("Time"), gtk.CellRendererText(), text=2)
-			self.ParentClass.treeview.append_column(self.col)
-			self.col = gtk.TreeViewColumn(_("Preview"), gtk.CellRendererText(), text=6)
-			self.col.set_spacing(235)
-			self.ParentClass.treeview.append_column(self.col)
 
-
-		elif mode == "advanced":
-			#cleaning up columns
-			if init != 1:
-				i = 3
-				while i > - 1:
-					temp = self.ParentClass.treeview.get_column(i)
-					self.ParentClass.treeview.remove_column(temp)
-					i = i -1
-			
-			# Setting up the columns
-			self.col = gtk.TreeViewColumn(_("Date"), gtk.CellRendererText(), text=1)
-			self.ParentClass.treeview.append_column(self.col)
-			self.col = gtk.TreeViewColumn(_("Time"), gtk.CellRendererText(), text=2)
-			self.ParentClass.treeview.append_column(self.col)
-			self.col = gtk.TreeViewColumn(_("Id"), gtk.CellRendererText(), text=4)
-			self.ParentClass.treeview.append_column(self.col)	
-			self.col = gtk.TreeViewColumn(_("Class"), gtk.CellRendererText(), text=3)
-			self.ParentClass.treeview.append_column(self.col)	
-			self.col = gtk.TreeViewColumn(_("Preview"), gtk.CellRendererText(), text=6)
-			self.col.set_spacing(235)
-			self.ParentClass.treeview.append_column(self.col)
-
-		
-		return
-		
 	def createpreview (self, minute, hour, day, month, weekday, command):
 		raise 'Not implemented'
 
@@ -232,17 +194,6 @@ class At:
 		#would probably have to do a specific job check for each job 
 		return gtk.FALSE
 
-	def amountApp (self, amount):
-		if amount == "1":
-			return _("st.")
-		else:
-			return _("th.")
-
-	def valToTimeVal (self, val):
-		if val == "0" or val == "1" or val == "2" or val == "3" or val == "4" or val == "5" or val == "6" or val == "7" or val == "8" or val == "9":
-			return "0" + val
-		else:
-			return val
 
 	def easy (self, minute, hour, day, month, weekday):
 		raise 'Not implemented'

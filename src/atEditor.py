@@ -50,29 +50,32 @@ class AtEditor:
 		self.nooutputRegex = re.compile('([^#\n$]*)>(\s|)/dev/null\s2>&1')
 		
 		self.editing = gtk.FALSE
-		self.help_button = self.xml.get_widget ("help_button")
-		self.cancel_button = self.xml.get_widget ("cancel_button")
-		self.ok_button = self.xml.get_widget ("ok_button")
-		self.runat_entry = self.xml.get_widget("runat_entry")
-		self.title_entry = self.xml.get_widget("title_entry")
-		self.date_entry = self.xml.get_widget("date_entry")
-		self.time_entry = self.xml.get_widget("time_entry")
+		
+		# Sorry Gaute, you will need to redo this
+		
+		#self.help_button = self.xml.get_widget ("help_button")
+		#self.cancel_button = self.xml.get_widget ("cancel_button")
+		#self.ok_button = self.xml.get_widget ("ok_button")
+		#self.runat_entry = self.xml.get_widget("runat_entry")
+		#self.title_entry = self.xml.get_widget("title_entry")
+		#self.date_entry = self.xml.get_widget("date_entry")
+		#self.time_entry = self.xml.get_widget("time_entry")
 		
 
 		#this is the buffer for the textviews
-		self.commands_textview_buffer = self.xml.get_widget("commands_textview_advanced").get_buffer()
+		#self.commands_textview_buffer = self.xml.get_widget("commands_textview_advanced").get_buffer()
 		#this is the two textviews
-		self.commands_textview_advanced = self.xml.get_widget("commands_textview_advanced")
-		self.commands_textview_basic = self.xml.get_widget("commands_textview_basic")
+		#self.commands_textview_advanced = self.xml.get_widget("commands_textview_advanced")
+		#self.commands_textview_basic = self.xml.get_widget("commands_textview_basic")
 		#they are using the same buffer
-		self.commands_textview_basic.set_buffer(self.commands_textview_buffer)
+		#self.commands_textview_basic.set_buffer(self.commands_textview_buffer)
 
-		self.notebook = self.xml.get_widget("notebook")
+		#self.notebook = self.xml.get_widget("notebook")
 
-		self.xml.signal_connect("on_add_help_button_clicked", self.on_add_help_button_clicked)
-		self.xml.signal_connect("on_cancel_button_clicked", self.on_cancel_button_clicked)
-		self.xml.signal_connect("on_ok_button_clicked", self.on_ok_button_clicked)
-		self.xml.signal_connect("on_anyadvanced_entry_changed", self.on_anyadvanced_entry_changed)
+		#self.xml.signal_connect("on_add_help_button_clicked", self.on_add_help_button_clicked)
+		#self.xml.signal_connect("on_cancel_button_clicked", self.on_cancel_button_clicked)
+		#self.xml.signal_connect("on_ok_button_clicked", self.on_ok_button_clicked)
+		#self.xml.signal_connect("on_anyadvanced_entry_changed", self.on_anyadvanced_entry_changed)
 		#self.xml.signal_connect("on_anybasic_entry_changed", self.on_anybasic_entry_changed)
 		
 		
@@ -212,7 +215,3 @@ class AtEditor:
 		end = self.commands_textview_buffer.get_end_iter()
 		self.commands = self.commands_textview_buffer.get_text(start, end)
 		return
-
-	
-
-	

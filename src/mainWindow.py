@@ -29,11 +29,13 @@ import setuserWindow
 import saveWindow
 import schedule
 import crontab
+import at
 import addWindow
 import sys
 import time
 import config
 import editor
+
 from os import popen
 
 ##
@@ -95,11 +97,12 @@ class main:
 		self.treeview.get_selection().connect("changed", self.onTreeViewSelectRow)
 		self.treeview.get_selection().unselect_all()
 		
-		# TODO for at
+		
 		self.crontab = crontab.Crontab(self)
-		# self.at = at.At(self)
+		self.at = at.At(self)
+		
 		self.crontab_editor = self.crontab.geteditor ()
-		# self.at_editor = self.at.geteditor ()
+		self.at_editor = self.at.geteditor ()
 				
 		self.treeview.set_rules_hint(gtk.TRUE)
 		self.treeview.columns_autosize()
