@@ -60,7 +60,7 @@ class main:
 		
 		self.editor = None
 		self.schedule = None
-		self.haveitem = False
+		#self.haveitem = False
 
 		#start the backend where all the user configuration is stored
 		self.backend = preset.ConfigBackend(self, "gconf")
@@ -287,7 +287,7 @@ class main:
 		self.del_button.set_sensitive (value)
 		self.properties_menu.set_sensitive (value)
 		self.delete_menu.set_sensitive (value)
-		self.haveitem = value
+		#self.haveitem = value
 
 	
 	#clean existing columns
@@ -362,7 +362,7 @@ class main:
 	def on_properties_menu_activate (self, *args):
 		store, iter = self.treeview.get_selection().get_selected()
 		
-		if iter != None:
+		try:
 			#see what scheduler (at, crontab or ...)
 			self.schedule = self.treemodel.get_value(iter, 7)
 			
@@ -376,11 +376,18 @@ class main:
 			linenumber = self.treemodel.get_value(iter, 4)
 			self.editor.showedit (record, linenumber, iter, self.edit_mode)
 
+		except Exception, ex:
+			print ex
+			self.dialog = gtk.MessageDialog(self.widget, gtk.DIALOG_MODAL|gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_ERROR, gtk.BUTTONS_OK, "Please select a task")
+			self.dialog.run ()
+			self.dialog.destroy ()			
+			
+
 	# TODO: looks not that clean :)
 	def on_delete_menu_activate (self, *args):
 		store, iter = self.treeview.get_selection().get_selected()
 	
-		if iter != None:
+		try:
 			#see what scheduler (at, crontab or ...)
 			self.schedule = self.treemodel.get_value(iter, 7)
 			
@@ -420,6 +427,12 @@ class main:
 						#go first
 						selection = self.treeview.get_selection()
 						selection.select_iter(firstiter)
+						
+		except Exception, ex:
+			print ex
+			self.dialog = gtk.MessageDialog(self.widget, gtk.DIALOG_MODAL|gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_ERROR, gtk.BUTTONS_OK, "Please select a task")
+			self.dialog.run ()
+			self.dialog.destroy ()
 
 	def	on_set_user_menu_activate(self, *args):
 		self.setuserWindow.ShowSetuserWindow()
@@ -447,13 +460,13 @@ class main:
 		if key == "Delete" or key == "KP_Delete":
 			self.on_delete_menu_activate()
 		#display properties with ENTER key
-		if (key == "Return" or key == "KP_Return") and self.haveitem == True:
+		if (key == "Return" or key == "KP_Return"):
  			self.on_properties_menu_activate(self, widget)
 
 	
 	#double click on task to get properties
 	def on_treeview_button_press_event (self, widget, event):
-		if event.type == gtk.gdk._2BUTTON_PRESS and self.haveitem == True:
+		if event.type == gtk.gdk._2BUTTON_PRESS:
 			self.on_properties_menu_activate(self, widget)
 
 
