@@ -8,23 +8,12 @@ General:
 
 
 Add window:
-* Regexp to check if the values entered in the advaced add form is correct.
 * Move the value from the advaced form into the advanced help form when shown
 	- Try to parse the values and select a radiobutton if possible
-* No '> /dev/null..' stuff in the command entry, only in the preview label
-	- perhaps a label next to the entry
 
 * if 'use advanced' is selected then jumb to advaced adding
 * set up a bugzilla
-* the 'Setting' label should be a header
-* the combobox 'Every' should not be editable, perhaps change to a normal combobox
 
-
-Add help window:
-* if >1 is selected in the select every field is written then change the label to 'dayS' or appropiate
-* and 'Happends from' should be changed to 'Happends from day' [ ] to [ ]
-* 'happends all days' should be 'happends every day'
-* the 'Expression' label should be a header.
 
 Documentation:
 * Create index.htm and adding.htm files, and make the help buttons work
