@@ -9,10 +9,6 @@ atqbin = "@ATQ_CONFIG@"
 atrmbin = "@ATRM_CONFIG@"
 batchbin = "@BATCH_CONFIG@"
 subin = "@SU_CONFIG@"
-chownbin = "@CHOWN_CONFIG@"
-
-def getChmodbin ():
-	return chmodbin
 
 def getSubin ():
 	return subin

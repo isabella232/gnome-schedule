@@ -274,14 +274,14 @@ class At:
 		if self.ParentClass.root == 1:
 			if self.ParentClass.user != "root":
 				#changes the ownership
-				execute = config.getChownbin() + " " + self.ParentClass.user + ": " + path
-				temp = commands.getoutput(execute)
+				os.chown(path, self.ParentClass.uid, self.ParentClass.gid)
 				execute = config.getSubin() + " " + self.ParentClass.user + " -c \"" + config.getAtbin() + " " + runat + " -f " + path + " && exit\""
 				temp = commands.getoutput(execute)
 
 		else:
 			execute = config.getAtbin() + " " + runat + " -f " + path
 			temp = commands.getoutput(execute)
+
 
 		os.unlink (path)
 		self.ParentClass.schedule_reload ("at")
@@ -311,8 +311,8 @@ class At:
 
 		if self.ParentClass.root == 1:
 			if self.ParentClass.user != "root":
-				execute = config.getChownbin() + " " + self.ParentClass.user + ": " + path
-				temp = commands.getoutput(execute)
+				#changes the ownership
+				os.chown(path, self.ParentClass.uid, self.ParentClass.gid)
 				execute = config.getSubin() + " " + self.ParentClass.user + " -c \"" + config.getAtbin() + " " + runat + " -f " + path + " && exit\""
 				temp = commands.getoutput(execute)
 		else:

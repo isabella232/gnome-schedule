@@ -362,6 +362,8 @@ class main:
 		else:
 			self.root = 0
 			self.user = os.environ['USER']
+		self.uid = UID
+		self.gid = os.getegid()
 
 
 	def on_add_button_clicked (self, *args):

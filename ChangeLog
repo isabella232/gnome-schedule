@@ -1,3 +1,8 @@
+2004-07-29  Gaute Hope <eg@gaute.eu.org>
+	
+	* at.py: Changed chown into using the os.chown feature, also saving the uid and gid since it is needed
+	* configure.py.in: Removed the chown stuff.
+
 2004-07-23  Gaute Hope <eg@gaute.eu.org>
 
 	* at.py, config.py.in: Changed chmod into chown as it should have been from before. This makes it more secure.
