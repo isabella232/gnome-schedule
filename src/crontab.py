@@ -67,9 +67,9 @@ class Crontab:
 			return None
 
 	def gettemplate (self, template_name):
-		icon_uri = support.gconf_client.get_string("/apps/gnome-schedule/templates/crontab/%s/icon" % (template_name))
+		icon_uri = support.gconf_client.get_string("/apps/gnome-schedule/templates/crontab/%s/icon_uri" % (template_name))
 		command = support.gconf_client.get_string("/apps/gnome-schedule/templates/crontab/%s/command" % (template_name))
-		frequency = support.gconf_client.get_string("/apps/gnome-schedule/templates/crontab/%s/crontab_frequency" % (template_name))
+		frequency = support.gconf_client.get_string("/apps/gnome-schedule/templates/crontab/%s/frequency" % (template_name))
 		title = support.gconf_client.get_string("/apps/gnome-schedule/templates/crontab/%s/title" % (template_name))
 
 		return icon_uri, command, frequency, title
@@ -142,24 +142,25 @@ class Crontab:
 		return "* * * * * "+ _("command")
 
 	def getfrequency (self, minute, hour, day, month, weekday):
-		index = _("use advanced")
-		# index = 0
+		# index = _("use advanced")
+		index = 0
 
 		# Must be translatable, it's the actual content of the combobox-entry
 		if minute == "*" and hour == "*" and month == "*" and day == "*" and weekday == "*":
-			index = self.translate_frequency ("minute")
-			# index = 1
+			# index = self.translate_frequency ("minute")
+			index = 1
 		if minute == "0" and hour == "*" and month == "*" and day == "*" and weekday == "*":
-			index = self.translate_frequency ("hour")
-			# index = 2
+			# index = self.translate_frequency ("hour")
+			index = 2
 		if minute == "0" and hour == "0" and month == "*" and day == "*" and weekday == "*":
-			index = self.translate_frequency ("day")
-			# index = 3
+			# index = self.translate_frequency ("day")
+			index = 3
 		if minute == "0" and hour == "0" and month == "*" and day == "1" and weekday == "*":
-			index = self.translate_frequency ("month")
-			# index = 4
+			# index = self.translate_frequency ("month")
+			index = 4
 		if minute == "0" and hour == "0" and month == "*" and day == "*" and weekday == "0":
-			index = self.translate_frequency ("week")
+			# index = self.translate_frequency ("week")
+			index = 5
 
 		return index
 		

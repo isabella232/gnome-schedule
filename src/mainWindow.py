@@ -100,10 +100,12 @@ class main:
 		try:
 			# this tries to fix a bug in libglade (the homogeneous propery ain't working)
 			self.toolbar = self.xml.get_widget ("toolbar")
+			print "Happened"
 			self.toolbar.get_nth_item (0).set_homogeneous (gtk.TRUE)
 			self.toolbar.get_nth_item (1).set_homogeneous (gtk.TRUE)
 			self.toolbar.get_nth_item (2).set_homogeneous (gtk.TRUE)
 			self.toolbar.get_nth_item (3).set_homogeneous (gtk.TRUE)
+			print "Happened"
 		except:
 			pass
 
@@ -162,7 +164,10 @@ class main:
 		else:
 			self.xml.signal_connect("on_btnSetUser_clicked", self.showSetUser)
 
-		gtk.mainloop()
+		try:
+			gtk.main ()
+		except:
+			gtk.mainloop()
 		return
 
 	def init_treeview(self, mode = "simple", init = 0):
@@ -185,7 +190,10 @@ class main:
 
 
 	def quit (self, *args):
-		gtk.mainquit()
+		try:
+			gtk.main_quit ()
+		except:
+			gtk.mainquit()
 
 	def readUser (self):
 		UID = os.geteuid()
