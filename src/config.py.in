@@ -8,6 +8,14 @@ atbin = "@AT_CONFIG@"
 atqbin = "@ATQ_CONFIG@"
 atrmbin = "@ATRM_CONFIG@"
 batchbin = "@BATCH_CONFIG@"
+subin = "@SU_CONFIG@"
+chmodbin = "@CHMOD_CONFIG@"
+
+def getChmodbin ():
+	return chmodbin
+
+def getSubin ():
+	return subin
 
 def getAtbin ():
 	return atbin

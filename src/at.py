@@ -253,7 +253,7 @@ class At:
 
 	def update (self, job_id, runat, command, title, icon):
 		#remove old
-		execute = "atrm " + str(job_id)
+		execute = config.getAtrmbin() + " " + str(job_id)
 		commands.getoutput(execute)
 		
 		#add new
@@ -270,8 +270,19 @@ class At:
 			tmp.write("ICON=None\n")
 		tmp.write (command + "\n")
 		tmp.close ()
-		execute = config.getAtbin() + " " + runat + " -f " + path
-		temp = commands.getoutput(execute)
+
+		if self.ParentClass.root == 1:
+			if self.ParentClass.user != "root":
+				#makes file readable by the user
+				execute = config.getChmodbin() + " o+r " + path
+				temp = commands.getoutput(execute)
+				execute = config.getSubin() + " " + self.ParentClass.user + " -c \"" + config.getAtbin() + " " + runat + " -f " + path + " && exit\""
+				temp = commands.getoutput(execute)
+
+		else:
+			execute = config.getAtbin() + " " + runat + " -f " + path
+			temp = commands.getoutput(execute)
+
 		os.unlink (path)
 		self.ParentClass.schedule_reload ("at")
 
@@ -297,8 +308,16 @@ class At:
 
 		tmp.write (command + "\n")
 		tmp.close ()
-		execute = config.getAtbin() + " " + runat + " -f " + path
-		temp = commands.getoutput(execute)
+
+		if self.ParentClass.root == 1:
+			if self.ParentClass.user != "root":
+				temp = commands.getoutput(execute)
+				execute = config.getSubin() + " " + self.ParentClass.user + " -c \"" + config.getAtbin() + " " + runat + " -f " + path + " && exit\""
+				temp = commands.getoutput(execute)
+		else:
+			execute = config.getAtbin() + " " + runat + " -f " + path
+			temp = commands.getoutput(execute)
+
 		#print execute
 		#print temp
 		os.unlink (path)
@@ -445,7 +464,7 @@ class At:
 
 		result = result.replace("\n",";")
 		#remove ending newlines, not if result len = 0
-		if len(result) <= 0:
+		if len(result) < 2:
 			done = 1
 		else:
 			done = 0
@@ -455,7 +474,7 @@ class At:
 			else:
 				done = 1
 		#remove beginning newlines
-		if len(result) <= 0:
+		if len(result) < 2:
 			done = 1
 		else:
 			done = 0
@@ -488,10 +507,11 @@ class At:
 					script, title, icon, prelen, dangerous = self.prepare_script (script)
 					#removing ending newlines, but keep one
 					#if a date before this is selected the record is removed, this creates an error, and generally if the script is of zero length
-					if len(script) == 0:
+					if len(script) < 2:
 						done = 1
 					else:
 						done = 0
+
 					while done == 0:
 						if script[-1] == "\n":
 							script = script[0:-1]

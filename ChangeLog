@@ -1,3 +1,7 @@
+2004-07-22  Gaute Hope <eg@gaute.eu.org>
+
+	* at.py, config.py.in: At editing in root now saves the file as the user that is selected. Two new binaries are needed: 'su' and 'chmod'. And changed some of the parsing of the script since it crashed when it was empty.
+
 2004-07-20  Gaute Hope <eg@gaute.eu.org>
 
 	* crontabEditor.py: The save button is now not active if the entered text is equal to the no preset text

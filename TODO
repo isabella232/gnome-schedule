@@ -15,7 +15,9 @@ Development:
  
  Unassigned release blockers
 
- * None!
+ * Add 'su' check to configure script
+ * Add 'chmod' check to configure script, or use another way to change the permission of the file. 
+   Perhaps use tempfile.TemporaryFile or something alike to set the mode at once.
 
  Unassigned unstable (need a new branch and/or will not be 
  included in the next release)
