@@ -159,6 +159,7 @@ class CrontabEditor:
 			self.check_field_format (self.month, "month")
 			self.check_field_format (self.weekday, "weekday")
 		except Exception, ex:
+			print ex
 			x, y, z = ex
 			self.WrongRecordDialog (x, y, z)
 			return
