@@ -51,7 +51,7 @@ class At:
 		self.init ()
 
 		#reading at
-		self.read ()
+		#self.read ()
 
 
 		self.editorwidget = self.xml.get_widget("atEditor")

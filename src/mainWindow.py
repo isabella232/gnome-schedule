@@ -26,7 +26,6 @@ import gtk.glade
 import support
 import gconf
 import setuserWindow
-import saveWindow
 import schedule
 import crontab
 import at
