@@ -35,6 +35,13 @@ Support
   version of PyGTK. You are free to wait for the major distributions to
   include PyGTK >= 2.4 or install an unstable version of PyGTK.
 
+   Note that if you don't install PyGTK in your standard prefix, you
+   will have to use something like this before running the ./autogen.sh
+   and/or ./configure scripts:
+ 
+   export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:/usr/lib/pkgconfig
+
+
 Compiling and HACKING
 ---------------------
 
