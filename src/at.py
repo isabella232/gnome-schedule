@@ -260,15 +260,21 @@ class At:
 			result = lines[prelen:(-1 - prelen)]
 
 		result = result.replace("\n",";")
-		#remove ending newlines
-		done = 0
+		#remove ending newlines, not if result len = 0
+		if len(result) <= 0:
+			done = 1
+		else:
+			done = 0
 		while done == 0:
 			if result[-1] == ";":
 				result = result[0:-1]
 			else:
 				done = 1
 		#remove beginning newlines
-		done = 0
+		if len(result) <= 0:
+			done = 1
+		else:
+			done = 0
 		while done == 0:
 			if result[0] == ";":
 				result = result[1:]
