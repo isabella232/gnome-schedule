@@ -1,0 +1,21 @@
+Summary: A graphical tool for configuring at and crontab
+Name: gnome-schedule
+Version: 1.0_beta
+Release: 1
+Copyright: GPL
+Group: Applications/System
+Source: ftp://gaute.eu.org/pub/gnome-schedule/gnome-shcedule-1.0_beta.tar.gz
+Buildroot: /var/tmp/%{name}-buildroot
+
+%description
+Gnome-schedule is a GNOME GUI for configuring a users crontab. It was made for Vixie cron whom comes with Fedora Linux, but should work with other cron servers aswell if the format of the config file is similar.
+
+%prep
+%setup 
+
+%build
+./configure --prefix=/usr
+make
+
+%install
+make install
