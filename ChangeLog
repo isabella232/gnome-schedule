@@ -1,6 +1,7 @@
 2004-08-01  Gaute Hope <eg@gaute.eu.org>
 
 	* configure.ac, dist/gentoo/gnome-schedule-0.1.0.ebuild.in: Changed version number to: 0.1.0, changed name of the ebuild
+	* atEditor.py: Fixed the bug where things get reset when they are supposed to be loaded from the treemodel. The template combobox events are disabled on loading of the form. So are the synchronising of between the time combo and the calendar. This shortens the use of __update_textboxes__ from 11 down to about 2 on a load.
 
 2004-07-31  Gaute Hope <eg@gaute.eu.org>
 

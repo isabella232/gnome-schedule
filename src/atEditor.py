@@ -24,7 +24,7 @@ import gconf
 #python modules
 import re
 import time
-import calender
+import calendar
 
 #custom modules
 import support
@@ -52,6 +52,8 @@ class AtEditor:
 		self.nooutputRegex = re.compile('([^#\n$]*)>(\s|)/dev/null\s2>&1')
 		#self.editing = gtk.FALSE
 		self.noevents = gtk.FALSE
+		self.NOACTION = gtk.FALSE	#getting alot of these now.. this is for abosultely noactions of the syncing and templates stuff
+		self.noupdate = gtk.FALSE
 		self.template_combobox_model = None
 		self.first = 0
 		self.combo_trigger = gtk.FALSE
@@ -108,6 +110,7 @@ class AtEditor:
 
 
 	def showadd (self, mode):
+		self.NOACTION = gtk.TRUE
 		self.__reset__ ()
 		self.title = _("Untitled")
 		self.editing = gtk.FALSE
@@ -116,12 +119,14 @@ class AtEditor:
 		
 		self.__loadicon__ ()
 		self.__reload_templates__ ()
-
+		self.__update_textboxes__()
+		self.NOACTION = gtk.FALSE
 
 	def showedit (self, record, job_id, iter, mode):
-		
+
 		self.editing = gtk.TRUE
-		
+		self.NOACTION = gtk.TRUE
+
 		self.job_id = job_id
 		self.date = self.ParentClass.ParentClass.treemodel.get_value(iter, 9)
 		self.time = self.ParentClass.ParentClass.treemodel.get_value(iter, 12)
@@ -141,8 +146,8 @@ class AtEditor:
 		self.__update_textboxes__ ()
 		self.parentiter = iter
 		self.widget.show ()
-
 		self.__reload_templates__ ()
+		self.NOACTION = gtk.FALSE
 
 	def on_worded_label_event (self, *args):
 		#TODO highlight on mouseover
@@ -184,7 +189,7 @@ class AtEditor:
 
 	
 	def __update_time_cal__ (self):
-
+		if self.NOACTION != gtk.TRUE:
 			(year, month, day) = self.calendar.get_date()
 			hour = self.hour_spinbutton.get_text()
 			minute = self.minute_spinbutton.get_text()
@@ -229,6 +234,7 @@ class AtEditor:
 
 
 	def __update_time_combo__ (self):
+		if self.NOACTION != gtk.TRUE:
 
 			#update variables, set calendar
 			runat = self.combobox_entry.get_text ()
@@ -250,10 +256,11 @@ class AtEditor:
 
 				
 	def on_combobox_changed (self, *args):
-		if self.noupdate == gtk.FALSE:	
-			self.combo_trigger = gtk.TRUE
-			self.__update_time_combo__()
-			self.combo_trigger = gtk.FALSE
+		if self.NOACTION != gtk.TRUE:
+			if self.noupdate == gtk.FALSE:	
+				self.combo_trigger = gtk.TRUE
+				self.__update_time_combo__()
+				self.combo_trigger = gtk.FALSE
 
 
 	def on_delete_button_clicked (self, *args):
@@ -275,10 +282,13 @@ class AtEditor:
 			
 
 	def gconfkey_changed (self, client, connection_id, entry, args):
-		self.__reload_templates__ ()
+		if self.NOACTION != gtk.TRUE:
+
+			self.__reload_templates__ ()
 
 
 	def __reload_templates__ (self):
+
 		self.template_names = preset.gettemplatenames ("at")
 		if not (self.template_names == None or len (self.template_names) <= 0):
 			active = self.template_combobox.get_active ()
@@ -298,7 +308,12 @@ class AtEditor:
 			
 			for template_name in self.template_names:
 				thetemplate = preset.gettemplate ("at",template_name)
-				icon_uri, command, runat, title, name,  = thetemplate
+				icon_uri, command, runat, title, name  = thetemplate
+				#print "icon_uri: " + icon_uri
+				#print "command: " + command
+				#print "runat: " + runat
+				#print "title: " + title
+				#print "name: " + name
 				self.template_combobox_model.append([name, template_name, thetemplate])
 						
 			self.remove_button.set_sensitive (gtk.TRUE)
@@ -307,45 +322,50 @@ class AtEditor:
 		
 
 	def on_template_combobox_entry_changed (self, widget):
-		firstiter = self.template_combobox_model.get_iter_first()
-		notemplate = self.template_combobox_model.get_value(firstiter,0)
-		entry = self.template_combobox.get_child().get_text()
-		if notemplate != entry:
-			self.save_button.set_sensitive (gtk.TRUE)
-		else:
-			self.save_button.set_sensitive (gtk.FALSE)
+		if self.NOACTION != gtk.TRUE:
+			firstiter = self.template_combobox_model.get_iter_first()
+			notemplate = self.template_combobox_model.get_value(firstiter,0)
+			entry = self.template_combobox.get_child().get_text()
+			if notemplate != entry:
+				self.save_button.set_sensitive (gtk.TRUE)
+			else:
+				self.save_button.set_sensitive (gtk.FALSE)
 	
 
 	def on_template_combobox_changed (self, *args):
-		if self.noevents == gtk.FALSE:
-			iter = self.template_combobox.get_active_iter ()
-			if iter == None:
-				return
-			template = self.template_combobox_model.get_value(iter, 2)
-			if template != None:
-				self.remove_button.set_sensitive (gtk.TRUE)
-				icon_uri, runat, title, name, command = template
-				if icon_uri != None:
-					pixbuf = gtk.gdk.pixbuf_new_from_file_at_size (icon_uri, 60, 60)
-					self.template_image.set_from_pixbuf(pixbuf)
-					self.icon = icon_uri
+		if self.NOACTION != gtk.TRUE:
+			if self.noevents == gtk.FALSE:
+				iter = self.template_combobox.get_active_iter ()
+				if iter == None:
+					return
+				template = self.template_combobox_model.get_value(iter, 2)
+				if template != None:
+					self.remove_button.set_sensitive (gtk.TRUE)
+					icon_uri, command, runat, title, name = template
+					if icon_uri != None:
+						pixbuf = gtk.gdk.pixbuf_new_from_file_at_size (icon_uri, 60, 60)
+						self.template_image.set_from_pixbuf(pixbuf)
+						self.icon = icon_uri
+					else:
+						self.__loadicon__ ()
+					self.title = title
+					self.command = command
+					if runat != None:
+						self.runat = runat
+
+						self.__update_textboxes__ ()
+
+						self.on_combobox_changed()
+					else:		
+						self.__update_textboxes__ ()
 				else:
+					self.remove_button.set_sensitive (gtk.FALSE)
+					self.save_button.set_sensitive (gtk.FALSE)
 					self.__loadicon__ ()
-				self.title = title
-				self.command = command
-				if runat != None:
-					self.runat = runat
-					self.__update_textboxes__ ()
-					self.on_combobox_changed()
-				else:					
-					self.__update_textboxes__ ()
-			else:
-				self.remove_button.set_sensitive (gtk.FALSE)
-				self.save_button.set_sensitive (gtk.FALSE)
-				self.__loadicon__ ()
-				self.__reset__ ()
 
-
+					self.__reset__ ()
+	
+	
 	def on_image_button_clicked (self, *args):
 		preview = gtk.Image()
 		preview.show()
@@ -357,6 +377,7 @@ class AtEditor:
 		if res != gtk.RESPONSE_REJECT:
 			self.icon = iconopendialog.get_filename()
 		iconopendialog.destroy ()
+
 		self.__update_textboxes__ ()
 
 #	def update_preview_cb(self, file_chooser, preview):
@@ -395,10 +416,12 @@ class AtEditor:
 		hour = ctime[3]
 		minute = ctime[4]
 		
-		firstday, ndays = calender.monthrange(month,year)
+
+
+		firstday, ndays = calendar.monthrange(year,month)
 		
 		if day == ndays:
-			if month != 12
+			if month != 12:
 				month = month + 1
 			else:
 				month = 1
@@ -413,12 +436,16 @@ class AtEditor:
 		self.calendar.select_day(day)
 		self.hour_spinbutton.set_text(str(hour))
 		self.minute_spinbutton.set_text(str(minute))
-	
+
 		self.__update_textboxes__ () #update_textboxes inside
 		
 
 	def __update_textboxes__(self, update_runat = 1):
+
 		self.noevents = gtk.TRUE
+		if self.title == None:
+			self.title = "Untitled"
+
 		self.title_entry.set_text(self.title)
 		self.script_textview_buffer.set_text(self.command)
 		if update_runat:
