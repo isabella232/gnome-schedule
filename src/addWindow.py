@@ -45,8 +45,7 @@ class AddWindow:
 		self.cancel_button = self.xml.get_widget ("cancel_button")
 		self.ok_button = self.xml.get_widget ("ok_button")
 		self.title_entry = self.xml.get_widget ("title_entry")
-		self.frequency_combobox = self.xml.get_widget ("frequency_combobox")
-
+		self.frequency_combobox = self.xml.get_widget ("frequency_combobox").get_child()
 
 		self.command_entry = self.xml.get_widget ("command_entry")
 		self.minute_entry = self.xml.get_widget ("minute_entry")
@@ -115,21 +114,19 @@ class AddWindow:
 
 
 	def set_frequency_combo (self):
-		index = 5
+		index = "use advanced"
 
-		if self.minute != "*" and self.hour == "*" and self.month == "*" and self.day == "*" and self.weekday == "*":
-			index = 0
-		if self.minute == "*" and self.hour != "*" and self.month == "*" and self.day == "*" and self.weekday == "*":
-			index = 1
-		if self.minute == "*" and self.hour == "*" and self.month == "*" and self.day != "*" and self.weekday == "*":
-			index = 2
-		if self.minute == "*" and self.hour == "*" and self.month == "*" and self.day == "*" and self.weekday != "*":
-			index = 3
-		if self.minute == "*" and self.hour == "*" and self.month != "*" and self.day == "*" and self.weekday == "*":
-			index = 4
+		if self.minute == "*" and self.hour == "*" and self.month == "*" and self.day == "*" and self.weekday == "*":
+			index = "minute"
+		if self.minute == "0" and self.hour == "*" and self.month == "*" and self.day == "*" and self.weekday == "*":
+			index = "hour"
+		if self.minute == "0" and self.hour == "0" and self.month == "*" and self.day == "*" and self.weekday == "*":
+			index = "day"
+		if self.minute == "0" and self.hour == "0" and self.month == "*" and self.day == "1" and self.weekday == "*":
+			index = "month"
 
-		self.frequency = index
-		self.frequency_combobox.set_active (self.frequency)
+
+		self.frequency_combobox.set_text (index)
 
 
 	def reset (self):
@@ -173,9 +170,8 @@ class AddWindow:
 			self.update_textboxes ()
 
 	def on_frequency_combobox_changed (self, bin):
-		temp = bin.get_child()
-		temp = temp.get_text()
-		self.frequency = temp
+		temp = 	self.frequency_combobox.get_text()
+
 		if temp == "minute":
 			self.minute = "*"
 			self.hour = "*"
