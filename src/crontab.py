@@ -40,7 +40,8 @@ class Crontab:
 	def __init__(self,root,user,uid,gid):
 		#default preview length
 		self.preview_len = 50
-		self.root =	0
+		self.root = root
+		self.set_rights(user,uid,gid)
 		
 		# TODO: shouldn't be gnome specific
 		self.defaultIcon = "/usr/share/icons/gnome/48x48/mimetypes/gnome-mime-application.png"
