@@ -52,7 +52,7 @@ class AddWindow:
 		self.frequency_combobox.connect("key_press_event", self.frequency_combobox_keypress)
 
 		self.basic_table = self.xml.get_widget ("basic_table")
-
+		self.nooutput_label = self.xml.get_widget ("nooutput_label")
 		self.command_entry = self.xml.get_widget ("command_entry")
 		self.minute_entry = self.xml.get_widget ("minute_entry")
 		self.hour_entry = self.xml.get_widget ("hour_entry")
@@ -61,7 +61,7 @@ class AddWindow:
 		self.weekday_entry = self.xml.get_widget ("weekday_entry")
 		self.setting_label = self.xml.get_widget ("setting_label")
 		self.chkNoOutput = self.xml.get_widget("chkNoOutput")
-		
+
 		self.xml.signal_connect("on_help_button_clicked", self.on_help_button_clicked)
 		self.xml.signal_connect("on_cancel_button_clicked", self.on_cancel_button_clicked)
 		self.xml.signal_connect("on_ok_button_clicked", self.on_ok_button_clicked)
@@ -72,8 +72,6 @@ class AddWindow:
 
 		self.xml.signal_connect("on_fieldHelp_clicked", self.on_fieldHelp_clicked)
 
-
-		
 		self.nooutput = self.chkNoOutput.get_active()
 		self.nooutputRegex = re.compile('([^#\n$]*)>(\s|)/dev/null\s2>&1')
 
@@ -87,12 +85,17 @@ class AddWindow:
 		self.parentiter = iter
 		self.widget.show_all()
 		
-		
 		m = self.nooutputRegex.match (self.command)
 		if (m != None):
+			self.nooutput_label.show ()
+			self.command = m.groups()[0]
+			self.command_entry.set_text (self.command)
 			self.chkNoOutput.set_active (gtk.TRUE)
+			self.nooutput = gtk.TRUE
 		else:
+			self.nooutput_label.hide ()
 			self.chkNoOutput.set_active (gtk.FALSE)
+			self.nooutput = gtk.FALSE
 
 	def frequency_combobox_keypress (self, *args):
 		return gtk.TRUE
@@ -112,6 +115,8 @@ class AddWindow:
 		self.editing = gtk.FALSE
 		self.widget.set_title(_("Create a new scheduled task"))
 		self.widget.show_all()
+		self.nooutput_label.hide ()
+		self.nooutput = gtk.FALSE
 		self.chkNoOutput.set_active (gtk.FALSE)
 
 	def on_help_button_clicked (self, *args):
@@ -122,20 +127,28 @@ class AddWindow:
 		return gtk.TRUE
 
 	def on_ok_button_clicked (self, *args):
-		record = self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday + " " + self.command + " # " + self.title
-		
+		space = " "
+		if self.nooutput:
+			if self.command[len(self.command)-1] == " ":
+				space = ""
+			record = self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday + " " + self.command + space + self.nooutputtag + " # " + self.title
+		else:
+			record = self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday + " " + self.command + " # " + self.title
+
 		if self.editing != gtk.FALSE:
 			self.crontab.updateLine (self.linenumber, record)
 			self.ParentClass.treemodel.set_value (self.parentiter, 3, record)
 			self.ParentClass.treemodel.set_value (self.parentiter, 0, self.title)
 			easystring = self.crontab.easyString (self.minute, self.hour, self.day, self.month, self.weekday)
 			self.ParentClass.treemodel.set_value (self.parentiter, 1, easystring)
-			self.ParentClass.treemodel.set_value (self.parentiter, 2, self.command)
-			self.ParentClass.treemodel.set_value (self.parentiter, 2, self.command)
+			if self.nooutput:
+				self.ParentClass.treemodel.set_value (self.parentiter, 2, self.command + space + self.nooutputtag)
+			else:
+				self.ParentClass.treemodel.set_value (self.parentiter, 2, self.command)
 			self.ParentClass.treemodel.set_value (self.parentiter, 5, self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday)
 		else:
 			self.crontab.appendLine (record)
-			self.ParentClass.treemodel.clear ()		
+			self.ParentClass.treemodel.clear ()
 			self.ParentClass.crontab.readCrontab ()
 
 		self.widget.hide ()
@@ -178,8 +191,8 @@ class AddWindow:
 		
 
 	def update_textboxes (self):
-		self.nooutput = self.chkNoOutput.get_active()	
 		self.noevents = gtk.TRUE
+		self.chkNoOutput.set_active (self.nooutput)
 		self.command_entry.set_text (self.command)
 		self.title_entry.set_text (self.title)
 		self.minute_entry.set_text (self.minute)
@@ -188,8 +201,7 @@ class AddWindow:
 		self.month_entry.set_text (self.month)
 		self.weekday_entry.set_text (self.weekday)
 		self.setting_label.set_text (self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday + " " + self.command)	
-		self.set_frequency_combo()	
-				
+		self.set_frequency_combo()
 		self.noevents = gtk.FALSE
 
 	def on_anyadvanced_entry_changed (self, *args):
@@ -207,27 +219,28 @@ class AddWindow:
 		if self.noevents == gtk.FALSE:
 			self.command = self.command_entry.get_text ()
 			self.title = self.title_entry.get_text ()
-			self.output = self.chkNoOutput.get_active()
-			self.update_textboxes ()
 			self.nooutput = self.chkNoOutput.get_active()
-		
-			self.noevents = gtk.TRUE
-			m = self.nooutputRegex.match (self.command)
+			self.update_textboxes ()
+
+			# self.noevents = gtk.TRUE
+			#m = self.nooutputRegex.match (self.command)
 			if self.nooutput:
-				if m == None:
-					if len (self.command) > 0 and self.command[len(self.command)-1] != " ":
-						self.command = self.command + " "
-					self.command = self.command + self.nooutputtag
-					self.command_entry.set_text (self.command)
+				#if m == None:
+					#if len (self.command) > 0 and self.command[len(self.command)-1] != " ":
+					#	self.command = self.command + " "
+					#self.command = self.command + self.nooutputtag
+					#self.command_entry.set_text (self.command)
+				self.nooutput_label.show ()
 			else:
-				if m != None:
-					self.command = m.groups()[0]
-					self.command_entry.set_text (self.command)
-			self.noevents = gtk.FALSE
+				#if m != None:
+					#self.command = m.groups()[0]
+					#self.command_entry.set_text (self.command)
+				self.nooutput_label.hide ()
+			# self.noevents = gtk.FALSE
 
 
 	def on_frequency_combobox_changed (self, bin):
-		temp = 	self.frequency_combobox.get_text()
+		temp = self.frequency_combobox.get_text()
 
 		if temp == "minute":
 			self.minute = "*"
