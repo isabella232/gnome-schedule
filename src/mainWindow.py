@@ -221,18 +221,25 @@ class main:
 			self.treeview.append_column(col)
 			col = gtk.TreeViewColumn(_("Frequency or time"), gtk.CellRendererText(), text=1)
 			self.treeview.append_column(col)
+
+			col = gtk.TreeViewColumn(_("Type"), gtk.CellRendererText(), text=12)
+			self.treeview.append_column(col)
+
 			col = gtk.TreeViewColumn(_("Preview"), gtk.CellRendererText(), text=2)
 			col.set_spacing(235)
 			self.treeview.append_column(col)
 
-			col = gtk.TreeViewColumn(_("Type"), gtk.CellRendererText(), text=12)
-			self.treeview.append_column(col)
+
 
 		elif mode == "advanced":
 			self.cleancolumns (init)		
 			# col = gtk.TreeViewColumn(_("Icon"), gtk.CellRendererText(), text=6)
 			# self.ParentClass.treeview.append_column(col)
 			col = gtk.TreeViewColumn(_("Frequency or time"), gtk.CellRendererText(), text=5)
+
+			col = gtk.TreeViewColumn(_("Type"), gtk.CellRendererText(), text=12)
+			self.treeview.append_column(col)
+
 			self.treeview.append_column(col)
 			col = gtk.TreeViewColumn(_("Preview"), gtk.CellRendererText(), text=2)
 			self.treeview.append_column(col)
@@ -240,8 +247,7 @@ class main:
 			col.set_spacing(235)
 			self.treeview.append_column(col)
 
-			col = gtk.TreeViewColumn(_("Type"), gtk.CellRendererText(), text=12)
-			self.treeview.append_column(col)
+
 
 		if self.root == 0:
 			self.btnSetUser.hide()
@@ -338,17 +344,18 @@ class main:
 		self.editor = self.schedule.geteditor ()
 		
 		if iter != None:
-			record = self.treemodel.get_value(iter, 3)
-			linenumber = self.treemodel.get_value(iter, 4)
-			self.schedule.delete (linenumber)
-			self.treemodel.clear ()		
-			self.schedule.read ()
+			if self.mode == "crontab":
+				record = self.treemodel.get_value(iter, 3)
+				linenumber = self.treemodel.get_value(iter, 4)
+				self.schedule.delete (linenumber)
+				self.treemodel.clear ()		
+				self.schedule.read ()
 
-			#moving to first
-			iter =  self.treemodel.get_iter_first()
-			if iter:
-				selection = self.treeview.get_selection()
-				selection.select_iter(iter)
+				#moving to first
+				iter =  self.treemodel.get_iter_first()
+				if iter:
+					selection = self.treeview.get_selection()
+					selection.select_iter(iter)
 		return
 
 	def on_quit_menu_activate (self, *args):
