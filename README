@@ -41,11 +41,17 @@ Support
  
    export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:/usr/lib/pkgconfig
 
+   For distributors: A script $prefix/bin/gnome-schedule. It's generated
+   from the src/gnome-schedule.in file. It will also set the PYTHONPATH
+   evironment variable correct for the session that will run the python
+   script. This way it's possible to both compile and run the application
+   without the need for globally registering the location of the PyGTK
+   libraries.
 
 Compiling and HACKING
 ---------------------
 
-  Gnome Schedule is (being) written using the programming language Python
+  GNOME Schedule is (being) written using the programming language Python
   and uses the PyGTK and Python-GConf bindings. No we are not planning
   to rewrite the tool in Perl just so that you can prove that Perl can
   do the same thing. To be honest, that would be a silly, stupid and 
@@ -63,7 +69,7 @@ Compiling and HACKING
 
 	o. http://lists.sourceforge.net/mailman/listinfo/gnome-schedule-devel
 
-  To compile Gnome Schedule from CVS you will also need
+  To compile GNOME Schedule from CVS you will also need
 
 	o. A CVS client
 	o. autoconf and the other auto* tools (version >= 1.7)
