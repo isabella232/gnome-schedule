@@ -26,8 +26,8 @@ import gobject
 import lang
 import atEditor
 import commands
-
-
+import config
+import string
 
 ##
 ## I18N
@@ -43,9 +43,20 @@ class At:
 		self.atRecordRegex = re.compile('([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)')
 		self.atRecordRegexAdd = re.compile('([^\s]+)\s([^\s]+)\s')
 
+		self.atRecordRegexAdded = re.compile('[^\s]+\s([0-9]+)\sat')
+
 		self.ParentClass = parent
-		
 		self.xml = self.ParentClass.xml
+
+		rem = self.append ("tomorrow", "")
+		m = self.atRecordRegexAdded.match (rem)
+		if m != None:
+			execute = config.getAtbin() + " -c " + m.groups()[0]
+			self.ignore_lines = os.popen(execute).readlines()
+			self.delete (m.groups()[0])
+			# print self.ignore_lines
+		else:
+			print "Problem learning the lines to ignore"
 
 		#init at
 		self.init ()
@@ -130,16 +141,14 @@ class At:
 		tmp = os.fdopen(fd, 'w')
 		tmp.write (command + "\n")
 		tmp.close ()
-		execute = "at " + runat + " -f " + path
+		execute = config.getAtbin() + " " + runat + " -f " + path
 		temp = commands.getoutput(execute)
 		os.unlink (path)
 
 	def delete (self, jobid):
 		if jobid:
-			execute = "atrm " + str(jobid)
+			execute = config.getAtrmbin()+ " " + str(jobid)
 		commands.getoutput(execute)
-		
-			
 		return
 
 	def append (self, runat, command):
@@ -148,38 +157,78 @@ class At:
 		tmp = os.fdopen(fd, 'w')
 		tmp.write (command + "\n")
 		tmp.close ()
-		execute = "at " + runat + " -f " + path
+		execute = config.getAtbin() + " " + runat + " -f " + path
 		temp = commands.getoutput(execute)
 		os.unlink (path)
-
-
-		return
+		return temp
 
 	def read (self):
 		#do 'atq'
-		execute = "atq"
+		execute = config.getAtqbin ()
 		self.lines = os.popen(execute).readlines()
 		for line in self.lines:
 			array_or_false = self.parse (line)
 			if array_or_false != gtk.FALSE:
-				(job_id, date, time, class_id, user, title, command) = array_or_false
-				icon_pix = None
-				iter = self.ParentClass.treemodel.append([title, time + " " + date, command, "", int(job_id), time, icon_pix, self, date, class_id, user, "Defined", "at"])
-				print int(job_id)
+				(job_id, date, time, class_id, user, lines, title, icon) = array_or_false
+
+				if icon != None:
+					try:
+						icon_pix = gtk.gdk.pixbuf_new_from_file (icon)
+					except:
+						icon_pix = None
+				else:
+					icon_pix = None
+
+				print lines
+				preview = self.make_preview (lines)
+				iter = self.ParentClass.treemodel.append([title, time + " " + date, preview, array_or_false, int(job_id), time, icon_pix, self, date, class_id, user, "Defined", "at"])
+				# print int(job_id)
 
 		#["None(not suported yet)", "12:50 2004-06-25", "", "35", "", "12:50", icon, at instance, "2004-06-25", "a", "drzap", "at"]
-		
 		return
 
-	def make_preview (self, str):
+	def ignore (self, testline):
+		found = gtk.FALSE
+		for line in self.ignore_lines:
+			if line == testline:
+				found = gtk.TRUE
+				break
+		return found
+
+	def prepare_script (self, lines):
+		newlines = []
+		title = None
+		icon = None
+		for line in lines:
+			if self.ignore(line) == gtk.FALSE and line.find ("OLDPWD=") == -1 and line.find ("SHLVL=") == -1:
+				if line.find ("TITLE=") != -1:
+					title = string.replace (line.split ("=")[1], "\n", "")
+				elif line.find ("ICON=") != -1:
+					icon = string.replace (line.split ("=")[1], "\n", "")
+				else:
+					newlines.append (line)
+
+		return newlines, title, icon
+
+	def make_preview (self, lines):
 		cnt = 0
 		result = ""
-		for a in str:
-			if cnt <= 15:
-				result = result + a
-			cnt = cnt + 1
-		if cnt > 15:
-			result = result + "..."
+		for line in lines:
+			if len (line) > 0 and line[0] != "#":
+				lcnt = 0
+				result = ""
+				for a in line:
+					if a == "\n":
+						a = ";"
+					if cnt <= 15:
+						result = result + a
+					else:
+						break
+					lcnt = lcnt + 1
+				cnt = cnt + lcnt
+			if cnt > 15:
+				result = result + "..."
+				break
 		return result
 
 	def parse (self, line, output = 0):
@@ -187,20 +236,23 @@ class At:
 			if len (line) > 1 and line[0] != '#':
 				m = self.atRecordRegex.match(line)
 				if m != None:
-					print m.groups()
+					# print m.groups()
 					job_id = m.groups ()[0]
 					date = m.groups ()[1]
 					time = m.groups ()[2]
 					class_id = m.groups ()[3]
 					user = m.groups ()[4]
-					command = "Not supported"
-					title = "Not supported"
-					return job_id, date, time, class_id, user, title, command
+					execute = config.getAtbin() + " -c " + job_id
+					# read lines and detect starter
+					readlines = os.popen(execute).readlines()
+					lines, title, icon = self.prepare_script (readlines)
+
+					return job_id, date, time, class_id, user, lines, title, icon
 		else:
 			if len (line) > 1 and line[0] != '#':
 				m = self.atRecordRegexAdd.match(line)
 				if m != None:
-					print m.groups()
+					# print m.groups()
 					job = m.groups ()[0]
 					job_id = m.groups ()[1]
 					return job_id

@@ -5,9 +5,21 @@ doc_dir = "@prefix@/share/doc/gnome-schedule-@VERSION@"
 gnomehelpbin = "@GNOMEHELP_CONFIG@"
 crontabbin = "@CRONTAB_CONFIG@"
 atbin = "@AT_CONFIG@"
+atqbin = "@ATQ_CONFIG@"
+atrmbin = "@ATRM_CONFIG@"
+batchbin = "@BATCH_CONFIG@"
 
 def getAtbin ():
 	return atbin
+
+def getAtrmbin ():
+	return atrmbin
+
+def getAtqbin ():
+	return atqbin
+
+def getBatchbin ():
+	return batchbin
 
 def getCrontabbin ():
 	return crontabbin

@@ -400,10 +400,15 @@ class Crontab:
 			if array_or_false != gtk.FALSE:
 				(minute, hour, day, month, weekday, command, title, icon) = array_or_false
 				time = minute + " " + hour + " " + day + " " + month + " " + weekday
-				try:
-					icon_pix = gtk.gdk.pixbuf_new_from_file (icon)
-				except:
+
+				if icon != None:
+					try:
+						icon_pix = gtk.gdk.pixbuf_new_from_file (icon)
+					except:
+						icon_pix = None
+				else:
 					icon_pix = None
+
 				preview = self.make_preview (command)
 				iter = self.ParentClass.treemodel.append([title, self.easy (minute, hour, day, month, weekday), preview, line, self.linecount, time, icon_pix, self, "", "", "", "Frequency", "crontab"])
 			self.linecount = self.linecount + 1
