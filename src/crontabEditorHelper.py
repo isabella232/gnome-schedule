@@ -140,12 +140,15 @@ class CrontabEditorHelper:
 				self.entRangeStart.set_text(m.groups()[3])
 				self.entRangeEnd.set_text (m.groups()[4])
 
+			# Unused
 			# 1,2,3,4 * * * * command
-			if m.groups()[5] != None:
-				self.radOth.set_active (gtk.TRUE)
-				thefield = m.groups()[5] + field[len(field)-1]
+			# if m.groups()[5] != None:
+				# self.radOth.set_active (gtk.TRUE)
+				# For some reason it's not grouping the last char :(
+				# So we'll just append it, bah!
+				# thefield = m.groups()[5] + expression[len(expression)-1]
 				# thefield = "1,2,3,4"
-				fields = thefield.split (",")
+				# fields = thefield.split (",")
 			self.NoExpressionEvents = gtk.FALSE
 
 		#show the form
@@ -156,6 +159,15 @@ class CrontabEditorHelper:
 	def btnOk_clicked(self, *args):
 		#move expression to field in editor and hide
 		expression = self.entExpression.get_text()
+		try:
+			self.ParentClass.ParentClass.schedule.checkfield (expression, self.field, self.editor.fieldRegex)
+		except Exception, ex:
+			x, y, z = ex
+			self.wrongdialog = gtk.MessageDialog(self.widget, gtk.DIALOG_MODAL|gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_ERROR, gtk.BUTTONS_OK, (_("This is invalid. Reason: %s") % (z)))
+			self.wrongdialog.run()
+			self.wrongdialog.destroy()
+			return
+
 		if self.field == _("minute"): self.editor.minute_entry.set_text(expression)
 		if self.field == _("hour"): self.editor.hour_entry.set_text(expression)
 		if self.field == _("day"): self.editor.day_entry.set_text(expression)

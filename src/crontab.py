@@ -145,19 +145,20 @@ class Crontab:
 					num = int (m.groups()[1])
 				else:
 					num = int (m.groups()[2])
-				if type==_("minute"):
+				# Should not be translatable!
+				if type=="minute":
 					if num > 59 or num < 0:
 						raise Exception('fixed', type, _("must be between 59 and 0"))
-				if type==_("hour"):
+				if type=="hour":
 					if num > 23 or num < 0:
 						raise Exception('fixed', type, _("must be between 23 and 0"))
-				if type==_("day"):
+				if type=="day":
 					if num > 31 or num < 1:
 						raise Exception('fixed', type, _("must be between 31 and 1"))
-				if type==_("month"):
+				if type=="month":
 					if num > 12 or num < 1:
 						raise Exception('fixed', type, _("must be between 12 and 1"))
-				if type==_("weekday"):
+				if type=="weekday":
 					if num > 7 or num < 0:
 						raise Exception('fixed', type, _("must be between 7 and 0"))
 

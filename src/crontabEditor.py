@@ -118,6 +118,7 @@ class CrontabEditor:
 
 	def check_field_format (self, field, type):
 		try:
+			# Type should not be translatable!
 			self.schedule.checkfield (field, type, self.fieldRegex)
 		except Exception, ex:
 			raise ex
@@ -160,11 +161,12 @@ class CrontabEditor:
 
 	def on_ok_button_clicked (self, *args):
 		try:
-			self.check_field_format (self.minute, _("minute"))
-			self.check_field_format (self.hour, _("hour"))
-			self.check_field_format (self.day, _("day"))
-			self.check_field_format (self.month, _("month"))
-			self.check_field_format (self.weekday, _("weekday"))
+			# Type should not be translatable!
+			self.check_field_format (self.minute, "minute")
+			self.check_field_format (self.hour, "hour")
+			self.check_field_format (self.day, "day")
+			self.check_field_format (self.month, "month")
+			self.check_field_format (self.weekday, "weekday")
 		except Exception, ex:
 			x, y, z = ex
 			self.wrongdialog = gtk.MessageDialog(self.widget, gtk.DIALOG_MODAL|gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_ERROR, gtk.BUTTONS_OK, (_("This is an invalid record! The problem could be at the %s field. Reason: %s") % (y, z)))
@@ -253,6 +255,10 @@ class CrontabEditor:
 	def on_frequency_combobox_changed (self, bin):
 		temp = self.frequency_combobox.get_text()
 
+		# Here it should be translatable!
+		# This is checking the actual content of the
+		# entry of the combobox, which is translated content
+
 		if temp == _("minute"):
 			self.minute = "*"
 			self.hour = "*"
@@ -290,21 +296,22 @@ class CrontabEditor:
 
 	def on_fieldHelp_clicked(self, widget, *args):
 		name = widget.get_name()
+		field = "minute"
 		if name == "btnMinuteHelp" :
-			name = _("minute")
+			field = "minute"
 			expression = self.minute_entry.get_text()
 		if name == "btnHourHelp" :
-			name = _("hour")
+			field = "hour"
 			expression = self.hour_entry.get_text()
 		if name == "btnDayHelp" :
-			name = _("day")
+			field = "day"
 			expression = self.day_entry.get_text()
 		if name == "btnMonthHelp" :
-			name = _("month")
+			field = "month"
 			expression = self.month_entry.get_text()
 		if name == "btnWeekdayHelp" :
-			name = _("weekday")
+			field = "weekday"
 			expression = self.weekday_entry.get_text()
 
-		self.ParentClass.editorhelper.show (name, expression)
+		self.ParentClass.editorhelper.show (field, expression)
 		return
