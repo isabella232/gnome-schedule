@@ -51,44 +51,32 @@ class AtEditor:
 		
 		self.editing = gtk.FALSE
 		
-		# Sorry Gaute, you will need to redo this
 		
-		#self.help_button = self.xml.get_widget ("help_button")
-		#self.cancel_button = self.xml.get_widget ("cancel_button")
-		#self.ok_button = self.xml.get_widget ("ok_button")
-		#self.runat_entry = self.xml.get_widget("runat_entry")
-		#self.title_entry = self.xml.get_widget("title_entry")
-		#self.date_entry = self.xml.get_widget("date_entry")
-		#self.time_entry = self.xml.get_widget("time_entry")
+		self.template_combobox = self.xml.get_widget ("at_template_combobox")
+		self.save_button = self.xml.get_widget ("at_save_button")
+		self.delete_button = self.xml.get_widget ("at_delete_button")
+		self.title_entry = self.xml.get_widget ("at_title_entry")
+		self.script_textview = self.xml.get_widget ("at_script_textview")
+		self.nooutput_checkbutton = self.xml.get_widget ("at_nooutput_checkbutton")
+		self.help_button = self.xml.get_widget ("at_help_button")
+		self.cancel_button = self.xml.get_widget ("at_cancel_button")
+		self.ok_button = self.xml.get_widget ("at_ok_button")
+		self.image_button = self.xml.get_widget ("at_image_button")
+		self.template_icon = self.xml.get_widget ("at_template_icon")
+		self.control_option = self.xml.get_widget ("at_control_option")
+		self.wording = self.xml.get_widget ("at_wording_option")
+		self.calendar = self.xml.get_widget ("at_calendar")
+		self.hour_spinbutton = self.xml.get_widget ("at_hour_spinbutton")
+		self.minute_spinbutton= self.xml.get_widget ("at_minute_spinbutton")
+		self.combobox = self.xml.get_widget ("at_combobox")
 		
-
-		#this is the buffer for the textviews
-		#self.commands_textview_buffer = self.xml.get_widget("commands_textview_advanced").get_buffer()
-		#this is the two textviews
-		#self.commands_textview_advanced = self.xml.get_widget("commands_textview_advanced")
-		#self.commands_textview_basic = self.xml.get_widget("commands_textview_basic")
-		#they are using the same buffer
-		#self.commands_textview_basic.set_buffer(self.commands_textview_buffer)
-
-		#self.notebook = self.xml.get_widget("notebook")
-
-		#self.xml.signal_connect("on_add_help_button_clicked", self.on_add_help_button_clicked)
-		#self.xml.signal_connect("on_cancel_button_clicked", self.on_cancel_button_clicked)
-		#self.xml.signal_connect("on_ok_button_clicked", self.on_ok_button_clicked)
-		#self.xml.signal_connect("on_anyadvanced_entry_changed", self.on_anyadvanced_entry_changed)
-		#self.xml.signal_connect("on_anybasic_entry_changed", self.on_anybasic_entry_changed)
-		
-		
-		#self.xml.signal_connect("on_fieldHelp_clicked", self.on_fieldHelp_clicked)
-
-
 	def on_remove_button_clicked (self, *args):
 		iter = self.template_combobox.get_active_iter ()
 		template = self.template_combobox_model.get_value(iter, 2)
 		icon_uri, command, frequency, title, name = template
 		self.template_combobox.set_active (0)
 		self.schedule.removetemplate (name)
-		
+
 	def on_save_button_clicked (self, *args):
 		# Uses SaveTemplate (will call it if OK is pressed)
 		# self.ParentClass.saveWindow.ShowSaveWindow(self)
