@@ -139,14 +139,11 @@ class At:
 		return
 
 	def append (self, runat, command):
-		print "adding"
-		print command
 		tmpfile = tempfile.mkstemp ("", "/tmp/at.", "/tmp")
 		fd, path = tmpfile
 		tmp = os.fdopen(fd, 'w')
 		tmp.write (command + "\n")
 		execute = "at " + runat + " -f " + path
-		print path
 		commands.getoutput(execute)
 		tmp.close ()
 		os.unlink (path)
