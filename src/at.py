@@ -43,10 +43,69 @@ class At:
 
 		return
 	def createtreemodel (self):
-		raise 'Not implemented'
+		# [0 Title, 1 date, 2 time, 3 class, 4 id, 5 user, 6 command preview(?)]
+		# ["get file", "2004-06-17", "20:17", "a", 24, "wget http://..."]
+		self.treemodel = gtk.ListStore(gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_INT, gobject.TYPE_STRING)
+		self.treeview.set_model (self.treemodel)
+
+		self.switchView("simple", 1)
+		return
 		
 	def switchview (self, mode = "simple", init = 0):
-		raise 'Not implemented'
+		if mode == "simple":
+			#cleaning up columns
+			if init != 1:
+				i = 4
+				while i > - 1:
+					temp = self.treeview.get_column(i)
+					self.treeview.remove_column(temp)
+					i = i -1
+				
+			# Setting up the columns
+			self.col = gtk.TreeViewColumn(_("Title"), gtk.CellRendererText(), text=0)
+			self.treeview.append_column(self.col)
+			self.col = gtk.TreeViewColumn(_("Date"), gtk.CellRendererText(), text=1)
+			self.treeview.append_column(self.col)
+			self.col = gtk.TreeViewColumn(_("Time"), gtk.CellRendererText(), text=2)
+			self.treeview.append_column(self.col)
+			self.col = gtk.TreeViewColumn(_("Preview"), gtk.CellRendererText(), text=6)
+			self.col.set_spacing(235)
+			self.treeview.append_column(self.col)
+
+
+		elif mode == "advanced":
+			#cleaning up columns
+			if init != 1:
+				i = 3
+				while i > - 1:
+					temp = self.treeview.get_column(i)
+					self.treeview.remove_column(temp)
+					i = i -1
+			
+			# Setting up the columns
+			self.col = gtk.TreeViewColumn(_("Date"), gtk.CellRendererText(), text=1)
+			self.treeview.append_column(self.col)
+			self.col = gtk.TreeViewColumn(_("Time"), gtk.CellRendererText(), text=2)
+			self.treeview.append_column(self.col)
+			self.col = gtk.TreeViewColumn(_("Id"), gtk.CellRendererText(), text=4)
+			self.treeview.append_column(self.col)	
+			self.col = gtk.TreeViewColumn(_("Class"), gtk.CellRendererText(), text=3)
+			self.treeview.append_column(self.col)	
+			self.col = gtk.TreeViewColumn(_("Preview"), gtk.CellRendererText(), text=6)
+			self.col.set_spacing(235)
+			self.treeview.append_column(self.col)
+
+		self.widget.show_all()
+
+		if self.root == 0:
+			self.btnSetUser.hide()
+		else:
+			self.xml.signal_connect("on_btnSetUser_clicked", self.showSetUser)
+
+		# self.treeview.get_selection().connect("changed", self.onTreeViewSelectRow)
+		self.treeview.get_selection().unselect_all()
+		self.edit_mode = mode
+		return
 		
 	def createpreview (self, minute, hour, day, month, weekday, command):
 		raise 'Not implemented'
