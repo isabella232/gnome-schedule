@@ -76,13 +76,14 @@ class AddWindow:
 		self.reset ()
 
 		self.minute = "*"
-		self.hour = "1"
+		self.hour = "*"
 		self.day = "*"
 		self.month = "*"
 		self.weekday = "*"
 		self.command = "ls"
 		self.title = "New scheduled task"
 		self.update_textboxes ()
+		self.set_frequency_combo()
 
 		self.editing = gtk.FALSE
 		self.widget.set_title(_("Create a new scheduled task"))
