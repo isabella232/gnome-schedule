@@ -24,6 +24,7 @@ import gconf
 #python modules
 import string
 import re
+import os
 
 #custom modules
 import config
@@ -46,6 +47,7 @@ class CrontabEditor:
 	def __init__(self, parent):
 
 		self.ParentClass = parent
+		self.schedule = self.ParentClass	#needed for the crontabeditorhelper
 		
 		self.xml = self.ParentClass.xml
 		self.widget = self.xml.get_widget("crontabEditor")
