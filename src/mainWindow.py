@@ -69,10 +69,22 @@ class main:
 
 		self.widget = self.xml.get_widget("mainWindow")
 		self.treeview = self.xml.get_widget("treeview")
+
 		self.add_button = self.xml.get_widget ("add_button")
 		self.prop_button = self.xml.get_widget ("prop_button")
 		self.del_button = self.xml.get_widget ("del_button")
 		self.help_button = self.xml.get_widget ("help_button")
+
+		# This will only work with PyGTK 2.4.x
+		try:
+			# this tries to fix a bug in libglade (the homogeneous propery ain't working)
+			self.toolbar = self.xml.get_widget ("toolbar")
+			self.toolbar.get_nth_item (0).set_homogeneous (gtk.TRUE)
+			self.toolbar.get_nth_item (1).set_homogeneous (gtk.TRUE)
+			self.toolbar.get_nth_item (2).set_homogeneous (gtk.TRUE)
+			self.toolbar.get_nth_item (3).set_homogeneous (gtk.TRUE)
+		except:
+			pass
 
 		self.treeview.set_rules_hint(gtk.TRUE)
 		self.treeview.columns_autosize()

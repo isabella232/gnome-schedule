@@ -31,6 +31,7 @@ if '--debug' in sys.argv:
 try:
 	import gtk
 	import gnome
+	import gnome.ui
 	gnome.program_init ("gnome-schedule", "@VERSION@")
 except:
 	print ("gnome-schedule requires a currently running X server.")
