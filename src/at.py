@@ -48,14 +48,15 @@ class At:
 		self.ParentClass = parent
 		self.xml = self.ParentClass.xml
 
-		rem = self.append ("tomorrow", "")
-		m = self.atRecordRegexAdded.match (rem)
-		if m != None:
-			execute = config.getAtbin() + " -c " + m.groups()[0]
-			self.ignore_lines = os.popen(execute).readlines()
-			self.delete (m.groups()[0])
-		else:
-			print _("Problem while learning the lines that are to be ignored")
+	#	rem = self.append ("tomorrow", "")
+	#	m = self.atRecordRegexAdded.match (rem)
+	#	if m != None:
+	#		execute = config.getAtbin() + " -c " + m.groups()[0]
+	#		self.ignore_lines = os.popen(execute).readlines()
+	#		for a in ignore_lines
+	#		self.delete (m.groups()[0])
+	#	else:
+	#		print _("Problem while learning the lines that are to be ignored")
 
 		#reading at
 		self.read ()
@@ -173,12 +174,26 @@ class At:
 		newlines = []
 		title = None
 		icon = None
+		startrec = gtk.FALSE
+		entarfnd = gtk.FALSE
 		for line in lines:
-			if self.ignore(line) == gtk.FALSE and line.find ("OLDPWD=") == -1 and line.find ("SHLVL=") == -1:
+			if startrec == gtk.FALSE and len(line) > 0:
+				if line[0] == '\n':
+					entarfnd = gtk.TRUE
+				else:
+					entarfnd = gtk.FALSE
+									
+				if entarfnd == gtk.TRUE and len (line) > 0 and line[0] == '\n':
+					startrec = gtk.TRUE
+			elif startrec == gtk.TRUE:
+				if line[len(line)-1] == '\n':
+					# chop last last (which is a newline)
+					line = line[:-1]
+					
 				if line.find ("TITLE=") != -1:
-					title = string.replace (line.split ("=")[1], "\n", "")
+					title = line.split ("=")[1]
 				elif line.find ("ICON=") != -1:
-					icon = string.replace (line.split ("=")[1], "\n", "")
+					icon =line.split ("=")[1]
 				else:
 					newlines.append (line)
 
@@ -197,8 +212,10 @@ class At:
 						result = result + a
 					else:
 						break
+					
 					lcnt = lcnt + 1
-				cnt = cnt + lcnt
+				result = result + ";"
+				cnt = cnt + lcnt + 1
 			if cnt > 15:
 				result = result + "..."
 				break
