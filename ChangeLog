@@ -1,3 +1,8 @@
+2004-06-18  Gaute Hope <eg@gaute.eu.org>
+	* Added support for reading 'at' records
+	* Added the editor files, but they are just copies of crontabEditor.py, just for debugging and making things look like they should
+	* Copyed src/config.py.in to config.py since i couldn't run it any other way. I suppose this is wrong and it is just temporary
+
 2004-06-18  Gustavo Maciel Dias Vieira  <gustavo@sagui.org>
 
 	* configure.ac: Added pt_BR to ALL_LINGUAS.
