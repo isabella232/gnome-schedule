@@ -176,47 +176,32 @@ class main:
 		#set add window
 		self.addWindow = addWindow.AddWindow (self)
 		
-		# TODO: select first task from list
+		# TODO: select first task from list?
 
 		self.schedule_reload ("all")
 
 		gtk.main()
 
 
-	def __initUser__(self):
-		self.setUser(os.environ['USER'])
-		
-		if self.uid != 0:
-			self.btnSetUser.hide()
-			self.set_user_menu.hide()	
-			self.statusbar.hide()
-			self.root = 0
-		else:
-			self.root = 1
-			self.statusbar.show()
-			self.statusbar.push(self.statusbarUser, (_("Editing user: ") + self.user))
-		
 
-	def setUser(self,user):
+	def changeUser(self,user):
+		if user != self.user:
+			self.__setUser__(user)
+			#change user for the schedulers
+			self.crontab.set_rights(self.user, self.uid, self.gid)
+			self.at.set_rights(self.user, self.uid, self.gid)
+			#adjust statusbar
+			if self.root == 1:
+				self.statusbar.push(self.statusbarUser, (_("Editing user: ") + self.user))
+		
+			self.schedule_reload ("all")
+	
+	
+	def __setUser__(self,user):
 		userdb = pwd.getpwnam(user)
 		self.user = user
 		self.uid = userdb[2]
 		self.gid = userdb[3]
-			
-		
-	def changeUser(self,user):
-		
-		if user != self.user:
-			
-				self.setUser(user)
-				#change user for the 
-				self.crontab.set_rights(self.user, self.uid, self.gid)
-				self.at.set_rights(self.user, self.uid, self.gid)
-				#adjust statusbar
-				if self.root == 1:
-					self.statusbar.push(self.statusbarUser, (_("Editing user: ") + self.user))
-		
-				self.schedule_reload ("all")
 		
 						
 	## TODO: 2 times a loop looks to mutch
@@ -293,7 +278,21 @@ class main:
 				self.xml = gtk.glade.XML (config.getGladedir() + "/gnome-schedule.glade", domain="gnome-schedule")
 			except:
 				print "ERROR: Could not load glade file"
+	
+	
+	def __initUser__(self):
+		self.__setUser__(os.environ['USER'])
 		
+		if self.uid != 0:
+			# TODO: make this default in glade file, so we don't get the animation?
+			self.set_user_menu.hide()	
+			self.root = 0
+		else:
+			self.root = 1
+			self.btnSetUser.show()
+			self.statusbar.show()
+			self.statusbar.push(self.statusbarUser, (_("Editing user: ") + self.user))
+				
 
 	#when the user selects a task, buttons get enabled
 	def on_TreeViewSelectRow (self, *args):
@@ -401,7 +400,7 @@ class main:
 			self.dialog.destroy ()			
 			
 
-	# TODO: looks not that clean :)
+	# TODO: looks not that clean (is broken)
 	def on_delete_menu_activate (self, *args):
 		store, iter = self.treeview.get_selection().get_selected()
 	
@@ -409,7 +408,7 @@ class main:
 			#see what scheduler (at, crontab or ...)
 			self.schedule = self.treemodel.get_value(iter, 7)
 			
-			# TODO: dirty hacky (is broken)
+			# TODO: dirty hacky 
 			if self.schedule.get_type() == "crontab":
 				self.editor = self.crontab_editor
 			elif self.schedule.get_type() == "at":
@@ -425,7 +424,6 @@ class main:
 			self.schedule.delete (linenumber, iter)
 			self.schedule_reload(self.schedule.get_type())
 			
-			# TODO: generate click event
 			firstiter = self.treemodel.get_iter_first()
 			try:
 				nextiter = self.treemodel.get_iter(path)
