@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-01-10 01:41-0500\n"
+"POT-Creation-Date: 2005-01-10 20:12-0500\n"
 "PO-Revision-Date: 2005-01-10 17:03-0400\n"
 "Last-Translator: Adam Weinberger <adamw@gnome.org>\n"
 "Language-Team: English/Canada <adamw@FreeBSD.org>\n"
@@ -65,7 +65,7 @@ msgid "%s is not a number"
 msgstr "%s is not a number"
 
 #: src/crontab.py:174 src/crontab.py:209 src/crontab.py:298
-#: src/crontabEditor.py:194 src/atEditor.py:117
+#: src/crontabEditor.py:195 src/atEditor.py:121
 msgid "Untitled"
 msgstr "Untitled"
 
@@ -74,58 +74,70 @@ msgstr "Untitled"
 msgid "Recurrent"
 msgstr "Recurrent"
 
-#: src/crontab.py:253 src/crontabEditor.py:88 src/gnome-schedule.glade.h:83
+#: src/crontab.py:253 src/crontabEditor.py:89 src/gnome-schedule.glade.h:69
 msgid "minute"
 msgstr "minute"
 
-#: src/crontab.py:255 src/crontabEditor.py:89 src/gnome-schedule.glade.h:82
+#: src/crontab.py:255 src/crontabEditor.py:90 src/gnome-schedule.glade.h:68
 msgid "hour"
 msgstr "hour"
 
-#: src/crontab.py:257 src/crontabEditor.py:90 src/gnome-schedule.glade.h:81
+#: src/crontab.py:257 src/crontabEditor.py:91 src/gnome-schedule.glade.h:67
 msgid "day"
 msgstr "day"
 
-#: src/crontab.py:259 src/crontabEditor.py:91 src/gnome-schedule.glade.h:84
+#: src/crontab.py:259 src/crontabEditor.py:92 src/gnome-schedule.glade.h:70
 msgid "month"
 msgstr "month"
 
-#: src/crontab.py:261 src/gnome-schedule.glade.h:88
+#: src/crontab.py:261 src/gnome-schedule.glade.h:74
 msgid "weekday"
 msgstr "weekday"
 
-#: src/crontabEditor.py:87
+#: src/crontabEditor.py:88
 msgid "use advanced"
 msgstr "use advanced"
 
-#: src/crontabEditor.py:92
+#: src/crontabEditor.py:93
 msgid "week"
 msgstr "week"
 
-#: src/crontabEditor.py:137 src/atEditor.py:119
+#: src/crontabEditor.py:138 src/atEditor.py:123
 msgid "Create a new scheduled task"
 msgstr "Create a new scheduled task"
 
-#: src/crontabEditor.py:157 src/atEditor.py:149
+#: src/crontabEditor.py:158 src/atEditor.py:153
 msgid "Edit a scheduled task"
 msgstr "Edit a scheduled task"
 
-#: src/crontabEditor.py:212 src/atEditor.py:321
+#: src/crontabEditor.py:213 src/atEditor.py:325
 msgid "Don't use a preset"
 msgstr "Don't use a preset"
 
-#: src/crontabEditor.py:268
+#: src/crontabEditor.py:269
 #, python-format
 msgid ""
 "This is an invalid record! The problem could be at the %s field. Reason: %s"
 msgstr ""
 "This is an invalid record! The problem could be at the %s field. Reason: %s"
 
-#: src/crontabEditor.py:322 src/atEditor.py:394
+#: src/crontabEditor.py:301
+msgid "The preset has not been saved"
+msgstr "The preset has not been saved"
+
+#: src/crontabEditor.py:303
+msgid "To delete a preset, you first need to select one"
+msgstr "To delete a preset, you first need to select one"
+
+#: src/crontabEditor.py:313
+msgid "To save a preset, you first have to choose a name for it"
+msgstr "To save a preset, you first have to choose a name for it"
+
+#: src/crontabEditor.py:323 src/atEditor.py:398
 msgid "Pick an icon for this scheduled task"
 msgstr "Pick an icon for this scheduled task"
 
-#: src/crontabEditor.py:382
+#: src/crontabEditor.py:383
 msgid "command"
 msgstr "command"
 
@@ -161,146 +173,90 @@ msgid "th. "
 msgstr "th. "
 
 #: src/gnome-schedule.glade.h:1
-msgid " "
-msgstr " "
-
-#: src/gnome-schedule.glade.h:2
-msgid "     "
-msgstr "     "
-
-#: src/gnome-schedule.glade.h:3
-msgid " >/dev/null 2>&1"
-msgstr " >/dev/null 2>&1"
-
-#: src/gnome-schedule.glade.h:4
-msgid "*"
-msgstr "*"
-
-#: src/gnome-schedule.glade.h:5
-msgid "* * * * * command"
-msgstr "* * * * * command"
-
-#: src/gnome-schedule.glade.h:6
-msgid "0"
-msgstr "0"
-
-#: src/gnome-schedule.glade.h:7
-msgid "0-23"
-msgstr "0-23"
-
-#: src/gnome-schedule.glade.h:8
-msgid "0-59"
-msgstr "0-59"
-
-#: src/gnome-schedule.glade.h:9
-msgid "0-7"
-msgstr "0-7"
-
-#: src/gnome-schedule.glade.h:10
-msgid "1-12"
-msgstr "1-12"
-
-#: src/gnome-schedule.glade.h:11
-msgid "1-31"
-msgstr "1-31"
-
-#: src/gnome-schedule.glade.h:12
-msgid "2"
-msgstr "2"
-
-#: src/gnome-schedule.glade.h:13
-msgid "59"
-msgstr "59"
-
-#: src/gnome-schedule.glade.h:14
-msgid ":"
-msgstr ":"
-
-#: src/gnome-schedule.glade.h:15
 msgid "<b>Basic settings</b>"
 msgstr "<b>Basic settings</b>"
 
-#: src/gnome-schedule.glade.h:16
+#: src/gnome-schedule.glade.h:2
 msgid "<b>Date setting</b>"
 msgstr "<b>Date setting</b>"
 
-#: src/gnome-schedule.glade.h:17
+#: src/gnome-schedule.glade.h:3
 msgid "<b>Frequency setting</b>"
 msgstr "<b>Frequency setting</b>"
 
-#: src/gnome-schedule.glade.h:18
+#: src/gnome-schedule.glade.h:4
 msgid "<b>Preview</b>"
 msgstr "<b>Preview</b>"
 
-#: src/gnome-schedule.glade.h:19
+#: src/gnome-schedule.glade.h:5
 msgid "<b>Select the type of the scheduled task</b>"
 msgstr "<b>Select the type of the scheduled task</b>"
 
-#: src/gnome-schedule.glade.h:20
-msgid "A scheduled task that will launch only one-time in the future."
+#: src/gnome-schedule.glade.h:6
+msgid "A scheduled task that will launch only once in the future."
 msgstr "A scheduled task that will launch only once in the future."
 
-#: src/gnome-schedule.glade.h:21
+#: src/gnome-schedule.glade.h:7
 msgid "A scheduled task that will launch recurrently."
 msgstr "A scheduled task that will launch recurrently."
 
-#: src/gnome-schedule.glade.h:22
+#: src/gnome-schedule.glade.h:8
 msgid "A_dvanced"
 msgstr "A_dvanced"
 
-#: src/gnome-schedule.glade.h:23
+#: src/gnome-schedule.glade.h:9
 msgid "About this application"
 msgstr "About this application"
 
-#: src/gnome-schedule.glade.h:24
+#: src/gnome-schedule.glade.h:10
 msgid "Active user"
 msgstr "Active user"
 
-#: src/gnome-schedule.glade.h:25
+#: src/gnome-schedule.glade.h:11
 msgid "Add a new scheduled task"
 msgstr "Add a new scheduled task"
 
-#: src/gnome-schedule.glade.h:26
+#: src/gnome-schedule.glade.h:12
 msgid "Add a scheduled task"
 msgstr "Add a scheduled task"
 
-#: src/gnome-schedule.glade.h:27
+#: src/gnome-schedule.glade.h:13
 msgid "Advanced"
 msgstr "Advanced"
 
-#: src/gnome-schedule.glade.h:28
+#: src/gnome-schedule.glade.h:14
 msgid "Alter a scheduled task"
 msgstr "Alter a scheduled task"
 
-#: src/gnome-schedule.glade.h:29
+#: src/gnome-schedule.glade.h:15
 msgid "Basic"
 msgstr "Basic"
 
-#: src/gnome-schedule.glade.h:30
+#: src/gnome-schedule.glade.h:16
 msgid "Cancel this operation"
 msgstr "Cancel this operation"
 
-#: src/gnome-schedule.glade.h:31
+#: src/gnome-schedule.glade.h:17
 msgid "Configure scheduled tasks"
 msgstr "Configure scheduled tasks"
 
-#: src/gnome-schedule.glade.h:32
+#: src/gnome-schedule.glade.h:18
 msgid "Date and time"
 msgstr "Date and time"
 
-#: src/gnome-schedule.glade.h:33
+#: src/gnome-schedule.glade.h:19
 msgid "Delete a scheduled task"
 msgstr "Delete a scheduled task"
 
-#: src/gnome-schedule.glade.h:34
+#: src/gnome-schedule.glade.h:20
 msgid "Every"
 msgstr "Every"
 
-#: src/gnome-schedule.glade.h:35
+#: src/gnome-schedule.glade.h:21
 msgid "Execution at a specific minute, hour, day, weekday or month."
 msgstr "Execution at a specific minute, hour, day, weekday or month."
 
-#: src/gnome-schedule.glade.h:36
+#: src/gnome-schedule.glade.h:22
 msgid ""
 "Execution at a step width. For example every five minutes, hours, days, "
 "weekdays or months."
@@ -308,55 +264,55 @@ msgstr ""
 "Execution at a step width. For example every five minutes, hours, days, "
 "weekdays or months."
 
-#: src/gnome-schedule.glade.h:37
+#: src/gnome-schedule.glade.h:23
 msgid "Execution at every minute, hour, day, weekday or month."
 msgstr "Execution at every minute, hour, day, weekday or month."
 
-#: src/gnome-schedule.glade.h:38
+#: src/gnome-schedule.glade.h:24
 msgid "Execution in a range."
 msgstr "Execution in a range."
 
-#: src/gnome-schedule.glade.h:39
+#: src/gnome-schedule.glade.h:25
 msgid "For example at 04:10 tomorrow, next week or in three days."
 msgstr "For example at 04:10 tomorrow, next week or in three days."
 
-#: src/gnome-schedule.glade.h:40
+#: src/gnome-schedule.glade.h:26
 msgid "For example every first hour of the day."
 msgstr "For example every first hour of the day."
 
-#: src/gnome-schedule.glade.h:41
+#: src/gnome-schedule.glade.h:27
 msgid "For experienced users only"
 msgstr "For experienced users only"
 
-#: src/gnome-schedule.glade.h:42
+#: src/gnome-schedule.glade.h:28
 msgid "Happens all"
 msgstr "Happens all"
 
-#: src/gnome-schedule.glade.h:43
+#: src/gnome-schedule.glade.h:29
 msgid "Happens at the"
 msgstr "Happens at the"
 
-#: src/gnome-schedule.glade.h:44
+#: src/gnome-schedule.glade.h:30
 msgid "Happens every"
 msgstr "Happens every"
 
-#: src/gnome-schedule.glade.h:45
+#: src/gnome-schedule.glade.h:31
 msgid "Happens from"
 msgstr "Happens from"
 
-#: src/gnome-schedule.glade.h:46
+#: src/gnome-schedule.glade.h:32
 msgid "No output"
 msgstr "No output"
 
-#: src/gnome-schedule.glade.h:47
+#: src/gnome-schedule.glade.h:33
 msgid "Other expression"
 msgstr "Other expression"
 
-#: src/gnome-schedule.glade.h:48
+#: src/gnome-schedule.glade.h:34
 msgid "Preset"
 msgstr "Preset"
 
-#: src/gnome-schedule.glade.h:49
+#: src/gnome-schedule.glade.h:35
 msgid ""
 "Quit the application. This will not stop the system scheduling. It will, "
 "however, quit this system schedule maintenance tool."
@@ -364,95 +320,95 @@ msgstr ""
 "Quit the application. This will not stop the system scheduling. It will, "
 "however, quit this system schedule maintenance tool."
 
-#: src/gnome-schedule.glade.h:50
+#: src/gnome-schedule.glade.h:36
 msgid "Run"
 msgstr "Run"
 
-#: src/gnome-schedule.glade.h:51
+#: src/gnome-schedule.glade.h:37
 msgid "Run at:"
 msgstr "Run at:"
 
-#: src/gnome-schedule.glade.h:52
+#: src/gnome-schedule.glade.h:38
 msgid "Scheduled and active tasks"
 msgstr "Scheduled and active tasks"
 
-#: src/gnome-schedule.glade.h:53
+#: src/gnome-schedule.glade.h:39
 msgid "Script"
 msgstr "Script"
 
-#: src/gnome-schedule.glade.h:54
-msgid "See \"man 5 crontab\" for informations about crontab format."
+#: src/gnome-schedule.glade.h:40
+msgid "See \"man 5 crontab\" for informations about the crontab format."
 msgstr "See \"man 5 crontab\" for information about the crontab format."
 
-#: src/gnome-schedule.glade.h:55
+#: src/gnome-schedule.glade.h:41
 msgid "Select a different user"
 msgstr "Select a different user"
 
-#: src/gnome-schedule.glade.h:56
+#: src/gnome-schedule.glade.h:42
 msgid "Set the day frequency setting"
 msgstr "Set the day frequency setting"
 
-#: src/gnome-schedule.glade.h:57
+#: src/gnome-schedule.glade.h:43
 msgid "Set the hour frequency setting"
 msgstr "Set the hour frequency setting"
 
-#: src/gnome-schedule.glade.h:58
+#: src/gnome-schedule.glade.h:44
 msgid "Set the icon of this scheduled task"
 msgstr "Set the icon of this scheduled task"
 
-#: src/gnome-schedule.glade.h:59
+#: src/gnome-schedule.glade.h:45
 msgid "Set the minute frequency setting"
 msgstr "Set the minute frequency setting"
 
-#: src/gnome-schedule.glade.h:60
+#: src/gnome-schedule.glade.h:46
 msgid "Set the month frequency setting"
 msgstr "Set the month frequency setting"
 
-#: src/gnome-schedule.glade.h:61
+#: src/gnome-schedule.glade.h:47
 msgid "Set the scheduled task"
 msgstr "Set the scheduled task"
 
-#: src/gnome-schedule.glade.h:62
+#: src/gnome-schedule.glade.h:48
 msgid "Set the weekday frequency setting"
 msgstr "Set the weekday frequency setting"
 
-#: src/gnome-schedule.glade.h:63
+#: src/gnome-schedule.glade.h:49
 msgid "Set user"
 msgstr "Set user"
 
-#: src/gnome-schedule.glade.h:64
+#: src/gnome-schedule.glade.h:50
 msgid "Show help"
 msgstr "Show help"
 
-#: src/gnome-schedule.glade.h:65
+#: src/gnome-schedule.glade.h:51
 msgid "Show the manual"
 msgstr "Show the manual"
 
-#: src/gnome-schedule.glade.h:66
+#: src/gnome-schedule.glade.h:52
 msgid "Shows the records"
 msgstr "Shows the records"
 
-#: src/gnome-schedule.glade.h:67
+#: src/gnome-schedule.glade.h:53
 msgid "Task title"
 msgstr "Task title"
 
-#: src/gnome-schedule.glade.h:68
+#: src/gnome-schedule.glade.h:54
 msgid "The date when the script will launch"
 msgstr "The date when the script will launch"
 
-#: src/gnome-schedule.glade.h:69
+#: src/gnome-schedule.glade.h:55
 msgid "Time expression help"
 msgstr "Time expression help"
 
-#: src/gnome-schedule.glade.h:70
+#: src/gnome-schedule.glade.h:56
 msgid "Time:"
 msgstr "Time:"
 
-#: src/gnome-schedule.glade.h:71
+#: src/gnome-schedule.glade.h:57
 msgid "Treeview"
 msgstr "Treeview"
 
-#: src/gnome-schedule.glade.h:72
+#: src/gnome-schedule.glade.h:58
 msgid ""
 "When selected, no output will be generated. When scheduled tasks in the "
 "crontab do have output and this option is not checked, the output will by "
@@ -462,11 +418,11 @@ msgstr ""
 "crontab do have output and this option is not checked, the output will by "
 "default be sent to the UNIX mailbox of the user."
 
-#: src/gnome-schedule.glade.h:73
+#: src/gnome-schedule.glade.h:59
 msgid "Will delete the selected preset"
 msgstr "Will delete the selected preset"
 
-#: src/gnome-schedule.glade.h:74
+#: src/gnome-schedule.glade.h:60
 msgid ""
 "Will save the current information as a preset. You can type the name of the "
 "preset in the combobox."
@@ -474,35 +430,35 @@ msgstr ""
 "Will save the current information as a preset. You can type the name of the "
 "preset in the combobox."
 
-#: src/gnome-schedule.glade.h:75
+#: src/gnome-schedule.glade.h:61
 msgid "[Add|Edit] scheduled task"
 msgstr "[Add|Edit] scheduled task"
 
-#: src/gnome-schedule.glade.h:76
+#: src/gnome-schedule.glade.h:62
 msgid "_Add task"
 msgstr "_Add task"
 
-#: src/gnome-schedule.glade.h:77
+#: src/gnome-schedule.glade.h:63
 msgid "_Delete"
 msgstr "_Delete"
 
-#: src/gnome-schedule.glade.h:78
+#: src/gnome-schedule.glade.h:64
 msgid "_Manual"
 msgstr "_Manual"
 
-#: src/gnome-schedule.glade.h:79
+#: src/gnome-schedule.glade.h:65
 msgid "_Select"
 msgstr "_Select"
 
-#: src/gnome-schedule.glade.h:80
+#: src/gnome-schedule.glade.h:66
 msgid "_Set user"
 msgstr "_Set user"
 
-#: src/gnome-schedule.glade.h:85
+#: src/gnome-schedule.glade.h:71
 msgid "to"
 msgstr "to"
 
-#: src/gnome-schedule.glade.h:86
+#: src/gnome-schedule.glade.h:72
 msgid ""
 "tomorrow\n"
 "next week"
@@ -839,12 +795,16 @@ msgid "Title"
 msgstr "Title"
 
 #: src/mainWindow.py:344 src/mainWindow.py:356
-msgid "Frequency or time"
-msgstr "Frequency or time"
+msgid "Date and Time Settings"
+msgstr "Date and Time Settings"
 
 #: src/mainWindow.py:348 src/mainWindow.py:360
 msgid "Preview"
 msgstr "Preview"
+
+#: src/mainWindow.py:400 src/mainWindow.py:451
+msgid "Please select a task"
+msgstr "Please select a task"
 
 #. TODO: should be using gtkAboutDialog
 #: src/mainWindow.py:494
@@ -868,10 +828,15 @@ msgstr ""
 "toghether from the far corners of Gaute Hope's mind."
 
 #: src/mainWindow.py:501
-msgid "translator_credits"
+msgid "translator-credits"
 msgstr "Adam Weinberger <adamw@gnome.org>"
 
-#: src/atEditor.py:510
+#. Translators: Separator between hour and minute entry fields
+#: src/atEditor.py:91
+msgid ":"
+msgstr ":"
+
+#: src/atEditor.py:514
 #, python-format
 msgid "This is an invalid record! The problem could be: %s"
 msgstr "This is an invalid record! The problem could be: %s"
