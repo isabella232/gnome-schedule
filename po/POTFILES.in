@@ -2,8 +2,8 @@
 # Please keep this file sorted alphabetically.
 
 # The src/lang.py file contains translation routines for
-# written numberings. If you as a translator have some
-# basic coding skills, you can get numbering translations
+# written numerics. If you as a translator have some
+# basic coding skills, you can get numeric translations
 # supported in your language this way
 
 src/at.py
