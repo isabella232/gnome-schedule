@@ -322,7 +322,7 @@ class Crontab:
 
 		self.ParentClass.treemodel.set_value (parentiter, 0, title)
 		if icon != None:
-			self.ParentClass.treemodel.set_value (parentiter, 6, gtk.gdk.pixbuf_new_from_file (icon))
+			self.ParentClass.treemodel.set_value (parentiter, 6, gtk.gdk.pixbuf_new_from_file_at_size (icon, 21, 21))
 
 		self.ParentClass.treemodel.set_value (parentiter, 3, record)
 		##
