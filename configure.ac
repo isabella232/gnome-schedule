@@ -84,5 +84,5 @@ desktop/Makefile
 desktop/gnome-schedule.desktop
 dist/fedora/2/gnome-schedule.spec
 dist/fedora/2/system-config-schedule.console 
-dist/gentoo/gnome-schedule-1.0_beta.ebuild
+dist/gentoo/gnome-schedule-0.1.0.ebuild
 ])
