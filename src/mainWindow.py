@@ -98,7 +98,7 @@ class main:
 
 		#for crontab it would be: ["untitled", "every hour", "ls /", "0 * * * * ls / # untitled", "5", "0 * * * *", icon, crontab instance, "", "", "", "crontab"]
 
-		self.treemodel = gtk.ListStore(gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_INT, gobject.TYPE_STRING, gobject.TYPE_PYOBJECT, gobject.TYPE_PYOBJECT, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING)
+		self.treemodel = gtk.ListStore(gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_INT, gobject.TYPE_STRING, gtk.gdk.Pixbuf, gobject.TYPE_PYOBJECT, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING)
 
 		self.treeview.set_model (self.treemodel)
 		self.switchView("simple", 1)
@@ -229,9 +229,13 @@ class main:
 	def switchView(self, mode = "simple", init = 0):
 		# TODO: Show the icon
 		if mode == "simple":
-			self.cleancolumns (init)		
-			#col = gtk.TreeViewColumn(_("Icon"), gtk.CellRendererText(), text=6)
-			#self.treeview.append_column(col)
+			self.cleancolumns (init)
+
+			cell = gtk.CellRendererPixbuf()
+			cell.set_fixed_size(10,10)		
+			col = gtk.TreeViewColumn(_("Icon"), cell, pixbuf=6)
+			self.treeview.append_column(col)
+			
 			
 			col = gtk.TreeViewColumn(_("Type"), gtk.CellRendererText(), text=12)
 			col.set_sizing (gtk.TREE_VIEW_COLUMN_AUTOSIZE)
