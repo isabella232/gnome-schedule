@@ -19,9 +19,6 @@
 #pygtk modules
 import gtk
 
-#python modules
-#import string
-
 ##
 ## I18N
 ##

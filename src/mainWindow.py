@@ -187,6 +187,7 @@ class main:
 		
 		##create crontab and at
 		self.crontab = crontab.Crontab(self)
+		self.crontab.read()
 		self.at = at.At(self)
 	
 		self.crontab_editor = self.crontab.geteditor ()

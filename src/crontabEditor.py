@@ -24,7 +24,7 @@ import gobject
 #python modules
 import string
 import re
-import os
+#import os
 
 #import pwd
 
@@ -32,7 +32,7 @@ import os
 #import mainWindow
 import config
 import support
-import schedule
+#import schedule
 
 ##
 ## I18N
@@ -47,22 +47,42 @@ _ = gettext.gettext
 class CrontabEditor:
 	def __init__(self, parent, schedule):
 		self.ParentClass = parent
+		#crontab in this case
 		self.schedule = schedule
 		
 		self.xml = self.ParentClass.xml
 		self.widget = self.schedule.editorwidget
+		
 		self.widget.connect("delete-event", self.on_cancel_button_clicked)
 
-		self.fieldRegex = re.compile('^(\*)$|^([0-9]+)$|^\*\\\([0-9]+)$|^([0-9]+)-([0-9]+)$|(([0-9]+[|,])+)')
-
 		self.editorhelperwidget = self.schedule.editorhelperwidget
+
+		self.fieldRegex = re.compile('^(\*)$|^([0-9]+)$|^\*\\\([0-9]+)$|^([0-9]+)-([0-9]+)$|(([0-9]+[|,])+)')
 		self.nooutputRegex = re.compile('([^#\n$]*)>(\s|)/dev/null\s2>&1')
 		
 		self.editing = gtk.FALSE
-		self.help_button = self.xml.get_widget ("help_button")
-		self.cancel_button = self.xml.get_widget ("cancel_button")
-		self.ok_button = self.xml.get_widget ("ok_button")
+		self.noevents = gtk.FALSE
+		self.noentryevents = gtk.FALSE
+		self.template_combobox_model = None
+		
+		##simple tab	
+		self.notebook = self.xml.get_widget("notebook")
+		self.template_image = self.xml.get_widget ("template_image")
+		self.image_button = self.xml.get_widget ("image_button")
+		self.template_label = self.xml.get_widget ("template_label")
+		self.basic_table = self.xml.get_widget ("basic_table")
+		
+		self.save_button = self.xml.get_widget ("save_button")
+		self.remove_button = self.xml.get_widget("remove_button")
+		
+		self.template_combobox = self.xml.get_widget ("template_combobox")
+		self.template_combobox_model = gtk.ListStore(gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_PYOBJECT)
+		self.template_combobox.set_text_column (0)		
+		self.template_combobox.set_model (self.template_combobox_model)
+		
 		self.title_entry = self.xml.get_widget ("title_entry")
+		self.command_entry = self.xml.get_widget ("command_entry")
+		self.nooutput_label = self.xml.get_widget ("nooutput_label")
 
 		self.frequency_combobox = self.xml.get_widget ("frequency_combobox")
 		self.frequency_combobox_model = gtk.ListStore (gobject.TYPE_STRING, gobject.TYPE_PYOBJECT)
@@ -73,26 +93,13 @@ class CrontabEditor:
 		self.frequency_combobox_model.append([_("month"), ["0", "0", "1", "*", "*"]])
 		self.frequency_combobox_model.append([_("week"), ["0", "0", "*", "*", "1"]])
 		self.frequency_combobox.set_model (self.frequency_combobox_model)
-		self.noevents = gtk.FALSE
-		self.basic_table = self.xml.get_widget ("basic_table")
-		self.nooutput_label = self.xml.get_widget ("nooutput_label")
-		self.command_entry = self.xml.get_widget ("command_entry")
-		self.minute_entry = self.xml.get_widget ("minute_entry")
-		self.hour_entry = self.xml.get_widget ("hour_entry")
-		self.day_entry = self.xml.get_widget ("day_entry")
-		self.month_entry = self.xml.get_widget ("month_entry")
-		self.weekday_entry = self.xml.get_widget ("weekday_entry")
-		self.setting_label = self.xml.get_widget ("setting_label")
+		
 		self.chkNoOutput = self.xml.get_widget("chkNoOutput")
-		self.notebook = self.xml.get_widget("notebook")
-		self.template_combobox_model = None
-		self.remove_button = self.xml.get_widget("remove_button")
-		self.template_combobox = self.xml.get_widget ("template_combobox")
-		self.template_image = self.xml.get_widget ("template_image")
-		self.template_label = self.xml.get_widget ("template_label")
-		self.image_button = self.xml.get_widget ("image_button")
-		self.save_button = self.xml.get_widget ("save_button")
-		self.noentryevents = gtk.FALSE
+				
+		self.help_button = self.xml.get_widget ("help_button")
+		self.cancel_button = self.xml.get_widget ("cancel_button")
+		self.ok_button = self.xml.get_widget ("ok_button")
+		
 		self.template_combobox.get_child().connect ("changed", self.on_template_combobox_entry_changed)
 		self.xml.signal_connect("on_remove_button_clicked", self.on_remove_button_clicked)
 		self.xml.signal_connect("on_add_help_button_clicked", self.on_add_help_button_clicked)
@@ -106,18 +113,29 @@ class CrontabEditor:
 		self.xml.signal_connect("on_save_button_clicked", self.on_save_button_clicked)
 		self.xml.signal_connect("on_fieldHelp_clicked", self.on_fieldHelp_clicked)
 		self.xml.signal_connect("on_template_combobox_changed", self.on_template_combobox_changed)
-		self.template_combobox_model = gtk.ListStore(gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_PYOBJECT)
-		self.template_combobox.set_text_column (0)		
-		self.template_combobox.set_model (self.template_combobox_model)
+		##
+		
+		##advanced tab
+		self.minute_entry = self.xml.get_widget ("minute_entry")
+		self.hour_entry = self.xml.get_widget ("hour_entry")
+		self.day_entry = self.xml.get_widget ("day_entry")
+		self.month_entry = self.xml.get_widget ("month_entry")
+		self.weekday_entry = self.xml.get_widget ("weekday_entry")
+				
+		self.setting_label = self.xml.get_widget ("setting_label")
+		##
+		
 		
 		self.nooutput = self.chkNoOutput.get_active()
 		self.loadicon ()
 		self.reload_templates ()
+		
+		#gconf code
 		support.gconf_client.add_dir ("/apps/gnome-schedule/templates/crontab", gconf.CLIENT_PRELOAD_NONE)
 		support.gconf_client.notify_add ("/apps/gnome-schedule/templates/crontab/installed", self.gconfkey_changed);
 		
 		
-
+	#remove template
 	def on_remove_button_clicked (self, *args):
 		iter = self.template_combobox.get_active_iter ()
 		template = self.template_combobox_model.get_value(iter, 2)
@@ -281,7 +299,7 @@ class CrontabEditor:
 		self.nooutput = gtk.FALSE
 		self.loadicon ()
 		self.reload_templates ()
-		self.chkNoOutput.set_active (gtk.FALSE)
+		self.chkNoOutput.set_active (gtk.TRUE)
 		
 	def on_template_combobox_entry_changed (self, widget):
 		self.save_button.set_sensitive (gtk.TRUE)
@@ -388,7 +406,7 @@ class CrontabEditor:
 		self.title = _("Untitled")
 		self.nooutput = gtk.FALSE
 		self.nooutput_label.hide ()
-		self.chkNoOutput.set_active (gtk.FALSE)
+		self.chkNoOutput.set_active (gtk.TRUE)
 		self.update_textboxes ()
 		
 	def update_textboxes (self):

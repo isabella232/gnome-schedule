@@ -39,3 +39,4 @@ Translations:
 
 Build System
   * remove mkinstalldirs when not needed anymore
+  * add python version check to configure.ac

@@ -33,7 +33,6 @@ import crontabEditor
 import lang
 import support
 import config
-#import mainWindow
 
 ##
 ## I18N
@@ -48,28 +47,20 @@ _ = gettext.gettext
 class Crontab:
 	def __init__(self, parent):
 		self.ParentClass = parent
-		
-		#get glade file
 		self.xml = self.ParentClass.xml
 		
-		self.nooutputtag = ">/dev/null 2>&1"
-		self.crontabRecordRegex = re.compile('([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^#\n$]*)(\s#\s([^\n$]*)|$)')
-		
-		#crontab Editor Window
 		self.editorwidget = self.xml.get_widget("crontabEditor")
-		self.editorwidget.hide()
-		
-		#crontab Editor Helper Window
 		self.editorhelperwidget = self.xml.get_widget("crontabEditorHelper")
-		self.editorhelperwidget.hide()
-		
+				
 		self.editor = crontabEditor.CrontabEditor (self.ParentClass, self)
 		self.editorhelper = crontabEditorHelper.CrontabEditorHelper(self, self.editor)
-		
+				
+		self.nooutputtag = ">/dev/null 2>&1"
+		self.crontabRecordRegex = re.compile('([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^#\n$]*)(\s#\s([^\n$]*)|$)')
+				
 		#default preview length
 		self.preview_len = 50
 
-		self.read()
 		return
 		
 	def replace (self, template_name_c):
@@ -326,19 +317,6 @@ class Crontab:
 		return
 
 
-	def make_preview (self, str, preview_len = 0):
-		if preview_len == 0:
-			preview_len = self.preview_len
-		cnt = 0
-		result = ""
-		for a in str:
-			if cnt <= preview_len:
-				result = result + a
-			cnt = cnt + 1
-		if cnt > preview_len:
-			result = result + "..."
-		return result
-
 	def update (self, linenumber, record, parentiter, nooutput, title, icon = None):
 		# The GUI
 		minute, hour, day, month, weekday, command, title_, icon_ = self.parse (record)
@@ -406,6 +384,12 @@ class Crontab:
 		self.lines.append (record)
 		self.write ()
 
+	#XXX maybe there is a better way
+	def easy (self, minute, hour, day, month, weekday):
+		return lang.translate_crontab_easy (minute, hour, day, month, weekday)
+
+
+	#read tasks in crontab
 	def read (self):
 		if self.ParentClass.root:
 			execute = config.getCrontabbin () + " -l -u " + self.ParentClass.user
@@ -415,6 +399,7 @@ class Crontab:
 		self.linecount = 0
 		self.lines = os.popen(execute).readlines()
 		for line in self.lines:
+			#read line and get info
 			array_or_false = self.parse (line)
 			if array_or_false != gtk.FALSE:
 				(minute, hour, day, month, weekday, command, title, icon) = array_or_false
@@ -428,14 +413,22 @@ class Crontab:
 				else:
 					icon_pix = None
 				
+				#make the command smaller if the lenght is to long
 				preview = self.make_preview (command)
+				#add task to treemodel in mainWindow
+				#XXX maybe move this to mainWindow
 				iter = self.ParentClass.treemodel.prepend([title, self.easy (minute, hour, day, month, weekday), preview, line, self.linecount, time, icon_pix, self, icon, "", "", "","", "Frequency", "crontab"])
+		
+				##debug
 				print "Read crontab, line: " + str(self.linecount)
 				count = count + 1
 			self.linecount = self.linecount + 1
 		print "-- Total crontab records: " + str(count)
+		##	
+			
 		return
 
+	#get info out of task line
 	def parse (self, line):
 		if len (line) > 1 and line[0] != '#':
 			m = self.crontabRecordRegex.match(line)
@@ -448,7 +441,10 @@ class Crontab:
 					weekday = m.groups ()[4]
 					command = m.groups ()[5]
 
+					#icon path is in comment of the task
 					icon = None
+					
+					#title is in comment of the task
 					title = None
 					if m.groups ()[7] != None:
 						lastpiece = string.split (m.groups ()[7], ", ")
@@ -462,5 +458,19 @@ class Crontab:
 					return minute, hour, day, month, weekday, command, title, icon
 		return gtk.FALSE
 
-	def easy (self, minute, hour, day, month, weekday):
-		return lang.translate_crontab_easy (minute, hour, day, month, weekday)
+   #if a command his lenght is to long the last part is removed 
+   #XXX if the beginning is just a long path it's maybe better to cut there
+   #XXX instead of in the front .../bin/updatedb instead of /dfdffd/bin/upda...
+	def make_preview (self, str, preview_len = 0):
+		if preview_len == 0:
+			preview_len = self.preview_len
+		cnt = 0
+		result = ""
+		for a in str:
+			if cnt <= preview_len:
+				result = result + a
+			cnt = cnt + 1
+		if cnt > preview_len:
+			result = result + "..."
+		return result
+
