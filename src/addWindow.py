@@ -119,41 +119,41 @@ class AddWindow:
 					num = int (m.groups()[1])
 				else:
 					num = int (m.groups()[2])
-				if type=="minute":
+				if type==_("minute"):
 					if num > 59 or num < 0:
-						raise Exception('fixed', type, 'must be between 59 and 0')
-				if type=="hour":
+						raise Exception('fixed', type, _("must be between 59 and 0"))
+				if type==_("hour"):
 					if num > 23 or num < 0:
-						raise Exception('fixed', type, 'must be between 23 and 0')
-				if type=="day":
+						raise Exception('fixed', type, _("must be between 23 and 0"))
+				if type==_("day"):
 					if num > 31 or num < 1:
-						raise Exception('fixed', type, 'must be between 31 and 1')
-				if type=="month":
+						raise Exception('fixed', type, _("must be between 31 and 1"))
+				if type==_("month"):
 					if num > 12 or num < 1:
-						raise Exception('fixed', type, 'must be between 12 and 1')
-				if type=="weekday":
+						raise Exception('fixed', type, _("must be between 12 and 1"))
+				if type==_("weekday"):
 					if num > 7 or num < 0:
-						raise Exception('fixed', type, 'must be between 7 and 0')
+						raise Exception('fixed', type, _("must be between 7 and 0"))
 
 			# 1-10 * * * * command
 			if m.groups()[3] != None or m.groups()[4] != None:
 				num1 = int (m.groups()[3])
 				num2 = int (m.groups()[4])
-				if type=="minute":
+				if type==_("minute"):
 					if num1 > 59 or num1 < 0 or num2 > 59 or num2 < 0:
-						raise Exception('range', type, 'must be between 59 and 0')
-				if type=="hour":
+						raise Exception('range', type, _("must be between 59 and 0"))
+				if type==_("hour"):
 					if num1 > 23 or num1 < 0 or num2 > 23 or num2 < 0:
-						raise Exception('range', type, 'must be between 23 and 0')
-				if type=="day":
+						raise Exception('range', type, _("must be between 23 and 0"))
+				if type==_("day"):
 					if num1 > 31 or num1 < 1 or num2 > 31 or num2 < 1:
-						raise Exception('range', type, 'must be between 31 and 1')
-				if type=="month":
+						raise Exception('range', type, _("must be between 31 and 1"))
+				if type==_("month"):
 					if num1 > 12 or num1 < 1 or num2 > 12 or num2 < 1:
-						raise Exception('range', type, 'must be between 12 and 1')
-				if type=="weekday":
+						raise Exception('range', type, _("must be between 12 and 1"))
+				if type==_("weekday"):
 					if num1 > 7 or num1 < 0 or num2 > 7 or num2 < 0:
-						raise Exception('range', type, 'must be between 7 and 0')
+						raise Exception('range', type, _("must be between 7 and 0"))
 
 			# 1,2,3,4 * * * * command
 			if m.groups()[5] != None:
@@ -163,21 +163,21 @@ class AddWindow:
 				for field in fields:
 					num = int (field)
 					print num
-					if type=="minute":
+					if type==_("minute"):
 						if num > 59 or num < 0:
-							raise Exception('steps', type, 'must be between 59 and 0')
-					if type=="hour":
+							raise Exception('steps', type, _("must be between 59 and 0"))
+					if type==_("hour"):
 						if num > 23 or num < 0:
-							raise Exception('steps', type, 'must be between 23 and 0')
-					if type=="day":
+							raise Exception('steps', type, ("must be between 23 and 0"))
+					if type==_("day"):
 						if num > 31 or num < 1:
-							raise Exception('steps', type, 'must be between 31 and 1')
-					if type=="month":
+							raise Exception('steps', type, _("must be between 31 and 1"))
+					if type==_("month"):
 						if num > 12 or num < 1:
-							raise Exception('steps', type, 'must be between 12 and 1')
-					if type=="weekday":
+							raise Exception('steps', type, _("must be between 12 and 1"))
+					if type==_("weekday"):
 						if num > 7 or num < 0:
-							raise Exception('steps', type, 'must be between 7 and 0')
+							raise Exception('steps', type, _("must be between 7 and 0"))
 
 
 
@@ -193,7 +193,7 @@ class AddWindow:
 		self.month = "*"
 		self.weekday = "*"
 		self.command = "ls"
-		self.title = "New scheduled task"
+		self.title = _("New scheduled task")
 		self.update_textboxes ()
 		self.set_frequency_combo()
 		self.editing = gtk.FALSE
@@ -204,7 +204,7 @@ class AddWindow:
 		self.chkNoOutput.set_active (gtk.FALSE)
 
 	def on_help_button_clicked (self, *args):
-		self.check_field_format (self.minute_entry.get_text(), "minute")
+		# self.check_field_format (self.minute_entry.get_text(), _("minute"))
 		print "Help"
 
 	def on_cancel_button_clicked (self, *args):
@@ -214,14 +214,14 @@ class AddWindow:
 	def on_ok_button_clicked (self, *args):
 
 		try:
-			self.check_field_format (self.minute, "minute")
-			self.check_field_format (self.hour, "hour")
-			self.check_field_format (self.day, "day")
-			self.check_field_format (self.month, "month")
-			self.check_field_format (self.weekday, "weekday")
+			self.check_field_format (self.minute, _("minute"))
+			self.check_field_format (self.hour, _("hour"))
+			self.check_field_format (self.day, _("day"))
+			self.check_field_format (self.month, _("month"))
+			self.check_field_format (self.weekday, _("weekday"))
 		except Exception, ex:
 			x, y, z = ex
-			self.wrongdialog = gtk.MessageDialog(self.widget, gtk.DIALOG_MODAL|gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_ERROR, gtk.BUTTONS_OK, "This is an invalid record! The problem could be at the " + y + " field. Reason: "+ z)
+			self.wrongdialog = gtk.MessageDialog(self.widget, gtk.DIALOG_MODAL|gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_ERROR, gtk.BUTTONS_OK, _("This is an invalid record! The problem could be at the ") + y + _(" field. Reason: ")+ z)
 			self.wrongdialog.run()
 			self.wrongdialog.destroy()
 			return
@@ -255,23 +255,23 @@ class AddWindow:
 
 
 	def set_frequency_combo (self):
-		index = "use advanced"
+		index = _("use advanced")
 		# index = 0
 
 		if self.minute == "*" and self.hour == "*" and self.month == "*" and self.day == "*" and self.weekday == "*":
-			index = "minute"
+			index = _("minute")
 			# index = 1
 		if self.minute == "0" and self.hour == "*" and self.month == "*" and self.day == "*" and self.weekday == "*":
-			index = "hour"
+			index = _("hour")
 			# index = 2
 		if self.minute == "0" and self.hour == "0" and self.month == "*" and self.day == "*" and self.weekday == "*":
-			index = "day"
+			index = _("day")
 			# index = 3
 		if self.minute == "0" and self.hour == "0" and self.month == "*" and self.day == "1" and self.weekday == "*":
-			index = "month"
+			index = _("month")
 			# index = 4
 		if self.minute == "0" and self.hour == "0" and self.month == "*" and self.day == "*" and self.weekday == "0":
-			index = "week"
+			index = _("week")
 
 
 		self.frequency_combobox.set_text (index)
@@ -287,7 +287,7 @@ class AddWindow:
 		self.day_entry.set_text ("")
 		self.month_entry.set_text ("")
 		self.weekday_entry.set_text ("")
-		self.setting_label.set_text ("* * * * * command")
+		self.setting_label.set_text ("* * * * * "+ _("command"))
 		self.noevents = gtk.FALSE
 
 	def update_textboxes (self):
@@ -342,31 +342,31 @@ class AddWindow:
 	def on_frequency_combobox_changed (self, bin):
 		temp = self.frequency_combobox.get_text()
 
-		if temp == "minute":
+		if temp == _("minute"):
 			self.minute = "*"
 			self.hour = "*"
 			self.day = "*"
 			self.month = "*"
 			self.weekday = "*"
-		elif temp == "hour":
+		elif temp == _("hour"):
 			self.minute = "0"
 			self.hour = "*"
 			self.day = "*"
 			self.month = "*"
 			self.weekday = "*"
-		elif temp == "day":
+		elif temp == _("day"):
 			self.minute = "0"
 			self.hour = "0"
 			self.day = "*"
 			self.month = "*"
 			self.weekday = "*"
-		elif temp == "month":
+		elif temp == _("month"):
 			self.minute = "0"
 			self.hour = "0"
 			self.day = "1"
 			self.month = "*"
 			self.weekday = "*"
-		elif temp == "week":
+		elif temp == _("week"):
 			self.minute = "0"
 			self.hour = "0"
 			self.day = "*"
@@ -379,11 +379,11 @@ class AddWindow:
 
 	def on_fieldHelp_clicked(self, widget, *args):
 		name = widget.get_name()
-		if name == "btnMinuteHelp" : name = "minute"
-		if name == "btnHourHelp" : name = "hour"
-		if name == "btnDayHelp" : name = "day"
-		if name == "btnMonthHelp" : name = "month"
-		if name == "btnWeekdayHelp" : name = "weekday"
+		if name == "btnMinuteHelp" : name = _("minute")
+		if name == "btnHourHelp" : name = _("hour")
+		if name == "btnDayHelp" : name = _("day")
+		if name == "btnMonthHelp" : name = -("month")
+		if name == "btnWeekdayHelp" : name = _("weekday")
 
 		self.ParentClass.addHelpWindow.showAll(name)
 		return

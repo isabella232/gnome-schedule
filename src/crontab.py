@@ -134,9 +134,9 @@ class Crontab:
 
 	def amountApp (self, amount):
 		if amount == "1":
-			return "st."
+			return _("st.")
 		else:
-			return "th."
+			return _("th.")
 
 	def valToTimeVal (self, val):
 		if val == "0" or val == "1" or val == "2" or val == "3" or val == "4" or val == "5" or val == "6" or val == "7" or val == "8" or val == "9":
@@ -146,35 +146,35 @@ class Crontab:
 
 	def easyString (self, minute, hour, day, month, weekday):
 		if minute == "*" and hour == "*" and month == "*" and day == "*" and weekday == "*":
-			return "Every minute"
+			return _("Every minute")
 
 		if minute != "*" and hour == "*" and month == "*" and day == "*" and weekday == "*":
-			return "Every " + minute + self.amountApp (minute) + " minute of every hour"
+			return _("Every ") + minute + self.amountApp (minute) + _(" minute of every hour")
 
 		if hour != "*" and month == "*" and day == "*" and weekday == "*":
 			if minute == "0":
-				return "Every " + hour + self.amountApp (hour) + " hour of the day"
+				return _("Every ") + hour + self.amountApp (hour) + _(" hour of the day")
 			elif minute != "*":
-				return "At " + hour + ":" + minute + " every day"
+				return _("At ") + hour + ":" + minute + _(" every day")
 		
 		if month == "*" and day != "*" and weekday == "*":
 			if minute == "0" and hour == "0":
-				return "Every " + day + self.amountApp (day) + " day of the month"
+				return _("Every ") + day + self.amountApp (day) + " day of the month"
 			elif minute != "*" and hour != "*":
-				return "At " + hour + ":" + minute + " every " + day + self.amountApp (day) + " day of the month"
+				return _("At ") + hour + ":" + minute + _(" every ") + day + self.amountApp (day) + _(" day of the month")
 
 
 		if month != "*" and weekday == "*":
 			if minute == "0" and hour == "0" and day == "1":
-				return "Every " + month + self.amountApp (month) + " month of the year"
+				return _("Every ") + month + self.amountApp (month) + _(" month of the year")
 			elif minute != "*" and hour != "*" and day != "*":
-				return "At the " + day + self.amountApp(day) + " " + self.valToTimeVal(hour) + ":" + self.valToTimeVal(minute) + " every " + month + self.amountApp(month) + " month of the year"
+				return _("At the ") + day + self.amountApp(day) + " " + self.valToTimeVal(hour) + ":" + self.valToTimeVal(minute) + _(" every ") + month + self.amountApp(month) + _(" month of the year")
 
 
 		if month == "*" and day == "*" and weekday != "*":
 			if minute == "0" and hour == "0":
-				return "Every " + weekday + self.amountApp (weekday) + " day of the week"
+				return _("Every ") + weekday + self.amountApp (weekday) + _(" day of the week")
 			elif minute != "*" and hour != "*":
-				return "Every " + weekday + self.amountApp(weekday) + " day of the week at " + self.valToTimeVal (hour) + ":" + self.valToTimeVal (minute) + ""
+				return _("Every ") + weekday + self.amountApp(weekday) + _(" day of the week at ") + self.valToTimeVal (hour) + ":" + self.valToTimeVal (minute) + ""
 
 		return minute + " " + hour + " " + day + " " + month + " " + weekday

@@ -25,6 +25,15 @@ import crontab
 import re
 import gobject
 
+##
+## I18N
+##
+from rhpl.translate import _, N_
+import rhpl.translate as translate
+domain = 'gnome-schedule'
+translate.textdomain (domain)
+gtk.glade.bindtextdomain(domain)
+
 class AddWindowHelp:
 	def __init__(self, parent, addwindow):
 		self.ParentClass = parent
@@ -69,19 +78,25 @@ class AddWindowHelp:
 
 	def populateLabels(self, field):
 		#put the apropiate values in the labels describing entitys, and the 'at' combobox
-		self.radAll.set_label("Happens all " + field + "s")
+		self.radAll.set_label(_("Happens all ") + field + _("s"))
 		self.lblEveryEntity.set_text(field)
 		self.lblFixEntity.set_text(field)
-		if field == "minute":
+		self.radRange.set_label (_("Happens from ") + field)
+		if field == _("minute"):
 			self.entRangeEnd.set_text ("59")
-		if field == "hour":
-			self.entRangeEnd.set_text ("59")
-		if field == "day":
+			self.entRangeStart.set_text ("0")
+		if field == _("hour"):
+			self.entRangeEnd.set_text ("23")
+			self.entRangeStart.set_text ("0")
+		if field == _("day"):
 			self.entRangeEnd.set_text ("31")
-		if field == "month":
+			self.entRangeStart.set_text ("1")
+		if field == _("month"):
 			self.entRangeEnd.set_text ("12")
-		if field == "weekday":
+			self.entRangeStart.set_text ("1")
+		if field == _("weekday"):
 			self.entRangeEnd.set_text ("7")
+			self.entRangeStart.set_text ("0")
 
 		self.do_label_magic ()
 
@@ -90,7 +105,7 @@ class AddWindowHelp:
 	def showAll(self, field):
 		self.field = field
 		#show the form
-		self.widget.set_title(("Edit timeexpression for: " + field))
+		self.widget.set_title(_("Edit timeexpression for: ") + field)
 		self.populateLabels(field)
 		self.widget.show_all()
 		return
@@ -98,11 +113,11 @@ class AddWindowHelp:
 	def btnOk_clicked(self, *args):
 		#move expression to field in addwindow and hide
 		expression = self.entExpression.get_text()
-		if self.field == "minute": self.AddWindow.minute_entry.set_text(expression)
-		if self.field == "hour": self.AddWindow.hour_entry.set_text(expression)
-		if self.field == "day": self.AddWindow.day_entry.set_text(expression)
-		if self.field == "month": self.AddWindow.month_entry.set_text(expression)
-		if self.field == "weekday": self.AddWindow.weekday_entry.set_text(expression)
+		if self.field == _("minute"): self.AddWindow.minute_entry.set_text(expression)
+		if self.field == _("hour"): self.AddWindow.hour_entry.set_text(expression)
+		if self.field == _("day"): self.AddWindow.day_entry.set_text(expression)
+		if self.field == _("month"): self.AddWindow.month_entry.set_text(expression)
+		if self.field == _("weekday"): self.AddWindow.weekday_entry.set_text(expression)
 		
 		self.widget.hide()
 		return
@@ -131,18 +146,18 @@ class AddWindowHelp:
 		try:
 			entFixValue = int (self.entFix.get_text())
 			if entFixValue == 1:
-				self.lblFixEntity.set_label ("st. " + self.field)
+				self.lblFixEntity.set_label (_("st. ") + self.field)
 			else:
-				self.lblFixEntity.set_label ("th. " + self.field)
+				self.lblFixEntity.set_label (_("th. ") + self.field)
 		except:
 			pass
 
 		try:
 			entEveryValue = int (self.entEvery.get_text())
 			if entEveryValue > 1:
-				self.lblEveryEntity.set_label (self.field + "s")
+				self.lblEveryEntity.set_label (self.field + _("s"))
 			else:
-				self.lblEveryEntity.set_label ("st. " + self.field)
+				self.lblEveryEntity.set_label (_("st. ") + self.field)
 		except:
 			pass
 
