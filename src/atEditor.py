@@ -1,6 +1,7 @@
 # addWindow.py - UI code for adding a crontab record
 # Copyright (C) 2004, 2005 Philip Van Hoof <me at freax dot org>
 # Copyright (C) 2004, 2005 Gaute Hope <eg at gaute dot eu dot org>
+# Copyright (C) 2004, 2005 Kristof Vansant <de_lupus at pandora dot be>
 
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -52,12 +53,12 @@ class AtEditor:
 		self.fieldRegex = re.compile('^(\*)$|^([0-9]+)$|^\*\\\([0-9]+)$|^([0-9]+)-([0-9]+)$|(^([0-9]+[,])+([0-9]+)$)')
 		self.nooutputRegex = re.compile('([^#\n$]*)>(\s|)/dev/null\s2>&1')
 		#self.editing = gtk.FALSE
-		self.noevents = gtk.FALSE
-		self.NOACTION = gtk.FALSE	#getting alot of these now.. this is for abosultely noactions of the syncing and templates stuff
-		self.noupdate = gtk.FALSE
+		self.noevents = False
+		self.NOACTION = False	#getting alot of these now.. this is for abosultely noactions of the syncing and templates stuff
+		self.noupdate = False
 		self.template_combobox_model = None
 		self.first = 0
-		self.combo_trigger = gtk.FALSE
+		self.combo_trigger = False
 	
 		self.save_button = self.xml.get_widget ("at_save_button")
 		self.remove_button = self.xml.get_widget ("at_delete_button")
@@ -108,22 +109,22 @@ class AtEditor:
 		self.backend.add_scheduler_type("at")
 
 	def showadd (self, mode):
-		self.NOACTION = gtk.TRUE
+		self.NOACTION = True
 		self.__reset__ ()
 		self.title = _("Untitled")
-		self.editing = gtk.FALSE
+		self.editing = False
 		self.widget.set_title(_("Create a new scheduled task"))
 		self.widget.show_all()
 		
 		self.__loadicon__ ()
 		self.__reload_templates__ ()
 		self.__update_textboxes__()
-		self.NOACTION = gtk.FALSE
+		self.NOACTION = False
 
 	def showedit (self, record, job_id, iter, mode):
 
-		self.editing = gtk.TRUE
-		self.NOACTION = gtk.TRUE
+		self.editing = True
+		self.NOACTION = True
 
 		self.job_id = job_id
 		self.date = self.ParentClass.treemodel.get_value(iter, 9)
@@ -145,7 +146,7 @@ class AtEditor:
 		self.parentiter = iter
 		self.widget.show ()
 		self.__reload_templates__ ()
-		self.NOACTION = gtk.FALSE
+		self.NOACTION = False
 
 	def on_worded_label_event (self, *args):
 		#TODO highlight on mouseover
@@ -187,7 +188,7 @@ class AtEditor:
 
 	
 	def __update_time_cal__ (self):
-		if self.NOACTION != gtk.TRUE:
+		if self.NOACTION != True:
 			(year, month, day) = self.calendar.get_date()
 			hour = self.hour_spinbutton.get_text()
 			minute = self.minute_spinbutton.get_text()
@@ -224,15 +225,15 @@ class AtEditor:
 				day = str(day)
 
 			self.runat = hour + ":" + minute + " " + year + "-" + month + "-" + day
-			self.noupdate = gtk.TRUE
-			if self.combo_trigger == gtk.FALSE:
+			self.noupdate = True
+			if self.combo_trigger == False:
 				self.__update_textboxes__()
 
-			self.noupdate = gtk.FALSE
+			self.noupdate = False
 
 
 	def __update_time_combo__ (self):
-		if self.NOACTION != gtk.TRUE:
+		if self.NOACTION != True:
 
 			#update variables, set calendar
 			runat = self.combobox_entry.get_text ()
@@ -254,11 +255,11 @@ class AtEditor:
 
 				
 	def on_combobox_changed (self, *args):
-		if self.NOACTION != gtk.TRUE:
-			if self.noupdate == gtk.FALSE:	
-				self.combo_trigger = gtk.TRUE
+		if self.NOACTION != True:
+			if self.noupdate == False:	
+				self.combo_trigger = True
 				self.__update_time_combo__()
-				self.combo_trigger = gtk.FALSE
+				self.combo_trigger = False
 
 
 	def on_delete_button_clicked (self, *args):
@@ -314,7 +315,7 @@ class AtEditor:
 		
 
 	def on_template_combobox_entry_changed (self, widget):
-		if self.NOACTION != gtk.TRUE:
+		if self.NOACTION != True:
 			firstiter = self.template_combobox_model.get_iter_first()
 			notemplate = self.template_combobox_model.get_value(firstiter,0)
 			entry = self.template_combobox.get_child().get_text()
@@ -325,8 +326,8 @@ class AtEditor:
 	
 
 	def on_template_combobox_changed (self, *args):
-		if self.NOACTION != gtk.TRUE:
-			if self.noevents == gtk.FALSE:
+		if self.NOACTION != True:
+			if self.noevents == False:
 				iter = self.template_combobox.get_active_iter ()
 				if iter == None:
 					return
@@ -434,7 +435,7 @@ class AtEditor:
 
 	def __update_textboxes__(self, update_runat = 1):
 
-		self.noevents = gtk.TRUE
+		self.noevents = True
 		if self.title == None:
 			self.title = "Untitled"
 
@@ -451,7 +452,7 @@ class AtEditor:
 		else:
 			self.__loadicon__ ()
 
-		self.noevents = gtk.FALSE
+		self.noevents = False
 
 
 	def __parse_time__ (self, time, date):
@@ -479,7 +480,7 @@ class AtEditor:
 
 	def on_cancel_button_clicked (self, *args):
 		self.widget.hide()
-		return gtk.TRUE
+		#return gtk.TRUE
 
 
 	def __WrongRecordDialog__ (self, x):
@@ -490,12 +491,12 @@ class AtEditor:
 
 	def on_ok_button_clicked (self, *args):
 		(validate, reason) = self.scheduler.checkfield(self.runat)
-		if validate == gtk.FALSE:
+		if validate == False:
 			self.__WrongRecordDialog__ (reason)
 			return
 		# TODO: Fill record
 		
-		if self.editing != gtk.FALSE:
+		if self.editing != False:
 			self.scheduler.update (self.job_id, self.runat, self.command, self.title, self.icon)
 		else:
 			self.scheduler.append (self.runat, self.command, self.title, self.icon)

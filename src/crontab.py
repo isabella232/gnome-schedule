@@ -1,6 +1,7 @@
 # crontab.py - code to interfere with crontab
 # Copyright (C) 2004, 2005 Philip Van Hoof <me at freax dot org>
 # Copyright (C) 2004, 2005 Gaute Hope <eg at gaute dot eu dot org>
+# Copyright (C) 2004, 2005 Kristof Vansant <de_lupus at pandora dot be>
 
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -15,9 +16,6 @@
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
-
-#pygtk modules
-import gtk
 
 #python modules
 import re
@@ -39,15 +37,18 @@ _ = gettext.gettext
 
 
 class Crontab:
-	def __init__(self, parent):
-		self.ParentClass = parent
-				
+	def __init__(self):
 		#default preview length
 		self.preview_len = 50
 		
 		self.nooutputtag = ">/dev/null 2>&1"
 		self.crontabRecordRegex = re.compile('([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^#\n$]*)(\s#\s([^\n$]*)|$)')
-				
+		
+	def set_rights(self, root, user, uid, gid):
+		self.root =	root
+		self.user = user
+		self.uid = uid
+		self.gid = gid
 	
 	def get_type (self):
 		return "crontab"
@@ -134,7 +135,7 @@ class Crontab:
 	def update (self,minute, hour, day, month, weekday,command, linenumber, parentiter, nooutput, title, icon = None):
 		# update crontab
 		record = minute + " " + hour + " " + day + " " + month + " " + weekday + " " + command
-		print "crontab:update:record=" + record
+		#print "crontab:update:record=" + record
 		
 		easystring = self.__easy__ (minute, hour, day, month, weekday)
 
@@ -152,29 +153,26 @@ class Crontab:
 	
 		self.lines[linenumber] = record
 		
-		#TODO let write return if write PASSED
-		#written = self.write()
+		# TODO: let write trow an exception if failed
 		self.__write__ ()
 	
-		# TODO: remove GUI stuff
-
 		##if written:
-		self.ParentClass.treemodel.set_value (parentiter, 1, easystring)
-		if nooutput:
-			space = " "
-			if command[len(command)-1] == " ":
-				space = ""
-			self.ParentClass.treemodel.set_value (parentiter, 2, self.__make_preview__ (command + space + self.nooutputtag))
-		else:
-				self.ParentClass.treemodel.set_value (parentiter, 2, self.__make_preview__ (command))
+		#self.ParentClass.treemodel.set_value (parentiter, 1, easystring)
+		#if nooutput:
+		#	space = " "
+		#	if command[len(command)-1] == " ":
+		#		space = ""
+		#	self.ParentClass.treemodel.set_value (parentiter, 2, self.__make_preview__ (command + space + self.nooutputtag))
+		#else:
+		#		self.ParentClass.treemodel.set_value (parentiter, 2, self.__make_preview__ (command))
 			
-		self.ParentClass.treemodel.set_value (parentiter, 5, minute + " " + hour + " " + day + " " + month + " " + weekday)
+		#self.ParentClass.treemodel.set_value (parentiter, 5, minute + " " + hour + " " + day + " " + month + " " + weekday)
 
-		self.ParentClass.treemodel.set_value (parentiter, 0, title)
-		if icon != None:
-			self.ParentClass.treemodel.set_value (parentiter, 6, gtk.gdk.pixbuf_new_from_file_at_size (icon, 21, 21))
+		#self.ParentClass.treemodel.set_value (parentiter, 0, title)
+		#if icon != None:
+		#	self.ParentClass.treemodel.set_value (parentiter, 6, gtk.gdk.pixbuf_new_from_file_at_size (icon, 21, 21))
 
-		self.ParentClass.treemodel.set_value (parentiter, 3, record)
+		#self.ParentClass.treemodel.set_value (parentiter, 3, record)
 		##
 
 
@@ -187,8 +185,9 @@ class Crontab:
 			number = number + 1
 
 		self.lines = newlines
+		# TODO: let write trow an exception if failed
 		self.__write__ ()
-		#reload is needed because the line number change 
+		
 		
 		
 
@@ -207,40 +206,44 @@ class Crontab:
 			record = record + " # " + _("Untitled") + ", " + icon
 
 		self.lines.append (record)
+		
+		# TODO: let write trow an exception if failed
 		self.__write__ ()
-		#self.ParentClass.schedule_reload ("crontab")
-
+		
 
 	#read tasks in crontab
 	def read (self):
+		
+		data = []
 
-		if self.ParentClass.root:
-			execute = config.getCrontabbin () + " -l -u " + self.ParentClass.user
+		# TODO: getRoot withit
+		if self.root:
+			execute = config.getCrontabbin () + " -l -u " + self.user
 		else:
 			execute = config.getCrontabbin () + " -l"
-		count = 0
-		self.linecount = 0
+		
+		linecount = 0
 		self.lines = os.popen(execute).readlines()
 		for line in self.lines:
 			#read line and get info
 			array_or_false = self.parse (line)
-			if array_or_false != gtk.FALSE:
+			if array_or_false != False:
 				(minute, hour, day, month, weekday, command, title, icon) = array_or_false
 				time = minute + " " + hour + " " + day + " " + month + " " + weekday
 
-				if icon != None:
-					try:
-						icon_pix = gtk.gdk.pixbuf_new_from_file_at_size (icon, 21, 21)
-					except:
-						icon_pix = None
-				else:
-					icon_pix = None
-				
+		
 				#make the command smaller if the lenght is to long
 				preview = self.__make_preview__ (command)
+				
 				#add task to treemodel in mainWindow
-				iter = self.ParentClass.treemodel.prepend([title, self.__easy__ (minute, hour, day, month, weekday), preview, line, self.linecount, time, icon_pix, self, icon, "", "", "","", _("Frequency"), "crontab"])
-			self.linecount = self.linecount + 1
+				
+				data.append([title, self.__easy__ (minute, hour, day, month, weekday), preview, line, linecount, time, self, icon, "", "", "","", _("Frequency"), "crontab"])
+				
+				
+			linecount = linecount + 1	
+		
+		print data
+		return data
 
 	def translate_frequency (self, frequency):
 
@@ -277,6 +280,7 @@ class Crontab:
 					command = m.groups ()[5]
 
 					#icon path is in comment of the task, this is the default
+					# TODO: shouldn't be gnome specific
 					icon = "/usr/share/icons/gnome/48x48/mimetypes/gnome-mime-application.png"
 					
 					#title is in comment of the task
@@ -296,7 +300,7 @@ class Crontab:
 						
 			else:
 				print "ERROR: Failed to parse crontab record"
-		return gtk.FALSE
+		return False
 
 	
 	def __easy__ (self, minute, hour, day, month, weekday):
@@ -325,9 +329,9 @@ class Crontab:
 		tmp.close ()
 
 		#replace crontab config with new one in file
-		if self.ParentClass.root:
+		if self.root:
 			# print config.getCrontabbin () + " -u " + self.ParentClass.user + " " + path
-			os.system (config.getCrontabbin () + " " + path + " -u " + self.ParentClass.user)
+			os.system (config.getCrontabbin () + " " + path + " -u " + self.user)
 		else:
 			# print config.getCrontabbin () + " " + path
 			os.system (config.getCrontabbin () + " " + path)
@@ -338,9 +342,9 @@ class Crontab:
 		#TODO needs exception handler
 		
 
-   #if a command his lenght is to long the last part is removed 
-   #XXX if the beginning is just a long path it's maybe better to cut there
-   #XXX instead of in the front .../bin/updatedb instead of /dfdffd/bin/upda...
+	#if a command his lenght is to long the last part is removed 
+	#XXX if the beginning is just a long path it's maybe better to cut there
+	#XXX instead of in the front .../bin/updatedb instead of /dfdffd/bin/upda...
 	def __make_preview__ (self, str, preview_len = 0):
 		if preview_len == 0:
 			preview_len = self.preview_len

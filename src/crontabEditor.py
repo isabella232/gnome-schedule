@@ -1,6 +1,7 @@
 # addWindow.py - UI code for adding a crontab record
 # Copyright (C) 2004, 2005 Philip Van Hoof <me at freax dot org>
 # Copyright (C) 2004, 2005 Gaute Hope <eg at gaute dot eu dot org>
+# Copyright (C) 2004, 2005 Kristof Vansant <de_lupus at pandora dot be>
 
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -57,7 +58,7 @@ class CrontabEditor:
 		self.nooutputRegex = re.compile('([^#\n$]*)>(\s|)/dev/null\s2>&1')
 		
 		#self.editing = gtk.FALSE
-		self.noevents = gtk.FALSE
+		self.noevents = False
 		
 		##simple tab	
 		self.notebook = self.xml.get_widget("notebook")
@@ -127,7 +128,7 @@ class CrontabEditor:
 		self.__loadicon__ ()
 		self.__reset__ ()
 		self.__set_frequency_combo__()
-		self.editing = gtk.FALSE
+		self.editing = False
 		self.widget.set_title(_("Create a new scheduled task"))
 		self.widget.show ()
 		self.__reload_templates__ ()
@@ -136,7 +137,7 @@ class CrontabEditor:
 	
 	def showedit (self, record, linenumber, iter, mode):
 		self.__reload_templates__ ()
-		self.editing = gtk.TRUE
+		self.editing = True
 		self.linenumber = linenumber
 		self.record = record
 		(self.minute, self.hour, self.day, self.month, self.weekday, self.command, self.title, self.icon) = self.scheduler.parse (record)
@@ -152,11 +153,11 @@ class CrontabEditor:
 			self.command = m.groups()[0]
 			self.command_entry.set_text (self.command)
 			self.chkNoOutput.set_active (gtk.TRUE)
-			self.nooutput = gtk.TRUE
+			self.nooutput = True
 		else:
 			self.nooutput_label.hide ()
 			self.chkNoOutput.set_active (gtk.FALSE)
-			self.nooutput = gtk.FALSE
+			self.nooutput = False
 
 		#switch to advanced tab if required
 		if mode == "advanced":
@@ -168,7 +169,7 @@ class CrontabEditor:
 
 
 	def __reset__ (self):
-		self.noevents = gtk.TRUE
+		self.noevents = True
 		self.minute = "*"
 		self.hour = "*"
 		self.day = "*"
@@ -176,11 +177,11 @@ class CrontabEditor:
 		self.weekday = "*"
 		self.command = "ls"
 		self.title = _("Untitled")
-		self.nooutput = gtk.TRUE
+		self.nooutput = True
 		self.nooutput_label.show ()
 		self.chkNoOutput.set_active (gtk.TRUE)
 		self.__update_textboxes__ ()
-		self.noevents = gtk.FALSE
+		self.noevents = False
 
 
 	def __reload_templates__ (self):
@@ -323,7 +324,7 @@ class CrontabEditor:
 
 
 	def on_template_combobox_changed (self, *args):
-		if self.noevents == gtk.FALSE:
+		if self.noevents == False:
 			iter = self.template_combobox.get_active_iter ()
 			if iter == None:
 				return
@@ -356,14 +357,14 @@ class CrontabEditor:
 				if (m != None):
 					self.nooutput_label.show ()
 					command = m.groups()[0]
-					self.noevents = gtk.TRUE
+					self.noevents = True
 					self.chkNoOutput.set_active (gtk.TRUE)
-					self.noevents = gtk.FALSE
-					self.nooutput = gtk.TRUE
+					self.noevents = False
+					self.nooutput = True
 				else:
 					self.nooutput_label.hide ()
 					self.chkNoOutput.set_active (gtk.FALSE)
-					self.nooutput = gtk.FALSE
+					self.nooutput = False
 
 
 				self.minute, self.hour, self.day, self.month, self.weekday, self.command, self.title, icon_ = self.scheduler.parse (record)
@@ -386,7 +387,7 @@ class CrontabEditor:
 
 	def on_cancel_button_clicked (self, *args):
 		self.widget.hide()
-		return gtk.TRUE
+		#return gtk.TRUE
 
 
 	def on_ok_button_clicked (self, *args):
@@ -405,12 +406,13 @@ class CrontabEditor:
 		record = self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday + " " + self.command
 
 		
-		if self.editing != gtk.FALSE:
+		if self.editing != False:
 			self.scheduler.update (self.minute, self.hour, self.day, self.month, self.weekday, self.command, self.linenumber, self.parentiter, self.nooutput, self.title, self.icon)
 			
 		else:
 			self.scheduler.append (self.minute, self.hour, self.day, self.month, self.weekday, self.command, self.nooutput, self.title, self.icon)
-			self.ParentClass.schedule_reload ("crontab")
+			
+		self.ParentClass.schedule_reload ("crontab")
 	
 		self.widget.hide ()
 
@@ -445,7 +447,7 @@ class CrontabEditor:
 
 		
 	def __update_textboxes__ (self):
-		self.noevents = gtk.TRUE
+		self.noevents = True
 		self.chkNoOutput.set_active (self.nooutput)
 		self.command_entry.set_text (self.command)
 		self.title_entry.set_text (self.title)
@@ -462,11 +464,11 @@ class CrontabEditor:
 			self.__loadicon__ ()
 		self.setting_label.set_text (self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday + " " + self.command)
 		self.__set_frequency_combo__()
-		self.noevents = gtk.FALSE
+		self.noevents = False
 
 
 	def on_anyadvanced_entry_changed (self, *args):
-		if self.noevents == gtk.FALSE:
+		if self.noevents == False:
 			self.minute = self.minute_entry.get_text ()
 			self.hour = self.hour_entry.get_text ()
 			self.day = self.day_entry.get_text ()
@@ -479,7 +481,7 @@ class CrontabEditor:
 
 
 	def on_anybasic_entry_changed (self, *args):
-		if self.noevents == gtk.FALSE:
+		if self.noevents == False:
 			self.command = self.command_entry.get_text ()
 			self.title = self.title_entry.get_text ()
 			self.nooutput = self.chkNoOutput.get_active()

@@ -18,7 +18,6 @@
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 
 #pygtk modules
-import gtk
 import gconf
 
 #python modules
@@ -69,14 +68,14 @@ class ConfigBackend:
 		installed = self.gconf_client.get_string("/apps/gnome-schedule/presets/" + type + "/installed")
 		newstring = installed
 		if installed != None:
-			first = gtk.TRUE
+			first = True
 			newstring = "   "
 			# TODO: test this code
 			for t in installed.split (", "):
 				if t != template_name_c:
-					if first == gtk.TRUE:
+					if first == True:
 						newstring = t
-						first = gtk.FALSE
+						first = False
 					else:
 						newstring = newstring + ", " + t
 		
@@ -113,13 +112,13 @@ class ConfigBackend:
 		if installed == None:
 			installed = template_name_c
 		else:
-			found = gtk.FALSE
+			found = False
 			# TODO: test this code
 			for t in installed.split (", "):
 				if t == template_name_c:
-					found = gtk.TRUE
+					found = True
 		
-			if found == gtk.FALSE:
+			if found == False:
 				installed = installed + ", " + template_name_c
 				
 		self.gconf_client.unset ("/apps/gnome-schedule/presets/" + type + "/installed")

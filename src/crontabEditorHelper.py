@@ -39,7 +39,7 @@ class CrontabEditorHelper:
 			
 		self.xml = self.ParentClass.xml
 		
-		self.NoExpressionEvents = gtk.FALSE
+		self.NoExpressionEvents = False
 		self.fieldRegex = self.ParentClass.fieldRegex
 		
 		self.widget = self.xml.get_widget("crontabEditorHelper")
@@ -115,7 +115,7 @@ class CrontabEditorHelper:
 		self.radOth.set_active (gtk.TRUE)
 
 		if m != None:
-			self.NoExpressionEvents = gtk.TRUE
+			self.NoExpressionEvents = True
 			self.entExpression.set_text (expression)
 			if m.groups()[0] != None:
 				self.radAll.set_active (gtk.TRUE)
@@ -140,7 +140,7 @@ class CrontabEditorHelper:
 			# if m.groups()[5] != None:
 				# self.radOth.set_active (gtk.TRUE)
 				# fields = m.groups()[5].split (",")
-			self.NoExpressionEvents = gtk.FALSE
+			self.NoExpressionEvents = False
 
 		#show the form
 		self.widget.set_title(_("Edit time expression for: ") + self.trans_field)
@@ -171,11 +171,11 @@ class CrontabEditorHelper:
 	def btnCancel_clicked(self, *args):
 		#hide
 		self.widget.hide()
-		return gtk.TRUE
+		#return gtk.TRUE
 
 
 	def RadioButtonChange(self, widget):
-		self.NoExpressionEvents = gtk.TRUE
+		self.NoExpressionEvents = True
 		self.do_label_magic ()
 		name = widget.get_name()
 		if widget.get_active():
@@ -187,7 +187,7 @@ class CrontabEditorHelper:
 				self.entExpression.set_text(self.entRangeStart.get_text() + "-" + self.entRangeEnd.get_text())
 			elif name == "radFix":
 				self.entExpression.set_text(self.entFix.get_text())
-		self.NoExpressionEvents = gtk.FALSE
+		self.NoExpressionEvents = False
 
 
 	def do_label_magic (self):
@@ -211,12 +211,12 @@ class CrontabEditorHelper:
 
 
 	def entExpressionChanged(self, *args):
-		if self.NoExpressionEvents == gtk.FALSE:
+		if self.NoExpressionEvents == False:
 			self.radOth.set_active (gtk.TRUE)
 
 
 	def anyEntryChanged(self, *args):
-		self.NoExpressionEvents = gtk.TRUE
+		self.NoExpressionEvents = True
 		self.do_label_magic ()
 		#create a easy read line for the expression view, put the command into the edit box
 		if self.radAll.get_active():
@@ -227,4 +227,4 @@ class CrontabEditorHelper:
 				self.entExpression.set_text(self.entRangeStart.get_text() + "-" + self.entRangeEnd.get_text())
 		if self.radFix.get_active ():
 				self.entExpression.set_text(self.entFix.get_text())
-		self.NoExpressionEvents = gtk.FALSE
+		self.NoExpressionEvents = False

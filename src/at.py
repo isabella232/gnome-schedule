@@ -1,6 +1,7 @@
 # at.py - code to interfere with at
 # Copyright (C) 2004, 2005 Philip Van Hoof <me at freax dot org>
 # Copyright (C) 2004, 2005 Gaute Hope <eg at gaute dot eu dot org>
+# Copyright (C) 2004, 2005 Kristof Vansant <de_lupus at pandora dot be>
 
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -16,10 +17,6 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 
-#pygtk modules
-import gtk
-import gobject
-
 #python modules
 import re
 import os
@@ -30,7 +27,7 @@ import time
 
 #custom modules
 import config
-#import atEditor
+
 
 ##
 ## I18N
@@ -43,22 +40,20 @@ _ = gettext.gettext
 
 
 class At:
-	def __init__(self, parent):
-		self.ParentClass = parent
-		#self.xml = self.ParentClass.xml
-		
+	def __init__(self):
+	
 		#default preview length
 		self.preview_len = 50
-		
-		#self.editor = atEditor.AtEditor (self)
-		
+
 		self.atRecordRegex = re.compile('([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)')
 		self.atRecordRegexAdd = re.compile('([^\s]+)\s([^\s]+)\s')
 		self.atRecordRegexAdded = re.compile('[^\s]+\s([0-9]+)\sat')
-	
-
-	#def geteditor (self):
-	#	return self.editor
+		
+	def set_rights(self, root, user, uid, gid):
+		self.root =	root
+		self.user = user
+		self.uid = uid
+		self.gid = gid
 
 	def get_type (self):
 		return "at"
@@ -101,10 +96,12 @@ class At:
 					job_id = m.groups ()[1]
 					return job_id
 
-		return gtk.FALSE
+		return False
 
 
 	def checkfield (self, runat):
+		#TODO: fix bug $0:19 2004-12-8$ not valid by regexp
+		print "$" + runat + "$"
 		regexp1 = re.compile("([0-9][0-9]):([0-9][0-9])\ ([0-9][0-9][0-9][0-9])-([0-9][0-9])-([0-9][0-9])")
 		regexp2 = re.compile("([0-9][0-9]):([0-9][0-9])")
 		regexp3 = re.compile("([0-9][0-9][0-9][0-9])-([0-9][0-9])-([0-9][0-9])")
@@ -127,23 +124,23 @@ class At:
 			day = int(day)
 
 			if hour > 24 or hour < 0:
-				return gtk.FALSE, "hour"
+				return False, "hour"
 			
 			if minute > 60 or minute < 0:
-				return gtk.FALSE, "minute"
+				return False, "minute"
 			
-			if hour < chour or (hour == chour and minute < cminute): plussday = gtk.TRUE
-			else: plussday = gtk.FALSE
+			if hour < chour or (hour == chour and minute < cminute): plussday = True
+			else: plussday = False
 
 			if year < cyear:
-				return gtk.FALSE, "year"
+				return False, "year"
 
 			if (month < cmonth and year <= cyear):
-				return gtk.FALSE, "month"
+				return False, "month"
 
 
-			if (day < cday and month <= cmonth) or (plussday == gtk.TRUE and day < cday + 1 and month <= cmonth):
-				return gtk.FALSE, "day"
+			if (day < cday and month <= cmonth) or (plussday == True and day < cday + 1 and month <= cmonth):
+				return False, "day"
 
 		elif runat_g2:
 
@@ -151,10 +148,10 @@ class At:
 			hour = int(hour)
 			minute = int(minute)
 			if hour > 24 or hour < 0:
-				return gtk.FALSE, "hour"
+				return False, "hour"
 	
 			if minute > 60 or minute < 0:
-				return gtk.FALSE, "minute"
+				return False, "minute"
 
 
 		elif runat_g3:
@@ -164,16 +161,16 @@ class At:
 			month = int(month)
 			day = int(day)
 			if year < cyear:
-				return gtk.FALSE, "year"
+				return False, "year"
 			if month < cmonth:
-				return gtk.FALSE, "month"
+				return False, "month"
 			if day < cday:
-				return gtk.FALSE, "day"
+				return False, "day"
 
 		else:
 			#lowercase
 			runat = runat.lower()
-
+		
 			#some timespecs:
 			days = ['sun','mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sunday','monday','tuesday','wednesday','thursday','friday','saturday']
 			relative_days = ['tomorrow','next week','today']
@@ -192,9 +189,9 @@ class At:
 			elif runat in relative_month:
 				pass
 			else:
-				return gtk.FALSE, "other"
+				return False, "other"
 
-		return gtk.TRUE, "ok"
+		return True, "ok"
 	
 	#TODO merge code of append and update	
 	def append (self, runat, command, title, icon):
@@ -215,11 +212,12 @@ class At:
 		
 		temp = None
 
-		if self.ParentClass.root == 1:
-			if self.ParentClass.user != "root":
+		# TODO: get this info
+		if self.root == 1:
+			if self.user != "root":
 				#changes the ownership
-				os.chown(path, self.ParentClass.uid, self.ParentClass.gid)
-				execute = config.getSubin() + " " + self.ParentClass.user + " -c \"" + config.getAtbin() + " " + runat + " -f " + path + " && exit\""
+				os.chown(path, self.uid, self.gid)
+				execute = config.getSubin() + " " + self.user + " -c \"" + config.getAtbin() + " " + runat + " -f " + path + " && exit\""
 				temp = commands.getoutput(execute)
 			else:
 				execute = config.getAtbin() + " " + runat + " -f " + path
@@ -229,7 +227,6 @@ class At:
 			temp = commands.getoutput(execute)
 
 		os.unlink (path)
-		#self.ParentClass.schedule_reload ("at")
 		return temp
 
 
@@ -253,10 +250,11 @@ class At:
 		tmp.write (command + "\n")
 		tmp.close ()
 
-		if self.ParentClass.root == 1:
-			if self.ParentClass.user != "root":
+		# TODO: get this info
+		if self.root == 1:
+			if self.user != "root":
 				#changes the ownership
-				os.chown(path, self.ParentClass.uid, self.ParentClass.gid)
+				os.chown(path, self.uid, self.gid)
 				execute = config.getSubin() + " " + self.ParentClass.user + " -c \"" + config.getAtbin() + " " + runat + " -f " + path + " && exit\""
 				temp = commands.getoutput(execute)
 
@@ -264,35 +262,35 @@ class At:
 			execute = config.getAtbin() + " " + runat + " -f " + path
 			temp = commands.getoutput(execute)
 
-
 		os.unlink (path)
-		#self.ParentClass.schedule_reload ("at")
-
+		
 
 	def delete (self, jobid, iter):
 		if jobid:
 			execute = config.getAtrmbin()+ " " + str(jobid)
 			commands.getoutput(execute)
-			#result = self.ParentClass.treemodel.remove(iter)
-	
+			
+				
 	# TODO: remove gui parts
 	def read (self):
+		
+		data = []
 		#do 'atq'
 		execute = config.getAtqbin ()
 		self.lines = os.popen(execute).readlines()
 		for line in self.lines:
 			array_or_false = self.parse (line)
-			if array_or_false != gtk.FALSE:
+			if array_or_false != False:
 				(job_id, date, time, class_id, user, lines, title, icon, prelen, dangerous) = array_or_false
 
-				if icon != None:
-					try:
-						icon_pix = gtk.gdk.pixbuf_new_from_file_at_size (icon, 21, 21)
-						
-					except:
-						icon_pix = None
-				else:
-					icon_pix = None
+				#if icon != None:
+				#	try:
+				#		icon_pix = gtk.gdk.pixbuf_new_from_file_at_size (icon, 21, 21)
+				#		
+				#	except:
+				#		icon_pix = None
+				#else:
+				#	icon_pix = None
 
 				preview = self.__make_preview__ (lines, prelen)
 				if dangerous == 1:
@@ -302,15 +300,18 @@ class At:
 					
 				timestring = _("%s%s%s %s%s%s") % ("", date, "", "", time, "")
 				timestring_show = _("At ") + timestring #_("%sAt%s%s") % (_(""), _(""), timestring, _(""))
-				if self.ParentClass.root == 1:
-					if self.ParentClass.user == user:
-						iter = self.ParentClass.treemodel.append([title, timestring_show, preview, lines, int(job_id), timestring, icon_pix, self, icon, date, class_id, user, time, _("Defined"), "at"])
+				if self.root == 1:
+					if self.user == user:
+						data.append([title, timestring_show, preview, lines, int(job_id), timestring, self, icon, date, class_id, user, time, _("Defined"), "at"])
 					else: 
 						#print "Record omitted, not current user"
 						pass
 				else:
-					iter = self.ParentClass.treemodel.append([title, timestring_show, preview, lines, int(job_id), timestring, icon_pix, self, icon, date, class_id, user, time, "Defined", "at"])
-
+					data.append([title, timestring_show, preview, lines, int(job_id), timestring, self, icon, date, class_id, user, time, "Defined", "at"])
+					
+			print data
+			return data
+			
 
 	def __prepare_script__ (self, script):
 	
@@ -378,6 +379,7 @@ class At:
 				prelen = prelen + len(icon) + 6
 		
 			else:
+				# TODO: shouldn't be gnome specific
 				icon = "/usr/share/icons/gnome/48x48/mimetypes/gnome-mime-application.png"
 
 		return script, title, icon, prelen, dangerous

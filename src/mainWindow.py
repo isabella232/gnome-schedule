@@ -60,7 +60,7 @@ class main:
 		
 		self.editor = None
 		self.schedule = None
-		self.haveitem = gtk.FALSE
+		self.haveitem = False
 
 		#start the backend where all the user configuration is stored
 		self.backend = preset.ConfigBackend(self, "gconf")
@@ -168,12 +168,12 @@ class main:
 			self.statusbar.show()
 		
 		##create crontab
-		self.crontab = crontab.Crontab(self)
+		self.crontab = crontab.Crontab()
 		self.crontab_editor = crontabEditor.CrontabEditor(self,self.backend, self.crontab)
 		##
 		
 		##create at
-		self.at = at.At(self)
+		self.at = at.At()
 		self.at_editor = atEditor.AtEditor (self, self.backend, self.at)
 		##
 		
@@ -185,6 +185,8 @@ class main:
 		
 		#load the treeview with the tasks
 		self.schedule_reload ("all")
+		
+		# TODO: select first task from list
 			
 		gtk.main()
 
@@ -195,33 +197,63 @@ class main:
 		
 		self.delarray = []
 		
+		self.crontab.set_rights(self.root, self.user, self.uid, self.gid)
+		self.at.set_rights(self.root, self.user, self.uid, self.gid)
+		
 		#adjust statusbar
 		if self.root == 1:
 			self.statusbar.push(self.statusbarUser, (_("Editing user: ") + self.user))
-				
+			
 		
 		if records == "crontab":
 			self.treemodel.foreach(self.__delete_row__, "crontab")
-			self.crontab.read()
+			
+			data = self.crontab.read()
+			if data != None:
+				self.__fill__(data)
 
 		elif records == "at":
 			self.treemodel.foreach(self.__delete_row__, "at")
-			self.at.read()
+			
+			data = self.at.read()
+			if data != None:
+				self.__fill__(data)
 
 		elif records == "all":
 			self.treemodel.foreach(self.__delete_row__, "all")
-			self.crontab.read ()
-			self.at.read ()
+			
+			data0 = self.crontab.read ()
+			if data0 != None:
+				self.__fill__(data0)
+			
+			data1 = self.at.read ()
+			if data1 != None:
+				self.__fill__(data1)
+	
 	
 		for iter in self.delarray:
 			self.treemodel.remove(iter)
 
 
+	def __fill__ (self, records):
+
+		for title, timestring_show, preview, lines, job_id, timestring, scheduler, icon, date, class_id, user, time, dunno, type in records:
+					
+			if icon != None:
+				try:
+					icon_pix = gtk.gdk.pixbuf_new_from_file_at_size (icon, 21, 21)
+				except:
+					icon_pix = None
+			else:
+				icon_pix = None
+
+			iter = self.treemodel.append([title, timestring_show, preview, lines, job_id, timestring, icon_pix, scheduler, icon, date, class_id, user, time, dunno, type])
+		
+		
 	def __delete_row__ (self, model, path, iter, record_type):
 		if record_type == self.treemodel.get_value(iter, 14) or record_type == "all":
 			self.delarray.append(iter)
 	##
-
 
 	# TODO: pixbuf or pixmap? gtkImage
 	def __loadIcon__(self):
@@ -367,6 +399,8 @@ class main:
 
 			self.schedule.delete (linenumber, iter)
 			self.schedule_reload(self.schedule.get_type())
+			
+			# TODO: generate click event
 			firstiter = self.treemodel.get_iter_first()
 			try:
 				nextiter = self.treemodel.get_iter(path)
@@ -407,17 +441,18 @@ class main:
 		self.on_manual_menu_activate (self, args)
 
 
-	#remove task from list with DEL key
 	def on_treeview_key_pressed (self, widget, event):
 		key = gtk.gdk.keyval_name(event.keyval)
+		#remove task from list with DEL key
 		if key == "Delete" or key == "KP_Delete":
 			self.on_delete_menu_activate()
+		if (key == "Return" or key == "KP_Return") and self.haveitem == True:
+ 			self.on_properties_menu_activate(self, widget)
 
-	# TODO: pressing enter on a listitem also should show properties
-	# TODO: if there are items in the list the first one should get focus
+	
 	#double click on task to get properties
 	def on_treeview_button_press_event (self, widget, event):
-		if event.type == gtk.gdk._2BUTTON_PRESS and self.haveitem == gtk.TRUE:
+		if event.type == gtk.gdk._2BUTTON_PRESS and self.haveitem == True:
 			self.on_properties_menu_activate(self, widget)
 
 
