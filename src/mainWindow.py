@@ -46,7 +46,7 @@ domain = 'gnome-schedule'
 gettext.bindtextdomain(domain)
 gettext.textdomain(domain)
 _ = gettext.gettext
-
+gtk.glade.bindtextdomain(domain)
 
 ##
 ## The MainWindow class
