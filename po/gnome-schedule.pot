@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-06-15 16:22+0200\n"
+"POT-Creation-Date: 2004-06-15 19:16+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,36 +30,36 @@ msgid "Happens from "
 msgstr ""
 
 #: ../src/addWindowHelp.py:89 ../src/addWindowHelp.py:153
-#: ../src/addWindow.py:122 ../src/addWindow.py:142 ../src/addWindow.py:166
-#: ../src/addWindow.py:217 ../src/addWindow.py:262 ../src/addWindow.py:345
-#: ../src/addWindow.py:383
+#: ../src/addWindow.py:123 ../src/addWindow.py:143 ../src/addWindow.py:167
+#: ../src/addWindow.py:222 ../src/addWindow.py:267 ../src/addWindow.py:350
+#: ../src/addWindow.py:388
 msgid "minute"
 msgstr ""
 
 #: ../src/addWindowHelp.py:92 ../src/addWindowHelp.py:154
-#: ../src/addWindow.py:125 ../src/addWindow.py:145 ../src/addWindow.py:169
-#: ../src/addWindow.py:218 ../src/addWindow.py:265 ../src/addWindow.py:351
-#: ../src/addWindow.py:386
+#: ../src/addWindow.py:126 ../src/addWindow.py:146 ../src/addWindow.py:170
+#: ../src/addWindow.py:223 ../src/addWindow.py:270 ../src/addWindow.py:356
+#: ../src/addWindow.py:391
 msgid "hour"
 msgstr ""
 
 #: ../src/addWindowHelp.py:95 ../src/addWindowHelp.py:155
-#: ../src/addWindow.py:128 ../src/addWindow.py:148 ../src/addWindow.py:172
-#: ../src/addWindow.py:219 ../src/addWindow.py:268 ../src/addWindow.py:357
-#: ../src/addWindow.py:389
+#: ../src/addWindow.py:129 ../src/addWindow.py:149 ../src/addWindow.py:173
+#: ../src/addWindow.py:224 ../src/addWindow.py:273 ../src/addWindow.py:362
+#: ../src/addWindow.py:394
 msgid "day"
 msgstr ""
 
 #: ../src/addWindowHelp.py:98 ../src/addWindowHelp.py:156
-#: ../src/addWindow.py:131 ../src/addWindow.py:151 ../src/addWindow.py:175
-#: ../src/addWindow.py:220 ../src/addWindow.py:271 ../src/addWindow.py:363
-#: ../src/addWindow.py:392
+#: ../src/addWindow.py:132 ../src/addWindow.py:152 ../src/addWindow.py:176
+#: ../src/addWindow.py:225 ../src/addWindow.py:276 ../src/addWindow.py:368
+#: ../src/addWindow.py:397
 msgid "month"
 msgstr ""
 
 #: ../src/addWindowHelp.py:101 ../src/addWindowHelp.py:157
-#: ../src/addWindow.py:134 ../src/addWindow.py:154 ../src/addWindow.py:178
-#: ../src/addWindow.py:221 ../src/addWindow.py:395
+#: ../src/addWindow.py:135 ../src/addWindow.py:155 ../src/addWindow.py:179
+#: ../src/addWindow.py:226 ../src/addWindow.py:400
 msgid "weekday"
 msgstr ""
 
@@ -76,55 +76,55 @@ msgstr ""
 msgid "th. "
 msgstr ""
 
-#: ../src/addWindow.py:85
+#: ../src/addWindow.py:86
 msgid "Edit a scheduled task"
 msgstr ""
 
-#: ../src/addWindow.py:124 ../src/addWindow.py:144 ../src/addWindow.py:168
+#: ../src/addWindow.py:125 ../src/addWindow.py:145 ../src/addWindow.py:169
 msgid "must be between 59 and 0"
 msgstr ""
 
-#: ../src/addWindow.py:127 ../src/addWindow.py:147
+#: ../src/addWindow.py:128 ../src/addWindow.py:148
 msgid "must be between 23 and 0"
 msgstr ""
 
-#: ../src/addWindow.py:130 ../src/addWindow.py:150 ../src/addWindow.py:174
+#: ../src/addWindow.py:131 ../src/addWindow.py:151 ../src/addWindow.py:175
 msgid "must be between 31 and 1"
 msgstr ""
 
-#: ../src/addWindow.py:133 ../src/addWindow.py:153 ../src/addWindow.py:177
+#: ../src/addWindow.py:134 ../src/addWindow.py:154 ../src/addWindow.py:178
 msgid "must be between 12 and 1"
 msgstr ""
 
-#: ../src/addWindow.py:136 ../src/addWindow.py:156 ../src/addWindow.py:180
+#: ../src/addWindow.py:137 ../src/addWindow.py:157 ../src/addWindow.py:181
 msgid "must be between 7 and 0"
 msgstr ""
 
-#: ../src/addWindow.py:196
+#: ../src/addWindow.py:197
 msgid "New scheduled task"
 msgstr ""
 
-#: ../src/addWindow.py:200
+#: ../src/addWindow.py:201
 msgid "Create a new scheduled task"
 msgstr ""
 
-#: ../src/addWindow.py:224
+#: ../src/addWindow.py:229
 msgid "This is an invalid record! The problem could be at the "
 msgstr ""
 
-#: ../src/addWindow.py:224
+#: ../src/addWindow.py:229
 msgid " field. Reason: "
 msgstr ""
 
-#: ../src/addWindow.py:258
+#: ../src/addWindow.py:263
 msgid "use advanced"
 msgstr ""
 
-#: ../src/addWindow.py:274 ../src/addWindow.py:369
+#: ../src/addWindow.py:279 ../src/addWindow.py:374
 msgid "week"
 msgstr ""
 
-#: ../src/addWindow.py:290
+#: ../src/addWindow.py:295
 msgid "command"
 msgstr ""
 
@@ -209,10 +209,6 @@ msgstr ""
 
 #: ../src/mainWindow.py:265
 msgid "This software is distributed under the GPL. "
-msgstr ""
-
-#: ../src/mainWindow.py:311
-msgid "Help is not available."
 msgstr ""
 
 #.

@@ -213,6 +213,7 @@ class main:
 
 		# self.treeview.get_selection().connect("changed", self.onTreeViewSelectRow)
 		self.treeview.get_selection().unselect_all()
+		self.edit_mode = mode
 		return
 
 
@@ -271,7 +272,7 @@ class main:
 		dlg.show()
 
 	def on_add_scheduled_task_menu_activate (self, *args):
-		self.addWindow.showAddWindow ()
+		self.addWindow.showAddWindow (self.edit_mode)
 		pass
 
 	def on_properties_menu_activate (self, *args):
@@ -279,7 +280,7 @@ class main:
 		if iter != None:
 			record = self.treemodel.get_value(iter, 3)
 			linenumber = self.treemodel.get_value(iter, 4)
-			self.addWindow.showEditWindow (record, linenumber, iter)
+			self.addWindow.showEditWindow (record, linenumber, iter, self.edit_mode)
 
 	def on_delete_menu_activate (self, *args):
 		store, iter = self.treeview.get_selection().get_selected()

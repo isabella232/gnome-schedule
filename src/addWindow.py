@@ -63,6 +63,7 @@ class AddWindow:
 		self.weekday_entry = self.xml.get_widget ("weekday_entry")
 		self.setting_label = self.xml.get_widget ("setting_label")
 		self.chkNoOutput = self.xml.get_widget("chkNoOutput")
+		self.notebook = self.xml.get_widget("notebook")
 
 		self.xml.signal_connect("on_add_help_button_clicked", self.on_add_help_button_clicked)
 		self.xml.signal_connect("on_cancel_button_clicked", self.on_cancel_button_clicked)
@@ -78,7 +79,7 @@ class AddWindow:
 		self.nooutputRegex = re.compile('([^#\n$]*)>(\s|)/dev/null\s2>&1')
 		self.fieldRegex = re.compile('^(\*)$|^([0-9]+)$|^\*\\\([0-9]+)$|^([0-9]+)-([0-9]+)$|(([0-9]+[|,])+)')
 
-	def showEditWindow (self, record, linenumber, iter):
+	def showEditWindow (self, record, linenumber, iter, mode):
 		self.editing = gtk.TRUE
 		self.linenumber = linenumber
 		self.record = record
@@ -100,6 +101,12 @@ class AddWindow:
 			self.nooutput_label.hide ()
 			self.chkNoOutput.set_active (gtk.FALSE)
 			self.nooutput = gtk.FALSE
+
+		#switch to advanced tab if required
+		if mode == "advanced":
+			self.notebook.set_current_page(1)
+		else:
+			self.notebook.set_current_page(0)
 
 	def frequency_combobox_keypress (self, *args):
 		# Returning true will tell gtk that the signal has been processed
@@ -185,7 +192,7 @@ class AddWindow:
 				#(*, 0, '2', 10, 10, '1,2,', 1)
 				# print m.groups()
 
-	def showAddWindow (self):
+	def showAddWindow (self, mode):
 		self.reset ()
 
 		self.minute = "*"
@@ -203,6 +210,13 @@ class AddWindow:
 		self.nooutput_label.hide ()
 		self.nooutput = gtk.FALSE
 		self.chkNoOutput.set_active (gtk.FALSE)
+		#switch to advanced tab if required
+		if mode == "advanced":
+			self.notebook.set_current_page(1)
+		else:
+			self.notebook.set_current_page(0)
+
+
 
 	def on_add_help_button_clicked (self, *args):
 		help_page = "file:///usr/share/doc/gnome-schedule-" + "@VERSION@" + "/addingandediting.html"
