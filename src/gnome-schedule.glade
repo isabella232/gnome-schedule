@@ -463,7 +463,6 @@
 		      <child>
 			<widget class="GtkEntry" id="title_entry">
 			  <property name="width_request">260</property>
-			  <property name="visible">True</property>
 			  <property name="can_focus">True</property>
 			  <property name="editable">True</property>
 			  <property name="visibility">True</property>
@@ -1265,7 +1264,6 @@ use advanced</property>
 </widget>
 
 <widget class="GtkWindow" id="crontabEditorHelper">
-  <property name="visible">True</property>
   <property name="title" translatable="yes">Time expression help</property>
   <property name="type">GTK_WINDOW_TOPLEVEL</property>
   <property name="window_position">GTK_WIN_POS_NONE</property>

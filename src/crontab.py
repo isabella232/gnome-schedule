@@ -24,6 +24,9 @@ import tempfile
 import config
 import mainWindow
 import gobject
+import crontabEditorHelper
+import crontabEditor
+
 ##
 ## I18N
 ##
@@ -36,12 +39,24 @@ gtk.glade.bindtextdomain(domain)
 class Crontab:
 	def __init__(self, parent):
 		self.crontabRecordRegex = re.compile('([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^#\n$]*)(\s#\s([^\n$]*)|$)')
-		
 		self.ParentClass = parent
+		self.xml = self.ParentClass.xml
 		self.nooutputtag = ">/dev/null 2>&1"
+
 		self.ParentClass.treemodel = self.createtreemodel ()
+		self.editorwidget = self.xml.get_widget("crontabEditor")
+		self.editorhelperwidget = self.xml.get_widget("crontabEditorHelper")
+		self.editor = crontabEditor.CrontabEditor (self, self)
+		self.editorhelper = crontabEditorHelper.CrontabEditorHelper(self, self.editor)
+
+		self.editorwidget.hide()
+		self.editorhelperwidget.hide()
+
 		self.read()
 		return
+
+	def geteditor (self):
+		return self.editor
 
 	def createtreemodel (self):
 		# [0 Title, 1 Frequency, 2 Command, 3 Crontab record, 4 Line number, 5 Time]
@@ -79,7 +94,7 @@ class Crontab:
 			# Setting up the columns
 			col = gtk.TreeViewColumn(_("Frequency"), gtk.CellRendererText(), text=5)
 			self.ParentClass.treeview.append_column(col)
-			col = gtk.ParentClass.TreeViewColumn(_("Command"), gtk.CellRendererText(), text=2)
+			col = gtk.TreeViewColumn(_("Command"), gtk.CellRendererText(), text=2)
 			self.ParentClass.treeview.append_column(col)
 			col = gtk.TreeViewColumn(_("Title"), gtk.CellRendererText(), text=0)
 			col.set_spacing(235)
@@ -328,36 +343,37 @@ class Crontab:
 			return val
 
 	def easy (self, minute, hour, day, month, weekday):
+		print "easy" + minute + hour + day
 		if minute == "*" and hour == "*" and month == "*" and day == "*" and weekday == "*":
 			return _("Every minute")
 
 		if minute != "*" and hour == "*" and month == "*" and day == "*" and weekday == "*":
-			return _("Every ") + minute + self.amountApp (minute) + _(" minute of every hour")
+			return (_("Every %s%s minute of every hour") % (minute, self.amountApp (minute)))
 
 		if hour != "*" and month == "*" and day == "*" and weekday == "*":
 			if minute == "0":
-				return _("Every ") + hour + self.amountApp (hour) + _(" hour of the day")
+				return (_("Every %s%s hour of the day") % (hour, self.amountApp (hour)))
 			elif minute != "*":
-				return _("At ") + hour + ":" + minute + _(" every day")
+				return (_("Every day at %s:%s") % (self.valToTimeVal (hour), self.valToTimeVal (minute)))
 		
 		if month == "*" and day != "*" and weekday == "*":
 			if minute == "0" and hour == "0":
-				return _("Every ") + day + self.amountApp (day) + " day of the month"
+				return (_("Every %s%s day of the month") % (day, self.amountApp (day)))
 			elif minute != "*" and hour != "*":
-				return _("At ") + hour + ":" + minute + _(" every ") + day + self.amountApp (day) + _(" day of the month")
+				return (_("At %s:%s every %s%s day of the month") % (self.valToTimeVal(hour), self.valToTimeVal(minute), day, self.amountApp (day)))
 
 
 		if month != "*" and weekday == "*":
 			if minute == "0" and hour == "0" and day == "1":
-				return _("Every ") + month + self.amountApp (month) + _(" month of the year")
+				return (_("Every %s%s month of the year") % (month, self.amountApp (month)))
 			elif minute != "*" and hour != "*" and day != "*":
-				return _("At the ") + day + self.amountApp(day) + " " + self.valToTimeVal(hour) + ":" + self.valToTimeVal(minute) + _(" every ") + month + self.amountApp(month) + _(" month of the year")
+				return (_("At the %s%s %s:%s every %s%s month of the year") % (day, self.amountApp(day), self.valToTimeVal(hour), self.valToTimeVal(minute), month, self.amountApp(month)))
 
 
 		if month == "*" and day == "*" and weekday != "*":
 			if minute == "0" and hour == "0":
-				return _("Every ") + weekday + self.amountApp (weekday) + _(" day of the week")
+				return (_("Every %s%s day of the week") % (weekday, self.amountApp (weekday)))
 			elif minute != "*" and hour != "*":
-				return _("Every ") + weekday + self.amountApp(weekday) + _(" day of the week at ") + self.valToTimeVal (hour) + ":" + self.valToTimeVal (minute) + ""
+				return (_("Every %s%s day of the week at %s:%s") % (weekday + self.amountApp(weekday), self.valToTimeVal (hour), self.valToTimeVal (minute)))
 
 		return minute + " " + hour + " " + day + " " + month + " " + weekday

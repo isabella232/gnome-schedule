@@ -42,6 +42,10 @@ class At:
 		self.read ()
 
 		return
+
+	def geteditor (self):
+		raise 'Not implemented'
+
 	def createtreemodel (self):
 		raise 'Not implemented'
 		

@@ -23,8 +23,6 @@ import string
 import os
 import re
 import gtk.glade
-import crontabEditorHelper
-import crontabEditor
 # import atEditor
 # import atEditorHelper
 import setuserWindow
@@ -81,27 +79,21 @@ class main:
 
 		#read the user
 		self.readUser()
-		
+
+		# It should be possible to switch these during run
+		# Remember it while developing this!
+		# the schedule.py defines the abstract interface for it
 		self.crontab_vs_at = "crontab"
+
 		if self.crontab_vs_at == "crontab":
-
 			self.schedule = crontab.Crontab(self)
-			# Happens during crontab creation:
-			# self.treemodel = self.schedule.createtreemodel ()
-
-			self.editorwidget = self.xml.get_widget("crontabEditor")
-			self.editorwidget.hide()
-			self.editorhelperwidget = self.xml.get_widget("crontabEditorHelper")
-			self.editorhelperwidget.hide()
-		
-			self.editor = crontabEditor.CrontabEditor (self, self.schedule)
-			self.editorhelper = crontabEditorHelper.CrontabEditorHelper(self, self.editor)
 		else:
 			raise 'Not implemented'
-			# self.schedule = at.At (self)
-			# self.editorwidget = self.xml.get_widget("atEditor")
-			# self.editorwidget.hide()
-			# self.editor = atEditor.AtEditor (self, self.schedule)
+			self.schedule = at.At(self)
+
+		self.editor = self.schedule.geteditor()
+
+
 		# This will only work with PyGTK 2.4.x
 		try:
 			# this tries to fix a bug in libglade (the homogeneous propery ain't working)

@@ -38,18 +38,21 @@ class Schedule:
 		self.read()
 		return
 
+	def geteditor (self):
+		raise 'Abstract method please override'
+
 	def createtreemodel (self):
 		raise 'Abstract method please override'
-		
+
 	def switchview (self, mode = "simple", init = 0):
 		raise 'Abstract method please override'
-		
+
 	def createpreview (self, minute, hour, day, month, weekday, command):
 		raise 'Abstract method please override'
 
 	def getstandardvalue (self):
 		raise 'Abstract method please override'
-		
+
 	def getfrequency (self, minute, hour, day, month, weekday):
 		raise 'Abstract method please override'
 
