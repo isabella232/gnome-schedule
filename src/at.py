@@ -29,6 +29,7 @@ import commands
 import config
 import string
 import gettext
+import time
 ##
 ## I18N
 ##
@@ -295,7 +296,11 @@ class At:
 					script = os.popen(execute).read()
 					script, title, icon, prelen = self.prepare_script (script)
 					#removing ending newlines, but keep one
-					done = 0
+					#if a date before this is selected the record is removed, this creates an error, and generally if the script is of zero length
+					if len(script) == 0:
+						done = 1
+					else:
+						done = 0
 					while done == 0:
 						if script[-1] == "\n":
 							script = script[0:-1]
