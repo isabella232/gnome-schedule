@@ -5,6 +5,7 @@ URL: http://gnome-schedule.sf.net
 Release: 1
 Copyright: GPL
 Group: Applications/System
+Source: gnome-schedule-@VERSION@.tar.gz
 Buildroot: /var/tmp/%{name}-buildroot
 Requires: python-conf2
 Requires: python
@@ -34,8 +35,13 @@ rm -rf $RPM_BUILD_ROOT
 
 %find_lang %name
 
-%changelog
-2004-07-18  Gaute Hope <eg@gaute.eu.org>
+%files -f %{name}.lang
+%defattr(-,root,root)
+#%doc COPYING
+%doc doc/*
+/usr/bin/gnome-schedule
+%dir /usr/share/gnome-schedule
+/usr/share/gnome-schedule/*
 
-	* Intial spec file
+
 
