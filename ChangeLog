@@ -1,3 +1,18 @@
+2004-06-13  Philip Van Hoof <me at freax dot org>
+	* addWindow.py
+	* ------------
+	* Regexp stuff to check if the values entered in the advaced add form is correct.
+	* No '> /dev/null..' stuff in the command entry (used a label)
+	* Redesign of the 'Setting' label 
+	* the combobox 'Every' is now read-only
+
+	* addWindowHelp.py
+	* ----------------	
+	* if >1 is selected in the select every field is written then change the label to 'dayS' or appropiate
+	* and 'Happends from' is changed to 'Happends from day' [ ] to [ ]
+	* 'happends all days' is 'happends every day'
+	* Redesign of the 'Expression' label
+
 2004-06-08  Philip Van Hoof <me at freax dot org>
 	* Implemented writing the crontab
 	* This means that, yes, the application is doing something usefull from now on
