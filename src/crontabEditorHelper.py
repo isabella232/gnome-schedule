@@ -156,9 +156,8 @@ class CrontabEditorHelper:
 		#move expression to field in editor and hide
 		expression = self.entExpression.get_text()
 		try:
-			self.ParentClass.ParentClass.schedule.checkfield (expression, self.field, self.editor.fieldRegex)
+			self.editor.schedule.checkfield (expression, self.field, self.editor.fieldRegex)
 		except Exception, ex:
-			print ex
 			x, y, z = ex
 			self.wrongdialog = gtk.MessageDialog(self.widget, gtk.DIALOG_MODAL|gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_ERROR, gtk.BUTTONS_OK, (_("This is invalid. Reason: %s") % (z)))
 			self.wrongdialog.run()
