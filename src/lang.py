@@ -189,7 +189,7 @@ def translate_crontab_easy (minute, hour, day, month, weekday):
 
 def translate_crontab_easy_en (minute, hour, day, month, weekday):
 	# * means "every"
-	# x-y means happens every instance between x and y
+	# x-y means happens every instance between x and y (not yet supported correctly)
 	# x means happens at
 	# *\x means happens every xth (not yet supported correctly)
 	# 1,2,3,4 means happens the 1st, 2e, 3th and 4th
