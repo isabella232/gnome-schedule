@@ -171,6 +171,13 @@ class At:
 		return found
 
 	def prepare_script (self, lines):
+	
+		# It looks like at prepends a bunch of stuff to each script
+		# Luckily it delimits that using two newlines
+		# So assuming that at never prepends two newlines unless
+		# it's done prepending, we will start recording the custom commands
+		# once the first two lines have been found
+		
 		newlines = []
 		title = None
 		icon = None
