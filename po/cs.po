@@ -4,14 +4,14 @@
 # This file is distributed under the same license as the gnome-schedule package.
 # Miloslav Trmac <mitr@volny.cz>, 2004
 #
-#: src/at.py:187 src/lang.py:116 src/lang.py:118 src/lang.py:210
+#: src/at.py:261 src/lang.py:116 src/lang.py:118 src/lang.py:210
 #: src/lang.py:212
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-07-11 04:15+0200\n"
-"PO-Revision-Date: 2004-07-11 15:55+0200\n"
+"POT-Creation-Date: 2004-07-13 15:35+0200\n"
+"PO-Revision-Date: 2004-07-13 19:39+0200\n"
 "Last-Translator: Miloslav Trmac <mitr@volny.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -26,7 +26,7 @@ msgstr "Spravovat vaše systémové úlohy"
 msgid "Schedule"
 msgstr "Plán"
 
-#: src/at.py:187
+#: src/at.py:261
 #, python-format
 msgid "%s%s%s %s%s%s"
 msgstr "%s%s%s %s%s%s"
@@ -51,7 +51,7 @@ msgstr "měsíc"
 msgid "weekday"
 msgstr "den v týdnu"
 
-#: src/crontab.py:177 src/crontabEditor.py:310 src/atEditor.py:377
+#: src/crontab.py:177 src/crontabEditor.py:311
 msgid "command"
 msgstr "příkaz"
 
@@ -90,7 +90,7 @@ msgid "Invalid"
 msgstr "Neplatné"
 
 #: src/crontab.py:357 src/crontab.py:395 src/crontab.py:451
-#: src/crontabEditor.py:270 src/crontabEditor.py:383 src/atEditor.py:341
+#: src/crontabEditor.py:270 src/crontabEditor.py:384 src/atEditor.py:388
 msgid "Untitled"
 msgstr "Nepojmenovaný"
 
@@ -108,19 +108,19 @@ msgid ""
 "This is an invalid record! The problem could be at the %s field. Reason: %s"
 msgstr "Toto není platný záznam! Problém je možná v poli %s. Důvod: %s"
 
-#: src/crontabEditor.py:166 src/atEditor.py:229
+#: src/crontabEditor.py:166 src/atEditor.py:243
 msgid "Don't use a template"
 msgstr "Nepoužívat šablonu"
 
-#: src/crontabEditor.py:191 src/atEditor.py:254
+#: src/crontabEditor.py:191 src/atEditor.py:301
 msgid "Pick an icon for this scheduled task"
 msgstr "Zvolte ikonu pro tuto plánovanou úlohu"
 
-#: src/crontabEditor.py:227 src/atEditor.py:331
+#: src/crontabEditor.py:227 src/atEditor.py:378
 msgid "Edit a scheduled task"
 msgstr "Upravit plánovanou úlohu"
 
-#: src/crontabEditor.py:274 src/atEditor.py:343
+#: src/crontabEditor.py:274 src/atEditor.py:390
 msgid "Create a new scheduled task"
 msgstr "Vytvořit plánovanou úlohu"
 
@@ -861,43 +861,47 @@ msgstr "Každou minutu, každou hodinu, den: %s, měsíc: %s"
 msgid "Every minute, every hour, day: %s, every month"
 msgstr "Každou minutu, každou hodinu, den: %s, každý měsíc"
 
-#. col = gtk.TreeViewColumn(_("Icon"), gtk.CellRendererText(), text=6)
-#. self.treeview.append_column(col)
-#: src/mainWindow.py:229 src/mainWindow.py:270
+#: src/mainWindow.py:237 src/mainWindow.py:270
+msgid "Icon"
+msgstr "Ikona"
+
+#: src/mainWindow.py:241 src/mainWindow.py:290
 msgid "Type"
 msgstr "Typ"
 
-#: src/mainWindow.py:233 src/mainWindow.py:265
+#: src/mainWindow.py:246 src/mainWindow.py:285
 msgid "Title"
 msgstr "Nadpis"
 
 # ???
-#. col = gtk.TreeViewColumn(_("Icon"), gtk.CellRendererText(), text=6)
-#. self.treeview.append_column(col)
-#: src/mainWindow.py:237 src/mainWindow.py:253
+#: src/mainWindow.py:251 src/mainWindow.py:273
 msgid "Frequency or time"
 msgstr "Frekvence času"
 
-#: src/mainWindow.py:241 src/mainWindow.py:258
+#: src/mainWindow.py:256 src/mainWindow.py:278
 msgid "Preview"
 msgstr "Náhled"
 
-#: src/mainWindow.py:342
-msgid "System Schedule"
-msgstr "Plánování systému"
+#: src/mainWindow.py:390
+msgid "Gnome Schedule"
+msgstr "Gnome Schedule"
 
-#: src/mainWindow.py:344
+#: src/mainWindow.py:392
 msgid "Copyright (c) 2004-2005 Gaute Hope."
 msgstr "Copyright © 2004-2005 Gaute Hope."
 
-#: src/mainWindow.py:345
+#: src/mainWindow.py:393
 msgid "This software is distributed under the GPL. "
 msgstr "Toto software je šířeno pod podmínkami GPL. "
 
-#: src/mainWindow.py:348
-msgid "documented_by"
-msgstr "documented_by"
+#: src/mainWindow.py:396
+msgid ""
+"Some painfully bad documentation put\n"
+"toghether from the far corners of Gaute Hope's mind."
+msgstr ""
+"Trocha zoufale špatné dokumentace sestavena\n"
+"z temných zákoutí mysli Gaute Hope."
 
-#: src/mainWindow.py:349
+#: src/mainWindow.py:396
 msgid "translator_credits"
 msgstr "Miloslav Trmač <mitr@volny.cz>"
