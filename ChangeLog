@@ -2,6 +2,7 @@
 
 	* crontabEditor.py: The save button is now not active if the entered text is equal to the no preset text
 	* atEditor.py: The save button is now not active if the entered text is equal to the no preset text
+	* crontab.py: Changed the format of the rewrite command, this is supported in both dcron and vixie-cron
 
 2004-06-24  Philip Van Hoof <me_NOSPAM@freax.org>
 

@@ -267,12 +267,14 @@ class Crontab:
 		tmp.close ()
 
 		#replace crontab config with new one in file
+
 		if self.ParentClass.root:
 			# print config.getCrontabbin () + " -u " + self.ParentClass.user + " " + path
-			os.system (config.getCrontabbin () +" -u " + self.ParentClass.user + " " + path)
+			os.system (config.getCrontabbin () + " " + path + " -u " + self.ParentClass.user)
 		else:
 			# print config.getCrontabbin () + " " + path
 			os.system (config.getCrontabbin () + " " + path)
+
 
 		os.unlink (path)
 		
@@ -365,6 +367,8 @@ class Crontab:
 
 	#read tasks in crontab
 	def read (self):
+
+
 		if self.ParentClass.root:
 			execute = config.getCrontabbin () + " -l -u " + self.ParentClass.user
 		else:
@@ -398,7 +402,7 @@ class Crontab:
 			self.linecount = self.linecount + 1
 		#print "-- Total crontab records: " + str(count)
 		##	
-			
+
 		return
 
 	#get info out of task line
@@ -429,6 +433,8 @@ class Crontab:
 						title = _("Untitled")
 
 					return minute, hour, day, month, weekday, command, title, icon
+						
+			
 		return gtk.FALSE
 
    #if a command his lenght is to long the last part is removed 
