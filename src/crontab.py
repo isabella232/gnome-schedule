@@ -111,9 +111,7 @@ class Crontab:
 
 			# 1,2,3,4 * * * * command
 			if m.groups()[5] != None:
-				thefield = m.groups()[5] + field[len(field)-1]
-				# thefield = "1,2,3,4"
-				fields = thefield.split (",")
+				fields = m.groups()[5].split (",")
 				for fieldx in fields:
 					try:
 						num = int (fieldx)

@@ -52,7 +52,7 @@ class CrontabEditor:
 		self.widget = self.xml.get_widget("crontabEditor")
 		self.widget.connect("delete-event", self.on_cancel_button_clicked)
 		
-		self.fieldRegex = re.compile('^(\*)$|^([0-9]+)$|^\*\/([0-9]+)$|^([0-9]+)-([0-9]+)$|(([0-9]+[|,])+)')
+		self.fieldRegex = re.compile('^(\*)$|^([0-9]+)$|^\*\/([0-9]+)$|^([0-9]+)-([0-9]+)$|(^([0-9]+[,])+([0-9]+)$)')
 		self.nooutputRegex = re.compile('([^#\n$]*)>(\s|)/dev/null\s2>&1')
 		
 		#self.editing = gtk.FALSE

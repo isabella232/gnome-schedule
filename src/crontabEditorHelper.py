@@ -140,11 +140,7 @@ class CrontabEditorHelper:
 			# 1,2,3,4 * * * * command
 			# if m.groups()[5] != None:
 				# self.radOth.set_active (gtk.TRUE)
-				# For some reason it's not grouping the last char :(
-				# So we'll just append it, bah!
-				# thefield = m.groups()[5] + expression[len(expression)-1]
-				# thefield = "1,2,3,4"
-				# fields = thefield.split (",")
+				# fields = m.groups()[5].split (",")
 			self.NoExpressionEvents = gtk.FALSE
 
 		#show the form
