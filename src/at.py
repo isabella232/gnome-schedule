@@ -176,8 +176,12 @@ class At:
 
 
 	def checkfield (self, runat):
-		regexp = re.compile("([0-9][0-9]):([0-9][0-9])\ ([0-9][0-9][0-9][0-9])-([0-9][0-9])-([0-9][0-9])")
-		runat_g = regexp.match(runat)
+		regexp1 = re.compile("([0-9][0-9]):([0-9][0-9])\ ([0-9][0-9][0-9][0-9])-([0-9][0-9])-([0-9][0-9])")
+		regexp2 = re.compile("([0-9][0-9]):([0-9][0-9])")
+		regexp3 = re.compile("([0-9][0-9][0-9][0-9])-([0-9][0-9])-([0-9][0-9])")
+		runat_g1 = regexp1.match(runat)
+		runat_g2 = regexp2.match(runat)
+		runat_g3 = regexp3.match(runat)
 		ctime = time.gmtime()
 		cyear = ctime[0]
 		cmonth = ctime[1]
@@ -186,8 +190,9 @@ class At:
 		cminute = ctime[4]
 
 	
-		if runat_g:
-			(hour, minute, year, month, day) =  runat_g.groups()
+		if runat_g1:
+
+			(hour, minute, year, month, day) =  runat_g1.groups()
 			hour = int(hour)
 			minute = int(minute)
 			year = int(year)
@@ -196,18 +201,67 @@ class At:
 
 			if hour > 24 or hour < 0:
 				return gtk.FALSE, "hour"
+			
+			if minute > 60 or minute < 0:
+				return gtk.FALSE, "minute"
+			
+			if hour < chour or (hour == chour and minute < cminute): plussday = gtk.TRUE
+			else: plussday = gtk.FALSE
+
+			if year < cyear:
+				return gtk.FALSE, "year"
+			if month < cmonth:
+				return gtk.FALSE, "month"
+
+			if day < cday or (plussday == gtk.TRUE and day < cday + 1):
+				return gtk.FALSE, "day"
+
+		elif runat_g2:
+
+			(hour, minute) =  runat_g2.groups()
+			hour = int(hour)
+			minute = int(minute)
+			if hour > 24 or hour < 0:
+				return gtk.FALSE, "hour"
 	
 			if minute > 60 or minute < 0:
 				return gtk.FALSE, "minute"
 
+
+		elif runat_g3:
+
+			(year, month, day) =  runat_g3.groups()
+			year = int(year)
+			month = int(month)
+			day = int(day)
 			if year < cyear:
 				return gtk.FALSE, "year"
 			if month < cmonth:
 				return gtk.FALSE, "month"
 			if day < cday:
 				return gtk.FALSE, "day"
+
+
 		else:
-			if runat == "tomorrow":
+			#lowercase
+			runat = runat.lower()
+
+			#some timespecs:
+			days = ['sun','mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sunday','monday','tuesday','wednesday','thursday','friday','saturday']
+			relative_days = ['tomorrow','next week','today']
+			relative_hour = ['noon','teatime','midnight','next hour']
+			relative_minute = ['next minute']
+			relative_month = ['next month']
+			
+			if runat in days:
+				pass
+			elif runat in relative_days:
+				pass
+			elif runat in relative_hour:
+				pass
+			elif runat in relative_minute:
+				pass
+			elif runat in relative_month:
 				pass
 			else:
 				return gtk.FALSE, "other"
