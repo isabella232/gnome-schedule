@@ -183,7 +183,7 @@ class CrontabEditorHelper:
 			if name == "radAll":
 				self.entExpression.set_text("*")
 			elif name == "radEvery":
-				self.entExpression.set_text("*\\" + self.entEvery.get_text())
+				self.entExpression.set_text("*/" + self.entEvery.get_text())
 			elif name == "radRange":
 				self.entExpression.set_text(self.entRangeStart.get_text() + "-" + self.entRangeEnd.get_text())
 			elif name == "radFix":
@@ -223,7 +223,7 @@ class CrontabEditorHelper:
 		if self.radAll.get_active():
 				self.entExpression.set_text("*")
 		if self.radEvery.get_active():
-				self.entExpression.set_text("*\\" + self.entEvery.get_text())
+				self.entExpression.set_text("*/" + self.entEvery.get_text())
 		if self.radRange.get_active():
 				self.entExpression.set_text(self.entRangeStart.get_text() + "-" + self.entRangeEnd.get_text())
 		if self.radFix.get_active ():
