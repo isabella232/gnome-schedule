@@ -71,13 +71,13 @@ class Schedule:
 	def write (self):
 		raise 'Abstract method, please override' 
 
-	def update (self, linenumber, record, parentiter, nooutput, title):
+	def update (self, linenumber, record, parentiter, nooutput, title, icon):
 		raise 'Abstract method, please override' 
 
 	def delete (self, linenumber):
 		raise 'Abstract method, please override' 
 
-	def append (self, record, nooutput, title):
+	def append (self, record, nooutput, title, icon):
 		raise 'Abstract method, please override' 
 
 	def read (self):

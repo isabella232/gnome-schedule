@@ -77,11 +77,18 @@ class CrontabEditor:
 		self.setting_label = self.xml.get_widget ("setting_label")
 		self.chkNoOutput = self.xml.get_widget("chkNoOutput")
 		self.notebook = self.xml.get_widget("notebook")
+		self.clock_image = self.xml.get_widget("clock_image")
+
+		if os.path.isfile(config.getImagedir() + "/gnome-clock.png"):
+			self.clock_image.set_from_file(config.getImagedir() + "/gnome-clock.png")
+		else:
+			self.clock_image.set_from_file("/usr/share/pixmaps/gnome-clock.png")
 
 		self.template_combobox = self.xml.get_widget ("template_combobox")
 		self.template_image = self.xml.get_widget ("template_image")
 		self.template_label = self.xml.get_widget ("template_label")
-										
+		self.image_button = self.xml.get_widget ("image_button")
+
 		self.xml.signal_connect("on_add_help_button_clicked", self.on_add_help_button_clicked)
 		self.xml.signal_connect("on_cancel_button_clicked", self.on_cancel_button_clicked)
 		self.xml.signal_connect("on_ok_button_clicked", self.on_ok_button_clicked)
@@ -89,6 +96,7 @@ class CrontabEditor:
 		self.xml.signal_connect("on_anybasic_entry_changed", self.on_anybasic_entry_changed)
 		self.xml.signal_connect("on_frequency_combobox_changed", self.on_frequency_combobox_changed)
 		self.xml.signal_connect("on_chkNoOutput_toggled", self.on_anybasic_entry_changed)
+		self.xml.signal_connect("on_image_button_clicked", self.on_image_button_clicked)
 
 		self.xml.signal_connect("on_fieldHelp_clicked", self.on_fieldHelp_clicked)
 
@@ -134,23 +142,46 @@ class CrontabEditor:
 				self.template_combobox.set_sensitive (gtk.FALSE)
 				self.template_label.set_sensitive (gtk.FALSE)
 
+	def on_image_button_clicked (self, *args):
+		preview = gtk.Image()
+		preview.show()
+		iconopendialog = gtk.FileChooserDialog(_("Pick an icon for this scheduled task"), self.widget, gtk.FILE_CHOOSER_ACTION_OPEN, (gtk.STOCK_OK, gtk.RESPONSE_ACCEPT, gtk.STOCK_CANCEL, gtk.RESPONSE_REJECT), "")
+		iconopendialog.set_preview_widget(preview)
+		iconopendialog.connect("update-preview", self.update_preview_cb, preview)
+		iconopendialog.run()
+		self.icon = iconopendialog.get_filename()
+		iconopendialog.destroy ()
+		self.update_textboxes ()
+
+	def update_preview_cb(self, file_chooser, preview):
+		filename = file_chooser.get_preview_filename()
+		try:
+			pixbuf = gtk.gdk.pixbuf_new_from_file_at_size(filename, 128, 128)
+			preview.set_from_pixbuf(pixbuf)
+			have_preview = gtk.TRUE
+		except:
+			have_preview = gtk.FALSE
+			file_chooser.set_preview_widget_active(have_preview)
+		return
+
 	def	loadicon (self):
 		nautilus_icon = support.nautilus_icon ("i-executable")
 		if nautilus_icon != None:
 			self.template_image.set_from_file(nautilus_icon)
+			self.icon = nautilus_icon
 		else:
 			self.template_image.set_from_file("/usr/share/icons/gnome/48x48/mimetypes/gnome-mime-application.png")
-		
+			self.icon = "/usr/share/icons/gnome/48x48/mimetypes/gnome-mime-application.png"
+
 	def showedit (self, record, linenumber, iter, mode):
 		self.editing = gtk.TRUE
 		self.linenumber = linenumber
 		self.record = record
-		(self.minute, self.hour, self.day, self.month, self.weekday, self.command, self.title) = self.schedule.parse (record)
+		(self.minute, self.hour, self.day, self.month, self.weekday, self.command, self.title, self.icon) = self.schedule.parse (record)
 		self.widget.set_title(_("Edit a scheduled task"))
 		self.update_textboxes ()
 		self.set_frequency_combo ()
 		self.parentiter = iter
-		self.loadicon ()
 		self.widget.show ()
 		self.reload_templates ()
 		
@@ -277,9 +308,9 @@ class CrontabEditor:
 		record = self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday + " " + self.command
 
 		if self.editing != gtk.FALSE:
-			self.schedule.update (self.linenumber, record, self.parentiter, self.nooutput, self.title)
+			self.schedule.update (self.linenumber, record, self.parentiter, self.nooutput, self.title, self.icon)
 		else:
-			self.schedule.append (record, self.nooutput, self.title)
+			self.schedule.append (record, self.nooutput, self.title, self.icon)
 			self.ParentClass.treemodel.clear ()
 			self.ParentClass.schedule.read ()
 
@@ -313,11 +344,12 @@ class CrontabEditor:
 		self.day_entry.set_text (self.day)
 		self.month_entry.set_text (self.month)
 		self.weekday_entry.set_text (self.weekday)
-		
+		if self.icon != None:
+			self.template_image.set_from_file(self.icon)
+		else:
+			self.loadicon ()
 		self.setting_label.set_text (self.schedule.createpreview(self.minute, self.hour, self.day, self.month, self.weekday, self.command))
 		self.set_frequency_combo()
-		
-		
 		self.noevents = gtk.FALSE
 
 	def on_anyadvanced_entry_changed (self, *args):
@@ -339,21 +371,10 @@ class CrontabEditor:
 			self.nooutput = self.chkNoOutput.get_active()
 			self.update_textboxes ()
 
-			# self.noevents = gtk.TRUE
-			#m = self.nooutputRegex.match (self.command)
 			if self.nooutput:
-				#if m == None:
-					#if len (self.command) > 0 and self.command[len(self.command)-1] != " ":
-					#	self.command = self.command + " "
-					#self.command = self.command + self.nooutputtag
-					#self.command_entry.set_text (self.command)
 				self.nooutput_label.show ()
 			else:
-				#if m != None:
-					#self.command = m.groups()[0]
-					#self.command_entry.set_text (self.command)
 				self.nooutput_label.hide ()
-			# self.noevents = gtk.FALSE
 
 
 	def on_frequency_combobox_changed (self, bin):
