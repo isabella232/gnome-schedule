@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-11-01 19:24-0500\n"
-"PO-Revision-Date: 2004-11-01 17:03-0400\n"
+"POT-Creation-Date: 2004-11-02 15:30-0500\n"
+"PO-Revision-Date: 2004-11-02 17:03-0400\n"
 "Last-Translator: Adam Weinberger <adamw@gnome.org>\n"
 "Language-Team: English/Canada <adamw@FreeBSD.org>\n"
 "MIME-Version: 1.0\n"
@@ -527,299 +527,301 @@ msgstr ""
 
 #: src/lang.py:69
 msgid ""
-"To the translator: Read src/lang.py !!! (yeah it's for you, not for the "
-"user. YES FOR YOU, the translator. YES:) really!"
+"To the translator: Please DO NOT TRANSLATE anything from src/lang.py until "
+"this message disappears. There will be some changes in the next days or "
+"weeks!"
 msgstr ""
-"To the translator: Read src/lang.py !!! (yeah it's for you, not for the "
-"user. YES FOR YOU, the translator. YES:) really!"
+"."
 
-#: src/lang.py:94
+#: src/lang.py:93
 msgid "zeroth"
 msgstr "zeroth"
 
-#: src/lang.py:95
+#: src/lang.py:94
 msgid "first"
 msgstr "first"
 
-#: src/lang.py:95
+#: src/lang.py:94
 msgid "second"
 msgstr "second"
 
-#: src/lang.py:95
+#: src/lang.py:94
 msgid "third"
 msgstr "third"
 
-#: src/lang.py:95
+#: src/lang.py:94
 msgid "fourth"
 msgstr "fourth"
 
-#: src/lang.py:95
+#: src/lang.py:94
 msgid "fifth"
 msgstr "fifth"
 
-#: src/lang.py:96
+#: src/lang.py:95
 msgid "sixth"
 msgstr "sixth"
 
-#: src/lang.py:96
+#: src/lang.py:95
 msgid "seventh"
 msgstr "seventh"
 
-#: src/lang.py:96
+#: src/lang.py:95
 msgid "eighth"
 msgstr "eighth"
 
-#: src/lang.py:96
+#: src/lang.py:95
 msgid "ninth"
 msgstr "ninth"
 
-#: src/lang.py:96
+#: src/lang.py:95
 msgid "tenth"
 msgstr "tenth"
 
-#: src/lang.py:97
+#: src/lang.py:96
 msgid "eleventh"
 msgstr "eleventh"
 
-#: src/lang.py:97
+#: src/lang.py:96
 msgid "twelfth"
 msgstr "twelfth"
 
-#: src/lang.py:97
+#: src/lang.py:96
 msgid "thirteenth"
 msgstr "thirteenth"
 
-#: src/lang.py:97
+#: src/lang.py:96
 msgid "fourteenth"
 msgstr "fourteenth"
 
-#: src/lang.py:97
+#: src/lang.py:96
 msgid "fifteenth"
 msgstr "fifteenth"
 
-#: src/lang.py:98
+#: src/lang.py:97
 msgid "sixteenth"
 msgstr "sixteenth"
 
-#: src/lang.py:98
+#: src/lang.py:97
 msgid "seventeenth"
 msgstr "seventeenth"
 
-#: src/lang.py:98
+#: src/lang.py:97
 msgid "eighteenth"
 msgstr "eighteenth"
 
-#: src/lang.py:98
+#: src/lang.py:97
 msgid "nineteenth"
 msgstr "nineteenth"
 
-#: src/lang.py:98
+#: src/lang.py:97
 msgid "twentieth"
 msgstr "twentieth"
 
-#: src/lang.py:101
+#: src/lang.py:100
 msgid "zero"
 msgstr "zero"
 
-#: src/lang.py:101
+#: src/lang.py:100
 msgid "ten"
 msgstr "ten"
 
-#: src/lang.py:101
+#: src/lang.py:100
 msgid "twenty"
 msgstr "twenty"
 
-#: src/lang.py:101
+#: src/lang.py:100
 msgid "thirty"
 msgstr "thirty"
 
-#: src/lang.py:101
+#: src/lang.py:100
 msgid "forty"
 msgstr "forty"
 
-#: src/lang.py:101
+#: src/lang.py:100
 msgid "fifty"
 msgstr "fifty"
 
-#: src/lang.py:101
+#: src/lang.py:100
 msgid "sixty"
 msgstr "sixty"
 
-#: src/lang.py:101
+#: src/lang.py:100
 msgid "seventy"
 msgstr "seventy"
 
-#: src/lang.py:101
+#: src/lang.py:100
 msgid "eighty"
 msgstr "eighty"
 
-#: src/lang.py:101
+#: src/lang.py:100
 msgid "ninety"
 msgstr "ninety"
 
-#: src/lang.py:108
+#: src/lang.py:107
 #, python-format
 msgid "minus %s"
 msgstr "minus %s"
 
-#: src/lang.py:118
+#: src/lang.py:117
 msgid "minus "
 msgstr "minus "
 
 #. These are just some table-lookups and translation magic :)
-#: src/lang.py:122
+#: src/lang.py:121
 #, python-format
 msgid "%s%s%s%s%s%s"
 msgstr "%s%s%s%s%s%s"
 
-#: src/lang.py:122
+#: src/lang.py:121
 msgid "-"
 msgstr "-"
 
-#: src/lang.py:125
+#: src/lang.py:124
 #, python-format
 msgid "%sth."
 msgstr "%sth."
 
-#: src/lang.py:216
+#: src/lang.py:215
 #, python-format
 msgid "%s%s:%s:%s%s"
 msgstr "%s%s:%s:%s%s"
 
-#: src/lang.py:218
+#: src/lang.py:217
 #, python-format
 msgid "%s%s:%s%s"
 msgstr "%s%s:%s%s"
 
-#: src/lang.py:257
+#: src/lang.py:256
 msgid "Every minute"
 msgstr "Every minute"
 
-#: src/lang.py:262
+#: src/lang.py:261
 msgid "Every hour"
 msgstr "Every hour"
 
-#: src/lang.py:264
+#: src/lang.py:263
 #, python-format
 msgid "Every %s minute of every hour"
 msgstr "Every %s minute of every hour"
 
-#: src/lang.py:269
+#: src/lang.py:268
 #, python-format
 msgid "Every %s hour of the day"
 msgstr "Every %s hour of the day"
 
-#: src/lang.py:271
+#: src/lang.py:270
 #, python-format
 msgid "Every day at %s"
 msgstr "Every day at %s"
 
-#: src/lang.py:273
+#: src/lang.py:272
 #, python-format
 msgid "Every minute during the %s hour"
 msgstr "Every minute during the %s hour"
 
-#: src/lang.py:278
+#: src/lang.py:277
 #, python-format
 msgid "Every %s day of the month"
 msgstr "Every %s day of the month"
 
-#: src/lang.py:280
+#: src/lang.py:279
 #, python-format
 msgid "At %s every %s day of the month"
 msgstr "At %s every %s day of the month"
 
-#: src/lang.py:282
+#: src/lang.py:281
 #, python-format
 msgid "Every minute of the %s hour every %s day of the month"
 msgstr "Every minute of the %s hour every %s day of the month"
 
-#: src/lang.py:284
+#: src/lang.py:283
 #, python-format
 msgid "At the %s minute of every hour every %s day of the month"
 msgstr "At the %s minute of every hour every %s day of the month"
 
-#: src/lang.py:286
+#: src/lang.py:285
 #, python-format
 msgid "Every minute at every %s day of the month"
 msgstr "Every minute at every %s day of the month"
 
-#: src/lang.py:291
+#: src/lang.py:290
 #, python-format
 msgid "Every %s month of the year"
 msgstr "Every %s month of the year"
 
-#: src/lang.py:293
+#: src/lang.py:292
 #, python-format
 msgid "At the %s day on %s every %s month of the year"
 msgstr "At the %s day on %s every %s month of the year"
 
-#: src/lang.py:295
+#: src/lang.py:294
 #, python-format
 msgid "At the %s day every minute of every %s hour every %s month of the year"
-msgstr "At the %s day, every minute of every %s hour, every %s month of the year"
+msgstr ""
+"At the %s day, every minute of every %s hour, every %s month of the year"
 
-#: src/lang.py:297
+#: src/lang.py:296
 #, python-format
 msgid "Every day and every hour at the %s minute every %s month of the year"
 msgstr "Every day and every hour at the %s minute every %s month of the year"
 
-#: src/lang.py:299
+#: src/lang.py:298
 #, python-format
 msgid "Every day on %s every %s month of the year"
 msgstr "Every day on %s every %s month of the year"
 
-#: src/lang.py:301
+#: src/lang.py:300
 #, python-format
 msgid "Every minute at the %s day every %s month of the year"
 msgstr "Every minute at the %s day every %s month of the year"
 
-#: src/lang.py:303
+#: src/lang.py:302
 #, python-format
 msgid "Every minute every %s month of the year"
 msgstr "Every minute every %s month of the year"
 
-#: src/lang.py:305
+#: src/lang.py:304
 #, python-format
 msgid "Every %s minute of every hour at the %s day of the %s month of the year"
-msgstr "Every %s minute of every hour at the %s day of the %s month of the year"
+msgstr ""
+"Every %s minute of every hour at the %s day of the %s month of the year"
 
-#: src/lang.py:307
+#: src/lang.py:306
 #, python-format
 msgid "Every minute of every %s hour in the %s month of the year"
 msgstr "Every minute of every %s hour in the %s month of the year"
 
-#: src/lang.py:313
+#: src/lang.py:312
 #, python-format
 msgid "Every %s day of the week"
 msgstr "Every %s day of the week"
 
-#: src/lang.py:315
+#: src/lang.py:314
 #, python-format
 msgid "Every %s day of the week at %s"
 msgstr "Every %s day of the week at %s"
 
-#: src/lang.py:317
+#: src/lang.py:316
 #, python-format
 msgid "Every %s day of the week every minute of the %s hour"
 msgstr "Every %s day of the week every minute of the %s hour"
 
-#: src/lang.py:319
+#: src/lang.py:318
 #, python-format
 msgid "Every %s day of the week the %s minute of every hour"
 msgstr "Every %s day of the week the %s minute of every hour"
 
-#: src/lang.py:321
+#: src/lang.py:320
 #, python-format
 msgid "Every %s day of the week every minute"
 msgstr "Every %s day of the week every minute"
 
-#: src/lang.py:326
+#: src/lang.py:325
 #, python-format
 msgid "Every minute at the %s day of the month and the %s day of the week"
 msgstr "Every minute at the %s day of the month and the %s day of the week"
 
-#: src/lang.py:328
+#: src/lang.py:327
 #, python-format
 msgid ""
 "Every minute at the %s hour every %s day of the month and every %s day of "
@@ -828,7 +830,7 @@ msgstr ""
 "Every minute at the %s hour every %s day of the month and every %s day of "
 "the week"
 
-#: src/lang.py:330
+#: src/lang.py:329
 #, python-format
 msgid ""
 "Every %s minute of every hour every %s day of the month and every %s day of "
@@ -837,17 +839,17 @@ msgstr ""
 "Every %s minute of every hour every %s day of the month and every %s day of "
 "the week"
 
-#: src/lang.py:332
+#: src/lang.py:331
 #, python-format
 msgid "Every %s day of the month and every %s day of the week at %s"
 msgstr "Every %s day of the month and every %s day of the week at %s"
 
-#: src/lang.py:337
+#: src/lang.py:336
 #, python-format
 msgid "Every minute every %s day of the week every %s month of the year"
 msgstr "Every minute every %s day of the week every %s month of the year"
 
-#: src/lang.py:339
+#: src/lang.py:338
 #, python-format
 msgid ""
 "Every %s minute of every hour at the %s day of the week every %s month of "
@@ -856,7 +858,7 @@ msgstr ""
 "Every %s minute of every hour at the %s day of the week every %s month of "
 "the year"
 
-#: src/lang.py:341
+#: src/lang.py:340
 #, python-format
 msgid ""
 "Every minute at the %s hour every %s day of the week every %s month of the "
@@ -865,12 +867,12 @@ msgstr ""
 "Every minute at the %s hour every %s day of the week every %s month of the "
 "year"
 
-#: src/lang.py:343
+#: src/lang.py:342
 #, python-format
 msgid "Every %s day of the week every %s month of the year at %s"
 msgstr "Every %s day of the week every %s month of the year at %s"
 
-#: src/lang.py:348
+#: src/lang.py:347
 #, python-format
 msgid ""
 "Every minute at the %s day of the week and at the %s day of the month every %"
@@ -879,7 +881,7 @@ msgstr ""
 "Every minute at the %s day of the week and at the %s day of the month every %"
 "s month of the year"
 
-#: src/lang.py:350
+#: src/lang.py:349
 #, python-format
 msgid ""
 "Every %s minute of every hour every %s day of the week and every %s day of "
@@ -888,7 +890,7 @@ msgstr ""
 "Every %s minute of every hour every %s day of the week and every %s day of "
 "the month every %s month of the year"
 
-#: src/lang.py:352
+#: src/lang.py:351
 #, python-format
 msgid ""
 "Every minute at the %s hour of every %s day of the week and every %s day of "
@@ -897,7 +899,7 @@ msgstr ""
 "Every minute at the %s hour of every %s day of the week and every %s day of "
 "the month every %s month of the year"
 
-#: src/lang.py:354
+#: src/lang.py:353
 #, python-format
 msgid ""
 "At %s every %s day of the week and every %s day of the month every %s month "
@@ -906,81 +908,81 @@ msgstr ""
 "At %s every %s day of the week and every %s day of the month every %s month "
 "of the year"
 
-#: src/lang.py:367
+#: src/lang.py:366
 msgid "Every minute, every hour, every day, every month, every weekday"
 msgstr "Every minute, every hour, every day, every month, every weekday"
 
-#: src/lang.py:370
+#: src/lang.py:369
 #, python-format
 msgid "At minute: %s, hour %s, day: %s, month: %s, weekday: %s"
 msgstr "At minute: %s, hour %s, day: %s, month: %s, weekday: %s"
 
-#: src/lang.py:373
+#: src/lang.py:372
 #, python-format
 msgid "At minute: %s, hour %s, day: %s, month: %s"
 msgstr "At minute: %s, hour %s, day: %s, month: %s"
 
-#: src/lang.py:376
+#: src/lang.py:375
 #, python-format
 msgid "At minute: %s, hour %s, day: %s, every month"
 msgstr "At minute: %s, hour %s, day: %s, every month"
 
-#: src/lang.py:378
+#: src/lang.py:377
 #, python-format
 msgid "At minute: %s, hour %s, every day, month: %s"
 msgstr "At minute: %s, hour %s, every day, month: %s"
 
-#: src/lang.py:380
+#: src/lang.py:379
 #, python-format
 msgid "At minute: %s, every hour, day: %s, month: %s"
 msgstr "At minute: %s, every hour, day: %s, month: %s"
 
-#: src/lang.py:383
+#: src/lang.py:382
 #, python-format
 msgid "At minute: %s, hour %s, every day, every month"
 msgstr "At minute: %s, hour %s, every day, every month"
 
-#: src/lang.py:385
+#: src/lang.py:384
 #, python-format
 msgid "At minute: %s, every hour, day: %s, every month"
 msgstr "At minute: %s, every hour, day: %s, every month"
 
-#: src/lang.py:387
+#: src/lang.py:386
 #, python-format
 msgid "At minute: %s, every hour, every day, month: %s"
 msgstr "At minute: %s, every hour, every day, month: %s"
 
-#: src/lang.py:389
+#: src/lang.py:388
 #, python-format
 msgid "At minute: %s, every hour, every day, every month"
 msgstr "At minute: %s, every hour, every day, every month"
 
-#: src/lang.py:392
+#: src/lang.py:391
 #, python-format
 msgid "Every minute, hour: %s, day: %s, month %s"
 msgstr "Every minute, hour: %s, day: %s, month %s"
 
-#: src/lang.py:394
+#: src/lang.py:393
 #, python-format
 msgid "Every minute, hour %s, day: %s, every month"
 msgstr "Every minute, hour %s, day: %s, every month"
 
-#: src/lang.py:396
+#: src/lang.py:395
 #, python-format
 msgid "Every minute, hour %s, every day, month: %s"
 msgstr "Every minute, hour %s, every day, month: %s"
 
-#: src/lang.py:398
+#: src/lang.py:397
 #, python-format
 msgid "Every minute, hour %s, every day, every month"
 msgstr "Every minute, hour %s, every day, every month"
 
-#: src/lang.py:401
+#: src/lang.py:400
 #, python-format
 msgid "Every minute, every hour, day: %s, month: %s"
 msgstr "Every minute, every hour, day: %s, month: %s"
 
-#: src/lang.py:403
+#: src/lang.py:402
 #, python-format
 msgid "Every minute, every hour, day: %s, every month"
 msgstr "Every minute, every hour, day: %s, every month"
@@ -1038,3 +1040,10 @@ msgstr "Adam Weinberger <adamw@gnome.org>"
 #, python-format
 msgid "This is an invalid record! The problem could be: %s "
 msgstr "This is an invalid record! The problem could be: %s "
+
+#~ msgid ""
+#~ "To the translator: Read src/lang.py !!! (yeah it's for you, not for the "
+#~ "user. YES FOR YOU, the translator. YES:) really!"
+#~ msgstr ""
+#~ "To the translator: Read src/lang.py !!! (yeah it's for you, not for the "
+#~ "user. YES FOR YOU, the translator. YES:) really!"
