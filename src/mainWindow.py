@@ -99,7 +99,7 @@ class main:
 				
 		if self.root == 1:
 			self.statusbarUser = self.statusbar.get_context_id("user")
-			self.statusbar.push(self.statusbarUser, self.user)
+			self.statusbar.push(self.statusbarUser, "Editing user: " + self.user)
 		##
 		
 		##configure the toolbar	
@@ -350,7 +350,7 @@ class main:
 	def schedule_reload (self, records = "all"):
 		#adjust statusbar
 		if self.root == 1:
-			self.statusbar.push(self.statusbarUser, self.user)
+			self.statusbar.push(self.statusbarUser, "Editing user: " + self.user)
 		
 		##debug info	
 		start = time.time()
