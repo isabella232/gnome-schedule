@@ -204,7 +204,7 @@ class At:
 		# it's done prepending, we will start recording the custom commands
 		# once the first two lines have been found
 
-		# gaute: It now seems like this is incorrect, and may vary upon distribution. I therefore determine the prepended stuff by making a test job and then removing the length of it. at gentoo it adds to newlines at the end of the script
+		#Later: It now seems like this is incorrect, and may vary upon distribution. I therefore determine the prepended stuff by making a test job and then removing the length of it. in gentoo it adds to newlines at the end of the script
 
 		
 		script = script[self.at_pre_len:]
