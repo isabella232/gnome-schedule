@@ -328,7 +328,7 @@ class At:
 		for line in self.lines:
 			array_or_false = self.parse (line)
 			if array_or_false != gtk.FALSE:
-				(job_id, date, time, class_id, user, lines, title, icon, prelen) = array_or_false
+				(job_id, date, time, class_id, user, lines, title, icon, prelen, dangerous) = array_or_false
 
 				if icon != None:
 					try:
@@ -343,7 +343,8 @@ class At:
 
 				
 				preview = self.make_preview (lines, prelen)
-				
+				if dangerous == 1:
+						preview = "DANGEROUS PARSE: " + preview
 				#chopping of title and icon stuff from script
 				lines = lines[prelen:]
 					
@@ -384,8 +385,8 @@ class At:
 
 		#Later: It now seems like this is incorrect, and may vary upon distribution. I therefore determine the prepended stuff by making a test job and then removing the length of it. in gentoo it adds to newlines at the end of the script
 
-		method = 2
-
+		method = 3
+		dangerous = 0
 		if method == 1:
 			script = script[self.at_pre_len:]
 	
@@ -408,7 +409,7 @@ class At:
 				prelen = prelen + len(icon) + 6
 			
 			else:
-				icon = "/usr/share/icons/gnome/48x48/mimetypes/gnome-mime-application.png"
+				icon = "/pygtk2reference/class-gtktreestore.html#method-gtktreestore--appendusr/share/icons/gnome/48x48/mimetypes/gnome-mime-application.png"
 
 		elif method == 2:
 			string = " || {\n	 echo 'Execution directory inaccessible' >&2\n	 exit 1\n}\n"
@@ -438,8 +439,69 @@ class At:
 			
 			else:
 				icon = "/usr/share/icons/gnome/48x48/mimetypes/gnome-mime-application.png"
-		
-		return script, title, icon, prelen
+
+		elif method == 3:
+			string = "TITLE="
+			titlestart = script.find(string)
+			print titlestart
+			if titlestart != -1:
+				script = script[titlestart:]
+
+				prelen = 0
+
+				# If the string contains TITLE=
+				string = "TITLE="
+				titlestart = script.find(string)
+				if titlestart != -1:
+					titleend = script.find("\n", titlestart)
+					title = script[titlestart + len(string):titleend]
+					#remeber the length to remove this from the preview
+					prelen = len(title) + 7
+
+				# If the string contains ICON=
+				string = "ICON="
+				iconstart = script.find ("ICON=") 
+				if iconstart != -1:
+					iconend = script.find ("\n", iconstart)
+					icon = script[(iconstart + len(string)):iconend]
+					prelen = prelen + len(icon) + 6
+			
+				else:
+					icon = "/usr/share/icons/gnome/48x48/mimetypes/gnome-mime-application.png"
+			else:
+				print "method 2"
+				dangerous = 1
+				#tries method 2
+
+				string = " || {\n	 echo 'Execution directory inaccessible' >&2\n	 exit 1\n}\n"
+				string_len = len(string)
+				start = script.find(string)
+				start = start + string_len
+	
+				script = script[start:]
+	
+				prelen = 0
+				# If the string contains TITLE=
+				titlestart = script.find ("TITLE=")
+				if titlestart != -1:
+					titleend = script.find("\n", titlestart)
+					title = script[(titlestart + 6):titleend]
+					#remeber the length to remove this from the preview
+					prelen = len(title) + 7
+				else:
+					title = "Untitled"
+					# If the string contains ICON=
+					iconstart = script.find ("ICON=") 
+				if iconstart != -1:
+					iconend = script.find ("\n", iconstart)
+					icon = script[(iconstart + 5):iconend]
+				
+					prelen = prelen + len(icon) + 6
+			
+				else:
+					icon = "/usr/share/icons/gnome/48x48/mimetypes/gnome-mime-application.png"
+
+		return script, title, icon, prelen, dangerous
 
 	def make_preview (self, lines, prelen, preview_len = 0):
 		if preview_len == 0:
@@ -494,7 +556,7 @@ class At:
 					execute = config.getAtbin() + " -c " + job_id
 					# read lines and detect starter
 					script = os.popen(execute).read()
-					script, title, icon, prelen = self.prepare_script (script)
+					script, title, icon, prelen, dangerous = self.prepare_script (script)
 					#removing ending newlines, but keep one
 					#if a date before this is selected the record is removed, this creates an error, and generally if the script is of zero length
 					if len(script) == 0:
@@ -507,7 +569,7 @@ class At:
 						else:
 							done = 1
 
-					return job_id, date, time, class_id, user, script, title, icon, prelen
+					return job_id, date, time, class_id, user, script, title, icon, prelen, dangerous
 		else:
 			if len (line) > 1 and line[0] != '#':
 				m = self.atRecordRegexAdd.match(line)
