@@ -1,3 +1,7 @@
+2004-06-24  Duarte Loreto <happyguy_pt@hotmail.com>
+
+	* pt.po: Added Portuguese translation.
+
 2004-06-21  Christian Rose  <menthos@menthos.com>
 
 	* POTFILES.in: Removed the nonexistant src/config.py entry that
