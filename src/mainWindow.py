@@ -373,14 +373,20 @@ class main:
 			record = self.treemodel.get_value(iter, 3)
 			linenumber = self.treemodel.get_value(iter, 4)
 
+			nextiter = self.treemodel.iter_next(iter)
+			firstiter = self.treemodel.get_iter_first()
 			self.schedule.delete (linenumber)
-			self.treemodel.remove(iter)
+			result = self.treemodel.remove(iter)
 
-			#moving to first
-			iter =  self.treemodel.get_iter_first()
-			if iter:
+			#moving to next
+			if nextiter:
 				selection = self.treeview.get_selection()
-				selection.select_iter(iter)
+				selection.select_iter(nextiter)
+			elif firstiter: 
+			#go first
+				selection = self.treeview.get_selection()
+				selection.select_iter(firstiter)
+				
 
 		return
 
