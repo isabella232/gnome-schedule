@@ -55,4 +55,6 @@ src/Makefile
 src/gnome-schedule
 doc/Makefile
 pixmaps/Makefile
-po/Makefile.in])
+po/Makefile.in
+gnome-schedule.console
+])
