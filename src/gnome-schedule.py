@@ -22,7 +22,6 @@ import sys
 import signal
 import config
 
-
 if __name__ == "__main__":
 	signal.signal (signal.SIGINT, signal.SIG_DFL)
 
@@ -40,10 +39,5 @@ except:
 	sys.exit(0)
 
 
-if 'at' in sys.argv: 
-	mode = "at"
-else:
-	mode = "crontab"
-
 import mainWindow
-mainWindow = mainWindow.main(debug_flag, mode)
+mainWindow = mainWindow.main(debug_flag)

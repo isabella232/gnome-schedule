@@ -37,7 +37,6 @@ class SetuserWindow:
 		self.widget = self.ParentClass.setuserwidget
 		self.widget.connect("delete-event", self.on_cancel_button_clicked)
 
-		self.user_combobox = self.xml.get_widget ("user_combobox")
 		self.cancel_button = self.xml.get_widget ("setuser_cancel_button")
 		self.ok_button = self.xml.get_widget ("setuser_ok_button")
 		self.entUser = self.xml.get_widget("entUser")

@@ -58,6 +58,35 @@ class Crontab:
 		self.read()
 		return
 
+	def removetemplate (self, template_name):
+		template_name_c = string.strip (template_name, "\s ,;:/\\\"'!@#$%^&*()-_+=|?<>.][{}")
+		template_name_c = string.replace (template_name_c, " ", "-")
+		
+		installed = support.gconf_client.get_string("/apps/gnome-schedule/templates/crontab/installed")
+		newstring = installed
+		if installed != None:
+			first = gtk.TRUE
+			newstring = "   "
+			for t in string.split (installed, ", "):
+				print t
+				if t != template_name_c:
+					if first == gtk.TRUE:
+						newstring = t
+						first = gtk.FALSE
+					else:
+						newstring = newstring + ", " + t
+
+		support.gconf_client.unset("/apps/gnome-schedule/templates/crontab/%s/name" % (template_name_c))
+		support.gconf_client.unset("/apps/gnome-schedule/templates/crontab/%s/icon_uri" % (template_name_c))
+		support.gconf_client.unset("/apps/gnome-schedule/templates/crontab/%s/command" % (template_name_c))
+		support.gconf_client.unset("/apps/gnome-schedule/templates/crontab/%s/frequency" % (template_name_c))
+		support.gconf_client.unset("/apps/gnome-schedule/templates/crontab/%s/title" % (template_name_c))
+		
+		if newstring == "   ":
+			support.gconf_client.unset ("/apps/gnome-schedule/templates/crontab/installed")
+		else:
+			support.gconf_client.set_string("/apps/gnome-schedule/templates/crontab/installed", newstring)
+		
 	def savetemplate (self, template_name, record, nooutput, title, icon):
 		minute, hour, day, month, weekday, command, title_, icon_ = self.parse (record)
 		frequency = minute + " " + hour + " " + day + " " + month + " " + weekday
@@ -84,21 +113,26 @@ class Crontab:
 		support.gconf_client.set_string("/apps/gnome-schedule/templates/crontab/installed", installed)
 
 	def gettemplatenames (self):
-		strlist = support.gconf_client.get_string("/apps/gnome-schedule/templates/crontab/installed")
-		if strlist != None:
-			list = string.split (strlist, ", ")
-			return list
-		else:
-			return None
+		#try:
+			strlist = support.gconf_client.get_string("/apps/gnome-schedule/templates/crontab/installed")
+			if strlist != None:
+				list = string.split (strlist, ", ")
+				return list
+			else:
+				return None
+		#except:
+		#	return None
 
 	def gettemplate (self, template_name):
-		icon_uri = support.gconf_client.get_string("/apps/gnome-schedule/templates/crontab/%s/icon_uri" % (template_name))
-		command = support.gconf_client.get_string("/apps/gnome-schedule/templates/crontab/%s/command" % (template_name))
-		frequency = support.gconf_client.get_string("/apps/gnome-schedule/templates/crontab/%s/frequency" % (template_name))
-		title = support.gconf_client.get_string("/apps/gnome-schedule/templates/crontab/%s/title" % (template_name))
-		name = support.gconf_client.get_string("/apps/gnome-schedule/templates/crontab/%s/name" % (template_name))
-
-		return icon_uri, command, frequency, title, name
+		try:
+			icon_uri = support.gconf_client.get_string("/apps/gnome-schedule/templates/crontab/%s/icon_uri" % (template_name))
+			command = support.gconf_client.get_string("/apps/gnome-schedule/templates/crontab/%s/command" % (template_name))
+			frequency = support.gconf_client.get_string("/apps/gnome-schedule/templates/crontab/%s/frequency" % (template_name))
+			title = support.gconf_client.get_string("/apps/gnome-schedule/templates/crontab/%s/title" % (template_name))
+			name = support.gconf_client.get_string("/apps/gnome-schedule/templates/crontab/%s/name" % (template_name))
+			return icon_uri, command, frequency, title, name
+		except Exception, ex:
+			return ex, ex, ex, ex, ex
 
 	def translate_frequency (self, frequency):
 
@@ -253,9 +287,12 @@ class Crontab:
 				thefield = m.groups()[5] + field[len(field)-1]
 				# thefield = "1,2,3,4"
 				fields = thefield.split (",")
-				for field in fields:
-					num = int (field)
-					# print num
+				for fieldx in fields:
+					try:
+						num = int (fieldx)
+					except:
+						raise Exception('steps', self.translate_frequency (type), _("%s is not a number") % (fieldx))
+
 					if type=="minute":
 						if num > 59 or num < 0:
 							raise Exception('steps', self.translate_frequency (type), _("must be between 59 and 0"))

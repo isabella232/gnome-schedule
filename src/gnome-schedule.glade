@@ -46,7 +46,7 @@
 		      <signal name="activate" handler="on_add_scheduled_task_menu_activate" last_modification_time="Sat, 05 Jun 2004 23:20:51 GMT"/>
 
 		      <child internal-child="image">
-			<widget class="GtkImage" id="image14">
+			<widget class="GtkImage" id="image15">
 			  <property name="visible">True</property>
 			  <property name="stock">gtk-add</property>
 			  <property name="icon_size">1</property>
@@ -75,7 +75,7 @@
 		      <signal name="activate" handler="on_delete_menu_activate" last_modification_time="Sat, 05 Jun 2004 23:20:51 GMT"/>
 
 		      <child internal-child="image">
-			<widget class="GtkImage" id="image15">
+			<widget class="GtkImage" id="image16">
 			  <property name="visible">True</property>
 			  <property name="stock">gtk-delete</property>
 			  <property name="icon_size">1</property>
@@ -121,6 +121,40 @@
 		      <property name="use_underline">True</property>
 		      <property name="active">False</property>
 		      <signal name="activate" handler="on_advanced_menu_activate" last_modification_time="Sat, 05 Jun 2004 23:26:54 GMT"/>
+		    </widget>
+		  </child>
+		</widget>
+	      </child>
+	    </widget>
+	  </child>
+
+	  <child>
+	    <widget class="GtkMenuItem" id="innstillingar1">
+	      <property name="visible">True</property>
+	      <property name="stock_item">GNOMEUIINFO_MENU_SETTINGS_TREE</property>
+	      <signal name="activate" handler="on_innstillingar1_activate" last_modification_time="Wed, 23 Jun 2004 10:26:53 GMT"/>
+
+	      <child>
+		<widget class="GtkMenu" id="innstillingar1_menu">
+
+		  <child>
+		    <widget class="GtkRadioMenuItem" id="crontab1">
+		      <property name="visible">True</property>
+		      <property name="label" translatable="yes">_Crontab</property>
+		      <property name="use_underline">True</property>
+		      <property name="active">True</property>
+		      <signal name="activate" handler="on_crontab1_activate" last_modification_time="Wed, 23 Jun 2004 10:26:53 GMT"/>
+		    </widget>
+		  </child>
+
+		  <child>
+		    <widget class="GtkRadioMenuItem" id="at1">
+		      <property name="visible">True</property>
+		      <property name="label" translatable="yes">_At</property>
+		      <property name="use_underline">True</property>
+		      <property name="active">False</property>
+		      <property name="group">crontab1</property>
+		      <signal name="activate" handler="on_at1_activate" last_modification_time="Wed, 23 Jun 2004 10:26:53 GMT"/>
 		    </widget>
 		  </child>
 		</widget>
@@ -315,6 +349,7 @@
 </widget>
 
 <widget class="GtkWindow" id="crontabEditor">
+  <property name="visible">True</property>
   <property name="title" translatable="yes">[Add|Edit] scheduled task</property>
   <property name="type">GTK_WINDOW_TOPLEVEL</property>
   <property name="window_position">GTK_WIN_POS_NONE</property>
@@ -592,6 +627,7 @@
 
 		      <child>
 			<widget class="GtkLabel" id="template_label">
+			  <property name="visible">True</property>
 			  <property name="sensitive">False</property>
 			  <property name="label" translatable="yes">Template</property>
 			  <property name="use_underline">False</property>
@@ -643,24 +679,6 @@
 		      </child>
 
 		      <child>
-			<widget class="GtkComboBox" id="template_combobox">
-			  <property name="sensitive">False</property>
-			  <property name="items" translatable="yes">Manual</property>
-			  <signal name="changed" handler="on_template_combobox_changed" last_modification_time="Tue, 22 Jun 2004 11:13:45 GMT"/>
-			</widget>
-			<packing>
-			  <property name="left_attach">1</property>
-			  <property name="right_attach">2</property>
-			  <property name="top_attach">0</property>
-			  <property name="bottom_attach">1</property>
-			  <property name="x_padding">5</property>
-			  <property name="y_padding">5</property>
-			  <property name="x_options">fill</property>
-			  <property name="y_options">fill</property>
-			</packing>
-		      </child>
-
-		      <child>
 			<widget class="GtkEntry" id="title_entry">
 			  <property name="width_request">255</property>
 			  <property name="visible">True</property>
@@ -682,6 +700,53 @@
 			  <property name="x_padding">5</property>
 			  <property name="y_padding">5</property>
 			  <property name="y_options"></property>
+			</packing>
+		      </child>
+
+		      <child>
+			<widget class="GtkHBox" id="hbox13">
+			  <property name="visible">True</property>
+			  <property name="homogeneous">False</property>
+			  <property name="spacing">0</property>
+
+			  <child>
+			    <widget class="GtkComboBox" id="template_combobox">
+			      <property name="visible">True</property>
+			      <property name="sensitive">False</property>
+			      <property name="items" translatable="yes"></property>
+			      <signal name="changed" handler="on_template_combobox_changed" last_modification_time="Tue, 22 Jun 2004 11:13:45 GMT"/>
+			    </widget>
+			    <packing>
+			      <property name="padding">5</property>
+			      <property name="expand">True</property>
+			      <property name="fill">True</property>
+			    </packing>
+			  </child>
+
+			  <child>
+			    <widget class="GtkButton" id="remove_button">
+			      <property name="visible">True</property>
+			      <property name="can_focus">True</property>
+			      <property name="label" translatable="yes">_Remove</property>
+			      <property name="use_underline">True</property>
+			      <property name="relief">GTK_RELIEF_NORMAL</property>
+			      <property name="focus_on_click">True</property>
+			      <signal name="clicked" handler="on_remove_button_clicked" last_modification_time="Wed, 23 Jun 2004 08:50:33 GMT"/>
+			    </widget>
+			    <packing>
+			      <property name="padding">5</property>
+			      <property name="expand">False</property>
+			      <property name="fill">False</property>
+			    </packing>
+			  </child>
+			</widget>
+			<packing>
+			  <property name="left_attach">1</property>
+			  <property name="right_attach">2</property>
+			  <property name="top_attach">0</property>
+			  <property name="bottom_attach">1</property>
+			  <property name="x_options">fill</property>
+			  <property name="y_options">fill</property>
 			</packing>
 		      </child>
 		    </widget>
@@ -1932,7 +1997,7 @@
   <property name="type">GTK_WINDOW_TOPLEVEL</property>
   <property name="window_position">GTK_WIN_POS_NONE</property>
   <property name="modal">False</property>
-  <property name="resizable">True</property>
+  <property name="resizable">False</property>
   <property name="destroy_with_parent">False</property>
   <property name="decorated">True</property>
   <property name="skip_taskbar_hint">False</property>
@@ -1991,7 +2056,7 @@
 	      </child>
 
 	      <child>
-		<widget class="GtkEntry" id="title_entry">
+		<widget class="GtkEntry" id="title_entry_at">
 		  <property name="visible">True</property>
 		  <property name="can_focus">True</property>
 		  <property name="editable">True</property>
@@ -2231,7 +2296,7 @@
 		  <property name="editable">True</property>
 		  <property name="visibility">True</property>
 		  <property name="max_length">0</property>
-		  <property name="text" translatable="yes">tomorrow</property>
+		  <property name="text" translatable="yes">22:15</property>
 		  <property name="has_frame">True</property>
 		  <property name="invisible_char" translatable="yes">*</property>
 		  <property name="activates_default">False</property>
@@ -2395,6 +2460,5 @@
     </widget>
   </child>
 </widget>
-
 
 </glade-interface>
