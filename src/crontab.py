@@ -290,6 +290,9 @@ class Crontab:
 		minute, hour, day, month, weekday, command, title_, icon_ = self.parse (record)
 		easystring = self.easy (minute, hour, day, month, weekday)
 
+		if nooutput:
+			record = record + " " + self.nooutputtag
+
 		if title != None and icon == None:
 			record = record + " # " + title
 		elif title != None and icon != None:
@@ -298,9 +301,7 @@ class Crontab:
 			title = _("Untitled")
 			record = record + " # " + title + ", " + icon
 
-		if nooutput:
-			record = record + " " + self.nooutputtag
-
+	
 		self.lines[linenumber] = record
 		
 		#TODO let write return if write PASSED
