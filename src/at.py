@@ -284,6 +284,14 @@ class At:
 					# read lines and detect starter
 					script = os.popen(execute).read()
 					script, title, icon, prelen = self.prepare_script (script)
+					#removing ending newlines, but keep one
+					done = 0
+					while done == 0:
+						if script[-1] == "\n":
+							script = script[0:-1]
+						else:
+							done = 1
+
 					return job_id, date, time, class_id, user, script, title, icon, prelen
 		else:
 			if len (line) > 1 and line[0] != '#':
@@ -292,8 +300,6 @@ class At:
 					# print m.groups()
 					job = m.groups ()[0]
 					job_id = m.groups ()[1]
-					print job
-					print job_id
 					return job_id
 
 		return gtk.FALSE

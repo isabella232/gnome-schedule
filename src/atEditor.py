@@ -274,10 +274,10 @@ class AtEditor:
 	def loadicon (self):
 		nautilus_icon = support.nautilus_icon ("i-executable")
 		if nautilus_icon != None:
-			self.template_image.set_from_file(nautilus_icon)
+			#self.template_image.set_from_file(nautilus_icon)
 			self.icon = nautilus_icon
 		else:
-			self.template_image.set_from_file("/usr/share/icons/gnome/48x48/mimetypes/gnome-mime-application.png")
+			#self.template_image.set_from_file("/usr/share/icons/gnome/48x48/mimetypes/gnome-mime-application.png")
 			self.icon = "/usr/share/icons/gnome/48x48/mimetypes/gnome-mime-application.png"
 	
 	def reset (self):
@@ -295,20 +295,23 @@ class AtEditor:
 		self.title_entry.set_text(self.title)
 		self.script_textview_buffer.set_text(self.command)
 		self.combobox_entry.set_text(self.runat)
+		if self.icon != None:
+			#self.template_image.set_from_file(self.icon)
+			pass
+		else:
+			self.loadicon ()
 		return
 
 	def showedit (self, record, job_id, iter, mode):
-		#self.reload_templates ()
+		#self.reload_templates () # not supported yet
 		self.editing = gtk.TRUE
-		#print record
-		#(self.script, self.title, self.icon, self.date, self.time) = record
-		#(self.job_id, self.date, self.time, self.class_id, self.user, self.script, self.title, self.icon) = record
-
+		
 		self.job_id = job_id
 		self.date = self.ParentClass.treemodel.get_value(iter, 8)
 		self.time = self.ParentClass.treemodel.get_value(iter, 5)
 		self.title = self.ParentClass.treemodel.get_value(iter, 0)
-		self.icon = self.ParentClass.treemodel.get_value(iter, 6)
+		#self.icon = self.ParentClass.treemodel.get_value(iter, 6) #need the path to the icon somewhere
+		self.icon = "None"
 		self.class_id = self.ParentClass.treemodel.get_value(iter, 9)
 		self.user = self.ParentClass.treemodel.get_value(iter, 10)
 		self.command = self.ParentClass.treemodel.get_value(iter, 3)
