@@ -1,0 +1,532 @@
+# Norwegian translation of gnome-schedule.
+# Copyright (C) 2004 Gaute Hope
+# This file is distributed under the same license as the gnome-schedule package.
+# <Gaute Hope>, 2004.
+#  <>, 2004.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-schedule 1.0\n"
+"POT-Creation-Date: 2004-07-18 17:37+0000\n"
+"PO-Revision-Date: 2004-07-18 17:57+0000\n"
+"Last-Translator: Gaute Hope <eg@gaute.eu.org>\n"
+"Language-Team: Norwegian/Nynorsk <nn@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../src/at.py:349
+#, python-format
+msgid "%s%s%s %s%s%s"
+msgstr ""
+
+#: ../src/atEditor.py:285 ../src/crontabEditor.py:193
+msgid "Don't use a preset"
+msgstr "Ikkje bruk eit førhandssett oppsett"
+
+#: ../src/atEditor.py:347 ../src/crontabEditor.py:219
+msgid "Pick an icon for this scheduled task"
+msgstr "Velg eit ikon for denne jobben"
+
+#: ../src/atEditor.py:439 ../src/crontabEditor.py:257
+msgid "Edit a scheduled task"
+msgstr "Rediger denne jobben"
+
+#: ../src/atEditor.py:462 ../src/crontab.py:301 ../src/crontab.py:358
+#: ../src/crontab.py:433 ../src/crontabEditor.py:300
+#: ../src/crontabEditor.py:440
+msgid "Untitled"
+msgstr "Namnlaus"
+
+#: ../src/atEditor.py:464 ../src/crontabEditor.py:304
+msgid "Create a new scheduled task"
+msgstr "Lag ein ny jobb"
+
+#: ../src/atEditor.py:482
+#, python-format
+msgid "This is an invalid record! The problem could be: %s "
+msgstr "Dette er eit ugyldig tidsuttrykk! Problemet kan vere: %s"
+
+#: ../src/crontab.py:162 ../src/crontabEditor.py:342
+msgid "command"
+msgstr "kommando"
+
+#: ../src/crontab.py:185 ../src/crontab.py:205 ../src/crontab.py:232
+msgid "must be between 0 and 59"
+msgstr "Må vere mellom 0 og 59"
+
+#: ../src/crontab.py:188 ../src/crontab.py:208
+msgid "must be between 0 and 23"
+msgstr "må vere mellom 0 og 23"
+
+#: ../src/crontab.py:191 ../src/crontab.py:211 ../src/crontab.py:238
+msgid "must be between 1 and 31"
+msgstr "må vere mellom 1 og 31"
+
+#: ../src/crontab.py:194 ../src/crontab.py:214 ../src/crontab.py:241
+msgid "must be between 1 and 12"
+msgstr "må vere mellom 1 og 12"
+
+#: ../src/crontab.py:197 ../src/crontab.py:217 ../src/crontab.py:244
+msgid "must be between 0 and 7"
+msgstr "må vere mellom 0 og 7"
+
+#: ../src/crontab.py:228
+#, python-format
+msgid "%s is not a number"
+msgstr "%s er ikkje eit nummer"
+
+#: ../src/crontab.py:246
+msgid "Unknown"
+msgstr "Ukjend"
+
+#: ../src/crontab.py:246
+msgid "Invalid"
+msgstr "Ugyldig"
+
+#: ../src/crontab.py:458 ../src/crontabEditor.py:87
+msgid "minute"
+msgstr "minutt"
+
+#: ../src/crontab.py:460 ../src/crontabEditor.py:88
+msgid "hour"
+msgstr "time"
+
+#: ../src/crontab.py:462 ../src/crontabEditor.py:89
+msgid "day"
+msgstr "dag"
+
+#: ../src/crontab.py:464 ../src/crontabEditor.py:90
+msgid "month"
+msgstr "månad"
+
+#: ../src/crontab.py:466
+msgid "weekday"
+msgstr "vekedag"
+
+#: ../src/crontabEditor.py:86
+msgid "use advanced"
+msgstr "bruk avansert"
+
+#: ../src/crontabEditor.py:91
+msgid "week"
+msgstr "veke"
+
+#: ../src/crontabEditor.py:172
+#, python-format
+msgid ""
+"This is an invalid record! The problem could be at the %s field. Reason: %s"
+msgstr ""
+"Dette er eit ugyldig tids uttrykk! Problemet kan vere %s feltet. Grunn: %s"
+
+#: ../src/crontabEditorHelper.py:102
+msgid "Happens all "
+msgstr "Skjer alle"
+
+#: ../src/crontabEditorHelper.py:102 ../src/crontabEditorHelper.py:210
+msgid "s"
+msgstr " "
+
+#: ../src/crontabEditorHelper.py:105
+msgid "Happens from "
+msgstr "Skjer frå"
+
+#: ../src/crontabEditorHelper.py:151
+msgid "Edit time expression for: "
+msgstr "Rediger tidsuttrykk for:"
+
+#: ../src/crontabEditorHelper.py:162
+#, python-format
+msgid "This is invalid. Reason: %s"
+msgstr "Dette er ugyldig. Grunn: %s"
+
+#: ../src/crontabEditorHelper.py:201 ../src/crontabEditorHelper.py:212
+msgid "st. "
+msgstr "."
+
+#: ../src/crontabEditorHelper.py:203
+msgid "th. "
+msgstr "."
+
+#: ../src/lang.py:69
+msgid ""
+"To the translator: Read src/lang.py !!! (yeah it's for you, not for the user. "
+"YES FOR YOU, the translator. YES:) really!"
+msgstr ""
+
+#: ../src/lang.py:92
+msgid "zeroth"
+msgstr ""
+
+#: ../src/lang.py:93
+msgid "first"
+msgstr ""
+
+#: ../src/lang.py:93
+msgid "second"
+msgstr ""
+
+#: ../src/lang.py:93
+msgid "third"
+msgstr ""
+
+#: ../src/lang.py:93
+msgid "fourth"
+msgstr ""
+
+#: ../src/lang.py:93
+msgid "fifth"
+msgstr ""
+
+#: ../src/lang.py:94
+msgid "sixth"
+msgstr ""
+
+#: ../src/lang.py:94
+msgid "seventh"
+msgstr ""
+
+#: ../src/lang.py:94
+msgid "eighth"
+msgstr ""
+
+#: ../src/lang.py:94
+msgid "ninth"
+msgstr ""
+
+#: ../src/lang.py:94
+msgid "tenth"
+msgstr ""
+
+#: ../src/lang.py:95
+msgid "eleventh"
+msgstr ""
+
+#: ../src/lang.py:95
+msgid "twelfth"
+msgstr ""
+
+#: ../src/lang.py:95
+msgid "thirteenth"
+msgstr ""
+
+#: ../src/lang.py:95
+msgid "fourteenth"
+msgstr ""
+
+#: ../src/lang.py:95
+msgid "fifteenth"
+msgstr ""
+
+#: ../src/lang.py:96
+msgid "sixteenth"
+msgstr ""
+
+#: ../src/lang.py:96
+msgid "seventeenth"
+msgstr ""
+
+#: ../src/lang.py:96
+msgid "eighteenth"
+msgstr ""
+
+#: ../src/lang.py:96
+msgid "nineteenth"
+msgstr ""
+
+#: ../src/lang.py:96
+msgid "twentieth"
+msgstr ""
+
+#: ../src/lang.py:99
+msgid "zero"
+msgstr ""
+
+#: ../src/lang.py:99
+msgid "ten"
+msgstr ""
+
+#: ../src/lang.py:99
+msgid "twenty"
+msgstr ""
+
+#: ../src/lang.py:99
+msgid "thirty"
+msgstr ""
+
+#: ../src/lang.py:99
+msgid "forty"
+msgstr ""
+
+#: ../src/lang.py:99
+msgid "fifty"
+msgstr ""
+
+#: ../src/lang.py:99
+msgid "sixty"
+msgstr ""
+
+#: ../src/lang.py:99
+msgid "seventy"
+msgstr ""
+
+#: ../src/lang.py:99
+msgid "eighty"
+msgstr ""
+
+#: ../src/lang.py:99
+msgid "ninety"
+msgstr ""
+
+#: ../src/lang.py:106
+#, python-format
+msgid "minus %s"
+msgstr ""
+
+#: ../src/lang.py:116
+msgid "minus "
+msgstr ""
+
+#: ../src/lang.py:120
+#, python-format
+msgid "%s%s%s%s%s%s"
+msgstr ""
+
+#: ../src/lang.py:120
+msgid "-"
+msgstr ""
+
+#: ../src/lang.py:123
+#, python-format
+msgid "%sth."
+msgstr ""
+
+#: ../src/lang.py:212
+#, python-format
+msgid "%s%s:%s:%s%s"
+msgstr ""
+
+#: ../src/lang.py:214
+#, python-format
+msgid "%s%s:%s%s"
+msgstr ""
+
+#: ../src/lang.py:251
+msgid "Every minute"
+msgstr ""
+
+#: ../src/lang.py:256
+msgid "Every hour"
+msgstr ""
+
+#: ../src/lang.py:258
+#, python-format
+msgid "Every %s minute of every hour"
+msgstr ""
+
+#: ../src/lang.py:263
+#, python-format
+msgid "Every %s hour of the day"
+msgstr ""
+
+#: ../src/lang.py:265
+#, python-format
+msgid "Every day at %s"
+msgstr ""
+
+#: ../src/lang.py:267
+#, python-format
+msgid "Every minute during the %s hour"
+msgstr ""
+
+#: ../src/lang.py:272
+#, python-format
+msgid "Every %s day of the month"
+msgstr ""
+
+#: ../src/lang.py:274
+#, python-format
+msgid "At %s every %s day of the month"
+msgstr ""
+
+#: ../src/lang.py:276
+#, python-format
+msgid "Every minute of the %s hour every %s day of the month"
+msgstr ""
+
+#: ../src/lang.py:278
+#, python-format
+msgid "At the %s minute of every hour every %s day of the month"
+msgstr ""
+
+#: ../src/lang.py:283
+#, python-format
+msgid "Every %s month of the year"
+msgstr ""
+
+#: ../src/lang.py:285
+#, python-format
+msgid "At the %s day on %s every %s month of the year"
+msgstr ""
+
+#: ../src/lang.py:287
+#, python-format
+msgid "At the %s day every %s hour every %s month of the year"
+msgstr ""
+
+#: ../src/lang.py:289
+#, python-format
+msgid "Every day and every hour at the %s minute every %s month of the year"
+msgstr ""
+
+#: ../src/lang.py:291
+#, python-format
+msgid "Every day on %s every %s month of the year"
+msgstr ""
+
+#: ../src/lang.py:297
+#, python-format
+msgid "Every %s day of the week"
+msgstr ""
+
+#: ../src/lang.py:299
+#, python-format
+msgid "Every %s day of the week at %s"
+msgstr ""
+
+#: ../src/lang.py:301
+#, python-format
+msgid "Every %s day of the week the %s hour"
+msgstr ""
+
+#: ../src/lang.py:303
+#, python-format
+msgid "Every %s day of the week the %s minute of every hour"
+msgstr ""
+
+#: ../src/lang.py:305
+#, python-format
+msgid "Every %s day of the week every minute"
+msgstr ""
+
+#: ../src/lang.py:318
+msgid "Every minute, every hour, every day, every month, every weekday"
+msgstr ""
+
+#: ../src/lang.py:321
+#, python-format
+msgid "At minute: %s, hour %s, day: %s, month: %s, weekday: %s"
+msgstr ""
+
+#: ../src/lang.py:324
+#, python-format
+msgid "At minute: %s, hour %s, day: %s, month: %s"
+msgstr ""
+
+#: ../src/lang.py:327
+#, python-format
+msgid "At minute: %s, hour %s, day: %s, every month"
+msgstr ""
+
+#: ../src/lang.py:329
+#, python-format
+msgid "At minute: %s, hour %s, every day, month: %s"
+msgstr ""
+
+#: ../src/lang.py:331
+#, python-format
+msgid "At minute: %s, every hour, day: %s, month: %s"
+msgstr ""
+
+#: ../src/lang.py:334
+#, python-format
+msgid "At minute: %s, hour %s, every day, every month"
+msgstr ""
+
+#: ../src/lang.py:336
+#, python-format
+msgid "At minute: %s, every hour, day: %s, every month"
+msgstr ""
+
+#: ../src/lang.py:338
+#, python-format
+msgid "At minute: %s, every hour, every day, month: %s"
+msgstr ""
+
+#: ../src/lang.py:340
+#, python-format
+msgid "At minute: %s, every hour, every day, every month"
+msgstr ""
+
+#: ../src/lang.py:343
+#, python-format
+msgid "Every minute, hour: %s, day: %s, month %s"
+msgstr ""
+
+#: ../src/lang.py:345
+#, python-format
+msgid "Every minute, hour %s, day: %s, every month"
+msgstr ""
+
+#: ../src/lang.py:347
+#, python-format
+msgid "Every minute, hour %s, every day, month: %s"
+msgstr ""
+
+#: ../src/lang.py:349
+#, python-format
+msgid "Every minute, hour %s, every day, every month"
+msgstr ""
+
+#: ../src/lang.py:352
+#, python-format
+msgid "Every minute, every hour, day: %s, month: %s"
+msgstr ""
+
+#: ../src/lang.py:354
+#, python-format
+msgid "Every minute, every hour, day: %s, every month"
+msgstr ""
+
+#: ../src/mainWindow.py:265 ../src/mainWindow.py:296
+msgid "Icon"
+msgstr "Ikon"
+
+#: ../src/mainWindow.py:268 ../src/mainWindow.py:316
+msgid "Type"
+msgstr "Type"
+
+#: ../src/mainWindow.py:273 ../src/mainWindow.py:311
+msgid "Title"
+msgstr "Tittel"
+
+#: ../src/mainWindow.py:278 ../src/mainWindow.py:299
+msgid "Frequency or time"
+msgstr "Frekvens"
+
+#: ../src/mainWindow.py:283 ../src/mainWindow.py:304
+msgid "Preview"
+msgstr "Førehandsvisning"
+
+#: ../src/mainWindow.py:474
+msgid "Gnome Schedule"
+msgstr "Gnome Schedule"
+
+#: ../src/mainWindow.py:476
+msgid "Copyright (c) 2004-2005 Gaute Hope."
+msgstr "Kopieringsrett (c) 2004-2005 Gaute Hope."
+
+#: ../src/mainWindow.py:477
+msgid "This software is distributed under the GPL. "
+msgstr "Denne mjukvaren e distribuert under GPL"
+
+#: ../src/mainWindow.py:481
+msgid ""
+"Some painfully bad documentation put\n"
+"toghether from the far corners of Gaute Hope's mind."
+msgstr "Noko dritdårleg dokumentasjon sutte i hop av Gaute Hope."
+
+#: ../src/mainWindow.py:481
+msgid "translator_credits"
+msgstr "Kreditt!"
+
