@@ -1,3 +1,9 @@
+2004-07-09 Gaute Hope <eg@gaute.eu.org>
+	
+	* Editing in at is now supported
+	* Titles in at is supported
+	* Icons is partially supported, need to get the path from somewhere.
+
 2004-07-08 Gaute Hope <eg@gaute.eu.org>
 
 	* enabled the at editor
