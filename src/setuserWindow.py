@@ -23,8 +23,6 @@ import gtk
 #python modules
 import pwd
 
-#import string
-
 ##
 ## I18N
 ##
@@ -66,9 +64,11 @@ class SetuserWindow:
 			user = self.entUser.get_text()
 			pwd.getpwnam(user)
 
-			# clean treeview, reread crontab
-			self.ParentClass.user = user
-			self.ParentClass.schedule_reload ()
+			if user != self.ParentClass.user:
+				# clean treeview, reread crontab
+				self.ParentClass.user = user
+				self.ParentClass.schedule_reload ()
+			
 			self.widget.hide()
 		except Exception, ex:
 			print ex

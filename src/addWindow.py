@@ -20,8 +20,7 @@
 import gtk
 
 #python modules
-#import pwd
-import string
+#import string
 
 ##
 ## I18N

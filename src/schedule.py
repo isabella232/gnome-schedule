@@ -16,20 +16,6 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 
-#pygtk modules
-#import gtk
-
-#python modules
-#import re
-#import sys
-#import os
-#import tempfile
-#import config
-
-
-#custom modules
-#import mainWindow
-
 ##
 ## I18N
 ##

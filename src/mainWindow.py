@@ -338,8 +338,6 @@ class main:
 		if UID == 0:
 			self.root = 1
 			self.user = "root"
-			if len(sys.argv) == 2:
-				self.user = sys.argv[1]
 		else:
 			self.root = 0
 			self.user = os.environ['USER']
@@ -446,9 +444,6 @@ class main:
 			pathint = path[0]
 			backpath = (pathint - 1,)
 
-			
-					
-						
 			self.schedule.delete (linenumber, iter)
 			firstiter = self.treemodel.get_iter_first()
 			try:
@@ -470,10 +465,6 @@ class main:
 						#go first
 						selection = self.treeview.get_selection()
 						selection.select_iter(firstiter)
-
-
-			
-				
 
 		return
 
