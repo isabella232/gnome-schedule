@@ -157,6 +157,7 @@ class At:
 		tmp.close ()
 		execute = config.getAtbin() + " " + runat + " -f " + path
 		temp = commands.getoutput(execute)
+		print temp
 		os.unlink (path)
 		return temp
 
