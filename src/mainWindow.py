@@ -129,7 +129,7 @@ class main:
 		self.treemodel = gtk.ListStore(gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_INT, gobject.TYPE_STRING)
 		self.treeview.set_model (self.treemodel)
 
-		self.switchView("advanced", 1)
+		self.switchView("simple", 1)
 
 
 		return
@@ -227,7 +227,6 @@ class main:
 		dlg.set_position (gtk.WIN_POS_CENTER)
 		dlg.set_border_width(2)
 		dlg.set_modal(gtk.TRUE)
-		dlg.set_transient_for(self.main_window)
 		dlg.set_icon(iconPixbuf)
 		rc = dlg.run()
 		dlg.destroy()
