@@ -41,19 +41,29 @@ class SetuserWindow:
 		self.widget = self.xml.get_widget("setuserWindow")
 		self.widget.connect("delete-event", self.on_cancel_button_clicked)
 
+		##comboxEntry
 		self.entUser = self.xml.get_widget("entUser")
 		
 		liststore = gtk.ListStore(gobject.TYPE_STRING)
 		self.entUser.set_model(liststore)
 		self.entUser.set_text_column(0)
 		
-				
+		#entryCompletion
+		# TODO: make it only possible for the user to type something that is in the list
+		self.entry = self.entUser.child
+		self.entry.set_text(self.ParentClass.user)
+  		completion = gtk.EntryCompletion()
+  		self.entry.set_completion(completion)
+   		completion.set_model(liststore)
+  		completion.set_text_column(0)
+  			
 		#fill combox with all the users
 		pwd_info = pwd.getpwall()
 		
 		for info in pwd_info:
 			self.entUser.append_text(info[0])
-			
+		##
+		
 		self.cancel_button = self.xml.get_widget ("setuser_cancel_button")
 		self.ok_button = self.xml.get_widget ("setuser_ok_button")
 		self.xml.signal_connect("on_setuser_cancel_button_clicked", self.on_cancel_button_clicked)
@@ -71,7 +81,7 @@ class SetuserWindow:
 
 	def on_ok_button_clicked (self, *args):
 		try:
-			user = self.entUser.get_active_text()
+			user = self.entry.get_text()
 			userdb = pwd.getpwnam(user)
 
 			if user != self.ParentClass.user:

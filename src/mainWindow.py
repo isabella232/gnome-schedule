@@ -402,6 +402,8 @@ class main:
 		if key == "Delete" or key == "KP_Delete":
 			self.on_delete_menu_activate()
 
+	# TODO: pressing enter on a listitem also should show properties
+	# TODO: if there are items in the list the first one should get focus
 	#double click on task to get properties
 	def on_treeview_button_press_event (self, widget, event):
 		if event.type == gtk.gdk._2BUTTON_PRESS and self.haveitem == gtk.TRUE:
