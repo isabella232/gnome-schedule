@@ -42,10 +42,12 @@ _ = gettext.gettext
 
 
 class CrontabEditor:
-	def __init__(self, parent):
+	def __init__(self, parent, backend, scheduler):
 
 		self.ParentClass = parent
-		self.schedule = self.ParentClass	#needed for the crontabeditorhelper
+		#self.schedule = self.ParentClass	#needed for the crontabeditorhelper
+		self.backend = backend
+		self.scheduler = scheduler
 		
 		self.xml = self.ParentClass.xml
 		self.widget = self.xml.get_widget("crontabEditor")
@@ -119,7 +121,7 @@ class CrontabEditor:
 		
 		self.editorhelper = crontabEditorHelper.CrontabEditorHelper(self)
 	
-		self.ParentClass.ParentClass.backend.add_scheduler_type("crontab")
+		self.backend.add_scheduler_type("crontab")
 		
 	def showadd (self, mode):
 		self.__loadicon__ ()
@@ -137,7 +139,7 @@ class CrontabEditor:
 		self.editing = gtk.TRUE
 		self.linenumber = linenumber
 		self.record = record
-		(self.minute, self.hour, self.day, self.month, self.weekday, self.command, self.title, self.icon) = self.ParentClass.parse (record)
+		(self.minute, self.hour, self.day, self.month, self.weekday, self.command, self.title, self.icon) = self.scheduler.parse (record)
 		self.widget.set_title(_("Edit a scheduled task"))
 		self.__update_textboxes__ ()
 		self.__set_frequency_combo__ ()
@@ -183,7 +185,7 @@ class CrontabEditor:
 
 	def __reload_templates__ (self):
 		#self.template_combobox.set_active (active)
-		self.template_names = self.ParentClass.ParentClass.backend.gettemplatenames ("crontab")
+		self.template_names = self.backend.gettemplatenames ("crontab")
 		
 		if not (self.template_names == None or len (self.template_names) <= 0):
 			active = self.template_combobox.get_active ()
@@ -203,7 +205,7 @@ class CrontabEditor:
 		else:
 			
 			for template_name in self.template_names:
-				thetemplate = self.ParentClass.ParentClass.backend.gettemplate ("crontab", template_name)
+				thetemplate = self.backend.gettemplate ("crontab", template_name)
 				icon_uri, command, frequency, title, name = thetemplate
 				self.template_combobox_model.append([name, template_name, thetemplate])
 						
@@ -213,7 +215,7 @@ class CrontabEditor:
 
 	# TODO: to gnome specific
 	def __loadicon__ (self):
-		nautilus_icon = self.ParentClass.ParentClass.backend.nautilus_icon ("i-executable")
+		nautilus_icon = self.backend.nautilus_icon ("i-executable")
 		if nautilus_icon != None:
 			pixbuf = gtk.gdk.pixbuf_new_from_file_at_size (nautilus_icon, 60, 60)
 			self.template_image.set_from_pixbuf(pixbuf)
@@ -245,11 +247,11 @@ class CrontabEditor:
 			space = " "
 			if self.command[len(self.command)-1] == " ":
 				space = ""
-			self.command = self.command + space + self.ParentClass.nooutputtag
+			self.command = self.command + space + self.scheduler.nooutputtag
 			
 		#record = self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday + " " + self.command
 		self.frequency = self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday
-		self.ParentClass.ParentClass.backend.savetemplate ("crontab",template_name, self.frequency, self.title, self.icon, self.command)
+		self.backend.savetemplate ("crontab",template_name, self.frequency, self.title, self.icon, self.command)
 		
 
 	#error dialog box 
@@ -262,7 +264,7 @@ class CrontabEditor:
 	def __check_field_format__ (self, field, type):
 		try:
 			# Type should not be translatable!
-			self.ParentClass.checkfield (field, type, self.fieldRegex)
+			self.scheduler.checkfield (field, type, self.fieldRegex)
 		except Exception, ex:
 			raise ex
 
@@ -273,7 +275,7 @@ class CrontabEditor:
 		template = self.template_combobox_model.get_value(iter, 2)
 		icon_uri, command, frequency, title, template_name = template
 		self.template_combobox.set_active (0)
-		self.ParentClass.ParentClass.backend.removetemplate ("crontab",template_name)
+		self.backend.removetemplate ("crontab",template_name)
 
 		
 	#save template	button
@@ -364,7 +366,7 @@ class CrontabEditor:
 					self.nooutput = gtk.FALSE
 
 
-				self.minute, self.hour, self.day, self.month, self.weekday, self.command, self.title, icon_ = self.ParentClass.parse (record)
+				self.minute, self.hour, self.day, self.month, self.weekday, self.command, self.title, icon_ = self.scheduler.parse (record)
 				self.command = command
 				self.__update_textboxes__ ()
 			else:
@@ -404,11 +406,11 @@ class CrontabEditor:
 
 		
 		if self.editing != gtk.FALSE:
-			self.ParentClass.update (self.minute, self.hour, self.day, self.month, self.weekday, self.command, self.linenumber, self.parentiter, self.nooutput, self.title, self.icon)
+			self.scheduler.update (self.minute, self.hour, self.day, self.month, self.weekday, self.command, self.linenumber, self.parentiter, self.nooutput, self.title, self.icon)
 			
 		else:
-			self.ParentClass.append (self.minute, self.hour, self.day, self.month, self.weekday, self.command, self.nooutput, self.title, self.icon)
-			self.ParentClass.ParentClass.schedule_reload ("crontab")
+			self.scheduler.append (self.minute, self.hour, self.day, self.month, self.weekday, self.command, self.nooutput, self.title, self.icon)
+			self.ParentClass.schedule_reload ("crontab")
 	
 		self.widget.hide ()
 

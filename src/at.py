@@ -30,7 +30,7 @@ import time
 
 #custom modules
 import config
-import atEditor
+#import atEditor
 
 ##
 ## I18N
@@ -45,20 +45,20 @@ _ = gettext.gettext
 class At:
 	def __init__(self, parent):
 		self.ParentClass = parent
-		self.xml = self.ParentClass.xml
+		#self.xml = self.ParentClass.xml
 		
 		#default preview length
 		self.preview_len = 50
 		
-		self.editor = atEditor.AtEditor (self)
+		#self.editor = atEditor.AtEditor (self)
 		
 		self.atRecordRegex = re.compile('([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)')
 		self.atRecordRegexAdd = re.compile('([^\s]+)\s([^\s]+)\s')
 		self.atRecordRegexAdded = re.compile('[^\s]+\s([0-9]+)\sat')
 	
 
-	def geteditor (self):
-		return self.editor
+	#def geteditor (self):
+	#	return self.editor
 
 	def get_type (self):
 		return "at"

@@ -169,14 +169,14 @@ class main:
 		
 		##create crontab
 		self.crontab = crontab.Crontab(self)
-		self.crontab_editor = self.crontab.geteditor ()
+		self.crontab_editor = crontabEditor.CrontabEditor(self,self.backend, self.crontab)
 		##
 		
 		##create at
 		self.at = at.At(self)
-		self.at_editor = self.at.geteditor ()
+		self.at_editor = atEditor.AtEditor (self, self.backend, self.at)
 		##
-  
+		
 		#set user window
 		self.setuserWindow = setuserWindow.SetuserWindow (self)
 		
@@ -333,7 +333,12 @@ class main:
 		if iter != None:
 			#see what scheduler (at, crontab or ...)
 			self.schedule = self.treemodel.get_value(iter, 7)
-			self.editor = self.schedule.geteditor ()
+			
+			# TODO: dirty hacky 
+			if self.schedule.get_type() == "crontab":
+				self.editor = self.crontab_editor
+			else:
+				self.editor = self.at_editor
 		
 			record = self.treemodel.get_value(iter, 3)
 			linenumber = self.treemodel.get_value(iter, 4)
@@ -346,7 +351,12 @@ class main:
 		if iter != None:
 			#see what scheduler (at, crontab or ...)
 			self.schedule = self.treemodel.get_value(iter, 7)
-			self.editor = self.schedule.geteditor ()
+			
+			# TODO: dirty hacky 
+			if self.schedule.get_type() == "crontab":
+				self.editor = self.crontab_editor
+			else:
+				self.editor = self.at_editor
 
 			record = self.treemodel.get_value(iter, 3)
 			linenumber = self.treemodel.get_value(iter, 4)

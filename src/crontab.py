@@ -25,7 +25,6 @@ import os
 import tempfile
 
 #custom modules
-import crontabEditor
 import lang
 import config
 
@@ -42,19 +41,13 @@ _ = gettext.gettext
 class Crontab:
 	def __init__(self, parent):
 		self.ParentClass = parent
-		self.xml = self.ParentClass.xml
-		
+				
 		#default preview length
 		self.preview_len = 50
 		
-		self.editor = crontabEditor.CrontabEditor(self)
-				
 		self.nooutputtag = ">/dev/null 2>&1"
 		self.crontabRecordRegex = re.compile('([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^#\n$]*)(\s#\s([^\n$]*)|$)')
 				
-
-	def geteditor (self):
-		return self.editor
 	
 	def get_type (self):
 		return "crontab"

@@ -39,9 +39,12 @@ _ = gettext.gettext
 
 
 class AtEditor:
-	def __init__(self, parent):
+	def __init__(self, parent, backend, scheduler):
 		self.ParentClass = parent
 		self.xml = self.ParentClass.xml
+		self.backend = backend
+		self.scheduler = scheduler
+		
 
 		self.widget = self.xml.get_widget("atEditor")
 		self.widget.connect("delete-event", self.on_cancel_button_clicked)
@@ -102,7 +105,7 @@ class AtEditor:
 		self.xml.signal_connect("on_at_minute_spinbutton_changed", self.on_minute_spinbutton_changed)
 		self.xml.signal_connect("on_at_combobox_changed", self.on_combobox_changed)
 
-		self.ParentClass.ParentClass.backend.add_scheduler_type("at")
+		self.backend.add_scheduler_type("at")
 
 	def showadd (self, mode):
 		self.NOACTION = gtk.TRUE
@@ -123,13 +126,13 @@ class AtEditor:
 		self.NOACTION = gtk.TRUE
 
 		self.job_id = job_id
-		self.date = self.ParentClass.ParentClass.treemodel.get_value(iter, 9)
-		self.time = self.ParentClass.ParentClass.treemodel.get_value(iter, 12)
-		self.title = self.ParentClass.ParentClass.treemodel.get_value(iter, 0)
-		self.icon = self.ParentClass.ParentClass.treemodel.get_value(iter, 8) 
-		self.class_id = self.ParentClass.ParentClass.treemodel.get_value(iter, 9)
-		self.user = self.ParentClass.ParentClass.treemodel.get_value(iter, 10)
-		self.command = self.ParentClass.ParentClass.treemodel.get_value(iter, 3)
+		self.date = self.ParentClass.treemodel.get_value(iter, 9)
+		self.time = self.ParentClass.treemodel.get_value(iter, 12)
+		self.title = self.ParentClass.treemodel.get_value(iter, 0)
+		self.icon = self.ParentClass.treemodel.get_value(iter, 8) 
+		self.class_id = self.ParentClass.treemodel.get_value(iter, 9)
+		self.user = self.ParentClass.treemodel.get_value(iter, 10)
+		self.command = self.ParentClass.treemodel.get_value(iter, 3)
 		self.runat = self.time + " " + self.date
 		#parse 	
 		(hour, minute, day, month, year) = self.__parse_time__(self.time, self.date)
@@ -263,7 +266,7 @@ class AtEditor:
 		template = self.template_combobox_model.get_value(iter, 2)
 		icon_uri, command, timeexpression, title, name = template
 		self.template_combobox.set_active (0)
-		self.ParentClass.ParentClass.backend.removetemplate ("at", name)
+		self.backend.removetemplate ("at", name)
 
 
 	def on_save_button_clicked (self, *args):
@@ -273,12 +276,12 @@ class AtEditor:
 		
 	def __SaveTemplate__ (self, template_name):
 		#TODO: validate record
-		self.ParentClass.ParentClass.backend.savetemplate ("at", template_name, self.runat, self.title, self.icon, self.command)
+		self.backend.savetemplate ("at", template_name, self.runat, self.title, self.icon, self.command)
 			
 	
 	def __reload_templates__ (self):
 
-		self.template_names = self.ParentClass.ParentClass.backend.gettemplatenames ("at")
+		self.template_names = self.backend.gettemplatenames ("at")
 		if not (self.template_names == None or len (self.template_names) <= 0):
 			active = self.template_combobox.get_active ()
 			if active == -1:
@@ -296,7 +299,7 @@ class AtEditor:
 		else:
 			
 			for template_name in self.template_names:
-				thetemplate = self.ParentClass.ParentClass.backend.gettemplate ("at",template_name)
+				thetemplate = self.backend.gettemplate ("at",template_name)
 				icon_uri, command, runat, title, name  = thetemplate
 				#print "icon_uri: " + icon_uri
 				#print "command: " + command
@@ -382,7 +385,7 @@ class AtEditor:
 
 
 	def __loadicon__ (self):
-		nautilus_icon = self.ParentClass.ParentClass.backend.nautilus_icon ("i-executable")
+		nautilus_icon = self.backend.nautilus_icon ("i-executable")
 		if nautilus_icon != None:
 			pixbuf = gtk.gdk.pixbuf_new_from_file_at_size (nautilus_icon, 60, 60)
 			self.template_image.set_from_pixbuf(pixbuf)
@@ -486,17 +489,17 @@ class AtEditor:
 
 
 	def on_ok_button_clicked (self, *args):
-		(validate, reason) = self.ParentClass.checkfield(self.runat)
+		(validate, reason) = self.scheduler.checkfield(self.runat)
 		if validate == gtk.FALSE:
 			self.__WrongRecordDialog__ (reason)
 			return
 		# TODO: Fill record
 		
 		if self.editing != gtk.FALSE:
-			self.ParentClass.update (self.job_id, self.runat, self.command, self.title, self.icon)
+			self.scheduler.update (self.job_id, self.runat, self.command, self.title, self.icon)
 		else:
-			self.ParentClass.append (self.runat, self.command, self.title, self.icon)
+			self.scheduler.append (self.runat, self.command, self.title, self.icon)
 		
-		self.ParentClass.ParentClass.schedule_reload ("at")
+		self.ParentClass.schedule_reload ("at")
 			
 		self.widget.hide ()
