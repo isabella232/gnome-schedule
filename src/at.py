@@ -273,8 +273,8 @@ class At:
 
 		if self.ParentClass.root == 1:
 			if self.ParentClass.user != "root":
-				#makes file readable by the user
-				execute = config.getChmodbin() + " o+r " + path
+				#changes the ownership
+				execute = config.getChownbin() + " " + self.ParentClass.user + ": " + path
 				temp = commands.getoutput(execute)
 				execute = config.getSubin() + " " + self.ParentClass.user + " -c \"" + config.getAtbin() + " " + runat + " -f " + path + " && exit\""
 				temp = commands.getoutput(execute)
@@ -311,6 +311,7 @@ class At:
 
 		if self.ParentClass.root == 1:
 			if self.ParentClass.user != "root":
+				execute = config.getChownbin() + " " + self.ParentClass.user + ": " + path
 				temp = commands.getoutput(execute)
 				execute = config.getSubin() + " " + self.ParentClass.user + " -c \"" + config.getAtbin() + " " + runat + " -f " + path + " && exit\""
 				temp = commands.getoutput(execute)
