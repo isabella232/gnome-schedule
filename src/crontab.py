@@ -268,6 +268,7 @@ class Crontab:
 	def parse (self, line):
 		if len (line) > 1 and line[0] != '#':
 			"""
+						   min        hour      day      month      wday     command   comment/title-icon or end
 			The regexp:	('([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^#\n$]*)(\s#\s([^\n$]*)|$)')
 			A record:	* * * * * echo $a >/dev/null 2>&1 # Untitled, /usr/share/icons/gnome/48x48/mimetypes/gnome-mime-application.png
 			"""
@@ -297,7 +298,8 @@ class Crontab:
 
 					return minute, hour, day, month, weekday, command, title, icon
 						
-			
+			else:
+				print "ERROR: Failed to parse crontab record"
 		return gtk.FALSE
 
 	
