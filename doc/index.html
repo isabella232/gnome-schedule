@@ -5,5 +5,28 @@
 </head>
 <body>
 <h1>System schedule configurator</h1>
+<h3>Introduction</h3>
+<p>System schedule configurator is a tool made to help the configuration of the crontab server easier. The crontab server runs commands at specified times such as every month at the 12th 12:00, or at every Tuesday.<br>If you were to configure this manually you would have to write a line like "* * * * 2 command" for every tuesday.<br><br>Explanation:<br>
+<table border="1">
+<tr><td><b>Minute</b></td><td><b>Hour</b></td><td><b>Day</b></td><td><b>Month</b></td><td><b>Weekday</b></td><td><b>Command</b></td></tr>
+<tr><td>*</td><td>*</td><td>*</td><td>*</td><td>2</td><td>command</td></tr>
+</table>
+See 'man crontab(5)' for more.<br>
+This is parsed into easy to read lines such as "Every tuesday" if possible(if not it is shown as this). And you can add titles and edit them and have full control in a listview.
+</p>
+<h3>Purpose</h3>
+<p>The main purposes of this application is to create a graphical interface for the user who doesn't know much about crontab and present the records in a way that would be easy to understand for everyone.<br>We have choosen to have an advanced option to make the tool useful for the experienced user aswell, for those that only could use an overview of the crontab and easily manage many different users crontabs. In the advaced mode the records is not parsed and are shown as they would look in the crontab file.</p>
+<h3>Features</h3>
+<p>
+<ul>
+<li>Parse common or easy time expression into easy readable lines like: "Every month"</li>
+<li>If you run it as root you may change to another users crontab</li>
+<li>Simple and advanced mode. Where the advanced mode shows an overview and the time expression as it would look in a regular crontab configuration file</li>
+<li>Add, delete and edit jobs.</li>
+<li>Titles of jobs by adding a comment after each job</li>
+<li>Commonly used time expression in radio buttons with customizable arguments like 'Run every [ ] hour' in the add/edit dialog</li>
+<li>"No output" checkbox adds a '>/dev/null 2>&1' to the command(and removes it if you deselect it)</li>
+<li>Advanced mode where you can edit the expression by typing them in</li>
+</p>
 </body>
 </html>
