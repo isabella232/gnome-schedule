@@ -259,8 +259,9 @@ class AddWindow:
 
 
 class AddWindowHelp:
-	def __init__(self, parent):
+	def __init__(self, parent, addwindow):
 		self.ParentClass = parent
+		self.AddWindow = addwindow
 		
 		#get some widgets and connect them
 		self.widget = self.ParentClass.addhelpwidget
@@ -272,14 +273,12 @@ class AddWindowHelp:
 		self.radRange = self.xml.get_widget("radRange")
 		self.radAt = self.xml.get_widget("radAt")
 
-		self.lblExpression = self.xml.get_widget("lblExpression")
-
+		self.entExpression = self.xml.get_widget("entExpression")
 		self.entEvery = self.xml.get_widget("entEvery")
 		self.entRangeStart = self.xml.get_widget("entRangeStart")
 		self.entRangeEnd = self.xml.get_widget("entRangeEnd")
-		self.cmbAt = self.xml.get_widget("cmbAt")
+		self.cmbAt = self.xml.get_widget("cmbAt").get_child()
 
-		self.lblAllEntity = self.xml.get_widget("lblAllEntity")
 		self.lblEveryEntity = self.xml.get_widget("lblEveryEntity")
 		
 		#connect the radiobuttons toggle
@@ -291,14 +290,17 @@ class AddWindowHelp:
 		self.xml.signal_connect("on_radAt_toggled", self.RadioButtonChange)
 		
 		#connect the changes of a combo or entry
-		
+		self.xml.signal_connect("on_entEvery_changed", self.anyEntryChanged)
+		self.xml.signal_connect("on_entRangeStart_changed", self.anyEntryChanged)
+		self.xml.signal_connect("on_entRangeEnd_changed", self.anyEntryChanged)
+		self.xml.signal_connect("on_cmbAt_changed", self.anyEntryChanged)
 		
 
 		return
 
 	def populateLabels(self, field):
 		#put the apropiate values in the labels describing entitys, and the 'at' combobox
-		self.lblAllEntity.set_text(field + "s")
+		self.radAll.set_label("Happens all " + field + "s")
 		self.lblEveryEntity.set_text(field)
 		return
 
@@ -312,6 +314,14 @@ class AddWindowHelp:
 
 	def btnOk_clicked(self, *args):
 		#move expression to field in addwindow and hide
+		expression = self.entExpression.get_text()
+		if self.field == "minute": self.AddWindow.minute_entry.set_text(expression)
+		if self.field == "hour": self.AddWindow.hour_entry.set_text(expression)
+		if self.field == "day": self.AddWindow.day_entry.set_text(expression)		
+		if self.field == "month": self.AddWindow.month_entry.set_text(expression)
+		if self.field == "weekday": self.AddWindow.weekday_entry.set_text(expression)
+		
+		self.widget.hide()
 		return
 
 	def btnCancel_clicked(self, *args):
@@ -320,12 +330,30 @@ class AddWindowHelp:
 		return gtk.TRUE
 
 	def RadioButtonChange(self, widget):
-		print widget.get_name()
+		name = widget.get_name()
+		if widget.get_active():
+			if name == "radAll":
+				self.entExpression.set_text("*")
+			elif name == "radEvery":
+				self.entExpression.set_text("*\\" + self.entEvery.get_text())
+			elif name == "radRange":
+				self.entExpression.set_text(self.entRangeStart.get_text() + "-" + self.entRangeEnd.get_text())
+			elif name == "radAt":
+				self.entExpression.set_text(self.cmbAt.get_text())
+			
 		return
 
 	def anyEntryChanged(self, *args):
 		#create a easy read line for the expression view, put the command into the edit box
+		if self.radAll.get_active():
+				self.entExpression.set_text("*")
+		if self.radEvery.get_active():
+				self.entExpression.set_text("*\\" + self.entEvery.get_text())
+		if self.radRange.get_active():
+				self.entExpression.set_text(self.entRangeStart.get_text() + "-" + self.entRangeEnd.get_text())
+		if self.radAt.get_active():
+				self.entExpression.set_text(self.cmbAt.get_text())
+			
 		return
 
-	def parseExpression(self, mode, value):
-		return
+

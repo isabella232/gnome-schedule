@@ -141,7 +141,7 @@ class main:
 		#add window help
 		self.addhelpwidget = self.xml.get_widget("addWindowHelp")
 		self.addhelpwidget.hide()
-		self.addHelpWindow = addWindow.AddWindowHelp(self)
+		self.addHelpWindow = addWindow.AddWindowHelp(self, self.addWindow)
 
 		#set user window
 		self.setuserwidget = self.xml.get_widget("setuserWindow")
