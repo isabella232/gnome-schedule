@@ -22,6 +22,13 @@ import re
 import os
 import sys
 import tempfile
+import gobject
+import crontabEditorHelper
+import crontabEditor
+import lang
+import atEditor
+import commands
+
 
 
 ##
@@ -36,24 +43,106 @@ gtk.glade.bindtextdomain(domain)
 class At:
 	def __init__(self, parent):
 		self.atRecordRegex = re.compile('([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)')
+		self.atRecordRegexAdd = re.compile('([^\s]+)\s([^\s]+)\s')
+
 		self.ParentClass = parent
+		self.ParentClass.treemodel = self.createtreemodel ()
+		self.xml = self.ParentClass.xml
+
+		#init at
+		self.init ()
 
 		#reading at
 		self.read ()
 
+
+		self.editorwidget = self.xml.get_widget("atEditor")
+#		self.editorhelperwidget = self.xml.get_widget("crontabEditorHelper")
+		self.editor = atEditor.AtEditor (self.ParentClass, self)
+		#self.editorhelper = crontabEditorHelper.CrontabEditorHelper(self, self.editor)
+
+		self.editorwidget.hide()
+	
 		return
 
-	def translate_frequency (self, frequency):
-		raise 'Not implemented'
+	def init (self):
+		#find common start of all scripts with a test job
+		runat = "tomorrow"
+		command = ""
+		tmpfile = tempfile.mkstemp ("", "/tmp/at.", "/tmp")
+		fd, path = tmpfile
+		tmp = os.fdopen(fd, 'w')
+		tmp.write (command + "\n")
+		execute = "at " + runat + " -f " + path
+		line = commands.getoutput(execute)
+		tmp.close ()
+		os.unlink (path)
+		#get output and jobid
+		job_id = self.parse(line, 1)
+		
+		#get the job
+		execute = "at -c " + job_id
+		self.atPre = commands.getoutput(execute)
+				
+		#delete it
+		execute = "atrm " + job_id
+		commands.getoutput(execute)
+		
 
 	def geteditor (self):
-		raise 'Not implemented'
+		return self.editor
 
 	def createtreemodel (self):
-		raise 'Not implemented'
+		# [0 Title, 1 date, 2 time, 3 class, 4 id, 5 user, 6 command preview(?)]
+		# ["get file", "2004-06-17", "20:17", "a", 24, "wget http://..."]
+		return gtk.ListStore(gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING)
 		
 	def switchview (self, mode = "simple", init = 0):
-		raise 'Not implemented'
+		if mode == "simple":
+			#cleaning up columns
+			if init != 1:
+				i = 4
+				while i > - 1:
+					temp = self.ParentClass.treeview.get_column(i)
+					self.ParentClass.treeview.remove_column(temp)
+					i = i -1
+				
+			# Setting up the columns
+			self.col = gtk.TreeViewColumn(_("Title"), gtk.CellRendererText(), text=0)
+			self.ParentClass.treeview.append_column(self.col)
+			self.col = gtk.TreeViewColumn(_("Date"), gtk.CellRendererText(), text=1)
+			self.ParentClass.treeview.append_column(self.col)
+			self.col = gtk.TreeViewColumn(_("Time"), gtk.CellRendererText(), text=2)
+			self.ParentClass.treeview.append_column(self.col)
+			self.col = gtk.TreeViewColumn(_("Preview"), gtk.CellRendererText(), text=6)
+			self.col.set_spacing(235)
+			self.ParentClass.treeview.append_column(self.col)
+
+
+		elif mode == "advanced":
+			#cleaning up columns
+			if init != 1:
+				i = 3
+				while i > - 1:
+					temp = self.ParentClass.treeview.get_column(i)
+					self.ParentClass.treeview.remove_column(temp)
+					i = i -1
+			
+			# Setting up the columns
+			self.col = gtk.TreeViewColumn(_("Date"), gtk.CellRendererText(), text=1)
+			self.ParentClass.treeview.append_column(self.col)
+			self.col = gtk.TreeViewColumn(_("Time"), gtk.CellRendererText(), text=2)
+			self.ParentClass.treeview.append_column(self.col)
+			self.col = gtk.TreeViewColumn(_("Id"), gtk.CellRendererText(), text=4)
+			self.ParentClass.treeview.append_column(self.col)	
+			self.col = gtk.TreeViewColumn(_("Class"), gtk.CellRendererText(), text=3)
+			self.ParentClass.treeview.append_column(self.col)	
+			self.col = gtk.TreeViewColumn(_("Preview"), gtk.CellRendererText(), text=6)
+			self.col.set_spacing(235)
+			self.ParentClass.treeview.append_column(self.col)
+
+		
+		return
 		
 	def createpreview (self, minute, hour, day, month, weekday, command):
 		raise 'Not implemented'
@@ -67,22 +156,42 @@ class At:
 	def checkfield (self, field, type, regex):
 		raise Exception('Abstract method please override','','','')
 
-	def write (self):
-		raise 'Not implemented'
 
-	def update (self, linenumber, record, nooutput, title):
-		raise 'Not implemented'
+	def update (self, runat, command, job_id):
+		#remove old
+		execute = "atrm " + job_id
+		commands.getoutput(execute)
+		
+		#add new
+		tmpfile = tempfile.mkstemp ("", "/tmp/at.", "/tmp")
+		fd, path = tmpfile
+		tmp = os.fdopen(fd, 'w')
+		tmp.write (command + "\n")
+		tmp.close ()
+		execute = "at " + runat + " -f " + path
+		temp = commands.getoutput(execute)
+		os.unlink (path)
 
 	def delete (self, jobid):
 		if jobid:
 			execute = "atrm " + jobid
-		#execute this
-		#reread or delete from the list(preferably)		
+		commands.getoutput(execute)
+		
 			
 		return
 
-	def append (self, record, nooutput, title):
-		raise 'Not implemented'
+	def append (self, runat, command):
+		tmpfile = tempfile.mkstemp ("", "/tmp/at.", "/tmp")
+		fd, path = tmpfile
+		tmp = os.fdopen(fd, 'w')
+		tmp.write (command + "\n")
+		tmp.close ()
+		execute = "at " + runat + " -f " + path
+		temp = commands.getoutput(execute)
+		os.unlink (path)
+
+
+		return
 
 	def read (self):
 		#do 'atq'
@@ -90,29 +199,35 @@ class At:
 		self.linecount = 0
 		self.lines = os.popen(execute).readlines()
 		for line in self.lines:
-			array_or_false = self.parseRecord (line)
+			array_or_false = self.parse (line)
 			if array_or_false != gtk.FALSE:
-				(title, date, time, class_id, job_id, user, command) = array_or_false
+				(job_id, date, time, class_id, user, command, title) = array_or_false
 				iter = self.ParentClass.treemodel.append([title, date, time, class_id, job_id, user, command])
 			self.linecount = self.linecount + 1
 		return
 
-	def parse (self, line):
-		if len (line) > 1 and line[0] != '#':
-			m = self.atRecordRegex.match(line)
-			if m != None:
+	def parse (self, line, output = 0):
+		if output == 0:
+			if len (line) > 1 and line[0] != '#':
+				m = self.atRecordRegex.match(line)
+				if m != None:
 					print m.groups()
-					minute = m.groups ()[0]
-					hour = m.groups ()[1]
-					day = m.groups ()[2]
-					month = m.groups ()[3]
-					weekday = m.groups ()[4]
-					command = m.groups ()[5]
-					title = m.groups ()[7]
-					if title == None:
-						title = "Untitled"
-
-					return minute, hour, day, month, weekday, command, title
+					job_id = m.groups ()[0]
+					date = m.groups ()[1]
+					time = m.groups ()[2]
+					class_id = m.groups ()[3]
+					user = m.groups ()[4]
+					command = "no"
+					title = "no"
+					return job_id, date, time, class_id, user, command, title
+		else:
+			if len (line) > 1 and line[0] != '#':
+				m = self.atRecordRegexAdd.match(line)
+				if m != None:
+					print m.groups()
+					job = m.groups ()[0]
+					job_id = m.groups ()[1]
+					return job_id
 		#left unchanged, the fields should be: user, job title, and id
 		#would probably have to do a specific job check for each job 
 		return gtk.FALSE
