@@ -77,12 +77,6 @@ class CrontabEditor:
 		self.setting_label = self.xml.get_widget ("setting_label")
 		self.chkNoOutput = self.xml.get_widget("chkNoOutput")
 		self.notebook = self.xml.get_widget("notebook")
-		self.clock_image = self.xml.get_widget("clock_image")
-
-		if os.path.isfile(config.getImagedir() + "/gnome-clock.png"):
-			self.clock_image.set_from_file(config.getImagedir() + "/gnome-clock.png")
-		else:
-			self.clock_image.set_from_file("/usr/share/pixmaps/gnome-clock.png")
 
 		self.template_combobox = self.xml.get_widget ("template_combobox")
 		self.template_image = self.xml.get_widget ("template_image")
@@ -97,7 +91,7 @@ class CrontabEditor:
 		self.xml.signal_connect("on_frequency_combobox_changed", self.on_frequency_combobox_changed)
 		self.xml.signal_connect("on_chkNoOutput_toggled", self.on_anybasic_entry_changed)
 		self.xml.signal_connect("on_image_button_clicked", self.on_image_button_clicked)
-
+		self.xml.signal_connect("on_save_button_clicked", self.on_save_button_clicked)
 		self.xml.signal_connect("on_fieldHelp_clicked", self.on_fieldHelp_clicked)
 
 		self.nooutput = self.chkNoOutput.get_active()
@@ -105,6 +99,32 @@ class CrontabEditor:
 		self.reload_templates ()
 		support.gconf_client.add_dir ("/apps/gnome-schedule/templates/crontab", gconf.CLIENT_PRELOAD_NONE)
 		support.gconf_client.notify_add ("/apps/gnome-schedule/templates/crontab/installed", self.gconfkey_changed);
+
+	def on_save_button_clicked (self, *args):
+		# Uses SaveTemplate (will call it if OK is pressed)
+		self.ParentClass.saveWindow.ShowSaveWindow(self)
+
+
+	def WrongRecordDialog (self, x, y, z):
+		self.wrongdialog = gtk.MessageDialog(self.widget, gtk.DIALOG_MODAL|gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_ERROR, gtk.BUTTONS_OK, (_("This is an invalid record! The problem could be at the %s field. Reason: %s") % (y, z)))
+		self.wrongdialog.run()
+		self.wrongdialog.destroy()
+
+	def SaveTemplate (self, template_name):
+		try:
+			# Type should not be translatable!
+			self.check_field_format (self.minute, "minute")
+			self.check_field_format (self.hour, "hour")
+			self.check_field_format (self.day, "day")
+			self.check_field_format (self.month, "month")
+			self.check_field_format (self.weekday, "weekday")
+		except Exception, ex:
+			x, y, z = ex
+			self.WrongRecordDialog (x, y, z)
+			return
+
+		record = self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday + " " + self.command
+		self.schedule.savetemplate (template_name, record, self.nooutput, self.title, self.icon)
 
 	def gconfkey_changed (self, client, connection_id, entry, args):
 		self.reload_templates ()
@@ -116,22 +136,24 @@ class CrontabEditor:
 			self.template_combobox.hide ()
 			self.template_label.hide()
 			self.template_combobox.set_sensitive (gtk.FALSE)
-			self.template_label.set_sensitive (gtk.FALSE)			
+			self.template_label.set_sensitive (gtk.FALSE)
 		else:
-			self.template_combobox_model = gtk.ListStore(gobject.TYPE_STRING, gobject.TYPE_PYOBJECT)
+			self.template_combobox_model = gtk.ListStore(gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_PYOBJECT)
 			self.template_combobox_model.clear ()
-			self.template_combobox_model.append([_("Don't use a template"), None])
+			self.template_combobox_model.append([_("Don't use a template"), None, None])
 			for template_name in self.template_names:
-				self.template_combobox_model.append([template_name, self.schedule.gettemplate (template_name)])			
-			
+				thetemplate = self.schedule.gettemplate (template_name)
+				icon_uri, command, frequency, title, name = thetemplate
+				self.template_combobox_model.append([name, template_name, thetemplate])
+
 			try:
 				active = self.template_combobox.get_active ()
 				self.template_combobox.set_model (self.template_combobox_model)
-				self.xml.signal_connect("on_template_combobox_changed", self.on_template_combobox_changed)				
+				self.xml.signal_connect("on_template_combobox_changed", self.on_template_combobox_changed)
 				self.template_combobox.show ()
 				self.template_label.show()
 				self.template_combobox.set_sensitive (gtk.TRUE)
-				self.template_label.set_sensitive (gtk.TRUE)				
+				self.template_label.set_sensitive (gtk.TRUE)
 				self.template_combobox.set_active (active)
 			except Exception, ex:
 				print "PyGTK Failure: combobox.set_model (gnome-schedule needs PyGTK 2.4!!!)"
@@ -241,11 +263,13 @@ class CrontabEditor:
 	def on_template_combobox_changed (self, *args):
 		if self.noevents == gtk.FALSE:
 			iter = self.template_combobox.get_active_iter ()
-			template = self.template_combobox_model.get_value(iter, 1)
+			template = self.template_combobox_model.get_value(iter, 2)
 			if template != None:
-				icon_uri, command, frequency, title = template
+				icon_uri, command, frequency, title, name = template
+				self.ParentClass.saveWindow.save_entry.set_text (name)
 				if icon_uri != None:
 					self.template_image.set_from_file (icon_uri)
+					self.icon = icon_uri
 				else:
 					self.loadicon ()
 				if frequency != None and command != None:
@@ -271,8 +295,8 @@ class CrontabEditor:
 					self.nooutput_label.hide ()
 					self.chkNoOutput.set_active (gtk.FALSE)
 					self.nooutput = gtk.FALSE
-			
-				self.minute, self.hour, self.day, self.month, self.weekday, self.command, self.title = self.schedule.parse (record)
+
+				self.minute, self.hour, self.day, self.month, self.weekday, self.command, self.title, icon_ = self.schedule.parse (record)
 				self.command = command
 				self.update_textboxes ()
 			else:
@@ -300,9 +324,7 @@ class CrontabEditor:
 			self.check_field_format (self.weekday, "weekday")
 		except Exception, ex:
 			x, y, z = ex
-			self.wrongdialog = gtk.MessageDialog(self.widget, gtk.DIALOG_MODAL|gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_ERROR, gtk.BUTTONS_OK, (_("This is an invalid record! The problem could be at the %s field. Reason: %s") % (y, z)))
-			self.wrongdialog.run()
-			self.wrongdialog.destroy()
+			self.WrongRecordDialog (x, y, z)
 			return
 
 		record = self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday + " " + self.command
