@@ -48,6 +48,54 @@ Support
    without the need for globally registering the location of the PyGTK
    libraries.
 
+
+INSTALL from source while PyGTK is not in your default prefix
+-------------------------------------------------------------
+o. Because some people dislike the fact that manually compiled 
+   applications tamper with their distribution which is managed by the
+   packaging system in use. We understand this and therefor made it
+   possible to install the application outside of any default prefix.
+
+o. If you want to use the sources pulled from the CVS server, you will have
+   to do what developers have to do and install packages and / or cvs 
+   modules like automake-1.7 and gnome-common. Alongside you will need to
+   install the latest version PyGTK. This is the module pygtk in cvs.
+
+o. The following script will install gnome-schedule on a system that has
+   Python and automake-1.7 and some tools like gmake installed.
+
+     export CVSROOT=":pserver:anonymous@cvs.gnome.org:/cvs/gnome/" 
+     cvs login
+     # Password: [press enter]
+     cvs -z3 checkout gnome-common gnome-schedule pygtk
+     pushd gnome-common
+     ./autogen.sh --prefix=/usr/
+     make
+     make install
+     popd
+     pushd pygtk
+     ./autogen.sh --prefix=/opt/pygtk/
+     make
+     make install
+     popd
+     pushd gnome-schedule
+     export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:/usr/lib/pkgconfig
+     ./autogen.sh --prefix=/opt/gnome-schedule/
+     make
+     make install
+
+     # and use .. to start gnome-schedule:
+
+     /opt/gnome-schedule/bin/gnome-schedule
+
+     # You can read the script to know how to start the Python-script
+     # manually. If PyGTK is not installed in your default prefix,
+     # you, in case you are planning not to use the script, would have
+     # to set the PYTHONPATH environment variable first! The generated
+     # script, however, will do all this for you (if you use the 
+     # script).
+
+
 Compiling and HACKING
 ---------------------
 
@@ -93,3 +141,35 @@ Compiling and HACKING
 	   organisation for the translation of the GNOME desktop
 	o. Other than only the generated po-files you should also
 	   check out the file src/lang.py
+
+
+Conclusions
+-----------
+
+o. Using this document we have showed that we are dedicated to getting
+   things working even do the main dependency is an unstable Python
+   library (PyGTK).
+
+o. Therefor we don't expect much whining from people who would love us 
+   to code against the stable tree of PyGTK while this tree being 
+   incapable of giving us the features we need.
+
+o. We DID documented every damn possible situation and even guide you
+   through the process of installing PyGTK in an non-standard prefix
+   which makes sure the library will NOT tamper with your current
+   installation.
+
+o. We know that even IF you DID installed PyGTK using the default
+   prefix (/usr) that distributions like Fedora Core 2 will still work
+   perfectly (it will show you deprecation warnings on the console
+   when launching most of the system-config-* tools, but afaik they
+   all work using the in-future deprecated PyGTK API). This means yet 
+   another reason not to whine about it.
+
+o. All this makes it absolutely impossible for l33t uber h4ckers to 
+   have a valid reason to whine about our decision to depend on a
+   unstable PyGTK library. Yeah, it's virtuall impossible.
+
+
+SO DON'T DO IT
+
