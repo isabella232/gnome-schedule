@@ -128,6 +128,7 @@ class main:
 		self.treeview.get_selection().connect("changed", self.on_TreeViewSelectRow)
 		self.treeview.get_selection().unselect_all()
 		
+		#XXX move in glade?
 		self.treeview.connect ("button_press_event", self.on_treeview_button_press_event)
 	
 		self.xml.signal_connect("on_treeview_key_press_event", self.on_treeview_key_pressed)
@@ -462,7 +463,7 @@ class main:
  			_("Copyright (c) 2004-2005 Gaute Hope."),
  			_("This software is distributed under the GPL. "),
  			["Philip Van Hoof <me at freax dot org>",
- 			"Kristof Vansant <de_lupus at pandora dot org",
+ 			"Kristof Vansant <de_lupus at pandora dot be",
  			"Gaute Hope <eg at gaute dot eu dot org>"], 
  			[_("Some painfully bad documentation put\ntoghether from the far corners of Gaute Hope's mind.")],_("translator_credits"),self.iconPixbuf)
  
