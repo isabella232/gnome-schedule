@@ -147,7 +147,7 @@ Conclusions
 -----------
 
 o. Using this document we have showed that we are dedicated to getting
-   things working even do the main dependency is an unstable Python
+   things working while the main dependency is an unstable Python
    library (PyGTK).
 
 o. Therefor we don't expect much whining from people who would love us 
@@ -167,7 +167,7 @@ o. We know that even IF you DID installed PyGTK using the default
    another reason not to whine about it.
 
 o. All this makes it absolutely impossible for l33t uber h4ckers to 
-   have a valid reason to whine about our decision to depend on a
+   still have a valid reason to whine about our decision to depend on a
    unstable PyGTK library. Yeah, it's virtuall impossible.
 
 
