@@ -116,10 +116,13 @@ class main:
 		self.xml.signal_connect("on_help_button_clicked", self.on_help_button_clicked)
 		self.xml.signal_connect("on_btnExit_clicked", self.quit)
 
-		if self.root != 1:
-			self.set_user_menu.visible = gtk.FALSE
-		else:
-			self.xml.signal_connect("on_btnSetUser_clicked", self.on_set_user_menu_activate)
+		try:
+			if self.root != 1:
+				self.set_user_menu.visible = gtk.FALSE
+			else:
+				self.xml.signal_connect("on_btnSetUser_clicked", self.on_set_user_menu_activate)
+		except:
+			pass
 
 		self.widget.connect("delete-event", self.quit)
 
