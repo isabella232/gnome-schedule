@@ -876,7 +876,7 @@
 
 		      <child>
 			<widget class="GtkEntry" id="minute_entry">
-			  <property name="width_request">32</property>
+			  <property name="width_request">40</property>
 			  <property name="visible">True</property>
 			  <property name="can_focus">True</property>
 			  <property name="editable">True</property>
@@ -922,7 +922,7 @@
 
 		      <child>
 			<widget class="GtkEntry" id="hour_entry">
-			  <property name="width_request">32</property>
+			  <property name="width_request">40</property>
 			  <property name="visible">True</property>
 			  <property name="can_focus">True</property>
 			  <property name="editable">True</property>
@@ -968,7 +968,7 @@
 
 		      <child>
 			<widget class="GtkEntry" id="day_entry">
-			  <property name="width_request">32</property>
+			  <property name="width_request">40</property>
 			  <property name="visible">True</property>
 			  <property name="can_focus">True</property>
 			  <property name="editable">True</property>
@@ -1014,7 +1014,7 @@
 
 		      <child>
 			<widget class="GtkEntry" id="month_entry">
-			  <property name="width_request">32</property>
+			  <property name="width_request">40</property>
 			  <property name="visible">True</property>
 			  <property name="can_focus">True</property>
 			  <property name="editable">True</property>
@@ -1060,7 +1060,7 @@
 
 		      <child>
 			<widget class="GtkEntry" id="weekday_entry">
-			  <property name="width_request">32</property>
+			  <property name="width_request">40</property>
 			  <property name="visible">True</property>
 			  <property name="can_focus">True</property>
 			  <property name="editable">True</property>

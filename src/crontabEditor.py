@@ -149,7 +149,12 @@ class CrontabEditor:
 
 	def reload_templates (self):
 		self.template_names = self.schedule.gettemplatenames ()
-
+		
+		try:
+			active = self.template_combobox.get_active ()
+		except:
+			active = -1
+			
 		self.template_combobox_model.clear ()
 		self.template_combobox_model.append ([_("Don't use a template"), None, None])
 
@@ -165,7 +170,7 @@ class CrontabEditor:
 				icon_uri, command, frequency, title, name = thetemplate
 				self.template_combobox_model.append([name, template_name, thetemplate])
 			try:
-				active = self.template_combobox.get_active ()
+				
 				self.xml.signal_connect("on_template_combobox_changed", self.on_template_combobox_changed)
 				#self.template_combobox.set_sensitive (gtk.TRUE)
 				self.remove_button.set_sensitive (gtk.TRUE)
