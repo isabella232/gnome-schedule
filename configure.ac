@@ -53,6 +53,15 @@ if test x$PYTHON_CONFIG = xno; then
   AC_MSG_ERROR(Please install the application python)
 fi
 
+AC_PATH_PROG(SU_CONFIG, su, no)
+if test x$BATCH_CONFIG = xno; then
+  AC_MSG_ERROR(Please install the application su)
+fi
+
+AC_PATH_PROG(CHOWN_CONFIG, chown, no)
+if test x$BATCH_CONFIG = xno; then
+  AC_MSG_ERROR(Please install the application chown)
+fi
 
 dnl *******************************
 dnl Internationalization
