@@ -1,505 +1,927 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Danish translation of Gnome Schedule.
+# Copyright (C) 2005 Gaute Hope
+# Copyright (C) 2005 Philip Van Hoof
+# Copyright (C) 2005 Kristof Vansant
+# This file is distributed under the same license as the gnome-schedule package.
+# Alex Thomsen Leth <alexl@stofanet.dk>, 2004.
+# Martin Willemoes Hansen <mwh@sysrq.dk>, 2005.
 #
-#, fuzzy
+# Husk at tilføje dig i credit-listen (besked id "translator-credits")
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: gnome-schedule\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-06-15 19:16+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Alex Thomsen Leth <alexl@stofanet.dk>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"POT-Creation-Date: 2005-01-04 16:19+0100\n"
+"PO-Revision-Date: 2005-01-04 16:18+0100\n"
+"Last-Translator: Martin Willemoes Hansen <mwh@sysrq.dk>\n"
+"Language-Team: Danish <dansk@klid.dk>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#. put the apropiate values in the labels describing entitys, and the 'at' combobox
-#: ../src/addWindowHelp.py:85
-msgid "Happens all "
-msgstr "Sker altid "
+#: desktop/gnome-schedule.desktop.in.h:1
+msgid "Manage your system tasks"
+msgstr "Håndtér dine systemopgaver"
 
-#: ../src/addWindowHelp.py:85 ../src/addWindowHelp.py:196
-msgid "s"
-msgstr ""
+#: desktop/gnome-schedule.desktop.in.h:2
+msgid "Schedule"
+msgstr "Skema"
 
-#: ../src/addWindowHelp.py:88
-msgid "Happens from "
-msgstr "Sker fra "
+#: src/at.py:299
+#, python-format
+msgid "%s%s%s %s%s%s"
+msgstr "%s%s%s %s%s%s"
 
-#: ../src/addWindowHelp.py:89 ../src/addWindowHelp.py:153
-#: ../src/addWindow.py:123 ../src/addWindow.py:143 ../src/addWindow.py:167
-#: ../src/addWindow.py:222 ../src/addWindow.py:267 ../src/addWindow.py:350
-#: ../src/addWindow.py:388
-msgid "minute"
-msgstr "minut"
-
-#: ../src/addWindowHelp.py:92 ../src/addWindowHelp.py:154
-#: ../src/addWindow.py:126 ../src/addWindow.py:146 ../src/addWindow.py:170
-#: ../src/addWindow.py:223 ../src/addWindow.py:270 ../src/addWindow.py:356
-#: ../src/addWindow.py:391
-msgid "hour"
-msgstr "time"
-
-#: ../src/addWindowHelp.py:95 ../src/addWindowHelp.py:155
-#: ../src/addWindow.py:129 ../src/addWindow.py:149 ../src/addWindow.py:173
-#: ../src/addWindow.py:224 ../src/addWindow.py:273 ../src/addWindow.py:362
-#: ../src/addWindow.py:394
-msgid "day"
-msgstr "dag"
-
-#: ../src/addWindowHelp.py:98 ../src/addWindowHelp.py:156
-#: ../src/addWindow.py:132 ../src/addWindow.py:152 ../src/addWindow.py:176
-#: ../src/addWindow.py:225 ../src/addWindow.py:276 ../src/addWindow.py:368
-#: ../src/addWindow.py:397
-msgid "month"
-msgstr "måned"
-
-#: ../src/addWindowHelp.py:101 ../src/addWindowHelp.py:157
-#: ../src/addWindow.py:135 ../src/addWindow.py:155 ../src/addWindow.py:179
-#: ../src/addWindow.py:226 ../src/addWindow.py:400
-msgid "weekday"
-msgstr "ugedag"
-
-#. show the form
-#: ../src/addWindowHelp.py:146
-msgid "Edit timeexpression for: "
-msgstr "Rediger tidsudtryk for: "
-
-#: ../src/addWindowHelp.py:187 ../src/addWindowHelp.py:198
-msgid "st. "
-msgstr ""
-
-#: ../src/addWindowHelp.py:189
-msgid "th. "
-msgstr ""
-
-#: ../src/addWindow.py:86
-msgid "Edit a scheduled task"
-msgstr "Rediger planlagt opgave"
-
-#: ../src/addWindow.py:125 ../src/addWindow.py:145 ../src/addWindow.py:169
-msgid "must be between 59 and 0"
-msgstr "skal være mellem 59 og 0"
-
-#: ../src/addWindow.py:128 ../src/addWindow.py:148
-msgid "must be between 23 and 0"
-msgstr "skal være mellem 23 og 0"
-
-#: ../src/addWindow.py:131 ../src/addWindow.py:151 ../src/addWindow.py:175
-msgid "must be between 31 and 1"
-msgstr "skal være mellem 31 og 1"
-
-#: ../src/addWindow.py:134 ../src/addWindow.py:154 ../src/addWindow.py:178
-msgid "must be between 12 and 1"
-msgstr "skal være mellem 12 og 1"
-
-#: ../src/addWindow.py:137 ../src/addWindow.py:157 ../src/addWindow.py:181
-msgid "must be between 7 and 0"
-msgstr "skal være mellem 7 og 0"
-
-#: ../src/addWindow.py:197
-msgid "New scheduled task"
-msgstr "Ny planlagt opgave"
-
-#: ../src/addWindow.py:201
-msgid "Create a new scheduled task"
-msgstr "Opret en ny planlagt opgave"
-
-#: ../src/addWindow.py:229
-msgid "This is an invalid record! The problem could be at the "
-msgstr "Dette er ukorrekt! Problemet kan være  "
-
-#: ../src/addWindow.py:229
-msgid " field. Reason: "
-msgstr " Felt. Grund: "
-
-#: ../src/addWindow.py:263
-msgid "use advanced"
-msgstr "advanceret"
-
-#: ../src/addWindow.py:279 ../src/addWindow.py:374
-msgid "week"
-msgstr "uge"
-
-#: ../src/addWindow.py:295
-msgid "command"
-msgstr "kommando"
-
-#: ../src/crontab.py:137
-msgid "st."
-msgstr ""
-
-#: ../src/crontab.py:139
-msgid "th."
-msgstr ""
-
-#: ../src/crontab.py:149
-msgid "Every minute"
-msgstr "Hver minut"
-
-#: ../src/crontab.py:152 ../src/crontab.py:156 ../src/crontab.py:162
-#: ../src/crontab.py:169 ../src/crontab.py:176 ../src/crontab.py:178
-msgid "Every "
-msgstr "Altid "
-
-#: ../src/crontab.py:152
-msgid " minute of every hour"
-msgstr " minut af hver time"
-
-#: ../src/crontab.py:156
-msgid " hour of the day"
-msgstr " time af dagen"
-
-#: ../src/crontab.py:158 ../src/crontab.py:164
+#: src/at.py:300
 msgid "At "
-msgstr "På"
+msgstr "Klokken "
 
-#: ../src/crontab.py:158
-msgid " every day"
-msgstr " hver dag"
+#: src/at.py:305
+msgid "Defined"
+msgstr "Defineret"
 
-#: ../src/crontab.py:164 ../src/crontab.py:171
-msgid " every "
-msgstr " hver "
+#: src/crontab.py:79 src/crontab.py:99 src/crontab.py:124
+msgid "must be between 0 and 59"
+msgstr "skal være mellem 0 og 59"
 
-#: ../src/crontab.py:164
-msgid " day of the month"
-msgstr " dag af måneden"
+#: src/crontab.py:82 src/crontab.py:102
+msgid "must be between 0 and 23"
+msgstr "skal være mellem 0 og 23"
 
-#: ../src/crontab.py:169 ../src/crontab.py:171
-msgid " month of the year"
-msgstr " måned af året"
+#: src/crontab.py:85 src/crontab.py:105 src/crontab.py:130
+msgid "must be between 1 and 31"
+msgstr "skal være mellem 1 og 31"
 
-#: ../src/crontab.py:171
-msgid "At the "
-msgstr ""
+#: src/crontab.py:88 src/crontab.py:108 src/crontab.py:133
+msgid "must be between 1 and 12"
+msgstr "skal være mellem 1 og 12"
 
-#: ../src/crontab.py:176
-msgid " day of the week"
-msgstr " dag af ugen"
+#: src/crontab.py:91 src/crontab.py:111 src/crontab.py:136
+msgid "must be between 0 and 7"
+msgstr "skal være mellem 0 og 7"
 
-#: ../src/crontab.py:178
-msgid " day of the week at "
-msgstr " dag af ugen på "
+#: src/crontab.py:120
+#, python-format
+msgid "%s is not a number"
+msgstr "%s er ikke et tal"
 
-#. Setting up the columns
-#: ../src/mainWindow.py:180 ../src/mainWindow.py:202
-msgid "Title"
-msgstr "Titel"
+#: src/crontab.py:138
+msgid "Unknown"
+msgstr "Ukendt"
 
-#. Setting up the columns
-#: ../src/mainWindow.py:182 ../src/mainWindow.py:198
+#: src/crontab.py:138
+msgid "Invalid"
+msgstr "Ugyldig"
+
+#: src/crontab.py:156 src/crontab.py:191 src/crontab.py:280
+#: src/crontabEditor.py:190 src/atEditor.py:117
+msgid "Untitled"
+msgstr "Uden titel"
+
+#. add task to treemodel in mainWindow
+#: src/crontab.py:223
 msgid "Frequency"
 msgstr "Interval"
 
-#: ../src/mainWindow.py:184 ../src/mainWindow.py:200
-msgid "Command"
-msgstr "Kommando"
+#: src/crontab.py:235 src/crontabEditor.py:88 src/gnome-schedule.glade.h:83
+msgid "minute"
+msgstr "minut"
 
-#: ../src/mainWindow.py:263
-msgid "System Schedule"
-msgstr "System Planlægger"
+#: src/crontab.py:237 src/crontabEditor.py:89 src/gnome-schedule.glade.h:82
+msgid "hour"
+msgstr "time"
 
-#: ../src/mainWindow.py:264
-msgid "Copyright (c) 2004-2005 Gaute Hope."
-msgstr ""
+#: src/crontab.py:239 src/crontabEditor.py:90 src/gnome-schedule.glade.h:81
+msgid "day"
+msgstr "dag"
 
-#: ../src/mainWindow.py:265
-msgid "This software is distributed under the GPL. "
-msgstr "Denne software er udgivet under GPL licensen"
+#: src/crontab.py:241 src/crontabEditor.py:91 src/gnome-schedule.glade.h:84
+msgid "month"
+msgstr "måned"
 
-#.
-#. * Translatable strings file generated by Glade.
-#. * Add this file to your project's POTFILES.in.
-#. * DO NOT compile it as part of your application.
-#.
-#: gnome-schedule.gladestrings:7
-msgid "Advanced Samba Server Settings"
-msgstr ""
+#: src/crontab.py:243 src/gnome-schedule.glade.h:88
+msgid "weekday"
+msgstr "ugedag"
 
-#: gnome-schedule.gladestrings:8
-msgid "label30"
-msgstr ""
+#: src/crontabEditor.py:87
+msgid "use advanced"
+msgstr "brug avanceret"
 
-#: gnome-schedule.gladestrings:9
-msgid "Basic"
-msgstr ""
+#: src/crontabEditor.py:92
+msgid "week"
+msgstr "uge"
 
-#: gnome-schedule.gladestrings:10
-msgid "label31"
-msgstr ""
+#: src/crontabEditor.py:137 src/atEditor.py:119
+msgid "Create a new scheduled task"
+msgstr "Opret en ny planlagt opgave"
 
-#: gnome-schedule.gladestrings:11
-msgid "Security"
-msgstr ""
+#: src/crontabEditor.py:155 src/atEditor.py:147
+msgid "Edit a scheduled task"
+msgstr "Redigér planlagt opgave"
 
-#: gnome-schedule.gladestrings:12
-msgid "label32"
-msgstr ""
+#: src/crontabEditor.py:208 src/atEditor.py:317
+msgid "Don't use a preset"
+msgstr "Anvend ikke et forvalg"
 
-#: gnome-schedule.gladestrings:13
-msgid "Logging"
-msgstr ""
+#: src/crontabEditor.py:271
+#, python-format
+msgid ""
+"This is an invalid record! The problem could be at the %s field. Reason: %s"
+msgstr "Dette er en ugyldig post! Problemet kan være ved %s-feltet. Grund: %s"
 
-#: gnome-schedule.gladestrings:14
-msgid "label33"
-msgstr ""
+#: src/crontabEditor.py:325 src/atEditor.py:390
+msgid "Pick an icon for this scheduled task"
+msgstr "Vælg et ikon for denne planlagte opgave"
 
-#: gnome-schedule.gladestrings:15
-msgid "Protocol"
-msgstr ""
+#: src/crontabEditor.py:385
+msgid "command"
+msgstr "kommando"
 
-#: gnome-schedule.gladestrings:16
-msgid "label34"
-msgstr ""
+#: src/crontabEditorHelper.py:102 src/gnome-schedule.glade.h:39
+msgid "Happens all "
+msgstr "Sker alle "
 
-#: gnome-schedule.gladestrings:17
-msgid "Tuning"
-msgstr ""
+#: src/crontabEditorHelper.py:102 src/crontabEditorHelper.py:206
+msgid "s"
+msgstr "(e)(r)"
 
-#: gnome-schedule.gladestrings:18
-msgid "label35"
-msgstr ""
+#: src/crontabEditorHelper.py:105
+msgid "Happens from "
+msgstr "Sker fra "
 
-#: gnome-schedule.gladestrings:19
-msgid "Printing"
-msgstr ""
+#. show the form
+#: src/crontabEditorHelper.py:146
+msgid "Edit time expression for: "
+msgstr "Redigér tidsudtryk for: "
 
-#: gnome-schedule.gladestrings:20
-msgid "label36"
-msgstr ""
+#: src/crontabEditorHelper.py:157
+#, python-format
+msgid "This is invalid. Reason: %s"
+msgstr "Dette er ugyldigt. Grund: %s"
 
-#: gnome-schedule.gladestrings:21
-msgid "Filename"
-msgstr ""
+# How horribly broken... I'm amazed some people still produce these things
+# in the 21st century. http://bugzilla.gnome.org/show_bug.cgi?id=162866
+#
+#: src/crontabEditorHelper.py:197 src/crontabEditorHelper.py:208
+msgid "st. "
+msgstr " "
 
-#: gnome-schedule.gladestrings:22
-msgid "label37"
-msgstr ""
+# How horribly broken... I'm amazed some people still produce these things
+# in the 21st century. http://bugzilla.gnome.org/show_bug.cgi?id=162866
+#
+#: src/crontabEditorHelper.py:199
+msgid "th. "
+msgstr " "
 
-#: gnome-schedule.gladestrings:23
-msgid "Domain"
-msgstr ""
+#: src/gnome-schedule.glade.h:1
+msgid " "
+msgstr " "
 
-#: gnome-schedule.gladestrings:24
-msgid "label38"
-msgstr ""
+#: src/gnome-schedule.glade.h:2
+msgid "     "
+msgstr "     "
 
-#: gnome-schedule.gladestrings:25
-msgid "Logon"
-msgstr ""
+# Fejlrapporteret... http://bugzilla.gnome.org/show_bug.cgi?id=162867
+#
+#: src/gnome-schedule.glade.h:3
+msgid " >/dev/null 2>&1"
+msgstr " >/dev/null 2>&1"
 
-#: gnome-schedule.gladestrings:26
-msgid "label39"
-msgstr ""
-
-#: gnome-schedule.gladestrings:27
-msgid "Browse"
-msgstr ""
-
-#: gnome-schedule.gladestrings:28
-msgid "label40"
-msgstr ""
-
-#: gnome-schedule.gladestrings:29
-msgid "WINS"
-msgstr ""
-
-#: gnome-schedule.gladestrings:30
-msgid "label41"
-msgstr ""
-
-#: gnome-schedule.gladestrings:31
-msgid "Locking"
-msgstr ""
-
-#: gnome-schedule.gladestrings:32
-msgid "label42"
-msgstr ""
-
-#: gnome-schedule.gladestrings:33
-msgid "Miscellaneous"
-msgstr ""
-
-#: gnome-schedule.gladestrings:34
-msgid "label43"
-msgstr ""
-
-#: gnome-schedule.gladestrings:35
-msgid "VFS"
-msgstr ""
-
-#: gnome-schedule.gladestrings:36
-msgid "label44"
-msgstr ""
-
-#: gnome-schedule.gladestrings:37
-msgid "Winbind"
-msgstr ""
-
-#: gnome-schedule.gladestrings:38
-msgid "Server Settings"
-msgstr ""
-
-#: gnome-schedule.gladestrings:39
-msgid "_Workgroup:"
-msgstr ""
-
-#: gnome-schedule.gladestrings:40
-#: gnome-schedule.gladestrings:41
-#: gnome-schedule.gladestrings:48
-#: gnome-schedule.gladestrings:50
-#: gnome-schedule.gladestrings:60
-#: gnome-schedule.gladestrings:62
-#: gnome-schedule.gladestrings:63
-#: gnome-schedule.gladestrings:65
-#: gnome-schedule.gladestrings:69
+#: src/gnome-schedule.glade.h:4
 msgid "*"
-msgstr ""
+msgstr "*"
 
-#: gnome-schedule.gladestrings:42
-msgid "_Description:"
-msgstr ""
+#: src/gnome-schedule.glade.h:5
+msgid "* * * * * command"
+msgstr "* * * * * kommando"
 
-#: gnome-schedule.gladestrings:43
-#: gnome-schedule.gladestrings:73
-msgid "_Basic"
-msgstr ""
+#: src/gnome-schedule.glade.h:6
+msgid "0"
+msgstr "0"
 
-#: gnome-schedule.gladestrings:44
-msgid "_Authentication Mode:"
-msgstr ""
+#: src/gnome-schedule.glade.h:7
+msgid "0-23"
+msgstr "0-23"
 
-#: gnome-schedule.gladestrings:45
-msgid "_Encrypt Passwords:"
-msgstr ""
+#: src/gnome-schedule.glade.h:8
+msgid "0-59"
+msgstr "0-59"
 
-#: gnome-schedule.gladestrings:46
-msgid "_Guest Account:"
-msgstr ""
+#: src/gnome-schedule.glade.h:9
+msgid "0-7"
+msgstr "0-7"
 
-#: gnome-schedule.gladestrings:47
-msgid "A_uthentication Server:"
-msgstr ""
+#: src/gnome-schedule.glade.h:10
+msgid "1-12"
+msgstr "1-12"
 
-#: gnome-schedule.gladestrings:49
-msgid "_Kerberos Realm:"
-msgstr ""
+#: src/gnome-schedule.glade.h:11
+msgid "1-31"
+msgstr "1-31"
 
-#: gnome-schedule.gladestrings:51
-msgid "_Security"
-msgstr ""
+#: src/gnome-schedule.glade.h:12
+msgid "2"
+msgstr "2"
 
-#: gnome-schedule.gladestrings:52
-msgid "Samba Users"
-msgstr ""
+#: src/gnome-schedule.glade.h:13
+msgid "59"
+msgstr "59"
 
-#: gnome-schedule.gladestrings:53
-msgid "_Add User"
-msgstr ""
+# Fejlrapporteret... http://bugzilla.gnome.org/show_bug.cgi?id=162867
+#
+#: src/gnome-schedule.glade.h:14
+msgid ":"
+msgstr ":"
 
-#: gnome-schedule.gladestrings:54
-msgid "_Edit User"
-msgstr ""
+#: src/gnome-schedule.glade.h:15
+msgid "<b>Basic settings</b>"
+msgstr "<b>Basisindstillinger</b>"
 
-#: gnome-schedule.gladestrings:55
-msgid "_Delete User"
-msgstr ""
+#: src/gnome-schedule.glade.h:16
+msgid "<b>Date setting</b>"
+msgstr "<b>Datoindstilling</b>"
 
-#: gnome-schedule.gladestrings:56
-msgid "Create New Samba User"
-msgstr ""
+#: src/gnome-schedule.glade.h:17
+msgid "<b>Frequency setting</b>"
+msgstr "<b>Frekvensindstilling</b>"
 
-#: gnome-schedule.gladestrings:57
-msgid "_Unix Username:"
-msgstr ""
+#: src/gnome-schedule.glade.h:18
+msgid "<b>Preview</b>"
+msgstr "<b>Forhåndsvisning</b>"
 
-#: gnome-schedule.gladestrings:58
-msgid "_Windows Username:"
-msgstr ""
+#: src/gnome-schedule.glade.h:19
+msgid "<b>Select the type of the scheduled task</b>"
+msgstr "<b>Vælg typen af den planlagte opgave</b>"
 
-#: gnome-schedule.gladestrings:59
-msgid "_Samba Password:"
-msgstr ""
+# Fejlrapporteret... http://bugzilla.gnome.org/show_bug.cgi?id=162868
+#
+#: src/gnome-schedule.glade.h:20
+msgid "A scheduled task that will launch at a frequency "
+msgstr "En planlagt opgave som vil starte ved en frekvens "
 
-#: gnome-schedule.gladestrings:61
-msgid "Con_firm Samba Password:"
-msgstr ""
+#: src/gnome-schedule.glade.h:21
+msgid "A scheduled task that will start at a defined time in the future"
+msgstr "En planlagt opgave som vil starte på et angivet tidspunkt i fremtiden"
 
-#: gnome-schedule.gladestrings:64
-#: gnome-schedule.gladestrings:77
-msgid "window1"
-msgstr ""
+#: src/gnome-schedule.glade.h:22
+msgid "A_dvanced"
+msgstr "A_vanceret"
 
-#: gnome-schedule.gladestrings:66
-msgid "Brow_se..."
-msgstr ""
+#: src/gnome-schedule.glade.h:23
+msgid "About this application"
+msgstr "Om dette program"
 
-#: gnome-schedule.gladestrings:67
-msgid "_Directory:"
-msgstr ""
+#: src/gnome-schedule.glade.h:24
+msgid "Active user"
+msgstr "Aktiv bruger"
 
-#: gnome-schedule.gladestrings:68
-msgid "D_escription:"
-msgstr ""
+#: src/gnome-schedule.glade.h:25
+msgid "Add a new scheduled task"
+msgstr "Tilføj en ny planlagt opgave"
 
-#: gnome-schedule.gladestrings:70
-msgid "Basic Permissions:"
-msgstr ""
+#: src/gnome-schedule.glade.h:26
+msgid "Add a scheduled task"
+msgstr "Tilføj en planlagt opgave"
 
-#: gnome-schedule.gladestrings:71
-msgid "_Read-only"
-msgstr ""
+#: src/gnome-schedule.glade.h:27
+msgid "Advanced"
+msgstr "Avanceret"
 
-#: gnome-schedule.gladestrings:72
-msgid "Read / _Write"
-msgstr ""
+#: src/gnome-schedule.glade.h:28
+msgid "Alter a scheduled task"
+msgstr "Ændr en planlagt opgave"
 
-#: gnome-schedule.gladestrings:74
-msgid "O_nly allow access to specific users"
-msgstr ""
+#: src/gnome-schedule.glade.h:29
+msgid "Basic"
+msgstr "Basis"
 
-#: gnome-schedule.gladestrings:75
-msgid "A_llow access to everyone"
-msgstr ""
+#: src/gnome-schedule.glade.h:30
+msgid "Cancel this operation"
+msgstr "Afbryd denne handling"
 
-#: gnome-schedule.gladestrings:76
-msgid "_Access"
-msgstr ""
+#: src/gnome-schedule.glade.h:31
+msgid "Configure scheduled tasks"
+msgstr "Konfigurér planlagte opgaver"
 
-#: gnome-schedule.gladestrings:78
-msgid "Permissions:"
-msgstr ""
+#: src/gnome-schedule.glade.h:32
+msgid "Date and time"
+msgstr "Dato og tid"
 
-#: gnome-schedule.gladestrings:79
-msgid "User Permissions:"
-msgstr ""
+#: src/gnome-schedule.glade.h:33
+msgid "Delete a scheduled task"
+msgstr "Slet en planlagt opgave"
 
-#: gnome-schedule.gladestrings:80
-msgid "Group Permissions:"
-msgstr ""
+#: src/gnome-schedule.glade.h:34
+msgid "Every"
+msgstr "Hver"
 
-#: gnome-schedule.gladestrings:81
-msgid "World Permissions:"
+#: src/gnome-schedule.glade.h:35
+msgid ""
+"For example 1,2,3,4 means happens the first, second, third and fourth minute"
 msgstr ""
+"For eksempel betyder 1,2,3,4 at det sker det første, andet, tredje og fjerde "
+"minut"
 
-#: gnome-schedule.gladestrings:82
-#: gnome-schedule.gladestrings:83
-#: gnome-schedule.gladestrings:84
-msgid "Read"
-msgstr ""
+#: src/gnome-schedule.glade.h:36
+msgid "For example at 04:10 tomorrow, next week or in three days."
+msgstr "For eksempel klokken 04.10 i morgen, næste uge eller om tre dage."
 
-#: gnome-schedule.gladestrings:85
-#: gnome-schedule.gladestrings:86
-#: gnome-schedule.gladestrings:87
-msgid "Write"
-msgstr ""
+#: src/gnome-schedule.glade.h:37
+msgid "For example every first hour of the day."
+msgstr "For eksempel den første time hver dag."
 
-#: gnome-schedule.gladestrings:88
-#: gnome-schedule.gladestrings:89
-#: gnome-schedule.gladestrings:90
-msgid "Execute"
+#: src/gnome-schedule.glade.h:38
+msgid "For experienced users only"
+msgstr "Kun for avancerede brugere"
+
+#: src/gnome-schedule.glade.h:40
+msgid ""
+"Happens at a defined occurrence. For example, happens at the second minute, "
+"hour, day, weekday or month"
 msgstr ""
+"Sker på en angivet forekomst. For eksempel sker det på det andet minut, "
+"anden time, dag, ugedag eller måned"
+
+#: src/gnome-schedule.glade.h:41
+msgid ""
+"Happens at all occurrence. For example, happens every minute, hour, day, "
+"weekday or month"
+msgstr ""
+"Sker på alle forekomster. For eksempel sker det hvert minut, hver time, dag, "
+"ugedag eller måned"
+
+#: src/gnome-schedule.glade.h:42
+msgid ""
+"Happens at every x occurrence. For example every two minutes, hours, days, "
+"weekdays or months"
+msgstr ""
+"Sker på hver x forekomst. For eksempel hver andet minut, anden time, dag, "
+"ugedag eller måned"
+
+#: src/gnome-schedule.glade.h:43
+msgid "Happens at the"
+msgstr "Sker den"
+
+#: src/gnome-schedule.glade.h:44
+msgid "Happens each occurrence between x and y"
+msgstr "Sker på hver forekomst mellem x og y"
+
+#: src/gnome-schedule.glade.h:45
+msgid "Happens every "
+msgstr "Sker hver "
+
+#: src/gnome-schedule.glade.h:46
+msgid "Happens from"
+msgstr "Sker fra"
+
+#: src/gnome-schedule.glade.h:47
+msgid "No output"
+msgstr "Ingen uddata"
+
+#: src/gnome-schedule.glade.h:48
+msgid "Other expression"
+msgstr "Andet udtryk"
+
+#: src/gnome-schedule.glade.h:49
+msgid "Preset"
+msgstr "Forvalgt"
+
+#: src/gnome-schedule.glade.h:50
+msgid ""
+"Quit the application. This will not stop the system scheduling. It will, "
+"however, quit this system schedule maintenance tool."
+msgstr ""
+"Afslut programmet. Dette vil ikke stoppe system-planlægningen. Derimod vil "
+"det afslutte dette system-planlægningsværktøj."
+
+#: src/gnome-schedule.glade.h:51
+msgid "Run"
+msgstr "Kør"
+
+#: src/gnome-schedule.glade.h:52
+msgid "Run at:"
+msgstr "Kør ved:"
+
+#: src/gnome-schedule.glade.h:53
+msgid "Scheduled and active tasks"
+msgstr "Planlagte og aktive opgaver"
+
+#: src/gnome-schedule.glade.h:54
+msgid "Script"
+msgstr "Skript"
+
+#: src/gnome-schedule.glade.h:55
+msgid "Select a different user"
+msgstr "Vælg en anden bruger"
+
+#: src/gnome-schedule.glade.h:56
+msgid "Set the day frequency setting"
+msgstr "Opsæt dagsfrekvensindstillingen"
+
+#: src/gnome-schedule.glade.h:57
+msgid "Set the hour frequency setting"
+msgstr "Opsæt timefrekvensindstillingen"
+
+#: src/gnome-schedule.glade.h:58
+msgid "Set the icon of this scheduled task"
+msgstr "Opsæt ikonet for denne planlagte opgave"
+
+#: src/gnome-schedule.glade.h:59
+msgid "Set the minute frequency setting"
+msgstr "Opsæt minutfrekvensindstillingen"
+
+#: src/gnome-schedule.glade.h:60
+msgid "Set the month frequency setting"
+msgstr "Opsæt månedsfrekvensindstillingen"
+
+#: src/gnome-schedule.glade.h:61
+msgid "Set the scheduled task"
+msgstr "Opsæt den planlagte opgave"
+
+#: src/gnome-schedule.glade.h:62
+msgid "Set the weekday frequency setting"
+msgstr "Opsæt ugedagsfrekvensindstillingen"
+
+#: src/gnome-schedule.glade.h:63
+msgid "Set user"
+msgstr "Opsæt bruger"
+
+#: src/gnome-schedule.glade.h:64
+msgid "Show help"
+msgstr "Vis hjælp"
+
+#: src/gnome-schedule.glade.h:65
+msgid "Show the manual"
+msgstr "Vis manualen"
+
+#: src/gnome-schedule.glade.h:66
+msgid "Shows the records"
+msgstr "Viser posterne"
+
+#: src/gnome-schedule.glade.h:67
+msgid "Task title"
+msgstr "Opgavetitel"
+
+#: src/gnome-schedule.glade.h:68
+msgid "The date when the script will launch"
+msgstr "Den dato hvor skriptet vil blive udført"
+
+#: src/gnome-schedule.glade.h:69
+msgid "Time expression help"
+msgstr "Hjælp til tidsudtryk"
+
+#: src/gnome-schedule.glade.h:70
+msgid "Time: "
+msgstr "Tid: "
+
+#: src/gnome-schedule.glade.h:71
+msgid "Treeview"
+msgstr "Trævisning"
+
+#: src/gnome-schedule.glade.h:72
+msgid ""
+"When selected, no output will be generated. When scheduled tasks in the "
+"crontab do have output and this option is not checked, the output will by "
+"default be send to the UNIX mailbox of the user"
+msgstr ""
+"Hvis valgt, vil ingen uddata vil blive genereret. Når planlagte opgaver i "
+"crontab har uddata og denne valgmulighed ikke er afkrydset, vil uddata blive "
+"sendt til brugerens e-postkasse"
+
+#: src/gnome-schedule.glade.h:73
+msgid "Will delete the selected preset"
+msgstr "Vil slette det valgte forvalg"
+
+#: src/gnome-schedule.glade.h:74
+msgid ""
+"Will save the current information as a preset. You can type the name of the "
+"preset in the combobox."
+msgstr ""
+"Vil gemme den nuværende information som et forvalg. Du kan indtaste navnet "
+"på forvalget i kombinationsfeltet."
+
+#: src/gnome-schedule.glade.h:75
+msgid "[Add|Edit] scheduled task"
+msgstr "[Tilføj|Redigér] planlagte opgaver"
+
+#: src/gnome-schedule.glade.h:76
+msgid "_Add task"
+msgstr "_Tilføj opgave"
+
+#: src/gnome-schedule.glade.h:77
+msgid "_Delete"
+msgstr "_Fjern"
+
+#: src/gnome-schedule.glade.h:78
+msgid "_Manual"
+msgstr "_Manual"
+
+#: src/gnome-schedule.glade.h:79
+msgid "_Select"
+msgstr "_Vælg"
+
+#: src/gnome-schedule.glade.h:80
+msgid "_Set user"
+msgstr "_Opsæt bruger"
+
+#: src/gnome-schedule.glade.h:85
+msgid "to"
+msgstr "til"
+
+#: src/gnome-schedule.glade.h:86
+msgid ""
+"tomorrow\n"
+"next week"
+msgstr ""
+"i morgen\n"
+"næste uge"
+
+#: src/lang.py:77
+msgid ""
+"To the translator: Read src/lang.py !!! (yeah it's for you, not for the "
+"user. YES FOR YOU, the translator. YES:) really!"
+msgstr ""
+"Til oversætteren: Læs src/lang.py !!! (Ja, beskeden er til dig, ikke til "
+"brugeren. JA TIL DIG, oversætteren. JA :) helt sikkert!)"
+
+#. Translators: Date format for expressions like "January 21"
+#: src/lang.py:104
+msgid "%B %d"
+msgstr "%d %B"
+
+#. Translators: Date format for expressions like "January 21, 2005"
+#: src/lang.py:110
+msgid "%B %d, %Y"
+msgstr "%d %B, %Y"
+
+#. Translators: Time format without seconds
+#: src/lang.py:119
+msgid "%H:%M"
+msgstr "%H:%M"
+
+#. Translators: Format of numeric ordinal numbers. If this is not applicable for you read lang.py.
+#: src/lang.py:217
+#, python-format
+msgid "%d."
+msgstr "%d."
+
+#: src/lang.py:249
+msgid "At every full hour"
+msgstr "Hver hele time"
+
+#: src/lang.py:251
+msgid "At every minute"
+msgstr "Hvert minut"
+
+#: src/lang.py:253
+#, python-format
+msgid "At the %(minute)s minute of every hour"
+msgstr "Hvert %(minute)s minut i hver time"
+
+#: src/lang.py:255
+#, python-format
+msgid "At every minute between %(time_from)s and %(time_to)s"
+msgstr "Hvert minut mellem %(time_from)s og %(time_to)s"
+
+#: src/lang.py:257
+#, python-format
+msgid "On every day at %(time)s"
+msgstr "Hver dag klokken %(time)s"
+
+#: src/lang.py:262
+#, python-format
+msgid "On the %(monthday)s of every month at every full hour"
+msgstr "Hver %(monthday)s i hver måned, hver hele time"
+
+#: src/lang.py:264
+#, python-format
+msgid "On the %(monthday)s of every month at every minute"
+msgstr "Hver %(monthday)s i hver måned, hvert minut"
+
+#: src/lang.py:266
+#, python-format
+msgid ""
+"On the %(monthday)s of every month at the %(minute)s minute of every hour"
+msgstr "Den %(monthday)s i hver måned, på det %(minute)s minut af hver time"
+
+#: src/lang.py:268
+#, python-format
+msgid ""
+"On the %(monthday)s of every month at every minute between %(time_from)s and "
+"%(time_to)s"
+msgstr ""
+"Den %(monthday)s i hver måned, hvert minut mellem %(time_from)s og %(time_to)"
+"s"
+
+#: src/lang.py:270
+#, python-format
+msgid "On the %(monthday)s of every month at %(time)s"
+msgstr "Den %(monthday)s i hver måned, klokken %(time)s"
+
+#: src/lang.py:275
+#, python-format
+msgid "On every day in %(month)s at every full hour"
+msgstr "Hver dag i %(month)s, hver hele time"
+
+#: src/lang.py:277
+#, python-format
+msgid "On every day in %(month)s at every minute"
+msgstr "Hver dag i %(month)s, hver minut"
+
+#: src/lang.py:279
+#, python-format
+msgid "On every day in %(month)s at the %(minute)s minute of every hour"
+msgstr "Hver dag i %(month)s, på det %(minute)s minut i hver time"
+
+#: src/lang.py:281
+#, python-format
+msgid ""
+"On every day in %(month)s at every minute between %(time_from)s and %"
+"(time_to)s"
+msgstr "Hver dag i %(month)s, hver minut mellem %(time_from)s og %(time_to)s"
+
+#: src/lang.py:283
+#, python-format
+msgid "On every day in %(month)s at %(time)s"
+msgstr "Hver dag i %(month)s klokken %(time)s"
+
+#: src/lang.py:288
+#, python-format
+msgid "Every year on %(date)s at every full hour"
+msgstr "Hvert år den %(date)s, hver hele time"
+
+#: src/lang.py:290
+#, python-format
+msgid "Every year on %(date)s at every minute"
+msgstr "Hvert år den %(date)s, hvert minut"
+
+#: src/lang.py:292
+#, python-format
+msgid "Every year on %(date)s at the %(minute)s minute of every hour"
+msgstr "Hvert år den %(date)s, på det %(minute)s minut i hver time"
+
+#: src/lang.py:294
+#, python-format
+msgid ""
+"Every year on %(date)s at every minute between %(time_from)s and %(time_to)s"
+msgstr "Hvert år den %(date)s, hver minut mellem %(time_from)s og %(time_to)s"
+
+#: src/lang.py:296
+#, python-format
+msgid "Every year on %(date)s at %(time)s"
+msgstr "Hvert år den %(date)s, klokken %(time)s"
+
+#: src/lang.py:301
+#, python-format
+msgid "On every %(weekday)s at every full hour"
+msgstr "Hver %(weekday)s, hver hele time"
+
+#: src/lang.py:303
+#, python-format
+msgid "On every %(weekday)s at every minute"
+msgstr "Hver %(weekday)s, hvert minut"
+
+#: src/lang.py:305
+#, python-format
+msgid "On every %(weekday)s at the %(minute)s minute of every hour"
+msgstr "Hver %(weekday)s, på det %(minute)s minut af hver time"
+
+#: src/lang.py:307
+#, python-format
+msgid ""
+"On every %(weekday)s at every minute between %(time_from)s and %(time_to)s"
+msgstr "Hver %(weekday)s, hvert minut mellem %(time_from)s og %(time_to)s"
+
+#: src/lang.py:309
+#, python-format
+msgid "On every %(weekday)s at %(time)s"
+msgstr "Hver %(weekday)s klokken %(time)s"
+
+#: src/lang.py:314
+#, python-format
+msgid ""
+"On the %(monthday)s of every month and every %(weekday)s at every full hour"
+msgstr "Den %(monthday)s hver måned og hver %(weekday)s, hver hele time"
+
+#: src/lang.py:316
+#, python-format
+msgid ""
+"On the %(monthday)s of every month and every %(weekday)s at every minute"
+msgstr "Den %(monthday)s hver måned og hver %(weekday)s, hvert minut"
+
+#: src/lang.py:318
+#, python-format
+msgid ""
+"On the %(monthday)s of every month and every %(weekday)s at the %(minute)s "
+"minute of every hour"
+msgstr ""
+"Den %(monthday)s hver måned og hver %(weekday)s på det %(minute)s minut hver "
+"hele time"
+
+#: src/lang.py:320
+#, python-format
+msgid ""
+"On the %(monthday)s of every month and every %(weekday)s at every minute "
+"between %(time_from)s and %(time_to)s"
+msgstr ""
+"Den %(monthday)s hver måned og hver %(weekday)s hvert minut mellem %"
+"(time_from)s og %(time_to)s"
+
+#: src/lang.py:322
+#, python-format
+msgid "On the %(monthday)s of every month and every %(weekday)s at %(time)s"
+msgstr "Den %(monthday)s hver måned og hver %(weekday)s klokken %(time)s"
+
+#: src/lang.py:327
+#, python-format
+msgid "On every %(weekday)s in %(month)s at every full hour"
+msgstr "Hver %(weekday)s i %(month)s, hver hele time"
+
+#: src/lang.py:329
+#, python-format
+msgid "On every %(weekday)s in %(month)s at every minute"
+msgstr "Hver %(weekday)s i %(month)s, hvert minut"
+
+#: src/lang.py:331
+#, python-format
+msgid ""
+"On every %(weekday)s in %(month)s at the %(minute)s minute of every hour"
+msgstr "Hver %(weekday)s i %(month)s på det %(minute)s minut, hver time"
+
+#: src/lang.py:333
+#, python-format
+msgid ""
+"On every %(weekday)s in %(month)s at every minute between %(time_from)s and %"
+"(time_to)s"
+msgstr ""
+"Hver %(weekday)s i %(month)s hvert minut mellem %(time_from)s og %(time_to)s"
+
+#: src/lang.py:335
+#, python-format
+msgid "On every %(weekday)s in %(month)s at %(time)s"
+msgstr "Hver %(weekday)s i %(month)s klokken %(time)s"
+
+#: src/lang.py:340
+#, python-format
+msgid ""
+"On every %(weekday)s in %(month)s and on %(date)s every year at every full "
+"hour"
+msgstr "Hver %(weekday)s i %(month)s og den %(date)s hvert år, hver hele time"
+
+#: src/lang.py:342
+#, python-format
+msgid ""
+"On every %(weekday)s in %(month)s and on %(date)s every year at every minute"
+msgstr "Hver %(weekday)s i %(month)s og den %(date)s hvert år, hvert minut"
+
+#: src/lang.py:344
+#, python-format
+msgid ""
+"On every %(weekday)s in %(month)s and on %(date)s every year at the %(minute)"
+"s minute of every hour"
+msgstr ""
+"Hver %(weekday)s i %(month)s og den %(date)s hvert år på det %(minute)s "
+"minut i hver time"
+
+#: src/lang.py:346
+#, python-format
+msgid ""
+"On every %(weekday)s in %(month)s and on %(date)s every year at every minute "
+"between %(time_from)s and %(time_to)s"
+msgstr ""
+"Hver %(weekday)s i %(month)s og den %(date)s hvert år, hvert minut mellem %"
+"(time_from)s og %(time_to)s"
+
+#: src/lang.py:348
+#, python-format
+msgid ""
+"On every %(weekday)s in %(month)s and on %(date)s every year at %(time)s"
+msgstr "Hver %(weekday)s i %(month)s og den %(date)s hvert år klokken %(time)s"
+
+#: src/lang.py:356
+msgid "every minute"
+msgstr "hvert minut"
+
+#: src/lang.py:358
+msgid "minute: "
+msgstr "minut: "
+
+#: src/lang.py:361
+msgid "every hour"
+msgstr "hver time"
+
+#: src/lang.py:363
+msgid "hour: "
+msgstr "time: "
+
+#: src/lang.py:366
+msgid "every day of the month"
+msgstr "hver dag i måneden"
+
+#: src/lang.py:368
+msgid "day of the month: "
+msgstr "dag i måneden: "
+
+#: src/lang.py:371
+msgid "every month"
+msgstr "hver måned"
+
+#: src/lang.py:373
+msgid "month: "
+msgstr "måned: "
+
+#: src/lang.py:378
+msgid ", weekday: "
+msgstr ", ugedag: "
+
+#: src/lang.py:380
+#, python-format
+msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s%(weekday)s"
+msgstr "Klokken %(minute)s, %(hour)s, %(monthday)s, %(month)s%(weekday)s"
+
+#: src/mainWindow.py:195 src/mainWindow.py:294
+msgid "Editing user: "
+msgstr "Redigerer bruger:"
+
+#: src/mainWindow.py:329
+msgid "Icon"
+msgstr "Ikon"
+
+#: src/mainWindow.py:334 src/mainWindow.py:367
+msgid "Type"
+msgstr "Type"
+
+#: src/mainWindow.py:338 src/mainWindow.py:363
+msgid "Title"
+msgstr "Titel"
+
+#: src/mainWindow.py:342 src/mainWindow.py:354
+msgid "Frequency or time"
+msgstr "Interval eller tid"
+
+#: src/mainWindow.py:346 src/mainWindow.py:358
+msgid "Preview"
+msgstr "Forhåndsvisning"
+
+#. TODO: should be using gtkAboutDialog
+#: src/mainWindow.py:492
+msgid "Gnome Schedule"
+msgstr "Gnome-systemplanlægger"
+
+#: src/mainWindow.py:494
+msgid "Copyright (c) 2004-2005 Gaute Hope."
+msgstr "Copyright (c) 2004-2005 Gaute Hope."
+
+#: src/mainWindow.py:495
+msgid "This software is distributed under the GPL. "
+msgstr "Dette programmel er udgivet under GPL."
+
+#: src/mainWindow.py:499
+msgid ""
+"Some painfully bad documentation put\n"
+"toghether from the far corners of Gaute Hope's mind."
+msgstr ""
+"Noget smerteligt dårligt dokumentation sammenstykket ud fra de fjerne "
+"hjørner af Gaute Hope's hjerne."
+
+#: src/mainWindow.py:499
+msgid "translator_credits"
+msgstr ""
+"Alex Thomsen Leth\n"
+"Martin Willemoes Hansen\n"
+"\n"
+"Dansk-gruppen <dansk@klid.dk>\n"
+"Mere info: http://www.klid.dk/dansk/"
+
+#: src/atEditor.py:512
+#, python-format
+msgid "This is an invalid record! The problem could be: %s "
+msgstr "Dette er en ugyldig post! Problemet kan være: %s "
+
+#~ msgid "must be between 59 and 0"
+#~ msgstr "skal være mellem 59 og 0"
+
+#~ msgid "must be between 23 and 0"
+#~ msgstr "skal være mellem 23 og 0"
+
+#~ msgid "must be between 12 and 1"
+#~ msgstr "skal være mellem 12 og 1"
+
+#~ msgid " hour of the day"
+#~ msgstr " time af dagen"
+
+#~ msgid " every day"
+#~ msgstr " hver dag"
+
+#~ msgid " month of the year"
+#~ msgstr " mned af ret"
+
+#~ msgid " day of the week"
+#~ msgstr " dag af ugen"
+
+#~ msgid " day of the week at "
+#~ msgstr " dag af ugen p "
+
+#~ msgid "Command"
+#~ msgstr "Kommando"
