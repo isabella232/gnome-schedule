@@ -173,6 +173,8 @@ class AddWindow:
 		if self.minute == "0" and self.hour == "0" and self.month == "*" and self.day == "1" and self.weekday == "*":
 			index = "month"
 			# index = 4
+		if self.minute == "0" and self.hour == "0" and self.month == "*" and self.day == "*" and self.weekday == "0":
+			index = "week"
 
 
 		self.frequency_combobox.set_text (index)
@@ -190,8 +192,6 @@ class AddWindow:
 		self.weekday_entry.set_text ("")
 		self.setting_label.set_text ("* * * * * command")
 		self.noevents = gtk.FALSE
-
-		
 
 	def update_textboxes (self):
 		self.noevents = gtk.TRUE
@@ -269,6 +269,12 @@ class AddWindow:
 			self.day = "1"
 			self.month = "*"
 			self.weekday = "*"
+		elif temp == "week":
+			self.minute = "0"
+			self.hour = "0"
+			self.day = "*"
+			self.month = "*"
+			self.weekday = "0"
 		else:
 			pass
 
