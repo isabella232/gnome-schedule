@@ -1,6 +1,13 @@
-2004-07-17  Gaute Hope <eg@gaute.eu.org>
+2004-07-17  Gaute Hope  <eg@gaute.eu.org>
 
 	* most of them.py: Removed debugging messages
+	* atEditor.py: Icons resized
+	* crontabEditor.py: Icons resized
+
+2004-07-16  Gaute Hope  <eg@gaute.eu.org>
+
+	* dist/gentoo: Created an ebuild for gentoo, ready for version 1.0_beta
+	* configure.ac: Changed the version to 1.0_beta, this should perhaps be changed
 
 2004-07-15  Kristof Vansant <de_lupus@pandora.be>
 
