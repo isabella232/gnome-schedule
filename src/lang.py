@@ -193,6 +193,9 @@ def translate_crontab_easy_en (minute, hour, day, month, weekday):
 	# x means happens at
 	# *\x means happens every xth (not yet supported correctly)
 	# 1,2,3,4 means happens the 1st, 2e, 3th and 4th
+	if minute.find ("\\") != -1 or hour.find ("\\") != -1 or day.find ("\\") != -1 or month.find ("\\") != -1 or weekday.find ("\\") != -1:
+		return minute + " " + hour + " " + day + " " + month + " " + weekday
+
 	if minute == "*" and hour == "*" and month == "*" and day == "*" and weekday == "*":
 		return _("Every minute")
 
