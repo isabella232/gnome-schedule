@@ -11,7 +11,6 @@ gnomeschedule_PYTHON = \
 	setuserWindow.py \
 	crontab.py \
 	lang.py \
-	support.py \
 	addWindow.py \
 	atEditor.py \
 	preset.py
