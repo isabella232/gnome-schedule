@@ -22,11 +22,15 @@ Development:
  included in the next release)
   * Unification of the atEditor and crontabEditor GUI
     One editor to rule them all!
+  * Support for mail direction in both cron and at
+  * Support for classes in at(nice, priority)
 
 
  Unassigned would make it to the release but are non-blocking it
   * Documentation
   * All times: Code cleanups, refactoring, bugfixes
+
+
 
 Documentation:
   * Write it (we can use some help here)
