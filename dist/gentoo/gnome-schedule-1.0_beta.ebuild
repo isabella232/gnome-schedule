@@ -1,4 +1,4 @@
-P="gnome-schedule-1.0_beta"
+P="gnome-schedule-@VERSION@"
 PN="gnome-schedule"
 PV="1.0"
 SLOT="0"
@@ -18,12 +18,11 @@ RDEPEND=">=sys-apps/at-3
 DEPEND="${RDEPEND}"
 
 src_compile() {
-  ./autogen.sh --prefix=/usr
+  econf
   emake
 }
 
 src_install() {
-  einfo "Installing.."
   einstall
 
   ewarn "gnome-schedule was developed using the CVS version of PyGtk(2.4), this may cause problems on early versions of PyGtk-2.3"
