@@ -1,3 +1,7 @@
+2004-08-01  Gaute Hope <eg@gaute.eu.org>
+
+	* configure.ac, dist/gentoo/gnome-schedule-0.1.0.ebuild.in: Changed version number to: 0.1.0, changed name of the ebuild
+
 2004-07-31  Gaute Hope <eg@gaute.eu.org>
 
 	* at.py: Fixed an error in the checkfield stuff for a day earlier than the one you are in now

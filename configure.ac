@@ -1,5 +1,5 @@
 AC_INIT(src/gnome-schedule.py)
-AM_INIT_AUTOMAKE(gnome-schedule, 1.0_beta)
+AM_INIT_AUTOMAKE(gnome-schedule, 0.1.0)
 
 AM_PATH_PYTHON
 
