@@ -95,20 +95,6 @@ class main:
 
 		self.editor = self.schedule.geteditor()
 
-
-		# This will only work with PyGTK 2.4.x
-		try:
-			# this tries to fix a bug in libglade (the homogeneous propery ain't working)
-			self.toolbar = self.xml.get_widget ("toolbar")
-			print "Happened"
-			self.toolbar.get_nth_item (0).set_homogeneous (gtk.TRUE)
-			self.toolbar.get_nth_item (1).set_homogeneous (gtk.TRUE)
-			self.toolbar.get_nth_item (2).set_homogeneous (gtk.TRUE)
-			self.toolbar.get_nth_item (3).set_homogeneous (gtk.TRUE)
-			print "Happened"
-		except:
-			pass
-
 		
 		self.treeview.set_rules_hint(gtk.TRUE)
 		self.treeview.columns_autosize()
