@@ -51,7 +51,7 @@ class At:
 		self.init ()
 
 		#reading at
-		#self.read ()
+		self.read ()
 
 
 		self.editorwidget = self.xml.get_widget("atEditor")
@@ -156,6 +156,7 @@ class At:
 		return
 
 	def read (self):
+		return
 		#do 'atq'
 		execute = "atq"
 		self.linecount = 0
