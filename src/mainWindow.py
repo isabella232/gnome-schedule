@@ -261,7 +261,7 @@ class main:
 
 	def on_about_menu_activate (self, *args):
 		dlg = gnome.ui.About(_("System Schedule"), "@VERSION@",
-			_("Copyright (c) 2001-2003 Gaute Hope."),
+			_("Copyright (c) 2004-2005 Gaute Hope."),
 			_("This software is distributed under the GPL. "),
 			["Philip Van Hoof <me at freax dot org>",
 			"Gaute Hope <eg at gaute dot eu dot org>"
