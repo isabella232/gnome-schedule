@@ -35,26 +35,22 @@ class AddWindow:
 		self.widget = self.xml.get_widget ("addWindow")
 		self.widget.connect("delete-event", self.on_cancel_button_clicked)
 
-		self.cancel_button = self.xml.get_widget ("select_cancel_button")
-		self.ok_button = self.xml.get_widget ("select_ok_button")
 		self.at_radio = self.xml.get_widget("at_radio")
 		self.crontab_radio = self.xml.get_widget("crontab_radio")
 		self.crontab_radio.set_active (gtk.TRUE)
+		
+		self.cancel_button = self.xml.get_widget ("select_cancel_button")
+		self.ok_button = self.xml.get_widget ("select_ok_button")
 		self.xml.signal_connect("on_select_cancel_button_clicked", self.on_cancel_button_clicked)
 		self.xml.signal_connect("on_select_ok_button_clicked", self.on_ok_button_clicked)
-
-		self.populateCombobox ()
-
+		
+		
 	def ShowAddWindow (self):
 		self.widget.show_all()
 
-	def populateCombobox (self):
-		pass
-
 	def on_cancel_button_clicked (self, *args):
 		self.widget.hide()
-		return gtk.TRUE
-
+		
 	def on_ok_button_clicked (self, *args):
 		self.widget.hide()
 		if self.crontab_radio.get_active ():
@@ -63,6 +59,4 @@ class AddWindow:
 		else:
 			self.ParentClass.editor = self.ParentClass.at_editor
 			self.ParentClass.editor.showadd (self.ParentClass.edit_mode)
-
 		
-		return gtk.TRUE

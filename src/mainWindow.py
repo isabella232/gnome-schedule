@@ -49,32 +49,17 @@ _ = gettext.gettext
 
 
 ##
-## Icon for windows
-##
-iconPixbuf = None
-if os.access("../pixmaps/gnome-schedule.png", os.F_OK):
-	iconPixbuf = gtk.gdk.pixbuf_new_from_file ("../pixmaps/gnome-schedule.png")
-else:
-	try:
-		iconPixbuf = gtk.gdk.pixbuf_new_from_file (config.getImagedir() + "/gnome-schedule.png")
-
-	except:
-		print "ERROR: Could not load icon"
-
-##
 ## The MainWindow class
 ##
 class main:
 	def __init__(self, debug_flag=None):
 		self.debug_flag = debug_flag
 
-		if os.access("gnome-schedule.glade", os.F_OK):
-			self.xml = gtk.glade.XML ("gnome-schedule.glade", domain="gnome-schedule")
-		else:
-			self.xml = gtk.glade.XML (config.getGladedir() + "/gnome-schedule.glade", domain="gnome-schedule")
+		self.__loadIcon__()
+		self.__loadGlade__()
 		
 		#get user
-		self.readUser()
+		self.__readUser__()
 		
 		self.editor = None
 		self.schedule = None
@@ -86,9 +71,9 @@ class main:
 		##configure the window
 		self.widget = self.xml.get_widget("mainWindow")
 
-		self.widget.connect("delete_event", self.quit)
-		self.widget.connect("destroy_event", self.quit)
-		self.widget.set_icon(iconPixbuf)
+		self.widget.connect("delete_event", self.__quit__)
+		self.widget.connect("destroy_event", self.__quit__)
+		self.widget.set_icon(self.iconPixbuf)
 		##		
 
 
@@ -124,9 +109,9 @@ class main:
 			# hiding the 'set user' option if not root
 			self.btnSetUser.hide()
 		else:
-			self.xml.signal_connect("on_btnSetUser_clicked", self.showSetUser)
+			self.xml.signal_connect("on_btnSetUser_clicked", self.on_btnSetUser_clicked)
 
-		self.xml.signal_connect("on_btnExit_clicked", self.quit)		
+		self.xml.signal_connect("on_btnExit_clicked", self.on_btnExit_clicked_clicked)		
 		##
 
 		##inittializing the treeview
@@ -140,10 +125,10 @@ class main:
 		self.treeview.columns_autosize()
 		
 		#user selects another task
-		self.treeview.get_selection().connect("changed", self.onTreeViewSelectRow)
+		self.treeview.get_selection().connect("changed", self.on_TreeViewSelectRow)
 		self.treeview.get_selection().unselect_all()
 		
-		self.treeview.connect ("button_press_event", self.treeview_button_press_event)
+		self.treeview.connect ("button_press_event", self.on_treeview_button_press_event)
 	
 		self.xml.signal_connect("on_treeview_key_press_event", self.on_treeview_key_pressed)
 		##
@@ -164,15 +149,15 @@ class main:
 		self.delete_menu.set_sensitive (gtk.FALSE)
 		
 		#ask gconf for config of advanced
-		support.gconf_client.notify_add ("/apps/gnome-schedule/advanced", self.gconfkey_advanced_changed);
+		support.gconf_client.notify_add ("/apps/gnome-schedule/advanced", self.on_gconfkey_advanced_changed);
 		self.advanced_menu.set_active (support.gconf_client.get_bool ("/apps/gnome-schedule/advanced"))
-		self.gconfkey_advanced_changed (support.gconf_client, None, "/apps/gnome-schedule/advanced", None)
+		self.on_gconfkey_advanced_changed(support.gconf_client, None, "/apps/gnome-schedule/advanced", None)
 		
 		
 		self.xml.signal_connect("on_add_scheduled_task_menu_activate", self.on_add_scheduled_task_menu_activate)
 		self.xml.signal_connect("on_properties_menu_activate", self.on_properties_menu_activate)
 		self.xml.signal_connect("on_delete_menu_activate", self.on_delete_menu_activate)
-		self.xml.signal_connect("on_quit_menu_activate", self.quit)
+		self.xml.signal_connect("on_quit_menu_activate", self.__quit__)
 		
 		self.xml.signal_connect("on_advanced_menu_activate", self.on_advanced_menu_activate)
 	
@@ -189,7 +174,7 @@ class main:
 		##create at
 		self.at = at.At(self)
 		self.at_editor = self.at.geteditor ()
-	   ##
+		##
   
 		#set user window
 		self.setuserWindow = setuserWindow.SetuserWindow (self)
@@ -204,27 +189,77 @@ class main:
 			gtk.main ()
 		except:
 			gtk.mainloop()
-		return
+
 	
+	#public function
+	def schedule_reload (self, records = "all"):
+		#adjust statusbar
+		if self.root == 1:
+			self.statusbar.push(self.statusbarUser, "Editing user: " + self.user)
+		
+		self.delarray = []
+		
+		if records == "crontab":
+			self.treemodel.foreach(self.__delete_row__, "crontab")
+			self.crontab.read()
+
+		elif records == "at":
+			self.treemodel.foreach(self.__delete_row__, "at")
+			self.at.read()
+
+		elif records == "all":
+			self.treemodel.foreach(self.__delete_row__, "all")
+			self.crontab.read ()
+			self.at.read ()
+	
+		for iter in self.delarray:
+			self.treemodel.remove(iter)
+
+
+	def __delete_row__ (self, model, path, iter, record_type):
+		current_record_type = self.treemodel.get_value(iter, 14)
+		if current_record_type == record_type or record_type == "all":
+			self.delarray.append(iter)
+
+
+	def __loadIcon__(self):
+		#iconPixbuf = None
+		if os.access("../pixmaps/gnome-schedule.png", os.F_OK):
+			self.iconPixbuf = gtk.gdk.pixbuf_new_from_file ("../pixmaps/gnome-schedule.png")
+		else:
+			try:
+				self.iconPixbuf = gtk.gdk.pixbuf_new_from_file (config.getImagedir() + "/gnome-schedule.png")
+			except:
+				print "ERROR: Could not load icon"
+
+
+	def __loadGlade__(self):
+		if os.access("gnome-schedule.glade", os.F_OK):
+			self.xml = gtk.glade.XML ("gnome-schedule.glade", domain="gnome-schedule")
+		else:
+			try:
+				self.xml = gtk.glade.XML (config.getGladedir() + "/gnome-schedule.glade", domain="gnome-schedule")
+			except:
+				print "ERROR: Could not load glade file"
+		
 
 	#remove task from list with DEL key
 	def on_treeview_key_pressed (self, widget, event):
 		key = gtk.gdk.keyval_name(event.keyval)
 		if key == "Delete" or key == "KP_Delete":
 			self.on_delete_menu_activate()
-		return
 
 	#double click on task to get properties
-	def treeview_button_press_event (self, widget, event):
+	def on_treeview_button_press_event (self, widget, event):
 		if event.type == gtk.gdk._2BUTTON_PRESS and self.haveitem == gtk.TRUE:
 			self.on_prop_button_clicked (self, widget)
 	
 	#when the user selects a task, buttons get enabled
-	def onTreeViewSelectRow (self, *args):
+	def on_TreeViewSelectRow (self, *args):
 		try:
 			store, iter = self.treeview.get_selection().get_selected()
 			self.schedule = self.treemodel.get_value(iter, 7)
-			self.editor = self.schedule.geteditor ()
+			#self.editor = self.schedule.geteditor ()
 			
 			self.prop_button.set_sensitive (gtk.TRUE)
 			self.del_button.set_sensitive (gtk.TRUE)
@@ -240,7 +275,7 @@ class main:
 			self.haveitem = gtk.FALSE
 	
 	#clean existing columns
-	def cleancolumns (self):
+	def __cleancolumns__ (self):
 		columns = len(self.treeview.get_columns())
 		if columns != 0:
 			i = columns - 1
@@ -250,10 +285,10 @@ class main:
 				i = i -1
 	
 	#switch between advanced and simple mode			
-	def switchView(self, mode = "simple"):
+	def __switchView__(self, mode = "simple"):
 		# TODO: Show the icon
 		if mode == "simple":
-			self.cleancolumns ()
+			self.__cleancolumns__()
 
 			cell = gtk.CellRendererPixbuf()
 			cell.set_fixed_size(21,21)	
@@ -286,7 +321,7 @@ class main:
 
 
 		elif mode == "advanced":
-			self.cleancolumns ()		
+			self.__cleancolumns__ ()		
 	
 			cell = gtk.CellRendererPixbuf()
 			cell.set_fixed_size(21,21)		
@@ -319,7 +354,7 @@ class main:
 		self.edit_mode = mode
 
 	#see if root and get user
-	def readUser (self):
+	def __readUser__(self):
 		UID = os.geteuid()
 		if UID == 0:
 			self.root = 1
@@ -328,82 +363,32 @@ class main:
 			self.root = 0
 			self.user = os.environ['USER']
 
-		return
-
-
-	def schedule_reload (self, records = "all"):
-		#adjust statusbar
-		if self.root == 1:
-			self.statusbar.push(self.statusbarUser, "Editing user: " + self.user)
-		
-		##debug info	
-		#start = time.time()
-		#print "###--- start reload: [" + str(start) + "] ---###"
-		##
-		
-		self.delarray = []
-		if records == "crontab":
-			self.treemodel.foreach(self.delete_row, "crontab")
-			self.crontab.read()
-
-		elif records == "at":
-			self.treemodel.foreach(self.delete_row, "at")
-			self.at.read()
-
-		elif records == "all":
-			self.treemodel.foreach(self.delete_row, "all")
-			self.crontab.read ()
-			self.at.read ()
-	
-		for iter in self.delarray:
-			self.treemodel.remove(iter)
-
-		##debug info
-		#end = time.time()
-		#diff = end - start
-		#print "###--- end reload: [" + str(end) + "] - Duration: " + str(diff) + " ---###"
-		##
-
-
-	def delete_row (self, model, path, iter, record_type):
-		current_record_type = self.treemodel.get_value(iter, 14)
-		if current_record_type == record_type or record_type == "all":
-			self.delarray.append(iter)
-			
-		return
-	
 
 	def on_add_button_clicked (self, *args):
 		self.on_add_scheduled_task_menu_activate (self, args)
-		pass
 
 	def on_prop_button_clicked (self, *args):
 		self.on_properties_menu_activate (self, args)
-		pass
 
 	def on_del_button_clicked (self, *args):
 		self.on_delete_menu_activate (self, args)
-		pass
 
 	def on_help_button_clicked (self, *args):
 		self.on_manual_menu_activate (self, args)
-		pass
 
-	def gconfkey_advanced_changed (self, client, connection_id, entry, args):
+	def on_gconfkey_advanced_changed (self, client, connection_id, entry, args):
 		val = support.gconf_client.get_bool ("/apps/gnome-schedule/advanced")
 		if val:
-			self.switchView("advanced")
+			self.__switchView__("advanced")
 		else:
-			self.switchView("simple")
-		return
+			self.__switchView__("simple")
+
 
 	def on_advanced_menu_activate (self, widget):
 		support.gconf_client.set_bool ("/apps/gnome-schedule/advanced", widget.get_active())
-
 	
 	def on_add_scheduled_task_menu_activate (self, *args):
 		self.addWindow.ShowAddWindow ()
-
 
 	def on_properties_menu_activate (self, *args):
 		store, iter = self.treeview.get_selection().get_selected()
@@ -423,7 +408,7 @@ class main:
 		if iter != None:
 			#see what scheduler (at, crontab or ...)
 			self.schedule = self.treemodel.get_value(iter, 7)
-			self.editor = self.schedule.geteditor ()
+			#self.editor = self.schedule.geteditor ()
 
 			record = self.treemodel.get_value(iter, 3)
 			linenumber = self.treemodel.get_value(iter, 4)
@@ -447,23 +432,25 @@ class main:
 					selection = self.treeview.get_selection()
 					selection.select_iter(nextiter)
 
-
 				else:
 					if firstiter:
 						#go first
 						selection = self.treeview.get_selection()
 						selection.select_iter(firstiter)
 
-		return
-
 
   	def on_quit_menu_activate (self, *args):
-  		self.quit ()
- 
- 	#change user
- 	def showSetUser(self, *args):
+  		self.__quit__()
+ 		 
+ 	def on_btnSetUser_clicked(self, *args):
+		self.__showSetUser__()
+		
+	def on_btnExit_clicked_clicked(self, *args):		
+		self.__quit__()
+ 		
+  	#change user
+ 	def __showSetUser__(self):
  		self.setuserWindow.ShowSetuserWindow()
- 		return
  
  	#about box
  	def on_about_menu_activate (self, *args):
@@ -475,12 +462,12 @@ class main:
  			["Philip Van Hoof <me at freax dot org>",
  			"Kristof Vansant <de_lupus at pandora dot org",
  			"Gaute Hope <eg at gaute dot eu dot org>"], 
- 			[_("Some painfully bad documentation put\ntoghether from the far corners of Gaute Hope's mind.")],_("translator_credits"),iconPixbuf)
+ 			[_("Some painfully bad documentation put\ntoghether from the far corners of Gaute Hope's mind.")],_("translator_credits"),self.iconPixbuf)
  
  		dlg.set_transient_for(self.widget)
  		dlg.set_position (gtk.WIN_POS_CENTER_ON_PARENT)
  		dlg.show()
- 
+ 		 	
  	#open help
   	def on_manual_menu_activate (self, *args):
   		help_page = "file://" + config.getDocdir() + "/index.html"
@@ -488,11 +475,11 @@ class main:
   		pid = os.fork()
   		if not pid:
   			os.execv(path, [path, help_page])
- 	
+ 		 		
  	#quit program
- 	def quit (self, *args):
+ 	def __quit__(self, *args):
  		try:
  			gtk.main_quit ()
  		except:
  			gtk.mainquit()
-  
+		

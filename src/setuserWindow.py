@@ -40,24 +40,20 @@ class SetuserWindow:
 		self.widget = self.xml.get_widget("setuserWindow")
 		self.widget.connect("delete-event", self.on_cancel_button_clicked)
 
-		self.cancel_button = self.xml.get_widget ("setuser_cancel_button")
-		self.ok_button = self.xml.get_widget ("setuser_ok_button")
+		#TODO replace with comboBox
 		self.entUser = self.xml.get_widget("entUser")
 
+		self.cancel_button = self.xml.get_widget ("setuser_cancel_button")
+		self.ok_button = self.xml.get_widget ("setuser_ok_button")
 		self.xml.signal_connect("on_setuser_cancel_button_clicked", self.on_cancel_button_clicked)
 		self.xml.signal_connect("on_setuser_ok_button_clicked", self.on_ok_button_clicked)
 
-		self.populateCombobox ()
-
+	#public function
 	def ShowSetuserWindow (self):
 		self.widget.show_all()
 
-	def populateCombobox (self):
-		pass
-
 	def on_cancel_button_clicked (self, *args):
 		self.widget.hide()
-		return gtk.TRUE
 
 	def on_ok_button_clicked (self, *args):
 		try:
@@ -70,9 +66,10 @@ class SetuserWindow:
 				self.ParentClass.schedule_reload ()
 			
 			self.widget.hide()
+			
 		except Exception, ex:
 			print ex
 			self.dialog = gtk.MessageDialog(self.widget, gtk.DIALOG_MODAL|gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_ERROR, gtk.BUTTONS_OK, "No such user")
 			self.dialog.run ()
 			self.dialog.destroy ()
-		return gtk.TRUE
+			

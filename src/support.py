@@ -10,6 +10,7 @@ gconf_client = gconf.client_get_default()
 
 
 def nautilus_icon (type):
+	#XXX I don't like this fixed paths maybe put them in config.py?
 	_nautdir = "/usr/share/pixmaps/nautilus"
 	_pixdir = "/usr/share/pixmaps"
 	theme = gconf_client.get_string("/desktop/gnome/file_views/icon_theme")

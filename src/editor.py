@@ -1,3 +1,5 @@
+## IS NOT USED YET
+
 # addWindow.py - UI code for adding a crontab record
 # Copyright (C) 2004, 2005 Philip Van Hoof <me at freax dot org>
 # Copyright (C) 2004, 2005 Gaute Hope <eg at gaute dot eu dot org>
