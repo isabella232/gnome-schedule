@@ -12,7 +12,8 @@ gnomeschedule_PYTHON = \
 	crontab.py \
 	editor.py \
 	schedule.py \
-	lang.py
+	lang.py \
+	support.py
 
 uidir = $(datadir)/gnome-schedule
 ui_DATA = gnome-schedule.glade

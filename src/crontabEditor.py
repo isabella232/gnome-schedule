@@ -189,7 +189,7 @@ class CrontabEditor:
 		self.month = "*"
 		self.weekday = "*"
 		self.command = "ls"
-		self.title = _("New scheduled task")
+		self.title = _("Untitled")
 		self.update_textboxes ()
 		self.set_frequency_combo()
 		self.editing = gtk.FALSE
@@ -291,18 +291,18 @@ class CrontabEditor:
 		self.frequency_combobox.set_active (index)
 
 	def reset (self):
-		self.noevents = gtk.TRUE
-		self.command_entry.set_text ("")
-		self.title_entry.set_text ("")
-		self.minute_entry.set_text ("")
-		self.hour_entry.set_text ("")
-		self.day_entry.set_text ("")
-		self.month_entry.set_text ("")
-		self.weekday_entry.set_text ("")
+		self.minute = "*"
+		self.hour = "*"
+		self.day = "*"
+		self.month = "*"
+		self.weekday = "*"
+		self.command = "ls"
+		self.title = _("Untitled")
+		self.nooutput = gtk.FALSE
+		self.nooutput_label.hide ()
 		self.chkNoOutput.set_active (gtk.FALSE)
-		self.setting_label.set_text (self.schedule.getstandardvalue())
-		self.noevents = gtk.FALSE
-
+		self.update_textboxes ()
+		
 	def update_textboxes (self):
 		self.noevents = gtk.TRUE
 		self.chkNoOutput.set_active (self.nooutput)

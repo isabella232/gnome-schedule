@@ -16,3 +16,4 @@ src/lang.py
 src/mainWindow.py
 src/schedule.py
 src/setuserWindow.py
+src/support.py
