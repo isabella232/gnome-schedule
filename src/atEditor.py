@@ -31,8 +31,8 @@ import commands
 import time
 
 #custom modules
-import mainWindow
-import schedule
+#import mainWindow
+#import schedule
 import config
 import support
 

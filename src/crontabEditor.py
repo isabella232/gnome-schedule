@@ -397,6 +397,7 @@ class CrontabEditor:
 			self.schedule.update (self.linenumber, record, self.parentiter, self.nooutput, self.title, self.icon)
 		else:
 			self.schedule.append (record, self.nooutput, self.title, self.icon)
+			#XXX move this to append?
 			self.ParentClass.schedule_reload ("crontab")
 
 		self.widget.hide ()
