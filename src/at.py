@@ -30,6 +30,7 @@ import config
 import string
 import gettext
 import time
+import support
 ##
 ## I18N
 ##
@@ -78,16 +79,92 @@ class At:
 		return
 
 	def removetemplate (self, template_name):
-		raise 'Not implemented'
+		template_name_c = self.replace (template_name)
+		
+		installed = support.gconf_client.get_string("/apps/gnome-schedule/templates/at/installed")
+		newstring = installed
+		if installed != None:
+			first = gtk.TRUE
+			newstring = "   "
+			for t in string.split (installed, ", "):
+				if t != template_name_c:
+					if first == gtk.TRUE:
+						newstring = t
+						first = gtk.FALSE
+					else:
+						newstring = newstring + ", " + t
 
-	def savetemplate (self, template_name, record, nooutput, title, icon):
-		raise 'Not implemented'
+		support.gconf_client.unset("/apps/gnome-schedule/templates/at/%s/name" % (template_name_c))
+		support.gconf_client.unset("/apps/gnome-schedule/templates/at/%s/icon_uri" % (template_name_c))
+
+		support.gconf_client.unset("/apps/gnome-schedule/templates/at/%s/runat" % (template_name_c))
+		support.gconf_client.unset("/apps/gnome-schedule/templates/at/%s/title" % (template_name_c))
+		
+		if newstring == "   ":
+			support.gconf_client.unset ("/apps/gnome-schedule/templates/at/installed")
+		else:
+			support.gconf_client.set_string("/apps/gnome-schedule/templates/at/installed", newstring)
+	
+
+	def replace (self, template_name_c):
+		for a in " ,	;:/\\\"'!@#$%^&*()-_+=|?<>.][{}":
+			template_name_c = string.replace (template_name_c, a, "-")
+		return template_name_c
+
+	def savetemplate (self, template_name, runat, nooutput, title, icon):
+		template_name_c = self.replace (template_name)
+		
+		if nooutput:
+			space = " "
+			if command[len(command)-1] == " ":
+				space = ""
+			command = command + space + self.nooutputtag
+
+		support.gconf_client.set_string("/apps/gnome-schedule/templates/at/%s/name" % (template_name_c), template_name)
+		support.gconf_client.set_string("/apps/gnome-schedule/templates/at/%s/icon_uri" % (template_name_c), icon)
+		support.gconf_client.set_string("/apps/gnome-schedule/templates/at/%s/runat" % (template_name_c), runat)
+		support.gconf_client.set_string("/apps/gnome-schedule/templates/at/%s/title" % (template_name_c), title)
+		
+		installed = support.gconf_client.get_string("/apps/gnome-schedule/templates/at/installed")
+		if installed == None:
+			installed = template_name_c
+		else:
+			found = gtk.FALSE
+			for t in string.split (installed, ", "):
+				if t == template_name_c:
+					found = gtk.TRUE
+
+			if found == gtk.FALSE:
+				installed = installed + ", " + template_name_c
+
+		support.gconf_client.unset ("/apps/gnome-schedule/templates/at/installed")
+		support.gconf_client.set_string("/apps/gnome-schedule/templates/at/installed", installed)
+		return
 
 	def gettemplatenames (self):
-		raise 'Not implemented'
+		#try:
+			strlist = support.gconf_client.get_string("/apps/gnome-schedule/templates/at/installed")
+			if strlist != None:
+				list = string.split (strlist, ", ")
+				return list
+			else:
+				return None
+		#except:
+		#	return None
 
 	def gettemplate (self, template_name):
-		raise 'Not implemented'
+		try:
+			icon_uri = support.gconf_client.get_string("/apps/gnome-schedule/templates/at/%s/icon_uri" % (template_name))
+			
+			runat = support.gconf_client.get_string("/apps/gnome-schedule/templates/at/%s/runat" % (template_name))
+			title = support.gconf_client.get_string("/apps/gnome-schedule/templates/at/%s/title" % (template_name))
+			name = support.gconf_client.get_string("/apps/gnome-schedule/templates/at/%s/name" % (template_name))
+			return icon_uri,  runat, title, name
+		except Exception, ex:
+			return ex, ex, ex, ex, ex
+
+
+
 
 	# Pass this to lang.py
 	def translate_frequency (self, frequency):
@@ -175,10 +252,13 @@ class At:
 				if icon != None:
 					try:
 						icon_pix = gtk.gdk.pixbuf_new_from_file_at_size (icon, 21, 21)
+						
 					except:
 						icon_pix = None
 				else:
 					icon_pix = None
+
+
 
 				
 				preview = self.make_preview (lines, prelen)
@@ -187,7 +267,7 @@ class At:
 				lines = lines[prelen:]
 					
 				timestring = _("%s%s%s %s%s%s") % (_(""), date, _(""), _(""), time, _(""))
-				iter = self.ParentClass.treemodel.append([title, timestring, preview, lines, int(job_id), timestring, icon_pix, self, date, class_id, user, time, "Defined", "at"])
+				iter = self.ParentClass.treemodel.append([title, timestring, preview, lines, int(job_id), timestring, icon_pix, self, icon, date, class_id, user, time, "Defined", "at"])
 
 				print "Read at job: " + str(job_id)
 				count = count + 1

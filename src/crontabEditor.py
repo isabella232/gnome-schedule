@@ -279,8 +279,9 @@ class CrontabEditor:
 		self.reload_templates ()
 		self.chkNoOutput.set_active (gtk.FALSE)
 		
-	def on_template_combobox_entry_changed (self, *args):
+	def on_template_combobox_entry_changed (self, widget):
 		self.save_button.set_sensitive (gtk.TRUE)
+
 
 	def on_template_combobox_changed (self, *args):
 		if self.noevents == gtk.FALSE:

@@ -2160,7 +2160,7 @@
 		      <property name="spacing">0</property>
 
 		      <child>
-			<widget class="GtkImage" id="at_template_icon">
+			<widget class="GtkImage" id="at_template_image">
 			  <property name="width_request">60</property>
 			  <property name="height_request">60</property>
 			  <property name="visible">True</property>
@@ -2882,7 +2882,7 @@
 			  <property name="items" translatable="yes">tomorrow
 next week
 </property>
-			  <signal name="changed" handler="on_at_combobox_changed" last_modification_time="Fri, 25 Jun 2004 07:36:36 GMT"/>
+			  <signal name="key_release_event" handler="on_at_combobox_changed" last_modification_time="Sun, 11 Jul 2004 18:39:38 GMT"/>
 			</widget>
 			<packing>
 			  <property name="padding">0</property>

@@ -92,13 +92,13 @@ class main:
 		self.schedule = None
 
 		#inittializing the treeview
-		# [0 Title, 1 Frequency, 2 Command, 3 Crontab record, 4 ID, 5 Time, 6 Icon, 7 scheduled instance, 8 date, 9 class_id, 10 user, 11 time, 12 type, 13 crontab/at]
+		# [0 Title, 1 Frequency, 2 Command, 3 Crontab record, 4 ID, 5 Time, 6 Icon, 7 scheduled instance, 8 icon path, 9 date, 10 class_id, 11 user, 12 time, 13 type, 14 crontab/at]
 
-		#for at this would be like: ["None(not suported yet)", "12:50 2004-06-25", "", "35", "", "12:50", icon, at instance, "2004-06-25", "a", "drzap", "at"]
+		#for at this would be like: ["untitled", "12:50 2004-06-25", "", "35", "", "12:50", icon, at instance, icon_path, "2004-06-25", "a", "drzap", "at"]
 
-		#for crontab it would be: ["untitled", "every hour", "ls /", "0 * * * * ls / # untitled", "5", "0 * * * *", icon, crontab instance, "", "", "", "crontab"]
+		#for crontab it would be: ["untitled", "every hour", "ls /", "0 * * * * ls / # untitled", "5", "0 * * * *", icon, crontab instance,icon_path, "", "", "", "crontab"]
 
-		self.treemodel = gtk.ListStore(gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_INT, gobject.TYPE_STRING, gtk.gdk.Pixbuf, gobject.TYPE_PYOBJECT, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING)
+		self.treemodel = gtk.ListStore(gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_INT, gobject.TYPE_STRING, gtk.gdk.Pixbuf, gobject.TYPE_PYOBJECT, gobject.TYPE_STRING , gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING)
 
 		self.treeview.set_model (self.treemodel)
 		self.switchView("simple", 1)
@@ -191,7 +191,6 @@ class main:
 
 	def on_treeview_key_pressed (self, widget, event):
 		key = gtk.gdk.keyval_name(event.keyval)
-		print key
 		if key == "Delete" or key == "KP_Delete":
 			self.on_delete_menu_activate()
 		return
@@ -239,7 +238,7 @@ class main:
 			self.treeview.append_column(col)
 			
 			
-			col = gtk.TreeViewColumn(_("Type"), gtk.CellRendererText(), text=12)
+			col = gtk.TreeViewColumn(_("Type"), gtk.CellRendererText(), text=13)
 			col.set_sizing (gtk.TREE_VIEW_COLUMN_AUTOSIZE)
 			col.set_resizable (gtk.TRUE)
 			self.treeview.append_column(col)
@@ -288,7 +287,7 @@ class main:
 			#col.set_sizing (gtk.TREE_VIEW_COLUMN_AUTOSIZE)
 			self.treeview.append_column(col)
 
-			col = gtk.TreeViewColumn(_("Type"), gtk.CellRendererText(), text=13)
+			col = gtk.TreeViewColumn(_("Type"), gtk.CellRendererText(), text=14)
 			col.set_resizable (gtk.TRUE)
 			#col.set_sizing (gtk.TREE_VIEW_COLUMN_AUTOSIZE)
 			self.treeview.append_column(col)
@@ -352,7 +351,7 @@ class main:
 		return
 
 	def delete_row (self, model, path, iter, record_type):
-		current_record_type = self.treemodel.get_value(iter, 13)
+		current_record_type = self.treemodel.get_value(iter, 14)
 		if current_record_type == record_type or record_type == "all":
 			self.delarray.append(iter)
 			
@@ -388,15 +387,13 @@ class main:
 		support.gconf_client.set_bool ("/apps/gnome-schedule/advanced", widget.get_active())
 
 	def on_about_menu_activate (self, *args):
-		dlg = gnome.ui.About(_("System Schedule"),
+		dlg = gnome.ui.About(_("Gnome Schedule"),
 			config.getVersion(),
 			_("Copyright (c) 2004-2005 Gaute Hope."),
 			_("This software is distributed under the GPL. "),
 			["Philip Van Hoof <me at freax dot org>",
 			"Gaute Hope <eg at gaute dot eu dot org>"], 
-			[_("documented_by")],
-			_("translator_credits"),
-			iconPixbuf)
+			[_("Some painfully bad documentation put\ntoghether from the far corners of Gaute Hope's mind.")],_("translator_credits"),iconPixbuf)
 
 		dlg.set_transient_for(self.widget)
 		dlg.set_position (gtk.WIN_POS_CENTER_ON_PARENT)
