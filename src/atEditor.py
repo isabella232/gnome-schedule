@@ -39,19 +39,13 @@ class AtEditor:
 	def __init__(self, parent, schedule):
 		self.ParentClass = parent
 		self.schedule = schedule
-		
 		self.xml = self.ParentClass.xml
 		self.widget = self.xml.get_widget("atEditor")
 		self.widget.connect("delete-event", self.on_cancel_button_clicked)
-
 		self.fieldRegex = re.compile('^(\*)$|^([0-9]+)$|^\*\\\([0-9]+)$|^([0-9]+)-([0-9]+)$|(([0-9]+[|,])+)')
-
-		#self.editorhelperwidget = self.ParentClass.editorhelperwidget
 		self.nooutputRegex = re.compile('([^#\n$]*)>(\s|)/dev/null\s2>&1')
-		
 		self.editing = gtk.FALSE
-		
-		
+
 		self.template_combobox = self.xml.get_widget ("at_template_combobox")
 		self.save_button = self.xml.get_widget ("at_save_button")
 		self.delete_button = self.xml.get_widget ("at_delete_button")
@@ -64,13 +58,82 @@ class AtEditor:
 		self.image_button = self.xml.get_widget ("at_image_button")
 		self.template_icon = self.xml.get_widget ("at_template_icon")
 		self.control_option = self.xml.get_widget ("at_control_option")
-		self.wording = self.xml.get_widget ("at_wording_option")
+		self.wording_option = self.xml.get_widget ("at_wording_option")
 		self.calendar = self.xml.get_widget ("at_calendar")
 		self.hour_spinbutton = self.xml.get_widget ("at_hour_spinbutton")
 		self.minute_spinbutton= self.xml.get_widget ("at_minute_spinbutton")
 		self.combobox = self.xml.get_widget ("at_combobox")
-		
-	def on_remove_button_clicked (self, *args):
+
+		self.xml.signal_connect("on_at_help_button_clicked", self.on_help_button_clicked)
+		self.xml.signal_connect("on_at_cancel_button_clicked", self.on_cancel_button_clicked)
+		self.xml.signal_connect("on_at_ok_button_clicked", self.on_ok_button_clicked)
+		self.xml.signal_connect("on_worded_label_event", self.on_worded_label_event)
+		self.xml.signal_connect("on_defined_label_event", self.on_defined_label_event)
+		self.xml.signal_connect("on_at_script_textview_popup_menu", self.on_script_textview_popup_menu)
+		self.xml.signal_connect("on_at_template_combobox_changed", self.on_template_combobox_changed)
+		self.xml.signal_connect("on_at_title_entry_changed", self.on_title_entry_changed)
+		self.xml.signal_connect("on_at_nooutput_checkbutton_toggled", self.on_nooutput_checkbutton_toggled)
+		self.xml.signal_connect("on_at_save_button_clicked", self.on_save_button_clicked)
+		self.xml.signal_connect("on_at_delete_button_clicked", self.on_delete_button_clicked)
+		self.xml.signal_connect("on_at_image_button_clicked", self.on_image_button_clicked)
+		self.xml.signal_connect("on_at_calendar_day_selected", self.on_calendar_day_selected)
+		self.xml.signal_connect("on_at_calendar_month_changed", self.on_calendar_month_changed)
+		self.xml.signal_connect("on_at_hour_spinbutton_changed", self.on_hour_spinbutton_changed)
+		self.xml.signal_connect("on_at_minute_spinbutton_changed", self.on_minute_spinbutton_changed)
+		self.xml.signal_connect("on_at_combobox_changed", self.on_combobox_changed)
+		self.xml.signal_connect("on_at_control_option_toggled", self.on_control_option_toggled)
+		self.xml.signal_connect("on_at_wording_option_toggled", self.on_wording_option_toggled)
+
+	def on_worded_label_event (self, *args):
+		# highlight on mouseover
+		# enable wording_option on click
+		pass
+
+	def on_defined_label_event (self, *args):
+		# highlight on mouseover
+		# enable control_option on click
+		pass
+
+	def on_script_textview_popup_menu (self, *args):
+		# show at_script_menu
+		# don't forget to attach eventhandling to this popup
+		pass
+
+	def on_title_entry_changed (self, *args):
+		pass
+
+	def on_nooutput_checkbutton_toggled (self, *args):
+		# I don't know if this is needed at all
+		pass
+
+	def on_calendar_day_selected (self, *args):
+		pass
+
+	def on_calendar_month_changed (self, *args):
+		pass
+
+	def on_hour_spinbutton_changed (self, *args):
+		pass
+
+	def on_minute_spinbutton_changed (self, *args):
+		pass
+
+	def on_combobox_changed (self, *args):
+		# In this combobox for example "tomorrow" should be checked
+		# for being possible or not
+		pass
+
+	def on_control_option_toggled (self, *args):
+		# Disable combobox
+		# enable the calendar en spinbuttons
+		pass
+
+	def on_wording_option_toggled (self, *args):
+		# Disable the calendar
+		# enable the combobox
+		pass
+
+	def on_delete_button_clicked (self, *args):
 		iter = self.template_combobox.get_active_iter ()
 		template = self.template_combobox_model.get_value(iter, 2)
 		icon_uri, command, frequency, title, name = template
@@ -158,20 +221,6 @@ class AtEditor:
 			self.template_image.set_from_file("/usr/share/icons/gnome/48x48/mimetypes/gnome-mime-application.png")
 			self.icon = "/usr/share/icons/gnome/48x48/mimetypes/gnome-mime-application.png"
 
-	def reset (self):
-		self.runat = "tomorrow"
-		self.commands = ""
-		self.title = ""
-		self.date = ""
-		self.time = ""
-		self.update_textboxes()
-		return
-
-	def update_textboxes (self):
-		# TODO
-		return		
-
-			
 	def showedit (self, record, job_id, iter, mode):
 		self.reload_templates ()
 		self.editing = gtk.TRUE
@@ -184,20 +233,8 @@ class AtEditor:
 		self.parentiter = iter
 		self.widget.show ()
 		self.update_textboxes ()
-		
-		#switch to advanced tab if required
-		if mode == "advanced":
-			self.notebook.set_current_page(1)
-		else:
-			self.notebook.set_current_page(0)
 
 
-
-	def check_field_format (self, field, type):
-		try:
-			self.schedule.checkfield (field, type, self.fieldRegex)
-		except Exception, ex:
-			raise ex
 
 	def showadd (self, mode):
 		self.reset ()
@@ -264,7 +301,7 @@ class AtEditor:
 		
 
 
-	def on_add_help_button_clicked (self, *args):
+	def on_help_button_clicked (self, *args):
 		help_page = "file://" + config.getDocdir() + "/addingandediting.html"
 		path = config.getGnomehelpbin ()
 		pid = os.fork()
@@ -274,7 +311,7 @@ class AtEditor:
 	def on_cancel_button_clicked (self, *args):
 		self.widget.hide()
 		return gtk.TRUE
-	
+
 	def on_ok_button_clicked (self, *args):
 		# TODO: Validate record
 		# TODO: Fill recorc
