@@ -4,14 +4,14 @@
 # Elros Cyriatan <cyriatan@fastmail.fm>, 2004.
 # 
 # 
-#: src/at.py:300 src/lang.py:118 src/lang.py:120 src/lang.py:212
+#: src/at.py:303 src/lang.py:118 src/lang.py:120 src/lang.py:212
 #: src/lang.py:214
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-08-17 11:48+0200\n"
-"PO-Revision-Date: 2004-08-17 12:32+0200\n"
+"POT-Creation-Date: 2004-09-07 19:50+0200\n"
+"PO-Revision-Date: 2004-09-07 20:52+0200\n"
 "Last-Translator: Elros Cyriatan <cyriatan@fastmail.fm>\n"
 "Language-Team: Dutch <vertaling@nl.linux.org>\n"
 "MIME-Version: 1.0\n"
@@ -26,7 +26,7 @@ msgstr "Uw systeemtaken beheren"
 msgid "Schedule"
 msgstr "Taakplanning"
 
-#: src/at.py:300
+#: src/at.py:303
 #, python-format
 msgid "%s%s%s %s%s%s"
 msgstr "%s%s%s %s%s%s"
@@ -130,7 +130,7 @@ msgstr "Gebeurt elke "
 
 #: src/crontabEditorHelper.py:103 src/crontabEditorHelper.py:211
 msgid "s"
-msgstr ""
+msgstr "s"
 
 #: src/crontabEditorHelper.py:106
 msgid "Happens from "
@@ -148,11 +148,11 @@ msgstr "Dit is ongeldig. Reden: %s"
 
 #: src/crontabEditorHelper.py:202 src/crontabEditorHelper.py:213
 msgid "st. "
-msgstr ""
+msgstr "e "
 
 #: src/crontabEditorHelper.py:204
 msgid "th. "
-msgstr ""
+msgstr "e "
 
 #: src/gnome-schedule.glade.h:1
 msgid " "
@@ -236,7 +236,8 @@ msgstr "Een geplande taak die wordt uitgevoerd met een frequentie "
 
 #: src/gnome-schedule.glade.h:21
 msgid "A scheduled task that will start at a defined time in the future"
-msgstr "Een geplande taak die op een bepaald moment in de toekomst wordt uitgevoerd"
+msgstr ""
+"Een geplande taak die op een bepaald moment in de toekomst wordt uitgevoerd"
 
 #: src/gnome-schedule.glade.h:22
 msgid "A_dvanced"
@@ -294,7 +295,8 @@ msgstr "Elke"
 msgid ""
 "For example 1,2,3,4 means happens the first, second, third and fourth minute"
 msgstr ""
-"Bijvoorbeeld: 1,2,3,4 betekent dat het de eerste, tweede, derde en vierde minuut gebeurt"
+"Bijvoorbeeld: 1,2,3,4 betekent dat het de eerste, tweede, derde en vierde "
+"minuut gebeurt"
 
 #: src/gnome-schedule.glade.h:36
 msgid "For example at 04:10 tomorrow, next week or in three days."
@@ -313,21 +315,24 @@ msgid ""
 "Happens at a defined occurrence. For example, happens at the second minute, "
 "hour, day, weekday or month"
 msgstr ""
-"Gebeurt met op een bepaald moment. Bijvoorbeeld op de tweede minuut, het tweede uur, de tweede dag, weekdag of maand"
+"Gebeurt met op een bepaald moment. Bijvoorbeeld op de tweede minuut, het "
+"tweede uur, de tweede dag, weekdag of maand"
 
 #: src/gnome-schedule.glade.h:41
 msgid ""
 "Happens at all occurrence. For example, happens every minute, hour, day, "
 "weekday or month"
 msgstr ""
-"Gebeurt periodiek op een vast moment. Bijvoorbeeld elke minuut, elk uur, elke dag, weekdag of maand"
+"Gebeurt periodiek op een vast moment. Bijvoorbeeld elke minuut, elk uur, "
+"elke dag, weekdag of maand"
 
 #: src/gnome-schedule.glade.h:42
 msgid ""
 "Happens at every x occurrence. For example every two minutes, hours, days, "
 "weekdays or months"
 msgstr ""
-"Gebeurt met een bepaalde regelmaat. Bijvoorbeeld om de minuut, om het uur, om de dag, weekdag of maand"
+"Gebeurt met een bepaalde regelmaat. Bijvoorbeeld om de minuut, om het uur, "
+"om de dag, weekdag of maand"
 
 #: src/gnome-schedule.glade.h:43
 msgid "Happens at the"
@@ -362,7 +367,8 @@ msgid ""
 "Quit the application. This will not stop the system scheduling. It will, "
 "however, quit this system schedule maintenance tool."
 msgstr ""
-"De toepassing afsluiten. Dit stopt alleen het programma, en niet de uitvoering van geplande taken door het systeem."
+"De toepassing afsluiten. Dit stopt alleen het programma, en niet de "
+"uitvoering van geplande taken door het systeem."
 
 #: src/gnome-schedule.glade.h:51
 msgid "Run"
@@ -458,7 +464,9 @@ msgid ""
 "crontab do have output and this option is not checked, the output will by "
 "default be send to the UNIX mailbox of the user"
 msgstr ""
-"Als aan gezet, wordt geen uitvoer gegenereerd. Als geplande taken in de crontab uitvoer hebben, en deze optie niet aan staat, wordt uitvoer standaard gestuurd naar het UNIX-postvak van de gebruiker"
+"Als aan gezet, wordt geen uitvoer gegenereerd. Als geplande taken in de "
+"crontab uitvoer hebben, en deze optie niet aan staat, wordt uitvoer "
+"standaard gestuurd naar het UNIX-postvak van de gebruiker"
 
 #: src/gnome-schedule.glade.h:74
 msgid "Will delete the selected preset"
@@ -469,7 +477,8 @@ msgid ""
 "Will save the current information as a preset. You can type the name of the "
 "preset in the combobox."
 msgstr ""
-"Dat zal de huidige informatie als voorinstelling opslaan. U kunt de naam van de voorinstelling in het combinatievak opgeven."
+"Dat zal de huidige informatie als voorinstelling opslaan. U kunt de naam van "
+"de voorinstelling in het combinatievak opgeven."
 
 #: src/gnome-schedule.glade.h:76
 msgid "[Add|Edit] scheduled task"
@@ -511,7 +520,7 @@ msgstr ""
 msgid ""
 "To the translator: Read src/lang.py !!! (yeah it's for you, not for the "
 "user. YES FOR YOU, the translator. YES:) really!"
-msgstr ""
+msgstr " "
 
 #: src/lang.py:92
 msgid "zeroth"
@@ -659,7 +668,7 @@ msgstr "-"
 #: src/lang.py:123
 #, python-format
 msgid "%sth."
-msgstr ""
+msgstr "%se"
 
 #: src/lang.py:212
 #, python-format
