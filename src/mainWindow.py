@@ -91,7 +91,7 @@ class main:
 		self.schedule = None
 
 		#inittializing the treeview
-		# [0 Title, 1 Frequency, 2 Command, 3 Crontab record, 4 ID, 5 Time, 6 Icon, 7 scheduled instance, 8 date, 9 class_id, 10 user, 11 type, 12 crontab/at]
+		# [0 Title, 1 Frequency, 2 Command, 3 Crontab record, 4 ID, 5 Time, 6 Icon, 7 scheduled instance, 8 date, 9 class_id, 10 user, 11 time, 12 type, 13 crontab/at]
 
 		#for at this would be like: ["None(not suported yet)", "12:50 2004-06-25", "", "35", "", "12:50", icon, at instance, "2004-06-25", "a", "drzap", "at"]
 
