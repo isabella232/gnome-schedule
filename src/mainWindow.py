@@ -387,6 +387,13 @@ class main:
 		support.gconf_client.set_bool ("/apps/gnome-schedule/advanced", widget.get_active())
 
 	def on_about_menu_activate (self, *args):
+		if os.access("../pixmaps/gnome-schedule.png", os.F_OK):
+			icon_path = "../pixmaps/gnome-schedule.png"
+		else:
+			icon_path = config.getImagedir() + "/gnome-schedule.png"
+
+		iconPixbuf = gtk.gdk.pixbuf_new_from_file (icon_path)
+
 		dlg = gnome.ui.About(_("Gnome Schedule"),
 			config.getVersion(),
 			_("Copyright (c) 2004-2005 Gaute Hope."),
