@@ -258,6 +258,13 @@ class main:
 		except:
 			pass
 
+		#moving to first
+		iter =  self.treemodel.get_iter_first()
+		if iter:
+			selection = self.treeview.get_selection()
+			selection.select_iter(iter)
+	
+		return
 
 	def on_quit_menu_activate (self, *args):
 		pass
