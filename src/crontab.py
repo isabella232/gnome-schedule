@@ -262,7 +262,7 @@ class Crontab:
 
 	def update (self, linenumber, record, parentiter, nooutput, title):
 		# The GUI
-		minute, hour, day, month, weekday, command, title = self.parse (record)
+		minute, hour, day, month, weekday, command, tit = self.parse (record)
 		
 		self.ParentClass.treemodel.set_value (parentiter, 0, title)
 		easystring = self.easy (minute, hour, day, month, weekday)
