@@ -424,19 +424,36 @@ class main:
 			record = self.treemodel.get_value(iter, 3)
 			linenumber = self.treemodel.get_value(iter, 4)
 
-			firstiter = self.treemodel.get_iter_first()
-			self.schedule.delete (linenumber, iter)
-			nextiter = self.treemodel.iter_next(iter)
+			path = self.treemodel.get_path(iter)
+			pathint = path[0]
+			backpath = (pathint - 1,)
 
 			
-			if nextiter == "None":
-			#go first
+					
+						
+			self.schedule.delete (linenumber, iter)
+			firstiter = self.treemodel.get_iter_first()
+			try:
+				nextiter = self.treemodel.get_iter(path)
+				#go next
 				selection = self.treeview.get_selection()
-				selection.select_iter(firstiter)
-			else:
-			#go next
-				selection = self.treeview.get_selection()
-				selection.select_iter(firstiter)
+				selection.select_iter(nextiter)
+
+			except:
+				if backpath[0] > 0:
+					nextiter = self.treemodel.get_iter(backpath)
+					#go back
+					selection = self.treeview.get_selection()
+					selection.select_iter(nextiter)
+
+
+				else:
+					if firstiter:
+						#go first
+						selection = self.treeview.get_selection()
+						selection.select_iter(firstiter)
+
+
 			
 				
 

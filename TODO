@@ -13,7 +13,6 @@ Development:
   * release minors  twice a week
   * release majors once a month
 
-  * The selecting of a new row after a deletion should be changed to paths since the iters are hard to calculate after a delete
   * Translateable at easy string
 
  
