@@ -32,7 +32,10 @@ freax: Both in the atEditor and crontabEditor
     One editor to rule them all!
   * Support for mail direction in both cron and at
   * Support for classes in at(nice, priority)
-
+  * Somehow detect the removal of a record (both at and crontab)
+    o. For example detect when an at-record will expire
+    o. Check for crontab records every minute?
+    o. Use fam to detect changes in the config-files of crontab and at?
 
  Unassigned would make it to the release but are non-blocking it
   * Documentation
