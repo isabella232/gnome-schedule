@@ -1,3 +1,11 @@
+# For the nice person who is going to fix this spec file:
+
+# This used to be the Makefile for Fedora Core 2
+# It DOES contain scripts that are required to get the console and pam stuff
+# working. DO take a look at it! Really!
+
+# http://cvs.gnome.org/viewcvs/gnome-schedule/Attic/Makefile?rev=1.6&view=auto
+
 Summary: Crontab server and at configuration tool
 Name: gnome-schedule
 Version: 0.0.1
