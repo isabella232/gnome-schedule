@@ -1,10 +1,14 @@
+2005-01-04  Martin Willemoes Hansen  <mwh@sysrq.dk>
+
+	* configure.ac: Added Danish (da) to ALL_LINGUAS.
+
 2005-01-03  Kostas Papadimas <pkst@gmx.net>
 
-	*configure.ac: added Greek (el) to ALL_LINGUAS
+	* configure.ac: added Greek (el) to ALL_LINGUAS
 
-2004-12-07	Amanpreet Singh Alam <amanpreetalam@yahoo.com>
+2004-12-07  Amanpreet Singh Alam <amanpreetalam@yahoo.com>
 
-	*configure.ac: pa is added to ALL_LINGUAS
+	* configure.ac: pa is added to ALL_LINGUAS
 
 2004-12-01  Kristof Vansant <de_lupus@pandora.be>
 	
