@@ -104,7 +104,7 @@ class At:
 			support.gconf_client.unset ("/apps/gnome-schedule/templates/at/installed")
 		else:
 			support.gconf_client.set_string("/apps/gnome-schedule/templates/at/installed", newstring)
-	
+	[0-9]
 
 	def replace (self, template_name_c):
 		for a in " ,	;:/\\\"'!@#$%^&*()-_+=|?<>.][{}":
@@ -175,9 +175,44 @@ class At:
 
 
 
-	def checkfield (self, field, type, regex):
-		
-		return
+	def checkfield (self, runat):
+		regexp = re.compile("([0-9][0-9]):([0-9][0-9])\ ([0-9][0-9][0-9][0-9])-([0-9][0-9])-([0-9][0-9])")
+		runat_g = regexp.match(runat)
+		ctime = time.gmtime()
+		cyear = ctime[0]
+		cmonth = ctime[1]
+		cday = ctime[2]
+		chour = ctime[3]
+		cminute = ctime[4]
+
+	
+		if runat_g:
+			(hour, minute, year, month, day) =  runat_g.groups()
+			hour = int(hour)
+			minute = int(minute)
+			year = int(year)
+			month = int(month)
+			day = int(day)
+
+			if hour > 24 or hour < 0:
+				return gtk.FALSE, "hour"
+	
+			if minute > 60 or minute < 0:
+				return gtk.FALSE, "minute"
+
+			if year < cyear:
+				return gtk.FALSE, "year"
+			if month < cmonth:
+				return gtk.FALSE, "month"
+			if day < cday:
+				return gtk.FALSE, "day"
+		else:
+			if runat == "tomorrow":
+				pass
+			else:
+				return gtk.FALSE, "other"
+
+		return gtk.TRUE, "ok"
 
 
 	def update (self, job_id, runat, command, title, icon):

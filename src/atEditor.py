@@ -447,6 +447,11 @@ class AtEditor:
 
 	def on_ok_button_clicked (self, *args):
 		# TODO: Validate record
+		(validate, reason) = self.schedule.checkfield(self.runat)
+		if validate == gtk.FALSE:
+			print "Schedule time validation failed because of: " + reason
+			#make this a popupdialog
+			return
 		# TODO: Fill record
 		
 		if self.editing != gtk.FALSE:
