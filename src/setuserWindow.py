@@ -63,10 +63,10 @@ class SetuserWindow:
 
 			# clean treeview, reread crontab
 			self.ParentClass.user = user
-			self.ParentClass.treemodel.clear()
-			self.ParentClass.schedule.read()
+			self.ParentClass.schedule_reload ()
 			self.widget.hide()
-		except:
+		except Exception, ex:
+			print ex
 			self.dialog = gtk.MessageDialog(self.widget, gtk.DIALOG_MODAL|gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_ERROR, gtk.BUTTONS_OK, "No such user")
 			self.dialog.run ()
 			self.dialog.destroy ()

@@ -94,6 +94,7 @@ class main:
 		self.treeview.get_selection().connect("changed", self.onTreeViewSelectRow)
 		self.treeview.get_selection().unselect_all()
 		
+		# TODO for at
 		self.crontab = crontab.Crontab(self)
 		# self.at = at.At(self)
 		self.crontab_editor = self.crontab.geteditor ()
@@ -232,6 +233,11 @@ class main:
 
 		return
 
+	def schedule_reload (self):
+		self.treemodel.clear()
+		self.crontab.read ()
+		# TODO for at
+		# self.at.read ()
 
 	def on_add_button_clicked (self, *args):
 		self.on_add_scheduled_task_menu_activate (self, args)

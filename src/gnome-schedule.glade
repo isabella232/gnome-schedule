@@ -251,22 +251,6 @@
 	      </child>
 
 	      <child>
-		<widget class="GtkToolButton" id="btnExit">
-		  <property name="visible">True</property>
-		  <property name="tooltip" translatable="yes">Quit the application. This will not stop the system scheduling. It will, however, quit this system schedule maintenance tool.</property>
-		  <property name="stock_id">gtk-quit</property>
-		  <property name="visible_horizontal">True</property>
-		  <property name="visible_vertical">True</property>
-		  <property name="is_important">True</property>
-		  <signal name="clicked" handler="on_btnExit_clicked" last_modification_time="Mon, 07 Jun 2004 23:11:05 GMT"/>
-		</widget>
-		<packing>
-		  <property name="expand">False</property>
-		  <property name="homogeneous">True</property>
-		</packing>
-	      </child>
-
-	      <child>
 		<widget class="GtkToolButton" id="btnSetUser">
 		  <property name="visible">True</property>
 		  <property name="tooltip" translatable="yes">Select a different user</property>
@@ -277,6 +261,26 @@
 		  <property name="visible_vertical">True</property>
 		  <property name="is_important">False</property>
 		  <signal name="clicked" handler="on_btnSetUser_clicked" last_modification_time="Wed, 09 Jun 2004 15:09:39 GMT"/>
+		</widget>
+		<packing>
+		  <property name="expand">False</property>
+		  <property name="homogeneous">True</property>
+		</packing>
+	      </child>
+
+	      <child>
+		<placeholder/>
+	      </child>
+
+	      <child>
+		<widget class="GtkToolButton" id="btnExit">
+		  <property name="visible">True</property>
+		  <property name="tooltip" translatable="yes">Quit the application. This will not stop the system scheduling. It will, however, quit this system schedule maintenance tool.</property>
+		  <property name="stock_id">gtk-quit</property>
+		  <property name="visible_horizontal">True</property>
+		  <property name="visible_vertical">True</property>
+		  <property name="is_important">True</property>
+		  <signal name="clicked" handler="on_btnExit_clicked" last_modification_time="Mon, 07 Jun 2004 23:11:05 GMT"/>
 		</widget>
 		<packing>
 		  <property name="expand">False</property>
