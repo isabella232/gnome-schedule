@@ -5,8 +5,8 @@
 2004-06-22  Philip Van Hoof <me_NOSPAM@freax.org>
 
 	* Template support (temporary gconf backend)
-	* Icon support: together with the title stored as metadata at the crontab
-	itself (* * * * * command[ # Title, icon_uri]])
+	* Icon support: together with the title stored as metadata 
+	at the crontab itself (* * * * * command[ # Title, icon_uri]])
 	* PyGTK >= 2.3 is now required (dependency)
 	* Less quirks for translators
 
