@@ -89,13 +89,13 @@ class main:
 		self.schedule = None
 
 		#inittializing the treeview
-		# [0 Title, 1 Frequency, 2 Command, 3 Crontab record, 4 Line number, 5 Time, 6 Icon, 7 scheduled instance, 8 date, 9 job_id, 10 class_id, 11 user, 12 type]
+		# [0 Title, 1 Frequency, 2 Command, 3 Crontab record, 4 ID, 5 Time, 6 Icon, 7 scheduled instance, 8 date, 9 class_id, 10 user, 11 type]
 
-		#for at this would be like: ["None(not suported yet)", "12:50 2004-06-25", "", "", "", "12:50", icon, at instance, "2004-06-25", "35", "a", "drzap", "at"]
+		#for at this would be like: ["None(not suported yet)", "12:50 2004-06-25", "", "35", "", "12:50", icon, at instance, "2004-06-25", "a", "drzap", "at"]
 
-		#for crontab it would be: ["untitled", "every hour", "ls /", "0 * * * * ls / # untitled", "5", "0 * * * *", icon, crontab instance, "", "", "", "", "crontab"]
+		#for crontab it would be: ["untitled", "every hour", "ls /", "0 * * * * ls / # untitled", "5", "0 * * * *", icon, crontab instance, "", "", "", "crontab"]
 
-		self.treemodel = gtk.ListStore(gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_INT, gobject.TYPE_STRING, gobject.TYPE_PYOBJECT, gobject.TYPE_PYOBJECT, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING)
+		self.treemodel = gtk.ListStore(gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_INT, gobject.TYPE_STRING, gobject.TYPE_PYOBJECT, gobject.TYPE_PYOBJECT, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING)
 
 		self.treeview.set_model (self.treemodel)
 		self.switchView("simple", 1)
@@ -222,7 +222,7 @@ class main:
 			col = gtk.TreeViewColumn(_("Frequency or time"), gtk.CellRendererText(), text=1)
 			self.treeview.append_column(col)
 
-			col = gtk.TreeViewColumn(_("Type"), gtk.CellRendererText(), text=12)
+			col = gtk.TreeViewColumn(_("Type"), gtk.CellRendererText(), text=11)
 			self.treeview.append_column(col)
 
 			col = gtk.TreeViewColumn(_("Preview"), gtk.CellRendererText(), text=2)
@@ -236,13 +236,14 @@ class main:
 			# col = gtk.TreeViewColumn(_("Icon"), gtk.CellRendererText(), text=6)
 			# self.ParentClass.treeview.append_column(col)
 			col = gtk.TreeViewColumn(_("Frequency or time"), gtk.CellRendererText(), text=5)
-
-			col = gtk.TreeViewColumn(_("Type"), gtk.CellRendererText(), text=12)
+			self.treeview.append_column(col)
+			col = gtk.TreeViewColumn(_("Type"), gtk.CellRendererText(), text=11)
 			self.treeview.append_column(col)
 
-			self.treeview.append_column(col)
+			
 			col = gtk.TreeViewColumn(_("Preview"), gtk.CellRendererText(), text=2)
 			self.treeview.append_column(col)
+
 			col = gtk.TreeViewColumn(_("Title"), gtk.CellRendererText(), text=0)
 			col.set_spacing(235)
 			self.treeview.append_column(col)
@@ -345,18 +346,18 @@ class main:
 		
 		
 		if iter != None:
-			#if mode == "crontab":
-				record = self.treemodel.get_value(iter, 3)
-				linenumber = self.treemodel.get_value(iter, 4)
-				self.schedule.delete (linenumber)
-				self.treemodel.clear ()		
-				
+			record = self.treemodel.get_value(iter, 3)
+			linenumber = self.treemodel.get_value(iter, 4)
+			print linenumber
+			self.schedule.delete (linenumber)
+			self.treemodel.clear ()		
+			
 
-				#moving to first
-				iter =  self.treemodel.get_iter_first()
-				if iter:
-					selection = self.treeview.get_selection()
-					selection.select_iter(iter)
+			#moving to first
+			iter =  self.treemodel.get_iter_first()
+			if iter:
+				selection = self.treeview.get_selection()
+				selection.select_iter(iter)
 		self.schedule_reload()
 		return
 
