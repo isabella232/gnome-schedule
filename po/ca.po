@@ -1,0 +1,947 @@
+# Traducció al català del gnome-schedule
+# Copyright (C) 2004 Free Software Foundation
+# This file is distributed under the same license as the gnome-schedule package.
+# Xavier Conde Rueda <xaviconde@eresmas.com>, 2004
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-schedule\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-09-15 10:21+0200\n"
+"PO-Revision-Date: 2004-08-04 19:42+0200\n"
+"Last-Translator: Xavier Conde Rueda <xaviconde@eresmas.com>\n"
+"Language-Team: Catalan <tradgnome@softcatala.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: desktop/gnome-schedule.desktop.in.h:1
+msgid "Manage your system tasks"
+msgstr "Gestioneu les tasques del vostre sistema"
+
+# Mozilla 1.3->schedule.label
+#: desktop/gnome-schedule.desktop.in.h:2
+msgid "Schedule"
+msgstr "Planificació"
+
+#: src/at.py:303
+#, python-format
+msgid "%s%s%s %s%s%s"
+msgstr "%s%s%s %s%s%s"
+
+#: src/crontab.py:78 src/crontab.py:98 src/crontab.py:125
+msgid "must be between 0 and 59"
+msgstr "ha d'estar entre 0 i 59"
+
+#: src/crontab.py:81 src/crontab.py:101
+msgid "must be between 0 and 23"
+msgstr "ha d'estar entre 0 i 23"
+
+#: src/crontab.py:84 src/crontab.py:104 src/crontab.py:131
+msgid "must be between 1 and 31"
+msgstr "ha d'estar entre 1 i 31"
+
+#: src/crontab.py:87 src/crontab.py:107 src/crontab.py:134
+msgid "must be between 1 and 12"
+msgstr "ha d'estar entre 1 i 12"
+
+#: src/crontab.py:90 src/crontab.py:110 src/crontab.py:137
+msgid "must be between 0 and 7"
+msgstr "ha d'estar entre 0 i 7"
+
+#: src/crontab.py:121
+#, python-format
+msgid "%s is not a number"
+msgstr "%s no és un nombre"
+
+# Winrar 2.9->String:rarlng.dll
+#: src/crontab.py:139
+msgid "Unknown"
+msgstr "Desconegut"
+
+# Mozilla 1.3->StatusInvalid
+#: src/crontab.py:139
+msgid "Invalid"
+msgstr "No és vàlid"
+
+# Netscape_4.7->String:MNRC32.DLL
+#: src/crontab.py:157 src/crontab.py:213 src/crontab.py:297
+#: src/crontabEditor.py:180 src/atEditor.py:115
+msgid "Untitled"
+msgstr "Sense títol"
+
+# source\ui\src\scfuncs.src string RID_SC_FUNCTION_DESCRIPTIONS1.SC_OPCODE_GET_TIME 4
+# Projecte_Open_Office_1.1 [sc.po]
+#: src/crontab.py:254 src/crontabEditor.py:83 src/gnome-schedule.glade.h:83
+msgid "minute"
+msgstr "minut"
+
+# source\ui\src\scfuncs.src string RID_SC_FUNCTION_DESCRIPTIONS1.SC_OPCODE_GET_TIME 2
+# Projecte_Open_Office_1.1 [sc.po]
+#: src/crontab.py:256 src/crontabEditor.py:84 src/gnome-schedule.glade.h:82
+msgid "hour"
+msgstr "hora"
+
+# source\ui\src\scfuncs.src string RID_SC_FUNCTION_DESCRIPTIONS1.SC_OPCODE_GET_DATE 6
+# Projecte_Open_Office_1.1 [sc.po]
+#: src/crontab.py:258 src/crontabEditor.py:85 src/gnome-schedule.glade.h:81
+msgid "day"
+msgstr "dia"
+
+# source\ui\src\scfuncs.src string RID_SC_FUNCTION_DESCRIPTIONS1.SC_OPCODE_GET_DATE 4
+# Projecte_Open_Office_1.1 [sc.po]
+#: src/crontab.py:260 src/crontabEditor.py:86 src/gnome-schedule.glade.h:84
+msgid "month"
+msgstr "mes"
+
+#: src/crontab.py:262 src/gnome-schedule.glade.h:89
+msgid "weekday"
+msgstr "dia de la setmana"
+
+#: src/crontabEditor.py:82
+msgid "use advanced"
+msgstr "usa l'avançat"
+
+#: src/crontabEditor.py:87
+msgid "week"
+msgstr "setmana"
+
+#: src/crontabEditor.py:133 src/atEditor.py:117
+msgid "Create a new scheduled task"
+msgstr "Crea una nova tasca planificada"
+
+#: src/crontabEditor.py:145 src/atEditor.py:145
+msgid "Edit a scheduled task"
+msgstr "Edita una tasca planificada"
+
+#: src/crontabEditor.py:198 src/atEditor.py:299
+msgid "Don't use a preset"
+msgstr "No utilitzis cap predeterminat"
+
+#: src/crontabEditor.py:260
+#, python-format
+msgid ""
+"This is an invalid record! The problem could be at the %s field. Reason: %s"
+msgstr "Aquest registre és invàlid. El problema pot estar al camp %s. Raó: %s"
+
+#: src/crontabEditor.py:294 src/atEditor.py:372
+msgid "Pick an icon for this scheduled task"
+msgstr "Escolliu una icona per a la tasca planificada"
+
+#: src/crontabEditor.py:352
+msgid "command"
+msgstr "ordre"
+
+#: src/crontabEditorHelper.py:103 src/gnome-schedule.glade.h:39
+msgid "Happens all "
+msgstr "Succeeix cada "
+
+#: src/crontabEditorHelper.py:103 src/crontabEditorHelper.py:211
+msgid "s"
+msgstr ""
+
+#: src/crontabEditorHelper.py:106
+msgid "Happens from "
+msgstr "Succeix des de "
+
+#. show the form
+#: src/crontabEditorHelper.py:151
+msgid "Edit time expression for: "
+msgstr "Editeu l'expressió de temps per a: "
+
+#: src/crontabEditorHelper.py:162
+#, python-format
+msgid "This is invalid. Reason: %s"
+msgstr "Això no és vàlid. Raó: %s"
+
+#: src/crontabEditorHelper.py:202 src/crontabEditorHelper.py:213
+msgid "st. "
+msgstr ""
+
+#: src/crontabEditorHelper.py:204
+msgid "th. "
+msgstr ""
+
+#: src/gnome-schedule.glade.h:1
+msgid " "
+msgstr " "
+
+# Projecte_Fedora [redhat-config-users.ca.po]
+#: src/gnome-schedule.glade.h:2
+msgid "     "
+msgstr "     "
+
+#: src/gnome-schedule.glade.h:3
+msgid " >/dev/null 2>&1"
+msgstr " >/dev/null 2>&1"
+
+# Mozilla 1.3->allFilter
+#: src/gnome-schedule.glade.h:4
+msgid "*"
+msgstr "*"
+
+#: src/gnome-schedule.glade.h:5
+msgid "* * * * * command"
+msgstr "* * * * * ordre"
+
+# Mozilla 1.3->textZoomResetCmd.commandkey
+#: src/gnome-schedule.glade.h:6
+msgid "0"
+msgstr "0"
+
+#: src/gnome-schedule.glade.h:7
+msgid "0-23"
+msgstr "0-23"
+
+#: src/gnome-schedule.glade.h:8
+msgid "0-59"
+msgstr "0-59"
+
+#: src/gnome-schedule.glade.h:9
+msgid "0-7"
+msgstr "0-7"
+
+#: src/gnome-schedule.glade.h:10
+msgid "1-12"
+msgstr "1-12"
+
+#: src/gnome-schedule.glade.h:11
+msgid "1-31"
+msgstr "1-31"
+
+# Netscape_4.7->Menu:RESDLL.DLL
+#: src/gnome-schedule.glade.h:12
+msgid "2"
+msgstr "2"
+
+#: src/gnome-schedule.glade.h:13
+msgid "59"
+msgstr "59"
+
+# Mozilla 1.3->colon.character
+#: src/gnome-schedule.glade.h:14
+msgid ":"
+msgstr ":"
+
+#: src/gnome-schedule.glade.h:15
+msgid "<b>Basic settings</b>"
+msgstr "<b>Configuració bàsica</b>"
+
+#: src/gnome-schedule.glade.h:16
+msgid "<b>Date setting</b>"
+msgstr "<b>Configuració de la data</b>"
+
+#: src/gnome-schedule.glade.h:17
+msgid "<b>Frequency setting</b>"
+msgstr "<b>Configuració de la freqüència</b>"
+
+# Gnome_2.6_Desktop [gok.HEAD.ca.po]
+#: src/gnome-schedule.glade.h:18
+msgid "<b>Preview</b>"
+msgstr "<b>Previsualització</b>"
+
+#: src/gnome-schedule.glade.h:19
+msgid "<b>Select the type of the scheduled task</b>"
+msgstr "<b>Seleccioneu el tipus de tasca planificada</b>"
+
+#: src/gnome-schedule.glade.h:20
+msgid "A scheduled task that will launch at a frequency "
+msgstr "Una tasca planificada s'executarà amb una freqüència "
+
+#: src/gnome-schedule.glade.h:21
+msgid "A scheduled task that will start at a defined time in the future"
+msgstr "Una tasca planificada que començarà en un moment futur"
+
+#: src/gnome-schedule.glade.h:22
+msgid "A_dvanced"
+msgstr "A_vançat"
+
+# Gnome_2.6_Desktop [gpdf.HEAD.ca.po]
+#: src/gnome-schedule.glade.h:23
+msgid "About this application"
+msgstr "Quant a aquesta aplicació"
+
+#: src/gnome-schedule.glade.h:24
+msgid "Active user"
+msgstr "Usuari actiu"
+
+#: src/gnome-schedule.glade.h:25
+msgid "Add a new scheduled task"
+msgstr "Afegeix una nova tasca planificada"
+
+#: src/gnome-schedule.glade.h:26
+msgid "Add a scheduled task"
+msgstr "Afegeix una tasca planificada"
+
+# Winrar 2.9->Dialog Caption:rarlng.dll
+#: src/gnome-schedule.glade.h:27
+msgid "Advanced"
+msgstr "Avançat"
+
+#: src/gnome-schedule.glade.h:28
+msgid "Alter a scheduled task"
+msgstr "Modifica una tasca planificada"
+
+# Mozilla 1.3->searchModeBasic.label
+#: src/gnome-schedule.glade.h:29
+msgid "Basic"
+msgstr "Bàsic"
+
+#: src/gnome-schedule.glade.h:30
+msgid "Cancel this operation"
+msgstr "Cancel·la aquesta operació"
+
+#: src/gnome-schedule.glade.h:31
+msgid "Configure scheduled tasks"
+msgstr "Configura les tasques planificades"
+
+# source\dialog\versdlg.src fixedtext DLG_VERSIONS FT_DATETIME
+# Projecte_Open_Office_1.1 [sfx2.po]
+#: src/gnome-schedule.glade.h:32
+msgid "Date and time"
+msgstr "Data i hora"
+
+#: src/gnome-schedule.glade.h:33
+msgid "Delete a scheduled task"
+msgstr "Suprimeix una tasca planificada"
+
+# source\ui\misc\linenum.src fixedline TP_LINENUMBERING FL_DISPLAY
+# source\ui\misc\linenum.src fixedtext TP_LINENUMBERING FT_DIVISOR
+# source\ui\misc\linenum.src fixedtext TP_LINENUMBERING FT_DIV_INTERVAL
+# Projecte_Open_Office_1.1 [sw.po]
+#: src/gnome-schedule.glade.h:34
+msgid "Every"
+msgstr "Cada"
+
+#: src/gnome-schedule.glade.h:35
+msgid ""
+"For example 1,2,3,4 means happens the first, second, third and fourth minute"
+msgstr ""
+"Per exemple 1,2,3,4 significa que succeeix el primer, segon, tercer i quart "
+"minut"
+
+#: src/gnome-schedule.glade.h:36
+msgid "For example at 04:10 tomorrow, next week or in three days."
+msgstr "Per exemple demà a les 04:10, la següent setmana o en tres dies."
+
+#: src/gnome-schedule.glade.h:37
+msgid "For example every first hour of the day."
+msgstr "Per exemple, cada primera hora del dia."
+
+#: src/gnome-schedule.glade.h:38
+msgid "For experienced users only"
+msgstr "Per a usuaris experimentats"
+
+#: src/gnome-schedule.glade.h:40
+msgid ""
+"Happens at a defined occurrence. For example, happens at the second minute, "
+"hour, day, weekday or month"
+msgstr ""
+"Succeix en un moment definit. Per exemple, al segon minut, hora, dia, dia de "
+"la setmana o mes"
+
+#: src/gnome-schedule.glade.h:41
+msgid ""
+"Happens at all occurrence. For example, happens every minute, hour, day, "
+"weekday or month"
+msgstr ""
+"Succeeix en cada moment. Per exemple, cada minut, hora, dia, setmana o mes"
+
+#: src/gnome-schedule.glade.h:42
+msgid ""
+"Happens at every x occurrence. For example every two minutes, hours, days, "
+"weekdays or months"
+msgstr ""
+"Succeix cada 'x'. Per exemple cada dos minuts, hores, dies, dia de la "
+"setmana o mes"
+
+#: src/gnome-schedule.glade.h:43
+msgid "Happens at the"
+msgstr "Succeeix el"
+
+#: src/gnome-schedule.glade.h:44
+msgid "Happens each occurrence between x and y"
+msgstr "Succeeix cada moment entre x i y"
+
+#: src/gnome-schedule.glade.h:45
+msgid "Happens every "
+msgstr "Succeeix cada "
+
+#: src/gnome-schedule.glade.h:46
+msgid "Happens from"
+msgstr "Succeeix des de"
+
+#: src/gnome-schedule.glade.h:47
+msgid "No output"
+msgstr "Sense sortida"
+
+#: src/gnome-schedule.glade.h:48
+msgid "Other expression"
+msgstr "Una altra expressió"
+
+#: src/gnome-schedule.glade.h:49
+msgid "Preset"
+msgstr "Predefinit"
+
+#: src/gnome-schedule.glade.h:50
+msgid ""
+"Quit the application. This will not stop the system scheduling. It will, "
+"however, quit this system schedule maintenance tool."
+msgstr ""
+"Surt de l'aplicació. No s'aturarà la planificació del sistema. Només es "
+"tancarà aquesta aplicació de configuració."
+
+# source\config\config.src string STR_FILTERNAME_CFG
+# source\config\config.src string DLG_MACROQUERY BTN_OK
+# Projecte_Open_Office_1.1 [sfx2.po]
+#: src/gnome-schedule.glade.h:51
+msgid "Run"
+msgstr "Executa"
+
+#: src/gnome-schedule.glade.h:52
+msgid "Run at:"
+msgstr "Executa el:"
+
+#: src/gnome-schedule.glade.h:53
+msgid "Scheduled and active tasks"
+msgstr "Tasques planificades i actives"
+
+# source\ui\fldui\fldui.src string STR_SCRIPTFLD
+# Projecte_Open_Office_1.1 [sw.po]
+#: src/gnome-schedule.glade.h:54
+msgid "Script"
+msgstr "Fitxer de seqüència"
+
+#: src/gnome-schedule.glade.h:55
+msgid "Select a different user"
+msgstr "Seleccioneu un usuari diferent"
+
+#: src/gnome-schedule.glade.h:56
+msgid "Set the day frequency setting"
+msgstr "Estableix la freqüència en dies"
+
+#: src/gnome-schedule.glade.h:57
+msgid "Set the hour frequency setting"
+msgstr "Estableix la freqüència en hores"
+
+#: src/gnome-schedule.glade.h:58
+msgid "Set the icon of this scheduled task"
+msgstr "Estableix la icona d'aquesta tasca planificada"
+
+#: src/gnome-schedule.glade.h:59
+msgid "Set the minute frequency setting"
+msgstr "Estableix la freqüència en minuts"
+
+#: src/gnome-schedule.glade.h:60
+msgid "Set the month frequency setting"
+msgstr "Estableix la freqüència mensual"
+
+#: src/gnome-schedule.glade.h:61
+msgid "Set the scheduled task"
+msgstr "Configura la tasca planificada"
+
+#: src/gnome-schedule.glade.h:62
+msgid "Set the weekday frequency setting"
+msgstr "Estableix la freqüència diària"
+
+#: src/gnome-schedule.glade.h:63
+msgid "Set user"
+msgstr "Estableix l'usuari"
+
+#: src/gnome-schedule.glade.h:64
+msgid "Show help"
+msgstr "Mostra l'ajuda"
+
+#: src/gnome-schedule.glade.h:65
+msgid "Show the manual"
+msgstr "Mostra el manual"
+
+#: src/gnome-schedule.glade.h:66
+msgid "Shows the records"
+msgstr "Mostra els registres"
+
+#: src/gnome-schedule.glade.h:67
+msgid "Task title"
+msgstr "Títol de la tasca"
+
+#: src/gnome-schedule.glade.h:68
+msgid "The date when the script will launch"
+msgstr "La data quan s'executarà el fitxer de seqüència"
+
+# Gnome_2.6_Desktop [gnome-media.HEAD.ca.po]
+#: src/gnome-schedule.glade.h:69
+msgid "The username"
+msgstr "El nom d'usuari"
+
+#: src/gnome-schedule.glade.h:70
+msgid "Time expression help"
+msgstr "Ajuda sobre l'expressió del temps"
+
+#: src/gnome-schedule.glade.h:71
+msgid "Time: "
+msgstr "Temps: "
+
+#: src/gnome-schedule.glade.h:72
+msgid "Treeview"
+msgstr "Visualització en arbre"
+
+#: src/gnome-schedule.glade.h:73
+msgid ""
+"When selected, no output will be generated. When scheduled tasks in the "
+"crontab do have output and this option is not checked, the output will by "
+"default be send to the UNIX mailbox of the user"
+msgstr ""
+"Quan se seleccioni, no es generarà cap sortida. Quan les tasques "
+"planificades en el crontab generin sortida i aquesta opció no estigui "
+"activada, la sortida s'enviarà a la bústia de correu UNIX de l'usuari"
+
+#: src/gnome-schedule.glade.h:74
+msgid "Will delete the selected preset"
+msgstr "Se suprimirà el predefinit seleccionat"
+
+#: src/gnome-schedule.glade.h:75
+msgid ""
+"Will save the current information as a preset. You can type the name of the "
+"preset in the combobox."
+msgstr ""
+"La informació actual es desarà com a predefinit. Podeu escriure el nom del "
+"predefinit en la caixa combinada."
+
+#: src/gnome-schedule.glade.h:76
+msgid "[Add|Edit] scheduled task"
+msgstr "Afegeix o edita la tasca planificada"
+
+#: src/gnome-schedule.glade.h:77
+msgid "_Add task"
+msgstr "_Afegeix una tasca"
+
+# Projecte_Fedora [redhat-logviewer.ca.po]
+#: src/gnome-schedule.glade.h:78
+msgid "_Delete"
+msgstr "_Suprimeix"
+
+# Projecte_Fedora [redhat-config-packages.ca.po]
+#: src/gnome-schedule.glade.h:79
+msgid "_Manual"
+msgstr "_Manual"
+
+# Gnome_2.6_Developer [libbonoboui.HEAD.ca.po]
+#: src/gnome-schedule.glade.h:80
+msgid "_Select"
+msgstr "_Selecciona"
+
+#: src/gnome-schedule.glade.h:85
+msgid "root"
+msgstr ""
+
+# Mozilla 1.3->topageInput.label
+#: src/gnome-schedule.glade.h:86
+msgid "to"
+msgstr "a"
+
+#: src/gnome-schedule.glade.h:87
+msgid ""
+"tomorrow\n"
+"next week"
+msgstr ""
+"demà\n"
+"la setmana que ve"
+
+#: src/lang.py:69
+msgid ""
+"To the translator: Read src/lang.py !!! (yeah it's for you, not for the "
+"user. YES FOR YOU, the translator. YES:) really!"
+msgstr " "
+
+#: src/lang.py:92
+msgid "zeroth"
+msgstr "zero"
+
+#: src/lang.py:93
+msgid "first"
+msgstr "primer"
+
+# source\ui\src\scfuncs.src string RID_SC_FUNCTION_DESCRIPTIONS1.SC_OPCODE_GET_TIME 6
+# Projecte_Open_Office_1.1 [sc.po]
+#: src/lang.py:93
+msgid "second"
+msgstr "segon"
+
+#: src/lang.py:93
+msgid "third"
+msgstr "tercer"
+
+#: src/lang.py:93
+msgid "fourth"
+msgstr "quart"
+
+#: src/lang.py:93
+msgid "fifth"
+msgstr "cinquè"
+
+#: src/lang.py:94
+msgid "sixth"
+msgstr "sisè"
+
+#: src/lang.py:94
+msgid "seventh"
+msgstr "setè"
+
+#: src/lang.py:94
+msgid "eighth"
+msgstr "vuitè"
+
+#: src/lang.py:94
+msgid "ninth"
+msgstr "novè"
+
+#: src/lang.py:94
+msgid "tenth"
+msgstr "desè"
+
+#: src/lang.py:95
+msgid "eleventh"
+msgstr "onzè"
+
+#: src/lang.py:95
+msgid "twelfth"
+msgstr "dotzè"
+
+#: src/lang.py:95
+msgid "thirteenth"
+msgstr "tretzè"
+
+#: src/lang.py:95
+msgid "fourteenth"
+msgstr "catorzè"
+
+#: src/lang.py:95
+msgid "fifteenth"
+msgstr "quinzè"
+
+#: src/lang.py:96
+msgid "sixteenth"
+msgstr "setzè"
+
+#: src/lang.py:96
+msgid "seventeenth"
+msgstr "disetè"
+
+#: src/lang.py:96
+msgid "eighteenth"
+msgstr "divuitè"
+
+#: src/lang.py:96
+msgid "nineteenth"
+msgstr "dinovè"
+
+#: src/lang.py:96
+msgid "twentieth"
+msgstr "vintè"
+
+# Gnome_2.6_Extras [gnome-glossary.HEAD.ca.po]
+#: src/lang.py:99
+msgid "zero"
+msgstr "zero"
+
+# Gnome_2.6_Desktop [gnome-games.HEAD.ca.po]
+#: src/lang.py:99
+msgid "ten"
+msgstr "deu"
+
+#: src/lang.py:99
+msgid "twenty"
+msgstr "vint"
+
+#: src/lang.py:99
+msgid "thirty"
+msgstr "trenta"
+
+#: src/lang.py:99
+msgid "forty"
+msgstr "quaranta"
+
+#: src/lang.py:99
+msgid "fifty"
+msgstr "cinquanta"
+
+#: src/lang.py:99
+msgid "sixty"
+msgstr "seixanta"
+
+#: src/lang.py:99
+msgid "seventy"
+msgstr "setanta"
+
+#: src/lang.py:99
+msgid "eighty"
+msgstr "vuitanta"
+
+#: src/lang.py:99
+msgid "ninety"
+msgstr "noranta"
+
+#: src/lang.py:106
+#, python-format
+msgid "minus %s"
+msgstr "menys %s"
+
+#: src/lang.py:116
+msgid "minus "
+msgstr "menys "
+
+#. These are just some table-lookups and translation magic :)
+#: src/lang.py:120
+#, python-format
+msgid "%s%s%s%s%s%s"
+msgstr "%s%s%s%s%s%s"
+
+# Mozilla 1.3->textZoomReduceCmd.commandkey
+#: src/lang.py:120
+msgid "-"
+msgstr "-"
+
+#: src/lang.py:123
+#, python-format
+msgid "%sth."
+msgstr ""
+
+#: src/lang.py:212
+#, python-format
+msgid "%s%s:%s:%s%s"
+msgstr "%s%s:%s:%s%s"
+
+#: src/lang.py:214
+#, python-format
+msgid "%s%s:%s%s"
+msgstr "%s%s:%s%s"
+
+#: src/lang.py:251
+msgid "Every minute"
+msgstr "Cada minut"
+
+#: src/lang.py:256
+msgid "Every hour"
+msgstr "Cada hora"
+
+#: src/lang.py:258
+#, python-format
+msgid "Every %s minute of every hour"
+msgstr "Cada %s minut o cada hora"
+
+#: src/lang.py:263
+#, python-format
+msgid "Every %s hour of the day"
+msgstr "Cada %s hora del dia"
+
+#: src/lang.py:265
+#, python-format
+msgid "Every day at %s"
+msgstr "Cada dia a les %s"
+
+#: src/lang.py:267
+#, python-format
+msgid "Every minute during the %s hour"
+msgstr "Cada minut durant la %s hora"
+
+#: src/lang.py:272
+#, python-format
+msgid "Every %s day of the month"
+msgstr "Cada %s dia del mes"
+
+#: src/lang.py:274
+#, python-format
+msgid "At %s every %s day of the month"
+msgstr "A les %s cada %s dia del mes"
+
+#: src/lang.py:276
+#, python-format
+msgid "Every minute of the %s hour every %s day of the month"
+msgstr "Cada minut de la %s hora cada %s dia del mes"
+
+#: src/lang.py:278
+#, python-format
+msgid "At the %s minute of every hour every %s day of the month"
+msgstr "El %s minut de cada hora cada %s dia del mes"
+
+#: src/lang.py:283
+#, python-format
+msgid "Every %s month of the year"
+msgstr "Cada %s mes de l'any"
+
+#: src/lang.py:285
+#, python-format
+msgid "At the %s day on %s every %s month of the year"
+msgstr "El %s dia de %s cada %s mes de l'any"
+
+#: src/lang.py:287
+#, python-format
+msgid "At the %s day every %s hour every %s month of the year"
+msgstr "El %s dia cada %s hora cada %s mes de l'any"
+
+#: src/lang.py:289
+#, python-format
+msgid "Every day and every hour at the %s minute every %s month of the year"
+msgstr "Cada dia i cada hora en el %s minut cada %s mes de l'any"
+
+#: src/lang.py:291
+#, python-format
+msgid "Every day on %s every %s month of the year"
+msgstr "Cada dia en %s cada %s mes de l'any"
+
+#: src/lang.py:297
+#, python-format
+msgid "Every %s day of the week"
+msgstr "Cada %s dia de la setmana"
+
+#: src/lang.py:299
+#, python-format
+msgid "Every %s day of the week at %s"
+msgstr "Cada %s dia de la setmana a les %s"
+
+#: src/lang.py:301
+#, python-format
+msgid "Every %s day of the week the %s hour"
+msgstr "Cada %s dia de la setmana la %s hora"
+
+#: src/lang.py:303
+#, python-format
+msgid "Every %s day of the week the %s minute of every hour"
+msgstr "Cada %s dia de la setmana en el minut %s de cada hora"
+
+#: src/lang.py:305
+#, python-format
+msgid "Every %s day of the week every minute"
+msgstr "Cada %s dia de la setmana cada minut"
+
+#: src/lang.py:318
+msgid "Every minute, every hour, every day, every month, every weekday"
+msgstr "Cada minut, cada hora, cada dia, cada mes, cada dia de la setmana"
+
+#: src/lang.py:321
+#, python-format
+msgid "At minute: %s, hour %s, day: %s, month: %s, weekday: %s"
+msgstr "El minut: %s, hora %s, dia: %s, mes: %s, dia de la setmana: %s"
+
+#: src/lang.py:324
+#, python-format
+msgid "At minute: %s, hour %s, day: %s, month: %s"
+msgstr "El minut: %s, hora %s, dia: %s, mes:%s"
+
+#: src/lang.py:327
+#, python-format
+msgid "At minute: %s, hour %s, day: %s, every month"
+msgstr "El minut: %s, hora %s, dia: %s, cada mes"
+
+#: src/lang.py:329
+#, python-format
+msgid "At minute: %s, hour %s, every day, month: %s"
+msgstr "El minut: %s, hora %s, cada dia, mes: %s"
+
+#: src/lang.py:331
+#, python-format
+msgid "At minute: %s, every hour, day: %s, month: %s"
+msgstr "El minut: %s, cada hora, dia: %s, mes: %s"
+
+#: src/lang.py:334
+#, python-format
+msgid "At minute: %s, hour %s, every day, every month"
+msgstr "El minut: %s, hora %s, cada dia, cada mes"
+
+#: src/lang.py:336
+#, python-format
+msgid "At minute: %s, every hour, day: %s, every month"
+msgstr "El minut: %s, cada hora, dia: %s, cada mes"
+
+#: src/lang.py:338
+#, python-format
+msgid "At minute: %s, every hour, every day, month: %s"
+msgstr "El minut: %s, cada hora, cada dia, mes: %s"
+
+#: src/lang.py:340
+#, python-format
+msgid "At minute: %s, every hour, every day, every month"
+msgstr "El minut: %s, cada hora, cada dia, cada mes"
+
+#: src/lang.py:343
+#, python-format
+msgid "Every minute, hour: %s, day: %s, month %s"
+msgstr "Cada minut, hora: %s, dia: %s, mes %s"
+
+#: src/lang.py:345
+#, python-format
+msgid "Every minute, hour %s, day: %s, every month"
+msgstr "Cada minut, hora %s, dia: %s, cada mes"
+
+#: src/lang.py:347
+#, python-format
+msgid "Every minute, hour %s, every day, month: %s"
+msgstr "Cada minut, hora %s, cada dia, mes: %s"
+
+#: src/lang.py:349
+#, python-format
+msgid "Every minute, hour %s, every day, every month"
+msgstr "Cada minut, hora %s, cada dia, cada mes"
+
+#: src/lang.py:352
+#, python-format
+msgid "Every minute, every hour, day: %s, month: %s"
+msgstr "Cada minut, cada hora, dia: %s, mes: %s"
+
+#: src/lang.py:354
+#, python-format
+msgid "Every minute, every hour, day: %s, every month"
+msgstr "Cada minut, cada hora, dia: %s, cada mes"
+
+# Mozilla 1.3->mediaLink
+#: src/mainWindow.py:298 src/mainWindow.py:329
+msgid "Icon"
+msgstr "Icona"
+
+# Winrar 2.9->String:rarlng.dll
+#: src/mainWindow.py:301 src/mainWindow.py:349
+msgid "Type"
+msgstr "Tipus"
+
+# Netscape_4.7->String:RESDLL.DLL
+#: src/mainWindow.py:306 src/mainWindow.py:344
+msgid "Title"
+msgstr "Títol"
+
+#: src/mainWindow.py:311 src/mainWindow.py:332
+msgid "Frequency or time"
+msgstr "Freqüència o temps"
+
+# Mozilla 1.3->autocompletePreview.label
+#: src/mainWindow.py:316 src/mainWindow.py:337
+msgid "Preview"
+msgstr "Previsualització"
+
+#. TODO if about gets into gtk this has to be changed
+#: src/mainWindow.py:461
+msgid "Gnome Schedule"
+msgstr "Planificador del Gnome"
+
+#: src/mainWindow.py:463
+msgid "Copyright (c) 2004-2005 Gaute Hope."
+msgstr "Copyright (c) 2004-2005 Gaute Hope."
+
+#: src/mainWindow.py:464
+msgid "This software is distributed under the GPL. "
+msgstr "Aquest programari es distribueix sota la GPL. "
+
+#: src/mainWindow.py:468
+msgid ""
+"Some painfully bad documentation put\n"
+"toghether from the far corners of Gaute Hope's mind."
+msgstr "Documentació, per en Gaute Hope"
+
+# Gnome_2.6_Desktop [zenity.HEAD.ca.po]
+#: src/mainWindow.py:468
+msgid "translator_credits"
+msgstr "Xavier Conde Rueda <xaviconde@eresmas.com>"
+
+#: src/atEditor.py:494
+#, python-format
+msgid "This is an invalid record! The problem could be: %s "
+msgstr "Aquest registre no és vàlid. El motiu pot ser: %s "
