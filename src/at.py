@@ -164,9 +164,9 @@ class At:
 			if array_or_false != gtk.FALSE:
 				(job_id, date, time, class_id, user, title, command) = array_or_false
 				icon_pix = None
-				iter = self.ParentClass.treemodel.append([title, time + " " + date, command, "", 0, time, icon_pix, self, date, job_id, class_id, user])
+				iter = self.ParentClass.treemodel.append([title, time + " " + date, command, "", 0, time, icon_pix, self, date, job_id, class_id, user, "Defined"])
 
-		#["None(not suported yet)", "12:50 2004-06-25", "", "", "", "12:50", icon, at instance, "2004-06-25", "35", "a", "drzap"]
+		#["None(not suported yet)", "12:50 2004-06-25", "", "", "", "12:50", icon, at instance, "2004-06-25", "35", "a", "drzap", "at"]
 		return
 
 	def parse (self, line, output = 0):

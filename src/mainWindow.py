@@ -89,13 +89,13 @@ class main:
 		self.schedule = None
 
 		#inittializing the treeview
-		# [0 Title, 1 Frequency, 2 Command, 3 Crontab record, 4 Line number, 5 Time, 6 Icon, 7 scheduled instance, 8 date, 9 job_id, 10 class_id, 11 user]
+		# [0 Title, 1 Frequency, 2 Command, 3 Crontab record, 4 Line number, 5 Time, 6 Icon, 7 scheduled instance, 8 date, 9 job_id, 10 class_id, 11 user, 12 type]
 
-		#for at this would be like: ["None(not suported yet)", "12:50 2004-06-25", "", "", "", "12:50", icon, at instance, "2004-06-25", "35", "a", "drzap"]
+		#for at this would be like: ["None(not suported yet)", "12:50 2004-06-25", "", "", "", "12:50", icon, at instance, "2004-06-25", "35", "a", "drzap", "at"]
 
-		#for crontab it would be: ["untitled", "every hour", "ls /", "0 * * * * ls / # untitled", "5", "0 * * * *", icon, crontab instance, "", "", "", ""]
+		#for crontab it would be: ["untitled", "every hour", "ls /", "0 * * * * ls / # untitled", "5", "0 * * * *", icon, crontab instance, "", "", "", "", "crontab"]
 
-		self.treemodel = gtk.ListStore(gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_INT, gobject.TYPE_STRING, gobject.TYPE_PYOBJECT, gobject.TYPE_PYOBJECT, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING)
+		self.treemodel = gtk.ListStore(gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_INT, gobject.TYPE_STRING, gobject.TYPE_PYOBJECT, gobject.TYPE_PYOBJECT, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING)
 
 		self.treeview.set_model (self.treemodel)
 		self.switchView("simple", 1)
@@ -205,7 +205,7 @@ class main:
 	def cleancolumns (self, init):
 		#cleaning up columns
 		if init != 1:
-			i = 2
+			i = 3
 			while i > - 1:
 				temp = self.treeview.get_column(i)
 				self.treeview.remove_column(temp)
@@ -225,6 +225,9 @@ class main:
 			col.set_spacing(235)
 			self.treeview.append_column(col)
 
+			col = gtk.TreeViewColumn(_("Type"), gtk.CellRendererText(), text=12)
+			self.treeview.append_column(col)
+
 		elif mode == "advanced":
 			self.cleancolumns (init)		
 			# col = gtk.TreeViewColumn(_("Icon"), gtk.CellRendererText(), text=6)
@@ -235,6 +238,9 @@ class main:
 			self.treeview.append_column(col)
 			col = gtk.TreeViewColumn(_("Title"), gtk.CellRendererText(), text=0)
 			col.set_spacing(235)
+			self.treeview.append_column(col)
+
+			col = gtk.TreeViewColumn(_("Type"), gtk.CellRendererText(), text=12)
 			self.treeview.append_column(col)
 
 		if self.root == 0:
