@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-06-07 20:12+0200\n"
+"POT-Creation-Date: 2004-06-08 00:08+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,13 +37,13 @@ msgstr ""
 msgid "Command"
 msgstr ""
 
-#: ../src/mainWindow.py:194
+#: ../src/mainWindow.py:187
 msgid ""
 "System Schedule @VERSION@\n"
 " A graphical interface for configuring the system schedule"
 msgstr ""
 
-#: ../src/mainWindow.py:195
+#: ../src/mainWindow.py:188
 msgid "About"
 msgstr ""
 

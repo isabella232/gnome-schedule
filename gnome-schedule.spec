@@ -1,6 +1,6 @@
 Summary: Crontab server and at configuration tool
 Name: gnome-schedule
-Version: 0.7.0_Beta
+Version: 1.0
 Release: 1
 URL: http://gaute.eu.org/stasj/cronconf
 License: GPL
