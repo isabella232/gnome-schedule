@@ -1,14 +1,14 @@
 P="gnome-schedule-@VERSION@"
 PN="gnome-schedule"
-PV="0.1.0"
+PV="@VERSION@"
 SLOT="0"
 LICENSE="GPL"
-KEYWORDS="x86"
+KEYWORDS="~x86"
 DESCRIPTION="A graphical tool for configuring at and crontab"
 SRC_URI="mirror://sourceforce/gnome-schedule/gnome-schedule-@VERSION@.tar.bz2"
 A="${P}.tar.bz2"
 HOMEPAGE="http://gnome-schedule.sourceforge.net"
-IUSE="+gnome +gtk"
+IUSE="+gnome +gtk +X"
 S=${WORKDIR}/gnome-schedule
 RDEPEND=">=sys-apps/at-3 
 		>=sys-apps/vixie-cron-3 

@@ -1,6 +1,7 @@
 2004-08-01  Gaute Hope <eg@gaute.eu.org>
 
 	* Made the version number more flexible
+	* Changed the version number on the ebuild name to 0.1.0
 	* Maksed unstable for x86
 	* Using sourceforge for mirror, this was at some earlier time
 
