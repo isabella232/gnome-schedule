@@ -3,6 +3,19 @@ import os
 import gtk
 
 # Dear translators,
+
+# This file is yours. You people do whatever you wan't with it.
+# You can fix spelling problems, add comments, add code and functionality
+# You don't have to inform be about changes (you can commit if you have
+# such an account on GNOME) yet you CAN ask the programmers for assistance.
+
+# Yes yours. Really
+
+
+# No seriously, yours. Yeah, yours. It's your file. You do with it what
+# you want. I mean it. Yes...
+
+
 # Most languages will not have to do all this, but some do.
 # http://lists.gnome.org/archives/gnome-i18n/2004-June/msg00089.html
 
