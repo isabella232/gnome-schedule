@@ -898,7 +898,7 @@ use advanced</property>
 	      <child>
 		<widget class="GtkLabel" id="label25">
 		  <property name="visible">True</property>
-		  <property name="label" translatable="yes">Tip: If you click the titles of the entries you will get a simple expression builder.</property>
+		  <property name="label" translatable="yes">Tip: If you click the buttons above the entries you will get a simple expression builder.</property>
 		  <property name="use_underline">False</property>
 		  <property name="use_markup">True</property>
 		  <property name="justify">GTK_JUSTIFY_LEFT</property>
@@ -1149,8 +1149,8 @@ use advanced</property>
 	  <property name="n_rows">5</property>
 	  <property name="n_columns">2</property>
 	  <property name="homogeneous">False</property>
-	  <property name="row_spacing">0</property>
-	  <property name="column_spacing">0</property>
+	  <property name="row_spacing">5</property>
+	  <property name="column_spacing">5</property>
 
 	  <child>
 	    <widget class="GtkRadioButton" id="radAll">
@@ -1202,8 +1202,8 @@ use advanced</property>
 	  <child>
 	    <widget class="GtkHBox" id="hbox5">
 	      <property name="visible">True</property>
-	      <property name="homogeneous">False</property>
-	      <property name="spacing">0</property>
+	      <property name="homogeneous">True</property>
+	      <property name="spacing">5</property>
 
 	      <child>
 		<widget class="GtkEntry" id="entEvery">
@@ -1284,8 +1284,8 @@ use advanced</property>
 	  <child>
 	    <widget class="GtkHBox" id="hbox6">
 	      <property name="visible">True</property>
-	      <property name="homogeneous">False</property>
-	      <property name="spacing">0</property>
+	      <property name="homogeneous">True</property>
+	      <property name="spacing">5</property>
 
 	      <child>
 		<widget class="GtkEntry" id="entRangeStart">
@@ -1361,30 +1361,6 @@ use advanced</property>
 	  </child>
 
 	  <child>
-	    <widget class="GtkRadioButton" id="radAt">
-	      <property name="visible">True</property>
-	      <property name="can_focus">True</property>
-	      <property name="label" translatable="yes">Happends at</property>
-	      <property name="use_underline">True</property>
-	      <property name="relief">GTK_RELIEF_NORMAL</property>
-	      <property name="focus_on_click">True</property>
-	      <property name="active">False</property>
-	      <property name="inconsistent">False</property>
-	      <property name="draw_indicator">True</property>
-	      <property name="group">radAll</property>
-	      <signal name="toggled" handler="on_radAt_toggled" last_modification_time="Thu, 10 Jun 2004 14:03:36 GMT"/>
-	    </widget>
-	    <packing>
-	      <property name="left_attach">0</property>
-	      <property name="right_attach">1</property>
-	      <property name="top_attach">3</property>
-	      <property name="bottom_attach">4</property>
-	      <property name="x_options">fill</property>
-	      <property name="y_options"></property>
-	    </packing>
-	  </child>
-
-	  <child>
 	    <widget class="GtkLabel" id="label26">
 	      <property name="visible">True</property>
 	      <property name="label" translatable="yes">&lt;b&gt;Expression:&lt;/b&gt;</property>
@@ -1404,30 +1380,6 @@ use advanced</property>
 	      <property name="top_attach">4</property>
 	      <property name="bottom_attach">5</property>
 	      <property name="x_options">fill</property>
-	      <property name="y_options"></property>
-	    </packing>
-	  </child>
-
-	  <child>
-	    <widget class="GtkComboBoxEntry" id="cmbAt">
-	      <property name="width_request">111</property>
-	      <property name="visible">True</property>
-	      <property name="items" translatable="yes">1
-2
-3
-4
-5
-6
-7
-</property>
-	      <signal name="changed" handler="on_cmbAt_changed" last_modification_time="Thu, 10 Jun 2004 14:03:41 GMT"/>
-	    </widget>
-	    <packing>
-	      <property name="left_attach">1</property>
-	      <property name="right_attach">2</property>
-	      <property name="top_attach">3</property>
-	      <property name="bottom_attach">4</property>
-	      <property name="x_options"></property>
 	      <property name="y_options"></property>
 	    </packing>
 	  </child>

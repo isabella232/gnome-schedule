@@ -22,6 +22,7 @@ import mainWindow
 import string
 import crontab
 import re
+import gobject
 ##
 ## I18N
 ##
@@ -246,7 +247,6 @@ class AddWindow:
 		self.update_textboxes()
 
 	def on_fieldHelp_clicked(self, widget, *args):
-		print "help"
 		name = widget.get_name()
 		if name == "btnMinuteHelp" : name = "minute"
 		if name == "btnHourHelp" : name = "hour"
@@ -277,7 +277,7 @@ class AddWindowHelp:
 		self.entEvery = self.xml.get_widget("entEvery")
 		self.entRangeStart = self.xml.get_widget("entRangeStart")
 		self.entRangeEnd = self.xml.get_widget("entRangeEnd")
-		self.cmbAt = self.xml.get_widget("cmbAt").get_child()
+
 
 		self.lblEveryEntity = self.xml.get_widget("lblEveryEntity")
 		
@@ -287,13 +287,13 @@ class AddWindowHelp:
 		self.xml.signal_connect("on_radAll_toggled", self.RadioButtonChange)
 		self.xml.signal_connect("on_radEvery_toggled", self.RadioButtonChange)
 		self.xml.signal_connect("on_radRange_toggled", self.RadioButtonChange)
-		self.xml.signal_connect("on_radAt_toggled", self.RadioButtonChange)
+
 		
 		#connect the changes of a combo or entry
 		self.xml.signal_connect("on_entEvery_changed", self.anyEntryChanged)
 		self.xml.signal_connect("on_entRangeStart_changed", self.anyEntryChanged)
 		self.xml.signal_connect("on_entRangeEnd_changed", self.anyEntryChanged)
-		self.xml.signal_connect("on_cmbAt_changed", self.anyEntryChanged)
+
 		
 
 		return
@@ -302,6 +302,8 @@ class AddWindowHelp:
 		#put the apropiate values in the labels describing entitys, and the 'at' combobox
 		self.radAll.set_label("Happens all " + field + "s")
 		self.lblEveryEntity.set_text(field)
+
+
 		return
 
 	def showAll(self, field):
@@ -338,8 +340,7 @@ class AddWindowHelp:
 				self.entExpression.set_text("*\\" + self.entEvery.get_text())
 			elif name == "radRange":
 				self.entExpression.set_text(self.entRangeStart.get_text() + "-" + self.entRangeEnd.get_text())
-			elif name == "radAt":
-				self.entExpression.set_text(self.cmbAt.get_text())
+
 			
 		return
 
@@ -351,8 +352,7 @@ class AddWindowHelp:
 				self.entExpression.set_text("*\\" + self.entEvery.get_text())
 		if self.radRange.get_active():
 				self.entExpression.set_text(self.entRangeStart.get_text() + "-" + self.entRangeEnd.get_text())
-		if self.radAt.get_active():
-				self.entExpression.set_text(self.cmbAt.get_text())
+
 			
 		return
 
