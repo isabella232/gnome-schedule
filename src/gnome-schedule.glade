@@ -1968,7 +1968,7 @@
 		  <property name="visible">True</property>
 		  <property name="tooltip" translatable="yes">For example at 04:10 tomorrow, next week or in three days.</property>
 		  <property name="can_focus">True</property>
-		  <property name="label" translatable="yes">A scheduled task that will start at a defined time in the future (AT)</property>
+		  <property name="label" translatable="yes">A scheduled task that will start at a defined time in the future</property>
 		  <property name="use_underline">True</property>
 		  <property name="relief">GTK_RELIEF_NORMAL</property>
 		  <property name="focus_on_click">True</property>
@@ -1988,7 +1988,7 @@
 		  <property name="visible">True</property>
 		  <property name="tooltip" translatable="yes">For example every first hour of the day.</property>
 		  <property name="can_focus">True</property>
-		  <property name="label" translatable="yes">A scheduled task that will launch at a frequency (CRONTAB)</property>
+		  <property name="label" translatable="yes">A scheduled task that will launch at a frequency </property>
 		  <property name="use_underline">True</property>
 		  <property name="relief">GTK_RELIEF_NORMAL</property>
 		  <property name="focus_on_click">True</property>
@@ -2357,32 +2357,6 @@
 		      </child>
 
 		      <child>
-			<widget class="GtkCheckButton" id="at_nooutput_checkbutton">
-			  <property name="visible">True</property>
-			  <property name="tooltip" translatable="yes">When selected, no output will be generated. When scheduled tasks in the crontab do have output and this option is not checked, the output will by default be send to the UNIX mailbox of the user</property>
-			  <property name="can_focus">True</property>
-			  <property name="label" translatable="yes">No output</property>
-			  <property name="use_underline">True</property>
-			  <property name="relief">GTK_RELIEF_NORMAL</property>
-			  <property name="focus_on_click">True</property>
-			  <property name="active">False</property>
-			  <property name="inconsistent">False</property>
-			  <property name="draw_indicator">True</property>
-			  <signal name="toggled" handler="on_at_nooutput_checkbutton_toggled" last_modification_time="Thu, 24 Jun 2004 08:23:55 GMT"/>
-			</widget>
-			<packing>
-			  <property name="left_attach">1</property>
-			  <property name="right_attach">2</property>
-			  <property name="top_attach">4</property>
-			  <property name="bottom_attach">5</property>
-			  <property name="x_padding">5</property>
-			  <property name="y_padding">5</property>
-			  <property name="x_options">fill</property>
-			  <property name="y_options"></property>
-			</packing>
-		      </child>
-
-		      <child>
 			<widget class="GtkLabel" id="label67">
 			  <property name="visible">True</property>
 			  <property name="label" translatable="yes">Script</property>
@@ -2525,23 +2499,7 @@
 		  </child>
 
 		  <child>
-		    <widget class="GtkRadioButton" id="at_control_option">
-		      <property name="visible">True</property>
-		      <property name="can_focus">True</property>
-		      <property name="label" translatable="yes">Defined date and time setting</property>
-		      <property name="use_underline">True</property>
-		      <property name="relief">GTK_RELIEF_NORMAL</property>
-		      <property name="focus_on_click">True</property>
-		      <property name="active">False</property>
-		      <property name="inconsistent">False</property>
-		      <property name="draw_indicator">True</property>
-		      <signal name="toggled" handler="on_at_control_option_toggled" last_modification_time="Fri, 25 Jun 2004 07:36:47 GMT"/>
-		    </widget>
-		    <packing>
-		      <property name="padding">0</property>
-		      <property name="expand">False</property>
-		      <property name="fill">False</property>
-		    </packing>
+		    <placeholder/>
 		  </child>
 
 		  <child>
@@ -2797,24 +2755,7 @@
 		  </child>
 
 		  <child>
-		    <widget class="GtkRadioButton" id="at_wording_option">
-		      <property name="visible">True</property>
-		      <property name="can_focus">True</property>
-		      <property name="label" translatable="yes">Worded date and time setting</property>
-		      <property name="use_underline">True</property>
-		      <property name="relief">GTK_RELIEF_NORMAL</property>
-		      <property name="focus_on_click">True</property>
-		      <property name="active">False</property>
-		      <property name="inconsistent">False</property>
-		      <property name="draw_indicator">True</property>
-		      <property name="group">at_control_option</property>
-		      <signal name="toggled" handler="on_at_wording_option_toggled" last_modification_time="Fri, 25 Jun 2004 07:36:42 GMT"/>
-		    </widget>
-		    <packing>
-		      <property name="padding">0</property>
-		      <property name="expand">False</property>
-		      <property name="fill">False</property>
-		    </packing>
+		    <placeholder/>
 		  </child>
 
 		  <child>
@@ -2845,7 +2786,7 @@
 			<widget class="GtkLabel" id="label69">
 			  <property name="width_request">60</property>
 			  <property name="visible">True</property>
-			  <property name="label" translatable="yes"></property>
+			  <property name="label" translatable="yes">Run at:</property>
 			  <property name="use_underline">False</property>
 			  <property name="use_markup">False</property>
 			  <property name="justify">GTK_JUSTIFY_LEFT</property>

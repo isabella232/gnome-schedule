@@ -59,7 +59,7 @@ class AtEditor:
 		self.title_entry = self.xml.get_widget ("at_title_entry")
 		self.script_textview = self.xml.get_widget ("at_script_textview")
 		self.script_textview_buffer = self.script_textview.get_buffer()
-		self.nooutput_checkbutton = self.xml.get_widget ("at_nooutput_checkbutton")
+
 		self.help_button = self.xml.get_widget ("at_help_button")
 		self.cancel_button = self.xml.get_widget ("at_cancel_button")
 		self.ok_button = self.xml.get_widget ("at_ok_button")
@@ -68,8 +68,7 @@ class AtEditor:
 		self.template_image = self.xml.get_widget ("at_template_image")
 		self.template_label = self.xml.get_widget ("at_template_label")
 		self.template_combobox_model = None
-		self.control_option = self.xml.get_widget ("at_control_option")
-		self.wording_option = self.xml.get_widget ("at_wording_option")
+
 		self.calendar = self.xml.get_widget ("at_calendar")
 		self.hour_spinbutton = self.xml.get_widget ("at_hour_spinbutton")
 		self.minute_spinbutton= self.xml.get_widget ("at_minute_spinbutton")
@@ -80,13 +79,12 @@ class AtEditor:
 		self.xml.signal_connect("on_at_help_button_clicked", self.on_help_button_clicked)
 		self.xml.signal_connect("on_at_cancel_button_clicked", self.on_cancel_button_clicked)
 		self.xml.signal_connect("on_at_ok_button_clicked", self.on_ok_button_clicked)
-		self.xml.signal_connect("on_worded_label_event", self.on_worded_label_event)
-		self.xml.signal_connect("on_defined_label_event", self.on_defined_label_event)
+
 		self.xml.signal_connect("on_at_script_textview_popup_menu", self.on_script_textview_popup_menu)
 		self.xml.signal_connect("on_at_script_textview_key_release_event", self.on_script_textview_change)
 		self.xml.signal_connect("on_at_template_combobox_changed", self.on_template_combobox_changed)
 		self.xml.signal_connect("on_at_title_entry_changed", self.on_title_entry_changed)
-		self.xml.signal_connect("on_at_nooutput_checkbutton_toggled", self.on_nooutput_checkbutton_toggled)
+
 		self.xml.signal_connect("on_at_save_button_clicked", self.on_save_button_clicked)
 		self.xml.signal_connect("on_at_delete_button_clicked", self.on_delete_button_clicked)
 		self.xml.signal_connect("on_at_image_button_clicked", self.on_image_button_clicked)
@@ -96,8 +94,7 @@ class AtEditor:
 		self.xml.signal_connect("on_at_hour_spinbutton_changed", self.on_hour_spinbutton_changed)
 		self.xml.signal_connect("on_at_minute_spinbutton_changed", self.on_minute_spinbutton_changed)
 		self.xml.signal_connect("on_at_combobox_changed", self.on_combobox_changed)
-		self.xml.signal_connect("on_at_control_option_toggled", self.on_control_option_toggled)
-		self.xml.signal_connect("on_at_wording_option_toggled", self.on_wording_option_toggled)
+
 	
 		#for the addwindow to not jump more than one day ahead in time
 		self.first = 0
@@ -136,35 +133,32 @@ class AtEditor:
 		self.title = self.title_entry.get_text()
 		return
 
-	def on_nooutput_checkbutton_toggled (self, widget):
-		self.nooutput = widget.get_active()
-		return
+
 
 	def on_calendar_day_selected (self, *args):		
-		if self.control_option.get_active(): self.update_time()
+		self.update_time_cal()
 			
 		return
 
 	def on_calendar_month_changed (self, *args):
-		if self.control_option.get_active(): self.update_time()
+		self.update_time_cal()
 		return
 	
 	def on_calendar_year_changed (self, *args):
-		if self.control_option.get_active(): self.update_time()
+		self.update_time_cal()
 		return
 
 
 	def on_hour_spinbutton_changed (self, *args):
-		if self.control_option.get_active(): self.update_time()
+		self.update_time_cal()
 		return
 
 	def on_minute_spinbutton_changed (self, *args):
-		if self.control_option.get_active():
-			self.update_time()
+		self.update_time_cal()
 		return
 	
-	def update_time (self):
-		if self.control_option.get_active():
+
+	def update_time_cal (self):
 			(year, month, day) = self.calendar.get_date()
 			hour = self.hour_spinbutton.get_text()
 			minute = self.minute_spinbutton.get_text()
@@ -201,9 +195,12 @@ class AtEditor:
 				day = str(day)
 
 			self.runat = hour + ":" + minute + " " + year + "-" + month + "-" + day
+			self.noupdate = gtk.TRUE
 			self.update_textboxes()
+			self.noupdate = gtk.FALSE
+			return
 
-		else: #word option active
+	def update_time_combo (self):
 			runat = self.combobox_entry.get_text ()
 			# validate runat
 			self.runat = runat
@@ -227,23 +224,15 @@ class AtEditor:
 	def on_combobox_changed (self, *args):
 		# In this combobox for example "tomorrow" should be checked
 		# for being possible or not
-		if self.wording_option.get_active():
-			self.update_time()
+		if self.noupdate == gtk.FALSE:
+			self.update_time_combo()
 			
 
 		return
 
-	def on_control_option_toggled (self, *args):
-		# Disable combobox
-		# enable the calendar en spinbuttons
-		self.update_time ()
 
 
-	def on_wording_option_toggled (self, *args):
-		# Disable the calendar
-		# enable the combobox
-		self.update_time ()
-		pass
+
 
 	def on_delete_button_clicked (self, *args):
 		iter = self.template_combobox.get_active_iter ()
@@ -326,7 +315,6 @@ class AtEditor:
 					self.runat = runat
 					self.title = title
 					self.update_textboxes ()
-					self.wording_option.set_active(gtk.TRUE)
 					self.on_combobox_changed()
 				else:					
 					self.title = title
@@ -377,15 +365,15 @@ class AtEditor:
 		self.icon = "/usr/share/icons/gnome/48x48/mimetypes/gnome-mime-application.png"
 		(year, month, day) = self.calendar.get_date()
 
-		self.nooutput_checkbutton.set_active (gtk.FALSE)
-		self.nooutput = self.nooutput_checkbutton.get_active()
+		
 		if self.first == 1:
 			pass
 		else:	
 			self.calendar.select_day(day+1)
 			self.first = 1
-		self.control_option.set_active(gtk.TRUE)
-		self.update_time () #update_textboxes inside
+		self.update_time_cal()		
+		self.update_textboxes () #update_textboxes inside
+		
 		return
 		
 
