@@ -1,46 +1,51 @@
 # -*- coding: UTF-8 -*-
+# Don't touch the first line :-) unless you know why and you need to touch
+# it for your language. Also if you changed the formatting using your
+# editor (and tested everything, haha)
+
 import os
 import gtk
 
 # Dear translators,
 
-# This file is yours. You people do whatever you wan't with it.
-# You can fix spelling problems, add comments, add code and functionality
-# You don't have to inform me about changes (you can commit if you have
-# such an account on GNOME) yet you CAN ask the programmers for assistance.
+# This file is yours. YOU people do whatever you wan't with it. You can
+# fix spelling problems, add comments, add code and functionality. You
+# don't have to inform me about changes (you can commit if you have such
+# an account on GNOME) yet you CAN ask the programmers for assistance.
 
 # Yes yours. Really
 
-
-# No seriously, yours. Yeah, yours. It's your file. You do with it what
-# you want. I mean it. Yes...
+# No seriously, it's yours. Yeah, yours. It's your file. You do whatever
+# you want with this file. I mean it. Yes...
 
 # If you don't have access you can create a diff file and send it to the
-# AUTHORS: cd src/; cvs diff -u lang.py > language.diff
-# and we will weed it out for you. We will provide you with the best
-# assistance possible.
+# AUTHORS: cd src/; cvs diff -u lang.py > language.diff  and we will
+# weed it out for you. We will provide you with the best assistance
+# possible.
+
+# WHY, WHY THE HELL WHY??? WHHHAAAYYYY??????!!!!!!
+# ------------------------------------------------
 
 # Most languages will not have to do all this, but some do.
 # http://lists.gnome.org/archives/gnome-i18n/2004-June/msg00089.html
 
-# To get numeric nth translation correct some languages need to get
+# To get numeric nth translations correct, some languages need to get
 # things like the gender and wording correct. The only way to do
-# this is to code it. Often it can't be done using the po-files
+# this is to code it.
 
 # Therefor I am making it possible for those languages to code it, in
 # this file.
 
-# Read through the comments of the implementations for other languages
-# and don't touch the implementations for English unless you know what
+# Read through the comments of the implementations of other languages
+# and don't touch the implementation for English unless you know what
 # you are doing.
 
-# If you language can get correctly translated by using only the po files,
-# it means that you don't have to touch these files at all.
+# If your language 'can' get correctly translated by using only the po
+# files, it means that you don't have to touch these files at all. In
+# that case the advice is simple: don't touch it. hehe :)
 
 
-##
-## I18N
-##
+# This is some I18n init stuff (don't touch it)
 from rhpl.translate import _, N_
 import rhpl.translate as translate
 domain = 'gnome-schedule'
@@ -110,7 +115,7 @@ def translate_nth_en (nth):
 # special cases in spelling and that the ordering to form the word is
 # a bit different. Dutch is also not using the 'nth' numeric to describe
 # the (for example) 3 of 43, in stead it's using a normal written numeric.
-# So I had to add a new table with the written version of tne numbers
+# So I had to add a new table with the written version of tne numbers.
 def translate_nth_nl (nth):
 	try:
 		nth = int(nth)
@@ -136,7 +141,7 @@ def translate_nth_nl (nth):
 		tennumber = nth / 10
 		remainder = nth - (tennumber*10)
 		# If the last character before the concatenation is a "e", we
-		# dutch-people write that e a bit different. This "en" is a lot
+		# dutch-people write that "e" a bit different. This "en" is a lot
 		# like the "-" in English. It concatenates the tennumber with the
 		# remainder.
 
@@ -152,8 +157,8 @@ def translate_nth_nl (nth):
 		else:
 			add = ""
 		# Our ordering is also different, and we don't use the nth-number
-		# to describe the remainder. We use a normal written version of the
-		# number
+		# to describe the remainder. We use a normal written version of
+		# the number.
 		return add + numbers[remainder]+between+tennumbers [tennumber]+"ste"
 	elif nth > 100 or nth < -100:
 		return string(nth) + "de"
@@ -163,16 +168,16 @@ def translate_nth_nl (nth):
 #	pass
 
 
-# These are a bit more difficult and are only here for the languages that
-# have to adjust gender and other specifics to the sentence when using
-# nth numeric values in sentences. If it's not needed for your language
-# (for example, it's not needed for dutch), then don't change anything and
-# do your translation in the po-files only.
+# These are a bit more difficult and are only here for the languages
+# that have to adjust gender and other specifics to the sentence when
+# using nth numeric values in sentences. If it's not needed for your
+# language (for example, it's not needed for dutch), then don't change
+# anything and do your translation in the po-files only.
 
-# This translates a hour, minute and seconds to a digital-clock-display
-# hour. As far as I know is the format internationally standarized.
-# Still I am making it possible to translate this using both po-files and
-# by defining your own version of it.
+# This translates a hour, minute and seconds to a digital-clock-display.
+# As far as I know is the format internationally standarized.
+# Still I am making it possible to translate this using both po-files
+# and by defining your own version of it.
 def timeval (hour, minute, seconds = None):
 	#if language.find ("whatever") != -1:
 	#	return timeval_whatever (hour, minute, seconds)
@@ -181,10 +186,10 @@ def timeval (hour, minute, seconds = None):
 
 # So this is the English version. It will return "hh:mm:ss". As you can
 # see I have added an empty translatable string at the beginning and end
-# of what will be returned. You can use that in your language to append
-# or prepend something. If the gender of words in your sentences change
-# cause of or nth numeric written values or these date values, use the
-# functions below to create a version for your language.
+# of what will be returned. You can use that in your language po-file to
+# append or prepend something. If the gender of words in your sentences
+# changes cause of or nth numeric written values or these date values,
+# use the functions below to create a version for your language.
 def timeval_en (hour, minute, seconds):
 	if int (minute) < 10:
 		minute = "0" + minute
@@ -202,7 +207,6 @@ def timeval_en (hour, minute, seconds):
 # You can copy-and-paste the whole block and start adjusting it for your
 # language. If you need assistance, read the AUTHORS file and try to
 # contact us or use the mailinglists.
-
 def translate_crontab_easy (minute, hour, day, month, weekday):
 	#if language.find ("whatever") != -1:
 	#	return translate_crontab_easy_whatever (minute, hour, day, month, weekday)
@@ -215,18 +219,24 @@ def translate_crontab_easy_en (minute, hour, day, month, weekday):
 	# x means happens at
 	# *\x means happens every xth (not yet supported correctly)
 	# 1,2,3,4 means happens the 1st, 2e, 3th and 4th
+	
+	# These are the two unsupported cases
 	if minute.find ("\\") != -1 or hour.find ("\\") != -1 or day.find ("\\") != -1 or month.find ("\\") != -1 or weekday.find ("\\") != -1:
 		return minute + " " + hour + " " + day + " " + month + " " + weekday
-
 	if minute.find ("-") != -1 or hour.find ("-") != -1 or day.find ("-") != -1 or month.find ("-") != -1 or weekday.find ("-") != -1:
 		return minute + " " + hour + " " + day + " " + month + " " + weekday
 
+	# So if our case is supported:
+
+	# If all are asterix, it means every minute :)
 	if minute == "*" and hour == "*" and month == "*" and day == "*" and weekday == "*":
 		return _("Every minute")
 
+	# If only minute is filled in
 	if minute != "*" and hour == "*" and month == "*" and day == "*" and weekday == "*":
 		return (_("Every %s minute of every hour") % (translate_nth (minute)))
 
+	# Minute and hour cases
 	if hour != "*" and month == "*" and day == "*" and weekday == "*":
 		if minute == "0":
 			return (_("Every %s hour of the day") % (translate_nth (hour)))
@@ -234,7 +244,8 @@ def translate_crontab_easy_en (minute, hour, day, month, weekday):
 			return (_("Every day at %s") % (timeval (hour, minute)))
 		elif minute == "*":
 			return (_("Every minute during the %s hour") % (translate_nth (hour)))
-	
+
+	# Day, minute and hour cases
 	if month == "*" and day != "*" and weekday == "*":
 		if minute == "0" and hour == "0":
 			return (_("Every %s day of the month") % (translate_nth (day)))
@@ -245,6 +256,7 @@ def translate_crontab_easy_en (minute, hour, day, month, weekday):
 		elif minute != "*" and hour == "*":
 			return (_("At the %s minute of every hour every %s day of the month") % (translate_nth (minute), translate_nth (day)))
 
+	# Day, minute, hour and month cases
 	if month != "*" and weekday == "*":
 		if minute == "0" and hour == "0" and day == "1":
 			return (_("Every %s month of the year") % (translate_nth (month)))
@@ -258,12 +270,16 @@ def translate_crontab_easy_en (minute, hour, day, month, weekday):
 			return (_("Every day on %s every %s month of the year") % (timeval (hour, minute), translate_nth (month)))
 
 
+	# Weekday cases
 	if month == "*" and day == "*" and weekday != "*":
 		if minute == "0" and hour == "0":
 			return (_("Every %s day of the week") % (translate_nth (weekday)))
 		elif minute != "*" and hour != "*":
 			return (_("Every %s day of the week at %s") % (translate_nth (weekday), timeval  (hour, minute)))
-		# All other cases are strange, why define a day of the month if you are already defining the day of the week? :)
-		# They are possible, yes, but I don't think that translations for such stuff is needed ...
+		# All other cases are strange, why define a day of the month if
+		# you are already defining the day of the week? :). They are
+		# possible, yes, but I don't think that translations for such
+		# stuff is needed ...
 
+	# If nothing got translated, we fall back to ...
 	return minute + " " + hour + " " + day + " " + month + " " + weekday
