@@ -283,10 +283,12 @@ def translate_crontab_easy_en (minute, hour, day, month, weekday):
 			return (_("Every %s day of the week") % (translate_nth (weekday)))
 		elif minute != "*" and hour != "*":
 			return (_("Every %s day of the week at %s") % (translate_nth (weekday), timeval  (hour, minute)))
-		# All other cases are strange, why define a day of the month if
-		# you are already defining the day of the week? :). They are
-		# possible, yes, but I don't think that translations for such
-		# stuff is needed ...
+		elif minute == "*" and hour != "*":
+			return (_("Every %s day of the week the %s hour") % (translate_nth (weekday), translate_nth (hour)))
+		elif minute != "*" and hour == "*":
+			return (_("Every %s day of the week the %s minute of every hour") % (translate_nth (weekday), translate_nth (minute)))
+		elif minute == "*" and hour == "*":
+			return (_("Every %s day of the week every minute") % (translate_nth (weekday)))
 
 	# If nothing got translated, we fall back to ...
 	return translate_crontab_easy_anylang (minute, hour, day, month, weekday)
