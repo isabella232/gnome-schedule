@@ -153,8 +153,27 @@ class AddWindow:
 
 			if m.groups()[5] != None:
 				thefield = m.groups()[5] + field[len(field)-1]
-				# Todo: parse and check a 'manual steps'-field
-				print thefield
+				# thefield = "1,2,3,4"
+				fields = thefield.split (",")
+				for field in fields:
+					num = int (field)
+					if type=="minute":
+						if num > 60 or num < 0:
+							raise
+					if type=="hour":
+						if num > 24 or num < 0:
+							raise
+					if type=="day":
+						if num > 31 or num < 0:
+							raise
+					if type=="month":
+						if num > 31 or num < 0:
+							raise
+					if type=="weekday":
+						if num > 7 or num < 0:
+							raise
+
+
 
 				#(*, 0, '2', 10, 10, '1,2,', 1)
 				# print m.groups()
