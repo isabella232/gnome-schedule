@@ -29,63 +29,137 @@ _ = gettext.gettext
 
 class Schedule:
 	def __init__(self, parent):
-		self.ParentClass = parent
-		self.read()
-		return
+		pass
+		
+	##SHARED
+	def removetemplate (self, template_name):
+		template_name_c = self.__replace__ (template_name)
+		
+		installed = support.gconf_client.get_string("/apps/gnome-schedule/presets/" + self.type + "/installed")
+		newstring = installed
+		if installed != None:
+			first = gtk.TRUE
+			newstring = "   "
+			for t in string.split (installed, ", "):
+				if t != template_name_c:
+					if first == gtk.TRUE:
+						newstring = t
+						first = gtk.FALSE
+					else:
+						newstring = newstring + ", " + t
 
-	def make_preview (self, str):
-		raise 'Abstract method please override'
+		
+		support.gconf_client.unset("/apps/gnome-schedule/presets/crontab/%s/name" % (template_name_c))
+		support.gconf_client.unset("/apps/gnome-schedule/presets/crontab/%s/icon_uri" % (template_name_c))
+		support.gconf_client.unset("/apps/gnome-schedule/presets/crontab/%s/command" % (template_name_c))
+		support.gconf_client.unset("/apps/gnome-schedule/presets/crontab/%s/title" % (template_name_c))
+	##
+		
+		##crontab
+		support.gconf_client.unset("/apps/gnome-schedule/presets/crontab/%s/frequency" % (template_name_c))
+		##
+		
+		##AT
+		support.gconf_client.unset("/apps/gnome-schedule/presets/at/%s/runat" % (template_name_c))
+		##
+		
+		##SHARED
+		if newstring == "   ":
+			support.gconf_client.unset ("/apps/gnome-schedule/presets/" + self.type + "/installed")
+		else:
+			support.gconf_client.set_string("/apps/gnome-schedule/presets/" + self.type + "/installed", newstring)
+		##
+		
+	##SHARED
+	def __replace__ (self, template_name_c):
+		for a in " ,	;:/\\\"'!@#$%^&*()-_+=|?<>.][{}":
+			template_name_c = string.replace (template_name_c, a, "-")
+			
+		return template_name_c
+	##
+	
+	
+	##CRONTAB
+	#def savetemplate (self, template_name, record, nooutput, title, icon):
+		
+		#minute, hour, day, month, weekday, command, title_, icon_ = self.parse (record)
+		#frequency = minute + " " + hour + " " + day + " " + month + " " + weekday
+		template_name_c = self.__replace__ (template_name)
+		
+		#move to 
+		if nooutput:
+			space = " "
+			if command[len(command)-1] == " ":
+				space = ""
+			command = command + space + self.nooutputtag
+			
+		support.gconf_client.set_string("/apps/gnome-schedule/presets/crontab/%s/frequency" % (template_name_c), frequency)
+	##
+	
+		##AT
+		#def savetemplate (self, template_name, runat, title, icon, command):
+		#template_name_c = self.replace (template_name)
+		support.gconf_client.set_string("/apps/gnome-schedule/presets/at/%s/runat" % (template_name_c), runat)
+		##
+	
+		##SHARED
+		support.gconf_client.set_string("/apps/gnome-schedule/presets/crontab/%s/name" % (template_name_c), template_name)
+		support.gconf_client.set_string("/apps/gnome-schedule/presets/crontab/%s/icon_uri" % (template_name_c), icon)
+		support.gconf_client.set_string("/apps/gnome-schedule/presets/crontab/%s/command" % (template_name_c), command)
+		support.gconf_client.set_string("/apps/gnome-schedule/presets/crontab/%s/title" % (template_name_c), title)
+		
+		installed = support.gconf_client.get_string("/apps/gnome-schedule/presets/" + self.type + "/installed")
+		if installed == None:
+			installed = template_name_c
+		else:
+			found = gtk.FALSE
+			for t in string.split (installed, ", "):
+				if t == template_name_c:
+					found = gtk.TRUE
 
-	def savetemplate (self, template_name, record, nooutput, title, icon):
-		raise 'Abstract method please override'
+			if found == gtk.FALSE:
+				installed = installed + ", " + template_name_c
 
+		support.gconf_client.unset ("/apps/gnome-schedule/presets/" + self.type + "/installed")
+		support.gconf_client.set_string("/apps/gnome-schedule/presets/" + self.type + "/installed", installed)
+		##
+		
+	##SHARED
 	def gettemplatenames (self):
-		raise 'Abstract method please override'
-
+		#try:
+			strlist = support.gconf_client.get_string("/apps/gnome-schedule/presets/" + self.type + "/installed")
+			if strlist != None:
+				list = string.split (strlist, ", ")
+				return list
+			else:
+				return None
+		#except:
+		#	return None
+	##
+	
+	##SHARED
 	def gettemplate (self, template_name):
-		raise 'Abstract method please override'
-
-	def translate_frequency (self, frequency):
-		raise 'Abstract method please override'
-
-	def geteditor (self):
-		raise 'Abstract method please override'
-
-	def createtreemodel (self):
-		raise 'Abstract method please override'
-
-	def switchview (self, mode = "simple", init = 0):
-		raise 'Abstract method please override'
-
-	def createpreview (self, minute, hour, day, month, weekday, command):
-		raise 'Abstract method please override'
-
-	def getstandardvalue (self):
-		raise 'Abstract method please override'
-
-	def getfrequency (self, minute, hour, day, month, weekday):
-		raise 'Abstract method please override'
-
-	def checkfield (self, field, type, regex):
-		raise Exception('Abstract method please override','','','')
-
-	def write (self):
-		raise 'Abstract method, please override' 
-
-	def update (self, linenumber, record, parentiter, nooutput, title, icon):
-		raise 'Abstract method, please override' 
-
-	def delete (self, linenumber):
-		raise 'Abstract method, please override' 
-
-	def append (self, record, nooutput, title, icon):
-		raise 'Abstract method, please override' 
-
-	def read (self):
-		raise 'Abstract method, please override'
-
-	def parse (self, line):
-		raise 'Abstract method, please override'
-
-	def easy (self, minute, hour, day, month, weekday):
-		raise 'Abstract method, please override'
+		try:
+			icon_uri = support.gconf_client.get_string("/apps/gnome-schedule/presets/" + self.type + "/%s/icon_uri" % (template_name))
+			command = support.gconf_client.get_string("/apps/gnome-schedule/presets/" + self.type + "/%s/command" % (template_name))
+			title = support.gconf_client.get_string("/apps/gnome-schedule/presets/" + self.type + "/%s/title" % (template_name))
+			name = support.gconf_client.get_string("/apps/gnome-schedule/presets/" + self.type + "/%s/name" % (template_name))
+	##		
+	
+			##AT	
+			runat = support.gconf_client.get_string("/apps/gnome-schedule/presets/at/%s/runat" % (template_name))
+			#return icon_uri,  runat, title, name, command
+			##
+	
+			##CRONTAB	
+			frequency = support.gconf_client.get_string("/apps/gnome-schedule/presets/crontab/%s/frequency" % (template_name))
+			return icon_uri, command, frequency, title, name
+			##
+			
+		##SHARED			
+		except Exception, ex:
+			return ex, ex, ex, ex, ex
+		##
+		
+	
+	
