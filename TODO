@@ -7,7 +7,6 @@ General:
 * release majors once a month
 
 
-
 Add window:
 * Regexp to check if the values entered in the advaced add form is correct.
 * Move the value from the advaced form into the advanced help form when shown
@@ -20,6 +19,7 @@ Add window:
 * the 'Setting' label should be a header
 * the combobox 'Every' should not be editable, perhaps change to a normal combobox
 
+
 Add help window:
 * if >1 is selected in the select every field is written then change the label to 'dayS' or appropiate
 * and 'Happends from' should be changed to 'Happends from day' [ ] to [ ]
@@ -27,6 +27,6 @@ Add help window:
 * the 'Expression' label should be a header.
 
 Documentation:
-* Create empty index.htm and adding.htm files, and make the help buttons work
+* Create index.htm and adding.htm files, and make the help buttons work
 * Write it :)
 

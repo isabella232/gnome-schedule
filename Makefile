@@ -2,7 +2,7 @@
 #Copyright Red Hat Inc.  Jan 2001
 
 VERSION=$(shell awk '/Version:/ { print $$2 }' gnome-schedule.spec)
-CVSTAG=r$(subst .,-,$(VERSION))
+CVSTAG=RELEASE-$(subst .,-,$(VERSION))-BRANCH
 SUBDIRS=po
 
 PREFIX=/usr
@@ -46,7 +46,7 @@ install:
 	done && test -z "$$fail"
 
 archive:
-	cvs tag -cFR $(CVSTAG) .
+	cvs tag -b $(CVSTAG) .
 	@rm -rf /tmp/${PKGNAME}-$(VERSION) /tmp/${PKGNAME}
 	@CVSROOT=`cat CVS/Root`; cd /tmp; cvs -d $$CVSROOT export -r$(CVSTAG) ${PKGNAME}
 	@mv /tmp/${PKGNAME} /tmp/${PKGNAME}-$(VERSION)
