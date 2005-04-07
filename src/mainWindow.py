@@ -284,7 +284,10 @@ class main:
 	
 	
 	def __initUser__(self):
-		self.__setUser__(os.environ['USER'])
+		self.uid = os.geteuid() #The enivronment variable isn't always updated after a 'su'
+		self.gid = os.getegid()
+		self.user = pwd.getpwuid(self.uid)[0]
+		print self.user
 		
 		if self.uid != 0:
 			self.set_user_menu.hide()	
