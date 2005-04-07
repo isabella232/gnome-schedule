@@ -67,6 +67,7 @@ class CrontabEditor:
 		##simple tab	
 		self.notebook = self.xml.get_widget("notebook")
 		self.template_image = self.xml.get_widget ("template_image")
+		self.template_image_size = gtk.icon_size_register ("cron_template_image_size", 60, 60)
 		self.image_button = self.xml.get_widget ("image_button")
 		self.template_label = self.xml.get_widget ("template_label")
 		self.basic_table = self.xml.get_widget ("basic_table")
@@ -232,9 +233,14 @@ class CrontabEditor:
 
 	# TODO: to gnome specific
 	def __loadicon__ (self):
-		pixbuf = gtk.gdk.pixbuf_new_from_file_at_size (self.defaultIcon, 60, 60)
+		try:
+			pixbuf = gtk.gdk.pixbuf_new_from_file_at_size (self.defaultIcon, 60, 60)
+			self.icon = self.defaultIcon
+		except gobject.GError:
+			pixbuf = gtk.Widget.render_icon (self.widget, gtk.STOCK_MISSING_IMAGE, self.template_image_size, None)
+			self.icon = ""
+
 		self.template_image.set_from_pixbuf(pixbuf)
-		self.icon = self.defaultIcon
 			
 
 	#save template
@@ -365,9 +371,12 @@ class CrontabEditor:
 				#if self.ParentClass.saveWindow != None:
 				#	self.ParentClass.saveWindow.save_entry.set_text (name)
 				if icon_uri != None:
-					pixbuf = gtk.gdk.pixbuf_new_from_file_at_size (icon_uri, 60, 60)
-					self.template_image.set_from_pixbuf(pixbuf)
-					self.icon = icon_uri
+					try:
+						pixbuf = gtk.gdk.pixbuf_new_from_file_at_size (icon_uri, 60, 60)
+						self.template_image.set_from_pixbuf(pixbuf)
+						self.icon = icon_uri
+					except gobject.GError:
+						self.__loadicon__ ()
 					
 				else:
 					self.__loadicon__ ()
@@ -487,8 +496,11 @@ class CrontabEditor:
 		self.month_entry.set_text (self.month)
 		self.weekday_entry.set_text (self.weekday)
 		if self.icon != None:
-			pixbuf = gtk.gdk.pixbuf_new_from_file_at_size (self.icon, 60, 60)
-			self.template_image.set_from_pixbuf(pixbuf)
+			try:
+				pixbuf = gtk.gdk.pixbuf_new_from_file_at_size (self.icon, 60, 60)
+				self.template_image.set_from_pixbuf(pixbuf)
+			except gobject.GError:
+				self.__loadicon__ ()
 
 		else:
 			self.__loadicon__ ()

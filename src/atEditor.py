@@ -81,6 +81,7 @@ class AtEditor:
 		##
 		
 		self.template_image = self.xml.get_widget ("at_template_image")
+		self.template_image_size = gtk.icon_size_register ("at_template_image_size", 60, 60)
 		self.template_label = self.xml.get_widget ("at_template_label")
 		
 		self.calendar = self.xml.get_widget ("at_calendar")
@@ -369,9 +370,13 @@ class AtEditor:
 					# self.remove_button.set_sensitive (True)
 					icon_uri, command, runat, title, name = template
 					if icon_uri != None:
-						pixbuf = gtk.gdk.pixbuf_new_from_file_at_size (icon_uri, 60, 60)
-						self.template_image.set_from_pixbuf(pixbuf)
-						self.icon = icon_uri
+						try:
+							pixbuf = gtk.gdk.pixbuf_new_from_file_at_size (icon_uri, 60, 60)
+							self.template_image.set_from_pixbuf(pixbuf)
+							self.icon = icon_uri
+						except gobject.GError:
+							self.__loadicon__ ()
+
 					else:
 						self.__loadicon__ ()
 					self.title = title
@@ -419,9 +424,14 @@ class AtEditor:
 
 
 	def __loadicon__ (self):
-		pixbuf = gtk.gdk.pixbuf_new_from_file_at_size (self.defaultIcon, 60, 60)
+		try:
+			pixbuf = gtk.gdk.pixbuf_new_from_file_at_size (self.defaultIcon, 60, 60)
+			self.icon = self.defaultIcon
+		except gobject.GError:
+			pixbuf = gtk.Widget.render_icon (self.widget, gtk.STOCK_MISSING_IMAGE, self.template_image_size, None)
+			self.icon = ""
+
 		self.template_image.set_from_pixbuf(pixbuf)
-		self.icon = self.defaultIcon
 
 	
 	def __reset__ (self):
@@ -473,8 +483,11 @@ class AtEditor:
 				self.combobox_entry.set_text(self.runat)
 
 		if self.icon != None:
-			pixbuf = gtk.gdk.pixbuf_new_from_file_at_size (self.icon, 60, 60)
-			self.template_image.set_from_pixbuf(pixbuf)
+			try:
+				pixbuf = gtk.gdk.pixbuf_new_from_file_at_size (self.icon, 60, 60)
+				self.template_image.set_from_pixbuf(pixbuf)
+			except gobject.GError:
+				self.__loadicon__ ()
 
 		else:
 			self.__loadicon__ ()
