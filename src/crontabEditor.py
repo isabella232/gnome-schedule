@@ -370,16 +370,13 @@ class CrontabEditor:
 				icon_uri, command, frequency, title, name = template
 				#if self.ParentClass.saveWindow != None:
 				#	self.ParentClass.saveWindow.save_entry.set_text (name)
-				if icon_uri != None:
-					try:
-						pixbuf = gtk.gdk.pixbuf_new_from_file_at_size (icon_uri, 60, 60)
-						self.template_image.set_from_pixbuf(pixbuf)
-						self.icon = icon_uri
-					except gobject.GError:
-						self.__loadicon__ ()
-					
-				else:
+				try:
+					pixbuf = gtk.gdk.pixbuf_new_from_file_at_size (icon_uri, 60, 60)
+					self.template_image.set_from_pixbuf(pixbuf)
+					self.icon = icon_uri
+				except (gobject.GError, TypeError):
 					self.__loadicon__ ()
+					
 				if frequency != None and command != None:
 					if title != None:
 						record = frequency + " " + command + " # " + title
@@ -495,15 +492,12 @@ class CrontabEditor:
 		self.day_entry.set_text (self.day)
 		self.month_entry.set_text (self.month)
 		self.weekday_entry.set_text (self.weekday)
-		if self.icon != None:
-			try:
-				pixbuf = gtk.gdk.pixbuf_new_from_file_at_size (self.icon, 60, 60)
-				self.template_image.set_from_pixbuf(pixbuf)
-			except gobject.GError:
-				self.__loadicon__ ()
-
-		else:
+		try:
+			pixbuf = gtk.gdk.pixbuf_new_from_file_at_size (self.icon, 60, 60)
+			self.template_image.set_from_pixbuf(pixbuf)
+		except (gobject.GError, TypeError):
 			self.__loadicon__ ()
+
 		self.setting_label.set_text (self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday + " " + self.command)
 		self.__set_frequency_combo__()
 		self.noevents = False

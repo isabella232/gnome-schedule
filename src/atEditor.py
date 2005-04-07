@@ -369,16 +369,13 @@ class AtEditor:
 				if template != None:
 					# self.remove_button.set_sensitive (True)
 					icon_uri, command, runat, title, name = template
-					if icon_uri != None:
-						try:
-							pixbuf = gtk.gdk.pixbuf_new_from_file_at_size (icon_uri, 60, 60)
-							self.template_image.set_from_pixbuf(pixbuf)
-							self.icon = icon_uri
-						except gobject.GError:
-							self.__loadicon__ ()
-
-					else:
+					try:
+						pixbuf = gtk.gdk.pixbuf_new_from_file_at_size (icon_uri, 60, 60)
+						self.template_image.set_from_pixbuf(pixbuf)
+						self.icon = icon_uri
+					except (gobject.GError, TypeError):
 						self.__loadicon__ ()
+
 					self.title = title
 					self.command = command
 					if runat != None:
@@ -482,14 +479,10 @@ class AtEditor:
 			if self.combobox_entry.get_text() != self.runat:
 				self.combobox_entry.set_text(self.runat)
 
-		if self.icon != None:
-			try:
-				pixbuf = gtk.gdk.pixbuf_new_from_file_at_size (self.icon, 60, 60)
-				self.template_image.set_from_pixbuf(pixbuf)
-			except gobject.GError:
-				self.__loadicon__ ()
-
-		else:
+		try:
+			pixbuf = gtk.gdk.pixbuf_new_from_file_at_size (self.icon, 60, 60)
+			self.template_image.set_from_pixbuf(pixbuf)
+		except (gobject.GError, TypeError):
 			self.__loadicon__ ()
 
 		self.noevents = False
