@@ -67,7 +67,7 @@ class CrontabEditor:
 		##simple tab	
 		self.notebook = self.xml.get_widget("notebook")
 		self.template_image = self.xml.get_widget ("template_image")
-		self.template_image_size = gtk.icon_size_register ("cron_template_image_size", 60, 60)
+		self.template_image_size = gtk.icon_size_register ("cron_template_image_size", 48, 48)
 		self.image_button = self.xml.get_widget ("image_button")
 		self.template_label = self.xml.get_widget ("template_label")
 		self.basic_table = self.xml.get_widget ("basic_table")
@@ -86,12 +86,12 @@ class CrontabEditor:
 
 		self.frequency_combobox = self.xml.get_widget ("frequency_combobox")
 		self.frequency_combobox_model = gtk.ListStore (gobject.TYPE_STRING, gobject.TYPE_PYOBJECT)
-		self.frequency_combobox_model.append([_("use advanced"), None])
-		self.frequency_combobox_model.append([_("minute"), ["*", "*", "*", "*", "*"]])
-		self.frequency_combobox_model.append([_("hour"), ["0", "*", "*", "*", "*"]])
-		self.frequency_combobox_model.append([_("day"), ["0", "0", "*", "*", "*"]])
-		self.frequency_combobox_model.append([_("month"), ["0", "0", "1", "*", "*"]])
-		self.frequency_combobox_model.append([_("week"), ["0", "0", "*", "*", "1"]])
+		self.frequency_combobox_model.append([_("Use advanced"), None])
+		self.frequency_combobox_model.append([_("Every minute"), ["*", "*", "*", "*", "*"]])
+		self.frequency_combobox_model.append([_("Every hour"), ["0", "*", "*", "*", "*"]])
+		self.frequency_combobox_model.append([_("Every day"), ["0", "0", "*", "*", "*"]])
+		self.frequency_combobox_model.append([_("Every month"), ["0", "0", "1", "*", "*"]])
+		self.frequency_combobox_model.append([_("Every week"), ["0", "0", "*", "*", "1"]])
 		self.frequency_combobox.set_model (self.frequency_combobox_model)
 		
 		self.chkNoOutput = self.xml.get_widget("chkNoOutput")
@@ -136,7 +136,7 @@ class CrontabEditor:
 		self.__reset__ ()
 		self.__set_frequency_combo__()
 		self.editing = False
-		self.widget.set_title(_("Create a new scheduled task"))
+		self.widget.set_title(_("Create a New Scheduled Task"))
 		self.widget.set_transient_for(self.ParentClass.widget)
 		self.widget.set_position(gtk.WIN_POS_CENTER_ON_PARENT)
 		self.widget.show ()
@@ -156,7 +156,7 @@ class CrontabEditor:
 		self.linenumber = linenumber
 		self.record = record
 		(self.minute, self.hour, self.day, self.month, self.weekday, self.command, self.title, self.icon) = self.scheduler.parse (record)
-		self.widget.set_title(_("Edit a scheduled task"))
+		self.widget.set_title(_("Edit a Scheduled Task"))
 		self.__update_textboxes__ ()
 		self.__set_frequency_combo__ ()
 		self.parentiter = iter
@@ -234,7 +234,7 @@ class CrontabEditor:
 	# TODO: to gnome specific
 	def __loadicon__ (self):
 		try:
-			pixbuf = gtk.gdk.pixbuf_new_from_file_at_size (self.defaultIcon, 60, 60)
+			pixbuf = gtk.gdk.pixbuf_new_from_file_at_size (self.defaultIcon, 48, 48)
 			self.icon = self.defaultIcon
 		except gobject.GError:
 			pixbuf = gtk.Widget.render_icon (self.widget, gtk.STOCK_MISSING_IMAGE, self.template_image_size, None)
@@ -326,7 +326,7 @@ class CrontabEditor:
 	def on_image_button_clicked (self, *args):
 		preview = gtk.Image()
 		preview.show()
-		iconopendialog = gtk.FileChooserDialog(_("Pick an icon for this scheduled task"), self.widget, gtk.FILE_CHOOSER_ACTION_OPEN, (gtk.STOCK_OK, gtk.RESPONSE_ACCEPT, gtk.STOCK_CANCEL, gtk.RESPONSE_REJECT), "")
+		iconopendialog = gtk.FileChooserDialog(_("Choose an Icon for this Scheduled Task"), self.widget, gtk.FILE_CHOOSER_ACTION_OPEN, (gtk.STOCK_OK, gtk.RESPONSE_ACCEPT, gtk.STOCK_CANCEL, gtk.RESPONSE_REJECT), "")
 		# Preview stuff appears to be highly unstable :-(
 		# iconopendialog.set_preview_widget(preview)
 		# iconopendialog.connect("update-preview", self.update_preview_cb, preview)
@@ -371,7 +371,7 @@ class CrontabEditor:
 				#if self.ParentClass.saveWindow != None:
 				#	self.ParentClass.saveWindow.save_entry.set_text (name)
 				try:
-					pixbuf = gtk.gdk.pixbuf_new_from_file_at_size (icon_uri, 60, 60)
+					pixbuf = gtk.gdk.pixbuf_new_from_file_at_size (icon_uri, 48, 48)
 					self.template_image.set_from_pixbuf(pixbuf)
 					self.icon = icon_uri
 				except (gobject.GError, TypeError):
@@ -493,7 +493,7 @@ class CrontabEditor:
 		self.month_entry.set_text (self.month)
 		self.weekday_entry.set_text (self.weekday)
 		try:
-			pixbuf = gtk.gdk.pixbuf_new_from_file_at_size (self.icon, 60, 60)
+			pixbuf = gtk.gdk.pixbuf_new_from_file_at_size (self.icon, 48, 48)
 			self.template_image.set_from_pixbuf(pixbuf)
 		except (gobject.GError, TypeError):
 			self.__loadicon__ ()

@@ -300,12 +300,12 @@ class At:
 				# TODO: looks like it could be one append
 				if self.root == 1:
 					if self.user == user:
-						data.append([title, timestring_show, preview, lines, int(job_id), timestring, self, icon, date, class_id, user, time, _("One-time"), "at"])
+						data.append([title, timestring_show, preview, lines, int(job_id), timestring, self, icon, date, class_id, user, time, _("Once"), "at"])
 					else: 
 						#print "Record omitted, not current user"
 						pass
 				else:
-					data.append([title, timestring_show, preview, lines, int(job_id), timestring, self, icon, date, class_id, user, time, _("One-time"), "at"])
+					data.append([title, timestring_show, preview, lines, int(job_id), timestring, self, icon, date, class_id, user, time, _("Once"), "at"])
 
 				print "added" + job_id	
 			

@@ -22,11 +22,13 @@ import gtk
 import gobject
 
 #python modules
+import os
 import re
 import time
 import calendar
 
 #custom modules
+import config
 import preset
 
 ##
@@ -49,9 +51,6 @@ class AtEditor:
 
 		self.widget = self.xml.get_widget("atEditor")
 		self.widget.connect("delete-event", self.on_cancel_button_clicked)
-		
-		self.fieldRegex = re.compile('^(\*)$|^([0-9]+)$|^\*\\\([0-9]+)$|^([0-9]+)-([0-9]+)$|(^([0-9]+[,])+([0-9]+)$)')
-		self.nooutputRegex = re.compile('([^#\n$]*)>(\s|)/dev/null\s2>&1')
 		
 		self.defaultIcon = defaultIcon
 		
@@ -81,15 +80,12 @@ class AtEditor:
 		##
 		
 		self.template_image = self.xml.get_widget ("at_template_image")
-		self.template_image_size = gtk.icon_size_register ("at_template_image_size", 60, 60)
+		self.template_image_size = gtk.icon_size_register ("at_template_image_size", 48, 48)
 		self.template_label = self.xml.get_widget ("at_template_label")
 		
 		self.calendar = self.xml.get_widget ("at_calendar")
 		self.hour_spinbutton = self.xml.get_widget ("at_hour_spinbutton")
 		self.minute_spinbutton = self.xml.get_widget ("at_minute_spinbutton")
-		self.time_separator = self.xml.get_widget ("at_time_separator")
-		# Translators: Separator between hour and minute entry fields
-		self.time_separator.set_label (_(":"))
 
 		self.combobox = self.xml.get_widget ("at_combobox")
 		self.combobox_entry = self.combobox.get_child()	
@@ -121,7 +117,7 @@ class AtEditor:
 		self.__reset__ ()
 		self.title = _("Untitled")
 		self.editing = False
-		self.widget.set_title(_("Create a new scheduled task"))
+		self.widget.set_title(_("Create a New Scheduled Task"))
 		self.widget.set_transient_for(self.ParentClass.widget)
 		self.widget.set_position(gtk.WIN_POS_CENTER_ON_PARENT)
 		self.widget.show_all()
@@ -149,9 +145,9 @@ class AtEditor:
 		(hour, minute, day, month, year) = self.__parse_time__(self.time, self.date)
 		self.calendar.select_month(int(month) - 1, int(year))
 		self.calendar.select_day(int(day))
-		self.hour_spinbutton.set_text(hour)
-		self.minute_spinbutton.set_text(minute)
-		self.widget.set_title(_("Edit a scheduled task"))
+		self.hour_spinbutton.set_value(int(hour))
+		self.minute_spinbutton.set_value(int(minute))
+		self.widget.set_title(_("Edit a Scheduled Task"))
 		self.__update_textboxes__ ()
 		self.parentiter = iter
 		self.widget.set_transient_for(self.ParentClass.widget)
@@ -260,8 +256,8 @@ class AtEditor:
 				day = int(day)
 				self.calendar.select_month(month - 1, year)
 				self.calendar.select_day(day)
-				self.hour_spinbutton.set_text(hour)
-				self.minute_spinbutton.set_text(minute)
+				self.hour_spinbutton.set_value(int(hour))
+				self.minute_spinbutton.set_value(int(minute))
 
 			self.__update_textboxes__ (0)
 
@@ -370,7 +366,7 @@ class AtEditor:
 					# self.remove_button.set_sensitive (True)
 					icon_uri, command, runat, title, name = template
 					try:
-						pixbuf = gtk.gdk.pixbuf_new_from_file_at_size (icon_uri, 60, 60)
+						pixbuf = gtk.gdk.pixbuf_new_from_file_at_size (icon_uri, 48, 48)
 						self.template_image.set_from_pixbuf(pixbuf)
 						self.icon = icon_uri
 					except (gobject.GError, TypeError):
@@ -397,7 +393,7 @@ class AtEditor:
 	def on_image_button_clicked (self, *args):
 		preview = gtk.Image()
 		preview.show()
-		iconopendialog = gtk.FileChooserDialog(_("Pick an icon for this scheduled task"), self.widget, gtk.FILE_CHOOSER_ACTION_OPEN, (gtk.STOCK_OK, gtk.RESPONSE_ACCEPT, gtk.STOCK_CANCEL, gtk.RESPONSE_REJECT), "")
+		iconopendialog = gtk.FileChooserDialog(_("Choose an Icon for this Scheduled Task"), self.widget, gtk.FILE_CHOOSER_ACTION_OPEN, (gtk.STOCK_OK, gtk.RESPONSE_ACCEPT, gtk.STOCK_CANCEL, gtk.RESPONSE_REJECT), "")
 		# Preview stuff appears to be highly unstable :-(
 		# iconopendialog.set_preview_widget(preview)
 		# iconopendialog.connect("update-preview", self.update_preview_cb, preview)
@@ -422,7 +418,7 @@ class AtEditor:
 
 	def __loadicon__ (self):
 		try:
-			pixbuf = gtk.gdk.pixbuf_new_from_file_at_size (self.defaultIcon, 60, 60)
+			pixbuf = gtk.gdk.pixbuf_new_from_file_at_size (self.defaultIcon, 48, 48)
 			self.icon = self.defaultIcon
 		except gobject.GError:
 			pixbuf = gtk.Widget.render_icon (self.widget, gtk.STOCK_MISSING_IMAGE, self.template_image_size, None)
@@ -461,8 +457,8 @@ class AtEditor:
 		self.calendar.select_month(month - 1, year)
 		
 		self.calendar.select_day(day)
-		self.hour_spinbutton.set_text(str(hour))
-		self.minute_spinbutton.set_text(str(minute))
+		self.hour_spinbutton.set_value(int(hour))
+		self.minute_spinbutton.set_value(int(minute))
 
 		self.__update_textboxes__ () #update_textboxes inside
 		
@@ -480,7 +476,7 @@ class AtEditor:
 				self.combobox_entry.set_text(self.runat)
 
 		try:
-			pixbuf = gtk.gdk.pixbuf_new_from_file_at_size (self.icon, 60, 60)
+			pixbuf = gtk.gdk.pixbuf_new_from_file_at_size (self.icon, 48, 48)
 			self.template_image.set_from_pixbuf(pixbuf)
 		except (gobject.GError, TypeError):
 			self.__loadicon__ ()

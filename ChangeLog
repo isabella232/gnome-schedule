@@ -1,3 +1,19 @@
+2005-04-17  Frank Arnold <frank@scirocco-5v-turbo.de>
+
+	* src/at.py: Changed type description string "One-time" to "Once".
+	* src/atEditor.py: Import of modules os and config (help button not 
+	  working). Removed regular expressions for crontab. Changed template
+	  icon size to 48x48 and removed time seperator (modified glade file).
+	  Changed some labels and titles according to HIG. Fixed not properly
+	  working population of spin button boxes (use gtk_spin_button_set_value
+	  instead of set_text).
+	* src/crontabEditor.py: Changed template icon size to 48x48 (modified 
+	  glade file). Changed some labels and titles according to HIG.
+	* src/crontabEditorHelper.py: Changed title according to HIG.
+	* src/gnome-schedule.glade: Changed alignment, grouping and labels 
+	  according to HIG. Added accelerators and keybindings. Use of GtkDialog
+	  instead of GtkWindow for all dialogs. Removed GNOMEUI stuff.
+
 2005-04-07  Frank Arnold <frank@scirocco-5v-turbo.de>
 
 	* src/crontabEditor.py:
