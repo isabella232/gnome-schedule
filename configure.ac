@@ -82,7 +82,4 @@ pixmaps/Makefile
 po/Makefile.in
 desktop/Makefile
 desktop/gnome-schedule.desktop
-dist/fedora/2/gnome-schedule.spec
-dist/fedora/2/system-config-schedule.console 
-dist/gentoo/gnome-schedule-0.0.1.ebuild
 ])

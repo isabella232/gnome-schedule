@@ -1,6 +1,7 @@
 2005-07-26	Gaute Hope	<eg@gaute.vetsj.com>
 
 	* configure.ac: changed version number to 0.9.0
+	* configure.ac: Removed the dist stuff, for make dist to work it has to be added as a sub dir in Makefile.am aswell, but the user doesn't need it. And the files in the dist dir should be rewritten based on the old version for a new release anyway.
 	* README: Made it a little less rude :)
 	
 2005-04-17  Frank Arnold <frank@scirocco-5v-turbo.de>
@@ -49,7 +50,7 @@
 	* src/gnome-schedule.glade: Set main window as not modal, corrected two sentences
 	* src/mainWindow.py: Changed three strings, marked two strings for translation
 
-2005-01-10  Žygimantas Beručka  <uid0@akl.lt>
+2005-01-10  Å½ygimantas BeruÄka  <uid0@akl.lt>
 
 	* configure.ac: Added Lithuanian (lt) to ALL_LINGUAS.
 
