@@ -29,10 +29,7 @@ Support
 
   The reason why we are using an unstable version of PyGTK is because
   the stable version of PyGTK is to incomplete for serious GNOME -and
-  Gtk >= 2.4 application development. You can try proving me wrong... 
-  However, I won't listen to your whining. So to answer the question 
-  that will probably get asked most: No we will not backport to a stable 
-  version of PyGTK. You are free to wait for the major distributions to
+  Gtk >= 2.4 application development. You are free to wait for the major distributions to
   include PyGTK >= 2.4 or install an unstable version of PyGTK.
 
    Note that if you don't install PyGTK using your standard prefix, you
@@ -107,18 +104,8 @@ Compiling and HACKING
 ---------------------
 
   GNOME Schedule is (being) written using the programming language Python
-  and uses the PyGTK and Python-GConf bindings. No we are not planning
-  to rewrite the tool in Perl just so that you can prove that Perl can
-  do the same thing. To be honest, that would be a silly, stupid and 
-  idiot-only thing to do. So don't even try thinking about asking. I 
-  even think Larry Wall would agree with me on this one. You probably
-  don't know who Larry Wall is, else you would not be thinking about
-  asking the question (in case you where thinking about asking it).
-
-  Anyway, for the Slashdot-I-ONLY-Love-Perl type of nitwits: If you're
-  trying to look smart by saying how much Python sucks, try proving it
-  to me by coding in stead of whining. 
-
+  and uses the PyGTK and Python-GConf bindings.
+  
   You can talk to the developers of gnome-schedule about development
   related issues here:
 
@@ -149,34 +136,4 @@ Compiling and HACKING
 	o. Other than only the generated po-files you should also
 	   check out the file src/lang.py
 
-
-Conclusions
------------
-
-o. Using this document we have showed that we are dedicated to getting
-   things working while the main dependency is an unstable Python
-   library (PyGTK).
-
-o. Therefor we don't expect much whining from people who would love us 
-   to code against the stable tree of PyGTK while this tree being 
-   incapable of giving us the features we need.
-
-o. We DID documented every damn possible situation and even guide you
-   through the process of installing PyGTK in an non-standard prefix
-   which makes sure the library will NOT tamper with your current
-   installation.
-
-o. We know that even IF you DID installed PyGTK using the default
-   prefix (/usr) that distributions like Fedora Core 2 will still work
-   perfectly (it will show you deprecation warnings on the console
-   when launching most of the system-config-* tools, but afaik they
-   all work using the in-future deprecated PyGTK API). This means yet 
-   another reason not to whine about it.
-
-o. All this makes it absolutely impossible for l33t uber h4ckers to 
-   still have a valid reason to whine about our decision to depend on a
-   unstable PyGTK library. Yeah, it's virtuall impossible.
-
-
-SO DON'T DO IT
 
