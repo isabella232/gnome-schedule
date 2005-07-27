@@ -5,26 +5,14 @@ Development:
 
   * create a RPM package, using the spec file.
 
- Philip Van Hoof
-  * set up a bugzilla
-
- Gaute Hope
-  * better screenshots, in default gnome theme
-  * release minors  twice a week
-  * release majors once a month
-  
- 
  Unassigned release blockers
   * None
 
  Unassigned unstable (need a new branch and/or will not be 
  included in the next release)
   * Show the next-run time for crontab records
-  * Unification of the atEditor and crontabEditor GUI
-    One editor to rule them all!
   * Support for mail direction in both cron and at
   * Support for classes in at(nice, priority)
-  * show list with users instead of textbox where you have to fill in the user
   * make task for more then one user at once (for a group of users)
   * add logging function? (http://docs.python.org/lib/module-logging.html)	 
   * "gnome-schedule --addtemplate foo" (will add a template) (console only)
