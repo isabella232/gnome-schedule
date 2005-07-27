@@ -500,8 +500,8 @@ class main:
  			_("This software is distributed under the GPL. "),
  			["Philip Van Hoof <me at freax dot org>",
  			"Kristof Vansant <de_lupus at pandora dot be>",
- 			"Gaute Hope <eg at gaute dot eu dot org>"], 
- 			[_("Some painfully bad documentation put\ntoghether from the far corners of Gaute Hope's mind.")],_("translator-credits"),self.iconPixbuf)
+ 			"Gaute Hope <eg@gaute.vetsj.com>"], 
+ 			[_("No one wants the credit.")],_("All the translators"),self.iconPixbuf)
  
  		dlg.set_transient_for(self.widget)
  		dlg.set_position (gtk.WIN_POS_CENTER_ON_PARENT)
