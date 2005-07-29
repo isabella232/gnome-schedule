@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-04-17 12:33-0400\n"
-"PO-Revision-Date: 2005-04-17 17:03-0400\n"
+"POT-Creation-Date: 2005-07-29 00:09-0400\n"
+"PO-Revision-Date: 2005-07-29 17:03-0400\n"
 "Last-Translator: Adam Weinberger <adamw@gnome.org>\n"
 "Language-Team: Canadian English <adamw@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -832,16 +832,12 @@ msgid "This software is distributed under the GPL. "
 msgstr "This software is distributed under the GPL. "
 
 #: src/mainWindow.py:504
-msgid ""
-"Some painfully bad documentation put\n"
-"toghether from the far corners of Gaute Hope's mind."
-msgstr ""
-"Some painfully bad documentation put\n"
-"toghether from the far corners of Gaute Hope's mind."
+msgid "No one wants the credit."
+msgstr "No one wants the credit."
 
 #: src/mainWindow.py:504
-msgid "translator-credits"
-msgstr "Adam Weinberger <adamw@gnome.org>"
+msgid "All the translators"
+msgstr "All the translators"
 
 #: src/atEditor.py:516
 #, python-format
