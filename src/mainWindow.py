@@ -501,7 +501,7 @@ class main:
  			["Philip Van Hoof <me at freax dot org>",
  			"Kristof Vansant <de_lupus at pandora dot be>",
  			"Gaute Hope <eg@gaute.vetsj.com>"], 
- 			[_("No one wants the credit.")],_("All the translators"),self.iconPixbuf)
+ 			[_("translator-credits")],_("All the translators"),self.iconPixbuf)
  
  		dlg.set_transient_for(self.widget)
  		dlg.set_position (gtk.WIN_POS_CENTER_ON_PARENT)
