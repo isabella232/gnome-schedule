@@ -1,3 +1,7 @@
+2005-08-04  Tommi Vainikainen  <thv@iki.fi>
+
+	* configure.ac (ALL_LINGUAS): Added 'fi' (Finnish).
+
 2005-07-26	Gaute Hope	<eg@gaute.vetsj.com>
 
 	* configure.ac: changed version number to 0.9.0
