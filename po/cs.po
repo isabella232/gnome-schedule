@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-04-30 11:30+0000\n"
-"PO-Revision-Date: 2005-04-30 16:31+0200\n"
+"POT-Creation-Date: 2005-08-05 03:43+0000\n"
+"PO-Revision-Date: 2005-08-05 12:21+0200\n"
 "Last-Translator: Miloslav Trmac <mitr@volny.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -826,21 +826,24 @@ msgid "This software is distributed under the GPL. "
 msgstr "Toto software je šířeno pod podmínkami GPL. "
 
 #: ../src/mainWindow.py:504
-msgid ""
-"Some painfully bad documentation put\n"
-"toghether from the far corners of Gaute Hope's mind."
-msgstr ""
-"Trocha zoufale špatné dokumentace sestavena\n"
-"z temných zákoutí mysli Gaute Hope."
-
-#: ../src/mainWindow.py:504
 msgid "translator-credits"
 msgstr "Miloslav Trmač <mitr@volny.cz>"
+
+#: ../src/mainWindow.py:504
+msgid "All the translators"
+msgstr "Všichni překladatelé"
 
 #: ../src/atEditor.py:516
 #, python-format
 msgid "This is an invalid record! The problem could be: %s"
 msgstr "Toto není platný záznam! Problém je možná: %s "
+
+#~ msgid ""
+#~ "Some painfully bad documentation put\n"
+#~ "toghether from the far corners of Gaute Hope's mind."
+#~ msgstr ""
+#~ "Trocha zoufale špatné dokumentace sestavena\n"
+#~ "z temných zákoutí mysli Gaute Hope."
 
 #~ msgid "One-time"
 #~ msgstr "Jednou"
