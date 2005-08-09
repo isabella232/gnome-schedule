@@ -31,15 +31,6 @@ import calendar
 import config
 import preset
 
-##
-## I18N
-##
-import gettext
-domain = 'gnome-schedule'
-gettext.bindtextdomain(domain)
-gettext.textdomain(domain)
-_ = gettext.gettext
-
 
 class AtEditor:
 	def __init__(self, parent, backend, scheduler,defaultIcon):

@@ -31,11 +31,7 @@ import mainWindow
 ## I18N
 ##
 import gettext
-domain = 'gnome-schedule'
-gettext.bindtextdomain(domain)
-gettext.textdomain(domain)
-_ = gettext.gettext
-
+gettext.install(config.GETTEXT_PACKAGE(), config.GNOMELOCALEDIR(), unicode=1)
 
 if __name__ == "__main__":
 	signal.signal (signal.SIGINT, signal.SIG_DFL)
@@ -61,9 +57,9 @@ try:
   import gnome.ui
 	
 except:
-  print ("You need to install pyGTK or GTKv2, ")
-  print ("or set your PYTHONPATH correctly.")
-  print ("try: export PYTHONPATH= ")
+  print _("You need to install pyGTK or GTKv2, ")
+  print _("or set your PYTHONPATH correctly.")
+  print _("try: export PYTHONPATH= ")
   sys.exit(1)
 
 # TODO: Gnome specific

@@ -23,16 +23,6 @@ import gtk
 import re
 
 
-##
-## I18N
-##
-import gettext
-domain = 'gnome-schedule'
-gettext.bindtextdomain(domain)
-gettext.textdomain(domain)
-_ = gettext.gettext
-
-
 class CrontabEditorHelper:
 	def __init__(self, parent):
 		self.ParentClass = parent

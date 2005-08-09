@@ -2,6 +2,7 @@ version = "@VERSION@"
 image_dir = "@prefix@/share/pixmaps"
 glade_dir = "@prefix@/share/gnome-schedule"
 doc_dir = "@prefix@/share/doc/gnome-schedule-@VERSION@"
+locale_dir = "@prefix@/share/locale"
 gnomehelpbin = "@GNOMEHELP_CONFIG@"
 crontabbin = "@CRONTAB_CONFIG@"
 atbin = "@AT_CONFIG@"
@@ -42,3 +43,9 @@ def getGladedir ():
 
 def getDocdir ():
 	return doc_dir
+
+def GETTEXT_PACKAGE():
+	return "@GETTEXT_PACKAGE@"
+
+def GNOMELOCALEDIR():
+	return locale_dir

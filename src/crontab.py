@@ -26,15 +26,6 @@ import tempfile
 import lang
 import config
 
-##
-## I18N
-##
-import gettext
-domain = 'gnome-schedule'
-gettext.bindtextdomain(domain)
-gettext.textdomain(domain)
-_ = gettext.gettext
-
 
 class Crontab:
 	def __init__(self,root,user,uid,gid):

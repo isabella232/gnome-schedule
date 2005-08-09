@@ -1,3 +1,7 @@
+2005-08-09	Gaute Hope	<eg@gaute.vetsj.com>
+
+	* src/*: applied the gettext patch from Tommi Vainikainen, http://bugzilla.gnome.org/attachment.cgi?id=50457&action=view
+
 2005-08-04  Tommi Vainikainen  <thv@iki.fi>
 
 	* configure.ac (ALL_LINGUAS): Added 'fi' (Finnish).

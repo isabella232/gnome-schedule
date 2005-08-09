@@ -20,15 +20,6 @@
 #pygtk modules
 import gtk
 
-##
-## I18N
-##
-import gettext
-domain = 'gnome-schedule'
-gettext.bindtextdomain(domain)
-gettext.textdomain(domain)
-_ = gettext.gettext
-
 
 # TODO: remove this class and let mainWindow generate this dialogbox
 class AddWindow:

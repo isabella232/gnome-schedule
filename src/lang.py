@@ -46,13 +46,17 @@ warnings.filterwarnings("once", "Locale not supported by Python. Using the fallb
 # files, it means that you don't have to touch these files at all. In
 # that case the advice is simple: don't touch it. hehe :)
 
+
+import config
+
+
 ##
 ## I18N
 ##
 import locale
 import gettext
-domain = 'gnome-schedule'
-gettext.bindtextdomain(domain)
+domain = config.GETTEXT_PACKAGE()
+gettext.bindtextdomain(domain, config.GNOMELOCALEDIR())
 gettext.textdomain(domain)
 _ = gettext.gettext
 

@@ -31,15 +31,6 @@ import config
 import preset
 import crontabEditorHelper
 
-##
-## I18N
-##
-import gettext
-domain = 'gnome-schedule'
-gettext.bindtextdomain(domain)
-gettext.textdomain(domain)
-_ = gettext.gettext
-
 
 class CrontabEditor:
 	def __init__(self, parent, backend, scheduler, defaultIcon):

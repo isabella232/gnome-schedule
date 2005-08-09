@@ -39,15 +39,7 @@ import setuserWindow
 import addWindow
 import preset
 
-##
-## I18N
-##
-import gettext
-domain = 'gnome-schedule'
-gettext.bindtextdomain(domain)
-gettext.textdomain(domain)
-_ = gettext.gettext
-gtk.glade.bindtextdomain(domain)
+gtk.glade.bindtextdomain(config.GETTEXT_PACKAGE(), config.GNOMELOCALEDIR())
 
 ##
 ## The MainWindow class
