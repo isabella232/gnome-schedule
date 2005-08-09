@@ -1,12 +1,13 @@
-2005-08-09	Gaute Hope	<eg@gaute.vetsj.com>
+2005-08-09  Gaute Hope  <eg@gaute.vetsj.com>
 
 	* src/*: applied the gettext patch from Tommi Vainikainen, http://bugzilla.gnome.org/attachment.cgi?id=50457&action=view
+	* src/crontabEditorHelper.py: fixed some of the untranslatable strings
 
 2005-08-04  Tommi Vainikainen  <thv@iki.fi>
 
 	* configure.ac (ALL_LINGUAS): Added 'fi' (Finnish).
 
-2005-07-26	Gaute Hope	<eg@gaute.vetsj.com>
+2005-07-26  Gaute Hope  <eg@gaute.vetsj.com>
 
 	* configure.ac: changed version number to 0.9.0
 	* configure.ac: Removed the dist stuff, for make dist to work it has to be added as a sub dir in Makefile.am aswell, but the user doesn't need it. And the files in the dist dir should be rewritten based on the old version for a new release anyway.

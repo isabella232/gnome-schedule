@@ -291,7 +291,7 @@ class Crontab:
 					return minute, hour, day, month, weekday, command, title, icon
 						
 			else:
-				print "ERROR: Failed to parse crontab record"
+				print _("ERROR: Failed to parse crontab record")
 		return False
 		# TODO: throw exception
 

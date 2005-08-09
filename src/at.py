@@ -279,7 +279,7 @@ class At:
 			
 				preview = self.__make_preview__ (lines, prelen)
 				if dangerous == 1:
-						preview = "DANGEROUS PARSE: " + preview
+						preview = _("DANGEROUS PARSE: %(preview)") % { "preview":  preview }
 				#chopping of title and icon stuff from script
 				lines = lines[prelen:]
 					
@@ -297,7 +297,7 @@ class At:
 				else:
 					data.append([title, timestring_show, preview, lines, int(job_id), timestring, self, icon, date, class_id, user, time, _("Once"), "at"])
 
-				print "added" + job_id	
+				print _("added %(id)") % { "id": job_id	}
 			
 		return data
 

@@ -75,32 +75,35 @@ class CrontabEditorHelper:
 			self.entRangeEnd.set_text ("59")
 			self.entRangeStart.set_text ("0")
 			self.entFix.set_text("0")
+			self.radAll.set_label(_("Happens all minutes"))
 		if field == "hour":
 			self.entRangeEnd.set_text ("23")
 			self.entRangeStart.set_text ("0")
 			self.entFix.set_text("0")
+			self.radAll.set_label(_("Happens all hours"))
 		if field == "day":
 			self.entRangeEnd.set_text ("31")
 			self.entRangeStart.set_text ("1")
 			self.entFix.set_text("1")
+			self.radAll.set_label(_("Happens all days"))
 		if field == "month":
 			self.entRangeEnd.set_text ("12")
 			self.entRangeStart.set_text ("1")
 			self.entFix.set_text("1")
+			self.radAll.set_label(_("Happens all months"))
 		if field == "weekday":
 			self.entRangeEnd.set_text ("7")
 			self.entRangeStart.set_text ("0")
 			self.entFix.set_text("0")
+			self.radAll.set_label(_("Happens all weekdays"))
 
 		self.entEvery.set_text("2")
 		self.entExpression.set_text ("*")
 
 		self.trans_field = self.ParentClass.scheduler.translate_frequency (field)
-
-		self.radAll.set_label(_("Happens all ") + self.trans_field + _("s"))
 		self.lblEveryEntity.set_text(self.trans_field)
 		self.lblFixEntity.set_text(self.trans_field)
-		self.radRange.set_label (_("Happens from ") + self.trans_field)
+		self.radRange.set_label (_("Happens from %s") % (self.trans_field))
 
 		self.do_label_magic ()
 
