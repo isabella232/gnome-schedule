@@ -1,3 +1,12 @@
+2005-08-14  Gaute Hope  <eg@gaute.vetsj.com>
+
+	* src/crontabEditorHelper.py: Changed Happens all ... to Happens every ...
+	  Tried to remove all entries of the self.trans_field stuff. Only one left for the window title, and I don't think it will be a problem.
+	* src/gnome-schedule.po: Added a '.' at the end of the from to field in crontabeditorhelper so that people may add something at the end.
+	* po/nn.po: oppdaterte til dei nye strengane.
+	* src/crontabEditorHelper.py: Created a function to split translated strings where a text entry is, this way a translator can create strings delimted by '[ ]', which means a box. This is implemented for: Happens every, happens at the. Happens from [ ] to, remains.
+	
+
 2005-08-09  Gaute Hope  <eg@gaute.vetsj.com>
 
 	* src/*: applied the gettext patch from Tommi Vainikainen, http://bugzilla.gnome.org/attachment.cgi?id=50457&action=view

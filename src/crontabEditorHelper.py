@@ -75,36 +75,40 @@ class CrontabEditorHelper:
 			self.entRangeEnd.set_text ("59")
 			self.entRangeStart.set_text ("0")
 			self.entFix.set_text("0")
-			self.radAll.set_label(_("Happens all minutes"))
+			self.radAll.set_label(_("Happens every minute"))
+
 		if field == "hour":
 			self.entRangeEnd.set_text ("23")
 			self.entRangeStart.set_text ("0")
 			self.entFix.set_text("0")
-			self.radAll.set_label(_("Happens all hours"))
+			self.radAll.set_label(_("Happens every hour"))
+
 		if field == "day":
 			self.entRangeEnd.set_text ("31")
 			self.entRangeStart.set_text ("1")
 			self.entFix.set_text("1")
-			self.radAll.set_label(_("Happens all days"))
+			self.radAll.set_label(_("Happens every day"))
+			
 		if field == "month":
 			self.entRangeEnd.set_text ("12")
 			self.entRangeStart.set_text ("1")
 			self.entFix.set_text("1")
-			self.radAll.set_label(_("Happens all months"))
+			self.radAll.set_label(_("Happens every month"))
+
 		if field == "weekday":
 			self.entRangeEnd.set_text ("7")
 			self.entRangeStart.set_text ("0")
 			self.entFix.set_text("0")
-			self.radAll.set_label(_("Happens all weekdays"))
+			self.radAll.set_label(_("Happens every weekday"))
+
 
 		self.entEvery.set_text("2")
 		self.entExpression.set_text ("*")
 
 		self.trans_field = self.ParentClass.scheduler.translate_frequency (field)
-		self.lblEveryEntity.set_text(self.trans_field)
-		self.lblFixEntity.set_text(self.trans_field)
-		self.radRange.set_label (_("Happens from %s") % (self.trans_field))
-
+		
+		
+		
 		self.do_label_magic ()
 
 
@@ -195,22 +199,104 @@ class CrontabEditorHelper:
 		self.NoExpressionEvents = False
 
 
+	def split_translated (self, trs_str):
+		result = [ ]
+
+		p = 0
+		i = trs_str.find("[ ]")
+		while (i != -1):
+			result.append (trs_str[p:i])
+			p = i+3
+			i = trs_str.find("[ ]", i+3)
+
+		result.append (trs_str[p:])
+		if result:
+				return result
+		else: 
+			return False
+		
 	def do_label_magic (self):
 		try:
 			entFixValue = int (self.entFix.get_text())
+
+			#Happens at the [ ] "field"
 			if entFixValue == 1:
-				self.lblFixEntity.set_label (_("st. ") + self.trans_field)
+				if self.field == "minute":
+					#minute
+					translated = self.split_translated(_("Happens at the [ ] st. minute"))
+
+				elif self.field == "hour":
+					#hour
+					translated = self.split_translated(_("Happens at the [ ] st. hour"))
+				elif self.field == "day":
+					#day
+					translated = self.split_translated(_("Happens at the [ ] st. day"))
+				elif self.field == "month":
+					#month
+					translated = self.split_translated(_("Happens at the [ ] st. month"))
+				elif self.field == "weekday":
+					#weekday
+					translated = self.split_translated(_("Happens at the [ ] st. weekday"))
+
+				self.radFix.set_label (translated[0])
+				self.lblFixEntity.set_label (translated[1])
+				
 			else:
-				self.lblFixEntity.set_label (_("th. ") + self.trans_field)
+				
+				if self.field == "minute":
+					#minute
+					translated = self.split_translated(_("Happens at the [ ] th. minute"))
+				elif self.field == "hour":
+					#hour
+					translated = self.split_translated(_("Happens at the [ ] th. hour"))
+				elif self.field == "day":
+					#day
+					translated = self.split_translated(_("Happens at the [ ] th. day"))
+				elif self.field == "month":
+					#month
+					translated = self.split_translated(_("Happens at the [ ] th. month"))
+				elif self.field == "weekday":
+					#weekday
+					translated = self.split_translated(_("Happens at the [ ] th. weekday"))
+					
+				self.radFix.set_label (translated[0])
+				self.lblFixEntity.set_label (translated[1])					
 		except:
 			pass
 
 		try:
 			entEveryValue = int (self.entEvery.get_text())
-			if entEveryValue > 1:
-				self.lblEveryEntity.set_label (self.trans_field + _("s"))
+			
+			#Happens at every [ ] "field"
+			if entEveryValue == 1:
+				if self.field == "minute":
+					translated = self.split_translated(_("Happens every [ ] st. minute"))
+				elif self.field == "hour":
+					translated = self.split_translated(_("Happens every [ ] st. hour"))
+				elif self.field == "day":
+					translated = self.split_translated(_("Happens every [ ] st. day"))
+				elif self.field == "month":
+					translated = self.split_translated(_("Happens every [ ] st. month"))
+				elif self.field == "weekday":
+					translated = self.split_translated(_("Happens every [ ] st. weekday"))
+					
+				self.radEvery.set_label (translated[0])
+				self.lblEveryEntity.set_label (translated[1])
+					
 			else:
-				self.lblEveryEntity.set_label (_("st. ") + self.trans_field)
+				if self.field == "minute":
+					translated = self.split_translated(_("Happens every [ ] th. minute"))
+				elif self.field == "hour":
+					translated = self.split_translated(_("Happens every [ ] th. hour"))
+				elif self.field == "day":
+					translated = self.split_translated(_("Happens every [ ] th. day"))
+				elif self.field == "month":
+					translated = self.split_translated(_("Happens every [ ] th. month"))
+				elif self.field == "weekday":
+					translated = self.split_translated(_("Happens every [ ] th. weekday"))
+					
+				self.radEvery.set_label (translated[0])
+				self.lblEveryEntity.set_label (translated[1])
 		except:
 			pass
 
