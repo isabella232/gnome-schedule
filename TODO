@@ -3,11 +3,6 @@ TODO
 
 Development:
 
-  * create a RPM package, using the spec file.
-
- Unassigned release blockers
-  * None
-
  Unassigned unstable (need a new branch and/or will not be 
  included in the next release)
   * Show the next-run time for crontab records
@@ -26,14 +21,10 @@ Development:
     o. Use fam to detect changes in the config-files of crontab and at?
   * Include a default icon for at, and a default icon for crontab
     and also make it the default-selected icon
-  * Create the fedora consolehelper and pam stuff (dist/fedora/)
-  * Depend on GNOME SuperUser for any other distro
-  * Create packages
 
 
  Unassigned would make it to the release but are non-blocking it
   * Documentation
-  * All times: Code cleanups, refactoring, bugfixes
   * We need more exception handlers and let functions return if an operation failed
     (in savetemplate for example)
   * look into (to see what could be interresting to use in our project):
@@ -48,6 +39,7 @@ Documentation:
 Translations:
   * Virtually any possible language 
   * Also checkout the lang.py file!
+  * Some of the translations are so outdated, and wrong that they hardly should be there.. ie: pa.po
 
 Build System
   * remove mkinstalldirs when not needed anymore
