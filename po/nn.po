@@ -34,7 +34,7 @@ msgstr "FARLEG PARSING: %(preview)"
 # 
 # 
 msgid "On %(date)s at %(time)s"
-msgstr "På %(date) på %(time)"
+msgstr "På %(date)s på %(time)s"
 
 #: ../src/at.py:293 ../src/at.py:298
 #

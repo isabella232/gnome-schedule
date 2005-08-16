@@ -278,13 +278,13 @@ class At:
 			
 				preview = self.__make_preview__ (lines, prelen)
 				if dangerous == 1:
-						preview = _("DANGEROUS PARSE: %(preview)") % { "preview":  preview }
+						preview = _("DANGEROUS PARSE: %(preview)") % {'preview':  preview}
 				#chopping of title and icon stuff from script
 				lines = lines[prelen:]
 					
 				timestring = "%s %s" % (date, time)
 				# TODO: localize time and date formats
-				timestring_show = _("On %(date)s at %(time)s") % { "date": date, "time": time }
+				timestring_show = _("On %(date)s at %(time)s") % {'date': date, 'time': time}
 				
 				# TODO: looks like it could be one append
 				if self.root == 1:
