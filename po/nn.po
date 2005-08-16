@@ -42,8 +42,8 @@ msgid "Once"
 msgstr "Ein gong"
 
 #: ../src/at.py:300
-msgid "added %(id)"
-msgstr "La til %(id)"
+msgid "added %(id)s"
+msgstr "La til %(id)s"
 
 #: ../src/crontab.py:49
 msgid "Minute"
@@ -937,7 +937,7 @@ msgstr "månad: %s"
 #: ../src/lang.py:286
 
 msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s"
-msgstr ""
+msgstr "På %(minute)s, %(hour)s, %(monthday)s, %(month)s"
 
 # python-format
 #: ../src/lang.py:288
@@ -947,13 +947,11 @@ msgstr "vekedag: %s"
 
 # python-format
 #: ../src/lang.py:289
-
 msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
-msgstr ""
+msgstr "På %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 
 # python-format
 #: ../src/mainWindow.py:190 ../src/mainWindow.py:291
-
 msgid "Editing user: %s"
 msgstr "Redigerar brukar: %s"
 
