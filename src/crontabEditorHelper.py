@@ -46,7 +46,8 @@ class CrontabEditorHelper:
 		self.entFix = self.xml.get_widget("entFix")
 		self.entRangeStart = self.xml.get_widget("entRangeStart")
 		self.entRangeEnd = self.xml.get_widget("entRangeEnd")
-
+	
+		self.header = self.xml.get_widget("label_crontab_editor_title")
 
 		self.lblEveryEntity = self.xml.get_widget("lblEveryEntity")
 		self.lblFixEntity = self.xml.get_widget("lblFixEntity")
@@ -150,7 +151,22 @@ class CrontabEditorHelper:
 		self.NoExpressionEvents = False
 
 		#show the form
-		self.widget.set_title(_("Edit Time Expression for: %s") % (self.trans_field))
+		if field == "minute":
+			self.header.set_text(_("Minute settings"))
+			self.widget.set_title(_("Edit Time Expression for minute"))
+		elif field == "hour":
+			self.header.set_text(_("Hour settings"))
+			self.widget.set_title(_("Edit Time Expression for hour"))
+		elif field == "day":
+			self.header.set_text(_("Day settings"))
+			self.widget.set_title(_("Edit Time Expression for day"))
+		elif field == "month":
+			self.header.set_text(_("Month settings"))
+			self.widget.set_title(_("Edit Time Expression for month"))
+		elif field == "weekday":
+			self.header.set_text(_("Weekday settings"))
+			self.widget.set_title(_("Edit Time Expression for weekday"))
+			
 		self.widget.set_transient_for(self.ParentClass.widget)
 		self.widget.set_position(gtk.WIN_POS_CENTER_ON_PARENT)
 		self.widget.show_all()

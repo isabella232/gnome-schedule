@@ -1,3 +1,8 @@
+2005-08-16  Gaute Hope  <eg@gaute.vetsj.com>
+
+	* src/gnome-schedule.glade, src/crontabEditorHelper.py: Updated the GUI for the crontabhelper
+	* po/nn.po: Updated some new strings
+
 2005-08-15  Gaute Hope  <eg@gaute.vetsj.com>
 
 	* src/gnome-schedule.glade, src/crontabEditorHelper.py: Created a new gui based on Frank Arnolds proposal: http://bugzilla.gnome.org/attachment.cgi?id=50706&action=view
