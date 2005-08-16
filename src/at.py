@@ -94,7 +94,7 @@ class At:
 
 	def checkfield (self, runat):
 		#TODO: fix bug $0:19 2004-12-8$ not valid by regexp
-		print "$" + runat + "$"
+		# print "$" + runat + "$"
 		regexp1 = re.compile("([0-9][0-9]):([0-9][0-9])\ ([0-9][0-9][0-9][0-9])-([0-9][0-9])-([0-9][0-9])")
 		regexp2 = re.compile("([0-9][0-9]):([0-9][0-9])")
 		regexp3 = re.compile("([0-9][0-9][0-9][0-9])-([0-9][0-9])-([0-9][0-9])")
@@ -269,7 +269,6 @@ class At:
 		#do 'atq'
 		execute = config.getAtqbin ()
 		self.lines = os.popen(execute).readlines()
-		print self.lines
 		for line in self.lines:
 			
 			array_or_false = self.parse (line)
@@ -297,7 +296,7 @@ class At:
 				else:
 					data.append([title, timestring_show, preview, lines, int(job_id), timestring, self, icon, date, class_id, user, time, _("Once"), "at"])
 
-				print _("added %(id)") % { "id": job_id	}
+				#print _("added %(id)") % { "id": job_id	}
 			
 		return data
 
