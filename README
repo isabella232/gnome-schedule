@@ -11,7 +11,7 @@ Dependencies
 
  Gnome Schedule needs
  
-	o. at,  batch,  atq, atrm, queue
+	o. at
 	o. crontab
 	o. Python
 	o. PyGTK >= 2.3
@@ -103,7 +103,7 @@ Some comments right after existing records in crontab may return weird results f
 Compiling and HACKING
 ---------------------
 
-  GNOME Schedule is (being) written using the programming language Python
+  GNOME Schedule is written using the programming language Python
   and uses the PyGTK and Python-GConf bindings.
   
   You can talk to the developers of gnome-schedule about development
