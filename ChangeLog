@@ -1,3 +1,7 @@
+2005-08-18  Gaute Hope  <eg@gaute.vetsj.com>
+
+	* dist/gentoo/gnome-schedule-0.9.0.ebuild: added, but found out there is an ebuild at breakmygentoo.net anyway. Not going to maintain this if the bmg one is functioning properly.
+	
 2005-08-16  Gaute Hope  <eg@gaute.vetsj.com>
 
 	* src/gnome-schedule.glade, src/crontabEditorHelper.py: Updated the GUI for the crontabhelper
