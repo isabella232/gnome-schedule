@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-08-16 19:35-0400\n"
-"PO-Revision-Date: 2005-08-16 17:03-0400\n"
+"POT-Creation-Date: 2005-08-19 00:48-0400\n"
+"PO-Revision-Date: 2005-08-19 17:03-0400\n"
 "Last-Translator: Adam Weinberger <adamw@gnome.org>\n"
 "Language-Team: Canadian English <adamw@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -25,8 +25,9 @@ msgid "Schedule"
 msgstr "Schedule"
 
 #: src/at.py:281
-msgid "DANGEROUS PARSE: %(preview)"
-msgstr "DANGEROUS PARSE: %(preview)"
+#, python-format
+msgid "DANGEROUS PARSE: %(preview)s"
+msgstr "DANGEROUS PARSE: %(preview)s"
 
 #. TODO: localize time and date formats
 #: src/at.py:287
@@ -58,15 +59,20 @@ msgstr "Month"
 msgid "Weekday"
 msgstr "Weekday"
 
-#: src/crontab.py:138 src/crontab.py:143 src/crontab.py:147
+#: src/crontab.py:138 src/crontab.py:143
 #, python-format
-msgid "Must be between %s and %s"
-msgstr "Must be between %s and %s"
+msgid "Must be between %(min)s and %(max)s"
+msgstr "Must be between %(min)s and %(max)s"
 
 #: src/crontab.py:145
 #, python-format
 msgid "%s is not a number"
 msgstr "%s is not a number"
+
+#: src/crontab.py:147
+#, python-format
+msgid "Must be between %s and %s"
+msgstr "Must be between %s and %s"
 
 #: src/crontab.py:165 src/crontab.py:200 src/crontab.py:289
 #: src/crontabEditor.py:187 src/atEditor.py:109
@@ -142,9 +148,11 @@ msgstr "Don't use a preset"
 #: src/crontabEditor.py:266
 #, python-format
 msgid ""
-"This is an invalid record! The problem could be at the %s field. Reason: %s"
+"This is an invalid record! The problem could be at the %(field)s field. "
+"Reason: %(reason)s"
 msgstr ""
-"This is an invalid record! The problem could be at the %s field. Reason: %s"
+"This is an invalid record! The problem could be at the %(field)s field. "
+"Reason: %(reason)s"
 
 #: src/crontabEditor.py:298
 msgid "The preset has not been saved"
