@@ -82,4 +82,5 @@ pixmaps/Makefile
 po/Makefile.in
 desktop/Makefile
 desktop/gnome-schedule.desktop
+servers/Makefile
 ])
