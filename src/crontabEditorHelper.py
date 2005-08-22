@@ -33,7 +33,7 @@ class CrontabEditorHelper:
 		self.fieldRegex = self.ParentClass.fieldRegex
 		
 		self.widget = self.xml.get_widget("crontabEditorHelper")
-		self.widget.connect("delete-event", self.btnCancel_clicked)
+		self.widget.connect("delete-event", self.widget.hide_on_delete)
 		
 		self.radAll = self.xml.get_widget("radAll")
 		self.radEvery = self.xml.get_widget("radEvery")

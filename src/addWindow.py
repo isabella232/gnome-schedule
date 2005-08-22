@@ -27,7 +27,7 @@ class AddWindow:
 		self.ParentClass = parent
 		self.xml = self.ParentClass.xml
 		self.widget = self.xml.get_widget ("addWindow")
-		self.widget.connect("delete-event", self.on_cancel_button_clicked)
+		self.widget.connect("delete-event", self.widget.hide_on_delete)
 
 		self.cancel_button = self.xml.get_widget ("select_cancel_button")
 		self.ok_button = self.xml.get_widget ("select_ok_button")

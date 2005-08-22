@@ -30,7 +30,7 @@ class SetuserWindow:
 		self.ParentClass = parent
 		self.xml = self.ParentClass.xml
 		self.widget = self.xml.get_widget("setuserWindow")
-		self.widget.connect("delete-event", self.on_cancel_button_clicked)
+		self.widget.connect("delete-event", self.widget.hide_on_delete)
 
 		##comboxEntry
 		self.entUser = self.xml.get_widget("entUser")

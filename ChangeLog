@@ -1,3 +1,22 @@
+	
+	
+2005-08-22  Gaute Hope  <eg@gaute.vetsj.com>
+	
+	* applied frank arnolds patch about the dialog window
+	* servers/*: started work on an applet
+	* configure.ac, Makefile.am: Added the servers dir.
+	* src/applet.py: applet code.
+
+2005-08-22  Frank Arnold <frank@scirocco-5v-turbo.de>
+ 
+ 	* src/addWindow.py:
+ 	* src/atEditor.py:
+ 	* src/crontabEditor.py:
+ 	* src/crontabEditorHelper.py:
+ 	* src/setuserWindow.py: Fix crashes after closing dialogs through ESC. 	See bug #314159.
+ 	
+	
+	
 2005-08-18  Gaute Hope  <eg@gaute.vetsj.com>
 
 	* dist/gentoo/gnome-schedule-0.9.0.ebuild: added, but found out there is an ebuild at breakmygentoo.net anyway. Not going to maintain this if the bmg one is functioning properly.

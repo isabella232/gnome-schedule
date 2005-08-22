@@ -41,7 +41,7 @@ class CrontabEditor:
 		
 		self.xml = self.ParentClass.xml
 		self.widget = self.xml.get_widget("crontabEditor")
-		self.widget.connect("delete-event", self.on_cancel_button_clicked)
+		self.widget.connect("delete-event", self.widget.hide_on_delete)
 		
 		
 		# TODO: move to crontab?

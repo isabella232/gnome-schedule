@@ -41,7 +41,7 @@ class AtEditor:
 		
 
 		self.widget = self.xml.get_widget("atEditor")
-		self.widget.connect("delete-event", self.on_cancel_button_clicked)
+		self.widget.connect("delete-event", self.widget.hide_on_delete)
 		
 		self.defaultIcon = defaultIcon
 		
