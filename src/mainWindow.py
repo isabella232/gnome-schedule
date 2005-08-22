@@ -399,6 +399,14 @@ class main:
 
 	# TODO: looks not that clean (is broken)
 	def on_delete_menu_activate (self, *args):
+		dialog = gtk.MessageDialog(self.widget, gtk.DIALOG_MODAL|gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_QUESTION, gtk.BUTTONS_YES_NO, _("Do you want to delete this task?"))
+		if (dialog.run() != gtk.RESPONSE_YES):
+			dialog.destroy()
+			del dialog
+			return
+		dialog.destroy()
+		del dialog
+		
 		store, iter = self.treeview.get_selection().get_selected()
 	
 		try:

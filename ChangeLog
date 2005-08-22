@@ -1,7 +1,6 @@
-	
-	
 2005-08-22  Gaute Hope  <eg@gaute.vetsj.com>
-	
+
+	* src/mainWindow.py: created a messagedialog that checks if you want to delete a task
 	* applied frank arnolds patch about the dialog window
 	* servers/*: started work on an applet
 	* configure.ac, Makefile.am: Added the servers dir.
