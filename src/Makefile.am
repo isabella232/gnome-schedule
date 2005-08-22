@@ -13,7 +13,8 @@ gnomeschedule_PYTHON = \
 	lang.py \
 	addWindow.py \
 	atEditor.py \
-	preset.py
+	preset.py \
+	applet.py
 
 uidir = $(datadir)/gnome-schedule
 ui_DATA = gnome-schedule.glade

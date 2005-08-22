@@ -37,6 +37,7 @@ class Applet:
 			self.app_factory(self.app, None)
 			self.app.reparent(main_window)
 			main_window.show_all()
+			gtk.main()
 		else:
 			gnomeapplet.bonobo_factory("OAFIID:GNOME_schedule_Factory", gnomeapplet.Applet.__gtype__, "gnome-schedule", config.getVersion(), self.app_factory)
 

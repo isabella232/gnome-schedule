@@ -26,7 +26,7 @@ import signal
 #custom modules
 import config
 import mainWindow
-
+import applet
 
 ##
 ## I18N
@@ -67,10 +67,8 @@ except:
 gnome.program_init ("gnome-schedule", config.getVersion())
 
 if "--applet" in sys.argv:
-	import applet
 	app = applet.Applet()
 elif "--applet-own-window" in sys.argv:
-	import applet
 	app = applet.Applet(1)
-	
-mainWindow = mainWindow.main(debug_flag)
+else:	
+	mainWindow = mainWindow.main(debug_flag)
