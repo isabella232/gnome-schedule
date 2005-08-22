@@ -1,4 +1,4 @@
-# mainWindow.py - mainWindow of the crontab configuration tool
+  # mainWindow.py - mainWindow of the crontab configuration tool
 # Copyright (C) 2004, 2005 Philip Van Hoof <me at freax dot org>
 # Copyright (C) 2004, 2005 Gaute Hope <eg at gaute dot eu dot org>
 # Copyright (C) 2004, 2005 Kristof Vansant <de_lupus at pandora dot be>
@@ -493,7 +493,7 @@ class main:
  			["Philip Van Hoof <me at freax dot org>",
  			"Kristof Vansant <de_lupus at pandora dot be>",
  			"Gaute Hope <eg@gaute.vetsj.com>"], 
- 			[_("translator-credits")],_("All the translators"),self.iconPixbuf)
+ 			["Nobody wants the credits, yet ;)"], _("translator-credits"),self.iconPixbuf)
  
  		dlg.set_transient_for(self.widget)
  		dlg.set_position (gtk.WIN_POS_CENTER_ON_PARENT)
