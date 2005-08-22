@@ -1,6 +1,6 @@
 #!/usr/bin/python2
 
-# gnome-schedule.py - Contains the startup script for gnome-schedule
+# applet.py: contains code for the gnome-schedule applet
 # Copyright (C) 2004, 2005 Philip Van Hoof <me at freax dot org>
 # Copyright (C) 2004, 2005 Gaute Hope <eg at gaute dot eu dot org>
 # Copyright (C) 2004, 2005 Kristof Vansant <de_lupus at pandora dot be>
@@ -22,29 +22,27 @@
 #python modules
 import pygtk
 import gtk
-import gnome.applet
+import gnomeapplet
 import sys
 
 import config
 
 class Applet:
-	def __init__(self):
-		#gnome.applet.bonobo_factory("OAFIID:GNOME_gnome-schedule_Factory", gnome.applet.Applet.__gtype__, "gnome-schedule", getVersion(), app_factory)
-		main_window = gtk.Window(gtk.WINDOW_TOPLEVEL)
-		main_window.set_title("Python Applet")
-		main_window.connect("destroy", gtk.mainquit) 
-		self.app = gnome.applet.Applet()
-		self.app_factory(self.app, None)
-		self.app.reparent(main_window)
-		main_window.show_all()
-		
+	def __init__(self, window = 0):
+		if window == 1:
+			main_window = gtk.Window(gtk.WINDOW_TOPLEVEL)
+			main_window.set_title("gnome-schedule-applet")
+			main_window.connect("destroy", gtk.mainquit) 
+			self.app = gnomeapplet.Applet()
+			self.app_factory(self.app, None)
+			self.app.reparent(main_window)
+			main_window.show_all()
+		else:
+			gnomeapplet.bonobo_factory("OAFIID:GNOME_schedule_Factory", gnomeapplet.Applet.__gtype__, "gnome-schedule", config.getVersion(), self.app_factory)
+
 	def app_factory(self, applet, iid):	
 		label = gtk.Label("bleh")
 		applet.add(label)
 		applet.show_all()
 		return gtk.TRUE
 		
-
-applet = Applet()
-gtk.main()
-sys.exit()	
