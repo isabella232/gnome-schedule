@@ -25,6 +25,7 @@ import gtk
 import gnome.applet
 import gobject
 import sys
+import os
 
 import config
 import mainWindow
@@ -45,14 +46,25 @@ class ScheduleApplet(gnome.applet.Applet):
 		self.applet = applet
 
 		self.__loadIcon__()
+		
 
 		self.ev_box = gtk.EventBox()
-		self.ev_box.connect("button-press-event", self.button_press)
-		self.ev_box.add(self.iconPixbuf)
+		self.image = gtk.Image()
+		self.image.set_from_pixbuf(self.iconPixbuf)
+		self.ev_box.add(self.image)
 		self.ev_box.show()
 		
 
 		self.applet.add(self.ev_box)
+		
+	
+
+		self.create_menu()
+		
+	
+		
+
+		
 		
 	
 		
@@ -62,15 +74,45 @@ class ScheduleApplet(gnome.applet.Applet):
 	
 	def __loadIcon__(self):
 		if os.access("../pixmaps/gnome-schedule.png", os.F_OK):
-			self.iconPixbuf = gtk.gdk.pixbuf_new_from_file ("../pixmaps/gnome-schedule.png")
+			self.iconPixbuf = gtk.gdk.pixbuf_new_from_file_at_size ("../pixmaps/gnome-schedule.png", 19, 19)
 		else:
 			try:
-				self.iconPixbuf = gtk.gdk.pixbuf_new_from_file (config.getImagedir() + "/gnome-schedule.png")
+				self.iconPixbuf = gtk.gdk.pixbuf_new_from_file_at_size (config.getImagedir() + "/gnome-schedule.png", 19, 19)
 			except:
 				print "ERROR: Could not load icon"
 
-	def button_press(self, event):
-		pass
+	def read_xml(self):
+		if os.access("gnome-schedule-applet.xml", os.F_OK):
+			f = open("gnome-schedule-applet.xml", 'r')
+		else:
+			try:
+				f = open(config.getGladedir() + "/gnome-schedule-applet.xml", 'r')
+			except:
+				print "ERROR: Could not load menu xml file"
+
+		xml = f.read()
+		f.close()
+		return xml
+
+		
+	def create_menu(self):
+		self.verbs = [ 	("show_main", self.show_main_window), 
+						("add", self.add_task),
+						("quit", self.cleanup)
+					]
+		self.propxml = self.read_xml()
+		self.applet.setup_menu(self.propxml, self.verbs, None)
+			
+		
+				
+
+		
+
+	def show_main_window(self, widget, event):
+		print "show mainwindow"
+
+	def add_task(self, widget, event):
+		print "add a task"
 
 		
 	def cleanup(self,event):
@@ -82,7 +124,18 @@ gobject.type_register(ScheduleApplet)
 def schedule_applet_factory(applet, iid):
     ScheduleApplet(applet,iid)
     return True
-    
-gnome.applet.bonobo_factory("OAFIID:GNOME_schedule_Factory",
+  
+if len(sys.argv) > 1 and sys.argv[1] == "run-in-window":
+    main_window = gtk.Window(gtk.WINDOW_TOPLEVEL)
+    main_window.set_title("Gnome schedule applet")
+    main_window.connect("destroy", gtk.main_quit) 
+    app = gnome.applet.Applet()
+    schedule_applet_factory(app, None)
+    app.reparent(main_window)
+    main_window.show_all()
+    gtk.main()
+
+else: 
+	gnome.applet.bonobo_factory("OAFIID:GNOME_schedule_Factory",
                                 ScheduleApplet.__gtype__, 
                                 "hello", "0", schedule_applet_factory)

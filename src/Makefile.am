@@ -22,7 +22,7 @@ gnomeschedule_PYTHON = \
 uidir = $(datadir)/gnome-schedule
 ui_DATA = \
 	gnome-schedule.glade \
-	gnome-schedule-applet.glade
+	gnome-schedule-applet.xml
 
 DISTCLEANFILES = \
 	$(bin_SCRIPTS) \

@@ -1,0 +1,5 @@
+<popup name="button3">
+	<menuitem name="show_main"     verb="show_main" _label="_Show mainwindow"     pixtype="stock" pixname="gtk-properties"/>
+	<menuitem name="add"     verb="add" _label="_Add a task"     pixtype="stock" pixname="gnome-stock-add"/>
+	<menuitem name="quit"	verb="quit" _label="_Quit"	pixtype="stock" pixname="gnome-stock-exit" />
+</popup>
