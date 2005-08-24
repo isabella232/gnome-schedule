@@ -1,3 +1,9 @@
+2005-08-24  Gaute Hope  <eg@gaute.vetsj.com>
+
+	* src/applet.py: rm
+	* src/scheduleapplet.py: add
+	* src/gnome-schedule-applet.glade: add, glade file for the applet
+	
 2005-08-22  Gaute Hope  <eg@gaute.vetsj.com>
 
 	* src/mainWindow.py: created a messagedialog that checks if you want to delete a task

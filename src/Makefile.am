@@ -14,10 +14,12 @@ gnomeschedule_PYTHON = \
 	addWindow.py \
 	atEditor.py \
 	preset.py \
-	applet.py
+	scheduleapplet.py
 
 uidir = $(datadir)/gnome-schedule
-ui_DATA = gnome-schedule.glade
+ui_DATA = \
+	gnome-schedule.glade \
+	gnome-schedule-applet.glade
 
 DISTCLEANFILES = \
 	$(bin_SCRIPTS) \

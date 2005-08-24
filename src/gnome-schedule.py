@@ -26,7 +26,7 @@ import signal
 #custom modules
 import config
 import mainWindow
-import applet
+
 
 ##
 ## I18N
@@ -63,12 +63,9 @@ except:
   print _("try: export PYTHONPATH= ")
   sys.exit(1)
 
-# TODO: Gnome specific
-gnome.program_init ("gnome-schedule", config.getVersion())
-
 if "--applet" in sys.argv:
-	app = applet.Applet()
-elif "--applet-own-window" in sys.argv:
-	app = applet.Applet(1)
+	import scheduleapplet
+	gnome.program_init ("gnome-schedule", config.getVersion())	
 else:	
+	gnome.program_init ("gnome-schedule", config.getVersion())
 	mainWindow = mainWindow.main(debug_flag)

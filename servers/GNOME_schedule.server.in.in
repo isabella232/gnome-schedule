@@ -1,26 +1,25 @@
-        <oaf_info>
-        <oaf_server iid="OAFIID:GNOME_schedule_Factory"
-                    type="exe" location="gnome-schedule --applet">
+<oaf_info>
+	<oaf_server iid="OAFIID:GNOME_schedule_Factory"
+		type="exe" location="/usr/share/gnome-schedule/scheduleapplet.py">
+		<oaf_attribute name="repo_ids" type="stringv">
+			<item value="IDL:Bonobo/GenericFactory:1.0"/>
+			<item value="IDL:Bonobo/Unknown:1.0"/>
+		</oaf_attribute>
+		<oaf_attribute name="name" type="string" value="Gnome schedule applet"/>
+		<oaf_attribute name="description" type="string" value="Configuration tool for your scheduled jobs"/>
+	</oaf_server>
 
-                <oaf_attribute name="repo_ids" type="stringv">
-                        <item value="IDL:Bonobo/GenericFactory:1.0"/>
-                        <item value="IDL:Bonobo/Unknown:1.0"/>
-                </oaf_attribute>
-                <oaf_attribute name="name" type="string" value="Gnome schedule applet"/>
-                <oaf_attribute name="description" type="string" value="Configuration tool for your scheduled jobs in at and cron"/>
-        </oaf_server>
+	<oaf_server iid="OAFIID:GNOME_schedule"
+		type="factory" location="OAFIID:GNOME_schedule_Factory">
 
-        <oaf_server iid="OAFIID:GNOME_schedule"
-                    type="factory" location="OAFIID:GNOME_schedule_Factory">
-
-                <oaf_attribute name="repo_ids" type="stringv">
-                        <item value="IDL:GNOME/Vertigo/PanelAppletShell:1.0"/>
-                        <item value="IDL:Bonobo/Control:1.0"/>
-                        <item value="IDL:Bonobo/Unknown:1.0"/>
-                </oaf_attribute>
-                <oaf_attribute name="name" type="string" value="gnome-schedule applet"/>
-                <oaf_attribute name="description" type="string" value="Configuration tool for your scheduled jobs in at and cron"/>
-                <oaf_attribute name="panel:category" type="string" value="System tools"/>
-                <oaf_attribute name="panel:icon" type="string" value="bug-buddy.png"/>
-        </oaf_server>
-        </oaf_info>
+		<oaf_attribute name="repo_ids" type="stringv">
+			<item value="IDL:GNOME/Vertigo/PanelAppletShell:1.0"/>
+			<item value="IDL:Bonobo/Control:1.0"/>
+			<item value="IDL:Bonobo/Unknown:1.0"/>
+		</oaf_attribute>
+		<oaf_attribute name="name" type="string" value="Gnome schedule"/>
+		<oaf_attribute name="description" type="string" value="Configuration tool for your scheduled jobs"/>
+		<oaf_attribute name="panel:category" type="string" value="System tools"/>
+		<oaf_attribute name="panel:icon" type="string" value="bug-buddy.png"/>
+	</oaf_server>
+</oaf_info>
