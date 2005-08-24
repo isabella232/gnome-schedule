@@ -1,6 +1,7 @@
 <oaf_info>
 	<oaf_server iid="OAFIID:GNOME_schedule_Factory"
-		type="exe" location="/usr/share/gnome-schedule/scheduleapplet.py">
+	
+		type="exe" location="scheduleapplet">
 		<oaf_attribute name="repo_ids" type="stringv">
 			<item value="IDL:Bonobo/GenericFactory:1.0"/>
 			<item value="IDL:Bonobo/Unknown:1.0"/>
@@ -22,4 +23,5 @@
 		<oaf_attribute name="panel:category" type="string" value="System tools"/>
 		<oaf_attribute name="panel:icon" type="string" value="bug-buddy.png"/>
 	</oaf_server>
+	
 </oaf_info>

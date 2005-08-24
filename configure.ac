@@ -77,6 +77,7 @@ Makefile
 src/config.py
 src/Makefile
 src/gnome-schedule
+src/scheduleapplet
 doc/Makefile
 pixmaps/Makefile
 po/Makefile.in

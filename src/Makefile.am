@@ -1,4 +1,6 @@
-bin_SCRIPTS = gnome-schedule
+bin_SCRIPTS = \
+			gnome-schedule \
+			scheduleapplet
 
 gnomescheduledir = $(prefix)/share/gnome-schedule
 gnomeschedule_PYTHON = \
@@ -15,6 +17,7 @@ gnomeschedule_PYTHON = \
 	atEditor.py \
 	preset.py \
 	scheduleapplet.py
+	
 
 uidir = $(datadir)/gnome-schedule
 ui_DATA = \

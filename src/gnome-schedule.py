@@ -63,9 +63,7 @@ except:
   print _("try: export PYTHONPATH= ")
   sys.exit(1)
 
-if "--applet" in sys.argv:
-	import scheduleapplet
-	gnome.program_init ("gnome-schedule", config.getVersion())	
-else:	
-	gnome.program_init ("gnome-schedule", config.getVersion())
-	mainWindow = mainWindow.main(debug_flag)
+
+gnome.program_init ("gnome-schedule", config.getVersion())	
+
+mainWindow = mainWindow.main(debug_flag)

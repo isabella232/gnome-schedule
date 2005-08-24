@@ -27,70 +27,62 @@ import gobject
 import sys
 
 import config
+import mainWindow
 
 class ScheduleApplet(gnome.applet.Applet):
-	def __init__(self):
-		self.__gobject_init__()
-		
-
-	def init (self):
-		self.set_applet_flags(gnome.applet.EXPAND_MIRROR)
-		
-		self.toggle = gtk.ToggleButton()
-		self.applet_tooltips = gtk.Tooltips()
-		self.setup_menu_from_file (None, config.getGladedir() + "gnome-schedule-applet.xml", None, [(_("About"), self._showAboutDialog), ("Pref", self._openPrefs)])
-
-		button_box = gtk.HBox()
-		button_box.pack_start(gtk.Label(_("Schedule")))
-		self.arrow = gtk.Arrow(gtk.ARROW_DOWN, gtk.SHADOW_IN)
-		button_box.pack_start(self.arrow)
 	
-		self.toggle.add(button_box)
-        
-		self.add(self.toggle)
-		self.toggle.connect("toggled", self._onToggle)
-		self.toggle.connect("button-press-event", self._onButtonPress)
-        
-		self.show_all()
+	
+	
+	def __init__(self, applet, iid):
+		self.__gobject_init__()
 
-		return True
-    
-	def _showAboutDialog(self, uicomponent, verb):
-		pass
-
-	def _showPrefDialog(self):
-        	pass
 		
-	def _openPrefs(self, uicomponent, verb):
-		pass
-        
-	def _onToggle(self, toggle):
-		if toggle.get_active():
-			self.poster_window.positionWindow()            
-			self.poster_window.show()
-			self.poster.grab_focus()
+			
+		gnome.program_init ("gnome-schedule", config.getVersion())
+
+		
+		
+		self.applet = applet
+
+		self.__loadIcon__()
+
+		self.ev_box = gtk.EventBox()
+		self.ev_box.connect("button-press-event", self.button_press)
+		self.ev_box.add(self.iconPixbuf)
+		self.ev_box.show()
+		
+
+		self.applet.add(self.ev_box)
+		
+	
+		
+		
+		self.applet.show_all()
+
+	
+	def __loadIcon__(self):
+		if os.access("../pixmaps/gnome-schedule.png", os.F_OK):
+			self.iconPixbuf = gtk.gdk.pixbuf_new_from_file ("../pixmaps/gnome-schedule.png")
 		else:
-			self.poster_window.hide()
+			try:
+				self.iconPixbuf = gtk.gdk.pixbuf_new_from_file (config.getImagedir() + "/gnome-schedule.png")
+			except:
+				print "ERROR: Could not load icon"
 
-	def _onEntryPosted(self):
-		self.toggle.set_active(False)
-
-	def _onButtonPress(self, toggle, event):
-		if event.button != 1:
-			toggle.stop_emission("button-press-event")
-            
-	def _createToolTip(self,client):
+	def button_press(self, event):
 		pass
 
-        
+		
+	def cleanup(self,event):
+		del self.applet
 
 gobject.type_register(ScheduleApplet)
 
-
-def foo(applet, iid):
-    print "Returning schedule applet"
-    return applet.init()
+#factory
+def schedule_applet_factory(applet, iid):
+    ScheduleApplet(applet,iid)
+    return True
     
-gnome.applet.bonobo_factory("OAFIID:GNOME_schedule_Factory", ScheduleApplet.__gtype__, "gnome-schedule", "0", foo)
-
-print "Done waiting in factory, returning... If this seems wrong, perhaps there is another copy of the GNOME_schedule factory running?"
+gnome.applet.bonobo_factory("OAFIID:GNOME_schedule_Factory",
+                                ScheduleApplet.__gtype__, 
+                                "hello", "0", schedule_applet_factory)
