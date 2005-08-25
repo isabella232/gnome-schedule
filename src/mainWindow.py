@@ -45,8 +45,9 @@ gtk.glade.bindtextdomain(config.GETTEXT_PACKAGE(), config.GNOMELOCALEDIR())
 ## The MainWindow class
 ##
 class main:
-	def __init__(self, debug_flag=None):
+	def __init__(self, debug_flag=None, inapplet=False):
 		self.debug_flag = debug_flag
+		self.inapplet = inapplet
 
 		self.__loadIcon__()
 		self.__loadGlade__()
@@ -175,7 +176,8 @@ class main:
 
 		self.schedule_reload ("all")
 
-		gtk.main()
+		if inapplet == False:
+			gtk.main()
 
 
 
@@ -273,6 +275,7 @@ class main:
 				self.xml = gtk.glade.XML (config.getGladedir() + "/gnome-schedule.glade", domain="gnome-schedule")
 			except:
 				print "ERROR: Could not load glade file"
+
 	
 	
 	def __initUser__(self):
@@ -518,5 +521,9 @@ class main:
  		 		
  	#quit program
  	def __quit__(self, *args):
-		gtk.main_quit ()
+		
+		if self.inapplet:
+			self.widget.hide()
+		else:
+			gtk.main_quit ()
 		

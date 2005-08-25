@@ -21,14 +21,20 @@
 
 #python modules
 import pygtk
+pygtk.require("2.0")
 import gtk
+import gtk.glade
+import gnome
+import gnome.ui
 import gnome.applet
 import gobject
 import sys
+import signal
 import os
 
 import config
 import mainWindow
+
 
 class ScheduleApplet(gnome.applet.Applet):
 	
@@ -36,6 +42,8 @@ class ScheduleApplet(gnome.applet.Applet):
 	
 	def __init__(self, applet, iid):
 		self.__gobject_init__()
+		import gettext
+		gettext.install(config.GETTEXT_PACKAGE(), config.GNOMELOCALEDIR(), unicode=1)
 
 		
 			
@@ -71,6 +79,8 @@ class ScheduleApplet(gnome.applet.Applet):
 		
 		self.applet.show_all()
 
+		self.main_loaded = False
+
 	
 	def __loadIcon__(self):
 		if os.access("../pixmaps/gnome-schedule.png", os.F_OK):
@@ -98,7 +108,8 @@ class ScheduleApplet(gnome.applet.Applet):
 	def create_menu(self):
 		self.verbs = [ 	("show_main", self.show_main_window), 
 						("add", self.add_task),
-						("quit", self.cleanup)
+						("help", self.show_help),
+						("about", self.show_about)
 					]
 		self.propxml = self.read_xml()
 		self.applet.setup_menu(self.propxml, self.verbs, None)
@@ -108,15 +119,32 @@ class ScheduleApplet(gnome.applet.Applet):
 
 		
 
-	def show_main_window(self, widget, event):
-		print "show mainwindow"
+	def show_main_window(self, *args):
+		if self.main_loaded == False:
+			self.main_loaded = True
+			self.main_window = mainWindow.main(None, True)
+		else:
+			self.main_window.schedule_reload("all")
+			self.main_window.widget.show()
 
-	def add_task(self, widget, event):
-		print "add a task"
+	def add_task(self, *args):
+		if self.main_loaded == False:
+			self.show_main_window()
+			self.main_window.widget.hide()
+		self.main_window.on_add_scheduled_task_menu_activate()
 
 		
-	def cleanup(self,event):
-		del self.applet
+	def show_help(self, *args):
+		if self.main_loaded == False:
+			self.show_main_window()
+			self.main_window.widget.hide()
+		self.main_window.on_manual_menu_activate()
+
+	def show_about(self, *args):
+		if self.main_loaded == False:
+			self.show_main_window()
+			self.main_window.widget.hide()
+		self.main_window.on_about_menu_activate()
 
 gobject.type_register(ScheduleApplet)
 

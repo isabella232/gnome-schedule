@@ -84,4 +84,5 @@ po/Makefile.in
 desktop/Makefile
 desktop/gnome-schedule.desktop
 servers/Makefile
+servers/GNOME_schedule.server
 ])

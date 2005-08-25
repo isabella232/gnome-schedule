@@ -21,7 +21,7 @@
 		<oaf_attribute name="name" type="string" value="Gnome schedule"/>
 		<oaf_attribute name="description" type="string" value="Configuration tool for your scheduled jobs"/>
 		<oaf_attribute name="panel:category" type="string" value="System tools"/>
-		<oaf_attribute name="panel:icon" type="string" value="bug-buddy.png"/>
+		<oaf_attribute name="panel:icon" type="string" value="@prefix@/share/pixmaps/gnome-schedule.png"/>
 	</oaf_server>
 	
 </oaf_info>

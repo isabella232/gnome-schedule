@@ -1,3 +1,10 @@
+2005-08-25  Gaute Hope  <eg@gaute.vetsj.com>
+
+	* panel functions implemented
+	* servers/Makefile.am, confiugre.ac: changed behaviour a bit
+	* servers/GNOME_schedule.server.in.in: rm
+	* servers/GNOME_schedule.server.in: add
+	
 2005-08-24  Gaute Hope  <eg@gaute.vetsj.com>
 
 	* src/applet.py: rm
