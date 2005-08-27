@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-08-19 00:48-0400\n"
-"PO-Revision-Date: 2005-08-19 17:03-0400\n"
+"POT-Creation-Date: 2005-08-27 19:13-0400\n"
+"PO-Revision-Date: 2005-08-27 17:03-0400\n"
 "Last-Translator: Adam Weinberger <adamw@gnome.org>\n"
 "Language-Team: Canadian English <adamw@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -292,6 +292,22 @@ msgstr "Months:"
 msgid "Weekdays:"
 msgstr "Weekdays:"
 
+#: src/gnome-schedule-applet.xml.h:1
+msgid "A_bout"
+msgstr "A_bout"
+
+#: src/gnome-schedule-applet.xml.h:2
+msgid "_Add a task"
+msgstr "_Add a task"
+
+#: src/gnome-schedule-applet.xml.h:3 src/gnome-schedule.glade.h:64
+msgid "_Help"
+msgstr "_Help"
+
+#: src/gnome-schedule-applet.xml.h:4
+msgid "_Manage tasks"
+msgstr "_Manage tasks"
+
 #: src/gnome-schedule.glade.h:1
 msgid "<b>Choose the user whose tasks you want to modify</b>"
 msgstr "<b>Choose the user whose tasks you want to modify</b>"
@@ -538,10 +554,6 @@ msgstr "_Date:"
 msgid "_Days of month:"
 msgstr "_Days of month:"
 
-#: src/gnome-schedule.glade.h:64
-msgid "_Help"
-msgstr "_Help"
-
 #: src/gnome-schedule.glade.h:65
 msgid "_Hour:"
 msgstr "_Hour:"
@@ -582,15 +594,15 @@ msgstr "_View"
 msgid "_Weekdays:"
 msgstr "_Weekdays:"
 
-#: src/gnome-schedule.py:60
+#: src/gnome-schedule.py:61
 msgid "You need to install pyGTK or GTKv2, "
 msgstr "You need to install pyGTK or GTKv2, "
 
-#: src/gnome-schedule.py:61
+#: src/gnome-schedule.py:62
 msgid "or set your PYTHONPATH correctly."
 msgstr "or set your PYTHONPATH correctly."
 
-#: src/gnome-schedule.py:62
+#: src/gnome-schedule.py:63
 msgid "try: export PYTHONPATH= "
 msgstr "try: export PYTHONPATH= "
 
@@ -905,55 +917,55 @@ msgstr "weekday: %s"
 msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 msgstr "At %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 
-#: src/mainWindow.py:190 src/mainWindow.py:291
+#: src/mainWindow.py:192 src/mainWindow.py:294
 #, python-format
 msgid "Editing user: %s"
 msgstr "Editing user: %s"
 
-#: src/mainWindow.py:326
+#: src/mainWindow.py:329
 msgid "Icon"
 msgstr "Icon"
 
-#: src/mainWindow.py:331 src/mainWindow.py:364
+#: src/mainWindow.py:334 src/mainWindow.py:367
 msgid "Type"
 msgstr "Type"
 
-#: src/mainWindow.py:335 src/mainWindow.py:360
+#: src/mainWindow.py:338 src/mainWindow.py:363
 msgid "Title"
 msgstr "Title"
 
-#: src/mainWindow.py:339 src/mainWindow.py:351
+#: src/mainWindow.py:342 src/mainWindow.py:354
 msgid "Date and Time Settings"
 msgstr "Date and Time Settings"
 
-#: src/mainWindow.py:343 src/mainWindow.py:355
+#: src/mainWindow.py:346 src/mainWindow.py:358
 msgid "Preview"
 msgstr "Preview"
 
-#: src/mainWindow.py:395 src/mainWindow.py:446
+#: src/mainWindow.py:398 src/mainWindow.py:457
 msgid "Please select a task"
 msgstr "Please select a task"
 
+#: src/mainWindow.py:405
+msgid "Do you want to delete this task?"
+msgstr "Do you want to delete this task?"
+
 #. TODO: should be using gtkAboutDialog
-#: src/mainWindow.py:489
+#: src/mainWindow.py:500
 msgid "Gnome Schedule"
 msgstr "Gnome Schedule"
 
-#: src/mainWindow.py:491
+#: src/mainWindow.py:502
 msgid "Copyright (c) 2004-2005 Gaute Hope."
 msgstr "Copyright (c) 2004-2005 Gaute Hope."
 
-#: src/mainWindow.py:492
+#: src/mainWindow.py:503
 msgid "This software is distributed under the GPL. "
 msgstr "This software is distributed under the GPL. "
 
-#: src/mainWindow.py:496
+#: src/mainWindow.py:507
 msgid "translator-credits"
 msgstr "Adam Weinberger <adamw@gnome.org>"
-
-#: src/mainWindow.py:496
-msgid "All the translators"
-msgstr "All the translators"
 
 #: src/atEditor.py:507
 #, python-format
