@@ -1,6 +1,7 @@
 *pyc
 *gladep
 gnome-schedule
+scheduleapplet
 config.py
 Makefile
 Makefile.in

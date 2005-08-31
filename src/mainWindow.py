@@ -1,5 +1,5 @@
   # mainWindow.py - mainWindow of the crontab configuration tool
-# Copyright (C) 2004, 2005 Philip Van Hoof <me at freax dot org>
+# Copyright (C) 2004, 2005 Philip Van Hoof <me at pvanhoof dot be>
 # Copyright (C) 2004, 2005 Gaute Hope <eg at gaute dot eu dot org>
 # Copyright (C) 2004, 2005 Kristof Vansant <de_lupus at pandora dot be>
 
@@ -501,7 +501,7 @@ class main:
  			config.getVersion(),
  			_("Copyright (c) 2004-2005 Gaute Hope."),
  			_("This software is distributed under the GPL. "),
- 			["Philip Van Hoof <me at freax dot org>",
+ 			["Philip Van Hoof <pvanhoof at gnome dot org>",
  			"Kristof Vansant <de_lupus at pandora dot be>",
  			"Gaute Hope <eg@gaute.vetsj.com>"], 
  			["Nobody wants the credits, yet ;)"], _("translator-credits"),self.iconPixbuf)

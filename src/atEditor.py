@@ -1,5 +1,5 @@
 # addWindow.py - UI code for adding an at record
-# Copyright (C) 2004, 2005 Philip Van Hoof <me at freax dot org>
+# Copyright (C) 2004, 2005 Philip Van Hoof <me at pvanhoof dot be>
 # Copyright (C) 2004, 2005 Gaute Hope <eg at gaute dot eu dot org>
 # Copyright (C) 2004, 2005 Kristof Vansant <de_lupus at pandora dot be>
 
