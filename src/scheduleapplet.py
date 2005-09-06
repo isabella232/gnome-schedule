@@ -25,7 +25,7 @@ import gtk
 import gtk.glade
 import gnome
 import gnome.ui
-import gnome.applet
+import gnomeapplet
 import gobject
 import sys
 import signal
@@ -35,7 +35,7 @@ import config
 import mainWindow
 
 
-class ScheduleApplet(gnome.applet.Applet):
+class ScheduleApplet(gnomeapplet.Applet):
 	
 	
 	
@@ -44,38 +44,22 @@ class ScheduleApplet(gnome.applet.Applet):
 		import gettext
 		gettext.install(config.GETTEXT_PACKAGE(), config.GNOMELOCALEDIR(), unicode=1)
 
-		
-			
 		gnome.program_init ("gnome-schedule", config.getVersion())
 
-		
-		
 		self.applet = applet
-
 		self.__loadIcon__()
 		
 
 		self.ev_box = gtk.EventBox()
+		
 		self.image = gtk.Image()
 		self.image.set_from_pixbuf(self.iconPixbuf)
+		
 		self.ev_box.add(self.image)
 		self.ev_box.show()
-		
-
 		self.applet.add(self.ev_box)
 		
-	
-
 		self.create_menu()
-		
-	
-		
-
-		
-		
-	
-		
-		
 		self.applet.show_all()
 
 		self.main_loaded = False
@@ -113,10 +97,6 @@ class ScheduleApplet(gnome.applet.Applet):
 		self.propxml = self.read_xml()
 		self.applet.setup_menu(self.propxml, self.verbs, None)
 			
-		
-				
-
-		
 
 	def show_main_window(self, *args):
 		if self.main_loaded == False:
@@ -156,13 +136,13 @@ if len(sys.argv) > 1 and sys.argv[1] == "run-in-window":
     main_window = gtk.Window(gtk.WINDOW_TOPLEVEL)
     main_window.set_title("Gnome schedule applet")
     main_window.connect("destroy", gtk.main_quit) 
-    app = gnome.applet.Applet()
+    app = gnomeapplet.Applet()
     schedule_applet_factory(app, None)
     app.reparent(main_window)
     main_window.show_all()
     gtk.main()
 
 else: 
-	gnome.applet.bonobo_factory("OAFIID:GNOME_schedule_Factory",
+	gnomeapplet.bonobo_factory("OAFIID:GNOME_schedule_Factory",
                                 ScheduleApplet.__gtype__, 
                                 "hello", "0", schedule_applet_factory)

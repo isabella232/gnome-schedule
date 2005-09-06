@@ -1,8 +1,9 @@
 AC_INIT(src/gnome-schedule.py)
 AM_INIT_AUTOMAKE(gnome-schedule, 0.9.0)
 
+dnl check for python
+dnl AM_PATH_PYTHON
 AM_PATH_PYTHON
-
 
 PKG_CHECK_MODULES(PYGTK, pygtk-2.0 >= 2.3)
 AC_SUBST(PYGTK_CFLAGS)
