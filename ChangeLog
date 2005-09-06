@@ -1,3 +1,8 @@
+2005-09-06  Gaute Hope  <eg@gaute.vetsj.com>
+
+	* servers/GNOME_schedule.server.in: new path for scheduleapplet
+	* src/Makefile.am: new path for scheduleapplet
+
 2005-09-01  Pawan Chitrakar  <pchitrakar@gmail.com>
 
 	* configure.ac: Added ne in ALL_LINGUAS
