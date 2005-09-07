@@ -66,6 +66,8 @@ dnl *******************************
 GETTEXT_PACKAGE=gnome-schedule
 AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, "$GETTEXT_PACKAGE")
 AC_SUBST(GETTEXT_PACKAGE)
+AC_CONFIG_MACRO_DIR([src/m4])
+GNOME_DOC_INIT
 
 dnl Add the languages which your application supports here.
 ALL_LINGUAS="bg ca cs da de el en_CA en_GB es fi fr hu it lt ne nl nn pa pt pt_BR rw sq sv uk zh_CN"
@@ -86,4 +88,5 @@ desktop/Makefile
 desktop/gnome-schedule.desktop
 servers/Makefile
 servers/GNOME_schedule.server
+help/Makefile
 ])

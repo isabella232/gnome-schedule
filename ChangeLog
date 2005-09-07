@@ -1,3 +1,18 @@
+2005-09-07  Rodrigo Marcos <rmarcos_geo@yahoo.es>
+
+	* Added support for localized manuals (Bug #156821):
+	* help/ChangeLog: add
+	* help/Makefile.am: add
+	* help/.cvsignore: add
+	* help/gnome-schedule.omf.in: add
+	* help/C/gnome-schedule.xml: add
+	* help/C/legal.xml: add
+	* help/C/figures/*: add
+	* src/m4/.cvsignore: add
+	* configure.ac: Added AC_CONFIG_MACRO_DIR([src/m4]), GNOME_DOC_INIT. Added help/Makefile to AC_OUTPUT
+	* Makefile.am: Added gnome-doc-utils.make to EXTRA_DIST and DISTCLEAN_FILES. Added DISTCHECK_CONFIGURE_FLAGS
+	* .cvsignore: Added gnome-doc-utils.make
+
 2005-09-06  Gaute Hope  <eg@gaute.vetsj.com>
 
 	* servers/GNOME_schedule.server.in: new path for scheduleapplet
