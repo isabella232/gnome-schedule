@@ -1,3 +1,8 @@
+2005-09-13  Rodrigo Marcos <rmarcos@cvs.gnome.org>
+
+	* help/C/gnome-schedule.xml: made some corrections
+	* help/es/figures/*: added Spanish screenshots
+	
 2005-09-07  Rodrigo Marcos <rmarcos_geo@yahoo.es>
 
 	* Added support for localized manuals (Bug #156821):
