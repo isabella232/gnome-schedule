@@ -80,13 +80,11 @@ Makefile
 src/config.py
 src/Makefile
 src/gnome-schedule
-src/scheduleapplet
-doc/Makefile
 pixmaps/Makefile
 po/Makefile.in
 desktop/Makefile
 desktop/gnome-schedule.desktop
 servers/Makefile
-servers/GNOME_schedule.server
+servers/GNOME_GnomeSchedule.server
 help/Makefile
 ])

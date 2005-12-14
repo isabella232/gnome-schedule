@@ -1,4 +1,4 @@
-#!/usr/bin/python2
+#!/usr/bin/python
 
 # scheduleapplet.py: contains code for the gnome-schedule applet
 # Copyright (C) 2004, 2005 Gaute Hope <eg at gaute dot eu dot org>
@@ -36,9 +36,6 @@ import mainWindow
 
 
 class ScheduleApplet(gnomeapplet.Applet):
-	
-	
-	
 	def __init__(self, applet, iid):
 		self.__gobject_init__()
 		import gettext
@@ -129,20 +126,9 @@ gobject.type_register(ScheduleApplet)
 
 #factory
 def schedule_applet_factory(applet, iid):
-    ScheduleApplet(applet,iid)
+    ScheduleApplet(applet, iid)
     return True
   
-if len(sys.argv) > 1 and sys.argv[1] == "run-in-window":
-    main_window = gtk.Window(gtk.WINDOW_TOPLEVEL)
-    main_window.set_title("Gnome schedule applet")
-    main_window.connect("destroy", gtk.main_quit) 
-    app = gnomeapplet.Applet()
-    schedule_applet_factory(app, None)
-    app.reparent(main_window)
-    main_window.show_all()
-    gtk.main()
-
-else: 
-	gnomeapplet.bonobo_factory("OAFIID:GNOME_schedule_Factory",
+gnomeapplet.bonobo_factory("OAFIID:GNOME_GnomeSchedule_Factory",
                                 ScheduleApplet.__gtype__, 
                                 "hello", "0", schedule_applet_factory)

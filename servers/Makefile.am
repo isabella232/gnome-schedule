@@ -1,5 +1,5 @@
 serverdir = $(libdir)/bonobo/servers
-server_DATA = GNOME_schedule.server
+server_DATA = GNOME_GnomeSchedule.server
 
 @INTLTOOL_SERVER_RULE@
 

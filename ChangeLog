@@ -1,3 +1,9 @@
+2005-12-14  Gaute Hope  <eg@gaute.vetsj.com>
+
+	* The applet is working
+	* Removed scheduleapplet.in, executing the python file directly from the .server file. 
+	* Name change on server file
+	
 2005-09-07  Rodrigo Marcos <rmarcos_geo@yahoo.es>
 
 	* Added support for localized manuals (Bug #156821):

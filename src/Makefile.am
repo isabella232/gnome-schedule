@@ -1,6 +1,5 @@
 bin_SCRIPTS = gnome-schedule
 
-libexec_SCRIPTS = scheduleapplet
 
 gnomescheduledir = $(prefix)/share/gnome-schedule
 gnomeschedule_PYTHON = \
@@ -33,6 +32,5 @@ DISTCLEANFILES = \
 
 EXTRA_DIST =  \
 	$(bin_SCRIPTS) \
-	$(libexec_SCRIPTS) \
 	$(gnomeschedule_PYTHON) \
 	$(ui_DATA)
