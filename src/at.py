@@ -101,7 +101,7 @@ class At:
 		runat_g1 = regexp1.match(runat)
 		runat_g2 = regexp2.match(runat)
 		runat_g3 = regexp3.match(runat)
-		ctime = time.gmtime()
+		ctime = time.localtime()
 		cyear = ctime[0]
 		cmonth = ctime[1]
 		cday = ctime[2]
@@ -122,8 +122,10 @@ class At:
 			if minute > 60 or minute < 0:
 				return False, "minute"
 			
-			if hour < chour or (hour == chour and minute < cminute): plussday = True
-			else: plussday = False
+			if hour < chour or (hour == chour and minute < cminute): 
+				plussday = True
+			else: 
+				plussday = False
 
 			if year < cyear:
 				return False, "year"
