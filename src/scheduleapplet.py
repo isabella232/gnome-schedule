@@ -19,30 +19,60 @@
 # Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 
 #python modules
-import pygtk
-pygtk.require("2.0")
-import gtk
-import gtk.glade
-import gnome
-import gnome.ui
-import gnomeapplet
-import gobject
 import sys
 import signal
 import os
 
+#custom modules
 import config
 import mainWindow
+
+
+##
+## I18N
+##
+import gettext
+gettext.install(config.GETTEXT_PACKAGE(), config.GNOMELOCALEDIR(), unicode=1)
+
+if __name__ == "__main__":
+	signal.signal (signal.SIGINT, signal.SIG_DFL)
+
+debug_flag = None
+if '--debug' in sys.argv:
+	debug_flag = 1
+
+try:
+	import pygtk
+  	#tell pyGTK, if possible, that we want GTKv2
+  	pygtk.require("2.0")
+  
+except:
+  #Some distributions come with GTK2, but not pyGTK
+  pass
+
+try:
+  import gtk
+  import gtk.glade
+  # TODO: Gnome specific
+  import gnome
+  import gnome.ui
+  import gnomeapplet
+  import gobject
+	
+except:
+  print _("You need to install pyGTK or GTKv2, ")
+  print _("or set your PYTHONPATH correctly.")
+  print _("try: export PYTHONPATH= ")
+  sys.exit(1)
+
+props = { gnome.PARAM_APP_DATADIR : config.getPrefix()}
+gnome.program_init ("gnome-schedule", config.getVersion(), properties=props)
 
 
 class ScheduleApplet(gnomeapplet.Applet):
 	def __init__(self, applet, iid):
 		self.__gobject_init__()
-		import gettext
-		gettext.install(config.GETTEXT_PACKAGE(), config.GNOMELOCALEDIR(), unicode=1)
-
-		gnome.program_init ("gnome-schedule", config.getVersion())
-
+				
 		self.applet = applet
 		self.__loadIcon__()
 		

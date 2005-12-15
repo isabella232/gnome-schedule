@@ -1,4 +1,4 @@
-#!/usr/bin/python2
+#!/usr/bin/python
 
 # gnome-schedule.py - Contains the startup script for gnome-schedule
 # Copyright (C) 2004, 2005 Philip Van Hoof <me at pvanhoof dot be>
@@ -63,7 +63,7 @@ except:
   print _("try: export PYTHONPATH= ")
   sys.exit(1)
 
-
-gnome.program_init ("gnome-schedule", config.getVersion())	
+props = { gnome.PARAM_APP_DATADIR : config.getPrefix()}
+gnome.program_init ("gnome-schedule", config.getVersion(), properties=props)	
 
 mainWindow = mainWindow.main(debug_flag)
