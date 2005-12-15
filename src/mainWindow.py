@@ -512,13 +512,8 @@ class main:
  		 	
  	#open help
   	def on_manual_menu_activate (self, *args):
-  		# TODO: correct way to do this?
   		gnome.help_display("gnome-schedule", '')
-  		#help_page = "file://" + config.getDocfile()
-  		#path = config.getGnomehelpbin ()
-  		#pid = os.fork()
-  		#if not pid:
-  		#	os.execv(path, [path, help_page])
+  		
  		 		
  	#quit program
  	def __quit__(self, *args):
