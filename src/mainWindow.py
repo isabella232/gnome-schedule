@@ -512,7 +512,7 @@ class main:
  		 	
  	#open help
   	def on_manual_menu_activate (self, *args):
-  		gnome.help_display('gnome-schedule', '')
+  		gnome.help_display('gnome-schedule')
   		
  		 		
  	#quit program
