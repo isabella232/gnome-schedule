@@ -122,7 +122,6 @@ class AtEditor:
 
 		self.editing = True
 		self.NOACTION = True
-
 		self.job_id = job_id
 		self.date = self.ParentClass.treemodel.get_value(iter, 9)
 		self.time = self.ParentClass.treemodel.get_value(iter, 12)
@@ -131,9 +130,11 @@ class AtEditor:
 		self.class_id = self.ParentClass.treemodel.get_value(iter, 9)
 		self.user = self.ParentClass.treemodel.get_value(iter, 10)
 		self.command = self.ParentClass.treemodel.get_value(iter, 3)
-		self.runat = self.time + " " + self.date
+		
+		print self.date, self.time
 		#parse 	
 		(hour, minute, day, month, year) = self.__parse_time__(self.time, self.date)
+		self.runat = self.time + " " + day + "." + month + "." + year
 		self.calendar.select_month(int(month) - 1, int(year))
 		self.calendar.select_day(int(day))
 		self.hour_spinbutton.set_value(int(hour))
@@ -223,7 +224,8 @@ class AtEditor:
 			else:
 				day = str(day)
 
-			self.runat = hour + ":" + minute + " " + year + "-" + month + "-" + day
+			self.runat = hour + ":" + minute + " " + day + "." + month + "." + year
+			#print self.runat
 			self.noupdate = True
 			if self.combo_trigger == False:
 				self.__update_textboxes__()
@@ -237,11 +239,11 @@ class AtEditor:
 			#update variables, set calendar
 			runat = self.combobox_entry.get_text ()
 			self.runat = runat
-			regexp = re.compile("([0-9][0-9]):([0-9][0-9])\ ([0-9][0-9][0-9][0-9])-([0-9][0-9])-([0-9][0-9])")
+			regexp = re.compile("([0-9][0-9]):([0-9][0-9])\ ([0-9][0-9])\.([0-9][0-9])\.([0-9][0-9][0-9][0-9])")
 			runat_g = regexp.match(self.runat)
 			if runat_g:
 
-				(hour, minute, year, month, day) =  runat_g.groups()
+				(hour, minute, day, month, year) =  runat_g.groups()
 				year = int(year)
 				month = int(month)
 				day = int(day)
@@ -444,7 +446,7 @@ class AtEditor:
 		else:
 			day = day + 1
 		
-		self.runat = str(hour) + ":" + str(minute) + " " + str(year) + "-" + str(month) + "-" + str(day)
+		self.runat = str(hour) + ":" + str(minute) + " " + str(day) + "." + str(month) + "." + str(year)
 		self.calendar.select_month(month - 1, year)
 		
 		self.calendar.select_day(day)

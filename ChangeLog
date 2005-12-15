@@ -2,6 +2,7 @@
 
 	* The help button now opens the new help system, working with different locales aswell. Even thou es is the only one with some images translated.
 	* configure.ac: gtk.glade check, xsltproc check.
+	* src/atEditor.py, src/at.py: Changed time format of adding new at tasks to: hh:mm DD.MM.YYYY, this seems to be more standard. And work on more installations.
 	
 2005-12-14  Gaute Hope  <eg@gaute.vetsj.com>
 

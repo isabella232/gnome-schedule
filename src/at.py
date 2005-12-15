@@ -95,9 +95,9 @@ class At:
 	def checkfield (self, runat):
 		#TODO: fix bug $0:19 2004-12-8$ not valid by regexp
 		# print "$" + runat + "$"
-		regexp1 = re.compile("([0-9][0-9]):([0-9][0-9])\ ([0-9][0-9][0-9][0-9])-([0-9][0-9])-([0-9][0-9])")
+		regexp1 = re.compile("([0-9][0-9]):([0-9][0-9])\ ([0-9][0-9])\.([0-9][0-9])\.([0-9][0-9][0-9][0-9])")
 		regexp2 = re.compile("([0-9][0-9]):([0-9][0-9])")
-		regexp3 = re.compile("([0-9][0-9][0-9][0-9])-([0-9][0-9])-([0-9][0-9])")
+		regexp3 = re.compile("([0-9][0-9])\.([0-9][0-9])\.([0-9][0-9][0-9][0-9])")
 		runat_g1 = regexp1.match(runat)
 		runat_g2 = regexp2.match(runat)
 		runat_g3 = regexp3.match(runat)
@@ -109,7 +109,7 @@ class At:
 		cminute = ctime[4]
 	
 		if runat_g1:
-			(hour, minute, year, month, day) =  runat_g1.groups()
+			(hour, minute, day, month, year) =  runat_g1.groups()
 			hour = int(hour)
 			minute = int(minute)
 			year = int(year)
@@ -149,7 +149,7 @@ class At:
 
 		elif runat_g3:
 
-			(year, month, day) =  runat_g3.groups()
+			(day, month, year) =  runat_g3.groups()
 			year = int(year)
 			month = int(month)
 			day = int(day)
