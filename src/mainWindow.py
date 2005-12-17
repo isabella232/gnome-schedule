@@ -45,7 +45,7 @@ gtk.glade.bindtextdomain(config.GETTEXT_PACKAGE(), config.GNOMELOCALEDIR())
 ## The MainWindow class
 ##
 class main:
-	def __init__(self, debug_flag=None, inapplet=False):
+	def __init__(self, debug_flag=None, inapplet=False, applet = None):
 		self.debug_flag = debug_flag
 		self.inapplet = inapplet
 
@@ -94,6 +94,7 @@ class main:
 		self.xml.signal_connect("on_help_button_clicked", self.on_help_button_clicked)
 		self.xml.signal_connect("on_btnSetUser_clicked", self.on_btnSetUser_clicked)
 		self.xml.signal_connect("on_btnExit_clicked", self.__quit__)
+		self.xml.signal_connect("on_mainWindow_delete_event", self.__quit__)
 		
 				
 		##inittializing the treeview
@@ -517,8 +518,10 @@ class main:
  		 		
  	#quit program
  	def __quit__(self, *args):
-		if self.inapplet:
-			self.widget.hide()
+ 		print "quit"
+ 		if self.inapplet:
+			self.widget.hide ()
 		else:
 			gtk.main_quit ()
+		return True
 		
