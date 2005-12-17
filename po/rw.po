@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-04-01 15:04-0700\n"
+"POT-Creation-Date: 2005-12-17 13:32+0000\n"
 "PO-Revision-Date: 2005-03-31 20:55-0700\n"
 "Last-Translator: Steve Murphy <murf@e-tools.com>\n"
 "Language-Team: Kinyarwanda <translation-team-rw@lists.sourceforge.net>\n"
@@ -24,88 +24,96 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "ULL NAME <EMAIL@ADDRESS>\n"
 
-#: desktop/gnome-schedule.desktop.in.h:1
+#: ../desktop/gnome-schedule.desktop.in.h:1
 #, fuzzy
 msgid "Manage your system tasks"
 msgstr "Sisitemu Ibikorwa"
 
 # scaddins/source\analysis\analysis.src:RID_ANALYSIS_FUNCTION_DESCRIPTIONS.ANALYSIS_Fvschedule.4.text
-#: desktop/gnome-schedule.desktop.in.h:2
+#: ../desktop/gnome-schedule.desktop.in.h:2
 msgid "Schedule"
 msgstr "Igenabihe"
 
+#: ../src/at.py:283
+#, python-format
+msgid "DANGEROUS PARSE: %(preview)s"
+msgstr ""
+
 #. TODO: localize time and date formats
-#: src/at.py:298
+#: ../src/at.py:289
 #, fuzzy, python-format
 msgid "On %(date)s at %(time)s"
 msgstr "Itariki S ku Igihe S"
 
-# wizards/source\schedule\schedule.src:dlgCalEventOnce.text
-#: src/at.py:303 src/at.py:308
-#, fuzzy
-msgid "One-time"
-msgstr "Icyarimwe"
+#: ../src/at.py:294 ../src/at.py:299
+msgid "Once"
+msgstr ""
 
 # sc/source\core\src\compiler.src:RID_SC_FUNCTION_NAMES.SC_OPCODE_GET_MIN.text
-#: src/crontab.py:58
+#: ../src/crontab.py:49
 #, fuzzy
 msgid "Minute"
 msgstr "UMUNOTA"
 
 # sc/source\core\src\compiler.src:RID_SC_FUNCTION_NAMES.SC_OPCODE_GET_HOUR.text
-#: src/crontab.py:59
+#: ../src/crontab.py:50
 #, fuzzy
 msgid "Hour"
 msgstr "ISAHA"
 
-#: src/crontab.py:60
+#: ../src/crontab.py:51
 #, fuzzy
 msgid "Day of Month"
 msgstr "Bya"
 
 # sw/source\ui\utlui\initui.src:STR_AUTH_FIELD_MONTH.text
-#: src/crontab.py:61
+#: ../src/crontab.py:52
 msgid "Month"
 msgstr "Ukwezi"
 
 # 6515
-#: src/crontab.py:62
+#: ../src/crontab.py:53
 msgid "Weekday"
 msgstr "UmunsiW'Icyumweru"
 
-#: src/crontab.py:147 src/crontab.py:152 src/crontab.py:156
+#: ../src/crontab.py:138 ../src/crontab.py:143
 #, fuzzy, python-format
-msgid "Must be between %s and %s"
+msgid "Must be between %(min)s and %(max)s"
 msgstr "hagati Na"
 
-#: src/crontab.py:154
+#: ../src/crontab.py:145
 #, fuzzy, python-format
 msgid "%s is not a number"
 msgstr "%sni OYA a Umubare"
 
+#: ../src/crontab.py:147
+#, fuzzy, python-format
+msgid "Must be between %s and %s"
+msgstr "hagati Na"
+
 # filter/source\xsltdialog\xmlfilterdialogstrings.src:STR_DEFAULT_UI_NAME.text
-#: src/crontab.py:174 src/crontab.py:209 src/crontab.py:298
-#: src/crontabEditor.py:195 src/atEditor.py:121
+#: ../src/crontab.py:165 ../src/crontab.py:200 ../src/crontab.py:289
+#: ../src/crontabEditor.py:187 ../src/atEditor.py:109
 msgid "Untitled"
 msgstr "Nta mutwe"
 
 #. add task to treemodel in mainWindow
-#: src/crontab.py:241
+#: ../src/crontab.py:232
 msgid "Recurrent"
 msgstr ""
 
 # sc/source\ui\src\scfuncs.src:RID_SC_FUNCTION_DESCRIPTIONS1.SC_OPCODE_GET_TIME.4.text
-#: src/crontab.py:253 src/crontabEditor.py:89 src/gnome-schedule.glade.h:69
+#: ../src/crontab.py:244
 msgid "minute"
 msgstr "iminota"
 
 # sc/source\ui\src\scfuncs.src:RID_SC_FUNCTION_DESCRIPTIONS1.SC_OPCODE_GET_TIME.2.text
-#: src/crontab.py:255 src/crontabEditor.py:90 src/gnome-schedule.glade.h:68
+#: ../src/crontab.py:246
 msgid "hour"
 msgstr "isaha"
 
 # sc/source\ui\src\scfuncs.src:RID_SC_FUNCTION_DESCRIPTIONS1.SC_OPCODE_GET_DATE.6.text
-#: src/crontab.py:257 src/crontabEditor.py:91 src/gnome-schedule.glade.h:67
+#: ../src/crontab.py:248
 msgid "day"
 msgstr "umunsi"
 
@@ -113,212 +121,394 @@ msgstr "umunsi"
 # sc/source\ui\src\scfuncs.src:RID_SC_FUNCTION_DESCRIPTIONS1.SC_OPCODE_GET_DATE.4.text
 # #-#-#-#-#  sc.pot (PACKAGE VERSION)  #-#-#-#-#
 # sc/source\ui\src\scfuncs.src:RID_SC_FUNCTION_DESCRIPTIONS1.SC_OPCODE_GDA_2.10.text
-#: src/crontab.py:259 src/crontabEditor.py:92 src/gnome-schedule.glade.h:70
+#: ../src/crontab.py:250
 msgid "month"
 msgstr "ukwezi"
 
 # sc/source\core\src\compiler.src:RID_SC_FUNCTION_NAMES.SC_OPCODE_GET_DAY_OF_WEEK.text
-#: src/crontab.py:261 src/gnome-schedule.glade.h:74
+#: ../src/crontab.py:252
 #, fuzzy
 msgid "weekday"
 msgstr "UMUNSIICYUMWERU"
 
-#: src/crontabEditor.py:88
+#: ../src/crontab.py:294
+msgid "ERROR: Failed to parse crontab record"
+msgstr ""
+
+#: ../src/crontabEditor.py:80
 #, fuzzy
-msgid "use advanced"
+msgid "Use advanced"
 msgstr "Gukoresha Urwego rwo hejuru"
 
-# svtools/source\control\calendar.src:STR_SVT_CALENDAR_WEEK.text
-#: src/crontabEditor.py:93
+#: ../src/crontabEditor.py:81 ../src/crontabEditorHelper.py:79
+#: ../src/gnome-schedule.glade.h:28
 #, fuzzy
-msgid "week"
-msgstr "Icyumweru"
+msgid "Every minute"
+msgstr "buri UMUNOTA"
 
-#: src/crontabEditor.py:138 src/atEditor.py:123
+#: ../src/crontabEditor.py:82 ../src/crontabEditorHelper.py:85
 #, fuzzy
-msgid "Create a new scheduled task"
+msgid "Every hour"
+msgstr "buri ISAHA"
+
+# sw/source\ui\misc\linenum.src:TP_LINENUMBERING.FT_DIV_INTERVAL.text
+#: ../src/crontabEditor.py:83 ../src/crontabEditorHelper.py:91
+#, fuzzy
+msgid "Every day"
+msgstr "Buri"
+
+#: ../src/crontabEditor.py:84 ../src/crontabEditorHelper.py:97
+#, fuzzy
+msgid "Every month"
+msgstr "buri Ukwezi"
+
+# sw/source\ui\misc\linenum.src:TP_LINENUMBERING.FT_DIV_INTERVAL.text
+#: ../src/crontabEditor.py:85
+#, fuzzy
+msgid "Every week"
+msgstr "Buri"
+
+#: ../src/crontabEditor.py:130 ../src/atEditor.py:111
+#, fuzzy
+msgid "Create a New Scheduled Task"
 msgstr "a Gishya Igikorwa"
 
-#: src/crontabEditor.py:158 src/atEditor.py:153
+#: ../src/crontabEditor.py:150 ../src/atEditor.py:142
 #, fuzzy
-msgid "Edit a scheduled task"
+msgid "Edit a Scheduled Task"
 msgstr "a Igikorwa"
 
-#: src/crontabEditor.py:213 src/atEditor.py:325
+#: ../src/crontabEditor.py:205 ../src/atEditor.py:315
 #, fuzzy
 msgid "Don't use a preset"
 msgstr "Gukoresha a"
 
-#: src/crontabEditor.py:269
+#: ../src/crontabEditor.py:266
 #, fuzzy, python-format
 msgid ""
-"This is an invalid record! The problem could be at the %s field. Reason: %s"
+"This is an invalid record! The problem could be at the %(field)s field. "
+"Reason: %(reason)s"
 msgstr "ni Sibyo Icyabitswe ku i Umwanya"
 
-#: src/crontabEditor.py:301
+#: ../src/crontabEditor.py:298
 #, fuzzy
 msgid "The preset has not been saved"
 msgstr "OYA"
 
-#: src/crontabEditor.py:303
+#: ../src/crontabEditor.py:300
 #, fuzzy
 msgid "To delete a preset, you first need to select one"
 msgstr "Gusiba a Itangira Kuri Guhitamo"
 
-#: src/crontabEditor.py:313
+#: ../src/crontabEditor.py:310
 #, fuzzy
 msgid "To save a preset, you first have to choose a name for it"
 msgstr "Kubika a Itangira Kuri Guhitamo a Izina: kugirango"
 
-#: src/crontabEditor.py:323 src/atEditor.py:398
+#: ../src/crontabEditor.py:320 ../src/atEditor.py:389
 #, fuzzy
-msgid "Pick an icon for this scheduled task"
+msgid "Choose an Icon for this Scheduled Task"
 msgstr "Agashushondanga kugirango iyi Igikorwa"
 
 # padmin/source\rtsetup.src:RID_RTS_RTSDIALOG.RID_RTS_RTSDIALOG_TABCONTROL.RID_RTS_COMMANDPAGE.text
-#: src/crontabEditor.py:383
+#: ../src/crontabEditor.py:380
 #, fuzzy
 msgid "command"
 msgstr "Icyo wifuza"
 
-#: src/crontabEditorHelper.py:110
+# sc/source\core\src\compiler.src:RID_SC_FUNCTION_NAMES.SC_OPCODE_GET_DAY_OF_WEEK.text
+#: ../src/crontabEditorHelper.py:103
 #, fuzzy
-msgid "Happens all "
-msgstr "Byose"
+msgid "Every weekday"
+msgstr "UMUNSIICYUMWERU"
 
-#: src/crontabEditorHelper.py:110 src/crontabEditorHelper.py:218
-msgid "s"
-msgstr "s"
+#: ../src/crontabEditorHelper.py:155
+msgid "Minute settings"
+msgstr ""
 
-#: src/crontabEditorHelper.py:113
+#: ../src/crontabEditorHelper.py:156
 #, fuzzy
-msgid "Happens from "
-msgstr "Bivuye"
-
-#. show the form
-#: src/crontabEditorHelper.py:156
-#, fuzzy, python-format
-msgid "Edit time expression for: %s"
+msgid "Edit Time Expression for minute"
 msgstr "Igihe imvugo kugirango"
 
-#: src/crontabEditorHelper.py:169
+#: ../src/crontabEditorHelper.py:158
+msgid "Hour settings"
+msgstr ""
+
+#: ../src/crontabEditorHelper.py:159
+#, fuzzy
+msgid "Edit Time Expression for hour"
+msgstr "Igihe imvugo kugirango"
+
+#: ../src/crontabEditorHelper.py:161
+#, fuzzy
+msgid "Day settings"
+msgstr "<B Igenamiterere B"
+
+#: ../src/crontabEditorHelper.py:162
+#, fuzzy
+msgid "Edit Time Expression for day"
+msgstr "Igihe imvugo kugirango"
+
+#: ../src/crontabEditorHelper.py:164
+msgid "Month settings"
+msgstr ""
+
+#: ../src/crontabEditorHelper.py:165
+#, fuzzy
+msgid "Edit Time Expression for month"
+msgstr "Igihe imvugo kugirango"
+
+# 6515
+#: ../src/crontabEditorHelper.py:167
+#, fuzzy
+msgid "Weekday settings"
+msgstr "UmunsiW'Icyumweru"
+
+#: ../src/crontabEditorHelper.py:168
+#, fuzzy
+msgid "Edit Time Expression for weekday"
+msgstr "Igihe imvugo kugirango"
+
+#: ../src/crontabEditorHelper.py:182
 #, fuzzy, python-format
 msgid "This is invalid. Reason: %s"
 msgstr "ni Sibyo"
 
-#: src/crontabEditorHelper.py:209 src/crontabEditorHelper.py:220
+#. minute
+#: ../src/crontabEditorHelper.py:222 ../src/gnome-schedule.glade.h:15
 #, fuzzy
-msgid "st. "
-msgstr "ST"
+msgid "At an exact minute"
+msgstr "buri UMUNOTA"
 
-#: src/crontabEditorHelper.py:211
-msgid "th. "
+# sc/source\core\src\compiler.src:RID_SC_FUNCTION_NAMES.SC_OPCODE_GET_MIN.text
+#: ../src/crontabEditorHelper.py:223 ../src/gnome-schedule.glade.h:42
+#, fuzzy
+msgid "Minute:"
+msgstr "UMUNOTA"
+
+#. hour
+#: ../src/crontabEditorHelper.py:226
+msgid "At an exact hour"
 msgstr ""
 
-#: src/gnome-schedule.glade.h:1
+# sc/source\core\src\compiler.src:RID_SC_FUNCTION_NAMES.SC_OPCODE_GET_HOUR.text
+#: ../src/crontabEditorHelper.py:227
 #, fuzzy
-msgid "<b>Basic settings</b>"
-msgstr "<B Amagenamiterere B"
+msgid "Hour:"
+msgstr "ISAHA"
 
-#: src/gnome-schedule.glade.h:2
+#. day
+#: ../src/crontabEditorHelper.py:230
+msgid "At an exact day"
+msgstr ""
+
+#: ../src/crontabEditorHelper.py:231
+msgid "Day:"
+msgstr ""
+
+#. month
+#: ../src/crontabEditorHelper.py:234
+msgid "At an exact month"
+msgstr ""
+
+# sw/source\ui\utlui\initui.src:STR_AUTH_FIELD_MONTH.text
+#: ../src/crontabEditorHelper.py:235
 #, fuzzy
-msgid "<b>Date setting</b>"
+msgid "Month:"
+msgstr "Ukwezi"
+
+#. weekday
+#: ../src/crontabEditorHelper.py:238
+msgid "At an exact weekday"
+msgstr ""
+
+# 6515
+#: ../src/crontabEditorHelper.py:239
+#, fuzzy
+msgid "Weekday:"
+msgstr "UmunsiW'Icyumweru"
+
+#: ../src/crontabEditorHelper.py:244 ../src/gnome-schedule.glade.h:40
+msgid "In a step width"
+msgstr ""
+
+# sc/source\core\src\compiler.src:RID_SC_FUNCTION_NAMES.SC_OPCODE_GET_MIN.text
+#: ../src/crontabEditorHelper.py:246 ../src/gnome-schedule.glade.h:43
+#, fuzzy
+msgid "Minutes:"
+msgstr "UMUNOTA"
+
+# sc/source\core\src\compiler.src:RID_SC_FUNCTION_NAMES.SC_OPCODE_GET_HOUR.text
+#: ../src/crontabEditorHelper.py:248
+#, fuzzy
+msgid "Hours:"
+msgstr "ISAHA"
+
+#: ../src/crontabEditorHelper.py:250
+msgid "Days:"
+msgstr ""
+
+# sw/source\ui\utlui\initui.src:STR_AUTH_FIELD_MONTH.text
+#: ../src/crontabEditorHelper.py:252
+#, fuzzy
+msgid "Months:"
+msgstr "Ukwezi"
+
+# 6515
+#: ../src/crontabEditorHelper.py:254
+#, fuzzy
+msgid "Weekdays:"
+msgstr "UmunsiW'Icyumweru"
+
+#: ../src/gnome-schedule-applet.xml.h:1
+msgid "A_bout"
+msgstr ""
+
+#: ../src/gnome-schedule-applet.xml.h:2
+#, fuzzy
+msgid "_Add a task"
+msgstr "Igikorwa"
+
+#: ../src/gnome-schedule-applet.xml.h:3 ../src/gnome-schedule.glade.h:64
+msgid "_Help"
+msgstr ""
+
+#: ../src/gnome-schedule-applet.xml.h:4
+#, fuzzy
+msgid "_Manage tasks"
+msgstr "Sisitemu Ibikorwa"
+
+#: ../src/gnome-schedule.glade.h:1
+msgid "<b>Choose the user whose tasks you want to modify</b>"
+msgstr ""
+
+#: ../src/gnome-schedule.glade.h:2
+#, fuzzy
+msgid "<b>Date and Time Settings</b>"
+msgstr "Na"
+
+#: ../src/gnome-schedule.glade.h:3
+msgid "<b>Execution Time</b>"
+msgstr ""
+
+#: ../src/gnome-schedule.glade.h:4
+#, fuzzy
+msgid "<b>General</b>"
+msgstr "<B B"
+
+#: ../src/gnome-schedule.glade.h:5
+#, fuzzy
+msgid "<b>Minute settings</b>"
 msgstr "<B Igenamiterere B"
 
-#: src/gnome-schedule.glade.h:3
-#, fuzzy
-msgid "<b>Frequency setting</b>"
-msgstr "<B Igenamiterere B"
-
-#: src/gnome-schedule.glade.h:4
+#: ../src/gnome-schedule.glade.h:6
 #, fuzzy
 msgid "<b>Preview</b>"
 msgstr "<B B"
 
-#: src/gnome-schedule.glade.h:5
+#: ../src/gnome-schedule.glade.h:7
 #, fuzzy
 msgid "<b>Select the type of the scheduled task</b>"
 msgstr "<B i Ubwoko Bya i Igikorwa B"
 
-#: src/gnome-schedule.glade.h:6
+#: ../src/gnome-schedule.glade.h:8
 #, fuzzy
-msgid "A scheduled task that will launch only once in the future."
-msgstr "A Igikorwa Rimwe in i"
+msgid "<b>Task</b>"
+msgstr "<B Igenamiterere B"
 
-#: src/gnome-schedule.glade.h:7
+#: ../src/gnome-schedule.glade.h:9
 #, fuzzy
-msgid "A scheduled task that will launch recurrently."
+msgid "A scheduled task that will launch _recurrently"
 msgstr "A Igikorwa"
 
-#: src/gnome-schedule.glade.h:8
+#: ../src/gnome-schedule.glade.h:10
 #, fuzzy
-msgid "A_dvanced"
-msgstr "Urwego rwo hejuru"
+msgid "A scheduled task that will launch only once in the _future"
+msgstr "A Igikorwa Rimwe in i"
 
-#: src/gnome-schedule.glade.h:9
+#: ../src/gnome-schedule.glade.h:11
 #, fuzzy
 msgid "About this application"
 msgstr "iyi Porogaramu"
 
-#: src/gnome-schedule.glade.h:10
+#: ../src/gnome-schedule.glade.h:12
 #, fuzzy
-msgid "Active user"
-msgstr "Ukoresha:"
+msgid "Add a Scheduled Task"
+msgstr "a Igikorwa"
 
-#: src/gnome-schedule.glade.h:11
+#: ../src/gnome-schedule.glade.h:13
 #, fuzzy
 msgid "Add a new scheduled task"
 msgstr "a Gishya Igikorwa"
 
-#: src/gnome-schedule.glade.h:12
-#, fuzzy
-msgid "Add a scheduled task"
-msgstr "a Igikorwa"
-
-#: src/gnome-schedule.glade.h:13
+#: ../src/gnome-schedule.glade.h:14
 msgid "Advanced"
 msgstr "Urwego rwo hejuru"
 
-#: src/gnome-schedule.glade.h:14
-#, fuzzy
-msgid "Alter a scheduled task"
-msgstr "a Igikorwa"
-
-#: src/gnome-schedule.glade.h:15
+#: ../src/gnome-schedule.glade.h:16
 msgid "Basic"
 msgstr "By'ibanze"
 
-#: src/gnome-schedule.glade.h:16
-#, fuzzy
-msgid "Cancel this operation"
-msgstr "iyi"
+#: ../src/gnome-schedule.glade.h:17
+msgid "Change User"
+msgstr ""
 
-#: src/gnome-schedule.glade.h:17
+#: ../src/gnome-schedule.glade.h:18
+msgid "Change _User"
+msgstr ""
+
+#: ../src/gnome-schedule.glade.h:19
 #, fuzzy
-msgid "Configure scheduled tasks"
+msgid "Choose an icon for this scheduled task"
+msgstr "Agashushondanga kugirango iyi Igikorwa"
+
+#: ../src/gnome-schedule.glade.h:20
+msgid "Choose the user whose tasks you want to modify"
+msgstr ""
+
+# padmin/source\rtsetup.src:RID_RTS_RTSDIALOG.RID_RTS_RTSDIALOG_TABCONTROL.RID_RTS_COMMANDPAGE.text
+#: ../src/gnome-schedule.glade.h:21
+#, fuzzy
+msgid "Co_mmand:"
+msgstr "Icyo wifuza"
+
+#: ../src/gnome-schedule.glade.h:22
+#, fuzzy
+msgid "Configure Scheduled Tasks"
 msgstr "Ibikorwa"
 
 # sfx2/source\dialog\versdlg.src:DLG_VERSIONS.FT_DATETIME.text
-#: src/gnome-schedule.glade.h:18
-msgid "Date and time"
+#: ../src/gnome-schedule.glade.h:23
+#, fuzzy
+msgid "Date and Time"
 msgstr "Itariki n'igihe"
 
-#: src/gnome-schedule.glade.h:19
+#: ../src/gnome-schedule.glade.h:24
 #, fuzzy
 msgid "Delete a scheduled task"
 msgstr "a Igikorwa"
 
-# sw/source\ui\misc\linenum.src:TP_LINENUMBERING.FT_DIV_INTERVAL.text
-#: src/gnome-schedule.glade.h:20
-msgid "Every"
-msgstr "Buri"
+#: ../src/gnome-schedule.glade.h:25
+#, fuzzy
+msgid "Delete the selected template"
+msgstr "Gusiba i Byahiswemo"
 
-#: src/gnome-schedule.glade.h:21
+#: ../src/gnome-schedule.glade.h:26
+msgid "Desc_ription:"
+msgstr ""
+
+#: ../src/gnome-schedule.glade.h:27
+#, fuzzy
+msgid "Edit a scheduled task"
+msgstr "a Igikorwa"
+
+#: ../src/gnome-schedule.glade.h:29
 #, fuzzy
 msgid "Execution at a specific minute, hour, day, weekday or month."
 msgstr "ku a UMUNOTA ISAHA UMUNSI UMUNSIICYUMWERU Cyangwa Ukwezi"
 
-#: src/gnome-schedule.glade.h:22
+#: ../src/gnome-schedule.glade.h:30
 #, fuzzy
 msgid ""
 "Execution at a step width. For example every five minutes, hours, days, "
@@ -327,183 +517,128 @@ msgstr ""
 "ku a Intera Ubugari Urugero buri Iminota amasaha Iminsi Uminsi y'akazi "
 "Cyangwa Amezi"
 
-#: src/gnome-schedule.glade.h:23
+#: ../src/gnome-schedule.glade.h:31
 #, fuzzy
 msgid "Execution at every minute, hour, day, weekday or month."
 msgstr "ku buri UMUNOTA ISAHA UMUNSI UMUNSIICYUMWERU Cyangwa Ukwezi"
 
-#: src/gnome-schedule.glade.h:24
+#: ../src/gnome-schedule.glade.h:32
 #, fuzzy
 msgid "Execution in a range."
 msgstr "in a Urutonde"
 
-#: src/gnome-schedule.glade.h:25
+#: ../src/gnome-schedule.glade.h:33
 #, fuzzy
-msgid "For example at 04:10 tomorrow, next week or in three days."
-msgstr "Urugero ku 10 Komeza>> Icyumweru Cyangwa in Iminsi"
-
-#: src/gnome-schedule.glade.h:26
-#, fuzzy
-msgid "For example every first hour of the day."
-msgstr "Urugero buri Itangira ISAHA Bya i UMUNSI"
-
-#: src/gnome-schedule.glade.h:27
-msgid "For experienced users only"
-msgstr ""
-
-#: src/gnome-schedule.glade.h:28
-#, fuzzy
-msgid "Happens all"
-msgstr "Byose"
-
-#: src/gnome-schedule.glade.h:29
-#, fuzzy
-msgid "Happens at the"
-msgstr "ku i"
-
-#: src/gnome-schedule.glade.h:30
-#, fuzzy
-msgid "Happens every"
-msgstr "buri"
-
-#: src/gnome-schedule.glade.h:31
-#, fuzzy
-msgid "Happens from"
-msgstr "Bivuye"
-
-#: src/gnome-schedule.glade.h:32
-#, fuzzy
-msgid "No output"
-msgstr "Ibisohoka"
-
-#: src/gnome-schedule.glade.h:33
-#, fuzzy
-msgid "Other expression"
+msgid "Expression:"
 msgstr "imvugo"
 
-#: src/gnome-schedule.glade.h:34
-msgid "Preset"
+#: ../src/gnome-schedule.glade.h:34
+#, fuzzy
+msgid "For example at 04:10 tomorrow, next week or in three days"
+msgstr "Urugero ku 10 Komeza>> Icyumweru Cyangwa in Iminsi"
+
+#: ../src/gnome-schedule.glade.h:35
+#, fuzzy
+msgid "For example every first hour of the day"
+msgstr "Urugero buri Itangira ISAHA Bya i UMUNSI"
+
+#: ../src/gnome-schedule.glade.h:36
+msgid "For experienced users"
 msgstr ""
 
-#: src/gnome-schedule.glade.h:35
+#: ../src/gnome-schedule.glade.h:37
+msgid "From:"
+msgstr ""
+
+# sfx2/source\toolbox\tbxopdlg.src:TP_CONFIG_OBJECTBAR.STR_SYMBOL.text
+#: ../src/gnome-schedule.glade.h:38
+#, fuzzy
+msgid "Ico_n:"
+msgstr "Agashushondanga"
+
+#: ../src/gnome-schedule.glade.h:39
+msgid "In a range"
+msgstr ""
+
+# sc/source\core\src\compiler.src:RID_SC_FUNCTION_NAMES.SC_OPCODE_GET_MIN.text
+#: ../src/gnome-schedule.glade.h:41
+#, fuzzy
+msgid "Mi_nutes:"
+msgstr "UMUNOTA"
+
+#: ../src/gnome-schedule.glade.h:44
+#, fuzzy
+msgid "No out_put"
+msgstr "Ibisohoka"
+
+#: ../src/gnome-schedule.glade.h:45
+msgid "Other"
+msgstr ""
+
+#: ../src/gnome-schedule.glade.h:46
 #, fuzzy
 msgid ""
 "Quit the application. This will not stop the system scheduling. It will, "
 "however, quit this system schedule maintenance tool."
 msgstr "i Porogaramu OYA Guhagarara i Sisitemu Kuvamo iyi Sisitemu Igenabihe"
 
-# #-#-#-#-#  basctl.pot (PACKAGE VERSION)  #-#-#-#-#
-# basctl/source\basicide\basidesh.src:RID_BASICIDE_OBJECTBAR.SID_BASICRUN.text
-# #-#-#-#-#  basctl.pot (PACKAGE VERSION)  #-#-#-#-#
-# basctl/source\basicide\macrodlg.src:RID_STR_RUN.text
-#: src/gnome-schedule.glade.h:36
-msgid "Run"
-msgstr "Gukoresha"
+#: ../src/gnome-schedule.glade.h:47
+msgid "Rec_urrence:"
+msgstr ""
 
-#: src/gnome-schedule.glade.h:37
-#, fuzzy
-msgid "Run at:"
-msgstr "ku"
+#: ../src/gnome-schedule.glade.h:48
+msgid "Save the current information as a template"
+msgstr ""
 
-#: src/gnome-schedule.glade.h:38
+#: ../src/gnome-schedule.glade.h:49
 #, fuzzy
 msgid "Scheduled and active tasks"
 msgstr "Na Gikora Ibikorwa"
 
 # sw/source\ui\fldui\fldui.src:STR_SCRIPTFLD.text
-#: src/gnome-schedule.glade.h:39
-msgid "Script"
+#: ../src/gnome-schedule.glade.h:50
+#, fuzzy
+msgid "Scri_pt:"
 msgstr "Inyandiko-porogaramu"
 
-#: src/gnome-schedule.glade.h:40
+#: ../src/gnome-schedule.glade.h:51
 #, fuzzy
 msgid "See \"man 5 crontab\" for informations about the crontab format."
 msgstr "5 kugirango Ibyerekeye i Imiterere"
 
-#: src/gnome-schedule.glade.h:41
+# basctl/source\basicide\tbxctl.src:RID_TOOLBOX.SID_INSERT_SELECT.text
+#: ../src/gnome-schedule.glade.h:52
 #, fuzzy
-msgid "Select a different user"
-msgstr "a Ukoresha:"
+msgid "Select..."
+msgstr "Guhitamo"
 
-#: src/gnome-schedule.glade.h:42
-#, fuzzy
-msgid "Set the day frequency setting"
-msgstr "i UMUNSI Ubwisubire Igenamiterere"
-
-#: src/gnome-schedule.glade.h:43
-#, fuzzy
-msgid "Set the hour frequency setting"
-msgstr "i ISAHA Ubwisubire Igenamiterere"
-
-#: src/gnome-schedule.glade.h:44
-#, fuzzy
-msgid "Set the icon of this scheduled task"
-msgstr "i Agashushondanga Bya iyi Igikorwa"
-
-#: src/gnome-schedule.glade.h:45
-#, fuzzy
-msgid "Set the minute frequency setting"
-msgstr "i UMUNOTA Ubwisubire Igenamiterere"
-
-#: src/gnome-schedule.glade.h:46
-#, fuzzy
-msgid "Set the month frequency setting"
-msgstr "i Ukwezi Ubwisubire Igenamiterere"
-
-#: src/gnome-schedule.glade.h:47
-#, fuzzy
-msgid "Set the scheduled task"
-msgstr "i Igikorwa"
-
-#: src/gnome-schedule.glade.h:48
-#, fuzzy
-msgid "Set the weekday frequency setting"
-msgstr "i UMUNSIICYUMWERU Ubwisubire Igenamiterere"
-
-#: src/gnome-schedule.glade.h:49
-#, fuzzy
-msgid "Set user"
-msgstr "Ukoresha:"
-
-#: src/gnome-schedule.glade.h:50
+#: ../src/gnome-schedule.glade.h:53
 #, fuzzy
 msgid "Show help"
 msgstr "Ifashayobora"
 
-#: src/gnome-schedule.glade.h:51
+#: ../src/gnome-schedule.glade.h:54
 #, fuzzy
 msgid "Show the manual"
 msgstr "i Bikorwa"
 
-#: src/gnome-schedule.glade.h:52
-#, fuzzy
-msgid "Shows the records"
-msgstr "i Ibyabitswe"
-
-#: src/gnome-schedule.glade.h:53
-#, fuzzy
-msgid "Task title"
-msgstr "Umutwe"
-
-#: src/gnome-schedule.glade.h:54
-#, fuzzy
-msgid "The date when the script will launch"
-msgstr "Itariki Ryari: i IYANDIKA"
-
-#: src/gnome-schedule.glade.h:55
+#: ../src/gnome-schedule.glade.h:55
 #, fuzzy
 msgid "Time expression help"
 msgstr "imvugo Ifashayobora"
 
-#: src/gnome-schedule.glade.h:56
-msgid "Time:"
-msgstr "Igihe:"
-
-#: src/gnome-schedule.glade.h:57
-msgid "Treeview"
+#: ../src/gnome-schedule.glade.h:56
+msgid "To:"
 msgstr ""
 
-#: src/gnome-schedule.glade.h:58
+#: ../src/gnome-schedule.glade.h:57
+#, fuzzy
+msgid ""
+"Tomorrow\n"
+"Next week"
+msgstr "Icyumweru"
+
+#: ../src/gnome-schedule.glade.h:59
 #, fuzzy
 msgid ""
 "When selected, no output will be generated. When scheduled tasks in the "
@@ -513,232 +648,260 @@ msgstr ""
 "Byahiswemo Oya Ibisohoka Ibikorwa in i Ibisohoka Na iyi Ihitamo ni OYA "
 "Ivivuwe i Ibisohoka ku Mburabuzi Kohereza Kuri i Bya i Ukoresha:"
 
-#: src/gnome-schedule.glade.h:59
-#, fuzzy
-msgid "Will delete the selected preset"
-msgstr "Gusiba i Byahiswemo"
+#: ../src/gnome-schedule.glade.h:60
+msgid "_About"
+msgstr ""
 
-#: src/gnome-schedule.glade.h:60
+#: ../src/gnome-schedule.glade.h:61
 #, fuzzy
-msgid ""
-"Will save the current information as a preset. You can type the name of the "
-"preset in the combobox."
-msgstr "Kubika i KIGEZWEHO Ibisobanuro Nka a Ubwoko i Izina: Bya i in i"
-
-#: src/gnome-schedule.glade.h:61
-#, fuzzy
-msgid "[Add|Edit] scheduled task"
-msgstr "[Igikorwa"
-
-#: src/gnome-schedule.glade.h:62
-#, fuzzy
-msgid "_Add task"
-msgstr "Igikorwa"
+msgid "_Advanced"
+msgstr "Urwego rwo hejuru"
 
 # #-#-#-#-#  basctl.pot (PACKAGE VERSION)  #-#-#-#-#
 # basctl/source\basicide\basidesh.src:RID_POPUP_TABBAR.SID_BASICIDE_DELETECURRENT.text
 # #-#-#-#-#  basctl.pot (PACKAGE VERSION)  #-#-#-#-#
 # basctl/source\basicide\brkdlg.src:RID_BASICIDE_BREAKPOINTDLG.RID_PB_DEL.text
-#: src/gnome-schedule.glade.h:63
+#: ../src/gnome-schedule.glade.h:62
 #, fuzzy
-msgid "_Delete"
+msgid "_Date:"
 msgstr "Gusiba"
 
-#: src/gnome-schedule.glade.h:64
+#: ../src/gnome-schedule.glade.h:63
+#, fuzzy
+msgid "_Days of month:"
+msgstr "Bya"
+
+# sc/source\core\src\compiler.src:RID_SC_FUNCTION_NAMES.SC_OPCODE_GET_HOUR.text
+#: ../src/gnome-schedule.glade.h:65
+#, fuzzy
+msgid "_Hour:"
+msgstr "ISAHA"
+
+# sc/source\core\src\compiler.src:RID_SC_FUNCTION_NAMES.SC_OPCODE_GET_HOUR.text
+#: ../src/gnome-schedule.glade.h:66
+#, fuzzy
+msgid "_Hours:"
+msgstr "ISAHA"
+
+#: ../src/gnome-schedule.glade.h:67
 #, fuzzy
 msgid "_Manual"
 msgstr "Bikorwa"
 
-# basctl/source\basicide\tbxctl.src:RID_TOOLBOX.SID_INSERT_SELECT.text
-#: src/gnome-schedule.glade.h:65
+# sc/source\core\src\compiler.src:RID_SC_FUNCTION_NAMES.SC_OPCODE_GET_MIN.text
+#: ../src/gnome-schedule.glade.h:68
 #, fuzzy
-msgid "_Select"
-msgstr "Guhitamo"
+msgid "_Minute:"
+msgstr "UMUNOTA"
 
-#: src/gnome-schedule.glade.h:66
+# sw/source\ui\utlui\initui.src:STR_AUTH_FIELD_MONTH.text
+#: ../src/gnome-schedule.glade.h:69
 #, fuzzy
-msgid "_Set user"
-msgstr "Ukoresha:"
+msgid "_Months:"
+msgstr "Ukwezi"
 
-#: src/gnome-schedule.glade.h:71
-msgid "to"
-msgstr "kuri"
+#: ../src/gnome-schedule.glade.h:70
+msgid "_Task"
+msgstr ""
 
-#: src/gnome-schedule.glade.h:72
+#: ../src/gnome-schedule.glade.h:71
+msgid "_Template:"
+msgstr ""
+
+#: ../src/gnome-schedule.glade.h:72
+msgid "_User:"
+msgstr ""
+
+#: ../src/gnome-schedule.glade.h:73
+msgid "_View"
+msgstr ""
+
+# 6515
+#: ../src/gnome-schedule.glade.h:74
 #, fuzzy
-msgid ""
-"tomorrow\n"
-"next week"
-msgstr "Icyumweru"
+msgid "_Weekdays:"
+msgstr "UmunsiW'Icyumweru"
+
+#: ../src/gnome-schedule.py:61
+msgid "You need to install pyGTK or GTKv2, "
+msgstr ""
+
+#: ../src/gnome-schedule.py:62
+msgid "or set your PYTHONPATH correctly."
+msgstr ""
+
+#: ../src/gnome-schedule.py:63
+msgid "try: export PYTHONPATH= "
+msgstr ""
 
 # #-#-#-#-#  dbaccess.pot (PACKAGE VERSION)  #-#-#-#-#
 # #-#-#-#-#  dbaccess.pot (PACKAGE VERSION)  #-#-#-#-#
 # #-#-#-#-#  dbaccess.pot (PACKAGE VERSION)  #-#-#-#-#
 #. Translators: Date format for expressions like 'January 21'. %B is month, %d is day number.
 #. Run the command 'man strftime' to read more about these and other available specifiers.
-#: src/lang.py:101
+#: ../src/lang.py:105
 #, fuzzy
 msgid "%B %d"
 msgstr "%B%d"
 
 #. Translators: Date format for expressions like 'January 21, 2005'. %B is month, %d is day number, %Y is year with century.
 #. Run the command 'man strftime' to read more about these and other available specifiers.
-#: src/lang.py:108
+#: ../src/lang.py:112
 msgid "%B %d, %Y"
 msgstr ""
 
 # desktop/source\app\ssodlg.src:DLG_SSOLOGIN.text
 #. Translators: Time without seconds. %H is hour, %M is minute.
 #. Run the command 'man strftime' to read more about these and other available specifiers.
-#: src/lang.py:118
+#: ../src/lang.py:122
 #, fuzzy
 msgid "%H:%M"
 msgstr "%H:%M"
 
-#: src/lang.py:155
+#: ../src/lang.py:159
 #, fuzzy
 msgid "At every full hour"
 msgstr "buri ISAHA"
 
-#: src/lang.py:157
+#: ../src/lang.py:161
 #, fuzzy
 msgid "At every minute"
 msgstr "buri UMUNOTA"
 
-#: src/lang.py:159
+#: ../src/lang.py:163
 #, fuzzy, python-format
 msgid "At minute %(minute)s of every hour"
 msgstr "UMUNOTA UMUNOTA S Bya buri ISAHA"
 
-#: src/lang.py:161
+#: ../src/lang.py:165
 #, fuzzy, python-format
 msgid "At every minute between %(time_from)s and %(time_to)s"
 msgstr "buri UMUNOTA hagati S Na S"
 
-#: src/lang.py:163
+#: ../src/lang.py:167
 #, fuzzy, python-format
 msgid "On every day at %(time)s"
 msgstr "buri UMUNSI ku Igihe S"
 
-#: src/lang.py:168
+#: ../src/lang.py:172
 #, fuzzy, python-format
 msgid "On day %(monthday)s of every month at every full hour"
 msgstr "UMUNSI S Bya buri Ukwezi ku buri ISAHA"
 
-#: src/lang.py:170
+#: ../src/lang.py:174
 #, fuzzy, python-format
 msgid "On day %(monthday)s of every month at every minute"
 msgstr "UMUNSI S Bya buri Ukwezi ku buri UMUNOTA"
 
-#: src/lang.py:172
+#: ../src/lang.py:176
 #, fuzzy, python-format
 msgid "On day %(monthday)s of every month at minute %(minute)s of every hour"
 msgstr "UMUNSI S Bya buri Ukwezi ku UMUNOTA UMUNOTA S Bya buri ISAHA"
 
-#: src/lang.py:174
+#: ../src/lang.py:178
 #, fuzzy, python-format
 msgid ""
 "On day %(monthday)s of every month at every minute between %(time_from)s and "
 "%(time_to)s"
 msgstr "UMUNSI S Bya buri Ukwezi ku buri UMUNOTA hagati S Na S"
 
-#: src/lang.py:176
+#: ../src/lang.py:180
 #, fuzzy, python-format
 msgid "On day %(monthday)s of every month at %(time)s"
 msgstr "UMUNSI S Bya buri Ukwezi ku Igihe S"
 
-#: src/lang.py:181
+#: ../src/lang.py:185
 #, fuzzy, python-format
 msgid "On every day in %(month)s at every full hour"
 msgstr "buri UMUNSI in Ukwezi S ku buri ISAHA"
 
-#: src/lang.py:183
+#: ../src/lang.py:187
 #, fuzzy, python-format
 msgid "On every day in %(month)s at every minute"
 msgstr "buri UMUNSI in Ukwezi S ku buri UMUNOTA"
 
-#: src/lang.py:185
+#: ../src/lang.py:189
 #, fuzzy, python-format
 msgid "On every day in %(month)s at minute %(minute)s of every hour"
 msgstr "buri UMUNSI in Ukwezi S ku UMUNOTA UMUNOTA S Bya buri ISAHA"
 
-#: src/lang.py:187
+#: ../src/lang.py:191
 #, fuzzy, python-format
 msgid ""
 "On every day in %(month)s at every minute between %(time_from)s and %"
 "(time_to)s"
 msgstr "buri UMUNSI in Ukwezi S ku buri UMUNOTA hagati S Na S"
 
-#: src/lang.py:189
+#: ../src/lang.py:193
 #, fuzzy, python-format
 msgid "On every day in %(month)s at %(time)s"
 msgstr "buri UMUNSI in Ukwezi S ku Igihe S"
 
-#: src/lang.py:194
+#: ../src/lang.py:198
 #, fuzzy, python-format
 msgid "Every year on %(date)s at every full hour"
 msgstr "Umwaka ku Itariki S ku buri ISAHA"
 
-#: src/lang.py:196
+#: ../src/lang.py:200
 #, fuzzy, python-format
 msgid "Every year on %(date)s at every minute"
 msgstr "Umwaka ku Itariki S ku buri UMUNOTA"
 
-#: src/lang.py:198
+#: ../src/lang.py:202
 #, fuzzy, python-format
 msgid "Every year on %(date)s at minute %(minute)s of every hour"
 msgstr "Umwaka ku Itariki S ku UMUNOTA UMUNOTA S Bya buri ISAHA"
 
-#: src/lang.py:200
+#: ../src/lang.py:204
 #, fuzzy, python-format
 msgid ""
 "Every year on %(date)s at every minute between %(time_from)s and %(time_to)s"
 msgstr "Umwaka ku Itariki S ku buri UMUNOTA hagati S Na S"
 
-#: src/lang.py:202
+#: ../src/lang.py:206
 #, fuzzy, python-format
 msgid "Every year on %(date)s at %(time)s"
 msgstr "Umwaka ku Itariki S ku Igihe S"
 
-#: src/lang.py:207
+#: ../src/lang.py:211
 #, fuzzy, python-format
 msgid "On every %(weekday)s at every full hour"
 msgstr "buri UMUNSIICYUMWERU S ku buri ISAHA"
 
-#: src/lang.py:209
+#: ../src/lang.py:213
 #, fuzzy, python-format
 msgid "On every %(weekday)s at every minute"
 msgstr "buri UMUNSIICYUMWERU S ku buri UMUNOTA"
 
-#: src/lang.py:211
+#: ../src/lang.py:215
 #, fuzzy, python-format
 msgid "On every %(weekday)s at minute %(minute)s of every hour"
 msgstr "buri UMUNSIICYUMWERU S ku UMUNOTA UMUNOTA S Bya buri ISAHA"
 
-#: src/lang.py:213
+#: ../src/lang.py:217
 #, fuzzy, python-format
 msgid ""
 "On every %(weekday)s at every minute between %(time_from)s and %(time_to)s"
 msgstr "buri UMUNSIICYUMWERU S ku buri UMUNOTA hagati S Na S"
 
-#: src/lang.py:215
+#: ../src/lang.py:219
 #, fuzzy, python-format
 msgid "On every %(weekday)s at %(time)s"
 msgstr "buri UMUNSIICYUMWERU S ku Igihe S"
 
-#: src/lang.py:220
+#: ../src/lang.py:224
 #, fuzzy, python-format
 msgid ""
 "On day %(monthday)s of every month and every %(weekday)s at every full hour"
 msgstr "UMUNSI S Bya buri Ukwezi Na buri UMUNSIICYUMWERU S ku buri ISAHA"
 
-#: src/lang.py:222
+#: ../src/lang.py:226
 #, fuzzy, python-format
 msgid ""
 "On day %(monthday)s of every month and every %(weekday)s at every minute"
 msgstr "UMUNSI S Bya buri Ukwezi Na buri UMUNSIICYUMWERU S ku buri UMUNOTA"
 
-#: src/lang.py:224
+#: ../src/lang.py:228
 #, fuzzy, python-format
 msgid ""
 "On day %(monthday)s of every month and every %(weekday)s at minute %(minute)"
@@ -747,7 +910,7 @@ msgstr ""
 "UMUNSI S Bya buri Ukwezi Na buri UMUNSIICYUMWERU S ku UMUNOTA UMUNOTA S Bya "
 "buri ISAHA"
 
-#: src/lang.py:226
+#: ../src/lang.py:230
 #, fuzzy, python-format
 msgid ""
 "On day %(monthday)s of every month and every %(weekday)s at every minute "
@@ -756,39 +919,39 @@ msgstr ""
 "UMUNSI S Bya buri Ukwezi Na buri UMUNSIICYUMWERU S ku buri UMUNOTA hagati S "
 "Na S"
 
-#: src/lang.py:228
+#: ../src/lang.py:232
 #, fuzzy, python-format
 msgid "On day %(monthday)s of every month and every %(weekday)s at %(time)s"
 msgstr "UMUNSI S Bya buri Ukwezi Na buri UMUNSIICYUMWERU S ku Igihe S"
 
-#: src/lang.py:233
+#: ../src/lang.py:237
 #, fuzzy, python-format
 msgid "On every %(weekday)s in %(month)s at every full hour"
 msgstr "buri UMUNSIICYUMWERU S in Ukwezi S ku buri ISAHA"
 
-#: src/lang.py:235
+#: ../src/lang.py:239
 #, fuzzy, python-format
 msgid "On every %(weekday)s in %(month)s at every minute"
 msgstr "buri UMUNSIICYUMWERU S in Ukwezi S ku buri UMUNOTA"
 
-#: src/lang.py:237
+#: ../src/lang.py:241
 #, fuzzy, python-format
 msgid "On every %(weekday)s in %(month)s at minute %(minute)s of every hour"
 msgstr "buri UMUNSIICYUMWERU S in Ukwezi S ku UMUNOTA UMUNOTA S Bya buri ISAHA"
 
-#: src/lang.py:239
+#: ../src/lang.py:243
 #, fuzzy, python-format
 msgid ""
 "On every %(weekday)s in %(month)s at every minute between %(time_from)s and %"
 "(time_to)s"
 msgstr "buri UMUNSIICYUMWERU S in Ukwezi S ku buri UMUNOTA hagati S Na S"
 
-#: src/lang.py:241
+#: ../src/lang.py:245
 #, fuzzy, python-format
 msgid "On every %(weekday)s in %(month)s at %(time)s"
 msgstr "buri UMUNSIICYUMWERU S in Ukwezi S ku Igihe S"
 
-#: src/lang.py:246
+#: ../src/lang.py:250
 #, fuzzy, python-format
 msgid ""
 "On every %(weekday)s in %(month)s and on %(date)s every year at every full "
@@ -796,7 +959,7 @@ msgid ""
 msgstr ""
 "buri UMUNSIICYUMWERU S in Ukwezi S Na ku Itariki S buri Umwaka ku buri ISAHA"
 
-#: src/lang.py:248
+#: ../src/lang.py:252
 #, fuzzy, python-format
 msgid ""
 "On every %(weekday)s in %(month)s and on %(date)s every year at every minute"
@@ -804,7 +967,7 @@ msgstr ""
 "buri UMUNSIICYUMWERU S in Ukwezi S Na ku Itariki S buri Umwaka ku buri "
 "UMUNOTA"
 
-#: src/lang.py:250
+#: ../src/lang.py:254
 #, fuzzy, python-format
 msgid ""
 "On every %(weekday)s in %(month)s and on %(date)s every year at minute %"
@@ -813,7 +976,7 @@ msgstr ""
 "buri UMUNSIICYUMWERU S in Ukwezi S Na ku Itariki S buri Umwaka ku UMUNOTA "
 "UMUNOTA S Bya buri ISAHA"
 
-#: src/lang.py:252
+#: ../src/lang.py:256
 #, fuzzy, python-format
 msgid ""
 "On every %(weekday)s in %(month)s and on %(date)s every year at every minute "
@@ -822,138 +985,283 @@ msgstr ""
 "buri UMUNSIICYUMWERU S in Ukwezi S Na ku Itariki S buri Umwaka ku buri "
 "UMUNOTA hagati S Na S"
 
-#: src/lang.py:254
+#: ../src/lang.py:258
 #, fuzzy, python-format
 msgid ""
 "On every %(weekday)s in %(month)s and on %(date)s every year at %(time)s"
 msgstr ""
 "buri UMUNSIICYUMWERU S in Ukwezi S Na ku Itariki S buri Umwaka ku Igihe S"
 
-#: src/lang.py:262
+#: ../src/lang.py:266
 #, fuzzy
 msgid "every minute"
 msgstr "buri UMUNOTA"
 
 # sc/source\core\src\compiler.src:RID_SC_FUNCTION_NAMES.SC_OPCODE_GET_MIN.text
-#: src/lang.py:264
+#: ../src/lang.py:268
 #, fuzzy, python-format
 msgid "minute: %s"
 msgstr "UMUNOTA"
 
-#: src/lang.py:267
+#: ../src/lang.py:271
 #, fuzzy
 msgid "every hour"
 msgstr "buri ISAHA"
 
 # sc/source\core\src\compiler.src:RID_SC_FUNCTION_NAMES.SC_OPCODE_GET_HOUR.text
-#: src/lang.py:269
+#: ../src/lang.py:273
 #, fuzzy, python-format
 msgid "hour: %s"
 msgstr "ISAHA"
 
-#: src/lang.py:272
+#: ../src/lang.py:276
 #, fuzzy
 msgid "every day of month"
 msgstr "buri UMUNSI Bya Ukwezi"
 
-#: src/lang.py:274
+#: ../src/lang.py:278
 #, fuzzy, python-format
 msgid "day of month: %s"
 msgstr "UMUNSI Bya Ukwezi"
 
-#: src/lang.py:277
+#: ../src/lang.py:281
 #, fuzzy
 msgid "every month"
 msgstr "buri Ukwezi"
 
-#: src/lang.py:279
+#: ../src/lang.py:283
 #, fuzzy, python-format
 msgid "month: %s"
 msgstr "Ukwezi"
 
-#: src/lang.py:282
+#: ../src/lang.py:286
 #, fuzzy, python-format
 msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s"
 msgstr "UMUNOTA S ISAHA S S Ukwezi S"
 
 # sc/source\core\src\compiler.src:RID_SC_FUNCTION_NAMES.SC_OPCODE_GET_DAY_OF_WEEK.text
-#: src/lang.py:284
+#: ../src/lang.py:288
 #, fuzzy, python-format
 msgid "weekday: %s"
 msgstr "UMUNSIICYUMWERU"
 
-#: src/lang.py:285
+#: ../src/lang.py:289
 #, fuzzy, python-format
 msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 msgstr "UMUNOTA S ISAHA S S Ukwezi S UMUNSIICYUMWERU S"
 
-#: src/mainWindow.py:198 src/mainWindow.py:296
+#: ../src/mainWindow.py:193 ../src/mainWindow.py:295
 #, fuzzy, python-format
 msgid "Editing user: %s"
 msgstr "Ukoresha:"
 
 # sfx2/source\toolbox\tbxopdlg.src:TP_CONFIG_OBJECTBAR.STR_SYMBOL.text
-#: src/mainWindow.py:331
+#: ../src/mainWindow.py:330
 msgid "Icon"
 msgstr "Agashushondanga"
 
 # filter/source\xsltdialog\xmlfilterdialogstrings.src:STR_COLUMN_HEADER_TYPE.text
-#: src/mainWindow.py:336 src/mainWindow.py:369
+#: ../src/mainWindow.py:335 ../src/mainWindow.py:368
 msgid "Type"
 msgstr "Ubwoko"
 
-#: src/mainWindow.py:340 src/mainWindow.py:365
+#: ../src/mainWindow.py:339 ../src/mainWindow.py:364
 msgid "Title"
 msgstr "Umutwe"
 
-#: src/mainWindow.py:344 src/mainWindow.py:356
+#: ../src/mainWindow.py:343 ../src/mainWindow.py:355
 #, fuzzy
 msgid "Date and Time Settings"
 msgstr "Na"
 
-#: src/mainWindow.py:348 src/mainWindow.py:360
+#: ../src/mainWindow.py:347 ../src/mainWindow.py:359
 msgid "Preview"
 msgstr "Igaragazambere"
 
-#: src/mainWindow.py:400 src/mainWindow.py:451
+#: ../src/mainWindow.py:399 ../src/mainWindow.py:458
 #, fuzzy
 msgid "Please select a task"
 msgstr "Guhitamo a Igikorwa"
 
+#: ../src/mainWindow.py:406
+msgid "Do you want to delete this task?"
+msgstr ""
+
 #. TODO: should be using gtkAboutDialog
-#: src/mainWindow.py:494
+#: ../src/mainWindow.py:501
 msgid "Gnome Schedule"
 msgstr ""
 
-#: src/mainWindow.py:496
+#: ../src/mainWindow.py:503
 #, fuzzy
 msgid "Copyright (c) 2004-2005 Gaute Hope."
 msgstr "C"
 
-#: src/mainWindow.py:497
+#: ../src/mainWindow.py:504
 #, fuzzy
 msgid "This software is distributed under the GPL. "
 msgstr "ni i"
 
-#: src/mainWindow.py:501
-#, fuzzy
-msgid ""
-"Some painfully bad documentation put\n"
-"toghether from the far corners of Gaute Hope's mind."
-msgstr "Bivuye i Bya"
-
-#: src/mainWindow.py:501
+#: ../src/mainWindow.py:508
 #, fuzzy
 msgid "translator-credits"
 msgstr "Umusemuzi"
 
-# setup2/source\ui\pages\pcfgserver.src:RESID_PAGE_PAGECONFIGSERVER.FT_INFO3.text
-#. Translators: Separator between hour and minute entry fields
-#: src/atEditor.py:91
-msgid ":"
-msgstr ":"
-
-#: src/atEditor.py:514
+#: ../src/atEditor.py:509
 #, fuzzy, python-format
 msgid "This is an invalid record! The problem could be: %s"
 msgstr "ni Sibyo Icyabitswe"
+
+# wizards/source\schedule\schedule.src:dlgCalEventOnce.text
+#, fuzzy
+#~ msgid "One-time"
+#~ msgstr "Icyarimwe"
+
+# svtools/source\control\calendar.src:STR_SVT_CALENDAR_WEEK.text
+#, fuzzy
+#~ msgid "week"
+#~ msgstr "Icyumweru"
+
+#, fuzzy
+#~ msgid "Happens all "
+#~ msgstr "Byose"
+
+#~ msgid "s"
+#~ msgstr "s"
+
+#, fuzzy
+#~ msgid "Happens from "
+#~ msgstr "Bivuye"
+
+#, fuzzy
+#~ msgid "st. "
+#~ msgstr "ST"
+
+#, fuzzy
+#~ msgid "<b>Basic settings</b>"
+#~ msgstr "<B Amagenamiterere B"
+
+#, fuzzy
+#~ msgid "<b>Frequency setting</b>"
+#~ msgstr "<B Igenamiterere B"
+
+#, fuzzy
+#~ msgid "A_dvanced"
+#~ msgstr "Urwego rwo hejuru"
+
+#, fuzzy
+#~ msgid "Active user"
+#~ msgstr "Ukoresha:"
+
+#, fuzzy
+#~ msgid "Alter a scheduled task"
+#~ msgstr "a Igikorwa"
+
+#, fuzzy
+#~ msgid "Cancel this operation"
+#~ msgstr "iyi"
+
+#, fuzzy
+#~ msgid "Happens all"
+#~ msgstr "Byose"
+
+#, fuzzy
+#~ msgid "Happens at the"
+#~ msgstr "ku i"
+
+#, fuzzy
+#~ msgid "Happens every"
+#~ msgstr "buri"
+
+#, fuzzy
+#~ msgid "Happens from"
+#~ msgstr "Bivuye"
+
+# #-#-#-#-#  basctl.pot (PACKAGE VERSION)  #-#-#-#-#
+# basctl/source\basicide\basidesh.src:RID_BASICIDE_OBJECTBAR.SID_BASICRUN.text
+# #-#-#-#-#  basctl.pot (PACKAGE VERSION)  #-#-#-#-#
+# basctl/source\basicide\macrodlg.src:RID_STR_RUN.text
+#~ msgid "Run"
+#~ msgstr "Gukoresha"
+
+#, fuzzy
+#~ msgid "Run at:"
+#~ msgstr "ku"
+
+#, fuzzy
+#~ msgid "Select a different user"
+#~ msgstr "a Ukoresha:"
+
+#, fuzzy
+#~ msgid "Set the day frequency setting"
+#~ msgstr "i UMUNSI Ubwisubire Igenamiterere"
+
+#, fuzzy
+#~ msgid "Set the hour frequency setting"
+#~ msgstr "i ISAHA Ubwisubire Igenamiterere"
+
+#, fuzzy
+#~ msgid "Set the icon of this scheduled task"
+#~ msgstr "i Agashushondanga Bya iyi Igikorwa"
+
+#, fuzzy
+#~ msgid "Set the minute frequency setting"
+#~ msgstr "i UMUNOTA Ubwisubire Igenamiterere"
+
+#, fuzzy
+#~ msgid "Set the month frequency setting"
+#~ msgstr "i Ukwezi Ubwisubire Igenamiterere"
+
+#, fuzzy
+#~ msgid "Set the scheduled task"
+#~ msgstr "i Igikorwa"
+
+#, fuzzy
+#~ msgid "Set the weekday frequency setting"
+#~ msgstr "i UMUNSIICYUMWERU Ubwisubire Igenamiterere"
+
+#, fuzzy
+#~ msgid "Set user"
+#~ msgstr "Ukoresha:"
+
+#, fuzzy
+#~ msgid "Shows the records"
+#~ msgstr "i Ibyabitswe"
+
+#, fuzzy
+#~ msgid "Task title"
+#~ msgstr "Umutwe"
+
+#, fuzzy
+#~ msgid "The date when the script will launch"
+#~ msgstr "Itariki Ryari: i IYANDIKA"
+
+#~ msgid "Time:"
+#~ msgstr "Igihe:"
+
+#, fuzzy
+#~ msgid ""
+#~ "Will save the current information as a preset. You can type the name of "
+#~ "the preset in the combobox."
+#~ msgstr "Kubika i KIGEZWEHO Ibisobanuro Nka a Ubwoko i Izina: Bya i in i"
+
+#, fuzzy
+#~ msgid "[Add|Edit] scheduled task"
+#~ msgstr "[Igikorwa"
+
+#, fuzzy
+#~ msgid "_Set user"
+#~ msgstr "Ukoresha:"
+
+#~ msgid "to"
+#~ msgstr "kuri"
+
+#, fuzzy
+#~ msgid ""
+#~ "Some painfully bad documentation put\n"
+#~ "toghether from the far corners of Gaute Hope's mind."
+#~ msgstr "Bivuye i Bya"
+
+# setup2/source\ui\pages\pcfgserver.src:RESID_PAGE_PAGECONFIGSERVER.FT_INFO3.text
+#~ msgid ":"
+#~ msgstr ":"

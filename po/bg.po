@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule gnome 2.10\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-02-02 19:36+0200\n"
+"POT-Creation-Date: 2005-12-17 13:32+0000\n"
 "PO-Revision-Date: 2005-02-02 19:36+0200\n"
 "Last-Translator: Vladimir \"Kaladan\" Petkov <vpetkov@i-space.org>\n"
 "Language-Team: Bulgarian <dict@linux.zonebg.com>\n"
@@ -17,793 +17,1038 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: desktop/gnome-schedule.desktop.in.h:1
+#: ../desktop/gnome-schedule.desktop.in.h:1
 msgid "Manage your system tasks"
 msgstr "Управление на вашите задачи за системата"
 
-#: desktop/gnome-schedule.desktop.in.h:2
+#: ../desktop/gnome-schedule.desktop.in.h:2
 msgid "Schedule"
 msgstr "Програма"
 
+#: ../src/at.py:283
+#, python-format
+msgid "DANGEROUS PARSE: %(preview)s"
+msgstr ""
+
 #. TODO: localize time and date formats
-#: src/at.py:298
+#: ../src/at.py:289
 #, python-format
 msgid "On %(date)s at %(time)s"
 msgstr ""
 
-#: src/at.py:303 src/at.py:308
-msgid "One-time"
-msgstr "На време"
+#: ../src/at.py:294 ../src/at.py:299
+msgid "Once"
+msgstr ""
 
-#: src/crontab.py:58
+#: ../src/crontab.py:49
 msgid "Minute"
 msgstr "Минута"
 
-#: src/crontab.py:59
+#: ../src/crontab.py:50
 msgid "Hour"
 msgstr "Час"
 
-#: src/crontab.py:60
+#: ../src/crontab.py:51
 msgid "Day of Month"
 msgstr "Ден от месеца"
 
-#: src/crontab.py:61
+#: ../src/crontab.py:52
 msgid "Month"
 msgstr "Месец"
 
-#: src/crontab.py:62
+#: ../src/crontab.py:53
 msgid "Weekday"
 msgstr "Седмичен ден"
 
-#: src/crontab.py:147 src/crontab.py:152 src/crontab.py:156
+#: ../src/crontab.py:138 ../src/crontab.py:143
 #, python-format
-msgid "Must be between %s and %s"
+msgid "Must be between %(min)s and %(max)s"
 msgstr ""
 
-#: src/crontab.py:154
+#: ../src/crontab.py:145
 #, python-format
 msgid "%s is not a number"
 msgstr ""
 
-#: src/crontab.py:174 src/crontab.py:209 src/crontab.py:298
-#: src/crontabEditor.py:195 src/atEditor.py:121
+#: ../src/crontab.py:147
+#, python-format
+msgid "Must be between %s and %s"
+msgstr ""
+
+#: ../src/crontab.py:165 ../src/crontab.py:200 ../src/crontab.py:289
+#: ../src/crontabEditor.py:187 ../src/atEditor.py:109
 msgid "Untitled"
 msgstr "Без заглавие"
 
 #. add task to treemodel in mainWindow
-#: src/crontab.py:241
+#: ../src/crontab.py:232
 msgid "Recurrent"
 msgstr ""
 
-#: src/crontab.py:253 src/crontabEditor.py:89 src/gnome-schedule.glade.h:69
+#: ../src/crontab.py:244
 msgid "minute"
 msgstr "минута"
 
-#: src/crontab.py:255 src/crontabEditor.py:90 src/gnome-schedule.glade.h:68
+#: ../src/crontab.py:246
 msgid "hour"
 msgstr "час"
 
-#: src/crontab.py:257 src/crontabEditor.py:91 src/gnome-schedule.glade.h:67
+#: ../src/crontab.py:248
 msgid "day"
 msgstr "ден"
 
-#: src/crontab.py:259 src/crontabEditor.py:92 src/gnome-schedule.glade.h:70
+#: ../src/crontab.py:250
 msgid "month"
 msgstr "месец"
 
-#: src/crontab.py:261 src/gnome-schedule.glade.h:74
+#: ../src/crontab.py:252
 msgid "weekday"
 msgstr "ден от седмицата"
 
-#: src/crontabEditor.py:88
-msgid "use advanced"
+#: ../src/crontab.py:294
+msgid "ERROR: Failed to parse crontab record"
+msgstr ""
+
+#: ../src/crontabEditor.py:80
+#, fuzzy
+msgid "Use advanced"
 msgstr "използване на допълнителни"
 
-#: src/crontabEditor.py:93
-msgid "week"
-msgstr "седмица"
+#: ../src/crontabEditor.py:81 ../src/crontabEditorHelper.py:79
+#: ../src/gnome-schedule.glade.h:28
+#, fuzzy
+msgid "Every minute"
+msgstr "всяка минута"
 
-#: src/crontabEditor.py:138 src/atEditor.py:123
-msgid "Create a new scheduled task"
+#: ../src/crontabEditor.py:82 ../src/crontabEditorHelper.py:85
+#, fuzzy
+msgid "Every hour"
+msgstr "всеки час"
+
+#: ../src/crontabEditor.py:83 ../src/crontabEditorHelper.py:91
+#, fuzzy
+msgid "Every day"
+msgstr "Всеки"
+
+#: ../src/crontabEditor.py:84 ../src/crontabEditorHelper.py:97
+#, fuzzy
+msgid "Every month"
+msgstr "всеки месец"
+
+#: ../src/crontabEditor.py:85
+#, fuzzy
+msgid "Every week"
+msgstr "Всеки"
+
+#: ../src/crontabEditor.py:130 ../src/atEditor.py:111
+#, fuzzy
+msgid "Create a New Scheduled Task"
 msgstr "Създаване на нова програмирана задача"
 
-#: src/crontabEditor.py:158 src/atEditor.py:153
-msgid "Edit a scheduled task"
+#: ../src/crontabEditor.py:150 ../src/atEditor.py:142
+#, fuzzy
+msgid "Edit a Scheduled Task"
 msgstr "Редактиране на програмирана задача"
 
-#: src/crontabEditor.py:213 src/atEditor.py:325
+#: ../src/crontabEditor.py:205 ../src/atEditor.py:315
 msgid "Don't use a preset"
 msgstr ""
 
-#: src/crontabEditor.py:269
+#: ../src/crontabEditor.py:266
 #, python-format
 msgid ""
-"This is an invalid record! The problem could be at the %s field. Reason: %s"
+"This is an invalid record! The problem could be at the %(field)s field. "
+"Reason: %(reason)s"
 msgstr ""
 
-#: src/crontabEditor.py:301
+#: ../src/crontabEditor.py:298
 msgid "The preset has not been saved"
 msgstr ""
 
-#: src/crontabEditor.py:303
+#: ../src/crontabEditor.py:300
 msgid "To delete a preset, you first need to select one"
 msgstr ""
 
-#: src/crontabEditor.py:313
+#: ../src/crontabEditor.py:310
 msgid "To save a preset, you first have to choose a name for it"
 msgstr ""
 
-#: src/crontabEditor.py:323 src/atEditor.py:398
-msgid "Pick an icon for this scheduled task"
+#: ../src/crontabEditor.py:320 ../src/atEditor.py:389
+#, fuzzy
+msgid "Choose an Icon for this Scheduled Task"
 msgstr "Избиране на икона за тази програмирана задача"
 
-#: src/crontabEditor.py:383
+#: ../src/crontabEditor.py:380
 msgid "command"
 msgstr "команда"
 
-#: src/crontabEditorHelper.py:110
-msgid "Happens all "
+#: ../src/crontabEditorHelper.py:103
+#, fuzzy
+msgid "Every weekday"
+msgstr "ден от седмицата"
+
+#: ../src/crontabEditorHelper.py:155
+msgid "Minute settings"
 msgstr ""
 
-#: src/crontabEditorHelper.py:110 src/crontabEditorHelper.py:218
-msgid "s"
+#: ../src/crontabEditorHelper.py:156
+msgid "Edit Time Expression for minute"
 msgstr ""
 
-#: src/crontabEditorHelper.py:113
-msgid "Happens from "
-msgstr "Случва се от "
-
-#. show the form
-#: src/crontabEditorHelper.py:156
-#, python-format
-msgid "Edit time expression for: %s"
+#: ../src/crontabEditorHelper.py:158
+msgid "Hour settings"
 msgstr ""
 
-#: src/crontabEditorHelper.py:169
+#: ../src/crontabEditorHelper.py:159
+msgid "Edit Time Expression for hour"
+msgstr ""
+
+#: ../src/crontabEditorHelper.py:161
+#, fuzzy
+msgid "Day settings"
+msgstr "<b>Настройки на датата</b>"
+
+#: ../src/crontabEditorHelper.py:162
+msgid "Edit Time Expression for day"
+msgstr ""
+
+#: ../src/crontabEditorHelper.py:164
+msgid "Month settings"
+msgstr ""
+
+#: ../src/crontabEditorHelper.py:165
+msgid "Edit Time Expression for month"
+msgstr ""
+
+#: ../src/crontabEditorHelper.py:167
+#, fuzzy
+msgid "Weekday settings"
+msgstr "Седмичен ден"
+
+#: ../src/crontabEditorHelper.py:168
+msgid "Edit Time Expression for weekday"
+msgstr ""
+
+#: ../src/crontabEditorHelper.py:182
 #, python-format
 msgid "This is invalid. Reason: %s"
 msgstr "Това е неточно. Причината е: %s"
 
-#: src/crontabEditorHelper.py:209 src/crontabEditorHelper.py:220
-msgid "st. "
+#. minute
+#: ../src/crontabEditorHelper.py:222 ../src/gnome-schedule.glade.h:15
+#, fuzzy
+msgid "At an exact minute"
+msgstr "На всяка минута"
+
+#: ../src/crontabEditorHelper.py:223 ../src/gnome-schedule.glade.h:42
+#, fuzzy
+msgid "Minute:"
+msgstr "Минута"
+
+#. hour
+#: ../src/crontabEditorHelper.py:226
+msgid "At an exact hour"
 msgstr ""
 
-#: src/crontabEditorHelper.py:211
-msgid "th. "
+#: ../src/crontabEditorHelper.py:227
+#, fuzzy
+msgid "Hour:"
+msgstr "Час"
+
+#. day
+#: ../src/crontabEditorHelper.py:230
+msgid "At an exact day"
 msgstr ""
 
-#: src/gnome-schedule.glade.h:1
-msgid "<b>Basic settings</b>"
-msgstr "<b>Основни настройки</b>"
+#: ../src/crontabEditorHelper.py:231
+msgid "Day:"
+msgstr ""
 
-#: src/gnome-schedule.glade.h:2
-msgid "<b>Date setting</b>"
+#. month
+#: ../src/crontabEditorHelper.py:234
+msgid "At an exact month"
+msgstr ""
+
+#: ../src/crontabEditorHelper.py:235
+#, fuzzy
+msgid "Month:"
+msgstr "Месец"
+
+#. weekday
+#: ../src/crontabEditorHelper.py:238
+msgid "At an exact weekday"
+msgstr ""
+
+#: ../src/crontabEditorHelper.py:239
+#, fuzzy
+msgid "Weekday:"
+msgstr "Седмичен ден"
+
+#: ../src/crontabEditorHelper.py:244 ../src/gnome-schedule.glade.h:40
+msgid "In a step width"
+msgstr ""
+
+#: ../src/crontabEditorHelper.py:246 ../src/gnome-schedule.glade.h:43
+#, fuzzy
+msgid "Minutes:"
+msgstr "Минута"
+
+#: ../src/crontabEditorHelper.py:248
+#, fuzzy
+msgid "Hours:"
+msgstr "Час"
+
+#: ../src/crontabEditorHelper.py:250
+msgid "Days:"
+msgstr ""
+
+#: ../src/crontabEditorHelper.py:252
+#, fuzzy
+msgid "Months:"
+msgstr "Месец"
+
+#: ../src/crontabEditorHelper.py:254
+#, fuzzy
+msgid "Weekdays:"
+msgstr "Седмичен ден"
+
+#: ../src/gnome-schedule-applet.xml.h:1
+msgid "A_bout"
+msgstr ""
+
+#: ../src/gnome-schedule-applet.xml.h:2
+#, fuzzy
+msgid "_Add a task"
+msgstr "_Добавяне на задача"
+
+#: ../src/gnome-schedule-applet.xml.h:3 ../src/gnome-schedule.glade.h:64
+msgid "_Help"
+msgstr ""
+
+#: ../src/gnome-schedule-applet.xml.h:4
+#, fuzzy
+msgid "_Manage tasks"
+msgstr "Управление на вашите задачи за системата"
+
+#: ../src/gnome-schedule.glade.h:1
+msgid "<b>Choose the user whose tasks you want to modify</b>"
+msgstr ""
+
+#: ../src/gnome-schedule.glade.h:2
+#, fuzzy
+msgid "<b>Date and Time Settings</b>"
 msgstr "<b>Настройки на датата</b>"
 
-#: src/gnome-schedule.glade.h:3
-msgid "<b>Frequency setting</b>"
-msgstr "<b>Настройки на честотата</b>"
+#: ../src/gnome-schedule.glade.h:3
+msgid "<b>Execution Time</b>"
+msgstr ""
 
-#: src/gnome-schedule.glade.h:4
+#: ../src/gnome-schedule.glade.h:4
+#, fuzzy
+msgid "<b>General</b>"
+msgstr "<b>Предварителен преглед</b>"
+
+#: ../src/gnome-schedule.glade.h:5
+#, fuzzy
+msgid "<b>Minute settings</b>"
+msgstr "<b>Настройки на датата</b>"
+
+#: ../src/gnome-schedule.glade.h:6
 msgid "<b>Preview</b>"
 msgstr "<b>Предварителен преглед</b>"
 
-#: src/gnome-schedule.glade.h:5
+#: ../src/gnome-schedule.glade.h:7
 msgid "<b>Select the type of the scheduled task</b>"
 msgstr "<b>Избор на тип на програмираната задача</b>"
 
-#: src/gnome-schedule.glade.h:6
-msgid "A scheduled task that will launch only once in the future."
+#: ../src/gnome-schedule.glade.h:8
+#, fuzzy
+msgid "<b>Task</b>"
+msgstr "<b>Настройки на датата</b>"
+
+#: ../src/gnome-schedule.glade.h:9
+msgid "A scheduled task that will launch _recurrently"
 msgstr ""
 
-#: src/gnome-schedule.glade.h:7
-msgid "A scheduled task that will launch recurrently."
+#: ../src/gnome-schedule.glade.h:10
+msgid "A scheduled task that will launch only once in the _future"
 msgstr ""
 
-#: src/gnome-schedule.glade.h:8
-msgid "A_dvanced"
-msgstr "_Допълнителни"
-
-#: src/gnome-schedule.glade.h:9
+#: ../src/gnome-schedule.glade.h:11
 msgid "About this application"
 msgstr "Относно тази програма"
 
-#: src/gnome-schedule.glade.h:10
-msgid "Active user"
-msgstr "Активен потребител"
+#: ../src/gnome-schedule.glade.h:12
+#, fuzzy
+msgid "Add a Scheduled Task"
+msgstr "Добавяне на програмирана задача"
 
-#: src/gnome-schedule.glade.h:11
+#: ../src/gnome-schedule.glade.h:13
 msgid "Add a new scheduled task"
 msgstr "Добавяне на нова програмирана задача"
 
-#: src/gnome-schedule.glade.h:12
-msgid "Add a scheduled task"
-msgstr "Добавяне на програмирана задача"
-
-#: src/gnome-schedule.glade.h:13
+#: ../src/gnome-schedule.glade.h:14
 msgid "Advanced"
 msgstr "Допълнителни"
 
-#: src/gnome-schedule.glade.h:14
-msgid "Alter a scheduled task"
-msgstr ""
-
-#: src/gnome-schedule.glade.h:15
+#: ../src/gnome-schedule.glade.h:16
 msgid "Basic"
 msgstr "Основни"
 
-#: src/gnome-schedule.glade.h:16
-msgid "Cancel this operation"
-msgstr "Отказване на тази операция"
+#: ../src/gnome-schedule.glade.h:17
+msgid "Change User"
+msgstr ""
 
-#: src/gnome-schedule.glade.h:17
-msgid "Configure scheduled tasks"
+#: ../src/gnome-schedule.glade.h:18
+msgid "Change _User"
+msgstr ""
+
+#: ../src/gnome-schedule.glade.h:19
+#, fuzzy
+msgid "Choose an icon for this scheduled task"
+msgstr "Избиране на икона за тази програмирана задача"
+
+#: ../src/gnome-schedule.glade.h:20
+msgid "Choose the user whose tasks you want to modify"
+msgstr ""
+
+#: ../src/gnome-schedule.glade.h:21
+#, fuzzy
+msgid "Co_mmand:"
+msgstr "команда"
+
+#: ../src/gnome-schedule.glade.h:22
+#, fuzzy
+msgid "Configure Scheduled Tasks"
 msgstr "Настройване на програмирани задачи"
 
-#: src/gnome-schedule.glade.h:18
-msgid "Date and time"
+#: ../src/gnome-schedule.glade.h:23
+#, fuzzy
+msgid "Date and Time"
 msgstr "Час и дата"
 
-#: src/gnome-schedule.glade.h:19
+#: ../src/gnome-schedule.glade.h:24
 msgid "Delete a scheduled task"
 msgstr "Изтриване на програмирана задача"
 
-#: src/gnome-schedule.glade.h:20
-msgid "Every"
-msgstr "Всеки"
+#: ../src/gnome-schedule.glade.h:25
+#, fuzzy
+msgid "Delete the selected template"
+msgstr "Изтриване на програмирана задача"
 
-#: src/gnome-schedule.glade.h:21
+#: ../src/gnome-schedule.glade.h:26
+msgid "Desc_ription:"
+msgstr ""
+
+#: ../src/gnome-schedule.glade.h:27
+msgid "Edit a scheduled task"
+msgstr "Редактиране на програмирана задача"
+
+#: ../src/gnome-schedule.glade.h:29
 msgid "Execution at a specific minute, hour, day, weekday or month."
 msgstr ""
 
-#: src/gnome-schedule.glade.h:22
+#: ../src/gnome-schedule.glade.h:30
 msgid ""
 "Execution at a step width. For example every five minutes, hours, days, "
 "weekdays or months."
 msgstr ""
 
-#: src/gnome-schedule.glade.h:23
+#: ../src/gnome-schedule.glade.h:31
 msgid "Execution at every minute, hour, day, weekday or month."
 msgstr ""
 
-#: src/gnome-schedule.glade.h:24
+#: ../src/gnome-schedule.glade.h:32
 msgid "Execution in a range."
 msgstr ""
 
-#: src/gnome-schedule.glade.h:25
-msgid "For example at 04:10 tomorrow, next week or in three days."
-msgstr ""
-
-#: src/gnome-schedule.glade.h:26
-msgid "For example every first hour of the day."
-msgstr ""
-
-#: src/gnome-schedule.glade.h:27
-msgid "For experienced users only"
-msgstr ""
-
-#: src/gnome-schedule.glade.h:28
-msgid "Happens all"
-msgstr ""
-
-#: src/gnome-schedule.glade.h:29
-msgid "Happens at the"
-msgstr ""
-
-#: src/gnome-schedule.glade.h:30
-msgid "Happens every"
-msgstr ""
-
-#: src/gnome-schedule.glade.h:31
-msgid "Happens from"
-msgstr ""
-
-#: src/gnome-schedule.glade.h:32
-msgid "No output"
-msgstr "Без изход"
-
-#: src/gnome-schedule.glade.h:33
-msgid "Other expression"
+#: ../src/gnome-schedule.glade.h:33
+#, fuzzy
+msgid "Expression:"
 msgstr "Друг израз"
 
-#: src/gnome-schedule.glade.h:34
-msgid "Preset"
+#: ../src/gnome-schedule.glade.h:34
+msgid "For example at 04:10 tomorrow, next week or in three days"
 msgstr ""
 
-#: src/gnome-schedule.glade.h:35
+#: ../src/gnome-schedule.glade.h:35
+msgid "For example every first hour of the day"
+msgstr ""
+
+#: ../src/gnome-schedule.glade.h:36
+msgid "For experienced users"
+msgstr ""
+
+#: ../src/gnome-schedule.glade.h:37
+msgid "From:"
+msgstr ""
+
+#: ../src/gnome-schedule.glade.h:38
+#, fuzzy
+msgid "Ico_n:"
+msgstr "Икона"
+
+#: ../src/gnome-schedule.glade.h:39
+msgid "In a range"
+msgstr ""
+
+#: ../src/gnome-schedule.glade.h:41
+#, fuzzy
+msgid "Mi_nutes:"
+msgstr "Минута"
+
+#: ../src/gnome-schedule.glade.h:44
+#, fuzzy
+msgid "No out_put"
+msgstr "Без изход"
+
+#: ../src/gnome-schedule.glade.h:45
+msgid "Other"
+msgstr ""
+
+#: ../src/gnome-schedule.glade.h:46
 msgid ""
 "Quit the application. This will not stop the system scheduling. It will, "
 "however, quit this system schedule maintenance tool."
 msgstr ""
 
-#: src/gnome-schedule.glade.h:36
-msgid "Run"
-msgstr "Стартиране"
+#: ../src/gnome-schedule.glade.h:47
+msgid "Rec_urrence:"
+msgstr ""
 
-#: src/gnome-schedule.glade.h:37
-msgid "Run at:"
-msgstr "Стартиране в:"
+#: ../src/gnome-schedule.glade.h:48
+msgid "Save the current information as a template"
+msgstr ""
 
-#: src/gnome-schedule.glade.h:38
+#: ../src/gnome-schedule.glade.h:49
 msgid "Scheduled and active tasks"
 msgstr "Програмирани и активни задачи"
 
-#: src/gnome-schedule.glade.h:39
-msgid "Script"
+#: ../src/gnome-schedule.glade.h:50
+#, fuzzy
+msgid "Scri_pt:"
 msgstr "Скрипт"
 
-#: src/gnome-schedule.glade.h:40
+#: ../src/gnome-schedule.glade.h:51
 msgid "See \"man 5 crontab\" for informations about the crontab format."
 msgstr ""
 
-#: src/gnome-schedule.glade.h:41
-msgid "Select a different user"
-msgstr "Избор на различен потребител"
+#: ../src/gnome-schedule.glade.h:52
+#, fuzzy
+msgid "Select..."
+msgstr "_Избор"
 
-#: src/gnome-schedule.glade.h:42
-msgid "Set the day frequency setting"
-msgstr ""
-
-#: src/gnome-schedule.glade.h:43
-msgid "Set the hour frequency setting"
-msgstr "Задаване на настройките за часовата честота"
-
-#: src/gnome-schedule.glade.h:44
-msgid "Set the icon of this scheduled task"
-msgstr "Задаване на икона за тази програмирана задача"
-
-#: src/gnome-schedule.glade.h:45
-msgid "Set the minute frequency setting"
-msgstr ""
-
-#: src/gnome-schedule.glade.h:46
-msgid "Set the month frequency setting"
-msgstr ""
-
-#: src/gnome-schedule.glade.h:47
-msgid "Set the scheduled task"
-msgstr "Задаване на програмираната задача"
-
-#: src/gnome-schedule.glade.h:48
-msgid "Set the weekday frequency setting"
-msgstr ""
-
-#: src/gnome-schedule.glade.h:49
-msgid "Set user"
-msgstr "Задаване на потребител"
-
-#: src/gnome-schedule.glade.h:50
+#: ../src/gnome-schedule.glade.h:53
 msgid "Show help"
 msgstr "Показване на помощ"
 
-#: src/gnome-schedule.glade.h:51
+#: ../src/gnome-schedule.glade.h:54
 msgid "Show the manual"
 msgstr "Показване на потребителското ръководство"
 
-#: src/gnome-schedule.glade.h:52
-msgid "Shows the records"
-msgstr "Показване на записите"
-
-#: src/gnome-schedule.glade.h:53
-msgid "Task title"
-msgstr "Име на задачата"
-
-#: src/gnome-schedule.glade.h:54
-msgid "The date when the script will launch"
-msgstr "Датата, на която скрипът ще бъде стартиран"
-
-#: src/gnome-schedule.glade.h:55
+#: ../src/gnome-schedule.glade.h:55
 msgid "Time expression help"
 msgstr ""
 
-#: src/gnome-schedule.glade.h:56
-msgid "Time:"
-msgstr "Време:"
-
-#: src/gnome-schedule.glade.h:57
-msgid "Treeview"
+#: ../src/gnome-schedule.glade.h:56
+msgid "To:"
 msgstr ""
 
-#: src/gnome-schedule.glade.h:58
+#: ../src/gnome-schedule.glade.h:57
+#, fuzzy
+msgid ""
+"Tomorrow\n"
+"Next week"
+msgstr ""
+"утре\n"
+"следваща седмица"
+
+#: ../src/gnome-schedule.glade.h:59
 msgid ""
 "When selected, no output will be generated. When scheduled tasks in the "
 "crontab do have output and this option is not checked, the output will by "
 "default be send to the UNIX mailbox of the user."
 msgstr ""
 
-#: src/gnome-schedule.glade.h:59
-msgid "Will delete the selected preset"
+#: ../src/gnome-schedule.glade.h:60
+msgid "_About"
 msgstr ""
 
-#: src/gnome-schedule.glade.h:60
-msgid ""
-"Will save the current information as a preset. You can type the name of the "
-"preset in the combobox."
-msgstr ""
+#: ../src/gnome-schedule.glade.h:61
+#, fuzzy
+msgid "_Advanced"
+msgstr "Допълнителни"
 
-#: src/gnome-schedule.glade.h:61
-msgid "[Add|Edit] scheduled task"
-msgstr ""
-
-#: src/gnome-schedule.glade.h:62
-msgid "_Add task"
-msgstr "_Добавяне на задача"
-
-#: src/gnome-schedule.glade.h:63
-msgid "_Delete"
+#: ../src/gnome-schedule.glade.h:62
+#, fuzzy
+msgid "_Date:"
 msgstr "_Изтриване"
 
-#: src/gnome-schedule.glade.h:64
+#: ../src/gnome-schedule.glade.h:63
+#, fuzzy
+msgid "_Days of month:"
+msgstr "Ден от месеца"
+
+#: ../src/gnome-schedule.glade.h:65
+#, fuzzy
+msgid "_Hour:"
+msgstr "Час"
+
+#: ../src/gnome-schedule.glade.h:66
+#, fuzzy
+msgid "_Hours:"
+msgstr "Час"
+
+#: ../src/gnome-schedule.glade.h:67
 msgid "_Manual"
 msgstr "_Потребителски"
 
-#: src/gnome-schedule.glade.h:65
-msgid "_Select"
-msgstr "_Избор"
+#: ../src/gnome-schedule.glade.h:68
+#, fuzzy
+msgid "_Minute:"
+msgstr "Минута"
 
-#: src/gnome-schedule.glade.h:66
-msgid "_Set user"
-msgstr "_Задаване на потребител"
+#: ../src/gnome-schedule.glade.h:69
+#, fuzzy
+msgid "_Months:"
+msgstr "Месец"
 
-#: src/gnome-schedule.glade.h:71
-msgid "to"
-msgstr "до"
-
-#: src/gnome-schedule.glade.h:72
-msgid ""
-"tomorrow\n"
-"next week"
+#: ../src/gnome-schedule.glade.h:70
+msgid "_Task"
 msgstr ""
-"утре\n"
-"следваща седмица"
+
+#: ../src/gnome-schedule.glade.h:71
+msgid "_Template:"
+msgstr ""
+
+#: ../src/gnome-schedule.glade.h:72
+msgid "_User:"
+msgstr ""
+
+#: ../src/gnome-schedule.glade.h:73
+msgid "_View"
+msgstr ""
+
+#: ../src/gnome-schedule.glade.h:74
+#, fuzzy
+msgid "_Weekdays:"
+msgstr "Седмичен ден"
+
+#: ../src/gnome-schedule.py:61
+msgid "You need to install pyGTK or GTKv2, "
+msgstr ""
+
+#: ../src/gnome-schedule.py:62
+msgid "or set your PYTHONPATH correctly."
+msgstr ""
+
+#: ../src/gnome-schedule.py:63
+msgid "try: export PYTHONPATH= "
+msgstr ""
 
 #. Translators: Date format for expressions like 'January 21'. %B is month, %d is day number.
 #. Run the command 'man strftime' to read more about these and other available specifiers.
-#: src/lang.py:101
+#: ../src/lang.py:105
 msgid "%B %d"
 msgstr "%d %B"
 
 #. Translators: Date format for expressions like 'January 21, 2005'. %B is month, %d is day number, %Y is year with century.
 #. Run the command 'man strftime' to read more about these and other available specifiers.
-#: src/lang.py:108
+#: ../src/lang.py:112
 msgid "%B %d, %Y"
 msgstr "%d %B, %Y"
 
 #. Translators: Time without seconds. %H is hour, %M is minute.
 #. Run the command 'man strftime' to read more about these and other available specifiers.
-#: src/lang.py:118
+#: ../src/lang.py:122
 msgid "%H:%M"
 msgstr "%H:%M"
 
-#: src/lang.py:155
+#: ../src/lang.py:159
 msgid "At every full hour"
 msgstr "На всеки час"
 
-#: src/lang.py:157
+#: ../src/lang.py:161
 msgid "At every minute"
 msgstr "На всяка минута"
 
-#: src/lang.py:159
+#: ../src/lang.py:163
 #, python-format
 msgid "At minute %(minute)s of every hour"
 msgstr ""
 
-#: src/lang.py:161
+#: ../src/lang.py:165
 #, python-format
 msgid "At every minute between %(time_from)s and %(time_to)s"
 msgstr ""
 
-#: src/lang.py:163
+#: ../src/lang.py:167
 #, python-format
 msgid "On every day at %(time)s"
 msgstr ""
 
-#: src/lang.py:168
+#: ../src/lang.py:172
 #, python-format
 msgid "On day %(monthday)s of every month at every full hour"
 msgstr ""
 
-#: src/lang.py:170
+#: ../src/lang.py:174
 #, python-format
 msgid "On day %(monthday)s of every month at every minute"
 msgstr ""
 
-#: src/lang.py:172
+#: ../src/lang.py:176
 #, python-format
 msgid "On day %(monthday)s of every month at minute %(minute)s of every hour"
 msgstr ""
 
-#: src/lang.py:174
+#: ../src/lang.py:178
 #, python-format
 msgid ""
 "On day %(monthday)s of every month at every minute between %(time_from)s and "
 "%(time_to)s"
 msgstr ""
 
-#: src/lang.py:176
+#: ../src/lang.py:180
 #, python-format
 msgid "On day %(monthday)s of every month at %(time)s"
 msgstr ""
 
-#: src/lang.py:181
+#: ../src/lang.py:185
 #, python-format
 msgid "On every day in %(month)s at every full hour"
 msgstr ""
 
-#: src/lang.py:183
+#: ../src/lang.py:187
 #, python-format
 msgid "On every day in %(month)s at every minute"
 msgstr ""
 
-#: src/lang.py:185
+#: ../src/lang.py:189
 #, python-format
 msgid "On every day in %(month)s at minute %(minute)s of every hour"
 msgstr ""
 
-#: src/lang.py:187
+#: ../src/lang.py:191
 #, python-format
 msgid ""
 "On every day in %(month)s at every minute between %(time_from)s and %"
 "(time_to)s"
 msgstr ""
 
-#: src/lang.py:189
+#: ../src/lang.py:193
 #, python-format
 msgid "On every day in %(month)s at %(time)s"
 msgstr ""
 
-#: src/lang.py:194
+#: ../src/lang.py:198
 #, python-format
 msgid "Every year on %(date)s at every full hour"
 msgstr ""
 
-#: src/lang.py:196
+#: ../src/lang.py:200
 #, python-format
 msgid "Every year on %(date)s at every minute"
 msgstr ""
 
-#: src/lang.py:198
+#: ../src/lang.py:202
 #, python-format
 msgid "Every year on %(date)s at minute %(minute)s of every hour"
 msgstr ""
 
-#: src/lang.py:200
+#: ../src/lang.py:204
 #, python-format
 msgid ""
 "Every year on %(date)s at every minute between %(time_from)s and %(time_to)s"
 msgstr ""
 
-#: src/lang.py:202
+#: ../src/lang.py:206
 #, python-format
 msgid "Every year on %(date)s at %(time)s"
 msgstr ""
 
-#: src/lang.py:207
+#: ../src/lang.py:211
 #, python-format
 msgid "On every %(weekday)s at every full hour"
 msgstr ""
 
-#: src/lang.py:209
+#: ../src/lang.py:213
 #, python-format
 msgid "On every %(weekday)s at every minute"
 msgstr ""
 
-#: src/lang.py:211
+#: ../src/lang.py:215
 #, python-format
 msgid "On every %(weekday)s at minute %(minute)s of every hour"
 msgstr ""
 
-#: src/lang.py:213
+#: ../src/lang.py:217
 #, python-format
 msgid ""
 "On every %(weekday)s at every minute between %(time_from)s and %(time_to)s"
 msgstr ""
 
-#: src/lang.py:215
+#: ../src/lang.py:219
 #, python-format
 msgid "On every %(weekday)s at %(time)s"
 msgstr ""
 
-#: src/lang.py:220
+#: ../src/lang.py:224
 #, python-format
 msgid ""
 "On day %(monthday)s of every month and every %(weekday)s at every full hour"
 msgstr ""
 
-#: src/lang.py:222
+#: ../src/lang.py:226
 #, python-format
 msgid ""
 "On day %(monthday)s of every month and every %(weekday)s at every minute"
 msgstr ""
 
-#: src/lang.py:224
+#: ../src/lang.py:228
 #, python-format
 msgid ""
 "On day %(monthday)s of every month and every %(weekday)s at minute %(minute)"
 "s of every hour"
 msgstr ""
 
-#: src/lang.py:226
+#: ../src/lang.py:230
 #, python-format
 msgid ""
 "On day %(monthday)s of every month and every %(weekday)s at every minute "
 "between %(time_from)s and %(time_to)s"
 msgstr ""
 
-#: src/lang.py:228
+#: ../src/lang.py:232
 #, python-format
 msgid "On day %(monthday)s of every month and every %(weekday)s at %(time)s"
 msgstr ""
 
-#: src/lang.py:233
+#: ../src/lang.py:237
 #, python-format
 msgid "On every %(weekday)s in %(month)s at every full hour"
 msgstr ""
 
-#: src/lang.py:235
+#: ../src/lang.py:239
 #, python-format
 msgid "On every %(weekday)s in %(month)s at every minute"
 msgstr ""
 
-#: src/lang.py:237
+#: ../src/lang.py:241
 #, python-format
 msgid "On every %(weekday)s in %(month)s at minute %(minute)s of every hour"
 msgstr ""
 
-#: src/lang.py:239
+#: ../src/lang.py:243
 #, python-format
 msgid ""
 "On every %(weekday)s in %(month)s at every minute between %(time_from)s and %"
 "(time_to)s"
 msgstr ""
 
-#: src/lang.py:241
+#: ../src/lang.py:245
 #, python-format
 msgid "On every %(weekday)s in %(month)s at %(time)s"
 msgstr ""
 
-#: src/lang.py:246
+#: ../src/lang.py:250
 #, python-format
 msgid ""
 "On every %(weekday)s in %(month)s and on %(date)s every year at every full "
 "hour"
 msgstr ""
 
-#: src/lang.py:248
+#: ../src/lang.py:252
 #, python-format
 msgid ""
 "On every %(weekday)s in %(month)s and on %(date)s every year at every minute"
 msgstr ""
 
-#: src/lang.py:250
+#: ../src/lang.py:254
 #, python-format
 msgid ""
 "On every %(weekday)s in %(month)s and on %(date)s every year at minute %"
 "(minute)s of every hour"
 msgstr ""
 
-#: src/lang.py:252
+#: ../src/lang.py:256
 #, python-format
 msgid ""
 "On every %(weekday)s in %(month)s and on %(date)s every year at every minute "
 "between %(time_from)s and %(time_to)s"
 msgstr ""
 
-#: src/lang.py:254
+#: ../src/lang.py:258
 #, python-format
 msgid ""
 "On every %(weekday)s in %(month)s and on %(date)s every year at %(time)s"
 msgstr ""
 
-#: src/lang.py:262
+#: ../src/lang.py:266
 msgid "every minute"
 msgstr "всяка минута"
 
-#: src/lang.py:264
+#: ../src/lang.py:268
 #, python-format
 msgid "minute: %s"
 msgstr ""
 
-#: src/lang.py:267
+#: ../src/lang.py:271
 msgid "every hour"
 msgstr "всеки час"
 
-#: src/lang.py:269
+#: ../src/lang.py:273
 #, python-format
 msgid "hour: %s"
 msgstr ""
 
-#: src/lang.py:272
+#: ../src/lang.py:276
 msgid "every day of month"
 msgstr ""
 
-#: src/lang.py:274
+#: ../src/lang.py:278
 #, python-format
 msgid "day of month: %s"
 msgstr ""
 
-#: src/lang.py:277
+#: ../src/lang.py:281
 msgid "every month"
 msgstr "всеки месец"
 
-#: src/lang.py:279
+#: ../src/lang.py:283
 #, python-format
 msgid "month: %s"
 msgstr ""
 
-#: src/lang.py:282
+#: ../src/lang.py:286
 #, python-format
 msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s"
 msgstr ""
 
-#: src/lang.py:284
+#: ../src/lang.py:288
 #, python-format
 msgid "weekday: %s"
 msgstr "седмичен ден: %s"
 
-#: src/lang.py:285
+#: ../src/lang.py:289
 #, python-format
 msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 msgstr ""
 
-#: src/mainWindow.py:198 src/mainWindow.py:296
+#: ../src/mainWindow.py:193 ../src/mainWindow.py:295
 #, python-format
 msgid "Editing user: %s"
 msgstr "Редактиране на потребител: %s"
 
-#: src/mainWindow.py:331
+#: ../src/mainWindow.py:330
 msgid "Icon"
 msgstr "Икона"
 
-#: src/mainWindow.py:336 src/mainWindow.py:369
+#: ../src/mainWindow.py:335 ../src/mainWindow.py:368
 msgid "Type"
 msgstr "Тип"
 
-#: src/mainWindow.py:340 src/mainWindow.py:365
+#: ../src/mainWindow.py:339 ../src/mainWindow.py:364
 msgid "Title"
 msgstr "Заглавие"
 
-#: src/mainWindow.py:344 src/mainWindow.py:356
+#: ../src/mainWindow.py:343 ../src/mainWindow.py:355
 msgid "Date and Time Settings"
 msgstr ""
 
-#: src/mainWindow.py:348 src/mainWindow.py:360
+#: ../src/mainWindow.py:347 ../src/mainWindow.py:359
 msgid "Preview"
 msgstr "Предварителен преглед"
 
-#: src/mainWindow.py:400 src/mainWindow.py:451
+#: ../src/mainWindow.py:399 ../src/mainWindow.py:458
 msgid "Please select a task"
 msgstr ""
 
+#: ../src/mainWindow.py:406
+msgid "Do you want to delete this task?"
+msgstr ""
+
 #. TODO: should be using gtkAboutDialog
-#: src/mainWindow.py:494
+#: ../src/mainWindow.py:501
 msgid "Gnome Schedule"
 msgstr "Gnome Schedule"
 
-#: src/mainWindow.py:496
+#: ../src/mainWindow.py:503
 msgid "Copyright (c) 2004-2005 Gaute Hope."
 msgstr "Авторски права (c) 2004-2005 Gaute Hope."
 
-#: src/mainWindow.py:497
+#: ../src/mainWindow.py:504
 msgid "This software is distributed under the GPL. "
 msgstr ""
 
-#: src/mainWindow.py:501
-msgid ""
-"Some painfully bad documentation put\n"
-"toghether from the far corners of Gaute Hope's mind."
-msgstr ""
-
-#: src/mainWindow.py:501
+#: ../src/mainWindow.py:508
 msgid "translator-credits"
 msgstr ""
 
-#. Translators: Separator between hour and minute entry fields
-#: src/atEditor.py:91
-msgid ":"
-msgstr ""
-
-#: src/atEditor.py:514
+#: ../src/atEditor.py:509
 #, python-format
 msgid "This is an invalid record! The problem could be: %s"
 msgstr ""
+
+#~ msgid "One-time"
+#~ msgstr "На време"
+
+#~ msgid "week"
+#~ msgstr "седмица"
+
+#~ msgid "Happens from "
+#~ msgstr "Случва се от "
+
+#~ msgid "<b>Basic settings</b>"
+#~ msgstr "<b>Основни настройки</b>"
+
+#~ msgid "<b>Frequency setting</b>"
+#~ msgstr "<b>Настройки на честотата</b>"
+
+#~ msgid "A_dvanced"
+#~ msgstr "_Допълнителни"
+
+#~ msgid "Active user"
+#~ msgstr "Активен потребител"
+
+#~ msgid "Cancel this operation"
+#~ msgstr "Отказване на тази операция"
+
+#~ msgid "Run"
+#~ msgstr "Стартиране"
+
+#~ msgid "Run at:"
+#~ msgstr "Стартиране в:"
+
+#~ msgid "Select a different user"
+#~ msgstr "Избор на различен потребител"
+
+#~ msgid "Set the hour frequency setting"
+#~ msgstr "Задаване на настройките за часовата честота"
+
+#~ msgid "Set the icon of this scheduled task"
+#~ msgstr "Задаване на икона за тази програмирана задача"
+
+#~ msgid "Set the scheduled task"
+#~ msgstr "Задаване на програмираната задача"
+
+#~ msgid "Set user"
+#~ msgstr "Задаване на потребител"
+
+#~ msgid "Shows the records"
+#~ msgstr "Показване на записите"
+
+#~ msgid "Task title"
+#~ msgstr "Име на задачата"
+
+#~ msgid "The date when the script will launch"
+#~ msgstr "Датата, на която скрипът ще бъде стартиран"
+
+#~ msgid "Time:"
+#~ msgstr "Време:"
+
+#~ msgid "_Set user"
+#~ msgstr "_Задаване на потребител"
+
+#~ msgid "to"
+#~ msgstr "до"

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-08-29 19:32+0200\n"
+"POT-Creation-Date: 2005-12-17 13:32+0000\n"
 "PO-Revision-Date: 2005-08-31 17:32+0200\n"
 "Last-Translator: Rodrigo Marcos Fombellida <rmarcos_geo@yahoo.es>\n"
 "Language-Team: Spanish <traductores@es.gnome.org>\n"
@@ -30,18 +30,18 @@ msgstr "Administrar sus tareas del sistema"
 msgid "Schedule"
 msgstr "Horario"
 
-#: ../src/at.py:281
+#: ../src/at.py:283
 #, python-format
 msgid "DANGEROUS PARSE: %(preview)s"
 msgstr "ANÁLISIS PELIGROSO: %(preview)s"
 
 #. TODO: localize time and date formats
-#: ../src/at.py:287
+#: ../src/at.py:289
 #, python-format
 msgid "On %(date)s at %(time)s"
 msgstr "El %(date)s a las %(time)s"
 
-#: ../src/at.py:292 ../src/at.py:297
+#: ../src/at.py:294 ../src/at.py:299
 msgid "Once"
 msgstr "Una vez"
 
@@ -143,11 +143,11 @@ msgstr "Cada semana"
 msgid "Create a New Scheduled Task"
 msgstr "Crear una tarea programada nueva"
 
-#: ../src/crontabEditor.py:150 ../src/atEditor.py:141
+#: ../src/crontabEditor.py:150 ../src/atEditor.py:142
 msgid "Edit a Scheduled Task"
 msgstr "Editar una tarea programada"
 
-#: ../src/crontabEditor.py:205 ../src/atEditor.py:313
+#: ../src/crontabEditor.py:205 ../src/atEditor.py:315
 msgid "Don't use a preset"
 msgstr "No usar una plantilla"
 
@@ -172,7 +172,7 @@ msgstr "Para borrar una plantilla, primero debe seleccionar una"
 msgid "To save a preset, you first have to choose a name for it"
 msgstr "Para guardar una plantilla, primero debe elegir un nombre para ella"
 
-#: ../src/crontabEditor.py:320 ../src/atEditor.py:387
+#: ../src/crontabEditor.py:320 ../src/atEditor.py:389
 msgid "Choose an Icon for this Scheduled Task"
 msgstr "Escoja un icono para esta tarea programada"
 
@@ -728,8 +728,10 @@ msgstr "Cada año el día %(date)s en el minuto %(minute)s de cada hora"
 
 #: ../src/lang.py:204
 #, python-format
-msgid "Every year on %(date)s at every minute between %(time_from)s and %(time_to)s"
-msgstr "Cada año el día %(date)s a cada minuto entre %(time_from)s y %(time_to)s"
+msgid ""
+"Every year on %(date)s at every minute between %(time_from)s and %(time_to)s"
+msgstr ""
+"Cada año el día %(date)s a cada minuto entre %(time_from)s y %(time_to)s"
 
 #: ../src/lang.py:206
 #, python-format
@@ -753,8 +755,10 @@ msgstr "Cada %(weekday)s en el minuto %(minute)s de cada hora"
 
 #: ../src/lang.py:217
 #, python-format
-msgid "On every %(weekday)s at every minute between %(time_from)s and %(time_to)s"
-msgstr "Cada %(weekday)s a cada minuto entre las %(time_from)s y las %(time_to)s"
+msgid ""
+"On every %(weekday)s at every minute between %(time_from)s and %(time_to)s"
+msgstr ""
+"Cada %(weekday)s a cada minuto entre las %(time_from)s y las %(time_to)s"
 
 #: ../src/lang.py:219
 #, python-format
@@ -763,12 +767,15 @@ msgstr "Cada %(weekday)s a las %(time)s"
 
 #: ../src/lang.py:224
 #, python-format
-msgid "On day %(monthday)s of every month and every %(weekday)s at every full hour"
-msgstr "El día %(monthday)s de cada mes y cada %(weekday)s a cada hora completa"
+msgid ""
+"On day %(monthday)s of every month and every %(weekday)s at every full hour"
+msgstr ""
+"El día %(monthday)s de cada mes y cada %(weekday)s a cada hora completa"
 
 #: ../src/lang.py:226
 #, python-format
-msgid "On day %(monthday)s of every month and every %(weekday)s at every minute"
+msgid ""
+"On day %(monthday)s of every month and every %(weekday)s at every minute"
 msgstr "El día %(monthday)s de cada mes y cada %(weekday)s a cada minuto"
 
 #: ../src/lang.py:228
@@ -834,7 +841,8 @@ msgstr ""
 
 #: ../src/lang.py:252
 #, python-format
-msgid "On every %(weekday)s in %(month)s and on %(date)s every year at every minute"
+msgid ""
+"On every %(weekday)s in %(month)s and on %(date)s every year at every minute"
 msgstr ""
 "Cada %(weekday)s del mes de %(month)s y el día %(date)s de cada año a cada "
 "minuto"
@@ -859,7 +867,8 @@ msgstr ""
 
 #: ../src/lang.py:258
 #, python-format
-msgid "On every %(weekday)s in %(month)s and on %(date)s every year at %(time)s"
+msgid ""
+"On every %(weekday)s in %(month)s and on %(date)s every year at %(time)s"
 msgstr ""
 "Cada %(weekday)s del mes de %(month)s y el día %(date)s de cada año a las %"
 "(time)s"
@@ -915,59 +924,59 @@ msgstr "día de la semana: %s"
 msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 msgstr "A las %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 
-#: ../src/mainWindow.py:192 ../src/mainWindow.py:294
+#: ../src/mainWindow.py:193 ../src/mainWindow.py:295
 #, python-format
 msgid "Editing user: %s"
 msgstr "Editando usuario: %s"
 
-#: ../src/mainWindow.py:329
+#: ../src/mainWindow.py:330
 msgid "Icon"
 msgstr "Icono"
 
-#: ../src/mainWindow.py:334 ../src/mainWindow.py:367
+#: ../src/mainWindow.py:335 ../src/mainWindow.py:368
 msgid "Type"
 msgstr "Tipo"
 
-#: ../src/mainWindow.py:338 ../src/mainWindow.py:363
+#: ../src/mainWindow.py:339 ../src/mainWindow.py:364
 msgid "Title"
 msgstr "Título"
 
-#: ../src/mainWindow.py:342 ../src/mainWindow.py:354
+#: ../src/mainWindow.py:343 ../src/mainWindow.py:355
 msgid "Date and Time Settings"
 msgstr "Configuración de fecha y hora"
 
-#: ../src/mainWindow.py:346 ../src/mainWindow.py:358
+#: ../src/mainWindow.py:347 ../src/mainWindow.py:359
 msgid "Preview"
 msgstr "Vista previa"
 
-#: ../src/mainWindow.py:398 ../src/mainWindow.py:457
+#: ../src/mainWindow.py:399 ../src/mainWindow.py:458
 msgid "Please select a task"
 msgstr "Por favor seleccione una tarea"
 
-#: ../src/mainWindow.py:405
+#: ../src/mainWindow.py:406
 msgid "Do you want to delete this task?"
 msgstr "¿Desea borrar esta tarea?"
 
 #. TODO: should be using gtkAboutDialog
-#: ../src/mainWindow.py:500
+#: ../src/mainWindow.py:501
 msgid "Gnome Schedule"
 msgstr "Planificación de Gnome"
 
-#: ../src/mainWindow.py:502
+#: ../src/mainWindow.py:503
 msgid "Copyright (c) 2004-2005 Gaute Hope."
 msgstr "Copyright © 2004-2005 Gaute Hope."
 
-#: ../src/mainWindow.py:503
+#: ../src/mainWindow.py:504
 msgid "This software is distributed under the GPL. "
 msgstr "Este software se distribuye bajo los términos de la GPL. "
 
-#: ../src/mainWindow.py:507
+#: ../src/mainWindow.py:508
 msgid "translator-credits"
 msgstr ""
 "Rodrigo Marcos Fombellida <rmarcos_geo@yahoo.es>\n"
 "QA:Francisco Javier F. Serrador <serrador@cvs.gnome.org>"
 
-#: ../src/atEditor.py:507
+#: ../src/atEditor.py:509
 #, python-format
 msgid "This is an invalid record! The problem could be: %s"
 msgstr "¡Este es un registro inválido! El problema podría ser: %s"
@@ -979,4 +988,3 @@ msgstr "¡Este es un registro inválido! El problema podría ser: %s"
 #~ msgstr ""
 #~ "Francisco Javier F. Serrador <serrador@cvs.gnome.org>Rodrigo Marcos "
 #~ "Fombellida <rmarcos_geo@yahoo.es>"
-

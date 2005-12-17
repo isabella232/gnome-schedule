@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-10-01 03:00+0200\n"
+"POT-Creation-Date: 2005-12-17 13:32+0000\n"
 "PO-Revision-Date: 2005-10-01 04:17+0200\n"
 "Last-Translator: Tino Meinen <a.t.meinen@chello.nl>\n"
 "Language-Team: Dutch <vertaling@vrijschrift.org>\n"
@@ -24,18 +24,18 @@ msgstr "Uw systeemtaken beheren"
 msgid "Schedule"
 msgstr "Taakplanning"
 
-#: ../src/at.py:281
+#: ../src/at.py:283
 #, python-format
 msgid "DANGEROUS PARSE: %(preview)s"
 msgstr "GEVAARLIJKE ONTLEDING: %(preview)s"
 
 #. TODO: localize time and date formats
-#: ../src/at.py:287
+#: ../src/at.py:289
 #, python-format
 msgid "On %(date)s at %(time)s"
 msgstr "Op %(date)s om %(time)s"
 
-#: ../src/at.py:292 ../src/at.py:297
+#: ../src/at.py:294 ../src/at.py:299
 msgid "Once"
 msgstr "Eenmalig"
 
@@ -137,11 +137,11 @@ msgstr "Elke week"
 msgid "Create a New Scheduled Task"
 msgstr "Een nieuwe geplande taak aanmaken"
 
-#: ../src/crontabEditor.py:150 ../src/atEditor.py:141
+#: ../src/crontabEditor.py:150 ../src/atEditor.py:142
 msgid "Edit a Scheduled Task"
 msgstr "Een geplande taak bewerken"
 
-#: ../src/crontabEditor.py:205 ../src/atEditor.py:313
+#: ../src/crontabEditor.py:205 ../src/atEditor.py:315
 msgid "Don't use a preset"
 msgstr "Geen voorinstelling gebruiken"
 
@@ -151,7 +151,8 @@ msgid ""
 "This is an invalid record! The problem could be at the %(field)s field. "
 "Reason: %(reason)s"
 msgstr ""
-"Dit is een ongeldig record! Het probleem kan liggen bij het %(field)s-veld. \n"
+"Dit is een ongeldig record! Het probleem kan liggen bij het %(field)s-"
+"veld. \n"
 "Reden: %(reason)s"
 
 #: ../src/crontabEditor.py:298
@@ -166,7 +167,7 @@ msgstr "Om een voorinstelling te verwijderen dient u er eerst een te kiezen"
 msgid "To save a preset, you first have to choose a name for it"
 msgstr "Om een voorinstelling op te slaan dient u eerst een naam te kiezen"
 
-#: ../src/crontabEditor.py:320 ../src/atEditor.py:387
+#: ../src/crontabEditor.py:320 ../src/atEditor.py:389
 msgid "Choose an Icon for this Scheduled Task"
 msgstr "Kies een pictogram voor deze geplande taak"
 
@@ -917,57 +918,57 @@ msgstr "weekdag: %s"
 msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 msgstr "Op %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 
-#: ../src/mainWindow.py:192 ../src/mainWindow.py:294
+#: ../src/mainWindow.py:193 ../src/mainWindow.py:295
 #, python-format
 msgid "Editing user: %s"
 msgstr "Bewerkende gebruiker: %s"
 
-#: ../src/mainWindow.py:329
+#: ../src/mainWindow.py:330
 msgid "Icon"
 msgstr "Pictogram"
 
-#: ../src/mainWindow.py:334 ../src/mainWindow.py:367
+#: ../src/mainWindow.py:335 ../src/mainWindow.py:368
 msgid "Type"
 msgstr "Soort"
 
-#: ../src/mainWindow.py:338 ../src/mainWindow.py:363
+#: ../src/mainWindow.py:339 ../src/mainWindow.py:364
 msgid "Title"
 msgstr "Titel"
 
-#: ../src/mainWindow.py:342 ../src/mainWindow.py:354
+#: ../src/mainWindow.py:343 ../src/mainWindow.py:355
 msgid "Date and Time Settings"
 msgstr "Datum en tijd"
 
-#: ../src/mainWindow.py:346 ../src/mainWindow.py:358
+#: ../src/mainWindow.py:347 ../src/mainWindow.py:359
 msgid "Preview"
 msgstr "Voorbeeld"
 
-#: ../src/mainWindow.py:398 ../src/mainWindow.py:457
+#: ../src/mainWindow.py:399 ../src/mainWindow.py:458
 msgid "Please select a task"
 msgstr "Kies alstublieft een taak"
 
-#: ../src/mainWindow.py:405
+#: ../src/mainWindow.py:406
 msgid "Do you want to delete this task?"
 msgstr "Wilt u deze taak verwijderen?"
 
 #. TODO: should be using gtkAboutDialog
-#: ../src/mainWindow.py:500
+#: ../src/mainWindow.py:501
 msgid "Gnome Schedule"
 msgstr "Gnome Taakplanning"
 
-#: ../src/mainWindow.py:502
+#: ../src/mainWindow.py:503
 msgid "Copyright (c) 2004-2005 Gaute Hope."
 msgstr "Copyright (c) 2004-2005 Gaute Hope."
 
-#: ../src/mainWindow.py:503
+#: ../src/mainWindow.py:504
 msgid "This software is distributed under the GPL. "
 msgstr "Deze software wordt verspreid onder de GPL. "
 
-#: ../src/mainWindow.py:507
+#: ../src/mainWindow.py:508
 msgid "translator-credits"
 msgstr "Taco WItte"
 
-#: ../src/atEditor.py:507
+#: ../src/atEditor.py:509
 #, python-format
 msgid "This is an invalid record! The problem could be: %s"
 msgstr "Dit is een ongeldig record! Het probleem kan zijn: %s"

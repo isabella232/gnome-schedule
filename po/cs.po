@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-08-29 19:43+0000\n"
+"POT-Creation-Date: 2005-12-17 13:32+0000\n"
 "PO-Revision-Date: 2005-08-29 22:38+0200\n"
 "Last-Translator: Miloslav Trmac <mitr@volny.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -24,18 +24,18 @@ msgstr "Spravovat vaše systémové úlohy"
 msgid "Schedule"
 msgstr "Plán"
 
-#: ../src/at.py:281
+#: ../src/at.py:283
 #, python-format
 msgid "DANGEROUS PARSE: %(preview)s"
 msgstr "NEBEZPEČNÉ ZPRACOVÁNÍ: %(preview)s"
 
 #. TODO: localize time and date formats
-#: ../src/at.py:287
+#: ../src/at.py:289
 #, python-format
 msgid "On %(date)s at %(time)s"
 msgstr "%(date)s v %(time)s"
 
-#: ../src/at.py:292 ../src/at.py:297
+#: ../src/at.py:294 ../src/at.py:299
 msgid "Once"
 msgstr "Jednou"
 
@@ -137,11 +137,11 @@ msgstr "Každý týden"
 msgid "Create a New Scheduled Task"
 msgstr "Vytvořit novou plánovanou úlohu"
 
-#: ../src/crontabEditor.py:150 ../src/atEditor.py:141
+#: ../src/crontabEditor.py:150 ../src/atEditor.py:142
 msgid "Edit a Scheduled Task"
 msgstr "Upravit plánovanou úlohu"
 
-#: ../src/crontabEditor.py:205 ../src/atEditor.py:313
+#: ../src/crontabEditor.py:205 ../src/atEditor.py:315
 msgid "Don't use a preset"
 msgstr "Nepoužívat šablonu"
 
@@ -150,7 +150,8 @@ msgstr "Nepoužívat šablonu"
 msgid ""
 "This is an invalid record! The problem could be at the %(field)s field. "
 "Reason: %(reason)s"
-msgstr "Toto není platný záznam! Problém je možná v poli %(field)s. Důvod: %(reason)s"
+msgstr ""
+"Toto není platný záznam! Problém je možná v poli %(field)s. Důvod: %(reason)s"
 
 #: ../src/crontabEditor.py:298
 msgid "The preset has not been saved"
@@ -164,7 +165,7 @@ msgstr "Pro odstranění šablony musíte nejdříve některou vybrat"
 msgid "To save a preset, you first have to choose a name for it"
 msgstr "Pro uložení šablony pro ni musíte zvolit název"
 
-#: ../src/crontabEditor.py:320 ../src/atEditor.py:387
+#: ../src/crontabEditor.py:320 ../src/atEditor.py:389
 msgid "Choose an Icon for this Scheduled Task"
 msgstr "Zvolte ikonu pro tuto plánovanou úlohu"
 
@@ -907,57 +908,57 @@ msgstr "den v týdnu: %s"
 msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 msgstr "V %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 
-#: ../src/mainWindow.py:192 ../src/mainWindow.py:294
+#: ../src/mainWindow.py:193 ../src/mainWindow.py:295
 #, python-format
 msgid "Editing user: %s"
 msgstr "Upravuji uživatele: %s"
 
-#: ../src/mainWindow.py:329
+#: ../src/mainWindow.py:330
 msgid "Icon"
 msgstr "Ikona"
 
-#: ../src/mainWindow.py:334 ../src/mainWindow.py:367
+#: ../src/mainWindow.py:335 ../src/mainWindow.py:368
 msgid "Type"
 msgstr "Typ"
 
-#: ../src/mainWindow.py:338 ../src/mainWindow.py:363
+#: ../src/mainWindow.py:339 ../src/mainWindow.py:364
 msgid "Title"
 msgstr "Nadpis"
 
-#: ../src/mainWindow.py:342 ../src/mainWindow.py:354
+#: ../src/mainWindow.py:343 ../src/mainWindow.py:355
 msgid "Date and Time Settings"
 msgstr "Nastavení data a času"
 
-#: ../src/mainWindow.py:346 ../src/mainWindow.py:358
+#: ../src/mainWindow.py:347 ../src/mainWindow.py:359
 msgid "Preview"
 msgstr "Náhled"
 
-#: ../src/mainWindow.py:398 ../src/mainWindow.py:457
+#: ../src/mainWindow.py:399 ../src/mainWindow.py:458
 msgid "Please select a task"
 msgstr "Zvolte prosím úlohu"
 
-#: ../src/mainWindow.py:405
+#: ../src/mainWindow.py:406
 msgid "Do you want to delete this task?"
 msgstr "Chcete odstranit tuto úlohu?"
 
 #. TODO: should be using gtkAboutDialog
-#: ../src/mainWindow.py:500
+#: ../src/mainWindow.py:501
 msgid "Gnome Schedule"
 msgstr "Gnome Schedule"
 
-#: ../src/mainWindow.py:502
+#: ../src/mainWindow.py:503
 msgid "Copyright (c) 2004-2005 Gaute Hope."
 msgstr "Copyright © 2004-2005 Gaute Hope."
 
-#: ../src/mainWindow.py:503
+#: ../src/mainWindow.py:504
 msgid "This software is distributed under the GPL. "
 msgstr "Toto software je šířeno pod podmínkami GPL. "
 
-#: ../src/mainWindow.py:507
+#: ../src/mainWindow.py:508
 msgid "translator-credits"
 msgstr "Miloslav Trmač <mitr@volny.cz>"
 
-#: ../src/atEditor.py:507
+#: ../src/atEditor.py:509
 #, python-format
 msgid "This is an invalid record! The problem could be: %s"
 msgstr "Toto není platný záznam! Problém je možná: %s "

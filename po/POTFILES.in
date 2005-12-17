@@ -16,7 +16,6 @@ src/gnome-schedule.glade
 src/gnome-schedule.py
 src/lang.py
 src/mainWindow.py
-src/schedule.py
 src/setuserWindow.py
 src/support.py
 src/addWindow.py
