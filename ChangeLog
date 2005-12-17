@@ -1,3 +1,7 @@
+2005-12-17  Gaute Hope  <eg@gaute.vetsj.com>
+
+	* Fixed bug where all the widgets disappeared when using the X on the window.
+	
 2005-12-15  Gaute Hope  <eg@gaute.vetsj.com>
 
 	* The help button now opens the new help system, working with different locales aswell. Even thou es is the only one with some images translated.
