@@ -111,7 +111,7 @@ src/gnome-schedule
 pixmaps/Makefile
 po/Makefile.in
 desktop/Makefile
-desktop/gnome-schedule.desktop
+desktop/gnome-schedule.desktop.in
 servers/Makefile
 servers/GNOME_GnomeSchedule.server
 help/Makefile

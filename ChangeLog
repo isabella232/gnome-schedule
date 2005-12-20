@@ -1,3 +1,7 @@
+2005-12-20  Gaute Hope  <eg@gaute.vetsj.com>
+
+	* Applied patch from Frank Arnold; bug 324547
+	
 2005-12-17  Gaute Hope  <eg@gaute.vetsj.com>
 
 	* Fixed bug where all the widgets disappeared when using the X on the window.
