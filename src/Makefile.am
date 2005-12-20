@@ -1,6 +1,5 @@
 bin_SCRIPTS = gnome-schedule
 
-
 gnomescheduledir = $(prefix)/share/gnome-schedule
 gnomeschedule_PYTHON = \
 	gnome-schedule.py \
@@ -15,13 +14,16 @@ gnomeschedule_PYTHON = \
 	addWindow.py \
 	atEditor.py \
 	preset.py \
-	scheduleapplet.py
+	scheduleapplet.py \
+	editor.py \
+	support.py
 	
 
 uidir = $(datadir)/gnome-schedule
 ui_DATA = \
 	gnome-schedule.glade \
 	gnome-schedule-applet.xml
+	
 
 DISTCLEANFILES = \
 	$(bin_SCRIPTS) \
@@ -34,3 +36,4 @@ EXTRA_DIST =  \
 	$(bin_SCRIPTS) \
 	$(gnomeschedule_PYTHON) \
 	$(ui_DATA)
+	

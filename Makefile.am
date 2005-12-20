@@ -14,7 +14,8 @@ DISTCLEANFILES =		\
 	gnome-doc-utils.make
 
 EXTRA_DIST = \
-	gnome-doc-utils.make
+	gnome-doc-utils.make \ 
+	$(intltool_extra)
   
 #Ignore scrollkeeper files
 DISTCHECK_CONFIGURE_FLAGS = --disable-scrollkeeper

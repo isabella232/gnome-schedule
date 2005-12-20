@@ -1,6 +1,7 @@
 2005-12-20  Gaute Hope  <eg@gaute.vetsj.com>
 
 	* Applied patch from Frank Arnold; bug 324547
+	* Fixed some distcheck errors, not done yet
 	
 2005-12-17  Gaute Hope  <eg@gaute.vetsj.com>
 
