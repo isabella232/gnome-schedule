@@ -588,7 +588,7 @@ at&gt; <userinput>Ctrl + D</userinput>
     <title>About &app;</title> 
     <sect2 id="myapp-about-authors">
       <title>Authors</title>
-      <para> &app; was written by Philip Van Hoof (<email>me at freax dot org</email>), 
+      <para> &app; was written by Philip Van Hoof (<email>pvanhoof@gnome.org</email>), 
       Kristof Vansant (<email>de_lupus at pandora dot be</email>) and 
       Gaute Hope (<email>eg@gaute.vetsj.com</email>). To find more information about
       &app;, please visit the 
