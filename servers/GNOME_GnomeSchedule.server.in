@@ -1,13 +1,13 @@
         <oaf_info>
         <oaf_server iid="OAFIID:GNOME_GnomeSchedule_Factory"
-                    type="exe" location="@PYTHON_CONFIG@ @prefix@/share/gnome-schedule/scheduleapplet.py">
+                    type="exe" location="/usr/bin/python /home/gaute/test/share/gnome-schedule/scheduleapplet.py">
 
                 <oaf_attribute name="repo_ids" type="stringv">
                         <item value="IDL:Bonobo/GenericFactory:1.0"/>
                         <item value="IDL:Bonobo/Unknown:1.0"/>
                 </oaf_attribute>
-                <oaf_attribute name="name" type="string" value="Gnome schedule"/>
-                <oaf_attribute name="description" type="string" value="Configures your scheduled tasks"/>
+                <oaf_attribute name="name" type="string" _value="Gnome schedule"/>
+                <oaf_attribute name="description" type="string" _value="Configures your scheduled tasks"/>
         </oaf_server>
 
         <oaf_server iid="OAFIID:GNOME_GnomeSchedule"
@@ -18,9 +18,9 @@
                         <item value="IDL:Bonobo/Control:1.0"/>
                         <item value="IDL:Bonobo/Unknown:1.0"/>
                 </oaf_attribute>
-                <oaf_attribute name="name" type="string" value="Gnome schedule"/>
-                <oaf_attribute name="description" type="string" value="Configures your scheduled tasks"/>
-                <oaf_attribute name="panel:category" type="string" value="System tools"/>
-                <oaf_attribute name="panel:icon" type="string" value="@prefix@/share/pixmaps/gnome-schedule.png"/>
+                <oaf_attribute name="name" type="string" _value="Gnome schedule"/>
+                <oaf_attribute name="description" type="string" _value="Configures your scheduled tasks"/>
+                <oaf_attribute name="panel:category" type="string" _value="System tools"/>
+                <oaf_attribute name="panel:icon" type="string" value="/home/gaute/test/share/pixmaps/gnome-schedule.png"/>
         </oaf_server>
         </oaf_info>
