@@ -1,3 +1,9 @@
+2005-12-21  Rodrigo M. Fombellida <rmarcos@cvs.gnome.org>
+
+	* Fixed figures distcheck error
+	* help/Makefile.am: Added DOC_FIGURES variable 
+	* .cvsignore: Added gnome-doc-utils.make
+
 2005-12-20  Gaute Hope  <eg@gaute.vetsj.com>
 
 	* Applied patch from Frank Arnold; bug 324547

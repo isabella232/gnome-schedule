@@ -37,3 +37,4 @@ configure.in
 system-config-schedule.console
 gnome-schedule.desktop
 gnome-schedule.spec
+gnome-doc-utils.make
