@@ -178,10 +178,21 @@ class main:
 
 		self.schedule_reload ("all")
 
+		self.timeout_handler_id = gobject.timeout_add(9000, self.update_schedule)
+
 		if inapplet == False:
 			gtk.main()
 
 
+	def update_schedule(self):
+		selection = self.treeview.get_selection()
+		model, iter, = selection.get_selected()
+		if iter:
+			path = model.get_path(iter)
+		self.schedule_reload ("all")
+		if iter:
+			 selection.select_path(path)	
+		return True
 
 	def changeUser(self,user):
 		if user != self.user:

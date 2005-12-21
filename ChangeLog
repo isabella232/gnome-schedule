@@ -1,3 +1,7 @@
+2005-12-21  Philip Van Hoof  <pvanhoof@gnome.org>
+
+	* Bugfix for Bug #324687 (refresh of jobs)
+
 2005-12-21  Gaute Hope  <eg@gaute.vetsj.com>
 
 	* configure.ac: rename of server.in to server.in.in
