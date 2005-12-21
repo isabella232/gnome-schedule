@@ -45,10 +45,11 @@ gtk.glade.bindtextdomain(config.GETTEXT_PACKAGE(), config.GNOMELOCALEDIR())
 ## The MainWindow class
 ##
 class main:
-	def __init__(self, debug_flag=None, inapplet=False, applet = None):
+	def __init__(self, debug_flag=None, inapplet=False, gprogram = None):
 		self.debug_flag = debug_flag
 		self.inapplet = inapplet
-
+		self.gprogram = gprogram
+		
 		self.__loadIcon__()
 		self.__loadGlade__()
 		
@@ -513,7 +514,7 @@ class main:
  		 	
  	#open help
   	def on_manual_menu_activate (self, *args):
-  		gnome.help_display('gnome-schedule')
+  		gnome.help_display_with_doc_id(self.gprogram, '', 'gnome-schedule.xml', '')
   		
  		 		
  	#quit program

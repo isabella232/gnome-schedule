@@ -3,6 +3,7 @@
 	* configure.ac: rename of server.in to server.in.in
 	* servers/GNOME_GnomeSchedule.server.in -> GNOME_GnomeSchedule.server.in.in
 	* po/POTFILES.in: Added GNOME_GnomeSchedule.server.in.in
+	* src/gnome-schedule.py, src/scheduleapplet.py, src/mainWindow.py: fixed bug 324141, using help_display_with_doc_id and not, help_display
 	
 2005-12-21  Rodrigo M. Fombellida <rmarcos@cvs.gnome.org>
 

@@ -65,15 +65,16 @@ except:
   print _("try: export PYTHONPATH= ")
   sys.exit(1)
 
-props = { gnome.PARAM_APP_DATADIR : config.getPrefix()}
-gnome.program_init ("gnome-schedule", config.getVersion(), properties=props)
+props = { gnome.PARAM_APP_DATADIR : config.getPrefix() + "/share"}
+pr = gnome.program_init ("gnome-schedule", config.getVersion(), properties=props)
 
 
 class ScheduleApplet(gnomeapplet.Applet):
-	def __init__(self, applet, iid):
+	def __init__(self, applet, iid, gprogram):
 		self.__gobject_init__()
 				
 		self.applet = applet
+		self.gprogram = gprogram
 		self.__loadIcon__()
 		
 
@@ -128,7 +129,7 @@ class ScheduleApplet(gnomeapplet.Applet):
 	def show_main_window(self, *args):
 		if self.main_loaded == False:
 			self.main_loaded = True
-			self.main_window = mainWindow.main(None, True, self)
+			self.main_window = mainWindow.main(None, True, self.gprogram)
 		else:
 			self.main_window.widget.show ()
 			self.main_window.schedule_reload("all")
@@ -157,7 +158,7 @@ gobject.type_register(ScheduleApplet)
 
 #factory
 def schedule_applet_factory(applet, iid):
-    ScheduleApplet(applet, iid)
+    ScheduleApplet(applet, iid, pr)
     return True
   
 gnomeapplet.bonobo_factory("OAFIID:GNOME_GnomeSchedule_Factory",
