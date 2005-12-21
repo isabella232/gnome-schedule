@@ -113,6 +113,6 @@ po/Makefile.in
 desktop/Makefile
 desktop/gnome-schedule.desktop.in
 servers/Makefile
-servers/GNOME_GnomeSchedule.server
+servers/GNOME_GnomeSchedule.server.in
 help/Makefile
 ])

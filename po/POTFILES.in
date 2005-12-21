@@ -6,6 +6,7 @@
 # basic coding skills, you can get numeric translations
 # supported in your language this way.
 desktop/gnome-schedule.desktop.in.in
+servers/GNOME_GnomeSchedule.server.in.in
 src/at.py
 src/crontab.py
 src/crontabEditor.py
