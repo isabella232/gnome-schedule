@@ -100,30 +100,26 @@ class ScheduleApplet(gnomeapplet.Applet):
 			try:
 				self.iconPixbuf = gtk.gdk.pixbuf_new_from_file_at_size (config.getImagedir() + "/gnome-schedule.png", 19, 19)
 			except:
-				print "ERROR: Could not load icon"
+				print _("ERROR: Could not load icon")
 
-	def read_xml(self):
-		if os.access("gnome-schedule-applet.xml", os.F_OK):
-			f = open("gnome-schedule-applet.xml", 'r')
-		else:
-			try:
-				f = open(config.getGladedir() + "/gnome-schedule-applet.xml", 'r')
-			except:
-				print "ERROR: Could not load menu xml file"
-
-		xml = f.read()
-		f.close()
-		return xml
-
-		
 	def create_menu(self):
-		self.verbs = [ 	("show_main", self.show_main_window), 
+		self.verbs = 	[ 		("show_main", self.show_main_window), 
 						("add", self.add_task),
 						("help", self.show_help),
 						("about", self.show_about)
-					]
-		self.propxml = self.read_xml()
-		self.applet.setup_menu(self.propxml, self.verbs, None)
+				]
+		
+		#check for file in current dir
+		if os.access ("gnome-schedule-applet.xml", os.F_OK):
+			datadir = './'
+		else:
+			if os.access (config.getGladedir() + "/gnome-schedule-applet.xml", os.F_OK):
+				datadir = config.getGladedir()
+			else:
+				print _("ERROR: Could not load menu xml file")
+				datadir = ''
+				
+		self.applet.setup_menu_from_file(datadir,  "gnome-schedule-applet.xml", "gnome-schedule", self.verbs)
 			
 
 	def show_main_window(self, *args):
