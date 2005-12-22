@@ -94,7 +94,7 @@ dnl *******************************
 GETTEXT_PACKAGE=gnome-schedule
 AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, "$GETTEXT_PACKAGE")
 AC_SUBST(GETTEXT_PACKAGE)
-AC_CONFIG_MACRO_DIR([src/m4])
+dnl AC_CONFIG_MACRO_DIR([m4])
 GNOME_DOC_INIT
 
 dnl Add the languages which your application supports here.
