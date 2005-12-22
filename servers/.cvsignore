@@ -1,3 +1,5 @@
 GNOME_schedule.server
+GNOME_GnomeSchedule.server.in
+GNOME_GnomeSchedule.server
 Makefile
 Makefile.in

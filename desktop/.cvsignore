@@ -1,3 +1,4 @@
+*.desktop.in
 *.desktop
 Makefile.in
 Makefile

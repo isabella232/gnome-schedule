@@ -1,5 +1,5 @@
 .tm_project2.cache
-.anjuta
+*.anjuta
 py-compile
 *.lo
 *.la
