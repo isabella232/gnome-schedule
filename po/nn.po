@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-12-17 13:32+0000\n"
+"POT-Creation-Date: 2005-12-24 00:44+0000\n"
 "PO-Revision-Date: 2005-08-16 12:37+0200\n"
 "Last-Translator: Gaute Hope <eg@gaute.eu.org>\n"
 "Language-Team: Norwegian/Nynorsk <nn@li.org>\n"
@@ -16,13 +16,27 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../desktop/gnome-schedule.desktop.in.h:1
+#: ../desktop/gnome-schedule.desktop.in.in.h:1
 msgid "Manage your system tasks"
 msgstr "Administrer dine system jobbar"
 
-#: ../desktop/gnome-schedule.desktop.in.h:2
+#: ../desktop/gnome-schedule.desktop.in.in.h:2
 msgid "Schedule"
 msgstr "Gnome Schedule"
+
+#: ../servers/GNOME_GnomeSchedule.server.in.in.h:1
+#, fuzzy
+msgid "Configures your scheduled tasks"
+msgstr "Konfigurer jobbar"
+
+#: ../servers/GNOME_GnomeSchedule.server.in.in.h:2
+#, fuzzy
+msgid "Gnome schedule"
+msgstr "Gnome Schedule"
+
+#: ../servers/GNOME_GnomeSchedule.server.in.in.h:3
+msgid "System tools"
+msgstr ""
 
 #: ../src/at.py:283
 #, fuzzy, python-format
@@ -177,7 +191,7 @@ msgstr "For å lagre eit førehandsoppsett må du først velge eit namn for det"
 msgid "Choose an Icon for this Scheduled Task"
 msgstr "Velg eit ikon for denne jobben"
 
-#: ../src/crontabEditor.py:380
+#: ../src/crontabEditor.py:385
 msgid "command"
 msgstr "kommando"
 
@@ -314,14 +328,13 @@ msgstr "_Om"
 
 #: ../src/gnome-schedule-applet.xml.h:2
 msgid "_Add a task"
-msgstr ""
+msgstr "_Legg til ein jobb"
 
 #: ../src/gnome-schedule-applet.xml.h:3 ../src/gnome-schedule.glade.h:64
 msgid "_Help"
 msgstr "_Hjelp"
 
 #: ../src/gnome-schedule-applet.xml.h:4
-#, fuzzy
 msgid "_Manage tasks"
 msgstr "Administrer dine system jobbar"
 
@@ -611,15 +624,15 @@ msgstr "_Utsjånad"
 msgid "_Weekdays:"
 msgstr "_Vekedagar:"
 
-#: ../src/gnome-schedule.py:61
+#: ../src/gnome-schedule.py:61 ../src/scheduleapplet.py:63
 msgid "You need to install pyGTK or GTKv2, "
 msgstr "Du må instalere pyGTK eller GTKv2, "
 
-#: ../src/gnome-schedule.py:62
+#: ../src/gnome-schedule.py:62 ../src/scheduleapplet.py:64
 msgid "or set your PYTHONPATH correctly."
 msgstr "eller setje PYTHONPATH skikkelig."
 
-#: ../src/gnome-schedule.py:63
+#: ../src/gnome-schedule.py:63 ../src/scheduleapplet.py:65
 msgid "try: export PYTHONPATH= "
 msgstr "prøv: export PYTHONPATH= "
 
@@ -971,61 +984,76 @@ msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 msgstr "På %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 
 # python-format
-#: ../src/mainWindow.py:193 ../src/mainWindow.py:295
+#: ../src/mainWindow.py:205 ../src/mainWindow.py:307
 #, python-format
 msgid "Editing user: %s"
 msgstr "Redigerar brukar: %s"
 
-#: ../src/mainWindow.py:330
+#: ../src/mainWindow.py:280 ../src/scheduleapplet.py:104
+msgid "ERROR: Could not load icon"
+msgstr ""
+
+#: ../src/mainWindow.py:290
+msgid "ERROR: Could not load glade file"
+msgstr ""
+
+#: ../src/mainWindow.py:342
 msgid "Icon"
 msgstr "Ikon"
 
-#: ../src/mainWindow.py:335 ../src/mainWindow.py:368
+#: ../src/mainWindow.py:347 ../src/mainWindow.py:380
 msgid "Type"
 msgstr "Type"
 
-#: ../src/mainWindow.py:339 ../src/mainWindow.py:364
+#: ../src/mainWindow.py:351 ../src/mainWindow.py:376
 msgid "Title"
 msgstr "Tittel"
 
-#: ../src/mainWindow.py:343 ../src/mainWindow.py:355
+#: ../src/mainWindow.py:355 ../src/mainWindow.py:367
 msgid "Date and Time Settings"
 msgstr "Dato og tids innstillingar"
 
-#: ../src/mainWindow.py:347 ../src/mainWindow.py:359
+#: ../src/mainWindow.py:359 ../src/mainWindow.py:371
 msgid "Preview"
 msgstr "Førehandsvisning"
 
-#: ../src/mainWindow.py:399 ../src/mainWindow.py:458
+#: ../src/mainWindow.py:411 ../src/mainWindow.py:470
 msgid "Please select a task"
 msgstr "Velg ein jobb"
 
-#: ../src/mainWindow.py:406
+#: ../src/mainWindow.py:418
 msgid "Do you want to delete this task?"
 msgstr ""
 
-#. TODO: should be using gtkAboutDialog
-#: ../src/mainWindow.py:501
+#: ../src/mainWindow.py:513
+#, fuzzy
+msgid "About Gnome Schedule"
+msgstr "Gnome Schedule"
+
+#: ../src/mainWindow.py:514
 msgid "Gnome Schedule"
 msgstr "Gnome Schedule"
 
-#: ../src/mainWindow.py:503
+#: ../src/mainWindow.py:516
 msgid "Copyright (c) 2004-2005 Gaute Hope."
 msgstr "Kopieringsrett (c) 2004-2005 Gaute Hope."
 
-#: ../src/mainWindow.py:504
-msgid "This software is distributed under the GPL. "
-msgstr "Denne mjukvaren e distribuert under GPL"
-
-#: ../src/mainWindow.py:508
+#: ../src/mainWindow.py:528
 msgid "translator-credits"
 msgstr "Gaute Hope"
 
+#: ../src/scheduleapplet.py:120
+msgid "ERROR: Could not load menu xml file"
+msgstr ""
+
 # python-format
-#: ../src/atEditor.py:509
+#: ../src/atEditor.py:516
 #, python-format
 msgid "This is an invalid record! The problem could be: %s"
 msgstr "Dette er eit ugyldig tidsuttrykk! Problemet kan vere: %s"
+
+#~ msgid "This software is distributed under the GPL. "
+#~ msgstr "Denne mjukvaren e distribuert under GPL"
 
 #~ msgid "added %(id)s"
 #~ msgstr "La til %(id)s"

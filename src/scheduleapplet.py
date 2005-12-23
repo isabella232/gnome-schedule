@@ -32,6 +32,7 @@ import mainWindow
 ## I18N
 ##
 import gettext
+import locale
 gettext.install(config.GETTEXT_PACKAGE(), config.GNOMELOCALEDIR(), unicode=1)
 
 if __name__ == "__main__":
@@ -69,10 +70,18 @@ props = { gnome.PARAM_APP_DATADIR : config.getPrefix() + "/share"}
 pr = gnome.program_init ("gnome-schedule", config.getVersion(), properties=props)
 
 
+
 class ScheduleApplet(gnomeapplet.Applet):
 	def __init__(self, applet, iid, gprogram):
 		self.__gobject_init__()
-				
+		
+		gettext.bindtextdomain(config.GETTEXT_PACKAGE(), config.GNOMELOCALEDIR())
+		gettext.textdomain(config.GETTEXT_PACKAGE())
+
+		locale.bindtextdomain(config.GETTEXT_PACKAGE(), config.GNOMELOCALEDIR())
+		locale.textdomain(config.GETTEXT_PACKAGE())
+		
+		
 		self.applet = applet
 		self.gprogram = gprogram
 		self.__loadIcon__()
