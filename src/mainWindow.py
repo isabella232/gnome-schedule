@@ -1,4 +1,4 @@
-  # mainWindow.py - mainWindow of the crontab configuration tool
+# mainWindow.py - mainWindow of the crontab configuration tool
 # Copyright (C) 2004, 2005 Philip Van Hoof <me at pvanhoof dot be>
 # Copyright (C) 2004, 2005 Gaute Hope <eg at gaute dot eu dot org>
 # Copyright (C) 2004, 2005 Kristof Vansant <de_lupus at pandora dot be>
@@ -277,7 +277,7 @@ class main:
 			try:
 				self.iconPixbuf = gtk.gdk.pixbuf_new_from_file (config.getImagedir() + "/gnome-schedule.png")
 			except:
-				print "ERROR: Could not load icon"
+				print _("ERROR: Could not load icon")
 
 
 	def __loadGlade__(self):
@@ -287,7 +287,7 @@ class main:
 			try:
 				self.xml = gtk.glade.XML (config.getGladedir() + "/gnome-schedule.glade", domain="gnome-schedule")
 			except:
-				print "ERROR: Could not load glade file"
+				print _("ERROR: Could not load glade file")
 
 	
 	
@@ -509,19 +509,28 @@ class main:
 
  	#about box
  	def on_about_menu_activate (self, *args):
- 		# TODO: should be using gtkAboutDialog
- 		dlg = gnome.ui.About(_("Gnome Schedule"),
- 			config.getVersion(),
- 			_("Copyright (c) 2004-2005 Gaute Hope."),
- 			_("This software is distributed under the GPL. "),
+ 		dlg = gtk.AboutDialog ()
+ 		dlg.set_title (_("About Gnome Schedule"))
+ 		dlg.set_name (_("Gnome Schedule"))
+ 		dlg.set_version (config.getVersion())
+ 		dlg.set_copyright (_("Copyright (c) 2004-2005 Gaute Hope."))
+ 		#dlg.set_comments ()
+ 		#dlg.set_license ()
+ 		dlg.set_website ("http://gnome-schedule.sourceforge.net")
+ 		dlg.set_authors (
  			["Philip Van Hoof <pvanhoof at gnome dot org>",
  			"Kristof Vansant <de_lupus at pandora dot be>",
- 			"Gaute Hope <eg@gaute.vetsj.com>"], 
- 			["Nobody wants the credits, yet ;)"], _("translator-credits"),self.iconPixbuf)
- 
- 		dlg.set_transient_for(self.widget)
- 		dlg.set_position (gtk.WIN_POS_CENTER_ON_PARENT)
- 		dlg.show()
+ 			"Gaute Hope <eg@gaute.vetsj.com>"]
+ 			)
+ 		dlg.set_documenters (
+ 			["Rodrigo Marcos Fombellida <rmarcos_geo@yahoo.es>"]
+ 			)
+ 		dlg.set_translator_credits (_("translator-credits"))
+ 		dlg.set_logo (self.iconPixbuf)
+ 		
+ 		dlg.run ()
+ 		
+ 		
  		 	
  	#open help
   	def on_manual_menu_activate (self, *args):
@@ -530,7 +539,6 @@ class main:
  		 		
  	#quit program
  	def __quit__(self, *args):
- 		print "quit"
  		if self.inapplet:
 			self.widget.hide ()
 		else:
