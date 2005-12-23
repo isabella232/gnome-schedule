@@ -1,3 +1,7 @@
+2005-12-23  Nickolay V. Shmyrev <nshmyrev@yandex.ru>
+
+	* configure.ac: Added ru to ALL_LINGUAS.
+
 2005-12-23  Gaute Hope  <eg@gaute.vetsj.com>
 
 	* src/scheduleapplet.py, src/gnome-schedule-applet.py: Changed xml format, using setup_menu_from_file() and not setup_menu()
