@@ -1,7 +1,7 @@
 2005-12-23  Gaute Hope  <eg@gaute.vetsj.com>
 
 	* src/scheduleapplet.py, src/gnome-schedule-applet.py: Changed xml format, using setup_menu_from_file() and not setup_menu()
-	
+	* src/atEditor.py, src/crontabEditor.py: Uncommented the preview stuff	
 2005-12-21  Philip Van Hoof  <pvanhoof@gnome.org>
 
 	* Bugfix for Bug #324687 (refresh of jobs)

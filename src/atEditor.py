@@ -387,9 +387,12 @@ class AtEditor:
 		preview = gtk.Image()
 		preview.show()
 		iconopendialog = gtk.FileChooserDialog(_("Choose an Icon for this Scheduled Task"), self.widget, gtk.FILE_CHOOSER_ACTION_OPEN, (gtk.STOCK_OK, gtk.RESPONSE_ACCEPT, gtk.STOCK_CANCEL, gtk.RESPONSE_REJECT), "")
+		
 		# Preview stuff appears to be highly unstable :-(
-		# iconopendialog.set_preview_widget(preview)
-		# iconopendialog.connect("update-preview", self.update_preview_cb, preview)
+		# 2005-12-23, gauteh: seems to work ok now.
+		
+		iconopendialog.set_preview_widget(preview)
+		iconopendialog.connect("update-preview", self.update_preview_cb, preview)
 		res = iconopendialog.run()
 		if res != gtk.RESPONSE_REJECT:
 			self.icon = iconopendialog.get_filename()
@@ -397,16 +400,20 @@ class AtEditor:
 
 		self.__update_textboxes__ ()
 
-#	def update_preview_cb(self, file_chooser, preview):
-#		filename = file_chooser.get_preview_filename()
-#		try:
-#			pixbuf = gtk.gdk.pixbuf_new_from_file_at_size(filename, 128, 128)
-#			preview.set_from_pixbuf(pixbuf)
-#			have_preview = True
-#		except:
-#			have_preview = False
-#			file_chooser.set_preview_widget_active(have_preview)
-#		return
+	def update_preview_cb(self, file_chooser, preview):
+		filename = file_chooser.get_preview_filename()
+		
+		try:
+			pixbuf = gtk.gdk.pixbuf_new_from_file_at_size(filename, 128, 128)
+			preview.set_from_pixbuf(pixbuf)
+			have_preview = True
+			
+		except:
+			have_preview = False
+		
+		file_chooser.set_preview_widget_active(have_preview)
+			
+		return
 
 
 	def __loadicon__ (self):
