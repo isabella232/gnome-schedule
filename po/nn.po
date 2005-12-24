@@ -993,7 +993,7 @@ msgstr "Kopieringsrett (c) 2004-2005 Gaute Hope."
 
 #: ../src/mainWindow.py:528
 msgid "translator-credits"
-msgstr "Gaute Hope"
+msgstr "Gaute Hope <eg@gaute.vetsj.com>"
 
 #: ../src/scheduleapplet.py:128
 msgid "ERROR: Could not load menu xml file"
