@@ -81,7 +81,7 @@ class SetuserWindow:
 			
 		except Exception, ex:
 			print ex
-			self.dialog = gtk.MessageDialog(self.widget, gtk.DIALOG_MODAL|gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_ERROR, gtk.BUTTONS_OK, "No such user")
+			self.dialog = gtk.MessageDialog(self.widget, gtk.DIALOG_MODAL|gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_ERROR, gtk.BUTTONS_OK, _("No such user"))
 			self.dialog.run ()
 			self.dialog.destroy ()
 		

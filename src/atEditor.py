@@ -282,9 +282,9 @@ class AtEditor:
 				self.template_combobox.set_active (0)
 				self.backend.removetemplate ("at", name)
 			else: 
-				self.template_doesnot_exist("The preset has not been saved")
+				self.template_doesnot_exist(_("The preset has not been saved"))
 		else:
-			self.template_doesnot_exist("To delete a preset, you first need to select one")
+			self.template_doesnot_exist(_("To delete a preset, you first need to select one"))
 
 
 	def on_save_button_clicked (self, *args):
@@ -295,7 +295,7 @@ class AtEditor:
 		if notemplate != entry:
 			self.__SaveTemplate__ (self.template_combobox.get_child().get_text())
 		else:
-			self.template_doesnot_exist("To save a preset, you first have to choose a name for it")
+			self.template_doesnot_exist(_("To save a preset, you first have to choose a name for it"))
 		
 		
 	def __SaveTemplate__ (self, template_name):
