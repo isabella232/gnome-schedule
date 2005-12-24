@@ -1,6 +1,7 @@
 2005-12-24  Gaute Hope  <eg@gaute.vetsj.com>
 
 	* src/scheduleapplet.py: bug 324343, fixed, thanks to johans at #gnome-hackers at gimpnet.
+	* src/scheduleapplet.py: double clicking the icon open mainwindow
 	
 2005-12-23  Gaute Hope  <eg@gaute.vetsj.com>
 

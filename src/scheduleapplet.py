@@ -92,14 +92,18 @@ class ScheduleApplet(gnomeapplet.Applet):
 		self.image = gtk.Image()
 		self.image.set_from_pixbuf(self.iconPixbuf)
 		
+		self.main_loaded = False
+		
 		self.ev_box.add(self.image)
 		self.ev_box.show()
+		self.ev_box.set_events(gtk.gdk.BUTTON_PRESS_MASK)
+		self.ev_box.connect("button_press_event", self.event_box_clicked)
 		self.applet.add(self.ev_box)
 		
 		self.create_menu()
 		self.applet.show_all()
 
-		self.main_loaded = False
+		
 
 	
 	def __loadIcon__(self):
@@ -131,6 +135,10 @@ class ScheduleApplet(gnomeapplet.Applet):
 		self.applet.setup_menu_from_file(datadir,  "gnome-schedule-applet.xml", "gnome-schedule", self.verbs)
 			
 
+	def event_box_clicked (self, widget, event):
+		if event.type == gtk.gdk._2BUTTON_PRESS:
+			self.show_main_window()
+		
 	def show_main_window(self, *args):
 		if self.main_loaded == False:
 			self.main_loaded = True
