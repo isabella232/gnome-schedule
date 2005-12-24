@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-12-17 13:32+0000\n"
+"POT-Creation-Date: 2005-12-24 01:11+0000\n"
 "PO-Revision-Date: 2005-02-01 15:50+0100\n"
 "Last-Translator: Martin Willemoes Hansen <mwh@sysrq.dk>\n"
 "Language-Team: Danish <dansk@klid.dk>\n"
@@ -20,13 +20,27 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../desktop/gnome-schedule.desktop.in.h:1
+#: ../desktop/gnome-schedule.desktop.in.in.h:1
 msgid "Manage your system tasks"
 msgstr "Håndtér dine systemopgaver"
 
-#: ../desktop/gnome-schedule.desktop.in.h:2
+#: ../desktop/gnome-schedule.desktop.in.in.h:2
 msgid "Schedule"
 msgstr "Skema"
+
+#: ../servers/GNOME_GnomeSchedule.server.in.in.h:1
+#, fuzzy
+msgid "Configures your scheduled tasks"
+msgstr "Konfigurér planlagte opgaver"
+
+#: ../servers/GNOME_GnomeSchedule.server.in.in.h:2
+#, fuzzy
+msgid "Gnome schedule"
+msgstr "Gnome-systemplanlægger"
+
+#: ../servers/GNOME_GnomeSchedule.server.in.in.h:3
+msgid "System tools"
+msgstr ""
 
 #: ../src/at.py:283
 #, python-format
@@ -181,7 +195,7 @@ msgstr "For at gemme et forvalg skal du først vælge et navn til det"
 msgid "Choose an Icon for this Scheduled Task"
 msgstr "Vælg et ikon for denne planlagte opgave"
 
-#: ../src/crontabEditor.py:380
+#: ../src/crontabEditor.py:385
 msgid "command"
 msgstr "kommando"
 
@@ -658,15 +672,15 @@ msgstr ""
 msgid "_Weekdays:"
 msgstr "Ugedag"
 
-#: ../src/gnome-schedule.py:61
+#: ../src/gnome-schedule.py:61 ../src/scheduleapplet.py:64
 msgid "You need to install pyGTK or GTKv2, "
 msgstr ""
 
-#: ../src/gnome-schedule.py:62
+#: ../src/gnome-schedule.py:62 ../src/scheduleapplet.py:65
 msgid "or set your PYTHONPATH correctly."
 msgstr ""
 
-#: ../src/gnome-schedule.py:63
+#: ../src/gnome-schedule.py:63 ../src/scheduleapplet.py:66
 msgid "try: export PYTHONPATH= "
 msgstr ""
 
@@ -969,53 +983,61 @@ msgstr "ugedag: %s"
 msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 msgstr "Klokken %(minute)s, %(hour)s, %(monthday)s, %(month)s%(weekday)s"
 
-#: ../src/mainWindow.py:193 ../src/mainWindow.py:295
+#: ../src/mainWindow.py:205 ../src/mainWindow.py:307
 #, python-format
 msgid "Editing user: %s"
 msgstr "Redigerer bruger: %s"
 
-#: ../src/mainWindow.py:330
+#: ../src/mainWindow.py:280 ../src/scheduleapplet.py:112
+msgid "ERROR: Could not load icon"
+msgstr ""
+
+#: ../src/mainWindow.py:290
+msgid "ERROR: Could not load glade file"
+msgstr ""
+
+#: ../src/mainWindow.py:342
 msgid "Icon"
 msgstr "Ikon"
 
-#: ../src/mainWindow.py:335 ../src/mainWindow.py:368
+#: ../src/mainWindow.py:347 ../src/mainWindow.py:380
 msgid "Type"
 msgstr "Type"
 
-#: ../src/mainWindow.py:339 ../src/mainWindow.py:364
+#: ../src/mainWindow.py:351 ../src/mainWindow.py:376
 msgid "Title"
 msgstr "Titel"
 
-#: ../src/mainWindow.py:343 ../src/mainWindow.py:355
+#: ../src/mainWindow.py:355 ../src/mainWindow.py:367
 msgid "Date and Time Settings"
 msgstr "Indstillinger for dato og tid"
 
-#: ../src/mainWindow.py:347 ../src/mainWindow.py:359
+#: ../src/mainWindow.py:359 ../src/mainWindow.py:371
 msgid "Preview"
 msgstr "Forhåndsvisning"
 
-#: ../src/mainWindow.py:399 ../src/mainWindow.py:458
+#: ../src/mainWindow.py:411 ../src/mainWindow.py:470
 msgid "Please select a task"
 msgstr "Vælg venligst en opgave"
 
-#: ../src/mainWindow.py:406
+#: ../src/mainWindow.py:418
 msgid "Do you want to delete this task?"
 msgstr ""
 
-#. TODO: should be using gtkAboutDialog
-#: ../src/mainWindow.py:501
+#: ../src/mainWindow.py:513
+#, fuzzy
+msgid "About Gnome Schedule"
+msgstr "Gnome-systemplanlægger"
+
+#: ../src/mainWindow.py:514
 msgid "Gnome Schedule"
 msgstr "Gnome-systemplanlægger"
 
-#: ../src/mainWindow.py:503
+#: ../src/mainWindow.py:516
 msgid "Copyright (c) 2004-2005 Gaute Hope."
 msgstr "Copyright (c) 2004-2005 Gaute Hope."
 
-#: ../src/mainWindow.py:504
-msgid "This software is distributed under the GPL. "
-msgstr "Dette programmel er udgivet under GPL."
-
-#: ../src/mainWindow.py:508
+#: ../src/mainWindow.py:528
 msgid "translator-credits"
 msgstr ""
 "Alex Thomsen Leth\n"
@@ -1024,10 +1046,17 @@ msgstr ""
 "Dansk-gruppen <dansk@klid.dk>\n"
 "Mere info: http://www.klid.dk/dansk/"
 
-#: ../src/atEditor.py:509
+#: ../src/scheduleapplet.py:128
+msgid "ERROR: Could not load menu xml file"
+msgstr ""
+
+#: ../src/atEditor.py:516
 #, python-format
 msgid "This is an invalid record! The problem could be: %s"
 msgstr "Dette er en ugyldig post! Problemet kan være: %s"
+
+#~ msgid "This software is distributed under the GPL. "
+#~ msgstr "Dette programmel er udgivet under GPL."
 
 #~ msgid "One-time"
 #~ msgstr "Én gang"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-12-17 13:32+0000\n"
+"POT-Creation-Date: 2005-12-24 01:11+0000\n"
 "PO-Revision-Date: 2004-12-06 00:30+0800\n"
 "Last-Translator: Funda Wang <fundawang@linux.net.cn>\n"
 "Language-Team: zh_CN <i18n-translation@lists.linux.net.cn>\n"
@@ -15,13 +15,27 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../desktop/gnome-schedule.desktop.in.h:1
+#: ../desktop/gnome-schedule.desktop.in.in.h:1
 msgid "Manage your system tasks"
 msgstr "管理您的系统任务"
 
-#: ../desktop/gnome-schedule.desktop.in.h:2
+#: ../desktop/gnome-schedule.desktop.in.in.h:2
 msgid "Schedule"
 msgstr "计划任务"
+
+#: ../servers/GNOME_GnomeSchedule.server.in.in.h:1
+#, fuzzy
+msgid "Configures your scheduled tasks"
+msgstr "配置计划任务"
+
+#: ../servers/GNOME_GnomeSchedule.server.in.in.h:2
+#, fuzzy
+msgid "Gnome schedule"
+msgstr "计划任务"
+
+#: ../servers/GNOME_GnomeSchedule.server.in.in.h:3
+msgid "System tools"
+msgstr ""
 
 #: ../src/at.py:283
 #, python-format
@@ -177,7 +191,7 @@ msgstr ""
 msgid "Choose an Icon for this Scheduled Task"
 msgstr "创建新的计划任务"
 
-#: ../src/crontabEditor.py:380
+#: ../src/crontabEditor.py:385
 msgid "command"
 msgstr "命令"
 
@@ -624,15 +638,15 @@ msgstr ""
 msgid "_Weekdays:"
 msgstr "星期"
 
-#: ../src/gnome-schedule.py:61
+#: ../src/gnome-schedule.py:61 ../src/scheduleapplet.py:64
 msgid "You need to install pyGTK or GTKv2, "
 msgstr ""
 
-#: ../src/gnome-schedule.py:62
+#: ../src/gnome-schedule.py:62 ../src/scheduleapplet.py:65
 msgid "or set your PYTHONPATH correctly."
 msgstr ""
 
-#: ../src/gnome-schedule.py:63
+#: ../src/gnome-schedule.py:63 ../src/scheduleapplet.py:66
 msgid "try: export PYTHONPATH= "
 msgstr ""
 
@@ -925,59 +939,70 @@ msgstr "星期"
 msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 msgstr ""
 
-#: ../src/mainWindow.py:193 ../src/mainWindow.py:295
+#: ../src/mainWindow.py:205 ../src/mainWindow.py:307
 #, fuzzy, python-format
 msgid "Editing user: %s"
 msgstr "编辑用户："
 
-#: ../src/mainWindow.py:330
+#: ../src/mainWindow.py:280 ../src/scheduleapplet.py:112
+msgid "ERROR: Could not load icon"
+msgstr ""
+
+#: ../src/mainWindow.py:290
+msgid "ERROR: Could not load glade file"
+msgstr ""
+
+#: ../src/mainWindow.py:342
 msgid "Icon"
 msgstr "图标"
 
-#: ../src/mainWindow.py:335 ../src/mainWindow.py:368
+#: ../src/mainWindow.py:347 ../src/mainWindow.py:380
 msgid "Type"
 msgstr "类型"
 
-#: ../src/mainWindow.py:339 ../src/mainWindow.py:364
+#: ../src/mainWindow.py:351 ../src/mainWindow.py:376
 msgid "Title"
 msgstr "标题"
 
-#: ../src/mainWindow.py:343 ../src/mainWindow.py:355
+#: ../src/mainWindow.py:355 ../src/mainWindow.py:367
 #, fuzzy
 msgid "Date and Time Settings"
 msgstr "日期和时间"
 
-#: ../src/mainWindow.py:347 ../src/mainWindow.py:359
+#: ../src/mainWindow.py:359 ../src/mainWindow.py:371
 msgid "Preview"
 msgstr ""
 
-#: ../src/mainWindow.py:399 ../src/mainWindow.py:458
+#: ../src/mainWindow.py:411 ../src/mainWindow.py:470
 #, fuzzy
 msgid "Please select a task"
 msgstr "删除计划任务"
 
-#: ../src/mainWindow.py:406
+#: ../src/mainWindow.py:418
 msgid "Do you want to delete this task?"
 msgstr ""
 
-#. TODO: should be using gtkAboutDialog
-#: ../src/mainWindow.py:501
+#: ../src/mainWindow.py:513
+msgid "About Gnome Schedule"
+msgstr ""
+
+#: ../src/mainWindow.py:514
 msgid "Gnome Schedule"
 msgstr ""
 
-#: ../src/mainWindow.py:503
+#: ../src/mainWindow.py:516
 msgid "Copyright (c) 2004-2005 Gaute Hope."
 msgstr ""
 
-#: ../src/mainWindow.py:504
-msgid "This software is distributed under the GPL. "
-msgstr ""
-
-#: ../src/mainWindow.py:508
+#: ../src/mainWindow.py:528
 msgid "translator-credits"
 msgstr ""
 
-#: ../src/atEditor.py:509
+#: ../src/scheduleapplet.py:128
+msgid "ERROR: Could not load menu xml file"
+msgstr ""
+
+#: ../src/atEditor.py:516
 #, python-format
 msgid "This is an invalid record! The problem could be: %s"
 msgstr ""

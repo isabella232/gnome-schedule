@@ -1,14 +1,14 @@
 # Norwegian translation of gnome-schedule.
 # Copyright (C) 2004 Gaute Hope
 # This file is distributed under the same license as the gnome-schedule package.
-# <Gaute Hope>, 2004.
+# <Gaute Hope>, 2004, 2005.
 # 
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-12-24 00:44+0000\n"
+"POT-Creation-Date: 2005-12-24 01:11+0000\n"
 "PO-Revision-Date: 2005-08-16 12:37+0200\n"
 "Last-Translator: Gaute Hope <eg@gaute.eu.org>\n"
 "Language-Team: Norwegian/Nynorsk <nn@li.org>\n"
@@ -25,23 +25,21 @@ msgid "Schedule"
 msgstr "Gnome Schedule"
 
 #: ../servers/GNOME_GnomeSchedule.server.in.in.h:1
-#, fuzzy
 msgid "Configures your scheduled tasks"
 msgstr "Konfigurer jobbar"
 
 #: ../servers/GNOME_GnomeSchedule.server.in.in.h:2
-#, fuzzy
 msgid "Gnome schedule"
 msgstr "Gnome Schedule"
 
 #: ../servers/GNOME_GnomeSchedule.server.in.in.h:3
 msgid "System tools"
-msgstr ""
+msgstr "Systemverkty"
 
 #: ../src/at.py:283
-#, fuzzy, python-format
+#, python-format
 msgid "DANGEROUS PARSE: %(preview)s"
-msgstr "FARLEG PARSING: %(preview)"
+msgstr "FARLEG PARSING: %(preview)s"
 
 # python-format
 # 
@@ -79,9 +77,9 @@ msgstr "Vekedag"
 
 # python-format
 #: ../src/crontab.py:138 ../src/crontab.py:143
-#, fuzzy, python-format
+#, python-format
 msgid "Must be between %(min)s and %(max)s"
-msgstr "Må vere mellom %s og %s"
+msgstr "Må vere mellom %(min)s og %(max)s"
 
 # python-format
 #: ../src/crontab.py:145
@@ -624,15 +622,15 @@ msgstr "_Utsjånad"
 msgid "_Weekdays:"
 msgstr "_Vekedagar:"
 
-#: ../src/gnome-schedule.py:61 ../src/scheduleapplet.py:63
+#: ../src/gnome-schedule.py:61 ../src/scheduleapplet.py:64
 msgid "You need to install pyGTK or GTKv2, "
 msgstr "Du må instalere pyGTK eller GTKv2, "
 
-#: ../src/gnome-schedule.py:62 ../src/scheduleapplet.py:64
+#: ../src/gnome-schedule.py:62 ../src/scheduleapplet.py:65
 msgid "or set your PYTHONPATH correctly."
 msgstr "eller setje PYTHONPATH skikkelig."
 
-#: ../src/gnome-schedule.py:63 ../src/scheduleapplet.py:65
+#: ../src/gnome-schedule.py:63 ../src/scheduleapplet.py:66
 msgid "try: export PYTHONPATH= "
 msgstr "prøv: export PYTHONPATH= "
 
@@ -989,7 +987,7 @@ msgstr "På %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 msgid "Editing user: %s"
 msgstr "Redigerar brukar: %s"
 
-#: ../src/mainWindow.py:280 ../src/scheduleapplet.py:104
+#: ../src/mainWindow.py:280 ../src/scheduleapplet.py:112
 msgid "ERROR: Could not load icon"
 msgstr ""
 
@@ -1042,7 +1040,7 @@ msgstr "Kopieringsrett (c) 2004-2005 Gaute Hope."
 msgid "translator-credits"
 msgstr "Gaute Hope"
 
-#: ../src/scheduleapplet.py:120
+#: ../src/scheduleapplet.py:128
 msgid "ERROR: Could not load menu xml file"
 msgstr ""
 

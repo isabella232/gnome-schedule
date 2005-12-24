@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule gnome 2.10\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-12-17 13:32+0000\n"
+"POT-Creation-Date: 2005-12-24 01:11+0000\n"
 "PO-Revision-Date: 2005-02-02 19:36+0200\n"
 "Last-Translator: Vladimir \"Kaladan\" Petkov <vpetkov@i-space.org>\n"
 "Language-Team: Bulgarian <dict@linux.zonebg.com>\n"
@@ -17,13 +17,27 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: ../desktop/gnome-schedule.desktop.in.h:1
+#: ../desktop/gnome-schedule.desktop.in.in.h:1
 msgid "Manage your system tasks"
 msgstr "Управление на вашите задачи за системата"
 
-#: ../desktop/gnome-schedule.desktop.in.h:2
+#: ../desktop/gnome-schedule.desktop.in.in.h:2
 msgid "Schedule"
 msgstr "Програма"
+
+#: ../servers/GNOME_GnomeSchedule.server.in.in.h:1
+#, fuzzy
+msgid "Configures your scheduled tasks"
+msgstr "Настройване на програмирани задачи"
+
+#: ../servers/GNOME_GnomeSchedule.server.in.in.h:2
+#, fuzzy
+msgid "Gnome schedule"
+msgstr "Gnome Schedule"
+
+#: ../servers/GNOME_GnomeSchedule.server.in.in.h:3
+msgid "System tools"
+msgstr ""
 
 #: ../src/at.py:283
 #, python-format
@@ -178,7 +192,7 @@ msgstr ""
 msgid "Choose an Icon for this Scheduled Task"
 msgstr "Избиране на икона за тази програмирана задача"
 
-#: ../src/crontabEditor.py:380
+#: ../src/crontabEditor.py:385
 msgid "command"
 msgstr "команда"
 
@@ -634,15 +648,15 @@ msgstr ""
 msgid "_Weekdays:"
 msgstr "Седмичен ден"
 
-#: ../src/gnome-schedule.py:61
+#: ../src/gnome-schedule.py:61 ../src/scheduleapplet.py:64
 msgid "You need to install pyGTK or GTKv2, "
 msgstr ""
 
-#: ../src/gnome-schedule.py:62
+#: ../src/gnome-schedule.py:62 ../src/scheduleapplet.py:65
 msgid "or set your PYTHONPATH correctly."
 msgstr ""
 
-#: ../src/gnome-schedule.py:63
+#: ../src/gnome-schedule.py:63 ../src/scheduleapplet.py:66
 msgid "try: export PYTHONPATH= "
 msgstr ""
 
@@ -935,57 +949,69 @@ msgstr "седмичен ден: %s"
 msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 msgstr ""
 
-#: ../src/mainWindow.py:193 ../src/mainWindow.py:295
+#: ../src/mainWindow.py:205 ../src/mainWindow.py:307
 #, python-format
 msgid "Editing user: %s"
 msgstr "Редактиране на потребител: %s"
 
-#: ../src/mainWindow.py:330
+#: ../src/mainWindow.py:280 ../src/scheduleapplet.py:112
+msgid "ERROR: Could not load icon"
+msgstr ""
+
+#: ../src/mainWindow.py:290
+msgid "ERROR: Could not load glade file"
+msgstr ""
+
+#: ../src/mainWindow.py:342
 msgid "Icon"
 msgstr "Икона"
 
-#: ../src/mainWindow.py:335 ../src/mainWindow.py:368
+#: ../src/mainWindow.py:347 ../src/mainWindow.py:380
 msgid "Type"
 msgstr "Тип"
 
-#: ../src/mainWindow.py:339 ../src/mainWindow.py:364
+#: ../src/mainWindow.py:351 ../src/mainWindow.py:376
 msgid "Title"
 msgstr "Заглавие"
 
-#: ../src/mainWindow.py:343 ../src/mainWindow.py:355
+#: ../src/mainWindow.py:355 ../src/mainWindow.py:367
 msgid "Date and Time Settings"
 msgstr ""
 
-#: ../src/mainWindow.py:347 ../src/mainWindow.py:359
+#: ../src/mainWindow.py:359 ../src/mainWindow.py:371
 msgid "Preview"
 msgstr "Предварителен преглед"
 
-#: ../src/mainWindow.py:399 ../src/mainWindow.py:458
+#: ../src/mainWindow.py:411 ../src/mainWindow.py:470
 msgid "Please select a task"
 msgstr ""
 
-#: ../src/mainWindow.py:406
+#: ../src/mainWindow.py:418
 msgid "Do you want to delete this task?"
 msgstr ""
 
-#. TODO: should be using gtkAboutDialog
-#: ../src/mainWindow.py:501
+#: ../src/mainWindow.py:513
+#, fuzzy
+msgid "About Gnome Schedule"
+msgstr "Gnome Schedule"
+
+#: ../src/mainWindow.py:514
 msgid "Gnome Schedule"
 msgstr "Gnome Schedule"
 
-#: ../src/mainWindow.py:503
+#: ../src/mainWindow.py:516
 msgid "Copyright (c) 2004-2005 Gaute Hope."
 msgstr "Авторски права (c) 2004-2005 Gaute Hope."
 
-#: ../src/mainWindow.py:504
-msgid "This software is distributed under the GPL. "
-msgstr ""
-
-#: ../src/mainWindow.py:508
+#: ../src/mainWindow.py:528
 msgid "translator-credits"
 msgstr ""
 
-#: ../src/atEditor.py:509
+#: ../src/scheduleapplet.py:128
+msgid "ERROR: Could not load menu xml file"
+msgstr ""
+
+#: ../src/atEditor.py:516
 #, python-format
 msgid "This is an invalid record! The problem could be: %s"
 msgstr ""
