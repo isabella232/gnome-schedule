@@ -166,12 +166,12 @@ msgstr "Ikkje bruk eit førhandssett oppsett"
 
 # python-format
 #: ../src/crontabEditor.py:266
-#, fuzzy, python-format
 msgid ""
 "This is an invalid record! The problem could be at the %(field)s field. "
 "Reason: %(reason)s"
 msgstr ""
-"Dette er eit ugyldig tids uttrykk! Problemet kan vere %s feltet. Grunn: %s"
+"Dette er eit ugyldig tids uttrykk! Problemet kan vere %(field)s feltet. "
+"Grunn: %(reason)s"
 
 #: ../src/crontabEditor.py:298
 msgid "The preset has not been saved"
@@ -320,7 +320,6 @@ msgid "Weekdays:"
 msgstr "Vekedagar:"
 
 #: ../src/gnome-schedule-applet.xml.h:1
-#, fuzzy
 msgid "A_bout"
 msgstr "_Om"
 
@@ -334,7 +333,7 @@ msgstr "_Hjelp"
 
 #: ../src/gnome-schedule-applet.xml.h:4
 msgid "_Manage tasks"
-msgstr "Administrer dine system jobbar"
+msgstr "Administrer dine system _jobbar"
 
 #: ../src/gnome-schedule.glade.h:1
 msgid "<b>Choose the user whose tasks you want to modify</b>"
@@ -495,11 +494,11 @@ msgstr "Mi_nutt"
 
 #: ../src/gnome-schedule.glade.h:44
 msgid "No out_put"
-msgstr "Ingen utdata"
+msgstr "Ingen _utdata"
 
 #: ../src/gnome-schedule.glade.h:45
 msgid "Other"
-msgstr "Anna:"
+msgstr "Anna"
 
 #: ../src/gnome-schedule.glade.h:46
 msgid ""
@@ -507,7 +506,7 @@ msgid ""
 "however, quit this system schedule maintenance tool."
 msgstr ""
 "Avslutt programmet. Det vil ikkje stoppe eventuelle jobbar, berre dette "
-"verktøyet."
+"verktyet."
 
 #: ../src/gnome-schedule.glade.h:47
 msgid "Rec_urrence:"
@@ -515,7 +514,7 @@ msgstr "_Gjentaking:"
 
 #: ../src/gnome-schedule.glade.h:48
 msgid "Save the current information as a template"
-msgstr "Lagr den noverande informasjonen som ei førhandsinnstilling"
+msgstr "Lagre den noverande informasjonen som ei førhandsinnstilling"
 
 #: ../src/gnome-schedule.glade.h:49
 msgid "Scheduled and active tasks"
@@ -580,7 +579,7 @@ msgstr "_Dato:"
 
 #: ../src/gnome-schedule.glade.h:63
 msgid "_Days of month:"
-msgstr "_Dagar i månaden_"
+msgstr "_Dagar i månaden:"
 
 #: ../src/gnome-schedule.glade.h:65
 msgid "_Hour:"
@@ -662,266 +661,228 @@ msgstr "Kvart minutt"
 
 # python-format
 #: ../src/lang.py:163
-#, fuzzy, python-format
 msgid "At minute %(minute)s of every hour"
-msgstr "På minutt %(minute) av kvar time"
+msgstr "På minutt %(minute)s av kvar time"
 
 # python-format
 #: ../src/lang.py:165
-#, fuzzy, python-format
 msgid "At every minute between %(time_from)s and %(time_to)s"
-msgstr "På kvart minutt mellom %(time_from) og %(time_to)"
+msgstr "På kvart minutt mellom %(time_from)s og %(time_to)s"
 
 # python-format
 #: ../src/lang.py:167
-#, fuzzy, python-format
 msgid "On every day at %(time)s"
-msgstr "Kvar dag på %(time)"
+msgstr "Kvar dag på %(time)s"
 
 # python-format
 #: ../src/lang.py:172
-#, fuzzy, python-format
 msgid "On day %(monthday)s of every month at every full hour"
-msgstr "På %(monthday) av kvar månad, kvar fulle time"
+msgstr "På %(monthday)s av kvar månad, kvar fulle time"
 
 # python-format
 #: ../src/lang.py:174
-#, fuzzy, python-format
 msgid "On day %(monthday)s of every month at every minute"
-msgstr "På %(monthday) av kvar kvar månad, kvart minutt"
+msgstr "På %(monthday)s av kvar kvar månad, kvart minutt"
 
 # python-format
 #: ../src/lang.py:176
-#, fuzzy, python-format
 msgid "On day %(monthday)s of every month at minute %(minute)s of every hour"
-msgstr "På %(monthday) av kvar månad på mintt %(minute) av kvar time"
+msgstr "På %(monthday)s av kvar månad på mintt %(minute)s av kvar time"
 
 # python-format
 #: ../src/lang.py:178
-#, fuzzy, python-format
 msgid ""
 "On day %(monthday)s of every month at every minute between %(time_from)s and "
 "%(time_to)s"
 msgstr ""
-"På %(monthday) av kvar månad, på kvart minutt mellom %(time_from) og &"
-"(time_to)"
+"På %(monthday)s av kvar månad, på kvart minutt mellom %(time_from)s og "
+"%(time_to)s"
 
 # python-format
 #: ../src/lang.py:180
-#, fuzzy, python-format
 msgid "On day %(monthday)s of every month at %(time)s"
-msgstr "På %(monthday) av kvar månad på %(time)"
+msgstr "På %(monthday)s av kvar månad på %(time)s"
 
 # python-format
 #: ../src/lang.py:185
-#, fuzzy, python-format
 msgid "On every day in %(month)s at every full hour"
-msgstr "Kvar dag i %(month), kvar fulle time"
+msgstr "Kvar dag i %(month)s, kvar fulle time"
 
 # python-format
 #: ../src/lang.py:187
-#, fuzzy, python-format
 msgid "On every day in %(month)s at every minute"
-msgstr "Kvar dag i %(month), kvart minutt"
+msgstr "Kvar dag i %(month)s, kvart minutt"
 
 # python-format
 #: ../src/lang.py:189
-#, fuzzy, python-format
 msgid "On every day in %(month)s at minute %(minute)s of every hour"
-msgstr "Kvar dag i %(month) på minutt: %(minute) av kvar time"
+msgstr "Kvar dag i %(month)s på minutt: %(minute)s av kvar time"
 
 # python-format
 #: ../src/lang.py:191
-#, fuzzy, python-format
 msgid ""
 "On every day in %(month)s at every minute between %(time_from)s and %"
 "(time_to)s"
 msgstr ""
-"På kvar dag i %(month) på kvart minutt mellom %(time_from) og %(time_to)"
+"På kvar dag i %(month)s på kvart minutt mellom %(time_from)s og %(time_to)s"
 
 # python-format
 #: ../src/lang.py:193
-#, fuzzy, python-format
 msgid "On every day in %(month)s at %(time)s"
-msgstr "På kvar dag i %(month) på %(time)"
+msgstr "På kvar dag i %(month)s på %(time)s"
 
 # python-format
 #: ../src/lang.py:198
-#, fuzzy, python-format
 msgid "Every year on %(date)s at every full hour"
-msgstr "Kvart år på %(date) kvar fulle time"
+msgstr "Kvart år på %(date)s kvar fulle time"
 
 # python-format
 #: ../src/lang.py:200
-#, fuzzy, python-format
 msgid "Every year on %(date)s at every minute"
-msgstr "Kvart år på %(date) kvart minutt"
+msgstr "Kvart år på %(date)s kvart minutt"
 
 # python-format
 #: ../src/lang.py:202
-#, fuzzy, python-format
 msgid "Every year on %(date)s at minute %(minute)s of every hour"
-msgstr "Kvart år på %(date) på minutt: %(minute) av kvar time"
+msgstr "Kvart år på %(date)s på minutt: %(minute)s av kvar time"
 
 # python-format
 #: ../src/lang.py:204
-#, fuzzy, python-format
 msgid ""
 "Every year on %(date)s at every minute between %(time_from)s and %(time_to)s"
-msgstr "Kvart år på %(date) på kvart minutt mellom %(time_from) og %(time_to)"
+msgstr "Kvart år på %(date)s på kvart minutt mellom %(time_from)s og %(time_to)s"
 
 # python-format
 #: ../src/lang.py:206
-#, fuzzy, python-format
 msgid "Every year on %(date)s at %(time)s"
-msgstr "Kvart år på %(date) og %(time)"
+msgstr "Kvart år på %(date)s og %(time)s"
 
 # python-format
 #: ../src/lang.py:211
-#, fuzzy, python-format
 msgid "On every %(weekday)s at every full hour"
-msgstr "På kvar %(weekday), kvar fulle time"
+msgstr "På kvar %(weekday)s, kvar fulle time"
 
 # python-format
 #: ../src/lang.py:213
-#, fuzzy, python-format
 msgid "On every %(weekday)s at every minute"
-msgstr "På kvar %(weekday) på kvart minutt"
+msgstr "På kvar %(weekday)s på kvart minutt"
 
 # python-format
 #: ../src/lang.py:215
-#, fuzzy, python-format
 msgid "On every %(weekday)s at minute %(minute)s of every hour"
-msgstr "På kvar %(weekday) på minutt: %(minute) av kvar time"
+msgstr "På kvar %(weekday)s på minutt: %(minute)s av kvar time"
 
 # python-format
 #: ../src/lang.py:217
-#, fuzzy, python-format
 msgid ""
 "On every %(weekday)s at every minute between %(time_from)s and %(time_to)s"
-msgstr "På kvar %(weekday) på kvart minutt mellom %(time_from) og %(time_to)"
+msgstr "På kvar %(weekday)s på kvart minutt mellom %(time_from)s og %(time_to)s"
 
 # python-format
 #: ../src/lang.py:219
-#, fuzzy, python-format
 msgid "On every %(weekday)s at %(time)s"
-msgstr "På kvar %(weekday) på %(time)"
+msgstr "På kvar %(weekday)s på %(time)s"
 
 # python-format
 #: ../src/lang.py:224
-#, fuzzy, python-format
 msgid ""
 "On day %(monthday)s of every month and every %(weekday)s at every full hour"
-msgstr "På %(monthday) av kvar månad og kvar %(weekday), kvar fulle time"
+msgstr "På %(monthday)s av kvar månad og kvar %(weekday)s, kvar fulle time"
 
 # python-format
 #: ../src/lang.py:226
-#, fuzzy, python-format
 msgid ""
 "On day %(monthday)s of every month and every %(weekday)s at every minute"
-msgstr "På %(monthday) av kvar månad og kvar %(weekday) kvart minutt"
+msgstr "På %(monthday)s av kvar månad og kvar %(weekday)s kvart minutt"
 
 # python-format
 #: ../src/lang.py:228
-#, fuzzy, python-format
 msgid ""
 "On day %(monthday)s of every month and every %(weekday)s at minute %(minute)"
 "s of every hour"
 msgstr ""
-"På %(monthday) av kvar månad og kvar %(weekday) på minutt: %(minute)av kvar "
+"På %(monthday)s av kvar månad og kvar %(weekday)s på minutt: %(minute)s av kvar "
 "time"
 
 # python-format
 #: ../src/lang.py:230
-#, fuzzy, python-format
 msgid ""
 "On day %(monthday)s of every month and every %(weekday)s at every minute "
 "between %(time_from)s and %(time_to)s"
 msgstr ""
-"På dag %(monthday) av kvar månad og kvar %(weekday) på kvart minuttmellom %"
-"(time_from) og %(time_to)"
+"På dag %(monthday)s av kvar månad og kvar %(weekday)s på kvart minuttmellom %"
+"(time_from)s og %(time_to)s"
 
 # python-format
 #: ../src/lang.py:232
-#, fuzzy, python-format
 msgid "On day %(monthday)s of every month and every %(weekday)s at %(time)s"
-msgstr "På %(monthday) av kvar månad og kvar %(weekday) på %(time)"
+msgstr "På %(monthday)s av kvar månad og kvar %(weekday)s på %(time)s"
 
 # python-format
 #: ../src/lang.py:237
-#, fuzzy, python-format
 msgid "On every %(weekday)s in %(month)s at every full hour"
-msgstr "På kvar %(weekday) i %(month) på kvar fulle time"
+msgstr "På kvar %(weekday)s i %(month) på kvar fulle time"
 
 # python-format
 #: ../src/lang.py:239
-#, fuzzy, python-format
 msgid "On every %(weekday)s in %(month)s at every minute"
-msgstr "På kvar %(weekday) i %(month) kvart minutt"
+msgstr "På kvar %(weekday)s i %(month)s kvart minutt"
 
 # python-format
 #: ../src/lang.py:241
-#, fuzzy, python-format
 msgid "On every %(weekday)s in %(month)s at minute %(minute)s of every hour"
-msgstr "På kvar %(weekday) i %(month) på minutt: %(minute) av kvar time"
+msgstr "På kvar %(weekday)s i %(month)s på minutt: %(minute)s av kvar time"
 
 # python-format
 #: ../src/lang.py:243
-#, fuzzy, python-format
 msgid ""
 "On every %(weekday)s in %(month)s at every minute between %(time_from)s and %"
 "(time_to)s"
 msgstr ""
-"På kvar %(weekday) i %(month) på kvart minutt mellom %(time_from) og%"
-"(time_to)"
+"På kvar %(weekday)s i %(month)s på kvart minutt mellom %(time_from)s og %"
+"(time_to)s"
 
 # python-format
 #: ../src/lang.py:245
-#, fuzzy, python-format
 msgid "On every %(weekday)s in %(month)s at %(time)s"
-msgstr "På kvar %(weekday) i %(month) på &(time)"
+msgstr "På kvar %(weekday)s i %(month)s på %(time)s"
 
 # python-format
 #: ../src/lang.py:250
-#, fuzzy, python-format
 msgid ""
 "On every %(weekday)s in %(month)s and on %(date)s every year at every full "
 "hour"
-msgstr "På kvar %(weekday) i %(month) og på %(date) kvart år, kvar fulle time"
+msgstr "På kvar %(weekday)s i %(month)s og på %(date)s kvart år, kvar fulle time"
 
 # python-format
 #: ../src/lang.py:252
-#, fuzzy, python-format
 msgid ""
 "On every %(weekday)s in %(month)s and on %(date)s every year at every minute"
-msgstr "På kvar %(weekday) i %(month) og på %(date) kvart år, kvart minutt"
+msgstr "På kvar %(weekday)s i %(month)s og på %(date)s kvart år, kvart minutt"
 
 # python-format
 #: ../src/lang.py:254
-#, fuzzy, python-format
 msgid ""
 "On every %(weekday)s in %(month)s and on %(date)s every year at minute %"
 "(minute)s of every hour"
 msgstr ""
-"På kvar %(weekday) i %(month)og på %(date) kvart år, kvart minutt: %(minute) "
+"På kvar %(weekday)s i %(month)s og på %(date)s kvart år, kvart minutt: %(minute)s "
 "av kvar time"
 
 # python-format
 #: ../src/lang.py:256
-#, fuzzy, python-format
 msgid ""
 "On every %(weekday)s in %(month)s and on %(date)s every year at every minute "
 "between %(time_from)s and %(time_to)s"
 msgstr ""
-"På kvar %(weekday) i %(month) og på %(date) kvart år, kvart minutt mellom%"
-"(time_from) og %(time_to)"
+"På kvar %(weekday)s i %(month)s og på %(date)s kvart år, kvart minutt mellom %"
+"(time_from)s og %(time_to)s"
 
 # python-format
 #: ../src/lang.py:258
-#, fuzzy, python-format
 msgid ""
 "On every %(weekday)s in %(month)s and on %(date)s every year at %(time)s"
-msgstr "På kvar %(weekday i %(month) og på %(date) kvart år %(time)"
+msgstr "På kvar %(weekday)s i %(month)s og på %(date)s kvart år %(time)s"
 
 #: ../src/lang.py:266
 msgid "every minute"
@@ -939,7 +900,6 @@ msgstr "kvar time"
 
 # python-format
 #: ../src/lang.py:273
-#, python-format
 msgid "hour: %s"
 msgstr "time: %s"
 
@@ -949,7 +909,6 @@ msgstr "kvar dag av månen"
 
 # python-format
 #: ../src/lang.py:278
-#, python-format
 msgid "day of month: %s"
 msgstr "dag i månaden: %s"
 
@@ -965,35 +924,31 @@ msgstr "månad: %s"
 
 # python-format
 #: ../src/lang.py:286
-#, python-format
 msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s"
 msgstr "På %(minute)s, %(hour)s, %(monthday)s, %(month)s"
 
 # python-format
 #: ../src/lang.py:288
-#, python-format
 msgid "weekday: %s"
 msgstr "vekedag: %s"
 
 # python-format
 #: ../src/lang.py:289
-#, python-format
 msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 msgstr "På %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 
 # python-format
 #: ../src/mainWindow.py:205 ../src/mainWindow.py:307
-#, python-format
 msgid "Editing user: %s"
 msgstr "Redigerar brukar: %s"
 
 #: ../src/mainWindow.py:280 ../src/scheduleapplet.py:112
 msgid "ERROR: Could not load icon"
-msgstr ""
+msgstr "FEIL: Kunne ikkje laste ikon"
 
 #: ../src/mainWindow.py:290
 msgid "ERROR: Could not load glade file"
-msgstr ""
+msgstr "FEIL: Kunne ikkje laste glade-fil"
 
 #: ../src/mainWindow.py:342
 msgid "Icon"
@@ -1024,9 +979,9 @@ msgid "Do you want to delete this task?"
 msgstr ""
 
 #: ../src/mainWindow.py:513
-#, fuzzy
+
 msgid "About Gnome Schedule"
-msgstr "Gnome Schedule"
+msgstr "Om Gnome Schedule"
 
 #: ../src/mainWindow.py:514
 msgid "Gnome Schedule"
@@ -1042,19 +997,10 @@ msgstr "Gaute Hope"
 
 #: ../src/scheduleapplet.py:128
 msgid "ERROR: Could not load menu xml file"
-msgstr ""
+msgstr "FEIL: Kunne ikkje laste meny xml-fil"
 
 # python-format
 #: ../src/atEditor.py:516
-#, python-format
 msgid "This is an invalid record! The problem could be: %s"
 msgstr "Dette er eit ugyldig tidsuttrykk! Problemet kan vere: %s"
 
-#~ msgid "This software is distributed under the GPL. "
-#~ msgstr "Denne mjukvaren e distribuert under GPL"
-
-#~ msgid "added %(id)s"
-#~ msgstr "La til %(id)s"
-
-#~ msgid "All the translators"
-#~ msgstr "Gaute Hope"
