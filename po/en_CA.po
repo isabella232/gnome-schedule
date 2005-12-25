@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-12-24 01:11+0000\n"
+"POT-Creation-Date: 2005-12-25 01:31-0500\n"
 "PO-Revision-Date: 2005-08-27 17:03-0400\n"
 "Last-Translator: Adam Weinberger <adamw@gnome.org>\n"
 "Language-Team: Canadian English <adamw@gnome.org>\n"
@@ -25,18 +25,16 @@ msgid "Schedule"
 msgstr "Schedule"
 
 #: ../servers/GNOME_GnomeSchedule.server.in.in.h:1
-#, fuzzy
 msgid "Configures your scheduled tasks"
-msgstr "Configure Scheduled Tasks"
+msgstr "Configures your scheduled tasks"
 
 #: ../servers/GNOME_GnomeSchedule.server.in.in.h:2
-#, fuzzy
 msgid "Gnome schedule"
-msgstr "Gnome Schedule"
+msgstr "GNOME schedule"
 
 #: ../servers/GNOME_GnomeSchedule.server.in.in.h:3
 msgid "System tools"
-msgstr ""
+msgstr "System tools"
 
 #: ../src/at.py:283
 #, python-format
@@ -168,15 +166,15 @@ msgstr ""
 "This is an invalid record! The problem could be at the %(field)s field. "
 "Reason: %(reason)s"
 
-#: ../src/crontabEditor.py:298
+#: ../src/crontabEditor.py:298 ../src/atEditor.py:285
 msgid "The preset has not been saved"
 msgstr "The preset has not been saved"
 
-#: ../src/crontabEditor.py:300
+#: ../src/crontabEditor.py:300 ../src/atEditor.py:287
 msgid "To delete a preset, you first need to select one"
 msgstr "To delete a preset, you first need to select one"
 
-#: ../src/crontabEditor.py:310
+#: ../src/crontabEditor.py:310 ../src/atEditor.py:298
 msgid "To save a preset, you first have to choose a name for it"
 msgstr "To save a preset, you first have to choose a name for it"
 
@@ -936,13 +934,13 @@ msgstr "At %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 msgid "Editing user: %s"
 msgstr "Editing user: %s"
 
-#: ../src/mainWindow.py:280 ../src/scheduleapplet.py:112
+#: ../src/mainWindow.py:280 ../src/scheduleapplet.py:116
 msgid "ERROR: Could not load icon"
-msgstr ""
+msgstr "ERROR: Could not load icon"
 
 #: ../src/mainWindow.py:290
 msgid "ERROR: Could not load glade file"
-msgstr ""
+msgstr "ERROR: Could not load glade file"
 
 #: ../src/mainWindow.py:342
 msgid "Icon"
@@ -973,13 +971,12 @@ msgid "Do you want to delete this task?"
 msgstr "Do you want to delete this task?"
 
 #: ../src/mainWindow.py:513
-#, fuzzy
 msgid "About Gnome Schedule"
-msgstr "Gnome Schedule"
+msgstr "About GNOME Schedule"
 
 #: ../src/mainWindow.py:514
 msgid "Gnome Schedule"
-msgstr "Gnome Schedule"
+msgstr "GNOME Schedule"
 
 #: ../src/mainWindow.py:516
 msgid "Copyright (c) 2004-2005 Gaute Hope."
@@ -989,14 +986,15 @@ msgstr "Copyright (c) 2004-2005 Gaute Hope."
 msgid "translator-credits"
 msgstr "Adam Weinberger <adamw@gnome.org>"
 
-#: ../src/scheduleapplet.py:128
+#: ../src/scheduleapplet.py:132
 msgid "ERROR: Could not load menu xml file"
-msgstr ""
+msgstr "ERROR: Could not load menu XML file"
+
+#: ../src/setuserWindow.py:84
+msgid "No such user"
+msgstr "No such user"
 
 #: ../src/atEditor.py:516
 #, python-format
 msgid "This is an invalid record! The problem could be: %s"
 msgstr "This is an invalid record! The problem could be: %s"
-
-#~ msgid "This software is distributed under the GPL. "
-#~ msgstr "This software is distributed under the GPL. "
