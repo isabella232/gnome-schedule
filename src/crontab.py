@@ -135,16 +135,16 @@ class Crontab:
 			if  result != None:
 				field = result.groups()[0]
 				if int(result.groups()[1]) not in timerange:
-					raise ValueError("stepwidth", self.timenames[type], _("Must be between %(min)s and %(max)s") % ( min(timerange),max(timerange) ) )
+					raise ValueError("stepwidth", self.timenames[type], _("Must be between %(min)s and %(max)s") % { "min": min(timerange), "max": max(timerange) } )
 
 			result = rexp_range.match(field)
 			if (result != None): 
 				if (int(result.groups()[0]) not in timerange) or (int(result.groups()[1]) not in timerange):
-					raise ValueError("range", self.timenames[type], _("Must be between %(min)s and %(max)s") % ( min(timerange),max(timerange) ) )
+					raise ValueError("range", self.timenames[type], _("Must be between %(min)s and %(max)s") % { "min": min(timerange), "max": max(timerange) } )
 			elif field.isdigit() != True:
 				raise ValueError("fixed", self.timenames[type], _("%s is not a number") % ( field ) )
 			elif int(field) not in timerange:
-				raise ValueError("fixed", self.timenames[type], _("Must be between %s and %s") % ( min(timerange),max(timerange) ) )
+				raise ValueError("fixed", self.timenames[type], _("Must be between %(min)s and %(max)s") % { "min": min(timerange), "max": max(timerange) } )
 
 
 	def update (self,minute, hour, day, month, weekday,command, linenumber, parentiter, nooutput, title, icon = None):

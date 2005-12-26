@@ -61,9 +61,9 @@ try:
   import gobject
 	
 except:
-  print _("You need to install pyGTK or GTKv2, ")
-  print _("or set your PYTHONPATH correctly.")
-  print _("try: export PYTHONPATH= ")
+  print _("You need to install pyGTK or GTKv2,\n"
+          "or set your PYTHONPATH correctly.\n"
+          "try: export PYTHONPATH= ")
   sys.exit(1)
 
 props = { gnome.PARAM_APP_DATADIR : config.getPrefix() + "/share"}
