@@ -1,6 +1,7 @@
 2005-12-26  Gaute Hope  <eg@gaute.vetsj.com>
 
 	* Applied patch from Frank Arnold: bug 324988
+	* configure.ac: changed pygtk check to 2.6
 
 2005-12-24  Gaute Hope  <eg@gaute.vetsj.com>
 
