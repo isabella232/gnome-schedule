@@ -1,15 +1,15 @@
 # German translation of gnome-schedule.
 # Copyright (C) 2005 Gaute Hope
 # This file is distributed under the same license as the gnome-schedule package.
-# Frank Arnold <frank@scirocco-5v-turbo.de>, 2005, 2005.
+# Frank Arnold <frank@scirocco-5v-turbo.de>, 2004, 2005.
 # 
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-12-24 01:11+0000\n"
-"PO-Revision-Date: 2005-04-17 08:47+0200\n"
+"POT-Creation-Date: 2005-12-26 19:12+0100\n"
+"PO-Revision-Date: 2005-12-26 19:10+0100\n"
 "Last-Translator: Frank Arnold <frank@scirocco-5v-turbo.de>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -22,26 +22,24 @@ msgstr "Zeitgesteuerte Systemaufgaben verwalten"
 
 #: ../desktop/gnome-schedule.desktop.in.in.h:2
 msgid "Schedule"
-msgstr "Zeitplanung"
+msgstr "Zeitgesteuerte Abläufe"
 
 #: ../servers/GNOME_GnomeSchedule.server.in.in.h:1
-#, fuzzy
 msgid "Configures your scheduled tasks"
-msgstr "Zeitgesteuerte Systemaufgaben bearbeiten"
+msgstr "Bearbeiten zeitgesteuerter Systemaufgaben"
 
 #: ../servers/GNOME_GnomeSchedule.server.in.in.h:2
-#, fuzzy
 msgid "Gnome schedule"
-msgstr "Gnome Schedule"
+msgstr "GNOME Schedule"
 
 #: ../servers/GNOME_GnomeSchedule.server.in.in.h:3
 msgid "System tools"
-msgstr ""
+msgstr "Systemwerkzeuge"
 
 #: ../src/at.py:283
 #, python-format
 msgid "DANGEROUS PARSE: %(preview)s"
-msgstr ""
+msgstr "UNSICHERE AUSWERTUNG: %(preview)s"
 
 #. TODO: localize time and date formats
 #: ../src/at.py:289
@@ -73,20 +71,15 @@ msgstr "Monat"
 msgid "Weekday"
 msgstr "Wochentag"
 
-#: ../src/crontab.py:138 ../src/crontab.py:143
-#, fuzzy, python-format
+#: ../src/crontab.py:138 ../src/crontab.py:143 ../src/crontab.py:147
+#, python-format
 msgid "Must be between %(min)s and %(max)s"
-msgstr "Muss eine Zahl zwischen %s und %s sein"
+msgstr "Muss eine Zahl zwischen %(min)s und %(max)s sein"
 
 #: ../src/crontab.py:145
 #, python-format
 msgid "%s is not a number"
 msgstr "%s ist keine Zahl"
-
-#: ../src/crontab.py:147
-#, python-format
-msgid "Must be between %s and %s"
-msgstr "Muss eine Zahl zwischen %s und %s sein"
 
 #: ../src/crontab.py:165 ../src/crontab.py:200 ../src/crontab.py:289
 #: ../src/crontabEditor.py:187 ../src/atEditor.py:109
@@ -120,7 +113,7 @@ msgstr "Wochentag"
 
 #: ../src/crontab.py:294
 msgid "ERROR: Failed to parse crontab record"
-msgstr ""
+msgstr "FEHLER: Crontab-Eintrag konnte nicht ausgewertet werden"
 
 #: ../src/crontabEditor.py:80
 msgid "Use advanced"
@@ -160,23 +153,24 @@ msgid "Don't use a preset"
 msgstr "Keine Vorlage verwenden"
 
 #: ../src/crontabEditor.py:266
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "This is an invalid record! The problem could be at the %(field)s field. "
 "Reason: %(reason)s"
 msgstr ""
-"Das ist ein ungültiger Eintrag! Das Problem könnte im Feld »%s« liegen. "
-"Grund: %s"
+"Das ist ein ungültiger Eintrag! Das Problem könnte im Feld »%(field)s« "
+"liegen.\n"
+"Grund: %(reason)s"
 
-#: ../src/crontabEditor.py:298
+#: ../src/crontabEditor.py:298 ../src/atEditor.py:285
 msgid "The preset has not been saved"
 msgstr "Die Voreinstellung wurde nicht gespeichert."
 
-#: ../src/crontabEditor.py:300
+#: ../src/crontabEditor.py:300 ../src/atEditor.py:287
 msgid "To delete a preset, you first need to select one"
 msgstr "Um eine Voreinstellung zu löschen, muss sie zuerst ausgewählt werden."
 
-#: ../src/crontabEditor.py:310
+#: ../src/crontabEditor.py:310 ../src/atEditor.py:298
 msgid "To save a preset, you first have to choose a name for it"
 msgstr ""
 "Um die Voreinstellung zu speichern, muss zuerst ein Name dafür eingegeben "
@@ -191,148 +185,128 @@ msgid "command"
 msgstr "Befehl"
 
 #: ../src/crontabEditorHelper.py:103
-#, fuzzy
 msgid "Every weekday"
-msgstr "Jede Woche"
+msgstr "Jeden Wochentag"
 
 #: ../src/crontabEditorHelper.py:155
 msgid "Minute settings"
-msgstr ""
+msgstr "Einstellungen für Minuten"
 
 #: ../src/crontabEditorHelper.py:156
-#, fuzzy
 msgid "Edit Time Expression for minute"
-msgstr "Zeitausdruck für %s"
+msgstr "Zeitausdruck für Minuten"
 
 #: ../src/crontabEditorHelper.py:158
 msgid "Hour settings"
-msgstr ""
+msgstr "Einstellungen für Stunden"
 
 #: ../src/crontabEditorHelper.py:159
-#, fuzzy
 msgid "Edit Time Expression for hour"
-msgstr "Zeitausdruck für %s"
+msgstr "Zeitausdruck für Stunden"
 
 #: ../src/crontabEditorHelper.py:161
-#, fuzzy
 msgid "Day settings"
-msgstr "<b>Datumseinstellungen</b>"
+msgstr "Einstellungen für Tage"
 
 #: ../src/crontabEditorHelper.py:162
-#, fuzzy
 msgid "Edit Time Expression for day"
-msgstr "Zeitausdruck für %s"
+msgstr "Zeitausdruck für Tage"
 
 #: ../src/crontabEditorHelper.py:164
 msgid "Month settings"
-msgstr ""
+msgstr "Einstellungen für Monate"
 
 #: ../src/crontabEditorHelper.py:165
-#, fuzzy
 msgid "Edit Time Expression for month"
-msgstr "Zeitausdruck für %s"
+msgstr "Zeitausdruck für Monate"
 
 #: ../src/crontabEditorHelper.py:167
-#, fuzzy
 msgid "Weekday settings"
-msgstr "_Wochentage:"
+msgstr "Einstellungen für Wochentage"
 
 #: ../src/crontabEditorHelper.py:168
-#, fuzzy
 msgid "Edit Time Expression for weekday"
-msgstr "Zeitausdruck für %s"
+msgstr "Zeitausdruck für Wochentage"
 
 #: ../src/crontabEditorHelper.py:182
 #, python-format
 msgid "This is invalid. Reason: %s"
-msgstr "Das ist ungültig. Grund: %s"
+msgstr "Ungültige Angaben. Grund: %s"
 
 #. minute
 #: ../src/crontabEditorHelper.py:222 ../src/gnome-schedule.glade.h:15
-#, fuzzy
 msgid "At an exact minute"
-msgstr "Zu jeder Minute"
+msgstr "Zu einer bestimmten Minute"
 
 #: ../src/crontabEditorHelper.py:223 ../src/gnome-schedule.glade.h:42
-#, fuzzy
 msgid "Minute:"
-msgstr "_Minute:"
+msgstr "Minute:"
 
 #. hour
 #: ../src/crontabEditorHelper.py:226
 msgid "At an exact hour"
-msgstr ""
+msgstr "Zu einer bestimmten Stunde"
 
 #: ../src/crontabEditorHelper.py:227
-#, fuzzy
 msgid "Hour:"
-msgstr "_Stunde:"
+msgstr "Stunde:"
 
 #. day
 #: ../src/crontabEditorHelper.py:230
 msgid "At an exact day"
-msgstr ""
+msgstr "Zu einem bestimmten Tag"
 
 #: ../src/crontabEditorHelper.py:231
-#, fuzzy
 msgid "Day:"
-msgstr "_Datum:"
+msgstr "Tag:"
 
 #. month
 #: ../src/crontabEditorHelper.py:234
 msgid "At an exact month"
-msgstr ""
+msgstr "Zu einem bestimmten Monat"
 
 #: ../src/crontabEditorHelper.py:235
-#, fuzzy
 msgid "Month:"
-msgstr "Monat"
+msgstr "Monat:"
 
 #. weekday
 #: ../src/crontabEditorHelper.py:238
 msgid "At an exact weekday"
-msgstr ""
+msgstr "Zu einem bestimmten Wochentag"
 
 #: ../src/crontabEditorHelper.py:239
-#, fuzzy
 msgid "Weekday:"
-msgstr "Wochentag"
+msgstr "Wochentag:"
 
 #: ../src/crontabEditorHelper.py:244 ../src/gnome-schedule.glade.h:40
 msgid "In a step width"
-msgstr ""
+msgstr "In einer Schrittweite"
 
 #: ../src/crontabEditorHelper.py:246 ../src/gnome-schedule.glade.h:43
-#, fuzzy
 msgid "Minutes:"
-msgstr "Mi_nuten:"
+msgstr "Minuten:"
 
 #: ../src/crontabEditorHelper.py:248
-#, fuzzy
 msgid "Hours:"
-msgstr "_Stunden:"
+msgstr "Stunden:"
 
 #: ../src/crontabEditorHelper.py:250
 msgid "Days:"
-msgstr ""
+msgstr "Tage:"
 
 #: ../src/crontabEditorHelper.py:252
-#, fuzzy
 msgid "Months:"
-msgstr "_Monate:"
+msgstr "Monate:"
 
 #: ../src/crontabEditorHelper.py:254
-#, fuzzy
 msgid "Weekdays:"
-msgstr "_Wochentage:"
+msgstr "Wochentage:"
 
 #: ../src/gnome-schedule-applet.xml.h:1
-#, fuzzy
 msgid "A_bout"
 msgstr "_Info"
 
 #: ../src/gnome-schedule-applet.xml.h:2
-#, fuzzy
 msgid "_Add a task"
 msgstr "Aufgabe hinzu_fügen"
 
@@ -341,9 +315,8 @@ msgid "_Help"
 msgstr "_Hilfe"
 
 #: ../src/gnome-schedule-applet.xml.h:4
-#, fuzzy
 msgid "_Manage tasks"
-msgstr "Zeitgesteuerte Systemaufgaben verwalten"
+msgstr "Systemaufgaben _verwalten"
 
 #: ../src/gnome-schedule.glade.h:1
 msgid "<b>Choose the user whose tasks you want to modify</b>"
@@ -362,9 +335,8 @@ msgid "<b>General</b>"
 msgstr "<b>Allgemein</b>"
 
 #: ../src/gnome-schedule.glade.h:5
-#, fuzzy
 msgid "<b>Minute settings</b>"
-msgstr "<b>Datumseinstellungen</b>"
+msgstr "<b>Einstellungen für Minuten</b>"
 
 #: ../src/gnome-schedule.glade.h:6
 msgid "<b>Preview</b>"
@@ -475,9 +447,8 @@ msgid "Execution in a range."
 msgstr "Ausführung zu jedem Ereignis zwischen den beiden Angaben."
 
 #: ../src/gnome-schedule.glade.h:33
-#, fuzzy
 msgid "Expression:"
-msgstr "Anderer Ausdruck"
+msgstr "Ausdruck:"
 
 #: ../src/gnome-schedule.glade.h:34
 msgid "For example at 04:10 tomorrow, next week or in three days"
@@ -493,7 +464,7 @@ msgstr "Für erfahrene Benutzer"
 
 #: ../src/gnome-schedule.glade.h:37
 msgid "From:"
-msgstr ""
+msgstr "Beginnend bei:"
 
 #: ../src/gnome-schedule.glade.h:38
 msgid "Ico_n:"
@@ -501,7 +472,7 @@ msgstr "S_ymbol:"
 
 #: ../src/gnome-schedule.glade.h:39
 msgid "In a range"
-msgstr ""
+msgstr "In einer Spanne"
 
 #: ../src/gnome-schedule.glade.h:41
 msgid "Mi_nutes:"
@@ -513,7 +484,7 @@ msgstr "_Keine Ausgabe"
 
 #: ../src/gnome-schedule.glade.h:45
 msgid "Other"
-msgstr ""
+msgstr "Anderer Ausdruck"
 
 #: ../src/gnome-schedule.glade.h:46
 msgid ""
@@ -561,7 +532,7 @@ msgstr "Hilfe zum Zeitausdruck"
 
 #: ../src/gnome-schedule.glade.h:56
 msgid "To:"
-msgstr ""
+msgstr "Endend mit:"
 
 #: ../src/gnome-schedule.glade.h:57
 msgid ""
@@ -608,7 +579,7 @@ msgstr "_Stunden:"
 
 #: ../src/gnome-schedule.glade.h:67
 msgid "_Manual"
-msgstr "_Handbuch"
+msgstr "I_nhalt"
 
 #: ../src/gnome-schedule.glade.h:68
 msgid "_Minute:"
@@ -639,16 +610,14 @@ msgid "_Weekdays:"
 msgstr "_Wochentage:"
 
 #: ../src/gnome-schedule.py:61 ../src/scheduleapplet.py:64
-msgid "You need to install pyGTK or GTKv2, "
+msgid ""
+"You need to install pyGTK or GTKv2,\n"
+"or set your PYTHONPATH correctly.\n"
+"try: export PYTHONPATH= "
 msgstr ""
-
-#: ../src/gnome-schedule.py:62 ../src/scheduleapplet.py:65
-msgid "or set your PYTHONPATH correctly."
-msgstr ""
-
-#: ../src/gnome-schedule.py:63 ../src/scheduleapplet.py:66
-msgid "try: export PYTHONPATH= "
-msgstr ""
+"Entweder pyGTK bzw. GTK2 sind nicht installiert oder die\n"
+"Umgebungsvariable »PYTHONPATH« ist nicht korrekt gesetzt.\n"
+"Versuchen Sie es mit »export PYTHONPATH=«"
 
 #. Translators: Date format for expressions like 'January 21'. %B is month, %d is day number.
 #. Run the command 'man strftime' to read more about these and other available specifiers.
@@ -666,7 +635,7 @@ msgstr "%d. %B %Y"
 #. Run the command 'man strftime' to read more about these and other available specifiers.
 #: ../src/lang.py:122
 msgid "%H:%M"
-msgstr "%H.%M Uhr"
+msgstr "%H:%M"
 
 #: ../src/lang.py:159
 msgid "At every full hour"
@@ -964,13 +933,13 @@ msgstr "%(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 msgid "Editing user: %s"
 msgstr "Bearbeitung der Einträge für den Benutzer »%s«"
 
-#: ../src/mainWindow.py:280 ../src/scheduleapplet.py:112
+#: ../src/mainWindow.py:280 ../src/scheduleapplet.py:116
 msgid "ERROR: Could not load icon"
-msgstr ""
+msgstr "FEHLER: Symbol konnte nicht geladen werden"
 
 #: ../src/mainWindow.py:290
 msgid "ERROR: Could not load glade file"
-msgstr ""
+msgstr "FEHLER: Glade-Datei konnte nicht geladen werden"
 
 #: ../src/mainWindow.py:342
 msgid "Icon"
@@ -998,16 +967,15 @@ msgstr "Bitte eine Aufgabe auswählen"
 
 #: ../src/mainWindow.py:418
 msgid "Do you want to delete this task?"
-msgstr ""
+msgstr "Möchten Sie diese Aufgabe löschen?"
 
 #: ../src/mainWindow.py:513
-#, fuzzy
 msgid "About Gnome Schedule"
-msgstr "Gnome Schedule"
+msgstr "Info zu GNOME Schedule"
 
 #: ../src/mainWindow.py:514
 msgid "Gnome Schedule"
-msgstr "Gnome Schedule"
+msgstr "GNOME Schedule"
 
 #: ../src/mainWindow.py:516
 msgid "Copyright (c) 2004-2005 Gaute Hope."
@@ -1017,14 +985,27 @@ msgstr "Copyright © 2004-2005 Gaute Hope."
 msgid "translator-credits"
 msgstr "Frank Arnold <frank@scirocco-5v-turbo.de>"
 
-#: ../src/scheduleapplet.py:128
+#: ../src/scheduleapplet.py:132
 msgid "ERROR: Could not load menu xml file"
-msgstr ""
+msgstr "FEHLER: XML-Datei für das Applet-Menü nicht gefunden"
+
+#: ../src/setuserWindow.py:84
+msgid "No such user"
+msgstr "Benutzer nicht vorhanden"
 
 #: ../src/atEditor.py:516
 #, python-format
 msgid "This is an invalid record! The problem could be: %s"
-msgstr "Das ist ein ungültiger Eintrag! Das Problem könnte sein: %s"
+msgstr "Das ist ein ungültiger Eintrag! Mögliches Problem: %s"
+
+#~ msgid "Must be between %s and %s"
+#~ msgstr "Muss eine Zahl zwischen %s und %s sein"
+
+#~ msgid "You need to install pyGTK or GTKv2, "
+#~ msgstr ""
+#~ "Entweder pyGTK bzw. GTK2 sind nicht installiert oder die\n"
+#~ "Umgebungsvariable »PYTHONPATH« ist nicht korrekt gesetzt.\n"
+#~ "Versuchen Sie es mit »export PYTHONPATH=«"
 
 #~ msgid "This software is distributed under the GPL. "
 #~ msgstr ""
