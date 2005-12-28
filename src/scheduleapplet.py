@@ -176,4 +176,4 @@ def schedule_applet_factory(applet, iid):
   
 gnomeapplet.bonobo_factory("OAFIID:GNOME_GnomeSchedule_Factory",
                                 ScheduleApplet.__gtype__, 
-                                "hello", "0", schedule_applet_factory)
+                                "GnomeScheduleApplet", "0", schedule_applet_factory)
