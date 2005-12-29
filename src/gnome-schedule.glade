@@ -1771,7 +1771,7 @@
 		  <child>
 		    <widget class="GtkRadioButton" id="radOth">
 		      <property name="visible">True</property>
-		      <property name="tooltip" translatable="yes">See &quot;man 5 crontab&quot; for informations about the crontab format.</property>
+		      <property name="tooltip" translatable="yes">See &quot;man 5 crontab&quot; for information about the crontab format.</property>
 		      <property name="can_focus">True</property>
 		      <property name="label" translatable="yes">Other</property>
 		      <property name="use_underline">True</property>

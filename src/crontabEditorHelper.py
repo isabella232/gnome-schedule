@@ -227,15 +227,15 @@ class CrontabEditorHelper:
 			translated[1] = _("Hour:")
 		elif self.field == "day":
 			#day
-			translated[0] = _("At an exact day")
+			translated[0] = _("On a day")
 			translated[1] = _("Day:")
 		elif self.field == "month":
 			#month
-			translated[0] = _("At an exact month")
+			translated[0] = _("In a month")
 			translated[1] = _("Month:")
 		elif self.field == "weekday":
 			#weekday
-			translated[0] = _("At an exact weekday")
+			translated[0] = _("On a weekday")
 			translated[1] = _("Weekday:")
 
 		self.radFix.set_label (translated[0])

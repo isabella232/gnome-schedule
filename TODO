@@ -28,6 +28,7 @@ Development:
 	 http://docs.python.org/lib/module-grp.html
 
 Translations:
+  * Check out the ngettext stuff for python, perhaps send python/gettext folks a note about the missing features. bug 325053
   * Virtually any possible language 
   * Also checkout the lang.py file!
   * Some of the translations are so outdated, and wrong that they hardly should be there.. ie: pa.po
