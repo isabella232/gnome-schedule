@@ -40,11 +40,6 @@ else
   AC_MSG_ERROR([You need to have python libglade bindings installed])
 fi
 
-AC_PATH_PROG(GNOMEHELP_CONFIG, gnome-help, no)
-if test x$GNOMEHELP_CONFIG = xno; then
-  AC_MSG_ERROR(Please install the application gnome-help)
-fi
-
 AC_PATH_PROG(CRONTAB_CONFIG, crontab, no)
 if test x$CRONTAB_CONFIG = xno; then
   AC_MSG_ERROR(Please install the application crontab)

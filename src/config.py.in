@@ -2,7 +2,6 @@ version = "@VERSION@"
 image_dir = "@prefix@/share/pixmaps"
 glade_dir = "@prefix@/share/gnome-schedule"
 locale_dir = "@prefix@/share/locale"
-gnomehelpbin = "@GNOMEHELP_CONFIG@"
 crontabbin = "@CRONTAB_CONFIG@"
 atbin = "@AT_CONFIG@"
 atqbin = "@ATQ_CONFIG@"
@@ -31,9 +30,6 @@ def getBatchbin ():
 
 def getCrontabbin ():
 	return crontabbin
-
-def getGnomehelpbin ():
-	return gnomehelpbin
 
 def getVersion ():
 	return version

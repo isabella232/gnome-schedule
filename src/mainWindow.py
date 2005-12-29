@@ -534,9 +534,21 @@ class main:
  		 	
  	#open help
   	def on_manual_menu_activate (self, *args):
-  		gnome.help_display_with_doc_id(self.gprogram, '', 'gnome-schedule.xml', '')
-  		
- 		 		
+		try:
+			gnome.help_display_with_doc_id (
+					self.gprogram, '',
+					'gnome-schedule.xml', '')
+		except gobject.GError, error:
+			dialog = gtk.MessageDialog (
+					self.widget,
+					gtk.DIALOG_DESTROY_WITH_PARENT,
+					gtk.MESSAGE_ERROR, gtk.BUTTONS_CLOSE)
+			dialog.set_markup ("<b>" + _("Could not display help") + "</b>")
+			dialog.format_secondary_text ("%s" % error)
+			dialog.run ()
+			dialog.destroy ()
+
+
  	#quit program
  	def __quit__(self, *args):
  		if self.inapplet:

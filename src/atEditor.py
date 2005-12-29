@@ -20,6 +20,7 @@
 #pygtk modules
 import gtk
 import gobject
+import gnome
 
 #python modules
 import os
@@ -82,7 +83,7 @@ class AtEditor:
 		self.combobox_entry = self.combobox.get_child()	
 			
 		self.template_combobox.get_child().connect ("changed", self.on_template_combobox_entry_changed)
-		self.xml.signal_connect("on_at_help_button_clicked", self.on_help_button_clicked)
+		self.xml.signal_connect("on_at_help_button_clicked", self.on_at_help_button_clicked)
 		self.xml.signal_connect("on_at_cancel_button_clicked", self.on_cancel_button_clicked)
 		self.xml.signal_connect("on_at_ok_button_clicked", self.on_ok_button_clicked)
 
@@ -499,12 +500,21 @@ class AtEditor:
 		return hour, minute, day, month, year
 
 
-	def on_help_button_clicked (self, *args):
-		help_page = "file://" + config.getDocdir() + "/addingandediting.html"
-		path = config.getGnomehelpbin ()
-		pid = os.fork()
-		if not pid:
-			os.execv(path, [path, help_page])
+	def on_at_help_button_clicked (self, *args):
+		try:
+			gnome.help_display_with_doc_id (
+					self.ParentClass.gprogram, '',
+					'gnome-schedule.xml',
+					'myapp-adding-once')
+		except gobject.GError, error:
+			dialog = gtk.MessageDialog (
+					self.widget,
+					gtk.DIALOG_DESTROY_WITH_PARENT,
+					gtk.MESSAGE_ERROR, gtk.BUTTONS_CLOSE)
+			dialog.set_markup ("<b>" + _("Could not display help") + "</b>")
+			dialog.format_secondary_text ("%s" % error)
+			dialog.run ()
+			dialog.destroy ()
 
 
 	def on_cancel_button_clicked (self, *args):
