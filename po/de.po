@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-12-26 19:12+0100\n"
-"PO-Revision-Date: 2005-12-26 19:10+0100\n"
+"POT-Creation-Date: 2005-12-29 23:04+0100\n"
+"PO-Revision-Date: 2005-12-29 23:03+0100\n"
 "Last-Translator: Frank Arnold <frank@scirocco-5v-turbo.de>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -82,7 +82,7 @@ msgid "%s is not a number"
 msgstr "%s ist keine Zahl"
 
 #: ../src/crontab.py:165 ../src/crontab.py:200 ../src/crontab.py:289
-#: ../src/crontabEditor.py:187 ../src/atEditor.py:109
+#: ../src/crontabEditor.py:187 ../src/atEditor.py:110
 msgid "Untitled"
 msgstr "Unbenannt"
 
@@ -140,49 +140,53 @@ msgstr "Jeden Monat"
 msgid "Every week"
 msgstr "Jede Woche"
 
-#: ../src/crontabEditor.py:130 ../src/atEditor.py:111
+#: ../src/crontabEditor.py:130 ../src/atEditor.py:112
 msgid "Create a New Scheduled Task"
 msgstr "Eine neue Aufgabe erstellen"
 
-#: ../src/crontabEditor.py:150 ../src/atEditor.py:142
+#: ../src/crontabEditor.py:150 ../src/atEditor.py:143
 msgid "Edit a Scheduled Task"
 msgstr "Eine Aufgabe bearbeiten"
 
-#: ../src/crontabEditor.py:205 ../src/atEditor.py:315
+#: ../src/crontabEditor.py:205 ../src/atEditor.py:316
 msgid "Don't use a preset"
 msgstr "Keine Vorlage verwenden"
 
 #: ../src/crontabEditor.py:266
 #, python-format
 msgid ""
-"This is an invalid record! The problem could be at the %(field)s field. "
+"This is an invalid record! The problem could be in the %(field)s field. "
 "Reason: %(reason)s"
 msgstr ""
 "Das ist ein ungültiger Eintrag! Das Problem könnte im Feld »%(field)s« "
 "liegen.\n"
 "Grund: %(reason)s"
 
-#: ../src/crontabEditor.py:298 ../src/atEditor.py:285
+#: ../src/crontabEditor.py:298 ../src/atEditor.py:286
 msgid "The preset has not been saved"
 msgstr "Die Voreinstellung wurde nicht gespeichert."
 
-#: ../src/crontabEditor.py:300 ../src/atEditor.py:287
+#: ../src/crontabEditor.py:300 ../src/atEditor.py:288
 msgid "To delete a preset, you first need to select one"
 msgstr "Um eine Voreinstellung zu löschen, muss sie zuerst ausgewählt werden."
 
-#: ../src/crontabEditor.py:310 ../src/atEditor.py:298
+#: ../src/crontabEditor.py:310 ../src/atEditor.py:299
 msgid "To save a preset, you first have to choose a name for it"
 msgstr ""
 "Um die Voreinstellung zu speichern, muss zuerst ein Name dafür eingegeben "
 "werden."
 
-#: ../src/crontabEditor.py:320 ../src/atEditor.py:389
+#: ../src/crontabEditor.py:320 ../src/atEditor.py:390
 msgid "Choose an Icon for this Scheduled Task"
 msgstr "Ein Symbol für diese Aufgabe auswählen"
 
 #: ../src/crontabEditor.py:385
 msgid "command"
 msgstr "Befehl"
+
+#: ../src/crontabEditor.py:423 ../src/mainWindow.py:546 ../src/atEditor.py:514
+msgid "Could not display help"
+msgstr "Anzeigen der Hilfe fehlgeschlagen"
 
 #: ../src/crontabEditorHelper.py:103
 msgid "Every weekday"
@@ -253,7 +257,7 @@ msgstr "Stunde:"
 
 #. day
 #: ../src/crontabEditorHelper.py:230
-msgid "At an exact day"
+msgid "On a day"
 msgstr "Zu einem bestimmten Tag"
 
 #: ../src/crontabEditorHelper.py:231
@@ -262,8 +266,8 @@ msgstr "Tag:"
 
 #. month
 #: ../src/crontabEditorHelper.py:234
-msgid "At an exact month"
-msgstr "Zu einem bestimmten Monat"
+msgid "In a month"
+msgstr "In einem bestimmten Monat"
 
 #: ../src/crontabEditorHelper.py:235
 msgid "Month:"
@@ -271,8 +275,8 @@ msgstr "Monat:"
 
 #. weekday
 #: ../src/crontabEditorHelper.py:238
-msgid "At an exact weekday"
-msgstr "Zu einem bestimmten Wochentag"
+msgid "On a weekday"
+msgstr "An einem bestimmten Wochentag"
 
 #: ../src/crontabEditorHelper.py:239
 msgid "Weekday:"
@@ -511,7 +515,7 @@ msgid "Scri_pt:"
 msgstr "S_kript:"
 
 #: ../src/gnome-schedule.glade.h:51
-msgid "See \"man 5 crontab\" for informations about the crontab format."
+msgid "See \"man 5 crontab\" for information about the crontab format."
 msgstr "Siehe »man 5 crontab« für nähere Informationen zum Crontab-Format."
 
 #: ../src/gnome-schedule.glade.h:52
@@ -993,10 +997,16 @@ msgstr "FEHLER: XML-Datei für das Applet-Menü nicht gefunden"
 msgid "No such user"
 msgstr "Benutzer nicht vorhanden"
 
-#: ../src/atEditor.py:516
+#: ../src/atEditor.py:526
 #, python-format
 msgid "This is an invalid record! The problem could be: %s"
 msgstr "Das ist ein ungültiger Eintrag! Mögliches Problem: %s"
+
+#~ msgid "At an exact month"
+#~ msgstr "Zu einem bestimmten Monat"
+
+#~ msgid "At an exact weekday"
+#~ msgstr "Zu einem bestimmten Wochentag"
 
 #~ msgid "Must be between %s and %s"
 #~ msgstr "Muss eine Zahl zwischen %s und %s sein"
