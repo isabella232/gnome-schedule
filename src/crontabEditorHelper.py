@@ -68,6 +68,14 @@ class CrontabEditorHelper:
 		self.xml.signal_connect("on_entRangeEnd_changed", self.anyEntryChanged)
 		self.xml.signal_connect("on_entExpression_changed", self.entExpressionChanged)
 
+		self.widgetgroups = { "radAll":  [],
+				      "radEvery":["entEvery", "lblEveryEntity"],
+				      "radRange":["entRangeStart", "entRangeEnd",
+						  "lblRangeStart", "lblRangeEnd"],
+				      "radFix":  ["entFix", "lblFixEntity"],
+				      "radOth":  ["entExpression",
+						  "lblExpression"] }
+
 
 	def populateLabels(self, field):
 		#put the apropiate values in the labels describing entitys, and the 'at' combobox
@@ -152,19 +160,19 @@ class CrontabEditorHelper:
 
 		#show the form
 		if field == "minute":
-			self.header.set_text(_("Minute settings"))
+			self.header.set_markup("<b>"+_("Minute settings")+"</b>")
 			self.widget.set_title(_("Edit Time Expression for minute"))
 		elif field == "hour":
-			self.header.set_text(_("Hour settings"))
+			self.header.set_markup("<b>"+_("Hour settings")+"</b>")
 			self.widget.set_title(_("Edit Time Expression for hour"))
 		elif field == "day":
-			self.header.set_text(_("Day settings"))
+			self.header.set_markup("<b>"+_("Day settings")+"</b>")
 			self.widget.set_title(_("Edit Time Expression for day"))
 		elif field == "month":
-			self.header.set_text(_("Month settings"))
+			self.header.set_markup("<b>"+_("Month settings")+"</b>")
 			self.widget.set_title(_("Edit Time Expression for month"))
 		elif field == "weekday":
-			self.header.set_text(_("Weekday settings"))
+			self.header.set_markup("<b>"+_("Weekday settings")+"</b>")
 			self.widget.set_title(_("Edit Time Expression for weekday"))
 			
 		self.widget.set_transient_for(self.ParentClass.widget)
@@ -213,6 +221,12 @@ class CrontabEditorHelper:
 			elif name == "radFix":
 				self.entExpression.set_text(self.entFix.get_text())
 		self.NoExpressionEvents = False
+
+		for groupname, widgetlist in self.widgetgroups.iteritems():
+			state = groupname == name
+			for widgetname in widgetlist:
+				widget = self.xml.get_widget(widgetname)
+				widget.set_sensitive(state)
 
 
 	def do_label_magic (self):

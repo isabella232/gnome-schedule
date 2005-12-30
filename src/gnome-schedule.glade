@@ -1963,7 +1963,7 @@
 		      <property name="spacing">0</property>
 
 		      <child>
-			<widget class="GtkLabel" id="label28">
+			<widget class="GtkLabel" id="lblRangeStart">
 			  <property name="visible">True</property>
 			  <property name="label" translatable="yes">From:</property>
 			  <property name="use_underline">False</property>
@@ -2027,7 +2027,7 @@
 		      <property name="spacing">0</property>
 
 		      <child>
-			<widget class="GtkLabel" id="label27">
+			<widget class="GtkLabel" id="lblRangeEnd">
 			  <property name="visible">True</property>
 			  <property name="label" translatable="yes">To:</property>
 			  <property name="use_underline">False</property>
@@ -2155,7 +2155,7 @@
 		      <property name="spacing">0</property>
 
 		      <child>
-			<widget class="GtkLabel" id="label29">
+			<widget class="GtkLabel" id="lblExpression">
 			  <property name="visible">True</property>
 			  <property name="label" translatable="yes">Expression:</property>
 			  <property name="use_underline">False</property>

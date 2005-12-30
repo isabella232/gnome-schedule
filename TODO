@@ -16,6 +16,8 @@ Development:
     
   * Include a default icon for at, and a default icon for crontab
     and also make it the default-selected icon
+    
+  * bug 325271, frank arnold: "ally - scan all dialogs for missing accelerators"
 
 
  Unassigned would make it to the release but are non-blocking it

@@ -1,3 +1,10 @@
+2005-12-30  Gaute Hope  <eg@gaute.vetsj.com>
+
+	* Applied patch from Frank Arnold: bug 325271
+	* Makes entries and labels non-sensitive if they don't belong to the activated radio button 
+	* Makes headers appearing in bold
+	* TODO: a11y - Scan all dialogs for missing accelerators
+	
 2005-12-29  Gaute Hope  <eg@gaute.vetsj.com>
 
 	* Applied patch from Frank Arnold: bug 325177
