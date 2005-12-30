@@ -1,3 +1,4 @@
+# translation of gnome-schedule.po to Spanish
 # traducción de es.po al Spanish
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
@@ -8,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-12-24 14:34+0100\n"
-"PO-Revision-Date: 2005-12-24 14:51+0100\n"
+"POT-Creation-Date: 2005-12-30 01:17+0100\n"
+"PO-Revision-Date: 2005-12-30 01:38+0100\n"
 "Last-Translator: Rodrigo Marcos Fombellida <rmarcos@cvs.gnome.org>\n"
 "Language-Team: Spanish <traductores@es.gnome.es>\n"
 "MIME-Version: 1.0\n"
@@ -73,7 +74,7 @@ msgstr "mes"
 msgid "Weekday"
 msgstr "día de la semana"
 
-#: ../src/crontab.py:138 ../src/crontab.py:143
+#: ../src/crontab.py:138 ../src/crontab.py:143 ../src/crontab.py:147
 #, python-format
 msgid "Must be between %(min)s and %(max)s"
 msgstr "debe estar entre %(min)s y %(max)s"
@@ -83,13 +84,8 @@ msgstr "debe estar entre %(min)s y %(max)s"
 msgid "%s is not a number"
 msgstr "%s no es un número"
 
-#: ../src/crontab.py:147
-#, python-format
-msgid "Must be between %s and %s"
-msgstr "debe estar entre %s y %s"
-
 #: ../src/crontab.py:165 ../src/crontab.py:200 ../src/crontab.py:289
-#: ../src/crontabEditor.py:187 ../src/atEditor.py:109
+#: ../src/crontabEditor.py:187 ../src/atEditor.py:110
 msgid "Untitled"
 msgstr "Sin título"
 
@@ -147,46 +143,50 @@ msgstr "Cada mes"
 msgid "Every week"
 msgstr "Cada semana"
 
-#: ../src/crontabEditor.py:130 ../src/atEditor.py:111
+#: ../src/crontabEditor.py:130 ../src/atEditor.py:112
 msgid "Create a New Scheduled Task"
 msgstr "Crear una tarea programada nueva"
 
-#: ../src/crontabEditor.py:150 ../src/atEditor.py:142
+#: ../src/crontabEditor.py:150 ../src/atEditor.py:143
 msgid "Edit a Scheduled Task"
 msgstr "Editar una tarea programada"
 
-#: ../src/crontabEditor.py:205 ../src/atEditor.py:315
+#: ../src/crontabEditor.py:205 ../src/atEditor.py:316
 msgid "Don't use a preset"
 msgstr "No usar una plantilla"
 
 #: ../src/crontabEditor.py:266
 #, python-format
 msgid ""
-"This is an invalid record! The problem could be at the %(field)s field. "
+"This is an invalid record! The problem could be in the %(field)s field. "
 "Reason: %(reason)s"
 msgstr ""
 "¡Este es un registro inválido! El problema podría estar en el campo %(field)"
 "s. Razón: %(reason)s"
 
-#: ../src/crontabEditor.py:298 ../src/atEditor.py:285
+#: ../src/crontabEditor.py:298 ../src/atEditor.py:286
 msgid "The preset has not been saved"
 msgstr "No se ha guardado la plantilla"
 
-#: ../src/crontabEditor.py:300 ../src/atEditor.py:287
+#: ../src/crontabEditor.py:300 ../src/atEditor.py:288
 msgid "To delete a preset, you first need to select one"
 msgstr "Para borrar una plantilla, primero debe seleccionar una"
 
-#: ../src/crontabEditor.py:310 ../src/atEditor.py:298
+#: ../src/crontabEditor.py:310 ../src/atEditor.py:299
 msgid "To save a preset, you first have to choose a name for it"
 msgstr "Para guardar una plantilla, primero debe elegir un nombre para ella"
 
-#: ../src/crontabEditor.py:320 ../src/atEditor.py:389
+#: ../src/crontabEditor.py:320 ../src/atEditor.py:390
 msgid "Choose an Icon for this Scheduled Task"
 msgstr "Escoja un icono para esta tarea programada"
 
 #: ../src/crontabEditor.py:385
 msgid "command"
 msgstr "comando"
+
+#: ../src/crontabEditor.py:423 ../src/mainWindow.py:546 ../src/atEditor.py:514
+msgid "Could not display help"
+msgstr "No se pudo mostrar la ayuda"
 
 #: ../src/crontabEditorHelper.py:103
 msgid "Every weekday"
@@ -257,8 +257,8 @@ msgstr "Hora:"
 
 #. day
 #: ../src/crontabEditorHelper.py:230
-msgid "At an exact day"
-msgstr "En un día exacto"
+msgid "On a day"
+msgstr "En un día"
 
 #: ../src/crontabEditorHelper.py:231
 msgid "Day:"
@@ -266,8 +266,8 @@ msgstr "Día:"
 
 #. month
 #: ../src/crontabEditorHelper.py:234
-msgid "At an exact month"
-msgstr "En un mes exacto"
+msgid "In a month"
+msgstr "En un mes"
 
 #: ../src/crontabEditorHelper.py:235
 msgid "Month:"
@@ -275,8 +275,8 @@ msgstr "Mes:"
 
 #. weekday
 #: ../src/crontabEditorHelper.py:238
-msgid "At an exact weekday"
-msgstr "En un día de la semana concreto"
+msgid "On a weekday"
+msgstr "En un día de la semana"
 
 #: ../src/crontabEditorHelper.py:239
 msgid "Weekday:"
@@ -511,8 +511,8 @@ msgid "Scri_pt:"
 msgstr "_Script:"
 
 #: ../src/gnome-schedule.glade.h:51
-msgid "See \"man 5 crontab\" for informations about the crontab format."
-msgstr "Vea «man 5 crontab» para información acerca del formato de crontab."
+msgid "See \"man 5 crontab\" for information about the crontab format."
+msgstr "Vea «man 5 crontab» para obtener información acerca del formato de crontab."
 
 #: ../src/gnome-schedule.glade.h:52
 msgid "Select..."
@@ -609,16 +609,14 @@ msgid "_Weekdays:"
 msgstr "D_ías de la semana:"
 
 #: ../src/gnome-schedule.py:61 ../src/scheduleapplet.py:64
-msgid "You need to install pyGTK or GTKv2, "
-msgstr "Necesita instalar pyGTK o GTKv2, "
-
-#: ../src/gnome-schedule.py:62 ../src/scheduleapplet.py:65
-msgid "or set your PYTHONPATH correctly."
-msgstr "o establecer su variable PYTHONPATH correctamente."
-
-#: ../src/gnome-schedule.py:63 ../src/scheduleapplet.py:66
-msgid "try: export PYTHONPATH= "
-msgstr "intente: export PYTHONPATH= "
+msgid ""
+"You need to install pyGTK or GTKv2,\n"
+"or set your PYTHONPATH correctly.\n"
+"try: export PYTHONPATH= "
+msgstr ""
+"Necesita instalar pyGTK o GTKv2, o\n"
+"establecer su PYTHONPATH correctamente.\n"
+"Pruebe: export PYTHONPATH="
 
 #. Translators: Date format for expressions like 'January 21'. %B is month, %d is day number.
 #. Run the command 'man strftime' to read more about these and other available specifiers.
@@ -928,7 +926,7 @@ msgstr "A las %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 msgid "Editing user: %s"
 msgstr "Editando usuario: %s"
 
-#: ../src/mainWindow.py:280 ../src/scheduleapplet.py:112
+#: ../src/mainWindow.py:280 ../src/scheduleapplet.py:116
 msgid "ERROR: Could not load icon"
 msgstr "ERROR: No se pudo cargar el icono"
 
@@ -982,7 +980,7 @@ msgstr ""
 "Rodrigo Marcos Fombellida <rmarcos@cvs.gnome.org>\n"
 "QA:Francisco Javier F. Serrador <serrador@cvs.gnome.org>"
 
-#: ../src/scheduleapplet.py:128
+#: ../src/scheduleapplet.py:132
 msgid "ERROR: Could not load menu xml file"
 msgstr "ERROR: No se pudo cargar el archivo xml del menú"
 
@@ -990,10 +988,25 @@ msgstr "ERROR: No se pudo cargar el archivo xml del menú"
 msgid "No such user"
 msgstr "No existe tal usuario"
 
-#: ../src/atEditor.py:516
+#: ../src/atEditor.py:526
 #, python-format
 msgid "This is an invalid record! The problem could be: %s"
 msgstr "¡Este es un registro inválido! El problema podría ser: %s"
+
+#~ msgid "Must be between %s and %s"
+#~ msgstr "debe estar entre %s y %s"
+
+#~ msgid "At an exact weekday"
+#~ msgstr "En un día de la semana concreto"
+
+#~ msgid "You need to install pyGTK or GTKv2, "
+#~ msgstr "Necesita instalar pyGTK o GTKv2, "
+
+#~ msgid "or set your PYTHONPATH correctly."
+#~ msgstr "o establecer su variable PYTHONPATH correctamente."
+
+#~ msgid "try: export PYTHONPATH= "
+#~ msgstr "intente: export PYTHONPATH= "
 
 #~ msgid "This software is distributed under the GPL. "
 #~ msgstr "Este software se distribuye bajo los términos de la GPL. "
