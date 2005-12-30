@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-12-24 01:11+0000\n"
-"PO-Revision-Date: 2005-10-01 04:17+0200\n"
+"POT-Creation-Date: 2005-12-29 03:20+0100\n"
+"PO-Revision-Date: 2005-12-29 06:27+0100\n"
 "Last-Translator: Tino Meinen <a.t.meinen@chello.nl>\n"
 "Language-Team: Dutch <vertaling@vrijschrift.org>\n"
 "MIME-Version: 1.0\n"
@@ -25,18 +25,16 @@ msgid "Schedule"
 msgstr "Taakplanning"
 
 #: ../servers/GNOME_GnomeSchedule.server.in.in.h:1
-#, fuzzy
 msgid "Configures your scheduled tasks"
-msgstr "Geplande taken configureren"
+msgstr "Configureert uw geplande taken"
 
 #: ../servers/GNOME_GnomeSchedule.server.in.in.h:2
-#, fuzzy
 msgid "Gnome schedule"
-msgstr "Gnome Taakplanning"
+msgstr "Gnome taakplanning"
 
 #: ../servers/GNOME_GnomeSchedule.server.in.in.h:3
 msgid "System tools"
-msgstr ""
+msgstr "Systeemgereedschap"
 
 #: ../src/at.py:283
 #, python-format
@@ -73,7 +71,7 @@ msgstr "Maand"
 msgid "Weekday"
 msgstr "Weekdag"
 
-#: ../src/crontab.py:138 ../src/crontab.py:143
+#: ../src/crontab.py:138 ../src/crontab.py:143 ../src/crontab.py:147
 #, python-format
 msgid "Must be between %(min)s and %(max)s"
 msgstr "Moet tussen %(min)s en %(max)s liggen"
@@ -82,11 +80,6 @@ msgstr "Moet tussen %(min)s en %(max)s liggen"
 #, python-format
 msgid "%s is not a number"
 msgstr "%s is geen getal"
-
-#: ../src/crontab.py:147
-#, python-format
-msgid "Must be between %s and %s"
-msgstr "Moet zijn tussen %s en %s"
 
 #: ../src/crontab.py:165 ../src/crontab.py:200 ../src/crontab.py:289
 #: ../src/crontabEditor.py:187 ../src/atEditor.py:109
@@ -169,15 +162,15 @@ msgstr ""
 "veld. \n"
 "Reden: %(reason)s"
 
-#: ../src/crontabEditor.py:298
+#: ../src/crontabEditor.py:298 ../src/atEditor.py:285
 msgid "The preset has not been saved"
 msgstr "De voorinstelling is niet opgeslagen"
 
-#: ../src/crontabEditor.py:300
+#: ../src/crontabEditor.py:300 ../src/atEditor.py:287
 msgid "To delete a preset, you first need to select one"
 msgstr "Om een voorinstelling te verwijderen dient u er eerst een te kiezen"
 
-#: ../src/crontabEditor.py:310
+#: ../src/crontabEditor.py:310 ../src/atEditor.py:298
 msgid "To save a preset, you first have to choose a name for it"
 msgstr "Om een voorinstelling op te slaan dient u eerst een naam te kiezen"
 
@@ -618,16 +611,15 @@ msgid "_Weekdays:"
 msgstr "_Weekdag:"
 
 #: ../src/gnome-schedule.py:61 ../src/scheduleapplet.py:64
-msgid "You need to install pyGTK or GTKv2, "
-msgstr "U moet pyGTK of GTK2 installeren, "
-
-#: ../src/gnome-schedule.py:62 ../src/scheduleapplet.py:65
-msgid "or set your PYTHONPATH correctly."
-msgstr "of uw PYTHONPATH correct instellen."
-
-#: ../src/gnome-schedule.py:63 ../src/scheduleapplet.py:66
-msgid "try: export PYTHONPATH= "
-msgstr "probeer: export PYTHONPATH= "
+msgid ""
+"You need to install pyGTK or GTKv2,\n"
+"or set your PYTHONPATH correctly.\n"
+"try: export PYTHONPATH= "
+msgstr ""
+"U moet pyGTK of GTKv2 installeren,\n"
+"of u moet PYTHONPATH op de juiste manier\n"
+"instellen.\n"
+"probeer: export PYTHONPATH= "
 
 #. Translators: Date format for expressions like 'January 21'. %B is month, %d is day number.
 #. Run the command 'man strftime' to read more about these and other available specifiers.
@@ -937,13 +929,13 @@ msgstr "Op %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 msgid "Editing user: %s"
 msgstr "Bewerkende gebruiker: %s"
 
-#: ../src/mainWindow.py:280 ../src/scheduleapplet.py:112
+#: ../src/mainWindow.py:280 ../src/scheduleapplet.py:116
 msgid "ERROR: Could not load icon"
-msgstr ""
+msgstr "FOUT: Kon pictogram niet laden"
 
 #: ../src/mainWindow.py:290
 msgid "ERROR: Could not load glade file"
-msgstr ""
+msgstr "FOUT: kon glade-bestand niet laden"
 
 #: ../src/mainWindow.py:342
 msgid "Icon"
@@ -974,9 +966,8 @@ msgid "Do you want to delete this task?"
 msgstr "Wilt u deze taak verwijderen?"
 
 #: ../src/mainWindow.py:513
-#, fuzzy
 msgid "About Gnome Schedule"
-msgstr "Gnome Taakplanning"
+msgstr "Over Gnome taakplanning"
 
 #: ../src/mainWindow.py:514
 msgid "Gnome Schedule"
@@ -988,16 +979,36 @@ msgstr "Copyright (c) 2004-2005 Gaute Hope."
 
 #: ../src/mainWindow.py:528
 msgid "translator-credits"
-msgstr "Taco WItte"
-
-#: ../src/scheduleapplet.py:128
-msgid "ERROR: Could not load menu xml file"
 msgstr ""
+"Tino Meinen\n"
+"Taco Witte\n"
+"\n"
+"Zie voor meer informatie http://nl.gnome.org"
+
+#: ../src/scheduleapplet.py:132
+msgid "ERROR: Could not load menu xml file"
+msgstr "FOUT: kon menu xml-bestand niet laden"
+
+#: ../src/setuserWindow.py:84
+msgid "No such user"
+msgstr "Gebruiker bestaat niet"
 
 #: ../src/atEditor.py:516
 #, python-format
 msgid "This is an invalid record! The problem could be: %s"
 msgstr "Dit is een ongeldig record! Het probleem kan zijn: %s"
+
+#~ msgid "Must be between %s and %s"
+#~ msgstr "Moet zijn tussen %s en %s"
+
+#~ msgid "You need to install pyGTK or GTKv2, "
+#~ msgstr "U moet pyGTK of GTK2 installeren, "
+
+#~ msgid "or set your PYTHONPATH correctly."
+#~ msgstr "of uw PYTHONPATH correct instellen."
+
+#~ msgid "try: export PYTHONPATH= "
+#~ msgstr "probeer: export PYTHONPATH= "
 
 #~ msgid "This software is distributed under the GPL. "
 #~ msgstr "Deze software wordt verspreid onder de GPL. "
