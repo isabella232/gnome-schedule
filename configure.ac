@@ -1,5 +1,5 @@
 AC_INIT(src/gnome-schedule.py)
-AM_INIT_AUTOMAKE(gnome-schedule, 0.9.0)
+AM_INIT_AUTOMAKE(gnome-schedule, 1.0.0)
 
 dnl check for python
 dnl AM_PATH_PYTHON
