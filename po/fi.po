@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-12-24 01:11+0000\n"
+"POT-Creation-Date: 2005-12-31 18:52+0000\n"
 "PO-Revision-Date: 2005-08-04 10:18+0300\n"
 "Last-Translator: Tommi Vainikainen <Tommi.Vainikainen@iki.fi>\n"
 "Language-Team: Finnish <gnome-fi-laatu@lists.sourceforge.net>\n"
@@ -73,7 +73,7 @@ msgstr "Kuukausi"
 msgid "Weekday"
 msgstr "Viikonpäivä"
 
-#: ../src/crontab.py:138 ../src/crontab.py:143
+#: ../src/crontab.py:138 ../src/crontab.py:143 ../src/crontab.py:147
 #, fuzzy, python-format
 msgid "Must be between %(min)s and %(max)s"
 msgstr "Täytyy olla %s ja %s välillä"
@@ -83,13 +83,8 @@ msgstr "Täytyy olla %s ja %s välillä"
 msgid "%s is not a number"
 msgstr "%s ei ole numero"
 
-#: ../src/crontab.py:147
-#, python-format
-msgid "Must be between %s and %s"
-msgstr "Täytyy olla %s ja %s välillä"
-
 #: ../src/crontab.py:165 ../src/crontab.py:200 ../src/crontab.py:289
-#: ../src/crontabEditor.py:187 ../src/atEditor.py:109
+#: ../src/crontabEditor.py:187 ../src/atEditor.py:110
 msgid "Untitled"
 msgstr "Nimetön"
 
@@ -126,20 +121,20 @@ msgstr ""
 msgid "Use advanced"
 msgstr "Käytä edistyneitä"
 
-#: ../src/crontabEditor.py:81 ../src/crontabEditorHelper.py:79
+#: ../src/crontabEditor.py:81 ../src/crontabEditorHelper.py:87
 #: ../src/gnome-schedule.glade.h:28
 msgid "Every minute"
 msgstr "Joka minuutti"
 
-#: ../src/crontabEditor.py:82 ../src/crontabEditorHelper.py:85
+#: ../src/crontabEditor.py:82 ../src/crontabEditorHelper.py:93
 msgid "Every hour"
 msgstr "Joka tunti"
 
-#: ../src/crontabEditor.py:83 ../src/crontabEditorHelper.py:91
+#: ../src/crontabEditor.py:83 ../src/crontabEditorHelper.py:99
 msgid "Every day"
 msgstr "Joka päivä"
 
-#: ../src/crontabEditor.py:84 ../src/crontabEditorHelper.py:97
+#: ../src/crontabEditor.py:84 ../src/crontabEditorHelper.py:105
 msgid "Every month"
 msgstr "Joka kuukausi"
 
@@ -147,38 +142,38 @@ msgstr "Joka kuukausi"
 msgid "Every week"
 msgstr "Joka viikko"
 
-#: ../src/crontabEditor.py:130 ../src/atEditor.py:111
+#: ../src/crontabEditor.py:130 ../src/atEditor.py:112
 msgid "Create a New Scheduled Task"
 msgstr "Luo uusi ajastettu tehtävä"
 
-#: ../src/crontabEditor.py:150 ../src/atEditor.py:142
+#: ../src/crontabEditor.py:150 ../src/atEditor.py:143
 msgid "Edit a Scheduled Task"
 msgstr "Muokkaa ajastettua tehtävää"
 
-#: ../src/crontabEditor.py:205 ../src/atEditor.py:315
+#: ../src/crontabEditor.py:205 ../src/atEditor.py:316
 msgid "Don't use a preset"
 msgstr ""
 
 #: ../src/crontabEditor.py:266
 #, fuzzy, python-format
 msgid ""
-"This is an invalid record! The problem could be at the %(field)s field. "
+"This is an invalid record! The problem could be in the %(field)s field. "
 "Reason: %(reason)s"
 msgstr "Tämä on virheellinen tietue! Ongelma saattaa olla %s-kentässä. Syy: %s"
 
-#: ../src/crontabEditor.py:298
+#: ../src/crontabEditor.py:298 ../src/atEditor.py:286
 msgid "The preset has not been saved"
 msgstr ""
 
-#: ../src/crontabEditor.py:300
+#: ../src/crontabEditor.py:300 ../src/atEditor.py:288
 msgid "To delete a preset, you first need to select one"
 msgstr ""
 
-#: ../src/crontabEditor.py:310
+#: ../src/crontabEditor.py:310 ../src/atEditor.py:299
 msgid "To save a preset, you first have to choose a name for it"
 msgstr ""
 
-#: ../src/crontabEditor.py:320 ../src/atEditor.py:389
+#: ../src/crontabEditor.py:320 ../src/atEditor.py:390
 msgid "Choose an Icon for this Scheduled Task"
 msgstr "Valitse kuvake tälle ajastetulle tehtävälle"
 
@@ -186,133 +181,139 @@ msgstr "Valitse kuvake tälle ajastetulle tehtävälle"
 msgid "command"
 msgstr "komento"
 
-#: ../src/crontabEditorHelper.py:103
+#: ../src/crontabEditor.py:423 ../src/mainWindow.py:546 ../src/atEditor.py:514
+msgid "Could not display help"
+msgstr ""
+
+#: ../src/crontabEditorHelper.py:111
 #, fuzzy
 msgid "Every weekday"
 msgstr "Joka viikko"
 
-#: ../src/crontabEditorHelper.py:155
+#: ../src/crontabEditorHelper.py:163
 msgid "Minute settings"
 msgstr ""
 
-#: ../src/crontabEditorHelper.py:156
+#: ../src/crontabEditorHelper.py:164
 msgid "Edit Time Expression for minute"
 msgstr ""
 
-#: ../src/crontabEditorHelper.py:158
+#: ../src/crontabEditorHelper.py:166
 msgid "Hour settings"
 msgstr ""
 
-#: ../src/crontabEditorHelper.py:159
+#: ../src/crontabEditorHelper.py:167
 msgid "Edit Time Expression for hour"
 msgstr ""
 
-#: ../src/crontabEditorHelper.py:161
+#: ../src/crontabEditorHelper.py:169
 #, fuzzy
 msgid "Day settings"
 msgstr "<b>Perusasetukset</b>"
 
-#: ../src/crontabEditorHelper.py:162
+#: ../src/crontabEditorHelper.py:170
 msgid "Edit Time Expression for day"
 msgstr ""
 
-#: ../src/crontabEditorHelper.py:164
+#: ../src/crontabEditorHelper.py:172
 msgid "Month settings"
 msgstr ""
 
-#: ../src/crontabEditorHelper.py:165
+#: ../src/crontabEditorHelper.py:173
 msgid "Edit Time Expression for month"
 msgstr ""
 
-#: ../src/crontabEditorHelper.py:167
+#: ../src/crontabEditorHelper.py:175
 #, fuzzy
 msgid "Weekday settings"
 msgstr "_Viikonpäivät:"
 
-#: ../src/crontabEditorHelper.py:168
+#: ../src/crontabEditorHelper.py:176
 msgid "Edit Time Expression for weekday"
 msgstr ""
 
-#: ../src/crontabEditorHelper.py:182
+#: ../src/crontabEditorHelper.py:190
 #, python-format
 msgid "This is invalid. Reason: %s"
 msgstr "Tämä on virheellinen. Syy: %s"
 
 #. minute
-#: ../src/crontabEditorHelper.py:222 ../src/gnome-schedule.glade.h:15
+#: ../src/crontabEditorHelper.py:236 ../src/gnome-schedule.glade.h:15
 #, fuzzy
 msgid "At an exact minute"
 msgstr "Joka minuutti"
 
-#: ../src/crontabEditorHelper.py:223 ../src/gnome-schedule.glade.h:42
+#: ../src/crontabEditorHelper.py:237 ../src/gnome-schedule.glade.h:42
 #, fuzzy
 msgid "Minute:"
 msgstr "_Minuutti:"
 
 #. hour
-#: ../src/crontabEditorHelper.py:226
+#: ../src/crontabEditorHelper.py:240
 msgid "At an exact hour"
 msgstr ""
 
-#: ../src/crontabEditorHelper.py:227
+#: ../src/crontabEditorHelper.py:241
 #, fuzzy
 msgid "Hour:"
 msgstr "_Tunti:"
 
 #. day
-#: ../src/crontabEditorHelper.py:230
-msgid "At an exact day"
+#: ../src/crontabEditorHelper.py:244
+msgid "On a day"
 msgstr ""
 
-#: ../src/crontabEditorHelper.py:231
+#: ../src/crontabEditorHelper.py:245
 #, fuzzy
 msgid "Day:"
 msgstr "_Päiväys:"
 
 #. month
-#: ../src/crontabEditorHelper.py:234
-msgid "At an exact month"
-msgstr ""
+#: ../src/crontabEditorHelper.py:248
+#, fuzzy
+msgid "In a month"
+msgstr "kuukausi"
 
-#: ../src/crontabEditorHelper.py:235
+#: ../src/crontabEditorHelper.py:249
 #, fuzzy
 msgid "Month:"
 msgstr "Kuukausi"
 
 #. weekday
-#: ../src/crontabEditorHelper.py:238
-msgid "At an exact weekday"
-msgstr ""
+#: ../src/crontabEditorHelper.py:252
+#, fuzzy
+msgid "On a weekday"
+msgstr "viikonpäivä"
 
-#: ../src/crontabEditorHelper.py:239
+#: ../src/crontabEditorHelper.py:253
 #, fuzzy
 msgid "Weekday:"
 msgstr "Viikonpäivä"
 
-#: ../src/crontabEditorHelper.py:244 ../src/gnome-schedule.glade.h:40
+#: ../src/crontabEditorHelper.py:258 ../src/gnome-schedule.glade.h:40
 msgid "In a step width"
 msgstr ""
 
-#: ../src/crontabEditorHelper.py:246 ../src/gnome-schedule.glade.h:43
+#: ../src/crontabEditorHelper.py:260 ../src/gnome-schedule.glade.h:43
 #, fuzzy
 msgid "Minutes:"
 msgstr "_Minuutti"
 
-#: ../src/crontabEditorHelper.py:248
+#: ../src/crontabEditorHelper.py:262
 #, fuzzy
 msgid "Hours:"
 msgstr "_Tunnit:"
 
-#: ../src/crontabEditorHelper.py:250
+#: ../src/crontabEditorHelper.py:264
 msgid "Days:"
 msgstr ""
 
-#: ../src/crontabEditorHelper.py:252
+#: ../src/crontabEditorHelper.py:266
 #, fuzzy
 msgid "Months:"
 msgstr "_Kuukausia:"
 
-#: ../src/crontabEditorHelper.py:254
+#: ../src/crontabEditorHelper.py:268
 #, fuzzy
 msgid "Weekdays:"
 msgstr "_Viikonpäivät:"
@@ -523,7 +524,8 @@ msgid "Scri_pt:"
 msgstr "Skri_pti:"
 
 #: ../src/gnome-schedule.glade.h:51
-msgid "See \"man 5 crontab\" for informations about the crontab format."
+#, fuzzy
+msgid "See \"man 5 crontab\" for information about the crontab format."
 msgstr "Katso lisätietoa komennolla \"man 5 crontab\" crontab-muotoilusta."
 
 #: ../src/gnome-schedule.glade.h:52
@@ -616,15 +618,10 @@ msgid "_Weekdays:"
 msgstr "_Viikonpäivät:"
 
 #: ../src/gnome-schedule.py:61 ../src/scheduleapplet.py:64
-msgid "You need to install pyGTK or GTKv2, "
-msgstr ""
-
-#: ../src/gnome-schedule.py:62 ../src/scheduleapplet.py:65
-msgid "or set your PYTHONPATH correctly."
-msgstr ""
-
-#: ../src/gnome-schedule.py:63 ../src/scheduleapplet.py:66
-msgid "try: export PYTHONPATH= "
+msgid ""
+"You need to install pyGTK or GTKv2,\n"
+"or set your PYTHONPATH correctly.\n"
+"try: export PYTHONPATH= "
 msgstr ""
 
 #. Translators: Date format for expressions like 'January 21'. %B is month, %d is day number.
@@ -921,7 +918,7 @@ msgstr ""
 msgid "Editing user: %s"
 msgstr ""
 
-#: ../src/mainWindow.py:280 ../src/scheduleapplet.py:112
+#: ../src/mainWindow.py:280 ../src/scheduleapplet.py:116
 msgid "ERROR: Could not load icon"
 msgstr ""
 
@@ -977,14 +974,21 @@ msgstr ""
 "\n"
 "http://gnome.fi/"
 
-#: ../src/scheduleapplet.py:128
+#: ../src/scheduleapplet.py:132
 msgid "ERROR: Could not load menu xml file"
 msgstr ""
 
-#: ../src/atEditor.py:516
+#: ../src/setuserWindow.py:84
+msgid "No such user"
+msgstr ""
+
+#: ../src/atEditor.py:526
 #, python-format
 msgid "This is an invalid record! The problem could be: %s"
 msgstr ""
+
+#~ msgid "Must be between %s and %s"
+#~ msgstr "Täytyy olla %s ja %s välillä"
 
 #~ msgid "Happens all "
 #~ msgstr "Tapahtuu joka "

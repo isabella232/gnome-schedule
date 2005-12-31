@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: el\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-12-24 01:11+0000\n"
+"POT-Creation-Date: 2005-12-31 18:52+0000\n"
 "PO-Revision-Date: 2005-01-03 12:40+0200\n"
 "Last-Translator: Kostas Papadimas <pkst@gnome.org>\n"
 "Language-Team: Greek <nls@tux.hellug.gr>\n"
@@ -81,7 +81,7 @@ msgstr "μήνας"
 msgid "Weekday"
 msgstr "εργάσιμη ημέρα"
 
-#: ../src/crontab.py:138 ../src/crontab.py:143
+#: ../src/crontab.py:138 ../src/crontab.py:143 ../src/crontab.py:147
 #, fuzzy, python-format
 msgid "Must be between %(min)s and %(max)s"
 msgstr "πρέπει να είναι ανάμεσα σε 0 και 7"
@@ -91,13 +91,8 @@ msgstr "πρέπει να είναι ανάμεσα σε 0 και 7"
 msgid "%s is not a number"
 msgstr "το %s δεν είναι αριθμός"
 
-#: ../src/crontab.py:147
-#, fuzzy, python-format
-msgid "Must be between %s and %s"
-msgstr "πρέπει να είναι ανάμεσα σε 0 και 7"
-
 #: ../src/crontab.py:165 ../src/crontab.py:200 ../src/crontab.py:289
-#: ../src/crontabEditor.py:187 ../src/atEditor.py:109
+#: ../src/crontabEditor.py:187 ../src/atEditor.py:110
 msgid "Untitled"
 msgstr "Ανώνυμο"
 
@@ -135,23 +130,23 @@ msgstr ""
 msgid "Use advanced"
 msgstr "χρήση προχωρημένων"
 
-#: ../src/crontabEditor.py:81 ../src/crontabEditorHelper.py:79
+#: ../src/crontabEditor.py:81 ../src/crontabEditorHelper.py:87
 #: ../src/gnome-schedule.glade.h:28
 #, fuzzy
 msgid "Every minute"
 msgstr "κάθε λεπτό"
 
-#: ../src/crontabEditor.py:82 ../src/crontabEditorHelper.py:85
+#: ../src/crontabEditor.py:82 ../src/crontabEditorHelper.py:93
 #, fuzzy
 msgid "Every hour"
 msgstr "κάθε ώρα"
 
-#: ../src/crontabEditor.py:83 ../src/crontabEditorHelper.py:91
+#: ../src/crontabEditor.py:83 ../src/crontabEditorHelper.py:99
 #, fuzzy
 msgid "Every day"
 msgstr "Κάθε"
 
-#: ../src/crontabEditor.py:84 ../src/crontabEditorHelper.py:97
+#: ../src/crontabEditor.py:84 ../src/crontabEditorHelper.py:105
 #, fuzzy
 msgid "Every month"
 msgstr "κάθε μήνα"
@@ -161,42 +156,42 @@ msgstr "κάθε μήνα"
 msgid "Every week"
 msgstr "Κάθε"
 
-#: ../src/crontabEditor.py:130 ../src/atEditor.py:111
+#: ../src/crontabEditor.py:130 ../src/atEditor.py:112
 #, fuzzy
 msgid "Create a New Scheduled Task"
 msgstr "Δημιουργία μιας νέας προγραμματισμένης εργασίας"
 
-#: ../src/crontabEditor.py:150 ../src/atEditor.py:142
+#: ../src/crontabEditor.py:150 ../src/atEditor.py:143
 #, fuzzy
 msgid "Edit a Scheduled Task"
 msgstr "Επεξεργασία μιας προγραμματισμένης εργασίας"
 
-#: ../src/crontabEditor.py:205 ../src/atEditor.py:315
+#: ../src/crontabEditor.py:205 ../src/atEditor.py:316
 msgid "Don't use a preset"
 msgstr "Να μην χρησιμοποιηθεί μια προκαθορισμένη ρύθμιση"
 
 #: ../src/crontabEditor.py:266
 #, fuzzy, python-format
 msgid ""
-"This is an invalid record! The problem could be at the %(field)s field. "
+"This is an invalid record! The problem could be in the %(field)s field. "
 "Reason: %(reason)s"
 msgstr ""
 "Αυτή δεν είναι μια έγκυρη εγγραφή! Το πρόβλημα πιθανόν να βρίσκεται στο "
 "πεδίο %s. Λόγος: %s"
 
-#: ../src/crontabEditor.py:298
+#: ../src/crontabEditor.py:298 ../src/atEditor.py:286
 msgid "The preset has not been saved"
 msgstr ""
 
-#: ../src/crontabEditor.py:300
+#: ../src/crontabEditor.py:300 ../src/atEditor.py:288
 msgid "To delete a preset, you first need to select one"
 msgstr ""
 
-#: ../src/crontabEditor.py:310
+#: ../src/crontabEditor.py:310 ../src/atEditor.py:299
 msgid "To save a preset, you first have to choose a name for it"
 msgstr ""
 
-#: ../src/crontabEditor.py:320 ../src/atEditor.py:389
+#: ../src/crontabEditor.py:320 ../src/atEditor.py:390
 #, fuzzy
 msgid "Choose an Icon for this Scheduled Task"
 msgstr "Επιλέξτε ένα εικονίδιο για αυτή την προγραμματισμένη εργασία"
@@ -205,136 +200,142 @@ msgstr "Επιλέξτε ένα εικονίδιο για αυτή την προ
 msgid "command"
 msgstr "εντολή"
 
-#: ../src/crontabEditorHelper.py:103
+#: ../src/crontabEditor.py:423 ../src/mainWindow.py:546 ../src/atEditor.py:514
+msgid "Could not display help"
+msgstr ""
+
+#: ../src/crontabEditorHelper.py:111
 #, fuzzy
 msgid "Every weekday"
 msgstr "εργάσιμη ημέρα"
 
-#: ../src/crontabEditorHelper.py:155
+#: ../src/crontabEditorHelper.py:163
 msgid "Minute settings"
 msgstr ""
 
-#: ../src/crontabEditorHelper.py:156
+#: ../src/crontabEditorHelper.py:164
 #, fuzzy
 msgid "Edit Time Expression for minute"
 msgstr "Επεξεργασία χρονικής έκφρασης για:"
 
-#: ../src/crontabEditorHelper.py:158
+#: ../src/crontabEditorHelper.py:166
 msgid "Hour settings"
 msgstr ""
 
-#: ../src/crontabEditorHelper.py:159
+#: ../src/crontabEditorHelper.py:167
 #, fuzzy
 msgid "Edit Time Expression for hour"
 msgstr "Επεξεργασία χρονικής έκφρασης για:"
 
-#: ../src/crontabEditorHelper.py:161
+#: ../src/crontabEditorHelper.py:169
 #, fuzzy
 msgid "Day settings"
 msgstr "<b>Ρύθμιση ημερομηνίας</b>"
 
-#: ../src/crontabEditorHelper.py:162
+#: ../src/crontabEditorHelper.py:170
 #, fuzzy
 msgid "Edit Time Expression for day"
 msgstr "Επεξεργασία χρονικής έκφρασης για:"
 
-#: ../src/crontabEditorHelper.py:164
+#: ../src/crontabEditorHelper.py:172
 msgid "Month settings"
 msgstr ""
 
-#: ../src/crontabEditorHelper.py:165
+#: ../src/crontabEditorHelper.py:173
 #, fuzzy
 msgid "Edit Time Expression for month"
 msgstr "Επεξεργασία χρονικής έκφρασης για:"
 
-#: ../src/crontabEditorHelper.py:167
+#: ../src/crontabEditorHelper.py:175
 msgid "Weekday settings"
 msgstr ""
 
-#: ../src/crontabEditorHelper.py:168
+#: ../src/crontabEditorHelper.py:176
 #, fuzzy
 msgid "Edit Time Expression for weekday"
 msgstr "Επεξεργασία χρονικής έκφρασης για:"
 
-#: ../src/crontabEditorHelper.py:182
+#: ../src/crontabEditorHelper.py:190
 #, python-format
 msgid "This is invalid. Reason: %s"
 msgstr "Αυτό δεν είναι έγκυρο. Λόγος: %s "
 
 #. minute
-#: ../src/crontabEditorHelper.py:222 ../src/gnome-schedule.glade.h:15
+#: ../src/crontabEditorHelper.py:236 ../src/gnome-schedule.glade.h:15
 #, fuzzy
 msgid "At an exact minute"
 msgstr "Κάθε λεπτό"
 
-#: ../src/crontabEditorHelper.py:223 ../src/gnome-schedule.glade.h:42
+#: ../src/crontabEditorHelper.py:237 ../src/gnome-schedule.glade.h:42
 #, fuzzy
 msgid "Minute:"
 msgstr "λεπτό:"
 
 #. hour
-#: ../src/crontabEditorHelper.py:226
+#: ../src/crontabEditorHelper.py:240
 msgid "At an exact hour"
 msgstr ""
 
-#: ../src/crontabEditorHelper.py:227
+#: ../src/crontabEditorHelper.py:241
 #, fuzzy
 msgid "Hour:"
 msgstr "ώρα: "
 
 #. day
-#: ../src/crontabEditorHelper.py:230
-msgid "At an exact day"
+#: ../src/crontabEditorHelper.py:244
+msgid "On a day"
 msgstr ""
 
-#: ../src/crontabEditorHelper.py:231
+#: ../src/crontabEditorHelper.py:245
 msgid "Day:"
 msgstr ""
 
 #. month
-#: ../src/crontabEditorHelper.py:234
-msgid "At an exact month"
-msgstr ""
+#: ../src/crontabEditorHelper.py:248
+#, fuzzy
+msgid "In a month"
+msgstr "μήνας"
 
-#: ../src/crontabEditorHelper.py:235
+#: ../src/crontabEditorHelper.py:249
 #, fuzzy
 msgid "Month:"
 msgstr "μήνας:"
 
 #. weekday
-#: ../src/crontabEditorHelper.py:238
-msgid "At an exact weekday"
-msgstr ""
+#: ../src/crontabEditorHelper.py:252
+#, fuzzy
+msgid "On a weekday"
+msgstr "εργάσιμη ημέρα"
 
-#: ../src/crontabEditorHelper.py:239
+#: ../src/crontabEditorHelper.py:253
 #, fuzzy
 msgid "Weekday:"
 msgstr "εργάσιμη ημέρα"
 
-#: ../src/crontabEditorHelper.py:244 ../src/gnome-schedule.glade.h:40
+#: ../src/crontabEditorHelper.py:258 ../src/gnome-schedule.glade.h:40
 msgid "In a step width"
 msgstr ""
 
-#: ../src/crontabEditorHelper.py:246 ../src/gnome-schedule.glade.h:43
+#: ../src/crontabEditorHelper.py:260 ../src/gnome-schedule.glade.h:43
 #, fuzzy
 msgid "Minutes:"
 msgstr "λεπτό:"
 
-#: ../src/crontabEditorHelper.py:248
+#: ../src/crontabEditorHelper.py:262
 #, fuzzy
 msgid "Hours:"
 msgstr "ώρα: "
 
-#: ../src/crontabEditorHelper.py:250
+#: ../src/crontabEditorHelper.py:264
 msgid "Days:"
 msgstr ""
 
-#: ../src/crontabEditorHelper.py:252
+#: ../src/crontabEditorHelper.py:266
 #, fuzzy
 msgid "Months:"
 msgstr "μήνας:"
 
-#: ../src/crontabEditorHelper.py:254
+#: ../src/crontabEditorHelper.py:268
 #, fuzzy
 msgid "Weekdays:"
 msgstr "εργάσιμη ημέρα"
@@ -574,7 +575,7 @@ msgid "Scri_pt:"
 msgstr "Δέσμη ενεργειών"
 
 #: ../src/gnome-schedule.glade.h:51
-msgid "See \"man 5 crontab\" for informations about the crontab format."
+msgid "See \"man 5 crontab\" for information about the crontab format."
 msgstr ""
 
 #: ../src/gnome-schedule.glade.h:52
@@ -679,15 +680,10 @@ msgid "_Weekdays:"
 msgstr "εργάσιμη ημέρα"
 
 #: ../src/gnome-schedule.py:61 ../src/scheduleapplet.py:64
-msgid "You need to install pyGTK or GTKv2, "
-msgstr ""
-
-#: ../src/gnome-schedule.py:62 ../src/scheduleapplet.py:65
-msgid "or set your PYTHONPATH correctly."
-msgstr ""
-
-#: ../src/gnome-schedule.py:63 ../src/scheduleapplet.py:66
-msgid "try: export PYTHONPATH= "
+msgid ""
+"You need to install pyGTK or GTKv2,\n"
+"or set your PYTHONPATH correctly.\n"
+"try: export PYTHONPATH= "
 msgstr ""
 
 #. Translators: Date format for expressions like 'January 21'. %B is month, %d is day number.
@@ -985,7 +981,7 @@ msgstr ""
 msgid "Editing user: %s"
 msgstr ""
 
-#: ../src/mainWindow.py:280 ../src/scheduleapplet.py:112
+#: ../src/mainWindow.py:280 ../src/scheduleapplet.py:116
 msgid "ERROR: Could not load icon"
 msgstr ""
 
@@ -1041,15 +1037,23 @@ msgstr "Πνευματικά δικαιώματα (c) 2004-2005 Gaute Hope."
 msgid "translator-credits"
 msgstr "Κώστας Παπαδήμας <pkst@gnome.org>"
 
-#: ../src/scheduleapplet.py:128
+#: ../src/scheduleapplet.py:132
 msgid "ERROR: Could not load menu xml file"
 msgstr ""
 
-#: ../src/atEditor.py:516
+#: ../src/setuserWindow.py:84
+msgid "No such user"
+msgstr ""
+
+#: ../src/atEditor.py:526
 #, fuzzy, python-format
 msgid "This is an invalid record! The problem could be: %s"
 msgstr ""
 "Αυτή δεν είναι μια έγκυρη εγγραφή!, Το πρόβλημα μπορεί να βρίσκεται : %s "
+
+#, fuzzy
+#~ msgid "Must be between %s and %s"
+#~ msgstr "πρέπει να είναι ανάμεσα σε 0 και 7"
 
 #~ msgid "This software is distributed under the GPL. "
 #~ msgstr "Αυτό το λογισμικό διανέμετια κάτω από την GPL. "

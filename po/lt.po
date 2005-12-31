@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-12-24 01:11+0000\n"
+"POT-Creation-Date: 2005-12-31 18:52+0000\n"
 "PO-Revision-Date: 2005-04-21 01:33+0300\n"
 "Last-Translator: Žygimantas Beručka <uid0@akl.lt>\n"
 "Language-Team: Lithuanian <komp_lt@konferencijos.lt>\n"
@@ -72,7 +72,7 @@ msgstr "Mėnuo"
 msgid "Weekday"
 msgstr "Savaitės diena"
 
-#: ../src/crontab.py:138 ../src/crontab.py:143
+#: ../src/crontab.py:138 ../src/crontab.py:143 ../src/crontab.py:147
 #, fuzzy, python-format
 msgid "Must be between %(min)s and %(max)s"
 msgstr "Turi būti tarp %s ir %s"
@@ -82,13 +82,8 @@ msgstr "Turi būti tarp %s ir %s"
 msgid "%s is not a number"
 msgstr "%s nėra skaičius"
 
-#: ../src/crontab.py:147
-#, python-format
-msgid "Must be between %s and %s"
-msgstr "Turi būti tarp %s ir %s"
-
 #: ../src/crontab.py:165 ../src/crontab.py:200 ../src/crontab.py:289
-#: ../src/crontabEditor.py:187 ../src/atEditor.py:109
+#: ../src/crontabEditor.py:187 ../src/atEditor.py:110
 msgid "Untitled"
 msgstr "Nepavadinta"
 
@@ -125,20 +120,20 @@ msgstr ""
 msgid "Use advanced"
 msgstr "Naudoti sudėtingą"
 
-#: ../src/crontabEditor.py:81 ../src/crontabEditorHelper.py:79
+#: ../src/crontabEditor.py:81 ../src/crontabEditorHelper.py:87
 #: ../src/gnome-schedule.glade.h:28
 msgid "Every minute"
 msgstr "Kiekvieną minutę"
 
-#: ../src/crontabEditor.py:82 ../src/crontabEditorHelper.py:85
+#: ../src/crontabEditor.py:82 ../src/crontabEditorHelper.py:93
 msgid "Every hour"
 msgstr "Kiekvieną valandą"
 
-#: ../src/crontabEditor.py:83 ../src/crontabEditorHelper.py:91
+#: ../src/crontabEditor.py:83 ../src/crontabEditorHelper.py:99
 msgid "Every day"
 msgstr "Kiekvieną dieną"
 
-#: ../src/crontabEditor.py:84 ../src/crontabEditorHelper.py:97
+#: ../src/crontabEditor.py:84 ../src/crontabEditorHelper.py:105
 msgid "Every month"
 msgstr "Kiekvieną mėnesį"
 
@@ -146,40 +141,40 @@ msgstr "Kiekvieną mėnesį"
 msgid "Every week"
 msgstr "Kiekvieną savaitę"
 
-#: ../src/crontabEditor.py:130 ../src/atEditor.py:111
+#: ../src/crontabEditor.py:130 ../src/atEditor.py:112
 msgid "Create a New Scheduled Task"
 msgstr "Sukurti naują suplanuotą užduotį"
 
-#: ../src/crontabEditor.py:150 ../src/atEditor.py:142
+#: ../src/crontabEditor.py:150 ../src/atEditor.py:143
 msgid "Edit a Scheduled Task"
 msgstr "Keisti suplanuotą užduotį"
 
-#: ../src/crontabEditor.py:205 ../src/atEditor.py:315
+#: ../src/crontabEditor.py:205 ../src/atEditor.py:316
 msgid "Don't use a preset"
 msgstr "Nenaudoti trafareto"
 
 #: ../src/crontabEditor.py:266
 #, fuzzy, python-format
 msgid ""
-"This is an invalid record! The problem could be at the %(field)s field. "
+"This is an invalid record! The problem could be in the %(field)s field. "
 "Reason: %(reason)s"
 msgstr ""
 "Tai yra netinkamas įrašas! Problema gali būti laukelyje %s. Priežastis: %s"
 
-#: ../src/crontabEditor.py:298
+#: ../src/crontabEditor.py:298 ../src/atEditor.py:286
 msgid "The preset has not been saved"
 msgstr "Trafaretas nebuvo išsaugotas"
 
-#: ../src/crontabEditor.py:300
+#: ../src/crontabEditor.py:300 ../src/atEditor.py:288
 msgid "To delete a preset, you first need to select one"
 msgstr "Norėdami ištrinti trafaretą, Jūs pirmiausia turite jį pasirinkti"
 
-#: ../src/crontabEditor.py:310
+#: ../src/crontabEditor.py:310 ../src/atEditor.py:299
 msgid "To save a preset, you first have to choose a name for it"
 msgstr ""
 "Norėdami išsaugoti trafdaretą, Jūs pirmiausia turite nurodyti jam vardą"
 
-#: ../src/crontabEditor.py:320 ../src/atEditor.py:389
+#: ../src/crontabEditor.py:320 ../src/atEditor.py:390
 msgid "Choose an Icon for this Scheduled Task"
 msgstr "Pasirinkite ikoną šiai suplanuotai užduočiai"
 
@@ -187,138 +182,144 @@ msgstr "Pasirinkite ikoną šiai suplanuotai užduočiai"
 msgid "command"
 msgstr "komanda"
 
-#: ../src/crontabEditorHelper.py:103
+#: ../src/crontabEditor.py:423 ../src/mainWindow.py:546 ../src/atEditor.py:514
+msgid "Could not display help"
+msgstr ""
+
+#: ../src/crontabEditorHelper.py:111
 #, fuzzy
 msgid "Every weekday"
 msgstr "Kiekvieną savaitę"
 
-#: ../src/crontabEditorHelper.py:155
+#: ../src/crontabEditorHelper.py:163
 msgid "Minute settings"
 msgstr ""
 
-#: ../src/crontabEditorHelper.py:156
+#: ../src/crontabEditorHelper.py:164
 #, fuzzy
 msgid "Edit Time Expression for minute"
 msgstr "Keisti laiko išraišką: %s"
 
-#: ../src/crontabEditorHelper.py:158
+#: ../src/crontabEditorHelper.py:166
 msgid "Hour settings"
 msgstr ""
 
-#: ../src/crontabEditorHelper.py:159
+#: ../src/crontabEditorHelper.py:167
 #, fuzzy
 msgid "Edit Time Expression for hour"
 msgstr "Keisti laiko išraišką: %s"
 
-#: ../src/crontabEditorHelper.py:161
+#: ../src/crontabEditorHelper.py:169
 #, fuzzy
 msgid "Day settings"
 msgstr "<b>Pagrindiniai nustatymai</b>"
 
-#: ../src/crontabEditorHelper.py:162
+#: ../src/crontabEditorHelper.py:170
 #, fuzzy
 msgid "Edit Time Expression for day"
 msgstr "Keisti laiko išraišką: %s"
 
-#: ../src/crontabEditorHelper.py:164
+#: ../src/crontabEditorHelper.py:172
 msgid "Month settings"
 msgstr ""
 
-#: ../src/crontabEditorHelper.py:165
+#: ../src/crontabEditorHelper.py:173
 #, fuzzy
 msgid "Edit Time Expression for month"
 msgstr "Keisti laiko išraišką: %s"
 
-#: ../src/crontabEditorHelper.py:167
+#: ../src/crontabEditorHelper.py:175
 #, fuzzy
 msgid "Weekday settings"
 msgstr "_Savaitės dienos:"
 
-#: ../src/crontabEditorHelper.py:168
+#: ../src/crontabEditorHelper.py:176
 #, fuzzy
 msgid "Edit Time Expression for weekday"
 msgstr "Keisti laiko išraišką: %s"
 
-#: ../src/crontabEditorHelper.py:182
+#: ../src/crontabEditorHelper.py:190
 #, python-format
 msgid "This is invalid. Reason: %s"
 msgstr "Netinkama. Priežastis: %s"
 
 #. minute
-#: ../src/crontabEditorHelper.py:222 ../src/gnome-schedule.glade.h:15
+#: ../src/crontabEditorHelper.py:236 ../src/gnome-schedule.glade.h:15
 #, fuzzy
 msgid "At an exact minute"
 msgstr "Kiekvieną minutę"
 
-#: ../src/crontabEditorHelper.py:223 ../src/gnome-schedule.glade.h:42
+#: ../src/crontabEditorHelper.py:237 ../src/gnome-schedule.glade.h:42
 #, fuzzy
 msgid "Minute:"
 msgstr "_Minutė:"
 
 #. hour
-#: ../src/crontabEditorHelper.py:226
+#: ../src/crontabEditorHelper.py:240
 msgid "At an exact hour"
 msgstr ""
 
-#: ../src/crontabEditorHelper.py:227
+#: ../src/crontabEditorHelper.py:241
 #, fuzzy
 msgid "Hour:"
 msgstr "_Valanda:"
 
 #. day
-#: ../src/crontabEditorHelper.py:230
-msgid "At an exact day"
+#: ../src/crontabEditorHelper.py:244
+msgid "On a day"
 msgstr ""
 
-#: ../src/crontabEditorHelper.py:231
+#: ../src/crontabEditorHelper.py:245
 #, fuzzy
 msgid "Day:"
 msgstr "_Data:"
 
 #. month
-#: ../src/crontabEditorHelper.py:234
-msgid "At an exact month"
-msgstr ""
+#: ../src/crontabEditorHelper.py:248
+#, fuzzy
+msgid "In a month"
+msgstr "mėnesį"
 
-#: ../src/crontabEditorHelper.py:235
+#: ../src/crontabEditorHelper.py:249
 #, fuzzy
 msgid "Month:"
 msgstr "Mėnuo"
 
 #. weekday
-#: ../src/crontabEditorHelper.py:238
-msgid "At an exact weekday"
-msgstr ""
+#: ../src/crontabEditorHelper.py:252
+#, fuzzy
+msgid "On a weekday"
+msgstr "savaitės dieną"
 
-#: ../src/crontabEditorHelper.py:239
+#: ../src/crontabEditorHelper.py:253
 #, fuzzy
 msgid "Weekday:"
 msgstr "Savaitės diena"
 
-#: ../src/crontabEditorHelper.py:244 ../src/gnome-schedule.glade.h:40
+#: ../src/crontabEditorHelper.py:258 ../src/gnome-schedule.glade.h:40
 msgid "In a step width"
 msgstr ""
 
-#: ../src/crontabEditorHelper.py:246 ../src/gnome-schedule.glade.h:43
+#: ../src/crontabEditorHelper.py:260 ../src/gnome-schedule.glade.h:43
 #, fuzzy
 msgid "Minutes:"
 msgstr "Mi_nutės:"
 
-#: ../src/crontabEditorHelper.py:248
+#: ../src/crontabEditorHelper.py:262
 #, fuzzy
 msgid "Hours:"
 msgstr "_Valandos:"
 
-#: ../src/crontabEditorHelper.py:250
+#: ../src/crontabEditorHelper.py:264
 msgid "Days:"
 msgstr ""
 
-#: ../src/crontabEditorHelper.py:252
+#: ../src/crontabEditorHelper.py:266
 #, fuzzy
 msgid "Months:"
 msgstr "_Mėnesiai:"
 
-#: ../src/crontabEditorHelper.py:254
+#: ../src/crontabEditorHelper.py:268
 #, fuzzy
 msgid "Weekdays:"
 msgstr "_Savaitės dienos:"
@@ -533,7 +534,8 @@ msgid "Scri_pt:"
 msgstr "Scenari_jus:"
 
 #: ../src/gnome-schedule.glade.h:51
-msgid "See \"man 5 crontab\" for informations about the crontab format."
+#, fuzzy
+msgid "See \"man 5 crontab\" for information about the crontab format."
 msgstr ""
 "Norėdami gauti daugiau informacijos apie crontab formatą, žr. „man 5 "
 "crontab“."
@@ -633,15 +635,10 @@ msgid "_Weekdays:"
 msgstr "_Savaitės dienos:"
 
 #: ../src/gnome-schedule.py:61 ../src/scheduleapplet.py:64
-msgid "You need to install pyGTK or GTKv2, "
-msgstr ""
-
-#: ../src/gnome-schedule.py:62 ../src/scheduleapplet.py:65
-msgid "or set your PYTHONPATH correctly."
-msgstr ""
-
-#: ../src/gnome-schedule.py:63 ../src/scheduleapplet.py:66
-msgid "try: export PYTHONPATH= "
+msgid ""
+"You need to install pyGTK or GTKv2,\n"
+"or set your PYTHONPATH correctly.\n"
+"try: export PYTHONPATH= "
 msgstr ""
 
 #. Translators: Date format for expressions like 'January 21'. %B is month, %d is day number.
@@ -974,7 +971,7 @@ msgstr "%(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 msgid "Editing user: %s"
 msgstr "Keičiamas naudotojas: %s"
 
-#: ../src/mainWindow.py:280 ../src/scheduleapplet.py:112
+#: ../src/mainWindow.py:280 ../src/scheduleapplet.py:116
 msgid "ERROR: Could not load icon"
 msgstr ""
 
@@ -1027,14 +1024,21 @@ msgstr "Autorinės teisės (c) 2004-2005 Gaute Hope."
 msgid "translator-credits"
 msgstr "Žygimantas Beručka <uid0@akl.lt>"
 
-#: ../src/scheduleapplet.py:128
+#: ../src/scheduleapplet.py:132
 msgid "ERROR: Could not load menu xml file"
 msgstr ""
 
-#: ../src/atEditor.py:516
+#: ../src/setuserWindow.py:84
+msgid "No such user"
+msgstr ""
+
+#: ../src/atEditor.py:526
 #, python-format
 msgid "This is an invalid record! The problem could be: %s"
 msgstr "Netinkamas įrašas! Problema gali būti: %s"
+
+#~ msgid "Must be between %s and %s"
+#~ msgstr "Turi būti tarp %s ir %s"
 
 #~ msgid "This software is distributed under the GPL. "
 #~ msgstr "Ši programa yra platinama GPL licencijos sąlygomis. "

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule-it\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-12-24 01:11+0000\n"
+"POT-Creation-Date: 2005-12-31 18:52+0000\n"
 "PO-Revision-Date: 2005-09-23 18:56+0200\n"
 "Last-Translator: Andrea Zagli <azagli@inwind.it>\n"
 "Language-Team: Italian <tp@lists.linux.it>\n"
@@ -74,7 +74,7 @@ msgstr "Mese"
 msgid "Weekday"
 msgstr "Giorno della settimana"
 
-#: ../src/crontab.py:138 ../src/crontab.py:143
+#: ../src/crontab.py:138 ../src/crontab.py:143 ../src/crontab.py:147
 #, python-format
 msgid "Must be between %(min)s and %(max)s"
 msgstr "Deve essere compreso tra %(min)s e %(max)s"
@@ -84,13 +84,8 @@ msgstr "Deve essere compreso tra %(min)s e %(max)s"
 msgid "%s is not a number"
 msgstr "%s non è un numero"
 
-#: ../src/crontab.py:147
-#, python-format
-msgid "Must be between %s and %s"
-msgstr "Deve essere compreso tra %s e %s"
-
 #: ../src/crontab.py:165 ../src/crontab.py:200 ../src/crontab.py:289
-#: ../src/crontabEditor.py:187 ../src/atEditor.py:109
+#: ../src/crontabEditor.py:187 ../src/atEditor.py:110
 msgid "Untitled"
 msgstr "Senza titolo"
 
@@ -127,20 +122,20 @@ msgstr "ERRORE: fallita l'analisi del record di crontab"
 msgid "Use advanced"
 msgstr "Uso avanzato"
 
-#: ../src/crontabEditor.py:81 ../src/crontabEditorHelper.py:79
+#: ../src/crontabEditor.py:81 ../src/crontabEditorHelper.py:87
 #: ../src/gnome-schedule.glade.h:28
 msgid "Every minute"
 msgstr "Ogni minuto"
 
-#: ../src/crontabEditor.py:82 ../src/crontabEditorHelper.py:85
+#: ../src/crontabEditor.py:82 ../src/crontabEditorHelper.py:93
 msgid "Every hour"
 msgstr "Ogni ora"
 
-#: ../src/crontabEditor.py:83 ../src/crontabEditorHelper.py:91
+#: ../src/crontabEditor.py:83 ../src/crontabEditorHelper.py:99
 msgid "Every day"
 msgstr "Ogni giorno"
 
-#: ../src/crontabEditor.py:84 ../src/crontabEditorHelper.py:97
+#: ../src/crontabEditor.py:84 ../src/crontabEditorHelper.py:105
 msgid "Every month"
 msgstr "Ogni mese"
 
@@ -148,40 +143,40 @@ msgstr "Ogni mese"
 msgid "Every week"
 msgstr "Ogni settimana"
 
-#: ../src/crontabEditor.py:130 ../src/atEditor.py:111
+#: ../src/crontabEditor.py:130 ../src/atEditor.py:112
 msgid "Create a New Scheduled Task"
 msgstr "Crea una nuova operazione pianificata"
 
-#: ../src/crontabEditor.py:150 ../src/atEditor.py:142
+#: ../src/crontabEditor.py:150 ../src/atEditor.py:143
 msgid "Edit a Scheduled Task"
 msgstr "Modifica un'operazione pianificata"
 
-#: ../src/crontabEditor.py:205 ../src/atEditor.py:315
+#: ../src/crontabEditor.py:205 ../src/atEditor.py:316
 msgid "Don't use a preset"
 msgstr "Non usare un preset"
 
 #: ../src/crontabEditor.py:266
-#, python-format
+#, fuzzy, python-format
 msgid ""
-"This is an invalid record! The problem could be at the %(field)s field. "
+"This is an invalid record! The problem could be in the %(field)s field. "
 "Reason: %(reason)s"
 msgstr ""
 "Questa impostazione non è valida! Il problema potrebbe essere il campo %"
 "(field)s. Motivo: %(reason)s"
 
-#: ../src/crontabEditor.py:298
+#: ../src/crontabEditor.py:298 ../src/atEditor.py:286
 msgid "The preset has not been saved"
 msgstr "Il preset non è stato salvato"
 
-#: ../src/crontabEditor.py:300
+#: ../src/crontabEditor.py:300 ../src/atEditor.py:288
 msgid "To delete a preset, you first need to select one"
 msgstr "Per eliminare un preset, si deve prima selezionarne uno"
 
-#: ../src/crontabEditor.py:310
+#: ../src/crontabEditor.py:310 ../src/atEditor.py:299
 msgid "To save a preset, you first have to choose a name for it"
 msgstr "Per salvare un preset, si deve prima inserirne il nome"
 
-#: ../src/crontabEditor.py:320 ../src/atEditor.py:389
+#: ../src/crontabEditor.py:320 ../src/atEditor.py:390
 msgid "Choose an Icon for this Scheduled Task"
 msgstr "Seleziona un'icona per questa operazione pianificata"
 
@@ -189,122 +184,129 @@ msgstr "Seleziona un'icona per questa operazione pianificata"
 msgid "command"
 msgstr "comando"
 
-#: ../src/crontabEditorHelper.py:103
+#: ../src/crontabEditor.py:423 ../src/mainWindow.py:546 ../src/atEditor.py:514
+msgid "Could not display help"
+msgstr ""
+
+#: ../src/crontabEditorHelper.py:111
 msgid "Every weekday"
 msgstr "Ogni giorno della settimana"
 
-#: ../src/crontabEditorHelper.py:155
+#: ../src/crontabEditorHelper.py:163
 msgid "Minute settings"
 msgstr "Impostazioni del minuto"
 
-#: ../src/crontabEditorHelper.py:156
+#: ../src/crontabEditorHelper.py:164
 msgid "Edit Time Expression for minute"
 msgstr "Modifica l'espressione di ricorrenza per il minuto"
 
-#: ../src/crontabEditorHelper.py:158
+#: ../src/crontabEditorHelper.py:166
 msgid "Hour settings"
 msgstr "Impostazioni dell'ora"
 
-#: ../src/crontabEditorHelper.py:159
+#: ../src/crontabEditorHelper.py:167
 msgid "Edit Time Expression for hour"
 msgstr "Modifica l'espressione di ricorrenza per l'ora"
 
-#: ../src/crontabEditorHelper.py:161
+#: ../src/crontabEditorHelper.py:169
 msgid "Day settings"
 msgstr "Impostazioni del giorno"
 
-#: ../src/crontabEditorHelper.py:162
+#: ../src/crontabEditorHelper.py:170
 msgid "Edit Time Expression for day"
 msgstr "Modifica l'espressione di ricorrenza per il giorno"
 
-#: ../src/crontabEditorHelper.py:164
+#: ../src/crontabEditorHelper.py:172
 msgid "Month settings"
 msgstr "Impostazioni del mese"
 
-#: ../src/crontabEditorHelper.py:165
+#: ../src/crontabEditorHelper.py:173
 msgid "Edit Time Expression for month"
 msgstr "Modifica l'espressione di ricorrenza per il mese"
 
-#: ../src/crontabEditorHelper.py:167
+#: ../src/crontabEditorHelper.py:175
 msgid "Weekday settings"
 msgstr "Impostazioni del giorno della settimana"
 
-#: ../src/crontabEditorHelper.py:168
+#: ../src/crontabEditorHelper.py:176
 msgid "Edit Time Expression for weekday"
 msgstr "Modifica l'espressione di ricorrenza per giorno della settimana"
 
-#: ../src/crontabEditorHelper.py:182
+#: ../src/crontabEditorHelper.py:190
 #, python-format
 msgid "This is invalid. Reason: %s"
 msgstr "Questo non è valido. Motivo: %s"
 
 #. minute
-#: ../src/crontabEditorHelper.py:222 ../src/gnome-schedule.glade.h:15
+#: ../src/crontabEditorHelper.py:236 ../src/gnome-schedule.glade.h:15
 msgid "At an exact minute"
 msgstr "A un minuto esatto"
 
-#: ../src/crontabEditorHelper.py:223 ../src/gnome-schedule.glade.h:42
+#: ../src/crontabEditorHelper.py:237 ../src/gnome-schedule.glade.h:42
 msgid "Minute:"
 msgstr "Minuto:"
 
 #. hour
-#: ../src/crontabEditorHelper.py:226
+#: ../src/crontabEditorHelper.py:240
 msgid "At an exact hour"
 msgstr "A un'ora esatta"
 
-#: ../src/crontabEditorHelper.py:227
+#: ../src/crontabEditorHelper.py:241
 msgid "Hour:"
 msgstr "Ora:"
 
 #. day
-#: ../src/crontabEditorHelper.py:230
-msgid "At an exact day"
+#: ../src/crontabEditorHelper.py:244
+#, fuzzy
+msgid "On a day"
 msgstr "A un giorno esatto"
 
-#: ../src/crontabEditorHelper.py:231
+#: ../src/crontabEditorHelper.py:245
 msgid "Day:"
 msgstr "Giorno:"
 
 #. month
-#: ../src/crontabEditorHelper.py:234
-msgid "At an exact month"
+#: ../src/crontabEditorHelper.py:248
+#, fuzzy
+msgid "In a month"
 msgstr "A un mese esatto"
 
-#: ../src/crontabEditorHelper.py:235
+#: ../src/crontabEditorHelper.py:249
 msgid "Month:"
 msgstr "Mese:"
 
 #. weekday
-#: ../src/crontabEditorHelper.py:238
-msgid "At an exact weekday"
-msgstr "A un giorno della settimana esatto"
+#: ../src/crontabEditorHelper.py:252
+#, fuzzy
+msgid "On a weekday"
+msgstr "giorno della settimana"
 
-#: ../src/crontabEditorHelper.py:239
+#: ../src/crontabEditorHelper.py:253
 msgid "Weekday:"
 msgstr "Giorno della settimana:"
 
 # Suggerimenti???
-#: ../src/crontabEditorHelper.py:244 ../src/gnome-schedule.glade.h:40
+#: ../src/crontabEditorHelper.py:258 ../src/gnome-schedule.glade.h:40
 msgid "In a step width"
 msgstr "A intervalli di tempo"
 
-#: ../src/crontabEditorHelper.py:246 ../src/gnome-schedule.glade.h:43
+#: ../src/crontabEditorHelper.py:260 ../src/gnome-schedule.glade.h:43
 msgid "Minutes:"
 msgstr "Minuti:"
 
-#: ../src/crontabEditorHelper.py:248
+#: ../src/crontabEditorHelper.py:262
 msgid "Hours:"
 msgstr "Ore:"
 
-#: ../src/crontabEditorHelper.py:250
+#: ../src/crontabEditorHelper.py:264
 msgid "Days:"
 msgstr "Giorni:"
 
-#: ../src/crontabEditorHelper.py:252
+#: ../src/crontabEditorHelper.py:266
 msgid "Months:"
 msgstr "Mesi:"
 
-#: ../src/crontabEditorHelper.py:254
+#: ../src/crontabEditorHelper.py:268
 msgid "Weekdays:"
 msgstr "Giorni della settimana:"
 
@@ -516,7 +518,8 @@ msgid "Scri_pt:"
 msgstr "Scri_pt:"
 
 #: ../src/gnome-schedule.glade.h:51
-msgid "See \"man 5 crontab\" for informations about the crontab format."
+#, fuzzy
+msgid "See \"man 5 crontab\" for information about the crontab format."
 msgstr "Vedere «man 5 crontab» per informazioni sul formato di crontab."
 
 #: ../src/gnome-schedule.glade.h:52
@@ -614,16 +617,11 @@ msgid "_Weekdays:"
 msgstr "_Giorni della settimana:"
 
 #: ../src/gnome-schedule.py:61 ../src/scheduleapplet.py:64
-msgid "You need to install pyGTK or GTKv2, "
-msgstr "Occorre installare pyGTK o GTKv2, "
-
-#: ../src/gnome-schedule.py:62 ../src/scheduleapplet.py:65
-msgid "or set your PYTHONPATH correctly."
-msgstr "o impostare correttamente PYTHONPATH."
-
-#: ../src/gnome-schedule.py:63 ../src/scheduleapplet.py:66
-msgid "try: export PYTHONPATH= "
-msgstr "provare: export PYTHONPATH= "
+msgid ""
+"You need to install pyGTK or GTKv2,\n"
+"or set your PYTHONPATH correctly.\n"
+"try: export PYTHONPATH= "
+msgstr ""
 
 #. Translators: Date format for expressions like 'January 21'. %B is month, %d is day number.
 #. Run the command 'man strftime' to read more about these and other available specifiers.
@@ -946,7 +944,7 @@ msgstr "A %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 msgid "Editing user: %s"
 msgstr "Modifica utente: %s"
 
-#: ../src/mainWindow.py:280 ../src/scheduleapplet.py:112
+#: ../src/mainWindow.py:280 ../src/scheduleapplet.py:116
 msgid "ERROR: Could not load icon"
 msgstr ""
 
@@ -999,14 +997,33 @@ msgstr "Copyright (c) 2004-2005 Gaute Hope."
 msgid "translator-credits"
 msgstr "Andrea Zagli <azagli@inwind.it>"
 
-#: ../src/scheduleapplet.py:128
+#: ../src/scheduleapplet.py:132
 msgid "ERROR: Could not load menu xml file"
 msgstr ""
 
-#: ../src/atEditor.py:516
+#: ../src/setuserWindow.py:84
+msgid "No such user"
+msgstr ""
+
+#: ../src/atEditor.py:526
 #, python-format
 msgid "This is an invalid record! The problem could be: %s"
 msgstr "Questa impostazione non è valida! Il problema potrebbe essere: %s"
+
+#~ msgid "Must be between %s and %s"
+#~ msgstr "Deve essere compreso tra %s e %s"
+
+#~ msgid "At an exact weekday"
+#~ msgstr "A un giorno della settimana esatto"
+
+#~ msgid "You need to install pyGTK or GTKv2, "
+#~ msgstr "Occorre installare pyGTK o GTKv2, "
+
+#~ msgid "or set your PYTHONPATH correctly."
+#~ msgstr "o impostare correttamente PYTHONPATH."
+
+#~ msgid "try: export PYTHONPATH= "
+#~ msgstr "provare: export PYTHONPATH= "
 
 #~ msgid "This software is distributed under the GPL. "
 #~ msgstr "Questo software è distribuito con licenza GPL."

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-12-29 23:04+0100\n"
+"POT-Creation-Date: 2005-12-31 18:52+0000\n"
 "PO-Revision-Date: 2005-12-29 23:03+0100\n"
 "Last-Translator: Frank Arnold <frank@scirocco-5v-turbo.de>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
@@ -119,20 +119,20 @@ msgstr "FEHLER: Crontab-Eintrag konnte nicht ausgewertet werden"
 msgid "Use advanced"
 msgstr "Erweiterte Einstellungen verwenden"
 
-#: ../src/crontabEditor.py:81 ../src/crontabEditorHelper.py:79
+#: ../src/crontabEditor.py:81 ../src/crontabEditorHelper.py:87
 #: ../src/gnome-schedule.glade.h:28
 msgid "Every minute"
 msgstr "Jede Minute"
 
-#: ../src/crontabEditor.py:82 ../src/crontabEditorHelper.py:85
+#: ../src/crontabEditor.py:82 ../src/crontabEditorHelper.py:93
 msgid "Every hour"
 msgstr "Jede Stunde"
 
-#: ../src/crontabEditor.py:83 ../src/crontabEditorHelper.py:91
+#: ../src/crontabEditor.py:83 ../src/crontabEditorHelper.py:99
 msgid "Every day"
 msgstr "Jeden Tag"
 
-#: ../src/crontabEditor.py:84 ../src/crontabEditorHelper.py:97
+#: ../src/crontabEditor.py:84 ../src/crontabEditorHelper.py:105
 msgid "Every month"
 msgstr "Jeden Monat"
 
@@ -188,121 +188,121 @@ msgstr "Befehl"
 msgid "Could not display help"
 msgstr "Anzeigen der Hilfe fehlgeschlagen"
 
-#: ../src/crontabEditorHelper.py:103
+#: ../src/crontabEditorHelper.py:111
 msgid "Every weekday"
 msgstr "Jeden Wochentag"
 
-#: ../src/crontabEditorHelper.py:155
+#: ../src/crontabEditorHelper.py:163
 msgid "Minute settings"
 msgstr "Einstellungen für Minuten"
 
-#: ../src/crontabEditorHelper.py:156
+#: ../src/crontabEditorHelper.py:164
 msgid "Edit Time Expression for minute"
 msgstr "Zeitausdruck für Minuten"
 
-#: ../src/crontabEditorHelper.py:158
+#: ../src/crontabEditorHelper.py:166
 msgid "Hour settings"
 msgstr "Einstellungen für Stunden"
 
-#: ../src/crontabEditorHelper.py:159
+#: ../src/crontabEditorHelper.py:167
 msgid "Edit Time Expression for hour"
 msgstr "Zeitausdruck für Stunden"
 
-#: ../src/crontabEditorHelper.py:161
+#: ../src/crontabEditorHelper.py:169
 msgid "Day settings"
 msgstr "Einstellungen für Tage"
 
-#: ../src/crontabEditorHelper.py:162
+#: ../src/crontabEditorHelper.py:170
 msgid "Edit Time Expression for day"
 msgstr "Zeitausdruck für Tage"
 
-#: ../src/crontabEditorHelper.py:164
+#: ../src/crontabEditorHelper.py:172
 msgid "Month settings"
 msgstr "Einstellungen für Monate"
 
-#: ../src/crontabEditorHelper.py:165
+#: ../src/crontabEditorHelper.py:173
 msgid "Edit Time Expression for month"
 msgstr "Zeitausdruck für Monate"
 
-#: ../src/crontabEditorHelper.py:167
+#: ../src/crontabEditorHelper.py:175
 msgid "Weekday settings"
 msgstr "Einstellungen für Wochentage"
 
-#: ../src/crontabEditorHelper.py:168
+#: ../src/crontabEditorHelper.py:176
 msgid "Edit Time Expression for weekday"
 msgstr "Zeitausdruck für Wochentage"
 
-#: ../src/crontabEditorHelper.py:182
+#: ../src/crontabEditorHelper.py:190
 #, python-format
 msgid "This is invalid. Reason: %s"
 msgstr "Ungültige Angaben. Grund: %s"
 
 #. minute
-#: ../src/crontabEditorHelper.py:222 ../src/gnome-schedule.glade.h:15
+#: ../src/crontabEditorHelper.py:236 ../src/gnome-schedule.glade.h:15
 msgid "At an exact minute"
 msgstr "Zu einer bestimmten Minute"
 
-#: ../src/crontabEditorHelper.py:223 ../src/gnome-schedule.glade.h:42
+#: ../src/crontabEditorHelper.py:237 ../src/gnome-schedule.glade.h:42
 msgid "Minute:"
 msgstr "Minute:"
 
 #. hour
-#: ../src/crontabEditorHelper.py:226
+#: ../src/crontabEditorHelper.py:240
 msgid "At an exact hour"
 msgstr "Zu einer bestimmten Stunde"
 
-#: ../src/crontabEditorHelper.py:227
+#: ../src/crontabEditorHelper.py:241
 msgid "Hour:"
 msgstr "Stunde:"
 
 #. day
-#: ../src/crontabEditorHelper.py:230
+#: ../src/crontabEditorHelper.py:244
 msgid "On a day"
 msgstr "Zu einem bestimmten Tag"
 
-#: ../src/crontabEditorHelper.py:231
+#: ../src/crontabEditorHelper.py:245
 msgid "Day:"
 msgstr "Tag:"
 
 #. month
-#: ../src/crontabEditorHelper.py:234
+#: ../src/crontabEditorHelper.py:248
 msgid "In a month"
 msgstr "In einem bestimmten Monat"
 
-#: ../src/crontabEditorHelper.py:235
+#: ../src/crontabEditorHelper.py:249
 msgid "Month:"
 msgstr "Monat:"
 
 #. weekday
-#: ../src/crontabEditorHelper.py:238
+#: ../src/crontabEditorHelper.py:252
 msgid "On a weekday"
 msgstr "An einem bestimmten Wochentag"
 
-#: ../src/crontabEditorHelper.py:239
+#: ../src/crontabEditorHelper.py:253
 msgid "Weekday:"
 msgstr "Wochentag:"
 
-#: ../src/crontabEditorHelper.py:244 ../src/gnome-schedule.glade.h:40
+#: ../src/crontabEditorHelper.py:258 ../src/gnome-schedule.glade.h:40
 msgid "In a step width"
 msgstr "In einer Schrittweite"
 
-#: ../src/crontabEditorHelper.py:246 ../src/gnome-schedule.glade.h:43
+#: ../src/crontabEditorHelper.py:260 ../src/gnome-schedule.glade.h:43
 msgid "Minutes:"
 msgstr "Minuten:"
 
-#: ../src/crontabEditorHelper.py:248
+#: ../src/crontabEditorHelper.py:262
 msgid "Hours:"
 msgstr "Stunden:"
 
-#: ../src/crontabEditorHelper.py:250
+#: ../src/crontabEditorHelper.py:264
 msgid "Days:"
 msgstr "Tage:"
 
-#: ../src/crontabEditorHelper.py:252
+#: ../src/crontabEditorHelper.py:266
 msgid "Months:"
 msgstr "Monate:"
 
-#: ../src/crontabEditorHelper.py:254
+#: ../src/crontabEditorHelper.py:268
 msgid "Weekdays:"
 msgstr "Wochentage:"
 

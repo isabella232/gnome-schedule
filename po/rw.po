@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-12-24 01:11+0000\n"
+"POT-Creation-Date: 2005-12-31 18:52+0000\n"
 "PO-Revision-Date: 2005-03-31 20:55-0700\n"
 "Last-Translator: Steve Murphy <murf@e-tools.com>\n"
 "Language-Team: Kinyarwanda <translation-team-rw@lists.sourceforge.net>\n"
@@ -91,7 +91,7 @@ msgstr "Ukwezi"
 msgid "Weekday"
 msgstr "UmunsiW'Icyumweru"
 
-#: ../src/crontab.py:138 ../src/crontab.py:143
+#: ../src/crontab.py:138 ../src/crontab.py:143 ../src/crontab.py:147
 #, fuzzy, python-format
 msgid "Must be between %(min)s and %(max)s"
 msgstr "hagati Na"
@@ -101,14 +101,9 @@ msgstr "hagati Na"
 msgid "%s is not a number"
 msgstr "%sni OYA a Umubare"
 
-#: ../src/crontab.py:147
-#, fuzzy, python-format
-msgid "Must be between %s and %s"
-msgstr "hagati Na"
-
 # filter/source\xsltdialog\xmlfilterdialogstrings.src:STR_DEFAULT_UI_NAME.text
 #: ../src/crontab.py:165 ../src/crontab.py:200 ../src/crontab.py:289
-#: ../src/crontabEditor.py:187 ../src/atEditor.py:109
+#: ../src/crontabEditor.py:187 ../src/atEditor.py:110
 msgid "Untitled"
 msgstr "Nta mutwe"
 
@@ -155,24 +150,24 @@ msgstr ""
 msgid "Use advanced"
 msgstr "Gukoresha Urwego rwo hejuru"
 
-#: ../src/crontabEditor.py:81 ../src/crontabEditorHelper.py:79
+#: ../src/crontabEditor.py:81 ../src/crontabEditorHelper.py:87
 #: ../src/gnome-schedule.glade.h:28
 #, fuzzy
 msgid "Every minute"
 msgstr "buri UMUNOTA"
 
-#: ../src/crontabEditor.py:82 ../src/crontabEditorHelper.py:85
+#: ../src/crontabEditor.py:82 ../src/crontabEditorHelper.py:93
 #, fuzzy
 msgid "Every hour"
 msgstr "buri ISAHA"
 
 # sw/source\ui\misc\linenum.src:TP_LINENUMBERING.FT_DIV_INTERVAL.text
-#: ../src/crontabEditor.py:83 ../src/crontabEditorHelper.py:91
+#: ../src/crontabEditor.py:83 ../src/crontabEditorHelper.py:99
 #, fuzzy
 msgid "Every day"
 msgstr "Buri"
 
-#: ../src/crontabEditor.py:84 ../src/crontabEditorHelper.py:97
+#: ../src/crontabEditor.py:84 ../src/crontabEditorHelper.py:105
 #, fuzzy
 msgid "Every month"
 msgstr "buri Ukwezi"
@@ -183,17 +178,17 @@ msgstr "buri Ukwezi"
 msgid "Every week"
 msgstr "Buri"
 
-#: ../src/crontabEditor.py:130 ../src/atEditor.py:111
+#: ../src/crontabEditor.py:130 ../src/atEditor.py:112
 #, fuzzy
 msgid "Create a New Scheduled Task"
 msgstr "a Gishya Igikorwa"
 
-#: ../src/crontabEditor.py:150 ../src/atEditor.py:142
+#: ../src/crontabEditor.py:150 ../src/atEditor.py:143
 #, fuzzy
 msgid "Edit a Scheduled Task"
 msgstr "a Igikorwa"
 
-#: ../src/crontabEditor.py:205 ../src/atEditor.py:315
+#: ../src/crontabEditor.py:205 ../src/atEditor.py:316
 #, fuzzy
 msgid "Don't use a preset"
 msgstr "Gukoresha a"
@@ -201,26 +196,26 @@ msgstr "Gukoresha a"
 #: ../src/crontabEditor.py:266
 #, fuzzy, python-format
 msgid ""
-"This is an invalid record! The problem could be at the %(field)s field. "
+"This is an invalid record! The problem could be in the %(field)s field. "
 "Reason: %(reason)s"
 msgstr "ni Sibyo Icyabitswe ku i Umwanya"
 
-#: ../src/crontabEditor.py:298
+#: ../src/crontabEditor.py:298 ../src/atEditor.py:286
 #, fuzzy
 msgid "The preset has not been saved"
 msgstr "OYA"
 
-#: ../src/crontabEditor.py:300
+#: ../src/crontabEditor.py:300 ../src/atEditor.py:288
 #, fuzzy
 msgid "To delete a preset, you first need to select one"
 msgstr "Gusiba a Itangira Kuri Guhitamo"
 
-#: ../src/crontabEditor.py:310
+#: ../src/crontabEditor.py:310 ../src/atEditor.py:299
 #, fuzzy
 msgid "To save a preset, you first have to choose a name for it"
 msgstr "Kubika a Itangira Kuri Guhitamo a Izina: kugirango"
 
-#: ../src/crontabEditor.py:320 ../src/atEditor.py:389
+#: ../src/crontabEditor.py:320 ../src/atEditor.py:390
 #, fuzzy
 msgid "Choose an Icon for this Scheduled Task"
 msgstr "Agashushondanga kugirango iyi Igikorwa"
@@ -231,147 +226,158 @@ msgstr "Agashushondanga kugirango iyi Igikorwa"
 msgid "command"
 msgstr "Icyo wifuza"
 
+#: ../src/crontabEditor.py:423 ../src/mainWindow.py:546 ../src/atEditor.py:514
+msgid "Could not display help"
+msgstr ""
+
 # sc/source\core\src\compiler.src:RID_SC_FUNCTION_NAMES.SC_OPCODE_GET_DAY_OF_WEEK.text
-#: ../src/crontabEditorHelper.py:103
+#: ../src/crontabEditorHelper.py:111
 #, fuzzy
 msgid "Every weekday"
 msgstr "UMUNSIICYUMWERU"
 
-#: ../src/crontabEditorHelper.py:155
+#: ../src/crontabEditorHelper.py:163
 msgid "Minute settings"
 msgstr ""
 
-#: ../src/crontabEditorHelper.py:156
+#: ../src/crontabEditorHelper.py:164
 #, fuzzy
 msgid "Edit Time Expression for minute"
 msgstr "Igihe imvugo kugirango"
 
-#: ../src/crontabEditorHelper.py:158
+#: ../src/crontabEditorHelper.py:166
 msgid "Hour settings"
 msgstr ""
 
-#: ../src/crontabEditorHelper.py:159
+#: ../src/crontabEditorHelper.py:167
 #, fuzzy
 msgid "Edit Time Expression for hour"
 msgstr "Igihe imvugo kugirango"
 
-#: ../src/crontabEditorHelper.py:161
+#: ../src/crontabEditorHelper.py:169
 #, fuzzy
 msgid "Day settings"
 msgstr "<B Igenamiterere B"
 
-#: ../src/crontabEditorHelper.py:162
+#: ../src/crontabEditorHelper.py:170
 #, fuzzy
 msgid "Edit Time Expression for day"
 msgstr "Igihe imvugo kugirango"
 
-#: ../src/crontabEditorHelper.py:164
+#: ../src/crontabEditorHelper.py:172
 msgid "Month settings"
 msgstr ""
 
-#: ../src/crontabEditorHelper.py:165
+#: ../src/crontabEditorHelper.py:173
 #, fuzzy
 msgid "Edit Time Expression for month"
 msgstr "Igihe imvugo kugirango"
 
 # 6515
-#: ../src/crontabEditorHelper.py:167
+#: ../src/crontabEditorHelper.py:175
 #, fuzzy
 msgid "Weekday settings"
 msgstr "UmunsiW'Icyumweru"
 
-#: ../src/crontabEditorHelper.py:168
+#: ../src/crontabEditorHelper.py:176
 #, fuzzy
 msgid "Edit Time Expression for weekday"
 msgstr "Igihe imvugo kugirango"
 
-#: ../src/crontabEditorHelper.py:182
+#: ../src/crontabEditorHelper.py:190
 #, fuzzy, python-format
 msgid "This is invalid. Reason: %s"
 msgstr "ni Sibyo"
 
 #. minute
-#: ../src/crontabEditorHelper.py:222 ../src/gnome-schedule.glade.h:15
+#: ../src/crontabEditorHelper.py:236 ../src/gnome-schedule.glade.h:15
 #, fuzzy
 msgid "At an exact minute"
 msgstr "buri UMUNOTA"
 
 # sc/source\core\src\compiler.src:RID_SC_FUNCTION_NAMES.SC_OPCODE_GET_MIN.text
-#: ../src/crontabEditorHelper.py:223 ../src/gnome-schedule.glade.h:42
+#: ../src/crontabEditorHelper.py:237 ../src/gnome-schedule.glade.h:42
 #, fuzzy
 msgid "Minute:"
 msgstr "UMUNOTA"
 
 #. hour
-#: ../src/crontabEditorHelper.py:226
+#: ../src/crontabEditorHelper.py:240
 msgid "At an exact hour"
 msgstr ""
 
 # sc/source\core\src\compiler.src:RID_SC_FUNCTION_NAMES.SC_OPCODE_GET_HOUR.text
-#: ../src/crontabEditorHelper.py:227
+#: ../src/crontabEditorHelper.py:241
 #, fuzzy
 msgid "Hour:"
 msgstr "ISAHA"
 
 #. day
-#: ../src/crontabEditorHelper.py:230
-msgid "At an exact day"
+#: ../src/crontabEditorHelper.py:244
+msgid "On a day"
 msgstr ""
 
-#: ../src/crontabEditorHelper.py:231
+#: ../src/crontabEditorHelper.py:245
 msgid "Day:"
 msgstr ""
 
+# #-#-#-#-#  sc.pot (PACKAGE VERSION)  #-#-#-#-#
+# sc/source\ui\src\scfuncs.src:RID_SC_FUNCTION_DESCRIPTIONS1.SC_OPCODE_GET_DATE.4.text
+# #-#-#-#-#  sc.pot (PACKAGE VERSION)  #-#-#-#-#
+# sc/source\ui\src\scfuncs.src:RID_SC_FUNCTION_DESCRIPTIONS1.SC_OPCODE_GDA_2.10.text
 #. month
-#: ../src/crontabEditorHelper.py:234
-msgid "At an exact month"
-msgstr ""
+#: ../src/crontabEditorHelper.py:248
+#, fuzzy
+msgid "In a month"
+msgstr "ukwezi"
 
 # sw/source\ui\utlui\initui.src:STR_AUTH_FIELD_MONTH.text
-#: ../src/crontabEditorHelper.py:235
+#: ../src/crontabEditorHelper.py:249
 #, fuzzy
 msgid "Month:"
 msgstr "Ukwezi"
 
+# sc/source\core\src\compiler.src:RID_SC_FUNCTION_NAMES.SC_OPCODE_GET_DAY_OF_WEEK.text
 #. weekday
-#: ../src/crontabEditorHelper.py:238
-msgid "At an exact weekday"
-msgstr ""
+#: ../src/crontabEditorHelper.py:252
+#, fuzzy
+msgid "On a weekday"
+msgstr "UMUNSIICYUMWERU"
 
 # 6515
-#: ../src/crontabEditorHelper.py:239
+#: ../src/crontabEditorHelper.py:253
 #, fuzzy
 msgid "Weekday:"
 msgstr "UmunsiW'Icyumweru"
 
-#: ../src/crontabEditorHelper.py:244 ../src/gnome-schedule.glade.h:40
+#: ../src/crontabEditorHelper.py:258 ../src/gnome-schedule.glade.h:40
 msgid "In a step width"
 msgstr ""
 
 # sc/source\core\src\compiler.src:RID_SC_FUNCTION_NAMES.SC_OPCODE_GET_MIN.text
-#: ../src/crontabEditorHelper.py:246 ../src/gnome-schedule.glade.h:43
+#: ../src/crontabEditorHelper.py:260 ../src/gnome-schedule.glade.h:43
 #, fuzzy
 msgid "Minutes:"
 msgstr "UMUNOTA"
 
 # sc/source\core\src\compiler.src:RID_SC_FUNCTION_NAMES.SC_OPCODE_GET_HOUR.text
-#: ../src/crontabEditorHelper.py:248
+#: ../src/crontabEditorHelper.py:262
 #, fuzzy
 msgid "Hours:"
 msgstr "ISAHA"
 
-#: ../src/crontabEditorHelper.py:250
+#: ../src/crontabEditorHelper.py:264
 msgid "Days:"
 msgstr ""
 
 # sw/source\ui\utlui\initui.src:STR_AUTH_FIELD_MONTH.text
-#: ../src/crontabEditorHelper.py:252
+#: ../src/crontabEditorHelper.py:266
 #, fuzzy
 msgid "Months:"
 msgstr "Ukwezi"
 
 # 6515
-#: ../src/crontabEditorHelper.py:254
+#: ../src/crontabEditorHelper.py:268
 #, fuzzy
 msgid "Weekdays:"
 msgstr "UmunsiW'Icyumweru"
@@ -618,7 +624,7 @@ msgstr "Inyandiko-porogaramu"
 
 #: ../src/gnome-schedule.glade.h:51
 #, fuzzy
-msgid "See \"man 5 crontab\" for informations about the crontab format."
+msgid "See \"man 5 crontab\" for information about the crontab format."
 msgstr "5 kugirango Ibyerekeye i Imiterere"
 
 # basctl/source\basicide\tbxctl.src:RID_TOOLBOX.SID_INSERT_SELECT.text
@@ -738,15 +744,10 @@ msgid "_Weekdays:"
 msgstr "UmunsiW'Icyumweru"
 
 #: ../src/gnome-schedule.py:61 ../src/scheduleapplet.py:64
-msgid "You need to install pyGTK or GTKv2, "
-msgstr ""
-
-#: ../src/gnome-schedule.py:62 ../src/scheduleapplet.py:65
-msgid "or set your PYTHONPATH correctly."
-msgstr ""
-
-#: ../src/gnome-schedule.py:63 ../src/scheduleapplet.py:66
-msgid "try: export PYTHONPATH= "
+msgid ""
+"You need to install pyGTK or GTKv2,\n"
+"or set your PYTHONPATH correctly.\n"
+"try: export PYTHONPATH= "
 msgstr ""
 
 # #-#-#-#-#  dbaccess.pot (PACKAGE VERSION)  #-#-#-#-#
@@ -1070,7 +1071,7 @@ msgstr "UMUNOTA S ISAHA S S Ukwezi S UMUNSIICYUMWERU S"
 msgid "Editing user: %s"
 msgstr "Ukoresha:"
 
-#: ../src/mainWindow.py:280 ../src/scheduleapplet.py:112
+#: ../src/mainWindow.py:280 ../src/scheduleapplet.py:116
 msgid "ERROR: Could not load icon"
 msgstr ""
 
@@ -1128,14 +1129,22 @@ msgstr "C"
 msgid "translator-credits"
 msgstr "Umusemuzi"
 
-#: ../src/scheduleapplet.py:128
+#: ../src/scheduleapplet.py:132
 msgid "ERROR: Could not load menu xml file"
 msgstr ""
 
-#: ../src/atEditor.py:516
+#: ../src/setuserWindow.py:84
+msgid "No such user"
+msgstr ""
+
+#: ../src/atEditor.py:526
 #, fuzzy, python-format
 msgid "This is an invalid record! The problem could be: %s"
 msgstr "ni Sibyo Icyabitswe"
+
+#, fuzzy
+#~ msgid "Must be between %s and %s"
+#~ msgstr "hagati Na"
 
 #, fuzzy
 #~ msgid "This software is distributed under the GPL. "
