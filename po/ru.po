@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-12-31 18:52+0000\n"
+"POT-Creation-Date: 2006-01-04 15:49+0000\n"
 "PO-Revision-Date: 2005-12-19 13:03+0400\n"
 "Last-Translator: Nickolay V. Shmyrev <nshmyrev@yandex.ru>\n"
 "Language-Team: Russian <gnome-cyr@gnome.org>\n"
@@ -183,7 +183,7 @@ msgstr "команда"
 
 #: ../src/crontabEditor.py:423 ../src/mainWindow.py:546 ../src/atEditor.py:514
 msgid "Could not display help"
-msgstr ""
+msgstr "Невозможно отобразить справку"
 
 #: ../src/crontabEditorHelper.py:111
 msgid "Every weekday"
@@ -616,6 +616,9 @@ msgid ""
 "or set your PYTHONPATH correctly.\n"
 "try: export PYTHONPATH= "
 msgstr ""
+"Вы должны установить pyGTK or GTKv2,\n"
+"или задать PYTHONPATH правильно.\n"
+"попробуйте: export PYTHONPATH= "
 
 #. Translators: Date format for expressions like 'January 21'. %B is month, %d is day number.
 #. Run the command 'man strftime' to read more about these and other available specifiers.
@@ -930,11 +933,11 @@ msgstr "Правка пользователя: %s"
 
 #: ../src/mainWindow.py:280 ../src/scheduleapplet.py:116
 msgid "ERROR: Could not load icon"
-msgstr ""
+msgstr "ОШИБКА: невозможно загрузить значок"
 
 #: ../src/mainWindow.py:290
 msgid "ERROR: Could not load glade file"
-msgstr ""
+msgstr "ОШИБКА: невозможно загрузить файл glade"
 
 #: ../src/mainWindow.py:342
 msgid "Icon"
@@ -983,11 +986,11 @@ msgstr "Nickolay V. Shmyrev <nshmyrev@yandex.ru>"
 
 #: ../src/scheduleapplet.py:132
 msgid "ERROR: Could not load menu xml file"
-msgstr ""
+msgstr "ОШИБКА: невозможно загрузить xml файл меню"
 
 #: ../src/setuserWindow.py:84
 msgid "No such user"
-msgstr ""
+msgstr "Нет такого пользователя"
 
 #: ../src/atEditor.py:526
 #, python-format

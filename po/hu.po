@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule.HEAD.hu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-12-20 03:15+0100\n"
+"POT-Creation-Date: 2006-01-04 15:49+0000\n"
 "PO-Revision-Date: 2005-12-20 21:52+0100\n"
 "Last-Translator: Gabor Kelemen <kelemeng@gnome.hu>\n"
 "Language-Team: Hungarian <gnome@gnome.hu>\n"
@@ -24,6 +24,20 @@ msgstr "Rendszerfeladatok kezelése"
 #: ../desktop/gnome-schedule.desktop.in.in.h:2
 msgid "Schedule"
 msgstr "Ütemező"
+
+#: ../servers/GNOME_GnomeSchedule.server.in.in.h:1
+#, fuzzy
+msgid "Configures your scheduled tasks"
+msgstr "Ütemezett feladatok beállítása"
+
+#: ../servers/GNOME_GnomeSchedule.server.in.in.h:2
+#, fuzzy
+msgid "Gnome schedule"
+msgstr "Gnome Schedule"
+
+#: ../servers/GNOME_GnomeSchedule.server.in.in.h:3
+msgid "System tools"
+msgstr ""
 
 #: ../src/at.py:283
 #, python-format
@@ -60,7 +74,7 @@ msgstr "Hónap"
 msgid "Weekday"
 msgstr "Hétköznap"
 
-#: ../src/crontab.py:138 ../src/crontab.py:143
+#: ../src/crontab.py:138 ../src/crontab.py:143 ../src/crontab.py:147
 #, python-format
 msgid "Must be between %(min)s and %(max)s"
 msgstr "%(min)s és %(max)s között kell lennie"
@@ -70,13 +84,8 @@ msgstr "%(min)s és %(max)s között kell lennie"
 msgid "%s is not a number"
 msgstr "%s nem egy szám"
 
-#: ../src/crontab.py:147
-#, python-format
-msgid "Must be between %s and %s"
-msgstr "%s és %s között kell lennie"
-
 #: ../src/crontab.py:165 ../src/crontab.py:200 ../src/crontab.py:289
-#: ../src/crontabEditor.py:187 ../src/atEditor.py:109
+#: ../src/crontabEditor.py:187 ../src/atEditor.py:110
 msgid "Untitled"
 msgstr "Névtelen"
 
@@ -113,20 +122,20 @@ msgstr "HIBA: A crontab rekord feldolgozása meghiúsult"
 msgid "Use advanced"
 msgstr "Haladó használat"
 
-#: ../src/crontabEditor.py:81 ../src/crontabEditorHelper.py:79
+#: ../src/crontabEditor.py:81 ../src/crontabEditorHelper.py:87
 #: ../src/gnome-schedule.glade.h:28
 msgid "Every minute"
 msgstr "Minden percben"
 
-#: ../src/crontabEditor.py:82 ../src/crontabEditorHelper.py:85
+#: ../src/crontabEditor.py:82 ../src/crontabEditorHelper.py:93
 msgid "Every hour"
 msgstr "Minden órában"
 
-#: ../src/crontabEditor.py:83 ../src/crontabEditorHelper.py:91
+#: ../src/crontabEditor.py:83 ../src/crontabEditorHelper.py:99
 msgid "Every day"
 msgstr "Minden nap"
 
-#: ../src/crontabEditor.py:84 ../src/crontabEditorHelper.py:97
+#: ../src/crontabEditor.py:84 ../src/crontabEditorHelper.py:105
 msgid "Every month"
 msgstr "Minden hónapban"
 
@@ -134,161 +143,170 @@ msgstr "Minden hónapban"
 msgid "Every week"
 msgstr "Minden héten"
 
-#: ../src/crontabEditor.py:130 ../src/atEditor.py:111
+#: ../src/crontabEditor.py:130 ../src/atEditor.py:112
 msgid "Create a New Scheduled Task"
 msgstr "Új ütemezett feladat létrehozása"
 
-#: ../src/crontabEditor.py:150 ../src/atEditor.py:142
+#: ../src/crontabEditor.py:150 ../src/atEditor.py:143
 msgid "Edit a Scheduled Task"
 msgstr "Ütemezett feladat szerkesztése"
 
-#: ../src/crontabEditor.py:205 ../src/atEditor.py:315
+#: ../src/crontabEditor.py:205 ../src/atEditor.py:316
 msgid "Don't use a preset"
 msgstr "Ne használjon előre beállított értéket"
 
 #: ../src/crontabEditor.py:266
-#, python-format
+#, fuzzy, python-format
 msgid ""
-"This is an invalid record! The problem could be at the %(field)s field. "
+"This is an invalid record! The problem could be in the %(field)s field. "
 "Reason: %(reason)s"
-msgstr "Ez egy érvénytelen rekord! A hiba a(z) %(field)s mezőnél lehet. Ok: %(reason)s"
+msgstr ""
+"Ez egy érvénytelen rekord! A hiba a(z) %(field)s mezőnél lehet. Ok: %(reason)"
+"s"
 
-#: ../src/crontabEditor.py:298
+#: ../src/crontabEditor.py:298 ../src/atEditor.py:286
 msgid "The preset has not been saved"
 msgstr "A beállítás nincs még mentve"
 
-#: ../src/crontabEditor.py:300
+#: ../src/crontabEditor.py:300 ../src/atEditor.py:288
 msgid "To delete a preset, you first need to select one"
 msgstr "Először válassza ki a törlendő beállítást"
 
-#: ../src/crontabEditor.py:310
+#: ../src/crontabEditor.py:310 ../src/atEditor.py:299
 msgid "To save a preset, you first have to choose a name for it"
 msgstr "Beállítás mentéséhez először adjon neki nevet"
 
-#: ../src/crontabEditor.py:320 ../src/atEditor.py:389
+#: ../src/crontabEditor.py:320 ../src/atEditor.py:390
 msgid "Choose an Icon for this Scheduled Task"
 msgstr "Válasszon ikont ehhez az ütemezett feladathoz"
 
-#: ../src/crontabEditor.py:380
+#: ../src/crontabEditor.py:385
 msgid "command"
 msgstr "parancs"
 
-#: ../src/crontabEditorHelper.py:103
+#: ../src/crontabEditor.py:423 ../src/mainWindow.py:546 ../src/atEditor.py:514
+msgid "Could not display help"
+msgstr ""
+
+#: ../src/crontabEditorHelper.py:111
 msgid "Every weekday"
 msgstr "Minden hétköznap"
 
-#: ../src/crontabEditorHelper.py:155
+#: ../src/crontabEditorHelper.py:163
 msgid "Minute settings"
 msgstr "Perc beállítások"
 
-#: ../src/crontabEditorHelper.py:156
+#: ../src/crontabEditorHelper.py:164
 msgid "Edit Time Expression for minute"
 msgstr "Időkifejezés szerkesztése a percekhez"
 
-#: ../src/crontabEditorHelper.py:158
+#: ../src/crontabEditorHelper.py:166
 msgid "Hour settings"
 msgstr "Óra beállításai"
 
-#: ../src/crontabEditorHelper.py:159
+#: ../src/crontabEditorHelper.py:167
 msgid "Edit Time Expression for hour"
 msgstr "Időkifejezés szerkesztése az órákhoz"
 
-#: ../src/crontabEditorHelper.py:161
+#: ../src/crontabEditorHelper.py:169
 msgid "Day settings"
 msgstr "Nap beállításai"
 
-#: ../src/crontabEditorHelper.py:162
+#: ../src/crontabEditorHelper.py:170
 msgid "Edit Time Expression for day"
 msgstr "Időkifejezés szerkesztése a napokhoz"
 
-#: ../src/crontabEditorHelper.py:164
+#: ../src/crontabEditorHelper.py:172
 msgid "Month settings"
 msgstr "Hónap beállításai"
 
-#: ../src/crontabEditorHelper.py:165
+#: ../src/crontabEditorHelper.py:173
 msgid "Edit Time Expression for month"
 msgstr "Időkifejezés szerkesztése a hónapokhoz"
 
-#: ../src/crontabEditorHelper.py:167
+#: ../src/crontabEditorHelper.py:175
 msgid "Weekday settings"
 msgstr "Hétköznap beállításai"
 
-#: ../src/crontabEditorHelper.py:168
+#: ../src/crontabEditorHelper.py:176
 msgid "Edit Time Expression for weekday"
 msgstr "Időkifejezés szerkesztése a hétköznapokhoz"
 
-#: ../src/crontabEditorHelper.py:182
+#: ../src/crontabEditorHelper.py:190
 #, python-format
 msgid "This is invalid. Reason: %s"
 msgstr "Ez érvénytelen. Ok: %s"
 
 #. minute
-#: ../src/crontabEditorHelper.py:222 ../src/gnome-schedule.glade.h:15
+#: ../src/crontabEditorHelper.py:236 ../src/gnome-schedule.glade.h:15
 msgid "At an exact minute"
 msgstr "Egy adott percben"
 
-#: ../src/crontabEditorHelper.py:223 ../src/gnome-schedule.glade.h:42
+#: ../src/crontabEditorHelper.py:237 ../src/gnome-schedule.glade.h:42
 msgid "Minute:"
 msgstr "Perc:"
 
 #. hour
-#: ../src/crontabEditorHelper.py:226
+#: ../src/crontabEditorHelper.py:240
 msgid "At an exact hour"
 msgstr "Egy adott órában"
 
-#: ../src/crontabEditorHelper.py:227
+#: ../src/crontabEditorHelper.py:241
 msgid "Hour:"
 msgstr "Óra:"
 
 #. day
-#: ../src/crontabEditorHelper.py:230
-msgid "At an exact day"
+#: ../src/crontabEditorHelper.py:244
+#, fuzzy
+msgid "On a day"
 msgstr "Egy adott napon"
 
-#: ../src/crontabEditorHelper.py:231
+#: ../src/crontabEditorHelper.py:245
 msgid "Day:"
 msgstr "Nap:"
 
 #. month
-#: ../src/crontabEditorHelper.py:234
-msgid "At an exact month"
+#: ../src/crontabEditorHelper.py:248
+#, fuzzy
+msgid "In a month"
 msgstr "Egy adott hónapban"
 
-#: ../src/crontabEditorHelper.py:235
+#: ../src/crontabEditorHelper.py:249
 msgid "Month:"
 msgstr "Hónap:"
 
 #. weekday
-#: ../src/crontabEditorHelper.py:238
-msgid "At an exact weekday"
-msgstr "Egy adott hétköznapon"
+#: ../src/crontabEditorHelper.py:252
+#, fuzzy
+msgid "On a weekday"
+msgstr "hétköznap"
 
-#: ../src/crontabEditorHelper.py:239
+#: ../src/crontabEditorHelper.py:253
 msgid "Weekday:"
 msgstr "Hétköznap:"
 
 # fixme megnézni miez, jóez?
-#: ../src/crontabEditorHelper.py:244 ../src/gnome-schedule.glade.h:40
+#: ../src/crontabEditorHelper.py:258 ../src/gnome-schedule.glade.h:40
 msgid "In a step width"
 msgstr "Egy lépés szélességben"
 
-#: ../src/crontabEditorHelper.py:246 ../src/gnome-schedule.glade.h:43
+#: ../src/crontabEditorHelper.py:260 ../src/gnome-schedule.glade.h:43
 msgid "Minutes:"
 msgstr "Perc:"
 
-#: ../src/crontabEditorHelper.py:248
+#: ../src/crontabEditorHelper.py:262
 msgid "Hours:"
 msgstr "Óra:"
 
-#: ../src/crontabEditorHelper.py:250
+#: ../src/crontabEditorHelper.py:264
 msgid "Days:"
 msgstr "Nap:"
 
-#: ../src/crontabEditorHelper.py:252
+#: ../src/crontabEditorHelper.py:266
 msgid "Months:"
 msgstr "Hónap:"
 
-#: ../src/crontabEditorHelper.py:254
+#: ../src/crontabEditorHelper.py:268
 msgid "Weekdays:"
 msgstr "Hétköznap:"
 
@@ -310,7 +328,8 @@ msgstr "_Feladatok kezelése"
 
 #: ../src/gnome-schedule.glade.h:1
 msgid "<b>Choose the user whose tasks you want to modify</b>"
-msgstr "<b>Válassza ki a felhasználót, akinek a feladatait módosítani kívánja</b>"
+msgstr ""
+"<b>Válassza ki a felhasználót, akinek a feladatait módosítani kívánja</b>"
 
 #: ../src/gnome-schedule.glade.h:2
 msgid "<b>Date and Time Settings</b>"
@@ -382,7 +401,8 @@ msgstr "Válasszon egy ikont ehhez az ütemezett feladathoz"
 
 #: ../src/gnome-schedule.glade.h:20
 msgid "Choose the user whose tasks you want to modify"
-msgstr "Válassza ki a felhasználót, akinek az ütemezett feladatait módosítani kívánja"
+msgstr ""
+"Válassza ki a felhasználót, akinek az ütemezett feladatait módosítani kívánja"
 
 #: ../src/gnome-schedule.glade.h:21
 msgid "Co_mmand:"
@@ -414,7 +434,8 @@ msgstr "Ütemezett feladat szerkesztése"
 
 #: ../src/gnome-schedule.glade.h:29
 msgid "Execution at a specific minute, hour, day, weekday or month."
-msgstr "Végrehajtás egy adott percben, órában, napon, hétköznapon vagy hónapban."
+msgstr ""
+"Végrehajtás egy adott percben, órában, napon, hétköznapon vagy hónapban."
 
 #: ../src/gnome-schedule.glade.h:30
 msgid ""
@@ -497,7 +518,8 @@ msgid "Scri_pt:"
 msgstr "_Parancsfájl:"
 
 #: ../src/gnome-schedule.glade.h:51
-msgid "See \"man 5 crontab\" for informations about the crontab format."
+#, fuzzy
+msgid "See \"man 5 crontab\" for information about the crontab format."
 msgstr ""
 "A crontab formátumáról szóló információkért lásd a \"man 5 crontab\" "
 "kézikönyvoldalt."
@@ -596,17 +618,12 @@ msgstr "_Nézet"
 msgid "_Weekdays:"
 msgstr "_Hétköznapok:"
 
-#: ../src/gnome-schedule.py:61 ../src/scheduleapplet.py:63
-msgid "You need to install pyGTK or GTKv2, "
-msgstr "Telepítenie kell a pyGTK vagy a GTKv2 egyikét,"
-
-#: ../src/gnome-schedule.py:62 ../src/scheduleapplet.py:64
-msgid "or set your PYTHONPATH correctly."
-msgstr "vagy helyesen kell beállítania a PYTHONPATH környezeti változót."
-
-#: ../src/gnome-schedule.py:63 ../src/scheduleapplet.py:65
-msgid "try: export PYTHONPATH= "
-msgstr "próbálja a következő parancsot: export PYTHONPATH= "
+#: ../src/gnome-schedule.py:61 ../src/scheduleapplet.py:64
+msgid ""
+"You need to install pyGTK or GTKv2,\n"
+"or set your PYTHONPATH correctly.\n"
+"try: export PYTHONPATH= "
+msgstr ""
 
 #. Translators: Date format for expressions like 'January 21'. %B is month, %d is day number.
 #. Run the command 'man strftime' to read more about these and other available specifiers.
@@ -724,8 +741,10 @@ msgstr "Minden év %(date)s napján minden óra %(minute)s percében"
 
 #: ../src/lang.py:204
 #, python-format
-msgid "Every year on %(date)s at every minute between %(time_from)s and %(time_to)s"
-msgstr "Minden év %(date)s napján minden percben %(time_from)s és %(time_to)s között"
+msgid ""
+"Every year on %(date)s at every minute between %(time_from)s and %(time_to)s"
+msgstr ""
+"Minden év %(date)s napján minden percben %(time_from)s és %(time_to)s között"
 
 #: ../src/lang.py:206
 #, python-format
@@ -749,8 +768,10 @@ msgstr "Minden %(weekday)s minden órájának %(minute)s percében "
 
 #: ../src/lang.py:217
 #, python-format
-msgid "On every %(weekday)s at every minute between %(time_from)s and %(time_to)s"
-msgstr "Minden %(weekday)s minden percében  %(time_from)s és %(time_to)s között"
+msgid ""
+"On every %(weekday)s at every minute between %(time_from)s and %(time_to)s"
+msgstr ""
+"Minden %(weekday)s minden percében  %(time_from)s és %(time_to)s között"
 
 #: ../src/lang.py:219
 #, python-format
@@ -759,15 +780,18 @@ msgstr "Minden %(weekday)s %(time)s-kor"
 
 #: ../src/lang.py:224
 #, python-format
-msgid "On day %(monthday)s of every month and every %(weekday)s at every full hour"
+msgid ""
+"On day %(monthday)s of every month and every %(weekday)s at every full hour"
 msgstr ""
 "Minden hónap %(monthday)s napján és minden %(weekday)s nap minden egész "
 "órájában"
 
 #: ../src/lang.py:226
 #, python-format
-msgid "On day %(monthday)s of every month and every %(weekday)s at every minute"
-msgstr "Minden hónap %(monthday)s napján és minden %(weekday)s nap minden percében"
+msgid ""
+"On day %(monthday)s of every month and every %(weekday)s at every minute"
+msgstr ""
+"Minden hónap %(monthday)s napján és minden %(weekday)s nap minden percében"
 
 #: ../src/lang.py:228
 #, python-format
@@ -790,7 +814,8 @@ msgstr ""
 #: ../src/lang.py:232
 #, python-format
 msgid "On day %(monthday)s of every month and every %(weekday)s at %(time)s"
-msgstr "Minden hónap %(monthday)s napján és minden %(weekday)s napon %(time)s-kor"
+msgstr ""
+"Minden hónap %(monthday)s napján és minden %(weekday)s napon %(time)s-kor"
 
 #: ../src/lang.py:237
 #, python-format
@@ -805,7 +830,8 @@ msgstr "%(month)s hónap minden %(weekday)s napjának minden percében"
 #: ../src/lang.py:241
 #, python-format
 msgid "On every %(weekday)s in %(month)s at minute %(minute)s of every hour"
-msgstr "%(month)s hónap minden %(weekday)s napján minden óra %(minute)s percében"
+msgstr ""
+"%(month)s hónap minden %(weekday)s napján minden óra %(minute)s percében"
 
 #: ../src/lang.py:243
 #, python-format
@@ -832,7 +858,8 @@ msgstr ""
 
 #: ../src/lang.py:252
 #, python-format
-msgid "On every %(weekday)s in %(month)s and on %(date)s every year at every minute"
+msgid ""
+"On every %(weekday)s in %(month)s and on %(date)s every year at every minute"
 msgstr ""
 "Minden %(weekday)s napon %(month)s hónapban és minden év %(date)s napjának "
 "minden percében"
@@ -857,7 +884,8 @@ msgstr ""
 
 #: ../src/lang.py:258
 #, python-format
-msgid "On every %(weekday)s in %(month)s and on %(date)s every year at %(time)s"
+msgid ""
+"On every %(weekday)s in %(month)s and on %(date)s every year at %(time)s"
 msgstr ""
 "Minden %(weekday)s napon %(month)s hónapban és minden év %(date)s napján %"
 "(time)s-kor"
@@ -913,58 +941,91 @@ msgstr "hétköznap: %s"
 msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 msgstr "Ekkor: %(minute)s, %(hour)s, %(monthday)s, %(month)s %(weekday)s"
 
-#: ../src/mainWindow.py:193 ../src/mainWindow.py:295
+#: ../src/mainWindow.py:205 ../src/mainWindow.py:307
 #, python-format
 msgid "Editing user: %s"
 msgstr "Felhasználó szerkesztése: %s"
 
-#: ../src/mainWindow.py:330
+#: ../src/mainWindow.py:280 ../src/scheduleapplet.py:116
+msgid "ERROR: Could not load icon"
+msgstr ""
+
+#: ../src/mainWindow.py:290
+msgid "ERROR: Could not load glade file"
+msgstr ""
+
+#: ../src/mainWindow.py:342
 msgid "Icon"
 msgstr "Ikon"
 
-#: ../src/mainWindow.py:335 ../src/mainWindow.py:368
+#: ../src/mainWindow.py:347 ../src/mainWindow.py:380
 msgid "Type"
 msgstr "Típus"
 
-#: ../src/mainWindow.py:339 ../src/mainWindow.py:364
+#: ../src/mainWindow.py:351 ../src/mainWindow.py:376
 msgid "Title"
 msgstr "Cím"
 
-#: ../src/mainWindow.py:343 ../src/mainWindow.py:355
+#: ../src/mainWindow.py:355 ../src/mainWindow.py:367
 msgid "Date and Time Settings"
 msgstr "Dátum és idő beállításai"
 
-#: ../src/mainWindow.py:347 ../src/mainWindow.py:359
+#: ../src/mainWindow.py:359 ../src/mainWindow.py:371
 msgid "Preview"
 msgstr "Előnézet"
 
-#: ../src/mainWindow.py:399 ../src/mainWindow.py:458
+#: ../src/mainWindow.py:411 ../src/mainWindow.py:470
 msgid "Please select a task"
 msgstr "Kérem válasszon egy feladatot"
 
-#: ../src/mainWindow.py:406
+#: ../src/mainWindow.py:418
 msgid "Do you want to delete this task?"
 msgstr "Törölni kívánja ezt a feladatot?"
 
-#. TODO: should be using gtkAboutDialog
-#: ../src/mainWindow.py:501
+#: ../src/mainWindow.py:513
+#, fuzzy
+msgid "About Gnome Schedule"
+msgstr "Gnome Schedule"
+
+#: ../src/mainWindow.py:514
 msgid "Gnome Schedule"
 msgstr "Gnome Schedule"
 
-#: ../src/mainWindow.py:503
+#: ../src/mainWindow.py:516
 msgid "Copyright (c) 2004-2005 Gaute Hope."
 msgstr "Copyright © 2004-2005 Gaute Hope."
 
-#: ../src/mainWindow.py:504
-msgid "This software is distributed under the GPL. "
-msgstr "Ez a szoftver a GPL feltételei szerint terjeszthető"
-
-#: ../src/mainWindow.py:508
+#: ../src/mainWindow.py:528
 msgid "translator-credits"
 msgstr "Kelemen Gábor <kelemeng@gnome.hu>"
 
-#: ../src/atEditor.py:509
+#: ../src/scheduleapplet.py:132
+msgid "ERROR: Could not load menu xml file"
+msgstr ""
+
+#: ../src/setuserWindow.py:84
+msgid "No such user"
+msgstr ""
+
+#: ../src/atEditor.py:526
 #, python-format
 msgid "This is an invalid record! The problem could be: %s"
 msgstr "Ez egy érvénytelen rekord! A hiba a következő lehet: %s "
 
+#~ msgid "Must be between %s and %s"
+#~ msgstr "%s és %s között kell lennie"
+
+#~ msgid "At an exact weekday"
+#~ msgstr "Egy adott hétköznapon"
+
+#~ msgid "You need to install pyGTK or GTKv2, "
+#~ msgstr "Telepítenie kell a pyGTK vagy a GTKv2 egyikét,"
+
+#~ msgid "or set your PYTHONPATH correctly."
+#~ msgstr "vagy helyesen kell beállítania a PYTHONPATH környezeti változót."
+
+#~ msgid "try: export PYTHONPATH= "
+#~ msgstr "próbálja a következő parancsot: export PYTHONPATH= "
+
+#~ msgid "This software is distributed under the GPL. "
+#~ msgstr "Ez a szoftver a GPL feltételei szerint terjeszthető"

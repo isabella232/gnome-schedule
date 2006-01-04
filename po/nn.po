@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-12-31 18:52+0000\n"
+"POT-Creation-Date: 2006-01-04 15:49+0000\n"
 "PO-Revision-Date: 2005-08-16 12:37+0200\n"
 "Last-Translator: Gaute Hope <eg@gaute.eu.org>\n"
 "Language-Team: Norwegian/Nynorsk <nn@li.org>\n"
@@ -160,6 +160,7 @@ msgstr "Ikkje bruk eit førhandssett oppsett"
 
 # python-format
 #: ../src/crontabEditor.py:266
+#, python-format
 msgid ""
 "This is an invalid record! The problem could be in the %(field)s field. "
 "Reason: %(reason)s"
@@ -846,6 +847,7 @@ msgstr "På %(monthday)s av kvar månad og kvar %(weekday)s på %(time)s"
 
 # python-format
 #: ../src/lang.py:237
+#, fuzzy, python-format
 msgid "On every %(weekday)s in %(month)s at every full hour"
 msgstr "På kvar %(weekday)s i %(month) på kvar fulle time"
 
