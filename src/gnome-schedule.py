@@ -1,5 +1,3 @@
-#!/usr/bin/python
-
 # gnome-schedule.py - Contains the startup script for gnome-schedule
 # Copyright (C) 2004, 2005 Philip Van Hoof <me at pvanhoof dot be>
 # Copyright (C) 2004, 2005 Gaute Hope <eg at gaute dot eu dot org>

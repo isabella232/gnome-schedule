@@ -1,5 +1,3 @@
-#!/usr/bin/python
-
 # scheduleapplet.py: contains code for the gnome-schedule applet
 # Copyright (C) 2004, 2005 Gaute Hope <eg at gaute dot eu dot org>
 # Copyright (C) 2004, 2005 Kristof Vansant <de_lupus at pandora dot be>
