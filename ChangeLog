@@ -1,6 +1,7 @@
 2005-01-06  Gaute Hope  <eg@gaute.vetsj.com>
 
 	* Removed the shebangs from scheduleapplet.py and gnome-schedule.py
+	* configure.ac: Checking for gnome-python>=2.12.0
 	
 2005-12-31  Gaute Hope  <eg@gaute.vetsj.com>
 

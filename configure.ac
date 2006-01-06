@@ -40,6 +40,9 @@ else
   AC_MSG_ERROR([You need to have python libglade bindings installed])
 fi
 
+PKG_CHECK_MODULES(GNOMEPYTHON, gnome-python-2.0 >= 2.12.0)
+
+
 AC_PATH_PROG(CRONTAB_CONFIG, crontab, no)
 if test x$CRONTAB_CONFIG = xno; then
   AC_MSG_ERROR(Please install the application crontab)
