@@ -2,7 +2,9 @@
 
 	* Removed the shebangs from scheduleapplet.py and gnome-schedule.py
 	* configure.ac: Checking for gnome-python>=2.12.0
-	
+	* configure.ac: removed useless second check for python, removed PYTHON_CONFIG variable
+	* updated files using PYTHON_CONFIG to be using PYTHON
+		
 2005-12-31  Gaute Hope  <eg@gaute.vetsj.com>
 
 	* tag for RELEASE-1-0-0-BRANCH

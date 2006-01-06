@@ -68,12 +68,6 @@ if test x$BATCH_CONFIG = xno; then
   AC_MSG_ERROR(Please install the application batch)
 fi
 
-
-AC_PATH_PROG(PYTHON_CONFIG, python, no)
-if test x$PYTHON_CONFIG = xno; then
-  AC_MSG_ERROR(Please install the application python)
-fi
-
 AC_PATH_PROG(SU_CONFIG, su, no)
 if test x$BATCH_CONFIG = xno; then
   AC_MSG_ERROR(Please install the application su)

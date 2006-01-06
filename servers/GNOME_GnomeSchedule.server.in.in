@@ -1,6 +1,6 @@
         <oaf_info>
         <oaf_server iid="OAFIID:GNOME_GnomeSchedule_Factory"
-                    type="exe" location="@PYTHON_CONFIG@ @prefix@/share/gnome-schedule/scheduleapplet.py">
+                    type="exe" location="@PYTHON@ @prefix@/share/gnome-schedule/scheduleapplet.py">
 
                 <oaf_attribute name="repo_ids" type="stringv">
                         <item value="IDL:Bonobo/GenericFactory:1.0"/>
