@@ -517,6 +517,8 @@ class main:
  		#dlg.set_comments ()
  		#dlg.set_license ()
  		dlg.set_website ("http://gnome-schedule.sourceforge.net")
+		gtk.about_dialog_set_url_hook(lambda dlg, url: url_show("http:/ /gnome-schedule.sourceforge.net"))
+		dlg.set_website_label("http://gnome-schedule.sourceforge.net")
  		dlg.set_authors (
  			["Philip Van Hoof <pvanhoof at gnome dot org>",
  			"Kristof Vansant <de_lupus at pandora dot be>",

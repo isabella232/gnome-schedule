@@ -1,3 +1,7 @@
+2005-01-07  Gaute Hope  <eg@gaute.vetsj.com>
+
+	* Applied patch from Jeff Schroeder <jeff.schroeder2@us.army.mil>, fixing unclickable url in about dialog
+	
 2005-01-06  Gaute Hope  <eg@gaute.vetsj.com>
 
 	* Removed the shebangs from scheduleapplet.py and gnome-schedule.py
