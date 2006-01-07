@@ -37,7 +37,14 @@ class At:
 		self.root =	root
 		self.set_rights(user,uid,gid)
 
-		self.atRecordRegex = re.compile('([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)')
+		#
+		# Gaute, can you check this new regex on the systems you own?
+		#
+
+		# self.atRecordRegex = re.compile('([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)')
+
+		self.atRecordRegex = re.compile('([^\s]+)\s(.*)(..:..:..\s....)\s([^\s]+)\s([^\s]+)')
+
 		self.atRecordRegexAdd = re.compile('([^\s]+)\s([^\s]+)\s')
 		self.atRecordRegexAdded = re.compile('[^\s]+\s([0-9]+)\sat')
 		
@@ -56,6 +63,7 @@ class At:
 			if len (line) > 1 and line[0] != '#':
 				m = self.atRecordRegex.match(line)
 				if m != None:
+
 					# print m.groups()
 					job_id = m.groups ()[0]
 					date = m.groups ()[1]
@@ -299,7 +307,8 @@ class At:
 					data.append([title, timestring_show, preview, lines, int(job_id), timestring, self, icon, date, class_id, user, time, _("Once"), "at"])
 
 				#print _("added %(id)s") % { "id": job_id	}
-			
+			else:
+				print _("Warning: a line in atq's output didn't parse")	
 		return data
 
 	

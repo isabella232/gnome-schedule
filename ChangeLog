@@ -1,3 +1,7 @@
+2006-01-07  Philip Van Hoof  <pvanhoof@gnome.org>
+
+	* src/at.py: Fixed atq parsing on Ubuntu Dapper
+	
 2005-01-07  Gaute Hope  <eg@gaute.vetsj.com>
 
 	* Applied patch from Jeff Schroeder <jeff.schroeder2@us.army.mil>, fixing unclickable url in about dialog
