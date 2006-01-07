@@ -348,7 +348,7 @@ class main:
 			col.set_resizable (True)
 			self.treeview.append_column(col)
 
-			col = gtk.TreeViewColumn(_("Title"), gtk.CellRendererText(), text=0)
+			col = gtk.TreeViewColumn(_("Description"), gtk.CellRendererText(), text=0)
 			col.set_resizable (True)
 			self.treeview.append_column(col)
 
@@ -373,7 +373,7 @@ class main:
 			col.set_expand (True)
 			self.treeview.append_column(col)
 
-			col = gtk.TreeViewColumn(_("Title"), gtk.CellRendererText(), text=0)
+			col = gtk.TreeViewColumn(_("Description"), gtk.CellRendererText(), text=0)
 			col.set_resizable (True)
 			self.treeview.append_column(col)
 
