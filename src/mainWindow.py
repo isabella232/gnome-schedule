@@ -24,6 +24,7 @@ import gobject
 
 # TODO: gnome specific
 import gnome
+from gnome import url_show
 
 #python modules
 import os
@@ -508,8 +509,13 @@ class main:
 
 
  	#about box
+ 	def open_url (self, *args):
+ 		url_show("http://gnome-schedule.sourceforge.net")
+ 		
  	def on_about_menu_activate (self, *args):
- 		dlg = gtk.AboutDialog ()
+ 	
+		gtk.about_dialog_set_url_hook(self.open_url, "bogusbar")
+	 	dlg = gtk.AboutDialog ()
  		dlg.set_title (_("About Gnome Schedule"))
  		dlg.set_name (_("Gnome Schedule"))
  		dlg.set_version (config.getVersion())
@@ -517,8 +523,7 @@ class main:
  		#dlg.set_comments ()
  		#dlg.set_license ()
  		dlg.set_website ("http://gnome-schedule.sourceforge.net")
-		gtk.about_dialog_set_url_hook(lambda dlg, url: url_show("http:/ /gnome-schedule.sourceforge.net"))
-		dlg.set_website_label("http://gnome-schedule.sourceforge.net")
+ 		dlg.set_website_label("http://gnome-schedule.sourceforge.net")
  		dlg.set_authors (
  			["Philip Van Hoof <pvanhoof at gnome dot org>",
  			"Kristof Vansant <de_lupus at pandora dot be>",
