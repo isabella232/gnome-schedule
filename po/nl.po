@@ -2,14 +2,14 @@
 # Copyright (C) 2004 Free Software Foundation, Inc.
 # This file is distributed under the same license as the gnome-schedule package.
 # Elros Cyriatan <cyriatan@fastmail.fm>, 2004.
-# Tino Meinen <a.t.meinen@chello.nl>, 2005.
+# Tino Meinen <a.t.meinen@chello.nl>, 2005, 2006.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-12-29 03:20+0100\n"
-"PO-Revision-Date: 2005-12-29 06:27+0100\n"
+"POT-Creation-Date: 2006-01-12 11:19+0100\n"
+"PO-Revision-Date: 2006-01-12 14:22+0100\n"
 "Last-Translator: Tino Meinen <a.t.meinen@chello.nl>\n"
 "Language-Team: Dutch <vertaling@vrijschrift.org>\n"
 "MIME-Version: 1.0\n"
@@ -36,20 +36,25 @@ msgstr "Gnome taakplanning"
 msgid "System tools"
 msgstr "Systeemgereedschap"
 
-#: ../src/at.py:283
+#: ../src/at.py:294
 #, python-format
 msgid "DANGEROUS PARSE: %(preview)s"
 msgstr "GEVAARLIJKE ONTLEDING: %(preview)s"
 
 #. TODO: localize time and date formats
-#: ../src/at.py:289
+#: ../src/at.py:300
 #, python-format
 msgid "On %(date)s at %(time)s"
 msgstr "Op %(date)s om %(time)s"
 
-#: ../src/at.py:294 ../src/at.py:299
+#: ../src/at.py:305 ../src/at.py:310
 msgid "Once"
 msgstr "Eenmalig"
+
+# was/werd niet verwerkt
+#: ../src/at.py:314
+msgid "Warning: a line in atq's output didn't parse"
+msgstr "Let op: een regel in atq's uitvoer kon niet worden verwerkt"
 
 #: ../src/crontab.py:49
 msgid "Minute"
@@ -82,7 +87,7 @@ msgid "%s is not a number"
 msgstr "%s is geen getal"
 
 #: ../src/crontab.py:165 ../src/crontab.py:200 ../src/crontab.py:289
-#: ../src/crontabEditor.py:187 ../src/atEditor.py:109
+#: ../src/crontabEditor.py:187 ../src/atEditor.py:110
 msgid "Untitled"
 msgstr "Naamloos"
 
@@ -119,20 +124,20 @@ msgstr "FOUT: verwerken van crontab-record is mislukt"
 msgid "Use advanced"
 msgstr "Geavanceerd gebruiken"
 
-#: ../src/crontabEditor.py:81 ../src/crontabEditorHelper.py:79
+#: ../src/crontabEditor.py:81 ../src/crontabEditorHelper.py:87
 #: ../src/gnome-schedule.glade.h:28
 msgid "Every minute"
 msgstr "Elke minuut"
 
-#: ../src/crontabEditor.py:82 ../src/crontabEditorHelper.py:85
+#: ../src/crontabEditor.py:82 ../src/crontabEditorHelper.py:93
 msgid "Every hour"
 msgstr "Elk uur"
 
-#: ../src/crontabEditor.py:83 ../src/crontabEditorHelper.py:91
+#: ../src/crontabEditor.py:83 ../src/crontabEditorHelper.py:99
 msgid "Every day"
 msgstr "Elke dag"
 
-#: ../src/crontabEditor.py:84 ../src/crontabEditorHelper.py:97
+#: ../src/crontabEditor.py:84 ../src/crontabEditorHelper.py:105
 msgid "Every month"
 msgstr "Elke maand"
 
@@ -140,41 +145,38 @@ msgstr "Elke maand"
 msgid "Every week"
 msgstr "Elke week"
 
-#: ../src/crontabEditor.py:130 ../src/atEditor.py:111
+#: ../src/crontabEditor.py:130 ../src/atEditor.py:112
 msgid "Create a New Scheduled Task"
 msgstr "Een nieuwe geplande taak aanmaken"
 
-#: ../src/crontabEditor.py:150 ../src/atEditor.py:142
+#: ../src/crontabEditor.py:150 ../src/atEditor.py:143
 msgid "Edit a Scheduled Task"
 msgstr "Een geplande taak bewerken"
 
-#: ../src/crontabEditor.py:205 ../src/atEditor.py:315
+#: ../src/crontabEditor.py:205 ../src/atEditor.py:316
 msgid "Don't use a preset"
 msgstr "Geen voorinstelling gebruiken"
 
 #: ../src/crontabEditor.py:266
 #, python-format
 msgid ""
-"This is an invalid record! The problem could be at the %(field)s field. "
+"This is an invalid record! The problem could be in the %(field)s field. "
 "Reason: %(reason)s"
-msgstr ""
-"Dit is een ongeldig record! Het probleem kan liggen bij het %(field)s-"
-"veld. \n"
-"Reden: %(reason)s"
+msgstr "Dit is een ongeldig record! Het probleem kan liggen bij het %(field)s-veld. Reden: %(reason)s"
 
-#: ../src/crontabEditor.py:298 ../src/atEditor.py:285
+#: ../src/crontabEditor.py:298 ../src/atEditor.py:286
 msgid "The preset has not been saved"
 msgstr "De voorinstelling is niet opgeslagen"
 
-#: ../src/crontabEditor.py:300 ../src/atEditor.py:287
+#: ../src/crontabEditor.py:300 ../src/atEditor.py:288
 msgid "To delete a preset, you first need to select one"
 msgstr "Om een voorinstelling te verwijderen dient u er eerst een te kiezen"
 
-#: ../src/crontabEditor.py:310 ../src/atEditor.py:298
+#: ../src/crontabEditor.py:310 ../src/atEditor.py:299
 msgid "To save a preset, you first have to choose a name for it"
 msgstr "Om een voorinstelling op te slaan dient u eerst een naam te kiezen"
 
-#: ../src/crontabEditor.py:320 ../src/atEditor.py:389
+#: ../src/crontabEditor.py:320 ../src/atEditor.py:390
 msgid "Choose an Icon for this Scheduled Task"
 msgstr "Kies een pictogram voor deze geplande taak"
 
@@ -182,129 +184,133 @@ msgstr "Kies een pictogram voor deze geplande taak"
 msgid "command"
 msgstr "opdracht"
 
-#: ../src/crontabEditorHelper.py:103
+#: ../src/crontabEditor.py:423 ../src/mainWindow.py:553 ../src/atEditor.py:514
+msgid "Could not display help"
+msgstr "Kon de hulp niet weergeven"
+
+#: ../src/crontabEditorHelper.py:111
 msgid "Every weekday"
 msgstr "Elke weekdag"
 
-#: ../src/crontabEditorHelper.py:155
+#: ../src/crontabEditorHelper.py:163
 msgid "Minute settings"
 msgstr "Minuut-instellingen"
 
-#: ../src/crontabEditorHelper.py:156
+#: ../src/crontabEditorHelper.py:164
 msgid "Edit Time Expression for minute"
 msgstr "Tijdsuitdrukking voor minuten bewerken"
 
-#: ../src/crontabEditorHelper.py:158
+#: ../src/crontabEditorHelper.py:166
 msgid "Hour settings"
 msgstr "Uur-instellingen"
 
-#: ../src/crontabEditorHelper.py:159
+#: ../src/crontabEditorHelper.py:167
 msgid "Edit Time Expression for hour"
 msgstr "Tijdsuitdrukking voor uren bewerken"
 
-#: ../src/crontabEditorHelper.py:161
+#: ../src/crontabEditorHelper.py:169
 msgid "Day settings"
 msgstr "Dag-instellingen"
 
-#: ../src/crontabEditorHelper.py:162
+#: ../src/crontabEditorHelper.py:170
 msgid "Edit Time Expression for day"
 msgstr "Tijdsuitdrukking voor dagen bewerken"
 
-#: ../src/crontabEditorHelper.py:164
+#: ../src/crontabEditorHelper.py:172
 msgid "Month settings"
 msgstr "Maand-instellingen"
 
-#: ../src/crontabEditorHelper.py:165
+#: ../src/crontabEditorHelper.py:173
 msgid "Edit Time Expression for month"
 msgstr "Tijdsuitdrukking voor maanden bewerken"
 
-#: ../src/crontabEditorHelper.py:167
+#: ../src/crontabEditorHelper.py:175
 msgid "Weekday settings"
 msgstr "Weekdag-instellingen"
 
-#: ../src/crontabEditorHelper.py:168
+#: ../src/crontabEditorHelper.py:176
 msgid "Edit Time Expression for weekday"
 msgstr "Tijdsuitdrukking voor weekdagen bewerken"
 
-#: ../src/crontabEditorHelper.py:182
+#: ../src/crontabEditorHelper.py:190
 #, python-format
 msgid "This is invalid. Reason: %s"
 msgstr "Dit is ongeldig. Reden: %s"
 
 #. minute
-#: ../src/crontabEditorHelper.py:222 ../src/gnome-schedule.glade.h:15
+#: ../src/crontabEditorHelper.py:236 ../src/gnome-schedule.glade.h:15
 msgid "At an exact minute"
 msgstr "Op een bepaalde minuut"
 
-#: ../src/crontabEditorHelper.py:223 ../src/gnome-schedule.glade.h:42
+#: ../src/crontabEditorHelper.py:237 ../src/gnome-schedule.glade.h:42
 msgid "Minute:"
 msgstr "Minuut:"
 
 #. hour
-#: ../src/crontabEditorHelper.py:226
+#: ../src/crontabEditorHelper.py:240
 msgid "At an exact hour"
 msgstr "Op een bepaald uur"
 
-#: ../src/crontabEditorHelper.py:227
+#: ../src/crontabEditorHelper.py:241
 msgid "Hour:"
 msgstr "Uur:"
 
 #. day
-#: ../src/crontabEditorHelper.py:230
-msgid "At an exact day"
+#: ../src/crontabEditorHelper.py:244
+msgid "On a day"
 msgstr "Op een bepaalde dag"
 
-#: ../src/crontabEditorHelper.py:231
+#: ../src/crontabEditorHelper.py:245
 msgid "Day:"
 msgstr "Dag:"
 
 #. month
-#: ../src/crontabEditorHelper.py:234
-msgid "At an exact month"
-msgstr "Op een bepaalde maand"
+#: ../src/crontabEditorHelper.py:248
+msgid "In a month"
+msgstr "In een bepaalde maand"
 
-#: ../src/crontabEditorHelper.py:235
+#: ../src/crontabEditorHelper.py:249
 msgid "Month:"
 msgstr "Maand:"
 
 #. weekday
-#: ../src/crontabEditorHelper.py:238
-msgid "At an exact weekday"
+#: ../src/crontabEditorHelper.py:252
+msgid "On a weekday"
 msgstr "Op een bepaalde weekdag"
 
-#: ../src/crontabEditorHelper.py:239
+#: ../src/crontabEditorHelper.py:253
 msgid "Weekday:"
 msgstr "Weekdag:"
 
 # in stapjes/in stappen van/
-#: ../src/crontabEditorHelper.py:244 ../src/gnome-schedule.glade.h:40
+#: ../src/crontabEditorHelper.py:258 ../src/gnome-schedule.glade.h:40
 msgid "In a step width"
 msgstr "In stapgrootte"
 
-#: ../src/crontabEditorHelper.py:246 ../src/gnome-schedule.glade.h:43
+#: ../src/crontabEditorHelper.py:260 ../src/gnome-schedule.glade.h:43
 msgid "Minutes:"
 msgstr "Minuten:"
 
 # op welke uren
-#: ../src/crontabEditorHelper.py:248
+#: ../src/crontabEditorHelper.py:262
 msgid "Hours:"
 msgstr "Uren:"
 
-#: ../src/crontabEditorHelper.py:250
+#: ../src/crontabEditorHelper.py:264
 msgid "Days:"
 msgstr "Dagen:"
 
-#: ../src/crontabEditorHelper.py:252
+#: ../src/crontabEditorHelper.py:266
 msgid "Months:"
 msgstr "Maanden:"
 
-#: ../src/crontabEditorHelper.py:254
+#: ../src/crontabEditorHelper.py:268
 msgid "Weekdays:"
 msgstr "Weekdagen:"
 
 #: ../src/gnome-schedule-applet.xml.h:1
 msgid "A_bout"
-msgstr "In_fo"
+msgstr "I_nfo"
 
 #: ../src/gnome-schedule-applet.xml.h:2
 msgid "_Add a task"
@@ -510,7 +516,7 @@ msgid "Scri_pt:"
 msgstr "Scri_pt"
 
 #: ../src/gnome-schedule.glade.h:51
-msgid "See \"man 5 crontab\" for informations about the crontab format."
+msgid "See \"man 5 crontab\" for information about the crontab format."
 msgstr "Zie \"man 5 crontab\" voor informatie over het crontab-formaat."
 
 # Selecteren/kiezen
@@ -610,7 +616,7 @@ msgstr "Beel_d"
 msgid "_Weekdays:"
 msgstr "_Weekdag:"
 
-#: ../src/gnome-schedule.py:61 ../src/scheduleapplet.py:64
+#: ../src/gnome-schedule.py:59 ../src/scheduleapplet.py:62
 msgid ""
 "You need to install pyGTK or GTKv2,\n"
 "or set your PYTHONPATH correctly.\n"
@@ -924,68 +930,68 @@ msgstr "weekdag: %s"
 msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 msgstr "Op %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 
-#: ../src/mainWindow.py:205 ../src/mainWindow.py:307
+#: ../src/mainWindow.py:206 ../src/mainWindow.py:308
 #, python-format
 msgid "Editing user: %s"
 msgstr "Bewerkende gebruiker: %s"
 
-#: ../src/mainWindow.py:280 ../src/scheduleapplet.py:116
+#: ../src/mainWindow.py:281 ../src/scheduleapplet.py:114
 msgid "ERROR: Could not load icon"
 msgstr "FOUT: Kon pictogram niet laden"
 
-#: ../src/mainWindow.py:290
+#: ../src/mainWindow.py:291
 msgid "ERROR: Could not load glade file"
 msgstr "FOUT: kon glade-bestand niet laden"
 
-#: ../src/mainWindow.py:342
+#: ../src/mainWindow.py:343
 msgid "Icon"
 msgstr "Pictogram"
 
-#: ../src/mainWindow.py:347 ../src/mainWindow.py:380
+#: ../src/mainWindow.py:348 ../src/mainWindow.py:381
 msgid "Type"
 msgstr "Soort"
 
-#: ../src/mainWindow.py:351 ../src/mainWindow.py:376
-msgid "Title"
-msgstr "Titel"
+#: ../src/mainWindow.py:352 ../src/mainWindow.py:377
+msgid "Description"
+msgstr "Omschrijving"
 
-#: ../src/mainWindow.py:355 ../src/mainWindow.py:367
+#: ../src/mainWindow.py:356 ../src/mainWindow.py:368
 msgid "Date and Time Settings"
 msgstr "Datum en tijd"
 
-#: ../src/mainWindow.py:359 ../src/mainWindow.py:371
+#: ../src/mainWindow.py:360 ../src/mainWindow.py:372
 msgid "Preview"
 msgstr "Voorbeeld"
 
-#: ../src/mainWindow.py:411 ../src/mainWindow.py:470
+#: ../src/mainWindow.py:412 ../src/mainWindow.py:471
 msgid "Please select a task"
 msgstr "Kies alstublieft een taak"
 
-#: ../src/mainWindow.py:418
+#: ../src/mainWindow.py:419
 msgid "Do you want to delete this task?"
 msgstr "Wilt u deze taak verwijderen?"
 
-#: ../src/mainWindow.py:513
+#: ../src/mainWindow.py:519
 msgid "About Gnome Schedule"
 msgstr "Over Gnome taakplanning"
 
-#: ../src/mainWindow.py:514
+#: ../src/mainWindow.py:520
 msgid "Gnome Schedule"
 msgstr "Gnome Taakplanning"
 
-#: ../src/mainWindow.py:516
+#: ../src/mainWindow.py:522
 msgid "Copyright (c) 2004-2005 Gaute Hope."
 msgstr "Copyright (c) 2004-2005 Gaute Hope."
 
-#: ../src/mainWindow.py:528
+#: ../src/mainWindow.py:535
 msgid "translator-credits"
 msgstr ""
 "Tino Meinen\n"
 "Taco Witte\n"
 "\n"
-"Zie voor meer informatie http://nl.gnome.org"
+"Kijk voor meer informatie op http://nl.gnome.org/"
 
-#: ../src/scheduleapplet.py:132
+#: ../src/scheduleapplet.py:130
 msgid "ERROR: Could not load menu xml file"
 msgstr "FOUT: kon menu xml-bestand niet laden"
 
@@ -993,10 +999,16 @@ msgstr "FOUT: kon menu xml-bestand niet laden"
 msgid "No such user"
 msgstr "Gebruiker bestaat niet"
 
-#: ../src/atEditor.py:516
+#: ../src/atEditor.py:526
 #, python-format
 msgid "This is an invalid record! The problem could be: %s"
 msgstr "Dit is een ongeldig record! Het probleem kan zijn: %s"
+
+#~ msgid "At an exact weekday"
+#~ msgstr "Op een bepaalde weekdag"
+
+#~ msgid "Title"
+#~ msgstr "Titel"
 
 #~ msgid "Must be between %s and %s"
 #~ msgstr "Moet zijn tussen %s en %s"
