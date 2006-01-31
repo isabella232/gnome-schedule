@@ -1,3 +1,10 @@
+2006-01-31  Alessio Frusciante  <algol@firenze.linux.it>
+
+	* Makefile.am: Added "it" (Italian) to DOC_LINGUAS.
+	* it/figures/*: Added figures for Italian translation.
+	* it/it.po: Added Italian translation by
+	Andrea Zagli <azagli@inwind.it>.
+
 2005-12-30  Rodrigo Marcos Fombellida <rmarcos@cvs.gnome.org>
 
 	* es/es.po: Updated Spanish translation.
