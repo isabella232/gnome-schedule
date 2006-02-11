@@ -1,19 +1,21 @@
-# Chinese/Traditional translation of Gnome Schedule.
-# Copyright (C) 2005 THE Gnome Schedule'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the Gnome Schedule package.
-# Kevin Tse <kevinkit@netvigator.com>, 2005, 2006.
-#
-#
+# zh_TW translation of gnome-schedule.
+# Copyright (C) 2006 THE gnome-schedule'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the gnome-schedule package.
+# Kevin Tse <kevinkit@netvigator.com>, 2005.
+# Kevin Tse <kevinkit@netvigator.com>, 2006.
+#  <>, 2006.
+# 
+# 
 msgid ""
 msgstr ""
-"Project-Id-Version: Gnome Schedule 1.0.0\n"
+"Project-Id-Version: gnome-schedule HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-12-29 11:15+0100\n"
-"PO-Revision-Date: 2006-01-30 13:59+0800\n"
+"POT-Creation-Date: 2006-02-12 07:06+0800\n"
+"PO-Revision-Date: 2006-02-11 01:44+0800\n"
 "Last-Translator: Kevin Tse <kevinkit@netvigator.com>\n"
-"Language-Team: Chinese (traditional) <community@linuxhall.org>\n"
+"Language-Team: Chinese/Traditional <zh-l10n@linux.org.tw>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../desktop/gnome-schedule.desktop.in.in.h:1
@@ -36,21 +38,24 @@ msgstr "Gnome schedule"
 msgid "System tools"
 msgstr "系統工具"
 
-#: ../src/at.py:283
+#: ../src/at.py:294
 #, python-format
 msgid "DANGEROUS PARSE: %(preview)s"
 msgstr "危險的語法：%(preview)s"
 
 #. TODO: localize time and date formats
-#: ../src/at.py:289
+#: ../src/at.py:300
 #, python-format
 msgid "On %(date)s at %(time)s"
 msgstr "在 %(date)s 之 %(time)s"
 
-#: ../src/at.py:294
-#: ../src/at.py:299
+#: ../src/at.py:305 ../src/at.py:310
 msgid "Once"
 msgstr "一次"
+
+#: ../src/at.py:314
+msgid "Warning: a line in atq's output didn't parse"
+msgstr ""
 
 #: ../src/crontab.py:49
 msgid "Minute"
@@ -70,11 +75,9 @@ msgstr "月"
 
 #: ../src/crontab.py:53
 msgid "Weekday"
-msgstr "週日"
+msgstr "星期"
 
-#: ../src/crontab.py:138
-#: ../src/crontab.py:143
-#: ../src/crontab.py:147
+#: ../src/crontab.py:138 ../src/crontab.py:143 ../src/crontab.py:147
 #, python-format
 msgid "Must be between %(min)s and %(max)s"
 msgstr "必須在 %(min)s 和  %(max)s 之內"
@@ -84,11 +87,8 @@ msgstr "必須在 %(min)s 和  %(max)s 之內"
 msgid "%s is not a number"
 msgstr "%s 不是一個數字"
 
-#: ../src/crontab.py:165
-#: ../src/crontab.py:200
-#: ../src/crontab.py:289
-#: ../src/crontabEditor.py:187
-#: ../src/atEditor.py:109
+#: ../src/crontab.py:165 ../src/crontab.py:200 ../src/crontab.py:289
+#: ../src/crontabEditor.py:187 ../src/atEditor.py:110
 msgid "Untitled"
 msgstr "無標題"
 
@@ -115,7 +115,7 @@ msgstr "月"
 
 #: ../src/crontab.py:252
 msgid "weekday"
-msgstr "週日"
+msgstr "星期"
 
 #: ../src/crontab.py:294
 msgid "ERROR: Failed to parse crontab record"
@@ -125,24 +125,20 @@ msgstr "錯誤：無法分析 crontab 之紀錄"
 msgid "Use advanced"
 msgstr "使用「進階」"
 
-#: ../src/crontabEditor.py:81
-#: ../src/crontabEditorHelper.py:79
+#: ../src/crontabEditor.py:81 ../src/crontabEditorHelper.py:87
 #: ../src/gnome-schedule.glade.h:28
 msgid "Every minute"
 msgstr "每分鐘"
 
-#: ../src/crontabEditor.py:82
-#: ../src/crontabEditorHelper.py:85
+#: ../src/crontabEditor.py:82 ../src/crontabEditorHelper.py:93
 msgid "Every hour"
 msgstr "每小時"
 
-#: ../src/crontabEditor.py:83
-#: ../src/crontabEditorHelper.py:91
+#: ../src/crontabEditor.py:83 ../src/crontabEditorHelper.py:99
 msgid "Every day"
 msgstr "每天"
 
-#: ../src/crontabEditor.py:84
-#: ../src/crontabEditorHelper.py:97
+#: ../src/crontabEditor.py:84 ../src/crontabEditorHelper.py:105
 msgid "Every month"
 msgstr "每月"
 
@@ -150,43 +146,38 @@ msgstr "每月"
 msgid "Every week"
 msgstr "每週"
 
-#: ../src/crontabEditor.py:130
-#: ../src/atEditor.py:111
+#: ../src/crontabEditor.py:130 ../src/atEditor.py:112
 msgid "Create a New Scheduled Task"
 msgstr "新建一項新安排的工作"
 
-#: ../src/crontabEditor.py:150
-#: ../src/atEditor.py:142
+#: ../src/crontabEditor.py:150 ../src/atEditor.py:143
 msgid "Edit a Scheduled Task"
 msgstr "編輯一項已安排的工作"
 
-#: ../src/crontabEditor.py:205
-#: ../src/atEditor.py:315
+#: ../src/crontabEditor.py:205 ../src/atEditor.py:316
 msgid "Don't use a preset"
 msgstr "不要使用預設值"
 
 #: ../src/crontabEditor.py:266
 #, python-format
-msgid "This is an invalid record! The problem could be at the %(field)s field. Reason: %(reason)s"
-msgstr "這是項無效的紀錄！這個問題可能在區域 %(field)s。原因：%(reason)s"
+msgid ""
+"This is an invalid record! The problem could be in the %(field)s field. "
+"Reason: %(reason)s"
+msgstr "這是項無效的紀錄！這個問題可能在區域 %(field)s。 原因：%(reason)s"
 
-#: ../src/crontabEditor.py:298
-#: ../src/atEditor.py:285
+#: ../src/crontabEditor.py:298 ../src/atEditor.py:286
 msgid "The preset has not been saved"
 msgstr "這個預設值還未存檔"
 
-#: ../src/crontabEditor.py:300
-#: ../src/atEditor.py:287
+#: ../src/crontabEditor.py:300 ../src/atEditor.py:288
 msgid "To delete a preset, you first need to select one"
 msgstr "要刪除一項預設值，您需要先選擇一個"
 
-#: ../src/crontabEditor.py:310
-#: ../src/atEditor.py:298
+#: ../src/crontabEditor.py:310 ../src/atEditor.py:299
 msgid "To save a preset, you first have to choose a name for it"
 msgstr "要為一個預設值存檔，您需要先為它選擇一個名稱"
 
-#: ../src/crontabEditor.py:320
-#: ../src/atEditor.py:389
+#: ../src/crontabEditor.py:320 ../src/atEditor.py:390
 msgid "Choose an Icon for this Scheduled Task"
 msgstr "為這項已安排的工作選擇一個圖示"
 
@@ -194,144 +185,143 @@ msgstr "為這項已安排的工作選擇一個圖示"
 msgid "command"
 msgstr "指令"
 
-#: ../src/crontabEditorHelper.py:103
-msgid "Every weekday"
-msgstr "每個週日"
+#: ../src/crontabEditor.py:423 ../src/mainWindow.py:553 ../src/atEditor.py:514
+msgid "Could not display help"
+msgstr "無法顥示說明"
 
-#: ../src/crontabEditorHelper.py:155
+#: ../src/crontabEditorHelper.py:111
+msgid "Every weekday"
+msgstr "每個星期"
+
+#: ../src/crontabEditorHelper.py:163
 msgid "Minute settings"
 msgstr "「分鐘」之設定"
 
-#: ../src/crontabEditorHelper.py:156
+#: ../src/crontabEditorHelper.py:164
 msgid "Edit Time Expression for minute"
-msgstr "編輯「分」之時間顯示方式"
+msgstr "編輯「分鐘」之時間顯示方式"
 
-#: ../src/crontabEditorHelper.py:158
+#: ../src/crontabEditorHelper.py:166
 msgid "Hour settings"
 msgstr "「小時」之設定"
 
-#: ../src/crontabEditorHelper.py:159
+#: ../src/crontabEditorHelper.py:167
 msgid "Edit Time Expression for hour"
-msgstr "編輯「時」之時間顯示方式"
+msgstr "編輯「小時」之時間顯示方式"
 
-#: ../src/crontabEditorHelper.py:161
+#: ../src/crontabEditorHelper.py:169
 msgid "Day settings"
 msgstr "「日」之設定"
 
-#: ../src/crontabEditorHelper.py:162
+#: ../src/crontabEditorHelper.py:170
 msgid "Edit Time Expression for day"
 msgstr "編輯「日」之時間顯示方式"
 
-#: ../src/crontabEditorHelper.py:164
+#: ../src/crontabEditorHelper.py:172
 msgid "Month settings"
 msgstr "「月」之設定"
 
-#: ../src/crontabEditorHelper.py:165
+#: ../src/crontabEditorHelper.py:173
 msgid "Edit Time Expression for month"
 msgstr "編輯「月」之時間顯示方式"
 
-#: ../src/crontabEditorHelper.py:167
+#: ../src/crontabEditorHelper.py:175
 msgid "Weekday settings"
-msgstr "「週日」之設定"
+msgstr "「星期」之設定"
 
-#: ../src/crontabEditorHelper.py:168
+#: ../src/crontabEditorHelper.py:176
 msgid "Edit Time Expression for weekday"
-msgstr "編輯週日之時間顯示方式"
+msgstr "編輯星期之時間顯示方式"
 
-#: ../src/crontabEditorHelper.py:182
+#: ../src/crontabEditorHelper.py:190
 #, python-format
 msgid "This is invalid. Reason: %s"
 msgstr "這是無效的。原因：%s"
 
 #. minute
-#: ../src/crontabEditorHelper.py:222
-#: ../src/gnome-schedule.glade.h:15
+#: ../src/crontabEditorHelper.py:236 ../src/gnome-schedule.glade.h:15
 msgid "At an exact minute"
 msgstr "在確切的某一分鐘"
 
-#: ../src/crontabEditorHelper.py:223
-#: ../src/gnome-schedule.glade.h:42
+#: ../src/crontabEditorHelper.py:237 ../src/gnome-schedule.glade.h:42
 msgid "Minute:"
 msgstr "分鐘："
 
 #. hour
-#: ../src/crontabEditorHelper.py:226
+#: ../src/crontabEditorHelper.py:240
 msgid "At an exact hour"
 msgstr "在確切的某一小時"
 
-#: ../src/crontabEditorHelper.py:227
+#: ../src/crontabEditorHelper.py:241
 msgid "Hour:"
 msgstr "時："
 
 #. day
-#: ../src/crontabEditorHelper.py:230
-msgid "At an exact day"
-msgstr "在確切的某一天"
+#: ../src/crontabEditorHelper.py:244
+msgid "On a day"
+msgstr "在某一日"
 
-#: ../src/crontabEditorHelper.py:231
+#: ../src/crontabEditorHelper.py:245
 msgid "Day:"
 msgstr "日："
 
 #. month
-#: ../src/crontabEditorHelper.py:234
-msgid "At an exact month"
-msgstr "在確切的某一個月"
+#: ../src/crontabEditorHelper.py:248
+msgid "In a month"
+msgstr "在某一個月"
 
-#: ../src/crontabEditorHelper.py:235
+#: ../src/crontabEditorHelper.py:249
 msgid "Month:"
 msgstr "月分："
 
 #. weekday
-#: ../src/crontabEditorHelper.py:238
-msgid "At an exact weekday"
-msgstr "在確切的某一個週日"
+#: ../src/crontabEditorHelper.py:252
+msgid "On a weekday"
+msgstr "在某一個星期"
 
-#: ../src/crontabEditorHelper.py:239
+#: ../src/crontabEditorHelper.py:253
 msgid "Weekday:"
-msgstr "週日"
+msgstr "星期"
 
-#: ../src/crontabEditorHelper.py:244
-#: ../src/gnome-schedule.glade.h:40
+#: ../src/crontabEditorHelper.py:258 ../src/gnome-schedule.glade.h:40
 msgid "In a step width"
 msgstr "在一個步進的寛度裡"
 
-#: ../src/crontabEditorHelper.py:246
-#: ../src/gnome-schedule.glade.h:43
+#: ../src/crontabEditorHelper.py:260 ../src/gnome-schedule.glade.h:43
 msgid "Minutes:"
 msgstr "分鐘："
 
-#: ../src/crontabEditorHelper.py:248
+#: ../src/crontabEditorHelper.py:262
 msgid "Hours:"
 msgstr " 小時："
 
-#: ../src/crontabEditorHelper.py:250
+#: ../src/crontabEditorHelper.py:264
 msgid "Days:"
-msgstr "日數："
+msgstr "日："
 
-#: ../src/crontabEditorHelper.py:252
+#: ../src/crontabEditorHelper.py:266
 msgid "Months:"
 msgstr "月："
 
-#: ../src/crontabEditorHelper.py:254
+#: ../src/crontabEditorHelper.py:268
 msgid "Weekdays:"
-msgstr "週日："
+msgstr "星期："
 
 #: ../src/gnome-schedule-applet.xml.h:1
 msgid "A_bout"
-msgstr "關於(_B)"
+msgstr "關於 (_B)"
 
 #: ../src/gnome-schedule-applet.xml.h:2
 msgid "_Add a task"
-msgstr "加入一項工作(_A)"
+msgstr "加入一項工作 (_A)"
 
-#: ../src/gnome-schedule-applet.xml.h:3
-#: ../src/gnome-schedule.glade.h:64
+#: ../src/gnome-schedule-applet.xml.h:3 ../src/gnome-schedule.glade.h:64
 msgid "_Help"
-msgstr "求助 (_H)"
+msgstr "說明(_H)"
 
 #: ../src/gnome-schedule-applet.xml.h:4
 msgid "_Manage tasks"
-msgstr "管理工作(_M)"
+msgstr "管理工作 (_M)"
 
 #: ../src/gnome-schedule.glade.h:1
 msgid "<b>Choose the user whose tasks you want to modify</b>"
@@ -399,7 +389,7 @@ msgstr "變更使用者"
 
 #: ../src/gnome-schedule.glade.h:18
 msgid "Change _User"
-msgstr "變更使用者(_U)"
+msgstr "變更使用者 (_U)"
 
 #: ../src/gnome-schedule.glade.h:19
 msgid "Choose an icon for this scheduled task"
@@ -411,7 +401,7 @@ msgstr "請選擇一個您想變更工作之使用者"
 
 #: ../src/gnome-schedule.glade.h:21
 msgid "Co_mmand:"
-msgstr "指令(_M):"
+msgstr "指令 (_M)"
 
 #: ../src/gnome-schedule.glade.h:22
 msgid "Configure Scheduled Tasks"
@@ -431,7 +421,7 @@ msgstr "刪除已選取的模板"
 
 #: ../src/gnome-schedule.glade.h:26
 msgid "Desc_ription:"
-msgstr "描述(_R):"
+msgstr "描述 (_R)"
 
 #: ../src/gnome-schedule.glade.h:27
 msgid "Edit a scheduled task"
@@ -439,15 +429,17 @@ msgstr "編輯一項已安排的工作"
 
 #: ../src/gnome-schedule.glade.h:29
 msgid "Execution at a specific minute, hour, day, weekday or month."
-msgstr "在每一個特定的分鐘、小時、週日或月裡執行。"
+msgstr "在每一個特定的分鐘、小時、星期或月裡執行。"
 
 #: ../src/gnome-schedule.glade.h:30
-msgid "Execution at a step width. For example every five minutes, hours, days, weekdays or months."
-msgstr "在一個步進的寛度裡執行。例如在每五分鐘、五小時、五個週日或五個月。"
+msgid ""
+"Execution at a step width. For example every five minutes, hours, days, "
+"weekdays or months."
+msgstr "在一個步進的寛度裡執行。例如在每五分鐘、五小時、五個星期或五個月。"
 
 #: ../src/gnome-schedule.glade.h:31
 msgid "Execution at every minute, hour, day, weekday or month."
-msgstr "在每分鐘、每小時、每天、每個週日或每個月執行。"
+msgstr "在每分鐘、每小時、每天、每個星期或每個月執行。"
 
 #: ../src/gnome-schedule.glade.h:32
 msgid "Execution in a range."
@@ -475,7 +467,7 @@ msgstr "由："
 
 #: ../src/gnome-schedule.glade.h:38
 msgid "Ico_n:"
-msgstr "圖示(_N)："
+msgstr "圖示 (_N)："
 
 #: ../src/gnome-schedule.glade.h:39
 msgid "In a range"
@@ -483,23 +475,26 @@ msgstr "在一個範圍裡"
 
 #: ../src/gnome-schedule.glade.h:41
 msgid "Mi_nutes:"
-msgstr "分鐘(_N)："
+msgstr "分鐘 (_N)："
 
 #: ../src/gnome-schedule.glade.h:44
 msgid "No out_put"
-msgstr "沒有輸出(_P)"
+msgstr "沒有輸出 (_P)"
 
 #: ../src/gnome-schedule.glade.h:45
 msgid "Other"
 msgstr "其他"
 
 #: ../src/gnome-schedule.glade.h:46
-msgid "Quit the application. This will not stop the system scheduling. It will, however, quit this system schedule maintenance tool."
-msgstr "退出這個應用程式。這將不會停止系統日程，但是這將會退出系統日程之維護工具。"
+msgid ""
+"Quit the application. This will not stop the system scheduling. It will, "
+"however, quit this system schedule maintenance tool."
+msgstr ""
+"退出這個應用程式。這將不會停止系統日程，但是這將會退出系統日程之維護工具。"
 
 #: ../src/gnome-schedule.glade.h:47
 msgid "Rec_urrence:"
-msgstr "循環(_U):"
+msgstr "循環 (_U)："
 
 #: ../src/gnome-schedule.glade.h:48
 msgid "Save the current information as a template"
@@ -511,15 +506,15 @@ msgstr "已安排及現行的工作"
 
 #: ../src/gnome-schedule.glade.h:50
 msgid "Scri_pt:"
-msgstr "命令稿(_P):"
+msgstr "手稿(_P)："
 
 #: ../src/gnome-schedule.glade.h:51
-msgid "See \"man 5 crontab\" for informations about the crontab format."
+msgid "See \"man 5 crontab\" for information about the crontab format."
 msgstr "如欲得知有關 crontab 格式的資料，請查看 \"man 5 crontab\"。"
 
 #: ../src/gnome-schedule.glade.h:52
 msgid "Select..."
-msgstr "選取..."
+msgstr "選取…"
 
 #: ../src/gnome-schedule.glade.h:53
 msgid "Show help"
@@ -543,70 +538,74 @@ msgid ""
 "Next week"
 msgstr ""
 "明天\n"
-"下週"
+"下周"
 
 #: ../src/gnome-schedule.glade.h:59
-msgid "When selected, no output will be generated. When scheduled tasks in the crontab do have output and this option is not checked, the output will by default be send to the UNIX mailbox of the user."
-msgstr "如果啟用這個選項，將不會有輸出產生。當在 crontab 裡已安排的工作有輸出以及這個選項沒有勾選的話，輸出將會默認的傳送至使用者之 UNIX 電子郵箱裡。"
+msgid ""
+"When selected, no output will be generated. When scheduled tasks in the "
+"crontab do have output and this option is not checked, the output will by "
+"default be send to the UNIX mailbox of the user."
+msgstr ""
+"如果啟用這個選項，將不會有輸出產生。當在 crontab 裡已安排的工作有輸出以及這個"
+"選項沒有勾選的話，輸出將會默認的傳送至使用者之 UNIX 電子郵箱裡。"
 
 #: ../src/gnome-schedule.glade.h:60
 msgid "_About"
-msgstr "關於(_A)"
+msgstr "關於 (_A)"
 
 #: ../src/gnome-schedule.glade.h:61
 msgid "_Advanced"
-msgstr "進階(_A)"
+msgstr "進階 (_A)"
 
 #: ../src/gnome-schedule.glade.h:62
 msgid "_Date:"
-msgstr "日期(_D)"
+msgstr "日期 (_D)"
 
 #: ../src/gnome-schedule.glade.h:63
 msgid "_Days of month:"
-msgstr "這個月的日數(_D):"
+msgstr "這個月的日數 (_D)："
 
 #: ../src/gnome-schedule.glade.h:65
 msgid "_Hour:"
-msgstr "小時(_H):"
+msgstr "小時 (_H)："
 
 #: ../src/gnome-schedule.glade.h:66
 msgid "_Hours:"
-msgstr "小時(_H):"
+msgstr "小時 (_H)："
 
 #: ../src/gnome-schedule.glade.h:67
 msgid "_Manual"
-msgstr "使用手冊(_M)"
+msgstr "使用手冊 (_M)"
 
 #: ../src/gnome-schedule.glade.h:68
 msgid "_Minute:"
-msgstr "分鐘(_M):"
+msgstr "分鐘 (_M)："
 
 #: ../src/gnome-schedule.glade.h:69
 msgid "_Months:"
-msgstr "月數(_M):"
+msgstr "月 (_M)："
 
 #: ../src/gnome-schedule.glade.h:70
 msgid "_Task"
-msgstr "工作(_T)"
+msgstr "工作 (_T)"
 
 #: ../src/gnome-schedule.glade.h:71
 msgid "_Template:"
-msgstr "模板(_T):"
+msgstr "模板 (_T)："
 
 #: ../src/gnome-schedule.glade.h:72
 msgid "_User:"
-msgstr "使用者(_U):"
+msgstr "使用者 (_U)："
 
 #: ../src/gnome-schedule.glade.h:73
 msgid "_View"
-msgstr "查看(_V)"
+msgstr "查看 (_V)"
 
 #: ../src/gnome-schedule.glade.h:74
 msgid "_Weekdays:"
-msgstr "週日(_W):"
+msgstr "星期 (_W)："
 
-#: ../src/gnome-schedule.py:61
-#: ../src/scheduleapplet.py:64
+#: ../src/gnome-schedule.py:59 ../src/scheduleapplet.py:62
 msgid ""
 "You need to install pyGTK or GTKv2,\n"
 "or set your PYTHONPATH correctly.\n"
@@ -674,8 +673,12 @@ msgstr "在每個月的第 %(monthday)s 日裡，每小時的第 %(minute)s 分�
 
 #: ../src/lang.py:178
 #, python-format
-msgid "On day %(monthday)s of every month at every minute between %(time_from)s and %(time_to)s"
-msgstr "在每個月的第 %(monthday)s 日裡，從 %(time_from)s 到 %(time_to)s 之間之每一分鐘"
+msgid ""
+"On day %(monthday)s of every month at every minute between %(time_from)s and "
+"%(time_to)s"
+msgstr ""
+"在每個月的第 %(monthday)s 日裡，從 %(time_from)s 到 %(time_to)s 之間之每一分"
+"鐘"
 
 #: ../src/lang.py:180
 #, python-format
@@ -699,8 +702,11 @@ msgstr "在 %(month)s 月的每一天裡，每小時之第 %(minute)s 分鐘"
 
 #: ../src/lang.py:191
 #, python-format
-msgid "On every day in %(month)s at every minute between %(time_from)s and %(time_to)s"
-msgstr "在 %(month)s 月裡的每一天中，從 %(time_from)s 到 %(time_to)s 之間之每一分鐘"
+msgid ""
+"On every day in %(month)s at every minute between %(time_from)s and %"
+"(time_to)s"
+msgstr ""
+"在 %(month)s 月裡的每一天中，從 %(time_from)s 到 %(time_to)s 之間之每一分鐘"
 
 #: ../src/lang.py:193
 #, python-format
@@ -724,7 +730,8 @@ msgstr "在每年裡的 %(date)s，每小時裡的第 %(minute)s 分鐘"
 
 #: ../src/lang.py:204
 #, python-format
-msgid "Every year on %(date)s at every minute between %(time_from)s and %(time_to)s"
+msgid ""
+"Every year on %(date)s at every minute between %(time_from)s and %(time_to)s"
 msgstr "在每年裡的 %(date)s，從 %(time_from)s 到 %(time_to)s 之間的每一分鐘"
 
 #: ../src/lang.py:206
@@ -735,102 +742,138 @@ msgstr "在每年裡的 %(date)s 之 %(time)s"
 #: ../src/lang.py:211
 #, python-format
 msgid "On every %(weekday)s at every full hour"
-msgstr "在每第 %(weekday)s 個週日之每一個完整小時"
+msgstr "在每第 %(weekday)s 個星期之每一個完整小時"
 
 #: ../src/lang.py:213
 #, python-format
 msgid "On every %(weekday)s at every minute"
-msgstr "在每第 %(weekday)s 個週日的每一分鐘"
+msgstr "在每第 %(weekday)s 個星期的每一分鐘"
 
 #: ../src/lang.py:215
 #, python-format
 msgid "On every %(weekday)s at minute %(minute)s of every hour"
-msgstr "在每第 %(weekday)s 個週日裡，每個小時裡之第 %(minute)s 分鐘"
+msgstr "在每第 %(weekday)s 個星期裡，每個小時裡之第 %(minute)s 分鐘"
 
 #: ../src/lang.py:217
 #, python-format
-msgid "On every %(weekday)s at every minute between %(time_from)s and %(time_to)s"
-msgstr "在每第 %(weekday)s 個週日裡，從 %(time_from)s 到 %(time_to)s 之間的每一分鐘"
+msgid ""
+"On every %(weekday)s at every minute between %(time_from)s and %(time_to)s"
+msgstr ""
+"在每第 %(weekday)s 個星期裡，從 %(time_from)s 到 %(time_to)s 之間的每一分鐘"
 
 #: ../src/lang.py:219
 #, python-format
 msgid "On every %(weekday)s at %(time)s"
-msgstr "在每第 %(weekday)s 個週日的 %(time)s"
+msgstr "在每第 %(weekday)s 個星期的 %(time)s"
 
 #: ../src/lang.py:224
 #, python-format
-msgid "On day %(monthday)s of every month and every %(weekday)s at every full hour"
-msgstr "在每個月和每第 %(weekday)s 個週日裡，第 %(monthday)s 日之每一個完整小時"
+msgid ""
+"On day %(monthday)s of every month and every %(weekday)s at every full hour"
+msgstr ""
+"在每個月和每第 %(weekday)s 個星期裡，第 %(monthday)s 日之每一個完整小時"
 
 #: ../src/lang.py:226
 #, python-format
-msgid "On day %(monthday)s of every month and every %(weekday)s at every minute"
-msgstr "在每個月和每第 %(weekday)s 個週日的第 %(monthday)s 日之每一分鐘"
+msgid ""
+"On day %(monthday)s of every month and every %(weekday)s at every minute"
+msgstr "在每個月和每第 %(weekday)s 個星期的第 %(monthday)s 日之每一分鐘"
 
 #: ../src/lang.py:228
 #, python-format
-msgid "On day %(monthday)s of every month and every %(weekday)s at minute %(minute)s of every hour"
-msgstr "在每個月和每第 %(weekday)s 個週日的第 %(monthday)s 日裡，每小時裡的第 %(minute)s 分鐘"
+msgid ""
+"On day %(monthday)s of every month and every %(weekday)s at minute %(minute)"
+"s of every hour"
+msgstr ""
+"在每個月和每第 %(weekday)s 個星期的第 %(monthday)s 日裡，每小時裡的第 %"
+"(minute)s 分鐘"
 
 #: ../src/lang.py:230
 #, python-format
-msgid "On day %(monthday)s of every month and every %(weekday)s at every minute between %(time_from)s and %(time_to)s"
-msgstr "在每個月和每第 %(weekday)s 個週日的第 %(monthday)s 日裡，從 %(time_from)s 到 %(time_to)s 之間的每一分鐘"
+msgid ""
+"On day %(monthday)s of every month and every %(weekday)s at every minute "
+"between %(time_from)s and %(time_to)s"
+msgstr ""
+"在每個月和每第 %(weekday)s 個星期的第 %(monthday)s 日裡，從 %(time_from)s 到 "
+"%(time_to)s 之間的每一分鐘"
 
 #: ../src/lang.py:232
 #, python-format
 msgid "On day %(monthday)s of every month and every %(weekday)s at %(time)s"
-msgstr "在每個月和每第 %(weekday)s 個週日的第 %(monthday)s 日裡之 %(time)s"
+msgstr "在每個月和每第 %(weekday)s 個星期的第 %(monthday)s 日裡之 %(time)s"
 
 #: ../src/lang.py:237
 #, python-format
 msgid "On every %(weekday)s in %(month)s at every full hour"
-msgstr "在 %(month)s 月裡的每第 %(weekday)s 個週日之每一個完整小時"
+msgstr "在 %(month)s 月裡的每第 %(weekday)s 個星期之每一個完整小時"
 
 #: ../src/lang.py:239
 #, python-format
 msgid "On every %(weekday)s in %(month)s at every minute"
-msgstr "在 %(month)s 月裡的每第 %(weekday)s 個週日中之每一分鐘"
+msgstr "在 %(month)s 月裡的每第 %(weekday)s 個星期中之每一分鐘"
 
 #: ../src/lang.py:241
 #, python-format
 msgid "On every %(weekday)s in %(month)s at minute %(minute)s of every hour"
-msgstr "在 %(month)s 月裡的第 %(weekday)s 個週日中，每個小時裡之第 %(minute)s 個分鐘"
+msgstr ""
+"在 %(month)s 月裡的第 %(weekday)s 個星期中，每個小時裡之第 %(minute)s 個分鐘"
 
 #: ../src/lang.py:243
 #, python-format
-msgid "On every %(weekday)s in %(month)s at every minute between %(time_from)s and %(time_to)s"
-msgstr "在 %(month)s 月裡的每第 %(weekday)s 個週日中，從 %(time_from)s 到 %(time_to)s 之間之每一分鐘"
+msgid ""
+"On every %(weekday)s in %(month)s at every minute between %(time_from)s and %"
+"(time_to)s"
+msgstr ""
+"在 %(month)s 月裡的每第 %(weekday)s 個星期中，從 %(time_from)s 到 %(time_to)"
+"s 之間之每一分鐘"
 
 #: ../src/lang.py:245
 #, python-format
 msgid "On every %(weekday)s in %(month)s at %(time)s"
-msgstr "在 %(month)s 月裡的每第 %(weekday)s 個週日之 %(time)s"
+msgstr "在 %(month)s 月裡的每第 %(weekday)s 個星期之 %(time)s"
 
 #: ../src/lang.py:250
 #, python-format
-msgid "On every %(weekday)s in %(month)s and on %(date)s every year at every full hour"
-msgstr "在 %(month)s 裡的每第 %(weekday)s 個週日，以及在每年裡的 %(date)s 之每一個完整小時"
+msgid ""
+"On every %(weekday)s in %(month)s and on %(date)s every year at every full "
+"hour"
+msgstr ""
+"在 %(month)s 裡的每第 %(weekday)s 個星期，以及在每年裡的 %(date)s 之每一個完"
+"整小時"
 
 #: ../src/lang.py:252
 #, python-format
-msgid "On every %(weekday)s in %(month)s and on %(date)s every year at every minute"
-msgstr "在 %(month)s 裡的每第 %(weekday)s 個週日裡，以及在每年裡的 %(date)s 之每一分鐘"
+msgid ""
+"On every %(weekday)s in %(month)s and on %(date)s every year at every minute"
+msgstr ""
+"在 %(month)s 裡的每第 %(weekday)s 個星期裡，以及在每年裡的 %(date)s 之每一分"
+"鐘"
 
 #: ../src/lang.py:254
 #, python-format
-msgid "On every %(weekday)s in %(month)s and on %(date)s every year at minute %(minute)s of every hour"
-msgstr "在 %(month)s 裡的每第 %(weekday)s 個週日裡、以及在每年裡的 %(date)s 中，每個小時裡之第 %(minute)s 分鐘"
+msgid ""
+"On every %(weekday)s in %(month)s and on %(date)s every year at minute %"
+"(minute)s of every hour"
+msgstr ""
+"在 %(month)s 裡的每第 %(weekday)s 個星期裡、以及在每年裡的 %(date)s 中，每個"
+"小時裡之第 %(minute)s 分鐘"
 
 #: ../src/lang.py:256
 #, python-format
-msgid "On every %(weekday)s in %(month)s and on %(date)s every year at every minute between %(time_from)s and %(time_to)s"
-msgstr "在 %(month)s 裡的每第 %(weekday)s 個週日裡、以及在每年裡的 %(date)s 中，從 %(time_from)s 到 %(time_to)s 之間的每一分鐘"
+msgid ""
+"On every %(weekday)s in %(month)s and on %(date)s every year at every minute "
+"between %(time_from)s and %(time_to)s"
+msgstr ""
+"在 %(month)s 裡的每第 %(weekday)s 個星期裡、以及在每年裡的 %(date)s 中，從 %"
+"(time_from)s 到 %(time_to)s 之間的每一分鐘"
 
 #: ../src/lang.py:258
 #, python-format
-msgid "On every %(weekday)s in %(month)s and on %(date)s every year at %(time)s"
-msgstr "在 %(month)s 裡的每第 %(weekday)s 個週日裡，以及在每年裡的 %(date)s 中之 %(time)s"
+msgid ""
+"On every %(weekday)s in %(month)s and on %(date)s every year at %(time)s"
+msgstr ""
+"在 %(month)s 裡的每第 %(weekday)s 個星期裡，以及在每年裡的 %(date)s 中之 %"
+"(time)s"
 
 #: ../src/lang.py:266
 msgid "every minute"
@@ -876,82 +919,71 @@ msgstr "在 %(month)s，%(monthday)s，%(hour)s，%(minute)s"
 #: ../src/lang.py:288
 #, python-format
 msgid "weekday: %s"
-msgstr "週日：%s"
+msgstr "星期：%s"
 
 #: ../src/lang.py:289
 #, python-format
 msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 msgstr "在 %(weekday)s，%(month)s，%(monthday)s，%(hour)s，%(minute)s"
 
-#: ../src/mainWindow.py:205
-#: ../src/mainWindow.py:307
+#: ../src/mainWindow.py:206 ../src/mainWindow.py:308
 #, python-format
 msgid "Editing user: %s"
 msgstr "編輯中的使用者：%s"
 
-#: ../src/mainWindow.py:280
-#: ../src/scheduleapplet.py:116
+#: ../src/mainWindow.py:281 ../src/scheduleapplet.py:114
 msgid "ERROR: Could not load icon"
 msgstr "錯誤：無法載入圖示"
 
-#: ../src/mainWindow.py:290
+#: ../src/mainWindow.py:291
 msgid "ERROR: Could not load glade file"
 msgstr "錯誤：無法載入 glade 檔案"
 
-#: ../src/mainWindow.py:342
+#: ../src/mainWindow.py:343
 msgid "Icon"
 msgstr "圖示"
 
-#: ../src/mainWindow.py:347
-#: ../src/mainWindow.py:380
+#: ../src/mainWindow.py:348 ../src/mainWindow.py:381
 msgid "Type"
 msgstr "類型"
 
-#: ../src/mainWindow.py:351
-#: ../src/mainWindow.py:376
-msgid "Title"
-msgstr "標題"
+#: ../src/mainWindow.py:352 ../src/mainWindow.py:377
+msgid "Description"
+msgstr "描述"
 
-#: ../src/mainWindow.py:355
-#: ../src/mainWindow.py:367
+#: ../src/mainWindow.py:356 ../src/mainWindow.py:368
 msgid "Date and Time Settings"
 msgstr "日期和時間之設定"
 
-#: ../src/mainWindow.py:359
-#: ../src/mainWindow.py:371
+#: ../src/mainWindow.py:360 ../src/mainWindow.py:372
 msgid "Preview"
 msgstr "預覽"
 
-#: ../src/mainWindow.py:411
-#: ../src/mainWindow.py:470
+#: ../src/mainWindow.py:412 ../src/mainWindow.py:471
 msgid "Please select a task"
 msgstr "請選取一項工作"
 
-#: ../src/mainWindow.py:418
+#: ../src/mainWindow.py:419
 msgid "Do you want to delete this task?"
 msgstr "確定要刪除這項工作嗎？"
 
-#: ../src/mainWindow.py:513
+#: ../src/mainWindow.py:519
 msgid "About Gnome Schedule"
 msgstr "關於 Gnome Schedule"
 
-#: ../src/mainWindow.py:514
+#: ../src/mainWindow.py:520
 msgid "Gnome Schedule"
 msgstr "Gnome Schedule"
 
-#: ../src/mainWindow.py:516
+#: ../src/mainWindow.py:522
 msgid "Copyright (c) 2004-2005 Gaute Hope."
 msgstr "(c) 2004-2005 Gaute Hope 版權所有。"
 
-#: ../src/mainWindow.py:528
+#: ../src/mainWindow.py:535
 msgid "translator-credits"
-msgstr ""
-"GNOME 程式中文化郵件論壇\n"
-"community@linuxhall.org\n"
-"\n"
-"Kevin Tse <kevinkit@netvigator.com>, 2006"
+msgstr "翻譯鳴謝"
 
-#: ../src/scheduleapplet.py:132
+#: ../src/scheduleapplet.py:130
 msgid "ERROR: Could not load menu xml file"
 msgstr "錯誤：無法載入選單 xml 檔案"
 
@@ -959,8 +991,88 @@ msgstr "錯誤：無法載入選單 xml 檔案"
 msgid "No such user"
 msgstr "沒有這個使用者"
 
-#: ../src/atEditor.py:516
+#: ../src/atEditor.py:526
 #, python-format
 msgid "This is an invalid record! The problem could be: %s"
 msgstr "這是一項無效的紀錄！這個問題可能是：%s"
 
+#~ msgid "Title"
+#~ msgstr "標題"
+
+#~ msgid "%s%s%s %s%s%s"
+#~ msgstr "%s%s%s %s%s%s"
+
+#~ msgid "Defined"
+#~ msgstr "已定义"
+
+#~ msgid "Unknown"
+#~ msgstr "未知"
+
+#~ msgid "Invalid"
+#~ msgstr "无效"
+
+#~ msgid "Frequency"
+#~ msgstr "频率"
+
+#~ msgid "week"
+#~ msgstr "周"
+
+#~ msgid " "
+#~ msgstr " "
+
+#~ msgid "     "
+#~ msgstr "     "
+
+#~ msgid "*"
+#~ msgstr "*"
+
+#~ msgid "2"
+#~ msgstr "2"
+
+#~ msgid "59"
+#~ msgstr "59"
+
+#~ msgid ":"
+#~ msgstr ":"
+
+#~ msgid "<b>Basic settings</b>"
+#~ msgstr "<b>基本设置</b>"
+
+#~ msgid "<b>Frequency setting</b>"
+#~ msgstr "<b>频率设置</b>"
+
+#~ msgid "A_dvanced"
+#~ msgstr "高级(_D)"
+
+#~ msgid "Active user"
+#~ msgstr "当前用户"
+
+#~ msgid "Cancel this operation"
+#~ msgstr "取消此操作"
+
+#~ msgid "Preset"
+#~ msgstr "预设"
+
+#~ msgid "Run"
+#~ msgstr "运行"
+
+#~ msgid "Run at:"
+#~ msgstr "运行于："
+
+#~ msgid "Select a different user"
+#~ msgstr "选择不同的用户"
+
+#~ msgid "Set user"
+#~ msgstr "设定用户"
+
+#~ msgid "Task title"
+#~ msgstr "任务标题"
+
+#~ msgid "Time: "
+#~ msgstr "时间："
+
+#~ msgid "Treeview"
+#~ msgstr "树型视图"
+
+#~ msgid "[Add|Edit] scheduled task"
+#~ msgstr "[添加|编辑]计划任务"
