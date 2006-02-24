@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-02-01 00:26+0200\n"
+"POT-Creation-Date: 2006-02-15 06:57+0200\n"
 "PO-Revision-Date: 2006-02-01 00:32+0200\n"
 "Last-Translator: Ilkka Tuohela <hile@iki.fi>\n"
 "Language-Team: Finnish <gnome-fi-laatu@lists.sourceforge.net>\n"
@@ -77,9 +77,9 @@ msgid "Weekday"
 msgstr "Viikonpäivä"
 
 #: ../src/crontab.py:138 ../src/crontab.py:143 ../src/crontab.py:147
-#, fuzzy, python-format
+#, python-format
 msgid "Must be between %(min)s and %(max)s"
-msgstr "Täytyy olla %s ja %s välillä"
+msgstr "Täytyy olla väliltä %(min)s ja %(max)s"
 
 #: ../src/crontab.py:145
 #, python-format
@@ -158,11 +158,13 @@ msgid "Don't use a preset"
 msgstr "Älä käytä esiasetusta"
 
 #: ../src/crontabEditor.py:266
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "This is an invalid record! The problem could be in the %(field)s field. "
 "Reason: %(reason)s"
-msgstr "Tämä on virheellinen tietue! Ongelma saattaa olla %s-kentässä. Syy: %s"
+msgstr ""
+"Tämä on virheellinen tietue! Ongelma saattaa olla kentässä %(field)s."
+"Syy: %(reason)s"
 
 #: ../src/crontabEditor.py:298 ../src/atEditor.py:286
 msgid "The preset has not been saved"
@@ -170,11 +172,11 @@ msgstr "Esiasetusta ei tallennettu"
 
 #: ../src/crontabEditor.py:300 ../src/atEditor.py:288
 msgid "To delete a preset, you first need to select one"
-msgstr ""
+msgstr "Esiasetus täytyy valita ennen kuin voit poistaa sen"
 
 #: ../src/crontabEditor.py:310 ../src/atEditor.py:299
 msgid "To save a preset, you first have to choose a name for it"
-msgstr ""
+msgstr "Esiasetukselle täytyy antaa nimi ennen kuin sen voi tallentaa"
 
 #: ../src/crontabEditor.py:320 ../src/atEditor.py:390
 msgid "Choose an Icon for this Scheduled Task"
@@ -186,7 +188,7 @@ msgstr "komento"
 
 #: ../src/crontabEditor.py:423 ../src/mainWindow.py:553 ../src/atEditor.py:514
 msgid "Could not display help"
-msgstr ""
+msgstr "Ohjetta ei voi näyttää"
 
 #: ../src/crontabEditorHelper.py:111
 msgid "Every weekday"
@@ -194,19 +196,19 @@ msgstr "Joka viikonpäivä"
 
 #: ../src/crontabEditorHelper.py:163
 msgid "Minute settings"
-msgstr ""
+msgstr "Minuuttiasetukset"
 
 #: ../src/crontabEditorHelper.py:164
 msgid "Edit Time Expression for minute"
-msgstr ""
+msgstr "Muokkaa aikaesityksen minuutteja"
 
 #: ../src/crontabEditorHelper.py:166
 msgid "Hour settings"
-msgstr ""
+msgstr "Tuntiasetukset"
 
 #: ../src/crontabEditorHelper.py:167
 msgid "Edit Time Expression for hour"
-msgstr ""
+msgstr "Muokkaa aikaesityksen tunteja"
 
 #: ../src/crontabEditorHelper.py:169
 msgid "Day settings"
@@ -214,7 +216,7 @@ msgstr "Päiväasetukset"
 
 #: ../src/crontabEditorHelper.py:170
 msgid "Edit Time Expression for day"
-msgstr ""
+msgstr "Muokkaa aikaesityksen päiviä"
 
 #: ../src/crontabEditorHelper.py:172
 msgid "Month settings"
@@ -222,7 +224,7 @@ msgstr "Kuukausiasetukset"
 
 #: ../src/crontabEditorHelper.py:173
 msgid "Edit Time Expression for month"
-msgstr ""
+msgstr "Muokkaa aikaesityksen kuukausia"
 
 #: ../src/crontabEditorHelper.py:175
 msgid "Weekday settings"
@@ -230,7 +232,7 @@ msgstr "Viikonpäiväasetukset"
 
 #: ../src/crontabEditorHelper.py:176
 msgid "Edit Time Expression for weekday"
-msgstr ""
+msgstr "Muokkaa aikalauseketta viikonpäivälle"
 
 #: ../src/crontabEditorHelper.py:190
 #, python-format
@@ -258,7 +260,7 @@ msgstr "Tunti:"
 #. day
 #: ../src/crontabEditorHelper.py:244
 msgid "On a day"
-msgstr ""
+msgstr "Päivänä"
 
 #: ../src/crontabEditorHelper.py:245
 msgid "Day:"
@@ -267,7 +269,7 @@ msgstr "Päivä:"
 #. month
 #: ../src/crontabEditorHelper.py:248
 msgid "In a month"
-msgstr "kuukadessa"
+msgstr "Kuukadessa"
 
 #: ../src/crontabEditorHelper.py:249
 msgid "Month:"
@@ -356,11 +358,11 @@ msgstr "<b>Tehtävä</b>"
 
 #: ../src/gnome-schedule.glade.h:9
 msgid "A scheduled task that will launch _recurrently"
-msgstr ""
+msgstr "_Toistuvasti käynnistyvä ajastettu tehtävä"
 
 #: ../src/gnome-schedule.glade.h:10
 msgid "A scheduled task that will launch only once in the _future"
-msgstr ""
+msgstr "_Kerran suoritettava ajastettu tehtävä"
 
 #: ../src/gnome-schedule.glade.h:11
 msgid "About this application"
@@ -439,23 +441,23 @@ msgstr ""
 
 #: ../src/gnome-schedule.glade.h:31
 msgid "Execution at every minute, hour, day, weekday or month."
-msgstr ""
+msgstr "Suoritetaan joka minuutti, tunti, äivä, viikonpäivä tai kuukausi."
 
 #: ../src/gnome-schedule.glade.h:32
 msgid "Execution in a range."
-msgstr ""
+msgstr "Suoritetaan tietyllä välillä."
 
 #: ../src/gnome-schedule.glade.h:33
 msgid "Expression:"
-msgstr ""
+msgstr "Ilmaisu:"
 
 #: ../src/gnome-schedule.glade.h:34
 msgid "For example at 04:10 tomorrow, next week or in three days"
-msgstr ""
+msgstr "Esimerkiksi 04:10 huomenna, ensiviikolla tai kolmen päivän päästä"
 
 #: ../src/gnome-schedule.glade.h:35
 msgid "For example every first hour of the day"
-msgstr ""
+msgstr "Esimerkiksi joka päivän ensimmäisenä tuntina"
 
 #: ../src/gnome-schedule.glade.h:36
 msgid "For experienced users"
@@ -463,7 +465,7 @@ msgstr ""
 
 #: ../src/gnome-schedule.glade.h:37
 msgid "From:"
-msgstr ""
+msgstr "Alkaen:"
 
 #: ../src/gnome-schedule.glade.h:38
 msgid "Ico_n:"
@@ -471,7 +473,7 @@ msgstr "_Kuvake"
 
 #: ../src/gnome-schedule.glade.h:39
 msgid "In a range"
-msgstr ""
+msgstr "Välillä"
 
 #: ../src/gnome-schedule.glade.h:41
 msgid "Mi_nutes:"
@@ -483,34 +485,35 @@ msgstr "Ei _tulostetta"
 
 #: ../src/gnome-schedule.glade.h:45
 msgid "Other"
-msgstr ""
+msgstr "Muu"
 
 #: ../src/gnome-schedule.glade.h:46
 msgid ""
 "Quit the application. This will not stop the system scheduling. It will, "
 "however, quit this system schedule maintenance tool."
 msgstr ""
+"Sulje ohjelma. Tämä ei lopeta järjestelmä ajastustoimintoja, vaan sulkee "
+"ainoastaan tämän hallintatyökalun."
 
 #: ../src/gnome-schedule.glade.h:47
 msgid "Rec_urrence:"
-msgstr ""
+msgstr "Toi_stuvuus:"
 
 #: ../src/gnome-schedule.glade.h:48
 msgid "Save the current information as a template"
-msgstr ""
+msgstr "Tallenna valitut tiedot pohjaksi"
 
 #: ../src/gnome-schedule.glade.h:49
 msgid "Scheduled and active tasks"
-msgstr ""
+msgstr "Ajastetut ja suorituksessa olevat tehtävät"
 
 #: ../src/gnome-schedule.glade.h:50
 msgid "Scri_pt:"
 msgstr "Skri_pti:"
 
 #: ../src/gnome-schedule.glade.h:51
-#, fuzzy
 msgid "See \"man 5 crontab\" for information about the crontab format."
-msgstr "Katso lisätietoa komennolla \"man 5 crontab\" crontab-muotoilusta."
+msgstr "Katso lisätietoa crontab-muotoilusta komennolla \"man 5 crontab\"."
 
 #: ../src/gnome-schedule.glade.h:52
 msgid "Select..."
@@ -526,17 +529,19 @@ msgstr "Näytä käyttöopas"
 
 #: ../src/gnome-schedule.glade.h:55
 msgid "Time expression help"
-msgstr ""
+msgstr "Aikailmaisun ohje"
 
 #: ../src/gnome-schedule.glade.h:56
 msgid "To:"
-msgstr ""
+msgstr "Saakka:"
 
 #: ../src/gnome-schedule.glade.h:57
 msgid ""
 "Tomorrow\n"
 "Next week"
 msgstr ""
+"Huomenna\n"
+"Ensi viikolla"
 
 #: ../src/gnome-schedule.glade.h:59
 msgid ""
@@ -607,6 +612,9 @@ msgid ""
 "or set your PYTHONPATH correctly.\n"
 "try: export PYTHONPATH= "
 msgstr ""
+"Joko pyGTK tai GTKv2 täytyy asettaa ja\n"
+"muuttuja PYTHONPATH asettaa oikein.\n"
+"kokeile: export PYTHONPATH= "
 
 #. Translators: Date format for expressions like 'January 21'. %B is month, %d is day number.
 #. Run the command 'man strftime' to read more about these and other available specifiers.
@@ -637,27 +645,27 @@ msgstr "Joka minuutti"
 #: ../src/lang.py:163
 #, python-format
 msgid "At minute %(minute)s of every hour"
-msgstr ""
+msgstr "Minuutilla %(minute)s joka tunti"
 
 #: ../src/lang.py:165
 #, python-format
 msgid "At every minute between %(time_from)s and %(time_to)s"
-msgstr ""
+msgstr "Joka minuutilla väliltä %(time_from)s ja %(time_to)s"
 
 #: ../src/lang.py:167
 #, python-format
 msgid "On every day at %(time)s"
-msgstr ""
+msgstr "Joka päivä kello %(time)s"
 
 #: ../src/lang.py:172
 #, python-format
 msgid "On day %(monthday)s of every month at every full hour"
-msgstr ""
+msgstr "Kuun %(monthday)s. päivä jokaisella täydellä tunnilla"
 
 #: ../src/lang.py:174
 #, python-format
 msgid "On day %(monthday)s of every month at every minute"
-msgstr ""
+msgstr "Kuun %(monthday)s. päivä jokaisella minuutilla"
 
 #: ../src/lang.py:176
 #, python-format
