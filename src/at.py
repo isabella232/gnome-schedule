@@ -45,6 +45,7 @@ class At:
 
 		# 16       2006-01-08 13:01 a gaute
 		# 7       Sun Jan  8 13:01:00 2006 a pvanhoof
+		# 1	2006-04-26 08:54 a gaute
 
 		self.atRecordRegex = re.compile('([^\s]+)\s((.*)\s(..:..:..\s....)|([^\s]+)\s([^\s]+))\s([^\s]+)\s([^\s]+)')
 

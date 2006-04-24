@@ -1,3 +1,7 @@
+2006-04-24  Gaute Hope  <eg@gaute.vetsj.com>
+
+	* configre.ac: Checking for the python gconf module aswell.
+
 2006-04-17  Kjartan Maraas  <kmaraas@gnome.org>
 
 	* configure.ac: Add nb to ALL_LINGUAS.
