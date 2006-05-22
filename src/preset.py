@@ -148,10 +148,9 @@ class ConfigBackend:
 			return ex, ex, ex, ex, ex
 			
 	def getDefaultIcon (self):
-		# TODO: I don't like this fixed paths maybe put them in config.py?
 		type = "i-executable"
-		_nautdir = "/usr/share/pixmaps/nautilus"
-		_pixdir = "/usr/share/pixmaps"
+		_nautdir = config.getImageDir() + "/nautilus"
+		_pixdir = config.getImageDir()
 		theme = self.gconf_client.get_string("/desktop/gnome/file_views/icon_theme")
 		if type == "x-directory/":
 			if theme:
