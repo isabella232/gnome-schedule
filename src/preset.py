@@ -23,6 +23,8 @@ import gconf
 #python modules
 import os
 
+import config
+
 class ConfigBackend:
 	
 	def __init__(self, parent, type):
@@ -149,8 +151,8 @@ class ConfigBackend:
 			
 	def getDefaultIcon (self):
 		type = "i-executable"
-		_nautdir = config.getImageDir() + "/nautilus"
-		_pixdir = config.getImageDir()
+		_nautdir = config.getImagedir() + "/nautilus"
+		_pixdir = config.getImagedir()
 		theme = self.gconf_client.get_string("/desktop/gnome/file_views/icon_theme")
 		if type == "x-directory/":
 			if theme:
