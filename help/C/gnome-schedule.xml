@@ -386,9 +386,9 @@ at&gt; <userinput>Ctrl + D</userinput>
   
     <variablelist>
     <title>Basic tab</title>
-	    <varlistentry><term>Template</term>
-	      <listitem><para>If you want to use a template to create a task faster, choose it from the drop-down list.
-	       For more information about using, creating and deleting templates see <xref linkend="myapp-templates"/>.</para>
+	    <varlistentry><term>Preset</term>
+	      <listitem><para>If you want to use a preset to create a task faster, choose it from the drop-down list.
+	       For more information about using, creating and deleting presets see <xref linkend="myapp-presets"/>.</para>
 	      </listitem>
 	    </varlistentry>
 	    <varlistentry><term>Description</term>
@@ -438,9 +438,9 @@ at&gt; <userinput>Ctrl + D</userinput>
       
     <variablelist>
     <title>Basic tab</title>
-	    <varlistentry><term>Template</term>
-	      <listitem><para>If you want to use a template to create a task faster, choose it from the drop-down list.
-	       For more information about using, creating and deleting templates see <xref linkend="myapp-templates"/>.</para>
+	    <varlistentry><term>Preset</term>
+	      <listitem><para>If you want to use a preset to create a task faster, choose it from the drop-down list.
+	       For more information about using, creating and deleting presets see <xref linkend="myapp-presets"/>.</para>
 	      </listitem>
 	    </varlistentry>
 	    <varlistentry><term>Description</term>
@@ -491,35 +491,35 @@ at&gt; <userinput>Ctrl + D</userinput>
       By pressing the <guibutton>OK</guibutton> button, the scheduled task will be removed from the <guilabel>Task list</guilabel>.</para>
   </sect1>
 
-<!-- ============== Using templates ============================ -->
-  <sect1 id="myapp-templates">
-    <title>Using Templates</title>
-    <para>&app; lets you save tasks as templates in order to reuse it later. So, you will be able to create new scheduled tasks faster.</para>
-    <para>To manage templates use the <guilabel>Template</guilabel> drop-down list on the properties window when you are adding or editing a tasks.</para>
+<!-- ============== Using presets ============================ -->
+  <sect1 id="myapp-presets">
+    <title>Using Presets</title>
+    <para>&app; lets you save tasks as presets in order to reuse it later. So, you will be able to create new scheduled tasks faster.</para>
+    <para>To manage presets use the <guilabel>Preset</guilabel> drop-down list on the properties window when you are adding or editing a tasks.</para>
     <variablelist>
- 	    <varlistentry><term>Creating a template</term>
-	      <listitem><para>To create a new template, first write a name for it in the <guilabel>Template</guilabel> drop-down list. 
-	        Next, fill in the fields you want to save in the template. 
+ 	    <varlistentry><term>Creating a preset</term>
+	      <listitem><para>To create a new preset, first write a name for it in the <guilabel>Preset</guilabel> drop-down list. 
+	        Next, fill in the fields you want to save in the preset. 
 	        And, finally, press <guibutton>Save</guibutton> button.</para>
 	      </listitem>
 	    </varlistentry>
-	    <varlistentry><term>Modifying a template</term>
-  	    <listitem><para>To modify a template, first choose it from the drop-down list.
+	    <varlistentry><term>Modifying a preset</term>
+  	    <listitem><para>To modify a preset, first choose it from the drop-down list.
   	      Next, change the fields you want to modify.
   	      And, finally, press <guibutton>Save</guibutton> button.</para></listitem>
   	  </varlistentry>
-  	  <varlistentry><term>Deleting a template</term>
-  	    <listitem><para>To delete a template choose it from the drop-down list and then press 
+  	  <varlistentry><term>Deleting a preset</term>
+  	    <listitem><para>To delete a preset choose it from the drop-down list and then press 
   	      the <guibutton>Delete</guibutton> button.</para></listitem>
   	  </varlistentry>
-  	  <varlistentry><term>Using a previously saved template</term>
-	      <listitem><para>To use a previously saved template drop-down the list and select it. The fields will be automatically filled in with the template options.</para></listitem>
+  	  <varlistentry><term>Using a previously saved preset</term>
+	      <listitem><para>To use a previously saved preset drop-down the list and select it. The fields will be automatically filled in with the preset options.</para></listitem>
 	    </varlistentry>
 	  </variablelist>
 	    
-	   <para>If you do not want to use templates select the default option <guilabel>Don't use a preset</guilabel> from the drop-down list.</para>
+	   <para>If you do not want to use presets select the default option <guilabel>Don't use a preset</guilabel> from the drop-down list.</para>
     <tip><para>
-	      You can have common tasks saved as templates. So, you will not have to write the same stuff again and again!
+	      You can have common tasks saved as presets. So, you will not have to write the same stuff again and again!
 	  </para></tip>
   </sect1>
   
