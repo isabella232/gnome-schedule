@@ -37,17 +37,16 @@ class At:
 		self.root =	root
 		self.set_rights(user,uid,gid)
 
-		#
-		# Gaute, can you check this new regex on the systems you own?
-		#
-
-		# self.atRecordRegex = re.compile('([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)')
 
 		# 16       2006-01-08 13:01 a gaute
 		# 7       Sun Jan  8 13:01:00 2006 a pvanhoof
 		# 1	2006-04-26 08:54 a gaute
 
-		self.atRecordRegex = re.compile('([^\s]+)\s((.*)\s(..:..:..\s....)|([^\s]+)\s([^\s]+))\s([^\s]+)\s([^\s]+)')
+		self.atRecordRegex = [ 
+			re.compile('([^\s]+)\s((.*)\s(..:..:..\s....)|([^\s]+)\s([^\s]+))\s([^\s]+)\s([^\s]+)'), 
+			re.compile('([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)') 
+			]
+			
 
 		self.atRecordRegexAdd = re.compile('([^\s]+)\s([^\s]+)\s')
 		self.atRecordRegexAdded = re.compile('[^\s]+\s([0-9]+)\sat')
@@ -65,7 +64,20 @@ class At:
 	def parse (self, line, output = 0):
 		if output == 0:
 			if len (line) > 1 and line[0] != '#':
-				m = self.atRecordRegex.match(line)
+				m = self.atRecordRegex[0].match(line)
+				if m == None:
+					m = self.atRecordRegex[1].match(line)
+					if m != None:
+						print "regexp: 1"
+					else:
+						# Exception
+						print "regexp: failed"
+						return False
+						
+				else:
+					print "regexp: 0"
+					
+					
 				if m != None:
 
 					# print m.groups()
