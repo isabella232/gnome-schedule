@@ -38,7 +38,7 @@ class Crontab:
 		self.crontabRecordRegex = re.compile('([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^#\n$]*)(\s#\s([^\n$]*)|$)')
 		self.__setup_timespec()
 		
-	def __setup_timespec():
+	def __setup_timespec(self):
 		##need implentation, http://bugzilla.gnome.org/show_bug.cgi?id=343512
 		self.special 	= [
 			"@reboot",
