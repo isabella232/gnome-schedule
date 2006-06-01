@@ -39,10 +39,10 @@ class Crontab:
 		
 	def __setup_timespec():
 		##need implentation, http://bugzilla.gnome.org/show_bug.cgi?id=343512
-		self.special 	= {
+		self.special 	= [
 			"@reboot",
 			"@hourly"
-		}
+		]
 		
 		self.timeranges = { 
 			"minute"   : range(0,60), 
