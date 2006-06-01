@@ -36,9 +36,9 @@ class Crontab:
 		
 		self.nooutputtag = ">/dev/null 2>&1"
 		self.crontabRecordRegex = re.compile('([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^#\n$]*)(\s#\s([^\n$]*)|$)')
-		self.__setup_timespec()
+		self.__setup_timespec__()
 		
-	def __setup_timespec(self):
+	def __setup_timespec__(self):
 		##need implentation, http://bugzilla.gnome.org/show_bug.cgi?id=343512
 		self.special 	= [
 			"@reboot",
