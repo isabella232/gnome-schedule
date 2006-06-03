@@ -37,14 +37,27 @@ class Crontab:
 		self.nooutputtag = ">/dev/null 2>&1"
 		self.crontabRecordRegex = re.compile('([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^#\n$]*)(\s#\s([^\n$]*)|$)')
 		self.__setup_timespec__()
+		self.env_vars = [ ]
+		
+		self.crontabdata = "/home/gaute/.gnome/gnome-schedule/crontab"
+		if os.path.exists(self.crontabdata) != True:
+			if os.makedirs(self.crontabdata, '0600'):
+				pass
+			else:
+				# FAILED TO CREATE DATADIR
+			
+		
 		
 	def __setup_timespec__(self):
-		##need implentation, http://bugzilla.gnome.org/show_bug.cgi?id=343512
-		self.special 	= [
-			"@reboot",
-			"@hourly"
-		]
-		
+		self.special 	= {
+			"@reboot"  : '',
+			"@hourly"  : '0 * * * *',
+			"@daily"   : '0 0 * * *',
+			"@weekly"  : '0 0 * * 0',
+			"@monthly" : '0 0 1 * *',
+			"@yearly"  : '0 0 1 1 *'
+			}
+				
 		self.timeranges = { 
 			"minute"   : range(0,60), 
 			"hour"     : range(0,24),
@@ -229,14 +242,13 @@ class Crontab:
 			#read line and get info
 			array_or_false = self.parse (line)
 			if array_or_false != False:
-				(minute, hour, day, month, weekday, command, title, icon) = array_or_false
+				(minute, hour, day, month, weekday, command, comment, job_id, title, icon, desc) = array_or_false
 				time = minute + " " + hour + " " + day + " " + month + " " + weekday
 
 				#make the command smaller if the lenght is to long
 				preview = self.__make_preview__ (command)
 				
 				#add task to treemodel in mainWindow
-				
 				data.append([title, self.__easy__ (minute, hour, day, month, weekday), preview, line, linecount, time, self, icon, "", "", "","", _("Recurrent"), "crontab"])
 				
 				
@@ -264,46 +276,86 @@ class Crontab:
 	
 	#get info out of task line
 	def parse (self, line):
-		if len (line) > 1 and line[0] != '#':
-			"""
-						   min        hour      day      month      wday     command   comment/title-icon or end
-			The regexp:	('([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^#\n$]*)(\s#\s([^\n$]*)|$)')
-			A record:	* * * * * echo $a >/dev/null 2>&1 # Untitled, /usr/share/icons/gnome/48x48/mimetypes/gnome-mime-application.png
-			"""
-			m = self.crontabRecordRegex.match(line)	
-			if m != None:
-					#print m.groups()
-					minute = m.groups ()[0]
-					hour = m.groups ()[1]
-					day = m.groups ()[2]
-					month = m.groups ()[3]
-					weekday = m.groups ()[4]
-					command = m.groups ()[5]
+		# Format of gnome-schedule job line
+		# * * * * * ls -l >/dev/null >2&1 # JOB_ID_1
+		
+		# Return types
+		# 0: Special expression
+		# 1: Enivornment variable
+		# 2: Regular expression
+		
+		line = line.lstrip()
+		
+		comment, line = line.rsplit('#', 1)
 
-					#icon path is in comment of the task, this is the default
-					icon = None
-					
-					#title is in comment of the task
-					title = None
-					if m.groups ()[7] != None:
-						# TODO: check if works
-						lastpiece = m.groups ()[7]
-						keep = lastpiece.split (", ")
-						title = keep[0]
-						if len (keep) > 1:
-							icon = keep[1]
-
-					if title == None:
-						title = _("Untitled")
-
-					return minute, hour, day, month, weekday, command, title, icon
-						
+		#special expressions
+		if line[0] == "@":
+			if (i = line.find('\s')):
+				pass
+			elif (i = line.find('\t')):
+				pass
 			else:
-				print _("ERROR: Failed to parse crontab record")
-		return False
-		# TODO: throw exception
-
-	
+				return False
+			special_expression = line[0:i]
+			line = line[i + 1:]
+			
+			## TODO: continue and return
+			return [0, line]
+			
+		elif (line[0].isalpha()):
+			if line[0] != '*':
+				#ENVIRONMENT VARIABLE
+				return [1, line]
+		else:
+			# Minute
+			minute, line = self.get_exp_sec (line)
+			
+			# Hour
+			hour, line = self.get_exp_sec (line)
+		
+			# Day of Month
+			dom, line = self.get_exp_sec (line)
+			
+			# Month of Year
+			moy, line = self.get_exp_sec (line)
+			
+			# Day of Week
+			dow, line = self.get_exp_sec (line)
+		
+		command = line.rstrip ()
+		
+		# Retrive jobid
+		if (i = comment.find ('JOB_ID_')):
+			job_id = comment[i + 7:].rstrip ()
+		else:
+			job_id = False
+		
+		# Retrive title and icon data
+		if job_id:
+			self.get_job_data (job_id)
+		else:
+			icon = False
+			title = False
+			desc = False
+			
+		#(minute, hour, day, month, weekday, command, comment, job_id, title, icon, desc)
+		return [2, [minute, hour, dom, moy, dow, command, comment, job_id, title, icon, desc]]
+		
+			
+	def get_exp_sec (self, line):
+		line.lstrip ()
+		if (i = line.find ('\s')):
+			pass
+		elif (i = line.find ('\t')):
+			pass
+		else:
+			#throw exception
+			return False
+			
+		sec = line[0:i]
+		line = [i + 1:]
+		return sec, line
+		
 	def __easy__ (self, minute, hour, day, month, weekday):
 		return lang.translate_crontab_easy (minute, hour, day, month, weekday)
 
