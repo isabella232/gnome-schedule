@@ -341,7 +341,14 @@ class Crontab:
 		#(minute, hour, day, month, weekday, command, comment, job_id, title, icon, desc)
 		return [2, [minute, hour, dom, moy, dow, command, comment, job_id, title, icon, desc]]
 		
+	def get_job_data (self, job_id):
+		f = os.path.join (self.crontabdata, "job_id")
+		if os.access (f, os.R_OK):
+			fh = os.open (f)
+			####### ___ !!! CONTINUE !!!!:__
 			
+		
+				
 	def get_exp_sec (self, line):
 		line.lstrip ()
 		if (i = line.find ('\s')):
