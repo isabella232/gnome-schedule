@@ -1,3 +1,8 @@
+2006-06-05  Gaute Hope  <eg@gaute.vetsj.com>
+
+	* src/crontab.py: Implemented new parse, added job_id to the treemodel for crontab, need some serious adjusting all around gnome-schedule.
+	* src/mainWindow.py: Also some adjusting to the new treemodel layout for crontab lines.
+	
 2006-05-22  Gaute Hope  <eg@gaute.vetsj.com>
 
 	* src/at.py: Using two regexps in case one is invalid.

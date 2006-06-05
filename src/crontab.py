@@ -41,15 +41,16 @@ class Crontab:
 		
 		self.crontabdata = "/home/gaute/.gnome/gnome-schedule/crontab"
 		if os.path.exists(self.crontabdata) != True:
-			if os.makedirs(self.crontabdata, '0600'):
+			if os.makedirs(self.crontabdata, 0700):
 				pass
 			else:
+				pass
 				# FAILED TO CREATE DATADIR
 			
 		
 		
-	def __setup_timespec__(self):
-		self.special 	= {
+	def __setup_timespec__ (self):
+		self.special = {
 			"@reboot"  : '',
 			"@hourly"  : '0 * * * *',
 			"@daily"   : '0 0 * * *',
@@ -168,7 +169,7 @@ class Crontab:
 				raise ValueError("fixed", self.timenames[type], _("Must be between %(min)s and %(max)s") % { "min": min(timerange), "max": max(timerange) } )
 
 
-	def update (self,minute, hour, day, month, weekday,command, linenumber, parentiter, nooutput, title, icon = None):
+	def update (self,minute, hour, day, month, weekday,command, linenumber, parentiter, nooutput, title, icon, job_id):
 		# update crontab
 		record = minute + " " + hour + " " + day + " " + month + " " + weekday + " " + command
 		#print "crontab:update:record=" + record
@@ -177,15 +178,21 @@ class Crontab:
 
 		if nooutput:
 			record = record + " " + self.nooutputtag
-
-		if title != None and icon == None:
-			record = record + " # " + title
-		elif title != None and icon != None:
-			record = record + " # " + title + ", " + icon
-		elif title == None and icon != None:
-			title = _("Untitled")
-			record = record + " # " + title + ", " + icon
-
+			
+			if title == None:
+				title = _("Untitled")
+				
+			# Create and write data file
+			f = os.path.join (self.crontabdata, job_id)
+			if os.access (f, os.W_OK):
+				fh = os.open (f, 'w')
+				fh.writeline ("title=" + title)
+				fh.writeline ("icon=" + icon)
+				fh.write ("desc=" + desc)
+				fh.close ()
+				
+			record = record + " # JOB_ID_" + job_id
+		
 	
 		self.lines[linenumber] = record
 		
@@ -206,20 +213,41 @@ class Crontab:
 		self.__write__ ()
 		
 		
-	def append (self, minute, hour, day, month, weekday, command, nooutput, title, icon = None):
+	def append (self, minute, hour, day, month, weekday, command, nooutput, title, icon = None, desc = None):
 		record = minute + " " + hour + " " + day + " " + month + " " + weekday + " " + command
 		if nooutput:
 			space = " "
 			if record[len(record)-1] == " ":
 				space = ""
 			record = record + space + self.nooutputtag
-		if title != None and icon == None:
-			record = record + " # " + title
-		elif title != None and icon != None:
-			record = record + " # " + title + ", " + icon
-		elif title == None and icon != None:
-			record = record + " # " + _("Untitled") + ", " + icon
-
+			
+			if title == None:
+				title = _("Untitled")
+				
+			# Create and write data file
+			f = os.path.join (self.crontabdata, "last_id")
+			if os.access (f, os.R_OK):
+				fh = os.open (f, 'r+')
+				last_id = int (fh.read ())
+				job_id = last_id + 1
+				fh.write (job_id)
+				fh.close ()
+			else:
+				job_id = 1
+				fh = os.open (f, 'w')
+				fh.write ("1")
+				fh.close
+			
+			f = os.path.join (self.crontabdata, job_id)
+			if os.access (f, os.W_OK):
+				fh = os.open (f, 'w')
+				fh.writeline ("title=" + title)
+				fh.writeline ("icon=" + icon)
+				fh.write ("desc=" + desc)
+				fh.close ()
+				
+			record = record + " # JOB_ID_" + job_id
+			
 		self.lines.append (record)
 		
 		# TODO: let write trow an exception if failed
@@ -242,14 +270,15 @@ class Crontab:
 			#read line and get info
 			array_or_false = self.parse (line)
 			if array_or_false != False:
-				(minute, hour, day, month, weekday, command, comment, job_id, title, icon, desc) = array_or_false
-				time = minute + " " + hour + " " + day + " " + month + " " + weekday
+				if array_or_false[0] == 2:
+					(minute, hour, day, month, weekday, command, comment, job_id, title, icon, desc) = array_or_false[1]
+					time = minute + " " + hour + " " + day + " " + month + " " + weekday
 
-				#make the command smaller if the lenght is to long
-				preview = self.__make_preview__ (command)
+					#make the command smaller if the lenght is to long
+					preview = self.__make_preview__ (command)
 				
-				#add task to treemodel in mainWindow
-				data.append([title, self.__easy__ (minute, hour, day, month, weekday), preview, line, linecount, time, self, icon, "", "", "","", _("Recurrent"), "crontab"])
+					#add task to treemodel in mainWindow
+					data.append([title, self.__easy__ (minute, hour, day, month, weekday), preview, line, linecount, time, self, icon, job_id, "", "","", _("Recurrent"), "crontab"])
 				
 				
 			linecount = linecount + 1	
@@ -282,7 +311,7 @@ class Crontab:
 		# Return types
 		# 0: Special expression
 		# 1: Enivornment variable
-		# 2: Regular expression
+		# 2: Standard expression
 		
 		line = line.lstrip()
 		
@@ -290,10 +319,11 @@ class Crontab:
 
 		#special expressions
 		if line[0] == "@":
-			if (i = line.find('\s')):
-				pass
-			elif (i = line.find('\t')):
-				pass
+			if (line.find('\s')):
+				i = line.find('\s')
+			elif (line.find('\t')):
+				i = line.find('\t')
+				
 			else:
 				return False
 			special_expression = line[0:i]
@@ -325,42 +355,60 @@ class Crontab:
 		command = line.rstrip ()
 		
 		# Retrive jobid
-		if (i = comment.find ('JOB_ID_')):
+		if (comment.find ('JOB_ID_')):
+			i = comment.find ('JOB_ID_')
 			job_id = comment[i + 7:].rstrip ()
 		else:
 			job_id = False
 		
 		# Retrive title and icon data
 		if job_id:
-			self.get_job_data (job_id)
+			title, icon, desc = self.get_job_data (job_id)
 		else:
-			icon = False
 			title = False
+			icon = False
 			desc = False
 			
-		#(minute, hour, day, month, weekday, command, comment, job_id, title, icon, desc)
 		return [2, [minute, hour, dom, moy, dow, command, comment, job_id, title, icon, desc]]
 		
 	def get_job_data (self, job_id):
 		f = os.path.join (self.crontabdata, "job_id")
 		if os.access (f, os.R_OK):
-			fh = os.open (f)
-			####### ___ !!! CONTINUE !!!!:__ 
+			if (fh == os.open (f, 'r')):
+				d = fh.read ()
+				
+				d.strip ()
+			
+				title = d[7:d.find ("\n")]
+				d = d[d.find ("\n") + 1:]
+			
+				icon = d[6:d.find ("\n")]
+				d = d[d.find ("\n") + 1:]
+			
+				desc = d[6:]
+				fh.close ()
+			
+				return title, icon, desc
+			else:
+				return False, False, False
+		else: 
+			return False, False, False
+			
 			
 		
 				
 	def get_exp_sec (self, line):
 		line.lstrip ()
-		if (i = line.find ('\s')):
-			pass
-		elif (i = line.find ('\t')):
-			pass
+		if (line.find ('\s')):
+			i = line.find ('\s')
+		elif (line.find ('\t')):
+			i = line.find ('\t')
 		else:
 			#throw exception
 			return False
 			
 		sec = line[0:i]
-		line = [i + 1:]
+		line = line[i + 1:]
 		return sec, line
 		
 	def __easy__ (self, minute, hour, day, month, weekday):
