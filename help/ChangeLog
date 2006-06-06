@@ -1,3 +1,8 @@
+2006-06-06 Rodrigo Marcos <rmarcos@cvs.gnome.org>
+
+	* Created new section in manual about launching graphical applications
+	from a programmed task.
+
 2006-01-31  Alessio Frusciante  <algol@firenze.linux.it>
 
 	* Makefile.am: Added "it" (Italian) to DOC_LINGUAS.

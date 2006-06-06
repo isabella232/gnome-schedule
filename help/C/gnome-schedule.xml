@@ -3,8 +3,8 @@
 "http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd" [
   <!ENTITY legal SYSTEM "legal.xml">
   <!ENTITY appversion "1.0.0">
-  <!ENTITY manrevision "2.0">
-  <!ENTITY date "August 2005">
+  <!ENTITY manrevision "2.1">
+  <!ENTITY date "June 2006">
   <!ENTITY app "<application>Gnome Schedule</application>">
   <!-- Information about the entities
        The legal.xml file contains legal information, there is no need to edit the file. 
@@ -19,8 +19,7 @@
   This is the Gnome Schedule User Guide
   This file is distributed under the terms of the GNU Free Documentation 
   License (GFDL)
-  Copyright (C) 2005 The GNOME Documentation Project
-  Rodrigo Marcos Fombellida <rmarcos_geo@yahoo.es>, 2005
+  Copyright (C) 2005, 2006 The GNOME Documentation Project
 ================================================================================ -->
 
 <!-- <abstract role="description"><para>User manual for the CPU Frequency Scaling applet.</para></abstract>
@@ -39,7 +38,7 @@
     <abstract role="description"><para>User Guide for the application Gnome Schedule</para></abstract>
     <copyright> 
       <year>2005</year> 
-      <holder>Rodrigo Marcos Fombellida rmarcos_geo@yahoo.es</holder> 
+      <holder>Rodrigo Marcos Fombellida rmarcos@cvs.gnome.org</holder> 
     </copyright>
 <!-- translators: uncomment this:
 
@@ -53,7 +52,7 @@
      not specified, the publisher/author is the same for all versions of the 
      document.  -->
     <publisher> 
-      <publishername> GNOME Documentation Project </publishername> 
+      <publishername>GNOME Documentation Project</publishername> 
     </publisher> 
 
    &legal;
@@ -62,22 +61,12 @@
 	any of this. -->
 
     <authorgroup> 
-      <!--
-      <author> 
-		<firstname>Documentation</firstname> 
-		<surname>Writer 2</surname> 
-		<affiliation> 
-	  		<orgname>GNOME Documentation Project</orgname> 
-	  		<address> <email>doc-writer2@gnome.org</email> </address> 
-		</affiliation> 
-      </author>
-      -->
       <author> 
 		<firstname>Rodrigo</firstname> 
 		<surname>Marcos Fombellida</surname> 
 		<affiliation> 
 	  		<orgname>GNOME Documentation Project</orgname> 
-	  		<address> <email>rmarcos_geo@yahoo.es</email> </address> 
+	  		<address> <email>rmarcos@cvs.gnome.org</email> </address> 
 		</affiliation> 
       </author> 
       
@@ -86,32 +75,32 @@
      
 <!-- Please translator, add here your personal information. Thanks for your work ;) -->
       <othercredit role="translator">
-		<firstname>Latin</firstname> 
-		<surname>Translator 1</surname> 
+		<firstname>Translator: Your first name here</firstname> 
+		<surname>Translator: Your surname here</surname> 
 		<affiliation> 
-	  		<orgname>Latin Translation Team</orgname> 
-	  		<address> <email>translator@gnome.org</email> </address> 
+	  		<orgname>Translator: The name of your translation team here</orgname> 
+	  		<address> <email>Translator: Your mail here</email> </address> 
 		</affiliation>
-		<contrib>Latin translation</contrib>
+		<contrib>Translator: Write here your contribution, e.g. Latin translation</contrib>
       </othercredit>
       
-<!-- Next is to omit the gnome-doc-utils warning: missing element with role maintainer:-->
-    <othercredit role="maintainer">
+<!-- Next is to omit the gnome-doc-utils warning: missing element with role maintainer: -->
+<!--    <othercredit role="maintainer">
       <firstname>Rodrigo</firstname> 
 		  <surname>Marcos Fombellida</surname> 
 		  <affiliation> 
 	  		<orgname>GNOME Documentation Project</orgname> 
-	  		<address> <email>rmarcos_geo@yahoo.es</email> </address> 
+	  		<address> <email>rmarcos@cvs.gnome.org</email> </address> 
 		  </affiliation>
-		  <contrib>Manual maintainer</contrib>
-	  </othercredit>
+		  <contrib>Gnome Schedule User Guide maintainance</contrib>
+	  </othercredit> -->
     </authorgroup>
 
 
 <!-- According to GNU FDL, revision history is mandatory if you are -->
 <!-- modifying/reusing someone else's document.  If not, you can omit it. -->
-<!-- Remember to remove the &manrevision; entity from the revision entries other-->
-<!-- than the current revision. -->
+<!-- Remember to remove the &manrevision; entity from the revision entries -->
+<!-- other than the current revision. -->
 <!-- The revision numbering system for GNOME manuals is as follows: -->
 <!-- * the revision number consists of two components -->
 <!-- * the first component of the revision number reflects the release version of the GNOME desktop. -->
@@ -122,23 +111,21 @@
 <!-- to V3.0, and so on. -->  
     <revhistory>
 <!-- Add next revision info here: -->
-<!--     
-    <revision> 
-		<revnumber>Gnome Schedule Manual V&manrevision;</revnumber> 
-		<date>&date;</date> 
-		<revdescription> 
-	  		<para role="author">Documentation Writer 2
-	    	<email>docwriter2@gnome.org</email>
-	  		</para>
-	  		<para role="publisher">GNOME Documentation Project</para>
-		</revdescription> 
-      </revision>   -->
       <revision> 
 		<revnumber>Gnome Schedule User Guide V2.0</revnumber> 
 		<date>August 2005</date> 
 		<revdescription> 
 	  		<para role="author">Rodrigo Marcos Fombellida 
-	    	<email>rmarcos_geo@yahoo.es</email></para>
+	    	<email>rmarcos@cvs.gnome.org</email></para>
+	  		<para role="publisher">GNOME Documentation Project</para>
+		</revdescription> 
+      </revision> 
+      <revision> 
+		<revnumber>Gnome Schedule User Guide V2.1</revnumber> 
+		<date>June 2006</date> 
+		<revdescription> 
+	  		<para role="author">Rodrigo Marcos Fombellida 
+	    	<email>rmarcos@cvs.gnome.org</email></para>
 	  		<para role="publisher">GNOME Documentation Project</para>
 		</revdescription> 
       </revision> 
@@ -194,7 +181,7 @@
 	      command <command>crontab</command> in this way:
 	      <screen>
 $ <userinput>crontab -e</userinput>
-<userinput>* * * * 2 &lt;command&gt;  #comments</userinput>
+<userinput>* * * * 2 &lt;command&gt; --parameters  #comments</userinput>
 	      </screen>
      </para>    
      <tip>
@@ -207,15 +194,16 @@ $ <userinput>crontab -e</userinput>
 	    </para>
 	    <para>If you were to configure <application>at</application> manually
 	      to execute a command, for example tomorrow at this time, you would have to use the 
-	      command<command>at</command> in this way:
+	      command <command>at</command> in this way:
         <screen>
 $ <userinput>at tomorrow</userinput>
-at&gt; <userinput>ls --parameters</userinput>
+at&gt; <userinput>&lt;command_1&gt; --parameters </userinput>
+at&gt; <userinput>&lt;command_2&gt; --parameters </userinput>
 at&gt; <userinput>Ctrl + D</userinput>
         </screen>
       </para>
       <tip>
-       <para>See <command>man at</command>  for more information about 
+       <para>See <command>man at</command> for more information about 
          <application>at</application></para>
      </tip> 
     </sect2>
@@ -566,6 +554,53 @@ at&gt; <userinput>Ctrl + D</userinput>
        Now the main window will show the scheduled tasks of the selected user.
      </para>
   </sect1>
+
+<!-- ================ Run graphical apps =================== -->
+<sect1 id="myapp-graphical_apps">
+<title>Using &app; to launch graphical applications</title>
+<para>You can use Gnome Schedule to launch a graphical application automatically, but
+there are some information you would consider before:</para>
+
+<sect2 id="myapp-graphical_apps-sub1">
+<title>About DISPLAY environment variable</title>
+<para>When you run a graphical application from the command line you must first set
+the environment variable DISPLAY. This variable is used to tell your graphical 
+application what X server to use. Normally you will want to use the one
+installed on your own computer. In that case you need to set the DISPLAY 
+variable in this way:</para>
+<para><command>DISPLAY=:0.0</command></para>
+<para>where :0.0 means use screen 0 of X server 0 in this computer.</para>
+<para>If you want display the application in a remote screen you can specify the IP
+address of the remote X server:</para>
+<para><command>DISPLAY=192.168.0.25:0.0</command></para>
+</sect2>
+
+<sect2 id="myapp-graphical_apps-sub2">
+<title>Setting DISPLAY variable for tasks that will launch once</title>
+<para>When you are creating or modifying a task, you can define the DISPLAY variable
+in the script text box. Make the definition at the begining of the script.</para>
+</sect2>
+
+<sect2 id="myapp-graphical_apps-sub3">
+<title>Setting DISPLAY variable for tasks that will launch recurrently</title>
+<para>Gnome Schedule does not support yet setting environment variables for recurrent
+tasks, but it will do soon. In the meantime, you can manually create a script 
+that first defines DISPLAY variable and then calls the graphical application.
+Finally, you can create a recurrent task to launch the script.</para>
+</sect2>
+
+<sect2 id="myapp-graphical_apps-sub4">
+<title>About X server</title>
+<para>The X server is part of the X Window System. It is in charge of drawing
+windows on the screen and processing the user input from a keyboard or any other
+peripheral.</para>
+<para>If you need more information about X server or the X Window System 
+you can read its 
+<ulink url="http://en.wikipedia.org/wiki/X_Window_System" type="http">entry</ulink>
+in the Wikipedia.</para>
+</sect2>
+
+</sect1>
 
 <!-- ============= Bugs ================================== -->
 <!-- This section is optional and is commented out by default. 
