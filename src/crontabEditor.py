@@ -147,7 +147,11 @@ class CrontabEditor:
 		self.linenumber = linenumber
 		self.record = record
 		self.job_id = job_id
-		(self.minute, self.hour, self.day, self.month, self.weekday, self.command, self.title, self.icon) = self.scheduler.parse (record)[1]
+		print "parsing"
+		print self.scheduler.parse (record)[1]
+		(self.minute, self.hour, self.day, self.month, self.weekday, self.command, self.comment, self.job_id, self.title, self.icon, self.desc) = self.scheduler.parse (record)[1]
+		
+		print "done parsing"
 		self.widget.set_title(_("Edit a Scheduled Task"))
 		self.__update_textboxes__ ()
 		self.__set_frequency_combo__ ()
@@ -449,7 +453,8 @@ class CrontabEditor:
 
 		
 		if self.editing != False:
-			self.scheduler.update (self.minute, self.hour, self.day, self.month, self.weekday, self.command, self.linenumber, self.parentiter, self.nooutput, self.title, self.icon, self.job_id)
+			self.minute, self.hour, self.day, self.month, self.weekday, self.command, self.comment, self.job_id, self.title, self.icon, self.desc
+			self.scheduler.update (self.minute, self.hour, self.day, self.month, self.weekday, self.command, self.linenumber, self.parentiter, self.nooutput, self.job_id, self.comment, self.title, self.icon, self.desc)
 			
 		else:
 			self.scheduler.append (self.minute, self.hour, self.day, self.month, self.weekday, self.command, self.nooutput, self.title, self.icon)
