@@ -21,6 +21,7 @@
 import re
 import os
 import tempfile
+import string
 
 #custom modules
 import lang
@@ -224,29 +225,45 @@ class Crontab:
 			if title == None:
 				title = _("Untitled")
 				
+			if desc == None:
+				desc = ""
+			
+			if icon == None:
+				icon = ""
+				
 			# Create and write data file
 			f = os.path.join (self.crontabdata, "last_id")
 			if os.access (f, os.R_OK):
-				fh = os.open (f, 'r+')
-				last_id = int (fh.read ())
+				fh = os.open (f, os.O_RDWR)
+				r = os.read (fh, 1024)
+				tmp = os.read (fh, 1024)
+				while tmp != "":
+					r = r + tmp
+					tmp = os.read (fh, 1024)
+				if r != "":
+					last_id = 0
+				else:
+					last_id = int (r)
+				print "last_id" + str (last_id)
 				job_id = last_id + 1
-				fh.write (job_id)
-				fh.close ()
+				os.write (fh, str (job_id))
+				os.close (fh)
 			else:
 				job_id = 1
-				fh = os.open (f, 'w')
-				fh.write ("1")
-				fh.close
+				fh = os.open (f, os.O_CREAT | os.O_WRONLY)
+				os.write (fh, "1")
+				os.close (fh)
 			
-			f = os.path.join (self.crontabdata, job_id)
-			if os.access (f, os.W_OK):
-				fh = os.open (f, 'w')
-				fh.writeline ("title=" + title)
-				fh.writeline ("icon=" + icon)
-				fh.write ("desc=" + desc)
-				fh.close ()
+			f = os.path.join (self.crontabdata, str(job_id))
+			print f
+			fh = os.open (f, os.O_WRONLY | os.O_CREAT)
+			os.write (fh, "title=" + title + "\n")
+			os.write (fh, "icon=" + icon +  "\n")
+			os.write (fh, "desc=" + desc + "\n")
+			os.close (fh)
+
 				
-			record = record + " # JOB_ID_" + job_id
+			record = record + " # JOB_ID_" + str (job_id)
 			
 		self.lines.append (record)
 		
@@ -272,6 +289,7 @@ class Crontab:
 			if array_or_false != False:
 				if array_or_false[0] == 2:
 					(minute, hour, day, month, weekday, command, comment, job_id, title, icon, desc) = array_or_false[1]
+					
 					time = minute + " " + hour + " " + day + " " + month + " " + weekday
 
 					#make the command smaller if the lenght is to long
@@ -314,9 +332,10 @@ class Crontab:
 		# 2: Standard expression
 		
 		line = line.lstrip()
+				
+		line, comment = line.rsplit('#', 1)
 		
-		comment, line = line.rsplit('#', 1)
-
+		
 		#special expressions
 		if line[0] == "@":
 			if (line.find('\s')):
@@ -399,14 +418,9 @@ class Crontab:
 				
 	def get_exp_sec (self, line):
 		line.lstrip ()
-		if (line.find ('\s')):
-			i = line.find ('\s')
-		elif (line.find ('\t')):
-			i = line.find ('\t')
-		else:
-			#throw exception
-			return False
-			
+		print line
+		print line.find(" ")
+		i = line.find(" ")
 		sec = line[0:i]
 		line = line[i + 1:]
 		return sec, line
