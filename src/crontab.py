@@ -118,7 +118,7 @@ class Crontab:
 		Checks a single Crontab time expression.
 		At first possibly contained alias names will be replaced by their
 		corresponding numbers. After that every asterisk will be replaced by
-		a »first to last« expression. Then the expression will be splitted
+		a "first to last" expression. Then the expression will be splitted
 		into the komma separated subexpressions.
 
 		Each subexpression will run through: 
