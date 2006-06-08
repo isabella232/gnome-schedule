@@ -189,8 +189,8 @@ class Crontab:
 			if os.access (f, os.R_OK):
 				fh = open (f, 'r+')
 				r = fh.read ()
-				if r != "":
-					last_id = 0
+				if r == "":
+					last_id = 1
 				else:
 					last_id = int (r)
 					
@@ -266,8 +266,9 @@ class Crontab:
 			if os.access (f, os.R_OK):
 				fh = open (f, 'r+')
 				r = fh.read ()
+				print r
 				if r == "":
-					last_id = 0
+					last_id = 1
 				else:
 					last_id = int (r)
 					
@@ -363,15 +364,34 @@ class Crontab:
 		# 0: Special expression
 		# 1: Enivornment variable
 		# 2: Standard expression
+		# 3: Comment
 		
 		line = line.lstrip()
+		comment = ""
+		
+		if line	!= "":
+			#print "Parsing line: " + line
+			if line[0] == "#":
+				comment = line[1:]
+				line = ""
+				return [3, comment]
+			else:
+				if (line.find ('#') != -1):
+					line, comment = line.rsplit('#', 1)
 				
-		line, comment = line.rsplit('#', 1)
-		comment.lstrip ()
+			comment = comment.strip ()
+			line = line.strip ()
 		
 		
 		#special expressions
-		if line[0] == "@":
+		if line == "":
+			#Empty
+			if comment != "":
+				return [3, comment]
+			else:
+				return False
+				
+		elif line[0] == "@":
 			if (line.find('\s')):
 				i = line.find('\s')
 			elif (line.find('\t')):
@@ -384,7 +404,7 @@ class Crontab:
 			
 			## TODO: continue and return
 			return [0, line]
-			
+	
 		elif (line[0].isalpha()):
 			if line[0] != '*':
 				#ENVIRONMENT VARIABLE
@@ -404,11 +424,12 @@ class Crontab:
 			
 			# Day of Week
 			dow, line = self.get_exp_sec (line)
+			
 		
-		command = line.rstrip ()
+		command = line.strip ()
 		
 		# Retrive jobid
-		if (comment.find ('JOB_ID_')):
+		if (comment.find ('JOB_ID_') != -1):
 			i = comment.find ('JOB_ID_')
 			job_id = int (comment[i + 7:].rstrip ())
 		else:
@@ -418,9 +439,9 @@ class Crontab:
 		if job_id:
 			title, icon, desc = self.get_job_data (job_id)
 		else:
-			title = False
-			icon = False
-			desc = False
+			title = ""
+			icon = ""
+			desc = ""
 			
 		return [2, [minute, hour, dom, moy, dow, command, comment, job_id, title, icon, desc]]
 		
@@ -430,7 +451,7 @@ class Crontab:
 			fh = open (f, 'r')
 			d = fh.read ()
 				
-			d.strip ()
+			d = d.strip ()
 			
 			title = d[6:d.find ("\n")]
 			d = d[d.find ("\n") + 1:]
@@ -444,15 +465,26 @@ class Crontab:
 			return title, icon, desc
 			
 		else: 
-			return False, False, False
+			return "", "", ""
 			
 			
 		
 				
 	def get_exp_sec (self, line):
-		line.lstrip ()
-		i = line.find(" ")
+		line = line.lstrip ()
+		#print "line: \"" + line + "\""
+		
+		## find next whitespace
+		i = 0
+		found = False
+		while (i <= len(line)) and (found == False):
+			if line[i] in string.whitespace:
+				found = True
+				#print "found: " + str (i)
+			else:
+				i = i + 1
 		sec = line[0:i]
+		#print "sec: \"" + sec + "\""
 		line = line[i + 1:]
 		return sec, line
 		

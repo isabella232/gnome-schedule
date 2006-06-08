@@ -142,6 +142,7 @@ class CrontabEditor:
 	
 	
 	def showedit (self, record, job_id, linenumber, iter, mode):
+		
 		self.__reload_templates__ ()
 		self.editing = True
 		self.linenumber = linenumber
@@ -149,7 +150,9 @@ class CrontabEditor:
 		self.job_id = job_id
 		(self.minute, self.hour, self.day, self.month, self.weekday, self.command, self.comment, self.job_id, self.title, self.icon, self.desc) = self.scheduler.parse (record)[1]
 		self.widget.set_title(_("Edit a Scheduled Task"))
+		
 		self.__update_textboxes__ ()
+		
 		self.__set_frequency_combo__ ()
 		self.parentiter = iter
 		self.widget.set_transient_for(self.ParentClass.widget)

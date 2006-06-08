@@ -1,3 +1,7 @@
+2006-06-08  Gaute Hope  <eg@gaute.vetsj.com>
+
+	* src/crontab.py, src/mainWindow.py, src/crontabEditor.py: Should have a working copy now, parses http://bugzilla.gnome.org/show_bug.cgi?id=342751 quite good. Aswell as adding JOB_ID's to existing tasks.
+	
 2006-06-05  Gaute Hope  <eg@gaute.vetsj.com>
 
 	* src/crontab.py: Implemented new parse, added job_id to the treemodel for crontab, need some serious adjusting all around gnome-schedule.
