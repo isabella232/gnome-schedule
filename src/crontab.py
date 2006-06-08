@@ -170,7 +170,7 @@ class Crontab:
 				raise ValueError("fixed", self.timenames[type], _("Must be between %(min)s and %(max)s") % { "min": min(timerange), "max": max(timerange) } )
 
 
-	def update (self,minute, hour, day, month, weekday,command, linenumber, parentiter, nooutput, title, icon, job_id):
+	def update (self, minute, hour, day, month, weekday, command, linenumber, parentiter, nooutput, job_id, comment, title, icon, desc):
 		# update crontab
 		record = minute + " " + hour + " " + day + " " + month + " " + weekday + " " + command
 		#print "crontab:update:record=" + record
@@ -179,22 +179,52 @@ class Crontab:
 
 		if nooutput:
 			record = record + " " + self.nooutputtag
-			
-			if title == None:
-				title = _("Untitled")
-				
-			# Create and write data file
-			f = os.path.join (self.crontabdata, job_id)
-			if os.access (f, os.W_OK):
-				fh = os.open (f, 'w')
-				fh.writeline ("title=" + title)
-				fh.writeline ("icon=" + icon)
-				fh.write ("desc=" + desc)
+		
+		if comment:
+			record = record + " #" + comment
+		
+		if job_id == False:
+			## Create a job_id for an existing task
+			f = os.path.join (self.crontabdata, "last_id")
+			if os.access (f, os.R_OK):
+				fh = open (f, 'r+')
+				r = fh.read ()
+				if r != "":
+					last_id = 0
+				else:
+					last_id = int (r)
+					
+				print "last_id" + str (last_id)
+				job_id = last_id + 1
+				print "job_id" + str (job_id)
+				fh.seek (0)
+				fh.truncate (1)
+				fh.write ( str(job_id))
 				fh.close ()
 				
-			record = record + " # JOB_ID_" + job_id
-		
+				
+			else:
+				job_id = 1
+				fh = open (f, 'w')
+				fh.write ('1')
+				fh.close ()
+				
+			record = record + " # JOB_ID_" + str (job_id)
+			
+			
+		if title == None:
+			title = _("Untitled")
 	
+		f = os.path.join (self.crontabdata, str(job_id))
+		print f
+		fh = open (f, 'w')
+		fh.truncate (1)
+		fh.seek (0)
+		fh.write ("title=" + title + "\n")
+		fh.write ("icon=" + icon +  "\n")
+		fh.write ("desc=" + desc + "\n")
+		fh.close ()	
+
 		self.lines[linenumber] = record
 		
 		# TODO: let write trow an exception if failed
@@ -234,34 +264,37 @@ class Crontab:
 			# Create and write data file
 			f = os.path.join (self.crontabdata, "last_id")
 			if os.access (f, os.R_OK):
-				fh = os.open (f, os.O_RDWR)
-				r = os.read (fh, 1024)
-				tmp = os.read (fh, 1024)
-				while tmp != "":
-					r = r + tmp
-					tmp = os.read (fh, 1024)
-				if r != "":
+				fh = open (f, 'r+')
+				r = fh.read ()
+				if r == "":
 					last_id = 0
 				else:
 					last_id = int (r)
+					
 				print "last_id" + str (last_id)
 				job_id = last_id + 1
-				os.write (fh, str (job_id))
-				os.close (fh)
+				print "job_id" + str (job_id)
+				fh.seek (0)
+				fh.truncate (1)
+				fh.write ( str(job_id))
+				fh.close ()
+				
+				
 			else:
 				job_id = 1
-				fh = os.open (f, os.O_CREAT | os.O_WRONLY)
-				os.write (fh, "1")
-				os.close (fh)
+				fh = open (f, 'w')
+				fh.write ('1')
+				fh.close ()
 			
 			f = os.path.join (self.crontabdata, str(job_id))
 			print f
-			fh = os.open (f, os.O_WRONLY | os.O_CREAT)
-			os.write (fh, "title=" + title + "\n")
-			os.write (fh, "icon=" + icon +  "\n")
-			os.write (fh, "desc=" + desc + "\n")
-			os.close (fh)
-
+			fh = open (f, 'w')
+			fh.truncate (1)
+			fh.seek (0)
+			fh.write ("title=" + title + "\n")
+			fh.write ("icon=" + icon +  "\n")
+			fh.write ("desc=" + desc + "\n")
+			fh.close ()
 				
 			record = record + " # JOB_ID_" + str (job_id)
 			
@@ -334,6 +367,7 @@ class Crontab:
 		line = line.lstrip()
 				
 		line, comment = line.rsplit('#', 1)
+		comment.lstrip ()
 		
 		
 		#special expressions
@@ -376,7 +410,7 @@ class Crontab:
 		# Retrive jobid
 		if (comment.find ('JOB_ID_')):
 			i = comment.find ('JOB_ID_')
-			job_id = comment[i + 7:].rstrip ()
+			job_id = int (comment[i + 7:].rstrip ())
 		else:
 			job_id = False
 		
@@ -391,25 +425,24 @@ class Crontab:
 		return [2, [minute, hour, dom, moy, dow, command, comment, job_id, title, icon, desc]]
 		
 	def get_job_data (self, job_id):
-		f = os.path.join (self.crontabdata, "job_id")
+		f = os.path.join (self.crontabdata, str (job_id))
 		if os.access (f, os.R_OK):
-			if (fh == os.open (f, 'r')):
-				d = fh.read ()
+			fh = open (f, 'r')
+			d = fh.read ()
 				
-				d.strip ()
+			d.strip ()
 			
-				title = d[7:d.find ("\n")]
-				d = d[d.find ("\n") + 1:]
+			title = d[6:d.find ("\n")]
+			d = d[d.find ("\n") + 1:]
 			
-				icon = d[6:d.find ("\n")]
-				d = d[d.find ("\n") + 1:]
+			icon = d[5:d.find ("\n")]
+			d = d[d.find ("\n") + 1:]
 			
-				desc = d[6:]
-				fh.close ()
+			desc = d[5:]
+			fh.close ()
 			
-				return title, icon, desc
-			else:
-				return False, False, False
+			return title, icon, desc
+			
 		else: 
 			return False, False, False
 			
@@ -418,8 +451,6 @@ class Crontab:
 				
 	def get_exp_sec (self, line):
 		line.lstrip ()
-		print line
-		print line.find(" ")
 		i = line.find(" ")
 		sec = line[0:i]
 		line = line[i + 1:]

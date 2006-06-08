@@ -147,11 +147,7 @@ class CrontabEditor:
 		self.linenumber = linenumber
 		self.record = record
 		self.job_id = job_id
-		print "parsing"
-		print self.scheduler.parse (record)[1]
 		(self.minute, self.hour, self.day, self.month, self.weekday, self.command, self.comment, self.job_id, self.title, self.icon, self.desc) = self.scheduler.parse (record)[1]
-		
-		print "done parsing"
 		self.widget.set_title(_("Edit a Scheduled Task"))
 		self.__update_textboxes__ ()
 		self.__set_frequency_combo__ ()

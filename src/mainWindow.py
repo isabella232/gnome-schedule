@@ -404,10 +404,8 @@ class main:
 			
 			# TODO: dirty hacky 
 			if self.schedule.get_type() == "crontab":
-				print "crontab"
 				self.editor = self.crontab_editor
 				job_id = self.treemodel.get_value (iter, 9)
-				print "start editor"
 				self.editor.showedit (record, job_id, linenumber, iter, self.edit_mode)
 			else:
 				self.editor = self.at_editor
