@@ -40,7 +40,7 @@ class Crontab:
 		self.__setup_timespec__()
 		self.env_vars = [ ]
 		
-		self.crontabdata = "/home/gaute/.gnome/gnome-schedule/crontab"
+		self.crontabdata = os.path.expanduser ("~/.gnome/gnome-schedule/crontab")
 		if os.path.exists(self.crontabdata) != True:
 			if os.makedirs(self.crontabdata, 0700):
 				pass
