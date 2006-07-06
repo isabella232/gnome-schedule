@@ -444,7 +444,7 @@ msgstr "Thực hiện vào mỗi phút, giờ, ngày, ngày tuần hay tháng."
 
 #:../src/gnome-schedule.glade.h:32
 msgid "Execution in a range."
-msgstr "Thực hiện trong phạm vị"
+msgstr "Thực hiện trong phạm vi"
 
 #:../src/gnome-schedule.glade.h:33
 msgid "Expression:"
@@ -472,7 +472,7 @@ msgstr "_Hình:"
 
 #:../src/gnome-schedule.glade.h:39
 msgid "In a range"
-msgstr "Trong phạm vị"
+msgstr "Trong phạm vi"
 
 #:../src/gnome-schedule.glade.h:41
 msgid "Mi_nutes:"
