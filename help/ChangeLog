@@ -1,3 +1,9 @@
+2006-07-23  Daniel Nylander <po@danielnylander.se>
+
+	* sv/sv.po: Added Swedish translation.
+	* sv/figures: Added directory.
+	* Makefile.am: Added sv to DOC_LINGUAS.
+
 2006-06-06 Rodrigo Marcos <rmarcos@cvs.gnome.org>
 
 	* Created new section in manual about launching graphical applications

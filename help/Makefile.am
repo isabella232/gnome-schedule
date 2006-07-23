@@ -11,4 +11,4 @@ DOC_FIGURES = \
 	figures/gnome-schedule_new_task.png \
 	figures/gnome-schedule_new_task_recurrent.png
 
-DOC_LINGUAS = es it
+DOC_LINGUAS = es it sv
