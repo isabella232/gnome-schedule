@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule.HEAD.hu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-01-06 11:04+0100\n"
+"POT-Creation-Date: 2006-08-15 03:54+0200\n"
 "PO-Revision-Date: 2006-01-06 18:37+0100\n"
 "Last-Translator: Gabor Kelemen <kelemeng@gnome.hu>\n"
 "Language-Team: Hungarian <gnome@gnome.hu>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.1\n"
-"Plural-Forms:  nplurals=1; plural=0;\n"
+"Plural-Forms:   nplurals=2; plural=(n != 1);\n"
 
 #: ../desktop/gnome-schedule.desktop.in.in.h:1
 msgid "Manage your system tasks"
@@ -37,20 +37,24 @@ msgstr "Gnome ütemező"
 msgid "System tools"
 msgstr "Rendszereszközök"
 
-#: ../src/at.py:283
+#: ../src/at.py:307
 #, python-format
 msgid "DANGEROUS PARSE: %(preview)s"
 msgstr "VESZÉLYES FELDOLGOZÁS: %(preview)s"
 
 #. TODO: localize time and date formats
-#: ../src/at.py:289
+#: ../src/at.py:313
 #, python-format
 msgid "On %(date)s at %(time)s"
 msgstr "%(date)s napon %(time)s-kor"
 
-#: ../src/at.py:294 ../src/at.py:299
+#: ../src/at.py:318 ../src/at.py:323
 msgid "Once"
 msgstr "Egyszer"
+
+#: ../src/at.py:327
+msgid "Warning: a line in atq's output didn't parse"
+msgstr ""
 
 #: ../src/crontab.py:49
 msgid "Minute"
@@ -159,8 +163,8 @@ msgid ""
 "This is an invalid record! The problem could be in the %(field)s field. "
 "Reason: %(reason)s"
 msgstr ""
-"Ez egy érvénytelen rekord! A hiba a(z) %(field)s mezőnél lehet. "
-"Ok: %(reason)s"
+"Ez egy érvénytelen rekord! A hiba a(z) %(field)s mezőnél lehet. Ok: %(reason)"
+"s"
 
 #: ../src/crontabEditor.py:298 ../src/atEditor.py:286
 msgid "The preset has not been saved"
@@ -182,7 +186,7 @@ msgstr "Válasszon ikont ehhez az ütemezett feladathoz"
 msgid "command"
 msgstr "parancs"
 
-#: ../src/crontabEditor.py:423 ../src/mainWindow.py:546 ../src/atEditor.py:514
+#: ../src/crontabEditor.py:423 ../src/mainWindow.py:553 ../src/atEditor.py:514
 msgid "Could not display help"
 msgstr "Nem jeleníthető meg a súgó"
 
@@ -323,7 +327,8 @@ msgstr "_Feladatok kezelése"
 
 #: ../src/gnome-schedule.glade.h:1
 msgid "<b>Choose the user whose tasks you want to modify</b>"
-msgstr "<b>Válassza ki a felhasználót, akinek a feladatait módosítani kívánja</b>"
+msgstr ""
+"<b>Válassza ki a felhasználót, akinek a feladatait módosítani kívánja</b>"
 
 #: ../src/gnome-schedule.glade.h:2
 msgid "<b>Date and Time Settings</b>"
@@ -395,7 +400,8 @@ msgstr "Válasszon egy ikont ehhez az ütemezett feladathoz"
 
 #: ../src/gnome-schedule.glade.h:20
 msgid "Choose the user whose tasks you want to modify"
-msgstr "Válassza ki a felhasználót, akinek az ütemezett feladatait módosítani kívánja"
+msgstr ""
+"Válassza ki a felhasználót, akinek az ütemezett feladatait módosítani kívánja"
 
 #: ../src/gnome-schedule.glade.h:21
 msgid "Co_mmand:"
@@ -427,7 +433,8 @@ msgstr "Ütemezett feladat szerkesztése"
 
 #: ../src/gnome-schedule.glade.h:29
 msgid "Execution at a specific minute, hour, day, weekday or month."
-msgstr "Végrehajtás egy adott percben, órában, napon, hétköznapon vagy hónapban."
+msgstr ""
+"Végrehajtás egy adott percben, órában, napon, hétköznapon vagy hónapban."
 
 #: ../src/gnome-schedule.glade.h:30
 msgid ""
@@ -609,7 +616,7 @@ msgstr "_Nézet"
 msgid "_Weekdays:"
 msgstr "_Hétköznapok:"
 
-#: ../src/gnome-schedule.py:61 ../src/scheduleapplet.py:64
+#: ../src/gnome-schedule.py:59 ../src/scheduleapplet.py:62
 msgid ""
 "You need to install pyGTK or GTKv2,\n"
 "or set your PYTHONPATH correctly.\n"
@@ -736,8 +743,10 @@ msgstr "Minden év %(date)s napján minden óra %(minute)s percében"
 
 #: ../src/lang.py:204
 #, python-format
-msgid "Every year on %(date)s at every minute between %(time_from)s and %(time_to)s"
-msgstr "Minden év %(date)s napján minden percben %(time_from)s és %(time_to)s között"
+msgid ""
+"Every year on %(date)s at every minute between %(time_from)s and %(time_to)s"
+msgstr ""
+"Minden év %(date)s napján minden percben %(time_from)s és %(time_to)s között"
 
 #: ../src/lang.py:206
 #, python-format
@@ -761,8 +770,10 @@ msgstr "Minden %(weekday)s minden órájának %(minute)s percében "
 
 #: ../src/lang.py:217
 #, python-format
-msgid "On every %(weekday)s at every minute between %(time_from)s and %(time_to)s"
-msgstr "Minden %(weekday)s minden percében  %(time_from)s és %(time_to)s között"
+msgid ""
+"On every %(weekday)s at every minute between %(time_from)s and %(time_to)s"
+msgstr ""
+"Minden %(weekday)s minden percében  %(time_from)s és %(time_to)s között"
 
 #: ../src/lang.py:219
 #, python-format
@@ -771,15 +782,18 @@ msgstr "Minden %(weekday)s %(time)s-kor"
 
 #: ../src/lang.py:224
 #, python-format
-msgid "On day %(monthday)s of every month and every %(weekday)s at every full hour"
+msgid ""
+"On day %(monthday)s of every month and every %(weekday)s at every full hour"
 msgstr ""
 "Minden hónap %(monthday)s napján és minden %(weekday)s nap minden egész "
 "órájában"
 
 #: ../src/lang.py:226
 #, python-format
-msgid "On day %(monthday)s of every month and every %(weekday)s at every minute"
-msgstr "Minden hónap %(monthday)s napján és minden %(weekday)s nap minden percében"
+msgid ""
+"On day %(monthday)s of every month and every %(weekday)s at every minute"
+msgstr ""
+"Minden hónap %(monthday)s napján és minden %(weekday)s nap minden percében"
 
 #: ../src/lang.py:228
 #, python-format
@@ -802,7 +816,8 @@ msgstr ""
 #: ../src/lang.py:232
 #, python-format
 msgid "On day %(monthday)s of every month and every %(weekday)s at %(time)s"
-msgstr "Minden hónap %(monthday)s napján és minden %(weekday)s napon %(time)s-kor"
+msgstr ""
+"Minden hónap %(monthday)s napján és minden %(weekday)s napon %(time)s-kor"
 
 #: ../src/lang.py:237
 #, python-format
@@ -817,7 +832,8 @@ msgstr "%(month)s hónap minden %(weekday)s napjának minden percében"
 #: ../src/lang.py:241
 #, python-format
 msgid "On every %(weekday)s in %(month)s at minute %(minute)s of every hour"
-msgstr "%(month)s hónap minden %(weekday)s napján minden óra %(minute)s percében"
+msgstr ""
+"%(month)s hónap minden %(weekday)s napján minden óra %(minute)s percében"
 
 #: ../src/lang.py:243
 #, python-format
@@ -844,7 +860,8 @@ msgstr ""
 
 #: ../src/lang.py:252
 #, python-format
-msgid "On every %(weekday)s in %(month)s and on %(date)s every year at every minute"
+msgid ""
+"On every %(weekday)s in %(month)s and on %(date)s every year at every minute"
 msgstr ""
 "Minden %(weekday)s napon %(month)s hónapban és minden év %(date)s napjának "
 "minden percében"
@@ -869,7 +886,8 @@ msgstr ""
 
 #: ../src/lang.py:258
 #, python-format
-msgid "On every %(weekday)s in %(month)s and on %(date)s every year at %(time)s"
+msgid ""
+"On every %(weekday)s in %(month)s and on %(date)s every year at %(time)s"
 msgstr ""
 "Minden %(weekday)s napon %(month)s hónapban és minden év %(date)s napján %"
 "(time)s-kor"
@@ -925,64 +943,65 @@ msgstr "hétköznap: %s"
 msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 msgstr "Ekkor: %(minute)s, %(hour)s, %(monthday)s, %(month)s %(weekday)s"
 
-#: ../src/mainWindow.py:205 ../src/mainWindow.py:307
+#: ../src/mainWindow.py:206 ../src/mainWindow.py:308
 #, python-format
 msgid "Editing user: %s"
 msgstr "Felhasználó szerkesztése: %s"
 
-#: ../src/mainWindow.py:280 ../src/scheduleapplet.py:116
+#: ../src/mainWindow.py:281 ../src/scheduleapplet.py:114
 msgid "ERROR: Could not load icon"
 msgstr "HIBA: nem tölthető be az ikon"
 
-#: ../src/mainWindow.py:290
+#: ../src/mainWindow.py:291
 msgid "ERROR: Could not load glade file"
 msgstr "HIBA: nem tölthető be a glade fájl"
 
-#: ../src/mainWindow.py:342
+#: ../src/mainWindow.py:343
 msgid "Icon"
 msgstr "Ikon"
 
-#: ../src/mainWindow.py:347 ../src/mainWindow.py:380
+#: ../src/mainWindow.py:348 ../src/mainWindow.py:381
 msgid "Type"
 msgstr "Típus"
 
-#: ../src/mainWindow.py:351 ../src/mainWindow.py:376
-msgid "Title"
-msgstr "Cím"
+#: ../src/mainWindow.py:352 ../src/mainWindow.py:377
+#, fuzzy
+msgid "Description"
+msgstr "_Leírás:"
 
-#: ../src/mainWindow.py:355 ../src/mainWindow.py:367
+#: ../src/mainWindow.py:356 ../src/mainWindow.py:368
 msgid "Date and Time Settings"
 msgstr "Dátum és idő beállításai"
 
-#: ../src/mainWindow.py:359 ../src/mainWindow.py:371
+#: ../src/mainWindow.py:360 ../src/mainWindow.py:372
 msgid "Preview"
 msgstr "Előnézet"
 
-#: ../src/mainWindow.py:411 ../src/mainWindow.py:470
+#: ../src/mainWindow.py:412 ../src/mainWindow.py:471
 msgid "Please select a task"
 msgstr "Kérem válasszon egy feladatot"
 
-#: ../src/mainWindow.py:418
+#: ../src/mainWindow.py:419
 msgid "Do you want to delete this task?"
 msgstr "Törölni kívánja ezt a feladatot?"
 
-#: ../src/mainWindow.py:513
+#: ../src/mainWindow.py:519
 msgid "About Gnome Schedule"
 msgstr "A Gnome ütemező névjegye"
 
-#: ../src/mainWindow.py:514
+#: ../src/mainWindow.py:520
 msgid "Gnome Schedule"
 msgstr "Gnome ütemező"
 
-#: ../src/mainWindow.py:516
+#: ../src/mainWindow.py:522
 msgid "Copyright (c) 2004-2005 Gaute Hope."
 msgstr "Copyright © 2004-2005 Gaute Hope."
 
-#: ../src/mainWindow.py:528
+#: ../src/mainWindow.py:535
 msgid "translator-credits"
 msgstr "Kelemen Gábor <kelemeng@gnome.hu>"
 
-#: ../src/scheduleapplet.py:132
+#: ../src/scheduleapplet.py:130
 msgid "ERROR: Could not load menu xml file"
 msgstr "HIBA: nem tölthető be a menü xml fájl"
 
@@ -995,3 +1014,5 @@ msgstr "Nincs ilyen felhasználó"
 msgid "This is an invalid record! The problem could be: %s"
 msgstr "Ez egy érvénytelen rekord! A hiba a következő lehet: %s "
 
+#~ msgid "Title"
+#~ msgstr "Cím"
