@@ -2,14 +2,14 @@
 # Copyright (C) 2004 THE gnome-schedule'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-schedule package.
 # David Lodge <dave@cirt.net>, 2004.
-# 
-# 
+#
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-01-04 15:49+0000\n"
-"PO-Revision-Date: 2005-04-19 21:46+0100\n"
+"POT-Creation-Date: 2006-09-12 06:59+0100\n"
+"PO-Revision-Date: 2006-09-12 07:00-0000\n"
 "Last-Translator: David Lodge <dave@cirt.net>\n"
 "Language-Team: English/GB <en@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -25,33 +25,36 @@ msgid "Schedule"
 msgstr "Schedule"
 
 #: ../servers/GNOME_GnomeSchedule.server.in.in.h:1
-#, fuzzy
 msgid "Configures your scheduled tasks"
-msgstr "Configure Scheduled Tasks"
+msgstr "Configures your scheduled tasks"
 
 #: ../servers/GNOME_GnomeSchedule.server.in.in.h:2
-#, fuzzy
 msgid "Gnome schedule"
-msgstr "Gnome Schedule"
+msgstr "Gnome schedule"
 
 #: ../servers/GNOME_GnomeSchedule.server.in.in.h:3
 msgid "System tools"
-msgstr ""
+msgstr "System tools"
 
-#: ../src/at.py:283
+#: ../src/at.py:307
 #, python-format
 msgid "DANGEROUS PARSE: %(preview)s"
-msgstr ""
+msgstr "DANGEROUS PARSE: %(preview)s"
 
 #. TODO: localize time and date formats
-#: ../src/at.py:289
+#: ../src/at.py:313
 #, python-format
 msgid "On %(date)s at %(time)s"
 msgstr "On %(date)s at %(time)s"
 
-#: ../src/at.py:294 ../src/at.py:299
+#: ../src/at.py:318
+#: ../src/at.py:323
 msgid "Once"
 msgstr "Once"
+
+#: ../src/at.py:327
+msgid "Warning: a line in atq's output didn't parse"
+msgstr "Warning: a line in atq's output didn't parse"
 
 #: ../src/crontab.py:49
 msgid "Minute"
@@ -73,18 +76,23 @@ msgstr "Month"
 msgid "Weekday"
 msgstr "Weekday"
 
-#: ../src/crontab.py:138 ../src/crontab.py:143 ../src/crontab.py:147
-#, fuzzy, python-format
+#: ../src/crontab.py:138
+#: ../src/crontab.py:143
+#: ../src/crontab.py:147
+#, python-format
 msgid "Must be between %(min)s and %(max)s"
-msgstr "Must be between %s and %s"
+msgstr "Must be between %(min)s and %(max)s"
 
 #: ../src/crontab.py:145
 #, python-format
 msgid "%s is not a number"
 msgstr "%s is not a number"
 
-#: ../src/crontab.py:165 ../src/crontab.py:200 ../src/crontab.py:289
-#: ../src/crontabEditor.py:187 ../src/atEditor.py:110
+#: ../src/crontab.py:165
+#: ../src/crontab.py:200
+#: ../src/crontab.py:289
+#: ../src/crontabEditor.py:187
+#: ../src/atEditor.py:110
 msgid "Untitled"
 msgstr "Untitled"
 
@@ -115,26 +123,30 @@ msgstr "weekday"
 
 #: ../src/crontab.py:294
 msgid "ERROR: Failed to parse crontab record"
-msgstr ""
+msgstr "ERROR: Failed to parse crontab record"
 
 #: ../src/crontabEditor.py:80
 msgid "Use advanced"
 msgstr "Use advanced"
 
-#: ../src/crontabEditor.py:81 ../src/crontabEditorHelper.py:87
+#: ../src/crontabEditor.py:81
+#: ../src/crontabEditorHelper.py:87
 #: ../src/gnome-schedule.glade.h:28
 msgid "Every minute"
 msgstr "Every minute"
 
-#: ../src/crontabEditor.py:82 ../src/crontabEditorHelper.py:93
+#: ../src/crontabEditor.py:82
+#: ../src/crontabEditorHelper.py:93
 msgid "Every hour"
 msgstr "Every hour"
 
-#: ../src/crontabEditor.py:83 ../src/crontabEditorHelper.py:99
+#: ../src/crontabEditor.py:83
+#: ../src/crontabEditorHelper.py:99
 msgid "Every day"
 msgstr "Every day"
 
-#: ../src/crontabEditor.py:84 ../src/crontabEditorHelper.py:105
+#: ../src/crontabEditor.py:84
+#: ../src/crontabEditorHelper.py:105
 msgid "Every month"
 msgstr "Every month"
 
@@ -142,39 +154,43 @@ msgstr "Every month"
 msgid "Every week"
 msgstr "Every week"
 
-#: ../src/crontabEditor.py:130 ../src/atEditor.py:112
+#: ../src/crontabEditor.py:130
+#: ../src/atEditor.py:112
 msgid "Create a New Scheduled Task"
 msgstr "Create a New Scheduled Task"
 
-#: ../src/crontabEditor.py:150 ../src/atEditor.py:143
+#: ../src/crontabEditor.py:150
+#: ../src/atEditor.py:143
 msgid "Edit a Scheduled Task"
 msgstr "Edit a Scheduled Task"
 
-#: ../src/crontabEditor.py:205 ../src/atEditor.py:316
+#: ../src/crontabEditor.py:205
+#: ../src/atEditor.py:316
 msgid "Don't use a preset"
 msgstr "Don't use a preset"
 
 #: ../src/crontabEditor.py:266
-#, fuzzy, python-format
-msgid ""
-"This is an invalid record! The problem could be in the %(field)s field. "
-"Reason: %(reason)s"
-msgstr ""
-"This is an invalid record! The problem could be at the %s field. Reason: %s"
+#, python-format
+msgid "This is an invalid record! The problem could be in the %(field)s field. Reason: %(reason)s"
+msgstr "This is an invalid record! The problem could be in the %(field)s field. Reason: %(reason)s"
 
-#: ../src/crontabEditor.py:298 ../src/atEditor.py:286
+#: ../src/crontabEditor.py:298
+#: ../src/atEditor.py:286
 msgid "The preset has not been saved"
 msgstr "The preset has not been saved"
 
-#: ../src/crontabEditor.py:300 ../src/atEditor.py:288
+#: ../src/crontabEditor.py:300
+#: ../src/atEditor.py:288
 msgid "To delete a preset, you first need to select one"
 msgstr "To delete a preset, you first need to select one"
 
-#: ../src/crontabEditor.py:310 ../src/atEditor.py:299
+#: ../src/crontabEditor.py:310
+#: ../src/atEditor.py:299
 msgid "To save a preset, you first have to choose a name for it"
 msgstr "To save a preset, you first have to choose a name for it"
 
-#: ../src/crontabEditor.py:320 ../src/atEditor.py:390
+#: ../src/crontabEditor.py:320
+#: ../src/atEditor.py:390
 msgid "Choose an Icon for this Scheduled Task"
 msgstr "Choose an Icon for this Scheduled Task"
 
@@ -182,60 +198,55 @@ msgstr "Choose an Icon for this Scheduled Task"
 msgid "command"
 msgstr "command"
 
-#: ../src/crontabEditor.py:423 ../src/mainWindow.py:546 ../src/atEditor.py:514
+#: ../src/crontabEditor.py:423
+#: ../src/mainWindow.py:553
+#: ../src/atEditor.py:514
 msgid "Could not display help"
-msgstr ""
+msgstr "Could not display help"
 
 #: ../src/crontabEditorHelper.py:111
-#, fuzzy
 msgid "Every weekday"
-msgstr "Every week"
+msgstr "Every weekday"
 
 #: ../src/crontabEditorHelper.py:163
 msgid "Minute settings"
-msgstr ""
+msgstr "Minute settings"
 
 #: ../src/crontabEditorHelper.py:164
-#, fuzzy
 msgid "Edit Time Expression for minute"
-msgstr "Edit Time Expression for: %s"
+msgstr "Edit Time Expression for minute"
 
 #: ../src/crontabEditorHelper.py:166
 msgid "Hour settings"
-msgstr ""
+msgstr "Hour settings"
 
 #: ../src/crontabEditorHelper.py:167
-#, fuzzy
 msgid "Edit Time Expression for hour"
-msgstr "Edit Time Expression for: %s"
+msgstr "Edit Time Expression for hour"
 
 #: ../src/crontabEditorHelper.py:169
 msgid "Day settings"
-msgstr ""
+msgstr "Day settings"
 
 #: ../src/crontabEditorHelper.py:170
-#, fuzzy
 msgid "Edit Time Expression for day"
-msgstr "Edit Time Expression for: %s"
+msgstr "Edit Time Expression for day"
 
 #: ../src/crontabEditorHelper.py:172
 msgid "Month settings"
-msgstr ""
+msgstr "Month settings"
 
 #: ../src/crontabEditorHelper.py:173
-#, fuzzy
 msgid "Edit Time Expression for month"
-msgstr "Edit Time Expression for: %s"
+msgstr "Edit Time Expression for month"
 
 #: ../src/crontabEditorHelper.py:175
-#, fuzzy
 msgid "Weekday settings"
-msgstr "_Weekdays:"
+msgstr "Weekday settings"
 
 #: ../src/crontabEditorHelper.py:176
-#, fuzzy
 msgid "Edit Time Expression for weekday"
-msgstr "Edit Time Expression for: %s"
+msgstr "Edit Time Expression for weekday"
 
 #: ../src/crontabEditorHelper.py:190
 #, python-format
@@ -243,103 +254,94 @@ msgid "This is invalid. Reason: %s"
 msgstr "This is invalid. Reason: %s"
 
 #. minute
-#: ../src/crontabEditorHelper.py:236 ../src/gnome-schedule.glade.h:15
-#, fuzzy
+#: ../src/crontabEditorHelper.py:236
+#: ../src/gnome-schedule.glade.h:15
 msgid "At an exact minute"
-msgstr "At every minute"
+msgstr "At an exact minute"
 
-#: ../src/crontabEditorHelper.py:237 ../src/gnome-schedule.glade.h:42
-#, fuzzy
+#: ../src/crontabEditorHelper.py:237
+#: ../src/gnome-schedule.glade.h:42
 msgid "Minute:"
-msgstr "_Minute:"
+msgstr "Minute:"
 
 #. hour
 #: ../src/crontabEditorHelper.py:240
 msgid "At an exact hour"
-msgstr ""
+msgstr "At an exact hour"
 
 #: ../src/crontabEditorHelper.py:241
-#, fuzzy
 msgid "Hour:"
-msgstr "_Hour:"
+msgstr "Hour:"
 
 #. day
 #: ../src/crontabEditorHelper.py:244
 msgid "On a day"
-msgstr ""
+msgstr "On a day"
 
 #: ../src/crontabEditorHelper.py:245
-#, fuzzy
 msgid "Day:"
-msgstr "_Date:"
+msgstr "Day:"
 
 #. month
 #: ../src/crontabEditorHelper.py:248
-#, fuzzy
 msgid "In a month"
-msgstr "month"
+msgstr "In a month"
 
 #: ../src/crontabEditorHelper.py:249
-#, fuzzy
 msgid "Month:"
-msgstr "Month"
+msgstr "Month:"
 
 #. weekday
 #: ../src/crontabEditorHelper.py:252
-#, fuzzy
 msgid "On a weekday"
-msgstr "weekday"
+msgstr "On a weekday"
 
 #: ../src/crontabEditorHelper.py:253
-#, fuzzy
 msgid "Weekday:"
-msgstr "Weekday"
+msgstr "Weekday:"
 
-#: ../src/crontabEditorHelper.py:258 ../src/gnome-schedule.glade.h:40
+#: ../src/crontabEditorHelper.py:258
+#: ../src/gnome-schedule.glade.h:40
 msgid "In a step width"
-msgstr ""
+msgstr "In a step width"
 
-#: ../src/crontabEditorHelper.py:260 ../src/gnome-schedule.glade.h:43
-#, fuzzy
+#: ../src/crontabEditorHelper.py:260
+#: ../src/gnome-schedule.glade.h:43
 msgid "Minutes:"
-msgstr "Mi_nutes:"
+msgstr "Minutes:"
 
 #: ../src/crontabEditorHelper.py:262
-#, fuzzy
 msgid "Hours:"
-msgstr "_Hours:"
+msgstr "Hours:"
 
 #: ../src/crontabEditorHelper.py:264
 msgid "Days:"
-msgstr ""
+msgstr "Days:"
 
 #: ../src/crontabEditorHelper.py:266
-#, fuzzy
 msgid "Months:"
-msgstr "_Months:"
+msgstr "Months:"
 
 #: ../src/crontabEditorHelper.py:268
-#, fuzzy
 msgid "Weekdays:"
-msgstr "_Weekdays:"
+msgstr "Weekdays:"
 
 #: ../src/gnome-schedule-applet.xml.h:1
-#, fuzzy
 msgid "A_bout"
-msgstr "_About"
+msgstr "A_bout"
 
 #: ../src/gnome-schedule-applet.xml.h:2
 msgid "_Add a task"
-msgstr ""
+msgstr "_Add a task"
 
-#: ../src/gnome-schedule-applet.xml.h:3 ../src/gnome-schedule.glade.h:64
+#: ../src/gnome-schedule-applet.xml.h:3
+#: ../src/gnome-schedule.glade.h:64
 msgid "_Help"
 msgstr "_Help"
 
 #: ../src/gnome-schedule-applet.xml.h:4
-#, fuzzy
 msgid "_Manage tasks"
-msgstr "Manage your system tasks"
+msgstr "_Manage tasks"
 
 #: ../src/gnome-schedule.glade.h:1
 msgid "<b>Choose the user whose tasks you want to modify</b>"
@@ -358,9 +360,8 @@ msgid "<b>General</b>"
 msgstr "<b>General</b>"
 
 #: ../src/gnome-schedule.glade.h:5
-#, fuzzy
 msgid "<b>Minute settings</b>"
-msgstr "<b>Date and Time Settings</b>"
+msgstr "<b>Minute settings</b>"
 
 #: ../src/gnome-schedule.glade.h:6
 msgid "<b>Preview</b>"
@@ -451,12 +452,8 @@ msgid "Execution at a specific minute, hour, day, weekday or month."
 msgstr "Execution at a specific minute, hour, day, weekday or month."
 
 #: ../src/gnome-schedule.glade.h:30
-msgid ""
-"Execution at a step width. For example every five minutes, hours, days, "
-"weekdays or months."
-msgstr ""
-"Execution at a step width. For example every five minutes, hours, days, "
-"weekdays or months."
+msgid "Execution at a step width. For example every five minutes, hours, days, weekdays or months."
+msgstr "Execution at a step width. For example every five minutes, hours, days, weekdays or months."
 
 #: ../src/gnome-schedule.glade.h:31
 msgid "Execution at every minute, hour, day, weekday or month."
@@ -467,9 +464,8 @@ msgid "Execution in a range."
 msgstr "Execution in a range."
 
 #: ../src/gnome-schedule.glade.h:33
-#, fuzzy
 msgid "Expression:"
-msgstr "Other expression"
+msgstr "Expression:"
 
 #: ../src/gnome-schedule.glade.h:34
 msgid "For example at 04:10 tomorrow, next week or in three days"
@@ -485,7 +481,7 @@ msgstr "For experienced users"
 
 #: ../src/gnome-schedule.glade.h:37
 msgid "From:"
-msgstr ""
+msgstr "From:"
 
 #: ../src/gnome-schedule.glade.h:38
 msgid "Ico_n:"
@@ -493,7 +489,7 @@ msgstr "Ico_n:"
 
 #: ../src/gnome-schedule.glade.h:39
 msgid "In a range"
-msgstr ""
+msgstr "In a range"
 
 #: ../src/gnome-schedule.glade.h:41
 msgid "Mi_nutes:"
@@ -505,15 +501,11 @@ msgstr "No out_put"
 
 #: ../src/gnome-schedule.glade.h:45
 msgid "Other"
-msgstr ""
+msgstr "Other"
 
 #: ../src/gnome-schedule.glade.h:46
-msgid ""
-"Quit the application. This will not stop the system scheduling. It will, "
-"however, quit this system schedule maintenance tool."
-msgstr ""
-"Quit the application. This will not stop the system scheduling. It will, "
-"however, quit this system schedule maintenance tool."
+msgid "Quit the application. This will not stop the system scheduling. It will, however, quit this system schedule maintenance tool."
+msgstr "Quit the application. This will not stop the system scheduling. It will, however, quit this system schedule maintenance tool."
 
 #: ../src/gnome-schedule.glade.h:47
 msgid "Rec_urrence:"
@@ -532,9 +524,8 @@ msgid "Scri_pt:"
 msgstr "Scri_pt:"
 
 #: ../src/gnome-schedule.glade.h:51
-#, fuzzy
 msgid "See \"man 5 crontab\" for information about the crontab format."
-msgstr "See \"man 5 crontab\" for informations about the crontab format."
+msgstr "See \"man 5 crontab\" for information about the crontab format."
 
 #: ../src/gnome-schedule.glade.h:52
 msgid "Select..."
@@ -554,7 +545,7 @@ msgstr "Time expression help"
 
 #: ../src/gnome-schedule.glade.h:56
 msgid "To:"
-msgstr ""
+msgstr "To:"
 
 #: ../src/gnome-schedule.glade.h:57
 msgid ""
@@ -565,14 +556,8 @@ msgstr ""
 "Next week"
 
 #: ../src/gnome-schedule.glade.h:59
-msgid ""
-"When selected, no output will be generated. When scheduled tasks in the "
-"crontab do have output and this option is not checked, the output will by "
-"default be send to the UNIX mailbox of the user."
-msgstr ""
-"When selected, no output will be generated. When scheduled tasks in the "
-"crontab do have output and this option is not checked, the output will by "
-"default be send to the UNIX mailbox of the user."
+msgid "When selected, no output will be generated. When scheduled tasks in the crontab do have output and this option is not checked, the output will by default be send to the UNIX mailbox of the user."
+msgstr "When selected, no output will be generated. When scheduled tasks in the crontab do have output and this option is not checked, the output will by default be send to the UNIX mailbox of the user."
 
 #: ../src/gnome-schedule.glade.h:60
 msgid "_About"
@@ -630,12 +615,16 @@ msgstr "_View"
 msgid "_Weekdays:"
 msgstr "_Weekdays:"
 
-#: ../src/gnome-schedule.py:61 ../src/scheduleapplet.py:64
+#: ../src/gnome-schedule.py:59
+#: ../src/scheduleapplet.py:62
 msgid ""
 "You need to install pyGTK or GTKv2,\n"
 "or set your PYTHONPATH correctly.\n"
 "try: export PYTHONPATH= "
 msgstr ""
+"You need to install pyGTK or GTKv2,\n"
+"or set your PYTHONPATH correctly.\n"
+"try: export PYTHONPATH= "
 
 #. Translators: Date format for expressions like 'January 21'. %B is month, %d is day number.
 #. Run the command 'man strftime' to read more about these and other available specifiers.
@@ -695,12 +684,8 @@ msgstr "On day %(monthday)s of every month at minute %(minute)s of every hour"
 
 #: ../src/lang.py:178
 #, python-format
-msgid ""
-"On day %(monthday)s of every month at every minute between %(time_from)s and "
-"%(time_to)s"
-msgstr ""
-"On day %(monthday)s of every month at every minute between %(time_from)s and "
-"%(time_to)s"
+msgid "On day %(monthday)s of every month at every minute between %(time_from)s and %(time_to)s"
+msgstr "On day %(monthday)s of every month at every minute between %(time_from)s and %(time_to)s"
 
 #: ../src/lang.py:180
 #, python-format
@@ -724,12 +709,8 @@ msgstr "On every day in %(month)s at minute %(minute)s of every hour"
 
 #: ../src/lang.py:191
 #, python-format
-msgid ""
-"On every day in %(month)s at every minute between %(time_from)s and %"
-"(time_to)s"
-msgstr ""
-"On every day in %(month)s at every minute between %(time_from)s and %"
-"(time_to)s"
+msgid "On every day in %(month)s at every minute between %(time_from)s and %(time_to)s"
+msgstr "On every day in %(month)s at every minute between %(time_from)s and %(time_to)s"
 
 #: ../src/lang.py:193
 #, python-format
@@ -753,10 +734,8 @@ msgstr "Every year on %(date)s at minute %(minute)s of every hour"
 
 #: ../src/lang.py:204
 #, python-format
-msgid ""
-"Every year on %(date)s at every minute between %(time_from)s and %(time_to)s"
-msgstr ""
-"Every year on %(date)s at every minute between %(time_from)s and %(time_to)s"
+msgid "Every year on %(date)s at every minute between %(time_from)s and %(time_to)s"
+msgstr "Every year on %(date)s at every minute between %(time_from)s and %(time_to)s"
 
 #: ../src/lang.py:206
 #, python-format
@@ -780,10 +759,8 @@ msgstr "On every %(weekday)s at minute %(minute)s of every hour"
 
 #: ../src/lang.py:217
 #, python-format
-msgid ""
-"On every %(weekday)s at every minute between %(time_from)s and %(time_to)s"
-msgstr ""
-"On every %(weekday)s at every minute between %(time_from)s and %(time_to)s"
+msgid "On every %(weekday)s at every minute between %(time_from)s and %(time_to)s"
+msgstr "On every %(weekday)s at every minute between %(time_from)s and %(time_to)s"
 
 #: ../src/lang.py:219
 #, python-format
@@ -792,35 +769,23 @@ msgstr "On every %(weekday)s at %(time)s"
 
 #: ../src/lang.py:224
 #, python-format
-msgid ""
-"On day %(monthday)s of every month and every %(weekday)s at every full hour"
-msgstr ""
-"On day %(monthday)s of every month and every %(weekday)s at every full hour"
+msgid "On day %(monthday)s of every month and every %(weekday)s at every full hour"
+msgstr "On day %(monthday)s of every month and every %(weekday)s at every full hour"
 
 #: ../src/lang.py:226
 #, python-format
-msgid ""
-"On day %(monthday)s of every month and every %(weekday)s at every minute"
-msgstr ""
-"On day %(monthday)s of every month and every %(weekday)s at every minute"
+msgid "On day %(monthday)s of every month and every %(weekday)s at every minute"
+msgstr "On day %(monthday)s of every month and every %(weekday)s at every minute"
 
 #: ../src/lang.py:228
 #, python-format
-msgid ""
-"On day %(monthday)s of every month and every %(weekday)s at minute %(minute)"
-"s of every hour"
-msgstr ""
-"On day %(monthday)s of every month and every %(weekday)s at minute %(minute)"
-"s of every hour"
+msgid "On day %(monthday)s of every month and every %(weekday)s at minute %(minute)s of every hour"
+msgstr "On day %(monthday)s of every month and every %(weekday)s at minute %(minute)s of every hour"
 
 #: ../src/lang.py:230
 #, python-format
-msgid ""
-"On day %(monthday)s of every month and every %(weekday)s at every minute "
-"between %(time_from)s and %(time_to)s"
-msgstr ""
-"On day %(monthday)s of every month and every %(weekday)s at every minute "
-"between %(time_from)s and %(time_to)s"
+msgid "On day %(monthday)s of every month and every %(weekday)s at every minute between %(time_from)s and %(time_to)s"
+msgstr "On day %(monthday)s of every month and every %(weekday)s at every minute between %(time_from)s and %(time_to)s"
 
 #: ../src/lang.py:232
 #, python-format
@@ -844,12 +809,8 @@ msgstr "On every %(weekday)s in %(month)s at minute %(minute)s of every hour"
 
 #: ../src/lang.py:243
 #, python-format
-msgid ""
-"On every %(weekday)s in %(month)s at every minute between %(time_from)s and %"
-"(time_to)s"
-msgstr ""
-"On every %(weekday)s in %(month)s at every minute between %(time_from)s and %"
-"(time_to)s"
+msgid "On every %(weekday)s in %(month)s at every minute between %(time_from)s and %(time_to)s"
+msgstr "On every %(weekday)s in %(month)s at every minute between %(time_from)s and %(time_to)s"
 
 #: ../src/lang.py:245
 #, python-format
@@ -858,44 +819,28 @@ msgstr "On every %(weekday)s in %(month)s at %(time)s"
 
 #: ../src/lang.py:250
 #, python-format
-msgid ""
-"On every %(weekday)s in %(month)s and on %(date)s every year at every full "
-"hour"
-msgstr ""
-"On every %(weekday)s in %(month)s and on %(date)s every year at every full "
-"hour"
+msgid "On every %(weekday)s in %(month)s and on %(date)s every year at every full hour"
+msgstr "On every %(weekday)s in %(month)s and on %(date)s every year at every full hour"
 
 #: ../src/lang.py:252
 #, python-format
-msgid ""
-"On every %(weekday)s in %(month)s and on %(date)s every year at every minute"
-msgstr ""
-"On every %(weekday)s in %(month)s and on %(date)s every year at every minute"
+msgid "On every %(weekday)s in %(month)s and on %(date)s every year at every minute"
+msgstr "On every %(weekday)s in %(month)s and on %(date)s every year at every minute"
 
 #: ../src/lang.py:254
 #, python-format
-msgid ""
-"On every %(weekday)s in %(month)s and on %(date)s every year at minute %"
-"(minute)s of every hour"
-msgstr ""
-"On every %(weekday)s in %(month)s and on %(date)s every year at minute %"
-"(minute)s of every hour"
+msgid "On every %(weekday)s in %(month)s and on %(date)s every year at minute %(minute)s of every hour"
+msgstr "On every %(weekday)s in %(month)s and on %(date)s every year at minute %(minute)s of every hour"
 
 #: ../src/lang.py:256
 #, python-format
-msgid ""
-"On every %(weekday)s in %(month)s and on %(date)s every year at every minute "
-"between %(time_from)s and %(time_to)s"
-msgstr ""
-"On every %(weekday)s in %(month)s and on %(date)s every year at every minute "
-"between %(time_from)s and %(time_to)s"
+msgid "On every %(weekday)s in %(month)s and on %(date)s every year at every minute between %(time_from)s and %(time_to)s"
+msgstr "On every %(weekday)s in %(month)s and on %(date)s every year at every minute between %(time_from)s and %(time_to)s"
 
 #: ../src/lang.py:258
 #, python-format
-msgid ""
-"On every %(weekday)s in %(month)s and on %(date)s every year at %(time)s"
-msgstr ""
-"On every %(weekday)s in %(month)s and on %(date)s every year at %(time)s"
+msgid "On every %(weekday)s in %(month)s and on %(date)s every year at %(time)s"
+msgstr "On every %(weekday)s in %(month)s and on %(date)s every year at %(time)s"
 
 #: ../src/lang.py:266
 msgid "every minute"
@@ -948,116 +893,113 @@ msgstr "weekday: %s"
 msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 msgstr "At %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 
-#: ../src/mainWindow.py:205 ../src/mainWindow.py:307
+#: ../src/mainWindow.py:206
+#: ../src/mainWindow.py:308
 #, python-format
 msgid "Editing user: %s"
 msgstr "Editing user: %s"
 
-#: ../src/mainWindow.py:280 ../src/scheduleapplet.py:116
+#: ../src/mainWindow.py:281
+#: ../src/scheduleapplet.py:114
 msgid "ERROR: Could not load icon"
-msgstr ""
+msgstr "ERROR: Could not load icon"
 
-#: ../src/mainWindow.py:290
+#: ../src/mainWindow.py:291
 msgid "ERROR: Could not load glade file"
-msgstr ""
+msgstr "ERROR: Could not load glade file"
 
-#: ../src/mainWindow.py:342
+#: ../src/mainWindow.py:343
 msgid "Icon"
 msgstr "Icon"
 
-#: ../src/mainWindow.py:347 ../src/mainWindow.py:380
+#: ../src/mainWindow.py:348
+#: ../src/mainWindow.py:381
 msgid "Type"
 msgstr "Type"
 
-#: ../src/mainWindow.py:351 ../src/mainWindow.py:376
-msgid "Title"
-msgstr "Title"
+#: ../src/mainWindow.py:352
+#: ../src/mainWindow.py:377
+msgid "Description"
+msgstr "Description"
 
-#: ../src/mainWindow.py:355 ../src/mainWindow.py:367
+#: ../src/mainWindow.py:356
+#: ../src/mainWindow.py:368
 msgid "Date and Time Settings"
 msgstr "Date and Time Settings"
 
-#: ../src/mainWindow.py:359 ../src/mainWindow.py:371
+#: ../src/mainWindow.py:360
+#: ../src/mainWindow.py:372
 msgid "Preview"
 msgstr "Preview"
 
-#: ../src/mainWindow.py:411 ../src/mainWindow.py:470
+#: ../src/mainWindow.py:412
+#: ../src/mainWindow.py:471
 msgid "Please select a task"
 msgstr "Please select a task"
 
-#: ../src/mainWindow.py:418
+#: ../src/mainWindow.py:419
 msgid "Do you want to delete this task?"
-msgstr ""
+msgstr "Do you want to delete this task?"
 
-#: ../src/mainWindow.py:513
-#, fuzzy
+#: ../src/mainWindow.py:519
 msgid "About Gnome Schedule"
-msgstr "Gnome Schedule"
+msgstr "About Gnome Schedule"
 
-#: ../src/mainWindow.py:514
+#: ../src/mainWindow.py:520
 msgid "Gnome Schedule"
 msgstr "Gnome Schedule"
 
-#: ../src/mainWindow.py:516
+#: ../src/mainWindow.py:522
 msgid "Copyright (c) 2004-2005 Gaute Hope."
 msgstr "Copyright (c) 2004-2005 Gaute Hope."
 
-#: ../src/mainWindow.py:528
+#: ../src/mainWindow.py:535
 msgid "translator-credits"
 msgstr "David Lodge <dave@cirt.net>"
 
-#: ../src/scheduleapplet.py:132
+#: ../src/scheduleapplet.py:130
 msgid "ERROR: Could not load menu xml file"
-msgstr ""
+msgstr "ERROR: Could not load menu xml file"
 
 #: ../src/setuserWindow.py:84
 msgid "No such user"
-msgstr ""
+msgstr "No such user"
 
 #: ../src/atEditor.py:526
 #, python-format
 msgid "This is an invalid record! The problem could be: %s"
 msgstr "This is an invalid record! The problem could be: %s"
 
+#~ msgid "Title"
+#~ msgstr "Title"
 #~ msgid "Must be between %s and %s"
 #~ msgstr "Must be between %s and %s"
-
 #~ msgid "This software is distributed under the GPL. "
 #~ msgstr "This software is distributed under the GPL. "
-
 #~ msgid "Happens all "
 #~ msgstr "Happens all "
-
 #~ msgid "s"
 #~ msgstr "s"
-
 #~ msgid "Happens from "
 #~ msgstr "Happens from "
-
 #~ msgid "st. "
 #~ msgstr "st. "
-
 #~ msgid "th. "
 #~ msgstr "th. "
-
 #~ msgid "Happens all"
 #~ msgstr "Happens all"
-
 #~ msgid "Happens at the"
 #~ msgstr "Happens at the"
-
 #~ msgid "Happens every"
 #~ msgstr "Happens every"
-
 #~ msgid "Happens from"
 #~ msgstr "Happens from"
-
 #~ msgid "to"
 #~ msgstr "to"
-
 #~ msgid ""
 #~ "Some painfully bad documentation put\n"
 #~ "toghether from the far corners of Gaute Hope's mind."
 #~ msgstr ""
 #~ "Some painfully bad documentation put\n"
 #~ "together from the far corners of Gaute Hope's mind."
+
