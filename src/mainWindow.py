@@ -446,8 +446,12 @@ class main:
 			path = self.treemodel.get_path(iter)
 			pathint = path[0]
 			backpath = (pathint - 1,)
-
-			self.schedule.delete (linenumber, iter)
+			
+			if self.schedule.get_type() == "crontab":
+				self.schedule.delete (linenumber, iter, self.treemodel.get_value(iter, 9))
+			elif self.schedule.get_type() == "at":
+				self.schedule.delete (linenumber, iter)
+			
 			self.schedule_reload(self.schedule.get_type())
 			
 			firstiter = self.treemodel.get_iter_first()

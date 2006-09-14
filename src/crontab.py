@@ -231,7 +231,11 @@ class Crontab:
 		self.__write__ ()
 	
 	
-	def delete (self, linenumber, iter):
+	def delete (self, linenumber, iter, job_id):
+		# delete file
+		f = os.path.join (self.crontabdata, job_id)
+		os.unlink (f)
+		
 		number = 0
 		newlines = list ()
 		for line in self.lines:

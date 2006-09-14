@@ -1,6 +1,7 @@
 2006-09-14  Gaute Hope  <eg@gaute.vetsj.com>
 
 	* Merge NEW_CRONTAB_PARSE and HEAD
+	* src/crontab.py, src/mainWindow.py: Deleting the job_id files.
 	
 2006-06-08  Gaute Hope  <eg@gaute.vetsj.com>
 
