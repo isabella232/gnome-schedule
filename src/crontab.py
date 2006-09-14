@@ -21,6 +21,7 @@
 import re
 import os
 import tempfile
+import string
 
 #custom modules
 import lang
@@ -36,7 +37,29 @@ class Crontab:
 		
 		self.nooutputtag = ">/dev/null 2>&1"
 		self.crontabRecordRegex = re.compile('([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^#\n$]*)(\s#\s([^\n$]*)|$)')
-
+		self.__setup_timespec__()
+		self.env_vars = [ ]
+		
+		self.crontabdata = os.path.expanduser ("~/.gnome/gnome-schedule/crontab")
+		if os.path.exists(self.crontabdata) != True:
+			if os.makedirs(self.crontabdata, 0700):
+				pass
+			else:
+				pass
+				# FAILED TO CREATE DATADIR
+			
+		
+		
+	def __setup_timespec__ (self):
+		self.special = {
+			"@reboot"  : '',
+			"@hourly"  : '0 * * * *',
+			"@daily"   : '0 0 * * *',
+			"@weekly"  : '0 0 * * 0',
+			"@monthly" : '0 0 1 * *',
+			"@yearly"  : '0 0 1 1 *'
+			}
+				
 		self.timeranges = { 
 			"minute"   : range(0,60), 
 			"hour"     : range(0,24),
@@ -95,7 +118,7 @@ class Crontab:
 		Checks a single Crontab time expression.
 		At first possibly contained alias names will be replaced by their
 		corresponding numbers. After that every asterisk will be replaced by
-		a »first to last« expression. Then the expression will be splitted
+		a "first to last" expression. Then the expression will be splitted
 		into the komma separated subexpressions.
 
 		Each subexpression will run through: 
@@ -147,7 +170,7 @@ class Crontab:
 				raise ValueError("fixed", self.timenames[type], _("Must be between %(min)s and %(max)s") % { "min": min(timerange), "max": max(timerange) } )
 
 
-	def update (self,minute, hour, day, month, weekday,command, linenumber, parentiter, nooutput, title, icon = None):
+	def update (self, minute, hour, day, month, weekday, command, linenumber, parentiter, nooutput, job_id, comment, title, icon, desc):
 		# update crontab
 		record = minute + " " + hour + " " + day + " " + month + " " + weekday + " " + command
 		#print "crontab:update:record=" + record
@@ -156,16 +179,52 @@ class Crontab:
 
 		if nooutput:
 			record = record + " " + self.nooutputtag
-
-		if title != None and icon == None:
-			record = record + " # " + title
-		elif title != None and icon != None:
-			record = record + " # " + title + ", " + icon
-		elif title == None and icon != None:
+		
+		if comment:
+			record = record + " #" + comment
+		
+		if job_id == False:
+			## Create a job_id for an existing task
+			f = os.path.join (self.crontabdata, "last_id")
+			if os.access (f, os.R_OK):
+				fh = open (f, 'r+')
+				r = fh.read ()
+				if r == "":
+					last_id = 1
+				else:
+					last_id = int (r)
+					
+				print "last_id" + str (last_id)
+				job_id = last_id + 1
+				print "job_id" + str (job_id)
+				fh.seek (0)
+				fh.truncate (1)
+				fh.write ( str(job_id))
+				fh.close ()
+				
+				
+			else:
+				job_id = 1
+				fh = open (f, 'w')
+				fh.write ('1')
+				fh.close ()
+				
+			record = record + " # JOB_ID_" + str (job_id)
+			
+			
+		if title == None:
 			title = _("Untitled")
-			record = record + " # " + title + ", " + icon
-
 	
+		f = os.path.join (self.crontabdata, str(job_id))
+		print f
+		fh = open (f, 'w')
+		fh.truncate (1)
+		fh.seek (0)
+		fh.write ("title=" + title + "\n")
+		fh.write ("icon=" + icon +  "\n")
+		fh.write ("desc=" + desc + "\n")
+		fh.close ()	
+
 		self.lines[linenumber] = record
 		
 		# TODO: let write trow an exception if failed
@@ -185,20 +244,61 @@ class Crontab:
 		self.__write__ ()
 		
 		
-	def append (self, minute, hour, day, month, weekday, command, nooutput, title, icon = None):
+	def append (self, minute, hour, day, month, weekday, command, nooutput, title, icon = None, desc = None):
 		record = minute + " " + hour + " " + day + " " + month + " " + weekday + " " + command
 		if nooutput:
 			space = " "
 			if record[len(record)-1] == " ":
 				space = ""
 			record = record + space + self.nooutputtag
-		if title != None and icon == None:
-			record = record + " # " + title
-		elif title != None and icon != None:
-			record = record + " # " + title + ", " + icon
-		elif title == None and icon != None:
-			record = record + " # " + _("Untitled") + ", " + icon
-
+			
+			if title == None:
+				title = _("Untitled")
+				
+			if desc == None:
+				desc = ""
+			
+			if icon == None:
+				icon = ""
+				
+			# Create and write data file
+			f = os.path.join (self.crontabdata, "last_id")
+			if os.access (f, os.R_OK):
+				fh = open (f, 'r+')
+				r = fh.read ()
+				print r
+				if r == "":
+					last_id = 1
+				else:
+					last_id = int (r)
+					
+				print "last_id" + str (last_id)
+				job_id = last_id + 1
+				print "job_id" + str (job_id)
+				fh.seek (0)
+				fh.truncate (1)
+				fh.write ( str(job_id))
+				fh.close ()
+				
+				
+			else:
+				job_id = 1
+				fh = open (f, 'w')
+				fh.write ('1')
+				fh.close ()
+			
+			f = os.path.join (self.crontabdata, str(job_id))
+			print f
+			fh = open (f, 'w')
+			fh.truncate (1)
+			fh.seek (0)
+			fh.write ("title=" + title + "\n")
+			fh.write ("icon=" + icon +  "\n")
+			fh.write ("desc=" + desc + "\n")
+			fh.close ()
+				
+			record = record + " # JOB_ID_" + str (job_id)
+			
 		self.lines.append (record)
 		
 		# TODO: let write trow an exception if failed
@@ -221,15 +321,16 @@ class Crontab:
 			#read line and get info
 			array_or_false = self.parse (line)
 			if array_or_false != False:
-				(minute, hour, day, month, weekday, command, title, icon) = array_or_false
-				time = minute + " " + hour + " " + day + " " + month + " " + weekday
+				if array_or_false[0] == 2:
+					(minute, hour, day, month, weekday, command, comment, job_id, title, icon, desc) = array_or_false[1]
+					
+					time = minute + " " + hour + " " + day + " " + month + " " + weekday
 
-				#make the command smaller if the lenght is to long
-				preview = self.__make_preview__ (command)
+					#make the command smaller if the lenght is to long
+					preview = self.__make_preview__ (command)
 				
-				#add task to treemodel in mainWindow
-				
-				data.append([title, self.__easy__ (minute, hour, day, month, weekday), preview, line, linecount, time, self, icon, "", "", "","", _("Recurrent"), "crontab"])
+					#add task to treemodel in mainWindow
+					data.append([title, self.__easy__ (minute, hour, day, month, weekday), preview, line, linecount, time, self, icon, job_id, "", "","", _("Recurrent"), "crontab"])
 				
 				
 			linecount = linecount + 1	
@@ -256,46 +357,137 @@ class Crontab:
 	
 	#get info out of task line
 	def parse (self, line):
-		if len (line) > 1 and line[0] != '#':
-			"""
-						   min        hour      day      month      wday     command   comment/title-icon or end
-			The regexp:	('([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^#\n$]*)(\s#\s([^\n$]*)|$)')
-			A record:	* * * * * echo $a >/dev/null 2>&1 # Untitled, /usr/share/icons/gnome/48x48/mimetypes/gnome-mime-application.png
-			"""
-			m = self.crontabRecordRegex.match(line)	
-			if m != None:
-					#print m.groups()
-					minute = m.groups ()[0]
-					hour = m.groups ()[1]
-					day = m.groups ()[2]
-					month = m.groups ()[3]
-					weekday = m.groups ()[4]
-					command = m.groups ()[5]
-
-					#icon path is in comment of the task, this is the default
-					icon = None
-					
-					#title is in comment of the task
-					title = None
-					if m.groups ()[7] != None:
-						# TODO: check if works
-						lastpiece = m.groups ()[7]
-						keep = lastpiece.split (", ")
-						title = keep[0]
-						if len (keep) > 1:
-							icon = keep[1]
-
-					if title == None:
-						title = _("Untitled")
-
-					return minute, hour, day, month, weekday, command, title, icon
-						
+		# Format of gnome-schedule job line
+		# * * * * * ls -l >/dev/null >2&1 # JOB_ID_1
+		
+		# Return types
+		# 0: Special expression
+		# 1: Enivornment variable
+		# 2: Standard expression
+		# 3: Comment
+		
+		line = line.lstrip()
+		comment = ""
+		
+		if line	!= "":
+			#print "Parsing line: " + line
+			if line[0] == "#":
+				comment = line[1:]
+				line = ""
+				return [3, comment]
 			else:
-				print _("ERROR: Failed to parse crontab record")
-		return False
-		# TODO: throw exception
-
+				if (line.find ('#') != -1):
+					line, comment = line.rsplit('#', 1)
+				
+			comment = comment.strip ()
+			line = line.strip ()
+		
+		
+		#special expressions
+		if line == "":
+			#Empty
+			if comment != "":
+				return [3, comment]
+			else:
+				return False
+				
+		elif line[0] == "@":
+			if (line.find('\s')):
+				i = line.find('\s')
+			elif (line.find('\t')):
+				i = line.find('\t')
+				
+			else:
+				return False
+			special_expression = line[0:i]
+			line = line[i + 1:]
+			
+			## TODO: continue and return
+			return [0, line]
 	
+		elif (line[0].isalpha()):
+			if line[0] != '*':
+				#ENVIRONMENT VARIABLE
+				return [1, line]
+		else:
+			# Minute
+			minute, line = self.get_exp_sec (line)
+			
+			# Hour
+			hour, line = self.get_exp_sec (line)
+		
+			# Day of Month
+			dom, line = self.get_exp_sec (line)
+			
+			# Month of Year
+			moy, line = self.get_exp_sec (line)
+			
+			# Day of Week
+			dow, line = self.get_exp_sec (line)
+			
+		
+		command = line.strip ()
+		
+		# Retrive jobid
+		if (comment.find ('JOB_ID_') != -1):
+			i = comment.find ('JOB_ID_')
+			job_id = int (comment[i + 7:].rstrip ())
+		else:
+			job_id = False
+		
+		# Retrive title and icon data
+		if job_id:
+			title, icon, desc = self.get_job_data (job_id)
+		else:
+			title = ""
+			icon = ""
+			desc = ""
+			
+		return [2, [minute, hour, dom, moy, dow, command, comment, job_id, title, icon, desc]]
+		
+	def get_job_data (self, job_id):
+		f = os.path.join (self.crontabdata, str (job_id))
+		if os.access (f, os.R_OK):
+			fh = open (f, 'r')
+			d = fh.read ()
+				
+			d = d.strip ()
+			
+			title = d[6:d.find ("\n")]
+			d = d[d.find ("\n") + 1:]
+			
+			icon = d[5:d.find ("\n")]
+			d = d[d.find ("\n") + 1:]
+			
+			desc = d[5:]
+			fh.close ()
+			
+			return title, icon, desc
+			
+		else: 
+			return "", "", ""
+			
+			
+		
+				
+	def get_exp_sec (self, line):
+		line = line.lstrip ()
+		#print "line: \"" + line + "\""
+		
+		## find next whitespace
+		i = 0
+		found = False
+		while (i <= len(line)) and (found == False):
+			if line[i] in string.whitespace:
+				found = True
+				#print "found: " + str (i)
+			else:
+				i = i + 1
+		sec = line[0:i]
+		#print "sec: \"" + sec + "\""
+		line = line[i + 1:]
+		return sec, line
+		
 	def __easy__ (self, minute, hour, day, month, weekday):
 		return lang.translate_crontab_easy (minute, hour, day, month, weekday)
 

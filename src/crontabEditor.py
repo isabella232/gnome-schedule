@@ -141,14 +141,18 @@ class CrontabEditor:
 			self.notebook.set_current_page(0)
 	
 	
-	def showedit (self, record, linenumber, iter, mode):
+	def showedit (self, record, job_id, linenumber, iter, mode):
+		
 		self.__reload_templates__ ()
 		self.editing = True
 		self.linenumber = linenumber
 		self.record = record
-		(self.minute, self.hour, self.day, self.month, self.weekday, self.command, self.title, self.icon) = self.scheduler.parse (record)
+		self.job_id = job_id
+		(self.minute, self.hour, self.day, self.month, self.weekday, self.command, self.comment, self.job_id, self.title, self.icon, self.desc) = self.scheduler.parse (record)[1]
 		self.widget.set_title(_("Edit a Scheduled Task"))
+		
 		self.__update_textboxes__ ()
+		
 		self.__set_frequency_combo__ ()
 		self.parentiter = iter
 		self.widget.set_transient_for(self.ParentClass.widget)
@@ -448,7 +452,8 @@ class CrontabEditor:
 
 		
 		if self.editing != False:
-			self.scheduler.update (self.minute, self.hour, self.day, self.month, self.weekday, self.command, self.linenumber, self.parentiter, self.nooutput, self.title, self.icon)
+			self.minute, self.hour, self.day, self.month, self.weekday, self.command, self.comment, self.job_id, self.title, self.icon, self.desc
+			self.scheduler.update (self.minute, self.hour, self.day, self.month, self.weekday, self.command, self.linenumber, self.parentiter, self.nooutput, self.job_id, self.comment, self.title, self.icon, self.desc)
 			
 		else:
 			self.scheduler.append (self.minute, self.hour, self.day, self.month, self.weekday, self.command, self.nooutput, self.title, self.icon)
