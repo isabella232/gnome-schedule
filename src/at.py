@@ -41,15 +41,29 @@ class At:
 		# 16       2006-01-08 13:01 a gaute
 		# 7       Sun Jan  8 13:01:00 2006 a pvanhoof
 		# 1	2006-04-26 08:54 a gaute
+		# 14	2006-09-21 10:54 a gaute
 
 		self.atRecordRegex = [ 
+			re.compile('([0-9]+)\s([0-9]4-[0-9]2-[0-9]2)\s([0-9]2:[0-9]2)\s([a]1)\s(.*)'),
 			re.compile('([^\s]+)\s((.*)\s(..:..:..\s....)|([^\s]+)\s([^\s]+))\s([^\s]+)\s([^\s]+)'), 
-			re.compile('([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)') 
+			re.compile('([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)')			
 			]
 			
 
-		self.atRecordRegexAdd = re.compile('([^\s]+)\s([^\s]+)\s')
+		# after you add a job, this line is printed to stderr
+		# job 10 at 2006-09-18 12:38
+		self.atRecordRegexAdd = re.compile('^job\s([0-9]+)\sat')
+		
 		self.atRecordRegexAdded = re.compile('[^\s]+\s([0-9]+)\sat')
+		
+		self.SCRIPT_DELIMITER = "###### ---- GNOME_SCHEDULE_SCRIPT_DELIMITER #####"
+		self.atdata = os.path.expanduser ("~/.gnome/gnome-schedule/at")
+		if os.path.exists(self.atdata) != True:
+			if os.makedirs(self.atdata, 0700):
+				pass
+			else:
+				pass
+				# FAILED TO CREATE DATADIR
 		
 	def set_rights(self,user,uid,gid):
 		self.user = user
@@ -61,8 +75,8 @@ class At:
 		return "at"
 
 
-	def parse (self, line, output = 0):
-		if output == 0:
+	def parse (self, line, output = True):
+		if (output == True):
 			if len (line) > 1 and line[0] != '#':
 				m = self.atRecordRegex[0].match(line)
 				if m == None:
@@ -70,9 +84,13 @@ class At:
 					if m != None:
 						print "regexp: 1"
 					else:
-						# Exception
-						print "regexp: failed"
-						return False
+						m = self.atRecordRegex[2].match(line)
+						if m != None:
+							print "regexp: 2"
+						else:
+							# Exception
+							print "regexp: failed"
+							return False
 						
 				else:
 					print "regexp: 0"
@@ -80,16 +98,17 @@ class At:
 					
 				if m != None:
 
-					# print m.groups()
 					job_id = m.groups ()[0]
-					date = m.groups ()[1]
-					time = m.groups ()[2]
-					class_id = m.groups ()[3]
-					user = m.groups ()[4]
+					date = m.groups ()[4]
+					time = m.groups ()[5]
+					class_id = m.groups ()[6]
+					user = m.groups ()[7]
 					execute = config.getAtbin() + " -c " + job_id
 					# read lines and detect starter
 					script = os.popen(execute).read()
-					script, title, icon, prelen, dangerous = self.__prepare_script__ (script)
+					script, prelen, dangerous = self.__prepare_script__ (script)
+					
+					title, icon, desc = self.get_job_data (int (job_id))
 					#removing ending newlines, but keep one
 					#if a date before this is selected the record is removed, this creates an error, and generally if the script is of zero length
 					if len(script) < 2:
@@ -104,18 +123,55 @@ class At:
 							done = 1
 
 					return job_id, date, time, class_id, user, script, title, icon, prelen, dangerous
-		else:
+		elif (output == False):
 			if len (line) > 1 and line[0] != '#':
-				m = self.atRecordRegexAdd.match(line)
+				m = self.atRecordRegexAdd.search(line)
+				#print "Parsing line: " + line
 				if m != None:
-					# print m.groups()
-					job = m.groups ()[0]
-					job_id = m.groups ()[1]
-					return job_id
+					#print "Parse successfull, groups: "
+					print m.groups()
+					job_id = m.groups ()[0]
+					return int(job_id)
+				else:
+					return False
 
 		return False
 		# TODO: throw exception
 
+	def get_job_data (self, job_id):
+		f = os.path.join (self.atdata, str (job_id))
+		if os.access (f, os.R_OK):
+			fh = open (f, 'r')
+			d = fh.read ()
+				
+			d = d.strip ()
+			
+			title = d[6:d.find ("\n")]
+			d = d[d.find ("\n") + 1:]
+			
+			icon = d[5:d.find ("\n")]
+			d = d[d.find ("\n") + 1:]
+			
+			desc = d[5:]
+			fh.close ()
+			
+			return title, icon, desc
+			
+		else: 
+			return "", "", ""
+			
+	def write_job_data (self, job_id, title, icon, desc):
+		# Create and write data file
+		f = os.path.join (self.atdata, str(job_id))
+		print f
+		fh = open (f, 'w')
+		fh.truncate (1)
+		fh.seek (0)
+		fh.write ("title=" + title + "\n")
+		fh.write ("icon=" + icon +  "\n")
+		fh.write ("desc=" + desc + "\n")
+		fh.close ()
+			
 	def checkfield (self, runat):
 		#TODO: fix bug $0:19 2004-12-8$ not valid by regexp
 		# print "$" + runat + "$"
@@ -218,15 +274,16 @@ class At:
 		tmpfile = tempfile.mkstemp ()
 		fd, path = tmpfile
 		tmp = os.fdopen(fd, 'w')
-		if title:
-			tmp.write("TITLE=" + title + "\n")
-		else:
-			tmp.write("TITLE=Untitled\n")
-		if icon:
-			tmp.write("ICON=" + icon + "\n")
-		else:
-			tmp.write("ICON=None\n")
+		#if title:
+		#	tmp.write("TITLE=" + title + "\n")
+		#else:
+	#		tmp.write("TITLE=Untitled\n")
+	#	if icon:
+	#		tmp.write("ICON=" + icon + "\n")
+	#	else:
+	#		tmp.write("ICON=None\n")
 
+		tmp.write (self.SCRIPT_DELIMITER + "\n")
 		tmp.write (command + "\n")
 		tmp.close ()
 		
@@ -237,35 +294,50 @@ class At:
 				#changes the ownership
 				os.chown(path, self.uid, self.gid)
 				execute = config.getSubin() + " " + self.user + " -c \"" + config.getAtbin() + " " + runat + " -f " + path + " && exit\""
-				temp = commands.getoutput(execute)
+				child_stdin, child_stdout, child_stderr = os.popen3(execute)
 			else:
 				execute = config.getAtbin() + " " + runat + " -f " + path
-				temp = commands.getoutput(execute)
+				child_stdin, child_stdout, child_stderr = os.popen3(execute)
 		else:
 			execute = config.getAtbin() + " " + runat + " -f " + path
-			temp = commands.getoutput(execute)
+			child_stdin, child_stdout, child_stderr = os.popen3(execute)
 
+		
+		err = child_stderr.readlines ()
+		job_id = 0
+		for line in err:
+			t = self.parse (line, False)
+			if t != False:
+				job_id = t
+		
+		print job_id
+		
+		desc = ""
+		self.write_job_data (job_id, title, icon, desc)
+		
 		os.unlink (path)
-		return temp
 
 
 	def update (self, job_id, runat, command, title, icon):
 		#remove old
-		execute = config.getAtrmbin() + " " + str(job_id)
+		f = os.path.join (self.atdata, str (job_id))
+		os.unlink (f)
+		execute = config.getAtrmbin()+ " " + str(job_id)
 		commands.getoutput(execute)
 		
 		#add new
 		tmpfile = tempfile.mkstemp ()
 		fd, path = tmpfile
 		tmp = os.fdopen(fd, 'w')
-		if title:
-			tmp.write("TITLE=" + title + "\n")
-		else:
-			tmp.write("TITLE=Untitled\n")
-		if icon:
-			tmp.write("ICON=" + icon + "\n")
-		else:
-			tmp.write("ICON=None\n")
+		#if title:
+	#		tmp.write("TITLE=" + title + "\n")
+	#	else:
+#			tmp.write("TITLE=Untitled\n")
+#		if icon:
+#			tmp.write("ICON=" + icon + "\n")
+#		else:
+#			tmp.write("ICON=None\n")
+		tmp.write (self.SCRIPT_DELIMITER + "\n")
 		tmp.write (command + "\n")
 		tmp.close ()
 
@@ -274,18 +346,35 @@ class At:
 				#changes the ownership
 				os.chown(path, self.uid, self.gid)
 				execute = config.getSubin() + " " + self.ParentClass.user + " -c \"" + config.getAtbin() + " " + runat + " -f " + path + " && exit\""
-				temp = commands.getoutput(execute)
-
+				child_stdin, child_stdout, child_stderr = os.popen3(execute)
+			else:
+				execute = config.getAtbin() + " " + runat + " -f " + path
+				child_stdin, child_stdout, child_stderr = os.popen3(execute)
 		else:
 			execute = config.getAtbin() + " " + runat + " -f " + path
-			temp = commands.getoutput(execute)
+			child_stdin, child_stdout, child_stderr = os.popen3(execute)
 
+		err = child_stderr.readlines ()
+		job_id = 0
+		for line in err:
+			t = self.parse (line, False)
+			if t != False:
+				job_id = t
+		
+		print job_id
+		
+		desc = ""
+		self.write_job_data (job_id, title, icon, desc)
+		
 		os.unlink (path)
 		
 
-	def delete (self, jobid, iter):
-		if jobid:
-			execute = config.getAtrmbin()+ " " + str(jobid)
+	def delete (self, job_id, iter):
+		if job_id:
+			# delete file
+			f = os.path.join (self.atdata, str(job_id))
+			os.unlink (f)
+			execute = config.getAtrmbin()+ " " + str(job_id)
 			commands.getoutput(execute)
 			
 				
@@ -298,6 +387,7 @@ class At:
 		for line in self.lines:
 			
 			array_or_false = self.parse (line)
+			#print array_or_false
 			if array_or_false != False:
 				(job_id, date, time, class_id, user, lines, title, icon, prelen, dangerous) = array_or_false
 
@@ -305,8 +395,9 @@ class At:
 				preview = self.__make_preview__ (lines, prelen)
 				if dangerous == 1:
 						preview = _("DANGEROUS PARSE: %(preview)s") % {'preview':  preview}
-				#chopping of title and icon stuff from script
+				#chopping of script delimiter
 				lines = lines[prelen:]
+				lines.strip ()
 					
 				timestring = "%s %s" % (date, time)
 				# TODO: localize time and date formats
@@ -339,32 +430,13 @@ class At:
 		#Later: It now seems like this is incorrect, and may vary upon distribution. I therefore determine the prepended stuff by making a test job and then removing the length of it. in gentoo it adds to newlines at the end of the script
 
 		dangerous = 0
-		string = "TITLE="
-		titlestart = script.find(string)
+		string = self.SCRIPT_DELIMITER
+		scriptstart = script.find(string)
 		#print titlestart
-		if titlestart != -1:
-			script = script[titlestart:]
-			prelen = 0
+		if scriptstart != -1:
+			script = script[scriptstart:]				
+			prelen = len(self.SCRIPT_DELIMITER) + 1
 
-			# If the string contains TITLE=
-			string = "TITLE="
-			titlestart = script.find(string)
-			if titlestart != -1:
-				titleend = script.find("\n", titlestart)
-				title = script[titlestart + len(string):titleend]
-				#remeber the length to remove this from the preview
-				prelen = len(title) + 7
-
-			# If the string contains ICON=
-			string = "ICON="
-			iconstart = script.find ("ICON=") 
-			if iconstart != -1:
-				iconend = script.find ("\n", iconstart)
-				icon = script[(iconstart + len(string)):iconend]
-				prelen = prelen + len(icon) + 6
-			
-			else:
-				icon = None
 		else:
 			#print "method 2"
 			dangerous = 1
@@ -385,8 +457,8 @@ class At:
 				prelen = len(title) + 7
 			else:
 				title = "Untitled"
-				# If the string contains ICON=
-				iconstart = script.find ("ICON=") 
+			# If the string contains ICON=
+			iconstart = script.find ("ICON=") 
 			if iconstart != -1:
 				iconend = script.find ("\n", iconstart)
 				icon = script[(iconstart + 5):iconend]
@@ -396,7 +468,7 @@ class At:
 			else:
 				icon = None 
 
-		return script, title, icon, prelen, dangerous
+		return script, prelen, dangerous
 
 
 	def __make_preview__ (self, lines, prelen, preview_len = 0):

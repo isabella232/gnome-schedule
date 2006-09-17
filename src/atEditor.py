@@ -131,8 +131,13 @@ class AtEditor:
 		self.class_id = self.ParentClass.treemodel.get_value(iter, 9)
 		self.user = self.ParentClass.treemodel.get_value(iter, 10)
 		self.command = self.ParentClass.treemodel.get_value(iter, 3)
-		
-		print self.date, self.time
+		# removing beginning newlines.. wherever they come from..
+		i = self.command.find ('\n', 0)
+		while i == 0:
+			self.command = self.command[1:]
+			i = self.command.find ('\n', 0)
+			
+		#print "date: ", self.date, "time: ", self.time
 		#parse 	
 		(hour, minute, day, month, year) = self.__parse_time__(self.time, self.date)
 		self.runat = self.time + " " + day + "." + month + "." + year

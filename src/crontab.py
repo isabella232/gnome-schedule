@@ -194,9 +194,9 @@ class Crontab:
 				else:
 					last_id = int (r)
 					
-				print "last_id" + str (last_id)
+				#print "last_id" + str (last_id)
 				job_id = last_id + 1
-				print "job_id" + str (job_id)
+				#print "job_id" + str (job_id)
 				fh.seek (0)
 				fh.truncate (1)
 				fh.write ( str(job_id))
@@ -216,7 +216,7 @@ class Crontab:
 			title = _("Untitled")
 	
 		f = os.path.join (self.crontabdata, str(job_id))
-		print f
+		#print f
 		fh = open (f, 'w')
 		fh.truncate (1)
 		fh.seek (0)
@@ -270,15 +270,14 @@ class Crontab:
 			if os.access (f, os.R_OK):
 				fh = open (f, 'r+')
 				r = fh.read ()
-				print r
 				if r == "":
 					last_id = 1
 				else:
 					last_id = int (r)
 					
-				print "last_id" + str (last_id)
+				
 				job_id = last_id + 1
-				print "job_id" + str (job_id)
+				
 				fh.seek (0)
 				fh.truncate (1)
 				fh.write ( str(job_id))
@@ -292,7 +291,7 @@ class Crontab:
 				fh.close ()
 			
 			f = os.path.join (self.crontabdata, str(job_id))
-			print f
+			
 			fh = open (f, 'w')
 			fh.truncate (1)
 			fh.seek (0)
@@ -339,7 +338,7 @@ class Crontab:
 				
 			linecount = linecount + 1	
 		
-		#print data
+		
 		return data
 
 
