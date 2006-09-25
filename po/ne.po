@@ -1,60 +1,66 @@
+# translation of gnome-schedule.HEAD.ne.po to Nepali
 # translation of gnome-schedule.HEAD.po to Nepali
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
 # Pawan Chitrakar <pawan@mpp.org.np>, 2005.
 # Ganesh Ghimire <gghimire@gmail.com>, 2005.
 # Jaydeep Bhusal <zaydeep@hotmail.com>, 2005.
+# Ishwar Sharma <eesha_kaf@yahoo.com>, 2005.
+# Ishwar Sharma <sharmabeeshwar@gmail.com>, 2005.
+# Mahesh subedi <submanesh@hotmail.com>, 2006.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-schedule.HEAD\n"
+"Project-Id-Version: gnome-schedule.HEAD.ne\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-01-04 15:49+0000\n"
-"PO-Revision-Date: 2005-07-31 10:32+0545\n"
-"Last-Translator: Jaydeep Bhusal <zaydeep@hotmail.com>\n"
+"POT-Creation-Date: 2006-05-15 11:28+0200\n"
+"PO-Revision-Date: 2006-06-11 15:58+0545\n"
+"Last-Translator: Mahesh subedi <submanesh@hotmail.com>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.9.1\n"
-"Plural-Forms: Nplurals=2;plural=(n!=0)\n"
+"X-Generator: KBabel 1.10.2\n"
+"Plural-Forms: nplurals=2;plural=(n!=1)\n"
 
 #: ../desktop/gnome-schedule.desktop.in.in.h:1
 msgid "Manage your system tasks"
-msgstr "तपाईँको प्रणालीका कार्यहरू व्यवस्थापन गर्नुहोस्"
+msgstr "तपाईँको प्रणालीका कार्यहरू व्यवस्थापन गर्नुहोस् "
 
 #: ../desktop/gnome-schedule.desktop.in.in.h:2
 msgid "Schedule"
 msgstr "कार्य तालिका"
 
 #: ../servers/GNOME_GnomeSchedule.server.in.in.h:1
-#, fuzzy
 msgid "Configures your scheduled tasks"
-msgstr "कार्यतालिकाको कार्यहरू कन्फिगर गर"
+msgstr "तपाईँको कार्यतालिकाको कार्यहरू कन्फिगर गर्नुहोस्"
 
 #: ../servers/GNOME_GnomeSchedule.server.in.in.h:2
-#, fuzzy
 msgid "Gnome schedule"
-msgstr "जीनोम कार्यतालिका"
+msgstr "जिनोम कार्यतालिका"
 
 #: ../servers/GNOME_GnomeSchedule.server.in.in.h:3
 msgid "System tools"
-msgstr ""
+msgstr "प्रणाली उपकरणहरू"
 
-#: ../src/at.py:283
+#: ../src/at.py:295
 #, python-format
 msgid "DANGEROUS PARSE: %(preview)s"
-msgstr ""
+msgstr "DANGEROUS PARSE: %(preview)s"
 
 #. TODO: localize time and date formats
-#: ../src/at.py:289
+#: ../src/at.py:301
 #, python-format
 msgid "On %(date)s at %(time)s"
 msgstr " %(date)s at %(time)s मा"
 
-#: ../src/at.py:294 ../src/at.py:299
+#: ../src/at.py:306 ../src/at.py:311
 msgid "Once"
-msgstr ""
+msgstr "एकपटक "
+
+#: ../src/at.py:315
+msgid "Warning: a line in atq's output didn't parse"
+msgstr "चेतावनी: atq's एउटा लाइनमा निर्गत पद वर्णन गरेन"
 
 #: ../src/crontab.py:49
 msgid "Minute"
@@ -77,19 +83,19 @@ msgid "Weekday"
 msgstr "हप्तादिन"
 
 #: ../src/crontab.py:138 ../src/crontab.py:143 ../src/crontab.py:147
-#, fuzzy, python-format
+#, python-format
 msgid "Must be between %(min)s and %(max)s"
-msgstr "%s र %s को बिचमा हुनुपर्दछ"
+msgstr " %(min)s र %(max)sको बीचमा हुनुपर्दछ "
 
 #: ../src/crontab.py:145
 #, python-format
 msgid "%s is not a number"
-msgstr "%s संख्या होइन"
+msgstr "%s सङ्ख्या होइन "
 
 #: ../src/crontab.py:165 ../src/crontab.py:200 ../src/crontab.py:289
 #: ../src/crontabEditor.py:187 ../src/atEditor.py:110
 msgid "Untitled"
-msgstr "शीर्षक नभएको"
+msgstr "शीर्षक विहिन "
 
 #. add task to treemodel in mainWindow
 #: ../src/crontab.py:232
@@ -118,74 +124,65 @@ msgstr "हप्तादिन"
 
 #: ../src/crontab.py:294
 msgid "ERROR: Failed to parse crontab record"
-msgstr ""
+msgstr "ERROR:  पर्स कर्नट्याब रेकर्ड गर्नका लागि असफल"
 
 #: ../src/crontabEditor.py:80
-#, fuzzy
 msgid "Use advanced"
 msgstr "आधुनिक प्रयोग गर्नुहोस्"
 
 #: ../src/crontabEditor.py:81 ../src/crontabEditorHelper.py:87
 #: ../src/gnome-schedule.glade.h:28
-#, fuzzy
 msgid "Every minute"
 msgstr "प्रत्येक मिनेट"
 
 #: ../src/crontabEditor.py:82 ../src/crontabEditorHelper.py:93
-#, fuzzy
 msgid "Every hour"
 msgstr "प्रत्येक घण्टा"
 
 #: ../src/crontabEditor.py:83 ../src/crontabEditorHelper.py:99
-#, fuzzy
 msgid "Every day"
-msgstr "प्रत्येक"
+msgstr "प्रत्येक दिन"
 
 #: ../src/crontabEditor.py:84 ../src/crontabEditorHelper.py:105
-#, fuzzy
 msgid "Every month"
 msgstr "प्रत्येक महिना"
 
 #: ../src/crontabEditor.py:85
-#, fuzzy
 msgid "Every week"
-msgstr "प्रत्येक"
+msgstr "प्रत्येक हप्ता"
 
 #: ../src/crontabEditor.py:130 ../src/atEditor.py:112
-#, fuzzy
 msgid "Create a New Scheduled Task"
 msgstr "एक नयाँ कार्यतालिका कार्य निर्माण गर्नुहोस्"
 
 #: ../src/crontabEditor.py:150 ../src/atEditor.py:143
-#, fuzzy
 msgid "Edit a Scheduled Task"
 msgstr "कार्य तालिकामा भएको कार्य सम्पादन गर्नुहोस्"
 
 #: ../src/crontabEditor.py:205 ../src/atEditor.py:316
 msgid "Don't use a preset"
-msgstr "पूर्वनिश्चित प्रयोग नगर्नुहोस्"
+msgstr "पहिला सेट गरेको प्रयोग नगर्नुहोस् "
 
 #: ../src/crontabEditor.py:266
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "This is an invalid record! The problem could be in the %(field)s field. "
 "Reason: %(reason)s"
-msgstr "यो अमान्य रेकर्ड हो! %s क्षेत्रमा समस्या हन सक्थ्यो। कारण: %s"
+msgstr "यो अमान्य रेकर्ड हो ! यो समस्याको कारण फाँट %(field)sको असफलता पनि हुनसक्छ। कारण: %(reason)s"
 
 #: ../src/crontabEditor.py:298 ../src/atEditor.py:286
 msgid "The preset has not been saved"
-msgstr "पूर्वनिश्चित बचत भएको छैन"
+msgstr "प्रिसेट बचत गरिएको छैन"
 
 #: ../src/crontabEditor.py:300 ../src/atEditor.py:288
 msgid "To delete a preset, you first need to select one"
-msgstr "पूर्वनिश्चित मेट्नको लागि तपाईँले एउटा छनोट गर्नु पर्दछ"
+msgstr "प्रिसेट मेट्नका लागि, तपाईँले एउटा चयन गर्नु पर्दछ"
 
 #: ../src/crontabEditor.py:310 ../src/atEditor.py:299
 msgid "To save a preset, you first have to choose a name for it"
-msgstr "पूर्वनिश्चित मेट्नको लागि तपाईँले यसका लागि एउटा नाम छनोट गर्नु पर्दछ"
+msgstr "पूर्वनिश्चित मेट्नका लागि तपाईँले यसका लागि एउटा नाम छनोट गर्नु पर्दछ"
 
 #: ../src/crontabEditor.py:320 ../src/atEditor.py:390
-#, fuzzy
 msgid "Choose an Icon for this Scheduled Task"
 msgstr "कार्य तालिकामा भएको कार्यका लागि एक प्रतिमा लिनुहोस्"
 
@@ -193,61 +190,53 @@ msgstr "कार्य तालिकामा भएको कार्यक
 msgid "command"
 msgstr "आदेश"
 
-#: ../src/crontabEditor.py:423 ../src/mainWindow.py:546 ../src/atEditor.py:514
+#: ../src/crontabEditor.py:423 ../src/mainWindow.py:553 ../src/atEditor.py:514
 msgid "Could not display help"
-msgstr ""
+msgstr "मद्दत प्रदर्शन गर्न सकेन"
 
 #: ../src/crontabEditorHelper.py:111
-#, fuzzy
 msgid "Every weekday"
 msgstr "हप्तादिन"
 
 #: ../src/crontabEditorHelper.py:163
 msgid "Minute settings"
-msgstr ""
+msgstr "मिनेट सेटिङ"
 
 #: ../src/crontabEditorHelper.py:164
-#, fuzzy
 msgid "Edit Time Expression for minute"
-msgstr "समय अभिव्यक्ति का लागि सम्पादन गर्नुहोस्: %s"
+msgstr "समय अभिव्यक्तिका लागि सम्पादन गर्नुहोस्: %s"
 
 #: ../src/crontabEditorHelper.py:166
 msgid "Hour settings"
-msgstr ""
+msgstr "घण्टा सेटिङ"
 
 #: ../src/crontabEditorHelper.py:167
-#, fuzzy
 msgid "Edit Time Expression for hour"
 msgstr "समय अभिव्यक्ति का लागि सम्पादन गर्नुहोस्: %s"
 
 #: ../src/crontabEditorHelper.py:169
-#, fuzzy
 msgid "Day settings"
-msgstr "<b>मिति सेटिङ्</b>"
+msgstr "<b>मिति सेटिङ</b>"
 
 #: ../src/crontabEditorHelper.py:170
-#, fuzzy
 msgid "Edit Time Expression for day"
-msgstr "समय अभिव्यक्ति का लागि सम्पादन गर्नुहोस्: %s"
+msgstr "समय अभिव्यक्तिका लागि सम्पादन गर्नुहोस्: %s"
 
 #: ../src/crontabEditorHelper.py:172
 msgid "Month settings"
-msgstr ""
+msgstr "महिना सेटिङ"
 
 #: ../src/crontabEditorHelper.py:173
-#, fuzzy
 msgid "Edit Time Expression for month"
-msgstr "समय अभिव्यक्ति का लागि सम्पादन गर्नुहोस्: %s"
+msgstr "समय अभिव्यक्तिका लागि सम्पादन गर्नुहोस्: %s"
 
 #: ../src/crontabEditorHelper.py:175
-#, fuzzy
 msgid "Weekday settings"
 msgstr "हप्तादिन"
 
 #: ../src/crontabEditorHelper.py:176
-#, fuzzy
 msgid "Edit Time Expression for weekday"
-msgstr "समय अभिव्यक्ति का लागि सम्पादन गर्नुहोस्: %s"
+msgstr "समय अभिव्यक्तिका लागि सम्पादन गर्नुहोस्: %s"
 
 #: ../src/crontabEditorHelper.py:190
 #, python-format
@@ -256,160 +245,140 @@ msgstr "यो अमान्य छ। कारण: %s"
 
 #. minute
 #: ../src/crontabEditorHelper.py:236 ../src/gnome-schedule.glade.h:15
-#, fuzzy
 msgid "At an exact minute"
 msgstr "प्रत्येक मिनेटमा"
 
 #: ../src/crontabEditorHelper.py:237 ../src/gnome-schedule.glade.h:42
-#, fuzzy
 msgid "Minute:"
 msgstr "मिनेट"
 
 #. hour
 #: ../src/crontabEditorHelper.py:240
 msgid "At an exact hour"
-msgstr ""
+msgstr "निश्चित घण्टामा"
 
 #: ../src/crontabEditorHelper.py:241
-#, fuzzy
 msgid "Hour:"
-msgstr "घण्टा"
+msgstr "घण्टा:"
 
 #. day
 #: ../src/crontabEditorHelper.py:244
 msgid "On a day"
-msgstr ""
+msgstr "एक दिनमा"
 
 #: ../src/crontabEditorHelper.py:245
 msgid "Day:"
-msgstr ""
+msgstr "दिन:"
 
 #. month
 #: ../src/crontabEditorHelper.py:248
-#, fuzzy
 msgid "In a month"
-msgstr "महिना"
+msgstr "एक महिनामा"
 
 #: ../src/crontabEditorHelper.py:249
-#, fuzzy
 msgid "Month:"
-msgstr "महिना"
+msgstr "महिना:"
 
 #. weekday
 #: ../src/crontabEditorHelper.py:252
-#, fuzzy
 msgid "On a weekday"
-msgstr "हप्तादिन"
+msgstr "हप्तादिन मा"
 
 #: ../src/crontabEditorHelper.py:253
-#, fuzzy
 msgid "Weekday:"
-msgstr "हप्तादिन"
+msgstr "हप्तादिन:"
 
 #: ../src/crontabEditorHelper.py:258 ../src/gnome-schedule.glade.h:40
 msgid "In a step width"
-msgstr ""
+msgstr "चरण चौडाइमा"
 
 #: ../src/crontabEditorHelper.py:260 ../src/gnome-schedule.glade.h:43
-#, fuzzy
 msgid "Minutes:"
-msgstr "मिनेट"
+msgstr "मिनेट:"
 
 #: ../src/crontabEditorHelper.py:262
-#, fuzzy
 msgid "Hours:"
-msgstr "घण्टा"
+msgstr "घण्टा:"
 
 #: ../src/crontabEditorHelper.py:264
 msgid "Days:"
-msgstr ""
+msgstr "दिनहरू:"
 
 #: ../src/crontabEditorHelper.py:266
-#, fuzzy
 msgid "Months:"
-msgstr "महिना"
+msgstr "महिनाहरू:"
 
 #: ../src/crontabEditorHelper.py:268
-#, fuzzy
 msgid "Weekdays:"
-msgstr "हप्तादिन"
+msgstr "हप्तादिनहरू:"
 
 #: ../src/gnome-schedule-applet.xml.h:1
 msgid "A_bout"
-msgstr ""
+msgstr "बारेमा"
 
 #: ../src/gnome-schedule-applet.xml.h:2
-#, fuzzy
 msgid "_Add a task"
-msgstr "_कार्य थप्नुहोस्"
+msgstr "कार्य थप्नुहोस्"
 
 #: ../src/gnome-schedule-applet.xml.h:3 ../src/gnome-schedule.glade.h:64
 msgid "_Help"
-msgstr ""
+msgstr "मद्दत"
 
 #: ../src/gnome-schedule-applet.xml.h:4
-#, fuzzy
 msgid "_Manage tasks"
-msgstr "तपाईँको प्रणालीका कार्यहरू व्यवस्थापन गर्नुहोस्"
+msgstr "कार्यहरू ब्यवस्थापन गर्नुहोस्"
 
 #: ../src/gnome-schedule.glade.h:1
 msgid "<b>Choose the user whose tasks you want to modify</b>"
-msgstr ""
+msgstr "<b>प्रयोगकर्ता रोज्नुहोस् जसको कार्य तपाईँ परिमार्जन गर्न चाहनुहुन्छ</b>"
 
 #: ../src/gnome-schedule.glade.h:2
-#, fuzzy
 msgid "<b>Date and Time Settings</b>"
-msgstr "मिति र समय सेटिङहरू"
+msgstr "<b>मिति र समय सेटिङ</b>"
 
 #: ../src/gnome-schedule.glade.h:3
 msgid "<b>Execution Time</b>"
-msgstr ""
+msgstr "<b>कार्यान्वयन समय</b>"
 
 #: ../src/gnome-schedule.glade.h:4
-#, fuzzy
 msgid "<b>General</b>"
-msgstr "<b>पूर्वदृष्य</b>"
+msgstr "<b>साधारण</b>"
 
 #: ../src/gnome-schedule.glade.h:5
-#, fuzzy
 msgid "<b>Minute settings</b>"
-msgstr "<b>मिति सेटिङ्</b>"
+msgstr "<b>मिति सेटिङ</b>"
 
 #: ../src/gnome-schedule.glade.h:6
 msgid "<b>Preview</b>"
-msgstr "<b>पूर्वदृष्य</b>"
+msgstr "<b>पूर्वदृश्य</b>"
 
 #: ../src/gnome-schedule.glade.h:7
 msgid "<b>Select the type of the scheduled task</b>"
-msgstr "<b>कार्यतालिकामा भएको कार्य प्रकार छनोट गर्नुहोस</b>"
+msgstr "<b>कार्यतालिकामा भएको कार्य प्रकार छनोट गर्नुहोस्</b>"
 
 #: ../src/gnome-schedule.glade.h:8
-#, fuzzy
 msgid "<b>Task</b>"
-msgstr "<b>मिति सेटिङ्</b>"
+msgstr "<b>मिति सेटिङ</b>"
 
 #: ../src/gnome-schedule.glade.h:9
-#, fuzzy
 msgid "A scheduled task that will launch _recurrently"
 msgstr "कार्यतालिकामा भएको कार्य जसको पुनराबृत्ति सुरु हुन्छ।"
 
 #: ../src/gnome-schedule.glade.h:10
-#, fuzzy
 msgid "A scheduled task that will launch only once in the _future"
-msgstr "कार्यतालिकाको कार्य भविश्यमा एक पटक मात्र प्रकाशित गरिने छ।"
+msgstr "कार्यतालिकाको कार्य भबिष्यमा एक पटक मात्र प्रकाशित गरिनेछ।"
 
 #: ../src/gnome-schedule.glade.h:11
 msgid "About this application"
-msgstr "अनुप्रयोगका बारेमा"
+msgstr "यो अनुप्रयोगका बारेमा"
 
 #: ../src/gnome-schedule.glade.h:12
-#, fuzzy
 msgid "Add a Scheduled Task"
-msgstr "कार्यतालिकामा कार्य थप्नुहोस्"
+msgstr "कार्यतालिकाको कार्य थप्नुहोस्"
 
 #: ../src/gnome-schedule.glade.h:13
 msgid "Add a new scheduled task"
-msgstr "कार्तालिकामा नयाँ कार्य थप्नुहोस्"
+msgstr "नयाँ कार्तालिकामा कार्य थप्नुहोस्"
 
 #: ../src/gnome-schedule.glade.h:14
 msgid "Advanced"
@@ -421,33 +390,29 @@ msgstr "आधारभूत"
 
 #: ../src/gnome-schedule.glade.h:17
 msgid "Change User"
-msgstr ""
+msgstr "प्रयोगकर्ता परिवर्तन गर्नुहोस्"
 
 #: ../src/gnome-schedule.glade.h:18
 msgid "Change _User"
-msgstr ""
+msgstr "प्रयोगकर्ता परिवर्तन गर्नुहोस्"
 
 #: ../src/gnome-schedule.glade.h:19
-#, fuzzy
 msgid "Choose an icon for this scheduled task"
-msgstr "कार्य तालिकामा भएको कार्यका लागि एक प्रतिमा लिनुहोस्"
+msgstr "यो कार्य तालिकाको कार्यका लागि एक प्रतिमा रोज्नुहोस्"
 
 #: ../src/gnome-schedule.glade.h:20
 msgid "Choose the user whose tasks you want to modify"
-msgstr ""
+msgstr "प्रयोगकर्ता रोज्नुहोस् जसको कार्यहरू तपाईँ परिमार्जन गर्न चाहनुहुन्छ "
 
 #: ../src/gnome-schedule.glade.h:21
-#, fuzzy
 msgid "Co_mmand:"
-msgstr "आदेश"
+msgstr "आदेश:"
 
 #: ../src/gnome-schedule.glade.h:22
-#, fuzzy
 msgid "Configure Scheduled Tasks"
-msgstr "कार्यतालिकाको कार्यहरू कन्फिगर गर"
+msgstr "कार्यतालिकाको कार्यहरू कन्फिगर गर्नुहोस्"
 
 #: ../src/gnome-schedule.glade.h:23
-#, fuzzy
 msgid "Date and Time"
 msgstr "मिति र समय"
 
@@ -456,29 +421,26 @@ msgid "Delete a scheduled task"
 msgstr "कार्यतालिकाको कार्य मेट्नुहोस्"
 
 #: ../src/gnome-schedule.glade.h:25
-#, fuzzy
 msgid "Delete the selected template"
-msgstr "छनोट गरिएको पूर्वनिश्चित मेटिने छ"
+msgstr "चयन गरिएको टेम्प्लेट मेट्नुहोस् "
 
 #: ../src/gnome-schedule.glade.h:26
 msgid "Desc_ription:"
-msgstr ""
+msgstr "वर्णन:"
 
 #: ../src/gnome-schedule.glade.h:27
 msgid "Edit a scheduled task"
-msgstr "कार्य तालिकामा भएको कार्य सम्पादन गर्नुहोस्"
+msgstr "कार्य तालिकाको कार्य सम्पादन गर्नुहोस्"
 
 #: ../src/gnome-schedule.glade.h:29
 msgid "Execution at a specific minute, hour, day, weekday or month."
-msgstr "निश्चित मिनेट, घण्टा, दिन, हप्ता वा महिनामा सञ्चालन गर्नुहोस्"
+msgstr "निश्चित मिनेट, घण्टा, दिन, हप्तादिन वा महिनामा सञ्चालन गर्नुहोस्"
 
 #: ../src/gnome-schedule.glade.h:30
 msgid ""
 "Execution at a step width. For example every five minutes, hours, days, "
 "weekdays or months."
-msgstr ""
-"एक चरण चौडाईमा कार्यान्वयन, उदाहरणका लागि हरेक पाँच मिनेटहरू, घण्टाहरु दिनहरू  हप्ताहरू "
-"वा महिनाहरू।"
+msgstr "चरण चौडाइमा कार्यान्वयन, उदाहरणका लागि हरेक पाँच मिनेट, घण्टा दिनहरू  हप्तादिनहरू वा महिनाहरू।"
 
 #: ../src/gnome-schedule.glade.h:31
 msgid "Execution at every minute, hour, day, weekday or month."
@@ -486,90 +448,79 @@ msgstr "प्रत्येक मिनेट, घण्टा, दिन, �
 
 #: ../src/gnome-schedule.glade.h:32
 msgid "Execution in a range."
-msgstr "दायरामा कार्यान्वयन"
+msgstr "दायरामा कार्यान्वयन।"
 
 #: ../src/gnome-schedule.glade.h:33
-#, fuzzy
 msgid "Expression:"
-msgstr "अन्य अभिव्यक्ति"
+msgstr "अभिव्यक्ति:"
 
 #: ../src/gnome-schedule.glade.h:34
-#, fuzzy
 msgid "For example at 04:10 tomorrow, next week or in three days"
-msgstr "उदाहरणका लागि भोलि ०४:१०, अर्को हप्ता वा तीन दिनमा"
+msgstr "उदाहरणका लागि भोलि ०४:१०, अर्को हप्ता वा तीन दिनमा "
 
 #: ../src/gnome-schedule.glade.h:35
-#, fuzzy
 msgid "For example every first hour of the day"
-msgstr "उदाहरणका लागि दिनको प्रत्येक पहिलो घण्टा"
+msgstr "उदाहरणका लागि दिनको प्रत्येक पहिलो घण्टा "
 
 #: ../src/gnome-schedule.glade.h:36
-#, fuzzy
 msgid "For experienced users"
-msgstr "अनुभवि प्रयोगकर्ताहरूकालागि मात्र"
+msgstr "अनुभवि प्रयोगकर्ताहरूका लागि मात्र"
 
 #: ../src/gnome-schedule.glade.h:37
 msgid "From:"
-msgstr ""
+msgstr "बाट:"
 
 #: ../src/gnome-schedule.glade.h:38
-#, fuzzy
 msgid "Ico_n:"
-msgstr "प्रतिमा"
+msgstr "प्रतिमा:"
 
 #: ../src/gnome-schedule.glade.h:39
 msgid "In a range"
-msgstr ""
+msgstr "दायरामा:"
 
 #: ../src/gnome-schedule.glade.h:41
-#, fuzzy
 msgid "Mi_nutes:"
-msgstr "मिनेट"
+msgstr "मिनेट:"
 
 #: ../src/gnome-schedule.glade.h:44
-#, fuzzy
 msgid "No out_put"
-msgstr "कुनै निर्गत छैन"
+msgstr "निर्गत छैन"
 
 #: ../src/gnome-schedule.glade.h:45
 msgid "Other"
-msgstr ""
+msgstr "अन्य"
 
 #: ../src/gnome-schedule.glade.h:46
 msgid ""
 "Quit the application. This will not stop the system scheduling. It will, "
 "however, quit this system schedule maintenance tool."
 msgstr ""
-"अनुप्रयोग बन्द गर्नुहोस। यसले प्रणालीको कार्यतालिका रोक्ने छैन। यो यद्यपी कार्यतालिका "
-"बनावट उपकरणमा हुनेछ।"
+"अनुप्रयोग अन्त्य गर्नुहोस्। यसले प्रणालीको कार्यतालिका रोक्ने छैन। यो यद्यपी कार्यतालिका "
+"बनावट उपकरणमा हुँनेछ।"
 
 #: ../src/gnome-schedule.glade.h:47
-#, fuzzy
 msgid "Rec_urrence:"
-msgstr "पुनराबृत्ति"
+msgstr "पुनराबृत्ति:"
 
 #: ../src/gnome-schedule.glade.h:48
 msgid "Save the current information as a template"
-msgstr ""
+msgstr "टेम्प्लेट जस्तै गरी हालको सूचनालाई बचत गर्नुहोस्"
 
 #: ../src/gnome-schedule.glade.h:49
 msgid "Scheduled and active tasks"
-msgstr "कार्यतालिकामा भएको र सकृय कार्यहरू"
+msgstr "कार्यतालिका र सक्रिय कार्यहरू"
 
 #: ../src/gnome-schedule.glade.h:50
-#, fuzzy
 msgid "Scri_pt:"
-msgstr "लिपि"
+msgstr "स्क्रिप्ट:"
 
 #: ../src/gnome-schedule.glade.h:51
-#, fuzzy
 msgid "See \"man 5 crontab\" for information about the crontab format."
-msgstr "क्रोनट्याब ढाँचाको बारेमा हेर्नका लागि \"म्यान ५ क्रोनट्याव\" हेर्नुहोस्।"
+msgstr "क्रोनट्याब ढाँचाका बारेमा हेर्नका लागि \"man 5 crontab\" हेर्नुहोस्।"
 
 #: ../src/gnome-schedule.glade.h:52
-#, fuzzy
 msgid "Select..."
-msgstr "_छनोट गर्नुहोस्"
+msgstr "चयन गर्नुहोस्..."
 
 #: ../src/gnome-schedule.glade.h:53
 msgid "Show help"
@@ -581,20 +532,19 @@ msgstr "म्यानुअल देखाउनुहोस्"
 
 #: ../src/gnome-schedule.glade.h:55
 msgid "Time expression help"
-msgstr "समय अभिव्यक्ति सहयोग "
+msgstr "समय अभिव्यक्ति मद्दत"
 
 #: ../src/gnome-schedule.glade.h:56
 msgid "To:"
-msgstr ""
+msgstr "लाई:"
 
 #: ../src/gnome-schedule.glade.h:57
-#, fuzzy
 msgid ""
 "Tomorrow\n"
 "Next week"
 msgstr ""
 "भोली\n"
-"अर्को हप्ता"
+"अर्को हप्ता "
 
 #: ../src/gnome-schedule.glade.h:59
 msgid ""
@@ -602,80 +552,75 @@ msgid ""
 "crontab do have output and this option is not checked, the output will by "
 "default be send to the UNIX mailbox of the user."
 msgstr ""
-"जब छनोट गरिन्छ, कुनै निर्गत निस्कँदैन। जब क्रोनट्याब भित्र कार्यतालिकामा राखिएको कार्य "
-"हरूमा हुने निर्गत र यो विकल्प जाँच गरिँदैन, पूर्वनिर्धारित द्वारा प्रयोग कर्ताको युनिक्स "
+"जब चयन गरिन्छ, कुनै निर्गत निस्कँदैन। जब क्रोनट्याब भित्र कार्यतालिकामा राखिएको कार्य "
+"हरूमा हुने निर्गत र यो विकल्प जाँच गरिँदैन, पूर्वनिर्धारणद्वारा प्रयोगकर्ताको युनिक्स "
 "पत्रमञ्जूषामा निर्गत पठाइन्छ।"
 
 #: ../src/gnome-schedule.glade.h:60
 msgid "_About"
-msgstr ""
+msgstr "बारेमा "
 
 #: ../src/gnome-schedule.glade.h:61
-#, fuzzy
 msgid "_Advanced"
 msgstr "उन्नत"
 
 #: ../src/gnome-schedule.glade.h:62
-#, fuzzy
 msgid "_Date:"
-msgstr "_मेट्नुहोस्"
+msgstr "मिति:"
 
 #: ../src/gnome-schedule.glade.h:63
-#, fuzzy
 msgid "_Days of month:"
-msgstr "महिनाको दिन"
+msgstr "महिनाका दिनहरू:"
 
 #: ../src/gnome-schedule.glade.h:65
-#, fuzzy
 msgid "_Hour:"
-msgstr "घण्टा"
+msgstr "घण्टा:"
 
 #: ../src/gnome-schedule.glade.h:66
-#, fuzzy
 msgid "_Hours:"
-msgstr "घण्टा"
+msgstr "घण्टा:"
 
 #: ../src/gnome-schedule.glade.h:67
 msgid "_Manual"
-msgstr "_म्यानुअल"
+msgstr "म्यानुअल"
 
 #: ../src/gnome-schedule.glade.h:68
-#, fuzzy
 msgid "_Minute:"
-msgstr "मिनेट"
+msgstr "मिनेट:"
 
 #: ../src/gnome-schedule.glade.h:69
-#, fuzzy
 msgid "_Months:"
-msgstr "महिना"
+msgstr "महिनाहरू:"
 
 #: ../src/gnome-schedule.glade.h:70
 msgid "_Task"
-msgstr ""
+msgstr "कार्य"
 
 #: ../src/gnome-schedule.glade.h:71
 msgid "_Template:"
-msgstr ""
+msgstr "टेम्प्लेट:"
 
 #: ../src/gnome-schedule.glade.h:72
 msgid "_User:"
-msgstr ""
+msgstr "प्रयोगकर्ता:"
 
 #: ../src/gnome-schedule.glade.h:73
 msgid "_View"
-msgstr ""
+msgstr "दृश्य"
 
 #: ../src/gnome-schedule.glade.h:74
-#, fuzzy
 msgid "_Weekdays:"
-msgstr "हप्तादिन"
+msgstr "हप्तादिनहरू:"
 
-#: ../src/gnome-schedule.py:61 ../src/scheduleapplet.py:64
+#: ../src/gnome-schedule.py:59 ../src/scheduleapplet.py:62
 msgid ""
 "You need to install pyGTK or GTKv2,\n"
 "or set your PYTHONPATH correctly.\n"
 "try: export PYTHONPATH= "
 msgstr ""
+"तपाईँले pyGTK वा GTKv2 स्थापना गर्नु पर्दछ,\n"
+"वा सहि तरिकाले PYTHONPATH सेट गर्नु पर्दछ।\n"
+"प्रयास गर्नुहोस्: निर्यात PYTHONPATH= "
 
 #. Translators: Date format for expressions like 'January 21'. %B is month, %d is day number.
 #. Run the command 'man strftime' to read more about these and other available specifiers.
@@ -697,7 +642,7 @@ msgstr "%H:%M"
 
 #: ../src/lang.py:159
 msgid "At every full hour"
-msgstr "प्रत्येक घण्टा समाप्तिमा"
+msgstr "प्रत्येक पूरा घण्टामा"
 
 #: ../src/lang.py:161
 msgid "At every minute"
@@ -706,7 +651,7 @@ msgstr "प्रत्येक मिनेटमा"
 #: ../src/lang.py:163
 #, python-format
 msgid "At minute %(minute)s of every hour"
-msgstr "प्रत्येक घण्टाको मिनेट %(minute)sुमा"
+msgstr "प्रत्येक घण्टाको मिनेट %(minute)s मा "
 
 #: ../src/lang.py:165
 #, python-format
@@ -721,7 +666,7 @@ msgstr "प्रत्येक दिन %(time)s मा"
 #: ../src/lang.py:172
 #, python-format
 msgid "On day %(monthday)s of every month at every full hour"
-msgstr "प्रत्येक पुरा घन्टामा प्रत्येक महिनाको %(monthday)s दिनमा"
+msgstr "प्रत्येक पूरा घण्टामा प्रत्येक महिनाको %(monthday)s दिनमा"
 
 #: ../src/lang.py:174
 #, python-format
@@ -731,16 +676,14 @@ msgstr "प्रत्येक महिनाको प्रत्येक 
 #: ../src/lang.py:176
 #, python-format
 msgid "On day %(monthday)s of every month at minute %(minute)s of every hour"
-msgstr "प्रत्येक महिनाको %(monthday)s दिनमा प्रत्येक घन्टाको minute %(minute)s मा"
+msgstr "प्रत्येक महिनाको %(monthday)s दिनमा प्रत्येक घण्टाको मिनट %(minute)s मा"
 
 #: ../src/lang.py:178
 #, python-format
 msgid ""
 "On day %(monthday)s of every month at every minute between %(time_from)s and "
 "%(time_to)s"
-msgstr ""
-"प्रत्येक महिनाको %(monthday)s दिनमा  %(time_from)s र %(time_to)s बीचको प्रत्येक "
-"मिनेटमा"
+msgstr "प्रत्येक महिनाको %(monthday)s दिनमा  %(time_from)s र %(time_to)s बीचको प्रत्येक मिनेटमा"
 
 #: ../src/lang.py:180
 #, python-format
@@ -750,7 +693,7 @@ msgstr "प्रत्येक महिनाको %(monthday)s दिनम
 #: ../src/lang.py:185
 #, python-format
 msgid "On every day in %(month)s at every full hour"
-msgstr "प्रत्येक पुरा घन्टामा प्रत्येक दिनको %(month)s मा"
+msgstr "प्रत्येक पूरा घण्टामा प्रत्येक दिनको %(month)s मा"
 
 #: ../src/lang.py:187
 #, python-format
@@ -760,15 +703,14 @@ msgstr "प्रत्येक मिनेटमा प्रत्येक 
 #: ../src/lang.py:189
 #, python-format
 msgid "On every day in %(month)s at minute %(minute)s of every hour"
-msgstr "प्रत्येक दिन %(month)s मा minute %(minute)s प्रत्येक घन्टाको"
+msgstr "प्रत्येक दिन %(month)s मा मिनट %(minute)s प्रत्येक घण्टाको"
 
 #: ../src/lang.py:191
 #, python-format
 msgid ""
 "On every day in %(month)s at every minute between %(time_from)s and %"
 "(time_to)s"
-msgstr ""
-"प्रत्येक मिनेटको %(month)s प्रत्येक दिनमा %(time_from)s र %(time_to)s को बीचमा"
+msgstr "प्रत्येक मिनेटको %(month)s प्रत्येक दिनमा %(time_from)s र %(time_to)s को बीचमा"
 
 #: ../src/lang.py:193
 #, python-format
@@ -778,7 +720,7 @@ msgstr "प्रत्येक दिन %(month)s मा %(time)s को"
 #: ../src/lang.py:198
 #, python-format
 msgid "Every year on %(date)s at every full hour"
-msgstr "प्रत्येक वर्ष %(date)s मा प्रत्येक पुरा घन्टामा"
+msgstr "प्रत्येक वर्ष %(date)s मा प्रत्येक पूरा घण्टामा"
 
 #: ../src/lang.py:200
 #, python-format
@@ -788,13 +730,12 @@ msgstr "प्रत्येक वर्ष प्रत्येक मिन
 #: ../src/lang.py:202
 #, python-format
 msgid "Every year on %(date)s at minute %(minute)s of every hour"
-msgstr "प्रत्येक वर्ष %(date)s मा प्रत्येक घन्टाको  minute %(minute)s मा"
+msgstr "प्रत्येक वर्ष %(date)s मा प्रत्येक घण्टाको मिनट %(minute)s मा"
 
 #: ../src/lang.py:204
 #, python-format
-msgid ""
-"Every year on %(date)s at every minute between %(time_from)s and %(time_to)s"
-msgstr "प्रत्येक वर्ष %(date)s मा प्रत्येक मिनेट %(time_from)s र %(time_to)s बीचमा"
+msgid "Every year on %(date)s at every minute between %(time_from)s and %(time_to)s"
+msgstr "प्रत्येक वर्ष %(date)s मा प्रत्येक मिनेट %(time_from)s र %(time_to)s बीचमा "
 
 #: ../src/lang.py:206
 #, python-format
@@ -804,7 +745,7 @@ msgstr "प्रत्येक वर्ष %(date)s को %(time)s मा"
 #: ../src/lang.py:211
 #, python-format
 msgid "On every %(weekday)s at every full hour"
-msgstr "प्रत्येक %(weekday)s मा प्रत्येक पुरा घण्टामा "
+msgstr "प्रत्येक %(weekday)s मा प्रत्येक पूरा घण्टामा"
 
 #: ../src/lang.py:213
 #, python-format
@@ -814,13 +755,12 @@ msgstr "प्रत्येक मिनेटको प्रत्येक 
 #: ../src/lang.py:215
 #, python-format
 msgid "On every %(weekday)s at minute %(minute)s of every hour"
-msgstr "प्रत्येक %(weekday)s मा प्रत्येक घन्टाको minute %(minute)s मा"
+msgstr "प्रत्येक %(weekday)s मा प्रत्येक घण्टाको मिनट %(minute)s मा"
 
 #: ../src/lang.py:217
 #, python-format
-msgid ""
-"On every %(weekday)s at every minute between %(time_from)s and %(time_to)s"
-msgstr "प्रत्येक मिनेटको प्रत्येक %(weekday)s को %(time_from)s र %(time_to)s को बीचमा"
+msgid "On every %(weekday)s at every minute between %(time_from)s and %(time_to)s"
+msgstr "प्रत्येक मिनेटको प्रत्येक %(weekday)s को %(time_from)s र %(time_to)s को बीचमा "
 
 #: ../src/lang.py:219
 #, python-format
@@ -829,15 +769,12 @@ msgstr "प्रत्येक %(weekday)s को %(time)s मा"
 
 #: ../src/lang.py:224
 #, python-format
-msgid ""
-"On day %(monthday)s of every month and every %(weekday)s at every full hour"
-msgstr ""
-"प्रत्येक महिनाको %(monthday)s दिनमा र प्रत्येक पुरा घन्टाको प्रत्येक %(weekday)s मा"
+msgid "On day %(monthday)s of every month and every %(weekday)s at every full hour"
+msgstr "प्रत्येक महिनाको %(monthday)s दिनमा र प्रत्येक पूरा घण्टाको प्रत्येक %(weekday)s मा"
 
 #: ../src/lang.py:226
 #, python-format
-msgid ""
-"On day %(monthday)s of every month and every %(weekday)s at every minute"
+msgid "On day %(monthday)s of every month and every %(weekday)s at every minute"
 msgstr "प्रत्येक महिनाको %(monthday)s दिनमा र प्रत्येक मिनेटको प्रत्येक %(weekday)s मा"
 
 #: ../src/lang.py:228
@@ -847,16 +784,14 @@ msgid ""
 "s of every hour"
 msgstr ""
 "प्रत्येक महिनाको %(monthday)s दिनमा र प्रत्येक  %(weekday)s को minute %(minute)s "
-"प्रत्येक घन्टामा"
+"प्रत्येक घण्टामा"
 
 #: ../src/lang.py:230
 #, python-format
 msgid ""
 "On day %(monthday)s of every month and every %(weekday)s at every minute "
 "between %(time_from)s and %(time_to)s"
-msgstr ""
-"प्रत्येक महिनाको %(monthday)s मा र प्रत्येक मिनेटको प्रत्येक %(weekday)s मा  %"
-"(time_from)s र %(time_to)s को बीचमा"
+msgstr "प्रत्येक महिनाको %(monthday)s मा र प्रत्येक मिनेटको प्रत्येक %(weekday)s मा %(time_from)s र %(time_to)s को बीचमा"
 
 #: ../src/lang.py:232
 #, python-format
@@ -866,70 +801,60 @@ msgstr "प्रत्येक महिनाको %(monthday)s र प्�
 #: ../src/lang.py:237
 #, python-format
 msgid "On every %(weekday)s in %(month)s at every full hour"
-msgstr "प्रत्येक %(weekday)s in %(month)s को प्रत्येक पुरा घन्टामा"
+msgstr "प्रत्येक %(weekday)s मा %(month)s को प्रत्येक पूरा घण्टामा"
 
 #: ../src/lang.py:239
 #, python-format
 msgid "On every %(weekday)s in %(month)s at every minute"
-msgstr "प्रत्येक मिनेटको प्रत्येक %(weekday)s in %(month)s मा"
+msgstr "प्रत्येक मिनेटको प्रत्येक %(weekday)s मा %(month)s मा"
 
 #: ../src/lang.py:241
 #, python-format
 msgid "On every %(weekday)s in %(month)s at minute %(minute)s of every hour"
-msgstr "प्रत्येक घन्टाको प्रत्येक %(weekday)s in %(month)s  minute %(minute)s मा"
+msgstr "प्रत्येक घण्टाको प्रत्येक %(weekday)s मा %(month)s  मिनट %(minute)s मा"
 
 #: ../src/lang.py:243
 #, python-format
 msgid ""
 "On every %(weekday)s in %(month)s at every minute between %(time_from)s and %"
 "(time_to)s"
-msgstr ""
-"प्रत्येक %(weekday)s in %(month)s %(time_from)s and %(time_to)s बीचको प्रत्येक "
-"मिनेटमा"
+msgstr "प्रत्येक %(weekday)s मा %(month)s %(time_from)s र %(time_to)s बीचको प्रत्येक मिनेटमा"
 
 #: ../src/lang.py:245
 #, python-format
 msgid "On every %(weekday)s in %(month)s at %(time)s"
-msgstr "प्रत्येक %(weekday)s in %(month)s  %(time)s मा"
+msgstr "प्रत्येक %(weekday)s मा %(month)s  %(time)s मा"
 
 #: ../src/lang.py:250
 #, python-format
 msgid ""
 "On every %(weekday)s in %(month)s and on %(date)s every year at every full "
 "hour"
-msgstr ""
-"On every %(weekday)s in %(month)s and on %(date)s every year at every full "
-"hour"
+msgstr "प्रत्येक %(weekday)s को %(month)s भित्र र %(date)s प्रत्येक पूरा घण्टामा प्रत्येक बर्ष "
 
 #: ../src/lang.py:252
 #, python-format
-msgid ""
-"On every %(weekday)s in %(month)s and on %(date)s every year at every minute"
-msgstr "प्रत्येक %(weekday)s in %(month)s अनि %(date)s प्रत्येक मिनेटको प्रत्येक वर्षमा"
+msgid "On every %(weekday)s in %(month)s and on %(date)s every year at every minute"
+msgstr "प्रत्येक %(weekday)s मा %(month)s अनि %(date)s प्रत्येक मिनेटको प्रत्येक वर्षमा"
 
 #: ../src/lang.py:254
 #, python-format
 msgid ""
 "On every %(weekday)s in %(month)s and on %(date)s every year at minute %"
 "(minute)s of every hour"
-msgstr ""
-"प्रत्येक %(weekday)s in %(month)s अनि %(date)s प्रत्येक वर्ष प्रत्येक घन्टाको minute %"
-"(minute)s मा"
+msgstr "प्रत्येक %(weekday)s मा %(month)s अनि %(date)s प्रत्येक वर्ष प्रत्येक घण्टाको मिनट %(minute)s मा"
 
 #: ../src/lang.py:256
 #, python-format
 msgid ""
 "On every %(weekday)s in %(month)s and on %(date)s every year at every minute "
 "between %(time_from)s and %(time_to)s"
-msgstr ""
-"प्रत्येक %(weekday)s in %(month)s अनि %(date)s प्रत्येक वर्ष प्रत्येक मिनेट  %"
-"(time_from)s र %(time_to)s बीचमा"
+msgstr "प्रत्येक %(weekday)s मा %(month)s अनि %(date)s प्रत्येक वर्ष प्रत्येक मिनेट %(time_from)s र %(time_to)s बीचमा"
 
 #: ../src/lang.py:258
 #, python-format
-msgid ""
-"On every %(weekday)s in %(month)s and on %(date)s every year at %(time)s"
-msgstr "प्रत्येक %(weekday)s in %(month)s अनि %(date)s प्रत्येक वर्ष %(time)s मा"
+msgid "On every %(weekday)s in %(month)s and on %(date)s every year at %(time)s"
+msgstr "प्रत्येक %(weekday)s मा %(month)s अनि %(date)s प्रत्येक वर्ष %(time)s मा"
 
 #: ../src/lang.py:266
 msgid "every minute"
@@ -960,7 +885,7 @@ msgstr "महिनाको दिन: %s"
 
 #: ../src/lang.py:281
 msgid "every month"
-msgstr "प्रत्येक महिना"
+msgstr "प्रत्येक महिना "
 
 #: ../src/lang.py:283
 #, python-format
@@ -982,207 +907,73 @@ msgstr "हप्तादिन: %s"
 msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 msgstr " %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s मा"
 
-#: ../src/mainWindow.py:205 ../src/mainWindow.py:307
+#: ../src/mainWindow.py:206 ../src/mainWindow.py:308
 #, python-format
 msgid "Editing user: %s"
 msgstr "प्रयोगकर्ता सम्पादन गर्दै: %s"
 
-#: ../src/mainWindow.py:280 ../src/scheduleapplet.py:116
+#: ../src/mainWindow.py:281 ../src/scheduleapplet.py:114
 msgid "ERROR: Could not load icon"
-msgstr ""
+msgstr "त्रुटि: प्रतिमा लोड गर्न सकेन"
 
-#: ../src/mainWindow.py:290
+#: ../src/mainWindow.py:291
 msgid "ERROR: Could not load glade file"
-msgstr ""
+msgstr "त्रुटि: ग्लेड फाइल लोड गर्न सकेन"
 
-#: ../src/mainWindow.py:342
+#: ../src/mainWindow.py:343
 msgid "Icon"
 msgstr "प्रतिमा"
 
-#: ../src/mainWindow.py:347 ../src/mainWindow.py:380
+#: ../src/mainWindow.py:348 ../src/mainWindow.py:381
 msgid "Type"
 msgstr "प्रकार"
 
-#: ../src/mainWindow.py:351 ../src/mainWindow.py:376
-msgid "Title"
-msgstr "शीर्षक"
+#: ../src/mainWindow.py:352 ../src/mainWindow.py:377
+msgid "Description"
+msgstr "वर्णन"
 
-#: ../src/mainWindow.py:355 ../src/mainWindow.py:367
+#: ../src/mainWindow.py:356 ../src/mainWindow.py:368
 msgid "Date and Time Settings"
-msgstr "मिति र समय सेटिङहरू"
+msgstr "मिति र समय सेटिङ"
 
-#: ../src/mainWindow.py:359 ../src/mainWindow.py:371
+#: ../src/mainWindow.py:360 ../src/mainWindow.py:372
 msgid "Preview"
-msgstr "पूर्वद्रिश्य"
+msgstr "पूर्वदृश्य"
 
-#: ../src/mainWindow.py:411 ../src/mainWindow.py:470
+#: ../src/mainWindow.py:412 ../src/mainWindow.py:471
 msgid "Please select a task"
-msgstr "कृपया एक कार्य छनोट गर्नुहोस्"
+msgstr "कृपया कार्य चयन गर्नुहोस्"
 
-#: ../src/mainWindow.py:418
+#: ../src/mainWindow.py:419
 msgid "Do you want to delete this task?"
-msgstr ""
+msgstr "तपाईँ यो कार्य मेट्न चाहनुहुन्छ ?"
 
-#: ../src/mainWindow.py:513
-#, fuzzy
+#: ../src/mainWindow.py:519
 msgid "About Gnome Schedule"
-msgstr "जीनोम कार्यतालिका"
+msgstr "जिनोम कार्यतालिकाका बारेमा"
 
-#: ../src/mainWindow.py:514
+#: ../src/mainWindow.py:520
 msgid "Gnome Schedule"
-msgstr "जीनोम कार्यतालिका"
+msgstr "जिनोम कार्यतालिका"
 
-#: ../src/mainWindow.py:516
+#: ../src/mainWindow.py:522
 msgid "Copyright (c) 2004-2005 Gaute Hope."
-msgstr "शर्बाधिकार (c) २००४-२००५ गउटे होप।"
+msgstr "प्रतिलिपि अधिकार (c) 2004-2005 गेट होप"
 
-#: ../src/mainWindow.py:528
+#: ../src/mainWindow.py:535
 msgid "translator-credits"
-msgstr "अनुवादक-श्रेय"
+msgstr "Mahesh Subedi<submanesh@gmail.com>"
 
-#: ../src/scheduleapplet.py:132
+#: ../src/scheduleapplet.py:130
 msgid "ERROR: Could not load menu xml file"
-msgstr ""
+msgstr "त्रुटि: मेनु xml फाइल लोड गर्न सकेन"
 
 #: ../src/setuserWindow.py:84
 msgid "No such user"
-msgstr ""
+msgstr "त्यस्तो प्रयोगकर्ता छैन"
 
 #: ../src/atEditor.py:526
 #, python-format
 msgid "This is an invalid record! The problem could be: %s"
-msgstr "यो असमान्य रेकर्ड हो! समस्या हुन सक्थ्यो: %s"
+msgstr "यो अवैध रेकर्ड हो! समस्या हुन सक्थ्यो: %s"
 
-#~ msgid "Must be between %s and %s"
-#~ msgstr "%s र %s को बिचमा हुनुपर्दछ"
-
-#~ msgid "This software is distributed under the GPL. "
-#~ msgstr "जिपिएल को नियन्त्रणमा यो सफ्टवेर बितरण गरिन्छ। "
-
-#~ msgid "One-time"
-#~ msgstr "एउटा-समय"
-
-#~ msgid "week"
-#~ msgstr "हप्ता"
-
-#~ msgid "Happens all "
-#~ msgstr "सवै हुन्छ"
-
-#~ msgid "s"
-#~ msgstr "एस"
-
-#~ msgid "Happens from "
-#~ msgstr "बाट हुन्छ"
-
-#~ msgid "st. "
-#~ msgstr "st. "
-
-#~ msgid "th. "
-#~ msgstr "th. "
-
-#~ msgid "<b>Basic settings</b>"
-#~ msgstr "<b>आधारभूत सेटिङ्हरू</b>"
-
-#~ msgid "<b>Frequency setting</b>"
-#~ msgstr "<b>आबृत्ति सेटिङ्</b>"
-
-#~ msgid "A_dvanced"
-#~ msgstr "उन्नत"
-
-#~ msgid "Active user"
-#~ msgstr "प्रयोगकर्ता सक्रिय गर्नुहोस्"
-
-#~ msgid "Alter a scheduled task"
-#~ msgstr "कार्यतालिकाको कार्य परिवर्तन गर्नुहोस्"
-
-#~ msgid "Cancel this operation"
-#~ msgstr "यस सञ्चालन रद्द गर्नुहोस्"
-
-#~ msgid "Happens all"
-#~ msgstr "सबै हुन्छ"
-
-#~ msgid "Happens at the"
-#~ msgstr "मा हुन्छ"
-
-#~ msgid "Happens every"
-#~ msgstr "हरेक हुन्छ"
-
-#~ msgid "Happens from"
-#~ msgstr "बाट हुन्छ"
-
-#~ msgid "Preset"
-#~ msgstr "पूर्व निश्चित"
-
-#~ msgid "Run"
-#~ msgstr "सञ्चालन गर्नुहोस्"
-
-#~ msgid "Run at:"
-#~ msgstr "मा सञ्चालन गर्नुहोस्:"
-
-#~ msgid "Select a different user"
-#~ msgstr "एक फरक प्रयोगकर्ता छनोट गर्नुहोस्"
-
-#~ msgid "Set the day frequency setting"
-#~ msgstr "दिनको आबृत्ति सेटिङ सेट गर्नुहोस्"
-
-#~ msgid "Set the hour frequency setting"
-#~ msgstr "घण्टाको आबृत्ति सेटिङ सेट गर्नुहोस्"
-
-#~ msgid "Set the icon of this scheduled task"
-#~ msgstr "यस कार्यतालिकाको कार्यको प्रतिमा सेट गर्नुहोस्"
-
-#~ msgid "Set the minute frequency setting"
-#~ msgstr "मिनेटको आबृत्ति सेटिङ सेट गर्नुहोस्"
-
-#~ msgid "Set the month frequency setting"
-#~ msgstr "महिनाको आबृत्ति सेटिङ सेट गर्नुहोस्"
-
-#~ msgid "Set the scheduled task"
-#~ msgstr "कार्यतालिकाको कार्य सेट गर्नुहोस्"
-
-#~ msgid "Set the weekday frequency setting"
-#~ msgstr "हप्तादिनको आबृत्ति सेटिङ सेट गर्नुहोस्"
-
-#~ msgid "Set user"
-#~ msgstr "प्रयोगकर्ता सेट गर्नुहोस्"
-
-#~ msgid "Shows the records"
-#~ msgstr "रेकर्डहरू देखाउँछ"
-
-#~ msgid "Task title"
-#~ msgstr "कार्य शिर्षक"
-
-#~ msgid "The date when the script will launch"
-#~ msgstr "लिपि लागु हुने मिति"
-
-#~ msgid "Time:"
-#~ msgstr "समय:"
-
-#~ msgid "Treeview"
-#~ msgstr "ट्रि दृष्य"
-
-#~ msgid ""
-#~ "Will save the current information as a preset. You can type the name of "
-#~ "the preset in the combobox."
-#~ msgstr ""
-#~ "हालको सूचना पूर्वनिश्चितको रूपमा बचत गरिन्छ। तपाईँले कम्वोबक्स भित्र नाम टाइप गर्न "
-#~ "सक्नु हुन्छ।"
-
-#~ msgid "[Add|Edit] scheduled task"
-#~ msgstr "[थप्ने|सम्पादन गर्ने] कार्यतालिकाको कार्य"
-
-#~ msgid "_Set user"
-#~ msgstr "प्रयोगकर्ता सेट गर्नुहोस्"
-
-#~ msgid "to"
-#~ msgstr "लाई"
-
-#~ msgid ""
-#~ "Some painfully bad documentation put\n"
-#~ "toghether from the far corners of Gaute Hope's mind."
-#~ msgstr ""
-#~ "केहि नराम्रो सँग \n"
-#~ "सँगै गउटे होप्स माइन्डको टाढाको कर्नरहरू बाट राखिएको।"
-
-#~ msgid ":"
-#~ msgstr ":"
