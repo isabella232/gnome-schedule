@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-02-27 23:07+0100\n"
+"POT-Creation-Date: 2006-10-03 15:51+0200\n"
 "PO-Revision-Date: 2006-07-28 01:15+0200\n"
 "Last-Translator: Francisco Javier F. Serrador <serrador@cvs.gnome.org>\n"
 "Language-Team: Spanish <traductores@es.gnome.org>\n"
@@ -39,88 +39,84 @@ msgstr "Planificación de Gnome"
 msgid "System tools"
 msgstr "Herramientas del sistema"
 
-#: ../src/at.py:294
+#: ../src/at.py:398
 #, python-format
 msgid "DANGEROUS PARSE: %(preview)s"
 msgstr "ANÁLISIS PELIGROSO: %(preview)s"
 
 #. TODO: localize time and date formats
-#: ../src/at.py:300
+#: ../src/at.py:405
 #, python-format
 msgid "On %(date)s at %(time)s"
 msgstr "El %(date)s a las %(time)s"
 
-#: ../src/at.py:305 ../src/at.py:310
+#: ../src/at.py:410 ../src/at.py:415
 msgid "Once"
 msgstr "Una vez"
 
-#: ../src/at.py:314
+#: ../src/at.py:419
 msgid "Warning: a line in atq's output didn't parse"
 msgstr "Advertencia: una línea en la salida de atq no se analizó"
 
-#: ../src/crontab.py:49
+#: ../src/crontab.py:72
 msgid "Minute"
 msgstr "minuto"
 
-#: ../src/crontab.py:50
+#: ../src/crontab.py:73
 msgid "Hour"
 msgstr "hora"
 
-#: ../src/crontab.py:51
+#: ../src/crontab.py:74
 msgid "Day of Month"
 msgstr "día del mes"
 
-#: ../src/crontab.py:52
+#: ../src/crontab.py:75
 msgid "Month"
 msgstr "mes"
 
-#: ../src/crontab.py:53
+#: ../src/crontab.py:76
 msgid "Weekday"
 msgstr "día de la semana"
 
-#: ../src/crontab.py:138 ../src/crontab.py:143 ../src/crontab.py:147
+#: ../src/crontab.py:161 ../src/crontab.py:166 ../src/crontab.py:170
 #, python-format
 msgid "Must be between %(min)s and %(max)s"
 msgstr "debe estar entre %(min)s y %(max)s"
 
-#: ../src/crontab.py:145
+#: ../src/crontab.py:168
 #, python-format
 msgid "%s is not a number"
 msgstr "%s no es un número"
 
-#: ../src/crontab.py:165 ../src/crontab.py:200 ../src/crontab.py:289
-#: ../src/crontabEditor.py:187 ../src/atEditor.py:110
+#: ../src/crontab.py:216 ../src/crontab.py:261 ../src/crontabEditor.py:191
+#: ../src/atEditor.py:110
 msgid "Untitled"
 msgstr "Sin título"
 
 #. add task to treemodel in mainWindow
-#: ../src/crontab.py:232
+#: ../src/crontab.py:337
 msgid "Recurrent"
 msgstr "Repetitiva"
 
-#: ../src/crontab.py:244
+#: ../src/crontab.py:349
 msgid "minute"
 msgstr "minuto"
 
-#: ../src/crontab.py:246
+#: ../src/crontab.py:351
 msgid "hour"
 msgstr "hora"
 
-#: ../src/crontab.py:248
+#: ../src/crontab.py:353
 msgid "day"
 msgstr "día"
 
-#: ../src/crontab.py:250
+#: ../src/crontab.py:355
 msgid "month"
 msgstr "mes"
 
-#: ../src/crontab.py:252
+#: ../src/crontab.py:357
 msgid "weekday"
 msgstr "día de la semana"
-
-#: ../src/crontab.py:294
-msgid "ERROR: Failed to parse crontab record"
-msgstr "ERROR: Ocurrió un fallo al analizar el registro de crontab"
 
 #: ../src/crontabEditor.py:80
 msgid "Use advanced"
@@ -151,15 +147,15 @@ msgstr "Cada semana"
 msgid "Create a New Scheduled Task"
 msgstr "Crear una tarea programada nueva"
 
-#: ../src/crontabEditor.py:150 ../src/atEditor.py:143
+#: ../src/crontabEditor.py:152 ../src/atEditor.py:148
 msgid "Edit a Scheduled Task"
 msgstr "Editar una tarea programada"
 
-#: ../src/crontabEditor.py:205 ../src/atEditor.py:316
+#: ../src/crontabEditor.py:209 ../src/atEditor.py:321
 msgid "Don't use a preset"
 msgstr "No usar una plantilla"
 
-#: ../src/crontabEditor.py:266
+#: ../src/crontabEditor.py:270
 #, python-format
 msgid ""
 "This is an invalid record! The problem could be in the %(field)s field. "
@@ -168,27 +164,27 @@ msgstr ""
 "¡Este es un registro inválido! El problema podría estar en el campo %(field)"
 "s. Razón: %(reason)s"
 
-#: ../src/crontabEditor.py:298 ../src/atEditor.py:286
+#: ../src/crontabEditor.py:302 ../src/atEditor.py:291
 msgid "The preset has not been saved"
 msgstr "No se ha guardado la plantilla"
 
-#: ../src/crontabEditor.py:300 ../src/atEditor.py:288
+#: ../src/crontabEditor.py:304 ../src/atEditor.py:293
 msgid "To delete a preset, you first need to select one"
 msgstr "Para borrar una plantilla, primero debe seleccionar una"
 
-#: ../src/crontabEditor.py:310 ../src/atEditor.py:299
+#: ../src/crontabEditor.py:314 ../src/atEditor.py:304
 msgid "To save a preset, you first have to choose a name for it"
 msgstr "Para guardar una plantilla, primero debe elegir un nombre para ella"
 
-#: ../src/crontabEditor.py:320 ../src/atEditor.py:390
+#: ../src/crontabEditor.py:324 ../src/atEditor.py:395
 msgid "Choose an Icon for this Scheduled Task"
 msgstr "Escoja un icono para esta tarea programada"
 
-#: ../src/crontabEditor.py:385
+#: ../src/crontabEditor.py:388
 msgid "command"
 msgstr "comando"
 
-#: ../src/crontabEditor.py:423 ../src/mainWindow.py:553 ../src/atEditor.py:514
+#: ../src/crontabEditor.py:426 ../src/mainWindow.py:564 ../src/atEditor.py:519
 msgid "Could not display help"
 msgstr "No se pudo mostrar la ayuda"
 
@@ -516,7 +512,8 @@ msgstr "_Script:"
 
 #: ../src/gnome-schedule.glade.h:51
 msgid "See \"man 5 crontab\" for information about the crontab format."
-msgstr "Vea «man 5 crontab» para obtener información acerca del formato de crontab."
+msgstr ""
+"Vea «man 5 crontab» para obtener información acerca del formato de crontab."
 
 #: ../src/gnome-schedule.glade.h:52
 msgid "Select..."
@@ -612,7 +609,7 @@ msgstr "_Vista"
 msgid "_Weekdays:"
 msgstr "D_ías de la semana:"
 
-#: ../src/gnome-schedule.py:59 ../src/scheduleapplet.py:62
+#: ../src/gnome-schedule.py:62 ../src/scheduleapplet.py:63
 msgid ""
 "You need to install pyGTK or GTKv2,\n"
 "or set your PYTHONPATH correctly.\n"
@@ -738,8 +735,10 @@ msgstr "Cada año el día %(date)s en el minuto %(minute)s de cada hora"
 
 #: ../src/lang.py:204
 #, python-format
-msgid "Every year on %(date)s at every minute between %(time_from)s and %(time_to)s"
-msgstr "Cada año el día %(date)s a cada minuto entre %(time_from)s y %(time_to)s"
+msgid ""
+"Every year on %(date)s at every minute between %(time_from)s and %(time_to)s"
+msgstr ""
+"Cada año el día %(date)s a cada minuto entre %(time_from)s y %(time_to)s"
 
 #: ../src/lang.py:206
 #, python-format
@@ -763,8 +762,10 @@ msgstr "Cada %(weekday)s en el minuto %(minute)s de cada hora"
 
 #: ../src/lang.py:217
 #, python-format
-msgid "On every %(weekday)s at every minute between %(time_from)s and %(time_to)s"
-msgstr "Cada %(weekday)s a cada minuto entre las %(time_from)s y las %(time_to)s"
+msgid ""
+"On every %(weekday)s at every minute between %(time_from)s and %(time_to)s"
+msgstr ""
+"Cada %(weekday)s a cada minuto entre las %(time_from)s y las %(time_to)s"
 
 #: ../src/lang.py:219
 #, python-format
@@ -773,12 +774,15 @@ msgstr "Cada %(weekday)s a las %(time)s"
 
 #: ../src/lang.py:224
 #, python-format
-msgid "On day %(monthday)s of every month and every %(weekday)s at every full hour"
-msgstr "El día %(monthday)s de cada mes y cada %(weekday)s a cada hora completa"
+msgid ""
+"On day %(monthday)s of every month and every %(weekday)s at every full hour"
+msgstr ""
+"El día %(monthday)s de cada mes y cada %(weekday)s a cada hora completa"
 
 #: ../src/lang.py:226
 #, python-format
-msgid "On day %(monthday)s of every month and every %(weekday)s at every minute"
+msgid ""
+"On day %(monthday)s of every month and every %(weekday)s at every minute"
 msgstr "El día %(monthday)s de cada mes y cada %(weekday)s a cada minuto"
 
 #: ../src/lang.py:228
@@ -844,7 +848,8 @@ msgstr ""
 
 #: ../src/lang.py:252
 #, python-format
-msgid "On every %(weekday)s in %(month)s and on %(date)s every year at every minute"
+msgid ""
+"On every %(weekday)s in %(month)s and on %(date)s every year at every minute"
 msgstr ""
 "Cada %(weekday)s del mes de %(month)s y el día %(date)s de cada año a cada "
 "minuto"
@@ -869,7 +874,8 @@ msgstr ""
 
 #: ../src/lang.py:258
 #, python-format
-msgid "On every %(weekday)s in %(month)s and on %(date)s every year at %(time)s"
+msgid ""
+"On every %(weekday)s in %(month)s and on %(date)s every year at %(time)s"
 msgstr ""
 "Cada %(weekday)s del mes de %(month)s y el día %(date)s de cada año a las %"
 "(time)s"
@@ -925,66 +931,67 @@ msgstr "día de la semana: %s"
 msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 msgstr "A las %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 
-#: ../src/mainWindow.py:206 ../src/mainWindow.py:308
+#: ../src/mainWindow.py:211 ../src/mainWindow.py:311
 #, python-format
 msgid "Editing user: %s"
 msgstr "Editando usuario: %s"
 
-#: ../src/mainWindow.py:281 ../src/scheduleapplet.py:114
+#: ../src/mainWindow.py:285 ../src/scheduleapplet.py:115
 msgid "ERROR: Could not load icon"
 msgstr "ERROR: No se pudo cargar el icono"
 
-#: ../src/mainWindow.py:291
+#: ../src/mainWindow.py:295
 msgid "ERROR: Could not load glade file"
 msgstr "ERROR: No se pudo cargar el archivo glade"
 
-#: ../src/mainWindow.py:343
+#: ../src/mainWindow.py:346
 msgid "Icon"
 msgstr "Icono"
 
-#: ../src/mainWindow.py:348 ../src/mainWindow.py:381
+#: ../src/mainWindow.py:351 ../src/mainWindow.py:384
 msgid "Type"
 msgstr "Tipo"
 
-#: ../src/mainWindow.py:352 ../src/mainWindow.py:377
+#: ../src/mainWindow.py:355 ../src/mainWindow.py:380
 msgid "Description"
 msgstr "Descripción"
 
-#: ../src/mainWindow.py:356 ../src/mainWindow.py:368
+#: ../src/mainWindow.py:359 ../src/mainWindow.py:371
 msgid "Date and Time Settings"
 msgstr "Configuración de fecha y hora"
 
-#: ../src/mainWindow.py:360 ../src/mainWindow.py:372
+#: ../src/mainWindow.py:363 ../src/mainWindow.py:375
 msgid "Preview"
 msgstr "Vista previa"
 
-#: ../src/mainWindow.py:412 ../src/mainWindow.py:471
+#: ../src/mainWindow.py:419 ../src/mainWindow.py:482
 msgid "Please select a task"
 msgstr "Por favor seleccione una tarea"
 
-#: ../src/mainWindow.py:419
+#: ../src/mainWindow.py:426
 msgid "Do you want to delete this task?"
 msgstr "¿Desea borrar esta tarea?"
 
-#: ../src/mainWindow.py:519
+#: ../src/mainWindow.py:530
 msgid "About Gnome Schedule"
 msgstr "Acerca de Planificación de Gnome"
 
-#: ../src/mainWindow.py:520
+#: ../src/mainWindow.py:531
 msgid "Gnome Schedule"
 msgstr "Planificación de Gnome"
 
-#: ../src/mainWindow.py:522
-msgid "Copyright (c) 2004-2005 Gaute Hope."
+#: ../src/mainWindow.py:533
+#, fuzzy
+msgid "Copyright (c) 2004-2006 Gaute Hope."
 msgstr "Copyright © 2004-2005 Gaute Hope."
 
-#: ../src/mainWindow.py:535
+#: ../src/mainWindow.py:546
 msgid "translator-credits"
 msgstr ""
 "Rodrigo Marcos Fombellida <rmarcos@cvs.gnome.org>\n"
 "QA:Francisco Javier F. Serrador <serrador@cvs.gnome.org>"
 
-#: ../src/scheduleapplet.py:130
+#: ../src/scheduleapplet.py:131
 msgid "ERROR: Could not load menu xml file"
 msgstr "ERROR: No se pudo cargar el archivo xml del menú"
 
@@ -992,8 +999,10 @@ msgstr "ERROR: No se pudo cargar el archivo xml del menú"
 msgid "No such user"
 msgstr "No existe tal usuario"
 
-#: ../src/atEditor.py:526
+#: ../src/atEditor.py:531
 #, python-format
 msgid "This is an invalid record! The problem could be: %s"
 msgstr "¡Este es un registro inválido! El problema podría ser: %s"
 
+#~ msgid "ERROR: Failed to parse crontab record"
+#~ msgstr "ERROR: Ocurrió un fallo al analizar el registro de crontab"

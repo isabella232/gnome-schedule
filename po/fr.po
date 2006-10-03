@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-01-04 15:49+0000\n"
+"POT-Creation-Date: 2006-10-03 15:51+0200\n"
 "PO-Revision-Date: 2004-09-11 00:07+0200\n"
 "Last-Translator: Yannick Marchegay <yannick.marchegay@lokanova.com>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
@@ -38,88 +38,88 @@ msgstr "Agenda GNOME"
 msgid "System tools"
 msgstr ""
 
-#: ../src/at.py:283
+#: ../src/at.py:398
 #, python-format
 msgid "DANGEROUS PARSE: %(preview)s"
 msgstr ""
 
 #. TODO: localize time and date formats
-#: ../src/at.py:289
+#: ../src/at.py:405
 #, python-format
 msgid "On %(date)s at %(time)s"
 msgstr ""
 
-#: ../src/at.py:294 ../src/at.py:299
+#: ../src/at.py:410 ../src/at.py:415
 msgid "Once"
 msgstr ""
 
-#: ../src/crontab.py:49
+#: ../src/at.py:419
+msgid "Warning: a line in atq's output didn't parse"
+msgstr ""
+
+#: ../src/crontab.py:72
 #, fuzzy
 msgid "Minute"
 msgstr "minute"
 
-#: ../src/crontab.py:50
+#: ../src/crontab.py:73
 #, fuzzy
 msgid "Hour"
 msgstr "heure"
 
-#: ../src/crontab.py:51
+#: ../src/crontab.py:74
 msgid "Day of Month"
 msgstr ""
 
-#: ../src/crontab.py:52
+#: ../src/crontab.py:75
 #, fuzzy
 msgid "Month"
 msgstr "mois"
 
-#: ../src/crontab.py:53
+#: ../src/crontab.py:76
 #, fuzzy
 msgid "Weekday"
 msgstr "jour de la semaine"
 
-#: ../src/crontab.py:138 ../src/crontab.py:143 ../src/crontab.py:147
+#: ../src/crontab.py:161 ../src/crontab.py:166 ../src/crontab.py:170
 #, fuzzy, python-format
 msgid "Must be between %(min)s and %(max)s"
 msgstr "doit être compris entre 0 et 7"
 
-#: ../src/crontab.py:145
+#: ../src/crontab.py:168
 #, python-format
 msgid "%s is not a number"
 msgstr "%s n'est pas un nombre"
 
-#: ../src/crontab.py:165 ../src/crontab.py:200 ../src/crontab.py:289
-#: ../src/crontabEditor.py:187 ../src/atEditor.py:110
+#: ../src/crontab.py:216 ../src/crontab.py:261 ../src/crontabEditor.py:191
+#: ../src/atEditor.py:110
 msgid "Untitled"
 msgstr "Sans titre"
 
 #. add task to treemodel in mainWindow
-#: ../src/crontab.py:232
+#: ../src/crontab.py:337
 msgid "Recurrent"
 msgstr ""
 
-#: ../src/crontab.py:244
+#: ../src/crontab.py:349
 msgid "minute"
 msgstr "minute"
 
-#: ../src/crontab.py:246
+#: ../src/crontab.py:351
 msgid "hour"
 msgstr "heure"
 
-#: ../src/crontab.py:248
+#: ../src/crontab.py:353
 msgid "day"
 msgstr "jour"
 
-#: ../src/crontab.py:250
+#: ../src/crontab.py:355
 msgid "month"
 msgstr "mois"
 
-#: ../src/crontab.py:252
+#: ../src/crontab.py:357
 msgid "weekday"
 msgstr "jour de la semaine"
-
-#: ../src/crontab.py:294
-msgid "ERROR: Failed to parse crontab record"
-msgstr ""
 
 #: ../src/crontabEditor.py:80
 #, fuzzy
@@ -155,17 +155,17 @@ msgstr "Tous les"
 msgid "Create a New Scheduled Task"
 msgstr "Créer une tâche planifiée"
 
-#: ../src/crontabEditor.py:150 ../src/atEditor.py:143
+#: ../src/crontabEditor.py:152 ../src/atEditor.py:148
 #, fuzzy
 msgid "Edit a Scheduled Task"
 msgstr "Éditer une tâche planifiée"
 
-#: ../src/crontabEditor.py:205 ../src/atEditor.py:316
+#: ../src/crontabEditor.py:209 ../src/atEditor.py:321
 #, fuzzy
 msgid "Don't use a preset"
 msgstr "N'utilisez pas un modèle"
 
-#: ../src/crontabEditor.py:266
+#: ../src/crontabEditor.py:270
 #, fuzzy, python-format
 msgid ""
 "This is an invalid record! The problem could be in the %(field)s field. "
@@ -174,28 +174,28 @@ msgstr ""
 "Ce n'est pas un enregistrement valide. Le problème pourrait se trouver dans "
 "le champ %s. Raison : %s"
 
-#: ../src/crontabEditor.py:298 ../src/atEditor.py:286
+#: ../src/crontabEditor.py:302 ../src/atEditor.py:291
 msgid "The preset has not been saved"
 msgstr ""
 
-#: ../src/crontabEditor.py:300 ../src/atEditor.py:288
+#: ../src/crontabEditor.py:304 ../src/atEditor.py:293
 msgid "To delete a preset, you first need to select one"
 msgstr ""
 
-#: ../src/crontabEditor.py:310 ../src/atEditor.py:299
+#: ../src/crontabEditor.py:314 ../src/atEditor.py:304
 msgid "To save a preset, you first have to choose a name for it"
 msgstr ""
 
-#: ../src/crontabEditor.py:320 ../src/atEditor.py:390
+#: ../src/crontabEditor.py:324 ../src/atEditor.py:395
 #, fuzzy
 msgid "Choose an Icon for this Scheduled Task"
 msgstr "Choisissez une icône pour cette tâche planifiée"
 
-#: ../src/crontabEditor.py:385
+#: ../src/crontabEditor.py:388
 msgid "command"
 msgstr "commande"
 
-#: ../src/crontabEditor.py:423 ../src/mainWindow.py:546 ../src/atEditor.py:514
+#: ../src/crontabEditor.py:426 ../src/mainWindow.py:564 ../src/atEditor.py:519
 msgid "Could not display help"
 msgstr ""
 
@@ -670,7 +670,7 @@ msgstr ""
 msgid "_Weekdays:"
 msgstr "jour de la semaine"
 
-#: ../src/gnome-schedule.py:61 ../src/scheduleapplet.py:64
+#: ../src/gnome-schedule.py:62 ../src/scheduleapplet.py:63
 msgid ""
 "You need to install pyGTK or GTKv2,\n"
 "or set your PYTHONPATH correctly.\n"
@@ -973,68 +973,69 @@ msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 msgstr ""
 "À la minute : %s, heure %s, jour : %s, mois : %s, jour de la semaine : %s"
 
-#: ../src/mainWindow.py:205 ../src/mainWindow.py:307
+#: ../src/mainWindow.py:211 ../src/mainWindow.py:311
 #, python-format
 msgid "Editing user: %s"
 msgstr ""
 
-#: ../src/mainWindow.py:280 ../src/scheduleapplet.py:116
+#: ../src/mainWindow.py:285 ../src/scheduleapplet.py:115
 msgid "ERROR: Could not load icon"
 msgstr ""
 
-#: ../src/mainWindow.py:290
+#: ../src/mainWindow.py:295
 msgid "ERROR: Could not load glade file"
 msgstr ""
 
-#: ../src/mainWindow.py:342
+#: ../src/mainWindow.py:346
 msgid "Icon"
 msgstr "Icône"
 
-#: ../src/mainWindow.py:347 ../src/mainWindow.py:380
+#: ../src/mainWindow.py:351 ../src/mainWindow.py:384
 msgid "Type"
 msgstr "Type"
 
-#: ../src/mainWindow.py:351 ../src/mainWindow.py:376
-msgid "Title"
-msgstr "Titre"
+#: ../src/mainWindow.py:355 ../src/mainWindow.py:380
+msgid "Description"
+msgstr ""
 
-#: ../src/mainWindow.py:355 ../src/mainWindow.py:367
+#: ../src/mainWindow.py:359 ../src/mainWindow.py:371
 #, fuzzy
 msgid "Date and Time Settings"
 msgstr "Date et heure"
 
-#: ../src/mainWindow.py:359 ../src/mainWindow.py:371
+#: ../src/mainWindow.py:363 ../src/mainWindow.py:375
 msgid "Preview"
 msgstr "Aperçu"
 
-#: ../src/mainWindow.py:411 ../src/mainWindow.py:470
+#: ../src/mainWindow.py:419 ../src/mainWindow.py:482
 #, fuzzy
 msgid "Please select a task"
 msgstr "Modifier une tâche planifiée"
 
-#: ../src/mainWindow.py:418
+#: ../src/mainWindow.py:426
 msgid "Do you want to delete this task?"
 msgstr ""
 
-#: ../src/mainWindow.py:513
+#: ../src/mainWindow.py:530
 #, fuzzy
 msgid "About Gnome Schedule"
 msgstr "Agenda GNOME"
 
-#: ../src/mainWindow.py:514
+#: ../src/mainWindow.py:531
 msgid "Gnome Schedule"
 msgstr "Agenda GNOME"
 
-#: ../src/mainWindow.py:516
-msgid "Copyright (c) 2004-2005 Gaute Hope."
+#: ../src/mainWindow.py:533
+#, fuzzy
+msgid "Copyright (c) 2004-2006 Gaute Hope."
 msgstr "Copyright (c) 2004-2005 Gaute Hope."
 
-#: ../src/mainWindow.py:528
+#: ../src/mainWindow.py:546
 #, fuzzy
 msgid "translator-credits"
 msgstr "Yannick Marchegay <yannick.marchegay@lokanova.com>"
 
-#: ../src/scheduleapplet.py:132
+#: ../src/scheduleapplet.py:131
 msgid "ERROR: Could not load menu xml file"
 msgstr ""
 
@@ -1042,10 +1043,13 @@ msgstr ""
 msgid "No such user"
 msgstr ""
 
-#: ../src/atEditor.py:526
+#: ../src/atEditor.py:531
 #, fuzzy, python-format
 msgid "This is an invalid record! The problem could be: %s"
 msgstr "Ce n'est pas un enregistrement valide. Le problème pourrait être : %s "
+
+#~ msgid "Title"
+#~ msgstr "Titre"
 
 #, fuzzy
 #~ msgid "Must be between %s and %s"

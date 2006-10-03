@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-10-03 10:53+0300\n"
+"POT-Creation-Date: 2006-10-03 15:51+0200\n"
 "PO-Revision-Date: 2006-10-03 11:00+0300\n"
 "Last-Translator: Ilkka Tuohela <hile@iki.fi>\n"
 "Language-Team: Finnish <gnome-fi-laatu@lists.sourceforge.net>\n"
@@ -37,22 +37,22 @@ msgstr "Gnome-ajastus"
 msgid "System tools"
 msgstr "Järjestelmätyökalut"
 
-#: ../src/at.py:397
+#: ../src/at.py:398
 #, python-format
 msgid "DANGEROUS PARSE: %(preview)s"
 msgstr "VAARALLINEN TULKINTA: %(preview)s"
 
 #. TODO: localize time and date formats
-#: ../src/at.py:404
+#: ../src/at.py:405
 #, python-format
 msgid "On %(date)s at %(time)s"
 msgstr "%(date)s kello %(time)s"
 
-#: ../src/at.py:409 ../src/at.py:414
+#: ../src/at.py:410 ../src/at.py:415
 msgid "Once"
 msgstr "Kerran"
 
-#: ../src/at.py:418
+#: ../src/at.py:419
 msgid "Warning: a line in atq's output didn't parse"
 msgstr "Varoitus: riviä atq:n tulosteessa ei voi tulkita"
 
@@ -86,33 +86,33 @@ msgstr "Täytyy olla väliltä %(min)s ja %(max)s"
 msgid "%s is not a number"
 msgstr "%s ei ole numero"
 
-#: ../src/crontab.py:216 ../src/crontab.py:260 ../src/crontabEditor.py:191
+#: ../src/crontab.py:216 ../src/crontab.py:261 ../src/crontabEditor.py:191
 #: ../src/atEditor.py:110
 msgid "Untitled"
 msgstr "Nimetön"
 
 #. add task to treemodel in mainWindow
-#: ../src/crontab.py:336
+#: ../src/crontab.py:337
 msgid "Recurrent"
 msgstr "Toistuva"
 
-#: ../src/crontab.py:348
+#: ../src/crontab.py:349
 msgid "minute"
 msgstr "minuutti"
 
-#: ../src/crontab.py:350
+#: ../src/crontab.py:351
 msgid "hour"
 msgstr "tunti"
 
-#: ../src/crontab.py:352
+#: ../src/crontab.py:353
 msgid "day"
 msgstr "päivä"
 
-#: ../src/crontab.py:354
+#: ../src/crontab.py:355
 msgid "month"
 msgstr "kuukausi"
 
-#: ../src/crontab.py:356
+#: ../src/crontab.py:357
 msgid "weekday"
 msgstr "viikonpäivä"
 
@@ -178,11 +178,11 @@ msgstr "Esiasetukselle täytyy antaa nimi ennen kuin sen voi tallentaa"
 msgid "Choose an Icon for this Scheduled Task"
 msgstr "Valitse kuvake tälle ajastetulle tehtävälle"
 
-#: ../src/crontabEditor.py:389
+#: ../src/crontabEditor.py:388
 msgid "command"
 msgstr "komento"
 
-#: ../src/crontabEditor.py:427 ../src/mainWindow.py:565 ../src/atEditor.py:519
+#: ../src/crontabEditor.py:426 ../src/mainWindow.py:564 ../src/atEditor.py:519
 msgid "Could not display help"
 msgstr "Ohjetta ei voi näyttää"
 
@@ -547,9 +547,9 @@ msgid ""
 "crontab do have output and this option is not checked, the output will by "
 "default be send to the UNIX mailbox of the user."
 msgstr ""
-"Piilota tulosteet, jos tämä on valittu. Kun crontabista ajastetut "
-"tehtävät kirjoittavat viestejä eikä tämä asetus ole asetettu, lähetetään "
-"viestit oletuksena käyttäjän UNIX-postilaatikkoon."
+"Piilota tulosteet, jos tämä on valittu. Kun crontabista ajastetut tehtävät "
+"kirjoittavat viestejä eikä tämä asetus ole asetettu, lähetetään viestit "
+"oletuksena käyttäjän UNIX-postilaatikkoon."
 
 #: ../src/gnome-schedule.glade.h:60
 msgid "_About"
@@ -607,7 +607,7 @@ msgstr "_Näytä"
 msgid "_Weekdays:"
 msgstr "_Viikonpäivät:"
 
-#: ../src/gnome-schedule.py:59 ../src/scheduleapplet.py:62
+#: ../src/gnome-schedule.py:62 ../src/scheduleapplet.py:63
 msgid ""
 "You need to install pyGTK or GTKv2,\n"
 "or set your PYTHONPATH correctly.\n"
@@ -906,12 +906,12 @@ msgstr "viikonpäivä: %s"
 msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 msgstr ""
 
-#: ../src/mainWindow.py:211 ../src/mainWindow.py:312
+#: ../src/mainWindow.py:211 ../src/mainWindow.py:311
 #, python-format
 msgid "Editing user: %s"
 msgstr "Muokataan käyttäjää: %s"
 
-#: ../src/mainWindow.py:285 ../src/scheduleapplet.py:114
+#: ../src/mainWindow.py:285 ../src/scheduleapplet.py:115
 msgid "ERROR: Could not load icon"
 msgstr "VIRHE: kuvaketta ei voitu ladata"
 
@@ -919,47 +919,48 @@ msgstr "VIRHE: kuvaketta ei voitu ladata"
 msgid "ERROR: Could not load glade file"
 msgstr "VIRHE: Glade-tiedostoa ei voitu ladata"
 
-#: ../src/mainWindow.py:347
+#: ../src/mainWindow.py:346
 msgid "Icon"
 msgstr "Kuvake"
 
-#: ../src/mainWindow.py:352 ../src/mainWindow.py:385
+#: ../src/mainWindow.py:351 ../src/mainWindow.py:384
 msgid "Type"
 msgstr "Tyyppi"
 
-#: ../src/mainWindow.py:356 ../src/mainWindow.py:381
+#: ../src/mainWindow.py:355 ../src/mainWindow.py:380
 msgid "Description"
 msgstr "Kuvaus"
 
-#: ../src/mainWindow.py:360 ../src/mainWindow.py:372
+#: ../src/mainWindow.py:359 ../src/mainWindow.py:371
 msgid "Date and Time Settings"
 msgstr "Päivän ja ajan asetukset"
 
-#: ../src/mainWindow.py:364 ../src/mainWindow.py:376
+#: ../src/mainWindow.py:363 ../src/mainWindow.py:375
 msgid "Preview"
 msgstr "Esikatselu"
 
-#: ../src/mainWindow.py:420 ../src/mainWindow.py:483
+#: ../src/mainWindow.py:419 ../src/mainWindow.py:482
 msgid "Please select a task"
 msgstr "Valitse tehtävä"
 
-#: ../src/mainWindow.py:427
+#: ../src/mainWindow.py:426
 msgid "Do you want to delete this task?"
 msgstr "Haluatko poistaa tämän tehtävän?"
 
-#: ../src/mainWindow.py:531
+#: ../src/mainWindow.py:530
 msgid "About Gnome Schedule"
 msgstr "Tietoja Gnome-ajastuksesta"
 
-#: ../src/mainWindow.py:532
+#: ../src/mainWindow.py:531
 msgid "Gnome Schedule"
 msgstr "Gnome-ajastus"
 
-#: ../src/mainWindow.py:534
-msgid "Copyright (c) 2004-2005 Gaute Hope."
+#: ../src/mainWindow.py:533
+#, fuzzy
+msgid "Copyright (c) 2004-2006 Gaute Hope."
 msgstr "Copyright © 2004-2005 Gaute Hope."
 
-#: ../src/mainWindow.py:547
+#: ../src/mainWindow.py:546
 msgid "translator-credits"
 msgstr ""
 "Tommi Vainikainen, 2005\n"
@@ -967,7 +968,7 @@ msgstr ""
 "\n"
 "http://gnome.fi/"
 
-#: ../src/scheduleapplet.py:130
+#: ../src/scheduleapplet.py:131
 msgid "ERROR: Could not load menu xml file"
 msgstr "VIRHE: valikon XML-tiedostoa ei voitu ladata"
 
