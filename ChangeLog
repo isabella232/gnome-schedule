@@ -1,3 +1,7 @@
+2006-10-03  Gaute Hope  <eg@gaute.vetsj.com>
+
+	* Release 1.0.1
+	
 2006-09-24  Gaute Hope  <eg@gaute.vetsj.com>
 
 	* src/gnome-schedule.py, src/scheduleapplet.py: Sets the POSIX_CORRECT variable, at is now supposed to output more or less the same thing each time
