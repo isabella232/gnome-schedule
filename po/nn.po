@@ -847,9 +847,9 @@ msgstr "På %(monthday)s av kvar månad og kvar %(weekday)s på %(time)s"
 
 # python-format
 #: ../src/lang.py:237
-#, fuzzy, python-format
+#, python-format
 msgid "On every %(weekday)s in %(month)s at every full hour"
-msgstr "På kvar %(weekday)s i %(month) på kvar fulle time"
+msgstr "På kvar %(weekday)s i %(month)s på kvar fulle time"
 
 # python-format
 #: ../src/lang.py:239
@@ -1003,7 +1003,6 @@ msgid "Type"
 msgstr "Type"
 
 #: ../src/mainWindow.py:355 ../src/mainWindow.py:380
-#, fuzzy
 msgid "Description"
 msgstr "_Skildring"
 
@@ -1032,9 +1031,8 @@ msgid "Gnome Schedule"
 msgstr "Gnome Schedule"
 
 #: ../src/mainWindow.py:533
-#, fuzzy
 msgid "Copyright (c) 2004-2006 Gaute Hope."
-msgstr "Kopieringsrett (c) 2004-2005 Gaute Hope."
+msgstr "Kopieringsrett (c) 2004-2006 Gaute Hope."
 
 #: ../src/mainWindow.py:546
 msgid "translator-credits"
