@@ -129,7 +129,7 @@ class At:
 				#print "Parsing line: " + line
 				if m != None:
 					#print "Parse successfull, groups: "
-					print m.groups()
+					#print m.groups()
 					job_id = m.groups ()[0]
 					return int(job_id)
 				else:
@@ -163,7 +163,7 @@ class At:
 	def write_job_data (self, job_id, title, icon, desc):
 		# Create and write data file
 		f = os.path.join (self.atdata, str(job_id))
-		print f
+		#print f
 		fh = open (f, 'w')
 		fh.truncate (1)
 		fh.seek (0)
@@ -310,7 +310,7 @@ class At:
 			if t != False:
 				job_id = t
 		
-		print job_id
+		#print job_id
 		
 		desc = ""
 		self.write_job_data (job_id, title, icon, desc)
@@ -361,7 +361,7 @@ class At:
 			if t != False:
 				job_id = t
 		
-		print job_id
+		#print job_id
 		
 		desc = ""
 		self.write_job_data (job_id, title, icon, desc)
@@ -373,7 +373,8 @@ class At:
 		if job_id:
 			# delete file
 			f = os.path.join (self.atdata, str(job_id))
-			os.unlink (f)
+			if os.access(f, os.F_OK):
+				os.unlink (f)
 			execute = config.getAtrmbin()+ " " + str(job_id)
 			commands.getoutput(execute)
 			

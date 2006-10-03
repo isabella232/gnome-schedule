@@ -135,8 +135,8 @@ class Crontab:
 		timerange = self.timeranges[type]
 
 		# Replace alias names only if no leading and following alphanumeric and 
-		# no leading slash is present. Otherwise terms like »JanJan« or 
-		# »1Feb« would give a valid check. Values after a slash are stepwidths
+		# no leading slash is present. Otherwise terms like "JanJan" or 
+		# "1Feb" would give a valid check. Values after a slash are stepwidths
 		# and shouldn't have an alias.
  		if type == "month": alias = self.monthnames.copy()
 		elif type == "weekday": alias = self.downames.copy()
@@ -234,7 +234,8 @@ class Crontab:
 	def delete (self, linenumber, iter, job_id):
 		# delete file
 		f = os.path.join (self.crontabdata, job_id)
-		os.unlink (f)
+		if os.access(f, os.F_OK):
+			os.unlink (f)
 		
 		number = 0
 		newlines = list ()
@@ -359,7 +360,9 @@ class Crontab:
 	
 	
 	#get info out of task line
-	def parse (self, line):
+	def parse (self, line, nofile = False):
+		# nofile: no datafile for title and icon available
+		
 		# Format of gnome-schedule job line
 		# * * * * * ls -l >/dev/null >2&1 # JOB_ID_1
 		
@@ -371,6 +374,7 @@ class Crontab:
 		
 		line = line.lstrip()
 		comment = ""
+		
 		
 		if line	!= "":
 			#print "Parsing line: " + line
@@ -432,21 +436,24 @@ class Crontab:
 		command = line.strip ()
 		
 		# Retrive jobid
-		if (comment.find ('JOB_ID_') != -1):
-			i = comment.find ('JOB_ID_')
+		i = comment.find ('JOB_ID_')
+		if (i != -1):			
 			job_id = int (comment[i + 7:].rstrip ())
 		else:
 			job_id = False
 		
 		# Retrive title and icon data
-		if job_id:
-			title, icon, desc = self.get_job_data (job_id)
-		else:
-			title = ""
-			icon = ""
-			desc = ""
+		if nofile == False:
+			if job_id:
+				title, icon, desc = self.get_job_data (job_id)
+			else:
+				title = ""
+				icon = ""
+				desc = ""
 			
-		return [2, [minute, hour, dom, moy, dow, command, comment, job_id, title, icon, desc]]
+			return [2, [minute, hour, dom, moy, dow, command, comment, job_id, title, icon, desc]]
+		else:
+			return minute, hour, dom, moy, dow, command
 		
 	def get_job_data (self, job_id):
 		f = os.path.join (self.crontabdata, str (job_id))

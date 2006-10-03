@@ -1,3 +1,10 @@
+2006-09-24  Gaute Hope  <eg@gaute.vetsj.com>
+
+	* src/gnome-schedule.py, src/scheduleapplet.py: Sets the POSIX_CORRECT variable, at is now supposed to output more or less the same thing each time
+	* src/crontab.py, src/crontabEditor.py: Templates work with data files
+	* src/at.py: Less output.
+	* Everything should work now with the data files
+	
 2006-09-17  Gaute Hope  <eg@gaute.vetsj.com>
 
 	* Implemented data files for AT aswell. Crontab templates broken, save title icon stuff in template. The parser cannot parse it since there is no file. Make a more complex crontab parser with a less complicated option in yet an elif statement.
@@ -39,7 +46,7 @@
 
 	* configure.in	Added vi in ALL_LINGUAS line.
 	
-	2006-01-07  Philip Van Hoof  <pvanhoof@gnome.org>
+2006-01-07  Philip Van Hoof  <pvanhoof@gnome.org>
 
 	* src/at.py: Fixed atq parsing on Ubuntu Dapper
 	

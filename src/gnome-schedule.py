@@ -20,6 +20,7 @@
 #python modules
 import sys
 import signal
+import os
 
 #custom modules
 import config
@@ -31,6 +32,8 @@ import mainWindow
 ##
 import gettext
 gettext.install(config.GETTEXT_PACKAGE(), config.GNOMELOCALEDIR(), unicode=1)
+
+#os.putenv ("POSIX_CORRECT", "enabled")
 
 if __name__ == "__main__":
 	signal.signal (signal.SIGINT, signal.SIG_DFL)

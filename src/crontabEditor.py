@@ -379,9 +379,8 @@ class CrontabEditor:
 					
 				if frequency != None and command != None:
 					if title != None:
-						record = frequency + " " + command + " # " + title
-					else:
-						record = frequency + " " + command
+						self.title = title
+					record = frequency + " " + command
 				else:
 					if frequency == None:
 						frequency = "* * * * *"
@@ -403,7 +402,7 @@ class CrontabEditor:
 					self.nooutput = False
 
 
-				self.minute, self.hour, self.day, self.month, self.weekday, self.command, self.title, icon_ = self.scheduler.parse (record)
+				self.minute, self.hour, self.day, self.month, self.weekday, self.command = self.scheduler.parse (record, True)
 				self.command = command
 				self.__update_textboxes__ ()
 			else:

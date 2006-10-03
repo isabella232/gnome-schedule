@@ -297,10 +297,9 @@ class main:
 	
 	
 	def __initUser__(self):
-		self.uid = os.geteuid() #The enivronment variable isn't always updated after a 'su'
+		self.uid = os.geteuid() 
 		self.gid = os.getegid()
 		self.user = pwd.getpwuid(self.uid)[0]
-		#print self.user
 		
 		if self.uid != 0:
 			self.set_user_menu.hide()	
@@ -531,7 +530,7 @@ class main:
  		dlg.set_title (_("About Gnome Schedule"))
  		dlg.set_name (_("Gnome Schedule"))
  		dlg.set_version (config.getVersion())
- 		dlg.set_copyright (_("Copyright (c) 2004-2005 Gaute Hope."))
+ 		dlg.set_copyright (_("Copyright (c) 2004-2006 Gaute Hope."))
  		#dlg.set_comments ()
  		#dlg.set_license ()
  		dlg.set_website ("http://gnome-schedule.sourceforge.net")
