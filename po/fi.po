@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: gnome-schedule\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-10-03 15:51+0200\n"
-"PO-Revision-Date: 2006-10-03 11:00+0300\n"
+"PO-Revision-Date: 2006-10-15 15:07+0300\n"
 "Last-Translator: Ilkka Tuohela <hile@iki.fi>\n"
 "Language-Team: Finnish <gnome-fi-laatu@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -661,44 +661,45 @@ msgstr "Joka päivä kello %(time)s"
 #: ../src/lang.py:172
 #, python-format
 msgid "On day %(monthday)s of every month at every full hour"
-msgstr "Kuun %(monthday)s. päivä jokaisella täydellä tunnilla"
+msgstr "Joka kuun %(monthday)s. päivä jokaisella täydellä tunnilla"
 
 #: ../src/lang.py:174
 #, python-format
 msgid "On day %(monthday)s of every month at every minute"
-msgstr "Kuun %(monthday)s. päivä jokaisella minuutilla"
+msgstr "Joka kuun %(monthday)s. päivä jokaisella minuutilla"
 
 #: ../src/lang.py:176
 #, python-format
 msgid "On day %(monthday)s of every month at minute %(minute)s of every hour"
-msgstr ""
+msgstr "Joka kuun %(monthday)s. päivä joka tunnin %(minute)s minuutilla"
 
 #: ../src/lang.py:178
 #, python-format
 msgid ""
 "On day %(monthday)s of every month at every minute between %(time_from)s and "
 "%(time_to)s"
-msgstr ""
+msgstr "Joka kuun %(monthday)s. päivä joka minuutilla välillä %(time_from)s ja "
+"%(time_to)s"
 
 #: ../src/lang.py:180
 #, python-format
 msgid "On day %(monthday)s of every month at %(time)s"
-msgstr ""
+msgstr "Joka kuun %(monthday)s. päivä kello %(time)s"
 
 #: ../src/lang.py:185
 #, python-format
 msgid "On every day in %(month)s at every full hour"
-msgstr ""
+msgstr "Joka päivä %(month)s kerran tunnissa"
 
 #: ../src/lang.py:187
 #, python-format
 msgid "On every day in %(month)s at every minute"
-msgstr ""
+msgstr "Joka päivä %(month)s kerran minuutissa"
 
 #: ../src/lang.py:189
 #, python-format
 msgid "On every day in %(month)s at minute %(minute)s of every hour"
-msgstr ""
+msgstr "Joka päivä %(month)s joka tunnin %(minute)s. minuutilla"
 
 #: ../src/lang.py:191
 #, python-format
@@ -710,28 +711,29 @@ msgstr ""
 #: ../src/lang.py:193
 #, python-format
 msgid "On every day in %(month)s at %(time)s"
-msgstr ""
+msgstr "Joka päivä %(month)s kello %(time)s"
 
 #: ../src/lang.py:198
 #, python-format
 msgid "Every year on %(date)s at every full hour"
-msgstr ""
+msgstr "Joka vuosi %(date)s päivänä joka tunti"
 
 #: ../src/lang.py:200
 #, python-format
 msgid "Every year on %(date)s at every minute"
-msgstr ""
+msgstr "Joka vuosi %(date)s päivänä joka minuutti"
 
 #: ../src/lang.py:202
 #, python-format
 msgid "Every year on %(date)s at minute %(minute)s of every hour"
-msgstr ""
+msgstr "Joka vuosi %(date)s päivänä joka tunnin %(minute)s minuutilla"
 
 #: ../src/lang.py:204
 #, python-format
 msgid ""
 "Every year on %(date)s at every minute between %(time_from)s and %(time_to)s"
 msgstr ""
+"Joka vuosi %(date)s päivänä joka minuttina välillä %(time_from)s ja %(time_to)s" 
 
 #: ../src/lang.py:206
 #, python-format
@@ -956,9 +958,8 @@ msgid "Gnome Schedule"
 msgstr "Gnome-ajastus"
 
 #: ../src/mainWindow.py:533
-#, fuzzy
 msgid "Copyright (c) 2004-2006 Gaute Hope."
-msgstr "Copyright © 2004-2005 Gaute Hope."
+msgstr "Tekijänoikeudet © 2004-2006 Gaute Hope."
 
 #: ../src/mainWindow.py:546
 msgid "translator-credits"
