@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: gnome-schedule\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-10-03 15:51+0200\n"
-"PO-Revision-Date: 2006-10-15 15:07+0300\n"
+"PO-Revision-Date: 2006-10-24 17:42+0300\n"
 "Last-Translator: Ilkka Tuohela <hile@iki.fi>\n"
 "Language-Team: Finnish <gnome-fi-laatu@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -707,6 +707,8 @@ msgid ""
 "On every day in %(month)s at every minute between %(time_from)s and %"
 "(time_to)s"
 msgstr ""
+"Joka päivä kuussa %(month)s joka minuutilla väliltä %(time_from)s - "
+"%(time_to)s"
 
 #: ../src/lang.py:193
 #, python-format
@@ -760,6 +762,7 @@ msgstr "Joka %(weekday)s joka tunnin minuutilla %(minute)s"
 msgid ""
 "On every %(weekday)s at every minute between %(time_from)s and %(time_to)s"
 msgstr ""
+"Joka %(weekday)s joka minuutilla välillä %(time_from)s - %(time_to)s"
 
 #: ../src/lang.py:219
 #, python-format
@@ -771,12 +774,14 @@ msgstr "Joka %(weekday)s kello %(time)s"
 msgid ""
 "On day %(monthday)s of every month and every %(weekday)s at every full hour"
 msgstr ""
+"Joka kuun %(monthday)s päivä ja joka %(weekday)s kerran tunnissa"
 
 #: ../src/lang.py:226
 #, python-format
 msgid ""
 "On day %(monthday)s of every month and every %(weekday)s at every minute"
 msgstr ""
+"Joka kuun %(monthday)s. päivä ja joka %(weekday)s joka minuutti"
 
 #: ../src/lang.py:228
 #, python-format
@@ -784,6 +789,7 @@ msgid ""
 "On day %(monthday)s of every month and every %(weekday)s at minute %(minute)"
 "s of every hour"
 msgstr ""
+"Joka kuun %(monthday)s. päivä ja joka %(weekday)s joka tunnin %(minute)s minuutilla"
 
 #: ../src/lang.py:230
 #, python-format
@@ -791,26 +797,28 @@ msgid ""
 "On day %(monthday)s of every month and every %(weekday)s at every minute "
 "between %(time_from)s and %(time_to)s"
 msgstr ""
+"Joka kuun %(monthday)s. päivä ja joka %(weekday)s joka minuutilla välillä "
+"%(time_from)s - %(time_to)s"
 
 #: ../src/lang.py:232
 #, python-format
 msgid "On day %(monthday)s of every month and every %(weekday)s at %(time)s"
-msgstr ""
+msgstr "Joka kuun %(monthday)s. päiväi ja joka %(weekday)s kello %(time)s"
 
 #: ../src/lang.py:237
 #, python-format
 msgid "On every %(weekday)s in %(month)s at every full hour"
-msgstr ""
+msgstr "Joka %(weekday)s kuussa %(month)s kerran tunnissa"
 
 #: ../src/lang.py:239
 #, python-format
 msgid "On every %(weekday)s in %(month)s at every minute"
-msgstr ""
+msgstr "Joka %(weekday)s kuussa %(month)s kerran minuutissa"
 
 #: ../src/lang.py:241
 #, python-format
 msgid "On every %(weekday)s in %(month)s at minute %(minute)s of every hour"
-msgstr ""
+msgstr "Joka %(weekday)s kuussa %(month)s joka tunnin %(minute)s minuutilla"
 
 #: ../src/lang.py:243
 #, python-format
@@ -818,11 +826,13 @@ msgid ""
 "On every %(weekday)s in %(month)s at every minute between %(time_from)s and %"
 "(time_to)s"
 msgstr ""
+"Joka %(weekday)s kuussa %(month)s joka minuutilla välillä "
+"%(time_from)s - %(time_to)s"
 
 #: ../src/lang.py:245
 #, python-format
 msgid "On every %(weekday)s in %(month)s at %(time)s"
-msgstr ""
+msgstr "Joka %(weekday)s kuussa %(month)s kello %(time)s"
 
 #: ../src/lang.py:250
 #, python-format
@@ -830,12 +840,14 @@ msgid ""
 "On every %(weekday)s in %(month)s and on %(date)s every year at every full "
 "hour"
 msgstr ""
+"Joka %(weekday)s kuussa %(month)s ja joka vuosi %(date)s kerran tunnissa"
 
 #: ../src/lang.py:252
 #, python-format
 msgid ""
 "On every %(weekday)s in %(month)s and on %(date)s every year at every minute"
 msgstr ""
+"Joka %(weekday)s kuussa %(month)s ja joka vuosi %(date)s kerran minuutissa"
 
 #: ../src/lang.py:254
 #, python-format
@@ -843,6 +855,8 @@ msgid ""
 "On every %(weekday)s in %(month)s and on %(date)s every year at minute %"
 "(minute)s of every hour"
 msgstr ""
+"Joka %(weekday)s kuussa %(month)s ja joka vuosi %(date)s joka tunnin "
+"%(minute)s minuutilla"
 
 #: ../src/lang.py:256
 #, python-format
@@ -850,12 +864,16 @@ msgid ""
 "On every %(weekday)s in %(month)s and on %(date)s every year at every minute "
 "between %(time_from)s and %(time_to)s"
 msgstr ""
+"Joka %(weekday)s kuussa %(month)s ja joka vuosi %(date)s joka minuutilla "
+"välillä %(time_from)s - %(time_to)s"
+
 
 #: ../src/lang.py:258
 #, python-format
 msgid ""
 "On every %(weekday)s in %(month)s and on %(date)s every year at %(time)s"
 msgstr ""
+"Joka  %(weekday)s kuussa %(month)s ja joka vuosi %(date)s kello %(time)s"
 
 #: ../src/lang.py:266
 msgid "every minute"
@@ -896,7 +914,7 @@ msgstr "kuukausi: %s"
 #: ../src/lang.py:286
 #, python-format
 msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s"
-msgstr ""
+msgstr "%(minute)s, %(hour)s, %(monthday)s, %(month)s"
 
 #: ../src/lang.py:288
 #, python-format
@@ -906,7 +924,7 @@ msgstr "viikonpäivä: %s"
 #: ../src/lang.py:289
 #, python-format
 msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
-msgstr ""
+msgstr "%(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 
 #: ../src/mainWindow.py:211 ../src/mainWindow.py:311
 #, python-format
