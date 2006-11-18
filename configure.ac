@@ -111,7 +111,7 @@ dnl AC_CONFIG_MACRO_DIR([m4])
 GNOME_DOC_INIT
 
 dnl Add the languages which your application supports here.
-ALL_LINGUAS="bg ca cs da de el en_CA en_GB es fi fr hu it lt nb ne nl nn pa pt pt_BR ru rw sq sv uk vi zh_CN zh_HK zh_TW"
+ALL_LINGUAS="ar bg ca cs da de el en_CA en_GB es fi fr hu it lt nb ne nl nn pa pt pt_BR ru rw sq sv uk vi zh_CN zh_HK zh_TW"
 
 AM_GLIB_GNU_GETTEXT
 AC_PROG_INTLTOOL
