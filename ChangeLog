@@ -1,3 +1,7 @@
+2006-11-18  Gaute Hope  <eg@gaute.vetsj.com>
+
+	* src/mainWindow.py: About dialog stays after it is closed. Not modular.
+	
 2006-10-03  Gaute Hope  <eg@gaute.vetsj.com>
 
 	* Release 1.0.1

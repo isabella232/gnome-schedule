@@ -546,9 +546,12 @@ class main:
  		dlg.set_translator_credits (_("translator-credits"))
  		dlg.set_logo (self.iconPixbuf)
  		
- 		dlg.run ()
- 		
- 		
+		if (dlg.run() != gtk.RESPONSE_YES):
+			dlg.destroy()
+			del dlg
+			return
+		dlg.destroy()
+		del dlg
  		 	
  	#open help
   	def on_manual_menu_activate (self, *args):
