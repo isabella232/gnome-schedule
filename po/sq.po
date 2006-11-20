@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-10-03 15:51+0200\n"
+"POT-Creation-Date: 2006-11-20 15:02+0100\n"
 "PO-Revision-Date: 2005-01-31 19:53+0100\n"
 "Last-Translator: Elian Myftiu <elian@alblinux.net>\n"
 "Language-Team: Albanian <gnome-albanian-perkthyesit@lists.sourceforge.net>\n"
@@ -192,7 +192,7 @@ msgstr "Zgjidh një ikonë për këtë detyrë kohore"
 msgid "command"
 msgstr "komandë"
 
-#: ../src/crontabEditor.py:426 ../src/mainWindow.py:564 ../src/atEditor.py:519
+#: ../src/crontabEditor.py:426 ../src/mainWindow.py:567 ../src/atEditor.py:519
 msgid "Could not display help"
 msgstr ""
 

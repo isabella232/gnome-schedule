@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-10-22 12:18+0200\n"
+"POT-Creation-Date: 2006-11-20 15:02+0100\n"
 "PO-Revision-Date: 2006-01-12 14:22+0100\n"
 "Last-Translator: Tino Meinen <a.t.meinen@chello.nl>\n"
 "Language-Team: Dutch <vertaling@vrijschrift.org>\n"
@@ -182,7 +182,7 @@ msgstr "Kies een pictogram voor deze geplande taak"
 msgid "command"
 msgstr "opdracht"
 
-#: ../src/crontabEditor.py:426 ../src/mainWindow.py:564 ../src/atEditor.py:519
+#: ../src/crontabEditor.py:426 ../src/mainWindow.py:567 ../src/atEditor.py:519
 msgid "Could not display help"
 msgstr "Kon de hulp niet weergeven"
 

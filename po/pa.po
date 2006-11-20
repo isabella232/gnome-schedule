@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pa\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-10-03 15:51+0200\n"
+"POT-Creation-Date: 2006-11-20 15:02+0100\n"
 "PO-Revision-Date: 2004-12-07 19:10+0530\n"
 "Last-Translator: Amanpreet Singh Alam <aalam@redhat.com>\n"
 "Language-Team: Punjabi <fedora-trans-pa@redhat.com>\n"
@@ -193,7 +193,7 @@ msgstr ""
 msgid "command"
 msgstr "ਕਮਾਂਡ"
 
-#: ../src/crontabEditor.py:426 ../src/mainWindow.py:564 ../src/atEditor.py:519
+#: ../src/crontabEditor.py:426 ../src/mainWindow.py:567 ../src/atEditor.py:519
 msgid "Could not display help"
 msgstr ""
 

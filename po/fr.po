@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-10-03 15:51+0200\n"
+"POT-Creation-Date: 2006-11-20 15:02+0100\n"
 "PO-Revision-Date: 2004-09-11 00:07+0200\n"
 "Last-Translator: Yannick Marchegay <yannick.marchegay@lokanova.com>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
@@ -195,7 +195,7 @@ msgstr "Choisissez une icône pour cette tâche planifiée"
 msgid "command"
 msgstr "commande"
 
-#: ../src/crontabEditor.py:426 ../src/mainWindow.py:564 ../src/atEditor.py:519
+#: ../src/crontabEditor.py:426 ../src/mainWindow.py:567 ../src/atEditor.py:519
 msgid "Could not display help"
 msgstr ""
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-10-03 15:51+0200\n"
+"POT-Creation-Date: 2006-11-20 15:02+0100\n"
 "PO-Revision-Date: 2005-08-29 22:38+0200\n"
 "Last-Translator: Miloslav Trmac <mitr@volny.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -182,7 +182,7 @@ msgstr "Zvolte ikonu pro tuto plánovanou úlohu"
 msgid "command"
 msgstr "příkaz"
 
-#: ../src/crontabEditor.py:426 ../src/mainWindow.py:564 ../src/atEditor.py:519
+#: ../src/crontabEditor.py:426 ../src/mainWindow.py:567 ../src/atEditor.py:519
 msgid "Could not display help"
 msgstr ""
 
