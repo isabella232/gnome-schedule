@@ -1,8 +1,9 @@
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule docs\n"
+"PO-Revision-Date: 2006-12-28 17:54+0100\n"
 "POT-Creation-Date: 2006-05-31 18:50+0200\n"
-"PO-Revision-Date: 2006-07-23 12:45+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "MIME-Version: 1.0\n"
@@ -11,55 +12,57 @@ msgstr ""
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:274(None)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:262(None)
 msgid "@@image: 'figures/gnome-schedule_main.png'; md5=c2aa42012dd7332c8d62be2c38b3a77a"
 msgstr "@@image: 'figures/gnome-schedule_main.png'; md5=c2aa42012dd7332c8d62be2c38b3a77a"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:350(None)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:338(None)
 msgid "@@image: 'figures/gnome-schedule_new_task.png'; md5=7499a5ef05a3c38fa6169a0b5d1e730f"
 msgstr "@@image: 'figures/gnome-schedule_new_task.png'; md5=7499a5ef05a3c38fa6169a0b5d1e730f"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:377(None)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:365(None)
 msgid "@@image: 'figures/gnome-schedule_new_task_recurrent.png'; md5=a2386f4f1918b4084318d3758c849c46"
 msgstr "@@image: 'figures/gnome-schedule_new_task_recurrent.png'; md5=a2386f4f1918b4084318d3758c849c46"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:429(None)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:417(None)
 msgid "@@image: 'figures/gnome-schedule_new_task_once.png'; md5=7bc26aae81e5596cab54e060351f04d7"
 msgstr "@@image: 'figures/gnome-schedule_new_task_once.png'; md5=7bc26aae81e5596cab54e060351f04d7"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:543(None)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:531(None)
 msgid "@@image: 'figures/gnome-schedule_advanced.png'; md5=48815baad4eda4f6ba675531b763d0a3"
 msgstr "@@image: 'figures/gnome-schedule_advanced.png'; md5=48815baad4eda4f6ba675531b763d0a3"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:38(title)
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:137(revnumber)
-msgid "Gnome Schedule User Guide V2.0"
-msgstr ""
+#!Gnome Schedule User Guide V2.[-0-]{+1+}
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:37(title)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:124(revnumber)
+msgid "Gnome Schedule User Guide V2.1"
+msgstr "Användarhandbok för Gnome-schemaläggaren v2.1"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:39(para)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:38(para)
 msgid "User Guide for the application Gnome Schedule"
-msgstr ""
+msgstr "Användarhandbok för programmet Gnome-schemaläggaren"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:41(year)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:40(year)
 msgid "2005"
 msgstr "2005"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:42(holder)
-msgid "Rodrigo Marcos Fombellida rmarcos_geo@yahoo.es"
-msgstr "Rodrigo Marcos Fombellida rmarcos_geo@yahoo.es"
+#!Rodrigo Marcos Fombellida rmarcos[-_-]{+@cvs.+}g{+nom+}e{+.+}o[-@yahoo.es-]{+rg+}
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:41(holder)
+msgid "Rodrigo Marcos Fombellida rmarcos@cvs.gnome.org"
+msgstr "Rodrigo Marcos Fombellida rmarcos@cvs.gnome.org"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:56(publishername)
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:79(orgname)
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:103(orgname)
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:142(para)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:55(publishername)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:68(orgname)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:120(para)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:129(para)
 msgid "GNOME Documentation Project"
 msgstr "Dokumentationsprojekt för GNOME"
 
@@ -87,538 +90,618 @@ msgstr "UNDER INGA OMSTÄNDIGHETER ELLER INOM RAMEN FÖR NÅGON LAGSTIFTNING, OA
 msgid "DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT ARE PROVIDED UNDER THE TERMS OF THE GNU FREE DOCUMENTATION LICENSE WITH THE FURTHER UNDERSTANDING THAT: <placeholder-1/>"
 msgstr "DOKUMENTET OCH MODIFIERADE VERSIONER AV DOKUMENTET TILLHANDAHÅLLS UNDER VILLKOREN I GNU FREE DOCUMENTATION LICENSE ENDAST UNDER FÖLJANDE FÖRUTSÄTTNINGAR: <placeholder-1/>"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:76(firstname)
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:100(firstname)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:65(firstname)
 msgid "Rodrigo"
 msgstr "Rodrigo"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:77(surname)
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:101(surname)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:66(surname)
 msgid "Marcos Fombellida"
 msgstr "Marcos Fombellida"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:80(email)
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:104(email)
-msgid "rmarcos_geo@yahoo.es"
-msgstr "rmarcos_geo@yahoo.es"
+#![-t-]r{+m+}a[-n-]{+rco+}s[-lator-]@{+cvs.+}gnome.org
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:69(email)
+msgid "rmarcos@cvs.gnome.org"
+msgstr "rmarcos@cvs.gnome.org"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:89(firstname)
-msgid "Latin"
-msgstr "Latin"
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:78(firstname)
+msgid "Translator: Your first name here"
+msgstr "Daniel"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:90(surname)
-msgid "Translator 1"
-msgstr ""
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:79(surname)
+msgid "Translator: Your surname here"
+msgstr "Nylander"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:92(orgname)
-msgid "Latin Translation Team"
-msgstr ""
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:81(orgname)
+msgid "Translator: The name of your translation team here"
+msgstr "Svenska grenen av Translation Project"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:93(email)
-msgid "translator@gnome.org"
-msgstr "translator@gnome.org"
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:82(email)
+msgid "Translator: Your mail here"
+msgstr "po@danielnylander.se"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:95(contrib)
-msgid "Latin translation"
-msgstr ""
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:84(contrib)
+msgid "Translator: Write here your contribution, e.g. Latin translation"
+msgstr "Svensk översättning"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:106(contrib)
-msgid "Manual maintainer"
-msgstr ""
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:115(revnumber)
+msgid "Gnome Schedule User Guide V2.0"
+msgstr "Användarhandbok för Gnome-schemaläggaren v2.0"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:138(date)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:116(date)
 msgid "August 2005"
 msgstr "Augusti 2005"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:140(para)
-msgid "Rodrigo Marcos Fombellida <email>rmarcos_geo@yahoo.es</email>"
-msgstr "Rodrigo Marcos Fombellida <email>rmarcos_geo@yahoo.es</email>"
+#!Rodrigo Marcos Fombellida <email>rmarcos[-_-]{+@cvs.+}g{+nom+}e{+.+}o[-@yahoo.es-]{+rg+}</email>
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:118(para)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:127(para)
+msgid "Rodrigo Marcos Fombellida <email>rmarcos@cvs.gnome.org</email>"
+msgstr "Rodrigo Marcos Fombellida <email>rmarcos@cvs.gnome.org</email>"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:147(releaseinfo)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:125(date)
+msgid "June 2006"
+msgstr "Juni 2006"
+
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:134(releaseinfo)
 msgid "This manual describes version 1.0.0 of Gnome Schedule."
-msgstr ""
+msgstr "Den här handboken beskriver version 1.0.0 av Gnome-schemaläggaren."
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:150(title)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:137(title)
 msgid "Feedback"
 msgstr "Återkoppling"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:151(para)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:138(para)
 msgid "To report a bug or make a suggestion regarding the <application>Gnome Schedule</application> application or this manual, follow the directions in the <ulink url=\"ghelp:gnome-feedback\" type=\"help\">GNOME Feedback Page</ulink>."
-msgstr ""
+msgstr "För att rapportera ett fel eller föreslå någonting angående programmet <application>Gnome-schemaläggare</application> eller den här handboken, följ anvisningarna på <ulink url=\"ghelp:gnome-feedback\" type=\"help\">GNOME:s återkopplingssida</ulink>."
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:161(primary)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:148(primary)
 #: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:0(application)
 msgid "Gnome Schedule"
-msgstr ""
+msgstr "Gnome-schemaläggaren"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:172(title)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:159(title)
 msgid "Introduction"
 msgstr "Introduktion"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:173(para)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:160(para)
 msgid "<application>Gnome Schedule</application> is a graphical tool that lets you schedule tasks with ease, to be run unattended at a specified time or periodically. These tasks, also known as jobs, can be either a command with its corresponding parameters or a script file with multiple instructions."
-msgstr ""
+msgstr "<application>Gnome-schemaläggaren</application> är ett grafiskt verktyg som låter dig schemalägga uppgifter på ett enkelt sätt, för att köras utan assistans vid en angiven tid eller periodvis. Dessa uppgifter, även kända som jobb, kan antingen vara ett kommando med dess motsvarande parametrar eller en skriptfil med flera instruktioner."
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:176(para)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:163(para)
 msgid "You can use <application>Gnome Schedule</application> to program repetitive tasks in your daily work that can be automated or to run a heavy task at night while you are sleeping, for example, backing-up your documents."
-msgstr ""
+msgstr "Du kan använda <application>Gnome-schemaläggare</application> för att programmera återkommande uppgifter i ditt dagliga arbete som kan automatiseras eller för att köra en tung uppgift nattetid när du sover, till exempel en säkerhetskopiering av dina dokument."
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:180(title)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:167(title)
 msgid "How does <application>Gnome Schedule</application> work?"
-msgstr ""
+msgstr "Hur fungerar <application>Gnome-schemaläggaren</application>?"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:181(para)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:168(para)
 msgid "<application>Gnome Schedule</application> uses <application>cron</application> and <application>at</application> to program job executions. These are two system services commonly used by Linux-like systems. <application>Gnome Schedule</application> provides a single graphical interface to configure both of them and present jobs in a way easy to understand for everyone."
-msgstr ""
+msgstr "<application>Gnome-schemaläggare</application> använder <application>cron</application> och <application>at</application> för att programmera jobbkörningar. Dessa är två systemtjänster som vanligen används av Linux-liknande system. <application>Gnome-schemaläggare</application> tillhandahåller ett enda grafiskt gränssnitt för att konfigurera dem båda och presentera jobb på ett enkelt sätt som alla kan förstå."
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:187(title)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:174(title)
 msgid "About cron and at"
 msgstr "Om cron och at"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:189(guilabel)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:176(guilabel)
 msgid "Cron"
 msgstr "Cron"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:191(para)
+#!If you were to configure <application>cron</application> manually to execute a command, for example every Tuesday, you would have to use the command <command>crontab</command> in this way: <screen>\n$ <userinput>crontab -e</userinput>\n<userinput>* * * * 2 &lt;command&gt; {+--parameters +} #comments</userinput>\n\t      </screen>
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:178(para)
 msgid ""
 "If you were to configure <application>cron</application> manually to execute a command, for example every Tuesday, you would have to use the command <command>crontab</command> in this way: <screen>\n"
 "$ <userinput>crontab -e</userinput>\n"
-"<userinput>* * * * 2 &lt;command&gt;  #comments</userinput>\n"
+"<userinput>* * * * 2 &lt;command&gt; --parameters  #comments</userinput>\n"
 "\t      </screen>"
 msgstr ""
+"Om du skulle konfigurera <application>cron</application> manuellt till att köra ett kommando, till exempel varje tisdag, skulle du använda kommandot <command>crontab</command> på det här sättet: <screen>\n"
+"$ <userinput>crontab -e</userinput>\n"
+"<userinput>* * * * 2 &lt;kommando&gt; --parameters  #kommentarer</userinput>\n"
+"\t      </screen>"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:201(para)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:188(para)
 msgid "See <command>man cron</command> and <command>man crontab</command> for more information about <application>cron</application>"
 msgstr "Se <command>man cron</command> och <command>man crontab</command> för mer information om <application>cron</application>"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:206(guilabel)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:193(guilabel)
 msgid "At"
 msgstr "At"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:208(para)
+#!If you were to configure <application>at</application> manually to execute a command, for example tomorrow at this time, you would have to use the command{+ +}<command>at</command> in this way: <screen>\n$ <userinput>at tomorrow</userinput>\nat&gt; <userinput>[-ls-]{+&lt;command_1&gt;+} --parameters{+ +}</userinput>\nat&gt; <userinput>{+&lt;command_2&gt; --parameters </userinput>\nat&gt; <userinput>+}Ctrl + D</userinput>\n        </screen>
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:195(para)
 msgid ""
-"If you were to configure <application>at</application> manually to execute a command, for example tomorrow at this time, you would have to use the command<command>at</command> in this way: <screen>\n"
+"If you were to configure <application>at</application> manually to execute a command, for example tomorrow at this time, you would have to use the command <command>at</command> in this way: <screen>\n"
 "$ <userinput>at tomorrow</userinput>\n"
-"at&gt; <userinput>ls --parameters</userinput>\n"
+"at&gt; <userinput>&lt;command_1&gt; --parameters </userinput>\n"
+"at&gt; <userinput>&lt;command_2&gt; --parameters </userinput>\n"
 "at&gt; <userinput>Ctrl + D</userinput>\n"
 "        </screen>"
 msgstr ""
+"Om du skulle konfigurera <application>at</application> manuellt till att köra ett kommando, till exempel imorgon vid den här tiden, skulle du använda kommandot <command>at</command> på det här sättet: <screen>\n"
+"$ <userinput>at tomorrow</userinput>\n"
+"at&gt; <userinput>&lt;kommando_1&gt; --parameters </userinput>\n"
+"at&gt; <userinput>&lt;kommando_2&gt; --parameters </userinput>\n"
+"at&gt; <userinput>Ctrl + D</userinput>\n"
+"        </screen>"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:218(para)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:206(para)
 msgid "See <command>man at</command> for more information about <application>at</application>"
 msgstr "Se <command>man at</command> för mer information om <application>at</application>"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:234(title)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:222(title)
 msgid "Getting Started"
 msgstr "Komma igång"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:237(title)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:225(title)
 msgid "To Start <application>Gnome Schedule</application>"
-msgstr ""
+msgstr "Starta <application>Gnome-schemaläggaren</application>"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:238(para)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:226(para)
 msgid "You can start <application><application>Gnome Schedule</application></application> in the following ways:"
-msgstr ""
+msgstr "Du kan starta <application><application>Gnome-schemaläggaren</application></application> på följande sätt:"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:242(term)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:230(term)
 msgid "<guimenu>Applications</guimenu> menu"
 msgstr "Menyn <guimenu>Program</guimenu>"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:244(para)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:232(para)
 msgid "Choose <menuchoice><guisubmenu>System Tools</guisubmenu><guimenuitem>Schedule</guimenuitem></menuchoice>."
-msgstr ""
+msgstr "Välj <menuchoice><guisubmenu>Systemverktyg</guisubmenu><guimenuitem>Schema</guimenuitem></menuchoice>."
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:252(term)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:240(term)
 msgid "Command line"
 msgstr "Kommandorad"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:254(para)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:242(para)
 msgid "To start <application><application>Gnome Schedule</application></application> from a command line, type the following command, then press <keycap>Return</keycap>:"
-msgstr ""
+msgstr "För att starta <application><application>Gnome-schemaläggare</application></application> från en kommandorad, ange följande kommando och tryck sedan på <keycap>Return</keycap>:"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:257(command)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:245(command)
 msgid "gnome-schedule"
 msgstr "gnome-schedule"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:265(title)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:253(title)
 msgid "When You Start <application>Gnome Schedule</application>"
-msgstr ""
+msgstr "När du startar <application>Gnome-schemaläggaren</application>"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:266(para)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:254(para)
 msgid "When you start <application><application>Gnome Schedule</application></application>, the main window is displayed:"
-msgstr ""
+msgstr "När du startar <application><application>Gnome-schemaläggare</application></application> kommer huvudfönstret att visas:"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:270(title)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:258(title)
 msgid "Start Up Window"
-msgstr ""
+msgstr "Uppstartsfönster"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:277(phrase)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:265(phrase)
 msgid "Shows <placeholder-1/> main window. Contains title bar, menu bar, tool bar, and task list."
-msgstr ""
+msgstr "Visar <placeholder-1/> huvudfönstret. Innehåller titellist, menyrad, verktygsrad och uppgiftslista."
 
 #. for example, the items on the menubar and on the tool bar. This section is optional.
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:287(para)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:275(para)
 msgid "The <application>Gnome Schedule</application> main window contains the following elements:"
-msgstr ""
+msgstr "Huvudfönstret i <application>Gnome-schemaläggare</application> innehåller följande element:"
+
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:279(term)
+msgid "Menu bar."
+msgstr "Menyrad."
+
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:281(para)
+msgid "The menus on the menu bar gives you access to every option in the application."
+msgstr "Menyerna på menyraden ger till åtkomst till alla alternativ i programmet."
+
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:285(term)
+msgid "Tool bar."
+msgstr "Verktygsrad."
+
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:287(para)
+msgid "The tool bar gives you direct access to the most common options from the menubar."
+msgstr "Verktygsraden ger dig direktåtkomst till de flesta vanliga alternativen från menyraden."
 
 #: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:291(term)
-msgid "Menu bar."
-msgstr ""
-
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:293(para)
-msgid "The menus on the menu bar gives you access to every option in the application."
-msgstr ""
-
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:297(term)
-msgid "Tool bar."
-msgstr ""
-
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:299(para)
-msgid "The tool bar gives you direct access to the most common options from the menubar."
-msgstr ""
-
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:303(term)
 msgid "Task list."
-msgstr ""
+msgstr "Uppgiftslista."
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:308(term)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:296(term)
 msgid "Icon:"
 msgstr "Ikon:"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:309(para)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:297(para)
 msgid "Image associated to the task."
-msgstr ""
+msgstr "Bild associerad med uppgiften."
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:311(term)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:299(term)
 msgid "Type:"
 msgstr "Typ:"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:312(para)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:300(para)
 msgid "Describes the type of the task: \"Recurrent\" or \"Once\"."
-msgstr ""
+msgstr "Beskriver uppgiftens typ: \"Återkommande\" eller \"En gång\"."
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:314(term)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:302(term)
 msgid "Title:"
 msgstr "Titel:"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:315(para)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:303(para)
 msgid "Shows the name of the task."
-msgstr ""
+msgstr "Visar namnet på uppgiften."
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:317(term)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:305(term)
 msgid "Date and Time Settings:"
 msgstr "Datum- och tidsinställningar:"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:318(para)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:306(para)
 msgid "Shows when the task is going to be executed."
-msgstr ""
+msgstr "Visar när uppgiften kommer att köras."
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:320(term)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:308(term)
 msgid "Preview:"
-msgstr ""
+msgstr "Förhandsvisning:"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:321(para)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:309(para)
 msgid "Shows the command that is going to be executed."
-msgstr ""
+msgstr "Visar kommandot som kommer att köras."
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:305(para)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:293(para)
 msgid "The Task list shows information about current scheduled tasks and pending jobs. For every task, the following information is detailed: <placeholder-1/>"
-msgstr ""
+msgstr "Uppgiftslistan visar information om för närvarande schemalagda uppgifter och väntande jobb. För varje uppgift visas följande information: <placeholder-1/>"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:329(para)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:317(para)
 msgid "You can read a brief description of some of the objects on the <application>Gnome Schedule</application> interface, by pointing them with the mouse and waiting for a few seconds."
-msgstr ""
+msgstr "Du kan läsa en kort beskrivning av några av objekten i <application>Gnome-schemaläggarens</application>-gränssnitt, genom att peka på dem med musen och vänta ett par sekunder."
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:337(title)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:325(title)
 msgid "Adding a New Scheduled Task"
-msgstr ""
+msgstr "Lägg till en ny schemalagd uppgift"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:338(para)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:326(para)
 msgid "You can add a new scheduled task by pressing the <guibutton>Add</guibutton> button in the main window tool bar or by selecting <menuchoice><guimenu>Task</guimenu><guimenuitem>New</guimenuitem></menuchoice> in the menu bar."
-msgstr ""
+msgstr "Du kan lägga till en ny schemalagd uppgift genom att trycka på <guibutton>Lägg till</guibutton>-knappen i huvudfönstrets verktygsrad eller genom att välja <menuchoice><guimenu>Uppgift</guimenu><guimenuitem>Ny</guimenuitem></menuchoice> i menyraden."
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:343(para)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:331(para)
 msgid "The following dialog window will appear letting you to choose the type of task you want to schedule:"
-msgstr ""
+msgstr "Följande dialogruta kommer att visas för att låta dig välja typ av uppgift som du vill schemalägga:"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:346(title)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:334(title)
 msgid "Task Type Selection Dialog Window"
-msgstr ""
+msgstr "Dialogrutan för val av uppgiftstyp"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:353(phrase)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:341(phrase)
 msgid "Shows <placeholder-1/> task type selection dialog window."
-msgstr ""
+msgstr "Visar <placeholder-1/> dialogrutan för val av uppgiftstyp."
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:361(para)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:349(para)
 msgid "by selecting the first option you will be able to schedule a task that will be executed periodically."
-msgstr ""
+msgstr "genom att välja första alternativet kommer du kunna schemalägga en uppgift som kommer att köras periodvis."
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:363(para)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:351(para)
 msgid "by selecting the second option you will be able to schedule a task that will only be executed once."
-msgstr ""
+msgstr "genom att välja det andra alternativet kommer du kunna schemalägga en uppgift som endast kommer att köras en gång."
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:369(title)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:357(title)
 msgid "Adding a scheduled task that will launch recurrently"
-msgstr ""
+msgstr "Lägg till en schemalagd uppgift med återkommande körningar"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:370(para)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:358(para)
 msgid "Choosing this option, the following dialog window is shown:"
-msgstr ""
+msgstr "Välj det här alternativet och följande dialogruta kommer att visas:"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:373(title)
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:425(title)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:361(title)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:413(title)
 msgid "\"Create a New Scheduled Task\" window"
-msgstr ""
+msgstr "\"Skapa en ny schemalagd uppgift\"-fönstret"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:380(phrase)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:368(phrase)
 msgid "Shows <placeholder-1/> \"Create a New Scheduled Task\" window."
-msgstr ""
+msgstr "Visar <placeholder-1/> \"Skapa en ny schemalagd uppgift\"-fönstret."
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:388(title)
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:440(title)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:376(title)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:428(title)
 msgid "Basic tab"
-msgstr ""
+msgstr "Fliken Grundläggande"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:389(term)
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:441(term)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:377(term)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:429(term)
 msgid "Preset"
-msgstr ""
+msgstr "Förval"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:390(para)
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:442(para)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:378(para)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:430(para)
 msgid "If you want to use a preset to create a task faster, choose it from the drop-down list. For more information about using, creating and deleting presets see <xref linkend=\"myapp-presets\"/>."
-msgstr ""
+msgstr "Om du vill använda ett förval för att skapa en uppgift snabbare, välj det från rullgardinslistan. För mer information om hur man använder, skapar och tar bort förval, se <xref linkend=\"myapp-presets\"/>."
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:394(term)
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:446(term)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:382(term)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:434(term)
 msgid "Description"
 msgstr "Beskrivning"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:395(para)
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:447(para)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:383(para)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:435(para)
 msgid "Lets you add a brief description of the task."
-msgstr ""
+msgstr "Låter dig lägga till en kort beskrivning av uppgiften."
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:397(term)
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:449(term)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:385(term)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:437(term)
 msgid "Icon"
 msgstr "Ikon"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:398(para)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:386(para)
 msgid "You can associate a custom icon to the task by pressing the image button."
-msgstr ""
+msgstr "Du kan associera en anpassad ikon till uppgiften genom att trycka på bildknappen."
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:400(term)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:388(term)
 msgid "Recurrence"
-msgstr ""
+msgstr "Återkommande"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:401(para)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:389(para)
 msgid "Lets you select when the task is going to be executed. If the basic time options are not enough, you can create a custom time expression in the <guilabel>Advanced</guilabel> tab."
-msgstr ""
+msgstr "Låter dig välja när uppgiften ska köras. Om de grundläggande tidsalternativen inte är tillräckliga, kan du skapa ett anpassat tidsuttryck under <guilabel>Avancerat</guilabel>-fliken."
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:405(term)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:393(term)
 msgid "Command"
 msgstr "Kommando"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:406(para)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:394(para)
 msgid "Enter here the command or script that will be executed periodically by this task."
-msgstr ""
+msgstr "Ange kommandot eller skriptet här som ska köras periodvis av den här uppgiften."
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:408(term)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:396(term)
 msgid "No output"
-msgstr ""
+msgstr "Ingen utmatning"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:409(para)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:397(para)
 msgid "Check this option if you want to hide the command output."
-msgstr ""
+msgstr "Kryssa för det här alternativet om du vill dölja utdata från kommandot."
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:413(guilabel)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:401(guilabel)
 msgid "Advanced tab"
-msgstr ""
+msgstr "Fliken Avancerat"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:414(para)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:402(para)
 msgid "Lets you create custom time expressions in case you need more flexibility. See <xref linkend=\"myapp-advanced\"/> for more information."
-msgstr ""
+msgstr "Låter dig skapa anpassade tidsuttryck i fall att du behöver mer flexibilitet. Se <xref linkend=\"myapp-advanced\"/> för mer information."
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:421(title)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:409(title)
 msgid "Adding a scheduled task that will launch once"
-msgstr ""
+msgstr "Lägg till en schemalagd uppgift som kommer att köras en gång"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:422(para)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:410(para)
 msgid "Choosing this option the following dialog window is shown:"
-msgstr ""
+msgstr "Välj det här alternativet och följande dialogruta kommer att visas:"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:432(phrase)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:420(phrase)
 msgid "Shows <placeholder-1/> \"Create a New Scheduled Task\" window"
-msgstr ""
+msgstr "Visar <placeholder-1/> \"Skapa en ny schemalagd uppgift\"-fönstret"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:450(para)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:438(para)
 msgid "By pressing the <guibutton>Icon</guibutton> button you can associate a custom icon to the task."
-msgstr ""
+msgstr "Genom att trycka på <guibutton>Ikon</guibutton>-knappen kan du associera en anpassad ikon till uppgiften."
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:452(term)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:440(term)
 msgid "Script"
 msgstr "Skript"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:453(para)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:441(para)
 msgid "Enter here the command or commands that will be executed once by this task."
-msgstr ""
+msgstr "Ange här det kommandot eller de kommandon som ska köras en gång av den här uppgiften."
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:457(title)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:445(title)
 msgid "Date and Time tab"
-msgstr ""
+msgstr "Fliken Datum och tid"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:458(term)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:446(term)
 msgid "Execution Time"
-msgstr ""
+msgstr "Starttid"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:459(para)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:447(para)
 msgid "Lets you select the date and time when the new task will be executed."
-msgstr ""
+msgstr "Låter dig välja det datum och tid när den nya uppgiften ska köras."
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:468(title)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:456(title)
 msgid "Modifying a Scheduled Task"
-msgstr ""
+msgstr "Ändra en schemalagd uppgift"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:469(para)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:457(para)
 msgid "You can modify a scheduled task by selecting it from the <guilabel>Task list</guilabel> with one click and by pressing the <guibutton>Properties</guibutton> button in the main window tool bar or, alternatively, by selecting <menuchoice><guimenu>Task</guimenu><guimenuitem>Properties</guimenuitem></menuchoice> on the menu bar. Then, the <guilabel>Edit a Scheduled Task</guilabel> window will be opened showing the task properties."
-msgstr ""
+msgstr "Du kan ändra en schemalagd uppgift genom att markera den i <guilabel>uppgiftslistan</guilabel> med ett klick och genom att trycka på knappen <guibutton>Egenskaper</guibutton> i huvudfönstret verktygsrad eller, alternativt, genom att välja <menuchoice><guimenu>Uppgift</guimenu><guimenuitem>Egenskaper</guimenuitem></menuchoice> i menyraden. Fönstret <guilabel>Redigera en schemalagd uppgift</guilabel> kommer att öppnas och visa uppgiftens egenskaper."
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:475(para)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:463(para)
 msgid "Now, you will be able to modify any field you want. When you have finished you can press <guibutton>OK</guibutton> button to save the changes or <guibutton>Cancel</guibutton> button to omit them."
-msgstr ""
+msgstr "Nu kan du ändra de fält som du vill. När du är klar kan du trycka på knappen <guibutton>OK</guibutton> för att spara ändringarna eller knappen <guibutton>Avbryt</guibutton> för att förkasta dem."
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:478(para)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:466(para)
 msgid "You can edit a task faster by simply double-clicking on it."
-msgstr ""
+msgstr "Du kan redigera en uppgift snabbare genom att dubbelklicka på den."
+
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:472(title)
+msgid "Deleting a Scheduled Task"
+msgstr "Ta bort en schemalagd uppgift"
+
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:473(para)
+msgid "You can delete a scheduled task by selecting it from the <guilabel>Task list</guilabel> with one click and by pressing the <guibutton>Delete</guibutton> button in the main window tool bar or by selecting <menuchoice><guimenu>Task</guimenu><guimenuitem>Delete</guimenuitem></menuchoice>. Next, you will be asked for confirmation. By pressing the <guibutton>OK</guibutton> button, the scheduled task will be removed from the <guilabel>Task list</guilabel>."
+msgstr "Du kan ta bort en schemalagd uppgift genom att markera den i <guilabel>uppgiftslistan</guilabel> med ett klick och sedan trycka på knappen <guibutton>Ta bort</guibutton> i huvudfönstrets verktygsrad, eller genom att välja <menuchoice><guimenu>Uppgift</guimenu><guimenuitem>Ta bort</guimenuitem></menuchoice>. Härnäst kommer du att bli tillfrågad att bekräfta åtgärden. Genom att trycka på knappen <guibutton>OK</guibutton>, kommer den schemalagda uppgiften att tas bort från <guilabel>uppgiftslistan</guilabel>."
 
 #: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:484(title)
-msgid "Deleting a Scheduled Task"
-msgstr ""
+msgid "Using Presets"
+msgstr "Använda förval"
 
 #: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:485(para)
-msgid "You can delete a scheduled task by selecting it from the <guilabel>Task list</guilabel> with one click and by pressing the <guibutton>Delete</guibutton> button in the main window tool bar or by selecting <menuchoice><guimenu>Task</guimenu><guimenuitem>Delete</guimenuitem></menuchoice>. Next, you will be asked for confirmation. By pressing the <guibutton>OK</guibutton> button, the scheduled task will be removed from the <guilabel>Task list</guilabel>."
-msgstr ""
-
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:496(title)
-msgid "Using Presets"
-msgstr ""
-
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:497(para)
 msgid "<application>Gnome Schedule</application> lets you save tasks as presets in order to reuse it later. So, you will be able to create new scheduled tasks faster."
-msgstr ""
+msgstr "<application>Gnome-schemaläggare</application> låter dig spara uppgifter som förval för att kunna återanvända dem senare. Därmed kommer du att kunna skapa nya schemalagda uppgifter snabbare."
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:498(para)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:486(para)
 msgid "To manage presets use the <guilabel>Preset</guilabel> drop-down list on the properties window when you are adding or editing a tasks."
-msgstr ""
+msgstr "För att hantera förval, använd rullgardinslistan <guilabel>Förval</guilabel> i egenskapsfönstret när du lägger till eller redigerar en uppgift."
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:500(term)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:488(term)
 msgid "Creating a preset"
-msgstr ""
+msgstr "Skapa ett förval"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:501(para)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:489(para)
 msgid "To create a new preset, first write a name for it in the <guilabel>Preset</guilabel> drop-down list. Next, fill in the fields you want to save in the preset. And, finally, press <guibutton>Save</guibutton> button."
-msgstr ""
+msgstr "För att skapa ett nytt förval, skriv först in namnet på det i rullgardinslistan <guilabel>Förval</guilabel>. Fyll sedan i fälten som du vill spara i förvalet, och till slut, tryck på knappen <guibutton>Spara</guibutton>."
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:506(term)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:494(term)
 msgid "Modifying a preset"
-msgstr ""
+msgstr "Ändra ett förval"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:507(para)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:495(para)
 msgid "To modify a preset, first choose it from the drop-down list. Next, change the fields you want to modify. And, finally, press <guibutton>Save</guibutton> button."
-msgstr ""
+msgstr "För att ändra ett förval, välj det först från rullgardinslistan. Ändra sedan de fält som du vill ändra, och till slut, tryck på knappen <guibutton>Spara</guibutton>."
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:511(term)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:499(term)
 msgid "Deleting a preset"
-msgstr ""
+msgstr "Ta bort ett förval"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:512(para)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:500(para)
 msgid "To delete a preset choose it from the drop-down list and then press the <guibutton>Delete</guibutton> button."
-msgstr ""
+msgstr "För att ta bort ett förval, markera det från rullgardinslistan och tryck sedan på knappen <guibutton>Ta bort</guibutton>."
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:515(term)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:503(term)
 msgid "Using a previously saved preset"
-msgstr ""
+msgstr "Använda ett tidigare sparat förval"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:516(para)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:504(para)
 msgid "To use a previously saved preset drop-down the list and select it. The fields will be automatically filled in with the preset options."
-msgstr ""
+msgstr "För att använda ett tidigare sparat förval, välj det i rullgardinslistan. Fälten kommer automatiskt att fyllas i med förvalets alternativ."
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:520(para)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:508(para)
 msgid "If you do not want to use presets select the default option <guilabel>Don't use a preset</guilabel> from the drop-down list."
-msgstr ""
+msgstr "Om du inte vill använda förval alls, välj standardalternativet <guilabel>Använd inte ett förval</guilabel> från rullgardinslistan."
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:521(para)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:509(para)
 msgid "You can have common tasks saved as presets. So, you will not have to write the same stuff again and again!"
-msgstr ""
+msgstr "Du kan spara vanliga uppgifter som förval. Det innebär att du inte behöver skriva in samma saker igen och igen!"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:528(title)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:516(title)
 msgid "Using the Advanced View"
-msgstr ""
+msgstr "Använda avancerade vyn"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:529(para)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:517(para)
 msgid "<application>Gnome Schedule</application> lets you add, edit and view scheduled task in a crontab-like style."
-msgstr ""
+msgstr "<application>Gnome-schemaläggare</application> låter dig lägga till, redigera och visa schemalagda uppgifter i en crontab-liknande stil."
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:530(para)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:518(para)
 msgid "You can activate the advanced view by choosing <menuchoice><guimenu>View</guimenu><guimenuitem>Advanced</guimenuitem></menuchoice> on the main window menu bar. You will notice that the information shown in the <guilabel>Task list</guilabel> change into a crontab-like style. Now, if you try to add a new recurrent task the <guilabel>Advanced</guilabel> tab will be shown by default in the <guilabel>Create a New Scheduled Task</guilabel> window."
-msgstr ""
+msgstr "Du kan aktivera den avancerade vyn genom att välja <menuchoice><guimenu>Visa</guimenu><guimenuitem>Avancerat</guimenuitem></menuchoice> på huvudfönstrets menyrad. Du kommer att se att informationen som visas i <guilabel>uppgiftslistan</guilabel> ändras till en crontab-liknande stil. Om du nu försöker att lägga till en ny återkommande uppgift kommer <guilabel>Avancerat</guilabel>-fliken att visas som standard i <guilabel>Skapa en ny schemalagd uppgift</guilabel>fönstret."
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:539(title)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:527(title)
 msgid "The Advanced tab"
-msgstr ""
+msgstr "Fliken Avancerat"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:546(phrase)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:534(phrase)
 msgid "Shows the Advanced tab in the \"Create a New Scheduled Task\" window"
-msgstr ""
+msgstr "Visar Avancerat-fliken i \"Skapa en ny schemalagd uppgift\"-fönstret"
 
 #. ==== End of Figure ====
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:552(para)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:540(para)
 msgid "Those who feel comfortable using <command>crontab</command> will find this option very interesting."
-msgstr ""
+msgstr "De som känner sig komfortabla med att använda <command>crontab</command> kommer att tycka att det här alternativet är mycket intressant."
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:557(title)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:545(title)
 msgid "Using <application>Gnome Schedule</application> as root"
-msgstr ""
+msgstr "Använda <application>Gnome-schemaläggare</application> som root"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:558(para)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:546(para)
 msgid "When you use <application>Gnome Schedule</application> as superuser, you can view, edit and add other users scheduled tasks."
-msgstr ""
+msgstr "När du använder <application>Gnome-schemaläggare</application> som superanvändaren, kan du visa, redigera och lägga till andra användares schemalagda uppgifter."
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:559(para)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:547(para)
 msgid "You can change the user by pressing the <guibutton>Change User</guibutton> button in the main window tool bar or, alternatively, by selecting <menuchoice><guimenu>Task</guimenu><guimenuitem>Change User</guimenuitem></menuchoice> from the menu bar. Then, a dialog window will be shown. Choose the desired user from the drop-down list and press <guibutton>OK</guibutton> button. Now the main window will show the scheduled tasks of the selected user."
-msgstr ""
+msgstr "Du kan byta användare genom att trycka på <guibutton>Byt användare</guibutton>-knappen i huvudfönstrets verktygsrad eller, alternativt, genom att välja <menuchoice><guimenu>Uppgift</guimenu><guimenuitem>Byt användare</guimenuitem></menuchoice> från menyraden. En dialogruta kommer att visas. Välj den önskade användaren från rullgardinslistan och tryck på knappen <guibutton>OK</guibutton>. Nu kommer huvudfönstret att visa de schemalagda uppgifterna för den valda användaren."
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:588(title)
+#!Using <application>Gnome Schedule</application> {+to l+}a{+unch graphical application+}s[- root-]
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:560(title)
+msgid "Using <application>Gnome Schedule</application> to launch graphical applications"
+msgstr "Använda <application>Gnome-schemaläggare</application> för att starta grafiska program"
+
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:561(para)
+msgid "You can use Gnome Schedule to launch a graphical application automatically, but there are some information you would consider before:"
+msgstr "Du kan använda Gnome-schemaläggare för att automatiskt köra ett grafiskt program, men det finns några detaljer som du bör känna till först:"
+
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:565(title)
+msgid "About DISPLAY environment variable"
+msgstr "Om miljövariabeln DISPLAY"
+
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:566(para)
+msgid "When you run a graphical application from the command line you must first set the environment variable DISPLAY. This variable is used to tell your graphical application what X server to use. Normally you will want to use the one installed on your own computer. In that case you need to set the DISPLAY variable in this way:"
+msgstr "När du kör ett grafiskt program från kommandoraden måste du först ställa in miljövariabeln DISPLAY. Den här variabeln används för att berätta för ditt grafiska program vilken X-server som ska användas. Vanligtvis vill du använda den som är installerad på din egna dator. I det fallet behöver du ställa in DISPLAY-variabeln på det här sättet:"
+
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:571(command)
+msgid "DISPLAY=:0.0"
+msgstr "DISPLAY=:0.0"
+
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:572(para)
+msgid "where :0.0 means use screen 0 of X server 0 in this computer."
+msgstr "där :0.0 betyder, använd skärm 0 för X server 0 på den här datorn."
+
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:573(para)
+msgid "If you want display the application in a remote screen you can specify the IP address of the remote X server:"
+msgstr "Om du vill visa programmet på en fjärrskärm kan du ange IP-adressen för fjärr-X-servern:"
+
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:575(command)
+msgid "DISPLAY=192.168.0.25:0.0"
+msgstr "DISPLAY=192.168.0.25:0.0"
+
+#![-Add-]{+Sett+}ing {+DISPLAY v+}a[- schedu-]{+riab+}le[-d-]{+ for+} task{+s+} that will launch once
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:579(title)
+msgid "Setting DISPLAY variable for tasks that will launch once"
+msgstr "Ställ in variabeln DISPLAY för uppgifter som kommer att köras en gång"
+
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:580(para)
+msgid "When you are creating or modifying a task, you can define the DISPLAY variable in the script text box. Make the definition at the begining of the script."
+msgstr "När du skapar eller ändrar en uppgift, kan du definiera variabeln DISPLAY i skriptrutan. Ange definitionen i början av skriptet."
+
+#![-Add-]{+Sett+}ing {+DISPLAY v+}a[- schedu-]{+riab+}le[-d-]{+ for+} task{+s+} that will launch recurrently
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:585(title)
+msgid "Setting DISPLAY variable for tasks that will launch recurrently"
+msgstr "Ställ in variabeln DISPLAY för uppgifter som kommer att köras återkommande"
+
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:586(para)
+msgid "Gnome Schedule does not support yet setting environment variables for recurrent tasks, but it will do soon. In the meantime, you can manually create a script that first defines DISPLAY variable and then calls the graphical application. Finally, you can create a recurrent task to launch the script."
+msgstr "Gnome-schemaläggare har inte stöd för att ställa in miljövariabler för återkommande uppgifter ännu, men kommer att få det snart. Under tiden kan du manuellt skapa ett skript som först definierar variabeln DISPLAY och sedan anropar det grafiska programmet. Till slut, du kan skapa en återkommande uppgift för att köra skriptet."
+
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:593(title)
+msgid "About X server"
+msgstr "Om X-server"
+
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:594(para)
+msgid "The X server is part of the X Window System. It is in charge of drawing windows on the screen and processing the user input from a keyboard or any other peripheral."
+msgstr "X-servern är en del av X Window System. Den är ansvarig för att rita ut fönster på skärmen och behandla användardata från ett tangentbord eller annan kringutrustning."
+
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:597(para)
+msgid "If you need more information about X server or the X Window System you can read its <ulink url=\"http://en.wikipedia.org/wiki/X_Window_System\" type=\"http\">entry</ulink> in the Wikipedia."
+msgstr "Om du behöver mer information om X-server eller X Window System kan du läsa på denna <ulink url=\"http://en.wikipedia.org/wiki/X_Window_System\" type=\"http\">sidan</ulink> hos Wikipedia."
+
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:623(title)
 msgid "About <application>Gnome Schedule</application>"
-msgstr "Om <application>Gnome Schedule</application>"
+msgstr "Om <application>Gnome-schemaläggaren</application>"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:590(title)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:625(title)
 msgid "Authors"
 msgstr "Upphovsmän"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:591(para)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:626(para)
 msgid "<application>Gnome Schedule</application> was written by Philip Van Hoof (<email>pvanhoof@gnome.org</email>), Kristof Vansant (<email>de_lupus at pandora dot be</email>) and Gaute Hope (<email>eg@gaute.vetsj.com</email>). To find more information about <application>Gnome Schedule</application>, please visit the <ulink url=\"http://gnome-schedule.sourceforge.net/\" type=\"http\"><application>Gnome Schedule</application> Web Page</ulink>."
-msgstr ""
+msgstr "<application>Gnome-schemaläggare</application> skrevs av Philip Van Hoof (<email>pvanhoof@gnome.org</email>), Kristof Vansant (<email>de_lupus at pandora dot be</email>) och Gaute Hope (<email>eg@gaute.vetsj.com</email>). För att hitta mer information om <application>Gnome-schemaläggare</application>, besök <ulink url=\"http://gnome-schedule.sourceforge.net/\" type=\"http\"><application>Gnome-schemaläggarens</application> webbsida</ulink>."
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:600(title)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:635(title)
 msgid "Reporting Bugs"
 msgstr "Rapportera fel"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:601(para)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:636(para)
 msgid "To report a bug or make a suggestion regarding this application or this manual, follow the directions in this <ulink url=\"ghelp:gnome-feedback\" type=\"help\">document</ulink>."
-msgstr ""
+msgstr "För att rapportera ett fel eller föreslå någonting angående det här programmet eller den här handboken, följ anvisningarna i det här <ulink url=\"ghelp:gnome-feedback\" type=\"help\">dokumentet</ulink>."
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:609(title)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:644(title)
 msgid "License"
 msgstr "Licens"
 
-#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:610(para)
+#: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:645(para)
 msgid "This program is distributed under the terms of the GNU General Public license as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version. A copy of this license can be found at this <ulink url=\"ghelp:gpl\" type=\"help\">link</ulink>, or in the file COPYING included with the source code of this program."
-msgstr ""
+msgstr "Det här programmet distribueras under villkoren för GNU General Public License som publicerats av Free Software Foundation; antingen version 2 av licensen, eller (upp till dig) någon senare version. En kopia av den här licensen kan hittas på den här <ulink url=\"ghelp:gpl\" type=\"help\">länken</ulink>, eller i filen COPYING som inkluderas med källkoden för det här programmet."
 
 #. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2.
 #: /tmp/doc-l10n/cvs/gnome-schedule.HEAD/C/gnome-schedule.xml:0(None)
 msgid "translator-credits"
-msgstr "Daniel Nylander <po@danielnylander.se>, 2006."
+msgstr "Daniel Nylander <po@danielnylander.se>, 2006"
 
