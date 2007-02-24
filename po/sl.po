@@ -1,0 +1,971 @@
+# Slovenian translation for gnome-schedule.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the gnome-schedule package.
+#
+# Matej Urbančič <matej.urban@gmail.com>, 2006, 2007.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-schedule HEAD\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-11-13 03:51+0100\n"
+"PO-Revision-Date: 2007-01-13 11:57+0100\n"
+"Last-Translator: Matej Urbančič <matej.urban@gmail.com>\n"
+"Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
+"X-Poedit-Language: Slovenian\n"
+"X-Poedit-Country: SLOVENIA\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: ../desktop/gnome-schedule.desktop.in.in.h:1
+msgid "Manage your system tasks"
+msgstr "Upravljanje s sistemskimi nalogami"
+
+#: ../desktop/gnome-schedule.desktop.in.in.h:2
+msgid "Schedule"
+msgstr "Urnik"
+
+#: ../servers/GNOME_GnomeSchedule.server.in.in.h:1
+msgid "Configures your scheduled tasks"
+msgstr "Nastavitve načrtovanih nalog."
+
+#: ../servers/GNOME_GnomeSchedule.server.in.in.h:2
+msgid "Gnome schedule"
+msgstr "Gnome urnik"
+
+#: ../servers/GNOME_GnomeSchedule.server.in.in.h:3
+msgid "System tools"
+msgstr "Sistemska orodja"
+
+#: ../src/at.py:398
+#, python-format
+msgid "DANGEROUS PARSE: %(preview)s"
+msgstr "NEVARNO RAZČLENJEVANJE: %(preview)s"
+
+#. TODO: localize time and date formats
+#: ../src/at.py:405
+#, python-format
+msgid "On %(date)s at %(time)s"
+msgstr "Dne, %(date)s ob %(time)s"
+
+#: ../src/at.py:410
+#: ../src/at.py:415
+msgid "Once"
+msgstr "Enkrat"
+
+#: ../src/at.py:419
+msgid "Warning: a line in atq's output didn't parse"
+msgstr "Opozorilo: vrstica v atq's odvodu ni bila razčlenjena"
+
+#: ../src/crontab.py:72
+msgid "Minute"
+msgstr "Minute"
+
+#: ../src/crontab.py:73
+msgid "Hour"
+msgstr "Ura"
+
+#: ../src/crontab.py:74
+msgid "Day of Month"
+msgstr "Dan v mesecu"
+
+#: ../src/crontab.py:75
+msgid "Month"
+msgstr "Mesec"
+
+#: ../src/crontab.py:76
+msgid "Weekday"
+msgstr "Dan v tednu"
+
+#: ../src/crontab.py:161
+#: ../src/crontab.py:166
+#: ../src/crontab.py:170
+#, python-format
+msgid "Must be between %(min)s and %(max)s"
+msgstr "Vrednost mora biti med %(min)s in %(max)s"
+
+#: ../src/crontab.py:168
+#, python-format
+msgid "%s is not a number"
+msgstr "%s ni število"
+
+#: ../src/crontab.py:216
+#: ../src/crontab.py:261
+#: ../src/crontabEditor.py:191
+#: ../src/atEditor.py:110
+msgid "Untitled"
+msgstr "Brez naslova"
+
+#. add task to treemodel in mainWindow
+#: ../src/crontab.py:337
+msgid "Recurrent"
+msgstr "Ponavljajoče"
+
+#: ../src/crontab.py:349
+msgid "minute"
+msgstr "minute"
+
+#: ../src/crontab.py:351
+msgid "hour"
+msgstr "ure"
+
+#: ../src/crontab.py:353
+msgid "day"
+msgstr "dan"
+
+#: ../src/crontab.py:355
+msgid "month"
+msgstr "mesec"
+
+#: ../src/crontab.py:357
+msgid "weekday"
+msgstr "dan v tednu"
+
+#: ../src/crontabEditor.py:80
+msgid "Use advanced"
+msgstr "Uporabi napredno"
+
+#: ../src/crontabEditor.py:81
+#: ../src/crontabEditorHelper.py:87
+#: ../src/gnome-schedule.glade.h:28
+msgid "Every minute"
+msgstr "Vsako minuto"
+
+#: ../src/crontabEditor.py:82
+#: ../src/crontabEditorHelper.py:93
+msgid "Every hour"
+msgstr "Vsako uro"
+
+#: ../src/crontabEditor.py:83
+#: ../src/crontabEditorHelper.py:99
+msgid "Every day"
+msgstr "Vsak dan"
+
+#: ../src/crontabEditor.py:84
+#: ../src/crontabEditorHelper.py:105
+msgid "Every month"
+msgstr "Vsak mesec"
+
+#: ../src/crontabEditor.py:85
+msgid "Every week"
+msgstr "Vsak teden"
+
+#: ../src/crontabEditor.py:130
+#: ../src/atEditor.py:112
+msgid "Create a New Scheduled Task"
+msgstr "Ustvari novo načrtovano nalogo."
+
+#: ../src/crontabEditor.py:152
+#: ../src/atEditor.py:148
+msgid "Edit a Scheduled Task"
+msgstr "Uredi načrtovano nalogo"
+
+#: ../src/crontabEditor.py:209
+#: ../src/atEditor.py:321
+msgid "Don't use a preset"
+msgstr "Ne uporabi prednastavitev"
+
+#: ../src/crontabEditor.py:270
+#, python-format
+msgid "This is an invalid record! The problem could be in the %(field)s field. Reason: %(reason)s"
+msgstr "Zapis je neveljaven! Težava je lahko v polju %(field)s. Razlog: %(reason)s"
+
+#: ../src/crontabEditor.py:302
+#: ../src/atEditor.py:291
+msgid "The preset has not been saved"
+msgstr "Prednastavitev je shranjena"
+
+#: ../src/crontabEditor.py:304
+#: ../src/atEditor.py:293
+msgid "To delete a preset, you first need to select one"
+msgstr "Za izbris prednastavljenih možnosti, morate najprej eno izbrati."
+
+#: ../src/crontabEditor.py:314
+#: ../src/atEditor.py:304
+msgid "To save a preset, you first have to choose a name for it"
+msgstr "Za shranjevanje prednastavljenih možnosti, morate najprej izbrati njeno ime."
+
+#: ../src/crontabEditor.py:324
+#: ../src/atEditor.py:395
+msgid "Choose an Icon for this Scheduled Task"
+msgstr "Izbor ikone za to načrtovano nalogo."
+
+#: ../src/crontabEditor.py:388
+msgid "command"
+msgstr "ukaz"
+
+#: ../src/crontabEditor.py:426
+#: ../src/mainWindow.py:564
+#: ../src/atEditor.py:519
+msgid "Could not display help"
+msgstr "Ni bilo moč prikazati pomoči"
+
+#: ../src/crontabEditorHelper.py:111
+msgid "Every weekday"
+msgstr "Vsak delavni dan"
+
+#: ../src/crontabEditorHelper.py:163
+msgid "Minute settings"
+msgstr "Nastavitve minut"
+
+#: ../src/crontabEditorHelper.py:164
+msgid "Edit Time Expression for minute"
+msgstr "Uredi časovni izraz za minuto"
+
+#: ../src/crontabEditorHelper.py:166
+msgid "Hour settings"
+msgstr "Nastavitve ure"
+
+#: ../src/crontabEditorHelper.py:167
+msgid "Edit Time Expression for hour"
+msgstr "Uredi časovni izraz za uro"
+
+#: ../src/crontabEditorHelper.py:169
+msgid "Day settings"
+msgstr "Nastavitve dni"
+
+#: ../src/crontabEditorHelper.py:170
+msgid "Edit Time Expression for day"
+msgstr "Uredi časovni izraz za dan"
+
+#: ../src/crontabEditorHelper.py:172
+msgid "Month settings"
+msgstr "Nastavitve mesecev"
+
+#: ../src/crontabEditorHelper.py:173
+msgid "Edit Time Expression for month"
+msgstr "Uredi časovni izraz za mesec"
+
+#: ../src/crontabEditorHelper.py:175
+msgid "Weekday settings"
+msgstr "Nastavitve tedna"
+
+#: ../src/crontabEditorHelper.py:176
+msgid "Edit Time Expression for weekday"
+msgstr "Uredi časovni izraz za teden"
+
+#: ../src/crontabEditorHelper.py:190
+#, python-format
+msgid "This is invalid. Reason: %s"
+msgstr "Izbor ni veljaven. Razlog: %s"
+
+#. minute
+#: ../src/crontabEditorHelper.py:236
+#: ../src/gnome-schedule.glade.h:15
+msgid "At an exact minute"
+msgstr "Ob točni minuti"
+
+#: ../src/crontabEditorHelper.py:237
+#: ../src/gnome-schedule.glade.h:42
+msgid "Minute:"
+msgstr "Minute:"
+
+#. hour
+#: ../src/crontabEditorHelper.py:240
+msgid "At an exact hour"
+msgstr "Ob točni uri"
+
+#: ../src/crontabEditorHelper.py:241
+msgid "Hour:"
+msgstr "Ura:"
+
+#. day
+#: ../src/crontabEditorHelper.py:244
+msgid "On a day"
+msgstr "Na dan"
+
+#: ../src/crontabEditorHelper.py:245
+msgid "Day:"
+msgstr "Dan:"
+
+#. month
+#: ../src/crontabEditorHelper.py:248
+msgid "In a month"
+msgstr "V mesecu"
+
+#: ../src/crontabEditorHelper.py:249
+msgid "Month:"
+msgstr "Mesec:"
+
+#. weekday
+#: ../src/crontabEditorHelper.py:252
+msgid "On a weekday"
+msgstr "Na delavni dan"
+
+#: ../src/crontabEditorHelper.py:253
+msgid "Weekday:"
+msgstr "Dan v tednu:"
+
+#: ../src/crontabEditorHelper.py:258
+#: ../src/gnome-schedule.glade.h:40
+msgid "In a step width"
+msgstr "V korak z"
+
+#: ../src/crontabEditorHelper.py:260
+#: ../src/gnome-schedule.glade.h:43
+msgid "Minutes:"
+msgstr "Minute:"
+
+#: ../src/crontabEditorHelper.py:262
+msgid "Hours:"
+msgstr "Ure:"
+
+#: ../src/crontabEditorHelper.py:264
+msgid "Days:"
+msgstr "Dnevi:"
+
+#: ../src/crontabEditorHelper.py:266
+msgid "Months:"
+msgstr "Meseci:"
+
+#: ../src/crontabEditorHelper.py:268
+msgid "Weekdays:"
+msgstr "Dnevi v tednu:"
+
+#: ../src/gnome-schedule-applet.xml.h:1
+msgid "A_bout"
+msgstr "_O programu"
+
+#: ../src/gnome-schedule-applet.xml.h:2
+msgid "_Add a task"
+msgstr "_Dodaj nalogo"
+
+#: ../src/gnome-schedule-applet.xml.h:3
+#: ../src/gnome-schedule.glade.h:64
+msgid "_Help"
+msgstr "_Pomoč"
+
+#: ../src/gnome-schedule-applet.xml.h:4
+msgid "_Manage tasks"
+msgstr "_Upravljaj z nalogami"
+
+#: ../src/gnome-schedule.glade.h:1
+msgid "<b>Choose the user whose tasks you want to modify</b>"
+msgstr "<b>Izbor uporabnika za spreminjanje nalog</b>"
+
+#: ../src/gnome-schedule.glade.h:2
+msgid "<b>Date and Time Settings</b>"
+msgstr "<b>Nastavitve časa in datuma</b>"
+
+#: ../src/gnome-schedule.glade.h:3
+msgid "<b>Execution Time</b>"
+msgstr "<b>Čas izvedbe</b>"
+
+#: ../src/gnome-schedule.glade.h:4
+msgid "<b>General</b>"
+msgstr "<b>Splošno</b>"
+
+#: ../src/gnome-schedule.glade.h:5
+msgid "<b>Minute settings</b>"
+msgstr "<b>Nastavitve minut</b>"
+
+#: ../src/gnome-schedule.glade.h:6
+msgid "<b>Preview</b>"
+msgstr "<b>Predogled</b>"
+
+#: ../src/gnome-schedule.glade.h:7
+msgid "<b>Select the type of the scheduled task</b>"
+msgstr "<b>Izbor tipa zaznamka urnika naloge</b>"
+
+#: ../src/gnome-schedule.glade.h:8
+msgid "<b>Task</b>"
+msgstr "<b>Naloga</b>"
+
+#: ../src/gnome-schedule.glade.h:9
+msgid "A scheduled task that will launch _recurrently"
+msgstr "Zaznamek urnika bo zagnan po_navljajoče"
+
+#: ../src/gnome-schedule.glade.h:10
+msgid "A scheduled task that will launch only once in the _future"
+msgstr "Zaznamek urnika bo zagnan samo enkrat v _prihodnosti"
+
+#: ../src/gnome-schedule.glade.h:11
+msgid "About this application"
+msgstr "O tem programu"
+
+#: ../src/gnome-schedule.glade.h:12
+msgid "Add a Scheduled Task"
+msgstr "Dodaj načrtovano nalogo"
+
+#: ../src/gnome-schedule.glade.h:13
+msgid "Add a new scheduled task"
+msgstr "Dodaj novo načrtovano nalogo"
+
+#: ../src/gnome-schedule.glade.h:14
+msgid "Advanced"
+msgstr "Napredno"
+
+#: ../src/gnome-schedule.glade.h:16
+msgid "Basic"
+msgstr "Osnovno"
+
+#: ../src/gnome-schedule.glade.h:17
+msgid "Change User"
+msgstr "Zamenjaj uporabnika"
+
+#: ../src/gnome-schedule.glade.h:18
+msgid "Change _User"
+msgstr "Zamenjaj _uporabnika"
+
+#: ../src/gnome-schedule.glade.h:19
+msgid "Choose an icon for this scheduled task"
+msgstr "Izbor ikone za to načrtovano nalogo."
+
+#: ../src/gnome-schedule.glade.h:20
+msgid "Choose the user whose tasks you want to modify"
+msgstr "Izbor uporabnika za spreminjanje nalog"
+
+#: ../src/gnome-schedule.glade.h:21
+msgid "Co_mmand:"
+msgstr "_Ukaz:"
+
+#: ../src/gnome-schedule.glade.h:22
+msgid "Configure Scheduled Tasks"
+msgstr "Nastavitve načrtovanih nalog"
+
+#: ../src/gnome-schedule.glade.h:23
+msgid "Date and Time"
+msgstr "Datum in čas"
+
+#: ../src/gnome-schedule.glade.h:24
+msgid "Delete a scheduled task"
+msgstr "Izbris naloge v urniku"
+
+#: ../src/gnome-schedule.glade.h:25
+msgid "Delete the selected template"
+msgstr "Izbris izbrane predloge"
+
+#: ../src/gnome-schedule.glade.h:26
+msgid "Desc_ription:"
+msgstr "_Opis:"
+
+#: ../src/gnome-schedule.glade.h:27
+msgid "Edit a scheduled task"
+msgstr "Uredi načrtovano nalogo"
+
+#: ../src/gnome-schedule.glade.h:29
+msgid "Execution at a specific minute, hour, day, weekday or month."
+msgstr "Izvedba ob določeni minuti, uri, dnevu, tednu ali mesecu."
+
+#: ../src/gnome-schedule.glade.h:30
+msgid "Execution at a step width. For example every five minutes, hours, days, weekdays or months."
+msgstr "Izvedba po korakih. Na primer: izvedba vsakih nekaj minut, ur, dni, tednov ali mesecev."
+
+#: ../src/gnome-schedule.glade.h:31
+msgid "Execution at every minute, hour, day, weekday or month."
+msgstr "Izvedba ob vsaki minuti, uri, dnevu, tednu ali mesecu."
+
+#: ../src/gnome-schedule.glade.h:32
+msgid "Execution in a range."
+msgstr "Izvedba v območju."
+
+#: ../src/gnome-schedule.glade.h:33
+msgid "Expression:"
+msgstr "Izraz:"
+
+#: ../src/gnome-schedule.glade.h:34
+msgid "For example at 04:10 tomorrow, next week or in three days"
+msgstr "Primer: Jutri ob 04:10, naslednji teden ali pa v treh dneh"
+
+#: ../src/gnome-schedule.glade.h:35
+msgid "For example every first hour of the day"
+msgstr "Na primer: vsako prvo uro dneva"
+
+#: ../src/gnome-schedule.glade.h:36
+msgid "For experienced users"
+msgstr "Za napredne uporabnike"
+
+#: ../src/gnome-schedule.glade.h:37
+msgid "From:"
+msgstr "Od:"
+
+#: ../src/gnome-schedule.glade.h:38
+msgid "Ico_n:"
+msgstr "Iko_na:"
+
+#: ../src/gnome-schedule.glade.h:39
+msgid "In a range"
+msgstr "V območju"
+
+#: ../src/gnome-schedule.glade.h:41
+msgid "Mi_nutes:"
+msgstr "Mi_nute:"
+
+#: ../src/gnome-schedule.glade.h:44
+msgid "No out_put"
+msgstr "Ni izpisa"
+
+#: ../src/gnome-schedule.glade.h:45
+msgid "Other"
+msgstr "Ostalo"
+
+#: ../src/gnome-schedule.glade.h:46
+msgid "Quit the application. This will not stop the system scheduling. It will, however, quit this system schedule maintenance tool."
+msgstr "Izhod iz programa. S tem ne bo prekinjeno izvajanje urnika. Prekinjeno bo samo orodje za urejanje zaznamkov urnika."
+
+#: ../src/gnome-schedule.glade.h:47
+msgid "Rec_urrence:"
+msgstr "_Ponovitev:"
+
+#: ../src/gnome-schedule.glade.h:48
+msgid "Save the current information as a template"
+msgstr "Shrani trenutne podrobnosti kot predlogo."
+
+#: ../src/gnome-schedule.glade.h:49
+msgid "Scheduled and active tasks"
+msgstr "Načrtovane in aktivne naloge"
+
+#: ../src/gnome-schedule.glade.h:50
+msgid "Scri_pt:"
+msgstr "Skri_pt:"
+
+#: ../src/gnome-schedule.glade.h:51
+msgid "See \"man 5 crontab\" for information about the crontab format."
+msgstr "Več podrobnosti o crontab obliki najdete v \"man 5 crontab\" ."
+
+#: ../src/gnome-schedule.glade.h:52
+msgid "Select..."
+msgstr "Izberite ..."
+
+#: ../src/gnome-schedule.glade.h:53
+msgid "Show help"
+msgstr "Kaži pomoč"
+
+#: ../src/gnome-schedule.glade.h:54
+msgid "Show the manual"
+msgstr "Prikaz priročnika"
+
+#: ../src/gnome-schedule.glade.h:55
+msgid "Time expression help"
+msgstr "Pomoč o časovnem zapisu"
+
+#: ../src/gnome-schedule.glade.h:56
+msgid "To:"
+msgstr "Na:"
+
+#: ../src/gnome-schedule.glade.h:57
+msgid ""
+"Tomorrow\n"
+"Next week"
+msgstr ""
+"Jutri\n"
+"Naslednji teden"
+
+#: ../src/gnome-schedule.glade.h:59
+msgid "When selected, no output will be generated. When scheduled tasks in the crontab do have output and this option is not checked, the output will by default be send to the UNIX mailbox of the user."
+msgstr "Z izbiro ne ustvarite izpisa. Ko so zaznamki urnika izbrani za izpis in je izbrana možnost, bo ta privzeto poslan na UNIX poštni predal uporabnika."
+
+#: ../src/gnome-schedule.glade.h:60
+msgid "_About"
+msgstr "_O Programu"
+
+#: ../src/gnome-schedule.glade.h:61
+msgid "_Advanced"
+msgstr "_Napredno"
+
+#: ../src/gnome-schedule.glade.h:62
+msgid "_Date:"
+msgstr "_Datum:"
+
+#: ../src/gnome-schedule.glade.h:63
+msgid "_Days of month:"
+msgstr "_Dnevi meseca:"
+
+#: ../src/gnome-schedule.glade.h:65
+msgid "_Hour:"
+msgstr "_Ura:"
+
+#: ../src/gnome-schedule.glade.h:66
+msgid "_Hours:"
+msgstr "_Ure:"
+
+#: ../src/gnome-schedule.glade.h:67
+msgid "_Manual"
+msgstr "_Ročno"
+
+#: ../src/gnome-schedule.glade.h:68
+msgid "_Minute:"
+msgstr "_Minute:"
+
+#: ../src/gnome-schedule.glade.h:69
+msgid "_Months:"
+msgstr "_Meseci:"
+
+#: ../src/gnome-schedule.glade.h:70
+msgid "_Task"
+msgstr "_Naloga"
+
+#: ../src/gnome-schedule.glade.h:71
+msgid "_Template:"
+msgstr "_Predloga:"
+
+#: ../src/gnome-schedule.glade.h:72
+msgid "_User:"
+msgstr "_Uporabnik:"
+
+#: ../src/gnome-schedule.glade.h:73
+msgid "_View"
+msgstr "_Pogled"
+
+#: ../src/gnome-schedule.glade.h:74
+msgid "_Weekdays:"
+msgstr "Dnevi v tednu:"
+
+#: ../src/gnome-schedule.py:62
+#: ../src/scheduleapplet.py:63
+msgid ""
+"You need to install pyGTK or GTKv2,\n"
+"or set your PYTHONPATH correctly.\n"
+"try: export PYTHONPATH= "
+msgstr ""
+"Naložiti morate pyGTK ali GTKv2,\n"
+"ali pa nastaviti pravilno pot PYTHONPATH.\n"
+"poskusite: export PYTHONPATH= "
+
+#. Translators: Date format for expressions like 'January 21'. %B is month, %d is day number.
+#. Run the command 'man strftime' to read more about these and other available specifiers.
+#: ../src/lang.py:105
+msgid "%B %d"
+msgstr "%d. %B"
+
+#. Translators: Date format for expressions like 'January 21, 2005'. %B is month, %d is day number, %Y is year with century.
+#. Run the command 'man strftime' to read more about these and other available specifiers.
+#: ../src/lang.py:112
+msgid "%B %d, %Y"
+msgstr "%d. %B %Y"
+
+#. Translators: Time without seconds. %H is hour, %M is minute.
+#. Run the command 'man strftime' to read more about these and other available specifiers.
+#: ../src/lang.py:122
+msgid "%H:%M"
+msgstr "%H:%M"
+
+#: ../src/lang.py:159
+msgid "At every full hour"
+msgstr "Ob vsaki polni uri"
+
+#: ../src/lang.py:161
+msgid "At every minute"
+msgstr "Ob vsaki minuti"
+
+#: ../src/lang.py:163
+#, python-format
+msgid "At minute %(minute)s of every hour"
+msgstr "Ob %(minute)s minuti vsake ure"
+
+#: ../src/lang.py:165
+#, python-format
+msgid "At every minute between %(time_from)s and %(time_to)s"
+msgstr "Ob vsaki minuti med %(time_from)s in %(time_to)s"
+
+#: ../src/lang.py:167
+#, python-format
+msgid "On every day at %(time)s"
+msgstr "Vsak dan ob %(time)s"
+
+#: ../src/lang.py:172
+#, python-format
+msgid "On day %(monthday)s of every month at every full hour"
+msgstr "Vsak %(monthday)s v mesecu ob polni uri"
+
+#: ../src/lang.py:174
+#, python-format
+msgid "On day %(monthday)s of every month at every minute"
+msgstr "Vsak %(monthday)s v mesecu na vsako minuto"
+
+#: ../src/lang.py:176
+#, python-format
+msgid "On day %(monthday)s of every month at minute %(minute)s of every hour"
+msgstr "Na %(monthday)s dan meseca ob %(minute)s minuti vsake ure"
+
+#: ../src/lang.py:178
+#, python-format
+msgid "On day %(monthday)s of every month at every minute between %(time_from)s and %(time_to)s"
+msgstr "Na %(monthday)s dan meseca na vsako minuto med %(time_from)s in %(time_to)s"
+
+#: ../src/lang.py:180
+#, python-format
+msgid "On day %(monthday)s of every month at %(time)s"
+msgstr "Na %(monthday)s dan meseca ob %(time)s"
+
+#: ../src/lang.py:185
+#, python-format
+msgid "On every day in %(month)s at every full hour"
+msgstr "%(month)s, vsak dan ob vsaki polni uri"
+
+#: ../src/lang.py:187
+#, python-format
+msgid "On every day in %(month)s at every minute"
+msgstr "%(month)s, vsak dan ob vsaki minuti"
+
+#: ../src/lang.py:189
+#, python-format
+msgid "On every day in %(month)s at minute %(minute)s of every hour"
+msgstr "%(month)s, vsak dan ob %(minute)s minuto vsake ure"
+
+#: ../src/lang.py:191
+#, python-format
+msgid "On every day in %(month)s at every minute between %(time_from)s and %(time_to)s"
+msgstr "%(month)s, vsak dan ob vsaki minuti med %(time_from)s in %(time_to)s"
+
+#: ../src/lang.py:193
+#, python-format
+msgid "On every day in %(month)s at %(time)s"
+msgstr "%(month)s, vsak dan ob %(time)s"
+
+#: ../src/lang.py:198
+#, python-format
+msgid "Every year on %(date)s at every full hour"
+msgstr "Vsako leto na %(date)s ob vsaki polni uri"
+
+#: ../src/lang.py:200
+#, python-format
+msgid "Every year on %(date)s at every minute"
+msgstr "Vsako leto na %(date)s ob vsaki minuti"
+
+#: ../src/lang.py:202
+#, python-format
+msgid "Every year on %(date)s at minute %(minute)s of every hour"
+msgstr "Vsako leto na %(date)s ob %(minute)s minuti vsake ure"
+
+#: ../src/lang.py:204
+#, python-format
+msgid "Every year on %(date)s at every minute between %(time_from)s and %(time_to)s"
+msgstr "Vsako leto na %(date)s ob vsaki minuti med %(time_from)s in %(time_to)s"
+
+#: ../src/lang.py:206
+#, python-format
+msgid "Every year on %(date)s at %(time)s"
+msgstr "Vsako leto na %(date)s ob %(time)s"
+
+#: ../src/lang.py:211
+#, python-format
+msgid "On every %(weekday)s at every full hour"
+msgstr "%(weekday)s ob vsaki polni uri"
+
+#: ../src/lang.py:213
+#, python-format
+msgid "On every %(weekday)s at every minute"
+msgstr "%(weekday)s ob vsaki minuti"
+
+#: ../src/lang.py:215
+#, python-format
+msgid "On every %(weekday)s at minute %(minute)s of every hour"
+msgstr "%(weekday)s vsako %(minute)s minuto vsake ure"
+
+#: ../src/lang.py:217
+#, python-format
+msgid "On every %(weekday)s at every minute between %(time_from)s and %(time_to)s"
+msgstr "%(weekday)s na vsako minuto med %(time_from)s in %(time_to)s"
+
+#: ../src/lang.py:219
+#, python-format
+msgid "On every %(weekday)s at %(time)s"
+msgstr "%(weekday)s ob %(time)s"
+
+#: ../src/lang.py:224
+#, python-format
+msgid "On day %(monthday)s of every month and every %(weekday)s at every full hour"
+msgstr "Vsakega %(monthday)s v mesecu in %(weekday)s ob vsaki polni uri"
+
+#: ../src/lang.py:226
+#, python-format
+msgid "On day %(monthday)s of every month and every %(weekday)s at every minute"
+msgstr "Vsakega %(monthday)s v mesecu in %(weekday)s vsako minuto"
+
+#: ../src/lang.py:228
+#, python-format
+msgid "On day %(monthday)s of every month and every %(weekday)s at minute %(minute)s of every hour"
+msgstr "Vsakega %(monthday)s v mesecu in %(weekday)s vsako %(minute)s minuto ure"
+
+#: ../src/lang.py:230
+#, python-format
+msgid "On day %(monthday)s of every month and every %(weekday)s at every minute between %(time_from)s and %(time_to)s"
+msgstr "Vsakega %(monthday)s v mesecu in %(weekday)s vsako minuto med %(time_from)s in %(time_to)s"
+
+#: ../src/lang.py:232
+#, python-format
+msgid "On day %(monthday)s of every month and every %(weekday)s at %(time)s"
+msgstr "Na %(monthday)s dan vsakega meseca in v %(weekday)s ob %(time)s"
+
+#: ../src/lang.py:237
+#, python-format
+msgid "On every %(weekday)s in %(month)s at every full hour"
+msgstr "%(weekday)s v mesecu %(month)s ob vsaki polni uri"
+
+#: ../src/lang.py:239
+#, python-format
+msgid "On every %(weekday)s in %(month)s at every minute"
+msgstr "%(weekday)s v mesecu %(month)s na vsako minuto"
+
+#: ../src/lang.py:241
+#, python-format
+msgid "On every %(weekday)s in %(month)s at minute %(minute)s of every hour"
+msgstr "%(weekday)s v mesecu %(month)s ob %(minute)s minuti vsake ure"
+
+#: ../src/lang.py:243
+#, python-format
+msgid "On every %(weekday)s in %(month)s at every minute between %(time_from)s and %(time_to)s"
+msgstr "%(weekday)s v mesecu %(month)s na vsako minuto med %(time_from)s in %(time_to)s"
+
+#: ../src/lang.py:245
+#, python-format
+msgid "On every %(weekday)s in %(month)s at %(time)s"
+msgstr "%(weekday)s v mesecu %(month)s ob %(time)s"
+
+#: ../src/lang.py:250
+#, python-format
+msgid "On every %(weekday)s in %(month)s and on %(date)s every year at every full hour"
+msgstr "%(weekday)s v mesecu %(month)s in na %(date)s vsako leto ob vsaki polni uri"
+
+#: ../src/lang.py:252
+#, python-format
+msgid "On every %(weekday)s in %(month)s and on %(date)s every year at every minute"
+msgstr "%(weekday)s v mesecu %(month)s in na %(date)s vsako leto vsako minuto"
+
+#: ../src/lang.py:254
+#, python-format
+msgid "On every %(weekday)s in %(month)s and on %(date)s every year at minute %(minute)s of every hour"
+msgstr "%(weekday)s v mesecu %(month)s in na %(date)s vsako leto na vsako  %(minute)s minuto vsake ure"
+
+#: ../src/lang.py:256
+#, python-format
+msgid "On every %(weekday)s in %(month)s and on %(date)s every year at every minute between %(time_from)s and %(time_to)s"
+msgstr "%(weekday)s v mesecu %(month)s in na %(date)s vsako leto ob vsaki minuti med %(time_from)s in %(time_to)s"
+
+#: ../src/lang.py:258
+#, python-format
+msgid "On every %(weekday)s in %(month)s and on %(date)s every year at %(time)s"
+msgstr "%(weekday)s v mesecu %(month)s in na %(date)s vsakega leta ob %(time)s"
+
+#: ../src/lang.py:266
+msgid "every minute"
+msgstr "vsako minuto"
+
+#: ../src/lang.py:268
+#, python-format
+msgid "minute: %s"
+msgstr "minute: %s"
+
+#: ../src/lang.py:271
+msgid "every hour"
+msgstr "vsako uro"
+
+#: ../src/lang.py:273
+#, python-format
+msgid "hour: %s"
+msgstr "ure: %s"
+
+#: ../src/lang.py:276
+msgid "every day of month"
+msgstr "vsak dan v mesecu"
+
+#: ../src/lang.py:278
+#, python-format
+msgid "day of month: %s"
+msgstr "dan v mesecu: %s"
+
+#: ../src/lang.py:281
+msgid "every month"
+msgstr "vsak mesec"
+
+#: ../src/lang.py:283
+#, python-format
+msgid "month: %s"
+msgstr "mesec: %s"
+
+#: ../src/lang.py:286
+#, python-format
+msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s"
+msgstr "Ob %(minute)s, %(hour)s, %(monthday)s, %(month)s"
+
+#: ../src/lang.py:288
+#, python-format
+msgid "weekday: %s"
+msgstr "dan v tednu: %s"
+
+#: ../src/lang.py:289
+#, python-format
+msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
+msgstr "Ob %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
+
+#: ../src/mainWindow.py:211
+#: ../src/mainWindow.py:311
+#, python-format
+msgid "Editing user: %s"
+msgstr "Urejanje uporabnika: %s"
+
+#: ../src/mainWindow.py:285
+#: ../src/scheduleapplet.py:115
+msgid "ERROR: Could not load icon"
+msgstr "NAPAKA: Ni mogoče naložiti ikone"
+
+#: ../src/mainWindow.py:295
+msgid "ERROR: Could not load glade file"
+msgstr "NAPAKA: Ni mogoče naložiti glade datoteke"
+
+#: ../src/mainWindow.py:346
+msgid "Icon"
+msgstr "Ikona"
+
+#: ../src/mainWindow.py:351
+#: ../src/mainWindow.py:384
+msgid "Type"
+msgstr "Vrsta"
+
+#: ../src/mainWindow.py:355
+#: ../src/mainWindow.py:380
+msgid "Description"
+msgstr "Opis"
+
+#: ../src/mainWindow.py:359
+#: ../src/mainWindow.py:371
+msgid "Date and Time Settings"
+msgstr "Nastavitve časa in datuma"
+
+#: ../src/mainWindow.py:363
+#: ../src/mainWindow.py:375
+msgid "Preview"
+msgstr "Predogled"
+
+#: ../src/mainWindow.py:419
+#: ../src/mainWindow.py:482
+msgid "Please select a task"
+msgstr "Prosim, izberite nalogo."
+
+#: ../src/mainWindow.py:426
+msgid "Do you want to delete this task?"
+msgstr "Želite izbrisati nalogo?"
+
+#: ../src/mainWindow.py:530
+msgid "About Gnome Schedule"
+msgstr "O GNOME Urniku"
+
+#: ../src/mainWindow.py:531
+msgid "Gnome Schedule"
+msgstr "Gnome urnik"
+
+#: ../src/mainWindow.py:533
+msgid "Copyright (c) 2004-2006 Gaute Hope."
+msgstr "Avtorske pravice (c) 2004-2006 Gaute Hope."
+
+#: ../src/mainWindow.py:546
+msgid "translator-credits"
+msgstr "Matej Urbančič"
+
+#: ../src/scheduleapplet.py:131
+msgid "ERROR: Could not load menu xml file"
+msgstr "NAPAKA: Ni mogoče naložiti xml menu datoteke"
+
+#: ../src/setuserWindow.py:84
+msgid "No such user"
+msgstr "Ne najdem uporabnika"
+
+#: ../src/atEditor.py:531
+#, python-format
+msgid "This is an invalid record! The problem could be: %s"
+msgstr "Neveljaven zapis! Težava je lahko: %s"
+
