@@ -545,6 +545,6 @@ class AtEditor:
 		else:
 			self.scheduler.append (self.runat, self.command, self.title, self.icon)
 		
-		self.ParentClass.schedule_reload ("at")
+		self.ParentClass.schedule_reload ()
 			
 		self.widget.hide ()

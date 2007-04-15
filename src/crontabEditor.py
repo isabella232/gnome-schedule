@@ -457,7 +457,7 @@ class CrontabEditor:
 		else:
 			self.scheduler.append (self.minute, self.hour, self.day, self.month, self.weekday, self.command, self.nooutput, self.title, self.icon)
 			
-		self.ParentClass.schedule_reload ("crontab")
+		self.ParentClass.schedule_reload ()
 	
 		self.widget.hide ()
 

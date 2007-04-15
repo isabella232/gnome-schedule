@@ -182,7 +182,7 @@ class main:
 		
 		# TODO: select first task from list?
 
-		self.schedule_reload ("all")
+		self.schedule_reload ()
 
 		self.timeout_handler_id = gobject.timeout_add(9000, self.update_schedule)
 
@@ -195,7 +195,7 @@ class main:
 		model, iter, = selection.get_selected()
 		if iter:
 			path = model.get_path(iter)
-		self.schedule_reload ("all")
+		self.schedule_reload ()
 		if iter:
 			 selection.select_path(path)	
 		return True
@@ -210,7 +210,7 @@ class main:
 			if self.root == 1:
 				self.statusbar.push(self.statusbarUser, (_("Editing user: %s") % (self.user)))
 		
-			self.schedule_reload ("all")
+			self.schedule_reload ()
 	
 	
 	def __setUser__(self,user):
@@ -221,42 +221,22 @@ class main:
 		
 						
 	## TODO: 2 times a loop looks to mutch
-	def schedule_reload (self, records = "all"):
-		
-		self.delarray = []
-					
-		if records == "crontab":
-			self.treemodel.foreach(self.__delete_row__, "crontab")
-			
-			data = self.crontab.read()
-			if data != None:
-				self.__fill__(data)
+	def schedule_reload (self):
+		self.treemodel.clear ()
 
-		elif records == "at":
-			self.treemodel.foreach(self.__delete_row__, "at")
+		data = self.crontab.read ()
+		if data != None:
+			self.__fill__ (data)
 			
-			data = self.at.read()
-			if data != None:
-				self.__fill__(data)
+		data = self.at.read ()
+		if data != None:
+			self.__fill__ (data)
+						
 
-		elif records == "all":
-			self.treemodel.foreach(self.__delete_row__, "all")
-			
-			data0 = self.crontab.read ()
-			if data0 != None:
-				self.__fill__(data0)
-			
-			data1 = self.at.read ()
-			if data1 != None:
-				self.__fill__(data1)
-	
-	
-		for iter in self.delarray:
-			self.treemodel.remove(iter)
 
 
 	def __fill__ (self, records):
-		for title, timestring_show, preview, lines, job_id, timestring, scheduler, icon, date, class_id, user, time, dunno, type in records:
+		for title, timestring_show, preview, lines, job_id, timestring, scheduler, icon, date, class_id, user, time, typetext, type in records:
 					
 			if icon != None:
 				try:
@@ -265,13 +245,11 @@ class main:
 					icon_pix = None
 			else:
 				icon_pix = None
+			
+			iter = self.treemodel.append([title, timestring_show, preview, lines, job_id, timestring, icon_pix, scheduler, icon, date, class_id, user, time, typetext, type])
 
-			iter = self.treemodel.append([title, timestring_show, preview, lines, job_id, timestring, icon_pix, scheduler, icon, date, class_id, user, time, dunno, type])
+			
 		
-		
-	def __delete_row__ (self, model, path, iter, record_type):
-		if record_type == self.treemodel.get_value(iter, 14) or record_type == "all":
-			self.delarray.append(iter)
 	##
 
 	# TODO: pixbuf or pixmap? gtkImage
@@ -455,7 +433,7 @@ class main:
 			elif self.schedule.get_type() == "at":
 				self.schedule.delete (linenumber, iter)
 			
-			self.schedule_reload(self.schedule.get_type())
+			self.schedule_reload()
 			
 			firstiter = self.treemodel.get_iter_first()
 			try:
@@ -530,7 +508,7 @@ class main:
  		dlg.set_title (_("About Gnome Schedule"))
  		dlg.set_name (_("Gnome Schedule"))
  		dlg.set_version (config.getVersion())
- 		dlg.set_copyright (_("Copyright (c) 2004-2006 Gaute Hope."))
+ 		dlg.set_copyright (_("Copyright (c) 2004-2007 Gaute Hope."))
  		#dlg.set_comments ()
  		#dlg.set_license ()
  		dlg.set_website ("http://gnome-schedule.sourceforge.net")
@@ -556,9 +534,9 @@ class main:
  	#open help
   	def on_manual_menu_activate (self, *args):
 		try:
-			gnome.help_display_with_doc_id (
-					self.gprogram, '',
-					'gnome-schedule.xml', '')
+			gnome.help_display (
+					'gnome-schedule', 
+					'')
 		except gobject.GError, error:
 			dialog = gtk.MessageDialog (
 					self.widget,

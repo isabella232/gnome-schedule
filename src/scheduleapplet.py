@@ -144,7 +144,7 @@ class ScheduleApplet(gnomeapplet.Applet):
 			self.main_window = mainWindow.main(None, True, self.gprogram)
 		else:
 			self.main_window.widget.show ()
-			self.main_window.schedule_reload("all")
+			self.main_window.schedule_reload()
 		
 
 	def add_task(self, *args):

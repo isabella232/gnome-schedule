@@ -1,3 +1,9 @@
+2007-04-13  Gaute Hope  <eg@gaute.vetsj.com>
+
+	* src/mainWindow.py: fixed duplication of tasks, now: always clearing and reloading everything
+	* src/mainWindow.py: Open manual, now using gnome.help_display not with_doc_id. Should work better, at least on newer gnome/gtk+bindings.
+	* src/gnome-schedule.glade: Toolbar is not possible to move.
+	
 2007-02-24  Matic Zgur  <mr.zgur@gmail.com>
 
 	* configure.ac: Added 'sl' to ALL_LINGUAS.
