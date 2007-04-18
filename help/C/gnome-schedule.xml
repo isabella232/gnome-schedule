@@ -85,7 +85,7 @@
       </othercredit>
       
 <!-- Next is to omit the gnome-doc-utils warning: missing element with role maintainer: -->
-<!--    <othercredit role="maintainer">
+    <othercredit role="maintainer">
       <firstname>Rodrigo</firstname> 
 		  <surname>Marcos Fombellida</surname> 
 		  <affiliation> 
@@ -93,7 +93,7 @@
 	  		<address> <email>rmarcos@cvs.gnome.org</email> </address> 
 		  </affiliation>
 		  <contrib>Gnome Schedule User Guide maintainance</contrib>
-	  </othercredit> -->
+	  </othercredit> 
     </authorgroup>
 
 
