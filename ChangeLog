@@ -1,3 +1,7 @@
+2007-04-18  Gaute Hope <eg@gaute.vetsj.com>
+
+	* help/C/gnome-schedule.xml: applyed patch from alex smith
+	
 2007-04-13  Gaute Hope  <eg@gaute.vetsj.com>
 
 	* src/mainWindow.py: fixed duplication of tasks, now: always clearing and reloading everything
