@@ -1,17 +1,19 @@
 # French translation of gnome-schedule.
-# Copyright (C) 2004, 2006 The Free Software Foundation, Inc.
+# Copyright (C) 2004-2007 The Free Software Foundation, Inc.
 # This file is distributed under the same license as the gnome-schedule package.
 #
 # Yannick Marchegay <yannick.marchegay@lokanova.com>, 2004.
-# Claude Paroz <paroz@email.ch>, 2006.
+# Claude Paroz <claude@2xlibre.net>, 2006.
+# Jonathan Ernst <jonathan@ernstfamily.ch>, 2007.
+# Stéphane Raimbault <stephane.raimbault@gmail.com>, 2007.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-01-23 01:16+0100\n"
-"PO-Revision-Date: 2006-12-05 23:00+0100\n"
-"Last-Translator: Claude Paroz <paroz@email.ch>\n"
+"POT-Creation-Date: 2007-04-22 09:15+0200\n"
+"PO-Revision-Date: 2007-04-22 09:27+0200\n"
+"Last-Translator: Stéphane Raimbault <stephane.raimbault@gmail.com>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -31,7 +33,7 @@ msgstr "Configure des tâches planifiées"
 
 #: ../servers/GNOME_GnomeSchedule.server.in.in.h:2
 msgid "Gnome schedule"
-msgstr "Planificateur de tâches Gnome"
+msgstr "Planificateur de tâches de GNOME"
 
 #: ../servers/GNOME_GnomeSchedule.server.in.in.h:3
 msgid "System tools"
@@ -118,7 +120,7 @@ msgstr "jour de la semaine"
 
 #: ../src/crontabEditor.py:80
 msgid "Use advanced"
-msgstr "Utilisation réglage expert"
+msgstr "Utilisation avancée"
 
 #: ../src/crontabEditor.py:81 ../src/crontabEditorHelper.py:87
 #: ../src/gnome-schedule.glade.h:28
@@ -182,7 +184,7 @@ msgstr "Choisissez une icône pour cette tâche planifiée"
 msgid "command"
 msgstr "commande"
 
-#: ../src/crontabEditor.py:426 ../src/mainWindow.py:567 ../src/atEditor.py:519
+#: ../src/crontabEditor.py:426 ../src/mainWindow.py:545 ../src/atEditor.py:519
 msgid "Could not display help"
 msgstr "Impossible d'afficher l'aide"
 
@@ -942,69 +944,71 @@ msgstr "jour de la semaine : %s"
 msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 msgstr "À : %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 
-#: ../src/mainWindow.py:211 ../src/mainWindow.py:311
+#: ../src/mainWindow.py:211 ../src/mainWindow.py:289
 #, python-format
 msgid "Editing user: %s"
 msgstr "Édition pour l'utilisateur : %s"
 
-#: ../src/mainWindow.py:285 ../src/scheduleapplet.py:115
+#: ../src/mainWindow.py:263 ../src/scheduleapplet.py:115
 msgid "ERROR: Could not load icon"
-msgstr "ERREUR : Impossible de charger une icône"
+msgstr "ERREUR : impossible de charger une icône"
 
-#: ../src/mainWindow.py:295
+#: ../src/mainWindow.py:273
 msgid "ERROR: Could not load glade file"
-msgstr "ERREUR : Impossible de charger un fichier glade"
+msgstr "ERREUR : impossible de charger un fichier glade"
 
-#: ../src/mainWindow.py:346
+#: ../src/mainWindow.py:324
 msgid "Icon"
 msgstr "Icône"
 
-#: ../src/mainWindow.py:351 ../src/mainWindow.py:384
+#: ../src/mainWindow.py:329 ../src/mainWindow.py:362
 msgid "Type"
 msgstr "Type"
 
-#: ../src/mainWindow.py:355 ../src/mainWindow.py:380
+#: ../src/mainWindow.py:333 ../src/mainWindow.py:358
 msgid "Description"
 msgstr "Description"
 
-#: ../src/mainWindow.py:359 ../src/mainWindow.py:371
+#: ../src/mainWindow.py:337 ../src/mainWindow.py:349
 msgid "Date and Time Settings"
 msgstr "Date et heure"
 
-#: ../src/mainWindow.py:363 ../src/mainWindow.py:375
+#: ../src/mainWindow.py:341 ../src/mainWindow.py:353
 msgid "Preview"
 msgstr "Aperçu"
 
-#: ../src/mainWindow.py:419 ../src/mainWindow.py:482
+#: ../src/mainWindow.py:397 ../src/mainWindow.py:460
 msgid "Please select a task"
 msgstr "Veuillez sélectionner une tâche"
 
-#: ../src/mainWindow.py:426
+#: ../src/mainWindow.py:404
 msgid "Do you want to delete this task?"
 msgstr "Voulez-vous réellement supprimer cette tâche ?"
 
-#: ../src/mainWindow.py:530
+#: ../src/mainWindow.py:508
 msgid "About Gnome Schedule"
-msgstr "À propos du planificateur Gnome"
+msgstr "À propos du planificateur de tâches de GNOME"
 
-#: ../src/mainWindow.py:531
+#: ../src/mainWindow.py:509
 msgid "Gnome Schedule"
-msgstr "Planificateur de tâches GNOME"
+msgstr "Planificateur de tâches de GNOME"
 
-#: ../src/mainWindow.py:533
-msgid "Copyright (c) 2004-2006 Gaute Hope."
-msgstr "Copyright (c) 2004-2006 Gaute Hope."
+#: ../src/mainWindow.py:511
+msgid "Copyright (c) 2004-2007 Gaute Hope."
+msgstr "Copyright (c) 2004-2007 Gaute Hope."
 
-#: ../src/mainWindow.py:546
+#: ../src/mainWindow.py:524
 msgid "translator-credits"
 msgstr ""
 "Yannick Marchegay <yannick.marchegay@lokanova.com>\n"
-"Claude Paroz <paroz@email.ch>\n"
-"Christophe Bliard <christophe.bliard@trux.info>"
+"Claude Paroz <claude@2xlibre.net>\n"
+"Christophe Bliard <christophe.bliard@trux.info>\n"
+"Jonathan Ernst <jonathan@ernstfamily.ch>\n"
+"Stéphane Raimbault <stephane.raimbault@gmail.com>"
 
 #: ../src/scheduleapplet.py:131
 msgid "ERROR: Could not load menu xml file"
-msgstr "ERREUR : Impossible de charger le fichier XML des menus"
+msgstr "ERREUR : impossible de charger le fichier XML des menus"
 
 #: ../src/setuserWindow.py:84
 msgid "No such user"
