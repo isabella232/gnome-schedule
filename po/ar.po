@@ -1,181 +1,174 @@
-# Arabic translations for PACKAGE package.
-# Copyright (C) 2006 THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# Automatically generated, 2006.
-#
+# Arabic translations for THIS package.
+# Copyright (C) 2007 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as THIS package.
+# Automatically generated, 2007.
+# Djihed Afifi <djihed@gmail.com>, 2007
 msgid ""
 msgstr ""
-"Project-Id-Version: Project\n"
+"Project-Id-Version: Arabic\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-20 15:02+0100\n"
-"PO-Revision-Date: 2006-11-18 00:46+0100\n"
+"POT-Creation-Date: 2007-04-21 22:52+0100\n"
+"PO-Revision-Date: 2007-04-14 18:49+0100\n"
 "Last-Translator: Djihed Afifi <djihed@gmail.com>\n"
-"Language-Team: Arabic <doc@arabeyes.org>\n"
+"Language-Team: Arabeyes <doc@arabeyes.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=6; plural=n == 0 ? 0 : n == 1 ? 1 : n == 2 ? 2 : n >= "
-"3 && n <= 10 ? 3 : n >= 11 && n <= 99 ? 4 : 5;\n"
-"X-Poedit-Language: Arabic\n"
 
 #: ../desktop/gnome-schedule.desktop.in.in.h:1
 #, fuzzy
 msgid "Manage your system tasks"
-msgstr "التقاط المعلومات من نظامك..."
+msgstr "أدِر شهاداتك"
 
 #: ../desktop/gnome-schedule.desktop.in.in.h:2
 #, fuzzy
 msgid "Schedule"
-msgstr "_جدوِلة الأجتماع"
+msgstr "مخطط"
 
 #: ../servers/GNOME_GnomeSchedule.server.in.in.h:1
+#, fuzzy
 msgid "Configures your scheduled tasks"
-msgstr ""
+msgstr "أعِدّ جلساتك"
 
 #: ../servers/GNOME_GnomeSchedule.server.in.in.h:2
 #, fuzzy
 msgid "Gnome schedule"
-msgstr "_جدوِلة الأجتماع"
+msgstr "مُجَدْوِل الأفعال"
 
 #: ../servers/GNOME_GnomeSchedule.server.in.in.h:3
 #, fuzzy
 msgid "System tools"
-msgstr "أدوات النّظام"
+msgstr "نداءات النظام"
 
 #: ../src/at.py:398
-#, fuzzy, python-format
+#, python-format
 msgid "DANGEROUS PARSE: %(preview)s"
-msgstr "<b>لمحة بأسماء الملفّات</b>"
+msgstr ""
 
 #. TODO: localize time and date formats
 #: ../src/at.py:405
-#, fuzzy, python-format
+#, python-format
 msgid "On %(date)s at %(time)s"
-msgstr "تاريخ ولحظة التغيير"
+msgstr ""
 
 #: ../src/at.py:410 ../src/at.py:415
 #, fuzzy
 msgid "Once"
-msgstr "اسمح مرة _واحدة"
+msgstr "واحد"
 
 #: ../src/at.py:419
 msgid "Warning: a line in atq's output didn't parse"
 msgstr ""
 
 #: ../src/crontab.py:72
-#, fuzzy
 msgid "Minute"
 msgstr "الدّقيقة"
 
 #: ../src/crontab.py:73
-#, fuzzy
 msgid "Hour"
 msgstr "السّاعة"
 
 #: ../src/crontab.py:74
-#, fuzzy
 msgid "Day of Month"
-msgstr "مشهد الشّهر"
+msgstr ""
 
 #: ../src/crontab.py:75
 #, fuzzy
 msgid "Month"
-msgstr "الشّهر"
+msgstr "أشهر"
 
 #: ../src/crontab.py:76
+#, fuzzy
 msgid "Weekday"
-msgstr ""
+msgstr "الأربعاء"
 
 #: ../src/crontab.py:161 ../src/crontab.py:166 ../src/crontab.py:170
 #, fuzzy, python-format
 msgid "Must be between %(min)s and %(max)s"
-msgstr "الزاوية يجب أن تكون بين 0.0 و 360.0،وهي كانت%g\n"
+msgstr "خمن عدداً بين %d و %d"
 
 #: ../src/crontab.py:168
 #, fuzzy, python-format
 msgid "%s is not a number"
-msgstr "ليس عليه علم"
+msgstr "%s ليس مجلّدا"
 
 #: ../src/crontab.py:216 ../src/crontab.py:261 ../src/crontabEditor.py:191
 #: ../src/atEditor.py:110
-#, fuzzy
 msgid "Untitled"
 msgstr "بدون عنوان"
 
 #. add task to treemodel in mainWindow
 #: ../src/crontab.py:337
+#, fuzzy
 msgid "Recurrent"
-msgstr ""
+msgstr "تكرار"
 
 #: ../src/crontab.py:349
 #, fuzzy
 msgid "minute"
-msgstr "دقيقة"
+msgstr "دقائق"
 
 #: ../src/crontab.py:351
 #, fuzzy
 msgid "hour"
-msgstr "ساعة"
+msgstr "ساعات"
 
 #: ../src/crontab.py:353
-#, fuzzy
 msgid "day"
 msgstr "اليوم"
 
 #: ../src/crontab.py:355
 #, fuzzy
 msgid "month"
-msgstr "الشّهر"
+msgstr "أشهر"
 
 #: ../src/crontab.py:357
+#, fuzzy
 msgid "weekday"
-msgstr ""
+msgstr "أسابيع"
 
 #: ../src/crontabEditor.py:80
 #, fuzzy
 msgid "Use advanced"
-msgstr "إعدادات متقدمة"
+msgstr "استعمال الإلغاء"
 
 #: ../src/crontabEditor.py:81 ../src/crontabEditorHelper.py:87
 #: ../src/gnome-schedule.glade.h:28
 #, fuzzy
 msgid "Every minute"
-msgstr "بقي دقيقة واحدة (%d%%)"
+msgstr "خمس دقائق"
 
 #: ../src/crontabEditor.py:82 ../src/crontabEditorHelper.py:93
 #, fuzzy
 msgid "Every hour"
-msgstr "_24 ساعة"
+msgstr "كل سنة"
 
 #: ../src/crontabEditor.py:83 ../src/crontabEditorHelper.py:99
-#, fuzzy
 msgid "Every day"
-msgstr "آخر يوم"
+msgstr "كل يوم"
 
 #: ../src/crontabEditor.py:84 ../src/crontabEditorHelper.py:105
 #, fuzzy
 msgid "Every month"
-msgstr "مشهد الشّهر"
+msgstr "كل شهر"
 
 #: ../src/crontabEditor.py:85
-#, fuzzy
 msgid "Every week"
-msgstr "مشهد الأسبوع"
+msgstr "كل أسبوع"
 
 #: ../src/crontabEditor.py:130 ../src/atEditor.py:112
 #, fuzzy
 msgid "Create a New Scheduled Task"
-msgstr "إضافة قائمة مهام جديدة"
+msgstr "أنشيء تقويماً جديداً"
 
 #: ../src/crontabEditor.py:152 ../src/atEditor.py:148
-#, fuzzy
 msgid "Edit a Scheduled Task"
-msgstr "<b>خيارات قائمة المهام</b>"
+msgstr ""
 
 #: ../src/crontabEditor.py:209 ../src/atEditor.py:321
 #, fuzzy
 msgid "Don't use a preset"
-msgstr "لا تستخدم امتداد ذاكرة X المشتركة"
+msgstr "لا يمكن حفظ الباقي"
 
 #: ../src/crontabEditor.py:270
 #, python-format
@@ -187,7 +180,7 @@ msgstr ""
 #: ../src/crontabEditor.py:302 ../src/atEditor.py:291
 #, fuzzy
 msgid "The preset has not been saved"
-msgstr "<%s> الاب \"%s\" لم يعرف"
+msgstr "لم تُحْفَظ لقطة الشّاشة"
 
 #: ../src/crontabEditor.py:304 ../src/atEditor.py:293
 msgid "To delete a preset, you first need to select one"
@@ -198,64 +191,69 @@ msgid "To save a preset, you first have to choose a name for it"
 msgstr ""
 
 #: ../src/crontabEditor.py:324 ../src/atEditor.py:395
+#, fuzzy
 msgid "Choose an Icon for this Scheduled Task"
-msgstr ""
+msgstr "اختر خطا للملاحظة"
 
 #: ../src/crontabEditor.py:388
 #, fuzzy
 msgid "command"
-msgstr "أمر:"
+msgstr "فاصلة"
 
-#: ../src/crontabEditor.py:426 ../src/mainWindow.py:567 ../src/atEditor.py:519
+#: ../src/crontabEditor.py:426 ../src/mainWindow.py:545 ../src/atEditor.py:519
 #, fuzzy
 msgid "Could not display help"
-msgstr "لم يمكن عرض المساعدة"
+msgstr "لم يمكن عرض المساعدة: %s"
 
 #: ../src/crontabEditorHelper.py:111
 #, fuzzy
 msgid "Every weekday"
-msgstr "ت_حديث كل:"
+msgstr "كل أسبوع"
 
 #: ../src/crontabEditorHelper.py:163
 #, fuzzy
 msgid "Minute settings"
-msgstr "اختر الإعدادات"
+msgstr "تعيينات الطابعة"
 
 #: ../src/crontabEditorHelper.py:164
+#, fuzzy
 msgid "Edit Time Expression for minute"
-msgstr ""
+msgstr "اذكر سببا للتغيير"
 
 #: ../src/crontabEditorHelper.py:166
 #, fuzzy
 msgid "Hour settings"
-msgstr "اختر الإعدادات"
+msgstr "اعدادات المجموعات"
 
 #: ../src/crontabEditorHelper.py:167
+#, fuzzy
 msgid "Edit Time Expression for hour"
-msgstr ""
+msgstr "حرّر أذون الموقع"
 
 #: ../src/crontabEditorHelper.py:169
 #, fuzzy
 msgid "Day settings"
-msgstr "اختر الإعدادات"
+msgstr "إعدادات النظام"
 
 #: ../src/crontabEditorHelper.py:170
+#, fuzzy
 msgid "Edit Time Expression for day"
-msgstr ""
+msgstr "حرّر أذون الموقع"
 
 #: ../src/crontabEditorHelper.py:172
 #, fuzzy
 msgid "Month settings"
-msgstr "اختر الإعدادات"
+msgstr "إعدادات الخطوط"
 
 #: ../src/crontabEditorHelper.py:173
+#, fuzzy
 msgid "Edit Time Expression for month"
-msgstr ""
+msgstr "حرّر ال_معلومات الشخصية"
 
 #: ../src/crontabEditorHelper.py:175
 #, fuzzy
 msgid "Weekday settings"
-msgstr "اختر الإعدادات"
+msgstr "الإعدادات العامّة"
 
 #: ../src/crontabEditorHelper.py:176
 msgid "Edit Time Expression for weekday"
@@ -264,13 +262,13 @@ msgstr ""
 #: ../src/crontabEditorHelper.py:190
 #, fuzzy, python-format
 msgid "This is invalid. Reason: %s"
-msgstr "تاريخ التّكرار غير صحيح"
+msgstr "هذه %s، اصدارة %s"
 
 #. minute
 #: ../src/crontabEditorHelper.py:236 ../src/gnome-schedule.glade.h:15
 #, fuzzy
 msgid "At an exact minute"
-msgstr "أقسام بـ %02i دقيقة"
+msgstr "دقيقة واحدة"
 
 #: ../src/crontabEditorHelper.py:237 ../src/gnome-schedule.glade.h:42
 #, fuzzy
@@ -279,9 +277,8 @@ msgstr "الدّقيقة"
 
 #. hour
 #: ../src/crontabEditorHelper.py:240
-#, fuzzy
 msgid "At an exact hour"
-msgstr "بدء العدّاد عند:"
+msgstr ""
 
 #: ../src/crontabEditorHelper.py:241
 #, fuzzy
@@ -292,7 +289,7 @@ msgstr "السّاعة"
 #: ../src/crontabEditorHelper.py:244
 #, fuzzy
 msgid "On a day"
-msgstr "آخر يوم"
+msgstr "مرة في اليوم"
 
 #: ../src/crontabEditorHelper.py:245
 #, fuzzy
@@ -303,27 +300,28 @@ msgstr "اليوم"
 #: ../src/crontabEditorHelper.py:248
 #, fuzzy
 msgid "In a month"
-msgstr "مشهد الشّهر"
+msgstr "خلال شهر"
 
 #: ../src/crontabEditorHelper.py:249
 #, fuzzy
 msgid "Month:"
-msgstr "الشّهر"
+msgstr "ال_شّهر:"
 
 #. weekday
 #: ../src/crontabEditorHelper.py:252
 #, fuzzy
 msgid "On a weekday"
-msgstr "استماع على:"
+msgstr "مرّة في الأسبوع"
 
 #: ../src/crontabEditorHelper.py:253
+#, fuzzy
 msgid "Weekday:"
-msgstr ""
+msgstr "الأربعاء"
 
 #: ../src/crontabEditorHelper.py:258 ../src/gnome-schedule.glade.h:40
 #, fuzzy
 msgid "In a step width"
-msgstr "العرض بالرموز"
+msgstr "عرض الأيقونة صفر"
 
 #: ../src/crontabEditorHelper.py:260 ../src/gnome-schedule.glade.h:43
 #, fuzzy
@@ -338,7 +336,7 @@ msgstr "ساعات"
 #: ../src/crontabEditorHelper.py:264
 #, fuzzy
 msgid "Days:"
-msgstr "الأيّام"
+msgstr "أيّام"
 
 #: ../src/crontabEditorHelper.py:266
 #, fuzzy
@@ -346,28 +344,29 @@ msgid "Months:"
 msgstr "أشهر"
 
 #: ../src/crontabEditorHelper.py:268
+#, fuzzy
 msgid "Weekdays:"
-msgstr ""
+msgstr "أيّام العمل:"
 
 #: ../src/gnome-schedule-applet.xml.h:1
 #, fuzzy
 msgid "A_bout"
-msgstr "_حول الشّرائط"
+msgstr "اجهض"
 
 #: ../src/gnome-schedule-applet.xml.h:2
 #, fuzzy
 msgid "_Add a task"
-msgstr "إضافة قائمة مهام جديدة"
+msgstr "اضف توقفا مؤقتا"
 
 #: ../src/gnome-schedule-applet.xml.h:3 ../src/gnome-schedule.glade.h:64
 #, fuzzy
 msgid "_Help"
-msgstr "م_ساعدة"
+msgstr "مساعدة"
 
 #: ../src/gnome-schedule-applet.xml.h:4
 #, fuzzy
 msgid "_Manage tasks"
-msgstr "المهام ال_فائت موعدها:"
+msgstr "إدارة الدِسكلت"
 
 #: ../src/gnome-schedule.glade.h:1
 msgid "<b>Choose the user whose tasks you want to modify</b>"
@@ -376,36 +375,36 @@ msgstr ""
 #: ../src/gnome-schedule.glade.h:2
 #, fuzzy
 msgid "<b>Date and Time Settings</b>"
-msgstr "إعدادات الوقت و التّاريخ"
+msgstr "<b>الوقت والتاريخ</b>"
 
 #: ../src/gnome-schedule.glade.h:3
 #, fuzzy
 msgid "<b>Execution Time</b>"
-msgstr "وقت غير سليم"
+msgstr "<b>اسم الإتصال</b>"
 
 #: ../src/gnome-schedule.glade.h:4
-#, fuzzy
 msgid "<b>General</b>"
 msgstr "<b>عام</b>"
 
 #: ../src/gnome-schedule.glade.h:5
 #, fuzzy
 msgid "<b>Minute settings</b>"
-msgstr "اختر الإعدادات"
+msgstr "<b>إعدادات المودم</b>"
 
 #: ../src/gnome-schedule.glade.h:6
 #, fuzzy
 msgid "<b>Preview</b>"
-msgstr "<b>لمحة</b>"
+msgstr "<b>الجهاز</b>"
 
 #: ../src/gnome-schedule.glade.h:7
+#, fuzzy
 msgid "<b>Select the type of the scheduled task</b>"
-msgstr ""
+msgstr "<b>ا_نتقِ نوع المفتاح الذي ترغب بإنشائه</b>"
 
 #: ../src/gnome-schedule.glade.h:8
 #, fuzzy
 msgid "<b>Task</b>"
-msgstr "المهمّة - %s"
+msgstr "<b>حاسوب لوحة</b>"
 
 #: ../src/gnome-schedule.glade.h:9
 msgid "A scheduled task that will launch _recurrently"
@@ -416,82 +415,78 @@ msgid "A scheduled task that will launch only once in the _future"
 msgstr ""
 
 #: ../src/gnome-schedule.glade.h:11
-#, fuzzy
 msgid "About this application"
-msgstr "حول هذا التّطبيق"
+msgstr "حوْل هذا البرنامج"
 
 #: ../src/gnome-schedule.glade.h:12
-#, fuzzy
 msgid "Add a Scheduled Task"
-msgstr "إضافة قائمة مهام جديدة"
+msgstr ""
 
 #: ../src/gnome-schedule.glade.h:13
 #, fuzzy
 msgid "Add a new scheduled task"
-msgstr "إضافة قائمة مهام جديدة"
+msgstr "أضف قاعدة جديدة"
 
 #: ../src/gnome-schedule.glade.h:14
-#, fuzzy
 msgid "Advanced"
 msgstr "متقدم"
 
 #: ../src/gnome-schedule.glade.h:16
-#, fuzzy
 msgid "Basic"
-msgstr "أساسي"
+msgstr "بسيط"
 
 #: ../src/gnome-schedule.glade.h:17
 #, fuzzy
 msgid "Change User"
-msgstr "بدّل المستخدم"
+msgstr "مجموعة التغييرات"
 
 #: ../src/gnome-schedule.glade.h:18
 #, fuzzy
 msgid "Change _User"
-msgstr "بدّل المستخدم"
+msgstr "مجموعة التغييرات"
 
 #: ../src/gnome-schedule.glade.h:19
+#, fuzzy
 msgid "Choose an icon for this scheduled task"
-msgstr ""
+msgstr "اختر خطا للملاحظة"
 
 #: ../src/gnome-schedule.glade.h:20
+#, fuzzy
 msgid "Choose the user whose tasks you want to modify"
-msgstr ""
+msgstr "اختر مجموعة الوسوم التي تريد استعمالها"
 
 #: ../src/gnome-schedule.glade.h:21
 #, fuzzy
 msgid "Co_mmand:"
-msgstr "الأ_مر:"
+msgstr "الأم_ر:"
 
 #: ../src/gnome-schedule.glade.h:22
 #, fuzzy
 msgid "Configure Scheduled Tasks"
-msgstr "الرُّزنامة و المهام"
+msgstr "إعداد الدِسكلت"
 
 #: ../src/gnome-schedule.glade.h:23
-#, fuzzy
 msgid "Date and Time"
-msgstr "الوقت و التّاريخ"
+msgstr "التاريخ و الوقت"
 
 #: ../src/gnome-schedule.glade.h:24
 #, fuzzy
 msgid "Delete a scheduled task"
-msgstr "<b>خيارات قائمة المهام</b>"
+msgstr "احذف المهام المنتقاة"
 
 #: ../src/gnome-schedule.glade.h:25
-#, fuzzy
 msgid "Delete the selected template"
-msgstr "_حذف المهام المنتقاة"
+msgstr "حذف القالب المحدد"
 
 #: ../src/gnome-schedule.glade.h:26
 #, fuzzy
 msgid "Desc_ription:"
-msgstr "وصف قصير: %s\n"
+msgstr "ال_وصف:"
 
 #: ../src/gnome-schedule.glade.h:27
 #, fuzzy
 msgid "Edit a scheduled task"
-msgstr "<b>خيارات قائمة المهام</b>"
+msgstr "ينفذ الأفعال المجدولة"
 
 #: ../src/gnome-schedule.glade.h:29
 msgid "Execution at a specific minute, hour, day, weekday or month."
@@ -510,7 +505,7 @@ msgstr ""
 #: ../src/gnome-schedule.glade.h:32
 #, fuzzy
 msgid "Execution in a range."
-msgstr "مدى منافذ TCP"
+msgstr "قيد التحقق..."
 
 #: ../src/gnome-schedule.glade.h:33
 #, fuzzy
@@ -528,37 +523,36 @@ msgstr ""
 #: ../src/gnome-schedule.glade.h:36
 #, fuzzy
 msgid "For experienced users"
-msgstr "مستخدمي الملف الشخصي %s"
+msgstr "ترقّب اللاعب القيم"
 
 #: ../src/gnome-schedule.glade.h:37
-#, fuzzy
 msgid "From:"
 msgstr "من:"
 
 #: ../src/gnome-schedule.glade.h:38
 #, fuzzy
 msgid "Ico_n:"
-msgstr "ICO "
+msgstr "أيقونة:"
 
 #: ../src/gnome-schedule.glade.h:39
 #, fuzzy
 msgid "In a range"
-msgstr "فاندنبرغ رينج"
+msgstr "غرانج"
 
 #: ../src/gnome-schedule.glade.h:41
 #, fuzzy
 msgid "Mi_nutes:"
-msgstr "تص_غير"
+msgstr "دقائق"
 
 #: ../src/gnome-schedule.glade.h:44
 #, fuzzy
 msgid "No out_put"
-msgstr "لا قانة تلفزية"
+msgstr "ملف الخرْج"
 
 #: ../src/gnome-schedule.glade.h:45
 #, fuzzy
 msgid "Other"
-msgstr "أخرى"
+msgstr "أخ_رى"
 
 #: ../src/gnome-schedule.glade.h:46
 msgid ""
@@ -567,8 +561,9 @@ msgid ""
 msgstr ""
 
 #: ../src/gnome-schedule.glade.h:47
+#, fuzzy
 msgid "Rec_urrence:"
-msgstr ""
+msgstr "تكرار"
 
 #: ../src/gnome-schedule.glade.h:48
 #, fuzzy
@@ -578,21 +573,22 @@ msgstr "احفظ البحث الحالي كملف"
 #: ../src/gnome-schedule.glade.h:49
 #, fuzzy
 msgid "Scheduled and active tasks"
-msgstr "رُزنامة و مهامّ إيفُليوشِن"
+msgstr "أرسل واستقبل الفاكسات"
 
 #: ../src/gnome-schedule.glade.h:50
 #, fuzzy
 msgid "Scri_pt:"
-msgstr "تاهوما 8 نقاط"
+msgstr "_برنامج نصي:"
 
 #: ../src/gnome-schedule.glade.h:51
+#, fuzzy
 msgid "See \"man 5 crontab\" for information about the crontab format."
-msgstr ""
+msgstr "اعرض معلومات عن الملف الحالي"
 
 #: ../src/gnome-schedule.glade.h:52
 #, fuzzy
 msgid "Select..."
-msgstr "_إختار"
+msgstr "انت_قاء..."
 
 #: ../src/gnome-schedule.glade.h:53
 #, fuzzy
@@ -602,15 +598,14 @@ msgstr "إظهار المساعدة"
 #: ../src/gnome-schedule.glade.h:54
 #, fuzzy
 msgid "Show the manual"
-msgstr "فتح الدليل"
+msgstr "افتح الكتيّب"
 
 #: ../src/gnome-schedule.glade.h:55
 #, fuzzy
 msgid "Time expression help"
-msgstr "عرض مساعدة المؤشّرات"
+msgstr "جملة غير صالحة"
 
 #: ../src/gnome-schedule.glade.h:56
-#, fuzzy
 msgid "To:"
 msgstr "إلى:"
 
@@ -619,7 +614,7 @@ msgstr "إلى:"
 msgid ""
 "Tomorrow\n"
 "Next week"
-msgstr "مشهد أسبوع العمل"
+msgstr "غدا"
 
 #: ../src/gnome-schedule.glade.h:59
 msgid ""
@@ -631,22 +626,20 @@ msgstr ""
 #: ../src/gnome-schedule.glade.h:60
 #, fuzzy
 msgid "_About"
-msgstr "_حول"
+msgstr "_6 عن البرنامج"
 
 #: ../src/gnome-schedule.glade.h:61
-#, fuzzy
 msgid "_Advanced"
-msgstr "متقدم"
+msgstr "م_تقدم"
 
 #: ../src/gnome-schedule.glade.h:62
-#, fuzzy
 msgid "_Date:"
 msgstr "ال_تّاريخ:"
 
 #: ../src/gnome-schedule.glade.h:63
 #, fuzzy
 msgid "_Days of month:"
-msgstr "مشهد الشّهر"
+msgstr "شهر واحد"
 
 #: ../src/gnome-schedule.glade.h:65
 #, fuzzy
@@ -659,9 +652,8 @@ msgid "_Hours:"
 msgstr "ساعات"
 
 #: ../src/gnome-schedule.glade.h:67
-#, fuzzy
 msgid "_Manual"
-msgstr "يدوي"
+msgstr "ي_دوي"
 
 #: ../src/gnome-schedule.glade.h:68
 #, fuzzy
@@ -671,31 +663,29 @@ msgstr "الدّقيقة"
 #: ../src/gnome-schedule.glade.h:69
 #, fuzzy
 msgid "_Months:"
-msgstr "أشهر"
+msgstr "ال_شّهر:"
 
 #: ../src/gnome-schedule.glade.h:70
-#, fuzzy
 msgid "_Task"
 msgstr "_مهمّة"
 
 #: ../src/gnome-schedule.glade.h:71
-#, fuzzy
 msgid "_Template:"
-msgstr "قالب"
+msgstr "قالب:"
 
 #: ../src/gnome-schedule.glade.h:72
-#, fuzzy
 msgid "_User:"
 msgstr "_مستخدم:"
 
 #: ../src/gnome-schedule.glade.h:73
 #, fuzzy
 msgid "_View"
-msgstr "_اعرض"
+msgstr "_عرض/"
 
 #: ../src/gnome-schedule.glade.h:74
+#, fuzzy
 msgid "_Weekdays:"
-msgstr ""
+msgstr "أ_سبوعي"
 
 #: ../src/gnome-schedule.py:62 ../src/scheduleapplet.py:63
 msgid ""
@@ -707,31 +697,31 @@ msgstr ""
 #. Translators: Date format for expressions like 'January 21'. %B is month, %d is day number.
 #. Run the command 'man strftime' to read more about these and other available specifiers.
 #: ../src/lang.py:105
+#, fuzzy
 msgid "%B %d"
-msgstr ""
+msgstr "%B %Y"
 
 #. Translators: Date format for expressions like 'January 21, 2005'. %B is month, %d is day number, %Y is year with century.
 #. Run the command 'man strftime' to read more about these and other available specifiers.
 #: ../src/lang.py:112
+#, fuzzy
 msgid "%B %d, %Y"
-msgstr ""
+msgstr "%b %d %Y"
 
 #. Translators: Time without seconds. %H is hour, %M is minute.
 #. Run the command 'man strftime' to read more about these and other available specifiers.
 #: ../src/lang.py:122
-#, fuzzy
 msgid "%H:%M"
 msgstr "%H:%M"
 
 #: ../src/lang.py:159
-#, fuzzy
 msgid "At every full hour"
-msgstr "تصفح بكامل الشاشة"
+msgstr ""
 
 #: ../src/lang.py:161
 #, fuzzy
 msgid "At every minute"
-msgstr "أقسام بـ %02i دقيقة"
+msgstr "كل شهر"
 
 #: ../src/lang.py:163
 #, python-format
@@ -948,42 +938,41 @@ msgstr ""
 #: ../src/lang.py:266
 #, fuzzy
 msgid "every minute"
-msgstr "بقي دقيقة واحدة (%d%%)"
+msgstr "كل شهر"
 
 #: ../src/lang.py:268
 #, fuzzy, python-format
 msgid "minute: %s"
-msgstr "الدّقيقة"
+msgstr "دقائق"
 
 #: ../src/lang.py:271
 #, fuzzy
 msgid "every hour"
-msgstr "_24 ساعة"
+msgstr "كل شهر"
 
 #: ../src/lang.py:273
 #, fuzzy, python-format
 msgid "hour: %s"
-msgstr "السّاعة"
+msgstr "ساعات"
 
 #: ../src/lang.py:276
 #, fuzzy
 msgid "every day of month"
-msgstr "إظهار شهر واحد"
+msgstr "كل شهر"
 
 #: ../src/lang.py:278
 #, fuzzy, python-format
 msgid "day of month: %s"
-msgstr "مشهد الشّهر"
+msgstr "فشل ضم %s"
 
 #: ../src/lang.py:281
-#, fuzzy
 msgid "every month"
-msgstr "مشهد الشّهر"
+msgstr "كل شهر"
 
 #: ../src/lang.py:283
 #, fuzzy, python-format
 msgid "month: %s"
-msgstr "الشّهر"
+msgstr "أشهر"
 
 #: ../src/lang.py:286
 #, python-format
@@ -991,94 +980,98 @@ msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s"
 msgstr ""
 
 #: ../src/lang.py:288
-#, python-format
+#, fuzzy, python-format
 msgid "weekday: %s"
-msgstr ""
+msgstr "مفتاح: %s"
 
 #: ../src/lang.py:289
 #, python-format
 msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 msgstr ""
 
-#: ../src/mainWindow.py:211 ../src/mainWindow.py:311
+#: ../src/mainWindow.py:211 ../src/mainWindow.py:289
 #, fuzzy, python-format
 msgid "Editing user: %s"
-msgstr "بدّل المستخدم"
+msgstr "تحرير مستخدم"
 
-#: ../src/mainWindow.py:285 ../src/scheduleapplet.py:115
+#: ../src/mainWindow.py:263 ../src/scheduleapplet.py:115
 #, fuzzy
 msgid "ERROR: Could not load icon"
-msgstr "لم يمكن تحميل الملخّص لـ %s"
+msgstr "لم يمكن تحميل القسم"
 
-#: ../src/mainWindow.py:295
-msgid "ERROR: Could not load glade file"
-msgstr ""
-
-#: ../src/mainWindow.py:346
+#: ../src/mainWindow.py:273
 #, fuzzy
-msgid "Icon"
-msgstr "أيقونة."
+msgid "ERROR: Could not load glade file"
+msgstr "لم أتمكن من تحميل ملف glade"
 
-#: ../src/mainWindow.py:351 ../src/mainWindow.py:384
+#: ../src/mainWindow.py:324
+msgid "Icon"
+msgstr "أيقونة"
+
+#: ../src/mainWindow.py:329 ../src/mainWindow.py:362
 #, fuzzy
 msgid "Type"
-msgstr "النّوع"
+msgstr "أنواع"
 
-#: ../src/mainWindow.py:355 ../src/mainWindow.py:380
+#: ../src/mainWindow.py:333 ../src/mainWindow.py:358
 #, fuzzy
 msgid "Description"
-msgstr "الوصف"
+msgstr "ال_وصف"
 
-#: ../src/mainWindow.py:359 ../src/mainWindow.py:371
+#: ../src/mainWindow.py:337 ../src/mainWindow.py:349
 #, fuzzy
 msgid "Date and Time Settings"
-msgstr "إعدادات الوقت و التّاريخ"
+msgstr "التاريخ و الوقت"
 
-#: ../src/mainWindow.py:363 ../src/mainWindow.py:375
+#: ../src/mainWindow.py:341 ../src/mainWindow.py:353
 #, fuzzy
 msgid "Preview"
-msgstr "لمحة"
+msgstr "معاينات"
 
-#: ../src/mainWindow.py:419 ../src/mainWindow.py:482
+#: ../src/mainWindow.py:397 ../src/mainWindow.py:460
 #, fuzzy
 msgid "Please select a task"
-msgstr "من فضلك إختار تلميحة"
+msgstr "من فضلك اختر رمز دال:"
 
-#: ../src/mainWindow.py:426
+#: ../src/mainWindow.py:404
 #, fuzzy
 msgid "Do you want to delete this task?"
-msgstr "هل تريد حذف هذا العمل (%s)؟"
+msgstr "أمتأكد أنك ترغب في حذف هذه المهمّة؟"
 
-#: ../src/mainWindow.py:530
+#: ../src/mainWindow.py:508
 #, fuzzy
 msgid "About Gnome Schedule"
-msgstr "حول مكتب جنوم"
+msgstr "حول راديو جينوم"
 
-#: ../src/mainWindow.py:531
+#: ../src/mainWindow.py:509
 #, fuzzy
 msgid "Gnome Schedule"
-msgstr "_جدوِلة الأجتماع"
+msgstr "أهلا جنوم"
 
-#: ../src/mainWindow.py:533
+#: ../src/mainWindow.py:511
 #, fuzzy
-msgid "Copyright (c) 2004-2006 Gaute Hope."
-msgstr "حقوق النسخ © 2004-2006 أليكس جرافيلي"
+msgid "Copyright (c) 2004-2007 Gaute Hope."
+msgstr "حقوق النسخ © 2004-2007 أليكس جرافيلي"
 
-#: ../src/mainWindow.py:546
+#: ../src/mainWindow.py:524
 #, fuzzy
 msgid "translator-credits"
-msgstr "Yousef Raffah يوسف رفه (yousef@raffah.com)"
+msgstr "المترجمون:"
 
 #: ../src/scheduleapplet.py:131
+#, fuzzy
 msgid "ERROR: Could not load menu xml file"
-msgstr ""
+msgstr "لم أتمكن من تحميل ملف glade"
 
 #: ../src/setuserWindow.py:84
 #, fuzzy
 msgid "No such user"
-msgstr "لا رسالة بهذا الإسم"
+msgstr "لا يوجد مستخدم بالإسم {0}"
 
 #: ../src/atEditor.py:531
-#, python-format
+#, fuzzy, python-format
 msgid "This is an invalid record! The problem could be: %s"
 msgstr ""
+"هذا ليس ملف لوحة مفاتيح سليم:\n"
+"%s"
+
