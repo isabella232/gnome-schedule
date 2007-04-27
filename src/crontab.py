@@ -41,6 +41,8 @@ class Crontab:
 		self.env_vars = [ ]
 		
 		self.crontabdata = os.path.expanduser ("~/.gnome/gnome-schedule/crontab")
+		self.crontabdatafileversion = 2
+		
 		if os.path.exists(self.crontabdata) != True:
 			if os.makedirs(self.crontabdata, 0700):
 				pass
@@ -220,9 +222,14 @@ class Crontab:
 		fh = open (f, 'w')
 		fh.truncate (1)
 		fh.seek (0)
+		fh.write ("ver=" + str(self.crontabdatafileversion) + "\n")
 		fh.write ("title=" + title + "\n")
 		fh.write ("icon=" + icon +  "\n")
 		fh.write ("desc=" + desc + "\n")
+		if nooutput:
+			fh.write ("nooutput=1\n")
+		else:
+			fh.write ("nooutput=0\n")
 		fh.close ()	
 
 		self.lines[linenumber] = record
@@ -257,51 +264,57 @@ class Crontab:
 				space = ""
 			record = record + space + self.nooutputtag
 			
-			if title == None:
-				title = _("Untitled")
-				
-			if desc == None:
-				desc = ""
+		if title == None:
+			title = _("Untitled")
 			
-			if icon == None:
-				icon = ""
+		if desc == None:
+			desc = ""
+			
+		if icon == None:
+			icon = ""
 				
-			# Create and write data file
-			f = os.path.join (self.crontabdata, "last_id")
-			if os.access (f, os.R_OK):
-				fh = open (f, 'r+')
-				r = fh.read ()
-				if r == "":
-					last_id = 1
-				else:
-					last_id = int (r)
-					
-				
-				job_id = last_id + 1
-				
-				fh.seek (0)
-				fh.truncate (1)
-				fh.write ( str(job_id))
-				fh.close ()
-				
-				
+		# Create and write data file
+		f = os.path.join (self.crontabdata, "last_id")
+		if os.access (f, os.R_OK):
+			fh = open (f, 'r+')
+			r = fh.read ()
+			if r == "":
+				last_id = 1
 			else:
-				job_id = 1
-				fh = open (f, 'w')
-				fh.write ('1')
-				fh.close ()
-			
-			f = os.path.join (self.crontabdata, str(job_id))
-			
-			fh = open (f, 'w')
-			fh.truncate (1)
-			fh.seek (0)
-			fh.write ("title=" + title + "\n")
-			fh.write ("icon=" + icon +  "\n")
-			fh.write ("desc=" + desc + "\n")
-			fh.close ()
+				last_id = int (r)
 				
-			record = record + " # JOB_ID_" + str (job_id)
+			
+			job_id = last_id + 1
+			
+			fh.seek (0)
+			fh.truncate (1)
+			fh.write ( str(job_id))
+			fh.close ()
+			
+				
+		else:
+			job_id = 1
+			fh = open (f, 'w')
+			fh.write ('1')
+			fh.close ()
+		
+		f = os.path.join (self.crontabdata, str(job_id))
+			
+		fh = open (f, 'w')
+		fh.truncate (1)
+		fh.seek (0)
+		fh.write ("ver=" + str(self.crontabdatafileversion) + "\n")
+		fh.write ("title=" + title + "\n")
+		fh.write ("icon=" + icon +  "\n")
+		fh.write ("desc=" + desc + "\n")
+		if nooutput:
+			fh.write ("nooutput=1\n")
+		else:
+			fh.write ("nooutput=0\n")
+		
+		fh.close ()
+				
+		record = record + " # JOB_ID_" + str (job_id)
 			
 		self.lines.append (record)
 		
@@ -326,7 +339,7 @@ class Crontab:
 			array_or_false = self.parse (line)
 			if array_or_false != False:
 				if array_or_false[0] == 2:
-					(minute, hour, day, month, weekday, command, comment, job_id, title, icon, desc) = array_or_false[1]
+					(minute, hour, day, month, weekday, command, comment, job_id, title, icon, desc, nooutput) = array_or_false[1]
 					
 					time = minute + " " + hour + " " + day + " " + month + " " + weekday
 
@@ -334,7 +347,7 @@ class Crontab:
 					preview = self.__make_preview__ (command)
 				
 					#add task to treemodel in mainWindow
-					data.append([title, self.__easy__ (minute, hour, day, month, weekday), preview, line, linecount, time, self, icon, job_id, "", "","", _("Recurrent"), "crontab"])
+					data.append([title, self.__easy__ (minute, hour, day, month, weekday), preview, line, linecount, time, self, icon, job_id, "", "","", _("Recurrent"), "crontab", nooutput])
 				
 				
 			linecount = linecount + 1	
@@ -445,13 +458,35 @@ class Crontab:
 		# Retrive title and icon data
 		if nofile == False:
 			if job_id:
-				title, icon, desc = self.get_job_data (job_id)
+				ver, title, icon, desc, nooutput = self.get_job_data (job_id)
 			else:
+				ver = 1
 				title = ""
 				icon = ""
 				desc = ""
+				nooutput = 0
 			
-			return [2, [minute, hour, dom, moy, dow, command, comment, job_id, title, icon, desc]]
+			if nooutput != 0:
+				# remove devnull part of command
+				# searching reverse, and only if nooutput is saved in the datafile
+				pos = command.rfind (self.nooutputtag)
+				if pos != -1:
+					command = command[:pos]
+			
+			# support older datafiles/entries without removing the no output tag	
+			if ver <= 1:
+				# old version, no output declaration in datafile, migration
+				pos = command.rfind (self.nooutputtag)
+				if pos != -1:
+					command = command[:pos]
+					nooutput = 1
+				else:
+					nooutput = 0
+			
+			command = command.strip ()	
+				
+				
+			return [2, [minute, hour, dom, moy, dow, command, comment, job_id, title, icon, desc, nooutput]]
 		else:
 			return minute, hour, dom, moy, dow, command
 		
@@ -461,18 +496,35 @@ class Crontab:
 			fh = open (f, 'r')
 			d = fh.read ()
 				
-			d = d.strip ()
-			
+			ver_p = d.find ("ver=")
+			if ver_p == -1:
+				ver = 1
+			else:
+				ver_s = d[ver_p + 4:d.find ("\n")]
+				d = d[d.find ("\n") + 1:]
+				ver = int (ver_s)
+				
 			title = d[6:d.find ("\n")]
 			d = d[d.find ("\n") + 1:]
 			
 			icon = d[5:d.find ("\n")]
 			d = d[d.find ("\n") + 1:]
 			
-			desc = d[5:]
+			desc = d[5:d.find ("\n")]
+			d = d[d.find ("\n") + 1:]
+			
+			if ver >= 2:
+				nooutput_str = d[9:d.find ("\n")]
+				if (nooutput_str == "0") or (nooutput_str == "1"):
+					nooutput = int (nooutput_str)
+				else:
+					nooutput = 0
+			else:
+				nooutput = 0
+			
 			fh.close ()
 			
-			return title, icon, desc
+			return ver, title, icon, desc, nooutput
 			
 		else: 
 			return "", "", ""

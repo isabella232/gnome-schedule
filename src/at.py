@@ -2,7 +2,6 @@
 # Copyright (C) 2004, 2005 Philip Van Hoof <me at pvanhoof dot be>
 # Copyright (C) 2004, 2005 Gaute Hope <eg at gaute dot eu dot org>
 # Copyright (C) 2004, 2005 Kristof Vansant <de_lupus at pandora dot be>
-
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation; either version 2 of the License, or
@@ -24,6 +23,7 @@ import sys
 import tempfile
 import commands
 import time
+import datetime
 
 #custom modules
 import config
@@ -42,11 +42,13 @@ class At:
 		# 7       Sun Jan  8 13:01:00 2006 a pvanhoof
 		# 1	2006-04-26 08:54 a gaute
 		# 14	2006-09-21 10:54 a gaute
+		# 3	Tue May  8 01:01:00 2007 a gaute
 
 		self.atRecordRegex = [ 
 			re.compile('([0-9]+)\s([0-9]4-[0-9]2-[0-9]2)\s([0-9]2:[0-9]2)\s([a]1)\s(.*)'),
 			re.compile('([^\s]+)\s((.*)\s(..:..:..\s....)|([^\s]+)\s([^\s]+))\s([^\s]+)\s([^\s]+)'), 
-			re.compile('([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)')			
+			re.compile('([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)'),
+			re.compile('^([\d]+)[\t]([\w]{3,3}[\s][\w]{3,3}[\s]*[\d]+[\s][\d]{2,2}[:][\d]{2,2}[:][\d]{2,2}[\s][\d]{4,4})[\s]([\w])[\s]([\w]+)')
 			]
 			
 
@@ -55,7 +57,7 @@ class At:
 		self.atRecordRegexAdd = re.compile('^job\s([0-9]+)\sat')
 		
 		self.atRecordRegexAdded = re.compile('[^\s]+\s([0-9]+)\sat')
-		
+		self.nooutput = 0
 		self.SCRIPT_DELIMITER = "###### ---- GNOME_SCHEDULE_SCRIPT_DELIMITER #####"
 		self.atdata = os.path.expanduser ("~/.gnome/gnome-schedule/at")
 		if os.path.exists(self.atdata) != True:
@@ -78,31 +80,62 @@ class At:
 	def parse (self, line, output = True):
 		if (output == True):
 			if len (line) > 1 and line[0] != '#':
+				regexp = 0
 				m = self.atRecordRegex[0].match(line)
 				if m == None:
-					m = self.atRecordRegex[1].match(line)
+					m = self.atRecordRegex[3].match(line)
 					if m != None:
-						print "regexp: 1"
+						print "regexp: 3"
+						regexp = 3
+						
 					else:
 						m = self.atRecordRegex[2].match(line)
 						if m != None:
 							print "regexp: 2"
+							regexp = 2
 						else:
-							# Exception
-							print "regexp: failed"
-							return False
+							m = self.atRecordRegex[1].match(line)
+							if m != None:
+								print "regexp: 1"
+								regexp = 1
+							else:
+								# Exception
+								print "regexp: failed"
+								return False
 						
 				else:
+					regexp = 0
 					print "regexp: 0"
 					
 					
 				if m != None:
-
-					job_id = m.groups ()[0]
-					date = m.groups ()[4]
-					time = m.groups ()[5]
-					class_id = m.groups ()[6]
-					user = m.groups ()[7]
+					print m.groups ()
+					
+					if regexp == 3:
+						job_id = m.groups ()[0]
+						dt = datetime.datetime.strptime (m.groups ()[1], "%a %b  %d %H:%M:%S %Y")
+						if dt != None:
+							print "datetime, first try succeseeded"
+							
+						if dt == None:
+							dt = datetime.datetime.strptime (m.groups ()[1], "%a %b %d %H:%M:%S %Y")
+							print "datetime, second try succseeded"
+						
+						if dt == None:
+							print "datetime failed to parse"
+							return False
+							
+						date = dt.strftime ("%Y-%m-%d")
+						time = dt.strftime ("%H:%M:%S")
+						class_id = m.groups ()[2]
+						user = m.groups ()[3]
+						
+					else:
+						job_id = m.groups ()[0]
+						date = m.groups ()[4]
+						time = m.groups ()[5]
+						class_id = m.groups ()[6]
+						user = m.groups ()[7]
 					execute = config.getAtbin() + " -c " + job_id
 					# read lines and detect starter
 					script = os.popen(execute).read()
@@ -321,7 +354,8 @@ class At:
 	def update (self, job_id, runat, command, title, icon):
 		#remove old
 		f = os.path.join (self.atdata, str (job_id))
-		os.unlink (f)
+		if os.access (f, os.F_OK):
+			os.unlink (f)
 		execute = config.getAtrmbin()+ " " + str(job_id)
 		commands.getoutput(execute)
 		
@@ -412,11 +446,12 @@ class At:
 						#print "Record omitted, not current user"
 						pass
 				else:
-					data.append([title, timestring_show, preview, lines, int(job_id), timestring, self, icon, date, class_id, user, time, _("Once"), "at"])
+					data.append([title, timestring_show, preview, lines, int(job_id), timestring, self, icon, date, class_id, user, time, _("Once"), "at", self.nooutput])
 
 				#print _("added %(id)s") % { "id": job_id	}
 			else:
 				print _("Warning: a line in atq's output didn't parse")	
+		print data
 		return data
 
 	

@@ -148,7 +148,7 @@ class CrontabEditor:
 		self.linenumber = linenumber
 		self.record = record
 		self.job_id = job_id
-		(self.minute, self.hour, self.day, self.month, self.weekday, self.command, self.comment, self.job_id, self.title, self.icon, self.desc) = self.scheduler.parse (record)[1]
+		(self.minute, self.hour, self.day, self.month, self.weekday, self.command, self.comment, self.job_id, self.title, self.icon, self.desc, self.nooutput) = self.scheduler.parse (record)[1]
 		self.widget.set_title(_("Edit a Scheduled Task"))
 		
 		self.__update_textboxes__ ()
@@ -159,17 +159,17 @@ class CrontabEditor:
 		self.widget.set_position(gtk.WIN_POS_CENTER_ON_PARENT)
 		self.widget.show ()
 		
-		m = self.nooutputRegex.match (self.command)
-		if (m != None):
+		
+	
+		if self.nooutput:
 			self.nooutput_label.show ()
-			self.command = m.groups()[0]
 			self.command_entry.set_text (self.command)
 			self.chkNoOutput.set_active (True)
-			self.nooutput = True
+			
 		else:
 			self.nooutput_label.hide ()
 			self.chkNoOutput.set_active (False)
-			self.nooutput = False
+			
 
 		#switch to advanced tab if required
 		if mode == "advanced":
@@ -189,7 +189,7 @@ class CrontabEditor:
 		self.weekday = "*"
 		self.command = "ls"
 		self.title = _("Untitled")
-		self.nooutput = True
+		self.nooutput = 1
 		self.nooutput_label.show ()
 		self.chkNoOutput.set_active (True)
 		self.__update_textboxes__ ()
@@ -219,7 +219,7 @@ class CrontabEditor:
 			
 			for template_name in self.template_names:
 				thetemplate = self.backend.gettemplate ("crontab", template_name)
-				icon_uri, command, frequency, title, name = thetemplate
+				icon_uri, command, frequency, title, name, nooutput = thetemplate
 				self.template_combobox_model.append([name, template_name, thetemplate])
 						
 			# self.remove_button.set_sensitive (True)
@@ -254,15 +254,11 @@ class CrontabEditor:
 			self.__WrongRecordDialog__ (x, y, z)
 			return
 
-		if self.nooutput:
-			space = " "
-			if self.command[len(self.command)-1] == " ":
-				space = ""
-			self.command = self.command + space + self.scheduler.nooutputtag
+		
 			
 		#record = self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday + " " + self.command
 		self.frequency = self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday
-		self.backend.savetemplate ("crontab",template_name, self.frequency, self.title, self.icon, self.command)
+		self.backend.savetemplate ("crontab",template_name, self.frequency, self.title, self.icon, self.command, self.nooutput)
 		
 
 	#error dialog box 
@@ -295,7 +291,7 @@ class CrontabEditor:
 			iter = self.template_combobox.get_active_iter ()
 			if iter != None:
 				template = self.template_combobox_model.get_value(iter, 2)
-				icon_uri, command, frequency, title, template_name = template
+				icon_uri, command, frequency, title, template_name, nooutput = template
 				self.template_combobox.set_active (0)
 				self.backend.removetemplate ("crontab",template_name)
 			else: 
@@ -367,7 +363,7 @@ class CrontabEditor:
 			template = self.template_combobox_model.get_value(iter, 2)
 			if template != None:
 				# self.remove_button.set_sensitive (True)
-				icon_uri, command, frequency, title, name = template
+				icon_uri, command, frequency, title, name, nooutput = template
 				#if self.ParentClass.saveWindow != None:
 				#	self.ParentClass.saveWindow.save_entry.set_text (name)
 				try:
@@ -388,18 +384,17 @@ class CrontabEditor:
 						command = _("command")
 					record = frequency + " " + command
 			
-				m = self.nooutputRegex.match (command)
-				if (m != None):
+				
+				if (nooutput):
 					self.nooutput_label.show ()
-					command = m.groups()[0]
 					self.noevents = True
 					self.chkNoOutput.set_active (True)
 					self.noevents = False
-					self.nooutput = True
+					self.nooutput = 1
 				else:
 					self.nooutput_label.hide ()
 					self.chkNoOutput.set_active (False)
-					self.nooutput = False
+					self.nooutput = 0
 
 
 				self.minute, self.hour, self.day, self.month, self.weekday, self.command = self.scheduler.parse (record, True)
@@ -451,7 +446,7 @@ class CrontabEditor:
 
 		
 		if self.editing != False:
-			self.minute, self.hour, self.day, self.month, self.weekday, self.command, self.comment, self.job_id, self.title, self.icon, self.desc
+			#self.minute, self.hour, self.day, self.month, self.weekday, self.command, self.comment, self.job_id, self.title, self.icon, self.desc
 			self.scheduler.update (self.minute, self.hour, self.day, self.month, self.weekday, self.command, self.linenumber, self.parentiter, self.nooutput, self.job_id, self.comment, self.title, self.icon, self.desc)
 			
 		else:

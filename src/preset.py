@@ -86,6 +86,7 @@ class ConfigBackend:
 		self.gconf_client.unset("/apps/gnome-schedule/presets/" + type + "/%s/command" % (template_name_c))
 		self.gconf_client.unset("/apps/gnome-schedule/presets/" + type + "/%s/title" % (template_name_c))
 		self.gconf_client.unset("/apps/gnome-schedule/presets/" + type + "/%s/timeexpression" % (template_name_c))
+		self.gconf_client.unset("/apps/gnome-schedule/presets/" + type + "/%s/nooutput" % (template_name_c))
 			
 		if newstring == "   ":
 			self.gconf_client.unset ("/apps/gnome-schedule/presets/" + type + "/installed")
@@ -101,7 +102,7 @@ class ConfigBackend:
 		return template_name_c
 	
 	
-	def savetemplate (self,type, template_name, timeexpression, title, icon, command):	
+	def savetemplate (self,type, template_name, timeexpression, title, icon, command, nooutput):	
 		template_name_c = self.__replace__ (template_name)
 		
 		self.gconf_client.set_string("/apps/gnome-schedule/presets/" + type + "/%s/timeexpression" % (template_name_c), timeexpression)
@@ -109,6 +110,7 @@ class ConfigBackend:
 		self.gconf_client.set_string("/apps/gnome-schedule/presets/" + type + "/%s/icon_uri" % (template_name_c), icon)
 		self.gconf_client.set_string("/apps/gnome-schedule/presets/" + type + "/%s/command" % (template_name_c), command)
 		self.gconf_client.set_string("/apps/gnome-schedule/presets/" + type + "/%s/title" % (template_name_c), title)
+		self.gconf_client.set_string("/apps/gnome-schedule/presets/" + type + "/%s/nooutput" % (template_name_c), str(nooutput))
 		
 		installed = self.gconf_client.get_string("/apps/gnome-schedule/presets/" + type + "/installed")
 		if installed == None:
@@ -143,8 +145,9 @@ class ConfigBackend:
 			command = self.gconf_client.get_string("/apps/gnome-schedule/presets/" + type + "/%s/command" % (template_name))
 			title = self.gconf_client.get_string("/apps/gnome-schedule/presets/" + type + "/%s/title" % (template_name))
 			name = self.gconf_client.get_string("/apps/gnome-schedule/presets/" + type + "/%s/name" % (template_name))
+			nooutput = self.gconf_client.get_string("/apps/gnome-schedule/presets/" + type + "/%s/nooutput" % (template_name))
 			timeexpression = self.gconf_client.get_string("/apps/gnome-schedule/presets/" + type + "/%s/timeexpression" % (template_name))
-			return icon_uri, command, timeexpression, title, name
+			return icon_uri, command, timeexpression, title, name, int(nooutput)
 	
 		except Exception, ex:
 			return ex, ex, ex, ex, ex
