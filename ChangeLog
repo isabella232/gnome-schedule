@@ -1,11 +1,14 @@
-2007-04-27  Gaute Hope <eg@gaute.vetsj.com>
+2007-05-02  Gaute Hope  <eg@gaute.vetsj.com>
+	* crontab now supports @reboot, plus reading other special expressions like @hourly and so on.
+	
+2007-04-27  Gaute Hope  <eg@gaute.vetsj.com>
 
 	* added nooutput field to the crontab datafiles to fix parsing error and not having to parse the crontab line to figure out if it is inteneded to have no output
 	* got problems with the at parser in this case and created a new regexp, using datetime to create a datetime object out of the complete date/time string parsed out of atq's output, the new regexp is number 3. Still struggeling to figure out how to make atq output predictable in all versions.
 	* added a new field to the treemodel created in mainWindow.py to keep the nooutput field. Also added a new gconf field for the nooutput field. Updated template handelers in the editors. at does not use the nooutput option, but since they are both using the same backend for some reason it needs to specify and load aswell this, send and recieve bogus.
 	* at the moment quite some debug that will be removed after some testing.
 	
-2007-04-18  Gaute Hope <eg@gaute.vetsj.com>
+2007-04-18  Gaute Hope  <eg@gaute.vetsj.com>
 
 	* help/C/gnome-schedule.xml: applyed patch from alex smith
 	

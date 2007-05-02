@@ -143,6 +143,11 @@ def translate_crontab_easy (minute, hour, day, month, weekday):
 # Don't touch this function. Copy and modify it to create a special translation.
 # Changes on this function affects all translations made through po files.  
 def translate_crontab_easy_common (minute, hour, day, month, weekday):
+
+	# reboot
+	if minute == "@reboot":
+		return _("At reboot")
+		
 	# These are unsupported cases
 	if minute.find ("/") != -1 or hour.find ("/") != -1 or day.find ("/") != -1 or month.find ("/") != -1 or weekday.find ("/") != -1:
 		return translate_crontab_easy_fallback (minute, hour, day, month, weekday)

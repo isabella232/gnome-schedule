@@ -83,6 +83,7 @@ class CrontabEditor:
 		self.frequency_combobox_model.append([_("Every day"), ["0", "0", "*", "*", "*"]])
 		self.frequency_combobox_model.append([_("Every month"), ["0", "0", "1", "*", "*"]])
 		self.frequency_combobox_model.append([_("Every week"), ["0", "0", "*", "*", "1"]])
+		self.frequency_combobox_model.append([_("At reboot"), ["@reboot", "@reboot", "@reboot", "@reboot", "@reboot"]])
 		self.frequency_combobox.set_model (self.frequency_combobox_model)
 		
 		self.chkNoOutput = self.xml.get_widget("chkNoOutput")
@@ -441,11 +442,14 @@ class CrontabEditor:
 			x, y, z = ex
 			self.__WrongRecordDialog__ (x, y, z)
 			return
-
-		record = self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday + " " + self.command
+			
+		if self.minute == "@reboot":
+			record = "@reboot " + self.command
+		else:
+			record = self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday + " " + self.command
 
 		
-		if self.editing != False:
+		if self.editing == True:
 			#self.minute, self.hour, self.day, self.month, self.weekday, self.command, self.comment, self.job_id, self.title, self.icon, self.desc
 			self.scheduler.update (self.minute, self.hour, self.day, self.month, self.weekday, self.command, self.linenumber, self.parentiter, self.nooutput, self.job_id, self.comment, self.title, self.icon, self.desc)
 			
@@ -482,6 +486,8 @@ class CrontabEditor:
 		if minute == "0" and hour == "0" and month == "*" and day == "*" and weekday == "0":
 			# index = self.translate_frequency ("week")
 			index = 5
+		if minute == "@reboot":
+			index = 6
 
 		return index
 
@@ -561,3 +567,4 @@ class CrontabEditor:
 			expression = self.weekday_entry.get_text()
 
 		self.editorhelper.show (field, expression)
+		

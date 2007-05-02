@@ -54,7 +54,7 @@ class Crontab:
 		
 	def __setup_timespec__ (self):
 		self.special = {
-			"@reboot"  : '',
+			"@reboot"  : '@reboot',
 			"@hourly"  : '0 * * * *',
 			"@daily"   : '0 0 * * *',
 			"@weekly"  : '0 0 * * 0',
@@ -134,47 +134,54 @@ class Crontab:
 		a try/except construct.  
 		"""
 
-		timerange = self.timeranges[type]
+		# reboot?
+		if expr != "@reboot":
+				
+		
+			timerange = self.timeranges[type]
 
-		# Replace alias names only if no leading and following alphanumeric and 
-		# no leading slash is present. Otherwise terms like "JanJan" or 
-		# "1Feb" would give a valid check. Values after a slash are stepwidths
-		# and shouldn't have an alias.
- 		if type == "month": alias = self.monthnames.copy()
-		elif type == "weekday": alias = self.downames.copy()
-		else: alias = None
-		if alias != None:
-			while True:
-				try: key,value = alias.popitem()
-				except KeyError: break
-				expr = re.sub("(?<!\w|/)" + value + "(?!\w)", key, expr)
+			# Replace alias names only if no leading and following alphanumeric and 
+			# no leading slash is present. Otherwise terms like "JanJan" or 
+			# "1Feb" would give a valid check. Values after a slash are stepwidths
+			# and shouldn't have an alias.
+ 			if type == "month": alias = self.monthnames.copy()
+			elif type == "weekday": alias = self.downames.copy()
+			else: alias = None
+			if alias != None:
+				while True:
+					try: key,value = alias.popitem()
+					except KeyError: break
+					expr = re.sub("(?<!\w|/)" + value + "(?!\w)", key, expr)
 
-		expr = expr.replace("*", str(min(timerange)) + "-" + str(max(timerange)) )
+			expr = expr.replace("*", str(min(timerange)) + "-" + str(max(timerange)) )
  		
-		list = expr.split(",")
-		rexp_step = re.compile("^(\d+-\d+)/(\d+)$")
-		rexp_range = re.compile("^(\d+)-(\d+)$")
+			list = expr.split(",")
+			rexp_step = re.compile("^(\d+-\d+)/(\d+)$")
+			rexp_range = re.compile("^(\d+)-(\d+)$")
 
-		for field in list:
-			result = rexp_step.match(field)
-			if  result != None:
-				field = result.groups()[0]
-				if int(result.groups()[1]) not in timerange:
-					raise ValueError("stepwidth", self.timenames[type], _("Must be between %(min)s and %(max)s") % { "min": min(timerange), "max": max(timerange) } )
-
-			result = rexp_range.match(field)
-			if (result != None): 
-				if (int(result.groups()[0]) not in timerange) or (int(result.groups()[1]) not in timerange):
-					raise ValueError("range", self.timenames[type], _("Must be between %(min)s and %(max)s") % { "min": min(timerange), "max": max(timerange) } )
-			elif field.isdigit() != True:
-				raise ValueError("fixed", self.timenames[type], _("%s is not a number") % ( field ) )
-			elif int(field) not in timerange:
-				raise ValueError("fixed", self.timenames[type], _("Must be between %(min)s and %(max)s") % { "min": min(timerange), "max": max(timerange) } )
-
+			for field in list:
+				result = rexp_step.match(field)
+				if  result != None:
+					field = result.groups()[0]
+					if int(result.groups()[1]) not in timerange:
+						raise ValueError("stepwidth", self.timenames[type], _("Must be between %(min)s and %(max)s") % { "min": min(timerange), "max": max(timerange) } )
+	
+				result = rexp_range.match(field)
+				if (result != None): 
+					if (int(result.groups()[0]) not in timerange) or (int(result.groups()[1]) not in timerange):
+						raise ValueError("range", self.timenames[type], _("Must be between %(min)s and %(max)s") % { "min": min(timerange), "max": max(timerange) } )
+				elif field.isdigit() != True:
+					raise ValueError("fixed", self.timenames[type], _("%s is not a number") % ( field ) )
+				elif int(field) not in timerange:
+					raise ValueError("fixed", self.timenames[type], _("Must be between %(min)s and %(max)s") % { "min": min(timerange), "max": max(timerange) } )
+	
 
 	def update (self, minute, hour, day, month, weekday, command, linenumber, parentiter, nooutput, job_id, comment, title, icon, desc):
 		# update crontab
-		record = minute + " " + hour + " " + day + " " + month + " " + weekday + " " + command
+		if minute == "@reboot":
+			record = "@reboot " + command
+		else:
+			record = minute + " " + hour + " " + day + " " + month + " " + weekday + " " + command
 		#print "crontab:update:record=" + record
 		
 		easystring = self.__easy__ (minute, hour, day, month, weekday)
@@ -257,7 +264,11 @@ class Crontab:
 		
 		
 	def append (self, minute, hour, day, month, weekday, command, nooutput, title, icon = None, desc = None):
-		record = minute + " " + hour + " " + day + " " + month + " " + weekday + " " + command
+		if minute == "@reboot":
+			record = "@reboot " + command
+		else:
+			record = minute + " " + hour + " " + day + " " + month + " " + weekday + " " + command
+
 		if nooutput:
 			space = " "
 			if record[len(record)-1] == " ":
@@ -412,18 +423,35 @@ class Crontab:
 				return False
 				
 		elif line[0] == "@":
-			if (line.find('\s')):
-				i = line.find('\s')
-			elif (line.find('\t')):
-				i = line.find('\t')
-				
+			special_expression, line = self.get_exp_sec (line)
+								
+			if special_expression == "@reboot":
+				minute = "@reboot"
+				hour = "@reboot"
+				dom = "@reboot"
+				moy = "@reboot"
+				dow = "@reboot"
 			else:
-				return False
-			special_expression = line[0:i]
-			line = line[i + 1:]
+
+				if special_expression in self.special:
+					expr = self.special[special_expression]
+					line = expr + " " + line
+
+					# Minute
+					minute, line = self.get_exp_sec (line)
 			
-			## TODO: continue and return
-			return [0, line]
+					# Hour
+					hour, line = self.get_exp_sec (line)
+				
+					# Day of Month
+					dom, line = self.get_exp_sec (line)
+			
+					# Month of Year
+					moy, line = self.get_exp_sec (line)
+			
+					# Day of Week
+					dow, line = self.get_exp_sec (line)
+						
 	
 		elif (line[0].isalpha()):
 			if line[0] != '*':
