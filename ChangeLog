@@ -2,6 +2,8 @@
 
 	* crontab now supports @reboot, plus reading other special expressions like @hourly and so on.
 	* crontab backend now checking for escaped %, and escaped escapor.
+	* updated po/
+	* po/POTFILES.skip: added containg some generated allready translated files that make make check complain in po/
 	
 2007-04-27  Gaute Hope  <eg@gaute.vetsj.com>
 

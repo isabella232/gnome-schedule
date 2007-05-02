@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-20 15:02+0100\n"
+"POT-Creation-Date: 2007-05-02 21:54+0200\n"
 "PO-Revision-Date: 2005-02-01 15:50+0100\n"
 "Last-Translator: Martin Willemoes Hansen <mwh@sysrq.dk>\n"
 "Language-Team: Danish <dansk@klid.dk>\n"
@@ -42,82 +42,82 @@ msgstr "Gnome-systemplanlægger"
 msgid "System tools"
 msgstr ""
 
-#: ../src/at.py:398
+#: ../src/at.py:432
 #, python-format
 msgid "DANGEROUS PARSE: %(preview)s"
 msgstr ""
 
 #. TODO: localize time and date formats
-#: ../src/at.py:405
+#: ../src/at.py:439
 #, python-format
 msgid "On %(date)s at %(time)s"
 msgstr "Den %(date)s klokken %(time)s"
 
-#: ../src/at.py:410 ../src/at.py:415
+#: ../src/at.py:444 ../src/at.py:449
 msgid "Once"
 msgstr ""
 
-#: ../src/at.py:419
+#: ../src/at.py:453
 msgid "Warning: a line in atq's output didn't parse"
 msgstr ""
 
-#: ../src/crontab.py:72
+#: ../src/crontab.py:74
 msgid "Minute"
 msgstr "Minut"
 
-#: ../src/crontab.py:73
+#: ../src/crontab.py:75
 msgid "Hour"
 msgstr "Time"
 
-#: ../src/crontab.py:74
+#: ../src/crontab.py:76
 msgid "Day of Month"
 msgstr "Dag i måneden"
 
-#: ../src/crontab.py:75
+#: ../src/crontab.py:77
 msgid "Month"
 msgstr "Måned"
 
-#: ../src/crontab.py:76
+#: ../src/crontab.py:78
 msgid "Weekday"
 msgstr "Ugedag"
 
-#: ../src/crontab.py:161 ../src/crontab.py:166 ../src/crontab.py:170
+#: ../src/crontab.py:167 ../src/crontab.py:172 ../src/crontab.py:176
 #, fuzzy, python-format
 msgid "Must be between %(min)s and %(max)s"
 msgstr "Skal være mellem %s og %s"
 
-#: ../src/crontab.py:168
+#: ../src/crontab.py:174
 #, python-format
 msgid "%s is not a number"
 msgstr "%s er ikke et tal"
 
-#: ../src/crontab.py:216 ../src/crontab.py:261 ../src/crontabEditor.py:191
+#: ../src/crontab.py:228 ../src/crontab.py:285 ../src/crontabEditor.py:192
 #: ../src/atEditor.py:110
 msgid "Untitled"
 msgstr "Uden titel"
 
 #. add task to treemodel in mainWindow
-#: ../src/crontab.py:337
+#: ../src/crontab.py:387
 msgid "Recurrent"
 msgstr "Tilbagevendende"
 
-#: ../src/crontab.py:349
+#: ../src/crontab.py:399
 msgid "minute"
 msgstr "minut"
 
-#: ../src/crontab.py:351
+#: ../src/crontab.py:401
 msgid "hour"
 msgstr "time"
 
-#: ../src/crontab.py:353
+#: ../src/crontab.py:403
 msgid "day"
 msgstr "dag"
 
-#: ../src/crontab.py:355
+#: ../src/crontab.py:405
 msgid "month"
 msgstr "måned"
 
-#: ../src/crontab.py:357
+#: ../src/crontab.py:407
 msgid "weekday"
 msgstr "ugedag"
 
@@ -152,49 +152,64 @@ msgstr "hver måned"
 msgid "Every week"
 msgstr "Hver"
 
-#: ../src/crontabEditor.py:130 ../src/atEditor.py:112
+#: ../src/crontabEditor.py:86 ../src/lang.py:149
+msgid "At reboot"
+msgstr ""
+
+#: ../src/crontabEditor.py:131 ../src/atEditor.py:112
 #, fuzzy
 msgid "Create a New Scheduled Task"
 msgstr "Opret en ny planlagt opgave"
 
-#: ../src/crontabEditor.py:152 ../src/atEditor.py:148
+#: ../src/crontabEditor.py:153 ../src/atEditor.py:151
 #, fuzzy
 msgid "Edit a Scheduled Task"
 msgstr "Redigér planlagt opgave"
 
-#: ../src/crontabEditor.py:209 ../src/atEditor.py:321
+#: ../src/crontabEditor.py:210 ../src/atEditor.py:326
 msgid "Don't use a preset"
 msgstr "Anvend ikke et forvalg"
 
-#: ../src/crontabEditor.py:270
+#: ../src/crontabEditor.py:271
 #, fuzzy, python-format
 msgid ""
 "This is an invalid record! The problem could be in the %(field)s field. "
 "Reason: %(reason)s"
 msgstr "Dette er en ugyldig post! Problemet kan være ved %s-feltet. Grund: %s"
 
-#: ../src/crontabEditor.py:302 ../src/atEditor.py:291
+#: ../src/crontabEditor.py:276
+msgid ""
+"Your command contains one or more of the character %, this is special for "
+"cron and cannot be used with Gnome-schedule because of the format it uses to "
+"store extra information on the crontab line. Please use the | redirector "
+"character to acheieve the same functionality. Refer to the crontab manual "
+"for more information about the % character. If you don not want to use it "
+"for redirection it must be properly escaped with the \\ letter. I.e.: \\"
+"$HOME."
+msgstr ""
+
+#: ../src/crontabEditor.py:307 ../src/atEditor.py:296
 msgid "The preset has not been saved"
 msgstr "Forvalget er ikke gemt"
 
-#: ../src/crontabEditor.py:304 ../src/atEditor.py:293
+#: ../src/crontabEditor.py:309 ../src/atEditor.py:298
 msgid "To delete a preset, you first need to select one"
 msgstr "For at slette et forvalg skal du først vælge det"
 
-#: ../src/crontabEditor.py:314 ../src/atEditor.py:304
+#: ../src/crontabEditor.py:319 ../src/atEditor.py:309
 msgid "To save a preset, you first have to choose a name for it"
 msgstr "For at gemme et forvalg skal du først vælge et navn til det"
 
-#: ../src/crontabEditor.py:324 ../src/atEditor.py:395
+#: ../src/crontabEditor.py:329 ../src/atEditor.py:400
 #, fuzzy
 msgid "Choose an Icon for this Scheduled Task"
 msgstr "Vælg et ikon for denne planlagte opgave"
 
-#: ../src/crontabEditor.py:388
+#: ../src/crontabEditor.py:393
 msgid "command"
 msgstr "kommando"
 
-#: ../src/crontabEditor.py:426 ../src/mainWindow.py:567 ../src/atEditor.py:519
+#: ../src/crontabEditor.py:430 ../src/mainWindow.py:545 ../src/atEditor.py:524
 msgid "Could not display help"
 msgstr ""
 
@@ -699,45 +714,45 @@ msgstr "%d %B, %Y"
 msgid "%H:%M"
 msgstr "%H:%M"
 
-#: ../src/lang.py:159
+#: ../src/lang.py:164
 msgid "At every full hour"
 msgstr "Hver hele time"
 
-#: ../src/lang.py:161
+#: ../src/lang.py:166
 msgid "At every minute"
 msgstr "Hvert minut"
 
-#: ../src/lang.py:163
+#: ../src/lang.py:168
 #, python-format
 msgid "At minute %(minute)s of every hour"
 msgstr "På det %(minute)s minut hver time"
 
-#: ../src/lang.py:165
+#: ../src/lang.py:170
 #, python-format
 msgid "At every minute between %(time_from)s and %(time_to)s"
 msgstr "Hvert minut mellem %(time_from)s og %(time_to)s"
 
-#: ../src/lang.py:167
+#: ../src/lang.py:172
 #, python-format
 msgid "On every day at %(time)s"
 msgstr "Hver dag klokken %(time)s"
 
-#: ../src/lang.py:172
+#: ../src/lang.py:177
 #, python-format
 msgid "On day %(monthday)s of every month at every full hour"
 msgstr "Den %(monthday)s hver måned, hver hele time"
 
-#: ../src/lang.py:174
+#: ../src/lang.py:179
 #, python-format
 msgid "On day %(monthday)s of every month at every minute"
 msgstr "Den %(monthday)s hver måned, hvert minut"
 
-#: ../src/lang.py:176
+#: ../src/lang.py:181
 #, python-format
 msgid "On day %(monthday)s of every month at minute %(minute)s of every hour"
 msgstr "Den %(monthday)s hver måned, på minut %(minute)s af hver time"
 
-#: ../src/lang.py:178
+#: ../src/lang.py:183
 #, python-format
 msgid ""
 "On day %(monthday)s of every month at every minute between %(time_from)s and "
@@ -745,103 +760,103 @@ msgid ""
 msgstr ""
 "Den %(monthday)s hver måned, hvert minut mellem %(time_from)s og %(time_to)s"
 
-#: ../src/lang.py:180
+#: ../src/lang.py:185
 #, python-format
 msgid "On day %(monthday)s of every month at %(time)s"
 msgstr "Den %(monthday)s i hver måned, klokken %(time)s"
 
-#: ../src/lang.py:185
+#: ../src/lang.py:190
 #, python-format
 msgid "On every day in %(month)s at every full hour"
 msgstr "Hver dag i %(month)s, hver hele time"
 
-#: ../src/lang.py:187
+#: ../src/lang.py:192
 #, python-format
 msgid "On every day in %(month)s at every minute"
 msgstr "Hver dag i %(month)s, hver minut"
 
-#: ../src/lang.py:189
+#: ../src/lang.py:194
 #, python-format
 msgid "On every day in %(month)s at minute %(minute)s of every hour"
 msgstr "Hver dag i %(month)s på det %(minute)s minut i hver time"
 
-#: ../src/lang.py:191
+#: ../src/lang.py:196
 #, python-format
 msgid ""
 "On every day in %(month)s at every minute between %(time_from)s and %"
 "(time_to)s"
 msgstr "Hver dag i %(month)s, hver minut mellem %(time_from)s og %(time_to)s"
 
-#: ../src/lang.py:193
+#: ../src/lang.py:198
 #, python-format
 msgid "On every day in %(month)s at %(time)s"
 msgstr "Hver dag i %(month)s klokken %(time)s"
 
-#: ../src/lang.py:198
+#: ../src/lang.py:203
 #, python-format
 msgid "Every year on %(date)s at every full hour"
 msgstr "Hvert år den %(date)s, hver hele time"
 
-#: ../src/lang.py:200
+#: ../src/lang.py:205
 #, python-format
 msgid "Every year on %(date)s at every minute"
 msgstr "Hvert år den %(date)s, hvert minut"
 
-#: ../src/lang.py:202
+#: ../src/lang.py:207
 #, python-format
 msgid "Every year on %(date)s at minute %(minute)s of every hour"
 msgstr "Hvert år den %(date)s på det %(minute)s minut i hver time"
 
-#: ../src/lang.py:204
+#: ../src/lang.py:209
 #, python-format
 msgid ""
 "Every year on %(date)s at every minute between %(time_from)s and %(time_to)s"
 msgstr "Hvert år den %(date)s, hver minut mellem %(time_from)s og %(time_to)s"
 
-#: ../src/lang.py:206
+#: ../src/lang.py:211
 #, python-format
 msgid "Every year on %(date)s at %(time)s"
 msgstr "Hvert år den %(date)s, klokken %(time)s"
 
-#: ../src/lang.py:211
+#: ../src/lang.py:216
 #, python-format
 msgid "On every %(weekday)s at every full hour"
 msgstr "Hver %(weekday)s, hver hele time"
 
-#: ../src/lang.py:213
+#: ../src/lang.py:218
 #, python-format
 msgid "On every %(weekday)s at every minute"
 msgstr "Hver %(weekday)s, hvert minut"
 
-#: ../src/lang.py:215
+#: ../src/lang.py:220
 #, python-format
 msgid "On every %(weekday)s at minute %(minute)s of every hour"
 msgstr "Hver %(weekday)s på det %(minute)s minut af hver time"
 
-#: ../src/lang.py:217
+#: ../src/lang.py:222
 #, python-format
 msgid ""
 "On every %(weekday)s at every minute between %(time_from)s and %(time_to)s"
 msgstr "Hver %(weekday)s, hvert minut mellem %(time_from)s og %(time_to)s"
 
-#: ../src/lang.py:219
+#: ../src/lang.py:224
 #, python-format
 msgid "On every %(weekday)s at %(time)s"
 msgstr "Hver %(weekday)s klokken %(time)s"
 
-#: ../src/lang.py:224
+#: ../src/lang.py:229
 #, python-format
 msgid ""
 "On day %(monthday)s of every month and every %(weekday)s at every full hour"
 msgstr "Den %(monthday)s hver måned og hver %(weekday)s, hver hele time"
 
-#: ../src/lang.py:226
+#: ../src/lang.py:231
 #, python-format
 msgid ""
 "On day %(monthday)s of every month and every %(weekday)s at every minute"
 msgstr "Den %(monthday)s hver måned og hver %(weekday)s, hvert minut"
 
-#: ../src/lang.py:228
+#: ../src/lang.py:233
 #, python-format
 msgid ""
 "On day %(monthday)s of every month and every %(weekday)s at minute %(minute)"
@@ -850,7 +865,7 @@ msgstr ""
 "Den %(monthday)s hver måned og hver %(weekday)s på det %(minute)s minut hver "
 "hele time"
 
-#: ../src/lang.py:230
+#: ../src/lang.py:235
 #, python-format
 msgid ""
 "On day %(monthday)s of every month and every %(weekday)s at every minute "
@@ -859,27 +874,27 @@ msgstr ""
 "Den %(monthday)s hver måned og hver %(weekday)s hvert minut mellem %"
 "(time_from)s og %(time_to)s"
 
-#: ../src/lang.py:232
+#: ../src/lang.py:237
 #, python-format
 msgid "On day %(monthday)s of every month and every %(weekday)s at %(time)s"
 msgstr "Den %(monthday)s hver måned og hver %(weekday)s klokken %(time)s"
 
-#: ../src/lang.py:237
+#: ../src/lang.py:242
 #, python-format
 msgid "On every %(weekday)s in %(month)s at every full hour"
 msgstr "Hver %(weekday)s i %(month)s, hver hele time"
 
-#: ../src/lang.py:239
+#: ../src/lang.py:244
 #, python-format
 msgid "On every %(weekday)s in %(month)s at every minute"
 msgstr "Hver %(weekday)s i %(month)s, hvert minut"
 
-#: ../src/lang.py:241
+#: ../src/lang.py:246
 #, python-format
 msgid "On every %(weekday)s in %(month)s at minute %(minute)s of every hour"
 msgstr "Hver %(weekday)s i %(month)s på det %(minute)s minut, hver time"
 
-#: ../src/lang.py:243
+#: ../src/lang.py:248
 #, python-format
 msgid ""
 "On every %(weekday)s in %(month)s at every minute between %(time_from)s and %"
@@ -887,25 +902,25 @@ msgid ""
 msgstr ""
 "Hver %(weekday)s i %(month)s hvert minut mellem %(time_from)s og %(time_to)s"
 
-#: ../src/lang.py:245
+#: ../src/lang.py:250
 #, python-format
 msgid "On every %(weekday)s in %(month)s at %(time)s"
 msgstr "Hver %(weekday)s i %(month)s klokken %(time)s"
 
-#: ../src/lang.py:250
+#: ../src/lang.py:255
 #, python-format
 msgid ""
 "On every %(weekday)s in %(month)s and on %(date)s every year at every full "
 "hour"
 msgstr "Hver %(weekday)s i %(month)s og den %(date)s hvert år, hver hele time"
 
-#: ../src/lang.py:252
+#: ../src/lang.py:257
 #, python-format
 msgid ""
 "On every %(weekday)s in %(month)s and on %(date)s every year at every minute"
 msgstr "Hver %(weekday)s i %(month)s og den %(date)s hvert år, hvert minut"
 
-#: ../src/lang.py:254
+#: ../src/lang.py:259
 #, python-format
 msgid ""
 "On every %(weekday)s in %(month)s and on %(date)s every year at minute %"
@@ -914,7 +929,7 @@ msgstr ""
 "Hver %(weekday)s i %(month)s og den %(date)s hvert år på det %(minute)s "
 "minut i hver time"
 
-#: ../src/lang.py:256
+#: ../src/lang.py:261
 #, python-format
 msgid ""
 "On every %(weekday)s in %(month)s and on %(date)s every year at every minute "
@@ -923,119 +938,119 @@ msgstr ""
 "Hver %(weekday)s i %(month)s og den %(date)s hvert år, hvert minut mellem %"
 "(time_from)s og %(time_to)s"
 
-#: ../src/lang.py:258
+#: ../src/lang.py:263
 #, python-format
 msgid ""
 "On every %(weekday)s in %(month)s and on %(date)s every year at %(time)s"
 msgstr "Hver %(weekday)s i %(month)s og den %(date)s hvert år klokken %(time)s"
 
-#: ../src/lang.py:266
+#: ../src/lang.py:271
 msgid "every minute"
 msgstr "hvert minut"
 
-#: ../src/lang.py:268
+#: ../src/lang.py:273
 #, python-format
 msgid "minute: %s"
 msgstr "minut: %s"
 
-#: ../src/lang.py:271
+#: ../src/lang.py:276
 msgid "every hour"
 msgstr "hver time"
 
-#: ../src/lang.py:273
+#: ../src/lang.py:278
 #, python-format
 msgid "hour: %s"
 msgstr "time: %s"
 
-#: ../src/lang.py:276
+#: ../src/lang.py:281
 msgid "every day of month"
 msgstr "hver dag i måneden"
 
-#: ../src/lang.py:278
+#: ../src/lang.py:283
 #, python-format
 msgid "day of month: %s"
 msgstr "dag i måneden: %s"
 
-#: ../src/lang.py:281
+#: ../src/lang.py:286
 msgid "every month"
 msgstr "hver måned"
 
-#: ../src/lang.py:283
+#: ../src/lang.py:288
 #, python-format
 msgid "month: %s"
 msgstr "måned: %s"
 
-#: ../src/lang.py:286
+#: ../src/lang.py:291
 #, python-format
 msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s"
 msgstr "Klokken %(minute)s, %(hour)s, %(monthday)s, %(month)s"
 
-#: ../src/lang.py:288
+#: ../src/lang.py:293
 #, python-format
 msgid "weekday: %s"
 msgstr "ugedag: %s"
 
-#: ../src/lang.py:289
+#: ../src/lang.py:294
 #, python-format
 msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 msgstr "Klokken %(minute)s, %(hour)s, %(monthday)s, %(month)s%(weekday)s"
 
-#: ../src/mainWindow.py:211 ../src/mainWindow.py:311
+#: ../src/mainWindow.py:211 ../src/mainWindow.py:289
 #, python-format
 msgid "Editing user: %s"
 msgstr "Redigerer bruger: %s"
 
-#: ../src/mainWindow.py:285 ../src/scheduleapplet.py:115
+#: ../src/mainWindow.py:263 ../src/scheduleapplet.py:115
 msgid "ERROR: Could not load icon"
 msgstr ""
 
-#: ../src/mainWindow.py:295
+#: ../src/mainWindow.py:273
 msgid "ERROR: Could not load glade file"
 msgstr ""
 
-#: ../src/mainWindow.py:346
+#: ../src/mainWindow.py:324
 msgid "Icon"
 msgstr "Ikon"
 
-#: ../src/mainWindow.py:351 ../src/mainWindow.py:384
+#: ../src/mainWindow.py:329 ../src/mainWindow.py:362
 msgid "Type"
 msgstr "Type"
 
-#: ../src/mainWindow.py:355 ../src/mainWindow.py:380
+#: ../src/mainWindow.py:333 ../src/mainWindow.py:358
 msgid "Description"
 msgstr ""
 
-#: ../src/mainWindow.py:359 ../src/mainWindow.py:371
+#: ../src/mainWindow.py:337 ../src/mainWindow.py:349
 msgid "Date and Time Settings"
 msgstr "Indstillinger for dato og tid"
 
-#: ../src/mainWindow.py:363 ../src/mainWindow.py:375
+#: ../src/mainWindow.py:341 ../src/mainWindow.py:353
 msgid "Preview"
 msgstr "Forhåndsvisning"
 
-#: ../src/mainWindow.py:419 ../src/mainWindow.py:482
+#: ../src/mainWindow.py:397 ../src/mainWindow.py:460
 msgid "Please select a task"
 msgstr "Vælg venligst en opgave"
 
-#: ../src/mainWindow.py:426
+#: ../src/mainWindow.py:404
 msgid "Do you want to delete this task?"
 msgstr ""
 
-#: ../src/mainWindow.py:530
+#: ../src/mainWindow.py:508
 #, fuzzy
 msgid "About Gnome Schedule"
 msgstr "Gnome-systemplanlægger"
 
-#: ../src/mainWindow.py:531
+#: ../src/mainWindow.py:509
 msgid "Gnome Schedule"
 msgstr "Gnome-systemplanlægger"
 
-#: ../src/mainWindow.py:533
+#: ../src/mainWindow.py:511
 #, fuzzy
-msgid "Copyright (c) 2004-2006 Gaute Hope."
+msgid "Copyright (c) 2004-2007 Gaute Hope."
 msgstr "Copyright (c) 2004-2005 Gaute Hope."
 
-#: ../src/mainWindow.py:546
+#: ../src/mainWindow.py:524
 msgid "translator-credits"
 msgstr ""
 "Alex Thomsen Leth\n"
@@ -1052,7 +1067,7 @@ msgstr ""
 msgid "No such user"
 msgstr ""
 
-#: ../src/atEditor.py:531
+#: ../src/atEditor.py:536
 #, python-format
 msgid "This is an invalid record! The problem could be: %s"
 msgstr "Dette er en ugyldig post! Problemet kan være: %s"

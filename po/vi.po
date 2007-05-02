@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule Gnome HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-20 15:02+0100\n"
+"POT-Creation-Date: 2007-05-02 21:54+0200\n"
 "PO-Revision-Date: 2006-01-15 18:13+1030\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <gnomevi-list@lists.sourceforge.net>\n"
@@ -36,82 +36,82 @@ msgstr "Lịch biểu Gnome"
 msgid "System tools"
 msgstr "Công cụ hệ thống"
 
-#: ../src/at.py:398
+#: ../src/at.py:432
 #, python-format
 msgid "DANGEROUS PARSE: %(preview)s"
 msgstr "PHÂN TÁCH NGUY HIỂM: %(preview)s"
 
 #. TODO: localize time and date formats
-#: ../src/at.py:405
+#: ../src/at.py:439
 #, python-format
 msgid "On %(date)s at %(time)s"
 msgstr "Vào %(date)s lúc %(time)s"
 
-#: ../src/at.py:410 ../src/at.py:415
+#: ../src/at.py:444 ../src/at.py:449
 msgid "Once"
 msgstr "Một lần"
 
-#: ../src/at.py:419
+#: ../src/at.py:453
 msgid "Warning: a line in atq's output didn't parse"
 msgstr "Cảnh báo : không thể phân tách một dòng trong dữ liệu xuất của atq"
 
-#: ../src/crontab.py:72
+#: ../src/crontab.py:74
 msgid "Minute"
 msgstr "Phút"
 
-#: ../src/crontab.py:73
+#: ../src/crontab.py:75
 msgid "Hour"
 msgstr "Giờ"
 
-#: ../src/crontab.py:74
+#: ../src/crontab.py:76
 msgid "Day of Month"
 msgstr "Ngày tháng"
 
-#: ../src/crontab.py:75
+#: ../src/crontab.py:77
 msgid "Month"
 msgstr "Tháng"
 
-#: ../src/crontab.py:76
+#: ../src/crontab.py:78
 msgid "Weekday"
 msgstr "Ngày tuần"
 
-#: ../src/crontab.py:161 ../src/crontab.py:166 ../src/crontab.py:170
+#: ../src/crontab.py:167 ../src/crontab.py:172 ../src/crontab.py:176
 #, python-format
 msgid "Must be between %(min)s and %(max)s"
 msgstr "Phải có từ %(min)s đến %(max)s"
 
-#: ../src/crontab.py:168
+#: ../src/crontab.py:174
 #, python-format
 msgid "%s is not a number"
 msgstr "%s không phải là con số"
 
-#: ../src/crontab.py:216 ../src/crontab.py:261 ../src/crontabEditor.py:191
+#: ../src/crontab.py:228 ../src/crontab.py:285 ../src/crontabEditor.py:192
 #: ../src/atEditor.py:110
 msgid "Untitled"
 msgstr "Không tên"
 
 #. add task to treemodel in mainWindow
-#: ../src/crontab.py:337
+#: ../src/crontab.py:387
 msgid "Recurrent"
 msgstr "Lặp"
 
-#: ../src/crontab.py:349
+#: ../src/crontab.py:399
 msgid "minute"
 msgstr "phút"
 
-#: ../src/crontab.py:351
+#: ../src/crontab.py:401
 msgid "hour"
 msgstr "giờ"
 
-#: ../src/crontab.py:353
+#: ../src/crontab.py:403
 msgid "day"
 msgstr "ngày"
 
-#: ../src/crontab.py:355
+#: ../src/crontab.py:405
 msgid "month"
 msgstr "tháng"
 
-#: ../src/crontab.py:357
+#: ../src/crontab.py:407
 msgid "weekday"
 msgstr "ngày tuần"
 
@@ -140,19 +140,23 @@ msgstr "Mỗi tháng"
 msgid "Every week"
 msgstr "Mỗi tuần"
 
-#: ../src/crontabEditor.py:130 ../src/atEditor.py:112
+#: ../src/crontabEditor.py:86 ../src/lang.py:149
+msgid "At reboot"
+msgstr ""
+
+#: ../src/crontabEditor.py:131 ../src/atEditor.py:112
 msgid "Create a New Scheduled Task"
 msgstr "Tạo tác vụ đã lập lịch mới"
 
-#: ../src/crontabEditor.py:152 ../src/atEditor.py:148
+#: ../src/crontabEditor.py:153 ../src/atEditor.py:151
 msgid "Edit a Scheduled Task"
 msgstr "Sửa đổi tác vụ đã lập lịch"
 
-#: ../src/crontabEditor.py:209 ../src/atEditor.py:321
+#: ../src/crontabEditor.py:210 ../src/atEditor.py:326
 msgid "Don't use a preset"
 msgstr "Đừng dùng định sẵn"
 
-#: ../src/crontabEditor.py:270
+#: ../src/crontabEditor.py:271
 #, python-format
 msgid ""
 "This is an invalid record! The problem could be in the %(field)s field. "
@@ -162,27 +166,38 @@ msgstr ""
 "Có lẽ vấn đề trong trường %(field)s.\n"
 "Lý do: %(reason)s"
 
-#: ../src/crontabEditor.py:302 ../src/atEditor.py:291
+#: ../src/crontabEditor.py:276
+msgid ""
+"Your command contains one or more of the character %, this is special for "
+"cron and cannot be used with Gnome-schedule because of the format it uses to "
+"store extra information on the crontab line. Please use the | redirector "
+"character to acheieve the same functionality. Refer to the crontab manual "
+"for more information about the % character. If you don not want to use it "
+"for redirection it must be properly escaped with the \\ letter. I.e.: \\"
+"$HOME."
+msgstr ""
+
+#: ../src/crontabEditor.py:307 ../src/atEditor.py:296
 msgid "The preset has not been saved"
 msgstr "Định sẵn chưa được lưu"
 
-#: ../src/crontabEditor.py:304 ../src/atEditor.py:293
+#: ../src/crontabEditor.py:309 ../src/atEditor.py:298
 msgid "To delete a preset, you first need to select one"
 msgstr "Để xóa bỏ định sẵn, trước hết bạn cần phải chọn nó"
 
-#: ../src/crontabEditor.py:314 ../src/atEditor.py:304
+#: ../src/crontabEditor.py:319 ../src/atEditor.py:309
 msgid "To save a preset, you first have to choose a name for it"
 msgstr "Để lưu định sẵn, trước hết bạn cần phải chọn tên cho nó"
 
-#: ../src/crontabEditor.py:324 ../src/atEditor.py:395
+#: ../src/crontabEditor.py:329 ../src/atEditor.py:400
 msgid "Choose an Icon for this Scheduled Task"
 msgstr "Chọn biểu tượng cho Tác vụ đã lập lịch này"
 
-#: ../src/crontabEditor.py:388
+#: ../src/crontabEditor.py:393
 msgid "command"
 msgstr "lệnh"
 
-#: ../src/crontabEditor.py:426 ../src/mainWindow.py:567 ../src/atEditor.py:519
+#: ../src/crontabEditor.py:430 ../src/mainWindow.py:545 ../src/atEditor.py:524
 msgid "Could not display help"
 msgstr "Không thể hiển thị trợ giúp"
 
@@ -635,45 +650,45 @@ msgstr "%d %B, %Y"
 msgid "%H:%M"
 msgstr "%H:%M"
 
-#: ../src/lang.py:159
+#: ../src/lang.py:164
 msgid "At every full hour"
 msgstr "Vào mỗi giờ hoàn toàn"
 
-#: ../src/lang.py:161
+#: ../src/lang.py:166
 msgid "At every minute"
 msgstr "Vào mỗi phút"
 
-#: ../src/lang.py:163
+#: ../src/lang.py:168
 #, python-format
 msgid "At minute %(minute)s of every hour"
 msgstr "Vào phút %(minute)s của mỗi giờ"
 
-#: ../src/lang.py:165
+#: ../src/lang.py:170
 #, python-format
 msgid "At every minute between %(time_from)s and %(time_to)s"
 msgstr "Vào mỗi phút từ %(time_from)s đến %(time_to)s"
 
-#: ../src/lang.py:167
+#: ../src/lang.py:172
 #, python-format
 msgid "On every day at %(time)s"
 msgstr "Vào mỗi ngày lúc %(time)s"
 
-#: ../src/lang.py:172
+#: ../src/lang.py:177
 #, python-format
 msgid "On day %(monthday)s of every month at every full hour"
 msgstr "Vào ngày %(monthday)s của mỗi tháng, vào mỗi giờ hoàn toàn"
 
-#: ../src/lang.py:174
+#: ../src/lang.py:179
 #, python-format
 msgid "On day %(monthday)s of every month at every minute"
 msgstr "Vào ngày %(monthday)s của mỗi tháng, vào mỗi phút"
 
-#: ../src/lang.py:176
+#: ../src/lang.py:181
 #, python-format
 msgid "On day %(monthday)s of every month at minute %(minute)s of every hour"
 msgstr "Vào ngày %(monthday)s của mỗi tháng, vào phút %(minute)s của mỗi giờ"
 
-#: ../src/lang.py:178
+#: ../src/lang.py:183
 #, python-format
 msgid ""
 "On day %(monthday)s of every month at every minute between %(time_from)s and "
@@ -682,27 +697,27 @@ msgstr ""
 "Vào ngày %(monthday)s của mỗi tháng, vào mỗi phút từ %(time_from)s đến %"
 "(time_to)s"
 
-#: ../src/lang.py:180
+#: ../src/lang.py:185
 #, python-format
 msgid "On day %(monthday)s of every month at %(time)s"
 msgstr "Vào ngày %(monthday)s của mỗi tháng lúc %(time)s"
 
-#: ../src/lang.py:185
+#: ../src/lang.py:190
 #, python-format
 msgid "On every day in %(month)s at every full hour"
 msgstr "Vào mỗi ngày trong %(month)s vào mỗi giờ hoàn toàn"
 
-#: ../src/lang.py:187
+#: ../src/lang.py:192
 #, python-format
 msgid "On every day in %(month)s at every minute"
 msgstr "Vào mỗi ngày trong %(month)s vào mỗi phút"
 
-#: ../src/lang.py:189
+#: ../src/lang.py:194
 #, python-format
 msgid "On every day in %(month)s at minute %(minute)s of every hour"
 msgstr "Vào mỗi ngày trong %(month)s vào phút %(minute)s của mỗi giờ"
 
-#: ../src/lang.py:191
+#: ../src/lang.py:196
 #, python-format
 msgid ""
 "On every day in %(month)s at every minute between %(time_from)s and %"
@@ -710,64 +725,64 @@ msgid ""
 msgstr ""
 "Vào mỗi ngày trong %(month)s vào mỗi phút từ %(time_from)s đến %(time_to)s"
 
-#: ../src/lang.py:193
+#: ../src/lang.py:198
 #, python-format
 msgid "On every day in %(month)s at %(time)s"
 msgstr "Vào mỗi ngày trong %(month)s lúc %(time)s"
 
-#: ../src/lang.py:198
+#: ../src/lang.py:203
 #, python-format
 msgid "Every year on %(date)s at every full hour"
 msgstr "Mỗi năm vào %(date)s vào mỗi giờ hoàn toàn"
 
-#: ../src/lang.py:200
+#: ../src/lang.py:205
 #, python-format
 msgid "Every year on %(date)s at every minute"
 msgstr "Mỗi năm vào %(date)s vào mỗi phút"
 
-#: ../src/lang.py:202
+#: ../src/lang.py:207
 #, python-format
 msgid "Every year on %(date)s at minute %(minute)s of every hour"
 msgstr "Mỗi năm vào %(date)s vào phút %(minute)s của mỗi giờ"
 
-#: ../src/lang.py:204
+#: ../src/lang.py:209
 #, python-format
 msgid ""
 "Every year on %(date)s at every minute between %(time_from)s and %(time_to)s"
 msgstr "Mỗi năm vào %(date)s vào mỗi phút từ %(time_from)s đến %(time_to)s"
 
-#: ../src/lang.py:206
+#: ../src/lang.py:211
 #, python-format
 msgid "Every year on %(date)s at %(time)s"
 msgstr "Mỗi năm vào ngày %(date)s lúc %(time)s"
 
-#: ../src/lang.py:211
+#: ../src/lang.py:216
 #, python-format
 msgid "On every %(weekday)s at every full hour"
 msgstr "Vào mỗi ngày %(weekday)s vào mỗi giờ hoàn to "
 
-#: ../src/lang.py:213
+#: ../src/lang.py:218
 #, python-format
 msgid "On every %(weekday)s at every minute"
 msgstr "Vào mỗi ngày %(weekday)s vào mỗi phút"
 
-#: ../src/lang.py:215
+#: ../src/lang.py:220
 #, python-format
 msgid "On every %(weekday)s at minute %(minute)s of every hour"
 msgstr "Vào mỗi ngày %(weekday)s vào phút %(minute)s của mỗi giờ"
 
-#: ../src/lang.py:217
+#: ../src/lang.py:222
 #, python-format
 msgid ""
 "On every %(weekday)s at every minute between %(time_from)s and %(time_to)s"
 msgstr "Vào mỗi ngày %(weekday)s vào mỗi phút từ %(time_from)s đến %(time_to)s"
 
-#: ../src/lang.py:219
+#: ../src/lang.py:224
 #, python-format
 msgid "On every %(weekday)s at %(time)s"
 msgstr "Vào mỗi ngày %(weekday)s lúc %(time)s"
 
-#: ../src/lang.py:224
+#: ../src/lang.py:229
 #, python-format
 msgid ""
 "On day %(monthday)s of every month and every %(weekday)s at every full hour"
@@ -775,14 +790,14 @@ msgstr ""
 "Vào ngày %(monthday)s của mỗi tháng và mỗi ngày %(weekday)s vào mỗi giờ hoàn "
 "toàn"
 
-#: ../src/lang.py:226
+#: ../src/lang.py:231
 #, python-format
 msgid ""
 "On day %(monthday)s of every month and every %(weekday)s at every minute"
 msgstr ""
 "Vào ngày %(monthday)s của mỗi tháng và mỗi ngày %(weekday)s vào mỗi phút"
 
-#: ../src/lang.py:228
+#: ../src/lang.py:233
 #, python-format
 msgid ""
 "On day %(monthday)s of every month and every %(weekday)s at minute %(minute)"
@@ -791,7 +806,7 @@ msgstr ""
 "Vào ngày %(monthday)s của mỗi tháng và mỗi ngày %(weekday)s vào phút %"
 "(minute)s của mỗi giờ"
 
-#: ../src/lang.py:230
+#: ../src/lang.py:235
 #, python-format
 msgid ""
 "On day %(monthday)s of every month and every %(weekday)s at every minute "
@@ -800,29 +815,29 @@ msgstr ""
 "Vào ngày %(monthday)s của mỗi tháng và mỗi ngày %(weekday)s vào mỗi phút từ %"
 "(time_from)s đến %(time_to)s"
 
-#: ../src/lang.py:232
+#: ../src/lang.py:237
 #, python-format
 msgid "On day %(monthday)s of every month and every %(weekday)s at %(time)s"
 msgstr ""
 "Vào ngày %(monthday)s của mỗi tháng và mỗi ngày %(weekday)s lúc %(time)s"
 
-#: ../src/lang.py:237
+#: ../src/lang.py:242
 #, python-format
 msgid "On every %(weekday)s in %(month)s at every full hour"
 msgstr "Vào mỗi ngày %(weekday)s trong %(month)s vào mỗi giờ hoàn toàn"
 
-#: ../src/lang.py:239
+#: ../src/lang.py:244
 #, python-format
 msgid "On every %(weekday)s in %(month)s at every minute"
 msgstr "Vào mỗi ngày %(weekday)s trong %(month)s vào mỗi phút"
 
-#: ../src/lang.py:241
+#: ../src/lang.py:246
 #, python-format
 msgid "On every %(weekday)s in %(month)s at minute %(minute)s of every hour"
 msgstr ""
 "Vào mỗi ngày %(weekday)s trong %(month)s vào phút %(minute)s của mỗi giờ"
 
-#: ../src/lang.py:243
+#: ../src/lang.py:248
 #, python-format
 msgid ""
 "On every %(weekday)s in %(month)s at every minute between %(time_from)s and %"
@@ -831,12 +846,12 @@ msgstr ""
 "Vào mỗi ngày %(weekday)s trong %(month)s vào mỗi phút từ %(time_from)s đến %"
 "(time_to)s"
 
-#: ../src/lang.py:245
+#: ../src/lang.py:250
 #, python-format
 msgid "On every %(weekday)s in %(month)s at %(time)s"
 msgstr "Vào mỗi ngày %(weekday)s trong %(month)s lúc %(time)s"
 
-#: ../src/lang.py:250
+#: ../src/lang.py:255
 #, python-format
 msgid ""
 "On every %(weekday)s in %(month)s and on %(date)s every year at every full "
@@ -845,7 +860,7 @@ msgstr ""
 "Vào mỗi ngày %(weekday)s trong %(month)s và vào ngày %(date)s trong mỗi năm "
 "vào mỗi giờ hoàn toàn"
 
-#: ../src/lang.py:252
+#: ../src/lang.py:257
 #, python-format
 msgid ""
 "On every %(weekday)s in %(month)s and on %(date)s every year at every minute"
@@ -853,7 +868,7 @@ msgstr ""
 "Vào mỗi ngày %(weekday)s trong %(month)s và vào ngày %(date)s trong mỗi năm "
 "vào mỗi phút"
 
-#: ../src/lang.py:254
+#: ../src/lang.py:259
 #, python-format
 msgid ""
 "On every %(weekday)s in %(month)s and on %(date)s every year at minute %"
@@ -862,7 +877,7 @@ msgstr ""
 "Vào mỗi ngày %(weekday)s trong %(month)s và vào ngày %(date)s trong mỗi năm "
 "vào phút %(minute)s của mỗi giờ"
 
-#: ../src/lang.py:256
+#: ../src/lang.py:261
 #, python-format
 msgid ""
 "On every %(weekday)s in %(month)s and on %(date)s every year at every minute "
@@ -871,7 +886,7 @@ msgstr ""
 "Vào mỗi ngày %(weekday)s trong %(month)s và vào ngày %(date)s trong mỗi năm "
 "vào mỗi phút từ %(time_from)s đến %(time_to)s"
 
-#: ../src/lang.py:258
+#: ../src/lang.py:263
 #, python-format
 msgid ""
 "On every %(weekday)s in %(month)s and on %(date)s every year at %(time)s"
@@ -879,112 +894,112 @@ msgstr ""
 "Vào mỗi ngày %(weekday)s trong %(month)s và vào ngày %(date)s trong mỗi năm "
 "lúc %(time)s"
 
-#: ../src/lang.py:266
+#: ../src/lang.py:271
 msgid "every minute"
 msgstr "mỗi phút"
 
-#: ../src/lang.py:268
+#: ../src/lang.py:273
 #, python-format
 msgid "minute: %s"
 msgstr "phút: %s"
 
-#: ../src/lang.py:271
+#: ../src/lang.py:276
 msgid "every hour"
 msgstr "mỗi giờ"
 
-#: ../src/lang.py:273
+#: ../src/lang.py:278
 #, python-format
 msgid "hour: %s"
 msgstr "giờ : %s"
 
-#: ../src/lang.py:276
+#: ../src/lang.py:281
 msgid "every day of month"
 msgstr "mỗi ngày trong tháng"
 
-#: ../src/lang.py:278
+#: ../src/lang.py:283
 #, python-format
 msgid "day of month: %s"
 msgstr "ngày tháng: %s"
 
-#: ../src/lang.py:281
+#: ../src/lang.py:286
 msgid "every month"
 msgstr "mỗi tháng"
 
-#: ../src/lang.py:283
+#: ../src/lang.py:288
 #, python-format
 msgid "month: %s"
 msgstr "tháng: %s"
 
-#: ../src/lang.py:286
+#: ../src/lang.py:291
 #, python-format
 msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s"
 msgstr "Lúc %(minute)s, %(hour)s, %(monthday)s, %(month)s"
 
-#: ../src/lang.py:288
+#: ../src/lang.py:293
 #, python-format
 msgid "weekday: %s"
 msgstr "ngày tuần: %s"
 
-#: ../src/lang.py:289
+#: ../src/lang.py:294
 #, python-format
 msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 msgstr "Lúc %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 
-#: ../src/mainWindow.py:211 ../src/mainWindow.py:311
+#: ../src/mainWindow.py:211 ../src/mainWindow.py:289
 #, python-format
 msgid "Editing user: %s"
 msgstr "Đang hiệu chỉnh người dung: %s"
 
-#: ../src/mainWindow.py:285 ../src/scheduleapplet.py:115
+#: ../src/mainWindow.py:263 ../src/scheduleapplet.py:115
 msgid "ERROR: Could not load icon"
 msgstr "LỖI: Không thể tải biểu tượng"
 
-#: ../src/mainWindow.py:295
+#: ../src/mainWindow.py:273
 msgid "ERROR: Could not load glade file"
 msgstr "LỖI: Không thể tải tập tin glade"
 
-#: ../src/mainWindow.py:346
+#: ../src/mainWindow.py:324
 msgid "Icon"
 msgstr "Hình"
 
-#: ../src/mainWindow.py:351 ../src/mainWindow.py:384
+#: ../src/mainWindow.py:329 ../src/mainWindow.py:362
 msgid "Type"
 msgstr "Kiểu"
 
-#: ../src/mainWindow.py:355 ../src/mainWindow.py:380
+#: ../src/mainWindow.py:333 ../src/mainWindow.py:358
 msgid "Description"
 msgstr "Mô tả"
 
-#: ../src/mainWindow.py:359 ../src/mainWindow.py:371
+#: ../src/mainWindow.py:337 ../src/mainWindow.py:349
 msgid "Date and Time Settings"
 msgstr "Thiết lập Ngày và Giờ"
 
-#: ../src/mainWindow.py:363 ../src/mainWindow.py:375
+#: ../src/mainWindow.py:341 ../src/mainWindow.py:353
 msgid "Preview"
 msgstr "Xem thử"
 
-#: ../src/mainWindow.py:419 ../src/mainWindow.py:482
+#: ../src/mainWindow.py:397 ../src/mainWindow.py:460
 msgid "Please select a task"
 msgstr "Hãy chọn một tác vụ"
 
-#: ../src/mainWindow.py:426
+#: ../src/mainWindow.py:404
 msgid "Do you want to delete this task?"
 msgstr "Bạn có muốn xóa bỏ tác vụ này không?"
 
-#: ../src/mainWindow.py:530
+#: ../src/mainWindow.py:508
 msgid "About Gnome Schedule"
 msgstr "Giới thiệu Lịch biểu Gnome"
 
-#: ../src/mainWindow.py:531
+#: ../src/mainWindow.py:509
 msgid "Gnome Schedule"
 msgstr "Lịch biểu Gnome"
 
-#: ../src/mainWindow.py:533
+#: ../src/mainWindow.py:511
 #, fuzzy
-msgid "Copyright (c) 2004-2006 Gaute Hope."
+msgid "Copyright (c) 2004-2007 Gaute Hope."
 msgstr "Bản quyền © năm 2004-2005 Gaute Hope."
 
-#: ../src/mainWindow.py:546
+#: ../src/mainWindow.py:524
 msgid "translator-credits"
 msgstr "Nhóm Việt hóa Gnome <gnomevi-list@lists.sourceforge.net>"
 
@@ -996,7 +1011,7 @@ msgstr "LỖI: Không thể tải tập tin dạng XML trình đơn"
 msgid "No such user"
 msgstr "Không có người dùng như vậy"
 
-#: ../src/atEditor.py:531
+#: ../src/atEditor.py:536
 #, python-format
 msgid "This is an invalid record! The problem could be: %s"
 msgstr ""
