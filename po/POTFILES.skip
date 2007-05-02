@@ -1,0 +1,5 @@
+# list of files that should not be translated
+# these files are generated from an allready translated file
+desktop/gnome-schedule.desktop.in
+servers/GNOME_GnomeSchedule.server.in
+
