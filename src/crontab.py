@@ -177,6 +177,9 @@ class Crontab:
 	
 
 	def update (self, minute, hour, day, month, weekday, command, linenumber, parentiter, nooutput, job_id, comment, title, icon, desc):
+		if self.check_command (command) == False:
+			return False
+			
 		# update crontab
 		if minute == "@reboot":
 			record = "@reboot " + command
@@ -264,6 +267,9 @@ class Crontab:
 		
 		
 	def append (self, minute, hour, day, month, weekday, command, nooutput, title, icon = None, desc = None):
+		if self.check_command (command) == False:
+			return False
+			
 		if minute == "@reboot":
 			record = "@reboot " + command
 		else:
@@ -333,6 +339,26 @@ class Crontab:
 		self.__write__ ()
 		
 
+	#check command for problems
+	def check_command (self, command):
+		# check if % is part of the command and if it is escaped, and the escapor not escaped.
+		i = command.find ("%")
+		while i != -1:
+			escaped = 0
+			part = command[0:i]
+			command = command[i + 1:]
+			e = part.rfind ("\\")
+			while (e != -1) and (e == len(part) - 1):
+				escaped = escaped + 1
+				part = part[0:len(part) - 1]
+				e = part.rfind ("\\")
+				
+			if (escaped % 2 == 0):
+				return False
+				
+			i = command.find ("%")
+		return True
+		
 	#read tasks in crontab
 	def read (self):
 		

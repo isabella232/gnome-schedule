@@ -1,6 +1,7 @@
 2007-05-02  Gaute Hope  <eg@gaute.vetsj.com>
 
 	* crontab now supports @reboot, plus reading other special expressions like @hourly and so on.
+	* crontab backend now checking for escaped %, and escaped escapor.
 	
 2007-04-27  Gaute Hope  <eg@gaute.vetsj.com>
 

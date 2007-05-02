@@ -249,13 +249,17 @@ class CrontabEditor:
 			self.__check_field_format__ (self.day, "day")
 			self.__check_field_format__ (self.month, "month")
 			self.__check_field_format__ (self.weekday, "weekday")
+
 		except ValueError, ex:
 			print ex
 			x, y, z = ex
 			self.__WrongRecordDialog__ (x, y, z)
 			return
+			
 
-		
+		if self.scheduler.check_command (self.command) == False:
+			self.__dialog_command_failed__ ()
+			return	False
 			
 		#record = self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday + " " + self.command
 		self.frequency = self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday
@@ -268,7 +272,11 @@ class CrontabEditor:
 		self.wrongdialog.run()
 		self.wrongdialog.destroy()
 
-		
+	def __dialog_command_failed__ (self):
+		self.wrongdialog2 = gtk.MessageDialog(self.widget, gtk.DIALOG_MODAL|gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_ERROR, gtk.BUTTONS_OK, (_("Your command contains one or more of the character %, this is special for cron and cannot be used with Gnome-schedule because of the format it uses to store extra information on the crontab line. Please use the | redirector character to acheieve the same functionality. Refer to the crontab manual for more information about the % character. If you don not want to use it for redirection it must be properly escaped with the \ letter. I.e.: \$HOME.")))
+		self.wrongdialog2.run()
+		self.wrongdialog2.destroy()
+			
 	def __check_field_format__ (self, field, type):
 		try:
 			# Type should not be translatable!
@@ -448,7 +456,10 @@ class CrontabEditor:
 		else:
 			record = self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday + " " + self.command
 
-		
+		if self.scheduler.check_command (self.command) == False:
+			self.__dialog_command_failed__ ()
+			return	False
+			
 		if self.editing == True:
 			#self.minute, self.hour, self.day, self.month, self.weekday, self.command, self.comment, self.job_id, self.title, self.icon, self.desc
 			self.scheduler.update (self.minute, self.hour, self.day, self.month, self.weekday, self.command, self.linenumber, self.parentiter, self.nooutput, self.job_id, self.comment, self.title, self.icon, self.desc)
