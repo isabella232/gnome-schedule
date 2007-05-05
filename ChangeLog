@@ -2,6 +2,7 @@
 
 	* src/mainWindow.py: Hides statusbar if not root
 	* src/mainWindow.py: Treeview made more compact and easier to read
+	* src/mainWindow.py, src/gnome-schedule.glade: Removed menubar, added some buttons.
 	
 2007-05-02  Gaute Hope  <eg@gaute.vetsj.com>
 

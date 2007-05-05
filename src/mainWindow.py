@@ -86,6 +86,8 @@ class main:
 		self.help_button = self.xml.get_widget ("help_button")
 		self.btnSetUser = self.xml.get_widget("btnSetUser")
 		self.btnExit = self.xml.get_widget("btnExit")
+		self.about_button = self.xml.get_widget ("about_button")
+		self.edit_mode_button = self.xml.get_widget ("edit_mode_button")
 
 		self.prop_button.set_sensitive (False)
 		self.del_button.set_sensitive (False)
@@ -95,6 +97,8 @@ class main:
 		self.xml.signal_connect("on_del_button_clicked", self.on_del_button_clicked)
 		self.xml.signal_connect("on_help_button_clicked", self.on_help_button_clicked)
 		self.xml.signal_connect("on_btnSetUser_clicked", self.on_btnSetUser_clicked)
+		self.xml.signal_connect("on_about_menu_activate", self.on_about_menu_activate)
+		self.xml.signal_connect("on_edit_mode_button_clicked", self.on_advanced_menu_activate)
 		self.xml.signal_connect("on_btnExit_clicked", self.__quit__)
 		self.xml.signal_connect("on_mainWindow_delete_event", self.__quit__)
 		
@@ -125,37 +129,11 @@ class main:
 		##
 
 		##configure the menu
-		self.add_scheduled_task_menu = self.xml.get_widget ("add_scheduled_task_menu")
-		self.properties_menu = self.xml.get_widget ("properties_menu")
-		self.delete_menu = self.xml.get_widget ("delete_menu")
-		self.set_user_menu = self.xml.get_widget ("set_user_menu")
-		self.quit_menu = self.xml.get_widget ("quit_menu")
-		
-		self.advanced_menu = self.xml.get_widget ("advanced_menu")
-		
-		self.manual_menu = self.xml.get_widget ("manual_menu")
-		self.about_menu = self.xml.get_widget ("about_menu")
-		
 
-		self.properties_menu.set_sensitive (False)
-		self.delete_menu.set_sensitive (False)
-
-		self.xml.signal_connect("on_add_scheduled_task_menu_activate", self.on_add_scheduled_task_menu_activate)
-		self.xml.signal_connect("on_properties_menu_activate", self.on_properties_menu_activate)
-		self.xml.signal_connect("on_delete_menu_activate", self.on_delete_menu_activate)
-		self.xml.signal_connect("on_set_user_menu_activate",self.on_set_user_menu_activate)
-		
-		self.xml.signal_connect("on_quit_menu_activate", self.__quit__)
-		
-		self.xml.signal_connect("on_advanced_menu_activate", self.on_advanced_menu_activate)
-	
-		self.xml.signal_connect("on_manual_menu_activate", self.on_manual_menu_activate)
-		self.xml.signal_connect("on_about_menu_activate", self.on_about_menu_activate)
 		##
 
 
 		#enable or disable advanced depending on user config
-		self.advanced_menu.set_active (self.backend.get_advanced_option())
 		if self.backend.get_advanced_option():
 			self.switchView("advanced")
 		else:
@@ -280,7 +258,7 @@ class main:
 		self.user = pwd.getpwuid(self.uid)[0]
 		
 		if self.uid != 0:
-			self.set_user_menu.hide()
+			self.btnSetUser.hide()
 			self.statusbar.hide()	
 			self.root = 0
 		else:
@@ -299,8 +277,7 @@ class main:
 			
 		self.prop_button.set_sensitive (value)
 		self.del_button.set_sensitive (value)
-		self.properties_menu.set_sensitive (value)
-		self.delete_menu.set_sensitive (value)
+
 		
 	
 	#clean existing columns
@@ -335,7 +312,7 @@ class main:
 		self.treeview.append_column(col)
 		
 		if mode == "simple":
-
+			
 			col = gtk.TreeViewColumn(_("Description"), gtk.CellRendererText(), text=0)
 			col.set_resizable (True)
 			self.treeview.append_column(col)
@@ -348,6 +325,8 @@ class main:
 			col.set_resizable (True)
 			col.set_expand (True)
 			self.treeview.append_column(col)
+			
+			self.edit_mode_button.set_label (_("Advanced"))
 
 
 		elif mode == "advanced":
@@ -365,11 +344,14 @@ class main:
 			col.set_resizable (True)
 			self.treeview.append_column(col)
 
-	
+			self.edit_mode_button.set_label (_("Simple"))
 
 
 	def on_advanced_menu_activate (self, widget):
-		self.backend.set_advanced_option(widget.get_active())
+		if self.backend.get_advanced_option():
+			self.backend.set_advanced_option(0)
+		else:
+			self.backend.set_advanced_option(1)
 	
 	def on_add_scheduled_task_menu_activate (self, *args):
 		self.addWindow.ShowAddWindow ()
