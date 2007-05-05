@@ -321,25 +321,30 @@ class main:
 		self.edit_mode = mode
 		
 		cell = gtk.CellRendererPixbuf()
-		cell.set_fixed_size(21,21)	
-		col = gtk.TreeViewColumn(_("Icon"), cell, pixbuf=6)
+		cell.set_fixed_size(21,21)
+		cell2 = gtk.CellRendererText ()	
+		col = gtk.TreeViewColumn (_("Task"), None)
+		col.pack_start (cell, True)
+		col.pack_end (cell2, True)
+		col.add_attribute (cell, "pixbuf", 6)
+		if mode == "simple":
+			col.add_attribute (cell2, "text", 13)
+		else:
+			col.add_attribute (cell2, "text", 14)
+			
 		self.treeview.append_column(col)
 		
 		if mode == "simple":
-
-			col = gtk.TreeViewColumn(_("Type"), gtk.CellRendererText(), text=13)
-			col.set_resizable (True)
-			self.treeview.append_column(col)
 
 			col = gtk.TreeViewColumn(_("Description"), gtk.CellRendererText(), text=0)
 			col.set_resizable (True)
 			self.treeview.append_column(col)
 
-			col = gtk.TreeViewColumn(_("Date and Time Settings"), gtk.CellRendererText(), text=1)
+			col = gtk.TreeViewColumn(_("Date and Time"), gtk.CellRendererText(), text=1)
 			col.set_resizable (True)
 			self.treeview.append_column(col)
 
-			col = gtk.TreeViewColumn(_("Preview"), gtk.CellRendererText(), text=2)
+			col = gtk.TreeViewColumn(_("Command preview"), gtk.CellRendererText(), text=2)
 			col.set_resizable (True)
 			col.set_expand (True)
 			self.treeview.append_column(col)
@@ -347,11 +352,11 @@ class main:
 
 		elif mode == "advanced":
 	
-			col = gtk.TreeViewColumn(_("Date and Time Settings"), gtk.CellRendererText(), text=5)
+			col = gtk.TreeViewColumn(_("Date and Time"), gtk.CellRendererText(), text=5)
 			col.set_resizable (True)
 			self.treeview.append_column(col)
 
-			col = gtk.TreeViewColumn(_("Preview"), gtk.CellRendererText(), text=2)
+			col = gtk.TreeViewColumn(_("Command preview"), gtk.CellRendererText(), text=2)
 			col.set_resizable (True)
 			col.set_expand (True)
 			self.treeview.append_column(col)
@@ -360,9 +365,6 @@ class main:
 			col.set_resizable (True)
 			self.treeview.append_column(col)
 
-			col = gtk.TreeViewColumn(_("Type"), gtk.CellRendererText(), text=14)
-			col.set_resizable (True)
-			self.treeview.append_column(col)
 	
 
 
