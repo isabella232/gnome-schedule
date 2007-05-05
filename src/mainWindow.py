@@ -280,7 +280,8 @@ class main:
 		self.user = pwd.getpwuid(self.uid)[0]
 		
 		if self.uid != 0:
-			self.set_user_menu.hide()	
+			self.set_user_menu.hide()
+			self.statusbar.hide()	
 			self.root = 0
 		else:
 			self.root = 1
