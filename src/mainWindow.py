@@ -80,7 +80,32 @@ class main:
 		##
 		
 		##configure the toolbar	
-		self.add_button = self.xml.get_widget ("add_button")
+		self.toolbar = self.xml.get_widget ("toolbar")
+		self.add_button = gtk.MenuToolButton (gtk.STOCK_NEW)
+		self.add_button_menu = gtk.Menu ()
+		self.add_button_menu_add_crontab = gtk.MenuItem (label=_("Recurrent task"), use_underline=False)
+		self.add_button_menu_add_at = gtk.MenuItem (label=_("One-time task"), use_underline=False)
+		self.add_button_menu.append (self.add_button_menu_add_crontab)
+		self.add_button_menu.append (self.add_button_menu_add_at)
+		
+		self.add_button.set_menu (self.add_button_menu)
+
+		self.toolbar.insert (self.add_button, 0)
+		self.add_button.set_is_important (True)
+		tip = gtk.Tooltips ()
+		tip.enable ()
+		
+		self.add_button.set_tooltip (tip, _("Add a new task"), tip_private=None)
+		self.add_button.show_all ()
+		self.add_button_menu.show_all ()
+		self.add_button_menu_add_crontab.show_all ()
+		self.add_button_menu_add_at.show_all ()
+
+		self.add_button.connect ("clicked", self.on_add_button_clicked)
+		self.add_button_menu_add_crontab.connect ("activate", self.on_add_crontab_task)
+		self.add_button_menu_add_at.connect ("activate", self.on_add_at_task)
+
+		
 		self.prop_button = self.xml.get_widget ("prop_button")
 		self.del_button = self.xml.get_widget ("del_button")
 		self.help_button = self.xml.get_widget ("help_button")
@@ -92,7 +117,7 @@ class main:
 		self.prop_button.set_sensitive (False)
 		self.del_button.set_sensitive (False)
 		
-		self.xml.signal_connect("on_add_button_clicked", self.on_add_button_clicked)
+		
 		self.xml.signal_connect("on_prop_button_clicked", self.on_prop_button_clicked)
 		self.xml.signal_connect("on_del_button_clicked", self.on_del_button_clicked)
 		self.xml.signal_connect("on_help_button_clicked", self.on_help_button_clicked)
@@ -352,7 +377,13 @@ class main:
 			self.backend.set_advanced_option(0)
 		else:
 			self.backend.set_advanced_option(1)
-	
+
+	def on_add_at_task (self, *args):
+		self.addWindow.go_at ()
+		
+	def on_add_crontab_task (self, *args):
+		self.addWindow.go_crontab ()
+		
 	def on_add_scheduled_task_menu_activate (self, *args):
 		self.addWindow.ShowAddWindow ()
 

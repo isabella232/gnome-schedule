@@ -41,19 +41,7 @@
 	  <property name="show_arrow">True</property>
 
 	  <child>
-	    <widget class="GtkToolButton" id="add_button">
-	      <property name="visible">True</property>
-	      <property name="tooltip" translatable="yes">Add a new scheduled task</property>
-	      <property name="stock_id">gtk-new</property>
-	      <property name="visible_horizontal">True</property>
-	      <property name="visible_vertical">True</property>
-	      <property name="is_important">True</property>
-	      <signal name="clicked" handler="on_add_button_clicked" last_modification_time="Fri, 15 Apr 2005 05:16:37 GMT"/>
-	    </widget>
-	    <packing>
-	      <property name="expand">False</property>
-	      <property name="homogeneous">True</property>
-	    </packing>
+	    <placeholder/>
 	  </child>
 
 	  <child>

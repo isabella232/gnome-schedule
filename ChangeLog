@@ -1,3 +1,7 @@
+2007-05-07  Gaute Hope  <eg@gaute.vetsj.com>
+
+	* src/mainWindow.py, src/addWindow.py, src/gnome-schedule.glade: The new button is now a MenuToolButton with a arrow that allows for direct selection of type of task that is intended to create. A click on the button works like earlier.
+	
 2007-05-05  Gaute Hope  <eg@gaute.vetsj.com>
 
 	* src/mainWindow.py: Hides statusbar if not root

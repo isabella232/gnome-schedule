@@ -51,13 +51,19 @@ class AddWindow:
 	def on_cancel_button_clicked (self, *args):
 		self.widget.hide()
 		
+	def go_crontab (self, *args):
+		self.ParentClass.editor = self.ParentClass.crontab_editor
+		self.ParentClass.editor.showadd (self.ParentClass.edit_mode)
+		
+	def go_at (self, *args):
+		self.ParentClass.editor = self.ParentClass.at_editor
+		self.ParentClass.editor.showadd (self.ParentClass.edit_mode)	
+		
 	def on_ok_button_clicked (self, *args):
 		self.widget.hide()
 
 		if self.crontab_radio.get_active ():
-			self.ParentClass.editor = self.ParentClass.crontab_editor
-			self.ParentClass.editor.showadd (self.ParentClass.edit_mode)
+			self.go_crontab ()
 		else:
-			self.ParentClass.editor = self.ParentClass.at_editor
-			self.ParentClass.editor.showadd (self.ParentClass.edit_mode)
+			self.go_at ()
 		
