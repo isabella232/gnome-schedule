@@ -1,0 +1,21 @@
+check bug: 419392, http://bugzilla.gnome.org/show_bug.cgi?id=419392
+
+* Update mainwindow:
+	- no menu. ok
+	- statusbar. ok, only visible when used
+	- treeview:
+		easier easy-view
+		icon and type in one row. ok
+		one icon for each type, and no other self specified.
+		tweak the advanced aswell a bit
+
+* crontab add/edit
+	- a preview of the time expression expressed on the easy form used in the treeview.
+	- better way of handeling special expressions like @reboot and @tomorrow
+	- remove icon selector
+
+* at add/edit
+	- no calendar, rather a dropdown calendar or something similar
+	- remove icon selector
+
+* for both crontab and at editors check the bug report and examples given there. 
