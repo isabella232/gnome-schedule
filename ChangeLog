@@ -1,3 +1,7 @@
+2007-05-25  Gaute Hope  <eg@gaute.vetsj.com>
+
+	* updated README
+	
 2007-05-02  Gaute Hope  <eg@gaute.vetsj.com>
 
 	* crontab now supports @reboot, plus reading other special expressions like @hourly and so on.
