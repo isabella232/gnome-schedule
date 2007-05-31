@@ -205,15 +205,15 @@ class AtEditor:
 			minute = self.minute_spinbutton.get_text()
 			month = month + 1 #months start at 0
 			year = str(year)
-			if hour:
+			if hour.isdigit():
 				hour = int(hour)
 			else:
-				return
+				return False
 
-			if minute:
+			if minute.isdigit():
 				minute = int(minute)
 			else:
-				return
+				return False
 	
 			if hour < 10:
 				hour = "0" + str(hour)
@@ -274,6 +274,13 @@ class AtEditor:
 				self.combo_trigger = False
 
 
+	def popup_error_no_digit (self, field):
+		box_popup = gtk.MessageDialog (self.widget, gtk.DIALOG_MODAL, gtk.MESSAGE_INFO, gtk.BUTTONS_OK, _("In one or both of the fields hour and minute there was entered a letter or a number out of range. Remember an hour only has 60 minutes and a day only 24 hours."))
+		box_popup.set_response_sensitive(gtk.RESPONSE_OK, True)
+		run = box_popup.run ()
+		box_popup.hide ()
+		field.set_text ("0")
+		 
 	def template_doesnot_exist (self, message):
 		box = gtk.MessageDialog(self.widget, gtk.DIALOG_MODAL, gtk.MESSAGE_INFO, gtk.BUTTONS_OK, message)
 		box.set_response_sensitive(gtk.RESPONSE_OK, True)
@@ -529,7 +536,7 @@ class AtEditor:
 
 	def on_cancel_button_clicked (self, *args):
 		self.widget.hide()
-		#return True
+		
 
 
 	def __WrongRecordDialog__ (self, x):
@@ -543,7 +550,7 @@ class AtEditor:
 		if validate == False:
 			self.__WrongRecordDialog__ (reason)
 			return
-		# TODO: Fill record
+		
 		
 		if self.editing != False:
 			self.scheduler.update (self.job_id, self.runat, self.command, self.title, self.icon)
@@ -553,3 +560,4 @@ class AtEditor:
 		self.ParentClass.schedule_reload ()
 			
 		self.widget.hide ()
+		
