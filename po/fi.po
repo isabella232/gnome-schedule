@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-02 21:54+0200\n"
+"POT-Creation-Date: 2007-08-14 22:13+0300\n"
 "PO-Revision-Date: 2006-10-24 17:42+0300\n"
 "Last-Translator: Ilkka Tuohela <hile@iki.fi>\n"
 "Language-Team: Finnish <gnome-fi-laatu@lists.sourceforge.net>\n"
@@ -143,7 +143,7 @@ msgstr "Joka viikko"
 
 #: ../src/crontabEditor.py:86 ../src/lang.py:149
 msgid "At reboot"
-msgstr ""
+msgstr "Käynnistettäessä"
 
 #: ../src/crontabEditor.py:131 ../src/atEditor.py:112
 msgid "Create a New Scheduled Task"
@@ -153,7 +153,7 @@ msgstr "Luo uusi ajastettu tehtävä"
 msgid "Edit a Scheduled Task"
 msgstr "Muokkaa ajastettua tehtävää"
 
-#: ../src/crontabEditor.py:210 ../src/atEditor.py:326
+#: ../src/crontabEditor.py:210 ../src/atEditor.py:333
 msgid "Don't use a preset"
 msgstr "Älä käytä esiasetusta"
 
@@ -176,20 +176,27 @@ msgid ""
 "for redirection it must be properly escaped with the \\ letter. I.e.: \\"
 "$HOME."
 msgstr ""
+"Komentosi sisältää yhden tai useampia %-merkkejä, joka on cronin "
+"erikoismerkki. Sitä ei voi käyttää  Gnome-schedulesta, koska sitä "
+"käytetään tallentaa lisätietoja crontab-riville. Käytä ohjainta |, jolla "
+"saat samaan aikaan tuloksen. Lue lisätietoja %-merkistä crontabin "
+"manuaalisivulta. Jos et halua käyttää sitä uudelleenohjaukseen, se tulee "
+"suojata kunnolla \\-merkillä, esimerkiksi \\$HOME."
 
-#: ../src/crontabEditor.py:307 ../src/atEditor.py:296
+
+#: ../src/crontabEditor.py:307 ../src/atEditor.py:303
 msgid "The preset has not been saved"
 msgstr "Esiasetusta ei tallennettu"
 
-#: ../src/crontabEditor.py:309 ../src/atEditor.py:298
+#: ../src/crontabEditor.py:309 ../src/atEditor.py:305
 msgid "To delete a preset, you first need to select one"
 msgstr "Esiasetus täytyy valita ennen kuin voit poistaa sen"
 
-#: ../src/crontabEditor.py:319 ../src/atEditor.py:309
+#: ../src/crontabEditor.py:319 ../src/atEditor.py:316
 msgid "To save a preset, you first have to choose a name for it"
 msgstr "Esiasetukselle täytyy antaa nimi ennen kuin sen voi tallentaa"
 
-#: ../src/crontabEditor.py:329 ../src/atEditor.py:400
+#: ../src/crontabEditor.py:329 ../src/atEditor.py:407
 msgid "Choose an Icon for this Scheduled Task"
 msgstr "Valitse kuvake tälle ajastetulle tehtävälle"
 
@@ -197,7 +204,7 @@ msgstr "Valitse kuvake tälle ajastetulle tehtävälle"
 msgid "command"
 msgstr "komento"
 
-#: ../src/crontabEditor.py:430 ../src/mainWindow.py:545 ../src/atEditor.py:524
+#: ../src/crontabEditor.py:430 ../src/mainWindow.py:545 ../src/atEditor.py:531
 msgid "Could not display help"
 msgstr "Ohjetta ei voi näyttää"
 
@@ -990,15 +997,14 @@ msgid "Gnome Schedule"
 msgstr "Gnome-ajastus"
 
 #: ../src/mainWindow.py:511
-#, fuzzy
 msgid "Copyright (c) 2004-2007 Gaute Hope."
-msgstr "Tekijänoikeudet © 2004-2006 Gaute Hope."
+msgstr "Tekijänoikeudet © 2004-2007 Gaute Hope."
 
 #: ../src/mainWindow.py:524
 msgid "translator-credits"
 msgstr ""
+"Ilkka Tuohela, 2006-2007\n"
 "Tommi Vainikainen, 2005\n"
-"Ilkka Tuohela, 2006\n"
 "\n"
 "http://gnome.fi/"
 
@@ -1010,7 +1016,17 @@ msgstr "VIRHE: valikon XML-tiedostoa ei voitu ladata"
 msgid "No such user"
 msgstr "Käyttäjä on tuntematon"
 
-#: ../src/atEditor.py:536
+#: ../src/atEditor.py:278
+msgid ""
+"In one or both of the fields hour and minute there was entered a letter or a "
+"number out of range. Remember an hour only has 60 minutes and a day only 24 "
+"hours."
+msgstr ""
+"Joko tunti- tai minuuttikenttään syötettiin kirjain tai numero, joka ei ole "
+"kelvollinen. Muistathan että tunnissa on vain 60 minuuttia ja päivässä "
+"24 tuntia."
+
+#: ../src/atEditor.py:543
 #, python-format
 msgid "This is an invalid record! The problem could be: %s"
 msgstr "Virheellinen tietue! Mahdollinen ongelma: %s"
