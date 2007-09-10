@@ -6,10 +6,10 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-schedule-it\n"
+"Project-Id-Version: gnome-schedule-it 1.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-02 21:54+0200\n"
-"PO-Revision-Date: 2007-02-15 11:17+0100\n"
+"POT-Creation-Date: 2007-09-10 22:18+0200\n"
+"PO-Revision-Date: 2007-09-05 19:22+0200\n"
 "Last-Translator: Andrea Zagli <azagli@inwind.it>\n"
 "Language-Team: Italian <tp@lists.linux.it>\n"
 "MIME-Version: 1.0\n"
@@ -54,7 +54,7 @@ msgstr "Una volta"
 
 #: ../src/at.py:453
 msgid "Warning: a line in atq's output didn't parse"
-msgstr "Attenzione: una linea nell'ouput di atq non è analizzata"
+msgstr "Attenzione: una riga nell'ouput di atq non è analizzata"
 
 #: ../src/crontab.py:74
 msgid "Minute"
@@ -143,7 +143,7 @@ msgstr "Ogni settimana"
 
 #: ../src/crontabEditor.py:86 ../src/lang.py:149
 msgid "At reboot"
-msgstr ""
+msgstr "Al riavvio"
 
 #: ../src/crontabEditor.py:131 ../src/atEditor.py:112
 msgid "Create a New Scheduled Task"
@@ -153,7 +153,7 @@ msgstr "Crea una nuova operazione pianificata"
 msgid "Edit a Scheduled Task"
 msgstr "Modifica un'operazione pianificata"
 
-#: ../src/crontabEditor.py:210 ../src/atEditor.py:326
+#: ../src/crontabEditor.py:210 ../src/atEditor.py:333
 msgid "Don't use a preset"
 msgstr "Non usare un preset"
 
@@ -176,20 +176,28 @@ msgid ""
 "for redirection it must be properly escaped with the \\ letter. I.e.: \\"
 "$HOME."
 msgstr ""
+"Il comando contiene uno o più caratteri «%», che per «cron» è speciale e non "
+"può essere utilizzato con Gnome-schedule a causa del formato che utilizza "
+"per immagazzinare informazioni aggiuntive sulla linea di «crontab». "
+"Utilizzare il carattere redizionatore «|» per realizzare la stessa "
+"funzionalità. Fare riferimento al manuale di «crontab» per maggiori "
+"informazioni sul carattere «%». Se non si vuole utilizzarlo per la "
+"redirezione può essere correttamente usata la sequenza di escape con la "
+"lettera «\\». Es.: \\$HOME."
 
-#: ../src/crontabEditor.py:307 ../src/atEditor.py:296
+#: ../src/crontabEditor.py:307 ../src/atEditor.py:303
 msgid "The preset has not been saved"
 msgstr "Il preset non è stato salvato"
 
-#: ../src/crontabEditor.py:309 ../src/atEditor.py:298
+#: ../src/crontabEditor.py:309 ../src/atEditor.py:305
 msgid "To delete a preset, you first need to select one"
 msgstr "Per eliminare un preset, si deve prima selezionarne uno"
 
-#: ../src/crontabEditor.py:319 ../src/atEditor.py:309
+#: ../src/crontabEditor.py:319 ../src/atEditor.py:316
 msgid "To save a preset, you first have to choose a name for it"
 msgstr "Per salvare un preset, si deve prima inserirne il nome"
 
-#: ../src/crontabEditor.py:329 ../src/atEditor.py:400
+#: ../src/crontabEditor.py:329 ../src/atEditor.py:407
 msgid "Choose an Icon for this Scheduled Task"
 msgstr "Seleziona un'icona per questa operazione pianificata"
 
@@ -197,7 +205,7 @@ msgstr "Seleziona un'icona per questa operazione pianificata"
 msgid "command"
 msgstr "comando"
 
-#: ../src/crontabEditor.py:430 ../src/mainWindow.py:545 ../src/atEditor.py:524
+#: ../src/crontabEditor.py:430 ../src/mainWindow.py:545 ../src/atEditor.py:531
 msgid "Could not display help"
 msgstr "Impossibile visualizzare l'aiuto"
 
@@ -295,7 +303,7 @@ msgstr "A un giorno della settimana"
 msgid "Weekday:"
 msgstr "Giorno della settimana:"
 
-# Suggerimenti???
+# 
 #: ../src/crontabEditorHelper.py:258 ../src/gnome-schedule.glade.h:40
 msgid "In a step width"
 msgstr "A intervalli di tempo"
@@ -338,7 +346,7 @@ msgstr "_Gestisci le operazioni"
 
 #: ../src/gnome-schedule.glade.h:1
 msgid "<b>Choose the user whose tasks you want to modify</b>"
-msgstr "<b>Scegliere l'utente di cui si vogliono modificare le operazioni</b>"
+msgstr "<b>Scegliere l'utente di cui modificare i compiti</b>"
 
 #: ../src/gnome-schedule.glade.h:2
 msgid "<b>Date and Time Settings</b>"
@@ -362,7 +370,7 @@ msgstr "<b>Anteprima</b>"
 
 #: ../src/gnome-schedule.glade.h:7
 msgid "<b>Select the type of the scheduled task</b>"
-msgstr "<b>Seleziona il tipo di operazione pianificata</b>"
+msgstr "<b>Selezionare il tipo di operazione pianificata</b>"
 
 #: ../src/gnome-schedule.glade.h:8
 msgid "<b>Task</b>"
@@ -426,7 +434,7 @@ msgstr "Data e ora"
 
 #: ../src/gnome-schedule.glade.h:24
 msgid "Delete a scheduled task"
-msgstr "Elimina una operazione pianificata"
+msgstr "Elimina un'operazione pianificata"
 
 #: ../src/gnome-schedule.glade.h:25
 msgid "Delete the selected template"
@@ -443,7 +451,7 @@ msgstr "Modifica un'operazione pianificata"
 #: ../src/gnome-schedule.glade.h:29
 msgid "Execution at a specific minute, hour, day, weekday or month."
 msgstr ""
-"Esecuzione ad uno specifico minuto, ora, giorno, giorno della settimana o "
+"Esecuzione a uno specifico minuto, ora, giorno, giorno della settimana o "
 "mese."
 
 #: ../src/gnome-schedule.glade.h:30
@@ -456,7 +464,7 @@ msgstr ""
 
 #: ../src/gnome-schedule.glade.h:31
 msgid "Execution at every minute, hour, day, weekday or month."
-msgstr "Esecuzione ad ogni minuto, ora, giorno, giorno della settimana o mese."
+msgstr "Esecuzione a ogni minuto, ora, giorno, giorno della settimana o mese."
 
 #: ../src/gnome-schedule.glade.h:32
 msgid "Execution in a range."
@@ -469,7 +477,7 @@ msgstr "Espressione:"
 #: ../src/gnome-schedule.glade.h:34
 msgid "For example at 04:10 tomorrow, next week or in three days"
 msgstr ""
-"Per esempio alle 04:10 di domani, la prossima settimana o fra tre giorni."
+"Per esempio alle 04.10 di domani, la prossima settimana o fra tre giorni"
 
 #: ../src/gnome-schedule.glade.h:35
 msgid "For example every first hour of the day"
@@ -1001,9 +1009,8 @@ msgid "Gnome Schedule"
 msgstr "Gnome Schedule"
 
 #: ../src/mainWindow.py:511
-#, fuzzy
 msgid "Copyright (c) 2004-2007 Gaute Hope."
-msgstr "Copyright (c) 2004-2006 Gaute Hope."
+msgstr "Copyright (c) 2004-2007 Gaute Hope."
 
 #: ../src/mainWindow.py:524
 msgid "translator-credits"
@@ -1011,16 +1018,23 @@ msgstr "Andrea Zagli <azagli@inwind.it>"
 
 #: ../src/scheduleapplet.py:131
 msgid "ERROR: Could not load menu xml file"
-msgstr "ERRORE: impossibile caricare il file xml del menu"
+msgstr "ERRORE: impossibile caricare il file xml del menù"
 
 #: ../src/setuserWindow.py:84
 msgid "No such user"
 msgstr "Nessun altro utente"
 
-#: ../src/atEditor.py:536
+#: ../src/atEditor.py:278
+msgid ""
+"In one or both of the fields hour and minute there was entered a letter or a "
+"number out of range. Remember an hour only has 60 minutes and a day only 24 "
+"hours."
+msgstr ""
+"In uno o entrambi i campi ora e minuto sono stati inseriti una lettera o un "
+"numero fuori intervallo. Ricordare che un'ora ha solo 60 minuti e un giorno "
+"solamente 24 ore."
+
+#: ../src/atEditor.py:543
 #, python-format
 msgid "This is an invalid record! The problem could be: %s"
 msgstr "Questa impostazione non è valida! Il problema potrebbe essere: %s"
-
-#~ msgid "ERROR: Failed to parse crontab record"
-#~ msgstr "ERRORE: fallita l'analisi del record di crontab"
