@@ -952,7 +952,7 @@ msgstr "Copyright (c) 2004-2007 Gaute Hope."
 
 #: ../src/mainWindow.py:524
 msgid "translator-credits"
-msgstr "La còla occitana de revirada d'Ubuntu, 2007 - ubuntu-l10n-oci@lists.ubuntu.com"
+msgstr "Yannig Marchegay (Kokoyaya) <yannig@marchegay.org)"
 
 #: ../src/scheduleapplet.py:131
 msgid "ERROR: Could not load menu xml file"
