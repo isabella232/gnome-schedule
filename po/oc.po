@@ -1,23 +1,21 @@
-# French translation of gnome-schedule.
+# Occitan translation of gnome-schedule.
 # Copyright (C) 2004-2007 The Free Software Foundation, Inc.
 # This file is distributed under the same license as the gnome-schedule package.
 #
-# Yannick Marchegay <yannick.marchegay@lokanova.com>, 2004.
-# Claude Paroz <claude@2xlibre.net>, 2006.
-# Jonathan Ernst <jonathan@ernstfamily.ch>, 2007.
-# Stéphane Raimbault <stephane.raimbault@gmail.com>, 2007.
+# Yannig MARCHEGAY (yannig@marchegay.org) - 2006-2007
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-02 21:54+0200\n"
+"POT-Creation-Date: 2007-10-13 17:48+0200\n"
 "PO-Revision-Date: 2007-08-19 20:32+0200\n"
-"Last-Translator: Stéphane Raimbault <stephane.raimbault@gmail.com>\n"
-"Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
+"Last-Translator: Yannig MARCHEGAY (Kokoyaya) <yannig@marchegay.org>\n"
+"Language-Team: Occitan (post 1500) <ubuntu-l10n-oci@lists.ubuntu.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: ../desktop/gnome-schedule.desktop.in.in.h:1
 msgid "Manage your system tasks"
@@ -155,7 +153,7 @@ msgstr ""
 msgid "Edit a Scheduled Task"
 msgstr ""
 
-#: ../src/crontabEditor.py:210 ../src/atEditor.py:326
+#: ../src/crontabEditor.py:210 ../src/atEditor.py:333
 msgid "Don't use a preset"
 msgstr ""
 
@@ -166,19 +164,30 @@ msgid ""
 "Reason: %(reason)s"
 msgstr ""
 
-#: ../src/crontabEditor.py:307 ../src/atEditor.py:296
+#: ../src/crontabEditor.py:276
+msgid ""
+"Your command contains one or more of the character %, this is special for "
+"cron and cannot be used with Gnome-schedule because of the format it uses to "
+"store extra information on the crontab line. Please use the | redirector "
+"character to acheieve the same functionality. Refer to the crontab manual "
+"for more information about the % character. If you don not want to use it "
+"for redirection it must be properly escaped with the \\ letter. I.e.: \\"
+"$HOME."
+msgstr ""
+
+#: ../src/crontabEditor.py:307 ../src/atEditor.py:303
 msgid "The preset has not been saved"
 msgstr ""
 
-#: ../src/crontabEditor.py:309 ../src/atEditor.py:298
+#: ../src/crontabEditor.py:309 ../src/atEditor.py:305
 msgid "To delete a preset, you first need to select one"
 msgstr ""
 
-#: ../src/crontabEditor.py:319 ../src/atEditor.py:309
+#: ../src/crontabEditor.py:319 ../src/atEditor.py:316
 msgid "To save a preset, you first have to choose a name for it"
 msgstr ""
 
-#: ../src/crontabEditor.py:329 ../src/atEditor.py:400
+#: ../src/crontabEditor.py:329 ../src/atEditor.py:407
 msgid "Choose an Icon for this Scheduled Task"
 msgstr ""
 
@@ -186,7 +195,7 @@ msgstr ""
 msgid "command"
 msgstr ""
 
-#: ../src/crontabEditor.py:430 ../src/mainWindow.py:545 ../src/atEditor.py:524
+#: ../src/crontabEditor.py:430 ../src/mainWindow.py:545 ../src/atEditor.py:531
 msgid "Could not display help"
 msgstr "Impossible de mostrar l'ajuda"
 
@@ -962,8 +971,14 @@ msgstr ""
 msgid "No such user"
 msgstr ""
 
-#: ../src/atEditor.py:536
+#: ../src/atEditor.py:278
+msgid ""
+"In one or both of the fields hour and minute there was entered a letter or a "
+"number out of range. Remember an hour only has 60 minutes and a day only 24 "
+"hours."
+msgstr ""
+
+#: ../src/atEditor.py:543
 #, python-format
 msgid "This is an invalid record! The problem could be: %s"
 msgstr ""
-
