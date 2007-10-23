@@ -44,7 +44,7 @@ class AtEditor:
 		self.widget = self.xml.get_widget("at_editor")
 		self.widget.connect("delete-event", self.widget.hide_on_delete)
 		
-		self.mode = 0 # 0 = add, 1 = edit
+		self.mode = 0 # 0 = add, 1 = edit, 2 = template
 
 		self.button_save = self.xml.get_widget ("at_button_save")
 		self.button_cancel = self.xml.get_widget ("at_button_cancel")
@@ -60,10 +60,8 @@ class AtEditor:
 		self.spin_month = self.xml.get_widget ("at_spin_month")
 		self.spin_day = self.xml.get_widget ("at_spin_day")
 
-		self.combobox = self.xml.get_widget ("at_combobox")
-		self.combobox_entry = self.combobox.get_child()	
 			
-)
+
 		self.xml.signal_connect("on_at_button_cancel_clicked", self.on_button_cancel_clicked)
 		self.xml.signal_connect("on_at_button_save_clicked", self.on_button_save_clicked)
 
@@ -107,7 +105,6 @@ class AtEditor:
 		print "got date: " + self.date
 		self.time = self.ParentClass.treemodel.get_value(iter, 12)
 		self.title = self.ParentClass.treemodel.get_value(iter, 0)
-		self.icon = self.ParentClass.treemodel.get_value(iter, 8) 
 		self.class_id = self.ParentClass.treemodel.get_value(iter, 9)
 		self.user = self.ParentClass.treemodel.get_value(iter, 10)
 		self.command = self.ParentClass.treemodel.get_value(iter, 3)
@@ -123,10 +120,12 @@ class AtEditor:
 		print "runat"
 		self.runat = self.time + " " + day + "." + month + "." + year
 		print "cal sel month"
-		self.calendar.select_month(int(month) - 1, int(year))
-		self.calendar.select_day(int(day))
-		self.hour_spinbutton.set_value(int(hour))
-		self.minute_spinbutton.set_value(int(minute))
+		self.spin_year.set_value (int (year))
+		self.spin_month.set_value (int (month))
+		self.spin_day.set_value (int (day))
+
+		self.spin_hour.set_value(int(hour))
+		self.spin_minute.set_value(int(minute))
 		self.widget.set_title(_("Edit a Scheduled Task"))
 		print "update textboxes"
 		self.__update_textboxes__ ()
@@ -134,10 +133,9 @@ class AtEditor:
 		self.widget.set_transient_for(self.ParentClass.widget)
 		self.widget.set_position(gtk.WIN_POS_CENTER_ON_PARENT)
 		self.widget.show ()
-		print "reload templates"
-		self.__reload_templates__ ()
-		self.NOACTION = False
+
 		print "showedit done"
+		
 	def on_worded_label_event (self, *args):
 		#TODO highlight on mouseover
 		pass
@@ -152,13 +150,13 @@ class AtEditor:
 		# don't forget to attach eventhandling to this popup
 		pass
 	
-	def on_script_textview_change (self, *args):
-		start = self.script_textview_buffer.get_start_iter()
-		end = self.script_textview_buffer.get_end_iter()
-		self.command = self.script_textview_buffer.get_text(start, end)
+	def on_text_task_change (self, *args):
+		start = self.text_task_buffer.get_start_iter()
+		end = self.text_task_buffer.get_end_iter()
+		self.command = self.text_task_buffer.get_text(start, end)
 
 
-	def on_title_entry_changed (self, *args):
+	def on_entry_title_changed (self, *args):
 		self.title = self.title_entry.get_text()
 
 	def on_calendar_day_selected (self, *args):		
@@ -173,7 +171,17 @@ class AtEditor:
 	def on_hour_spinbutton_changed (self, *args):
 		self.__update_time_cal__()
 
-	def on_minute_spinbutton_changed (self, *args):
+	def on_spin_minute_changed (self, *args):
+		minute = self.spin_minute.get_text ()
+		if minute.isdigit ():
+			minute = int (minute)
+			if minute < 10:
+				minute = "0" + str (minute)
+			else:
+				minute = str (minute)
+		else:
+			self.spin_minute.set_text (self.minute)
+			
 		self.__update_time_cal__()
 
 	

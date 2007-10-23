@@ -174,7 +174,7 @@ class main:
 		
 		##create at
 		self.at = at.At(self.root,self.user, self.uid, self.gid)
-		self.at_editor = atEditor.AtEditor (self, self.backend, self.at, self.defaultIcon)
+		self.at_editor = atEditor.AtEditor (self, self.backend, self.at)
 		##
 		
 		#set user window
