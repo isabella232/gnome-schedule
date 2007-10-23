@@ -59,6 +59,8 @@ class At:
 		self.atRecordRegexAdded = re.compile('[^\s]+\s([0-9]+)\sat')
 		self.nooutput = 0
 		self.SCRIPT_DELIMITER = "###### ---- GNOME_SCHEDULE_SCRIPT_DELIMITER #####"
+		
+		self.atdatafileversion = 2
 		self.atdata = os.path.expanduser ("~/.gnome/gnome-schedule/at")
 		if os.path.exists(self.atdata) != True:
 			if os.makedirs(self.atdata, 0700):
@@ -114,15 +116,16 @@ class At:
 					if regexp == 3:
 						job_id = m.groups ()[0]
 						dt = datetime.datetime.strptime (m.groups ()[1], "%a %b  %d %H:%M:%S %Y")
-						if dt != None:
-							print "datetime, first try succeseeded"
+						#if dt != None:
+							#print "datetime, first try succeseeded"
+							
 							
 						if dt == None:
 							dt = datetime.datetime.strptime (m.groups ()[1], "%a %b %d %H:%M:%S %Y")
-							print "datetime, second try succseeded"
+							#print "datetime, second try succseeded"
 						
 						if dt == None:
-							print "datetime failed to parse"
+							#print "datetime failed to parse"
 							return False
 							
 						date = dt.strftime ("%Y-%m-%d")
@@ -141,9 +144,11 @@ class At:
 					script = os.popen(execute).read()
 					script, prelen, dangerous = self.__prepare_script__ (script)
 					
-					title, icon, desc = self.get_job_data (int (job_id))
+					title, desc = self.get_job_data (int (job_id))
 					#removing ending newlines, but keep one
-					#if a date before this is selected the record is removed, this creates an error, and generally if the script is of zero length
+					#if a date in the past is selected the record is removed by at, this creates an error, and generally if the script is of zero length
+					# TODO: complain about it as well
+					
 					if len(script) < 2:
 						done = 1
 					else:
@@ -155,7 +160,7 @@ class At:
 						else:
 							done = 1
 
-					return job_id, date, time, class_id, user, script, title, icon, prelen, dangerous
+					return job_id, date, time, class_id, user, script, title, prelen, dangerous
 		elif (output == False):
 			if len (line) > 1 and line[0] != '#':
 				m = self.atRecordRegexAdd.search(line)
@@ -179,29 +184,41 @@ class At:
 				
 			d = d.strip ()
 			
+			ver_p = d.find ("ver=")
+			if ver_p == -1:
+				ver = 1
+			else:
+				ver_s = d[ver_p + 4:d.find ("\n")]
+				d = d[d.find ("\n") + 1:]
+				ver = int (ver_s)
+				
 			title = d[6:d.find ("\n")]
 			d = d[d.find ("\n") + 1:]
 			
-			icon = d[5:d.find ("\n")]
+			# icons out
+			if ver < 2:
+				icon = d[5:d.find ("\n")]
+				d = d[d.find ("\n") + 1:]
+			
+			desc = d[5:d.find ("\n")]
 			d = d[d.find ("\n") + 1:]
 			
-			desc = d[5:]
 			fh.close ()
 			
-			return title, icon, desc
+			return title, desc
 			
 		else: 
 			return "", "", ""
 			
-	def write_job_data (self, job_id, title, icon, desc):
+	def write_job_data (self, job_id, title, desc):
 		# Create and write data file
 		f = os.path.join (self.atdata, str(job_id))
 		#print f
 		fh = open (f, 'w')
 		fh.truncate (1)
 		fh.seek (0)
+		fh.write ("ver=" + str(self.atdatafileversion) + "\n")
 		fh.write ("title=" + title + "\n")
-		fh.write ("icon=" + icon +  "\n")
 		fh.write ("desc=" + desc + "\n")
 		fh.close ()
 			
@@ -301,21 +318,11 @@ class At:
 
 		return True, "ok"
 
-	
-	#TODO merge code of append and update	
-	def append (self, runat, command, title, icon):
+		
+	def append (self, runat, command, title):
 		tmpfile = tempfile.mkstemp ()
 		fd, path = tmpfile
 		tmp = os.fdopen(fd, 'w')
-		#if title:
-		#	tmp.write("TITLE=" + title + "\n")
-		#else:
-	#		tmp.write("TITLE=Untitled\n")
-	#	if icon:
-	#		tmp.write("ICON=" + icon + "\n")
-	#	else:
-	#		tmp.write("ICON=None\n")
-
 		tmp.write (self.SCRIPT_DELIMITER + "\n")
 		tmp.write (command + "\n")
 		tmp.close ()
@@ -346,12 +353,13 @@ class At:
 		#print job_id
 		
 		desc = ""
-		self.write_job_data (job_id, title, icon, desc)
+		self.write_job_data (job_id, title, desc)
 		
 		os.unlink (path)
 
 
-	def update (self, job_id, runat, command, title, icon):
+	def update (self, job_id, runat, command, title):
+		print "update" + str (job_id) + runat + command + title
 		#remove old
 		f = os.path.join (self.atdata, str (job_id))
 		if os.access (f, os.F_OK):
@@ -398,7 +406,7 @@ class At:
 		#print job_id
 		
 		desc = ""
-		self.write_job_data (job_id, title, icon, desc)
+		self.write_job_data (job_id, title, desc)
 		
 		os.unlink (path)
 		
@@ -424,7 +432,7 @@ class At:
 			array_or_false = self.parse (line)
 			#print array_or_false
 			if array_or_false != False:
-				(job_id, date, time, class_id, user, lines, title, icon, prelen, dangerous) = array_or_false
+				(job_id, date, time, class_id, user, lines, title, prelen, dangerous) = array_or_false
 
 			
 				preview = self.__make_preview__ (lines, prelen)
@@ -441,12 +449,12 @@ class At:
 				# TODO: looks like it could be one append
 				if self.root == 1:
 					if self.user == user:
-						data.append([title, timestring_show, preview, lines, int(job_id), timestring, self, icon, date, class_id, user, time, _("Once"), "at"])
+						data.append([title, timestring_show, preview, lines, int(job_id), timestring, self, None, date, class_id, user, time, _("Once"), "at"])
 					else: 
 						#print "Record omitted, not current user"
 						pass
 				else:
-					data.append([title, timestring_show, preview, lines, int(job_id), timestring, self, icon, date, class_id, user, time, _("Once"), "at", self.nooutput])
+					data.append([title, timestring_show, preview, lines, int(job_id), timestring, self, None, date, class_id, user, time, _("Once"), "at", self.nooutput])
 
 				#print _("added %(id)s") % { "id": job_id	}
 			else:
@@ -545,3 +553,4 @@ class At:
 			result = result + "..."
 
 		return result
+		

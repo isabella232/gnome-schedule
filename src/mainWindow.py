@@ -241,15 +241,7 @@ class main:
 	def __fill__ (self, records):
 		for title, timestring_show, preview, lines, job_id, timestring, scheduler, icon, date, class_id, user, time, typetext, type, nooutput in records:
 					
-			if icon != None:
-				try:
-					icon_pix = gtk.gdk.pixbuf_new_from_file_at_size (icon, 21, 21)
-				except:
-					icon_pix = None
-			else:
-				icon_pix = None
-			
-			iter = self.treemodel.append([title, timestring_show, preview, lines, job_id, timestring, icon_pix, scheduler, icon, date, class_id, user, time, typetext, type, nooutput])
+			iter = self.treemodel.append([title, timestring_show, preview, lines, job_id, timestring, self.iconPixbuf, scheduler, icon, date, class_id, user, time, typetext, type, nooutput])
 
 			
 		
@@ -258,10 +250,10 @@ class main:
 	# TODO: pixbuf or pixmap? gtkImage
 	def __loadIcon__(self):
 		if os.access("../pixmaps/gnome-schedule.png", os.F_OK):
-			self.iconPixbuf = gtk.gdk.pixbuf_new_from_file ("../pixmaps/gnome-schedule.png")
+			self.iconPixbuf = gtk.gdk.pixbuf_new_from_file_at_size ("../pixmaps/gnome-schedule.png", 19, 19)
 		else:
 			try:
-				self.iconPixbuf = gtk.gdk.pixbuf_new_from_file (config.getImagedir() + "/gnome-schedule.png")
+				self.iconPixbuf = gtk.gdk.pixbuf_new_from_file_at_size (config.getImagedir() + "/gnome-schedule.png", 19, 19)
 			except:
 				print _("ERROR: Could not load icon")
 

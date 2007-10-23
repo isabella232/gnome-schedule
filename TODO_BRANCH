@@ -17,6 +17,7 @@ check bug: 419392, http://bugzilla.gnome.org/show_bug.cgi?id=419392
 * at add/edit
 	- connect new dialog
 	- popup calendar
+	- wont support: tomorrow, next week, ...
 
 
 * for both crontab and at editors check the bug report and examples given there. 
