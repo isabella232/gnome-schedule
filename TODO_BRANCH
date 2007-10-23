@@ -15,7 +15,8 @@ check bug: 419392, http://bugzilla.gnome.org/show_bug.cgi?id=419392
 	- remove icon selector
 
 * at add/edit
-	- no calendar, rather a dropdown calendar or something similar
-	- remove icon selector
+	- connect new dialog
+	- popup calendar
+
 
 * for both crontab and at editors check the bug report and examples given there. 

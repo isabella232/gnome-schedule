@@ -1,6 +1,6 @@
 # addWindow.py - UI code for adding an at record
 # Copyright (C) 2004, 2005 Philip Van Hoof <me at pvanhoof dot be>
-# Copyright (C) 2004, 2005 Gaute Hope <eg at gaute dot eu dot org>
+# Copyright (C) 2004, 2005, 2006, 2007 Gaute Hope <eg at gaute dot vetsj dot com>
 # Copyright (C) 2004, 2005 Kristof Vansant <de_lupus at pandora dot be>
 
 # This program is free software; you can redistribute it and/or modify
@@ -34,95 +34,74 @@ import preset
 
 
 class AtEditor:
-	def __init__(self, parent, backend, scheduler,defaultIcon):
+	def __init__(self, parent, backend, scheduler):
 		self.ParentClass = parent
 		self.xml = self.ParentClass.xml
 		self.backend = backend
 		self.scheduler = scheduler
 		
 
-		self.widget = self.xml.get_widget("atEditor")
+		self.widget = self.xml.get_widget("at_editor")
 		self.widget.connect("delete-event", self.widget.hide_on_delete)
 		
-		self.defaultIcon = defaultIcon
-		
-		#self.editing = False
-		self.noevents = False
-		self.NOACTION = False	#getting alot of these now.. this is for abosultely noactions of the syncing and templates stuff
-		self.noupdate = False
-		self.template_combobox_model = None
-		self.first = 0
-		self.combo_trigger = False
-	
-		self.save_button = self.xml.get_widget ("at_save_button")
-		self.remove_button = self.xml.get_widget ("at_delete_button")
-		self.title_entry = self.xml.get_widget ("at_title_entry")
-		self.script_textview = self.xml.get_widget ("at_script_textview")
-		self.script_textview_buffer = self.script_textview.get_buffer()
+		self.mode = 0 # 0 = add, 1 = edit
 
-		self.help_button = self.xml.get_widget ("at_help_button")
-		self.cancel_button = self.xml.get_widget ("at_cancel_button")
-		self.ok_button = self.xml.get_widget ("at_ok_button")
-		self.image_button = self.xml.get_widget ("at_image_button")
+		self.button_save = self.xml.get_widget ("at_button_save")
+		self.button_cancel = self.xml.get_widget ("at_button_cancel")
+		self.entry_title = self.xml.get_widget ("at_entry_title")
+		self.text_task = self.xml.get_widget ("at_text_task")
+		self.text_task_buffer = self.text_task.get_buffer()
+		self.button_add_template = self.xml.get_widget ("at_button_template")
+		self.button_calendar = self.xml.get_widget ("at_button_calendar")
 
-		##template combobox config		
-		self.template_combobox = self.xml.get_widget ("at_template_combobox")
-		self.template_combobox_model = gtk.ListStore(gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_PYOBJECT)
-		self.template_combobox.set_model (self.template_combobox_model)
-		##
-		
-		self.template_image = self.xml.get_widget ("at_template_image")
-		self.template_image_size = gtk.icon_size_register ("at_template_image_size", 48, 48)
-		self.template_label = self.xml.get_widget ("at_template_label")
-		
-		self.calendar = self.xml.get_widget ("at_calendar")
-		self.hour_spinbutton = self.xml.get_widget ("at_hour_spinbutton")
-		self.minute_spinbutton = self.xml.get_widget ("at_minute_spinbutton")
+		self.spin_hour = self.xml.get_widget ("at_spin_hour")
+		self.spin_minute = self.xml.get_widget ("at_spin_minute")
+		self.spin_year = self.xml.get_widget ("at_spin_year")
+		self.spin_month = self.xml.get_widget ("at_spin_month")
+		self.spin_day = self.xml.get_widget ("at_spin_day")
 
 		self.combobox = self.xml.get_widget ("at_combobox")
 		self.combobox_entry = self.combobox.get_child()	
 			
-		self.template_combobox.get_child().connect ("changed", self.on_template_combobox_entry_changed)
-		self.xml.signal_connect("on_at_help_button_clicked", self.on_at_help_button_clicked)
-		self.xml.signal_connect("on_at_cancel_button_clicked", self.on_cancel_button_clicked)
-		self.xml.signal_connect("on_at_ok_button_clicked", self.on_ok_button_clicked)
+)
+		self.xml.signal_connect("on_at_button_cancel_clicked", self.on_button_cancel_clicked)
+		self.xml.signal_connect("on_at_button_save_clicked", self.on_button_save_clicked)
 
-		self.xml.signal_connect("on_at_script_textview_popup_menu", self.on_script_textview_popup_menu)
-		self.xml.signal_connect("on_at_script_textview_key_release_event", self.on_script_textview_change)
-		self.xml.signal_connect("on_at_template_combobox_changed", self.on_template_combobox_changed)
-		self.xml.signal_connect("on_at_title_entry_changed", self.on_title_entry_changed)
+		self.xml.signal_connect("on_at_text_task_popup_menu", self.on_text_task_popup_menu)
+		self.xml.signal_connect("on_at_text_task_key_release_event", self.on_text_task_change)
 
-		self.xml.signal_connect("on_at_save_button_clicked", self.on_save_button_clicked)
-		self.xml.signal_connect("on_at_delete_button_clicked", self.on_delete_button_clicked)
-		self.xml.signal_connect("on_at_image_button_clicked", self.on_image_button_clicked)
-		self.xml.signal_connect("on_at_calendar_day_selected", self.on_calendar_day_selected)
-		self.xml.signal_connect("on_at_calendar_month_changed", self.on_calendar_month_changed)
-		self.xml.signal_connect("on_at_calendar_year_changed", self.on_calendar_year_changed)
-		self.xml.signal_connect("on_at_hour_spinbutton_changed", self.on_hour_spinbutton_changed)
-		self.xml.signal_connect("on_at_minute_spinbutton_changed", self.on_minute_spinbutton_changed)
-		self.xml.signal_connect("on_at_combobox_changed", self.on_combobox_changed)
+		self.xml.signal_connect("on_at_entry_title_changed", self.on_entry_title_changed)
+
+		self.xml.signal_connect("on_at_button_save_clicked", self.on_button_save_clicked)
+		self.xml.signal_connect("on_at_button_cancel_clicked", self.on_button_cancel_clicked)
+		self.xml.signal_connect ("on_at_button_calendar_clicked", self.on_button_calendar_clicked)
+		self.xml.signal_connect ("on_at_button_template_clicked", self.on_button_template_clicked)
+		
+		self.xml.signal_connect("on_at_spin_hour_changed", self.on_spin_hour_changed)
+		self.xml.signal_connect("on_at_spin_minute_changed", self.on_spin_minute_changed)
+		self.xml.signal_connect ("on_at_spin_year_change", self.on_spin_year_cheanged)
+		self.xml.signal_connect ("on_at_spin_month_change", self.on_spin_month_changed)
+		self.xml.signal_connect ("on_at_spin_day_change", self.on_spin_day_changed)
+		
+		
 
 		self.backend.add_scheduler_type("at")
 
 	def showadd (self, mode):
-		self.NOACTION = True
+		print "add"
 		self.__reset__ ()
 		self.title = _("Untitled")
-		self.editing = False
+		self.mode = 0 # add new task
 		self.widget.set_title(_("Create a New Scheduled Task"))
 		self.widget.set_transient_for(self.ParentClass.widget)
 		self.widget.set_position(gtk.WIN_POS_CENTER_ON_PARENT)
 		self.widget.show_all()
 		
-		self.__loadicon__ ()
-		self.__reload_templates__ ()
 		self.__update_textboxes__()
-		self.NOACTION = False
 
 	def showedit (self, record, job_id, iter, mode):
 		print "showedit"
-		self.editing = True
-		self.NOACTION = True
+		self.mode = 1 # edit task
 		self.job_id = job_id
 		self.date = self.ParentClass.treemodel.get_value(iter, 9)
 		print "got date: " + self.date
