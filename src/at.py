@@ -59,6 +59,8 @@ class At:
 		self.atRecordRegexAdded = re.compile('[^\s]+\s([0-9]+)\sat')
 		self.nooutput = 0
 		self.SCRIPT_DELIMITER = "###### ---- GNOME_SCHEDULE_SCRIPT_DELIMITER #####"
+		
+		self.atdatafileversion = 3
 		self.atdata = os.path.expanduser ("~/.gnome/gnome-schedule/at")
 		if os.path.exists(self.atdata) != True:
 			if os.makedirs(self.atdata, 0700):
@@ -179,14 +181,29 @@ class At:
 				
 			d = d.strip ()
 			
+			ver_p = d.find ("ver=")
+			if ver_p == -1:
+				ver = 1
+			else:
+				ver_s = d[ver_p + 4:d.find ("\n")]
+				d = d[d.find ("\n") + 1:]
+				ver = int (ver_s)
+				
 			title = d[6:d.find ("\n")]
 			d = d[d.find ("\n") + 1:]
 			
-			icon = d[5:d.find ("\n")]
+			# icons out
+			if ver < 2 or ver == 3:
+				icon = d[5:d.find ("\n")]
+				d = d[d.find ("\n") + 1:]
+			else:
+				icon = ""
+			
+			desc = d[5:d.find ("\n")]
 			d = d[d.find ("\n") + 1:]
 			
-			desc = d[5:]
 			fh.close ()
+			
 			
 			return title, icon, desc
 			
@@ -200,6 +217,7 @@ class At:
 		fh = open (f, 'w')
 		fh.truncate (1)
 		fh.seek (0)
+		fh.write ("ver=" + str(self.atdatafileversion) + "\n")
 		fh.write ("title=" + title + "\n")
 		fh.write ("icon=" + icon +  "\n")
 		fh.write ("desc=" + desc + "\n")
