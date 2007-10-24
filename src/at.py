@@ -196,7 +196,7 @@ class At:
 			d = d[d.find ("\n") + 1:]
 			
 			# icons out
-			if ver < 2:
+			if ver < 2 or ver == 3:
 				icon = d[5:d.find ("\n")]
 				d = d[d.find ("\n") + 1:]
 			
