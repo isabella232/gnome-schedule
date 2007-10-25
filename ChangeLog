@@ -1,3 +1,7 @@
+2007-10-25  Gaute Hope  <eg@gaute.vetsj.com>
+
+	* Fixed crontab parsing mon, tue, wed and 'at' parser locale ignorant.
+	
 2007-10-22  Gaute Hope  <eg@gaute.vetsj.com>
 
 	* src/gnome-schedule.glade: Fixed tooltips in addWindow. https://bugs.launchpad.net/ubuntu/+source/gnome-schedule/+bug/134992

@@ -24,6 +24,7 @@ import tempfile
 import commands
 import time
 import datetime
+import locale
 
 #custom modules
 import config
@@ -69,6 +70,8 @@ class At:
 				pass
 				# FAILED TO CREATE DATADIR
 		
+		self.currentlocale = locale.getlocale (locale.LC_ALL)
+		
 	def set_rights(self,user,uid,gid):
 		self.user = user
 		self.uid = uid
@@ -79,6 +82,12 @@ class At:
 		return "at"
 
 
+	def standard_locale (self):
+		locale.setlocale (locale.LC_ALL, 'C')
+	
+	def restore_locale (self):
+		locale.setlocale (locale.LC_ALL, self.currentlocale)
+		
 	def parse (self, line, output = True):
 		if (output == True):
 			if len (line) > 1 and line[0] != '#':
@@ -115,18 +124,21 @@ class At:
 					
 					if regexp == 3:
 						job_id = m.groups ()[0]
-						dt = datetime.datetime.strptime (m.groups ()[1], "%a %b  %d %H:%M:%S %Y")
-						if dt != None:
-							print "datetime, first try succeseeded"
-							
-						if dt == None:
-							dt = datetime.datetime.strptime (m.groups ()[1], "%a %b %d %H:%M:%S %Y")
-							print "datetime, second try succseeded"
 						
-						if dt == None:
-							print "datetime failed to parse"
-							return False
-							
+						self.standard_locale ()
+						try:
+							dt = datetime.datetime.strptime (m.groups ()[1], "%a %b  %d %H:%M:%S %Y")
+							print "datetime, first try succeseeded"
+						except:	
+							try:
+								dt = datetime.datetime.strptime (m.groups ()[1], "%a %b %d %H:%M:%S %Y")
+								print "datetime, second try succseeded"
+							except:
+								print "datetime failed to parse"
+								self.restore_locale ()
+								return False
+						
+						self.restore_locale ()
 						date = dt.strftime ("%Y-%m-%d")
 						time = dt.strftime ("%H:%M:%S")
 						class_id = m.groups ()[2]
@@ -340,6 +352,8 @@ class At:
 		
 		temp = None
 
+		self.standard_locale ()
+		
 		if self.root == 1:
 			if self.user != "root":
 				#changes the ownership
@@ -353,6 +367,7 @@ class At:
 			execute = config.getAtbin() + " " + runat + " -f " + path
 			child_stdin, child_stdout, child_stderr = os.popen3(execute)
 
+		self.restore_locale ()
 		
 		err = child_stderr.readlines ()
 		job_id = 0
@@ -393,6 +408,7 @@ class At:
 		tmp.write (command + "\n")
 		tmp.close ()
 
+		self.standard_locale ()
 		if self.root == 1:
 			if self.user != "root":
 				#changes the ownership
@@ -406,6 +422,7 @@ class At:
 			execute = config.getAtbin() + " " + runat + " -f " + path
 			child_stdin, child_stdout, child_stderr = os.popen3(execute)
 
+		self.restore_locale ()
 		err = child_stderr.readlines ()
 		job_id = 0
 		for line in err:
