@@ -498,6 +498,14 @@ class Crontab:
 			
 			# Day of Week
 			dow, line = self.get_exp_sec (line)
+			dow = dow.replace ("Mon", "1")
+			dow = dow.replace ("Tue", "2")
+			dow = dow.replace ("Wed", "3")
+			dow = dow.replace ("Thu", "4")
+			dow = dow.replace ("Fri", "5")
+			dow = dow.replace ("Sat", "6")
+			dow = dow.replace ("Sun", "7")
+			
 			
 		
 		command = line.strip ()
