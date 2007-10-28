@@ -1,6 +1,6 @@
 # Swedish messages for gnome-schedule.
-# Copyright (C) 2004, 2005, 2006 Free Software Foundation, Inc.
-# Daniel Nylander <po@danielnylander.se>, 2006.
+# Copyright (C) 2004, 2005, 2006, 2007 Free Software Foundation, Inc.
+# Daniel Nylander <po@danielnylander.se>, 2006, 2007.
 # Christian Rose <menthos@menthos.com>, 2004, 2005.
 #
 # $Id: sv.po,v 1.13 2006/12/28 16:54:55 dnylande Exp $
@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-06-01 03:15+0100\n"
-"PO-Revision-Date: 2007-06-01 17:09+0100\n"
+"POT-Creation-Date: 2007-10-28 10:08+0100\n"
+"PO-Revision-Date: 2007-10-28 10:08+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "MIME-Version: 1.0\n"
@@ -22,8 +22,8 @@ msgid "Manage your system tasks"
 msgstr "Hantera dina systemuppgifter"
 
 #: ../desktop/gnome-schedule.desktop.in.in.h:2
-msgid "Schedule"
-msgstr "Schema"
+msgid "Scheduled tasks"
+msgstr "Schemalagda uppgifter"
 
 #: ../servers/GNOME_GnomeSchedule.server.in.in.h:1
 msgid "Configures your scheduled tasks"
@@ -37,23 +37,23 @@ msgstr "Gnome-schema"
 msgid "System tools"
 msgstr "Systemverktyg"
 
-#: ../src/at.py:432
+#: ../src/at.py:467
 #, python-format
 msgid "DANGEROUS PARSE: %(preview)s"
 msgstr "FARLIG TOLKNING: %(preview)s"
 
 #. TODO: localize time and date formats
-#: ../src/at.py:439
+#: ../src/at.py:474
 #, python-format
 msgid "On %(date)s at %(time)s"
 msgstr "Den %(date)s klockan %(time)s"
 
-#: ../src/at.py:444
-#: ../src/at.py:449
+#: ../src/at.py:479
+#: ../src/at.py:484
 msgid "Once"
 msgstr "En gång"
 
-#: ../src/at.py:453
+#: ../src/at.py:488
 msgid "Warning: a line in atq's output didn't parse"
 msgstr "Varning: en rad i atq:s utdata kunde inte tolkas"
 
@@ -986,6 +986,8 @@ msgstr "I ett eller båda av fältens timme och minut fanns det en bokstav eller
 msgid "This is an invalid record! The problem could be: %s"
 msgstr "Detta är en ogiltig post! Problemet kan vara: %s"
 
+#~ msgid "Schedule"
+#~ msgstr "Schema"
 #~ msgid "ERROR: Failed to parse crontab record"
 #~ msgstr "FEL: Misslyckades med att tolka crontab-post"
 #~ msgid "Title"
@@ -1129,8 +1131,6 @@ msgstr "Detta är en ogiltig post! Problemet kan vara: %s"
 #~ msgstr "Ställ in minutfrekvensinställningen"
 #~ msgid "Set the month frequency setting"
 #~ msgstr "Ställ in månadsfrekvensinställningen"
-#~ msgid "Set the scheduled task"
-#~ msgstr "Ställ in den schemalagda uppgiften"
 #~ msgid "Set the weekday frequency setting"
 #~ msgstr "Ställ in veckodagsfrekvensinställningen"
 #~ msgid "Set user"
