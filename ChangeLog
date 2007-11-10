@@ -1,3 +1,7 @@
+2007-11-10  Gaute Hope  <eg@gaute.vetsj.com>
+
+	* Changed version number to 1.2.0
+	
 2007-10-25  Gaute Hope  <eg@gaute.vetsj.com>
 
 	* Fixed crontab parsing mon, tue, wed and 'at' parser locale ignorant.
