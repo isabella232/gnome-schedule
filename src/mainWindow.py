@@ -343,7 +343,7 @@ class main:
 			col.set_expand (True)
 			self.treeview.append_column(col)
 			
-			self.edit_mode_button.set_label (_("Advanced"))
+			#self.edit_mode_button.set_label (_("Advanced"))
 
 
 		elif mode == "advanced":
@@ -361,7 +361,7 @@ class main:
 			col.set_resizable (True)
 			self.treeview.append_column(col)
 
-			self.edit_mode_button.set_label (_("Simple"))
+			#self.edit_mode_button.set_label (_("Simple"))
 
 
 	def on_advanced_menu_activate (self, widget):

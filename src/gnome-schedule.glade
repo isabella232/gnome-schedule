@@ -36,7 +36,6 @@
 	<widget class="GtkToolbar" id="toolbar">
 	  <property name="visible">True</property>
 	  <property name="orientation">GTK_ORIENTATION_HORIZONTAL</property>
-	  <property name="toolbar_style">GTK_TOOLBAR_BOTH_HORIZ</property>
 	  <property name="tooltips">True</property>
 	  <property name="show_arrow">True</property>
 
@@ -96,11 +95,11 @@
 	  </child>
 
 	  <child>
-	    <widget class="GtkToolButton" id="edit_mode_button">
+	    <widget class="GtkToggleToolButton" id="edit_mode_button">
 	      <property name="visible">True</property>
 	      <property name="label" translatable="yes">Advanced</property>
 	      <property name="use_underline">True</property>
-	      <property name="stock_id">gtk-convert</property>
+	      <property name="stock_id">gtk-dialog-warning</property>
 	      <property name="visible_horizontal">True</property>
 	      <property name="visible_vertical">True</property>
 	      <property name="is_important">True</property>
@@ -129,21 +128,7 @@
 	    </packing>
 	  </child>
 
-	  <child>
-	    <widget class="GtkToolButton" id="btnExit">
-	      <property name="visible">True</property>
-	      <property name="tooltip" translatable="yes">Quit the application. This will not stop the system scheduling. It will, however, quit this system schedule maintenance tool.</property>
-	      <property name="stock_id">gtk-quit</property>
-	      <property name="visible_horizontal">True</property>
-	      <property name="visible_vertical">True</property>
-	      <property name="is_important">True</property>
-	      <signal name="clicked" handler="on_btnExit_clicked" last_modification_time="Fri, 15 Apr 2005 05:17:40 GMT"/>
-	    </widget>
-	    <packing>
-	      <property name="expand">False</property>
-	      <property name="homogeneous">True</property>
-	    </packing>
-	  </child>
+
 
 	  <child>
 	    <widget class="GtkToolButton" id="help_button">
@@ -152,7 +137,7 @@
 	      <property name="stock_id">gtk-help</property>
 	      <property name="visible_horizontal">True</property>
 	      <property name="visible_vertical">True</property>
-	      <property name="is_important">True</property>
+	      <property name="is_important">False</property>
 	      <signal name="clicked" handler="on_help_button_clicked" last_modification_time="Fri, 15 Apr 2005 05:17:26 GMT"/>
 	    </widget>
 	    <packing>
@@ -167,7 +152,7 @@
 	      <property name="stock_id">gtk-about</property>
 	      <property name="visible_horizontal">True</property>
 	      <property name="visible_vertical">True</property>
-	      <property name="is_important">True</property>
+	      <property name="is_important">False</property>
 	      <signal name="clicked" handler="on_about_menu_activate" last_modification_time="Sat, 05 May 2007 08:21:39 GMT"/>
 	    </widget>
 	    <packing>
