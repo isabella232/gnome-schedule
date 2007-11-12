@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule-it 1.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-10 22:18+0200\n"
+"POT-Creation-Date: 2007-11-12 21:22+0100\n"
 "PO-Revision-Date: 2007-09-05 19:22+0200\n"
 "Last-Translator: Andrea Zagli <azagli@inwind.it>\n"
 "Language-Team: Italian <tp@lists.linux.it>\n"
@@ -22,8 +22,9 @@ msgid "Manage your system tasks"
 msgstr "Gestisce le operazioni pianificate di sistema"
 
 #: ../desktop/gnome-schedule.desktop.in.in.h:2
-msgid "Schedule"
-msgstr "Pianifica"
+#, fuzzy
+msgid "Scheduled tasks"
+msgstr "Aggiunge un'operazione pianificata"
 
 #: ../servers/GNOME_GnomeSchedule.server.in.in.h:1
 msgid "Configures your scheduled tasks"
@@ -37,22 +38,22 @@ msgstr "Gnome schedule"
 msgid "System tools"
 msgstr "Strumenti di sistema"
 
-#: ../src/at.py:432
+#: ../src/at.py:467
 #, python-format
 msgid "DANGEROUS PARSE: %(preview)s"
 msgstr "ANALISI PERICOLOSA: %(preview)s"
 
 #. TODO: localize time and date formats
-#: ../src/at.py:439
+#: ../src/at.py:474
 #, python-format
 msgid "On %(date)s at %(time)s"
 msgstr "Il giorno %(date)s alle %(time)s"
 
-#: ../src/at.py:444 ../src/at.py:449
+#: ../src/at.py:479 ../src/at.py:484
 msgid "Once"
 msgstr "Una volta"
 
-#: ../src/at.py:453
+#: ../src/at.py:488
 msgid "Warning: a line in atq's output didn't parse"
 msgstr "Attenzione: una riga nell'ouput di atq non è analizzata"
 
@@ -1038,3 +1039,6 @@ msgstr ""
 #, python-format
 msgid "This is an invalid record! The problem could be: %s"
 msgstr "Questa impostazione non è valida! Il problema potrebbe essere: %s"
+
+#~ msgid "Schedule"
+#~ msgstr "Pianifica"

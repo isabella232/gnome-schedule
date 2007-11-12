@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-02 21:54+0200\n"
+"POT-Creation-Date: 2007-11-12 21:22+0100\n"
 "PO-Revision-Date: 2005-01-31 19:53+0100\n"
 "Last-Translator: Elian Myftiu <elian@alblinux.net>\n"
 "Language-Team: Albanian <gnome-albanian-perkthyesit@lists.sourceforge.net>\n"
@@ -20,8 +20,9 @@ msgid "Manage your system tasks"
 msgstr "Organizo detyrat e sistemit tënd"
 
 #: ../desktop/gnome-schedule.desktop.in.in.h:2
-msgid "Schedule"
-msgstr "Orar"
+#, fuzzy
+msgid "Scheduled tasks"
+msgstr "Cakto detyrën kohore"
 
 #: ../servers/GNOME_GnomeSchedule.server.in.in.h:1
 #, fuzzy
@@ -37,22 +38,22 @@ msgstr "Orari Gnome"
 msgid "System tools"
 msgstr ""
 
-#: ../src/at.py:432
+#: ../src/at.py:467
 #, python-format
 msgid "DANGEROUS PARSE: %(preview)s"
 msgstr ""
 
 #. TODO: localize time and date formats
-#: ../src/at.py:439
+#: ../src/at.py:474
 #, python-format
 msgid "On %(date)s at %(time)s"
 msgstr "Më %(date)s në %(time)s"
 
-#: ../src/at.py:444 ../src/at.py:449
+#: ../src/at.py:479 ../src/at.py:484
 msgid "Once"
 msgstr ""
 
-#: ../src/at.py:453
+#: ../src/at.py:488
 msgid "Warning: a line in atq's output didn't parse"
 msgstr ""
 
@@ -161,7 +162,7 @@ msgstr "Krijo një detyrë të re kohore"
 msgid "Edit a Scheduled Task"
 msgstr "Ndrysho një detyrë kohore"
 
-#: ../src/crontabEditor.py:210 ../src/atEditor.py:326
+#: ../src/crontabEditor.py:210 ../src/atEditor.py:333
 msgid "Don't use a preset"
 msgstr "Mos përdor asnjë"
 
@@ -185,20 +186,20 @@ msgid ""
 "$HOME."
 msgstr ""
 
-#: ../src/crontabEditor.py:307 ../src/atEditor.py:296
+#: ../src/crontabEditor.py:307 ../src/atEditor.py:303
 msgid "The preset has not been saved"
 msgstr "Paravendosja nuk u ruajt"
 
-#: ../src/crontabEditor.py:309 ../src/atEditor.py:298
+#: ../src/crontabEditor.py:309 ../src/atEditor.py:305
 msgid "To delete a preset, you first need to select one"
 msgstr "Për të fshirë një paravendosje, duhet më parë të zgjedhësh një"
 
-#: ../src/crontabEditor.py:319 ../src/atEditor.py:309
+#: ../src/crontabEditor.py:319 ../src/atEditor.py:316
 msgid "To save a preset, you first have to choose a name for it"
 msgstr ""
 "Për të shpëtuar një paravendosje, më parë duhet të zgjedhësh një emër për të"
 
-#: ../src/crontabEditor.py:329 ../src/atEditor.py:400
+#: ../src/crontabEditor.py:329 ../src/atEditor.py:407
 #, fuzzy
 msgid "Choose an Icon for this Scheduled Task"
 msgstr "Zgjidh një ikonë për këtë detyrë kohore"
@@ -207,7 +208,7 @@ msgstr "Zgjidh një ikonë për këtë detyrë kohore"
 msgid "command"
 msgstr "komandë"
 
-#: ../src/crontabEditor.py:430 ../src/mainWindow.py:545 ../src/atEditor.py:524
+#: ../src/crontabEditor.py:430 ../src/mainWindow.py:545 ../src/atEditor.py:531
 msgid "Could not display help"
 msgstr ""
 
@@ -1061,10 +1062,20 @@ msgstr ""
 msgid "No such user"
 msgstr ""
 
-#: ../src/atEditor.py:536
+#: ../src/atEditor.py:278
+msgid ""
+"In one or both of the fields hour and minute there was entered a letter or a "
+"number out of range. Remember an hour only has 60 minutes and a day only 24 "
+"hours."
+msgstr ""
+
+#: ../src/atEditor.py:543
 #, python-format
 msgid "This is an invalid record! The problem could be: %s"
 msgstr "Ky është një regjistrim i pavlefshëm! Problemi mund të jetë: %s"
+
+#~ msgid "Schedule"
+#~ msgstr "Orar"
 
 #~ msgid "Title"
 #~ msgstr "Titulli"
@@ -1152,9 +1163,6 @@ msgstr "Ky është një regjistrim i pavlefshëm! Problemi mund të jetë: %s"
 
 #~ msgid "Set the month frequency setting"
 #~ msgstr "Cakto frekuencën mujore"
-
-#~ msgid "Set the scheduled task"
-#~ msgstr "Cakto detyrën kohore"
 
 #~ msgid "Set the weekday frequency setting"
 #~ msgstr "Cakto frekuencën e ditëve të javës"

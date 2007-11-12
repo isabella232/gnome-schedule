@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arabic\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-02 21:54+0200\n"
+"POT-Creation-Date: 2007-11-12 21:22+0100\n"
 "PO-Revision-Date: 2007-04-14 18:49+0100\n"
 "Last-Translator: Djihed Afifi <djihed@gmail.com>\n"
 "Language-Team: Arabeyes <doc@arabeyes.org>\n"
@@ -22,8 +22,8 @@ msgstr "أدِر شهاداتك"
 
 #: ../desktop/gnome-schedule.desktop.in.in.h:2
 #, fuzzy
-msgid "Schedule"
-msgstr "مخطط"
+msgid "Scheduled tasks"
+msgstr "أرسل واستقبل الفاكسات"
 
 #: ../servers/GNOME_GnomeSchedule.server.in.in.h:1
 #, fuzzy
@@ -40,23 +40,23 @@ msgstr "مُجَدْوِل الأفعال"
 msgid "System tools"
 msgstr "نداءات النظام"
 
-#: ../src/at.py:432
+#: ../src/at.py:467
 #, python-format
 msgid "DANGEROUS PARSE: %(preview)s"
 msgstr ""
 
 #. TODO: localize time and date formats
-#: ../src/at.py:439
+#: ../src/at.py:474
 #, python-format
 msgid "On %(date)s at %(time)s"
 msgstr ""
 
-#: ../src/at.py:444 ../src/at.py:449
+#: ../src/at.py:479 ../src/at.py:484
 #, fuzzy
 msgid "Once"
 msgstr "واحد"
 
-#: ../src/at.py:453
+#: ../src/at.py:488
 msgid "Warning: a line in atq's output didn't parse"
 msgstr ""
 
@@ -169,7 +169,7 @@ msgstr "أنشيء تقويماً جديداً"
 msgid "Edit a Scheduled Task"
 msgstr ""
 
-#: ../src/crontabEditor.py:210 ../src/atEditor.py:326
+#: ../src/crontabEditor.py:210 ../src/atEditor.py:333
 #, fuzzy
 msgid "Don't use a preset"
 msgstr "لا يمكن حفظ الباقي"
@@ -192,20 +192,20 @@ msgid ""
 "$HOME."
 msgstr ""
 
-#: ../src/crontabEditor.py:307 ../src/atEditor.py:296
+#: ../src/crontabEditor.py:307 ../src/atEditor.py:303
 #, fuzzy
 msgid "The preset has not been saved"
 msgstr "لم تُحْفَظ لقطة الشّاشة"
 
-#: ../src/crontabEditor.py:309 ../src/atEditor.py:298
+#: ../src/crontabEditor.py:309 ../src/atEditor.py:305
 msgid "To delete a preset, you first need to select one"
 msgstr ""
 
-#: ../src/crontabEditor.py:319 ../src/atEditor.py:309
+#: ../src/crontabEditor.py:319 ../src/atEditor.py:316
 msgid "To save a preset, you first have to choose a name for it"
 msgstr ""
 
-#: ../src/crontabEditor.py:329 ../src/atEditor.py:400
+#: ../src/crontabEditor.py:329 ../src/atEditor.py:407
 #, fuzzy
 msgid "Choose an Icon for this Scheduled Task"
 msgstr "اختر خطا للملاحظة"
@@ -215,7 +215,7 @@ msgstr "اختر خطا للملاحظة"
 msgid "command"
 msgstr "فاصلة"
 
-#: ../src/crontabEditor.py:430 ../src/mainWindow.py:545 ../src/atEditor.py:524
+#: ../src/crontabEditor.py:430 ../src/mainWindow.py:545 ../src/atEditor.py:531
 #, fuzzy
 msgid "Could not display help"
 msgstr "لم يمكن عرض المساعدة: %s"
@@ -1083,9 +1083,20 @@ msgstr "لم أتمكن من تحميل ملف glade"
 msgid "No such user"
 msgstr "لا يوجد مستخدم بالإسم {0}"
 
-#: ../src/atEditor.py:536
+#: ../src/atEditor.py:278
+msgid ""
+"In one or both of the fields hour and minute there was entered a letter or a "
+"number out of range. Remember an hour only has 60 minutes and a day only 24 "
+"hours."
+msgstr ""
+
+#: ../src/atEditor.py:543
 #, fuzzy, python-format
 msgid "This is an invalid record! The problem could be: %s"
 msgstr ""
 "هذا ليس ملف لوحة مفاتيح سليم:\n"
 "%s"
+
+#, fuzzy
+#~ msgid "Schedule"
+#~ msgstr "مخطط"

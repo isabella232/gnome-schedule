@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-02 21:54+0200\n"
+"POT-Creation-Date: 2007-11-12 21:22+0100\n"
 "PO-Revision-Date: 2004-12-06 00:30+0800\n"
 "Last-Translator: Funda Wang <fundawang@linux.net.cn>\n"
 "Language-Team: zh_CN <i18n-translation@lists.linux.net.cn>\n"
@@ -20,8 +20,9 @@ msgid "Manage your system tasks"
 msgstr "管理您的系统任务"
 
 #: ../desktop/gnome-schedule.desktop.in.in.h:2
-msgid "Schedule"
-msgstr "计划任务"
+#, fuzzy
+msgid "Scheduled tasks"
+msgstr "添加计划任务"
 
 #: ../servers/GNOME_GnomeSchedule.server.in.in.h:1
 #, fuzzy
@@ -37,22 +38,22 @@ msgstr "计划任务"
 msgid "System tools"
 msgstr ""
 
-#: ../src/at.py:432
+#: ../src/at.py:467
 #, python-format
 msgid "DANGEROUS PARSE: %(preview)s"
 msgstr ""
 
 #. TODO: localize time and date formats
-#: ../src/at.py:439
+#: ../src/at.py:474
 #, python-format
 msgid "On %(date)s at %(time)s"
 msgstr ""
 
-#: ../src/at.py:444 ../src/at.py:449
+#: ../src/at.py:479 ../src/at.py:484
 msgid "Once"
 msgstr ""
 
-#: ../src/at.py:453
+#: ../src/at.py:488
 msgid "Warning: a line in atq's output didn't parse"
 msgstr ""
 
@@ -162,7 +163,7 @@ msgstr "创建新的计划任务"
 msgid "Edit a Scheduled Task"
 msgstr "编辑计划任务"
 
-#: ../src/crontabEditor.py:210 ../src/atEditor.py:326
+#: ../src/crontabEditor.py:210 ../src/atEditor.py:333
 msgid "Don't use a preset"
 msgstr "不使用预设"
 
@@ -184,19 +185,19 @@ msgid ""
 "$HOME."
 msgstr ""
 
-#: ../src/crontabEditor.py:307 ../src/atEditor.py:296
+#: ../src/crontabEditor.py:307 ../src/atEditor.py:303
 msgid "The preset has not been saved"
 msgstr ""
 
-#: ../src/crontabEditor.py:309 ../src/atEditor.py:298
+#: ../src/crontabEditor.py:309 ../src/atEditor.py:305
 msgid "To delete a preset, you first need to select one"
 msgstr ""
 
-#: ../src/crontabEditor.py:319 ../src/atEditor.py:309
+#: ../src/crontabEditor.py:319 ../src/atEditor.py:316
 msgid "To save a preset, you first have to choose a name for it"
 msgstr ""
 
-#: ../src/crontabEditor.py:329 ../src/atEditor.py:400
+#: ../src/crontabEditor.py:329 ../src/atEditor.py:407
 #, fuzzy
 msgid "Choose an Icon for this Scheduled Task"
 msgstr "创建新的计划任务"
@@ -205,7 +206,7 @@ msgstr "创建新的计划任务"
 msgid "command"
 msgstr "命令"
 
-#: ../src/crontabEditor.py:430 ../src/mainWindow.py:545 ../src/atEditor.py:524
+#: ../src/crontabEditor.py:430 ../src/mainWindow.py:545 ../src/atEditor.py:531
 msgid "Could not display help"
 msgstr ""
 
@@ -1017,10 +1018,20 @@ msgstr ""
 msgid "No such user"
 msgstr ""
 
-#: ../src/atEditor.py:536
+#: ../src/atEditor.py:278
+msgid ""
+"In one or both of the fields hour and minute there was entered a letter or a "
+"number out of range. Remember an hour only has 60 minutes and a day only 24 "
+"hours."
+msgstr ""
+
+#: ../src/atEditor.py:543
 #, python-format
 msgid "This is an invalid record! The problem could be: %s"
 msgstr ""
+
+#~ msgid "Schedule"
+#~ msgstr "计划任务"
 
 #~ msgid "Title"
 #~ msgstr "标题"

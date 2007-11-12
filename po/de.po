@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-02 21:54+0200\n"
+"POT-Creation-Date: 2007-11-12 21:22+0100\n"
 "PO-Revision-Date: 2006-06-15 17:05+0200\n"
 "Last-Translator: Hendrik Richter <hendrikr@gnome.org>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
@@ -21,8 +21,9 @@ msgid "Manage your system tasks"
 msgstr "Zeitgesteuerte Systemaufgaben verwalten"
 
 #: ../desktop/gnome-schedule.desktop.in.in.h:2
-msgid "Schedule"
-msgstr "Zeitgesteuerte Abläufe"
+#, fuzzy
+msgid "Scheduled tasks"
+msgstr "Übernehmen der Aufgabe"
 
 #: ../servers/GNOME_GnomeSchedule.server.in.in.h:1
 msgid "Configures your scheduled tasks"
@@ -36,22 +37,22 @@ msgstr "GNOME Schedule"
 msgid "System tools"
 msgstr "Systemwerkzeuge"
 
-#: ../src/at.py:432
+#: ../src/at.py:467
 #, python-format
 msgid "DANGEROUS PARSE: %(preview)s"
 msgstr "UNSICHERE AUSWERTUNG: %(preview)s"
 
 #. TODO: localize time and date formats
-#: ../src/at.py:439
+#: ../src/at.py:474
 #, python-format
 msgid "On %(date)s at %(time)s"
 msgstr "Am %(date)s um %(time)s"
 
-#: ../src/at.py:444 ../src/at.py:449
+#: ../src/at.py:479 ../src/at.py:484
 msgid "Once"
 msgstr "Einmalig"
 
-#: ../src/at.py:453
+#: ../src/at.py:488
 msgid "Warning: a line in atq's output didn't parse"
 msgstr ""
 
@@ -152,7 +153,7 @@ msgstr "Eine neue Aufgabe erstellen"
 msgid "Edit a Scheduled Task"
 msgstr "Eine Aufgabe bearbeiten"
 
-#: ../src/crontabEditor.py:210 ../src/atEditor.py:326
+#: ../src/crontabEditor.py:210 ../src/atEditor.py:333
 msgid "Don't use a preset"
 msgstr "Keine Vorlage verwenden"
 
@@ -177,21 +178,21 @@ msgid ""
 "$HOME."
 msgstr ""
 
-#: ../src/crontabEditor.py:307 ../src/atEditor.py:296
+#: ../src/crontabEditor.py:307 ../src/atEditor.py:303
 msgid "The preset has not been saved"
 msgstr "Die Voreinstellung wurde nicht gespeichert."
 
-#: ../src/crontabEditor.py:309 ../src/atEditor.py:298
+#: ../src/crontabEditor.py:309 ../src/atEditor.py:305
 msgid "To delete a preset, you first need to select one"
 msgstr "Um eine Voreinstellung zu löschen, muss sie zuerst ausgewählt werden."
 
-#: ../src/crontabEditor.py:319 ../src/atEditor.py:309
+#: ../src/crontabEditor.py:319 ../src/atEditor.py:316
 msgid "To save a preset, you first have to choose a name for it"
 msgstr ""
 "Um die Voreinstellung zu speichern, muss zuerst ein Name dafür eingegeben "
 "werden."
 
-#: ../src/crontabEditor.py:329 ../src/atEditor.py:400
+#: ../src/crontabEditor.py:329 ../src/atEditor.py:407
 msgid "Choose an Icon for this Scheduled Task"
 msgstr "Ein Symbol für diese Aufgabe auswählen"
 
@@ -199,7 +200,7 @@ msgstr "Ein Symbol für diese Aufgabe auswählen"
 msgid "command"
 msgstr "Befehl"
 
-#: ../src/crontabEditor.py:430 ../src/mainWindow.py:545 ../src/atEditor.py:524
+#: ../src/crontabEditor.py:430 ../src/mainWindow.py:545 ../src/atEditor.py:531
 msgid "Could not display help"
 msgstr "Anzeigen der Hilfe fehlgeschlagen"
 
@@ -1014,10 +1015,20 @@ msgstr "FEHLER: XML-Datei für das Applet-Menü nicht gefunden"
 msgid "No such user"
 msgstr "Benutzer nicht vorhanden"
 
-#: ../src/atEditor.py:536
+#: ../src/atEditor.py:278
+msgid ""
+"In one or both of the fields hour and minute there was entered a letter or a "
+"number out of range. Remember an hour only has 60 minutes and a day only 24 "
+"hours."
+msgstr ""
+
+#: ../src/atEditor.py:543
 #, python-format
 msgid "This is an invalid record! The problem could be: %s"
 msgstr "Das ist ein ungültiger Eintrag! Mögliches Problem: %s"
+
+#~ msgid "Schedule"
+#~ msgstr "Zeitgesteuerte Abläufe"
 
 #~ msgid "ERROR: Failed to parse crontab record"
 #~ msgstr "FEHLER: Crontab-Eintrag konnte nicht ausgewertet werden"
@@ -1134,9 +1145,6 @@ msgstr "Das ist ein ungültiger Eintrag! Mögliches Problem: %s"
 
 #~ msgid "Set the month frequency setting"
 #~ msgstr "Monat der Wiederholung einstellen"
-
-#~ msgid "Set the scheduled task"
-#~ msgstr "Übernehmen der Aufgabe"
 
 #~ msgid "Set the weekday frequency setting"
 #~ msgstr "Wochentag der Wiederholung einstellen"

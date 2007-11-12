@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-02 21:54+0200\n"
+"POT-Creation-Date: 2007-11-12 21:22+0100\n"
 "PO-Revision-Date: 2006-01-12 14:22+0100\n"
 "Last-Translator: Tino Meinen <a.t.meinen@chello.nl>\n"
 "Language-Team: Dutch <vertaling@vrijschrift.org>\n"
@@ -21,8 +21,9 @@ msgid "Manage your system tasks"
 msgstr "Uw systeemtaken beheren"
 
 #: ../desktop/gnome-schedule.desktop.in.in.h:2
-msgid "Schedule"
-msgstr "Taakplanning"
+#, fuzzy
+msgid "Scheduled tasks"
+msgstr "De geplande taak instellen"
 
 #: ../servers/GNOME_GnomeSchedule.server.in.in.h:1
 msgid "Configures your scheduled tasks"
@@ -36,23 +37,23 @@ msgstr "Gnome taakplanning"
 msgid "System tools"
 msgstr "Systeemgereedschap"
 
-#: ../src/at.py:432
+#: ../src/at.py:467
 #, python-format
 msgid "DANGEROUS PARSE: %(preview)s"
 msgstr "GEVAARLIJKE ONTLEDING: %(preview)s"
 
 #. TODO: localize time and date formats
-#: ../src/at.py:439
+#: ../src/at.py:474
 #, python-format
 msgid "On %(date)s at %(time)s"
 msgstr "Op %(date)s om %(time)s"
 
-#: ../src/at.py:444 ../src/at.py:449
+#: ../src/at.py:479 ../src/at.py:484
 msgid "Once"
 msgstr "Eenmalig"
 
 # was/werd niet verwerkt
-#: ../src/at.py:453
+#: ../src/at.py:488
 msgid "Warning: a line in atq's output didn't parse"
 msgstr "Let op: een regel in atq's uitvoer kon niet worden verwerkt"
 
@@ -154,7 +155,7 @@ msgstr "Een nieuwe geplande taak aanmaken"
 msgid "Edit a Scheduled Task"
 msgstr "Een geplande taak bewerken"
 
-#: ../src/crontabEditor.py:210 ../src/atEditor.py:326
+#: ../src/crontabEditor.py:210 ../src/atEditor.py:333
 msgid "Don't use a preset"
 msgstr "Geen voorinstelling gebruiken"
 
@@ -178,19 +179,19 @@ msgid ""
 "$HOME."
 msgstr ""
 
-#: ../src/crontabEditor.py:307 ../src/atEditor.py:296
+#: ../src/crontabEditor.py:307 ../src/atEditor.py:303
 msgid "The preset has not been saved"
 msgstr "De voorinstelling is niet opgeslagen"
 
-#: ../src/crontabEditor.py:309 ../src/atEditor.py:298
+#: ../src/crontabEditor.py:309 ../src/atEditor.py:305
 msgid "To delete a preset, you first need to select one"
 msgstr "Om een voorinstelling te verwijderen dient u er eerst een te kiezen"
 
-#: ../src/crontabEditor.py:319 ../src/atEditor.py:309
+#: ../src/crontabEditor.py:319 ../src/atEditor.py:316
 msgid "To save a preset, you first have to choose a name for it"
 msgstr "Om een voorinstelling op te slaan dient u eerst een naam te kiezen"
 
-#: ../src/crontabEditor.py:329 ../src/atEditor.py:400
+#: ../src/crontabEditor.py:329 ../src/atEditor.py:407
 msgid "Choose an Icon for this Scheduled Task"
 msgstr "Kies een pictogram voor deze geplande taak"
 
@@ -198,7 +199,7 @@ msgstr "Kies een pictogram voor deze geplande taak"
 msgid "command"
 msgstr "opdracht"
 
-#: ../src/crontabEditor.py:430 ../src/mainWindow.py:545 ../src/atEditor.py:524
+#: ../src/crontabEditor.py:430 ../src/mainWindow.py:545 ../src/atEditor.py:531
 msgid "Could not display help"
 msgstr "Kon de hulp niet weergeven"
 
@@ -1014,10 +1015,20 @@ msgstr "FOUT: kon menu xml-bestand niet laden"
 msgid "No such user"
 msgstr "Gebruiker bestaat niet"
 
-#: ../src/atEditor.py:536
+#: ../src/atEditor.py:278
+msgid ""
+"In one or both of the fields hour and minute there was entered a letter or a "
+"number out of range. Remember an hour only has 60 minutes and a day only 24 "
+"hours."
+msgstr ""
+
+#: ../src/atEditor.py:543
 #, python-format
 msgid "This is an invalid record! The problem could be: %s"
 msgstr "Dit is een ongeldig record! Het probleem kan zijn: %s"
+
+#~ msgid "Schedule"
+#~ msgstr "Taakplanning"
 
 #~ msgid "ERROR: Failed to parse crontab record"
 #~ msgstr "FOUT: verwerken van crontab-record is mislukt"
@@ -1129,9 +1140,6 @@ msgstr "Dit is een ongeldig record! Het probleem kan zijn: %s"
 
 #~ msgid "Set the month frequency setting"
 #~ msgstr "De maandfrequentie instellen"
-
-#~ msgid "Set the scheduled task"
-#~ msgstr "De geplande taak instellen"
 
 #~ msgid "Set the weekday frequency setting"
 #~ msgstr "De weekdagfrequentie instellen"

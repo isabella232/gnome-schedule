@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-02 21:54+0200\n"
+"POT-Creation-Date: 2007-11-12 21:22+0100\n"
 "PO-Revision-Date: 2005-03-31 20:55-0700\n"
 "Last-Translator: Steve Murphy <murf@e-tools.com>\n"
 "Language-Team: Kinyarwanda <translation-team-rw@lists.sourceforge.net>\n"
@@ -29,10 +29,10 @@ msgstr ""
 msgid "Manage your system tasks"
 msgstr "Sisitemu Ibikorwa"
 
-# scaddins/source\analysis\analysis.src:RID_ANALYSIS_FUNCTION_DESCRIPTIONS.ANALYSIS_Fvschedule.4.text
 #: ../desktop/gnome-schedule.desktop.in.in.h:2
-msgid "Schedule"
-msgstr "Igenabihe"
+#, fuzzy
+msgid "Scheduled tasks"
+msgstr "i Igikorwa"
 
 #: ../servers/GNOME_GnomeSchedule.server.in.in.h:1
 #, fuzzy
@@ -49,22 +49,22 @@ msgstr "Igenabihe"
 msgid "System tools"
 msgstr ""
 
-#: ../src/at.py:432
+#: ../src/at.py:467
 #, python-format
 msgid "DANGEROUS PARSE: %(preview)s"
 msgstr ""
 
 #. TODO: localize time and date formats
-#: ../src/at.py:439
+#: ../src/at.py:474
 #, fuzzy, python-format
 msgid "On %(date)s at %(time)s"
 msgstr "Itariki S ku Igihe S"
 
-#: ../src/at.py:444 ../src/at.py:449
+#: ../src/at.py:479 ../src/at.py:484
 msgid "Once"
 msgstr ""
 
-#: ../src/at.py:453
+#: ../src/at.py:488
 msgid "Warning: a line in atq's output didn't parse"
 msgstr ""
 
@@ -192,7 +192,7 @@ msgstr "a Gishya Igikorwa"
 msgid "Edit a Scheduled Task"
 msgstr "a Igikorwa"
 
-#: ../src/crontabEditor.py:210 ../src/atEditor.py:326
+#: ../src/crontabEditor.py:210 ../src/atEditor.py:333
 #, fuzzy
 msgid "Don't use a preset"
 msgstr "Gukoresha a"
@@ -215,22 +215,22 @@ msgid ""
 "$HOME."
 msgstr ""
 
-#: ../src/crontabEditor.py:307 ../src/atEditor.py:296
+#: ../src/crontabEditor.py:307 ../src/atEditor.py:303
 #, fuzzy
 msgid "The preset has not been saved"
 msgstr "OYA"
 
-#: ../src/crontabEditor.py:309 ../src/atEditor.py:298
+#: ../src/crontabEditor.py:309 ../src/atEditor.py:305
 #, fuzzy
 msgid "To delete a preset, you first need to select one"
 msgstr "Gusiba a Itangira Kuri Guhitamo"
 
-#: ../src/crontabEditor.py:319 ../src/atEditor.py:309
+#: ../src/crontabEditor.py:319 ../src/atEditor.py:316
 #, fuzzy
 msgid "To save a preset, you first have to choose a name for it"
 msgstr "Kubika a Itangira Kuri Guhitamo a Izina: kugirango"
 
-#: ../src/crontabEditor.py:329 ../src/atEditor.py:400
+#: ../src/crontabEditor.py:329 ../src/atEditor.py:407
 #, fuzzy
 msgid "Choose an Icon for this Scheduled Task"
 msgstr "Agashushondanga kugirango iyi Igikorwa"
@@ -241,7 +241,7 @@ msgstr "Agashushondanga kugirango iyi Igikorwa"
 msgid "command"
 msgstr "Icyo wifuza"
 
-#: ../src/crontabEditor.py:430 ../src/mainWindow.py:545 ../src/atEditor.py:524
+#: ../src/crontabEditor.py:430 ../src/mainWindow.py:545 ../src/atEditor.py:531
 msgid "Could not display help"
 msgstr ""
 
@@ -1152,10 +1152,21 @@ msgstr ""
 msgid "No such user"
 msgstr ""
 
-#: ../src/atEditor.py:536
+#: ../src/atEditor.py:278
+msgid ""
+"In one or both of the fields hour and minute there was entered a letter or a "
+"number out of range. Remember an hour only has 60 minutes and a day only 24 "
+"hours."
+msgstr ""
+
+#: ../src/atEditor.py:543
 #, fuzzy, python-format
 msgid "This is an invalid record! The problem could be: %s"
 msgstr "ni Sibyo Icyabitswe"
+
+# scaddins/source\analysis\analysis.src:RID_ANALYSIS_FUNCTION_DESCRIPTIONS.ANALYSIS_Fvschedule.4.text
+#~ msgid "Schedule"
+#~ msgstr "Igenabihe"
 
 #~ msgid "Title"
 #~ msgstr "Umutwe"
@@ -1267,10 +1278,6 @@ msgstr "ni Sibyo Icyabitswe"
 #, fuzzy
 #~ msgid "Set the month frequency setting"
 #~ msgstr "i Ukwezi Ubwisubire Igenamiterere"
-
-#, fuzzy
-#~ msgid "Set the scheduled task"
-#~ msgstr "i Igikorwa"
 
 #, fuzzy
 #~ msgid "Set the weekday frequency setting"

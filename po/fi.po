@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-14 22:13+0300\n"
+"POT-Creation-Date: 2007-11-12 21:22+0100\n"
 "PO-Revision-Date: 2006-10-24 17:42+0300\n"
 "Last-Translator: Ilkka Tuohela <hile@iki.fi>\n"
 "Language-Team: Finnish <gnome-fi-laatu@lists.sourceforge.net>\n"
@@ -22,8 +22,9 @@ msgid "Manage your system tasks"
 msgstr "Hallitse järjestelmäsi tehtäviä"
 
 #: ../desktop/gnome-schedule.desktop.in.in.h:2
-msgid "Schedule"
-msgstr "Ajastus"
+#, fuzzy
+msgid "Scheduled tasks"
+msgstr "Lisää ajastettu tehtävä"
 
 #: ../servers/GNOME_GnomeSchedule.server.in.in.h:1
 msgid "Configures your scheduled tasks"
@@ -37,22 +38,22 @@ msgstr "Gnome-ajastus"
 msgid "System tools"
 msgstr "Järjestelmätyökalut"
 
-#: ../src/at.py:432
+#: ../src/at.py:467
 #, python-format
 msgid "DANGEROUS PARSE: %(preview)s"
 msgstr "VAARALLINEN TULKINTA: %(preview)s"
 
 #. TODO: localize time and date formats
-#: ../src/at.py:439
+#: ../src/at.py:474
 #, python-format
 msgid "On %(date)s at %(time)s"
 msgstr "%(date)s kello %(time)s"
 
-#: ../src/at.py:444 ../src/at.py:449
+#: ../src/at.py:479 ../src/at.py:484
 msgid "Once"
 msgstr "Kerran"
 
-#: ../src/at.py:453
+#: ../src/at.py:488
 msgid "Warning: a line in atq's output didn't parse"
 msgstr "Varoitus: riviä atq:n tulosteessa ei voi tulkita"
 
@@ -177,12 +178,11 @@ msgid ""
 "$HOME."
 msgstr ""
 "Komentosi sisältää yhden tai useampia %-merkkejä, joka on cronin "
-"erikoismerkki. Sitä ei voi käyttää  Gnome-schedulesta, koska sitä "
-"käytetään tallentaa lisätietoja crontab-riville. Käytä ohjainta |, jolla "
-"saat samaan aikaan tuloksen. Lue lisätietoja %-merkistä crontabin "
-"manuaalisivulta. Jos et halua käyttää sitä uudelleenohjaukseen, se tulee "
-"suojata kunnolla \\-merkillä, esimerkiksi \\$HOME."
-
+"erikoismerkki. Sitä ei voi käyttää  Gnome-schedulesta, koska sitä käytetään "
+"tallentaa lisätietoja crontab-riville. Käytä ohjainta |, jolla saat samaan "
+"aikaan tuloksen. Lue lisätietoja %-merkistä crontabin manuaalisivulta. Jos "
+"et halua käyttää sitä uudelleenohjaukseen, se tulee suojata kunnolla \\-"
+"merkillä, esimerkiksi \\$HOME."
 
 #: ../src/crontabEditor.py:307 ../src/atEditor.py:303
 msgid "The preset has not been saved"
@@ -1023,13 +1023,16 @@ msgid ""
 "hours."
 msgstr ""
 "Joko tunti- tai minuuttikenttään syötettiin kirjain tai numero, joka ei ole "
-"kelvollinen. Muistathan että tunnissa on vain 60 minuuttia ja päivässä "
-"24 tuntia."
+"kelvollinen. Muistathan että tunnissa on vain 60 minuuttia ja päivässä 24 "
+"tuntia."
 
 #: ../src/atEditor.py:543
 #, python-format
 msgid "This is an invalid record! The problem could be: %s"
 msgstr "Virheellinen tietue! Mahdollinen ongelma: %s"
+
+#~ msgid "Schedule"
+#~ msgstr "Ajastus"
 
 #~ msgid "ERROR: Failed to parse crontab record"
 #~ msgstr "VIRHE: Crontab-tietutta ei voi tulkita"
