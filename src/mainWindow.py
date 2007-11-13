@@ -85,9 +85,27 @@ class main:
 		##configure the toolbar	
 		self.toolbar = self.xml.get_widget ("toolbar")
 		self.add_button = gtk.MenuToolButton (gtk.STOCK_NEW)
+		
 		self.add_button_menu = gtk.Menu ()
-		self.add_button_menu_add_crontab = gtk.MenuItem (label=_("Recurrent task"), use_underline=False)
-		self.add_button_menu_add_at = gtk.MenuItem (label=_("One-time task"), use_underline=False)
+		self.add_button_menu_add_crontab = gtk.MenuItem ()
+		self.add_button_menu_add_at = gtk.MenuItem ()
+
+		self.recurrenthbox = gtk.HBox ()
+		icon = gtk.Image ()
+		icon.set_from_pixbuf (self.iconcrontab)
+		label = gtk.Label (_("Recurrent task"))
+		self.recurrenthbox.add (icon)
+		self.recurrenthbox.add (label)
+		self.add_button_menu_add_crontab.add (self.recurrenthbox)
+		
+		self.onetimehbox = gtk.HBox ()
+		icon = gtk.Image ()
+		icon.set_from_pixbuf (self.iconat)
+		label = gtk.Label (_("One-time task"))
+		self.onetimehbox.add (icon)
+		self.onetimehbox.add (label)
+		self.add_button_menu_add_at.add (self.onetimehbox)
+		
 		self.add_button_menu.append (self.add_button_menu_add_crontab)
 		self.add_button_menu.append (self.add_button_menu_add_at)
 		
@@ -257,11 +275,11 @@ class main:
 	def __loadIcon__(self):
 		self.ti_theme = thoughicon.ToughIconTheme()
 		
-		if os.access("../icons/gnome-schedule.png", os.F_OK):
-			self.iconPixbuf = gtk.gdk.pixbuf_new_from_file_at_size ("../icons/gnome-schedule.png", 19, 19)
+		if os.access("../icons/gnome-schedule.svg", os.F_OK):
+			self.iconPixbuf = gtk.gdk.pixbuf_new_from_file_at_size ("../icons/gnome-schedule.svg", 52, 52)
 		else:
 			try:
-				self.iconPixbuf = gtk.gdk.pixbuf_new_from_file_at_size (config.getImagedir() + "/gnome-schedule.png", 19, 19)
+				self.iconPixbuf = gtk.gdk.pixbuf_new_from_file_at_size (config.getImagedir() + "/gnome-schedule.svg", 52, 52)
 			except:
 				print _("ERROR: Could not load icon")
 		
