@@ -36,6 +36,7 @@
 	<widget class="GtkToolbar" id="toolbar">
 	  <property name="visible">True</property>
 	  <property name="orientation">GTK_ORIENTATION_HORIZONTAL</property>
+	  <property name="toolbar_style">GTK_TOOLBAR_BOTH</property>
 	  <property name="tooltips">True</property>
 	  <property name="show_arrow">True</property>
 
@@ -103,6 +104,7 @@
 	      <property name="visible_horizontal">True</property>
 	      <property name="visible_vertical">True</property>
 	      <property name="is_important">True</property>
+	      <property name="active">False</property>
 	      <signal name="clicked" handler="on_edit_mode_button_clicked" last_modification_time="Sat, 05 May 2007 08:27:01 GMT"/>
 	    </widget>
 	    <packing>
@@ -127,8 +129,6 @@
 	      <property name="homogeneous">True</property>
 	    </packing>
 	  </child>
-
-
 
 	  <child>
 	    <widget class="GtkToolButton" id="help_button">
@@ -2576,8 +2576,8 @@
 		  <property name="justification">GTK_JUSTIFY_LEFT</property>
 		  <property name="wrap_mode">GTK_WRAP_NONE</property>
 		  <property name="cursor_visible">True</property>
-		  <property name="pixels_above_lines">5</property>
-		  <property name="pixels_below_lines">5</property>
+		  <property name="pixels_above_lines">0</property>
+		  <property name="pixels_below_lines">0</property>
 		  <property name="pixels_inside_wrap">0</property>
 		  <property name="left_margin">5</property>
 		  <property name="right_margin">2</property>
