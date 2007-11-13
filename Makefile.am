@@ -1,4 +1,4 @@
-SUBDIRS = desktop src pixmaps po servers help
+SUBDIRS = desktop src icons po servers help
 
 intltool_extra = intltool-extract.in intltool-merge.in intltool-update.in
 

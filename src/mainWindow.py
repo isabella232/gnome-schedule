@@ -40,6 +40,8 @@ import setuserWindow
 import addWindow
 import preset
 
+import thoughicon
+
 gtk.glade.bindtextdomain(config.GETTEXT_PACKAGE(), config.GNOMELOCALEDIR())
 
 ##
@@ -69,6 +71,7 @@ class main:
 
 		self.widget.connect("delete_event", self.__quit__)
 		self.widget.connect("destroy_event", self.__quit__)
+		
 		self.widget.set_icon(self.iconPixbuf)
 		##		
 
@@ -241,7 +244,10 @@ class main:
 	def __fill__ (self, records):
 		for title, timestring_show, preview, lines, job_id, timestring, scheduler, icon, date, class_id, user, time, typetext, type, nooutput in records:
 					
-			iter = self.treemodel.append([title, timestring_show, preview, lines, job_id, timestring, self.iconPixbuf, scheduler, icon, date, class_id, user, time, typetext, type, nooutput])
+			if scheduler.get_type() == "crontab":
+				iter = self.treemodel.append([title, timestring_show, preview, lines, job_id, timestring, self.iconcrontab, scheduler, icon, date, class_id, user, time, typetext, type, nooutput])
+			elif scheduler.get_type() == "at":
+				iter = self.treemodel.append([title, timestring_show, preview, lines, job_id, timestring, self.iconat, scheduler, icon, date, class_id, user, time, typetext, type, nooutput])
 
 			
 		
@@ -249,15 +255,21 @@ class main:
 
 	# TODO: pixbuf or pixmap? gtkImage
 	def __loadIcon__(self):
-		if os.access("../pixmaps/gnome-schedule.png", os.F_OK):
-			self.iconPixbuf = gtk.gdk.pixbuf_new_from_file_at_size ("../pixmaps/gnome-schedule.png", 19, 19)
+		self.ti_theme = thoughicon.ToughIconTheme()
+		
+		if os.access("../icons/gnome-schedule.png", os.F_OK):
+			self.iconPixbuf = gtk.gdk.pixbuf_new_from_file_at_size ("../icons/gnome-schedule.png", 19, 19)
 		else:
 			try:
 				self.iconPixbuf = gtk.gdk.pixbuf_new_from_file_at_size (config.getImagedir() + "/gnome-schedule.png", 19, 19)
 			except:
 				print _("ERROR: Could not load icon")
-
-
+		
+		self.iconcrontab  = self.ti_theme.load_icon (gtk.STOCK_REFERSH, 19, 0)
+		
+		# TODO: Create icon for at
+		self.iconat = self.ti_theme.load_icon (gtk.STOCK_GO_FORWARD, 19, 0)
+		
 	def __loadGlade__(self):
 		if os.access("gnome-schedule.glade", os.F_OK):
 			self.xml = gtk.glade.XML ("gnome-schedule.glade", domain="gnome-schedule")
@@ -342,8 +354,7 @@ class main:
 			col.set_resizable (True)
 			col.set_expand (True)
 			self.treeview.append_column(col)
-			
-			#self.edit_mode_button.set_label (_("Advanced"))
+
 
 
 		elif mode == "advanced":
@@ -361,7 +372,6 @@ class main:
 			col.set_resizable (True)
 			self.treeview.append_column(col)
 
-			#self.edit_mode_button.set_label (_("Simple"))
 
 
 	def on_advanced_menu_activate (self, widget):
