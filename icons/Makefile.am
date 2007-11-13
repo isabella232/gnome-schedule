@@ -1,6 +1,6 @@
-gnomeschedule_pixmapsdir = $(prefix)/share/pixmaps
+gnomeschedule_iconsdir = $(prefix)/share/icons
 
-gnomeschedule_pixmaps_DATA = \
+gnomeschedule_icons_DATA = \
 	gnome-schedule.png
 
-EXTRA_DIST = $(gnomeschedule_pixmaps_DATA)
+EXTRA_DIST = $(gnomeschedule_icons_DATA)

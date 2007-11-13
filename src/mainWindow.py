@@ -265,7 +265,7 @@ class main:
 			except:
 				print _("ERROR: Could not load icon")
 		
-		self.iconcrontab  = self.ti_theme.load_icon (gtk.STOCK_REFERSH, 19, 0)
+		self.iconcrontab  = self.ti_theme.load_icon (gtk.STOCK_REFRESH, 19, 0)
 		
 		# TODO: Create icon for at
 		self.iconat = self.ti_theme.load_icon (gtk.STOCK_GO_FORWARD, 19, 0)

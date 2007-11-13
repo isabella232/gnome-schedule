@@ -266,20 +266,45 @@ class At:
 			if minute > 60 or minute < 0:
 				return False, "minute"
 			
-			if hour < chour or (hour == chour and minute < cminute): 
-				plussday = True
-			else: 
-				plussday = False
-
-			if year < cyear:
-				return False, "year"
-
-			if (month < cmonth and year <= cyear):
+			if month > 12 or month < 0:
 				return False, "month"
-
-
-			if (day < cday and month <= cmonth) or (plussday == True and day < cday + 1 and month <= cmonth):
+				
+			if day > 31 or day < 0:
 				return False, "day"
+				
+			if year < 0:
+				return False, "year"
+				
+			if year >= cyear: 
+				if year == cyear:
+					syear = True
+					if (month >= cmonth):
+						if month == cmonth:
+							smonth = True
+							if day >= cday:
+								if day == cday:
+									sday = True
+									if hour >= chour:
+										if hour == chour:
+											shour = True
+											if minute <= cminute:
+												return False, "minute"
+										else:
+											shour = False
+									else:
+										return False, "hour"
+								else:
+									sday = False
+							else:
+								return False, "day"
+						else:
+							smonth = False
+					else:
+						return False, "month"
+				else:
+					syear = False
+			else:
+				return False, "year"
 
 		elif runat_g2:
 

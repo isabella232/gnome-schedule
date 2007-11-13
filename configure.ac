@@ -121,7 +121,7 @@ Makefile
 src/config.py
 src/Makefile
 src/gnome-schedule
-pixmaps/Makefile
+icons/Makefile
 po/Makefile.in
 desktop/Makefile
 desktop/gnome-schedule.desktop.in
