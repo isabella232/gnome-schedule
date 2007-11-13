@@ -76,9 +76,9 @@ class AtEditor:
 		
 		self.xml.signal_connect("on_at_spin_hour_changed", self.on_spin_hour_changed)
 		self.xml.signal_connect("on_at_spin_minute_changed", self.on_spin_minute_changed)
-		self.xml.signal_connect ("on_at_spin_year_change", self.on_spin_year_changed)
-		self.xml.signal_connect ("on_at_spin_month_change", self.on_spin_month_changed)
-		self.xml.signal_connect ("on_at_spin_day_change", self.on_spin_day_changed)
+		self.xml.signal_connect ("on_at_spin_year_changed", self.on_spin_year_changed)
+		self.xml.signal_connect ("on_at_spin_month_changed", self.on_spin_month_changed)
+		self.xml.signal_connect ("on_at_spin_day_changed", self.on_spin_day_changed)
 		
 		
 
@@ -119,7 +119,7 @@ class AtEditor:
 		#parse 	
 		(hour, minute, day, month, year) = self.__parse_time__(self.time, self.date)
 		print "runat"
-		self.runat = self.time + " " + day + "." + month + "." + year
+		self.runat = self.time + " " + year + "-" + month + "-" + day 
 		print "cal sel month"
 		self.spin_year.set_value (int (year))
 		self.spin_month.set_value (int (month))
@@ -198,10 +198,25 @@ class AtEditor:
 			hour = int(hour)
 		else:
 			return False
+			
 		if minute.isdigit():
 			minute = int(minute)
 		else:
 			return False
+			
+		if day.isdigit ():
+			day = int (day)
+		else:
+			return False
+		
+		if month.isdigit ():
+			month = int (month)
+		else:
+			return False
+		
+		if year.isdigit () == False:
+			return False
+			
 		if hour < 10:
 			hour = "0" + str(hour)
 		else:
@@ -222,7 +237,7 @@ class AtEditor:
 		else:
 			day = str(day)
 
-		self.runat = hour + ":" + minute + " " + day + "." + month + "." + year
+		self.runat = hour + ":" + minute + " " + year + "-" + month + "-" + day
 		print self.runat
 
 
@@ -245,7 +260,7 @@ class AtEditor:
 		hour = ctime[3]
 		minute = ctime[4]
 		
-		self.runat = str(hour) + ":" + str(minute) + " " + str(day) + "." + str(month) + "." + str(year)
+		self.runat = str(hour) + ":" + str(minute) + " " + str (year) + "-" + str (month) + "-" + str(day)
 
 		self.spin_hour.set_value(int(hour))
 		self.spin_minute.set_value(int(minute))
