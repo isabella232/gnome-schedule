@@ -16,7 +16,6 @@ gnomeschedule_PYTHON = \
 	preset.py \
 	scheduleapplet.py \
 	editor.py \
-	support.py \
 	thoughicon.py
 	
 

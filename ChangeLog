@@ -6,6 +6,7 @@
 	* advanced view toggle button behaves
 	* set version to 2.0.0-BETA
 	* remembers size and position, but not state due to silly gtk/gnome
+	* removed support.py, translates thoughicon.py
 	
 2007-11-14  Gaute Hope  <eg@gaute.vetsj.com>
 

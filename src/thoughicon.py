@@ -67,10 +67,10 @@ class ToughIconTheme:
         if self._internal_cache.has_key(cache_name):
             return self._internal_cache[cache_name]
         if name is None or name == "":
-            warn("ICON: Using dummy icon")
+            warn(_("ICON: Using dummy icon"))
             name = "applications-other"
         if name.startswith("/"):
-            warn("ICON: Doesn't handle absolute paths: '%s'" % name)
+            warn(_("ICON: Doesn't handle absolute paths: '%s'" % name))
             name = "applications-other"
         if name.find(".") != -1:
             import os.path
@@ -79,7 +79,7 @@ class ToughIconTheme:
             if len(os.path.splitext(name)[1]) == (3 + 1): # extension includes '.'
                 name = os.path.splitext(name)[0]
         if not self.has_icon(name):
-            warn("ICON: Icon '%s' is not in theme" % name)
+            warn(_("ICON: Icon '%s' is not in theme" % name))
             name = "applications-other"
         # FIXME: mvo: this try: except is a hack to work around 
         #             ubuntu #6858 (icon is no longer in cache after removal)
@@ -91,7 +91,7 @@ class ToughIconTheme:
             icon = self.load_icon("applications-other", size, 0)
             name = "applications-other"
         if icon.get_width() != size:
-            warn("ICON: Got badly sized icon for %s" % name)
+            warn(_("ICON: Got badly sized icon for %s" % name))
             icon = icon.scale_simple(size, size, gtk.gdk.INTERP_BILINEAR)
         
         info = self.lookup_icon(name, size, gtk.ICON_LOOKUP_NO_SVG | gtk.ICON_LOOKUP_USE_BUILTIN)
