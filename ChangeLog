@@ -5,6 +5,7 @@
 	* new field to the main treemodel for timestring_advanced; the timestring shown in advanced mode. Effectively only affecting @reboot entries now showing _("At reboot") and not 5 x @reboot
 	* advanced view toggle button behaves
 	* set version to 2.0.0-BETA
+	* remembers size and position, but not state due to silly gtk/gnome
 	
 2007-11-14  Gaute Hope  <eg@gaute.vetsj.com>
 

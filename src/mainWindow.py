@@ -75,6 +75,14 @@ class main:
 		self.widget.connect("destroy_event", self.__quit__)
 		
 		self.widget.set_icon(self.iconPixbuf)
+		
+		#load state
+		(x, y, h, w) = self.backend.get_window_state ()
+ 		self.widget.move (x, y)
+ 		self.widget.resize (h, w)
+
+		self.widget.set_resizable (True)
+
 		##		
 
 
@@ -218,8 +226,8 @@ class main:
 
 		if inapplet == False:
 			gtk.main()
-
-
+		
+	
 	def update_schedule(self):
 		selection = self.treeview.get_selection()
 		model, iter, = selection.get_selected()
@@ -597,6 +605,10 @@ class main:
 
  	#quit program
  	def __quit__(self, *args):
+ 		#save state
+ 		x,y = self.widget.get_position ()
+ 		h, w = self.widget.get_size ()
+ 		self.backend.set_window_state(x, y, h, w)
  		if self.inapplet:
 			self.widget.hide ()
 		else:

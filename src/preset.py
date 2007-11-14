@@ -36,6 +36,19 @@ class ConfigBackend:
 		self.gconf_client.add_dir ("/apps/gnome-schedule", gconf.CLIENT_PRELOAD_NONE)		
 		self.gconf_client.notify_add ("/apps/gnome-schedule/advanced", self.on_gconfkey_advanced_changed)
 
+	
+	def set_window_state (self, x, y, height, width):
+		self.gconf_client.set_int ("/apps/gnome-schedule/x", x)
+		self.gconf_client.set_int ("/apps/gnome-schedule/y", y)
+		self.gconf_client.set_int ("/apps/gnome-schedule/height", height)
+		self.gconf_client.set_int ("/apps/gnome-schedule/width", width)
+	
+	def get_window_state (self):
+		h = self.gconf_client.get_int ("/apps/gnome-schedule/height")
+		w = self.gconf_client.get_int ("/apps/gnome-schedule/width")
+		x = self.gconf_client.get_int ("/apps/gnome-schedule/x")
+		y = self.gconf_client.get_int ("/apps/gnome-schedule/y")
+		return x, y, h, w
 		
 	def get_advanced_option(self):
 		return self.gconf_client.get_bool ("/apps/gnome-schedule/advanced")

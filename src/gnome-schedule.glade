@@ -8,7 +8,7 @@
   <property name="title" translatable="yes">Configure Scheduled Tasks</property>
   <property name="type">GTK_WINDOW_TOPLEVEL</property>
   <property name="window_position">GTK_WIN_POS_NONE</property>
-  <property name="modal">True</property>
+  <property name="modal">False</property>
   <property name="default_width">600</property>
   <property name="default_height">400</property>
   <property name="resizable">True</property>
@@ -21,6 +21,7 @@
   <property name="focus_on_map">True</property>
   <property name="urgency_hint">False</property>
   <signal name="delete_event" handler="on_mainWindow_delete_event" last_modification_time="Sat, 17 Dec 2005 13:01:23 GMT"/>
+  <signal name="window_state_event" handler="on_mainWindow_window_state_event" last_modification_time="Wed, 14 Nov 2007 15:21:21 GMT"/>
 
   <child>
     <widget class="GtkVBox" id="main_vbox">
