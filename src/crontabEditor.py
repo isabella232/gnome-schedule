@@ -397,7 +397,7 @@ class CrontabEditor:
 			day = self.special
 			month = self.special
 			weekday = self.special
-			self.label_preview.set_text (self.scheduler.__easy__ (minute, hour, day, month, weekday))
+			self.label_preview.set_text ("<b>" + self.scheduler.__easy__ (minute, hour, day, month, weekday) + "</b>")
 		else:
 			self.label_preview.set_text ("<b>" + self.scheduler.__easy__ (self.minute, self.hour, self.day, self.month, self.weekday) + "</b>")
 		self.label_preview.set_use_markup (True)
