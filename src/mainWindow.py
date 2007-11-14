@@ -59,6 +59,8 @@ class main:
 		self.editor = None
 		self.schedule = None
 		
+		self.noevents = False
+		
 			
 		#start the backend where all the user configuration is stored
 		self.backend = preset.ConfigBackend(self, "gconf")
@@ -180,10 +182,14 @@ class main:
 
 
 		#enable or disable advanced depending on user config
+		self.noevents = True
 		if self.backend.get_advanced_option():
 			self.switchView("advanced")
+			self.edit_mode_button.set_active (True)
 		else:
 			self.switchView("simple")
+			self.edit_mode_button.set_active (False)
+		self.noevents = False
 		
 		
 		self.__initUser__()
@@ -343,7 +349,6 @@ class main:
 	
 	#switch between advanced and simple mode			
 	def switchView(self, mode = "simple"):
-		#TODO: experimental code + show icon?
 		self.__cleancolumns__ ()
 		
 		self.treeview.get_selection().unselect_all()
@@ -398,10 +403,11 @@ class main:
 
 
 	def on_advanced_menu_activate (self, widget):
-		if self.backend.get_advanced_option():
-			self.backend.set_advanced_option(0)
-		else:
-			self.backend.set_advanced_option(1)
+		if self.noevents == False:
+			if self.backend.get_advanced_option():
+				self.backend.set_advanced_option(0)
+			else:
+				self.backend.set_advanced_option(1)
 
 	def on_add_at_task (self, *args):
 		self.addWindow.go_at ()
