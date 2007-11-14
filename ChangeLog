@@ -1,3 +1,16 @@
+2007-11-14  Gaute Hope  <eg@gaute.vetsj.com>
+
+	* Oh.. forgot this file, here's a summary
+	* From trunk: Bugfix where some dates in the future wouldn't be accepted.
+	* at editor fully works
+	* added icon to at editor
+	* added icons to drop down menu
+	* removed exit button
+	* new icon for gnome-schedule by kiddo
+	* created new crontab interface in glade, needs to attached	
+	* at parser locale ignorant
+	* gnome-schedule desktop entry in preferences
+	
 2007-05-30  Gaute Hope  <eg@gaute.vetsj.com>
 
 	* src/atEditor.py: No crash on letters entered into hour or minute spinbox. Bug: https://bugs.launchpad.net/ubuntu/+source/gnome-schedule/+bug/115782
