@@ -283,10 +283,15 @@ class main:
 			except:
 				print _("ERROR: Could not load icon")
 		
-		self.iconcrontab  = self.ti_theme.load_icon (gtk.STOCK_REFRESH, 19, 0)
+		self.iconatstring = gtk.STOCK_CANCEL
+		self.iconcrontabstring = gtk.STOCK_REFRESH
+		
+		self.iconcrontab  = self.ti_theme.load_icon (self.iconcrontabstring, 19, 0)
+		self.bigiconcrontab = self.ti_theme.load_icon (self.iconcrontabstring, 49, 0)
 		
 		# TODO: Create icon for at
-		self.iconat = self.ti_theme.load_icon (gtk.STOCK_GO_FORWARD, 19, 0)
+		self.iconat = self.ti_theme.load_icon (self.iconatstring, 19, 0)
+		self.bigiconat = self.ti_theme.load_icon (self.iconatstring, 49, 0)
 		
 	def __loadGlade__(self):
 		if os.access("gnome-schedule.glade", os.F_OK):

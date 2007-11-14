@@ -59,7 +59,14 @@ class AtEditor:
 		self.spin_year = self.xml.get_widget ("at_spin_year")
 		self.spin_month = self.xml.get_widget ("at_spin_month")
 		self.spin_day = self.xml.get_widget ("at_spin_day")
-
+		
+		self.title_box = self.xml.get_widget ("title_box")
+		
+		self.image_icon = gtk.Image ()
+		self.image_icon.set_from_pixbuf (self.ParentClass.bigiconat)
+		self.title_box.pack_start (self.image_icon, False, False, 0)
+		self.title_box.reorder_child (self.image_icon, 0)
+		
 			
 
 		self.xml.signal_connect("on_at_button_cancel_clicked", self.on_button_cancel_clicked)
