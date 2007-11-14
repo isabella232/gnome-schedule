@@ -3,6 +3,7 @@
 	* new crontab editor fully works
 	* deleted old one
 	* new field to the main treemodel for timestring_advanced; the timestring shown in advanced mode. Effectively only affecting @reboot entries now showing _("At reboot") and not 5 x @reboot
+	* advanced view toggle button behaves
 	
 2007-11-14  Gaute Hope  <eg@gaute.vetsj.com>
 

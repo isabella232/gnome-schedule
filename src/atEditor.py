@@ -91,7 +91,6 @@ class AtEditor:
 		self.backend.add_scheduler_type("at")
 
 	def showadd (self):
-		print "add"
 		self.button_save.set_label (gtk.STOCK_ADD)
 		self.__reset__ ()
 		self.title = _("Untitled")
@@ -104,12 +103,10 @@ class AtEditor:
 		self.__update_textboxes__()
 
 	def showedit (self, record, job_id, iter):
-		print "showedit"
 		self.button_save.set_label (gtk.STOCK_APPLY)
 		self.mode = 1 # edit task
 		self.job_id = job_id
 		self.date = self.ParentClass.treemodel.get_value(iter, 9)
-		print "got date: " + self.date
 		self.time = self.ParentClass.treemodel.get_value(iter, 12)
 		self.title = self.ParentClass.treemodel.get_value(iter, 0)
 		self.class_id = self.ParentClass.treemodel.get_value(iter, 9)
@@ -121,12 +118,9 @@ class AtEditor:
 			self.command = self.command[1:]
 			i = self.command.find ('\n', 0)
 			
-		print "date: ", self.date, "time: ", self.time
 		#parse 	
 		(hour, minute, day, month, year) = self.__parse_time__(self.time, self.date)
-		print "runat"
 		self.runat = self.time + " " + year + "-" + month + "-" + day 
-		print "cal sel month"
 		self.spin_year.set_value (int (year))
 		self.spin_month.set_value (int (month))
 		self.spin_day.set_value (int (day))
@@ -135,14 +129,12 @@ class AtEditor:
 		self.spin_minute.set_value(int(minute))
 		self.widget.set_title(_("Edit a Scheduled Task"))
 		
-		print "update textboxes"
 		self.__update_textboxes__ ()
 		self.parentiter = iter
 		self.widget.set_transient_for(self.ParentClass.widget)
 		self.widget.set_position(gtk.WIN_POS_CENTER_ON_PARENT)
 		self.widget.show ()
 
-		print "showedit done"
 		
 	def on_worded_label_event (self, *args):
 		#TODO highlight on mouseover
@@ -244,7 +236,6 @@ class AtEditor:
 			day = str(day)
 
 		self.runat = hour + ":" + minute + " " + year + "-" + month + "-" + day
-		print self.runat
 
 
 	def popup_error_no_digit (self, field):
@@ -311,7 +302,6 @@ class AtEditor:
 
 
 	def on_button_save_clicked (self, *args):
-		print "ADD"
 		(validate, reason) = self.scheduler.checkfield(self.runat)
 		if validate == False:
 			self.__WrongRecordDialog__ (reason)
@@ -319,10 +309,8 @@ class AtEditor:
 		
 		
 		if self.mode == 1:
-			print "update"
 			self.scheduler.update (self.job_id, self.runat, self.command, self.title)
 		else:
-			print "append"
 			self.scheduler.append (self.runat, self.command, self.title)
 		
 		self.ParentClass.schedule_reload ()
