@@ -95,31 +95,31 @@ class At:
 				if m == None:
 					m = self.atRecordRegex[3].match(line)
 					if m != None:
-						print "regexp: 3"
+						#print "regexp: 3"
 						regexp = 3
 						
 					else:
 						m = self.atRecordRegex[2].match(line)
 						if m != None:
-							print "regexp: 2"
+							#print "regexp: 2"
 							regexp = 2
 						else:
 							m = self.atRecordRegex[1].match(line)
 							if m != None:
-								print "regexp: 1"
+								#print "regexp: 1"
 								regexp = 1
 							else:
 								# Exception
-								print "regexp: failed"
+								#print "regexp: failed"
 								return False
 						
 				else:
 					regexp = 0
-					print "regexp: 0"
+					#print "regexp: 0"
 					
 					
 				if m != None:
-					print m.groups ()
+					#print m.groups ()
 					
 					if regexp == 3:
 						job_id = m.groups ()[0]
@@ -127,13 +127,13 @@ class At:
 						self.standard_locale ()
 						try:
 							dt = datetime.datetime.strptime (m.groups ()[1], "%a %b  %d %H:%M:%S %Y")
-							print "datetime, first try succeseeded"
+							#print "datetime, first try succeseeded"
 						except:	
 							try:
 								dt = datetime.datetime.strptime (m.groups ()[1], "%a %b %d %H:%M:%S %Y")
-								print "datetime, second try succseeded"
+								#print "datetime, second try succseeded"
 							except:
-								print "datetime failed to parse"
+								#print "datetime failed to parse"
 								self.restore_locale ()
 								return False
 						
@@ -400,7 +400,7 @@ class At:
 
 
 	def update (self, job_id, runat, command, title):
-		print "update" + str (job_id) + runat + command + title
+		#print "update" + str (job_id) + runat + command + title
 		#remove old
 		f = os.path.join (self.atdata, str (job_id))
 		if os.access (f, os.F_OK):
@@ -502,7 +502,7 @@ class At:
 				#print _("added %(id)s") % { "id": job_id	}
 			else:
 				print _("Warning: a line in atq's output didn't parse")	
-		print data
+		
 		return data
 
 	

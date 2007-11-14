@@ -440,7 +440,7 @@ class main:
 				self.editor.showedit (record, linenumber, iter)
 
 		except Exception, ex:
-			print ex
+			#print ex
 			self.dialog = gtk.MessageDialog(self.widget, gtk.DIALOG_MODAL|gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_ERROR, gtk.BUTTONS_OK, _("Please select a task"))
 			self.dialog.run ()
 			self.dialog.destroy ()			
@@ -503,7 +503,7 @@ class main:
 						selection.select_iter(firstiter)
 						
 		except Exception, ex:
-			print ex
+			#print ex
 			self.dialog = gtk.MessageDialog(self.widget, gtk.DIALOG_MODAL|gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_ERROR, gtk.BUTTONS_OK, _("Please select a task"))
 			self.dialog.run ()
 			self.dialog.destroy ()

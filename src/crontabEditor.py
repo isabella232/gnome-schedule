@@ -357,7 +357,7 @@ class CrontabEditor:
 		
 	def __getfrequency__ (self, minute, hour, day, month, weekday, special):
 		index = -1
-		print "getfreq"
+		
 		if minute == "*" and hour == "*" and month == "*" and day == "*" and weekday == "*":
 			index = 0
 		if minute == "0" and hour == "*" and month == "*" and day == "*" and weekday == "*":
@@ -371,7 +371,6 @@ class CrontabEditor:
 		if special != "":
 			index = 5
 			
-		print "index: " + str (index)
 
 		return index
 
@@ -404,9 +403,7 @@ class CrontabEditor:
 			
 			
 	def on_anyadvanced_entry_changed (self, *args):
-		print "anyadvanced"
 		if self.noevents == False:
-			print "anyadvacedtrue"
 			self.minute = self.minute_entry.get_text ()
 			self.hour = self.hour_entry.get_text ()
 			self.day = self.day_entry.get_text ()
@@ -430,7 +427,6 @@ class CrontabEditor:
 		frequency = self.frequency_combobox_model.get_value(iter, 1)
 		if frequency != None:
 			self.minute, self.hour, self.day, self.month, self.weekday, self.special = frequency
-			print "comobobox got freq"
 			self.__update_textboxes__()
 		
 	
