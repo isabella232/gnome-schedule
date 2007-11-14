@@ -158,7 +158,7 @@ class main:
 		##for crontab it would be: 
 		
 # ["untitled", "every hour", "ls /", "0 * * * * ls / # untitled", "5", "0 * * * *", icon, crontab instance,icon_path, 1(job_id), "", "", "crontab"]
-		self.treemodel = gtk.ListStore(gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_INT, gobject.TYPE_STRING, gtk.gdk.Pixbuf, gobject.TYPE_PYOBJECT, gobject.TYPE_STRING , gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_INT)
+		self.treemodel = gtk.ListStore(gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_INT, gobject.TYPE_STRING, gtk.gdk.Pixbuf, gobject.TYPE_PYOBJECT, gobject.TYPE_STRING , gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_INT, gobject.TYPE_STRING)
 		
 		self.treeview = self.xml.get_widget("treeview")
 		
@@ -260,12 +260,12 @@ class main:
 
 
 	def __fill__ (self, records):
-		for title, timestring_show, preview, lines, job_id, timestring, scheduler, icon, date, class_id, user, time, typetext, type, nooutput in records:
+		for title, timestring_show, preview, lines, job_id, timestring, scheduler, icon, date, class_id, user, time, typetext, type, nooutput, timestring_advanced in records:
 					
 			if scheduler.get_type() == "crontab":
-				iter = self.treemodel.append([title, timestring_show, preview, lines, job_id, timestring, self.iconcrontab, scheduler, icon, date, class_id, user, time, typetext, type, nooutput])
+				iter = self.treemodel.append([title, timestring_show, preview, lines, job_id, timestring, self.iconcrontab, scheduler, icon, date, class_id, user, time, typetext, type, nooutput, timestring_advanced])
 			elif scheduler.get_type() == "at":
-				iter = self.treemodel.append([title, timestring_show, preview, lines, job_id, timestring, self.iconat, scheduler, icon, date, class_id, user, time, typetext, type, nooutput])
+				iter = self.treemodel.append([title, timestring_show, preview, lines, job_id, timestring, self.iconat, scheduler, icon, date, class_id, user, time, typetext, type, nooutput, timestring_advanced])
 
 			
 		
@@ -283,7 +283,7 @@ class main:
 			except:
 				print _("ERROR: Could not load icon")
 		
-		self.iconatstring = gtk.STOCK_CANCEL
+		self.iconatstring = gtk.STOCK_DIALOG_WARNING
 		self.iconcrontabstring = gtk.STOCK_REFRESH
 		
 		self.iconcrontab  = self.ti_theme.load_icon (self.iconcrontabstring, 19, 0)
@@ -382,7 +382,7 @@ class main:
 
 		elif mode == "advanced":
 	
-			col = gtk.TreeViewColumn(_("Date and Time"), gtk.CellRendererText(), text=5)
+			col = gtk.TreeViewColumn(_("Date and Time"), gtk.CellRendererText(), text=16)
 			col.set_resizable (True)
 			self.treeview.append_column(col)
 
