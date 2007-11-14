@@ -3163,7 +3163,7 @@
       <property name="spacing">0</property>
 
       <child>
-	<widget class="GtkHBox" id="title_box">
+	<widget class="GtkHBox" id="crontab_title_box">
 	  <property name="visible">True</property>
 	  <property name="homogeneous">False</property>
 	  <property name="spacing">0</property>
@@ -3204,7 +3204,7 @@
 	      </child>
 
 	      <child>
-		<widget class="GtkEntry" id="entry_desc">
+		<widget class="GtkEntry" id="entry_title">
 		  <property name="visible">True</property>
 		  <property name="can_focus">True</property>
 		  <property name="editable">True</property>
@@ -3214,6 +3214,7 @@
 		  <property name="has_frame">True</property>
 		  <property name="invisible_char">●</property>
 		  <property name="activates_default">False</property>
+		  <signal name="changed" handler="on_anybasic_entry_changed" last_modification_time="Wed, 14 Nov 2007 14:02:46 GMT"/>
 		</widget>
 		<packing>
 		  <property name="padding">0</property>
@@ -3281,6 +3282,7 @@
 	      <property name="active">False</property>
 	      <property name="inconsistent">False</property>
 	      <property name="draw_indicator">True</property>
+	      <signal name="toggled" handler="on_rb_basic_toggled" last_modification_time="Wed, 14 Nov 2007 12:31:29 GMT"/>
 	    </widget>
 	    <packing>
 	      <property name="left_attach">0</property>
@@ -3289,23 +3291,6 @@
 	      <property name="bottom_attach">1</property>
 	      <property name="x_options">fill</property>
 	      <property name="y_options"></property>
-	    </packing>
-	  </child>
-
-	  <child>
-	    <widget class="GtkComboBoxEntry" id="combo_basic_time">
-	      <property name="visible">True</property>
-	      <property name="items" translatable="yes">Every hour</property>
-	      <property name="add_tearoffs">False</property>
-	      <property name="has_frame">True</property>
-	      <property name="focus_on_click">True</property>
-	    </widget>
-	    <packing>
-	      <property name="left_attach">1</property>
-	      <property name="right_attach">2</property>
-	      <property name="top_attach">0</property>
-	      <property name="bottom_attach">1</property>
-	      <property name="y_options">fill</property>
 	    </packing>
 	  </child>
 
@@ -3321,6 +3306,7 @@
 	      <property name="inconsistent">False</property>
 	      <property name="draw_indicator">True</property>
 	      <property name="group">rb_basic</property>
+	      <signal name="toggled" handler="on_rb_advanced_toggled" last_modification_time="Wed, 14 Nov 2007 12:31:34 GMT"/>
 	    </widget>
 	    <packing>
 	      <property name="left_attach">0</property>
@@ -3329,6 +3315,23 @@
 	      <property name="bottom_attach">2</property>
 	      <property name="x_options">fill</property>
 	      <property name="y_options"></property>
+	    </packing>
+	  </child>
+
+	  <child>
+	    <widget class="GtkComboBox" id="frequency_combobox">
+	      <property name="visible">True</property>
+	      <property name="items" translatable="yes">Every hour</property>
+	      <property name="add_tearoffs">False</property>
+	      <property name="focus_on_click">True</property>
+	      <signal name="changed" handler="on_frequency_combobox_changed" last_modification_time="Wed, 14 Nov 2007 12:56:20 GMT"/>
+	    </widget>
+	    <packing>
+	      <property name="left_attach">1</property>
+	      <property name="right_attach">2</property>
+	      <property name="top_attach">0</property>
+	      <property name="bottom_attach">1</property>
+	      <property name="y_options">fill</property>
 	    </packing>
 	  </child>
 	</widget>
@@ -3343,7 +3346,7 @@
 	<widget class="GtkTable" id="table5">
 	  <property name="border_width">5</property>
 	  <property name="visible">True</property>
-	  <property name="n_rows">7</property>
+	  <property name="n_rows">8</property>
 	  <property name="n_columns">2</property>
 	  <property name="homogeneous">False</property>
 	  <property name="row_spacing">3</property>
@@ -3501,7 +3504,7 @@
 	      <property name="spacing">5</property>
 
 	      <child>
-		<widget class="GtkEntry" id="entry_minute">
+		<widget class="GtkEntry" id="minute_entry">
 		  <property name="visible">True</property>
 		  <property name="can_focus">True</property>
 		  <property name="editable">True</property>
@@ -3511,6 +3514,7 @@
 		  <property name="has_frame">True</property>
 		  <property name="invisible_char">●</property>
 		  <property name="activates_default">False</property>
+		  <signal name="changed" handler="on_anyadvanced_entry_changed" last_modification_time="Wed, 14 Nov 2007 14:02:51 GMT"/>
 		</widget>
 		<packing>
 		  <property name="padding">0</property>
@@ -3520,13 +3524,14 @@
 	      </child>
 
 	      <child>
-		<widget class="GtkButton" id="button_minute">
+		<widget class="GtkButton" id="help_minute">
 		  <property name="visible">True</property>
 		  <property name="can_focus">True</property>
 		  <property name="label">gtk-edit</property>
 		  <property name="use_stock">True</property>
 		  <property name="relief">GTK_RELIEF_NORMAL</property>
 		  <property name="focus_on_click">True</property>
+		  <signal name="clicked" handler="on_help_clicked" last_modification_time="Wed, 14 Nov 2007 11:53:59 GMT"/>
 		</widget>
 		<packing>
 		  <property name="padding">0</property>
@@ -3552,7 +3557,7 @@
 	      <property name="spacing">5</property>
 
 	      <child>
-		<widget class="GtkEntry" id="entry_hour">
+		<widget class="GtkEntry" id="hour_entry">
 		  <property name="visible">True</property>
 		  <property name="can_focus">True</property>
 		  <property name="editable">True</property>
@@ -3562,6 +3567,7 @@
 		  <property name="has_frame">True</property>
 		  <property name="invisible_char">●</property>
 		  <property name="activates_default">False</property>
+		  <signal name="changed" handler="on_anyadvanced_entry_changed" last_modification_time="Wed, 14 Nov 2007 14:02:56 GMT"/>
 		</widget>
 		<packing>
 		  <property name="padding">0</property>
@@ -3571,13 +3577,14 @@
 	      </child>
 
 	      <child>
-		<widget class="GtkButton" id="button_hour">
+		<widget class="GtkButton" id="help_hour">
 		  <property name="visible">True</property>
 		  <property name="can_focus">True</property>
 		  <property name="label">gtk-edit</property>
 		  <property name="use_stock">True</property>
 		  <property name="relief">GTK_RELIEF_NORMAL</property>
 		  <property name="focus_on_click">True</property>
+		  <signal name="clicked" handler="on_help_clicked" last_modification_time="Wed, 14 Nov 2007 13:00:08 GMT"/>
 		</widget>
 		<packing>
 		  <property name="padding">0</property>
@@ -3603,7 +3610,7 @@
 	      <property name="spacing">5</property>
 
 	      <child>
-		<widget class="GtkEntry" id="entry_day">
+		<widget class="GtkEntry" id="day_entry">
 		  <property name="visible">True</property>
 		  <property name="can_focus">True</property>
 		  <property name="editable">True</property>
@@ -3613,6 +3620,7 @@
 		  <property name="has_frame">True</property>
 		  <property name="invisible_char">●</property>
 		  <property name="activates_default">False</property>
+		  <signal name="changed" handler="on_anyadvanced_entry_changed" last_modification_time="Wed, 14 Nov 2007 14:03:01 GMT"/>
 		</widget>
 		<packing>
 		  <property name="padding">0</property>
@@ -3622,13 +3630,14 @@
 	      </child>
 
 	      <child>
-		<widget class="GtkButton" id="button_day">
+		<widget class="GtkButton" id="help_day">
 		  <property name="visible">True</property>
 		  <property name="can_focus">True</property>
 		  <property name="label">gtk-edit</property>
 		  <property name="use_stock">True</property>
 		  <property name="relief">GTK_RELIEF_NORMAL</property>
 		  <property name="focus_on_click">True</property>
+		  <signal name="clicked" handler="on_help_clicked" last_modification_time="Wed, 14 Nov 2007 11:53:50 GMT"/>
 		</widget>
 		<packing>
 		  <property name="padding">0</property>
@@ -3654,7 +3663,7 @@
 	      <property name="spacing">5</property>
 
 	      <child>
-		<widget class="GtkEntry" id="entry_month">
+		<widget class="GtkEntry" id="month_entry">
 		  <property name="visible">True</property>
 		  <property name="can_focus">True</property>
 		  <property name="editable">True</property>
@@ -3664,6 +3673,7 @@
 		  <property name="has_frame">True</property>
 		  <property name="invisible_char">●</property>
 		  <property name="activates_default">False</property>
+		  <signal name="changed" handler="on_anyadvanced_entry_changed" last_modification_time="Wed, 14 Nov 2007 14:03:07 GMT"/>
 		</widget>
 		<packing>
 		  <property name="padding">0</property>
@@ -3673,13 +3683,14 @@
 	      </child>
 
 	      <child>
-		<widget class="GtkButton" id="button_month">
+		<widget class="GtkButton" id="help_month">
 		  <property name="visible">True</property>
 		  <property name="can_focus">True</property>
 		  <property name="label">gtk-edit</property>
 		  <property name="use_stock">True</property>
 		  <property name="relief">GTK_RELIEF_NORMAL</property>
 		  <property name="focus_on_click">True</property>
+		  <signal name="clicked" handler="on_help_clicked" last_modification_time="Wed, 14 Nov 2007 11:53:44 GMT"/>
 		</widget>
 		<packing>
 		  <property name="padding">0</property>
@@ -3705,7 +3716,7 @@
 	      <property name="spacing">5</property>
 
 	      <child>
-		<widget class="GtkEntry" id="entry_weekday">
+		<widget class="GtkEntry" id="weekday_entry">
 		  <property name="visible">True</property>
 		  <property name="can_focus">True</property>
 		  <property name="editable">True</property>
@@ -3715,6 +3726,7 @@
 		  <property name="has_frame">True</property>
 		  <property name="invisible_char">●</property>
 		  <property name="activates_default">False</property>
+		  <signal name="changed" handler="on_anyadvanced_entry_changed" last_modification_time="Wed, 14 Nov 2007 14:03:12 GMT"/>
 		</widget>
 		<packing>
 		  <property name="padding">0</property>
@@ -3724,13 +3736,14 @@
 	      </child>
 
 	      <child>
-		<widget class="GtkButton" id="button_weekday">
+		<widget class="GtkButton" id="help_weekday">
 		  <property name="visible">True</property>
 		  <property name="can_focus">True</property>
 		  <property name="label">gtk-edit</property>
 		  <property name="use_stock">True</property>
 		  <property name="relief">GTK_RELIEF_NORMAL</property>
 		  <property name="focus_on_click">True</property>
+		  <signal name="clicked" handler="on_help_clicked" last_modification_time="Wed, 14 Nov 2007 11:53:37 GMT"/>
 		</widget>
 		<packing>
 		  <property name="padding">0</property>
@@ -3760,6 +3773,7 @@
 	      <property name="has_frame">True</property>
 	      <property name="invisible_char">●</property>
 	      <property name="activates_default">False</property>
+	      <signal name="changed" handler="on_anybasic_entry_changed" last_modification_time="Wed, 14 Nov 2007 14:03:16 GMT"/>
 	    </widget>
 	    <packing>
 	      <property name="left_attach">1</property>
@@ -3771,39 +3785,11 @@
 	  </child>
 
 	  <child>
-	    <widget class="GtkLabel" id="label_preview">
-	      <property name="visible">True</property>
-	      <property name="label" translatable="yes">Every hour of every day</property>
-	      <property name="use_underline">False</property>
-	      <property name="use_markup">False</property>
-	      <property name="justify">GTK_JUSTIFY_LEFT</property>
-	      <property name="wrap">False</property>
-	      <property name="selectable">False</property>
-	      <property name="xalign">0</property>
-	      <property name="yalign">0.5</property>
-	      <property name="xpad">0</property>
-	      <property name="ypad">0</property>
-	      <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
-	      <property name="width_chars">-1</property>
-	      <property name="single_line_mode">False</property>
-	      <property name="angle">0</property>
-	    </widget>
-	    <packing>
-	      <property name="left_attach">1</property>
-	      <property name="right_attach">2</property>
-	      <property name="top_attach">6</property>
-	      <property name="bottom_attach">7</property>
-	      <property name="x_options">fill</property>
-	      <property name="y_options"></property>
-	    </packing>
-	  </child>
-
-	  <child>
 	    <widget class="GtkLabel" id="label27">
 	      <property name="visible">True</property>
-	      <property name="label" translatable="yes">&lt;b&gt;Task:&lt;/b&gt;</property>
+	      <property name="label" translatable="yes">Task:</property>
 	      <property name="use_underline">False</property>
-	      <property name="use_markup">True</property>
+	      <property name="use_markup">False</property>
 	      <property name="justify">GTK_JUSTIFY_LEFT</property>
 	      <property name="wrap">False</property>
 	      <property name="selectable">False</property>
@@ -3827,9 +3813,37 @@
 	  </child>
 
 	  <child>
+	    <widget class="GtkLabel" id="label_preview">
+	      <property name="visible">True</property>
+	      <property name="label" translatable="yes"></property>
+	      <property name="use_underline">False</property>
+	      <property name="use_markup">True</property>
+	      <property name="justify">GTK_JUSTIFY_LEFT</property>
+	      <property name="wrap">True</property>
+	      <property name="selectable">False</property>
+	      <property name="xalign">0</property>
+	      <property name="yalign">0.5</property>
+	      <property name="xpad">0</property>
+	      <property name="ypad">0</property>
+	      <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
+	      <property name="width_chars">-1</property>
+	      <property name="single_line_mode">False</property>
+	      <property name="angle">0</property>
+	    </widget>
+	    <packing>
+	      <property name="left_attach">1</property>
+	      <property name="right_attach">2</property>
+	      <property name="top_attach">7</property>
+	      <property name="bottom_attach">8</property>
+	      <property name="x_options">fill</property>
+	      <property name="y_options"></property>
+	    </packing>
+	  </child>
+
+	  <child>
 	    <widget class="GtkLabel" id="label23">
 	      <property name="visible">True</property>
-	      <property name="label" translatable="yes">Preview:</property>
+	      <property name="label" translatable="yes">&lt;b&gt;Preview:&lt;/b&gt;</property>
 	      <property name="use_underline">False</property>
 	      <property name="use_markup">True</property>
 	      <property name="justify">GTK_JUSTIFY_LEFT</property>
@@ -3847,9 +3861,31 @@
 	    <packing>
 	      <property name="left_attach">0</property>
 	      <property name="right_attach">1</property>
+	      <property name="top_attach">7</property>
+	      <property name="bottom_attach">8</property>
+	      <property name="x_options">fill</property>
+	      <property name="y_options"></property>
+	    </packing>
+	  </child>
+
+	  <child>
+	    <widget class="GtkCheckButton" id="cb_nooutput">
+	      <property name="visible">True</property>
+	      <property name="can_focus">True</property>
+	      <property name="label" translatable="yes">_No output (&gt;/dev/null 2&gt;&amp;1)</property>
+	      <property name="use_underline">True</property>
+	      <property name="relief">GTK_RELIEF_NORMAL</property>
+	      <property name="focus_on_click">True</property>
+	      <property name="active">False</property>
+	      <property name="inconsistent">False</property>
+	      <property name="draw_indicator">True</property>
+	      <signal name="toggled" handler="on_anybasic_entry_changed" last_modification_time="Wed, 14 Nov 2007 14:07:12 GMT"/>
+	    </widget>
+	    <packing>
+	      <property name="left_attach">1</property>
+	      <property name="right_attach">2</property>
 	      <property name="top_attach">6</property>
 	      <property name="bottom_attach">7</property>
-	      <property name="x_padding">5</property>
 	      <property name="x_options">fill</property>
 	      <property name="y_options"></property>
 	    </packing>
@@ -3877,6 +3913,7 @@
 	      <property name="use_underline">True</property>
 	      <property name="relief">GTK_RELIEF_NORMAL</property>
 	      <property name="focus_on_click">True</property>
+	      <signal name="clicked" handler="on_button_template_clicked" last_modification_time="Wed, 14 Nov 2007 11:40:33 GMT"/>
 	    </widget>
 	  </child>
 
@@ -3889,11 +3926,12 @@
 	      <property name="use_stock">True</property>
 	      <property name="relief">GTK_RELIEF_NORMAL</property>
 	      <property name="focus_on_click">True</property>
+	      <signal name="clicked" handler="on_button_cancel_clicked" last_modification_time="Wed, 14 Nov 2007 11:38:44 GMT"/>
 	    </widget>
 	  </child>
 
 	  <child>
-	    <widget class="GtkButton" id="button_add">
+	    <widget class="GtkButton" id="button_apply">
 	      <property name="visible">True</property>
 	      <property name="can_default">True</property>
 	      <property name="can_focus">True</property>
@@ -3901,6 +3939,7 @@
 	      <property name="use_stock">True</property>
 	      <property name="relief">GTK_RELIEF_NORMAL</property>
 	      <property name="focus_on_click">True</property>
+	      <signal name="clicked" handler="on_button_apply_clicked" last_modification_time="Wed, 14 Nov 2007 11:40:26 GMT"/>
 	    </widget>
 	  </child>
 	</widget>

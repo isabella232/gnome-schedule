@@ -66,6 +66,7 @@ class AtEditor:
 		self.image_icon.set_from_pixbuf (self.ParentClass.bigiconat)
 		self.title_box.pack_start (self.image_icon, False, False, 0)
 		self.title_box.reorder_child (self.image_icon, 0)
+		self.image_icon.show ()
 		
 			
 
@@ -87,11 +88,9 @@ class AtEditor:
 		self.xml.signal_connect ("on_at_spin_month_changed", self.on_spin_month_changed)
 		self.xml.signal_connect ("on_at_spin_day_changed", self.on_spin_day_changed)
 		
-		
-
 		self.backend.add_scheduler_type("at")
 
-	def showadd (self, mode):
+	def showadd (self):
 		print "add"
 		self.button_save.set_label (gtk.STOCK_ADD)
 		self.__reset__ ()
@@ -104,7 +103,7 @@ class AtEditor:
 		
 		self.__update_textboxes__()
 
-	def showedit (self, record, job_id, iter, mode):
+	def showedit (self, record, job_id, iter):
 		print "showedit"
 		self.button_save.set_label (gtk.STOCK_APPLY)
 		self.mode = 1 # edit task

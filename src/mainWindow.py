@@ -63,8 +63,8 @@ class main:
 		#start the backend where all the user configuration is stored
 		self.backend = preset.ConfigBackend(self, "gconf")
 		
-		
-		self.defaultIcon = self.backend.getDefaultIcon()
+		# TODO: Not needed anymore
+		#self.defaultIcon = self.backend.getDefaultIcon()
 		
 		##configure the window
 		self.widget = self.xml.get_widget("mainWindow")
@@ -190,7 +190,7 @@ class main:
 		
 		##create crontab
 		self.crontab = crontab.Crontab(self.root,self.user, self.uid, self.gid)
-		self.crontab_editor = crontabEditor.CrontabEditor(self,self.backend, self.crontab, self.defaultIcon)
+		self.crontab_editor = crontabEditor.CrontabEditor(self,self.backend, self.crontab)
 		##
 		
 		##create at
@@ -428,10 +428,10 @@ class main:
 			if self.schedule.get_type() == "crontab":
 				self.editor = self.crontab_editor
 				job_id = self.treemodel.get_value (iter, 9)
-				self.editor.showedit (record, job_id, linenumber, iter, self.edit_mode)
+				self.editor.showedit (record, job_id, linenumber, iter)
 			else:
 				self.editor = self.at_editor
-				self.editor.showedit (record, linenumber, iter, self.edit_mode)
+				self.editor.showedit (record, linenumber, iter)
 
 		except Exception, ex:
 			print ex

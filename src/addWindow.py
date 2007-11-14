@@ -53,11 +53,11 @@ class AddWindow:
 		
 	def go_crontab (self, *args):
 		self.ParentClass.editor = self.ParentClass.crontab_editor
-		self.ParentClass.editor.showadd (self.ParentClass.edit_mode)
+		self.ParentClass.editor.showadd ()
 		
 	def go_at (self, *args):
 		self.ParentClass.editor = self.ParentClass.at_editor
-		self.ParentClass.editor.showadd (self.ParentClass.edit_mode)	
+		self.ParentClass.editor.showadd ()	
 		
 	def on_ok_button_clicked (self, *args):
 		self.widget.hide()

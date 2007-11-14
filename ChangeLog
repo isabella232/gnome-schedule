@@ -1,5 +1,9 @@
 2007-11-14  Gaute Hope  <eg@gaute.vetsj.com>
 
+	* new crontab editor fully works
+	
+2007-11-14  Gaute Hope  <eg@gaute.vetsj.com>
+
 	* Oh.. forgot this file, here's a summary
 	* From trunk: Bugfix where some dates in the future wouldn't be accepted.
 	* at editor fully works
@@ -10,6 +14,7 @@
 	* created new crontab interface in glade, needs to attached	
 	* at parser locale ignorant
 	* gnome-schedule desktop entry in preferences
+
 	
 2007-05-30  Gaute Hope  <eg@gaute.vetsj.com>
 
