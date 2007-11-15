@@ -1,3 +1,14 @@
+2007-11-15  Gaute Hope  <eg@gaute.vetsj.com>
+
+	* src/crontabEditorHelper.py: Changed window title to type: "Edit minute", re-translation needed.
+	* src/gnome-schedule.glade, src/crontabEditorHelper.py, po/fr.po: Applied Kiddo's changes, they are as follows:
+	* simplified the crontab helper dialog (minutes editor for example) to the extreme. My reasoning is this: you don't need a label to indicate that it's all about minutes because a) the user just clicked an edit button at the right of the Minutes field b) this should be in the window title anyway (this needs to be implemented: replace the window title for something relevant), and c) this adds visual clutter. The net result from removing this label is that now, there is no more reason to "indent" the rest of the dialog, so a whole bunch of GTK widgets can be removed. Much simpler :)
+	* fix the spacings everywhere to be HIG-compliant (lien). 12px around dialogs, 6 or 12 pixels spacings pretty much everywhere, realign stuff
+	* in the addWindow dialog, simplify the wording of the choices. It was too redundant (the text was not a useful read for the user)
+	* make the crontab_editor "resize-friendly"
+	* switch stuff around in the crontab_editor
+	* change some terms (i.e.: task --> command)
+	
 2007-11-14  Gaute Hope  <eg@gaute.vetsj.com>
 
 	* new crontab editor fully works
