@@ -29,18 +29,19 @@ import config
 
 
 class Crontab:
-	def __init__(self,root,user,uid,gid):
+	def __init__(self,root,user,uid,gid, user_home_dir):
 		#default preview length
 		self.preview_len = 50
 		self.root = root
-		self.set_rights(user,uid,gid)
+		self.set_rights(user,uid,gid, user_home_dir)
+		self.user_home_dir = user_home_dir
 		
 		self.nooutputtag = ">/dev/null 2>&1"
 		self.crontabRecordRegex = re.compile('([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^#\n$]*)(\s#\s([^\n$]*)|$)')
 		self.__setup_timespec__()
 		self.env_vars = [ ]
 		
-		self.crontabdata = os.path.expanduser ("~/.gnome/gnome-schedule/crontab")
+		self.crontabdata = self.user_home_dir + "/.gnome/gnome-schedule/crontab"
 		self.crontabdatafileversion = 3
 		
 		if os.path.exists(self.crontabdata) != True:
@@ -59,7 +60,9 @@ class Crontab:
 			"@daily"   : '0 0 * * *',
 			"@weekly"  : '0 0 * * 0',
 			"@monthly" : '0 0 1 * *',
-			"@yearly"  : '0 0 1 1 *'
+			"@yearly"  : '0 0 1 1 *',
+			"@annually": '0 0 1 1 *',
+			"@midnight": '0 0 * * *'
 			}
 				
 		self.timeranges = { 
@@ -105,10 +108,12 @@ class Crontab:
 			}
 		
 
-	def set_rights(self,user,uid,gid):
+	def set_rights(self,user,uid,gid, ud):
 		self.user = user
 		self.uid = uid
 		self.gid = gid
+		self.user_home_dir = ud
+		self.crontabdata = self.user_home_dir + "/.gnome/gnome-schedule/crontab"
 
 
 	def get_type (self):
@@ -440,15 +445,13 @@ class Crontab:
 			comment = comment.strip ()
 			line = line.strip ()
 		
-		
-		#special expressions
 		if line == "":
 			#Empty
 			if comment != "":
 				return [3, comment]
 			else:
 				return False
-				
+		#special expressions		
 		elif line[0] == "@":
 			special_expression, line = self.get_exp_sec (line)
 								
@@ -588,11 +591,12 @@ class Crontab:
 				nooutput = 0
 			
 			fh.close ()
-			
+
 			return ver, title, desc, nooutput
 			
+			
 		else: 
-			return "", "", ""
+			return "", "", "", 0
 			
 			
 		

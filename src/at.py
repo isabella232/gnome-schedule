@@ -31,12 +31,13 @@ import config
 
 
 class At:
-	def __init__(self,root,user,uid,gid):
+	def __init__(self,root,user,uid,gid,user_home_dir):
 	
 		#default preview length
 		self.preview_len = 50
 		self.root =	root
-		self.set_rights(user,uid,gid)
+		self.set_rights(user,uid,gid, user_home_dir)
+		self.user_home_dir = user_home_dir
 
 
 		# 16       2006-01-08 13:01 a gaute
@@ -62,7 +63,7 @@ class At:
 		self.SCRIPT_DELIMITER = "###### ---- GNOME_SCHEDULE_SCRIPT_DELIMITER #####"
 		
 		self.atdatafileversion = 2
-		self.atdata = os.path.expanduser ("~/.gnome/gnome-schedule/at")
+		self.atdata = self.user_home_dir + "/.gnome/gnome-schedule/at"
 		if os.path.exists(self.atdata) != True:
 			if os.makedirs(self.atdata, 0700):
 				pass
@@ -72,10 +73,12 @@ class At:
 				
 		self.currentlocale = locale.getlocale (locale.LC_ALL)
 		
-	def set_rights(self,user,uid,gid):
+	def set_rights(self,user,uid,gid, ud):
 		self.user = user
 		self.uid = uid
 		self.gid = gid
+		self.user_home_dir = ud
+		self.atdata = self.user_home_dir + "/.gnome/gnome-schedule/at"
 
 	
 	def get_type (self):
@@ -219,7 +222,7 @@ class At:
 			return title, desc
 			
 		else: 
-			return "", "", ""
+			return "", ""
 			
 	def write_job_data (self, job_id, title, desc):
 		# Create and write data file
@@ -492,7 +495,7 @@ class At:
 				# TODO: looks like it could be one append
 				if self.root == 1:
 					if self.user == user:
-						data.append([title, timestring_show, preview, lines, int(job_id), timestring, self, None, date, class_id, user, time, _("Once"), "at", timestring])
+						data.append([title, timestring_show, preview, lines, int(job_id), timestring, self, None, date, class_id, user, time, _("Once"), "at", self.nooutput, timestring])
 					else: 
 						#print "Record omitted, not current user"
 						pass

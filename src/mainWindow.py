@@ -29,6 +29,7 @@ from gnome import url_show
 #python modules
 import os
 import pwd
+import tempfile
 
 #custom modules
 import config
@@ -78,8 +79,10 @@ class main:
 		
 		#load state
 		(x, y, h, w) = self.backend.get_window_state ()
- 		self.widget.move (x, y)
- 		self.widget.resize (h, w)
+		if (x and y):
+	 		self.widget.move (x, y)
+	 	if (h and w):
+	 		self.widget.resize (h, w)
 
 		self.widget.set_resizable (True)
 
@@ -139,6 +142,7 @@ class main:
 		
 		self.prop_button = self.xml.get_widget ("prop_button")
 		self.del_button = self.xml.get_widget ("del_button")
+		self.run_button = self.xml.get_widget ("run_button")
 		self.help_button = self.xml.get_widget ("help_button")
 		self.btnSetUser = self.xml.get_widget("btnSetUser")
 		self.btnExit = self.xml.get_widget("btnExit")
@@ -147,6 +151,7 @@ class main:
 
 		self.prop_button.set_sensitive (False)
 		self.del_button.set_sensitive (False)
+		self.run_button.set_sensitive (False)
 		
 		
 		self.xml.signal_connect("on_prop_button_clicked", self.on_prop_button_clicked)
@@ -157,10 +162,12 @@ class main:
 		self.xml.signal_connect("on_edit_mode_button_clicked", self.on_advanced_menu_activate)
 		self.xml.signal_connect("on_btnExit_clicked", self.__quit__)
 		self.xml.signal_connect("on_mainWindow_delete_event", self.__quit__)
+		self.xml.signal_connect("on_run_button_clicked", self.on_run_button_clicked)
 		
 				
 		##inittializing the treeview
-		## [0 Title, 1 Frequency, 2 Command, 3 Crontab record, 4 ID, 5 Time, 6 Icon, 7 scheduled instance, 8 icon path, 9 date, 10 class_id, 11 user, 12 time, 13 type, 14 crontab/at]
+		## somethins not rite here..:
+		## [0 Title, 1 Frequency, 2 Command, 3 Crontab record, 4 ID, 5 Time, 6 Icon, 7 scheduled instance, 8 icon path, 9 date, 10 class_id, 11 user, 12 time, 13 type, 14 crontab/at, 15 advanced time string]
 		##for at this would be like: 
 		
 # ["untitled", "12:50 2004-06-25", "preview", "script", "job_id", "12:50", icon, at instance, icon_path, "2004-06-25", "a", "drzap", "at"]
@@ -203,12 +210,12 @@ class main:
 		self.__initUser__()
 		
 		##create crontab
-		self.crontab = crontab.Crontab(self.root,self.user, self.uid, self.gid)
-		self.crontab_editor = crontabEditor.CrontabEditor(self,self.backend, self.crontab)
+		self.crontab = crontab.Crontab(self.root, self.user, self.uid, self.gid, self.user_home_dir)
+		self.crontab_editor = crontabEditor.CrontabEditor(self, self.backend, self.crontab)
 		##
 		
 		##create at
-		self.at = at.At(self.root,self.user, self.uid, self.gid)
+		self.at = at.At(self.root, self.user, self.uid, self.gid, self.user_home_dir)
 		self.at_editor = atEditor.AtEditor (self, self.backend, self.at)
 		##
 		
@@ -242,8 +249,8 @@ class main:
 		if user != self.user:
 			self.__setUser__(user)
 			#change user for the schedulers
-			self.crontab.set_rights(self.user, self.uid, self.gid)
-			self.at.set_rights(self.user, self.uid, self.gid)
+			self.crontab.set_rights(self.user, self.uid, self.gid, self.user_home_dir)
+			self.at.set_rights(self.user, self.uid, self.gid, self.user_home_dir)
 			#adjust statusbar
 			if self.root == 1:
 				self.statusbar.push(self.statusbarUser, (_("Editing user: %s") % (self.user)))
@@ -256,6 +263,8 @@ class main:
 		self.user = user
 		self.uid = userdb[2]
 		self.gid = userdb[3]
+		self.user_home_dir = userdb[5]
+		self.user_shell = userdb[6]
 		
 						
 	## TODO: 2 times a loop looks to mutch
@@ -322,6 +331,8 @@ class main:
 		self.uid = os.geteuid() 
 		self.gid = os.getegid()
 		self.user = pwd.getpwuid(self.uid)[0]
+		self.user_home_dir = pwd.getpwuid(self.uid)[5]
+		self.user_shell = pwd.getpwuid(self.uid)[6]
 		
 		if self.uid != 0:
 			self.btnSetUser.hide()
@@ -343,6 +354,7 @@ class main:
 			
 		self.prop_button.set_sensitive (value)
 		self.del_button.set_sensitive (value)
+		self.run_button.set_sensitive (value)
 
 		
 	
@@ -555,7 +567,71 @@ class main:
  	#about box
  	def open_url (self, *args):
  		url_show("http://gnome-schedule.sourceforge.net")
- 		
+ 	
+ 	def on_run_button_clicked (self, *args):
+		dialog = gtk.MessageDialog(self.widget, gtk.DIALOG_MODAL|gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_QUESTION, gtk.BUTTONS_YES_NO, _("Are you sure wou want to run this task now? Recurrent tasks will be run in the users home directory, one-time tasks in the directory from where the program (like Gnome Schedule) used to add it was executed."))
+		if (dialog.run() != gtk.RESPONSE_YES):
+			dialog.destroy()
+			del dialog
+			return
+		dialog.destroy()
+		del dialog
+		
+		store, iter = self.treeview.get_selection().get_selected()
+	
+		try:
+			# commands are at model[3]
+			
+			#see what scheduler (at, crontab or ...)		
+			self.schedule = self.treemodel.get_value(iter, 7)
+			
+			self.user_home_dir
+			
+			tmpfile = tempfile.mkstemp ()
+			fd, path = tmpfile
+			tmp = os.fdopen (fd, 'w')
+			
+			commands = self.treemodel.get_value(iter, 3)
+			linenumber = self.treemodel.get_value(iter, 4)
+			script = "#!" + self.user_shell + "\n"
+			script = script + "cd " + self.user_home_dir + "\n"
+			if self.schedule.get_type () == "at":
+				if self.root == 1:
+					if self.user != "root":
+						script = script + "su " + self.user + " -c \"source " + path + "\"\n"
+						os.chown(path, self.uid, self.gid)
+					else:
+						script = script + "source " + path + "\n"
+				else:
+					script = script + "source " + path + "\n"		
+				execute = config.getAtbin () + " -c " + str (linenumber)
+				tmp.write (os.popen (execute).read () + "\n")
+				
+			elif self.schedule.get_type () == "crontab":
+				if self.root == 1:
+					if self.user != "root":
+						script = script + "su " + self.user + " -c \"source " + path + "\"\n"
+						os.chown(path, self.uid, self.gid)
+					else:
+						script = script + "source " + path + "\n"
+				else:
+					script = script + "source " + path + "\n"
+					
+				tmp.write (self.schedule.parse (commands)[1][5])
+			
+			tmp.close ()
+			script = script + "\necho " + _("Press ENTER to continue and close this window.") + "\n"
+			script = script + "read\nrm " + path + "\nexit\n"
+			
+			gnome.execute_terminal_shell (self.user_home_dir, script)
+
+				
+		except Exception, ex:
+			print ex
+			self.dialog = gtk.MessageDialog(self.widget, gtk.DIALOG_MODAL|gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_ERROR, gtk.BUTTONS_OK, _("Please select a task!"))
+			self.dialog.run ()
+			self.dialog.destroy ()
+ 			
  	def on_about_menu_activate (self, *args):
  	
 		gtk.about_dialog_set_url_hook(self.open_url, "bogusbar")
