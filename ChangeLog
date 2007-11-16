@@ -2,6 +2,7 @@
 
 	* Fixed superuser stuff, was broken
 	* Added feature: Run task, runs the selected task in a terminal and waits for a button to be pressed
+	* fixed my own bug: 497413
 	
 2007-11-15  Gaute Hope  <eg@gaute.vetsj.com>
 

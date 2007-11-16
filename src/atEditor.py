@@ -120,7 +120,7 @@ class AtEditor:
 			
 		#parse 	
 		(hour, minute, day, month, year) = self.__parse_time__(self.time, self.date)
-		self.runat = self.time + " " + year + "-" + month + "-" + day 
+		self.runat = hour + ":" + minute  + " " + year + "-" + month + "-" + day 
 		self.spin_year.set_value (int (year))
 		self.spin_month.set_value (int (month))
 		self.spin_day.set_value (int (day))
@@ -302,6 +302,7 @@ class AtEditor:
 
 
 	def on_button_save_clicked (self, *args):
+		print self.runat
 		(validate, reason) = self.scheduler.checkfield(self.runat)
 		if validate == False:
 			self.__WrongRecordDialog__ (reason)
