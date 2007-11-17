@@ -569,7 +569,8 @@ class main:
  		url_show("http://gnome-schedule.sourceforge.net")
  	
  	def on_run_button_clicked (self, *args):
-		dialog = gtk.MessageDialog(self.widget, gtk.DIALOG_MODAL|gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_QUESTION, gtk.BUTTONS_YES_NO, _("Are you sure wou want to run this task now?\n\nRecurrent tasks will be run from the home directory, one-time tasks from the directory where the program (Gnome schedule) was executed from (also normally the home directory)."))
+		dialog = gtk.MessageDialog(self.widget, gtk.DIALOG_MODAL|gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_QUESTION, gtk.BUTTONS_NONE, _("Are you sure wou want to run this task now?\n\nRecurrent tasks will be run from the home directory, one-time tasks from the directory where the program (Gnome schedule) was executed from (also normally the home directory)."))
+		dialog.add_buttons (gtk.STOCK_EXECUTE, gtk.RESPONSE_YES, gtk.STOCK_CANCEL, gtk.RESPONSE_CANCEL)
 		if (dialog.run() != gtk.RESPONSE_YES):
 			dialog.destroy()
 			del dialog
