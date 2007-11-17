@@ -1,3 +1,8 @@
+2007-11-17  Gaute Hope  <eg@gaute.vetsj.com>
+
+	* Dialogs informing about working directory of tasks upon add and edit with "don't show" button
+	* Also a second working dir dialog on the run tasks, with a "don't show" button
+	
 2007-11-16  Gaute Hope  <eg@gaute.vetsj.com>
 
 	* tweaked the run task stuff, should be safly using pathnames with strange characters. dialog text refined.
