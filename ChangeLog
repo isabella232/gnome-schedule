@@ -1,6 +1,7 @@
 2007-11-16  Gaute Hope  <eg@gaute.vetsj.com>
 
-	* Fixed superuser stuff, was broken
+	* tweaked the run task stuff, should be safly using pathnames with strange characters. dialog text refined.
+	* Fixed superuser support, was broken
 	* Added feature: Run task, runs the selected task in a terminal and waits for a button to be pressed
 	* fixed my own bug: 497413
 	

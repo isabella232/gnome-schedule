@@ -569,7 +569,7 @@ class main:
  		url_show("http://gnome-schedule.sourceforge.net")
  	
  	def on_run_button_clicked (self, *args):
-		dialog = gtk.MessageDialog(self.widget, gtk.DIALOG_MODAL|gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_QUESTION, gtk.BUTTONS_YES_NO, _("Are you sure wou want to run this task now? Recurrent tasks will be run in the users home directory, one-time tasks in the directory from where the program (like Gnome Schedule) used to add it was executed."))
+		dialog = gtk.MessageDialog(self.widget, gtk.DIALOG_MODAL|gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_QUESTION, gtk.BUTTONS_YES_NO, _("Are you sure wou want to run this task now?\n\nRecurrent tasks will be run from the home directory, one-time tasks from the directory where the program (Gnome schedule) was executed from (also normally the home directory)."))
 		if (dialog.run() != gtk.RESPONSE_YES):
 			dialog.destroy()
 			del dialog
@@ -585,8 +585,6 @@ class main:
 			#see what scheduler (at, crontab or ...)		
 			self.schedule = self.treemodel.get_value(iter, 7)
 			
-			self.user_home_dir
-			
 			tmpfile = tempfile.mkstemp ()
 			fd, path = tmpfile
 			tmp = os.fdopen (fd, 'w')
@@ -594,7 +592,6 @@ class main:
 			commands = self.treemodel.get_value(iter, 3)
 			linenumber = self.treemodel.get_value(iter, 4)
 			script = "#!" + self.user_shell + "\n"
-			script = script + "cd " + self.user_home_dir + "\n"
 			if self.schedule.get_type () == "at":
 				if self.root == 1:
 					if self.user != "root":
