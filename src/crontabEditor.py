@@ -335,6 +335,23 @@ class CrontabEditor:
 			self.__dialog_command_failed__ ()
 			return	False
 		
+		
+		if (self.backend.get_not_inform_working_dir_crontab() != True):
+			dia2 = gtk.MessageDialog (self.widget, gtk.DIALOG_MODAL | gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_WARNING, gtk.BUTTONS_NONE, _("Note about working directory of executed tasks:\n\nRecurrent tasks will be run from the home directory."))
+			dia2.add_buttons ("_Don't show again", gtk.RESPONSE_CLOSE, gtk.STOCK_OK, gtk.RESPONSE_OK, gtk.STOCK_CANCEL, gtk.RESPONSE_CANCEL)
+			dia2.set_title (_("Warning: Working directory of executed tasks"))
+			response = dia2.run ()
+			if response == gtk.RESPONSE_CANCEL:
+				dia2.destroy ()
+				del dia2
+				return
+			elif response == gtk.RESPONSE_CLOSE:
+				self.backend.set_not_inform_working_dir_crontab (True)
+			else:
+				pass
+			dia2.destroy ()
+			del dia2
+			
 		if self.editing == True:
 			self.scheduler.update (self.minute, self.hour, self.day, self.month, self.weekday, self.command, self.linenumber, self.parentiter, self.nooutput, self.job_id, self.comment, self.title, self.desc)
 			

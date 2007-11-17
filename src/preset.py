@@ -36,7 +36,29 @@ class ConfigBackend:
 		self.gconf_client.add_dir ("/apps/gnome-schedule", gconf.CLIENT_PRELOAD_NONE)		
 		self.gconf_client.notify_add ("/apps/gnome-schedule/advanced", self.on_gconfkey_advanced_changed)
 
+	def get_not_inform_working_dir (self):
+		if ((self.get_not_inform_working_dir_crontab () and self.get_not_inform_working_dir_at ()) or self.gconf_client.get_bool ("/apps/gnome-schedule/inform_working_dir")):
+			return True
+		else:
+			return False
+			
 	
+	def set_not_inform_working_dir (self, value):
+		self.gconf_client.set_bool ("/apps/gnome-schedule/inform_working_dir", value)
+	
+	def get_not_inform_working_dir_crontab (self):
+		return self.gconf_client.get_bool ("/apps/gnome-schedule/inform_working_dir_crontab")
+	
+	def set_not_inform_working_dir_crontab (self, value):
+		self.gconf_client.set_bool ("/apps/gnome-schedule/inform_working_dir_crontab", value)
+		
+	def get_not_inform_working_dir_at (self):
+		return self.gconf_client.get_bool ("/apps/gnome-schedule/inform_working_dir_at")
+	
+	def set_not_inform_working_dir_at (self, value):
+		self.gconf_client.set_bool ("/apps/gnome-schedule/inform_working_dir_at", value)
+		
+		
 	def set_window_state (self, x, y, height, width):
 		self.gconf_client.set_int ("/apps/gnome-schedule/x", x)
 		self.gconf_client.set_int ("/apps/gnome-schedule/y", y)

@@ -569,14 +569,31 @@ class main:
  		url_show("http://gnome-schedule.sourceforge.net")
  	
  	def on_run_button_clicked (self, *args):
-		dialog = gtk.MessageDialog(self.widget, gtk.DIALOG_MODAL|gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_QUESTION, gtk.BUTTONS_NONE, _("Are you sure wou want to run this task now?\n\nRecurrent tasks will be run from the home directory, one-time tasks from the directory where the program (Gnome schedule) was executed from (also normally the home directory)."))
+		dialog = gtk.MessageDialog(self.widget, gtk.DIALOG_MODAL|gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_QUESTION, gtk.BUTTONS_NONE, _("Are you sure you want to run this task now?\n\nThis is used to preview the task and initiates a one-time run, this does not affect the normal scheduled run times."))
 		dialog.add_buttons (gtk.STOCK_EXECUTE, gtk.RESPONSE_YES, gtk.STOCK_CANCEL, gtk.RESPONSE_CANCEL)
+		dialog.set_title (_("Are you sure you want to run this task?"))
 		if (dialog.run() != gtk.RESPONSE_YES):
 			dialog.destroy()
 			del dialog
 			return
 		dialog.destroy()
 		del dialog
+		
+		if (self.backend.get_not_inform_working_dir() != True):
+			dia2 = gtk.MessageDialog (self.widget, gtk.DIALOG_MODAL | gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_WARNING, gtk.BUTTONS_NONE, _("Note about working directory of executed tasks:\n\nRecurrent tasks will be run from the home directory, one-time tasks from the directory where Gnome schedule was run from at the time of task creation (normally the home directory)."))
+			dia2.add_buttons ("_Don't show again", gtk.RESPONSE_CLOSE, gtk.STOCK_OK, gtk.RESPONSE_OK, gtk.STOCK_CANCEL, gtk.RESPONSE_CANCEL)
+			dia2.set_title (_("Warning: Working directory of executed tasks"))
+			response = dia2.run ()
+			if response == gtk.RESPONSE_CANCEL:
+				dia2.destroy ()
+				del dia2
+				return
+			elif response == gtk.RESPONSE_CLOSE:
+				self.backend.set_not_inform_working_dir (True)
+			else:
+				pass
+			dia2.destroy ()
+			del dia2
 		
 		store, iter = self.treeview.get_selection().get_selected()
 	
