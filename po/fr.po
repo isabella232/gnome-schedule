@@ -933,4 +933,5 @@ msgstr "Ce n'est pas un enregistrement valide. Le problème pourrait être : %s
 #~ msgstr ""
 #~ "Si cette option est cochée, aucune sortie n'est générée. Si cette option "
 #~ "n'est pas cochée et que des tâches planifiées dans crontab produisent une "
-#~ "sortie, celle-ci est envoyée par dw6==
+#~ "sortie, celle-ci est envoyée par"
+
