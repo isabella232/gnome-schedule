@@ -312,9 +312,16 @@ class main:
 		self.iconcrontab  = self.ti_theme.load_icon (self.iconcrontabstring, 19, 0)
 		self.bigiconcrontab = self.ti_theme.load_icon (self.iconcrontabstring, 49, 0)
 		
-		# TODO: Create icon for at
-		self.iconat = self.ti_theme.load_icon (self.iconatstring, 19, 0)
-		self.bigiconat = self.ti_theme.load_icon (self.iconatstring, 49, 0)
+		if os.access ("../icons/at.svg", os.F_OK):
+			self.iconat = gtk.gdk.pixbuf_new_from_file_at_size ("../icons/at.svg", 19, 19)
+			self.bigiconat = gtk.gdk.pixbuf_new_from_file_at_size ("../icons/at.svg", 49, 49)
+		else:
+			try:
+				self.iconat = gtk.gdk.pixbuf_new_from_file_at_size (config.getImagedir() + "/at.svg", 19, 19)
+				self.bigiconat = gtk.gdk.pixbuf_new_from_file_at_size (config.getImagedir() + "/at.svg", 49, 49)
+			except:
+				print _("ERROR: Could not load icon")
+				
 		
 	def __loadGlade__(self):
 		if os.access("gnome-schedule.glade", os.F_OK):

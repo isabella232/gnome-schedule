@@ -1,3 +1,8 @@
+2007-11-19  Gaute Hope  <eg@gaute.vetsj.com>
+
+	* using the appointment-new.svg icon from Tango for 'at' tasks.
+	* deleted old unused icon for gnome-schedule
+	
 2007-11-17  Gaute Hope  <eg@gaute.vetsj.com>
 
 	* Dialogs informing about working directory of tasks upon add and edit with "don't show" button
