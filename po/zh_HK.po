@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-11-20 09:08+0100\n"
+"POT-Creation-Date: 2007-11-20 09:56+0100\n"
 "PO-Revision-Date: 2006-06-23 01:25+0800\n"
 "Last-Translator: Kevin Tse <kevinkit@netvigator.com>\n"
 "Language-Team: Chinese (Taiwan) <zh-l10n@linux.org.tw>\n"
@@ -745,128 +745,135 @@ msgid "Every year on %(date)s at %(time)s"
 msgstr "每年%(date)s%(time)s"
 
 #: ../src/lang.py:216
-#, python-format
-msgid "On every %(weekday)s at every full hour"
+#, fuzzy, python-format
+msgid "On every weekday: %(weekday)s at every full hour"
 msgstr "每個%(weekday)s的每小時"
 
 #: ../src/lang.py:218
-#, python-format
-msgid "On every %(weekday)s at every minute"
+#, fuzzy, python-format
+msgid "On every weekday: %(weekday)s at every minute"
 msgstr "每個%(weekday)s的每分鐘"
 
 #: ../src/lang.py:220
-#, python-format
-msgid "On every %(weekday)s at minute %(minute)s of every hour"
+#, fuzzy, python-format
+msgid "On every weekday: %(weekday)s at minute %(minute)s of every hour"
 msgstr "每個%(weekday)s每小時的第 %(minute)s 分鐘"
 
 #: ../src/lang.py:222
-#, python-format
+#, fuzzy, python-format
 msgid ""
-"On every %(weekday)s at every minute between %(time_from)s and %(time_to)s"
+"On every weekday: %(weekday)s at every minute between %(time_from)s and %"
+"(time_to)s"
 msgstr "每個%(weekday)s 從%(time_from)s到%(time_to)s之間的每分鐘"
 
 #: ../src/lang.py:224
-#, python-format
-msgid "On every %(weekday)s at %(time)s"
+#, fuzzy, python-format
+msgid "On every weekday: %(weekday)s at %(time)s"
 msgstr "每個%(weekday)s%(time)s"
 
 #: ../src/lang.py:229
-#, python-format
+#, fuzzy, python-format
 msgid ""
-"On day %(monthday)s of every month and every %(weekday)s at every full hour"
+"On day %(monthday)s of every month and every weekday: %(weekday)s at every "
+"full hour"
 msgstr "每個月第%(monthday)s天的每小時，和每個%(weekday)s的每小時"
 
 #: ../src/lang.py:231
-#, python-format
+#, fuzzy, python-format
 msgid ""
-"On day %(monthday)s of every month and every %(weekday)s at every minute"
+"On day %(monthday)s of every month and every weekday: %(weekday)s at every "
+"minute"
 msgstr "每個月第%(monthday)s天的每分鐘，和每個%(weekday)s的每分鐘"
 
 #: ../src/lang.py:233
-#, python-format
+#, fuzzy, python-format
 msgid ""
-"On day %(monthday)s of every month and every %(weekday)s at minute %(minute)"
-"s of every hour"
+"On day %(monthday)s of every month and every weekday: %(weekday)s at minute %"
+"(minute)s of every hour"
 msgstr ""
 "每個月第%(monthday)s天的每小時第 %(minute)s 分鐘，和每個%(weekday)s的每小時"
 "第 %(minute)s 分鐘"
 
 #: ../src/lang.py:235
-#, python-format
+#, fuzzy, python-format
 msgid ""
-"On day %(monthday)s of every month and every %(weekday)s at every minute "
-"between %(time_from)s and %(time_to)s"
+"On day %(monthday)s of every month and every weekday: %(weekday)s at every "
+"minute between %(time_from)s and %(time_to)s"
 msgstr ""
 "每個月第%(monthday)s天從%(time_from)s到%(time_to)s之間的每分鐘，和每個%"
 "(weekday)s從%(time_from)s到%(time_to)s之間的每分鐘"
 
 #: ../src/lang.py:237
-#, python-format
-msgid "On day %(monthday)s of every month and every %(weekday)s at %(time)s"
+#, fuzzy, python-format
+msgid ""
+"On day %(monthday)s of every month and every weekday: %(weekday)s at %(time)s"
 msgstr "每個月第%(monthday)s天的 %(time)s，和每個%(weekday)s%(time)s"
 
 #: ../src/lang.py:242
-#, python-format
-msgid "On every %(weekday)s in %(month)s at every full hour"
+#, fuzzy, python-format
+msgid "On every weekday: %(weekday)s in %(month)s at every full hour"
 msgstr "%(month)s每個%(weekday)s的每小時"
 
 #: ../src/lang.py:244
-#, python-format
-msgid "On every %(weekday)s in %(month)s at every minute"
+#, fuzzy, python-format
+msgid "On every weekday: %(weekday)s in %(month)s at every minute"
 msgstr "%(month)s每個%(weekday)s的每分鐘"
 
 #: ../src/lang.py:246
-#, python-format
-msgid "On every %(weekday)s in %(month)s at minute %(minute)s of every hour"
+#, fuzzy, python-format
+msgid ""
+"On every weekday: %(weekday)s in %(month)s at minute %(minute)s of every hour"
 msgstr "%(month)s每個%(weekday)s的每小時第 %(minute)s 分鐘"
 
 #: ../src/lang.py:248
-#, python-format
+#, fuzzy, python-format
 msgid ""
-"On every %(weekday)s in %(month)s at every minute between %(time_from)s and %"
-"(time_to)s"
+"On every weekday: %(weekday)s in %(month)s at every minute between %"
+"(time_from)s and %(time_to)s"
 msgstr "%(month)s每個%(weekday)s，從%(time_from)s到%(time_to)s之間的每分鐘"
 
 #: ../src/lang.py:250
-#, python-format
-msgid "On every %(weekday)s in %(month)s at %(time)s"
+#, fuzzy, python-format
+msgid "On every weekday: %(weekday)s in %(month)s at %(time)s"
 msgstr "%(month)s每個%(weekday)s%(time)s"
 
 #: ../src/lang.py:255
-#, python-format
+#, fuzzy, python-format
 msgid ""
-"On every %(weekday)s in %(month)s and on %(date)s every year at every full "
-"hour"
+"On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
+"every full hour"
 msgstr "%(month)s每個%(weekday)s的每小時，和%(date)s的每小時"
 
 #: ../src/lang.py:257
-#, python-format
+#, fuzzy, python-format
 msgid ""
-"On every %(weekday)s in %(month)s and on %(date)s every year at every minute"
+"On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
+"every minute"
 msgstr "%(month)s每個%(weekday)s的每分鐘，和%(date)s的每分鐘"
 
 #: ../src/lang.py:259
-#, python-format
+#, fuzzy, python-format
 msgid ""
-"On every %(weekday)s in %(month)s and on %(date)s every year at minute %"
-"(minute)s of every hour"
+"On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
+"minute %(minute)s of every hour"
 msgstr ""
 "%(month)s每個%(weekday)s的每小時第 %(minute)s 分鐘，和%(date)s的每小時第 %"
 "(minute)s 分鐘"
 
 #: ../src/lang.py:261
-#, python-format
+#, fuzzy, python-format
 msgid ""
-"On every %(weekday)s in %(month)s and on %(date)s every year at every minute "
-"between %(time_from)s and %(time_to)s"
+"On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
+"every minute between %(time_from)s and %(time_to)s"
 msgstr ""
 "%(month)s每個%(weekday)s和%(date)s，這些日子從%(time_from)s到%(time_to)s之間"
 "的每分鐘"
 
 #: ../src/lang.py:263
-#, python-format
+#, fuzzy, python-format
 msgid ""
-"On every %(weekday)s in %(month)s and on %(date)s every year at %(time)s"
+"On every weekday: %(weekday)s in %(month)s and on %(date)s every year at %"
+"(time)s"
 msgstr "%(month)s每個%(weekday)s%(time)s，和%(date)s%(time)s"
 
 #: ../src/lang.py:271

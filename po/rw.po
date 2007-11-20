@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-11-20 09:08+0100\n"
+"POT-Creation-Date: 2007-11-20 09:56+0100\n"
 "PO-Revision-Date: 2005-03-31 20:55-0700\n"
 "Last-Translator: Steve Murphy <murf@e-tools.com>\n"
 "Language-Team: Kinyarwanda <translation-team-rw@lists.sourceforge.net>\n"
@@ -896,47 +896,50 @@ msgstr "Umwaka ku Itariki S ku Igihe S"
 
 #: ../src/lang.py:216
 #, fuzzy, python-format
-msgid "On every %(weekday)s at every full hour"
+msgid "On every weekday: %(weekday)s at every full hour"
 msgstr "buri UMUNSIICYUMWERU S ku buri ISAHA"
 
 #: ../src/lang.py:218
 #, fuzzy, python-format
-msgid "On every %(weekday)s at every minute"
+msgid "On every weekday: %(weekday)s at every minute"
 msgstr "buri UMUNSIICYUMWERU S ku buri UMUNOTA"
 
 #: ../src/lang.py:220
 #, fuzzy, python-format
-msgid "On every %(weekday)s at minute %(minute)s of every hour"
+msgid "On every weekday: %(weekday)s at minute %(minute)s of every hour"
 msgstr "buri UMUNSIICYUMWERU S ku UMUNOTA UMUNOTA S Bya buri ISAHA"
 
 #: ../src/lang.py:222
 #, fuzzy, python-format
 msgid ""
-"On every %(weekday)s at every minute between %(time_from)s and %(time_to)s"
+"On every weekday: %(weekday)s at every minute between %(time_from)s and %"
+"(time_to)s"
 msgstr "buri UMUNSIICYUMWERU S ku buri UMUNOTA hagati S Na S"
 
 #: ../src/lang.py:224
 #, fuzzy, python-format
-msgid "On every %(weekday)s at %(time)s"
+msgid "On every weekday: %(weekday)s at %(time)s"
 msgstr "buri UMUNSIICYUMWERU S ku Igihe S"
 
 #: ../src/lang.py:229
 #, fuzzy, python-format
 msgid ""
-"On day %(monthday)s of every month and every %(weekday)s at every full hour"
+"On day %(monthday)s of every month and every weekday: %(weekday)s at every "
+"full hour"
 msgstr "UMUNSI S Bya buri Ukwezi Na buri UMUNSIICYUMWERU S ku buri ISAHA"
 
 #: ../src/lang.py:231
 #, fuzzy, python-format
 msgid ""
-"On day %(monthday)s of every month and every %(weekday)s at every minute"
+"On day %(monthday)s of every month and every weekday: %(weekday)s at every "
+"minute"
 msgstr "UMUNSI S Bya buri Ukwezi Na buri UMUNSIICYUMWERU S ku buri UMUNOTA"
 
 #: ../src/lang.py:233
 #, fuzzy, python-format
 msgid ""
-"On day %(monthday)s of every month and every %(weekday)s at minute %(minute)"
-"s of every hour"
+"On day %(monthday)s of every month and every weekday: %(weekday)s at minute %"
+"(minute)s of every hour"
 msgstr ""
 "UMUNSI S Bya buri Ukwezi Na buri UMUNSIICYUMWERU S ku UMUNOTA UMUNOTA S Bya "
 "buri ISAHA"
@@ -944,56 +947,59 @@ msgstr ""
 #: ../src/lang.py:235
 #, fuzzy, python-format
 msgid ""
-"On day %(monthday)s of every month and every %(weekday)s at every minute "
-"between %(time_from)s and %(time_to)s"
+"On day %(monthday)s of every month and every weekday: %(weekday)s at every "
+"minute between %(time_from)s and %(time_to)s"
 msgstr ""
 "UMUNSI S Bya buri Ukwezi Na buri UMUNSIICYUMWERU S ku buri UMUNOTA hagati S "
 "Na S"
 
 #: ../src/lang.py:237
 #, fuzzy, python-format
-msgid "On day %(monthday)s of every month and every %(weekday)s at %(time)s"
+msgid ""
+"On day %(monthday)s of every month and every weekday: %(weekday)s at %(time)s"
 msgstr "UMUNSI S Bya buri Ukwezi Na buri UMUNSIICYUMWERU S ku Igihe S"
 
 #: ../src/lang.py:242
 #, fuzzy, python-format
-msgid "On every %(weekday)s in %(month)s at every full hour"
+msgid "On every weekday: %(weekday)s in %(month)s at every full hour"
 msgstr "buri UMUNSIICYUMWERU S in Ukwezi S ku buri ISAHA"
 
 #: ../src/lang.py:244
 #, fuzzy, python-format
-msgid "On every %(weekday)s in %(month)s at every minute"
+msgid "On every weekday: %(weekday)s in %(month)s at every minute"
 msgstr "buri UMUNSIICYUMWERU S in Ukwezi S ku buri UMUNOTA"
 
 #: ../src/lang.py:246
 #, fuzzy, python-format
-msgid "On every %(weekday)s in %(month)s at minute %(minute)s of every hour"
+msgid ""
+"On every weekday: %(weekday)s in %(month)s at minute %(minute)s of every hour"
 msgstr "buri UMUNSIICYUMWERU S in Ukwezi S ku UMUNOTA UMUNOTA S Bya buri ISAHA"
 
 #: ../src/lang.py:248
 #, fuzzy, python-format
 msgid ""
-"On every %(weekday)s in %(month)s at every minute between %(time_from)s and %"
-"(time_to)s"
+"On every weekday: %(weekday)s in %(month)s at every minute between %"
+"(time_from)s and %(time_to)s"
 msgstr "buri UMUNSIICYUMWERU S in Ukwezi S ku buri UMUNOTA hagati S Na S"
 
 #: ../src/lang.py:250
 #, fuzzy, python-format
-msgid "On every %(weekday)s in %(month)s at %(time)s"
+msgid "On every weekday: %(weekday)s in %(month)s at %(time)s"
 msgstr "buri UMUNSIICYUMWERU S in Ukwezi S ku Igihe S"
 
 #: ../src/lang.py:255
 #, fuzzy, python-format
 msgid ""
-"On every %(weekday)s in %(month)s and on %(date)s every year at every full "
-"hour"
+"On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
+"every full hour"
 msgstr ""
 "buri UMUNSIICYUMWERU S in Ukwezi S Na ku Itariki S buri Umwaka ku buri ISAHA"
 
 #: ../src/lang.py:257
 #, fuzzy, python-format
 msgid ""
-"On every %(weekday)s in %(month)s and on %(date)s every year at every minute"
+"On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
+"every minute"
 msgstr ""
 "buri UMUNSIICYUMWERU S in Ukwezi S Na ku Itariki S buri Umwaka ku buri "
 "UMUNOTA"
@@ -1001,8 +1007,8 @@ msgstr ""
 #: ../src/lang.py:259
 #, fuzzy, python-format
 msgid ""
-"On every %(weekday)s in %(month)s and on %(date)s every year at minute %"
-"(minute)s of every hour"
+"On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
+"minute %(minute)s of every hour"
 msgstr ""
 "buri UMUNSIICYUMWERU S in Ukwezi S Na ku Itariki S buri Umwaka ku UMUNOTA "
 "UMUNOTA S Bya buri ISAHA"
@@ -1010,8 +1016,8 @@ msgstr ""
 #: ../src/lang.py:261
 #, fuzzy, python-format
 msgid ""
-"On every %(weekday)s in %(month)s and on %(date)s every year at every minute "
-"between %(time_from)s and %(time_to)s"
+"On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
+"every minute between %(time_from)s and %(time_to)s"
 msgstr ""
 "buri UMUNSIICYUMWERU S in Ukwezi S Na ku Itariki S buri Umwaka ku buri "
 "UMUNOTA hagati S Na S"
@@ -1019,7 +1025,8 @@ msgstr ""
 #: ../src/lang.py:263
 #, fuzzy, python-format
 msgid ""
-"On every %(weekday)s in %(month)s and on %(date)s every year at %(time)s"
+"On every weekday: %(weekday)s in %(month)s and on %(date)s every year at %"
+"(time)s"
 msgstr ""
 "buri UMUNSIICYUMWERU S in Ukwezi S Na ku Itariki S buri Umwaka ku Igihe S"
 
