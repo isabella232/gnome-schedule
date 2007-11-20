@@ -11,7 +11,6 @@ src/at.py
 src/crontab.py
 src/crontabEditor.py
 src/crontabEditorHelper.py
-src/editor.py
 src/gnome-schedule-applet.xml
 src/gnome-schedule.glade
 src/gnome-schedule.py
@@ -19,7 +18,7 @@ src/lang.py
 src/mainWindow.py
 src/scheduleapplet.py
 src/setuserWindow.py
-src/support.py
 src/addWindow.py
 src/at.py
 src/atEditor.py
+src/thoughicon.py

@@ -1,3 +1,8 @@
+2007-11-20  Gaute Hope  <eg@gaute.vetsj.com>
+
+	* merged some changes from trunk
+	* removed editor.py
+	
 2007-11-19  Gaute Hope  <eg@gaute.vetsj.com>
 
 	* using the appointment-new.svg icon from Tango for 'at' tasks.
