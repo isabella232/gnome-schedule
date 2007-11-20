@@ -213,54 +213,54 @@ def translate_crontab_easy_common (minute, hour, day, month, weekday):
 	# Weekday cases
 	if month == "*" and day == "*" and weekday != "*":
 		if minute == "0" and hour == "*":
-			return (_("On every %(weekday)s at every full hour") % { "weekday": lc_weekday(weekday) } )
+			return (_("On every weekday: %(weekday)s at every full hour") % { "weekday": lc_weekday(weekday) } )
 		elif minute == "*" and hour == "*":
-			return (_("On every %(weekday)s at every minute") % { "weekday": lc_weekday(weekday) } )
+			return (_("On every weekday: %(weekday)s at every minute") % { "weekday": lc_weekday(weekday) } )
 		elif minute != "*" and hour == "*":
-			return (_("On every %(weekday)s at minute %(minute)s of every hour") % { "weekday": lc_weekday(weekday), "minute": str(minute) } )
+			return (_("On every weekday: %(weekday)s at minute %(minute)s of every hour") % { "weekday": lc_weekday(weekday), "minute": str(minute) } )
 		elif minute == "*" and hour != "*":
-			return (_("On every %(weekday)s at every minute between %(time_from)s and %(time_to)s") % { "weekday": lc_weekday(weekday), "time_from": lc_time(hour, 0), "time_to": lc_time(hour, 59) } )
+			return (_("On every weekday: %(weekday)s at every minute between %(time_from)s and %(time_to)s") % { "weekday": lc_weekday(weekday), "time_from": lc_time(hour, 0), "time_to": lc_time(hour, 59) } )
 		elif minute != "*" and hour != "*":
-			return (_("On every %(weekday)s at %(time)s") % { "weekday": lc_weekday(weekday), "time": lc_time(hour, minute) } )
+			return (_("On every weekday: %(weekday)s at %(time)s") % { "weekday": lc_weekday(weekday), "time": lc_time(hour, minute) } )
 
 	# Day and weekday cases
 	if day != "*" and month == "*" and weekday != "*":
 		if minute == "0" and hour == "*":
-			return (_("On day %(monthday)s of every month and every %(weekday)s at every full hour") % { "monthday": str(day), "weekday": lc_weekday(weekday) } )
+			return (_("On day %(monthday)s of every month and every weekday: %(weekday)s at every full hour") % { "monthday": str(day), "weekday": lc_weekday(weekday) } )
 		elif minute == "*" and hour == "*":
-			return (_("On day %(monthday)s of every month and every %(weekday)s at every minute") % { "monthday": str(day), "weekday": lc_weekday(weekday) } )
+			return (_("On day %(monthday)s of every month and every weekday: %(weekday)s at every minute") % { "monthday": str(day), "weekday": lc_weekday(weekday) } )
 		elif minute != "*" and hour == "*":
-			return (_("On day %(monthday)s of every month and every %(weekday)s at minute %(minute)s of every hour") % { "monthday": str(day), "weekday": lc_weekday(weekday), "minute": str(minute) } )
+			return (_("On day %(monthday)s of every month and every weekday: %(weekday)s at minute %(minute)s of every hour") % { "monthday": str(day), "weekday": lc_weekday(weekday), "minute": str(minute) } )
 		elif minute == "*" and hour != "*":
-			return (_("On day %(monthday)s of every month and every %(weekday)s at every minute between %(time_from)s and %(time_to)s") % { "monthday": str(day), "weekday": lc_weekday(weekday), "time_from": lc_time(hour, 0), "time_to": lc_time(hour, 59) } )
+			return (_("On day %(monthday)s of every month and every weekday: %(weekday)s at every minute between %(time_from)s and %(time_to)s") % { "monthday": str(day), "weekday": lc_weekday(weekday), "time_from": lc_time(hour, 0), "time_to": lc_time(hour, 59) } )
 		elif minute != "*" and hour != "*":
-			return (_("On day %(monthday)s of every month and every %(weekday)s at %(time)s") % { "monthday": str(day), "weekday": lc_weekday(weekday), "time": lc_time(hour, minute) } )
+			return (_("On day %(monthday)s of every month and every weekday: %(weekday)s at %(time)s") % { "monthday": str(day), "weekday": lc_weekday(weekday), "time": lc_time(hour, minute) } )
 
 	# Month and weekday cases
 	if day == "*" and month != "*" and weekday != "*":
 		if minute == "0" and hour == "*":
-			return (_("On every %(weekday)s in %(month)s at every full hour") % { "weekday": lc_weekday(weekday), "month": lc_month(month) } )
+			return (_("On every weekday: %(weekday)s in %(month)s at every full hour") % { "weekday": lc_weekday(weekday), "month": lc_month(month) } )
 		elif minute == "*" and hour == "*":
-			return (_("On every %(weekday)s in %(month)s at every minute") % { "weekday": lc_weekday(weekday), "month": lc_month(month) } )
+			return (_("On every weekday: %(weekday)s in %(month)s at every minute") % { "weekday": lc_weekday(weekday), "month": lc_month(month) } )
 		elif minute != "*" and hour == "*":
-			return (_("On every %(weekday)s in %(month)s at minute %(minute)s of every hour") % { "weekday": lc_weekday(weekday), "month": lc_month(month), "minute": str(minute) } )
+			return (_("On every weekday: %(weekday)s in %(month)s at minute %(minute)s of every hour") % { "weekday": lc_weekday(weekday), "month": lc_month(month), "minute": str(minute) } )
 		elif minute == "*" and hour != "*":
-			return (_("On every %(weekday)s in %(month)s at every minute between %(time_from)s and %(time_to)s") % { "weekday": lc_weekday(weekday), "month": lc_month(month), "time_from": lc_time(hour, 0), "time_to": lc_time(hour, 59) } )
+			return (_("On every weekday: %(weekday)s in %(month)s at every minute between %(time_from)s and %(time_to)s") % { "weekday": lc_weekday(weekday), "month": lc_month(month), "time_from": lc_time(hour, 0), "time_to": lc_time(hour, 59) } )
 		elif minute != "*" and hour != "*":
-			return (_("On every %(weekday)s in %(month)s at %(time)s") % { "weekday": lc_weekday(weekday), "month": lc_month(month), "time": lc_time(hour, minute) } )
+			return (_("On every weekday: %(weekday)s in %(month)s at %(time)s") % { "weekday": lc_weekday(weekday), "month": lc_month(month), "time": lc_time(hour, minute) } )
 
 	# Day, month and weekday cases
 	if day != "*" and month != "*" and weekday != "*":
 		if minute == "0" and hour == "*":
-			return (_("On every %(weekday)s in %(month)s and on %(date)s every year at every full hour") % { "weekday": lc_weekday(weekday), "month": lc_month(month), "date": lc_date(day,month) } )
+			return (_("On every weekday: %(weekday)s in %(month)s and on %(date)s every year at every full hour") % { "weekday": lc_weekday(weekday), "month": lc_month(month), "date": lc_date(day,month) } )
 		elif minute == "*" and hour == "*":
-			return (_("On every %(weekday)s in %(month)s and on %(date)s every year at every minute") % { "weekday": lc_weekday(weekday), "month": lc_month(month), "date": lc_date(day,month) } )
+			return (_("On every weekday: %(weekday)s in %(month)s and on %(date)s every year at every minute") % { "weekday": lc_weekday(weekday), "month": lc_month(month), "date": lc_date(day,month) } )
 		elif minute != "*" and hour == "*":
-			return (_("On every %(weekday)s in %(month)s and on %(date)s every year at minute %(minute)s of every hour") % { "weekday": lc_weekday(weekday), "month": lc_month(month), "date": lc_date(day,month), "minute": str(minute) } )
+			return (_("On every weekday: %(weekday)s in %(month)s and on %(date)s every year at minute %(minute)s of every hour") % { "weekday": lc_weekday(weekday), "month": lc_month(month), "date": lc_date(day,month), "minute": str(minute) } )
 		elif minute == "*" and hour != "*":
-			return (_("On every %(weekday)s in %(month)s and on %(date)s every year at every minute between %(time_from)s and %(time_to)s") % { "weekday": lc_weekday(weekday), "month": lc_month(month), "date": lc_date(day,month), "time_from": lc_time(hour, 0), "time_to": lc_time(hour, 59) } )
+			return (_("On every weekday: %(weekday)s in %(month)s and on %(date)s every year at every minute between %(time_from)s and %(time_to)s") % { "weekday": lc_weekday(weekday), "month": lc_month(month), "date": lc_date(day,month), "time_from": lc_time(hour, 0), "time_to": lc_time(hour, 59) } )
 		elif minute != "*" and hour != "*":
-			return (_("On every %(weekday)s in %(month)s and on %(date)s every year at %(time)s") % { "weekday": lc_weekday(weekday), "month": lc_month(month), "date": lc_date(day,month), "time": lc_time(hour, minute) } )
+			return (_("On every weekday: %(weekday)s in %(month)s and on %(date)s every year at %(time)s") % { "weekday": lc_weekday(weekday), "month": lc_month(month), "date": lc_date(day,month), "time": lc_time(hour, minute) } )
 
 	# If nothing got translated, we fall back to ...
 	return translate_crontab_easy_fallback (minute, hour, day, month, weekday)
