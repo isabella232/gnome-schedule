@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-11-12 21:22+0100\n"
+"POT-Creation-Date: 2007-11-20 09:08+0100\n"
 "PO-Revision-Date: 2006-07-05 21:19+0400\n"
 "Last-Translator: Nickolay V. Shmyrev <nshmyrev@yandex.ru>\n"
 "Language-Team: Russian <gnome-cyr@gnome.org>\n"
@@ -35,22 +35,22 @@ msgstr "Расписание GNOME"
 msgid "System tools"
 msgstr "Системные средства"
 
-#: ../src/at.py:467
+#: ../src/at.py:491
 #, python-format
 msgid "DANGEROUS PARSE: %(preview)s"
 msgstr "Опасное состояние: %(preview)s"
 
 #. TODO: localize time and date formats
-#: ../src/at.py:474
+#: ../src/at.py:498
 #, python-format
 msgid "On %(date)s at %(time)s"
 msgstr "%(date)s-ого в %(time)s"
 
-#: ../src/at.py:479 ../src/at.py:484
+#: ../src/at.py:503 ../src/at.py:508
 msgid "Once"
 msgstr "Один раз"
 
-#: ../src/at.py:488
+#: ../src/at.py:512
 msgid "Warning: a line in atq's output didn't parse"
 msgstr "Предупреждение: не удалось разобрать строку в выводе atq"
 

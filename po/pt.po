@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2.10\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-11-12 21:22+0100\n"
+"POT-Creation-Date: 2007-11-20 09:08+0100\n"
 "PO-Revision-Date: 2004-12-11 13:30+0000\n"
 "Last-Translator: Duarte Loreto <happyguy_pt@hotmail.com>\n"
 "Language-Team: Portuguese <gnome_pt@yahoogroups.com>\n"
@@ -38,22 +38,22 @@ msgstr "Calendarização Gnome"
 msgid "System tools"
 msgstr ""
 
-#: ../src/at.py:467
+#: ../src/at.py:491
 #, python-format
 msgid "DANGEROUS PARSE: %(preview)s"
 msgstr ""
 
 #. TODO: localize time and date formats
-#: ../src/at.py:474
+#: ../src/at.py:498
 #, fuzzy, python-format
 msgid "On %(date)s at %(time)s"
 msgstr "Todos os anos a %(date)s às %(time)s"
 
-#: ../src/at.py:479 ../src/at.py:484
+#: ../src/at.py:503 ../src/at.py:508
 msgid "Once"
 msgstr ""
 
-#: ../src/at.py:488
+#: ../src/at.py:512
 msgid "Warning: a line in atq's output didn't parse"
 msgstr ""
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-11-12 21:22+0100\n"
+"POT-Creation-Date: 2007-11-20 09:08+0100\n"
 "PO-Revision-Date: 2006-12-28 19:42+0200\n"
 "Last-Translator: Xavier Conde Rueda <xavi.conde@gmail.com>\n"
 "Language-Team: Catalan <tradgnome@softcatala.org>\n"
@@ -36,22 +36,22 @@ msgstr "Planificador del Gnome"
 msgid "System tools"
 msgstr "Eines del sistema"
 
-#: ../src/at.py:467
+#: ../src/at.py:491
 #, python-format
 msgid "DANGEROUS PARSE: %(preview)s"
 msgstr "Anàlisi perillosa: %(preview)s"
 
 #. TODO: localize time and date formats
-#: ../src/at.py:474
+#: ../src/at.py:498
 #, python-format
 msgid "On %(date)s at %(time)s"
 msgstr "El %(date)s a les %(time)s"
 
-#: ../src/at.py:479 ../src/at.py:484
+#: ../src/at.py:503 ../src/at.py:508
 msgid "Once"
 msgstr "Una vegada"
 
-#: ../src/at.py:488
+#: ../src/at.py:512
 msgid "Warning: a line in atq's output didn't parse"
 msgstr "Avís: no s'ha pogut analitzar una línia de la sortida de l'atq"
 

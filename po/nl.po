@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-11-12 21:22+0100\n"
+"POT-Creation-Date: 2007-11-20 09:08+0100\n"
 "PO-Revision-Date: 2006-01-12 14:22+0100\n"
 "Last-Translator: Tino Meinen <a.t.meinen@chello.nl>\n"
 "Language-Team: Dutch <vertaling@vrijschrift.org>\n"
@@ -37,23 +37,23 @@ msgstr "Gnome taakplanning"
 msgid "System tools"
 msgstr "Systeemgereedschap"
 
-#: ../src/at.py:467
+#: ../src/at.py:491
 #, python-format
 msgid "DANGEROUS PARSE: %(preview)s"
 msgstr "GEVAARLIJKE ONTLEDING: %(preview)s"
 
 #. TODO: localize time and date formats
-#: ../src/at.py:474
+#: ../src/at.py:498
 #, python-format
 msgid "On %(date)s at %(time)s"
 msgstr "Op %(date)s om %(time)s"
 
-#: ../src/at.py:479 ../src/at.py:484
+#: ../src/at.py:503 ../src/at.py:508
 msgid "Once"
 msgstr "Eenmalig"
 
 # was/werd niet verwerkt
-#: ../src/at.py:488
+#: ../src/at.py:512
 msgid "Warning: a line in atq's output didn't parse"
 msgstr "Let op: een regel in atq's uitvoer kon niet worden verwerkt"
 

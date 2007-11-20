@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-11-12 21:22+0100\n"
+"POT-Creation-Date: 2007-11-20 09:08+0100\n"
 "PO-Revision-Date: 2005-02-01 15:50+0100\n"
 "Last-Translator: Martin Willemoes Hansen <mwh@sysrq.dk>\n"
 "Language-Team: Danish <dansk@klid.dk>\n"
@@ -43,22 +43,22 @@ msgstr "Gnome-systemplanlægger"
 msgid "System tools"
 msgstr ""
 
-#: ../src/at.py:467
+#: ../src/at.py:491
 #, python-format
 msgid "DANGEROUS PARSE: %(preview)s"
 msgstr ""
 
 #. TODO: localize time and date formats
-#: ../src/at.py:474
+#: ../src/at.py:498
 #, python-format
 msgid "On %(date)s at %(time)s"
 msgstr "Den %(date)s klokken %(time)s"
 
-#: ../src/at.py:479 ../src/at.py:484
+#: ../src/at.py:503 ../src/at.py:508
 msgid "Once"
 msgstr ""
 
-#: ../src/at.py:488
+#: ../src/at.py:512
 msgid "Warning: a line in atq's output didn't parse"
 msgstr ""
 
