@@ -4,6 +4,7 @@
 	* removed editor.py and support.py
 	* removed alot of debug messages
 	* removed old .cvsignore files, hope i dont need them
+	* removed ChangeLog.cvs
 	
 2007-11-10  Gaute Hope  <eg@gaute.vetsj.com>
 
