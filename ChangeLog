@@ -6,6 +6,7 @@
 	* removed old .cvsignore files, hope i don't need them
 	* removed Changelog.cvs
 	* removed README.cvs, we have a HACKING file that says the same
+	* updated AUTHORS to honour the documentor
 	
 2007-11-19  Gaute Hope  <eg@gaute.vetsj.com>
 

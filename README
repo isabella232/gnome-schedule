@@ -9,7 +9,7 @@ gnome-schedule
 Dependencies
 ------------
 
- Gnome Schedule needs
+ Gnome Schedule needs (at least)
  
 	o. at
 	o. crontab
@@ -57,7 +57,7 @@ o. The following commands will install gnome-schedule on a system that has
 Important notes
 ---------------
 If you have previous records in at, gnome-schedule may have problems reading them. 
-They are marked as DANGROUS PARSE in the list if a unsecure method was used. This will not damage
+They are marked as DANGEROUS PARSE in the list if a unsecure method was used. This will not damage
 the record, and if you open one pressing cancel in the script editor will not change anything.
 
 Some comments right after existing records in crontab may return weird results for title and icon, this should not damage anything.
@@ -83,7 +83,6 @@ Compiling and HACKING
   To make contributions you should first read
 
 	o. HACKING
-	o. README.cvs
 	o. AUTHORS
 	o. The source code itself :-)
 
