@@ -1,21 +1,24 @@
+# translation of oc.po to Occitan
 # Occitan translation of gnome-schedule help.
 # Copyright (C) 2004-2007 The Free Software Foundation, Inc.
 # This file is distributed under the same license as the gnome-schedule package.
 #
 # Yannig MARCHEGAY (yannig@marchegay.org) - 2006-2007
 #
+# Yannig Marchegay (Kokoyaya) <yannig@marchegay.org>, 2007.
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-schedule docs\n"
+"Project-Id-Version: oc\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-05-14 19:48+0100\n"
-"PO-Revision-Date: 2007-10-14 15:06+0200\n"
-"Last-Translator: Yannig MARCHEGAY (Kokoyaya) <yannig@marchegay.org>\n"
-"Language-Team: Occitan (post 1500) <ubuntu-l10n-oci@lists.ubuntu.com>\n"
+"PO-Revision-Date: 2007-11-20 14:31+0100\n"
+"Last-Translator: Yannig Marchegay (Kokoyaya) <yannig@marchegay.org>\n"
+"Language-Team: Occitan <ubuntu-l10n-oci@lists.ubuntu.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);"
+"Plural-Forms: nplurals=2; plural=(n > 1);X-Generator: KBabel 1.11.4\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
@@ -87,7 +90,7 @@ msgstr ""
 #: C/gnome-schedule.xml:92(orgname) C/gnome-schedule.xml:120(para)
 #: C/gnome-schedule.xml:129(para)
 msgid "GNOME Documentation Project"
-msgstr ""
+msgstr "Projècte de documentacion de GNOME"
 
 #: C/gnome-schedule.xml:2(para)
 msgid ""
@@ -154,7 +157,7 @@ msgstr ""
 
 #: C/gnome-schedule.xml:65(firstname) C/gnome-schedule.xml:89(firstname)
 msgid "Rodrigo"
-msgstr ""
+msgstr "Rodrigo"
 
 #: C/gnome-schedule.xml:66(surname) C/gnome-schedule.xml:90(surname)
 msgid "Marcos Fombellida"
@@ -194,7 +197,7 @@ msgstr ""
 
 #: C/gnome-schedule.xml:116(date)
 msgid "August 2005"
-msgstr ""
+msgstr "Agost de 2005"
 
 #: C/gnome-schedule.xml:118(para) C/gnome-schedule.xml:127(para)
 msgid "Rodrigo Marcos Fombellida <email>rmarcos@cvs.gnome.org</email>"
@@ -222,7 +225,7 @@ msgstr ""
 
 #: C/gnome-schedule.xml:148(primary) C/gnome-schedule.xml:0(application)
 msgid "Gnome Schedule"
-msgstr ""
+msgstr "Gnome Schedule"
 
 #: C/gnome-schedule.xml:159(title)
 msgid "Introduction"
@@ -305,7 +308,7 @@ msgstr ""
 
 #: C/gnome-schedule.xml:222(title)
 msgid "Getting Started"
-msgstr ""
+msgstr "Per començar"
 
 #: C/gnome-schedule.xml:225(title)
 msgid "To Start <application>Gnome Schedule</application>"
@@ -319,7 +322,7 @@ msgstr ""
 
 #: C/gnome-schedule.xml:230(term)
 msgid "<guimenu>Applications</guimenu> menu"
-msgstr ""
+msgstr "Menut <guimenu>Applications</guimenu>"
 
 #: C/gnome-schedule.xml:232(para)
 msgid ""
@@ -329,7 +332,7 @@ msgstr ""
 
 #: C/gnome-schedule.xml:240(term)
 msgid "Command line"
-msgstr ""
+msgstr "Linha de comanda"
 
 #: C/gnome-schedule.xml:242(para)
 msgid ""
@@ -395,7 +398,7 @@ msgstr ""
 
 #: C/gnome-schedule.xml:296(term)
 msgid "Icon:"
-msgstr ""
+msgstr "Icòna :"
 
 #: C/gnome-schedule.xml:297(para)
 msgid "Image associated to the task."
@@ -403,7 +406,7 @@ msgstr ""
 
 #: C/gnome-schedule.xml:299(term)
 msgid "Type:"
-msgstr ""
+msgstr "Tipe :"
 
 #: C/gnome-schedule.xml:300(para)
 msgid "Describes the type of the task: \"Recurrent\" or \"Once\"."
@@ -411,7 +414,7 @@ msgstr ""
 
 #: C/gnome-schedule.xml:302(term)
 msgid "Title:"
-msgstr ""
+msgstr "Títol:"
 
 #: C/gnome-schedule.xml:303(para)
 msgid "Shows the name of the task."
@@ -427,7 +430,7 @@ msgstr ""
 
 #: C/gnome-schedule.xml:308(term)
 msgid "Preview:"
-msgstr ""
+msgstr "Ulhada :"
 
 #: C/gnome-schedule.xml:309(para)
 msgid "Shows the command that is going to be executed."
@@ -517,7 +520,7 @@ msgstr ""
 
 #: C/gnome-schedule.xml:382(term) C/gnome-schedule.xml:434(term)
 msgid "Description"
-msgstr ""
+msgstr "Descripcion"
 
 #: C/gnome-schedule.xml:383(para) C/gnome-schedule.xml:435(para)
 msgid "Lets you add a brief description of the task."
@@ -525,11 +528,10 @@ msgstr ""
 
 #: C/gnome-schedule.xml:385(term) C/gnome-schedule.xml:437(term)
 msgid "Icon"
-msgstr ""
+msgstr "Icòna"
 
 #: C/gnome-schedule.xml:386(para)
-msgid ""
-"You can associate a custom icon to the task by pressing the image button."
+msgid "You can associate a custom icon to the task by pressing the image button."
 msgstr ""
 
 #: C/gnome-schedule.xml:388(term)
@@ -545,7 +547,7 @@ msgstr ""
 
 #: C/gnome-schedule.xml:393(term)
 msgid "Command"
-msgstr ""
+msgstr "Comanda"
 
 #: C/gnome-schedule.xml:394(para)
 msgid ""
@@ -591,11 +593,10 @@ msgstr ""
 
 #: C/gnome-schedule.xml:440(term)
 msgid "Script"
-msgstr ""
+msgstr "Escript"
 
 #: C/gnome-schedule.xml:441(para)
-msgid ""
-"Enter here the command or commands that will be executed once by this task."
+msgid "Enter here the command or commands that will be executed once by this task."
 msgstr ""
 
 #: C/gnome-schedule.xml:445(title)
@@ -868,7 +869,7 @@ msgstr ""
 
 #: C/gnome-schedule.xml:625(title)
 msgid "Authors"
-msgstr ""
+msgstr "Autors"
 
 #: C/gnome-schedule.xml:626(para)
 msgid ""
@@ -893,7 +894,7 @@ msgstr ""
 
 #: C/gnome-schedule.xml:644(title)
 msgid "License"
-msgstr ""
+msgstr "Licéncia"
 
 #: C/gnome-schedule.xml:645(para)
 msgid ""
@@ -907,5 +908,5 @@ msgstr ""
 #. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2.
 #: C/gnome-schedule.xml:0(None)
 msgid "translator-credits"
-msgstr ""
+msgstr "Yannig Marchegay (Kokoyaya) <yannig@marchegay.org)"
 
