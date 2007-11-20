@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-02 21:54+0200\n"
+"POT-Creation-Date: 2007-11-20 09:55+0100\n"
 "PO-Revision-Date: 2005-08-16 12:37+0200\n"
 "Last-Translator: Gaute Hope <eg@gaute.eu.org>\n"
 "Language-Team: Norwegian/Nynorsk <nn@li.org>\n"
@@ -21,8 +21,9 @@ msgid "Manage your system tasks"
 msgstr "Administrer dine system jobbar"
 
 #: ../desktop/gnome-schedule.desktop.in.in.h:2
-msgid "Schedule"
-msgstr "Gnome Schedule"
+#, fuzzy
+msgid "Scheduled tasks"
+msgstr "Legg til ein jobb"
 
 #: ../servers/GNOME_GnomeSchedule.server.in.in.h:1
 msgid "Configures your scheduled tasks"
@@ -36,7 +37,7 @@ msgstr "Gnome Schedule"
 msgid "System tools"
 msgstr "Systemverkty"
 
-#: ../src/at.py:432
+#: ../src/at.py:486
 #, python-format
 msgid "DANGEROUS PARSE: %(preview)s"
 msgstr "FARLEG PARSING: %(preview)s"
@@ -45,125 +46,128 @@ msgstr "FARLEG PARSING: %(preview)s"
 # 
 # 
 #. TODO: localize time and date formats
-#: ../src/at.py:439
+#: ../src/at.py:493
 #, python-format
 msgid "On %(date)s at %(time)s"
 msgstr "På %(date)s på %(time)s"
 
 #
-#: ../src/at.py:444 ../src/at.py:449
+#: ../src/at.py:498 ../src/at.py:503
 msgid "Once"
 msgstr "Ein gong"
 
-#: ../src/at.py:453
+#: ../src/at.py:507
 msgid "Warning: a line in atq's output didn't parse"
 msgstr ""
 
-#: ../src/crontab.py:74
+#: ../src/crontab.py:77
 msgid "Minute"
 msgstr "Minutt"
 
-#: ../src/crontab.py:75
+#: ../src/crontab.py:78
 msgid "Hour"
 msgstr "Time"
 
-#: ../src/crontab.py:76
+#: ../src/crontab.py:79
 msgid "Day of Month"
 msgstr "Dag av månade"
 
-#: ../src/crontab.py:77
+#: ../src/crontab.py:80
 msgid "Month"
 msgstr "Månad"
 
-#: ../src/crontab.py:78
+#: ../src/crontab.py:81
 msgid "Weekday"
 msgstr "Vekedag"
 
+#: ../src/crontab.py:147 ../src/gnome-schedule.glade.h:12
+msgid "Basic"
+msgstr "Enkel"
+
 # python-format
-#: ../src/crontab.py:167 ../src/crontab.py:172 ../src/crontab.py:176
+#: ../src/crontab.py:147
+#, fuzzy, python-format
+msgid "This is not a valid special record: %(record)s"
+msgstr "Dette er ugyldig. Grunn: %s"
+
+# python-format
+#: ../src/crontab.py:175 ../src/crontab.py:180 ../src/crontab.py:184
 #, python-format
 msgid "Must be between %(min)s and %(max)s"
 msgstr "Må vere mellom %(min)s og %(max)s"
 
 # python-format
-#: ../src/crontab.py:174
+#: ../src/crontab.py:182
 #, python-format
 msgid "%s is not a number"
 msgstr "%s er ikkje eit nummer"
 
-#: ../src/crontab.py:228 ../src/crontab.py:285 ../src/crontabEditor.py:192
-#: ../src/atEditor.py:110
+#: ../src/crontab.py:236 ../src/crontab.py:292 ../src/crontabEditor.py:186
+#: ../src/atEditor.py:96 ../src/atEditor.py:250 ../src/atEditor.py:274
 msgid "Untitled"
 msgstr "Namnlaus"
 
-#. add task to treemodel in mainWindow
-#: ../src/crontab.py:387
+#: ../src/crontab.py:391 ../src/crontab.py:393
 msgid "Recurrent"
 msgstr "Gjentakande"
 
-#: ../src/crontab.py:399
-msgid "minute"
-msgstr "minutt"
-
-#: ../src/crontab.py:401
-msgid "hour"
-msgstr "time"
-
-#: ../src/crontab.py:403
-msgid "day"
-msgstr "dag"
-
-#: ../src/crontab.py:405
-msgid "month"
-msgstr "månad"
-
-#: ../src/crontab.py:407
-msgid "weekday"
-msgstr "vekedag"
-
-#: ../src/crontabEditor.py:80
-msgid "Use advanced"
-msgstr "Bruk avansert"
-
-#: ../src/crontabEditor.py:81 ../src/crontabEditorHelper.py:87
-#: ../src/gnome-schedule.glade.h:28
-msgid "Every minute"
-msgstr "Kvart minutt"
-
-#: ../src/crontabEditor.py:82 ../src/crontabEditorHelper.py:93
-msgid "Every hour"
-msgstr "Kvar time"
-
-#: ../src/crontabEditor.py:83 ../src/crontabEditorHelper.py:99
-msgid "Every day"
-msgstr "Kvar dag"
-
-#: ../src/crontabEditor.py:84 ../src/crontabEditorHelper.py:105
-msgid "Every month"
-msgstr "Kvar månad"
-
-#: ../src/crontabEditor.py:85
-msgid "Every week"
-msgstr "Kvar veke"
-
-#: ../src/crontabEditor.py:86 ../src/lang.py:149
+#: ../src/crontab.py:391 ../src/crontabEditor.py:75 ../src/lang.py:149
 msgid "At reboot"
 msgstr ""
 
-#: ../src/crontabEditor.py:131 ../src/atEditor.py:112
+#: ../src/crontab.py:405
+msgid "minute"
+msgstr "minutt"
+
+#: ../src/crontab.py:407
+msgid "hour"
+msgstr "time"
+
+#: ../src/crontab.py:409
+msgid "day"
+msgstr "dag"
+
+#: ../src/crontab.py:411
+msgid "month"
+msgstr "månad"
+
+#: ../src/crontab.py:413
+msgid "weekday"
+msgstr "vekedag"
+
+#: ../src/crontabEditor.py:70 ../src/crontabEditorHelper.py:87
+#: ../src/gnome-schedule.glade.h:25
+msgid "Every minute"
+msgstr "Kvart minutt"
+
+#: ../src/crontabEditor.py:71 ../src/crontabEditorHelper.py:93
+#: ../src/gnome-schedule.glade.h:24
+msgid "Every hour"
+msgstr "Kvar time"
+
+#: ../src/crontabEditor.py:72 ../src/crontabEditorHelper.py:99
+msgid "Every day"
+msgstr "Kvar dag"
+
+#: ../src/crontabEditor.py:73 ../src/crontabEditorHelper.py:105
+msgid "Every month"
+msgstr "Kvar månad"
+
+#: ../src/crontabEditor.py:74
+msgid "Every week"
+msgstr "Kvar veke"
+
+#. add new task
+#: ../src/crontabEditor.py:130 ../src/atEditor.py:98
 msgid "Create a New Scheduled Task"
 msgstr "Lag ein ny jobb"
 
-#: ../src/crontabEditor.py:153 ../src/atEditor.py:151
+#: ../src/crontabEditor.py:155 ../src/atEditor.py:130
 msgid "Edit a Scheduled Task"
 msgstr "Rediger ein jobb"
 
-#: ../src/crontabEditor.py:210 ../src/atEditor.py:326
-msgid "Don't use a preset"
-msgstr "Ikkje bruk eit førhandssett oppsett"
-
 # python-format
-#: ../src/crontabEditor.py:271
+#: ../src/crontabEditor.py:213
 #, python-format
 msgid ""
 "This is an invalid record! The problem could be in the %(field)s field. "
@@ -172,7 +176,7 @@ msgstr ""
 "Dette er eit ugyldig tids uttrykk! Problemet kan vere %(field)s feltet. "
 "Grunn: %(reason)s"
 
-#: ../src/crontabEditor.py:276
+#: ../src/crontabEditor.py:218
 msgid ""
 "Your command contains one or more of the character %, this is special for "
 "cron and cannot be used with Gnome-schedule because of the format it uses to "
@@ -183,153 +187,117 @@ msgid ""
 "$HOME."
 msgstr ""
 
-#: ../src/crontabEditor.py:307 ../src/atEditor.py:296
-msgid "The preset has not been saved"
-msgstr "Førehandsoppsettet har ikkje blitt lagra"
+#: ../src/crontabEditor.py:340
+msgid ""
+"Note about working directory of executed tasks:\n"
+"\n"
+"Recurrent tasks will be run from the home directory."
+msgstr ""
 
-#: ../src/crontabEditor.py:309 ../src/atEditor.py:298
-msgid "To delete a preset, you first need to select one"
-msgstr "For å slette eit førhandsoppsett må du først velge eit"
-
-#: ../src/crontabEditor.py:319 ../src/atEditor.py:309
-msgid "To save a preset, you first have to choose a name for it"
-msgstr "For å lagre eit førehandsoppsett må du først velge eit namn for det"
-
-#: ../src/crontabEditor.py:329 ../src/atEditor.py:400
-msgid "Choose an Icon for this Scheduled Task"
-msgstr "Velg eit ikon for denne jobben"
-
-#: ../src/crontabEditor.py:393
-msgid "command"
-msgstr "kommando"
-
-#: ../src/crontabEditor.py:430 ../src/mainWindow.py:545 ../src/atEditor.py:524
-msgid "Could not display help"
-msgstr "Kunne ikkje vise hjelp"
+#: ../src/crontabEditor.py:342 ../src/mainWindow.py:592 ../src/atEditor.py:313
+msgid "Warning: Working directory of executed tasks"
+msgstr ""
 
 #: ../src/crontabEditorHelper.py:111
 msgid "Every weekday"
 msgstr "Kvar veke"
 
-#
 #: ../src/crontabEditorHelper.py:163
-msgid "Minute settings"
-msgstr "Minutt:"
+#, fuzzy
+msgid "Edit minute"
+msgstr "minutt"
 
-# python-format
-#
-#: ../src/crontabEditorHelper.py:164
-msgid "Edit Time Expression for minute"
-msgstr "Rediger tidsuttrykk for: %s"
+#: ../src/crontabEditorHelper.py:165
+#, fuzzy
+msgid "Edit hour"
+msgstr "Kvar time"
 
-#: ../src/crontabEditorHelper.py:166
-msgid "Hour settings"
-msgstr "Time innstillingar"
-
-# python-format
 #: ../src/crontabEditorHelper.py:167
-msgid "Edit Time Expression for hour"
-msgstr "Rediger tidsuttrykk for time"
+msgid "Edit day"
+msgstr ""
 
 #: ../src/crontabEditorHelper.py:169
-msgid "Day settings"
-msgstr "Dag innstillingar"
+#, fuzzy
+msgid "Edit month"
+msgstr "månad"
+
+#: ../src/crontabEditorHelper.py:171
+#, fuzzy
+msgid "Edit weekday"
+msgstr "vekedag"
 
 # python-format
-#: ../src/crontabEditorHelper.py:170
-msgid "Edit Time Expression for day"
-msgstr "Rediger tidsuttrykk for dag"
-
-#: ../src/crontabEditorHelper.py:172
-msgid "Month settings"
-msgstr "Månad innstillingar"
-
-# python-format
-#: ../src/crontabEditorHelper.py:173
-msgid "Edit Time Expression for month"
-msgstr "Rediger tidsuttrykk for månad"
-
-#: ../src/crontabEditorHelper.py:175
-msgid "Weekday settings"
-msgstr "Vekedag innstillingar"
-
-# python-format
-#: ../src/crontabEditorHelper.py:176
-msgid "Edit Time Expression for weekday"
-msgstr "Rediger tidsuttrykk for vekedag"
-
-# python-format
-#: ../src/crontabEditorHelper.py:190
+#: ../src/crontabEditorHelper.py:185
 #, python-format
 msgid "This is invalid. Reason: %s"
 msgstr "Dette er ugyldig. Grunn: %s"
 
 #. minute
-#: ../src/crontabEditorHelper.py:236 ../src/gnome-schedule.glade.h:15
+#: ../src/crontabEditorHelper.py:231 ../src/gnome-schedule.glade.h:11
 msgid "At an exact minute"
 msgstr "På eit spesifisert minutt"
 
-#: ../src/crontabEditorHelper.py:237 ../src/gnome-schedule.glade.h:42
+#: ../src/crontabEditorHelper.py:232 ../src/gnome-schedule.glade.h:39
 msgid "Minute:"
 msgstr "Minutt:"
 
 #. hour
-#: ../src/crontabEditorHelper.py:240
+#: ../src/crontabEditorHelper.py:235
 msgid "At an exact hour"
 msgstr "På ein spesifisert time"
 
-#: ../src/crontabEditorHelper.py:241
+#: ../src/crontabEditorHelper.py:236 ../src/gnome-schedule.glade.h:34
 msgid "Hour:"
 msgstr "Time:"
 
 #. day
-#: ../src/crontabEditorHelper.py:244
+#: ../src/crontabEditorHelper.py:239
 msgid "On a day"
 msgstr "På ein spesifisert dag"
 
-#: ../src/crontabEditorHelper.py:245
+#: ../src/crontabEditorHelper.py:240 ../src/gnome-schedule.glade.h:19
 msgid "Day:"
 msgstr "Dag:"
 
 #. month
-#: ../src/crontabEditorHelper.py:248
+#: ../src/crontabEditorHelper.py:243
 msgid "In a month"
 msgstr "På ein spesifisert månad"
 
-#: ../src/crontabEditorHelper.py:249
+#: ../src/crontabEditorHelper.py:244 ../src/gnome-schedule.glade.h:41
 msgid "Month:"
 msgstr "Månad:"
 
 #. weekday
-#: ../src/crontabEditorHelper.py:252
+#: ../src/crontabEditorHelper.py:247
 msgid "On a weekday"
 msgstr "På ein spesifisert vekedag"
 
-#: ../src/crontabEditorHelper.py:253
+#: ../src/crontabEditorHelper.py:248 ../src/gnome-schedule.glade.h:53
 msgid "Weekday:"
 msgstr "Vekedag:"
 
-#: ../src/crontabEditorHelper.py:258 ../src/gnome-schedule.glade.h:40
+#: ../src/crontabEditorHelper.py:253 ../src/gnome-schedule.glade.h:36
 msgid "In a step width"
 msgstr "Med eit tidsmellomrom"
 
-#: ../src/crontabEditorHelper.py:260 ../src/gnome-schedule.glade.h:43
+#: ../src/crontabEditorHelper.py:255 ../src/gnome-schedule.glade.h:40
 msgid "Minutes:"
 msgstr "Minutt:"
 
-#: ../src/crontabEditorHelper.py:262
+#: ../src/crontabEditorHelper.py:257
 msgid "Hours:"
 msgstr "Timar:"
 
-#: ../src/crontabEditorHelper.py:264
+#: ../src/crontabEditorHelper.py:259
 msgid "Days:"
 msgstr "Dagar:"
 
-#: ../src/crontabEditorHelper.py:266
+#: ../src/crontabEditorHelper.py:261
 msgid "Months:"
 msgstr "Månadar:"
 
-#: ../src/crontabEditorHelper.py:268
+#: ../src/crontabEditorHelper.py:263
 msgid "Weekdays:"
 msgstr "Vekedagar:"
 
@@ -341,7 +309,7 @@ msgstr "_Om"
 msgid "_Add a task"
 msgstr "_Legg til ein jobb"
 
-#: ../src/gnome-schedule-applet.xml.h:3 ../src/gnome-schedule.glade.h:64
+#: ../src/gnome-schedule-applet.xml.h:3
 msgid "_Help"
 msgstr "_Hjelp"
 
@@ -350,115 +318,96 @@ msgid "_Manage tasks"
 msgstr "Administrer dine system _jobbar"
 
 #: ../src/gnome-schedule.glade.h:1
+msgid "*"
+msgstr ""
+
+#: ../src/gnome-schedule.glade.h:2
+msgid "0"
+msgstr ""
+
+#: ../src/gnome-schedule.glade.h:3
+msgid ":"
+msgstr ""
+
+#: ../src/gnome-schedule.glade.h:4
 msgid "<b>Choose the user whose tasks you want to modify</b>"
 msgstr "<b>Velg brukaren som du vil endre jobbane til</b>"
 
-#: ../src/gnome-schedule.glade.h:2
-msgid "<b>Date and Time Settings</b>"
-msgstr "<b>Dato og tids innstillingar</b>"
-
-#: ../src/gnome-schedule.glade.h:3
-msgid "<b>Execution Time</b>"
-msgstr "<b>Utførings tid</b>"
-
-#: ../src/gnome-schedule.glade.h:4
-msgid "<b>General</b>"
-msgstr "<b>Generelt</b>"
-
-#
 #: ../src/gnome-schedule.glade.h:5
-msgid "<b>Minute settings</b>"
-msgstr "<b>Dato og tids innstillingar</b>"
-
-#: ../src/gnome-schedule.glade.h:6
-msgid "<b>Preview</b>"
-msgstr "<b>Førehandsvisning</b>"
-
-#: ../src/gnome-schedule.glade.h:7
 msgid "<b>Select the type of the scheduled task</b>"
 msgstr "<b>Velg typen av jobb</b>"
 
+#: ../src/gnome-schedule.glade.h:6
+#, fuzzy
+msgid "<big>Preview</big>"
+msgstr "<b>Førehandsvisning</b>"
+
+#: ../src/gnome-schedule.glade.h:7
+msgid "<big>Time &amp; Date</big>"
+msgstr ""
+
 #: ../src/gnome-schedule.glade.h:8
-msgid "<b>Task</b>"
-msgstr "<b>Jobb</b>"
-
-#: ../src/gnome-schedule.glade.h:9
-msgid "A scheduled task that will launch _recurrently"
-msgstr "Ein jobb som vil _gjenta seg"
-
-#: ../src/gnome-schedule.glade.h:10
-msgid "A scheduled task that will launch only once in the _future"
-msgstr "Ein jobb som vil skje ein gang i _framtida"
-
-#: ../src/gnome-schedule.glade.h:11
-msgid "About this application"
-msgstr "Om"
-
-#: ../src/gnome-schedule.glade.h:12
 msgid "Add a Scheduled Task"
 msgstr "Legg til ein jobb"
 
-#: ../src/gnome-schedule.glade.h:13
-msgid "Add a new scheduled task"
-msgstr "Legg til ein ny jobb"
+#: ../src/gnome-schedule.glade.h:9
+#, fuzzy
+msgid "Add as template"
+msgstr "_Legg til ein jobb"
 
-#: ../src/gnome-schedule.glade.h:14
+#: ../src/gnome-schedule.glade.h:10
 msgid "Advanced"
 msgstr "Avansert"
 
-#: ../src/gnome-schedule.glade.h:16
-msgid "Basic"
-msgstr "Enkel"
-
-#: ../src/gnome-schedule.glade.h:17
+#: ../src/gnome-schedule.glade.h:13
 msgid "Change User"
 msgstr "Velg brukar"
 
-#: ../src/gnome-schedule.glade.h:18
-msgid "Change _User"
-msgstr "Velg _brukar"
-
-#: ../src/gnome-schedule.glade.h:19
-msgid "Choose an icon for this scheduled task"
-msgstr "Velg eit ikon for denne jobben"
-
-#: ../src/gnome-schedule.glade.h:20
+#: ../src/gnome-schedule.glade.h:14
 msgid "Choose the user whose tasks you want to modify"
 msgstr "Velg brukaren som du vil endre jobbane til"
 
-#: ../src/gnome-schedule.glade.h:21
-msgid "Co_mmand:"
+#: ../src/gnome-schedule.glade.h:15
+#, fuzzy
+msgid "Command:"
 msgstr "_Kommando"
 
-#: ../src/gnome-schedule.glade.h:22
+#: ../src/gnome-schedule.glade.h:16
 msgid "Configure Scheduled Tasks"
 msgstr "Konfigurer jobbar"
 
-#: ../src/gnome-schedule.glade.h:23
-msgid "Date and Time"
-msgstr "Dato og tid"
+#: ../src/gnome-schedule.glade.h:17
+msgid "Create task from template"
+msgstr ""
 
-#: ../src/gnome-schedule.glade.h:24
+#: ../src/gnome-schedule.glade.h:18
+#, fuzzy
+msgid "Date:"
+msgstr "_Dato:"
+
+#: ../src/gnome-schedule.glade.h:20
 msgid "Delete a scheduled task"
 msgstr "Slett ein jobb"
 
-#: ../src/gnome-schedule.glade.h:25
-msgid "Delete the selected template"
-msgstr "Slett det valgte førehandsoppsettet"
-
-#: ../src/gnome-schedule.glade.h:26
-msgid "Desc_ription:"
+#: ../src/gnome-schedule.glade.h:21
+#, fuzzy
+msgid "Description:"
 msgstr "_Skildring"
 
-#: ../src/gnome-schedule.glade.h:27
+#: ../src/gnome-schedule.glade.h:22
+#, fuzzy
+msgid "Edit a periodical task"
+msgstr "Rediger ein jobb"
+
+#: ../src/gnome-schedule.glade.h:23
 msgid "Edit a scheduled task"
 msgstr "Rediger ein jobb"
 
-#: ../src/gnome-schedule.glade.h:29
+#: ../src/gnome-schedule.glade.h:26
 msgid "Execution at a specific minute, hour, day, weekday or month."
 msgstr "Utføring på eit minutt, ein time, dag, vekedag eller månad."
 
-#: ../src/gnome-schedule.glade.h:30
+#: ../src/gnome-schedule.glade.h:27
 msgid ""
 "Execution at a step width. For example every five minutes, hours, days, "
 "weekdays or months."
@@ -466,174 +415,105 @@ msgstr ""
 "Utføring i eit tidsrom på for eksempel fem minutt, timar, dagar, vekedagar "
 "eller månadar."
 
-#: ../src/gnome-schedule.glade.h:31
+#: ../src/gnome-schedule.glade.h:28
 msgid "Execution at every minute, hour, day, weekday or month."
 msgstr "Utføring kvart minutt, time, dag, vekedag, eller månad."
 
-#: ../src/gnome-schedule.glade.h:32
+#: ../src/gnome-schedule.glade.h:29
 msgid "Execution in a range."
 msgstr "Utføring i eit tidsrom."
 
-#: ../src/gnome-schedule.glade.h:33
+#: ../src/gnome-schedule.glade.h:30
 msgid "Expression:"
 msgstr "Uttrykk:"
 
-#: ../src/gnome-schedule.glade.h:34
+#: ../src/gnome-schedule.glade.h:31
 msgid "For example at 04:10 tomorrow, next week or in three days"
 msgstr "For eksempel kl 04:10 i mora, neste veke eller om tre dagar."
 
-#: ../src/gnome-schedule.glade.h:35
+#: ../src/gnome-schedule.glade.h:32
 msgid "For example every first hour of the day"
 msgstr "For eksempel den første timen av kvar dag."
 
-#: ../src/gnome-schedule.glade.h:36
-msgid "For experienced users"
-msgstr "For avanserte brukara"
-
-#: ../src/gnome-schedule.glade.h:37
+#: ../src/gnome-schedule.glade.h:33
 msgid "From:"
 msgstr "Frå:"
 
-#: ../src/gnome-schedule.glade.h:38
-msgid "Ico_n:"
-msgstr "_Ikon"
-
-#: ../src/gnome-schedule.glade.h:39
+#: ../src/gnome-schedule.glade.h:35
 msgid "In a range"
 msgstr "I eit tidsrom"
 
-#: ../src/gnome-schedule.glade.h:41
-msgid "Mi_nutes:"
-msgstr "Mi_nutt"
+#: ../src/gnome-schedule.glade.h:37
+#, fuzzy
+msgid "Launch only once in the _future"
+msgstr "Ein jobb som vil skje ein gang i _framtida"
 
-#: ../src/gnome-schedule.glade.h:44
-msgid "No out_put"
-msgstr "Ingen _utdata"
+#: ../src/gnome-schedule.glade.h:38
+msgid "Launches _recurrently"
+msgstr ""
 
-#: ../src/gnome-schedule.glade.h:45
+#: ../src/gnome-schedule.glade.h:42
 msgid "Other"
 msgstr "Anna"
 
-#: ../src/gnome-schedule.glade.h:46
-msgid ""
-"Quit the application. This will not stop the system scheduling. It will, "
-"however, quit this system schedule maintenance tool."
+#: ../src/gnome-schedule.glade.h:43
+msgid "Run task"
 msgstr ""
-"Avslutt programmet. Det vil ikkje stoppe eventuelle jobbar, berre dette "
-"verktyet."
 
-#: ../src/gnome-schedule.glade.h:47
-msgid "Rec_urrence:"
-msgstr "_Gjentaking:"
-
-#: ../src/gnome-schedule.glade.h:48
-msgid "Save the current information as a template"
-msgstr "Lagre den noverande informasjonen som ei førhandsinnstilling"
-
-#: ../src/gnome-schedule.glade.h:49
+#: ../src/gnome-schedule.glade.h:44
 msgid "Scheduled and active tasks"
 msgstr "Framtidige og aktive jobbar"
 
-#: ../src/gnome-schedule.glade.h:50
-msgid "Scri_pt:"
-msgstr "Skri_pt:"
-
-#: ../src/gnome-schedule.glade.h:51
+#: ../src/gnome-schedule.glade.h:45
 msgid "See \"man 5 crontab\" for information about the crontab format."
 msgstr "Sjå \"man 5 crontab\" for meir informasjon om crontab formatet."
 
-#: ../src/gnome-schedule.glade.h:52
-msgid "Select..."
-msgstr "Velg..."
-
-#: ../src/gnome-schedule.glade.h:53
+#: ../src/gnome-schedule.glade.h:46
 msgid "Show help"
 msgstr "Vis hjelp"
 
-#: ../src/gnome-schedule.glade.h:54
-msgid "Show the manual"
-msgstr "Vis manualen"
+#: ../src/gnome-schedule.glade.h:47
+#, fuzzy
+msgid "Task describtion:"
+msgstr "_Skildring"
 
-#: ../src/gnome-schedule.glade.h:55
+#: ../src/gnome-schedule.glade.h:48
+#, fuzzy
+msgid "Task:"
+msgstr "_Jobb"
+
+#: ../src/gnome-schedule.glade.h:49
+msgid "Time & Date"
+msgstr ""
+
+#: ../src/gnome-schedule.glade.h:50
 msgid "Time expression help"
 msgstr "Tidsuttrykk hjelp"
 
-#: ../src/gnome-schedule.glade.h:56
+#: ../src/gnome-schedule.glade.h:51
+#, fuzzy
+msgid "Time:"
+msgstr "Tittel"
+
+#: ../src/gnome-schedule.glade.h:52
 msgid "To:"
 msgstr "Til:"
 
-#: ../src/gnome-schedule.glade.h:57
-msgid ""
-"Tomorrow\n"
-"Next week"
+#: ../src/gnome-schedule.glade.h:54
+msgid "_Calendar"
 msgstr ""
-"I morgon\n"
-"Neste veke"
 
-#: ../src/gnome-schedule.glade.h:59
-msgid ""
-"When selected, no output will be generated. When scheduled tasks in the "
-"crontab do have output and this option is not checked, the output will by "
-"default be send to the UNIX mailbox of the user."
+#: ../src/gnome-schedule.glade.h:55
+msgid "_No output (>/dev/null 2>&1)"
 msgstr ""
-"Når valgt, vil ingen utdata bli laga. Når jobbar i crontab har utdata og "
-"dette valget ikkje er gjort vil du få utdata i UNIX mailboxen til brukaren."
 
-#: ../src/gnome-schedule.glade.h:60
-msgid "_About"
-msgstr "_Om"
-
-#: ../src/gnome-schedule.glade.h:61
-msgid "_Advanced"
-msgstr "_Avansert"
-
-#: ../src/gnome-schedule.glade.h:62
-msgid "_Date:"
-msgstr "_Dato:"
-
-#: ../src/gnome-schedule.glade.h:63
-msgid "_Days of month:"
-msgstr "_Dagar i månaden:"
-
-#: ../src/gnome-schedule.glade.h:65
-msgid "_Hour:"
-msgstr "_Time:"
-
-#: ../src/gnome-schedule.glade.h:66
-msgid "_Hours:"
-msgstr "_Timar:"
-
-#: ../src/gnome-schedule.glade.h:67
-msgid "_Manual"
-msgstr "_Manual"
-
-#: ../src/gnome-schedule.glade.h:68
-msgid "_Minute:"
-msgstr "_Minutt:"
-
-#: ../src/gnome-schedule.glade.h:69
-msgid "_Months:"
-msgstr "_Månadar:"
-
-#: ../src/gnome-schedule.glade.h:70
-msgid "_Task"
-msgstr "_Jobb"
-
-#: ../src/gnome-schedule.glade.h:71
-msgid "_Template:"
-msgstr "_Førhandsoppsett:"
-
-#: ../src/gnome-schedule.glade.h:72
+#: ../src/gnome-schedule.glade.h:56
 msgid "_User:"
 msgstr "_Brukar:"
 
-#: ../src/gnome-schedule.glade.h:73
-msgid "_View"
-msgstr "_Utsjånad"
-
-#: ../src/gnome-schedule.glade.h:74
-msgid "_Weekdays:"
-msgstr "_Vekedagar:"
+#: ../src/gnome-schedule.glade.h:57
+msgid "ls -l"
+msgstr ""
 
 #: ../src/gnome-schedule.py:62 ../src/scheduleapplet.py:63
 msgid ""
@@ -790,151 +670,158 @@ msgstr "Kvart år på %(date)s og %(time)s"
 
 # python-format
 #: ../src/lang.py:216
-#, python-format
-msgid "On every %(weekday)s at every full hour"
+#, fuzzy, python-format
+msgid "On every weekday: %(weekday)s at every full hour"
 msgstr "På kvar %(weekday)s, kvar fulle time"
 
 # python-format
 #: ../src/lang.py:218
-#, python-format
-msgid "On every %(weekday)s at every minute"
+#, fuzzy, python-format
+msgid "On every weekday: %(weekday)s at every minute"
 msgstr "På kvar %(weekday)s på kvart minutt"
 
 # python-format
 #: ../src/lang.py:220
-#, python-format
-msgid "On every %(weekday)s at minute %(minute)s of every hour"
+#, fuzzy, python-format
+msgid "On every weekday: %(weekday)s at minute %(minute)s of every hour"
 msgstr "På kvar %(weekday)s på minutt: %(minute)s av kvar time"
 
 # python-format
 #: ../src/lang.py:222
-#, python-format
+#, fuzzy, python-format
 msgid ""
-"On every %(weekday)s at every minute between %(time_from)s and %(time_to)s"
+"On every weekday: %(weekday)s at every minute between %(time_from)s and %"
+"(time_to)s"
 msgstr ""
 "På kvar %(weekday)s på kvart minutt mellom %(time_from)s og %(time_to)s"
 
 # python-format
 #: ../src/lang.py:224
-#, python-format
-msgid "On every %(weekday)s at %(time)s"
+#, fuzzy, python-format
+msgid "On every weekday: %(weekday)s at %(time)s"
 msgstr "På kvar %(weekday)s på %(time)s"
 
 # python-format
 #: ../src/lang.py:229
-#, python-format
+#, fuzzy, python-format
 msgid ""
-"On day %(monthday)s of every month and every %(weekday)s at every full hour"
+"On day %(monthday)s of every month and every weekday: %(weekday)s at every "
+"full hour"
 msgstr "På %(monthday)s av kvar månad og kvar %(weekday)s, kvar fulle time"
 
 # python-format
 #: ../src/lang.py:231
-#, python-format
+#, fuzzy, python-format
 msgid ""
-"On day %(monthday)s of every month and every %(weekday)s at every minute"
+"On day %(monthday)s of every month and every weekday: %(weekday)s at every "
+"minute"
 msgstr "På %(monthday)s av kvar månad og kvar %(weekday)s kvart minutt"
 
 # python-format
 #: ../src/lang.py:233
-#, python-format
+#, fuzzy, python-format
 msgid ""
-"On day %(monthday)s of every month and every %(weekday)s at minute %(minute)"
-"s of every hour"
+"On day %(monthday)s of every month and every weekday: %(weekday)s at minute %"
+"(minute)s of every hour"
 msgstr ""
 "På %(monthday)s av kvar månad og kvar %(weekday)s på minutt: %(minute)s av "
 "kvar time"
 
 # python-format
 #: ../src/lang.py:235
-#, python-format
+#, fuzzy, python-format
 msgid ""
-"On day %(monthday)s of every month and every %(weekday)s at every minute "
-"between %(time_from)s and %(time_to)s"
+"On day %(monthday)s of every month and every weekday: %(weekday)s at every "
+"minute between %(time_from)s and %(time_to)s"
 msgstr ""
 "På dag %(monthday)s av kvar månad og kvar %(weekday)s på kvart minuttmellom %"
 "(time_from)s og %(time_to)s"
 
 # python-format
 #: ../src/lang.py:237
-#, python-format
-msgid "On day %(monthday)s of every month and every %(weekday)s at %(time)s"
+#, fuzzy, python-format
+msgid ""
+"On day %(monthday)s of every month and every weekday: %(weekday)s at %(time)s"
 msgstr "På %(monthday)s av kvar månad og kvar %(weekday)s på %(time)s"
 
 # python-format
 #: ../src/lang.py:242
-#, python-format
-msgid "On every %(weekday)s in %(month)s at every full hour"
+#, fuzzy, python-format
+msgid "On every weekday: %(weekday)s in %(month)s at every full hour"
 msgstr "På kvar %(weekday)s i %(month)s på kvar fulle time"
 
 # python-format
 #: ../src/lang.py:244
-#, python-format
-msgid "On every %(weekday)s in %(month)s at every minute"
+#, fuzzy, python-format
+msgid "On every weekday: %(weekday)s in %(month)s at every minute"
 msgstr "På kvar %(weekday)s i %(month)s kvart minutt"
 
 # python-format
 #: ../src/lang.py:246
-#, python-format
-msgid "On every %(weekday)s in %(month)s at minute %(minute)s of every hour"
+#, fuzzy, python-format
+msgid ""
+"On every weekday: %(weekday)s in %(month)s at minute %(minute)s of every hour"
 msgstr "På kvar %(weekday)s i %(month)s på minutt: %(minute)s av kvar time"
 
 # python-format
 #: ../src/lang.py:248
-#, python-format
+#, fuzzy, python-format
 msgid ""
-"On every %(weekday)s in %(month)s at every minute between %(time_from)s and %"
-"(time_to)s"
+"On every weekday: %(weekday)s in %(month)s at every minute between %"
+"(time_from)s and %(time_to)s"
 msgstr ""
 "På kvar %(weekday)s i %(month)s på kvart minutt mellom %(time_from)s og %"
 "(time_to)s"
 
 # python-format
 #: ../src/lang.py:250
-#, python-format
-msgid "On every %(weekday)s in %(month)s at %(time)s"
+#, fuzzy, python-format
+msgid "On every weekday: %(weekday)s in %(month)s at %(time)s"
 msgstr "På kvar %(weekday)s i %(month)s på %(time)s"
 
 # python-format
 #: ../src/lang.py:255
-#, python-format
+#, fuzzy, python-format
 msgid ""
-"On every %(weekday)s in %(month)s and on %(date)s every year at every full "
-"hour"
+"On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
+"every full hour"
 msgstr ""
 "På kvar %(weekday)s i %(month)s og på %(date)s kvart år, kvar fulle time"
 
 # python-format
 #: ../src/lang.py:257
-#, python-format
+#, fuzzy, python-format
 msgid ""
-"On every %(weekday)s in %(month)s and on %(date)s every year at every minute"
+"On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
+"every minute"
 msgstr "På kvar %(weekday)s i %(month)s og på %(date)s kvart år, kvart minutt"
 
 # python-format
 #: ../src/lang.py:259
-#, python-format
+#, fuzzy, python-format
 msgid ""
-"On every %(weekday)s in %(month)s and on %(date)s every year at minute %"
-"(minute)s of every hour"
+"On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
+"minute %(minute)s of every hour"
 msgstr ""
 "På kvar %(weekday)s i %(month)s og på %(date)s kvart år, kvart minutt: %"
 "(minute)s av kvar time"
 
 # python-format
 #: ../src/lang.py:261
-#, python-format
+#, fuzzy, python-format
 msgid ""
-"On every %(weekday)s in %(month)s and on %(date)s every year at every minute "
-"between %(time_from)s and %(time_to)s"
+"On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
+"every minute between %(time_from)s and %(time_to)s"
 msgstr ""
 "På kvar %(weekday)s i %(month)s og på %(date)s kvart år, kvart minutt mellom "
 "%(time_from)s og %(time_to)s"
 
 # python-format
 #: ../src/lang.py:263
-#, python-format
+#, fuzzy, python-format
 msgid ""
-"On every %(weekday)s in %(month)s and on %(date)s every year at %(time)s"
+"On every weekday: %(weekday)s in %(month)s and on %(date)s every year at %"
+"(time)s"
 msgstr "På kvar %(weekday)s i %(month)s og på %(date)s kvart år %(time)s"
 
 #: ../src/lang.py:271
@@ -995,64 +882,112 @@ msgstr "vekedag: %s"
 msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 msgstr "På %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 
+#: ../src/mainWindow.py:109
+#, fuzzy
+msgid "Recurrent task"
+msgstr "Gjentakande"
+
+#: ../src/mainWindow.py:117
+msgid "One-time task"
+msgstr ""
+
+#: ../src/mainWindow.py:132
+#, fuzzy
+msgid "Add a new task"
+msgstr "_Legg til ein jobb"
+
 # python-format
-#: ../src/mainWindow.py:211 ../src/mainWindow.py:289
+#: ../src/mainWindow.py:256 ../src/mainWindow.py:352
 #, python-format
 msgid "Editing user: %s"
 msgstr "Redigerar brukar: %s"
 
-#: ../src/mainWindow.py:263 ../src/scheduleapplet.py:115
+#: ../src/mainWindow.py:307 ../src/mainWindow.py:323
+#: ../src/scheduleapplet.py:115
 msgid "ERROR: Could not load icon"
 msgstr "FEIL: Kunne ikkje laste ikon"
 
-#: ../src/mainWindow.py:273
+#: ../src/mainWindow.py:333
 msgid "ERROR: Could not load glade file"
 msgstr "FEIL: Kunne ikkje laste glade-fil"
 
-#: ../src/mainWindow.py:324
-msgid "Icon"
-msgstr "Ikon"
+#: ../src/mainWindow.py:387
+#, fuzzy
+msgid "Task"
+msgstr "_Jobb"
 
-#: ../src/mainWindow.py:329 ../src/mainWindow.py:362
-msgid "Type"
-msgstr "Type"
-
-#: ../src/mainWindow.py:333 ../src/mainWindow.py:358
+#: ../src/mainWindow.py:400 ../src/mainWindow.py:426
 msgid "Description"
 msgstr "_Skildring"
 
-#: ../src/mainWindow.py:337 ../src/mainWindow.py:349
-msgid "Date and Time Settings"
-msgstr "Dato og tids innstillingar"
+#: ../src/mainWindow.py:404 ../src/mainWindow.py:417
+msgid "Date and Time"
+msgstr "Dato og tid"
 
-#: ../src/mainWindow.py:341 ../src/mainWindow.py:353
-msgid "Preview"
-msgstr "Førehandsvisning"
+#: ../src/mainWindow.py:408 ../src/mainWindow.py:421
+msgid "Command preview"
+msgstr ""
 
-#: ../src/mainWindow.py:397 ../src/mainWindow.py:460
+#. print ex
+#: ../src/mainWindow.py:471 ../src/mainWindow.py:534
 msgid "Please select a task"
 msgstr "Velg ein jobb"
 
-#: ../src/mainWindow.py:404
+#: ../src/mainWindow.py:478
 msgid "Do you want to delete this task?"
 msgstr "Er du sikker på at du vil slette denne jobben?"
 
-#: ../src/mainWindow.py:508
+#: ../src/mainWindow.py:579
+msgid ""
+"Are you sure you want to run this task now?\n"
+"\n"
+"This is used to preview the task and initiates a one-time run, this does not "
+"affect the normal scheduled run times."
+msgstr ""
+
+#: ../src/mainWindow.py:581
+#, fuzzy
+msgid "Are you sure you want to run this task?"
+msgstr "Er du sikker på at du vil slette denne jobben?"
+
+#: ../src/mainWindow.py:590
+msgid ""
+"Note about working directory of executed tasks:\n"
+"\n"
+"Recurrent tasks will be run from the home directory, one-time tasks from the "
+"directory where Gnome schedule was run from at the time of task creation "
+"(normally the home directory)."
+msgstr ""
+
+#: ../src/mainWindow.py:645
+msgid "Press ENTER to continue and close this window."
+msgstr ""
+
+#: ../src/mainWindow.py:653
+#, fuzzy
+msgid "Please select a task!"
+msgstr "Velg ein jobb"
+
+#: ../src/mainWindow.py:661
 msgid "About Gnome Schedule"
 msgstr "Om Gnome Schedule"
 
-#: ../src/mainWindow.py:509
+#: ../src/mainWindow.py:662
 msgid "Gnome Schedule"
 msgstr "Gnome Schedule"
 
-#: ../src/mainWindow.py:511
+#: ../src/mainWindow.py:664
 #, fuzzy
 msgid "Copyright (c) 2004-2007 Gaute Hope."
 msgstr "Kopieringsrett (c) 2004-2006 Gaute Hope."
 
-#: ../src/mainWindow.py:524
+#: ../src/mainWindow.py:677
 msgid "translator-credits"
 msgstr "Gaute Hope <eg@gaute.vetsj.com>"
+
+#: ../src/mainWindow.py:698
+msgid "Could not display help"
+msgstr "Kunne ikkje vise hjelp"
 
 #: ../src/scheduleapplet.py:131
 msgid "ERROR: Could not load menu xml file"
@@ -1062,17 +997,238 @@ msgstr "FEIL: Kunne ikkje laste meny xml-fil"
 msgid "No such user"
 msgstr "Ingen brukar med dette namnet"
 
+#: ../src/atEditor.py:242
+msgid ""
+"In one or both of the fields hour and minute there was entered a letter, or "
+"a number out of range. Remember an hour only has 60 minutes and a day only "
+"24 hours."
+msgstr ""
+
 # python-format
-#: ../src/atEditor.py:536
+#: ../src/atEditor.py:299
 #, python-format
 msgid "This is an invalid record! The problem could be: %s"
 msgstr "Dette er eit ugyldig tidsuttrykk! Problemet kan vere: %s"
 
+#: ../src/atEditor.py:311
+msgid ""
+"Note about working directory of executed tasks:\n"
+"\n"
+"One-time tasks will be run from the directory where Gnome schedule is run "
+"from (normally the home directory)."
+msgstr ""
+
+#: ../src/thoughicon.py:70
+msgid "ICON: Using dummy icon"
+msgstr ""
+
+#: ../src/thoughicon.py:73
+#, python-format
+msgid "ICON: Doesn't handle absolute paths: '%s'"
+msgstr ""
+
+#: ../src/thoughicon.py:82
+#, python-format
+msgid "ICON: Icon '%s' is not in theme"
+msgstr ""
+
+#: ../src/thoughicon.py:94
+#, python-format
+msgid "ICON: Got badly sized icon for %s"
+msgstr ""
+
+#~ msgid "Schedule"
+#~ msgstr "Gnome Schedule"
+
+#~ msgid "Use advanced"
+#~ msgstr "Bruk avansert"
+
+#~ msgid "Don't use a preset"
+#~ msgstr "Ikkje bruk eit førhandssett oppsett"
+
+#~ msgid "The preset has not been saved"
+#~ msgstr "Førehandsoppsettet har ikkje blitt lagra"
+
+#~ msgid "To delete a preset, you first need to select one"
+#~ msgstr "For å slette eit førhandsoppsett må du først velge eit"
+
+#~ msgid "To save a preset, you first have to choose a name for it"
+#~ msgstr "For å lagre eit førehandsoppsett må du først velge eit namn for det"
+
+#~ msgid "Choose an Icon for this Scheduled Task"
+#~ msgstr "Velg eit ikon for denne jobben"
+
+#~ msgid "command"
+#~ msgstr "kommando"
+
+#
+#~ msgid "Minute settings"
+#~ msgstr "Minutt:"
+
+# python-format
+#
+#~ msgid "Edit Time Expression for minute"
+#~ msgstr "Rediger tidsuttrykk for: %s"
+
+#~ msgid "Hour settings"
+#~ msgstr "Time innstillingar"
+
+# python-format
+#~ msgid "Edit Time Expression for hour"
+#~ msgstr "Rediger tidsuttrykk for time"
+
+#~ msgid "Day settings"
+#~ msgstr "Dag innstillingar"
+
+# python-format
+#~ msgid "Edit Time Expression for day"
+#~ msgstr "Rediger tidsuttrykk for dag"
+
+#~ msgid "Month settings"
+#~ msgstr "Månad innstillingar"
+
+# python-format
+#~ msgid "Edit Time Expression for month"
+#~ msgstr "Rediger tidsuttrykk for månad"
+
+#~ msgid "Weekday settings"
+#~ msgstr "Vekedag innstillingar"
+
+# python-format
+#~ msgid "Edit Time Expression for weekday"
+#~ msgstr "Rediger tidsuttrykk for vekedag"
+
+#~ msgid "<b>Date and Time Settings</b>"
+#~ msgstr "<b>Dato og tids innstillingar</b>"
+
+#~ msgid "<b>Execution Time</b>"
+#~ msgstr "<b>Utførings tid</b>"
+
+#~ msgid "<b>General</b>"
+#~ msgstr "<b>Generelt</b>"
+
+#
+#~ msgid "<b>Minute settings</b>"
+#~ msgstr "<b>Dato og tids innstillingar</b>"
+
+#~ msgid "<b>Task</b>"
+#~ msgstr "<b>Jobb</b>"
+
+#~ msgid "A scheduled task that will launch _recurrently"
+#~ msgstr "Ein jobb som vil _gjenta seg"
+
+#~ msgid "About this application"
+#~ msgstr "Om"
+
+#~ msgid "Add a new scheduled task"
+#~ msgstr "Legg til ein ny jobb"
+
+#~ msgid "Change _User"
+#~ msgstr "Velg _brukar"
+
+#~ msgid "Choose an icon for this scheduled task"
+#~ msgstr "Velg eit ikon for denne jobben"
+
+#~ msgid "Delete the selected template"
+#~ msgstr "Slett det valgte førehandsoppsettet"
+
+#~ msgid "For experienced users"
+#~ msgstr "For avanserte brukara"
+
+#~ msgid "Ico_n:"
+#~ msgstr "_Ikon"
+
+#~ msgid "Mi_nutes:"
+#~ msgstr "Mi_nutt"
+
+#~ msgid "No out_put"
+#~ msgstr "Ingen _utdata"
+
+#~ msgid ""
+#~ "Quit the application. This will not stop the system scheduling. It will, "
+#~ "however, quit this system schedule maintenance tool."
+#~ msgstr ""
+#~ "Avslutt programmet. Det vil ikkje stoppe eventuelle jobbar, berre dette "
+#~ "verktyet."
+
+#~ msgid "Rec_urrence:"
+#~ msgstr "_Gjentaking:"
+
+#~ msgid "Save the current information as a template"
+#~ msgstr "Lagre den noverande informasjonen som ei førhandsinnstilling"
+
+#~ msgid "Scri_pt:"
+#~ msgstr "Skri_pt:"
+
+#~ msgid "Select..."
+#~ msgstr "Velg..."
+
+#~ msgid "Show the manual"
+#~ msgstr "Vis manualen"
+
+#~ msgid ""
+#~ "Tomorrow\n"
+#~ "Next week"
+#~ msgstr ""
+#~ "I morgon\n"
+#~ "Neste veke"
+
+#~ msgid ""
+#~ "When selected, no output will be generated. When scheduled tasks in the "
+#~ "crontab do have output and this option is not checked, the output will by "
+#~ "default be send to the UNIX mailbox of the user."
+#~ msgstr ""
+#~ "Når valgt, vil ingen utdata bli laga. Når jobbar i crontab har utdata og "
+#~ "dette valget ikkje er gjort vil du få utdata i UNIX mailboxen til "
+#~ "brukaren."
+
+#~ msgid "_About"
+#~ msgstr "_Om"
+
+#~ msgid "_Advanced"
+#~ msgstr "_Avansert"
+
+#~ msgid "_Days of month:"
+#~ msgstr "_Dagar i månaden:"
+
+#~ msgid "_Hour:"
+#~ msgstr "_Time:"
+
+#~ msgid "_Hours:"
+#~ msgstr "_Timar:"
+
+#~ msgid "_Manual"
+#~ msgstr "_Manual"
+
+#~ msgid "_Minute:"
+#~ msgstr "_Minutt:"
+
+#~ msgid "_Months:"
+#~ msgstr "_Månadar:"
+
+#~ msgid "_Template:"
+#~ msgstr "_Førhandsoppsett:"
+
+#~ msgid "_View"
+#~ msgstr "_Utsjånad"
+
+#~ msgid "_Weekdays:"
+#~ msgstr "_Vekedagar:"
+
+#~ msgid "Icon"
+#~ msgstr "Ikon"
+
+#~ msgid "Type"
+#~ msgstr "Type"
+
+#~ msgid "Date and Time Settings"
+#~ msgstr "Dato og tids innstillingar"
+
+#~ msgid "Preview"
+#~ msgstr "Førehandsvisning"
+
 #~ msgid "ERROR: Failed to parse crontab record"
 #~ msgstr "FEIL: Klarte ikkje å lese crontab linja"
-
-#~ msgid "Title"
-#~ msgstr "Tittel"
 
 # python-format
 #~ msgid "Must be between %s and %s"
