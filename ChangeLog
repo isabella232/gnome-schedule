@@ -5,6 +5,7 @@
 	* updated oc translation from trunk
 	* removed old .cvsignore files, hope i don't need them
 	* removed Changelog.cvs
+	* removed README.cvs, we have a HACKING file that says the same
 	
 2007-11-19  Gaute Hope  <eg@gaute.vetsj.com>
 
