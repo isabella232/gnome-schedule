@@ -120,12 +120,12 @@ class AtEditor:
 		self.NOACTION = False
 
 	def showedit (self, record, job_id, iter, mode):
-		print "showedit"
+		#print "showedit"
 		self.editing = True
 		self.NOACTION = True
 		self.job_id = job_id
 		self.date = self.ParentClass.treemodel.get_value(iter, 9)
-		print "got date: " + self.date
+		#print "got date: " + self.date
 		self.time = self.ParentClass.treemodel.get_value(iter, 12)
 		self.title = self.ParentClass.treemodel.get_value(iter, 0)
 		self.icon = self.ParentClass.treemodel.get_value(iter, 8) 
@@ -138,27 +138,27 @@ class AtEditor:
 			self.command = self.command[1:]
 			i = self.command.find ('\n', 0)
 			
-		print "date: ", self.date, "time: ", self.time
+		#print "date: ", self.date, "time: ", self.time
 		#parse 	
 		(hour, minute, day, month, year) = self.__parse_time__(self.time, self.date)
-		print "runat"
+		#print "runat"
 		self.runat = self.time + " " + day + "." + month + "." + year
-		print "cal sel month"
+		#print "cal sel month"
 		self.calendar.select_month(int(month) - 1, int(year))
 		self.calendar.select_day(int(day))
 		self.hour_spinbutton.set_value(int(hour))
 		self.minute_spinbutton.set_value(int(minute))
 		self.widget.set_title(_("Edit a Scheduled Task"))
-		print "update textboxes"
+		#print "update textboxes"
 		self.__update_textboxes__ ()
 		self.parentiter = iter
 		self.widget.set_transient_for(self.ParentClass.widget)
 		self.widget.set_position(gtk.WIN_POS_CENTER_ON_PARENT)
 		self.widget.show ()
-		print "reload templates"
+		#print "reload templates"
 		self.__reload_templates__ ()
 		self.NOACTION = False
-		print "showedit done"
+		#print "showedit done"
 	def on_worded_label_event (self, *args):
 		#TODO highlight on mouseover
 		pass

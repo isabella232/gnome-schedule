@@ -1,3 +1,9 @@
+2007-11-20  Gaute Hope  <eg@gaute.vetsj.com>
+
+	* Fixed some confusing expressions for weekday easy translations
+	* removed editor.py and support.py
+	* removed alot of debug messages
+	
 2007-11-10  Gaute Hope  <eg@gaute.vetsj.com>
 
 	* Changed version number to 1.2.0

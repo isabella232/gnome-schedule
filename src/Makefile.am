@@ -14,9 +14,7 @@ gnomeschedule_PYTHON = \
 	addWindow.py \
 	atEditor.py \
 	preset.py \
-	scheduleapplet.py \
-	editor.py \
-	support.py
+	scheduleapplet.py 
 	
 
 uidir = $(datadir)/gnome-schedule
