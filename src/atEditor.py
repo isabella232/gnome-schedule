@@ -187,6 +187,7 @@ class AtEditor:
 	def __destroy_calendar__ (self):
 		print "destroy calendar"
 		self.cal_window.hide_all ()
+		return True
 
 	def on_cal_day_selected (self, *args):
 		print "day selected"
@@ -368,6 +369,7 @@ class AtEditor:
 		print "button cancel"
 		self.__destroy_calendar__ ()
 		self.widget.hide()
+		return True
 		
 
 	def __WrongRecordDialog__ (self, x):
