@@ -65,9 +65,8 @@ class AddWindow:
 		
 		self.button_at.add (self.ahbox)
 		self.button_at.show_all ()
-		
-		
-		
+
+
 	def ShowAddWindow (self):
 		self.widget.set_transient_for(self.ParentClass.widget)
 		self.widget.set_position(gtk.WIN_POS_CENTER_ON_PARENT)
