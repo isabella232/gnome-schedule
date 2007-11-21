@@ -80,6 +80,10 @@ class AtEditor:
 		self.xml.signal_connect ("on_cal_button_toggled", self.on_cal_button_toggled)
 		
 		self.cal_loaded = False
+		self.x, self.y = self.widget.get_position ()
+		self.height, self.width = self.widget.get_size ()
+		
+		self.xml.signal_connect ("on_at_editor_size_changed", self.on_at_editor_size_changed)
 		
 		self.xml.signal_connect("on_at_button_cancel_clicked", self.on_button_cancel_clicked)
 		self.xml.signal_connect("on_at_button_save_clicked", self.on_button_save_clicked)
@@ -154,15 +158,14 @@ class AtEditor:
 		self.__hide_calendar__ ()
 		
 	def on_at_editor_size_changed (self, *args):
-		pass
-		"""
 		if self.cal_button.get_active ():
 			x, y = self.widget.get_position ()
-			button_rect = self.cal_button.get_allocation ()
-			x = x + button_rect.x
-			y = y + button_rect.y + button_rect.height
-			self.cal_window.move (x, y)
-		"""
+			height, width = self.widget.get_size ()
+			if ((x != self.x) or (y != self.y) or (height != self.height) or (width != self.width)):
+				self.__hide_calendar__ ()
+				
+		
+		
 			
 	def on_cal_button_toggled (self, *args):
 		if self.cal_button.get_active ():
@@ -174,7 +177,7 @@ class AtEditor:
 	def __setup_calendar__ (self):
 		if self.cal_loaded == False:
 			self.xml.signal_connect ("on_cal_lost_focus", self.on_cal_lost_focus)
-			self.xml.signal_connect ("on_cal_window_destroy", self.__destroy_calendar__)
+			self.xml.signal_connect ("on_cal_window_destroy", self.__destroy_calendar__) # its actually not destroyed, but deleted
 		
 			self.xml.signal_connect ("on_cal_day_selected_dc", self.on_cal_day_selected_dc)
 			self.xml.signal_connect ("on_cal_day_selected", self.on_cal_day_selected)
@@ -185,7 +188,6 @@ class AtEditor:
 			self.cal_loaded = True
 		
 	def __destroy_calendar__ (self):
-		print "destroy calendar"
 		self.cal_window.hide_all ()
 		return True
 
@@ -203,6 +205,8 @@ class AtEditor:
 		y = y + button_rect.y + button_rect.height
 		self.cal_window.move (x, y)
 		self.widget.set_modal (False)
+		self.x, self.y = self.widget.get_position ()
+		self.height, self.width = self.widget.get_size ()
 		self.cal_window.show_all ()
 		
 	def __hide_calendar__ (self):
@@ -366,7 +370,6 @@ class AtEditor:
 
 
 	def on_button_cancel_clicked (self, *args):
-		print "button cancel"
 		self.__destroy_calendar__ ()
 		self.widget.hide()
 		return True

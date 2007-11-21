@@ -1396,9 +1396,7 @@
     <property name="decorated">False</property>
     <property name="deletable">False</property>
     <signal name="focus_out_event" handler="on_cal_lost_focus"/>
-    <signal name="destroy" handler="on_cal_window_destroy"/>
     <signal name="delete_event" handler="on_cal_window_destroy"/>
-    <signal name="destroy_event" handler="on_cal_window_destroy"/>
     <child>
       <widget class="GtkCalendar" id="calendar">
         <property name="visible">True</property>
@@ -1427,16 +1425,13 @@
     <signal name="check_resize" handler="on_cal_lost_focus"/>
     <signal name="frame_event" handler="on_cal_lost_focus"/>
     <signal name="button_press_event" handler="on_cal_lost_focus"/>
-    <signal name="close" handler="on_at_editor_delete"/>
     <signal name="screen_changed" handler="on_cal_lost_focus"/>
-    <signal name="destroy" handler="on_at_editor_delete"/>
+    <signal name="event" handler="on_at_editor_size_changed"/>
     <signal name="activate_focus" handler="on_cal_lost_focus"/>
     <signal name="set_focus_child" handler="on_cal_lost_focus"/>
     <signal name="move_focus" handler="on_cal_lost_focus"/>
     <signal name="delete_event" handler="on_at_editor_delete"/>
-    <signal name="destroy_event" handler="on_at_editor_delete"/>
     <signal name="set_focus" handler="on_cal_lost_focus"/>
-    <signal name="response" handler="on_at_editor_delete"/>
     <child internal-child="vbox">
       <widget class="GtkVBox" id="at_dialog_vbox">
         <property name="visible">True</property>
