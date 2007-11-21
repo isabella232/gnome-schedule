@@ -1,22 +1,19 @@
 check bug: 419392, http://bugzilla.gnome.org/show_bug.cgi?id=419392
 
-* Update mainwindow:
-	- no menu. ok
-	- statusbar. ok, only visible when used
-	- treeview:
-		easier easy-view
-		icon and type in one row. ok
-		one icon for each type, and no other self specified.
-		tweak the advanced aswell a bit
+Do we need templates?
 
-* crontab add/edit
-	- a preview of the time expression expressed on the easy form used in the treeview.
-	- better way of handeling special expressions like @reboot and @tomorrow
-	- remove icon selector
+Templates:
+        - A template manager with a list of templates. Where you:
+          a) Can delete templates
+          b) Can edit templates
+          c) Get explained that you need to add templates through the editors
+          d) Can add tasks based on template
 
-* at add/edit
-	- popup calendar
-	- wont support: tomorrow, next week, ...
+        - A New from Template option where you:
+          a) Get a list of templates, the list here and in the template manager should look about the same
+          b) The list has an icon corresponding to the type it belongs to
+          c) It show a preview like in the main window
+          d) Includes time expressions and the rest of the relevant information stored
 
-
-* for both crontab and at editors check the bug report and examples given there. 
+        - The editors need support for editing a template
+          a) They need a third output option where they replace the existing template

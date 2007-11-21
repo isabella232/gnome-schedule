@@ -2,7 +2,7 @@ TODO
 ----
 
 Development:
- Unassigned unstable (need a new branch and/or will not be 
+ Wishlist (need a new branch and/or will not be 
  included in the next release)
   * Show the next-run time for crontab records
   * Support for mail direction in both cron and at
@@ -13,9 +13,6 @@ Development:
   * "gnome-schedule --addtask task user" (will add a task for a user) (console only) 
     http://docs.python.org/lib/module-getopt.html
     
-    
-  * Include a default icon for at, and a default icon for crontab
-    and also make it the default-selected icon
     
   * bug 325271, frank arnold: "ally - scan all dialogs for missing accelerators"
 
