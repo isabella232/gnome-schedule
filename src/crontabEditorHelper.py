@@ -1,6 +1,6 @@
 # addWindowhelp.py - UI code for help window for adding a crontab record
-# Copyright (C) 2004, 2005 Philip Van Hoof <me at pvanhoof dot be>
-# Copyright (C) 2004, 2005 Gaute Hope <eg at gaute dot eu dot org>
+# Copyright (C) 2004, 2005  Philip Van Hoof <me at pvanhoof dot be>
+# Copyright (C) 2004 - 2008 Gaute Hope <eg at gaute dot vetsj dot com>
 
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
