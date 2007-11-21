@@ -42,7 +42,7 @@ class AtEditor:
 		
 
 		self.widget = self.xml.get_widget("at_editor")
-		self.widget.connect("delete-event", self.on_button_cancel_clicked)
+		self.xml.signal_connect("on_at_editor_delete", self.on_button_cancel_clicked)
 		
 		self.mode = 0 # 0 = add, 1 = edit, 2 = template
 
@@ -52,7 +52,7 @@ class AtEditor:
 		self.text_task = self.xml.get_widget ("at_text_task")
 		self.text_task_buffer = self.text_task.get_buffer()
 		self.button_add_template = self.xml.get_widget ("at_button_template")
-		self.button_calendar = self.xml.get_widget ("at_button_calendar")
+		
 
 		self.spin_hour = self.xml.get_widget ("at_spin_hour")
 		self.spin_minute = self.xml.get_widget ("at_spin_minute")
@@ -78,10 +78,8 @@ class AtEditor:
 		self.cal_button.show_all ()
 		
 		self.xml.signal_connect ("on_cal_button_toggled", self.on_cal_button_toggled)
-		self.xml.signal_connect ("on_cal_day_selected_dc", self.on_cal_day_selected_dc)
-		self.xml.signal_connect ("on_cal_day_selected", self.on_cal_day_selected)
 		
-		self.xml.signal_connect ("on_at_editor_size_changed", self.on_at_editor_size_changed)
+		self.cal_loaded = False
 		
 		self.xml.signal_connect("on_at_button_cancel_clicked", self.on_button_cancel_clicked)
 		self.xml.signal_connect("on_at_button_save_clicked", self.on_button_save_clicked)
@@ -112,7 +110,7 @@ class AtEditor:
 		self.widget.set_transient_for(self.ParentClass.widget)
 		self.widget.set_position(gtk.WIN_POS_CENTER_ON_PARENT)
 		self.__setup_calendar__ ()
-		self.widget.show_all()
+		self.widget.show_all ()
 		
 		self.__update_textboxes__()
 
@@ -150,13 +148,21 @@ class AtEditor:
 		self.__setup_calendar__ ()
 		self.widget.show_all ()
 
+		
+
+	def on_cal_lost_focus (self, *args):
+		self.__hide_calendar__ ()
+		
 	def on_at_editor_size_changed (self, *args):
+		pass
+		"""
 		if self.cal_button.get_active ():
 			x, y = self.widget.get_position ()
 			button_rect = self.cal_button.get_allocation ()
 			x = x + button_rect.x
 			y = y + button_rect.y + button_rect.height
 			self.cal_window.move (x, y)
+		"""
 			
 	def on_cal_button_toggled (self, *args):
 		if self.cal_button.get_active ():
@@ -166,12 +172,20 @@ class AtEditor:
 	
 	
 	def __setup_calendar__ (self):
-		self.cal_window = self.xml.get_widget ("cal_window")
-		self.cal_window.set_transient_for (self.widget)
-		self.calendar = self.xml.get_widget ("calendar")
-		self.cal_window.hide_all ()
+		if self.cal_loaded == False:
+			self.xml.signal_connect ("on_cal_lost_focus", self.on_cal_lost_focus)
+			self.xml.signal_connect ("on_cal_window_destroy", self.__destroy_calendar__)
+		
+			self.xml.signal_connect ("on_cal_day_selected_dc", self.on_cal_day_selected_dc)
+			self.xml.signal_connect ("on_cal_day_selected", self.on_cal_day_selected)
+		
+			self.cal_window = self.xml.get_widget ("cal_window")
+			self.calendar = self.xml.get_widget ("calendar")
+			self.cal_window.hide_all ()
+			self.cal_loaded = True
 		
 	def __destroy_calendar__ (self):
+		print "destroy calendar"
 		self.cal_window.hide_all ()
 
 	def on_cal_day_selected (self, *args):
@@ -351,6 +365,7 @@ class AtEditor:
 
 
 	def on_button_cancel_clicked (self, *args):
+		print "button cancel"
 		self.__destroy_calendar__ ()
 		self.widget.hide()
 		
