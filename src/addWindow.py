@@ -33,13 +33,39 @@ class AddWindow:
 		self.ok_button = self.xml.get_widget ("select_ok_button")
 
 		self.xml.signal_connect("on_select_cancel_button_clicked", self.on_cancel_button_clicked)
-		self.xml.signal_connect("on_select_ok_button_clicked", self.on_ok_button_clicked)
-
 		
-		self.at_radio = self.xml.get_widget("at_radio")
-		self.crontab_radio = self.xml.get_widget("crontab_radio")
-		self.crontab_radio.set_active (True)
+		self.xml.signal_connect("on_button_at_clicked", self.on_button_at_clicked)
+		self.xml.signal_connect("on_button_crontab_clicked", self.on_button_crontab_clicked)
 
+		self.button_at = self.xml.get_widget ("button_at")
+		self.button_crontab = self.xml.get_widget ("button_crontab")
+
+		self.chbox = gtk.HBox (False, 5)
+		self.cicon = gtk.Image ()
+		self.cicon.set_from_pixbuf (self.ParentClass.bigiconcrontab)
+		self.cicon.set_alignment (0, 0.5)
+		self.chbox.pack_start (self.cicon, False, False, 5)
+		self.clabel = gtk.Label (_("A task that launches recurrently"))
+		self.clabel.set_justify (gtk.JUSTIFY_LEFT)
+		self.clabel.set_alignment (0, 0.5)
+		self.chbox.pack_start (self.clabel, True, True, 5)
+		
+		self.button_crontab.add (self.chbox)
+		self.button_crontab.show_all ()
+		
+		self.ahbox = gtk.HBox (False, 5)
+		self.aicon = gtk.Image ()
+		self.aicon.set_from_pixbuf (self.ParentClass.bigiconat)
+		self.aicon.set_alignment (0, 0.5)
+		self.ahbox.pack_start (self.aicon, False, False, 5)
+		self.alabel = gtk.Label (_("A task that launches one time"))
+		self.alabel.set_justify (gtk.JUSTIFY_LEFT)
+		self.alabel.set_alignment (0, 0.5)
+		self.ahbox.pack_start (self.alabel, True, True, 5)
+		
+		self.button_at.add (self.ahbox)
+		self.button_at.show_all ()
+		
 		
 		
 	def ShowAddWindow (self):
@@ -51,19 +77,13 @@ class AddWindow:
 	def on_cancel_button_clicked (self, *args):
 		self.widget.hide()
 		
-	def go_crontab (self, *args):
+	def on_button_crontab_clicked (self, *args):
+		self.widget.hide ()
 		self.ParentClass.editor = self.ParentClass.crontab_editor
 		self.ParentClass.editor.showadd ()
 		
-	def go_at (self, *args):
+	def on_button_at_clicked (self, *args):
+		self.widget.hide ()
 		self.ParentClass.editor = self.ParentClass.at_editor
 		self.ParentClass.editor.showadd ()	
-		
-	def on_ok_button_clicked (self, *args):
-		self.widget.hide()
-
-		if self.crontab_radio.get_active ():
-			self.go_crontab ()
-		else:
-			self.go_at ()
 		
