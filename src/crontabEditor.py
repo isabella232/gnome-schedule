@@ -253,11 +253,19 @@ class CrontabEditor:
 					self.rb_basic.set_active (False)
 					if (self.frequency_combobox.get_active () == 5):
 						# reboot, standard every hour
+						self.special = ""
 						self.minute_entry.set_text ("0")
 						self.hour_entry.set_text ("*")
 						self.day_entry.set_text ("*")
 						self.month_entry.set_text ("*")
 						self.weekday_entry.set_text ("*")
+						self.minute = "0"
+						self.hour = "*"
+						self.day = "*"
+						self.month = "*"
+						self.weekday = "*"
+						
+						self.update_preview ()
 						
 					self.rb_advanced.set_active (True)
 					self.minute_entry.set_editable (True)
