@@ -20,8 +20,6 @@
 #pygtk modules
 import gtk
 
-
-# TODO: remove this class and let mainWindow generate this dialogbox
 class AddWindow:
 	def __init__(self, parent):
 		self.ParentClass = parent
