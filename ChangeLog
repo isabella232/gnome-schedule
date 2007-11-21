@@ -1,5 +1,6 @@
 2007-11-21  Gaute Hope  <eg@gaute.vetsj.com>
 
+	* changed version to 1.9.0, should be know as: 2.0.0-BETA and NEW-UI
 	* addwindow.py: using buttons not radiobuttons, one click less and i think it looks better
 	* started work on the calendar.. but it doesn't want to move properly
 	* now it at least beheaves slightly proper
