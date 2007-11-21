@@ -176,7 +176,7 @@ class CrontabEditor:
 
 	def __reset__ (self):
 		self.noevents = True
-		self.minute = "*"
+		self.minute = "0"
 		self.hour = "*"
 		self.day = "*"
 		self.month = "*"
