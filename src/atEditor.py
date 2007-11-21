@@ -1,7 +1,7 @@
 # addWindow.py - UI code for adding an at record
-# Copyright (C) 2004, 2005 Philip Van Hoof <me at pvanhoof dot be>
-# Copyright (C) 2004, 2005, 2006, 2007 Gaute Hope <eg at gaute dot vetsj dot com>
-# Copyright (C) 2004, 2005 Kristof Vansant <de_lupus at pandora dot be>
+# Copyright (C) 2004, 2005  Philip Van Hoof <me at pvanhoof dot be>
+# Copyright (C) 2004 - 2008 Gaute Hope <eg at gaute dot vetsj dot com>
+# Copyright (C) 2004, 2005  Kristof Vansant <de_lupus at pandora dot be>
 
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -42,7 +42,7 @@ class AtEditor:
 		
 
 		self.widget = self.xml.get_widget("at_editor")
-		self.widget.connect("delete-event", self.widget.hide_on_delete)
+		self.widget.connect("delete-event", self.on_button_cancel_clicked)
 		
 		self.mode = 0 # 0 = add, 1 = edit, 2 = template
 
@@ -68,8 +68,21 @@ class AtEditor:
 		self.title_box.reorder_child (self.image_icon, 0)
 		self.image_icon.show ()
 		
-			
-
+		self.cal_button = self.xml.get_widget ("cal_button")
+		self.cal_hbox = gtk.HBox ()
+		self.arrow = gtk.Arrow (gtk.ARROW_DOWN, gtk.SHADOW_OUT)
+		self.cal_label = gtk.Label (_("Calendar"))
+		self.cal_hbox.add (self.cal_label)
+		self.cal_hbox.add (self.arrow)
+		self.cal_button.add (self.cal_hbox)
+		self.cal_button.show_all ()
+		
+		self.xml.signal_connect ("on_cal_button_toggled", self.on_cal_button_toggled)
+		self.xml.signal_connect ("on_cal_day_selected_dc", self.on_cal_day_selected_dc)
+		self.xml.signal_connect ("on_cal_day_selected", self.on_cal_day_selected)
+		
+		self.xml.signal_connect ("on_at_editor_size_changed", self.on_at_editor_size_changed)
+		
 		self.xml.signal_connect("on_at_button_cancel_clicked", self.on_button_cancel_clicked)
 		self.xml.signal_connect("on_at_button_save_clicked", self.on_button_save_clicked)
 
@@ -98,6 +111,7 @@ class AtEditor:
 		self.widget.set_title(_("Create a New Scheduled Task"))
 		self.widget.set_transient_for(self.ParentClass.widget)
 		self.widget.set_position(gtk.WIN_POS_CENTER_ON_PARENT)
+		self.__setup_calendar__ ()
 		self.widget.show_all()
 		
 		self.__update_textboxes__()
@@ -133,8 +147,53 @@ class AtEditor:
 		self.parentiter = iter
 		self.widget.set_transient_for(self.ParentClass.widget)
 		self.widget.set_position(gtk.WIN_POS_CENTER_ON_PARENT)
-		self.widget.show ()
+		self.__setup_calendar__ ()
+		self.widget.show_all ()
 
+	def on_at_editor_size_changed (self, *args):
+		if self.cal_button.get_active ():
+			x, y = self.widget.get_position ()
+			button_rect = self.cal_button.get_allocation ()
+			x = x + button_rect.x
+			y = y + button_rect.y + button_rect.height
+			self.cal_window.move (x, y)
+			
+	def on_cal_button_toggled (self, *args):
+		if self.cal_button.get_active ():
+			self.__show_calendar__ ()
+		else:
+			self.__hide_calendar__ ()
+	
+	
+	def __setup_calendar__ (self):
+		self.cal_window = self.xml.get_widget ("cal_window")
+		self.cal_window.set_transient_for (self.widget)
+		self.calendar = self.xml.get_widget ("calendar")
+		self.cal_window.hide_all ()
+		
+	def __destroy_calendar__ (self):
+		self.cal_window.hide_all ()
+
+	def on_cal_day_selected (self, *args):
+		print "day selected"
+		
+	def on_cal_day_selected_dc (self, *args):
+		print "day selected"
+		self.__hide_calendar__ ()
+				
+	def __show_calendar__ (self):
+		x, y = self.widget.get_position ()
+		button_rect = self.cal_button.get_allocation ()
+		x = x + button_rect.x
+		y = y + button_rect.y + button_rect.height
+		self.cal_window.move (x, y)
+		self.widget.set_modal (False)
+		self.cal_window.show_all ()
+		
+	def __hide_calendar__ (self):
+		self.cal_window.hide_all ()
+		self.cal_button.set_active (False)
+		self.widget.set_modal (True)
 		
 	def on_worded_label_event (self, *args):
 		#TODO highlight on mouseover
@@ -292,6 +351,7 @@ class AtEditor:
 
 
 	def on_button_cancel_clicked (self, *args):
+		self.__destroy_calendar__ ()
 		self.widget.hide()
 		
 

@@ -1,3 +1,7 @@
+2007-11-21  Gaute Hope  <eg@gaute.vetsj.com>
+
+	* started work on the calendar.. but it doesn't want to move properly
+	
 2007-11-20  Gaute Hope  <eg@gaute.vetsj.com>
 
 	* merged some changes from trunk
@@ -7,6 +11,7 @@
 	* removed Changelog.cvs
 	* removed README.cvs, we have a HACKING file that says the same
 	* updated AUTHORS to honour the documentor
+	* updated copyrights
 	
 2007-11-19  Gaute Hope  <eg@gaute.vetsj.com>
 

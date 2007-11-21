@@ -1,6 +1,6 @@
 # scheduleapplet.py: contains code for the gnome-schedule applet
-# Copyright (C) 2004, 2005 Gaute Hope <eg at gaute dot eu dot org>
-# Copyright (C) 2004, 2005 Kristof Vansant <de_lupus at pandora dot be>
+# Copyright (C) 2004 - 2008 Gaute Hope <eg at gaute dot vetsj dot com>
+# Copyright (C) 2004, 2005  Kristof Vansant <de_lupus at pandora dot be>
 
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
