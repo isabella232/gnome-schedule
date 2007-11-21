@@ -82,6 +82,7 @@ class AtEditor:
 		self.cal_loaded = False
 		self.x, self.y = self.widget.get_position ()
 		self.height, self.width = self.widget.get_size ()
+		self.cal_active = True
 		
 		self.xml.signal_connect ("on_at_editor_size_changed", self.on_at_editor_size_changed)
 		
@@ -192,10 +193,13 @@ class AtEditor:
 		return True
 
 	def on_cal_day_selected (self, *args):
-		print "day selected"
+		if self.cal_active:
+			year, month, day = self.calendar.get_date ()
+			self.spin_year.set_value (int (year))
+			self.spin_month.set_value (int (month) + 1)
+			self.spin_day.set_value (int (day))
 		
 	def on_cal_day_selected_dc (self, *args):
-		print "day selected"
 		self.__hide_calendar__ ()
 				
 	def __show_calendar__ (self):
@@ -207,6 +211,10 @@ class AtEditor:
 		self.widget.set_modal (False)
 		self.x, self.y = self.widget.get_position ()
 		self.height, self.width = self.widget.get_size ()
+		self.cal_active = False
+		self.calendar.select_month (self.spin_month.get_value_as_int () -1 , self.spin_year.get_value_as_int ())
+		self.calendar.select_day (self.spin_day.get_value_as_int ())
+		self.cal_active = True
 		self.cal_window.show_all ()
 		
 	def __hide_calendar__ (self):
