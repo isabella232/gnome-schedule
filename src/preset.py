@@ -88,45 +88,42 @@ class ConfigBackend:
 			self.parent.switchView("simple")
 
 
-	def add_scheduler_type(self,type):
+	def add_scheduler_type(self, type):
 		self.gconf_client.add_dir ("/apps/gnome-schedule/presets/" + type, gconf.CLIENT_PRELOAD_NONE)
 		self.gconf_client.notify_add ("/apps/gnome-schedule/presets/" + type + "/installed", self.on_gconfkey_editor_changed);
 
 
 	def on_gconfkey_editor_changed (self, client, connection_id, entry, args):
 		# TODO: dirty hack
-		self.parent.at_editor.__reload_templates__ ()
-		self.parent.crontab_editor.__reload_templates__ ()
+		#self.parent.at_editor.__reload_templates__ ()
+		#self.parent.crontab_editor.__reload_templates__ ()
+		pass
 		
 
-	def removetemplate (self,type, template_name):
-		template_name_c = self.__replace__ (template_name)
-	
-		installed = self.gconf_client.get_string("/apps/gnome-schedule/presets/" + type + "/installed")
+	def removetemplate_crontab (self, template_id):	
+		installed = self.gconf_client.get_string("/apps/gnome-schedule/presets/crontab/installed")
 		newstring = installed
 		if installed != None:
 			first = True
 			newstring = "   "
 			# TODO: test this code
 			for t in installed.split (", "):
-				if t != template_name_c:
+				if t != str (template_id):
 					if first == True:
 						newstring = t
 						first = False
 					else:
 						newstring = newstring + ", " + t
 		
-		self.gconf_client.unset("/apps/gnome-schedule/presets/" + type + "/%s/name" % (template_name_c))
-		self.gconf_client.unset("/apps/gnome-schedule/presets/" + type + "/%s/icon_uri" % (template_name_c))
-		self.gconf_client.unset("/apps/gnome-schedule/presets/" + type + "/%s/command" % (template_name_c))
-		self.gconf_client.unset("/apps/gnome-schedule/presets/" + type + "/%s/title" % (template_name_c))
-		self.gconf_client.unset("/apps/gnome-schedule/presets/" + type + "/%s/timeexpression" % (template_name_c))
-		self.gconf_client.unset("/apps/gnome-schedule/presets/" + type + "/%s/nooutput" % (template_name_c))
+		self.gconf_client.unset("/apps/gnome-schedule/presets/criontab/%s/title" % (template_id))
+		self.gconf_client.unset("/apps/gnome-schedule/presets/crontab/%s/command" % (template_id))
+		self.gconf_client.unset("/apps/gnome-schedule/presets/crontab/%s/timeexpression" % (template_id))
+		self.gconf_client.unset("/apps/gnome-schedule/presets/crontab/%s/nooutput" % (template_id))
 			
 		if newstring == "   ":
-			self.gconf_client.unset ("/apps/gnome-schedule/presets/" + type + "/installed")
+			self.gconf_client.unset ("/apps/gnome-schedule/presets/crontab/installed")
 		else:
-			self.gconf_client.set_string("/apps/gnome-schedule/presets/" + type + "/installed", newstring)
+			self.gconf_client.set_string("/apps/gnome-schedule/presets/crontab/installed", newstring)
 		
 
 	def __replace__ (self, template_name_c):
@@ -136,35 +133,44 @@ class ConfigBackend:
 			
 		return template_name_c
 	
-	
-	def savetemplate (self,type, template_name, timeexpression, title, icon, command, nooutput):	
-		template_name_c = self.__replace__ (template_name)
+	def create_new_id_crontab (self):
+		i = self.gconf_client.get_int ("/apps/gnome-schedule/presets/crontab/last_id")
+		if i == None:
+			self.gconf_client.set_int ("/apps/gnome-schedule/presets/crontab/last_id", 1)
+			return 1
+		else:
+			i = i + 1
+			self.gconf_client.set_int ("/apps/gnome-schedule/presets/crontab/last_id", i)
+			return i
+			
+	def savetemplate_crontab (self, template_id, title, command, nooutput, timeexpression):	
+		#template_name_c = self.__replace__ (template_name)
+		if (template_id == 0):
+			template_id = self.create_new_id_crontab ()
+			
+		self.gconf_client.set_string("/apps/gnome-schedule/presets/crontab/%s/timeexpression" % (template_id), timeexpression)
+		self.gconf_client.set_string("/apps/gnome-schedule/presets/crontab/%s/title" % (template_id), title)
+		self.gconf_client.set_string("/apps/gnome-schedule/presets/crontab/%s/command" % (template_id), command)
+		self.gconf_client.set_bool("/apps/gnome-schedule/presets/crontab/%s/nooutput" % (template_id), nooutput)
 		
-		self.gconf_client.set_string("/apps/gnome-schedule/presets/" + type + "/%s/timeexpression" % (template_name_c), timeexpression)
-		self.gconf_client.set_string("/apps/gnome-schedule/presets/" + type + "/%s/name" % (template_name_c), template_name)
-		self.gconf_client.set_string("/apps/gnome-schedule/presets/" + type + "/%s/icon_uri" % (template_name_c), icon)
-		self.gconf_client.set_string("/apps/gnome-schedule/presets/" + type + "/%s/command" % (template_name_c), command)
-		self.gconf_client.set_string("/apps/gnome-schedule/presets/" + type + "/%s/title" % (template_name_c), title)
-		self.gconf_client.set_string("/apps/gnome-schedule/presets/" + type + "/%s/nooutput" % (template_name_c), str(nooutput))
-		
-		installed = self.gconf_client.get_string("/apps/gnome-schedule/presets/" + type + "/installed")
+		installed = self.gconf_client.get_string("/apps/gnome-schedule/presets/crontab/installed")
 		if installed == None:
-			installed = template_name_c
+			installed = str(template_id)
 		else:
 			found = False
 			# TODO: test this code
 			for t in installed.split (", "):
-				if t == template_name_c:
+				if t == str (template_id):
 					found = True
 		
 			if found == False:
-				installed = installed + ", " + template_name_c
+				installed = installed + ", " + str (template_id)
 				
-		self.gconf_client.unset ("/apps/gnome-schedule/presets/" + type + "/installed")
-		self.gconf_client.set_string("/apps/gnome-schedule/presets/" + type + "/installed", installed)
+		self.gconf_client.unset ("/apps/gnome-schedule/presets/crontab/installed")
+		self.gconf_client.set_string("/apps/gnome-schedule/presets/crontab/installed", installed)
 		
 		
-	def gettemplatenames (self,type):
+	def gettemplateids (self, type):
 		strlist = self.gconf_client.get_string("/apps/gnome-schedule/presets/" + type + "/installed")
 		if strlist != None:
 			# TODO: test this code
@@ -174,48 +180,18 @@ class ConfigBackend:
 			return None
 
 
-	def gettemplate (self, type, template_name):
-		try:
-			icon_uri = self.gconf_client.get_string("/apps/gnome-schedule/presets/" + type + "/%s/icon_uri" % (template_name))
-			command = self.gconf_client.get_string("/apps/gnome-schedule/presets/" + type + "/%s/command" % (template_name))
-			title = self.gconf_client.get_string("/apps/gnome-schedule/presets/" + type + "/%s/title" % (template_name))
-			name = self.gconf_client.get_string("/apps/gnome-schedule/presets/" + type + "/%s/name" % (template_name))
-			nooutput = self.gconf_client.get_string("/apps/gnome-schedule/presets/" + type + "/%s/nooutput" % (template_name))
-			timeexpression = self.gconf_client.get_string("/apps/gnome-schedule/presets/" + type + "/%s/timeexpression" % (template_name))
-			return icon_uri, command, timeexpression, title, name, int(nooutput)
+	def gettemplate (self, type, template_id):
+		if type == "crontab":
+			try:
+				command = self.gconf_client.get_string("/apps/gnome-schedule/presets/crontab/%s/command" % (template_id))
+				title = self.gconf_client.get_string("/apps/gnome-schedule/presets/crontab/%s/title" % (template_id))
+				nooutput = self.gconf_client.get_string("/apps/gnome-schedule/presets/" + type + "/%s/nooutput" % (template_name))
+				timeexpression = self.gconf_client.get_string("/apps/gnome-schedule/presets/" + type + "/%s/timeexpression" % (template_name))
+				return template_id, title, command, nooutput, timeexpression
 	
-		except Exception, ex:
-			return ex, ex, ex, ex, ex
+			except Exception, ex:
+				return ex, ex, ex, ex, ex
+		else if type == "at":
+			pass
 			
-	def getDefaultIcon (self):
-		type = "i-executable"
-		_nautdir = config.getImagedir() + "/nautilus"
-		_pixdir = config.getImagedir()
-		theme = self.gconf_client.get_string("/desktop/gnome/file_views/icon_theme")
-		if type == "x-directory/":
-			if theme:
-				newicon = "%s/%s/i-directory.png" % (_nautdir,theme)
-			else:
-				newicon = "%s/gnome-folder.png" % _pixdir
-		
-			if os.path.isfile(newicon):
-				return newicon
-			return None
-		else:
-			icontmp = type.replace('/','-')
-			if theme:
-				newicon = "%s/%s/gnome-%s.png" % (_nautdir,theme,icontmp)
-				if os.path.isfile(newicon):
-					return newicon
-				else:
-					newicon = "%s/%s/%s.png" % (_nautdir,theme,icontmp)
-					if os.path.isfile(newicon):
-						return newicon
-					else:
-						newicon = "%s/document-icons/gnome-%s.png" % (_nautdir,icontmp)
-						if os.path.isfile(newicon):
-							return newicon
-			return "/usr/share/icons/gnome/48x48/mimetypes/gnome-mime-application.png"
 
-		
-	

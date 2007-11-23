@@ -61,13 +61,10 @@ class main:
 		self.schedule = None
 		
 		self.noevents = False
-		
-			
+					
 		#start the backend where all the user configuration is stored
 		self.backend = preset.ConfigBackend(self, "gconf")
 		
-		# TODO: Not needed anymore
-		#self.defaultIcon = self.backend.getDefaultIcon()
 		
 		##configure the window
 		self.widget = self.xml.get_widget("mainWindow")
@@ -437,10 +434,10 @@ class main:
 				self.backend.set_advanced_option(1)
 
 	def on_add_at_task (self, *args):
-		self.addWindow.go_at ()
+		self.addWindow.on_button_at_clicked (*args)
 		
 	def on_add_crontab_task (self, *args):
-		self.addWindow.go_crontab ()
+		self.addWindow.on_button_crontab_clicked  (*args)
 		
 	def on_add_scheduled_task_menu_activate (self, *args):
 		self.addWindow.ShowAddWindow ()
