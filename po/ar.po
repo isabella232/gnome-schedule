@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arabic\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-11-20 09:56+0100\n"
+"POT-Creation-Date: 2007-11-28 19:03+0100\n"
 "PO-Revision-Date: 2007-04-14 18:49+0100\n"
 "Last-Translator: Djihed Afifi <djihed@gmail.com>\n"
 "Language-Team: Arabeyes <doc@arabeyes.org>\n"
@@ -1072,7 +1072,7 @@ msgstr "أهلا جنوم"
 
 #: ../src/mainWindow.py:511
 #, fuzzy
-msgid "Copyright (c) 2004-2007 Gaute Hope."
+msgid "Copyright (c) 2004-2008 Gaute Hope."
 msgstr "حقوق النسخ © 2004-2007 أليكس جرافيلي"
 
 #: ../src/mainWindow.py:524

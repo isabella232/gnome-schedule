@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: el\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-11-20 09:56+0100\n"
+"POT-Creation-Date: 2007-11-28 19:03+0100\n"
 "PO-Revision-Date: 2005-01-03 12:40+0200\n"
 "Last-Translator: Kostas Papadimas <pkst@gnome.org>\n"
 "Language-Team: Greek <nls@tux.hellug.gr>\n"
@@ -1053,7 +1053,7 @@ msgstr "Gnome Schedule"
 
 #: ../src/mainWindow.py:511
 #, fuzzy
-msgid "Copyright (c) 2004-2007 Gaute Hope."
+msgid "Copyright (c) 2004-2008 Gaute Hope."
 msgstr "Πνευματικά δικαιώματα (c) 2004-2005 Gaute Hope."
 
 #: ../src/mainWindow.py:524

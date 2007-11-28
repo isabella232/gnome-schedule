@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule.HEAD.ne\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-11-20 09:56+0100\n"
+"POT-Creation-Date: 2007-11-28 19:03+0100\n"
 "PO-Revision-Date: 2006-06-11 15:58+0545\n"
 "Last-Translator: Mahesh subedi <submanesh@hotmail.com>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -1000,7 +1000,7 @@ msgstr "जिनोम कार्यतालिका"
 
 #: ../src/mainWindow.py:511
 #, fuzzy
-msgid "Copyright (c) 2004-2007 Gaute Hope."
+msgid "Copyright (c) 2004-2008 Gaute Hope."
 msgstr "प्रतिलिपि अधिकार (c) 2004-2005 गेट होप"
 
 #: ../src/mainWindow.py:524

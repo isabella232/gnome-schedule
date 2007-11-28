@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-11-20 09:56+0100\n"
+"POT-Creation-Date: 2007-11-28 19:03+0100\n"
 "PO-Revision-Date: 2007-04-22 09:27+0200\n"
 "Last-Translator: Stéphane Raimbault <stephane.raimbault@gmail.com>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
@@ -1017,7 +1017,8 @@ msgid "Gnome Schedule"
 msgstr "Planificateur de tâches de GNOME"
 
 #: ../src/mainWindow.py:511
-msgid "Copyright (c) 2004-2007 Gaute Hope."
+#, fuzzy
+msgid "Copyright (c) 2004-2008 Gaute Hope."
 msgstr "Copyright (c) 2004-2007 Gaute Hope."
 
 #: ../src/mainWindow.py:524

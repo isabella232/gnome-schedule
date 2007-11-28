@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-11-20 09:56+0100\n"
+"POT-Creation-Date: 2007-11-28 19:03+0100\n"
 "PO-Revision-Date: 2006-12-28 19:42+0200\n"
 "Last-Translator: Xavier Conde Rueda <xavi.conde@gmail.com>\n"
 "Language-Team: Catalan <tradgnome@softcatala.org>\n"
@@ -1056,7 +1056,7 @@ msgstr "Planificador del Gnome"
 
 #: ../src/mainWindow.py:511
 #, fuzzy
-msgid "Copyright (c) 2004-2007 Gaute Hope."
+msgid "Copyright (c) 2004-2008 Gaute Hope."
 msgstr "Copyright (c) 2004-2006 Gaute Hope."
 
 # Gnome_2.6_Desktop [zenity.HEAD.ca.po]

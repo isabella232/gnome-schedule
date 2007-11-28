@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-11-20 09:56+0100\n"
+"POT-Creation-Date: 2007-11-28 19:03+0100\n"
 "PO-Revision-Date: 2006-06-23 01:20+0800\n"
 "Last-Translator: Kevin Tse <kevinkit@netvigator.com>\n"
 "Language-Team: Chinese (Taiwan) <zh-l10n@linux.org.tw>\n"
@@ -978,7 +978,7 @@ msgstr "GNOME 工作排程"
 
 #: ../src/mainWindow.py:511
 #, fuzzy
-msgid "Copyright (c) 2004-2007 Gaute Hope."
+msgid "Copyright (c) 2004-2008 Gaute Hope."
 msgstr "版權所有 (c) 2004-2005 Gaute Hope"
 
 #: ../src/mainWindow.py:524

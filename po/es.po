@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule.HEAD.es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-11-21 20:34+0000\n"
+"POT-Creation-Date: 2007-11-28 19:03+0100\n"
 "PO-Revision-Date: 2007-11-28 17:55+0100\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Spanish <traductores@es.gnome.org>\n"
@@ -534,7 +534,8 @@ msgstr "_Script:"
 
 #: ../src/gnome-schedule.glade.h:51
 msgid "See \"man 5 crontab\" for information about the crontab format."
-msgstr "Vea «man 5 crontab» para obtener información acerca del formato de crontab."
+msgstr ""
+"Vea «man 5 crontab» para obtener información acerca del formato de crontab."
 
 #: ../src/gnome-schedule.glade.h:52
 msgid "Select..."
@@ -756,8 +757,10 @@ msgstr "Cada año el día %(date)s en el minuto %(minute)s de cada hora"
 
 #: ../src/lang.py:209
 #, python-format
-msgid "Every year on %(date)s at every minute between %(time_from)s and %(time_to)s"
-msgstr "Cada año el día %(date)s a cada minuto entre %(time_from)s y %(time_to)s"
+msgid ""
+"Every year on %(date)s at every minute between %(time_from)s and %(time_to)s"
+msgstr ""
+"Cada año el día %(date)s a cada minuto entre %(time_from)s y %(time_to)s"
 
 #: ../src/lang.py:211
 #, python-format
@@ -784,7 +787,8 @@ msgstr "Cada %(weekday)s en el minuto %(minute)s de cada hora"
 msgid ""
 "On every weekday: %(weekday)s at every minute between %(time_from)s and %"
 "(time_to)s"
-msgstr "Cada %(weekday)s a cada minuto entre las %(time_from)s y las %(time_to)s"
+msgstr ""
+"Cada %(weekday)s a cada minuto entre las %(time_from)s y las %(time_to)s"
 
 #: ../src/lang.py:224
 #, python-format
@@ -796,7 +800,8 @@ msgstr "Cada %(weekday)s a las %(time)s"
 msgid ""
 "On day %(monthday)s of every month and every weekday: %(weekday)s at every "
 "full hour"
-msgstr "El día %(monthday)s de cada mes y cada %(weekday)s a cada hora completa"
+msgstr ""
+"El día %(monthday)s de cada mes y cada %(weekday)s a cada hora completa"
 
 #: ../src/lang.py:231
 #, python-format
@@ -825,7 +830,8 @@ msgstr ""
 
 #: ../src/lang.py:237
 #, python-format
-msgid "On day %(monthday)s of every month and every weekday: %(weekday)s at %(time)s"
+msgid ""
+"On day %(monthday)s of every month and every weekday: %(weekday)s at %(time)s"
 msgstr "El día %(monthday)s de cada mes y cada %(weekday)s a las %(time)s"
 
 #: ../src/lang.py:242
@@ -840,7 +846,8 @@ msgstr "Cada %(weekday)s de %(month)s a cada minuto"
 
 #: ../src/lang.py:246
 #, python-format
-msgid "On every weekday: %(weekday)s in %(month)s at minute %(minute)s of every hour"
+msgid ""
+"On every weekday: %(weekday)s in %(month)s at minute %(minute)s of every hour"
 msgstr "Cada %(weekday)s de %(month)s en el minuto %(minute)s de cada hora"
 
 #: ../src/lang.py:248
@@ -1035,4 +1042,3 @@ msgstr ""
 #, python-format
 msgid "This is an invalid record! The problem could be: %s"
 msgstr "¡Este es un registro inválido! El problema podría ser: %s"
-
