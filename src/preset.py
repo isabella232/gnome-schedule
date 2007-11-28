@@ -115,7 +115,7 @@ class ConfigBackend:
 					else:
 						newstring = newstring + ", " + t
 		
-		self.gconf_client.unset("/apps/gnome-schedule/presets/criontab/%s/title" % (template_id))
+		self.gconf_client.unset("/apps/gnome-schedule/presets/crontab/%s/title" % (template_id))
 		self.gconf_client.unset("/apps/gnome-schedule/presets/crontab/%s/command" % (template_id))
 		self.gconf_client.unset("/apps/gnome-schedule/presets/crontab/%s/timeexpression" % (template_id))
 		self.gconf_client.unset("/apps/gnome-schedule/presets/crontab/%s/nooutput" % (template_id))
@@ -191,7 +191,7 @@ class ConfigBackend:
 	
 			except Exception, ex:
 				return ex, ex, ex, ex, ex
-		else if type == "at":
+		elif type == "at":
 			pass
 			
 
