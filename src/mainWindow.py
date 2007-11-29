@@ -39,7 +39,7 @@ import at
 import atEditor
 import setuserWindow
 import addWindow
-import preset
+import data
 
 import thoughicon
 
@@ -63,7 +63,7 @@ class main:
 		self.noevents = False
 					
 		#start the backend where all the user configuration is stored
-		self.backend = preset.ConfigBackend(self, "gconf")
+		self.backend = data.ConfigBackend(self, "gconf")
 		
 		
 		##configure the window
