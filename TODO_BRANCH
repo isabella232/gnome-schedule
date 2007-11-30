@@ -1,19 +1,4 @@
 check bug: 419392, http://bugzilla.gnome.org/show_bug.cgi?id=419392
 
-Do we need templates?
-
-Templates:
-        - A template manager with a list of templates. Where you:
-          a) Can delete templates
-          b) Can edit templates
-          c) Get explained that you need to add templates through the editors
-          d) Can add tasks based on template
-
-        - A New from Template option where you:
-          a) Get a list of templates, the list here and in the template manager should look about the same
-          b) The list has an icon corresponding to the type it belongs to
-          c) It show a preview like in the main window
-          d) Includes time expressions and the rest of the relevant information stored
-
-        - The editors need support for editing a template
-          a) They need a third output option where they replace the existing template
+* All dialogs and editors should be hidden when ESC is pressed
+* Check that only the mainwindow is displayed in the window list and on the task bar
