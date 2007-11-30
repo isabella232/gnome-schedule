@@ -34,11 +34,12 @@ import preset
 
 
 class AtEditor:
-	def __init__(self, parent, backend, scheduler):
+	def __init__(self, parent, backend, scheduler, template):
 		self.ParentClass = parent
 		self.xml = self.ParentClass.xml
 		self.backend = backend
 		self.scheduler = scheduler
+		self.template = template
 		
 
 		self.widget = self.xml.get_widget("at_editor")
@@ -52,6 +53,7 @@ class AtEditor:
 		self.text_task = self.xml.get_widget ("at_text_task")
 		self.text_task_buffer = self.text_task.get_buffer()
 		self.button_add_template = self.xml.get_widget ("at_button_template")
+		self.at_vbox_time = self.xml.get_widget ("at_vbox_time")
 		
 
 		self.spin_hour = self.xml.get_widget ("at_spin_hour")
@@ -95,7 +97,6 @@ class AtEditor:
 		self.xml.signal_connect("on_at_entry_title_changed", self.on_entry_title_changed)
 
 		self.xml.signal_connect("on_at_button_cancel_clicked", self.on_button_cancel_clicked)
-		self.xml.signal_connect ("on_at_button_calendar_clicked", self.on_button_calendar_clicked)
 		self.xml.signal_connect ("on_at_button_template_clicked", self.on_button_template_clicked)
 		
 		self.xml.signal_connect("on_at_spin_hour_changed", self.on_spin_hour_changed)
@@ -104,8 +105,7 @@ class AtEditor:
 		self.xml.signal_connect ("on_at_spin_month_changed", self.on_spin_month_changed)
 		self.xml.signal_connect ("on_at_spin_day_changed", self.on_spin_day_changed)
 		
-		self.backend.add_scheduler_type("at")
-
+		
 	def showadd (self):
 		self.button_save.set_label (gtk.STOCK_ADD)
 		self.__reset__ ()
@@ -118,7 +118,44 @@ class AtEditor:
 		self.widget.show_all ()
 		
 		self.__update_textboxes__()
-
+	
+	def showadd_template (self, title, command):
+		self.button_save.set_label (gtk.STOCK_ADD)
+		self.__reset__ ()
+		self.title = title
+		self.command = command
+		self.mode = 0 # add new task
+		self.widget.set_title(_("Create a New Scheduled Task"))
+		self.widget.set_transient_for(self.ParentClass.widget)
+		self.widget.set_position(gtk.WIN_POS_CENTER_ON_PARENT)
+		self.__setup_calendar__ ()
+		self.widget.show_all ()
+		
+		self.__update_textboxes__()
+	
+	def showedit_template (self, id, title, command):
+		self.button_save.set_label (gtk.STOCK_ADD)
+		self.__reset__ ()
+		self.tid = id
+		self.title = title
+		self.command = command
+		self.mode = 2 # edit template
+		
+		self.widget.set_title(_("Edit template"))
+		self.widget.set_transient_for(self.ParentClass.widget)
+		self.widget.set_position(gtk.WIN_POS_CENTER_ON_PARENT)
+		self.__setup_calendar__ ()
+		self.widget.show_all ()
+		
+		# grey out time settings
+		self.at_vbox_time.hide ()
+		
+		# save and cancel buttons
+		self.button_save.set_label (gtk.STOCK_SAVE)
+		self.button_add_template.hide ()
+		
+		self.__update_textboxes__()
+		
 	def showedit (self, record, job_id, iter):
 		self.button_save.set_label (gtk.STOCK_APPLY)
 		self.mode = 1 # edit task
@@ -236,13 +273,7 @@ class AtEditor:
 		# don't forget to attach eventhandling to this popup
 		pass
 		
-	def on_button_calendar_clicked (self, *args):
-		# TODO: bloddy popups..
-		pass
-	
-	def on_button_template_clicked (self, *args):
-		# TODO: ah.. templates.. sweet templates..
-		pass
+
 	
 	def on_text_task_change (self, *args):
 		start = self.text_task_buffer.get_start_iter()
@@ -388,8 +419,16 @@ class AtEditor:
 		self.wrongdialog.run()
 		self.wrongdialog.destroy()
 
+	def on_button_template_clicked (self, *args):
+		self.template.savetemplate_at (0, self.title, self.command)
+		self.widget.hide ()
 
 	def on_button_save_clicked (self, *args):
+		if self.mode == 2:
+			self.template.savetemplate_at (self.tid, self.title, self.command)
+			self.widget.hide ()
+			return
+			
 		(validate, reason) = self.scheduler.checkfield(self.runat)
 		if validate == False:
 			self.__WrongRecordDialog__ (reason)

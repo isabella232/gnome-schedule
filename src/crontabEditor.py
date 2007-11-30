@@ -33,11 +33,12 @@ import crontabEditorHelper
 
 
 class CrontabEditor:
-	def __init__(self, parent, backend, scheduler):
+	def __init__(self, parent, backend, scheduler, template):
 
 		self.ParentClass = parent
 		self.backend = backend
 		self.scheduler = scheduler
+		self.template = template
 		
 		self.xml = self.ParentClass.xml
 		self.widget = self.xml.get_widget("crontab_editor")
@@ -57,7 +58,6 @@ class CrontabEditor:
 		self.title_box.reorder_child (self.image_icon, 0)
 		self.image_icon.show ()
 		
-		#self.editing = False
 		self.noevents = False
 		
 		
@@ -81,12 +81,11 @@ class CrontabEditor:
 		
 		self.button_cancel = self.xml.get_widget ("button_cancel")
 		self.button_apply = self.xml.get_widget ("button_apply")
+		self.button_template = self.xml.get_widget ("button_template")
 		self.rb_advanced = self.xml.get_widget ("rb_advanced")
 		self.rb_basic = self.xml.get_widget ("rb_basic")
 		
 		self.label_preview = self.xml.get_widget ("label_preview")
-		
-		#self.xml.signal_connect("on_cron_help_button_clicked", self.on_cron_help_button_clicked)
 		
 		self.xml.signal_connect("on_button_cancel_clicked", self.on_button_cancel_clicked)
 		self.xml.signal_connect("on_button_apply_clicked", self.on_button_apply_clicked)
@@ -99,6 +98,8 @@ class CrontabEditor:
 		
 		self.xml.signal_connect("on_rb_advanced_toggled", self.on_editmode_toggled)
 		self.xml.signal_connect("on_rb_basic_toggled", self.on_editmode_toggled)
+		
+		self.xml.signal_connect ("on_button_template_clicked", self.on_template_clicked)
 		
 		
 		##
@@ -120,24 +121,107 @@ class CrontabEditor:
 		
 		self.editorhelper = crontabEditorHelper.CrontabEditorHelper(self)
 		
-		self.backend.add_scheduler_type("crontab")
-		
+			
 		
 	def showadd (self):
 		self.button_apply.set_label (gtk.STOCK_ADD)
 		self.__reset__ ()
-		self.editing = False
+		self.mode = 0
 		self.widget.set_title(_("Create a New Scheduled Task"))
 		self.widget.set_transient_for(self.ParentClass.widget)
 		self.widget.set_position(gtk.WIN_POS_CENTER_ON_PARENT)
 		self.widget.show ()
 		self.cb_nooutput.set_active (True)
 
-	
-	
+	def showadd_template (self, title, command, nooutput,timeexpression):
+		self.button_apply.set_label (gtk.STOCK_ADD)
+		self.__reset__ ()
+		self.mode = 0
+		self.widget.set_title(_("Create a New Scheduled Task"))
+		self.widget.set_transient_for(self.ParentClass.widget)
+		self.widget.set_position(gtk.WIN_POS_CENTER_ON_PARENT)
+		self.widget.show ()
+		
+		self.nooutput = nooutput
+		# hehe again, why make it less complicated..
+		timeexpression = timeexpression + " echo hehe"
+		self.minute, self.hour, self.day, self.month, self.weekday, hehe = self.scheduler.parse (timeexpression, True)
+		self.special = ""
+		if self.minute == "@reboot":
+			self.special = "@reboot"
+			self.minute = ""
+			self.day = ""
+			self.hour = ""
+			self.month = ""
+			self.weekday = ""
+		self.command = command
+		self.title = title
+		
+		self.__update_textboxes__ ()
+
+		i = self.__getfrequency__ (self.minute, self.hour, self.day, self.month, self.weekday, self.special)
+		if i == -1:
+			# advanced
+			self.rb_advanced.set_active (True)
+		else:
+			self.rb_basic.set_active (True)
+			self.frequency_combobox.set_active (i)
+
+		if self.nooutput:
+			self.entry_task.set_text (self.command)
+			self.cb_nooutput.set_active (True)
+			
+		else:
+			self.cb_nooutput.set_active (False)
+			
+			
+	def showedit_template (self, id, title, command, nooutput, timeexpression):
+		self.button_apply.set_label (gtk.STOCK_SAVE)
+		
+		self.mode = 2
+		self.tid = id
+		self.__reset__ ()
+		
+		self.command = command
+		self.title = title
+		self.nooutput = nooutput
+		
+		timeexpression = timeexpression + " echo hehe"
+		self.minute, self.hour, self.day, self.month, self.weekday, hehe = self.scheduler.parse (timeexpression, True)
+		self.special = ""
+		if self.minute == "@reboot":
+			self.special = "@reboot"
+			self.minute = ""
+			self.day = ""
+			self.hour = ""
+			self.month = ""
+			self.weekday = ""
+			
+		self.widget.set_title(_("Edit template"))		
+		self.__update_textboxes__ ()
+		
+		self.widget.set_transient_for(self.ParentClass.widget)
+		self.widget.set_position(gtk.WIN_POS_CENTER_ON_PARENT)
+		self.widget.show ()
+		self.button_template.hide ()
+		i = self.__getfrequency__ (self.minute, self.hour, self.day, self.month, self.weekday, self.special)
+		if i == -1:
+			# advanced
+			self.rb_advanced.set_active (True)
+		else:
+			self.rb_basic.set_active (True)
+			self.frequency_combobox.set_active (i)
+
+		if self.nooutput:
+			self.entry_task.set_text (self.command)
+			self.cb_nooutput.set_active (True)
+			
+		else:
+			self.cb_nooutput.set_active (False)
+				
 	def showedit (self, record, job_id, linenumber, iter):
 		self.button_apply.set_label (gtk.STOCK_APPLY)
-		self.editing = True
+		self.mode = 1
 		self.linenumber = linenumber
 		self.record = record
 		self.job_id = job_id
@@ -310,7 +394,45 @@ class CrontabEditor:
 	def on_button_cancel_clicked (self, *args):
 		self.widget.hide()
 
+	def on_template_clicked (self, *args):
+		if self.special != "":
+			try:
+				self.__check_field_format__ (self.special, "special")
+				record = self.special + " " + self.command
+				self.minute = "@reboot"
+				self.hour = "@reboot"
+				self.day = "@reboot"
+				self.month = "@reboot"
+				self.weekday = "@reboot"
+			except ValueError, ex:
+				x, y, z = ex
+				self.__WrongRecordDialog__ (x, y, z)
+				return
+		else:
+			try:
+				# Type should not be translatable!
+				self.__check_field_format__ (self.minute, "minute")
+				self.__check_field_format__ (self.hour, "hour")
+				self.__check_field_format__ (self.day, "day")
+				self.__check_field_format__ (self.month, "month")
+				self.__check_field_format__ (self.weekday, "weekday")
+				record = self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday + " " + self.command
+			except ValueError, ex:
+				x, y, z = ex
+				self.__WrongRecordDialog__ (x, y, z)
+				return
 
+		if self.scheduler.check_command (self.command) == False:
+			self.__dialog_command_failed__ ()
+			return	False
+			
+		if self.special != "":
+			self.template.savetemplate_crontab (0, self.title, self.command, self.nooutput, self.special)
+		else:
+			self.template.savetemplate_crontab (0, self.title, self.command, self.nooutput, self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday)
+		
+		self.widget.hide ()
+		
 	def on_button_apply_clicked (self, *args):
 		if self.special != "":
 			try:
@@ -360,14 +482,54 @@ class CrontabEditor:
 			dia2.destroy ()
 			del dia2
 			
-		if self.editing == True:
+		if self.mode == 1:
 			self.scheduler.update (self.minute, self.hour, self.day, self.month, self.weekday, self.command, self.linenumber, self.parentiter, self.nooutput, self.job_id, self.comment, self.title, self.desc)
 			
-		else:
+		elif self.mode == 0:
 			self.scheduler.append (self.minute, self.hour, self.day, self.month, self.weekday, self.command, self.nooutput, self.title)
 			
-		self.ParentClass.schedule_reload ()
+		elif self.mode == 2:
+			if self.special != "":
+				try:
+					self.__check_field_format__ (self.special, "special")
+					record = self.special + " " + self.command	
+					self.minute = "@reboot"
+					self.hour = "@reboot"
+					self.day = "@reboot"
+					self.month = "@reboot"
+					self.weekday = "@reboot"
+				except ValueError, ex:
+					x, y, z = ex
+					self.__WrongRecordDialog__ (x, y, z)
+					return
+			else:
+				try:
+					# Type should not be translatable!
+					self.__check_field_format__ (self.minute, "minute")
+					self.__check_field_format__ (self.hour, "hour")
+					self.__check_field_format__ (self.day, "day")
+					self.__check_field_format__ (self.month, "month")
+					self.__check_field_format__ (self.weekday, "weekday")
+					record = self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday + " " + self.command
+				except ValueError, ex:
+					x, y, z = ex
+					self.__WrongRecordDialog__ (x, y, z)
+					return
+
+			if self.scheduler.check_command (self.command) == False:
+				self.__dialog_command_failed__ ()
+				return	False
+			
+			if self.special != "":
+				self.template.savetemplate_crontab (self.tid, self.title, self.command, self.nooutput, self.special)
+			else:
+				self.template.savetemplate_crontab (self.tid, self.title, self.command, self.nooutput, self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday)
 	
+			self.widget.hide ()
+			self.ParentClass.template_manager.reload_tv ()
+			return
+			
+		self.ParentClass.schedule_reload ()
 		self.widget.hide ()
 
 

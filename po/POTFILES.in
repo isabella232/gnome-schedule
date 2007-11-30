@@ -22,3 +22,6 @@ src/addWindow.py
 src/at.py
 src/atEditor.py
 src/thoughicon.py
+src/template_chooser.py
+src/template_manager.py
+

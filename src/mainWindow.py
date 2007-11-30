@@ -40,6 +40,9 @@ import atEditor
 import setuserWindow
 import addWindow
 import data
+import template
+import template_chooser
+import template_manager
 
 import thoughicon
 
@@ -64,6 +67,7 @@ class main:
 					
 		#start the backend where all the user configuration is stored
 		self.backend = data.ConfigBackend(self, "gconf")
+		self.template = template.Template (self, self.backend)
 		
 		
 		##configure the window
@@ -99,25 +103,44 @@ class main:
 		self.add_button_menu = gtk.Menu ()
 		self.add_button_menu_add_crontab = gtk.MenuItem ()
 		self.add_button_menu_add_at = gtk.MenuItem ()
+		self.add_button_menu_add_template = gtk.MenuItem ()
 
 		self.recurrenthbox = gtk.HBox ()
 		icon = gtk.Image ()
 		icon.set_from_pixbuf (self.iconcrontab)
 		label = gtk.Label (_("Recurrent task"))
-		self.recurrenthbox.add (icon)
-		self.recurrenthbox.add (label)
+		icon.set_alignment (0, 0.5)
+		label.set_justify (gtk.JUSTIFY_LEFT)
+		label.set_alignment (0, 0.5)
+		self.recurrenthbox.pack_start (icon, False, False, 2)
+		self.recurrenthbox.pack_start (label, True, True, 2)
 		self.add_button_menu_add_crontab.add (self.recurrenthbox)
 		
 		self.onetimehbox = gtk.HBox ()
 		icon = gtk.Image ()
 		icon.set_from_pixbuf (self.iconat)
 		label = gtk.Label (_("One-time task"))
-		self.onetimehbox.add (icon)
-		self.onetimehbox.add (label)
+		icon.set_alignment (0, 0.5)
+		label.set_justify (gtk.JUSTIFY_LEFT)
+		label.set_alignment (0, 0.5)
+		self.onetimehbox.pack_start (icon, False, False, 2)
+		self.onetimehbox.pack_start (label, True, True, 2)
 		self.add_button_menu_add_at.add (self.onetimehbox)
+		
+		self.templatehbox = gtk.HBox ()
+		icon = gtk.Image ()
+		icon.set_from_pixbuf (self.icontemplate)
+		label = gtk.Label (_("From template"))
+		icon.set_alignment (0, 0.5)
+		label.set_justify (gtk.JUSTIFY_LEFT)
+		label.set_alignment (0, 0.5)
+		self.templatehbox.pack_start (icon, False, False, 2)
+		self.templatehbox.pack_start (label, True, True, 2)
+		self.add_button_menu_add_template.add (self.templatehbox)
 		
 		self.add_button_menu.append (self.add_button_menu_add_crontab)
 		self.add_button_menu.append (self.add_button_menu_add_at)
+		self.add_button_menu.append (self.add_button_menu_add_template)
 		
 		self.add_button.set_menu (self.add_button_menu)
 
@@ -135,6 +158,7 @@ class main:
 		self.add_button.connect ("clicked", self.on_add_button_clicked)
 		self.add_button_menu_add_crontab.connect ("activate", self.on_add_crontab_task)
 		self.add_button_menu_add_at.connect ("activate", self.on_add_at_task)
+		self.add_button_menu_add_template.connect ("activate", self.on_add_from_template)
 
 		
 		self.prop_button = self.xml.get_widget ("prop_button")
@@ -161,8 +185,9 @@ class main:
 		self.xml.signal_connect("on_mainWindow_delete_event", self.__quit__)
 		self.xml.signal_connect("on_run_button_clicked", self.on_run_button_clicked)
 		
+		self.xml.signal_connect ("on_button_m_template_clicked", self.on_template_manager_button)
 				
-		##inittializing the treeview
+		##inittializing the treeview and treemodel
 		## somethins not rite here..:
 		## [0 Title, 1 Frequency, 2 Command, 3 Crontab record, 4 ID, 5 Time, 6 Icon, 7 scheduled instance, 8 icon path, 9 date, 10 class_id, 11 user, 12 time, 13 type, 14 crontab/at, 15 advanced time string]
 		##for at this would be like: 
@@ -180,18 +205,7 @@ class main:
 		self.xml.signal_connect("on_treeview_key_press_event", self.on_treeview_key_pressed)
 		
 		self.treeview.set_model (self.treemodel)
-						
-		#when a selection is made
 		self.treeview.get_selection().connect("changed", self.on_TreeViewSelectRow)
-		
-		# TODO: enable?
-		#self.treeview.set_rules_hint(True)
-		##
-
-		##configure the menu
-
-		##
-
 
 		#enable or disable advanced depending on user config
 		self.noevents = True
@@ -208,12 +222,12 @@ class main:
 		
 		##create crontab
 		self.crontab = crontab.Crontab(self.root, self.user, self.uid, self.gid, self.user_home_dir)
-		self.crontab_editor = crontabEditor.CrontabEditor(self, self.backend, self.crontab)
+		self.crontab_editor = crontabEditor.CrontabEditor(self, self.backend, self.crontab, self.template)
 		##
 		
 		##create at
 		self.at = at.At(self.root, self.user, self.uid, self.gid, self.user_home_dir)
-		self.at_editor = atEditor.AtEditor (self, self.backend, self.at)
+		self.at_editor = atEditor.AtEditor (self, self.backend, self.at, self.template)
 		##
 		
 		#set user window
@@ -222,7 +236,9 @@ class main:
 		#set add window
 		self.addWindow = addWindow.AddWindow (self)
 		
-		# TODO: select first task from list?
+		# template windows
+		self.template_chooser = template_chooser.TemplateChooser (self, self.template)
+		self.template_manager = template_manager.TemplateManager (self, self.template)
 
 		self.schedule_reload ()
 
@@ -305,9 +321,13 @@ class main:
 		
 		self.iconatstring = gtk.STOCK_DIALOG_WARNING
 		self.iconcrontabstring = gtk.STOCK_REFRESH
+		self.icontemplatestring = gtk.STOCK_INDEX
 		
 		self.iconcrontab  = self.ti_theme.load_icon (self.iconcrontabstring, 19, 0)
 		self.bigiconcrontab = self.ti_theme.load_icon (self.iconcrontabstring, 49, 0)
+		
+		self.icontemplate = self.ti_theme.load_icon (self.icontemplatestring, 19, 0)
+		self.bigicontemplate = self.ti_theme.load_icon (self.icontemplatestring, 49, 0)
 		
 		if os.access ("../icons/at.svg", os.F_OK):
 			self.iconat = gtk.gdk.pixbuf_new_from_file_at_size ("../icons/at.svg", 19, 19)
@@ -438,6 +458,12 @@ class main:
 		
 	def on_add_crontab_task (self, *args):
 		self.addWindow.on_button_crontab_clicked  (*args)
+	
+	def on_add_from_template (self, *args):
+		self.addWindow.on_button_template_clicked  (*args)
+
+	def on_template_manager_button (self, *args):
+		self.template_manager.show ()
 		
 	def on_add_scheduled_task_menu_activate (self, *args):
 		self.addWindow.ShowAddWindow ()
