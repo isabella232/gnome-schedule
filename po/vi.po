@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule Gnome HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-11-30 13:58+0100\n"
+"POT-Creation-Date: 2007-11-30 14:09+0100\n"
 "PO-Revision-Date: 2006-01-15 18:13+1030\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <gnomevi-list@lists.sourceforge.net>\n"
@@ -76,7 +76,7 @@ msgstr "Tháng"
 msgid "Weekday"
 msgstr "Ngày tuần"
 
-#: ../src/crontab.py:147 ../src/gnome-schedule.glade.h:15
+#: ../src/crontab.py:147 ../src/gnome-schedule.glade.h:16
 msgid "Basic"
 msgstr "Cơ bản"
 
@@ -130,12 +130,12 @@ msgid "weekday"
 msgstr "ngày tuần"
 
 #: ../src/crontabEditor.py:70 ../src/crontabEditorHelper.py:87
-#: ../src/gnome-schedule.glade.h:28
+#: ../src/gnome-schedule.glade.h:29
 msgid "Every minute"
 msgstr "Mỗi phút"
 
 #: ../src/crontabEditor.py:71 ../src/crontabEditorHelper.py:93
-#: ../src/gnome-schedule.glade.h:27
+#: ../src/gnome-schedule.glade.h:28
 msgid "Every hour"
 msgstr "Mỗi giờ"
 
@@ -233,11 +233,11 @@ msgid "This is invalid. Reason: %s"
 msgstr "Đây không phải là hợp lệ. Lý do: %s"
 
 #. minute
-#: ../src/crontabEditorHelper.py:231 ../src/gnome-schedule.glade.h:14
+#: ../src/crontabEditorHelper.py:231 ../src/gnome-schedule.glade.h:15
 msgid "At an exact minute"
 msgstr "Vào một phút chính xác"
 
-#: ../src/crontabEditorHelper.py:232 ../src/gnome-schedule.glade.h:41
+#: ../src/crontabEditorHelper.py:232 ../src/gnome-schedule.glade.h:42
 msgid "Minute:"
 msgstr "Phút:"
 
@@ -246,7 +246,7 @@ msgstr "Phút:"
 msgid "At an exact hour"
 msgstr "Vào một giờ chính xác"
 
-#: ../src/crontabEditorHelper.py:236 ../src/gnome-schedule.glade.h:37
+#: ../src/crontabEditorHelper.py:236 ../src/gnome-schedule.glade.h:38
 msgid "Hour:"
 msgstr "Giờ :"
 
@@ -255,7 +255,7 @@ msgstr "Giờ :"
 msgid "On a day"
 msgstr "Vào một ngày chính xác"
 
-#: ../src/crontabEditorHelper.py:240 ../src/gnome-schedule.glade.h:22
+#: ../src/crontabEditorHelper.py:240 ../src/gnome-schedule.glade.h:23
 msgid "Day:"
 msgstr "Ngày:"
 
@@ -264,7 +264,7 @@ msgstr "Ngày:"
 msgid "In a month"
 msgstr "Trong một tháng chính xác"
 
-#: ../src/crontabEditorHelper.py:244 ../src/gnome-schedule.glade.h:43
+#: ../src/crontabEditorHelper.py:244 ../src/gnome-schedule.glade.h:44
 msgid "Month:"
 msgstr "Tháng:"
 
@@ -273,15 +273,15 @@ msgstr "Tháng:"
 msgid "On a weekday"
 msgstr "Vào một ngày tuần chính xác"
 
-#: ../src/crontabEditorHelper.py:248 ../src/gnome-schedule.glade.h:55
+#: ../src/crontabEditorHelper.py:248 ../src/gnome-schedule.glade.h:56
 msgid "Weekday:"
 msgstr "Ngày tuần:"
 
-#: ../src/crontabEditorHelper.py:253 ../src/gnome-schedule.glade.h:39
+#: ../src/crontabEditorHelper.py:253 ../src/gnome-schedule.glade.h:40
 msgid "In a step width"
 msgstr "Trong rộng bước"
 
-#: ../src/crontabEditorHelper.py:255 ../src/gnome-schedule.glade.h:42
+#: ../src/crontabEditorHelper.py:255 ../src/gnome-schedule.glade.h:43
 msgid "Minutes:"
 msgstr "Phút:"
 
@@ -352,81 +352,87 @@ msgid "<b>Select the type of the scheduled task:</b>"
 msgstr "<b>Chọn kiểu tác vụ đã lập lịch</b>"
 
 #: ../src/gnome-schedule.glade.h:9
+msgid ""
+"<b>To create a new task you need to use the <i>Add as template</i> button in "
+"the new task windows</b>"
+msgstr ""
+
+#: ../src/gnome-schedule.glade.h:10
 #, fuzzy
 msgid "<big>Preview</big>"
 msgstr "<b>Xem thử</b>"
 
-#: ../src/gnome-schedule.glade.h:10
+#: ../src/gnome-schedule.glade.h:11
 msgid "<big>Time &amp; Date</big>"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:11
+#: ../src/gnome-schedule.glade.h:12
 msgid "Add a Scheduled Task"
 msgstr "Thêm tác vụ đã lập lịch"
 
-#: ../src/gnome-schedule.glade.h:12
+#: ../src/gnome-schedule.glade.h:13
 #, fuzzy
 msgid "Add as template"
 msgstr "Th_êm tác vụ"
 
-#: ../src/gnome-schedule.glade.h:13
+#: ../src/gnome-schedule.glade.h:14
 msgid "Advanced"
 msgstr "Cấp cao"
 
-#: ../src/gnome-schedule.glade.h:16
+#: ../src/gnome-schedule.glade.h:17
 msgid "Change User"
 msgstr "Chuyển đổi người dùng"
 
-#: ../src/gnome-schedule.glade.h:17
+#: ../src/gnome-schedule.glade.h:18
 #, fuzzy
 msgid "Choose template"
 msgstr "Th_êm tác vụ"
 
-#: ../src/gnome-schedule.glade.h:18
+#: ../src/gnome-schedule.glade.h:19
 msgid "Choose the user whose tasks you want to modify"
 msgstr "Chọn người dùng sở hữu những tác vụ bạn muốn sửa đổi"
 
-#: ../src/gnome-schedule.glade.h:19
+#: ../src/gnome-schedule.glade.h:20
 #, fuzzy
 msgid "Command:"
 msgstr "_Lệnh:"
 
-#: ../src/gnome-schedule.glade.h:20
+#: ../src/gnome-schedule.glade.h:21
 msgid "Configure Scheduled Tasks"
 msgstr "Cấu hình tác vụ đã lập lịch"
 
-#: ../src/gnome-schedule.glade.h:21
+#: ../src/gnome-schedule.glade.h:22
 #, fuzzy
 msgid "Date:"
 msgstr "_Ngày:"
 
-#: ../src/gnome-schedule.glade.h:23
+#: ../src/gnome-schedule.glade.h:24
 msgid "Delete a scheduled task"
 msgstr "Xoá bỏ tác vụ đã lập lịch"
 
-#: ../src/gnome-schedule.glade.h:24
+#: ../src/gnome-schedule.glade.h:25
 #, fuzzy
 msgid "Description:"
 msgstr "_Mô tả:"
 
-#: ../src/gnome-schedule.glade.h:25
+#: ../src/gnome-schedule.glade.h:26
 #, fuzzy
 msgid "Edit a periodical task"
 msgstr "Sửa đổi tác vụ đã lập lịch"
 
-#: ../src/gnome-schedule.glade.h:26
+#: ../src/gnome-schedule.glade.h:27
 msgid "Edit a scheduled task"
 msgstr "Sửa đổi tác vụ đã lập lịch"
 
-#: ../src/gnome-schedule.glade.h:29
+#: ../src/gnome-schedule.glade.h:30
 msgid "Execute at:"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:30
+#: ../src/gnome-schedule.glade.h:31
 msgid "Execution at a specific minute, hour, day, weekday or month."
 msgstr "Thực hiện vào phút, giờ, ngày, ngày tuần hay tháng chính xác."
 
-#: ../src/gnome-schedule.glade.h:31
+#: ../src/gnome-schedule.glade.h:32
 msgid ""
 "Execution at a step width. For example every five minutes, hours, days, "
 "weekdays or months."
@@ -434,107 +440,107 @@ msgstr ""
 "Thực hiện tại rộng bước. Lấy thí dụ, mỗi năm phút, giờ, ngày, ngày tuần hay "
 "tháng."
 
-#: ../src/gnome-schedule.glade.h:32
+#: ../src/gnome-schedule.glade.h:33
 msgid "Execution at every minute, hour, day, weekday or month."
 msgstr "Thực hiện vào mỗi phút, giờ, ngày, ngày tuần hay tháng."
 
-#: ../src/gnome-schedule.glade.h:33
+#: ../src/gnome-schedule.glade.h:34
 msgid "Execution in a range."
 msgstr "Thực hiện trong phạm vi"
 
-#: ../src/gnome-schedule.glade.h:34
+#: ../src/gnome-schedule.glade.h:35
 msgid "Expression:"
 msgstr "Biểu thức:"
 
-#: ../src/gnome-schedule.glade.h:35
+#: ../src/gnome-schedule.glade.h:36
 msgid "For example every first hour of the day"
 msgstr "Lấy thí dụ, mỗi giờ thứ nhất trong ngày"
 
-#: ../src/gnome-schedule.glade.h:36
+#: ../src/gnome-schedule.glade.h:37
 msgid "From:"
 msgstr "Từ :"
 
-#: ../src/gnome-schedule.glade.h:38
+#: ../src/gnome-schedule.glade.h:39
 msgid "In a range"
 msgstr "Trong phạm vi"
 
-#: ../src/gnome-schedule.glade.h:40
+#: ../src/gnome-schedule.glade.h:41
 #, fuzzy
 msgid "Manage templates"
 msgstr "_Quản lý tác vụ"
 
-#: ../src/gnome-schedule.glade.h:44
+#: ../src/gnome-schedule.glade.h:45
 msgid "Other"
 msgstr "Khác"
 
-#: ../src/gnome-schedule.glade.h:45
+#: ../src/gnome-schedule.glade.h:46
 msgid "Run task"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:46
+#: ../src/gnome-schedule.glade.h:47
 msgid "Scheduled and active tasks"
 msgstr "Tác vụ đã lập lịch và hoạt động"
 
-#: ../src/gnome-schedule.glade.h:47
+#: ../src/gnome-schedule.glade.h:48
 msgid "See \"man 5 crontab\" for information about the crontab format."
 msgstr "Xem « man 5 crontab » để tìm thông tin về khuôn dạng crontab."
 
-#: ../src/gnome-schedule.glade.h:48
+#: ../src/gnome-schedule.glade.h:49
 msgid "Show help"
 msgstr "Hiện trợ giúp"
 
-#: ../src/gnome-schedule.glade.h:49
+#: ../src/gnome-schedule.glade.h:50
 #, fuzzy
 msgid "Task description:"
 msgstr "_Mô tả:"
 
-#: ../src/gnome-schedule.glade.h:50
+#: ../src/gnome-schedule.glade.h:51
 #, fuzzy
 msgid "Task:"
 msgstr "_Tác vụ"
 
-#: ../src/gnome-schedule.glade.h:51
+#: ../src/gnome-schedule.glade.h:52
 #, fuzzy
 msgid "Templates"
 msgstr "_Mẫu :"
 
-#: ../src/gnome-schedule.glade.h:52
+#: ../src/gnome-schedule.glade.h:53
 msgid "Time expression help"
 msgstr "Trợ giúp về biểu thức thời gian"
 
-#: ../src/gnome-schedule.glade.h:53
+#: ../src/gnome-schedule.glade.h:54
 msgid "Time:"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:54
+#: ../src/gnome-schedule.glade.h:55
 msgid "To:"
 msgstr "Đến:"
 
-#: ../src/gnome-schedule.glade.h:56
+#: ../src/gnome-schedule.glade.h:57
 msgid "_No output (>/dev/null 2>&1)"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:57
+#: ../src/gnome-schedule.glade.h:58
 msgid "_User:"
 msgstr "_Người dùng:"
 
-#: ../src/gnome-schedule.glade.h:58
+#: ../src/gnome-schedule.glade.h:59
 msgid "gtk-apply"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:59
+#: ../src/gnome-schedule.glade.h:60
 msgid "gtk-cancel"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:60
+#: ../src/gnome-schedule.glade.h:61
 msgid "gtk-delete"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:61
+#: ../src/gnome-schedule.glade.h:62
 msgid "gtk-edit"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:62
+#: ../src/gnome-schedule.glade.h:63
 msgid "ls -l"
 msgstr ""
 
