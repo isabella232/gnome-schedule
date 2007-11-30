@@ -2,8 +2,7 @@ TODO
 ----
 
 Development:
- Wishlist (need a new branch and/or will not be 
- included in the next release)
+ Wishlist (need a new branch and/or will not be included in the next release)
   * Show the next-run time for crontab records
   * Support for mail direction in both cron and at
   * Support for classes in at(nice, priority)
@@ -16,15 +15,9 @@ Development:
     
   * bug 325271, frank arnold: "ally - scan all dialogs for missing accelerators"
 
-
  Unassigned would make it to the release but are non-blocking it
   * We need more exception handlers and let functions return if an operation failed
     (in savetemplate for example)
-  * look into (to see what could be interresting to use in our project):
-  	 http://docs.python.org/lib/module-locale.html 
-	 http://docs.python.org/lib/module-calendar.html 
-	 http://docs.python.org/lib/module-datetime.html
-	 http://docs.python.org/lib/module-grp.html
 
 Translations:
   * Check out the ngettext stuff for python, perhaps send python/gettext folks a note about the missing features. bug 325053
