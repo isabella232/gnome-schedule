@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-11-29 11:13+0100\n"
+"POT-Creation-Date: 2007-11-30 13:58+0100\n"
 "PO-Revision-Date: 2006-07-05 21:19+0400\n"
 "Last-Translator: Nickolay V. Shmyrev <nshmyrev@yandex.ru>\n"
 "Language-Team: Russian <gnome-cyr@gnome.org>\n"
@@ -93,12 +93,13 @@ msgstr "Значение должно находится между %(min)s и %
 msgid "%s is not a number"
 msgstr "%s не является числом"
 
-#: ../src/crontab.py:236 ../src/crontab.py:292 ../src/crontabEditor.py:186
-#: ../src/atEditor.py:112 ../src/atEditor.py:336 ../src/atEditor.py:360
+#: ../src/crontab.py:236 ../src/crontab.py:292 ../src/crontabEditor.py:270
+#: ../src/atEditor.py:112 ../src/atEditor.py:367 ../src/atEditor.py:391
 msgid "Untitled"
 msgstr "Безымянная"
 
-#: ../src/crontab.py:391 ../src/crontab.py:393
+#: ../src/crontab.py:391 ../src/crontab.py:393 ../src/template_chooser.py:84
+#: ../src/template_manager.py:85
 msgid "Recurrent"
 msgstr "Периодично"
 
@@ -149,15 +150,22 @@ msgid "Every week"
 msgstr "Каждую неделю"
 
 #. add new task
-#: ../src/crontabEditor.py:130 ../src/atEditor.py:114
+#: ../src/crontabEditor.py:130 ../src/crontabEditor.py:140
+#: ../src/atEditor.py:114 ../src/atEditor.py:128
 msgid "Create a New Scheduled Task"
 msgstr "Запланировать новое задание"
 
-#: ../src/crontabEditor.py:155 ../src/atEditor.py:147
+#. edit template
+#: ../src/crontabEditor.py:200 ../src/atEditor.py:144
+#, fuzzy
+msgid "Edit template"
+msgstr "_Добавить задание"
+
+#: ../src/crontabEditor.py:239 ../src/atEditor.py:184
 msgid "Edit a Scheduled Task"
 msgstr "Правка запланированного задания"
 
-#: ../src/crontabEditor.py:213
+#: ../src/crontabEditor.py:297
 #, python-format
 msgid ""
 "This is an invalid record! The problem could be in the %(field)s field. "
@@ -166,7 +174,7 @@ msgstr ""
 "Эта запись некорректна! Проблема может быть в поле %(field)s. Причина: %"
 "(reason)s"
 
-#: ../src/crontabEditor.py:218
+#: ../src/crontabEditor.py:302
 msgid ""
 "Your command contains one or more of the character %, this is special for "
 "cron and cannot be used with Gnome-schedule because of the format it uses to "
@@ -177,14 +185,14 @@ msgid ""
 "$HOME."
 msgstr ""
 
-#: ../src/crontabEditor.py:348
+#: ../src/crontabEditor.py:470
 msgid ""
 "Note about working directory of executed tasks:\n"
 "\n"
 "Recurrent tasks will be run from the home directory."
 msgstr ""
 
-#: ../src/crontabEditor.py:350 ../src/mainWindow.py:589 ../src/atEditor.py:401
+#: ../src/crontabEditor.py:472 ../src/mainWindow.py:615 ../src/atEditor.py:440
 msgid "Warning: Working directory of executed tasks"
 msgstr ""
 
@@ -323,7 +331,7 @@ msgid ":"
 msgstr ""
 
 #: ../src/gnome-schedule.glade.h:5
-msgid "<b>Choose a template</b>"
+msgid "<b>Choose a template to create a task from:</b>"
 msgstr ""
 
 #: ../src/gnome-schedule.glade.h:6
@@ -475,7 +483,7 @@ msgstr "Справка"
 
 #: ../src/gnome-schedule.glade.h:49
 #, fuzzy
-msgid "Task describtion:"
+msgid "Task description:"
 msgstr "_Описание:"
 
 #: ../src/gnome-schedule.glade.h:50
@@ -525,10 +533,6 @@ msgid "gtk-edit"
 msgstr ""
 
 #: ../src/gnome-schedule.glade.h:62
-msgid "gtk-new"
-msgstr ""
-
-#: ../src/gnome-schedule.glade.h:63
 msgid "ls -l"
 msgstr ""
 
@@ -855,61 +859,68 @@ msgstr "день недели: %s"
 msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 msgstr "В %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 
-#: ../src/mainWindow.py:106
+#: ../src/mainWindow.py:111
 #, fuzzy
 msgid "Recurrent task"
 msgstr "Периодично"
 
-#: ../src/mainWindow.py:114
+#: ../src/mainWindow.py:122
 msgid "One-time task"
 msgstr ""
 
-#: ../src/mainWindow.py:129
+#: ../src/mainWindow.py:133
+#, fuzzy
+msgid "From template"
+msgstr "_Добавить задание"
+
+#: ../src/mainWindow.py:152
 #, fuzzy
 msgid "Add a new task"
 msgstr "_Добавить задание"
 
-#: ../src/mainWindow.py:253 ../src/mainWindow.py:349
+#: ../src/mainWindow.py:269 ../src/mainWindow.py:369
 #, python-format
 msgid "Editing user: %s"
 msgstr "Правка пользователя: %s"
 
-#: ../src/mainWindow.py:304 ../src/mainWindow.py:320
+#: ../src/mainWindow.py:320 ../src/mainWindow.py:340
 #: ../src/scheduleapplet.py:115
 msgid "ERROR: Could not load icon"
 msgstr "ОШИБКА: невозможно загрузить значок"
 
-#: ../src/mainWindow.py:330
+#: ../src/mainWindow.py:350
 msgid "ERROR: Could not load glade file"
 msgstr "ОШИБКА: невозможно загрузить файл glade"
 
-#: ../src/mainWindow.py:384
+#: ../src/mainWindow.py:404 ../src/template_chooser.py:53
+#: ../src/template_manager.py:54
 #, fuzzy
 msgid "Task"
 msgstr "_Задача"
 
-#: ../src/mainWindow.py:397 ../src/mainWindow.py:423
+#: ../src/mainWindow.py:417 ../src/mainWindow.py:443
+#: ../src/template_chooser.py:62 ../src/template_manager.py:63
 msgid "Description"
 msgstr "Описание"
 
-#: ../src/mainWindow.py:401 ../src/mainWindow.py:414
+#: ../src/mainWindow.py:421 ../src/mainWindow.py:434
 msgid "Date and Time"
 msgstr "Дата и время"
 
-#: ../src/mainWindow.py:405 ../src/mainWindow.py:418
+#: ../src/mainWindow.py:425 ../src/mainWindow.py:438
 msgid "Command preview"
 msgstr ""
 
 #. print ex
-#: ../src/mainWindow.py:468 ../src/mainWindow.py:531
+#: ../src/mainWindow.py:494 ../src/mainWindow.py:557
 msgid "Please select a task"
 msgstr "Пожалуйста, выберите задание"
 
-#: ../src/mainWindow.py:475
+#: ../src/mainWindow.py:501
 msgid "Do you want to delete this task?"
 msgstr "Хотите удалить это задание?"
 
-#: ../src/mainWindow.py:576
+#: ../src/mainWindow.py:602
 msgid ""
 "Are you sure you want to run this task now?\n"
 "\n"
@@ -917,12 +928,12 @@ msgid ""
 "affect the normal scheduled run times."
 msgstr ""
 
-#: ../src/mainWindow.py:578
+#: ../src/mainWindow.py:604
 #, fuzzy
 msgid "Are you sure you want to run this task?"
 msgstr "Хотите удалить это задание?"
 
-#: ../src/mainWindow.py:587
+#: ../src/mainWindow.py:613
 msgid ""
 "Note about working directory of executed tasks:\n"
 "\n"
@@ -931,33 +942,33 @@ msgid ""
 "(normally the home directory)."
 msgstr ""
 
-#: ../src/mainWindow.py:642
+#: ../src/mainWindow.py:668
 msgid "Press ENTER to continue and close this window."
 msgstr ""
 
-#: ../src/mainWindow.py:650
+#: ../src/mainWindow.py:676
 #, fuzzy
 msgid "Please select a task!"
 msgstr "Пожалуйста, выберите задание"
 
-#: ../src/mainWindow.py:658
+#: ../src/mainWindow.py:684
 msgid "About Gnome Schedule"
 msgstr "О программе \"Расписание GNOME\""
 
-#: ../src/mainWindow.py:659
+#: ../src/mainWindow.py:685
 msgid "Gnome Schedule"
 msgstr "Расписание GNOME"
 
-#: ../src/mainWindow.py:661
+#: ../src/mainWindow.py:687
 #, fuzzy
 msgid "Copyright (c) 2004-2008 Gaute Hope."
 msgstr "Copyright (c) 2004-2005 Gaute Hope."
 
-#: ../src/mainWindow.py:674
+#: ../src/mainWindow.py:700
 msgid "translator-credits"
 msgstr "Nickolay V. Shmyrev <nshmyrev@yandex.ru>"
 
-#: ../src/mainWindow.py:695
+#: ../src/mainWindow.py:721
 msgid "Could not display help"
 msgstr "Невозможно отобразить справку"
 
@@ -969,32 +980,36 @@ msgstr "ОШИБКА: невозможно загрузить xml файл ме�
 msgid "No such user"
 msgstr "Нет такого пользователя"
 
-#: ../src/addWindow.py:46
+#: ../src/addWindow.py:48
 #, fuzzy
 msgid "A task that launches recurrently"
 msgstr "Запланированная задача будет запускаться периодично"
 
-#: ../src/addWindow.py:59
+#: ../src/addWindow.py:61
 msgid "A task that launches one time"
 msgstr ""
 
-#: ../src/atEditor.py:74
+#: ../src/addWindow.py:74
+msgid "A task from a predefined template"
+msgstr ""
+
+#: ../src/atEditor.py:76
 msgid "Calendar"
 msgstr ""
 
-#: ../src/atEditor.py:328
+#: ../src/atEditor.py:359
 msgid ""
 "In one or both of the fields hour and minute there was entered a letter, or "
 "a number out of range. Remember an hour only has 60 minutes and a day only "
 "24 hours."
 msgstr ""
 
-#: ../src/atEditor.py:387
+#: ../src/atEditor.py:418
 #, python-format
 msgid "This is an invalid record! The problem could be: %s"
 msgstr "Это некорректная запись! Проблема может быть в: %s"
 
-#: ../src/atEditor.py:399
+#: ../src/atEditor.py:438
 msgid ""
 "Note about working directory of executed tasks:\n"
 "\n"
@@ -1019,6 +1034,10 @@ msgstr ""
 #: ../src/thoughicon.py:94
 #, python-format
 msgid "ICON: Got badly sized icon for %s"
+msgstr ""
+
+#: ../src/template_chooser.py:75 ../src/template_manager.py:76
+msgid "One-time"
 msgstr ""
 
 #~ msgid "For example at 04:10 tomorrow, next week or in three days"

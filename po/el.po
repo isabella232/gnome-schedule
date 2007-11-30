@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: el\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-11-29 11:13+0100\n"
+"POT-Creation-Date: 2007-11-30 13:58+0100\n"
 "PO-Revision-Date: 2005-01-03 12:40+0200\n"
 "Last-Translator: Kostas Papadimas <pkst@gnome.org>\n"
 "Language-Team: Greek <nls@tux.hellug.gr>\n"
@@ -105,12 +105,13 @@ msgstr "πρέπει να είναι ανάμεσα σε 0 και 7"
 msgid "%s is not a number"
 msgstr "το %s δεν είναι αριθμός"
 
-#: ../src/crontab.py:236 ../src/crontab.py:292 ../src/crontabEditor.py:186
-#: ../src/atEditor.py:112 ../src/atEditor.py:336 ../src/atEditor.py:360
+#: ../src/crontab.py:236 ../src/crontab.py:292 ../src/crontabEditor.py:270
+#: ../src/atEditor.py:112 ../src/atEditor.py:367 ../src/atEditor.py:391
 msgid "Untitled"
 msgstr "Ανώνυμο"
 
-#: ../src/crontab.py:391 ../src/crontab.py:393
+#: ../src/crontab.py:391 ../src/crontab.py:393 ../src/template_chooser.py:84
+#: ../src/template_manager.py:85
 msgid "Recurrent"
 msgstr ""
 
@@ -166,17 +167,24 @@ msgid "Every week"
 msgstr "Κάθε"
 
 #. add new task
-#: ../src/crontabEditor.py:130 ../src/atEditor.py:114
+#: ../src/crontabEditor.py:130 ../src/crontabEditor.py:140
+#: ../src/atEditor.py:114 ../src/atEditor.py:128
 #, fuzzy
 msgid "Create a New Scheduled Task"
 msgstr "Δημιουργία μιας νέας προγραμματισμένης εργασίας"
 
-#: ../src/crontabEditor.py:155 ../src/atEditor.py:147
+#. edit template
+#: ../src/crontabEditor.py:200 ../src/atEditor.py:144
+#, fuzzy
+msgid "Edit template"
+msgstr "Προσ_θήκη εργασίας"
+
+#: ../src/crontabEditor.py:239 ../src/atEditor.py:184
 #, fuzzy
 msgid "Edit a Scheduled Task"
 msgstr "Επεξεργασία μιας προγραμματισμένης εργασίας"
 
-#: ../src/crontabEditor.py:213
+#: ../src/crontabEditor.py:297
 #, fuzzy, python-format
 msgid ""
 "This is an invalid record! The problem could be in the %(field)s field. "
@@ -185,7 +193,7 @@ msgstr ""
 "Αυτή δεν είναι μια έγκυρη εγγραφή! Το πρόβλημα πιθανόν να βρίσκεται στο "
 "πεδίο %s. Λόγος: %s"
 
-#: ../src/crontabEditor.py:218
+#: ../src/crontabEditor.py:302
 msgid ""
 "Your command contains one or more of the character %, this is special for "
 "cron and cannot be used with Gnome-schedule because of the format it uses to "
@@ -196,14 +204,14 @@ msgid ""
 "$HOME."
 msgstr ""
 
-#: ../src/crontabEditor.py:348
+#: ../src/crontabEditor.py:470
 msgid ""
 "Note about working directory of executed tasks:\n"
 "\n"
 "Recurrent tasks will be run from the home directory."
 msgstr ""
 
-#: ../src/crontabEditor.py:350 ../src/mainWindow.py:589 ../src/atEditor.py:401
+#: ../src/crontabEditor.py:472 ../src/mainWindow.py:615 ../src/atEditor.py:440
 msgid "Warning: Working directory of executed tasks"
 msgstr ""
 
@@ -356,7 +364,7 @@ msgid ":"
 msgstr ":"
 
 #: ../src/gnome-schedule.glade.h:5
-msgid "<b>Choose a template</b>"
+msgid "<b>Choose a template to create a task from:</b>"
 msgstr ""
 
 #: ../src/gnome-schedule.glade.h:6
@@ -516,8 +524,9 @@ msgid "Show help"
 msgstr "Εμφάνιση βοήθειας"
 
 #: ../src/gnome-schedule.glade.h:49
-msgid "Task describtion:"
-msgstr ""
+#, fuzzy
+msgid "Task description:"
+msgstr "Δέσμη ενεργειών"
 
 #: ../src/gnome-schedule.glade.h:50
 msgid "Task:"
@@ -566,10 +575,6 @@ msgid "gtk-edit"
 msgstr ""
 
 #: ../src/gnome-schedule.glade.h:62
-msgid "gtk-new"
-msgstr ""
-
-#: ../src/gnome-schedule.glade.h:63
 msgid "ls -l"
 msgstr ""
 
@@ -877,61 +882,68 @@ msgstr "εργάσιμη ημέρα"
 msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 msgstr ""
 
-#: ../src/mainWindow.py:106
+#: ../src/mainWindow.py:111
 msgid "Recurrent task"
 msgstr ""
 
-#: ../src/mainWindow.py:114
+#: ../src/mainWindow.py:122
 msgid "One-time task"
 msgstr ""
 
-#: ../src/mainWindow.py:129
+#: ../src/mainWindow.py:133
+#, fuzzy
+msgid "From template"
+msgstr "Προσ_θήκη εργασίας"
+
+#: ../src/mainWindow.py:152
 #, fuzzy
 msgid "Add a new task"
 msgstr "Προσ_θήκη εργασίας"
 
-#: ../src/mainWindow.py:253 ../src/mainWindow.py:349
+#: ../src/mainWindow.py:269 ../src/mainWindow.py:369
 #, python-format
 msgid "Editing user: %s"
 msgstr ""
 
-#: ../src/mainWindow.py:304 ../src/mainWindow.py:320
+#: ../src/mainWindow.py:320 ../src/mainWindow.py:340
 #: ../src/scheduleapplet.py:115
 msgid "ERROR: Could not load icon"
 msgstr ""
 
-#: ../src/mainWindow.py:330
+#: ../src/mainWindow.py:350
 msgid "ERROR: Could not load glade file"
 msgstr ""
 
-#: ../src/mainWindow.py:384
+#: ../src/mainWindow.py:404 ../src/template_chooser.py:53
+#: ../src/template_manager.py:54
 msgid "Task"
 msgstr ""
 
-#: ../src/mainWindow.py:397 ../src/mainWindow.py:423
+#: ../src/mainWindow.py:417 ../src/mainWindow.py:443
+#: ../src/template_chooser.py:62 ../src/template_manager.py:63
 msgid "Description"
 msgstr ""
 
-#: ../src/mainWindow.py:401 ../src/mainWindow.py:414
+#: ../src/mainWindow.py:421 ../src/mainWindow.py:434
 #, fuzzy
 msgid "Date and Time"
 msgstr "Ημερομηνία και ώρα"
 
-#: ../src/mainWindow.py:405 ../src/mainWindow.py:418
+#: ../src/mainWindow.py:425 ../src/mainWindow.py:438
 msgid "Command preview"
 msgstr ""
 
 #. print ex
-#: ../src/mainWindow.py:468 ../src/mainWindow.py:531
+#: ../src/mainWindow.py:494 ../src/mainWindow.py:557
 #, fuzzy
 msgid "Please select a task"
 msgstr "Αλλαγή μιας προγραμματισμένης εργασίας"
 
-#: ../src/mainWindow.py:475
+#: ../src/mainWindow.py:501
 msgid "Do you want to delete this task?"
 msgstr ""
 
-#: ../src/mainWindow.py:576
+#: ../src/mainWindow.py:602
 msgid ""
 "Are you sure you want to run this task now?\n"
 "\n"
@@ -939,11 +951,11 @@ msgid ""
 "affect the normal scheduled run times."
 msgstr ""
 
-#: ../src/mainWindow.py:578
+#: ../src/mainWindow.py:604
 msgid "Are you sure you want to run this task?"
 msgstr ""
 
-#: ../src/mainWindow.py:587
+#: ../src/mainWindow.py:613
 msgid ""
 "Note about working directory of executed tasks:\n"
 "\n"
@@ -952,35 +964,35 @@ msgid ""
 "(normally the home directory)."
 msgstr ""
 
-#: ../src/mainWindow.py:642
+#: ../src/mainWindow.py:668
 msgid "Press ENTER to continue and close this window."
 msgstr ""
 
-#: ../src/mainWindow.py:650
+#: ../src/mainWindow.py:676
 #, fuzzy
 msgid "Please select a task!"
 msgstr "Αλλαγή μιας προγραμματισμένης εργασίας"
 
-#: ../src/mainWindow.py:658
+#: ../src/mainWindow.py:684
 #, fuzzy
 msgid "About Gnome Schedule"
 msgstr "Gnome Schedule"
 
-#: ../src/mainWindow.py:659
+#: ../src/mainWindow.py:685
 msgid "Gnome Schedule"
 msgstr "Gnome Schedule"
 
-#: ../src/mainWindow.py:661
+#: ../src/mainWindow.py:687
 #, fuzzy
 msgid "Copyright (c) 2004-2008 Gaute Hope."
 msgstr "Πνευματικά δικαιώματα (c) 2004-2005 Gaute Hope."
 
-#: ../src/mainWindow.py:674
+#: ../src/mainWindow.py:700
 #, fuzzy
 msgid "translator-credits"
 msgstr "Κώστας Παπαδήμας <pkst@gnome.org>"
 
-#: ../src/mainWindow.py:695
+#: ../src/mainWindow.py:721
 msgid "Could not display help"
 msgstr ""
 
@@ -992,33 +1004,37 @@ msgstr ""
 msgid "No such user"
 msgstr ""
 
-#: ../src/addWindow.py:46
+#: ../src/addWindow.py:48
 #, fuzzy
 msgid "A task that launches recurrently"
 msgstr "Μια προγρεαμματισμένη εργασία θα ξεκινήσει με συχνότητα"
 
-#: ../src/addWindow.py:59
+#: ../src/addWindow.py:61
 msgid "A task that launches one time"
 msgstr ""
 
-#: ../src/atEditor.py:74
+#: ../src/addWindow.py:74
+msgid "A task from a predefined template"
+msgstr ""
+
+#: ../src/atEditor.py:76
 msgid "Calendar"
 msgstr ""
 
-#: ../src/atEditor.py:328
+#: ../src/atEditor.py:359
 msgid ""
 "In one or both of the fields hour and minute there was entered a letter, or "
 "a number out of range. Remember an hour only has 60 minutes and a day only "
 "24 hours."
 msgstr ""
 
-#: ../src/atEditor.py:387
+#: ../src/atEditor.py:418
 #, fuzzy, python-format
 msgid "This is an invalid record! The problem could be: %s"
 msgstr ""
 "Αυτή δεν είναι μια έγκυρη εγγραφή!, Το πρόβλημα μπορεί να βρίσκεται : %s "
 
-#: ../src/atEditor.py:399
+#: ../src/atEditor.py:438
 msgid ""
 "Note about working directory of executed tasks:\n"
 "\n"
@@ -1043,6 +1059,10 @@ msgstr ""
 #: ../src/thoughicon.py:94
 #, python-format
 msgid "ICON: Got badly sized icon for %s"
+msgstr ""
+
+#: ../src/template_chooser.py:75 ../src/template_manager.py:76
+msgid "One-time"
 msgstr ""
 
 #, fuzzy
