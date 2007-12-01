@@ -191,8 +191,8 @@ msgstr ""
 "Dette er eit ugyldig tidsuttrykk! Problemet kan vere %(field)s feltet. "
 "Grunn: %(reason)s"
 
-#: ../src/crontabEditor.py:302
 #
+#: ../src/crontabEditor.py:302
 msgid ""
 "Your command contains one or more of the character %, this is special for "
 "cron and cannot be used with Gnome-schedule because of the format it uses to "
@@ -377,8 +377,8 @@ msgstr "<b>Administrer førhandsoppsett</b>"
 msgid "<b>Select the type of the scheduled task:</b>"
 msgstr "<b>Velg typen av oppgåve:</b>"
 
-#: ../src/gnome-schedule.glade.h:9
 #
+#: ../src/gnome-schedule.glade.h:9
 msgid ""
 "<b>To create a new template you need to use the <i>Add as template</i> "
 "button in the windows where you create new tasks</b>"
@@ -1052,8 +1052,8 @@ msgstr "Om Gnome Schedule"
 msgid "Gnome Schedule"
 msgstr "Gnome Schedule"
 
-#: ../src/mainWindow.py:714
 #
+#: ../src/mainWindow.py:714
 msgid "Copyright (c) 2004-2008 Gaute Hope."
 msgstr "Kopieringsrett (c) 2004-2006 Gaute Hope."
 
@@ -1074,7 +1074,6 @@ msgid "No such user"
 msgstr "Ingen brukar med dette namnet"
 
 #: ../src/addWindow.py:48
-#, 
 msgid "A task that launches recurrently"
 msgstr "Ei oppgåve som vil gjenta seg"
 
@@ -1140,4 +1139,3 @@ msgstr "IKON: Fekk dårleg ikon med dårleg storleik: %s"
 #: ../src/template_chooser.py:83 ../src/template_manager.py:84
 msgid "One-time"
 msgstr "Ein-gong"
-
