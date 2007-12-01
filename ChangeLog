@@ -6,6 +6,7 @@
 	* Treating it as a bug in crontab.. strangly i cannot reproduce it, crontab.py is still checking for it though and fails on that line.
 	* icons/template.svg: Using the icon bookmark-new.svg from the tango project to symbolize templates, possible that the hacking to get it displayed on the menu button made some other accessability or theme wide settings not apply to this button.
 	* changed some strings
+	* help opens correctly
 	
 	
 2007-11-30  Gaute Hope  <eg@gaute.vetsj.com>

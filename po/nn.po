@@ -384,7 +384,7 @@ msgid ""
 "button in the windows where you create new tasks</b>"
 msgstr ""
 "<b>For å lage eit nytt førehandsoppsett må du bruke <i>Legg til som "
-"førehandsoppsett</i> knappen i vindauga der du kan lage nye oppgåver"
+"førehandsoppsett</i> knappen i vindauga der du kan lage nye oppgåver</b>"
 
 #
 #: ../src/gnome-schedule.glade.h:10

@@ -739,7 +739,7 @@ class main:
 		try:
 			gnome.help_display (
 					'gnome-schedule', 
-					'')
+					None)
 		except gobject.GError, error:
 			dialog = gtk.MessageDialog (
 					self.widget,
