@@ -1,4 +1,6 @@
 check bug: 419392, http://bugzilla.gnome.org/show_bug.cgi?id=419392
 
 * All dialogs and editors should be hidden when ESC is pressed
-* Check that only the mainwindow is displayed in the window list and on the task bar
+* labels should be expanded
+* toolbar template button, icon should work with different toolbar setups (appearance -> interface in user settings)
+
