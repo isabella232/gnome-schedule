@@ -603,12 +603,15 @@ class CrontabEditor:
 				self.__check_field_format__ (self.weekday, "weekday")
 				
 				# Day of Month
-				# TODO: Verify behaviour
+				# Crontab bug? Let's not support
+				# dom behaves like minute
+				"""
 				dom = self.day
 				if dom.isdigit() == False:
 					dom = dom.lower ()
 					for day in self.scheduler.downumbers:
 						dom = dom.replace (day, self.scheduler.downumbers[day])
+				"""
 						
 				# Month of Year
 				moy = self.month
@@ -624,7 +627,7 @@ class CrontabEditor:
 					dow = dow.lower ()
 					for day in self.scheduler.downumbers:
 						dow = dow.replace (day, self.scheduler.downumbers[day])
-				self.label_preview.set_text ("<b>" + self.scheduler.__easy__ (self.minute, self.hour, dom, moy, dow) + "</b>")
+				self.label_preview.set_text ("<b>" + self.scheduler.__easy__ (self.minute, self.hour, self.day, moy, dow) + "</b>")
 			except ValueError, ex:
 				x, y, z = ex
 				self.label_preview.set_text (_("This is an invalid record! The problem could be in the %(field)s field. Reason: %(reason)s") % ({'field' : y, 'reason' : z}))

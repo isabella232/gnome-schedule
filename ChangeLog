@@ -3,6 +3,7 @@
 	* Merged tweakings from trunk concerning text strings in dom fields.
 	* The preview field in crontab editor checks for errors and doesn't crash on string entries.
 	* TODO: Figure out behaviour, if as parsed now then allow it in checkfield
+	* Treating it as a bug in crontab.. strangly i cannot reproduce it, crontab.py is still checking for it though and fails on that line.
 	
 2007-11-30  Gaute Hope  <eg@gaute.vetsj.com>
 
