@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arabic\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-11-30 14:09+0100\n"
+"POT-Creation-Date: 2007-12-01 16:28+0100\n"
 "PO-Revision-Date: 2007-04-14 18:49+0100\n"
 "Last-Translator: Djihed Afifi <djihed@gmail.com>\n"
 "Language-Team: Arabeyes <doc@arabeyes.org>\n"
@@ -82,63 +82,68 @@ msgstr "أشهر"
 msgid "Weekday"
 msgstr "الأربعاء"
 
-#: ../src/crontab.py:147 ../src/gnome-schedule.glade.h:16
+#: ../src/crontab.py:172 ../src/gnome-schedule.glade.h:16
 msgid "Basic"
 msgstr "بسيط"
 
-#: ../src/crontab.py:147
+#: ../src/crontab.py:172
 #, fuzzy, python-format
 msgid "This is not a valid special record: %(record)s"
 msgstr "هذه %s، اصدارة %s"
 
-#: ../src/crontab.py:175 ../src/crontab.py:180 ../src/crontab.py:184
+#: ../src/crontab.py:200 ../src/crontab.py:205 ../src/crontab.py:209
 #, fuzzy, python-format
 msgid "Must be between %(min)s and %(max)s"
 msgstr "خمن عدداً بين %d و %d"
 
-#: ../src/crontab.py:182
+#: ../src/crontab.py:207
 #, fuzzy, python-format
 msgid "%s is not a number"
 msgstr "%s ليس مجلّدا"
 
-#: ../src/crontab.py:236 ../src/crontab.py:292 ../src/crontabEditor.py:270
+#: ../src/crontab.py:261 ../src/crontab.py:317 ../src/crontabEditor.py:270
 #: ../src/atEditor.py:112 ../src/atEditor.py:367 ../src/atEditor.py:391
 msgid "Untitled"
 msgstr "بدون عنوان"
 
-#: ../src/crontab.py:391 ../src/crontab.py:393 ../src/template_chooser.py:84
-#: ../src/template_manager.py:85
+#: ../src/crontab.py:416 ../src/crontab.py:418 ../src/template_chooser.py:92
+#: ../src/template_manager.py:93
 #, fuzzy
 msgid "Recurrent"
 msgstr "تكرار"
 
-#: ../src/crontab.py:391 ../src/crontabEditor.py:75 ../src/lang.py:149
+#: ../src/crontab.py:416 ../src/crontabEditor.py:75 ../src/lang.py:149
 msgid "At reboot"
 msgstr ""
 
-#: ../src/crontab.py:405
+#: ../src/crontab.py:430
 #, fuzzy
 msgid "minute"
 msgstr "دقائق"
 
-#: ../src/crontab.py:407
+#: ../src/crontab.py:432
 #, fuzzy
 msgid "hour"
 msgstr "ساعات"
 
-#: ../src/crontab.py:409
+#: ../src/crontab.py:434
 msgid "day"
 msgstr "اليوم"
 
-#: ../src/crontab.py:411
+#: ../src/crontab.py:436
 #, fuzzy
 msgid "month"
 msgstr "أشهر"
 
-#: ../src/crontab.py:413
+#: ../src/crontab.py:438
 #, fuzzy
 msgid "weekday"
 msgstr "أسابيع"
+
+#: ../src/crontab.py:537
+msgid ""
+"Failed to parse the Day of Month field, possibly due to a bug in crontab."
+msgstr ""
 
 #: ../src/crontabEditor.py:70 ../src/crontabEditorHelper.py:87
 #: ../src/gnome-schedule.glade.h:29
@@ -182,7 +187,8 @@ msgstr "اضف توقفا مؤقتا"
 msgid "Edit a Scheduled Task"
 msgstr ""
 
-#: ../src/crontabEditor.py:297
+#: ../src/crontabEditor.py:297 ../src/crontabEditor.py:593
+#: ../src/crontabEditor.py:633
 #, python-format
 msgid ""
 "This is an invalid record! The problem could be in the %(field)s field. "
@@ -207,7 +213,7 @@ msgid ""
 "Recurrent tasks will be run from the home directory."
 msgstr ""
 
-#: ../src/crontabEditor.py:472 ../src/mainWindow.py:615 ../src/atEditor.py:440
+#: ../src/crontabEditor.py:472 ../src/mainWindow.py:642 ../src/atEditor.py:441
 msgid "Warning: Working directory of executed tasks"
 msgstr ""
 
@@ -251,7 +257,7 @@ msgstr "هذه %s، اصدارة %s"
 msgid "At an exact minute"
 msgstr "دقيقة واحدة"
 
-#: ../src/crontabEditorHelper.py:232 ../src/gnome-schedule.glade.h:42
+#: ../src/crontabEditorHelper.py:232 ../src/gnome-schedule.glade.h:41
 #, fuzzy
 msgid "Minute:"
 msgstr "الدّقيقة"
@@ -261,7 +267,7 @@ msgstr "الدّقيقة"
 msgid "At an exact hour"
 msgstr ""
 
-#: ../src/crontabEditorHelper.py:236 ../src/gnome-schedule.glade.h:38
+#: ../src/crontabEditorHelper.py:236 ../src/gnome-schedule.glade.h:37
 #, fuzzy
 msgid "Hour:"
 msgstr "السّاعة"
@@ -283,7 +289,7 @@ msgstr "اليوم"
 msgid "In a month"
 msgstr "خلال شهر"
 
-#: ../src/crontabEditorHelper.py:244 ../src/gnome-schedule.glade.h:44
+#: ../src/crontabEditorHelper.py:244 ../src/gnome-schedule.glade.h:43
 #, fuzzy
 msgid "Month:"
 msgstr "ال_شّهر:"
@@ -294,17 +300,17 @@ msgstr "ال_شّهر:"
 msgid "On a weekday"
 msgstr "مرّة في الأسبوع"
 
-#: ../src/crontabEditorHelper.py:248 ../src/gnome-schedule.glade.h:56
+#: ../src/crontabEditorHelper.py:248 ../src/gnome-schedule.glade.h:55
 #, fuzzy
 msgid "Weekday:"
 msgstr "الأربعاء"
 
-#: ../src/crontabEditorHelper.py:253 ../src/gnome-schedule.glade.h:40
+#: ../src/crontabEditorHelper.py:253 ../src/gnome-schedule.glade.h:39
 #, fuzzy
 msgid "In a step width"
 msgstr "عرض الأيقونة صفر"
 
-#: ../src/crontabEditorHelper.py:255 ../src/gnome-schedule.glade.h:43
+#: ../src/crontabEditorHelper.py:255 ../src/gnome-schedule.glade.h:42
 #, fuzzy
 msgid "Minutes:"
 msgstr "دقائق"
@@ -386,7 +392,7 @@ msgstr "<b>ا_نتقِ نوع المفتاح الذي ترغب بإنشائه</b
 #: ../src/gnome-schedule.glade.h:9
 msgid ""
 "<b>To create a new task you need to use the <i>Add as template</i> button in "
-"the new task windows</b>"
+"the windows where you create new tasks</b>"
 msgstr ""
 
 #: ../src/gnome-schedule.glade.h:10
@@ -490,100 +496,96 @@ msgid "Expression:"
 msgstr "تعبير"
 
 #: ../src/gnome-schedule.glade.h:36
-msgid "For example every first hour of the day"
-msgstr ""
-
-#: ../src/gnome-schedule.glade.h:37
 msgid "From:"
 msgstr "من:"
 
-#: ../src/gnome-schedule.glade.h:39
+#: ../src/gnome-schedule.glade.h:38
 #, fuzzy
 msgid "In a range"
 msgstr "غرانج"
 
-#: ../src/gnome-schedule.glade.h:41
+#: ../src/gnome-schedule.glade.h:40
 #, fuzzy
 msgid "Manage templates"
 msgstr "إدارة الدِسكلت"
 
-#: ../src/gnome-schedule.glade.h:45
+#: ../src/gnome-schedule.glade.h:44
 #, fuzzy
 msgid "Other"
 msgstr "أخ_رى"
 
-#: ../src/gnome-schedule.glade.h:46
+#: ../src/gnome-schedule.glade.h:45
 msgid "Run task"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:47
+#: ../src/gnome-schedule.glade.h:46
 #, fuzzy
 msgid "Scheduled and active tasks"
 msgstr "أرسل واستقبل الفاكسات"
 
-#: ../src/gnome-schedule.glade.h:48
+#: ../src/gnome-schedule.glade.h:47
 #, fuzzy
 msgid "See \"man 5 crontab\" for information about the crontab format."
 msgstr "اعرض معلومات عن الملف الحالي"
 
-#: ../src/gnome-schedule.glade.h:49
+#: ../src/gnome-schedule.glade.h:48
 #, fuzzy
 msgid "Show help"
 msgstr "إظهار المساعدة"
 
-#: ../src/gnome-schedule.glade.h:50
+#: ../src/gnome-schedule.glade.h:49
 #, fuzzy
 msgid "Task description:"
 msgstr "ال_وصف:"
 
-#: ../src/gnome-schedule.glade.h:51
+#: ../src/gnome-schedule.glade.h:50
 #, fuzzy
 msgid "Task:"
 msgstr "_مهمّة"
 
-#: ../src/gnome-schedule.glade.h:52
+#: ../src/gnome-schedule.glade.h:51 ../src/mainWindow.py:184
 #, fuzzy
 msgid "Templates"
 msgstr "قالب:"
 
-#: ../src/gnome-schedule.glade.h:53
+#: ../src/gnome-schedule.glade.h:52
 #, fuzzy
 msgid "Time expression help"
 msgstr "جملة غير صالحة"
 
-#: ../src/gnome-schedule.glade.h:54
+#: ../src/gnome-schedule.glade.h:53
 msgid "Time:"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:55
+#: ../src/gnome-schedule.glade.h:54
 msgid "To:"
 msgstr "إلى:"
 
-#: ../src/gnome-schedule.glade.h:57
+#: ../src/gnome-schedule.glade.h:56
 msgid "_No output (>/dev/null 2>&1)"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:58
+#: ../src/gnome-schedule.glade.h:57
 msgid "_User:"
 msgstr "_مستخدم:"
 
-#: ../src/gnome-schedule.glade.h:59
+#: ../src/gnome-schedule.glade.h:58
 msgid "gtk-apply"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:60
+#: ../src/gnome-schedule.glade.h:59
 msgid "gtk-cancel"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:61
+#: ../src/gnome-schedule.glade.h:60
 msgid "gtk-delete"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:62
+#: ../src/gnome-schedule.glade.h:61
 msgid "gtk-edit"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:63
+#: ../src/gnome-schedule.glade.h:62
 msgid "ls -l"
 msgstr ""
 
@@ -915,54 +917,54 @@ msgstr "اضف توقفا مؤقتا"
 msgid "Add a new task"
 msgstr "اضف توقفا مؤقتا"
 
-#: ../src/mainWindow.py:269 ../src/mainWindow.py:369
+#: ../src/mainWindow.py:285 ../src/mainWindow.py:396
 #, fuzzy, python-format
 msgid "Editing user: %s"
 msgstr "تحرير مستخدم"
 
-#: ../src/mainWindow.py:320 ../src/mainWindow.py:340
+#: ../src/mainWindow.py:336 ../src/mainWindow.py:357 ../src/mainWindow.py:367
 #: ../src/scheduleapplet.py:115
 #, fuzzy
 msgid "ERROR: Could not load icon"
 msgstr "لم يمكن تحميل القسم"
 
-#: ../src/mainWindow.py:350
+#: ../src/mainWindow.py:377
 #, fuzzy
 msgid "ERROR: Could not load glade file"
 msgstr "لم أتمكن من تحميل ملف glade"
 
-#: ../src/mainWindow.py:404 ../src/template_chooser.py:53
-#: ../src/template_manager.py:54
+#: ../src/mainWindow.py:431 ../src/template_chooser.py:61
+#: ../src/template_manager.py:62
 #, fuzzy
 msgid "Task"
 msgstr "_مهمّة"
 
-#: ../src/mainWindow.py:417 ../src/mainWindow.py:443
-#: ../src/template_chooser.py:62 ../src/template_manager.py:63
+#: ../src/mainWindow.py:444 ../src/mainWindow.py:470
+#: ../src/template_chooser.py:70 ../src/template_manager.py:71
 #, fuzzy
 msgid "Description"
 msgstr "ال_وصف"
 
-#: ../src/mainWindow.py:421 ../src/mainWindow.py:434
+#: ../src/mainWindow.py:448 ../src/mainWindow.py:461
 msgid "Date and Time"
 msgstr "التاريخ و الوقت"
 
-#: ../src/mainWindow.py:425 ../src/mainWindow.py:438
+#: ../src/mainWindow.py:452 ../src/mainWindow.py:465
 msgid "Command preview"
 msgstr ""
 
 #. print ex
-#: ../src/mainWindow.py:494 ../src/mainWindow.py:557
+#: ../src/mainWindow.py:521 ../src/mainWindow.py:584
 #, fuzzy
 msgid "Please select a task"
 msgstr "من فضلك اختر رمز دال:"
 
-#: ../src/mainWindow.py:501
+#: ../src/mainWindow.py:528
 #, fuzzy
 msgid "Do you want to delete this task?"
 msgstr "أمتأكد أنك ترغب في حذف هذه المهمّة؟"
 
-#: ../src/mainWindow.py:602
+#: ../src/mainWindow.py:629
 msgid ""
 "Are you sure you want to run this task now?\n"
 "\n"
@@ -970,12 +972,12 @@ msgid ""
 "affect the normal scheduled run times."
 msgstr ""
 
-#: ../src/mainWindow.py:604
+#: ../src/mainWindow.py:631
 #, fuzzy
 msgid "Are you sure you want to run this task?"
 msgstr "أمتأكد أنك ترغب في حذف هذه المهمّة؟"
 
-#: ../src/mainWindow.py:613
+#: ../src/mainWindow.py:640
 msgid ""
 "Note about working directory of executed tasks:\n"
 "\n"
@@ -984,36 +986,36 @@ msgid ""
 "(normally the home directory)."
 msgstr ""
 
-#: ../src/mainWindow.py:668
+#: ../src/mainWindow.py:695
 msgid "Press ENTER to continue and close this window."
 msgstr ""
 
-#: ../src/mainWindow.py:676
+#: ../src/mainWindow.py:703
 #, fuzzy
 msgid "Please select a task!"
 msgstr "من فضلك اختر رمز دال:"
 
-#: ../src/mainWindow.py:684
+#: ../src/mainWindow.py:711
 #, fuzzy
 msgid "About Gnome Schedule"
 msgstr "حول راديو جينوم"
 
-#: ../src/mainWindow.py:685
+#: ../src/mainWindow.py:712
 #, fuzzy
 msgid "Gnome Schedule"
 msgstr "أهلا جنوم"
 
-#: ../src/mainWindow.py:687
+#: ../src/mainWindow.py:714
 #, fuzzy
 msgid "Copyright (c) 2004-2008 Gaute Hope."
 msgstr "حقوق النسخ © 2004-2007 أليكس جرافيلي"
 
-#: ../src/mainWindow.py:700
+#: ../src/mainWindow.py:727
 #, fuzzy
 msgid "translator-credits"
 msgstr "المترجمون:"
 
-#: ../src/mainWindow.py:721
+#: ../src/mainWindow.py:748
 #, fuzzy
 msgid "Could not display help"
 msgstr "لم يمكن عرض المساعدة: %s"
@@ -1058,7 +1060,7 @@ msgstr ""
 "هذا ليس ملف لوحة مفاتيح سليم:\n"
 "%s"
 
-#: ../src/atEditor.py:438
+#: ../src/atEditor.py:439
 msgid ""
 "Note about working directory of executed tasks:\n"
 "\n"
@@ -1085,7 +1087,7 @@ msgstr ""
 msgid "ICON: Got badly sized icon for %s"
 msgstr ""
 
-#: ../src/template_chooser.py:75 ../src/template_manager.py:76
+#: ../src/template_chooser.py:83 ../src/template_manager.py:84
 msgid "One-time"
 msgstr ""
 

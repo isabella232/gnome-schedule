@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-11-30 14:09+0100\n"
+"POT-Creation-Date: 2007-12-01 16:28+0100\n"
 "PO-Revision-Date: 2005-08-27 17:03-0400\n"
 "Last-Translator: Adam Weinberger <adamw@gnome.org>\n"
 "Language-Team: Canadian English <adamw@gnome.org>\n"
@@ -76,58 +76,63 @@ msgstr "Month"
 msgid "Weekday"
 msgstr "Weekday"
 
-#: ../src/crontab.py:147 ../src/gnome-schedule.glade.h:16
+#: ../src/crontab.py:172 ../src/gnome-schedule.glade.h:16
 msgid "Basic"
 msgstr "Basic"
 
-#: ../src/crontab.py:147
+#: ../src/crontab.py:172
 #, fuzzy, python-format
 msgid "This is not a valid special record: %(record)s"
 msgstr "This is invalid. Reason: %s"
 
-#: ../src/crontab.py:175 ../src/crontab.py:180 ../src/crontab.py:184
+#: ../src/crontab.py:200 ../src/crontab.py:205 ../src/crontab.py:209
 #, python-format
 msgid "Must be between %(min)s and %(max)s"
 msgstr "Must be between %(min)s and %(max)s"
 
-#: ../src/crontab.py:182
+#: ../src/crontab.py:207
 #, python-format
 msgid "%s is not a number"
 msgstr "%s is not a number"
 
-#: ../src/crontab.py:236 ../src/crontab.py:292 ../src/crontabEditor.py:270
+#: ../src/crontab.py:261 ../src/crontab.py:317 ../src/crontabEditor.py:270
 #: ../src/atEditor.py:112 ../src/atEditor.py:367 ../src/atEditor.py:391
 msgid "Untitled"
 msgstr "Untitled"
 
-#: ../src/crontab.py:391 ../src/crontab.py:393 ../src/template_chooser.py:84
-#: ../src/template_manager.py:85
+#: ../src/crontab.py:416 ../src/crontab.py:418 ../src/template_chooser.py:92
+#: ../src/template_manager.py:93
 msgid "Recurrent"
 msgstr "Recurrent"
 
-#: ../src/crontab.py:391 ../src/crontabEditor.py:75 ../src/lang.py:149
+#: ../src/crontab.py:416 ../src/crontabEditor.py:75 ../src/lang.py:149
 msgid "At reboot"
 msgstr ""
 
-#: ../src/crontab.py:405
+#: ../src/crontab.py:430
 msgid "minute"
 msgstr "minute"
 
-#: ../src/crontab.py:407
+#: ../src/crontab.py:432
 msgid "hour"
 msgstr "hour"
 
-#: ../src/crontab.py:409
+#: ../src/crontab.py:434
 msgid "day"
 msgstr "day"
 
-#: ../src/crontab.py:411
+#: ../src/crontab.py:436
 msgid "month"
 msgstr "month"
 
-#: ../src/crontab.py:413
+#: ../src/crontab.py:438
 msgid "weekday"
 msgstr "weekday"
+
+#: ../src/crontab.py:537
+msgid ""
+"Failed to parse the Day of Month field, possibly due to a bug in crontab."
+msgstr ""
 
 #: ../src/crontabEditor.py:70 ../src/crontabEditorHelper.py:87
 #: ../src/gnome-schedule.glade.h:29
@@ -167,7 +172,8 @@ msgstr "_Add a task"
 msgid "Edit a Scheduled Task"
 msgstr "Edit a Scheduled Task"
 
-#: ../src/crontabEditor.py:297
+#: ../src/crontabEditor.py:297 ../src/crontabEditor.py:593
+#: ../src/crontabEditor.py:633
 #, python-format
 msgid ""
 "This is an invalid record! The problem could be in the %(field)s field. "
@@ -194,7 +200,7 @@ msgid ""
 "Recurrent tasks will be run from the home directory."
 msgstr ""
 
-#: ../src/crontabEditor.py:472 ../src/mainWindow.py:615 ../src/atEditor.py:440
+#: ../src/crontabEditor.py:472 ../src/mainWindow.py:642 ../src/atEditor.py:441
 msgid "Warning: Working directory of executed tasks"
 msgstr ""
 
@@ -236,7 +242,7 @@ msgstr "This is invalid. Reason: %s"
 msgid "At an exact minute"
 msgstr "At an exact minute"
 
-#: ../src/crontabEditorHelper.py:232 ../src/gnome-schedule.glade.h:42
+#: ../src/crontabEditorHelper.py:232 ../src/gnome-schedule.glade.h:41
 msgid "Minute:"
 msgstr "Minute:"
 
@@ -245,7 +251,7 @@ msgstr "Minute:"
 msgid "At an exact hour"
 msgstr "At an exact hour"
 
-#: ../src/crontabEditorHelper.py:236 ../src/gnome-schedule.glade.h:38
+#: ../src/crontabEditorHelper.py:236 ../src/gnome-schedule.glade.h:37
 msgid "Hour:"
 msgstr "Hour:"
 
@@ -263,7 +269,7 @@ msgstr "Day:"
 msgid "In a month"
 msgstr "In a month"
 
-#: ../src/crontabEditorHelper.py:244 ../src/gnome-schedule.glade.h:44
+#: ../src/crontabEditorHelper.py:244 ../src/gnome-schedule.glade.h:43
 msgid "Month:"
 msgstr "Month:"
 
@@ -272,15 +278,15 @@ msgstr "Month:"
 msgid "On a weekday"
 msgstr "On a weekday"
 
-#: ../src/crontabEditorHelper.py:248 ../src/gnome-schedule.glade.h:56
+#: ../src/crontabEditorHelper.py:248 ../src/gnome-schedule.glade.h:55
 msgid "Weekday:"
 msgstr "Weekday:"
 
-#: ../src/crontabEditorHelper.py:253 ../src/gnome-schedule.glade.h:40
+#: ../src/crontabEditorHelper.py:253 ../src/gnome-schedule.glade.h:39
 msgid "In a step width"
 msgstr "In a step width"
 
-#: ../src/crontabEditorHelper.py:255 ../src/gnome-schedule.glade.h:43
+#: ../src/crontabEditorHelper.py:255 ../src/gnome-schedule.glade.h:42
 msgid "Minutes:"
 msgstr "Minutes:"
 
@@ -353,7 +359,7 @@ msgstr "<b>Select the type of the scheduled task</b>"
 #: ../src/gnome-schedule.glade.h:9
 msgid ""
 "<b>To create a new task you need to use the <i>Add as template</i> button in "
-"the new task windows</b>"
+"the windows where you create new tasks</b>"
 msgstr ""
 
 #: ../src/gnome-schedule.glade.h:10
@@ -452,94 +458,90 @@ msgid "Expression:"
 msgstr "Expression:"
 
 #: ../src/gnome-schedule.glade.h:36
-msgid "For example every first hour of the day"
-msgstr "For example every first hour of the day"
-
-#: ../src/gnome-schedule.glade.h:37
 msgid "From:"
 msgstr "From:"
 
-#: ../src/gnome-schedule.glade.h:39
+#: ../src/gnome-schedule.glade.h:38
 msgid "In a range"
 msgstr "In a range"
 
-#: ../src/gnome-schedule.glade.h:41
+#: ../src/gnome-schedule.glade.h:40
 #, fuzzy
 msgid "Manage templates"
 msgstr "_Manage tasks"
 
-#: ../src/gnome-schedule.glade.h:45
+#: ../src/gnome-schedule.glade.h:44
 msgid "Other"
 msgstr "Other"
 
-#: ../src/gnome-schedule.glade.h:46
+#: ../src/gnome-schedule.glade.h:45
 msgid "Run task"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:47
+#: ../src/gnome-schedule.glade.h:46
 msgid "Scheduled and active tasks"
 msgstr "Scheduled and active tasks"
 
-#: ../src/gnome-schedule.glade.h:48
+#: ../src/gnome-schedule.glade.h:47
 msgid "See \"man 5 crontab\" for information about the crontab format."
 msgstr "See \"man 5 crontab\" for information about the crontab format."
 
-#: ../src/gnome-schedule.glade.h:49
+#: ../src/gnome-schedule.glade.h:48
 msgid "Show help"
 msgstr "Show help"
 
-#: ../src/gnome-schedule.glade.h:50
+#: ../src/gnome-schedule.glade.h:49
 #, fuzzy
 msgid "Task description:"
 msgstr "Desc_ription:"
 
-#: ../src/gnome-schedule.glade.h:51
+#: ../src/gnome-schedule.glade.h:50
 #, fuzzy
 msgid "Task:"
 msgstr "_Task"
 
-#: ../src/gnome-schedule.glade.h:52
+#: ../src/gnome-schedule.glade.h:51 ../src/mainWindow.py:184
 #, fuzzy
 msgid "Templates"
 msgstr "_Template:"
 
-#: ../src/gnome-schedule.glade.h:53
+#: ../src/gnome-schedule.glade.h:52
 msgid "Time expression help"
 msgstr "Time expression help"
 
-#: ../src/gnome-schedule.glade.h:54
+#: ../src/gnome-schedule.glade.h:53
 msgid "Time:"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:55
+#: ../src/gnome-schedule.glade.h:54
 msgid "To:"
 msgstr "To:"
 
-#: ../src/gnome-schedule.glade.h:57
+#: ../src/gnome-schedule.glade.h:56
 msgid "_No output (>/dev/null 2>&1)"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:58
+#: ../src/gnome-schedule.glade.h:57
 msgid "_User:"
 msgstr "_User:"
 
-#: ../src/gnome-schedule.glade.h:59
+#: ../src/gnome-schedule.glade.h:58
 msgid "gtk-apply"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:60
+#: ../src/gnome-schedule.glade.h:59
 msgid "gtk-cancel"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:61
+#: ../src/gnome-schedule.glade.h:60
 msgid "gtk-delete"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:62
+#: ../src/gnome-schedule.glade.h:61
 msgid "gtk-edit"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:63
+#: ../src/gnome-schedule.glade.h:62
 msgid "ls -l"
 msgstr ""
 
@@ -890,49 +892,49 @@ msgstr "_Add a task"
 msgid "Add a new task"
 msgstr "_Add a task"
 
-#: ../src/mainWindow.py:269 ../src/mainWindow.py:369
+#: ../src/mainWindow.py:285 ../src/mainWindow.py:396
 #, python-format
 msgid "Editing user: %s"
 msgstr "Editing user: %s"
 
-#: ../src/mainWindow.py:320 ../src/mainWindow.py:340
+#: ../src/mainWindow.py:336 ../src/mainWindow.py:357 ../src/mainWindow.py:367
 #: ../src/scheduleapplet.py:115
 msgid "ERROR: Could not load icon"
 msgstr "ERROR: Could not load icon"
 
-#: ../src/mainWindow.py:350
+#: ../src/mainWindow.py:377
 msgid "ERROR: Could not load glade file"
 msgstr "ERROR: Could not load glade file"
 
-#: ../src/mainWindow.py:404 ../src/template_chooser.py:53
-#: ../src/template_manager.py:54
+#: ../src/mainWindow.py:431 ../src/template_chooser.py:61
+#: ../src/template_manager.py:62
 #, fuzzy
 msgid "Task"
 msgstr "_Task"
 
-#: ../src/mainWindow.py:417 ../src/mainWindow.py:443
-#: ../src/template_chooser.py:62 ../src/template_manager.py:63
+#: ../src/mainWindow.py:444 ../src/mainWindow.py:470
+#: ../src/template_chooser.py:70 ../src/template_manager.py:71
 msgid "Description"
 msgstr "Description"
 
-#: ../src/mainWindow.py:421 ../src/mainWindow.py:434
+#: ../src/mainWindow.py:448 ../src/mainWindow.py:461
 msgid "Date and Time"
 msgstr "Date and Time"
 
-#: ../src/mainWindow.py:425 ../src/mainWindow.py:438
+#: ../src/mainWindow.py:452 ../src/mainWindow.py:465
 msgid "Command preview"
 msgstr ""
 
 #. print ex
-#: ../src/mainWindow.py:494 ../src/mainWindow.py:557
+#: ../src/mainWindow.py:521 ../src/mainWindow.py:584
 msgid "Please select a task"
 msgstr "Please select a task"
 
-#: ../src/mainWindow.py:501
+#: ../src/mainWindow.py:528
 msgid "Do you want to delete this task?"
 msgstr "Do you want to delete this task?"
 
-#: ../src/mainWindow.py:602
+#: ../src/mainWindow.py:629
 msgid ""
 "Are you sure you want to run this task now?\n"
 "\n"
@@ -940,12 +942,12 @@ msgid ""
 "affect the normal scheduled run times."
 msgstr ""
 
-#: ../src/mainWindow.py:604
+#: ../src/mainWindow.py:631
 #, fuzzy
 msgid "Are you sure you want to run this task?"
 msgstr "Do you want to delete this task?"
 
-#: ../src/mainWindow.py:613
+#: ../src/mainWindow.py:640
 msgid ""
 "Note about working directory of executed tasks:\n"
 "\n"
@@ -954,33 +956,33 @@ msgid ""
 "(normally the home directory)."
 msgstr ""
 
-#: ../src/mainWindow.py:668
+#: ../src/mainWindow.py:695
 msgid "Press ENTER to continue and close this window."
 msgstr ""
 
-#: ../src/mainWindow.py:676
+#: ../src/mainWindow.py:703
 #, fuzzy
 msgid "Please select a task!"
 msgstr "Please select a task"
 
-#: ../src/mainWindow.py:684
+#: ../src/mainWindow.py:711
 msgid "About Gnome Schedule"
 msgstr "About GNOME Schedule"
 
-#: ../src/mainWindow.py:685
+#: ../src/mainWindow.py:712
 msgid "Gnome Schedule"
 msgstr "GNOME Schedule"
 
-#: ../src/mainWindow.py:687
+#: ../src/mainWindow.py:714
 #, fuzzy
 msgid "Copyright (c) 2004-2008 Gaute Hope."
 msgstr "Copyright (c) 2004-2005 Gaute Hope."
 
-#: ../src/mainWindow.py:700
+#: ../src/mainWindow.py:727
 msgid "translator-credits"
 msgstr "Adam Weinberger <adamw@gnome.org>"
 
-#: ../src/mainWindow.py:721
+#: ../src/mainWindow.py:748
 msgid "Could not display help"
 msgstr "Could not display help"
 
@@ -1021,7 +1023,7 @@ msgstr ""
 msgid "This is an invalid record! The problem could be: %s"
 msgstr "This is an invalid record! The problem could be: %s"
 
-#: ../src/atEditor.py:438
+#: ../src/atEditor.py:439
 msgid ""
 "Note about working directory of executed tasks:\n"
 "\n"
@@ -1048,9 +1050,12 @@ msgstr ""
 msgid "ICON: Got badly sized icon for %s"
 msgstr ""
 
-#: ../src/template_chooser.py:75 ../src/template_manager.py:76
+#: ../src/template_chooser.py:83 ../src/template_manager.py:84
 msgid "One-time"
 msgstr ""
+
+#~ msgid "For example every first hour of the day"
+#~ msgstr "For example every first hour of the day"
 
 #~ msgid "For example at 04:10 tomorrow, next week or in three days"
 #~ msgstr "For example at 04:10 tomorrow, next week, or in three days"
