@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-12-01 16:28+0100\n"
+"POT-Creation-Date: 2007-12-01 17:55+0100\n"
 "PO-Revision-Date: 2007-11-14 17:55-0500\n"
 "Last-Translator: Jeff Fortin <nekohayo ~at~ gmail.com>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
@@ -185,14 +185,14 @@ msgstr ""
 "le champ %(field)s. Raison : %(reason)s"
 
 #: ../src/crontabEditor.py:302
+#, fuzzy
 msgid ""
 "Your command contains one or more of the character %, this is special for "
 "cron and cannot be used with Gnome-schedule because of the format it uses to "
 "store extra information on the crontab line. Please use the | redirector "
 "character to acheieve the same functionality. Refer to the crontab manual "
 "for more information about the % character. If you don not want to use it "
-"for redirection it must be properly escaped with the \\ letter. I.e.: \\"
-"$HOME."
+"for redirection it must be properly escaped with the \\ letter."
 msgstr ""
 "Votre commande contient le caractère %, qui est un caractère spécial pour "
 "cron et ne peut pas être utilisé à cause du format sous lequel gnome-"
@@ -367,8 +367,8 @@ msgstr "<b>Choisissez le type de tâche planifiée</b>"
 
 #: ../src/gnome-schedule.glade.h:9
 msgid ""
-"<b>To create a new task you need to use the <i>Add as template</i> button in "
-"the windows where you create new tasks</b>"
+"<b>To create a new template you need to use the <i>Add as template</i> "
+"button in the windows where you create new tasks</b>"
 msgstr ""
 
 #: ../src/gnome-schedule.glade.h:10

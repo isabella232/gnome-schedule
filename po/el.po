@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: el\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-12-01 16:28+0100\n"
+"POT-Creation-Date: 2007-12-01 17:55+0100\n"
 "PO-Revision-Date: 2005-01-03 12:40+0200\n"
 "Last-Translator: Kostas Papadimas <pkst@gnome.org>\n"
 "Language-Team: Greek <nls@tux.hellug.gr>\n"
@@ -206,8 +206,7 @@ msgid ""
 "store extra information on the crontab line. Please use the | redirector "
 "character to acheieve the same functionality. Refer to the crontab manual "
 "for more information about the % character. If you don not want to use it "
-"for redirection it must be properly escaped with the \\ letter. I.e.: \\"
-"$HOME."
+"for redirection it must be properly escaped with the \\ letter."
 msgstr ""
 
 #: ../src/crontabEditor.py:470
@@ -389,8 +388,8 @@ msgstr "<b>Επιλέξτε το είδος της προγραμματισμέ�
 
 #: ../src/gnome-schedule.glade.h:9
 msgid ""
-"<b>To create a new task you need to use the <i>Add as template</i> button in "
-"the windows where you create new tasks</b>"
+"<b>To create a new template you need to use the <i>Add as template</i> "
+"button in the windows where you create new tasks</b>"
 msgstr ""
 
 #: ../src/gnome-schedule.glade.h:10
