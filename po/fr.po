@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-11-28 19:03+0100\n"
+"POT-Creation-Date: 2007-12-01 18:00+0100\n"
 "PO-Revision-Date: 2007-04-22 09:27+0200\n"
 "Last-Translator: Stéphane Raimbault <stephane.raimbault@gmail.com>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
@@ -79,45 +79,50 @@ msgstr "Mois"
 msgid "Weekday"
 msgstr "Jour de la semaine"
 
-#: ../src/crontab.py:167 ../src/crontab.py:172 ../src/crontab.py:176
+#: ../src/crontab.py:192 ../src/crontab.py:197 ../src/crontab.py:201
 #, python-format
 msgid "Must be between %(min)s and %(max)s"
 msgstr "Doit être compris entre %(min)s et %(max)s"
 
-#: ../src/crontab.py:174
+#: ../src/crontab.py:199
 #, python-format
 msgid "%s is not a number"
 msgstr "%s n'est pas un nombre"
 
-#: ../src/crontab.py:228 ../src/crontab.py:285 ../src/crontabEditor.py:192
+#: ../src/crontab.py:253 ../src/crontab.py:310 ../src/crontabEditor.py:192
 #: ../src/atEditor.py:110
 msgid "Untitled"
 msgstr "Sans titre"
 
 #. add task to treemodel in mainWindow
-#: ../src/crontab.py:387
+#: ../src/crontab.py:412
 msgid "Recurrent"
 msgstr "Régulier"
 
-#: ../src/crontab.py:399
+#: ../src/crontab.py:424
 msgid "minute"
 msgstr "minute"
 
-#: ../src/crontab.py:401
+#: ../src/crontab.py:426
 msgid "hour"
 msgstr "heure"
 
-#: ../src/crontab.py:403
+#: ../src/crontab.py:428
 msgid "day"
 msgstr "jour"
 
-#: ../src/crontab.py:405
+#: ../src/crontab.py:430
 msgid "month"
 msgstr "mois"
 
-#: ../src/crontab.py:407
+#: ../src/crontab.py:432
 msgid "weekday"
 msgstr "jour de la semaine"
+
+#: ../src/crontab.py:533
+msgid ""
+"Failed to parse the Day of Month field, possibly due to a bug in crontab."
+msgstr ""
 
 #: ../src/crontabEditor.py:80
 msgid "Use advanced"
@@ -160,7 +165,7 @@ msgstr "Édition d'une tâche planifiée"
 msgid "Don't use a preset"
 msgstr "Sans modèle"
 
-#: ../src/crontabEditor.py:271
+#: ../src/crontabEditor.py:268
 #, python-format
 msgid ""
 "This is an invalid record! The problem could be in the %(field)s field. "
@@ -169,7 +174,7 @@ msgstr ""
 "Ce n'est pas un enregistrement valide. Le problème pourrait se trouver dans "
 "le champ %(field)s. Raison : %(reason)s"
 
-#: ../src/crontabEditor.py:276
+#: ../src/crontabEditor.py:273
 msgid ""
 "Your command contains one or more of the character %, this is special for "
 "cron and cannot be used with Gnome-schedule because of the format it uses to "
@@ -180,27 +185,27 @@ msgid ""
 "$HOME."
 msgstr ""
 
-#: ../src/crontabEditor.py:307 ../src/atEditor.py:303
+#: ../src/crontabEditor.py:304 ../src/atEditor.py:303
 msgid "The preset has not been saved"
 msgstr "Le modèle n'a pas été enregistré"
 
-#: ../src/crontabEditor.py:309 ../src/atEditor.py:305
+#: ../src/crontabEditor.py:306 ../src/atEditor.py:305
 msgid "To delete a preset, you first need to select one"
 msgstr "Pour supprimer un modèle, vous devez d'abord le sélectionner"
 
-#: ../src/crontabEditor.py:319 ../src/atEditor.py:316
+#: ../src/crontabEditor.py:316 ../src/atEditor.py:316
 msgid "To save a preset, you first have to choose a name for it"
 msgstr "Pour enregistrer un modèle, vous devez d'abord lui donner un nom"
 
-#: ../src/crontabEditor.py:329 ../src/atEditor.py:407
+#: ../src/crontabEditor.py:326 ../src/atEditor.py:407
 msgid "Choose an Icon for this Scheduled Task"
 msgstr "Choisissez une icône pour cette tâche planifiée"
 
-#: ../src/crontabEditor.py:393
+#: ../src/crontabEditor.py:390
 msgid "command"
 msgstr "commande"
 
-#: ../src/crontabEditor.py:430 ../src/mainWindow.py:545 ../src/atEditor.py:531
+#: ../src/crontabEditor.py:427 ../src/mainWindow.py:545 ../src/atEditor.py:531
 msgid "Could not display help"
 msgstr "Impossible d'afficher l'aide"
 
