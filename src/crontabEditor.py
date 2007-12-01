@@ -578,14 +578,57 @@ class CrontabEditor:
 
 	def update_preview (self):
 		if self.special != "":
-			minute = self.special
-			hour = self.special
-			day = self.special
-			month = self.special
-			weekday = self.special
-			self.label_preview.set_text ("<b>" + self.scheduler.__easy__ (minute, hour, day, month, weekday) + "</b>")
+			try:
+				self.__check_field_format__ (self.special, "special")
+				record = self.special + " " + self.command
+				minute = "@reboot"
+				hour = "@reboot"
+				day = "@reboot"
+				month = "@reboot"
+				weekday = "@reboot"
+				self.label_preview.set_text ("<b>" + self.scheduler.__easy__ (minute, hour, day, month, weekday) + "</b>")
+				
+			except ValueError, ex:
+				x, y, z = ex
+				self.label_preview.set_text (_("This is an invalid record! The problem could be in the %(field)s field. Reason: %(reason)s") % ({'field' : y, 'reason' : z}))
+				
+				
 		else:
-			self.label_preview.set_text ("<b>" + self.scheduler.__easy__ (self.minute, self.hour, self.day, self.month, self.weekday) + "</b>")
+			try:
+				# Type should not be translatable!
+				self.__check_field_format__ (self.minute, "minute")
+				self.__check_field_format__ (self.hour, "hour")
+				self.__check_field_format__ (self.day, "day")
+				self.__check_field_format__ (self.month, "month")
+				self.__check_field_format__ (self.weekday, "weekday")
+				
+				# Day of Month
+				# TODO: Verify behaviour
+				dom = self.day
+				if dom.isdigit() == False:
+					dom = dom.lower ()
+					for day in self.scheduler.downumbers:
+						dom = dom.replace (day, self.scheduler.downumbers[day])
+						
+				# Month of Year
+				moy = self.month
+				if moy.isdigit () == False:
+					moy = moy.lower ()
+					for m in self.scheduler.monthnumbers:
+						moy = moy.replace (m, self.scheduler.monthnumbers[m])
+					
+			
+				# Day of Week
+				dow = self.weekday
+				if dow.isdigit() == False:
+					dow = dow.lower ()
+					for day in self.scheduler.downumbers:
+						dow = dow.replace (day, self.scheduler.downumbers[day])
+				self.label_preview.set_text ("<b>" + self.scheduler.__easy__ (self.minute, self.hour, dom, moy, dow) + "</b>")
+			except ValueError, ex:
+				x, y, z = ex
+				self.label_preview.set_text (_("This is an invalid record! The problem could be in the %(field)s field. Reason: %(reason)s") % ({'field' : y, 'reason' : z}))
+
 		self.label_preview.set_use_markup (True)
 			
 			

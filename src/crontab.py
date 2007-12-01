@@ -82,29 +82,54 @@ class Crontab:
 			}
 	
 		self.monthnames = {
-			"1"        : "Jan",
-			"2"        : "Feb",
-			"3"        : "Mar",
-			"4"        : "Apr",
-			"5"        : "May",
-			"6"        : "Jun",
-			"7"        : "Jul",
-			"8"        : "Aug",
-			"9"        : "Sep",
-			"10"       : "Oct",
-			"11"       : "Nov",
-			"12"       : "Dec"
+			"1"        : "jan",
+			"2"        : "feb",
+			"3"        : "mar",
+			"4"        : "apr",
+			"5"        : "may",
+			"6"        : "jun",
+			"7"        : "jul",
+			"8"        : "aug",
+			"9"        : "sep",
+			"10"       : "oct",
+			"11"       : "nov",
+			"12"       : "dec"
 			}
-
+		self.monthnumbers = {
+			"jan"	: "1",
+			"feb"	: "2",
+			"mar"	: "3",
+			"apr"	: "4",
+			"may"	: "5",
+			"jun"	: "6",
+			"jul"	: "7",
+			"aug"	: "8",
+			"sep"	: "9",
+			"oct"	: "10",
+			"nov"	: "11",
+			"dec"	: "12"
+			}
+			
 		self.downames = {
-			"0"        : "Sun",
-			"1"        : "Mon",
-			"2"        : "Tue",
-			"3"        : "Wed",
-			"4"        : "Thu",
-			"5"        : "Fri",
-			"6"        : "Sat",
-			"7"        : "Sun"
+			"0"        : "sun",
+			"1"        : "mon",
+			"2"        : "tue",
+			"3"        : "wed",
+			"4"        : "thu",
+			"5"        : "fri",
+			"6"        : "sat",
+			"7"        : "sun"
+			}
+		
+		self.downumbers = {
+			"sun"	: "0",
+			"mon"	: "1",
+			"tue"	: "2",
+			"wed"	: "3",
+			"thu"	: "4",
+			"fri"	: "5",
+			"sat"	: "6",
+			"sun"	: "7"
 			}
 		
 
@@ -126,7 +151,7 @@ class Crontab:
 		At first possibly contained alias names will be replaced by their
 		corresponding numbers. After that every asterisk will be replaced by
 		a "first to last" expression. Then the expression will be splitted
-		into the komma separated subexpressions.
+		into the comma separated subexpressions.
 
 		Each subexpression will run through: 
 		1. Check for stepwidth in range (if it has one)
@@ -428,6 +453,7 @@ class Crontab:
 		# 2: Standard expression
 		# 3: Comment
 		
+		origline = line
 		line = line.lstrip()
 		comment = ""
 		
@@ -495,21 +521,27 @@ class Crontab:
 			hour, line = self.get_exp_sec (line)
 		
 			# Day of Month
+			# TODO: Verify behaviour
 			dom, line = self.get_exp_sec (line)
-			
+			if dom.isdigit() == False:
+				dom = dom.lower ()
+				for day in self.downumbers:
+					dom = dom.replace (day, self.downumbers[day])
+					
 			# Month of Year
 			moy, line = self.get_exp_sec (line)
+			if moy.isdigit () == False:
+				moy = moy.lower ()
+				for m in self.monthnumbers:
+					moy = moy.replace (m, self.monthnumbers[m])
+					
 			
 			# Day of Week
 			dow, line = self.get_exp_sec (line)
-			dow = dow.lower ()
-			dow = dow.replace ("mon", "1")
-			dow = dow.replace ("tue", "2")
-			dow = dow.replace ("wed", "3")
-			dow = dow.replace ("thu", "4")
-			dow = dow.replace ("fri", "5")
-			dow = dow.replace ("sat", "6")
-			dow = dow.replace ("sun", "7")
+			if dow.isdigit() == False:
+				dow = dow.lower ()
+				for day in self.downumbers:
+					dow = dow.replace (day, self.downumbers[day])
 			
 			
 		
@@ -623,7 +655,7 @@ class Crontab:
 		return lang.translate_crontab_easy (minute, hour, day, month, weekday)
 
 
-	#create temp file with old tasks and new ones and then updates crontab
+	#create temp file with old tasks and new ones and then update crontab
 	def __write__ (self):
 		tmpfile = tempfile.mkstemp ()
 		fd, path = tmpfile
