@@ -174,7 +174,7 @@ class main:
 		self.prop_button.set_sensitive (False)
 		self.del_button.set_sensitive (False)
 		self.run_button.set_sensitive (False)
-
+	
 		self.button_tb = self.button_template.get_child ()
 		self.tvbox = self.button_tb.get_child ()
 		for w in self.tvbox.get_children ():
@@ -189,6 +189,8 @@ class main:
 		self.tvbox.pack_start (label, True, True, 0)
 		self.tvbox.show_all ()
 		
+	
+			
 		self.xml.signal_connect("on_prop_button_clicked", self.on_prop_button_clicked)
 		self.xml.signal_connect("on_del_button_clicked", self.on_del_button_clicked)
 		self.xml.signal_connect("on_help_button_clicked", self.on_help_button_clicked)
@@ -344,11 +346,13 @@ class main:
 			self.icontemplate = gtk.gdk.pixbuf_new_from_file_at_size ("../icons/template.svg", 19, 19)
 			self.normalicontemplate = gtk.gdk.pixbuf_new_from_file_at_size ("../icons/template.svg", 25, 25)
 			self.bigicontemplate = gtk.gdk.pixbuf_new_from_file_at_size ("../icons/template.svg", 49, 49)
+			self.pathicontemplate = "../icons/template.svg"
 		else:
 			try:
 				self.icontemplate = gtk.gdk.pixbuf_new_from_file_at_size (config.getImagedir() + "/template.svg", 19, 19)
 				self.normalicontemplate = gtk.gdk.pixbuf_new_from_file_at_size (config.getImagedir() + "/template.svg", 25, 25)
 				self.bigicontemplate = gtk.gdk.pixbuf_new_from_file_at_size (config.getImagedir() + "/template.svg", 49, 49)
+				self.pathicontemplate = config.getImagedir() + "/template.svg"
 			except:
 				print _("ERROR: Could not load icon")
 				
