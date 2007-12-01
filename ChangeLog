@@ -4,6 +4,7 @@
 	* Tweaked parsing of text strings in crontab, need more info about how to interprent textstring in the dom field
 	* Seems like it is a bug in crontab allowing it to be parsed, checking for it on parse. (strangly i cannot reproduce it anymore..)
 	* WrongRecordDialog, string translation is now mapped
+	* mainwindow.py: fixed help opener
 	
 2007-11-20  Gaute Hope  <eg@gaute.vetsj.com>
 
