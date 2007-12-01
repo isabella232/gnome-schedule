@@ -528,7 +528,7 @@ class Crontab:
 					dom = dom.replace (day, self.scheduler.downumbers[day])
 			"""
 			try:
-				self.__check_field_format__ (dom, "day")
+				self.checkfield (dom, "day")
 			except ValueError, ex:
 				print _("Failed to parse the Day of Month field, possibly due to a bug in crontab.")
 				return
