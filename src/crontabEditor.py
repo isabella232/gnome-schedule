@@ -242,8 +242,6 @@ class CrontabEditor:
 	#save template
 	def __SaveTemplate__ (self, template_name):
 		try:
-			# Type should not be translatable!
-			#XXX do check in crontab savetemplate itself instead of here?
 			self.__check_field_format__ (self.minute, "minute")
 			self.__check_field_format__ (self.hour, "hour")
 			self.__check_field_format__ (self.day, "day")
