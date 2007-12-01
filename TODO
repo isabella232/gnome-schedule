@@ -12,22 +12,13 @@ Development:
   * "gnome-schedule --addtemplate foo" (will add a template) (console only)
   * "gnome-schedule --addtask task user" (will add a task for a user) (console only) 
     http://docs.python.org/lib/module-getopt.html
-    
-    
-  * Include a default icon for at, and a default icon for crontab
-    and also make it the default-selected icon
-    
+
   * bug 325271, frank arnold: "ally - scan all dialogs for missing accelerators"
 
 
  Unassigned would make it to the release but are non-blocking it
   * We need more exception handlers and let functions return if an operation failed
     (in savetemplate for example)
-  * look into (to see what could be interresting to use in our project):
-  	 http://docs.python.org/lib/module-locale.html 
-	 http://docs.python.org/lib/module-calendar.html 
-	 http://docs.python.org/lib/module-datetime.html
-	 http://docs.python.org/lib/module-grp.html
 
 Translations:
   * Check out the ngettext stuff for python, perhaps send python/gettext folks a note about the missing features. bug 325053

@@ -1,3 +1,8 @@
+2007-12-01  Gaute Hope  <eg@gaute.vetsj.com>
+
+	* Changed version number to 1.2.1
+	* Tweaked parsing of text strings in crontab, need more info about how to interprent textstring in the dom field
+	
 2007-11-20  Gaute Hope  <eg@gaute.vetsj.com>
 
 	* Fixed some confusing expressions for weekday easy translations
@@ -8,7 +13,7 @@
 	* removed README.cvs, we have a HACKING file that says the same
 	* updated AUTHORS file to honour the documentor
 	* updated copyrights
-	
+		
 2007-11-10  Gaute Hope  <eg@gaute.vetsj.com>
 
 	* Changed version number to 1.2.0
