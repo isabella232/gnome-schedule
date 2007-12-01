@@ -169,11 +169,25 @@ class main:
 		self.btnExit = self.xml.get_widget("btnExit")
 		self.about_button = self.xml.get_widget ("about_button")
 		self.edit_mode_button = self.xml.get_widget ("edit_mode_button")
+		self.button_template = self.xml.get_widget ("button_m_template")
 
 		self.prop_button.set_sensitive (False)
 		self.del_button.set_sensitive (False)
 		self.run_button.set_sensitive (False)
-		
+
+		self.button_tb = self.button_template.get_child ()
+		self.tvbox = self.button_tb.get_child ()
+		for w in self.tvbox.get_children ():
+			self.tvbox.remove (w)
+		icon = gtk.Image ()
+		icon.set_from_pixbuf (self.normalicontemplate)
+		label = gtk.Label (_("Templates"))
+		icon.set_alignment (0.5, 0.5)
+		label.set_justify (gtk.JUSTIFY_CENTER)
+		label.set_alignment (0.5, 0.5)
+		self.tvbox.pack_start (icon, True, True, 0)
+		self.tvbox.pack_start (label, True, True, 0)
+		self.tvbox.show_all ()
 		
 		self.xml.signal_connect("on_prop_button_clicked", self.on_prop_button_clicked)
 		self.xml.signal_connect("on_del_button_clicked", self.on_del_button_clicked)
@@ -326,9 +340,18 @@ class main:
 		self.iconcrontab  = self.ti_theme.load_icon (self.iconcrontabstring, 19, 0)
 		self.bigiconcrontab = self.ti_theme.load_icon (self.iconcrontabstring, 49, 0)
 		
-		self.icontemplate = self.ti_theme.load_icon (self.icontemplatestring, 19, 0)
-		self.bigicontemplate = self.ti_theme.load_icon (self.icontemplatestring, 49, 0)
-		
+		if os.access ("../icons/template.svg", os.F_OK):
+			self.icontemplate = gtk.gdk.pixbuf_new_from_file_at_size ("../icons/template.svg", 19, 19)
+			self.normalicontemplate = gtk.gdk.pixbuf_new_from_file_at_size ("../icons/template.svg", 25, 25)
+			self.bigicontemplate = gtk.gdk.pixbuf_new_from_file_at_size ("../icons/template.svg", 49, 49)
+		else:
+			try:
+				self.icontemplate = gtk.gdk.pixbuf_new_from_file_at_size (config.getImagedir() + "/template.svg", 19, 19)
+				self.normalicontemplate = gtk.gdk.pixbuf_new_from_file_at_size (config.getImagedir() + "/template.svg", 25, 25)
+				self.bigicontemplate = gtk.gdk.pixbuf_new_from_file_at_size (config.getImagedir() + "/template.svg", 49, 49)
+			except:
+				print _("ERROR: Could not load icon")
+				
 		if os.access ("../icons/at.svg", os.F_OK):
 			self.iconat = gtk.gdk.pixbuf_new_from_file_at_size ("../icons/at.svg", 19, 19)
 			self.bigiconat = gtk.gdk.pixbuf_new_from_file_at_size ("../icons/at.svg", 49, 49)

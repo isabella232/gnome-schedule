@@ -30,6 +30,14 @@ class TemplateChooser:
 		self.widget = self.xml.get_widget ("template_chooser")
 		self.widget.connect("delete-event", self.widget.hide_on_delete)
 		
+		self.title_box = self.xml.get_widget ("tc_title_box")
+		
+		self.image_icon = gtk.Image ()
+		self.image_icon.set_from_pixbuf (self.parent.bigicontemplate)
+		self.title_box.pack_start (self.image_icon, False, False, 0)
+		self.title_box.reorder_child (self.image_icon, 0)
+		self.image_icon.show ()
+		
 		self.treeview = self.xml.get_widget ("tc_treeview")
 		self.button_use = self.xml.get_widget ("tc_button_use")
 		self.button_cancel = self.xml.get_widget ("tc_button_cancel")
