@@ -518,10 +518,20 @@ class Crontab:
 		
 			# Day of Month
 			dom, line = self.get_exp_sec (line)
+			# Crontab bug? Let's not support
+			# dom behaves like minute
+			"""
+			dom = self.day
 			if dom.isdigit() == False:
 				dom = dom.lower ()
-				for day in self.downumbers:
-					dom = dom.replace (day, self.downumbers[day])
+				for day in self.scheduler.downumbers:
+					dom = dom.replace (day, self.scheduler.downumbers[day])
+			"""
+			try:
+				self.__check_field_format__ (dom, "day")
+			except ValueError, ex:
+				print _("Failed to parse the Day of Month field, possibly due to a bug in crontab.")
+				return
 					
 			# Month of Year
 			moy, line = self.get_exp_sec (line)

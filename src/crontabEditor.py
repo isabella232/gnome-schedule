@@ -251,7 +251,6 @@ class CrontabEditor:
 			self.__check_field_format__ (self.weekday, "weekday")
 
 		except ValueError, ex:
-			print ex
 			x, y, z = ex
 			self.__WrongRecordDialog__ (x, y, z)
 			return
@@ -268,7 +267,7 @@ class CrontabEditor:
 
 	#error dialog box 
 	def __WrongRecordDialog__ (self, x, y, z):
-		self.wrongdialog = gtk.MessageDialog(self.widget, gtk.DIALOG_MODAL|gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_ERROR, gtk.BUTTONS_OK, (_("This is an invalid record! The problem could be in the %(field)s field. Reason: %(reason)s") % (y, z)))
+		self.wrongdialog = gtk.MessageDialog(self.widget, gtk.DIALOG_MODAL|gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_ERROR, gtk.BUTTONS_OK, (_("This is an invalid record! The problem could be in the %(field)s field. Reason: %(reason)s") % ({ 'field' : y, 'reason' : z})))
 		self.wrongdialog.run()
 		self.wrongdialog.destroy()
 
