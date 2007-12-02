@@ -1,3 +1,5 @@
+Branched development continues in /trunk/
+
 check bug: 419392, http://bugzilla.gnome.org/show_bug.cgi?id=419392
 
 * All dialogs and editors should be hidden when ESC is pressed
