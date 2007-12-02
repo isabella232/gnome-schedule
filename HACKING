@@ -1,6 +1,10 @@
 Hacking on gnome-schedule
 -------------------------
 
+Remember to send an email to the gnome-schedule-devel list
+or check out the latest code from the subversion repository
+in case work has allready been started on some of the features.
+
 Minor changes (build fixes, typos, documentation and small bug fixes)
 can be committed at will, but please send a note to the maintainer(s)
 alerting them to what you have done and be sure to include a ChangeLog

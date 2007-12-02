@@ -1,3 +1,22 @@
+2007-12-02:
+
+        It is time for the (most likely) last release in the 1.x series, there are fairly few updates since the recent 1.2.0 release, but although it was meant as a last translation update I found some significant bugs.
+
+A summary of the Changelog:
+  ∘ Fixed bug in the at editor: choosing dates in the future with a month or day before the current one failed
+  ∘ Fixed some parsing bugs in crontab regarding short term strings in the time expressions (mon, tue, wed)
+  ∘ Fixed some confusing simple expressions regarding weekdays
+  ∘ Removed debug messages
+  ∘ Fixed help open function
+  ∘ Fixed an error in the dialog that pops up if a record is invalid
+
+
+Other than that it might be worth saying that since this file was updated the last time versions: 1.0.0, 1.0.1 and 1.2.0 has been released.
+
+Other than that it is not much to say about this one. Happy scheduling!
+
+- gaute, 2007-12-02
+
 2006-09-17:
 	Both at and crontab are using data files in the directory $HOME/.gnome/gnome-schedule/at|crontab
 	New crontab parser merged into HEAD.

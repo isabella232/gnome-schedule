@@ -1,6 +1,10 @@
 TODO
 ----
 
+Remember to send an email to the gnome-schedule-devel list
+or check out the latest code from the subversion repository
+in case work has allready been started on some of the features.
+
 Development:
  Wishlist (need a new branch and/or will not be included in the next release)
   * Show the next-run time for crontab records

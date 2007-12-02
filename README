@@ -16,6 +16,7 @@ Dependencies
 	o. Python
 	o. PyGTK >= 2.3
 	o. Python GConf
+        o. su
 
 Support
 -------
@@ -24,19 +25,19 @@ Support
      of gnome-schedule here:
  
 	o. http://lists.sourceforge.net/mailman/listinfo/gnome-schedule-users
+        There is also a development list here:
+        o. http://lists.sourceforge.net/mailman/listinfo/gnome-schedule-devel
 
-
-INSTALL from source while PyGTK is not in your default prefix
+INSTALL from source:
 -------------------------------------------------------------
 o. Because some people dislike the fact that manually compiled 
    applications tamper with their distribution which is managed by the
-   packaging system in use. We understand this and therefor made it
+   packaging system in use. We understand this and therefore made it
    possible to install the application outside of any default prefix.
 
 o. If you want to use the sources pulled from the subversion server you need automake-1.7 and gnome-common.
 
-o. The following commands will install gnome-schedule on a system that has
-   Python and automake-1.7 and some tools like gmake installed.
+o. The following commands will install gnome-schedule on a system that has python and automake-1.7 and some tools like gmake installed.
 
      $ svn checkout http://svn.gnome.org/svn/gnome-schedule/trunk gnome-schedule
      $ pushd gnome-schedule
@@ -56,11 +57,9 @@ o. The following commands will install gnome-schedule on a system that has
 
 Important notes
 ---------------
-If you have previous records in at, gnome-schedule may have problems reading them. 
-They are marked as DANGEROUS PARSE in the list if a unsecure method was used. This will not damage
-the record, and if you open one pressing cancel in the script editor will not change anything.
+If you have previous records in 'at', gnome-schedule may have problems reading them and they are marked with DANGEROUS PARSE in the list if a unsecure method was used. There are no risk that the record will be lost or damaged unless you open it for editing and press apply, but we have tested many different setups and it should work fine.
 
-Some comments right after existing records in crontab may return weird results for title and icon, this should not damage anything.
+Some comments right after existing records in crontab may return weird results for title and icon, normally this doesn't damage anything.
 
 
 Compiling and HACKING
