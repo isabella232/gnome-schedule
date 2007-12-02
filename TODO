@@ -6,8 +6,13 @@ or check out the latest code from the subversion repository
 in case work has allready been started on some of the features.
 
 Development:
- Unassigned unstable (need a new branch and/or will not be 
- included in the next release)
+check bug: 419392, http://bugzilla.gnome.org/show_bug.cgi?id=419392
+
+* All dialogs and editors should be hidden when ESC is pressed
+* labels should be expanded
+* toolbar template button, icon should work with different toolbar setups (appearance -> interface in user settings)
+
+ Wishlist (need a new branch and/or will not be included in the next release)
   * Show the next-run time for crontab records
   * Support for mail direction in both cron and at
   * Support for classes in at(nice, priority)
@@ -16,9 +21,9 @@ Development:
   * "gnome-schedule --addtemplate foo" (will add a template) (console only)
   * "gnome-schedule --addtask task user" (will add a task for a user) (console only) 
     http://docs.python.org/lib/module-getopt.html
-
+    
+    
   * bug 325271, frank arnold: "ally - scan all dialogs for missing accelerators"
-
 
  Unassigned would make it to the release but are non-blocking it
   * We need more exception handlers and let functions return if an operation failed

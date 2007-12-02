@@ -20,8 +20,6 @@
 #pygtk modules
 import gtk
 
-
-# TODO: remove this class and let mainWindow generate this dialogbox
 class AddWindow:
 	def __init__(self, parent):
 		self.ParentClass = parent
@@ -33,15 +31,55 @@ class AddWindow:
 		self.ok_button = self.xml.get_widget ("select_ok_button")
 
 		self.xml.signal_connect("on_select_cancel_button_clicked", self.on_cancel_button_clicked)
-		self.xml.signal_connect("on_select_ok_button_clicked", self.on_ok_button_clicked)
+		
+		self.xml.signal_connect("on_button_at_clicked", self.on_button_at_clicked)
+		self.xml.signal_connect("on_button_crontab_clicked", self.on_button_crontab_clicked)
+		self.xml.signal_connect("on_button_templates_clicked", self.on_button_template_clicked)
 
-		
-		self.at_radio = self.xml.get_widget("at_radio")
-		self.crontab_radio = self.xml.get_widget("crontab_radio")
-		self.crontab_radio.set_active (True)
+		self.button_at = self.xml.get_widget ("button_at")
+		self.button_crontab = self.xml.get_widget ("button_crontab")
+		self.button_template = self.xml.get_widget ("button_templates")
 
+		self.chbox = gtk.HBox (False, 5)
+		self.cicon = gtk.Image ()
+		self.cicon.set_from_pixbuf (self.ParentClass.bigiconcrontab)
+		self.cicon.set_alignment (0, 0.5)
+		self.chbox.pack_start (self.cicon, False, False, 5)
+		self.clabel = gtk.Label (_("A task that launches recurrently"))
+		self.clabel.set_justify (gtk.JUSTIFY_LEFT)
+		self.clabel.set_alignment (0, 0.5)
+		self.chbox.pack_start (self.clabel, True, True, 5)
 		
+		self.button_crontab.add (self.chbox)
+		self.button_crontab.show_all ()
 		
+		self.ahbox = gtk.HBox (False, 5)
+		self.aicon = gtk.Image ()
+		self.aicon.set_from_pixbuf (self.ParentClass.bigiconat)
+		self.aicon.set_alignment (0, 0.5)
+		self.ahbox.pack_start (self.aicon, False, False, 5)
+		self.alabel = gtk.Label (_("A task that launches one time"))
+		self.alabel.set_justify (gtk.JUSTIFY_LEFT)
+		self.alabel.set_alignment (0, 0.5)
+		self.ahbox.pack_start (self.alabel, True, True, 5)
+		
+		self.button_at.add (self.ahbox)
+		self.button_at.show_all ()
+		
+		self.thbox = gtk.HBox (False, 5)
+		self.ticon = gtk.Image ()
+		self.ticon.set_from_pixbuf (self.ParentClass.bigicontemplate)
+		self.ticon.set_alignment (0, 0.5)
+		self.thbox.pack_start (self.ticon, False, False, 5)
+		self.tlabel = gtk.Label (_("A task from a predefined template"))
+		self.tlabel.set_justify (gtk.JUSTIFY_LEFT)
+		self.tlabel.set_alignment (0, 0.5)
+		self.thbox.pack_start (self.tlabel, True, True, 5)
+		
+		self.button_template.add (self.thbox)
+		self.button_template.show_all ()
+
+
 	def ShowAddWindow (self):
 		self.widget.set_transient_for(self.ParentClass.widget)
 		self.widget.set_position(gtk.WIN_POS_CENTER_ON_PARENT)
@@ -51,13 +89,17 @@ class AddWindow:
 	def on_cancel_button_clicked (self, *args):
 		self.widget.hide()
 		
-	def on_ok_button_clicked (self, *args):
-		self.widget.hide()
-
-		if self.crontab_radio.get_active ():
-			self.ParentClass.editor = self.ParentClass.crontab_editor
-			self.ParentClass.editor.showadd (self.ParentClass.edit_mode)
-		else:
-			self.ParentClass.editor = self.ParentClass.at_editor
-			self.ParentClass.editor.showadd (self.ParentClass.edit_mode)
+	def on_button_template_clicked (self, *args):
+		self.widget.hide ()
+		self.ParentClass.template_chooser.show ()
+				
+	def on_button_crontab_clicked (self, *args):
+		self.widget.hide ()
+		self.ParentClass.editor = self.ParentClass.crontab_editor
+		self.ParentClass.editor.showadd ()
+		
+	def on_button_at_clicked (self, *args):
+		self.widget.hide ()
+		self.ParentClass.editor = self.ParentClass.at_editor
+		self.ParentClass.editor.showadd ()	
 		

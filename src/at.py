@@ -31,12 +31,13 @@ import config
 
 
 class At:
-	def __init__(self,root,user,uid,gid):
+	def __init__(self,root,user,uid,gid,user_home_dir):
 	
 		#default preview length
 		self.preview_len = 50
 		self.root =	root
-		self.set_rights(user,uid,gid)
+		self.set_rights(user,uid,gid, user_home_dir)
+		self.user_home_dir = user_home_dir
 
 
 		# 16       2006-01-08 13:01 a gaute
@@ -61,26 +62,27 @@ class At:
 		self.nooutput = 0
 		self.SCRIPT_DELIMITER = "###### ---- GNOME_SCHEDULE_SCRIPT_DELIMITER #####"
 		
-		self.atdatafileversion = 3
-		self.atdata = os.path.expanduser ("~/.gnome/gnome-schedule/at")
+		self.atdatafileversion = 2
+		self.atdata = self.user_home_dir + "/.gnome/gnome-schedule/at"
 		if os.path.exists(self.atdata) != True:
 			if os.makedirs(self.atdata, 0700):
 				pass
 			else:
 				pass
 				# FAILED TO CREATE DATADIR
-		
+				
 		self.currentlocale = locale.getlocale (locale.LC_ALL)
 		
-	def set_rights(self,user,uid,gid):
+	def set_rights(self,user,uid,gid, ud):
 		self.user = user
 		self.uid = uid
 		self.gid = gid
+		self.user_home_dir = ud
+		self.atdata = self.user_home_dir + "/.gnome/gnome-schedule/at"
 
 	
 	def get_type (self):
 		return "at"
-
 
 	def standard_locale (self):
 		locale.setlocale (locale.LC_ALL, 'C')
@@ -139,6 +141,7 @@ class At:
 								return False
 						
 						self.restore_locale ()
+					
 						date = dt.strftime ("%Y-%m-%d")
 						time = dt.strftime ("%H:%M:%S")
 						class_id = m.groups ()[2]
@@ -155,9 +158,11 @@ class At:
 					script = os.popen(execute).read()
 					script, prelen, dangerous = self.__prepare_script__ (script)
 					
-					title, icon, desc = self.get_job_data (int (job_id))
+					title, desc = self.get_job_data (int (job_id))
 					#removing ending newlines, but keep one
-					#if a date before this is selected the record is removed, this creates an error, and generally if the script is of zero length
+					#if a date in the past is selected the record is removed by at, this creates an error, and generally if the script is of zero length
+					# TODO: complain about it as well
+					
 					if len(script) < 2:
 						done = 1
 					else:
@@ -169,7 +174,7 @@ class At:
 						else:
 							done = 1
 
-					return job_id, date, time, class_id, user, script, title, icon, prelen, dangerous
+					return job_id, date, time, class_id, user, script, title, prelen, dangerous
 		elif (output == False):
 			if len (line) > 1 and line[0] != '#':
 				m = self.atRecordRegexAdd.search(line)
@@ -208,21 +213,18 @@ class At:
 			if ver < 2 or ver == 3:
 				icon = d[5:d.find ("\n")]
 				d = d[d.find ("\n") + 1:]
-			else:
-				icon = ""
 			
 			desc = d[5:d.find ("\n")]
 			d = d[d.find ("\n") + 1:]
 			
 			fh.close ()
 			
-			
-			return title, icon, desc
+			return title, desc
 			
 		else: 
-			return "", "", ""
+			return "", ""
 			
-	def write_job_data (self, job_id, title, icon, desc):
+	def write_job_data (self, job_id, title, desc):
 		# Create and write data file
 		f = os.path.join (self.atdata, str(job_id))
 		#print f
@@ -231,16 +233,18 @@ class At:
 		fh.seek (0)
 		fh.write ("ver=" + str(self.atdatafileversion) + "\n")
 		fh.write ("title=" + title + "\n")
-		fh.write ("icon=" + icon +  "\n")
 		fh.write ("desc=" + desc + "\n")
 		fh.close ()
 			
 	def checkfield (self, runat):
 		#TODO: fix bug $0:19 2004-12-8$ not valid by regexp
 		# print "$" + runat + "$"
-		regexp1 = re.compile("([0-9][0-9]):([0-9][0-9])\ ([0-9][0-9])\.([0-9][0-9])\.([0-9][0-9][0-9][0-9])")
+		#regexp1 = re.compile("([0-9][0-9]):([0-9][0-9])\ ([0-9][0-9])\.([0-9][0-9])\.([0-9][0-9][0-9][0-9])")
+		#print "Testing: " + runat
+		regexp1 = re.compile ("([0-9][0-9]):([0-9][0-9])\ ([0-9][0-9][0-9][0-9])\-([0-9][0-9])\-([0-9][0-9])")
 		regexp2 = re.compile("([0-9][0-9]):([0-9][0-9])")
 		regexp3 = re.compile("([0-9][0-9])\.([0-9][0-9])\.([0-9][0-9][0-9][0-9])")
+		
 		runat_g1 = regexp1.match(runat)
 		runat_g2 = regexp2.match(runat)
 		runat_g3 = regexp3.match(runat)
@@ -252,7 +256,7 @@ class At:
 		cminute = ctime[4]
 	
 		if runat_g1:
-			(hour, minute, day, month, year) =  runat_g1.groups()
+			(hour, minute, year, month, day) =  runat_g1.groups()
 			hour = int(hour)
 			minute = int(minute)
 			year = int(year)
@@ -304,6 +308,7 @@ class At:
 					syear = False
 			else:
 				return False, "year"
+
 		elif runat_g2:
 
 			(hour, minute) =  runat_g2.groups()
@@ -355,21 +360,11 @@ class At:
 
 		return True, "ok"
 
-	
-	#TODO merge code of append and update	
-	def append (self, runat, command, title, icon):
+		
+	def append (self, runat, command, title):
 		tmpfile = tempfile.mkstemp ()
 		fd, path = tmpfile
 		tmp = os.fdopen(fd, 'w')
-		#if title:
-		#	tmp.write("TITLE=" + title + "\n")
-		#else:
-	#		tmp.write("TITLE=Untitled\n")
-	#	if icon:
-	#		tmp.write("ICON=" + icon + "\n")
-	#	else:
-	#		tmp.write("ICON=None\n")
-
 		tmp.write (self.SCRIPT_DELIMITER + "\n")
 		tmp.write (command + "\n")
 		tmp.close ()
@@ -377,7 +372,6 @@ class At:
 		temp = None
 
 		self.standard_locale ()
-		
 		if self.root == 1:
 			if self.user != "root":
 				#changes the ownership
@@ -391,8 +385,8 @@ class At:
 			execute = config.getAtbin() + " " + runat + " -f " + path
 			child_stdin, child_stdout, child_stderr = os.popen3(execute)
 
+
 		self.restore_locale ()
-		
 		err = child_stderr.readlines ()
 		job_id = 0
 		for line in err:
@@ -403,12 +397,13 @@ class At:
 		#print job_id
 		
 		desc = ""
-		self.write_job_data (job_id, title, icon, desc)
+		self.write_job_data (job_id, title, desc)
 		
 		os.unlink (path)
 
 
-	def update (self, job_id, runat, command, title, icon):
+	def update (self, job_id, runat, command, title):
+		#print "update" + str (job_id) + runat + command + title
 		#remove old
 		f = os.path.join (self.atdata, str (job_id))
 		if os.access (f, os.F_OK):
@@ -457,7 +452,7 @@ class At:
 		#print job_id
 		
 		desc = ""
-		self.write_job_data (job_id, title, icon, desc)
+		self.write_job_data (job_id, title, desc)
 		
 		os.unlink (path)
 		
@@ -483,7 +478,7 @@ class At:
 			array_or_false = self.parse (line)
 			#print array_or_false
 			if array_or_false != False:
-				(job_id, date, time, class_id, user, lines, title, icon, prelen, dangerous) = array_or_false
+				(job_id, date, time, class_id, user, lines, title, prelen, dangerous) = array_or_false
 
 			
 				preview = self.__make_preview__ (lines, prelen)
@@ -500,17 +495,17 @@ class At:
 				# TODO: looks like it could be one append
 				if self.root == 1:
 					if self.user == user:
-						data.append([title, timestring_show, preview, lines, int(job_id), timestring, self, icon, date, class_id, user, time, _("Once"), "at"])
+						data.append([title, timestring_show, preview, lines, int(job_id), timestring, self, None, date, class_id, user, time, _("Once"), "at", self.nooutput, timestring])
 					else: 
 						#print "Record omitted, not current user"
 						pass
 				else:
-					data.append([title, timestring_show, preview, lines, int(job_id), timestring, self, icon, date, class_id, user, time, _("Once"), "at", self.nooutput])
+					data.append([title, timestring_show, preview, lines, int(job_id), timestring, self, None, date, class_id, user, time, _("Once"), "at", self.nooutput, timestring])
 
 				#print _("added %(id)s") % { "id": job_id	}
 			else:
 				print _("Warning: a line in atq's output didn't parse")	
-		#print data
+		
 		return data
 
 	
@@ -604,3 +599,4 @@ class At:
 			result = result + "..."
 
 		return result
+		

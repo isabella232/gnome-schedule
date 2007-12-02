@@ -68,3 +68,4 @@ props = { gnome.PARAM_APP_DATADIR : config.getPrefix() + "/share" }
 pr = gnome.program_init ("gnome-schedule", config.getVersion(), properties=props)
 
 mainWindow = mainWindow.main(debug_flag, False, pr)
+

@@ -29,6 +29,7 @@ from gnome import url_show
 #python modules
 import os
 import pwd
+import tempfile
 
 #custom modules
 import config
@@ -38,7 +39,12 @@ import at
 import atEditor
 import setuserWindow
 import addWindow
-import preset
+import data
+import template
+import template_chooser
+import template_manager
+
+import thoughicon
 
 gtk.glade.bindtextdomain(config.GETTEXT_PACKAGE(), config.GNOMELOCALEDIR())
 
@@ -57,19 +63,30 @@ class main:
 		self.editor = None
 		self.schedule = None
 		
-			
+		self.noevents = False
+					
 		#start the backend where all the user configuration is stored
-		self.backend = preset.ConfigBackend(self, "gconf")
+		self.backend = data.ConfigBackend(self, "gconf")
+		self.template = template.Template (self, self.backend)
 		
-		
-		self.defaultIcon = self.backend.getDefaultIcon()
 		
 		##configure the window
 		self.widget = self.xml.get_widget("mainWindow")
 
 		self.widget.connect("delete_event", self.__quit__)
 		self.widget.connect("destroy_event", self.__quit__)
+		
 		self.widget.set_icon(self.iconPixbuf)
+		
+		#load state
+		(x, y, h, w) = self.backend.get_window_state ()
+		if (x and y):
+	 		self.widget.move (x, y)
+	 	if (h and w):
+	 		self.widget.resize (h, w)
+
+		self.widget.set_resizable (True)
+
 		##		
 
 
@@ -80,27 +97,115 @@ class main:
 		##
 		
 		##configure the toolbar	
-		self.add_button = self.xml.get_widget ("add_button")
+		self.toolbar = self.xml.get_widget ("toolbar")
+		self.add_button = gtk.MenuToolButton (gtk.STOCK_NEW)
+		
+		self.add_button_menu = gtk.Menu ()
+		self.add_button_menu_add_crontab = gtk.MenuItem ()
+		self.add_button_menu_add_at = gtk.MenuItem ()
+		self.add_button_menu_add_template = gtk.MenuItem ()
+
+		self.recurrenthbox = gtk.HBox ()
+		icon = gtk.Image ()
+		icon.set_from_pixbuf (self.iconcrontab)
+		label = gtk.Label (_("Recurrent task"))
+		icon.set_alignment (0, 0.5)
+		label.set_justify (gtk.JUSTIFY_LEFT)
+		label.set_alignment (0, 0.5)
+		self.recurrenthbox.pack_start (icon, False, False, 2)
+		self.recurrenthbox.pack_start (label, True, True, 2)
+		self.add_button_menu_add_crontab.add (self.recurrenthbox)
+		
+		self.onetimehbox = gtk.HBox ()
+		icon = gtk.Image ()
+		icon.set_from_pixbuf (self.iconat)
+		label = gtk.Label (_("One-time task"))
+		icon.set_alignment (0, 0.5)
+		label.set_justify (gtk.JUSTIFY_LEFT)
+		label.set_alignment (0, 0.5)
+		self.onetimehbox.pack_start (icon, False, False, 2)
+		self.onetimehbox.pack_start (label, True, True, 2)
+		self.add_button_menu_add_at.add (self.onetimehbox)
+		
+		self.templatehbox = gtk.HBox ()
+		icon = gtk.Image ()
+		icon.set_from_pixbuf (self.icontemplate)
+		label = gtk.Label (_("From template"))
+		icon.set_alignment (0, 0.5)
+		label.set_justify (gtk.JUSTIFY_LEFT)
+		label.set_alignment (0, 0.5)
+		self.templatehbox.pack_start (icon, False, False, 2)
+		self.templatehbox.pack_start (label, True, True, 2)
+		self.add_button_menu_add_template.add (self.templatehbox)
+		
+		self.add_button_menu.append (self.add_button_menu_add_crontab)
+		self.add_button_menu.append (self.add_button_menu_add_at)
+		self.add_button_menu.append (self.add_button_menu_add_template)
+		
+		self.add_button.set_menu (self.add_button_menu)
+
+		self.toolbar.insert (self.add_button, 0)
+		self.add_button.set_is_important (True)
+		tip = gtk.Tooltips ()
+		tip.enable ()
+		
+		self.add_button.set_tooltip (tip, _("Add a new task"), tip_private=None)
+		self.add_button.show_all ()
+		self.add_button_menu.show_all ()
+		self.add_button_menu_add_crontab.show_all ()
+		self.add_button_menu_add_at.show_all ()
+
+		self.add_button.connect ("clicked", self.on_add_button_clicked)
+		self.add_button_menu_add_crontab.connect ("activate", self.on_add_crontab_task)
+		self.add_button_menu_add_at.connect ("activate", self.on_add_at_task)
+		self.add_button_menu_add_template.connect ("activate", self.on_add_from_template)
+
+		
 		self.prop_button = self.xml.get_widget ("prop_button")
 		self.del_button = self.xml.get_widget ("del_button")
+		self.run_button = self.xml.get_widget ("run_button")
 		self.help_button = self.xml.get_widget ("help_button")
 		self.btnSetUser = self.xml.get_widget("btnSetUser")
 		self.btnExit = self.xml.get_widget("btnExit")
+		self.about_button = self.xml.get_widget ("about_button")
+		self.edit_mode_button = self.xml.get_widget ("edit_mode_button")
+		self.button_template = self.xml.get_widget ("button_m_template")
 
 		self.prop_button.set_sensitive (False)
 		self.del_button.set_sensitive (False)
+		self.run_button.set_sensitive (False)
+	
+		self.button_tb = self.button_template.get_child ()
+		self.tvbox = self.button_tb.get_child ()
+		for w in self.tvbox.get_children ():
+			self.tvbox.remove (w)
+		icon = gtk.Image ()
+		icon.set_from_pixbuf (self.normalicontemplate)
+		label = gtk.Label (_("Templates"))
+		icon.set_alignment (0.5, 0.5)
+		label.set_justify (gtk.JUSTIFY_CENTER)
+		label.set_alignment (0.5, 0.5)
+		self.tvbox.pack_start (icon, True, True, 0)
+		self.tvbox.pack_start (label, True, True, 0)
+		self.tvbox.show_all ()
 		
-		self.xml.signal_connect("on_add_button_clicked", self.on_add_button_clicked)
+	
+			
 		self.xml.signal_connect("on_prop_button_clicked", self.on_prop_button_clicked)
 		self.xml.signal_connect("on_del_button_clicked", self.on_del_button_clicked)
 		self.xml.signal_connect("on_help_button_clicked", self.on_help_button_clicked)
 		self.xml.signal_connect("on_btnSetUser_clicked", self.on_btnSetUser_clicked)
+		self.xml.signal_connect("on_about_menu_activate", self.on_about_menu_activate)
+		self.xml.signal_connect("on_edit_mode_button_clicked", self.on_advanced_menu_activate)
 		self.xml.signal_connect("on_btnExit_clicked", self.__quit__)
 		self.xml.signal_connect("on_mainWindow_delete_event", self.__quit__)
+		self.xml.signal_connect("on_run_button_clicked", self.on_run_button_clicked)
 		
+		self.xml.signal_connect ("on_button_m_template_clicked", self.on_template_manager_button)
 				
-		##inittializing the treeview
-		## [0 Title, 1 Frequency, 2 Command, 3 Crontab record, 4 ID, 5 Time, 6 Icon, 7 scheduled instance, 8 icon path, 9 date, 10 class_id, 11 user, 12 time, 13 type, 14 crontab/at]
+		##inittializing the treeview and treemodel
+		## somethins not rite here..:
+		## [0 Title, 1 Frequency, 2 Command, 3 Crontab record, 4 ID, 5 Time, 6 Icon, 7 scheduled instance, 8 icon path, 9 date, 10 class_id, 11 user, 12 time, 13 type, 14 crontab/at, 15 advanced time string]
 		##for at this would be like: 
 		
 # ["untitled", "12:50 2004-06-25", "preview", "script", "job_id", "12:50", icon, at instance, icon_path, "2004-06-25", "a", "drzap", "at"]
@@ -108,7 +213,7 @@ class main:
 		##for crontab it would be: 
 		
 # ["untitled", "every hour", "ls /", "0 * * * * ls / # untitled", "5", "0 * * * *", icon, crontab instance,icon_path, 1(job_id), "", "", "crontab"]
-		self.treemodel = gtk.ListStore(gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_INT, gobject.TYPE_STRING, gtk.gdk.Pixbuf, gobject.TYPE_PYOBJECT, gobject.TYPE_STRING , gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_INT)
+		self.treemodel = gtk.ListStore(gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_INT, gobject.TYPE_STRING, gtk.gdk.Pixbuf, gobject.TYPE_PYOBJECT, gobject.TYPE_STRING , gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_INT, gobject.TYPE_STRING)
 		
 		self.treeview = self.xml.get_widget("treeview")
 		
@@ -116,62 +221,29 @@ class main:
 		self.xml.signal_connect("on_treeview_key_press_event", self.on_treeview_key_pressed)
 		
 		self.treeview.set_model (self.treemodel)
-						
-		#when a selection is made
 		self.treeview.get_selection().connect("changed", self.on_TreeViewSelectRow)
-		
-		# TODO: enable?
-		#self.treeview.set_rules_hint(True)
-		##
-
-		##configure the menu
-		self.add_scheduled_task_menu = self.xml.get_widget ("add_scheduled_task_menu")
-		self.properties_menu = self.xml.get_widget ("properties_menu")
-		self.delete_menu = self.xml.get_widget ("delete_menu")
-		self.set_user_menu = self.xml.get_widget ("set_user_menu")
-		self.quit_menu = self.xml.get_widget ("quit_menu")
-		
-		self.advanced_menu = self.xml.get_widget ("advanced_menu")
-		
-		self.manual_menu = self.xml.get_widget ("manual_menu")
-		self.about_menu = self.xml.get_widget ("about_menu")
-		
-
-		self.properties_menu.set_sensitive (False)
-		self.delete_menu.set_sensitive (False)
-
-		self.xml.signal_connect("on_add_scheduled_task_menu_activate", self.on_add_scheduled_task_menu_activate)
-		self.xml.signal_connect("on_properties_menu_activate", self.on_properties_menu_activate)
-		self.xml.signal_connect("on_delete_menu_activate", self.on_delete_menu_activate)
-		self.xml.signal_connect("on_set_user_menu_activate",self.on_set_user_menu_activate)
-		
-		self.xml.signal_connect("on_quit_menu_activate", self.__quit__)
-		
-		self.xml.signal_connect("on_advanced_menu_activate", self.on_advanced_menu_activate)
-	
-		self.xml.signal_connect("on_manual_menu_activate", self.on_manual_menu_activate)
-		self.xml.signal_connect("on_about_menu_activate", self.on_about_menu_activate)
-		##
-
 
 		#enable or disable advanced depending on user config
-		self.advanced_menu.set_active (self.backend.get_advanced_option())
+		self.noevents = True
 		if self.backend.get_advanced_option():
 			self.switchView("advanced")
+			self.edit_mode_button.set_active (True)
 		else:
 			self.switchView("simple")
+			self.edit_mode_button.set_active (False)
+		self.noevents = False
 		
 		
 		self.__initUser__()
 		
 		##create crontab
-		self.crontab = crontab.Crontab(self.root,self.user, self.uid, self.gid)
-		self.crontab_editor = crontabEditor.CrontabEditor(self,self.backend, self.crontab, self.defaultIcon)
+		self.crontab = crontab.Crontab(self.root, self.user, self.uid, self.gid, self.user_home_dir)
+		self.crontab_editor = crontabEditor.CrontabEditor(self, self.backend, self.crontab, self.template)
 		##
 		
 		##create at
-		self.at = at.At(self.root,self.user, self.uid, self.gid)
-		self.at_editor = atEditor.AtEditor (self, self.backend, self.at, self.defaultIcon)
+		self.at = at.At(self.root, self.user, self.uid, self.gid, self.user_home_dir)
+		self.at_editor = atEditor.AtEditor (self, self.backend, self.at, self.template)
 		##
 		
 		#set user window
@@ -180,7 +252,9 @@ class main:
 		#set add window
 		self.addWindow = addWindow.AddWindow (self)
 		
-		# TODO: select first task from list?
+		# template windows
+		self.template_chooser = template_chooser.TemplateChooser (self, self.template)
+		self.template_manager = template_manager.TemplateManager (self, self.template)
 
 		self.schedule_reload ()
 
@@ -188,8 +262,8 @@ class main:
 
 		if inapplet == False:
 			gtk.main()
-
-
+		
+	
 	def update_schedule(self):
 		selection = self.treeview.get_selection()
 		model, iter, = selection.get_selected()
@@ -204,8 +278,8 @@ class main:
 		if user != self.user:
 			self.__setUser__(user)
 			#change user for the schedulers
-			self.crontab.set_rights(self.user, self.uid, self.gid)
-			self.at.set_rights(self.user, self.uid, self.gid)
+			self.crontab.set_rights(self.user, self.uid, self.gid, self.user_home_dir)
+			self.at.set_rights(self.user, self.uid, self.gid, self.user_home_dir)
 			#adjust statusbar
 			if self.root == 1:
 				self.statusbar.push(self.statusbarUser, (_("Editing user: %s") % (self.user)))
@@ -218,6 +292,8 @@ class main:
 		self.user = user
 		self.uid = userdb[2]
 		self.gid = userdb[3]
+		self.user_home_dir = userdb[5]
+		self.user_shell = userdb[6]
 		
 						
 	## TODO: 2 times a loop looks to mutch
@@ -236,17 +312,12 @@ class main:
 
 
 	def __fill__ (self, records):
-		for title, timestring_show, preview, lines, job_id, timestring, scheduler, icon, date, class_id, user, time, typetext, type, nooutput in records:
+		for title, timestring_show, preview, lines, job_id, timestring, scheduler, icon, date, class_id, user, time, typetext, type, nooutput, timestring_advanced in records:
 					
-			if icon != None:
-				try:
-					icon_pix = gtk.gdk.pixbuf_new_from_file_at_size (icon, 21, 21)
-				except:
-					icon_pix = None
-			else:
-				icon_pix = None
-			
-			iter = self.treemodel.append([title, timestring_show, preview, lines, job_id, timestring, icon_pix, scheduler, icon, date, class_id, user, time, typetext, type, nooutput])
+			if scheduler.get_type() == "crontab":
+				iter = self.treemodel.append([title, timestring_show, preview, lines, job_id, timestring, self.iconcrontab, scheduler, icon, date, class_id, user, time, typetext, type, nooutput, timestring_advanced])
+			elif scheduler.get_type() == "at":
+				iter = self.treemodel.append([title, timestring_show, preview, lines, job_id, timestring, self.iconat, scheduler, icon, date, class_id, user, time, typetext, type, nooutput, timestring_advanced])
 
 			
 		
@@ -254,15 +325,48 @@ class main:
 
 	# TODO: pixbuf or pixmap? gtkImage
 	def __loadIcon__(self):
-		if os.access("../pixmaps/gnome-schedule.png", os.F_OK):
-			self.iconPixbuf = gtk.gdk.pixbuf_new_from_file ("../pixmaps/gnome-schedule.png")
+		self.ti_theme = thoughicon.ToughIconTheme()
+		
+		if os.access("../icons/gnome-schedule.svg", os.F_OK):
+			self.iconPixbuf = gtk.gdk.pixbuf_new_from_file_at_size ("../icons/gnome-schedule.svg", 52, 52)
 		else:
 			try:
-				self.iconPixbuf = gtk.gdk.pixbuf_new_from_file (config.getImagedir() + "/gnome-schedule.png")
+				self.iconPixbuf = gtk.gdk.pixbuf_new_from_file_at_size (config.getImagedir() + "/gnome-schedule.svg", 52, 52)
 			except:
 				print _("ERROR: Could not load icon")
-
-
+		
+		self.iconatstring = gtk.STOCK_DIALOG_WARNING
+		self.iconcrontabstring = gtk.STOCK_REFRESH
+		self.icontemplatestring = gtk.STOCK_INDEX
+		
+		self.iconcrontab  = self.ti_theme.load_icon (self.iconcrontabstring, 19, 0)
+		self.bigiconcrontab = self.ti_theme.load_icon (self.iconcrontabstring, 49, 0)
+		
+		if os.access ("../icons/template.svg", os.F_OK):
+			self.icontemplate = gtk.gdk.pixbuf_new_from_file_at_size ("../icons/template.svg", 19, 19)
+			self.normalicontemplate = gtk.gdk.pixbuf_new_from_file_at_size ("../icons/template.svg", 25, 25)
+			self.bigicontemplate = gtk.gdk.pixbuf_new_from_file_at_size ("../icons/template.svg", 49, 49)
+			self.pathicontemplate = "../icons/template.svg"
+		else:
+			try:
+				self.icontemplate = gtk.gdk.pixbuf_new_from_file_at_size (config.getImagedir() + "/template.svg", 19, 19)
+				self.normalicontemplate = gtk.gdk.pixbuf_new_from_file_at_size (config.getImagedir() + "/template.svg", 25, 25)
+				self.bigicontemplate = gtk.gdk.pixbuf_new_from_file_at_size (config.getImagedir() + "/template.svg", 49, 49)
+				self.pathicontemplate = config.getImagedir() + "/template.svg"
+			except:
+				print _("ERROR: Could not load icon")
+				
+		if os.access ("../icons/at.svg", os.F_OK):
+			self.iconat = gtk.gdk.pixbuf_new_from_file_at_size ("../icons/at.svg", 19, 19)
+			self.bigiconat = gtk.gdk.pixbuf_new_from_file_at_size ("../icons/at.svg", 49, 49)
+		else:
+			try:
+				self.iconat = gtk.gdk.pixbuf_new_from_file_at_size (config.getImagedir() + "/at.svg", 19, 19)
+				self.bigiconat = gtk.gdk.pixbuf_new_from_file_at_size (config.getImagedir() + "/at.svg", 49, 49)
+			except:
+				print _("ERROR: Could not load icon")
+				
+		
 	def __loadGlade__(self):
 		if os.access("gnome-schedule.glade", os.F_OK):
 			self.xml = gtk.glade.XML ("gnome-schedule.glade", domain="gnome-schedule")
@@ -278,9 +382,12 @@ class main:
 		self.uid = os.geteuid() 
 		self.gid = os.getegid()
 		self.user = pwd.getpwuid(self.uid)[0]
+		self.user_home_dir = pwd.getpwuid(self.uid)[5]
+		self.user_shell = pwd.getpwuid(self.uid)[6]
 		
 		if self.uid != 0:
-			self.set_user_menu.hide()	
+			self.btnSetUser.hide()
+			self.statusbar.hide()	
 			self.root = 0
 		else:
 			self.root = 1
@@ -298,8 +405,8 @@ class main:
 			
 		self.prop_button.set_sensitive (value)
 		self.del_button.set_sensitive (value)
-		self.properties_menu.set_sensitive (value)
-		self.delete_menu.set_sensitive (value)
+		self.run_button.set_sensitive (value)
+
 		
 	
 	#clean existing columns
@@ -313,44 +420,49 @@ class main:
 	
 	#switch between advanced and simple mode			
 	def switchView(self, mode = "simple"):
-		#TODO: experimental code + show icon?
 		self.__cleancolumns__ ()
 		
 		self.treeview.get_selection().unselect_all()
 		self.edit_mode = mode
 		
 		cell = gtk.CellRendererPixbuf()
-		cell.set_fixed_size(21,21)	
-		col = gtk.TreeViewColumn(_("Icon"), cell, pixbuf=6)
+		cell.set_fixed_size(21,21)
+		cell2 = gtk.CellRendererText ()	
+		col = gtk.TreeViewColumn (_("Task"), None)
+		col.pack_start (cell, True)
+		col.pack_end (cell2, True)
+		col.add_attribute (cell, "pixbuf", 6)
+		if mode == "simple":
+			col.add_attribute (cell2, "text", 13)
+		else:
+			col.add_attribute (cell2, "text", 14)
+			
 		self.treeview.append_column(col)
 		
 		if mode == "simple":
-
-			col = gtk.TreeViewColumn(_("Type"), gtk.CellRendererText(), text=13)
-			col.set_resizable (True)
-			self.treeview.append_column(col)
-
+			
 			col = gtk.TreeViewColumn(_("Description"), gtk.CellRendererText(), text=0)
 			col.set_resizable (True)
 			self.treeview.append_column(col)
 
-			col = gtk.TreeViewColumn(_("Date and Time Settings"), gtk.CellRendererText(), text=1)
+			col = gtk.TreeViewColumn(_("Date and Time"), gtk.CellRendererText(), text=1)
 			col.set_resizable (True)
 			self.treeview.append_column(col)
 
-			col = gtk.TreeViewColumn(_("Preview"), gtk.CellRendererText(), text=2)
+			col = gtk.TreeViewColumn(_("Command preview"), gtk.CellRendererText(), text=2)
 			col.set_resizable (True)
 			col.set_expand (True)
 			self.treeview.append_column(col)
+
 
 
 		elif mode == "advanced":
 	
-			col = gtk.TreeViewColumn(_("Date and Time Settings"), gtk.CellRendererText(), text=5)
+			col = gtk.TreeViewColumn(_("Date and Time"), gtk.CellRendererText(), text=16)
 			col.set_resizable (True)
 			self.treeview.append_column(col)
 
-			col = gtk.TreeViewColumn(_("Preview"), gtk.CellRendererText(), text=2)
+			col = gtk.TreeViewColumn(_("Command preview"), gtk.CellRendererText(), text=2)
 			col.set_resizable (True)
 			col.set_expand (True)
 			self.treeview.append_column(col)
@@ -359,15 +471,27 @@ class main:
 			col.set_resizable (True)
 			self.treeview.append_column(col)
 
-			col = gtk.TreeViewColumn(_("Type"), gtk.CellRendererText(), text=14)
-			col.set_resizable (True)
-			self.treeview.append_column(col)
-	
 
 
 	def on_advanced_menu_activate (self, widget):
-		self.backend.set_advanced_option(widget.get_active())
+		if self.noevents == False:
+			if self.backend.get_advanced_option():
+				self.backend.set_advanced_option(0)
+			else:
+				self.backend.set_advanced_option(1)
+
+	def on_add_at_task (self, *args):
+		self.addWindow.on_button_at_clicked (*args)
+		
+	def on_add_crontab_task (self, *args):
+		self.addWindow.on_button_crontab_clicked  (*args)
 	
+	def on_add_from_template (self, *args):
+		self.addWindow.on_button_template_clicked  (*args)
+
+	def on_template_manager_button (self, *args):
+		self.template_manager.show ()
+		
 	def on_add_scheduled_task_menu_activate (self, *args):
 		self.addWindow.ShowAddWindow ()
 
@@ -387,13 +511,13 @@ class main:
 			if self.schedule.get_type() == "crontab":
 				self.editor = self.crontab_editor
 				job_id = self.treemodel.get_value (iter, 9)
-				self.editor.showedit (record, job_id, linenumber, iter, self.edit_mode)
+				self.editor.showedit (record, job_id, linenumber, iter)
 			else:
 				self.editor = self.at_editor
-				self.editor.showedit (record, linenumber, iter, self.edit_mode)
+				self.editor.showedit (record, linenumber, iter)
 
 		except Exception, ex:
-			print ex
+			#print ex
 			self.dialog = gtk.MessageDialog(self.widget, gtk.DIALOG_MODAL|gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_ERROR, gtk.BUTTONS_OK, _("Please select a task"))
 			self.dialog.run ()
 			self.dialog.destroy ()			
@@ -456,7 +580,7 @@ class main:
 						selection.select_iter(firstiter)
 						
 		except Exception, ex:
-			print ex
+			#print ex
 			self.dialog = gtk.MessageDialog(self.widget, gtk.DIALOG_MODAL|gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_ERROR, gtk.BUTTONS_OK, _("Please select a task"))
 			self.dialog.run ()
 			self.dialog.destroy ()
@@ -500,7 +624,86 @@ class main:
  	#about box
  	def open_url (self, *args):
  		url_show("http://gnome-schedule.sourceforge.net")
- 		
+ 	
+ 	def on_run_button_clicked (self, *args):
+		dialog = gtk.MessageDialog(self.widget, gtk.DIALOG_MODAL|gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_QUESTION, gtk.BUTTONS_NONE, _("Are you sure you want to run this task now?\n\nThis is used to preview the task and initiates a one-time run, this does not affect the normal scheduled run times."))
+		dialog.add_buttons (gtk.STOCK_EXECUTE, gtk.RESPONSE_YES, gtk.STOCK_CANCEL, gtk.RESPONSE_CANCEL)
+		dialog.set_title (_("Are you sure you want to run this task?"))
+		if (dialog.run() != gtk.RESPONSE_YES):
+			dialog.destroy()
+			del dialog
+			return
+		dialog.destroy()
+		del dialog
+		
+		if (self.backend.get_not_inform_working_dir() != True):
+			dia2 = gtk.MessageDialog (self.widget, gtk.DIALOG_MODAL | gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_WARNING, gtk.BUTTONS_NONE, _("Note about working directory of executed tasks:\n\nRecurrent tasks will be run from the home directory, one-time tasks from the directory where Gnome schedule was run from at the time of task creation (normally the home directory)."))
+			dia2.add_buttons ("_Don't show again", gtk.RESPONSE_CLOSE, gtk.STOCK_OK, gtk.RESPONSE_OK, gtk.STOCK_CANCEL, gtk.RESPONSE_CANCEL)
+			dia2.set_title (_("Warning: Working directory of executed tasks"))
+			response = dia2.run ()
+			if response == gtk.RESPONSE_CANCEL:
+				dia2.destroy ()
+				del dia2
+				return
+			elif response == gtk.RESPONSE_CLOSE:
+				self.backend.set_not_inform_working_dir (True)
+			else:
+				pass
+			dia2.destroy ()
+			del dia2
+		
+		store, iter = self.treeview.get_selection().get_selected()
+	
+		try:
+			# commands are at model[3]
+			
+			#see what scheduler (at, crontab or ...)		
+			self.schedule = self.treemodel.get_value(iter, 7)
+			
+			tmpfile = tempfile.mkstemp ()
+			fd, path = tmpfile
+			tmp = os.fdopen (fd, 'w')
+			
+			commands = self.treemodel.get_value(iter, 3)
+			linenumber = self.treemodel.get_value(iter, 4)
+			script = "#!" + self.user_shell + "\n"
+			if self.schedule.get_type () == "at":
+				if self.root == 1:
+					if self.user != "root":
+						script = script + "su " + self.user + " -c \"source " + path + "\"\n"
+						os.chown(path, self.uid, self.gid)
+					else:
+						script = script + "source " + path + "\n"
+				else:
+					script = script + "source " + path + "\n"		
+				execute = config.getAtbin () + " -c " + str (linenumber)
+				tmp.write (os.popen (execute).read () + "\n")
+				
+			elif self.schedule.get_type () == "crontab":
+				if self.root == 1:
+					if self.user != "root":
+						script = script + "su " + self.user + " -c \"source " + path + "\"\n"
+						os.chown(path, self.uid, self.gid)
+					else:
+						script = script + "source " + path + "\n"
+				else:
+					script = script + "source " + path + "\n"
+					
+				tmp.write (self.schedule.parse (commands)[1][5])
+			
+			tmp.close ()
+			script = script + "\necho " + _("Press ENTER to continue and close this window.") + "\n"
+			script = script + "read\nrm " + path + "\nexit\n"
+			
+			gnome.execute_terminal_shell (self.user_home_dir, script)
+
+				
+		except Exception, ex:
+			print ex
+			self.dialog = gtk.MessageDialog(self.widget, gtk.DIALOG_MODAL|gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_ERROR, gtk.BUTTONS_OK, _("Please select a task!"))
+			self.dialog.run ()
+			self.dialog.destroy ()
+ 			
  	def on_about_menu_activate (self, *args):
  	
 		gtk.about_dialog_set_url_hook(self.open_url, "bogusbar")
@@ -550,6 +753,10 @@ class main:
 
  	#quit program
  	def __quit__(self, *args):
+ 		#save state
+ 		x,y = self.widget.get_position ()
+ 		h, w = self.widget.get_size ()
+ 		self.backend.set_window_state(x, y, h, w)
  		if self.inapplet:
 			self.widget.hide ()
 		else:

@@ -1,49 +1,130 @@
 2007-12-02  Gaute Hope  <eg@gaute.vetsj.com>
 
-	* Released 1.2.1
-
+	* Released 1.2.1 and merged new-ui to trunk/
+	
 2007-12-01  Gaute Hope  <eg@gaute.vetsj.com>
 
-	* Changed version number to 1.2.1
-	* Tweaked parsing of text strings in crontab, need more info about how to interprent textstring in the dom field
-	* Seems like it is a bug in crontab allowing it to be parsed, checking for it on parse. (strangly i cannot reproduce it anymore..)
-	* WrongRecordDialog, string translation is now mapped
-	* mainwindow.py: fixed help opener
+	* Merged tweakings from trunk concerning text strings in dom fields.
+	* The preview field in crontab editor checks for errors and doesn't crash on string entries.
+	* TODO: Figure out behaviour, if as parsed now then allow it in checkfield
+	* Treating it as a bug in crontab.. strangly i cannot reproduce it, crontab.py is still checking for it though and fails on that line.
+	* icons/template.svg: Using the icon bookmark-new.svg from the tango project to symbolize templates, possible that the hacking to get it displayed on the menu button made some other accessability or theme wide settings not apply to this button.
+	* changed some strings
+	* help opens correctly
+	
+	
+2007-11-30  Gaute Hope  <eg@gaute.vetsj.com>
+
+	* ateditor has a requested width to keep the width when editing template, hope it doesn't cause problems with translations and longer strings.
+	* src/template_chooser.py: displays templates, supports advanced view: depends on the advanced button in the main window.
+	* src/template_chooser.py: using existing templates fully implemented
+	* src/template_manager.py: all that is working in the chooser works in the manager
+	* template_manager: deleting works, editing works, edit default behaviour by doubleclick
+	* src/atEditor.py, src/crontabEditor.py: Both support adding, using and editing templates
+	* Templates fully implemented, needs testing
+
+2007-11-29  Gaute Hope  <eg@gaute.vetsj.com>
+
+	* renamed src/preset.py to src/data.py
+	* added src/template.py: Contains shared code for template manager and chooser
+	* add as template works in both at and crontab editor
+	* added src/template_chooser.py: template chooser window
+	* added add from template as option to the new button and window
+	* fixed allignment in new drop down menu
+	* src/template_chooser.py: Connecting, setting up
+	
+2007-11-21  Gaute Hope  <eg@gaute.vetsj.com>
+
+	* changed version to 1.9.0-NEW_UI
+	* addwindow.py: using buttons not radiobuttons, one click less and i think it looks better
+	* started work on the calendar.. but it doesn't want to move properly
+	* now it at least beheaves slightly proper
+	* and finally it even works.
 	
 2007-11-20  Gaute Hope  <eg@gaute.vetsj.com>
 
-	* Fixed some confusing expressions for weekday easy translations
-	* removed editor.py and support.py
-	* removed alot of debug messages
-	* removed old .cvsignore files, hope i dont need them
-	* removed ChangeLog.cvs
+	* merged some changes from trunk
+	* removed editor.py
+	* updated oc translation from trunk
+	* removed old .cvsignore files, hope i don't need them
+	* removed Changelog.cvs
 	* removed README.cvs, we have a HACKING file that says the same
-	* updated AUTHORS file to honour the documentor
+	* updated AUTHORS to honour the documentor
 	* updated copyrights
-		
-2007-11-10  Gaute Hope  <eg@gaute.vetsj.com>
-
-	* Changed version number to 1.2.0
 	
-2007-10-25  Gaute Hope  <eg@gaute.vetsj.com>
+2007-11-19  Gaute Hope  <eg@gaute.vetsj.com>
 
-	* Fixed crontab parsing mon, tue, wed and 'at' parser locale ignorant.
+	* using the appointment-new.svg icon from Tango for 'at' tasks.
+	* deleted old unused icon for gnome-schedule
 	
-2007-10-22  Gaute Hope  <eg@gaute.vetsj.com>
+2007-11-17  Gaute Hope  <eg@gaute.vetsj.com>
 
-	* src/gnome-schedule.glade: Fixed tooltips in addWindow. https://bugs.launchpad.net/ubuntu/+source/gnome-schedule/+bug/134992
+	* Dialogs informing about working directory of tasks upon add and edit with "don't show" button
+	* Also a second working dir dialog on the run tasks, with a "don't show" button
+	
+2007-11-16  Gaute Hope  <eg@gaute.vetsj.com>
 
-2007-10-14  Yannig Marchegay  <yannig@marchegay.org>
+	* tweaked the run task stuff, should be safly using pathnames with strange characters. dialog text refined.
+	* Fixed superuser support, was broken
+	* Added feature: Run task, runs the selected task in a terminal and waits for a button to be pressed
+	* fixed my own bug: 497413
+	
+2007-11-15  Gaute Hope  <eg@gaute.vetsj.com>
 
-	* configure.in: Added 'oc' to ALL_LINGUAS.
+	* src/crontabEditorHelper.py: Changed window title to type: "Edit minute", re-translation needed.
+	* src/gnome-schedule.glade, src/crontabEditorHelper.py, po/fr.po: Applied Kiddo's changes, they are as follows:
+	* simplified the crontab helper dialog (minutes editor for example) to the extreme. My reasoning is this: you don't need a label to indicate that it's all about minutes because a) the user just clicked an edit button at the right of the Minutes field b) this should be in the window title anyway (this needs to be implemented: replace the window title for something relevant), and c) this adds visual clutter. The net result from removing this label is that now, there is no more reason to "indent" the rest of the dialog, so a whole bunch of GTK widgets can be removed. Much simpler :)
+	* fix the spacings everywhere to be HIG-compliant (lien). 12px around dialogs, 6 or 12 pixels spacings pretty much everywhere, realign stuff
+	* in the addWindow dialog, simplify the wording of the choices. It was too redundant (the text was not a useful read for the user)
+	* make the crontab_editor "resize-friendly"
+	* switch stuff around in the crontab_editor
+	* change some terms (i.e.: task --> command)
+	
+2007-11-14  Gaute Hope  <eg@gaute.vetsj.com>
 
+	* new crontab editor fully works
+	* deleted old one
+	* new field to the main treemodel for timestring_advanced; the timestring shown in advanced mode. Effectively only affecting @reboot entries now showing _("At reboot") and not 5 x @reboot
+	* advanced view toggle button behaves
+	* set version to 2.0.0-BETA
+	* remembers size and position, but not state due to silly gtk/gnome
+	* removed support.py, translates thoughicon.py
+	* src/gnome-schedule.glade: Formatting changed of entire file while switching to glade-3
+	* added kiddos changes
+	
+	
+2007-11-14  Gaute Hope  <eg@gaute.vetsj.com>
+
+	* Oh.. forgot this file, here's a summary
+	* From trunk: Bugfix where some dates in the future wouldn't be accepted.
+	* at editor fully works
+	* added icon to at editor
+	* added icons to drop down menu
+	* removed exit button
+	* new icon for gnome-schedule by kiddo
+	* created new crontab interface in glade, needs to be attached	
+	* at parser locale ignorant
+	* gnome-schedule desktop entry in preferences
+
+	
 2007-05-30  Gaute Hope  <eg@gaute.vetsj.com>
 
-        * src/atEditor.py: No crash on letters entered into hour or minute spinbox. Bug: https://bugs.launchpad.net/ubuntu/+source/gnome-schedule/+bug/115782
-
+	* src/atEditor.py: No crash on letters entered into hour or minute spinbox. Bug: https://bugs.launchpad.net/ubuntu/+source/gnome-schedule/+bug/115782
+	
 2007-05-25  Gaute Hope  <eg@gaute.vetsj.com>
 
 	* updated README
+	* updated towards trunk
+	
+2007-05-07  Gaute Hope  <eg@gaute.vetsj.com>
+
+	* src/mainWindow.py, src/addWindow.py, src/gnome-schedule.glade: The new button is now a MenuToolButton with a arrow that allows for direct selection of type of task that is intended to create. A click on the button works like earlier.
+	
+2007-05-05  Gaute Hope  <eg@gaute.vetsj.com>
+
+	* src/mainWindow.py: Hides statusbar if not root
+	* src/mainWindow.py: Treeview made more compact and easier to read
+	* src/mainWindow.py, src/gnome-schedule.glade: Removed menubar, added some buttons.
 	
 2007-05-02  Gaute Hope  <eg@gaute.vetsj.com>
 

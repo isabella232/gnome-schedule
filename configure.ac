@@ -1,5 +1,5 @@
 AC_INIT(src/gnome-schedule.py)
-AM_INIT_AUTOMAKE(gnome-schedule, 1.2.1)
+AM_INIT_AUTOMAKE(gnome-schedule, 1.9.0-NEW_UI)
 
 dnl check for python
 dnl AM_PATH_PYTHON
@@ -121,7 +121,7 @@ Makefile
 src/config.py
 src/Makefile
 src/gnome-schedule
-pixmaps/Makefile
+icons/Makefile
 po/Makefile.in
 desktop/Makefile
 desktop/gnome-schedule.desktop.in

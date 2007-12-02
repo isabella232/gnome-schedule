@@ -29,19 +29,20 @@ import config
 
 
 class Crontab:
-	def __init__(self,root,user,uid,gid):
+	def __init__(self,root,user,uid,gid, user_home_dir):
 		#default preview length
 		self.preview_len = 50
 		self.root = root
-		self.set_rights(user,uid,gid)
+		self.set_rights(user,uid,gid, user_home_dir)
+		self.user_home_dir = user_home_dir
 		
 		self.nooutputtag = ">/dev/null 2>&1"
 		self.crontabRecordRegex = re.compile('([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^#\n$]*)(\s#\s([^\n$]*)|$)')
 		self.__setup_timespec__()
 		self.env_vars = [ ]
 		
-		self.crontabdata = os.path.expanduser ("~/.gnome/gnome-schedule/crontab")
-		self.crontabdatafileversion = 2
+		self.crontabdata = self.user_home_dir + "/.gnome/gnome-schedule/crontab"
+		self.crontabdatafileversion = 3
 		
 		if os.path.exists(self.crontabdata) != True:
 			if os.makedirs(self.crontabdata, 0700):
@@ -59,7 +60,9 @@ class Crontab:
 			"@daily"   : '0 0 * * *',
 			"@weekly"  : '0 0 * * 0',
 			"@monthly" : '0 0 1 * *',
-			"@yearly"  : '0 0 1 1 *'
+			"@yearly"  : '0 0 1 1 *',
+			"@annually": '0 0 1 1 *',
+			"@midnight": '0 0 * * *'
 			}
 				
 		self.timeranges = { 
@@ -130,10 +133,12 @@ class Crontab:
 			}
 		
 
-	def set_rights(self,user,uid,gid):
+	def set_rights(self,user,uid,gid, ud):
 		self.user = user
 		self.uid = uid
 		self.gid = gid
+		self.user_home_dir = ud
+		self.crontabdata = self.user_home_dir + "/.gnome/gnome-schedule/crontab"
 
 
 	def get_type (self):
@@ -146,7 +151,7 @@ class Crontab:
 		At first possibly contained alias names will be replaced by their
 		corresponding numbers. After that every asterisk will be replaced by
 		a "first to last" expression. Then the expression will be splitted
-		into the komma separated subexpressions.
+		into the comma separated subexpressions.
 
 		Each subexpression will run through: 
 		1. Check for stepwidth in range (if it has one)
@@ -160,9 +165,12 @@ class Crontab:
 		"""
 
 		# reboot?
-		if expr != "@reboot":
-				
-		
+		if type == "special":
+			if expr in self.special:
+				pass
+			else:
+				raise ValueError ("special", _("Basic"), _("This is not a valid special record: %(record)s") % {"record": expr})
+		else:
 			timerange = self.timeranges[type]
 
 			# Replace alias names only if no leading and following alphanumeric and 
@@ -201,7 +209,7 @@ class Crontab:
 					raise ValueError("fixed", self.timenames[type], _("Must be between %(min)s and %(max)s") % { "min": min(timerange), "max": max(timerange) } )
 	
 
-	def update (self, minute, hour, day, month, weekday, command, linenumber, parentiter, nooutput, job_id, comment, title, icon, desc):
+	def update (self, minute, hour, day, month, weekday, command, linenumber, parentiter, nooutput, job_id, comment, title, desc):
 		if self.check_command (command) == False:
 			return False
 			
@@ -259,7 +267,6 @@ class Crontab:
 		fh.seek (0)
 		fh.write ("ver=" + str(self.crontabdatafileversion) + "\n")
 		fh.write ("title=" + title + "\n")
-		fh.write ("icon=" + icon +  "\n")
 		fh.write ("desc=" + desc + "\n")
 		if nooutput:
 			fh.write ("nooutput=1\n")
@@ -291,7 +298,7 @@ class Crontab:
 		self.__write__ ()
 		
 		
-	def append (self, minute, hour, day, month, weekday, command, nooutput, title, icon = None, desc = None):
+	def append (self, minute, hour, day, month, weekday, command, nooutput, title, desc = None):
 		if self.check_command (command) == False:
 			return False
 			
@@ -311,9 +318,6 @@ class Crontab:
 			
 		if desc == None:
 			desc = ""
-			
-		if icon == None:
-			icon = ""
 				
 		# Create and write data file
 		f = os.path.join (self.crontabdata, "last_id")
@@ -347,7 +351,6 @@ class Crontab:
 		fh.seek (0)
 		fh.write ("ver=" + str(self.crontabdatafileversion) + "\n")
 		fh.write ("title=" + title + "\n")
-		fh.write ("icon=" + icon +  "\n")
 		fh.write ("desc=" + desc + "\n")
 		if nooutput:
 			fh.write ("nooutput=1\n")
@@ -401,7 +404,7 @@ class Crontab:
 			array_or_false = self.parse (line)
 			if array_or_false != False:
 				if array_or_false[0] == 2:
-					(minute, hour, day, month, weekday, command, comment, job_id, title, icon, desc, nooutput) = array_or_false[1]
+					(minute, hour, day, month, weekday, command, comment, job_id, title, desc, nooutput) = array_or_false[1]
 					
 					time = minute + " " + hour + " " + day + " " + month + " " + weekday
 
@@ -409,7 +412,10 @@ class Crontab:
 					preview = self.__make_preview__ (command)
 				
 					#add task to treemodel in mainWindow
-					data.append([title, self.__easy__ (minute, hour, day, month, weekday), preview, line, linecount, time, self, icon, job_id, "", "","", _("Recurrent"), "crontab", nooutput])
+					if minute == "@reboot":
+						data.append([title, self.__easy__ (minute, hour, day, month, weekday), preview, line, linecount, time, self, None, job_id, "", "","", _("Recurrent"), "crontab", nooutput, _("At reboot")])
+					else:
+						data.append([title, self.__easy__ (minute, hour, day, month, weekday), preview, line, linecount, time, self, None, job_id, "", "","", _("Recurrent"), "crontab", nooutput, time])
 				
 				
 			linecount = linecount + 1	
@@ -465,15 +471,13 @@ class Crontab:
 			comment = comment.strip ()
 			line = line.strip ()
 		
-		
-		#special expressions
 		if line == "":
 			#Empty
 			if comment != "":
 				return [3, comment]
 			else:
 				return False
-				
+		#special expressions		
 		elif line[0] == "@":
 			special_expression, line = self.get_exp_sec (line)
 								
@@ -562,11 +566,10 @@ class Crontab:
 		# Retrive title and icon data
 		if nofile == False:
 			if job_id:
-				ver, title, icon, desc, nooutput = self.get_job_data (job_id)
+				ver, title, desc, nooutput = self.get_job_data (job_id)
 			else:
 				ver = 1
 				title = ""
-				icon = ""
 				desc = ""
 				nooutput = 0
 			
@@ -590,7 +593,7 @@ class Crontab:
 			command = command.strip ()	
 				
 				
-			return [2, [minute, hour, dom, moy, dow, command, comment, job_id, title, icon, desc, nooutput]]
+			return [2, [minute, hour, dom, moy, dow, command, comment, job_id, title, desc, nooutput]]
 		else:
 			return minute, hour, dom, moy, dow, command
 		
@@ -611,8 +614,10 @@ class Crontab:
 			title = d[6:d.find ("\n")]
 			d = d[d.find ("\n") + 1:]
 			
-			icon = d[5:d.find ("\n")]
-			d = d[d.find ("\n") + 1:]
+			if ver < 3:
+				# not in use
+				icon = d[5:d.find ("\n")]
+				d = d[d.find ("\n") + 1:]
 			
 			desc = d[5:d.find ("\n")]
 			d = d[d.find ("\n") + 1:]
@@ -627,11 +632,12 @@ class Crontab:
 				nooutput = 0
 			
 			fh.close ()
+
+			return ver, title, desc, nooutput
 			
-			return ver, title, icon, desc, nooutput
 			
 		else: 
-			return "", "", ""
+			return "", "", "", 0
 			
 			
 		
@@ -658,7 +664,7 @@ class Crontab:
 		return lang.translate_crontab_easy (minute, hour, day, month, weekday)
 
 
-	#create temp file with old tasks and new ones and then updates crontab
+	#create temp file with old tasks and new ones and then update crontab
 	def __write__ (self):
 		tmpfile = tempfile.mkstemp ()
 		fd, path = tmpfile

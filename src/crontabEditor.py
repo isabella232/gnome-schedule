@@ -33,14 +33,15 @@ import crontabEditorHelper
 
 
 class CrontabEditor:
-	def __init__(self, parent, backend, scheduler, defaultIcon):
+	def __init__(self, parent, backend, scheduler, template):
 
 		self.ParentClass = parent
 		self.backend = backend
 		self.scheduler = scheduler
+		self.template = template
 		
 		self.xml = self.ParentClass.xml
-		self.widget = self.xml.get_widget("crontabEditor")
+		self.widget = self.xml.get_widget("crontab_editor")
 		self.widget.connect("delete-event", self.widget.hide_on_delete)
 		
 		
@@ -49,228 +50,256 @@ class CrontabEditor:
 		self.nooutputRegex = re.compile('([^#\n$]*)>(\s|)/dev/null\s2>&1')
 		
 		
-		self.defaultIcon = defaultIcon
+		self.title_box = self.xml.get_widget ("crontab_title_box")
 		
-		#self.editing = False
+		self.image_icon = gtk.Image ()
+		self.image_icon.set_from_pixbuf (self.ParentClass.bigiconcrontab)
+		self.title_box.pack_start (self.image_icon, False, False, 0)
+		self.title_box.reorder_child (self.image_icon, 0)
+		self.image_icon.show ()
+		
 		self.noevents = False
 		
 		
 		##simple tab	
-		self.notebook = self.xml.get_widget("notebook")
-		self.template_image = self.xml.get_widget ("template_image")
-		self.template_image_size = gtk.icon_size_register ("cron_template_image_size", 48, 48)
-		self.image_button = self.xml.get_widget ("image_button")
-		self.template_label = self.xml.get_widget ("template_label")
-		self.basic_table = self.xml.get_widget ("basic_table")
+		self.entry_title = self.xml.get_widget ("entry_title")
+		self.entry_task = self.xml.get_widget ("entry_task")
 		
-		self.save_button = self.xml.get_widget ("save_button")
-		self.remove_button = self.xml.get_widget("remove_button")
-		
-		self.template_combobox = self.xml.get_widget ("template_combobox")
-		self.template_combobox_model = gtk.ListStore(gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_PYOBJECT)
-		self.template_combobox.set_model (self.template_combobox_model)
-		
-		self.title_entry = self.xml.get_widget ("title_entry")
-		self.command_entry = self.xml.get_widget ("command_entry")
-		self.nooutput_label = self.xml.get_widget ("nooutput_label")
-		self.nooutput_label.set_label(" >/dev/null 2>&1")
-
 		self.frequency_combobox = self.xml.get_widget ("frequency_combobox")
 		self.frequency_combobox_model = gtk.ListStore (gobject.TYPE_STRING, gobject.TYPE_PYOBJECT)
-		self.frequency_combobox_model.append([_("Use advanced"), None])
-		self.frequency_combobox_model.append([_("Every minute"), ["*", "*", "*", "*", "*"]])
-		self.frequency_combobox_model.append([_("Every hour"), ["0", "*", "*", "*", "*"]])
-		self.frequency_combobox_model.append([_("Every day"), ["0", "0", "*", "*", "*"]])
-		self.frequency_combobox_model.append([_("Every month"), ["0", "0", "1", "*", "*"]])
-		self.frequency_combobox_model.append([_("Every week"), ["0", "0", "*", "*", "1"]])
-		self.frequency_combobox_model.append([_("At reboot"), ["@reboot", "@reboot", "@reboot", "@reboot", "@reboot"]])
+		self.frequency_combobox_model.append([_("Every minute"), ["*", "*", "*", "*", "*", ""]])
+		self.frequency_combobox_model.append([_("Every hour"), ["0", "*", "*", "*", "*", ""]])
+		self.frequency_combobox_model.append([_("Every day"), ["0", "0", "*", "*", "*", ""]])
+		self.frequency_combobox_model.append([_("Every month"), ["0", "0", "1", "*", "*", ""]])
+		self.frequency_combobox_model.append([_("Every week"), ["0", "0", "*", "*", "1", ""]])
+		self.frequency_combobox_model.append([_("At reboot"), ["", "", "", "", "", "@reboot"]])
 		self.frequency_combobox.set_model (self.frequency_combobox_model)
 		
-		self.chkNoOutput = self.xml.get_widget("chkNoOutput")
+		self.cb_nooutput = self.xml.get_widget("cb_nooutput")
 				
-		self.help_button = self.xml.get_widget ("cron_help_button")
-		self.cancel_button = self.xml.get_widget ("cancel_button")
-		self.ok_button = self.xml.get_widget ("ok_button")
+		#self.help_button = self.xml.get_widget ("cron_help_button")
 		
-		self.template_combobox.get_child().connect ("changed", self.on_template_combobox_entry_changed)
+		self.button_cancel = self.xml.get_widget ("button_cancel")
+		self.button_apply = self.xml.get_widget ("button_apply")
+		self.button_template = self.xml.get_widget ("button_template")
+		self.rb_advanced = self.xml.get_widget ("rb_advanced")
+		self.rb_basic = self.xml.get_widget ("rb_basic")
 		
-		self.xml.signal_connect("on_remove_button_clicked", self.on_remove_button_clicked)
-		self.xml.signal_connect("on_cron_help_button_clicked", self.on_cron_help_button_clicked)
-		self.xml.signal_connect("on_cancel_button_clicked", self.on_cancel_button_clicked)
-		self.xml.signal_connect("on_ok_button_clicked", self.on_ok_button_clicked)
+		self.label_preview = self.xml.get_widget ("label_preview")
+		
+		self.xml.signal_connect("on_button_cancel_clicked", self.on_button_cancel_clicked)
+		self.xml.signal_connect("on_button_apply_clicked", self.on_button_apply_clicked)
 		self.xml.signal_connect("on_anyadvanced_entry_changed", self.on_anyadvanced_entry_changed)
 		self.xml.signal_connect("on_anybasic_entry_changed", self.on_anybasic_entry_changed)
 		self.xml.signal_connect("on_frequency_combobox_changed", self.on_frequency_combobox_changed)
-		self.xml.signal_connect("on_chkNoOutput_toggled", self.on_anybasic_entry_changed)
-		self.xml.signal_connect("on_image_button_clicked", self.on_image_button_clicked)
-		self.xml.signal_connect("on_save_button_clicked", self.on_save_button_clicked)
-		self.xml.signal_connect("on_fieldHelp_clicked", self.on_fieldHelp_clicked)
-		self.xml.signal_connect("on_template_combobox_changed", self.on_template_combobox_changed)
+		self.xml.signal_connect("on_cb_nooutput_toggeled", self.on_anybasic_entry_changed)
+
+		self.xml.signal_connect("on_help_clicked", self.on_fieldHelp_clicked)
+		
+		self.xml.signal_connect("on_rb_advanced_toggled", self.on_editmode_toggled)
+		self.xml.signal_connect("on_rb_basic_toggled", self.on_editmode_toggled)
+		
+		self.xml.signal_connect ("on_button_template_clicked", self.on_template_clicked)
+		
+		
 		##
 		
-		##advanced tab
+		##advanced
 		self.minute_entry = self.xml.get_widget ("minute_entry")
 		self.hour_entry = self.xml.get_widget ("hour_entry")
 		self.day_entry = self.xml.get_widget ("day_entry")
 		self.month_entry = self.xml.get_widget ("month_entry")
 		self.weekday_entry = self.xml.get_widget ("weekday_entry")
-				
-		self.setting_label = self.xml.get_widget ("setting_label")
+		
+		self.help_minute = self.xml.get_widget ("help_minute")
+		self.help_hour = self.xml.get_widget ("help_hour")
+		self.help_day = self.xml.get_widget ("help_day")
+		self.help_month = self.xml.get_widget ("help_month")
+		self.help_weekday = self.xml.get_widget ("help_weekday")
 		##
 		
 		
 		self.editorhelper = crontabEditorHelper.CrontabEditorHelper(self)
-		self.backend.add_scheduler_type("crontab")
 		
+			
 		
-	def showadd (self, mode):
-		self.__loadicon__ ()
+	def showadd (self):
+		self.button_apply.set_label (gtk.STOCK_ADD)
 		self.__reset__ ()
-		self.__set_frequency_combo__()
-		self.editing = False
+		self.mode = 0
 		self.widget.set_title(_("Create a New Scheduled Task"))
 		self.widget.set_transient_for(self.ParentClass.widget)
 		self.widget.set_position(gtk.WIN_POS_CENTER_ON_PARENT)
 		self.widget.show ()
-		self.__reload_templates__ ()
-		self.chkNoOutput.set_active (True)
-		
-		#switch to advanced tab if required
-		if mode == "advanced":
-			self.notebook.set_current_page(1)
-		else:
-			self.notebook.set_current_page(0)
-	
-	
-	def showedit (self, record, job_id, linenumber, iter, mode):
-		
-		self.__reload_templates__ ()
-		self.editing = True
-		self.linenumber = linenumber
-		self.record = record
-		self.job_id = job_id
-		(self.minute, self.hour, self.day, self.month, self.weekday, self.command, self.comment, self.job_id, self.title, self.icon, self.desc, self.nooutput) = self.scheduler.parse (record)[1]
-		self.widget.set_title(_("Edit a Scheduled Task"))
-		
-		self.__update_textboxes__ ()
-		
-		self.__set_frequency_combo__ ()
-		self.parentiter = iter
+		self.cb_nooutput.set_active (True)
+
+	def showadd_template (self, title, command, nooutput,timeexpression):
+		self.button_apply.set_label (gtk.STOCK_ADD)
+		self.__reset__ ()
+		self.mode = 0
+		self.widget.set_title(_("Create a New Scheduled Task"))
 		self.widget.set_transient_for(self.ParentClass.widget)
 		self.widget.set_position(gtk.WIN_POS_CENTER_ON_PARENT)
 		self.widget.show ()
 		
+		self.nooutput = nooutput
+		# hehe again, why make it less complicated..
+		timeexpression = timeexpression + " echo hehe"
+		self.minute, self.hour, self.day, self.month, self.weekday, hehe = self.scheduler.parse (timeexpression, True)
+		self.special = ""
+		if self.minute == "@reboot":
+			self.special = "@reboot"
+			self.minute = ""
+			self.day = ""
+			self.hour = ""
+			self.month = ""
+			self.weekday = ""
+		self.command = command
+		self.title = title
 		
-	
+		self.__update_textboxes__ ()
+
+		i = self.__getfrequency__ (self.minute, self.hour, self.day, self.month, self.weekday, self.special)
+		if i == -1:
+			# advanced
+			self.rb_advanced.set_active (True)
+		else:
+			self.rb_basic.set_active (True)
+			self.frequency_combobox.set_active (i)
+
 		if self.nooutput:
-			self.nooutput_label.show ()
-			self.command_entry.set_text (self.command)
-			self.chkNoOutput.set_active (True)
+			self.entry_task.set_text (self.command)
+			self.cb_nooutput.set_active (True)
 			
 		else:
-			self.nooutput_label.hide ()
-			self.chkNoOutput.set_active (False)
+			self.cb_nooutput.set_active (False)
 			
-
-		#switch to advanced tab if required
-		if mode == "advanced":
-			self.notebook.set_current_page(1)
+			
+	def showedit_template (self, id, title, command, nooutput, timeexpression):
+		self.button_apply.set_label (gtk.STOCK_SAVE)
+		
+		self.mode = 2
+		self.tid = id
+		self.__reset__ ()
+		
+		self.command = command
+		self.title = title
+		self.nooutput = nooutput
+		
+		timeexpression = timeexpression + " echo hehe"
+		self.minute, self.hour, self.day, self.month, self.weekday, hehe = self.scheduler.parse (timeexpression, True)
+		self.special = ""
+		if self.minute == "@reboot":
+			self.special = "@reboot"
+			self.minute = ""
+			self.day = ""
+			self.hour = ""
+			self.month = ""
+			self.weekday = ""
+			
+		self.widget.set_title(_("Edit template"))		
+		self.__update_textboxes__ ()
+		
+		self.widget.set_transient_for(self.ParentClass.widget)
+		self.widget.set_position(gtk.WIN_POS_CENTER_ON_PARENT)
+		self.widget.show ()
+		self.button_template.hide ()
+		i = self.__getfrequency__ (self.minute, self.hour, self.day, self.month, self.weekday, self.special)
+		if i == -1:
+			# advanced
+			self.rb_advanced.set_active (True)
 		else:
-			self.notebook.set_current_page(0)
+			self.rb_basic.set_active (True)
+			self.frequency_combobox.set_active (i)
 
-		self.template_combobox.set_active (0)
+		if self.nooutput:
+			self.entry_task.set_text (self.command)
+			self.cb_nooutput.set_active (True)
+			
+		else:
+			self.cb_nooutput.set_active (False)
+				
+	def showedit (self, record, job_id, linenumber, iter):
+		self.button_apply.set_label (gtk.STOCK_APPLY)
+		self.mode = 1
+		self.linenumber = linenumber
+		self.record = record
+		self.job_id = job_id
+		self.__reset__ ()
+		(self.minute, self.hour, self.day, self.month, self.weekday, self.command, self.comment, self.job_id, self.title, self.desc, self.nooutput) = self.scheduler.parse (record)[1]
+		self.special = ""
+		if self.minute == "@reboot":
+			self.special = "@reboot"
+			self.minute = ""
+			self.day = ""
+			self.hour = ""
+			self.month = ""
+			self.weekday = ""
+			
+		self.widget.set_title(_("Edit a Scheduled Task"))		
+		self.__update_textboxes__ ()
+		self.parentiter = iter
+		self.widget.set_transient_for(self.ParentClass.widget)
+		self.widget.set_position(gtk.WIN_POS_CENTER_ON_PARENT)
+		self.widget.show ()
+		i = self.__getfrequency__ (self.minute, self.hour, self.day, self.month, self.weekday, self.special)
+		if i == -1:
+			# advanced
+			self.rb_advanced.set_active (True)
+		else:
+			self.rb_basic.set_active (True)
+			self.frequency_combobox.set_active (i)
 
+		if self.nooutput:
+			self.entry_task.set_text (self.command)
+			self.cb_nooutput.set_active (True)
+			
+		else:
+			self.cb_nooutput.set_active (False)
+			
 
 	def __reset__ (self):
 		self.noevents = True
-		self.minute = "*"
+		self.minute = "0"
 		self.hour = "*"
 		self.day = "*"
 		self.month = "*"
 		self.weekday = "*"
+		self.special = ""
 		self.command = "ls"
 		self.title = _("Untitled")
 		self.nooutput = 1
-		self.nooutput_label.show ()
-		self.chkNoOutput.set_active (True)
+		self.frequency_combobox.set_active (1)
+		self.rb_basic.set_active (True)
+		self.minute_entry.set_editable (False)
+		self.minute_entry.set_sensitive (False)
+		self.hour_entry.set_editable (False)
+		self.hour_entry.set_sensitive (False)
+		self.day_entry.set_editable (False)
+		self.day_entry.set_sensitive (False)
+		self.month_entry.set_editable (False)
+		self.month_entry.set_sensitive (False)
+		self.weekday_entry.set_editable (False)			
+		self.weekday_entry.set_sensitive (False)
+		self.help_minute.set_sensitive (False)
+		self.help_hour.set_sensitive (False)
+		self.help_day.set_sensitive (False)
+		self.help_month.set_sensitive (False)
+		self.help_weekday.set_sensitive (False)
+		self.cb_nooutput.set_active (True)
+		self.frequency_combobox.set_sensitive (True)
 		self.__update_textboxes__ ()
 		self.noevents = False
 
 
-	def __reload_templates__ (self):
-		#self.template_combobox.set_active (active)
-		self.template_names = self.backend.gettemplatenames ("crontab")
-		
-		if not (self.template_names == None or len (self.template_names) <= 0):
-			active = self.template_combobox.get_active ()
-			if active == -1:
-				active = 0
-			
-		self.template_combobox_model.clear ()
-		self.template_combobox_model.append ([_("Don't use a preset"), None, None])
-
-		if self.template_names == None or len (self.template_names) <= 0:
-			active = 0
-			# self.remove_button.set_sensitive (False)
-			# self.save_button.set_sensitive (False)
-			self.template_combobox.set_active (0)
-			# self.template_combobox.set_sensitive (False)
-			# self.template_label.set_sensitive (False)
-		else:
-			
-			for template_name in self.template_names:
-				thetemplate = self.backend.gettemplate ("crontab", template_name)
-				icon_uri, command, frequency, title, name, nooutput = thetemplate
-				self.template_combobox_model.append([name, template_name, thetemplate])
-						
-			# self.remove_button.set_sensitive (True)
-							
-		self.template_combobox.set_active (active)
-
-	# TODO: to gnome specific
-	def __loadicon__ (self):
-		try:
-			pixbuf = gtk.gdk.pixbuf_new_from_file_at_size (self.defaultIcon, 48, 48)
-			self.icon = self.defaultIcon
-		except gobject.GError:
-			pixbuf = gtk.Widget.render_icon (self.widget, gtk.STOCK_MISSING_IMAGE, self.template_image_size, None)
-			self.icon = ""
-
-		self.template_image.set_from_pixbuf(pixbuf)
-			
-
-	#save template
-	def __SaveTemplate__ (self, template_name):
-		try:
-			self.__check_field_format__ (self.minute, "minute")
-			self.__check_field_format__ (self.hour, "hour")
-			self.__check_field_format__ (self.day, "day")
-			self.__check_field_format__ (self.month, "month")
-			self.__check_field_format__ (self.weekday, "weekday")
-
-		except ValueError, ex:
-			x, y, z = ex
-			self.__WrongRecordDialog__ (x, y, z)
-			return
-			
-
-		if self.scheduler.check_command (self.command) == False:
-			self.__dialog_command_failed__ ()
-			return	False
-			
-		#record = self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday + " " + self.command
-		self.frequency = self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday
-		self.backend.savetemplate ("crontab",template_name, self.frequency, self.title, self.icon, self.command, self.nooutput)
-		
-
 	#error dialog box 
 	def __WrongRecordDialog__ (self, x, y, z):
-		self.wrongdialog = gtk.MessageDialog(self.widget, gtk.DIALOG_MODAL|gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_ERROR, gtk.BUTTONS_OK, (_("This is an invalid record! The problem could be in the %(field)s field. Reason: %(reason)s") % ({ 'field' : y, 'reason' : z})))
+		self.wrongdialog = gtk.MessageDialog(self.widget, gtk.DIALOG_MODAL|gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_ERROR, gtk.BUTTONS_OK, (_("This is an invalid record! The problem could be in the %(field)s field. Reason: %(reason)s") % (y, z)))
 		self.wrongdialog.run()
 		self.wrongdialog.destroy()
 
 	def __dialog_command_failed__ (self):
-		self.wrongdialog2 = gtk.MessageDialog(self.widget, gtk.DIALOG_MODAL|gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_ERROR, gtk.BUTTONS_OK, (_("Your command contains one or more of the character %, this is special for cron and cannot be used with Gnome-schedule because of the format it uses to store extra information on the crontab line. Please use the | redirector character to acheieve the same functionality. Refer to the crontab manual for more information about the % character. If you don not want to use it for redirection it must be properly escaped with the \ letter. I.e.: \$HOME.")))
+		self.wrongdialog2 = gtk.MessageDialog(self.widget, gtk.DIALOG_MODAL|gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_ERROR, gtk.BUTTONS_OK, (_("Your command contains one or more of the character %, this is special for cron and cannot be used with Gnome-schedule because of the format it uses to store extra information on the crontab line. Please use the | redirector character to acheieve the same functionality. Refer to the crontab manual for more information about the % character. If you don not want to use it for redirection it must be properly escaped with the \ letter.")))
 		self.wrongdialog2.run()
 		self.wrongdialog2.destroy()
 			
@@ -281,138 +310,8 @@ class CrontabEditor:
 		except ValueError, ex:
 			raise ex
 
-		
-	def template_doesnot_exist (self, message):
-		box = gtk.MessageDialog(self.widget, gtk.DIALOG_MODAL, gtk.MESSAGE_INFO, gtk.BUTTONS_OK, message)
-		box.set_response_sensitive(gtk.RESPONSE_OK, True)
-		run = box.run()
-		box.hide()
-
-	#remove template button
-	def on_remove_button_clicked (self, *args):
-		firstiter = self.template_combobox_model.get_iter_first()
-		notemplate = self.template_combobox_model.get_value(firstiter,0)
-		entry = self.template_combobox.get_child().get_text()
-		if notemplate != entry:
-			iter = self.template_combobox.get_active_iter ()
-			if iter != None:
-				template = self.template_combobox_model.get_value(iter, 2)
-				icon_uri, command, frequency, title, template_name, nooutput = template
-				self.template_combobox.set_active (0)
-				self.backend.removetemplate ("crontab",template_name)
-			else: 
-				self.template_doesnot_exist(_("The preset has not been saved"))
-		else:
-			self.template_doesnot_exist(_("To delete a preset, you first need to select one"))
-		
-	#save template	button
-	def on_save_button_clicked (self, *args):
-		firstiter = self.template_combobox_model.get_iter_first()
-		notemplate = self.template_combobox_model.get_value(firstiter,0)
-		entry = self.template_combobox.get_child().get_text()
-		if notemplate != entry:
-			self.__SaveTemplate__ (self.template_combobox.get_child().get_text())
-		else:
-			self.template_doesnot_exist(_("To save a preset, you first have to choose a name for it"))
-		
-
-	def gconfkey_changed (self, client, connection_id, entry, args):
-		self.__reload_templates__ ()
-
-
-	def on_image_button_clicked (self, *args):
-		preview = gtk.Image()
-		preview.show()
-		iconopendialog = gtk.FileChooserDialog(_("Choose an Icon for this Scheduled Task"), self.widget, gtk.FILE_CHOOSER_ACTION_OPEN, (gtk.STOCK_OK, gtk.RESPONSE_ACCEPT, gtk.STOCK_CANCEL, gtk.RESPONSE_REJECT), "")
-		
-		# Preview stuff appears to be highly unstable :-(
-		# 2005-12-23, gauteh: seems to work ok now.
-		
-		iconopendialog.set_preview_widget(preview)
-		iconopendialog.connect("update-preview", self.update_preview_cb, preview)
-		
-		res = iconopendialog.run()
-		if res != gtk.RESPONSE_REJECT:
-			self.icon = iconopendialog.get_filename()
-		iconopendialog.destroy ()
-		self.__update_textboxes__ ()
-
-	def update_preview_cb(self, file_chooser, preview):
-		filename = file_chooser.get_preview_filename()
-		try:
-			pixbuf = gtk.gdk.pixbuf_new_from_file_at_size(filename, 128, 128)
-			preview.set_from_pixbuf(pixbuf)
-			have_preview = True
-		except:
-			have_preview = False
-			
-		file_chooser.set_preview_widget_active(have_preview)
-		return
-
-
-	def on_template_combobox_entry_changed (self, widget):
-		pass
-		#firstiter = self.template_combobox_model.get_iter_first()
-		#notemplate = self.template_combobox_model.get_value(firstiter,0)
-		#entry = self.template_combobox.get_child().get_text()
-		#if notemplate != entry:
-		#	self.save_button.set_sensitive (True)
-		#else:
-		#	self.save_button.set_sensitive (False)
-
-
-	def on_template_combobox_changed (self, *args):
-		if self.noevents == False:
-			iter = self.template_combobox.get_active_iter ()
-			if iter == None:
-				return
-			template = self.template_combobox_model.get_value(iter, 2)
-			if template != None:
-				# self.remove_button.set_sensitive (True)
-				icon_uri, command, frequency, title, name, nooutput = template
-				#if self.ParentClass.saveWindow != None:
-				#	self.ParentClass.saveWindow.save_entry.set_text (name)
-				try:
-					pixbuf = gtk.gdk.pixbuf_new_from_file_at_size (icon_uri, 48, 48)
-					self.template_image.set_from_pixbuf(pixbuf)
-					self.icon = icon_uri
-				except (gobject.GError, TypeError):
-					self.__loadicon__ ()
-					
-				if frequency != None and command != None:
-					if title != None:
-						self.title = title
-					record = frequency + " " + command
-				else:
-					if frequency == None:
-						frequency = "* * * * *"
-					if command == None:
-						command = _("command")
-					record = frequency + " " + command
-			
-				
-				if (nooutput):
-					self.nooutput_label.show ()
-					self.noevents = True
-					self.chkNoOutput.set_active (True)
-					self.noevents = False
-					self.nooutput = 1
-				else:
-					self.nooutput_label.hide ()
-					self.chkNoOutput.set_active (False)
-					self.nooutput = 0
-
-
-				self.minute, self.hour, self.day, self.month, self.weekday, self.command = self.scheduler.parse (record, True)
-				self.command = command
-				self.__update_textboxes__ ()
-			else:
-				# self.remove_button.set_sensitive (False)
-				# self.save_button.set_sensitive (False)
-				self.__loadicon__ ()
-				self.__reset__ ()
-
-
+	#TODO: Help button?
+	"""
 	def on_cron_help_button_clicked (self, *args):
 		try:
 			gnome.help_display_with_doc_id (
@@ -429,98 +328,313 @@ class CrontabEditor:
 			dialog.run ()
 			dialog.destroy ()
 
-
-	def on_cancel_button_clicked (self, *args):
-		self.widget.hide()
-		#return True
-
-
-	def on_ok_button_clicked (self, *args):
-		try:
-			# Type should not be translatable!
-			self.__check_field_format__ (self.minute, "minute")
-			self.__check_field_format__ (self.hour, "hour")
-			self.__check_field_format__ (self.day, "day")
-			self.__check_field_format__ (self.month, "month")
-			self.__check_field_format__ (self.weekday, "weekday")
-		except ValueError, ex:
-			x, y, z = ex
-			self.__WrongRecordDialog__ (x, y, z)
-			return
+	"""
+	def on_editmode_toggled (self, widget, *args):
+		if widget.get_active() == True:
+			if self.noevents == False:
+				self.noevents = True
+				if widget.get_name () == self.rb_advanced.get_name ():
+					self.rb_basic.set_active (False)
+					if (self.frequency_combobox.get_active () == 5):
+						# reboot, standard every hour
+						self.special = ""
+						self.minute_entry.set_text ("0")
+						self.hour_entry.set_text ("*")
+						self.day_entry.set_text ("*")
+						self.month_entry.set_text ("*")
+						self.weekday_entry.set_text ("*")
+						self.minute = "0"
+						self.hour = "*"
+						self.day = "*"
+						self.month = "*"
+						self.weekday = "*"
+						
+						self.update_preview ()
+						
+					self.rb_advanced.set_active (True)
+					self.minute_entry.set_editable (True)
+					self.minute_entry.set_sensitive (True)
+					self.hour_entry.set_editable (True)
+					self.hour_entry.set_sensitive (True)
+					self.day_entry.set_editable (True)
+					self.day_entry.set_sensitive (True)
+					self.month_entry.set_editable (True)
+					self.month_entry.set_sensitive (True)
+					self.weekday_entry.set_editable (True)
+					self.weekday_entry.set_sensitive (True)
+					self.help_minute.set_sensitive (True)
+					self.help_hour.set_sensitive (True)
+					self.help_day.set_sensitive (True)
+					self.help_month.set_sensitive (True)
+					self.help_weekday.set_sensitive (True)
+					self.frequency_combobox.set_sensitive (False)
+				else:
+					self.rb_basic.set_active (True)
+					self.rb_advanced.set_active (False)
+					self.minute_entry.set_editable (False)
+					self.minute_entry.set_sensitive (False)
+					self.hour_entry.set_editable (False)
+					self.hour_entry.set_sensitive (False)
+					self.day_entry.set_editable (False)
+					self.day_entry.set_sensitive (False)
+					self.month_entry.set_editable (False)
+					self.month_entry.set_sensitive (False)
+					self.weekday_entry.set_editable (False)			
+					self.weekday_entry.set_sensitive (False)
+					self.help_minute.set_sensitive (False)
+					self.help_hour.set_sensitive (False)
+					self.help_day.set_sensitive (False)
+					self.help_month.set_sensitive (False)
+					self.help_weekday.set_sensitive (False)
+					self.frequency_combobox.set_sensitive (True)
+					self.on_frequency_combobox_changed (self.frequency_combobox)
+				self.noevents = False
 			
-		if self.minute == "@reboot":
-			record = "@reboot " + self.command
+		
+	def on_button_cancel_clicked (self, *args):
+		self.widget.hide()
+
+	def on_template_clicked (self, *args):
+		if self.special != "":
+			try:
+				self.__check_field_format__ (self.special, "special")
+				record = self.special + " " + self.command
+				self.minute = "@reboot"
+				self.hour = "@reboot"
+				self.day = "@reboot"
+				self.month = "@reboot"
+				self.weekday = "@reboot"
+			except ValueError, ex:
+				x, y, z = ex
+				self.__WrongRecordDialog__ (x, y, z)
+				return
 		else:
-			record = self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday + " " + self.command
+			try:
+				# Type should not be translatable!
+				self.__check_field_format__ (self.minute, "minute")
+				self.__check_field_format__ (self.hour, "hour")
+				self.__check_field_format__ (self.day, "day")
+				self.__check_field_format__ (self.month, "month")
+				self.__check_field_format__ (self.weekday, "weekday")
+				record = self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday + " " + self.command
+			except ValueError, ex:
+				x, y, z = ex
+				self.__WrongRecordDialog__ (x, y, z)
+				return
 
 		if self.scheduler.check_command (self.command) == False:
 			self.__dialog_command_failed__ ()
 			return	False
 			
-		if self.editing == True:
-			#self.minute, self.hour, self.day, self.month, self.weekday, self.command, self.comment, self.job_id, self.title, self.icon, self.desc
-			self.scheduler.update (self.minute, self.hour, self.day, self.month, self.weekday, self.command, self.linenumber, self.parentiter, self.nooutput, self.job_id, self.comment, self.title, self.icon, self.desc)
-			
+		if self.special != "":
+			self.template.savetemplate_crontab (0, self.title, self.command, self.nooutput, self.special)
 		else:
-			self.scheduler.append (self.minute, self.hour, self.day, self.month, self.weekday, self.command, self.nooutput, self.title, self.icon)
+			self.template.savetemplate_crontab (0, self.title, self.command, self.nooutput, self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday)
+		
+		self.widget.hide ()
+		
+	def on_button_apply_clicked (self, *args):
+		if self.special != "":
+			try:
+				self.__check_field_format__ (self.special, "special")
+				record = self.special + " " + self.command
+				self.minute = "@reboot"
+				self.hour = "@reboot"
+				self.day = "@reboot"
+				self.month = "@reboot"
+				self.weekday = "@reboot"
+			except ValueError, ex:
+				x, y, z = ex
+				self.__WrongRecordDialog__ (x, y, z)
+				return
+		else:
+			try:
+				# Type should not be translatable!
+				self.__check_field_format__ (self.minute, "minute")
+				self.__check_field_format__ (self.hour, "hour")
+				self.__check_field_format__ (self.day, "day")
+				self.__check_field_format__ (self.month, "month")
+				self.__check_field_format__ (self.weekday, "weekday")
+				record = self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday + " " + self.command
+			except ValueError, ex:
+				x, y, z = ex
+				self.__WrongRecordDialog__ (x, y, z)
+				return
+
+		if self.scheduler.check_command (self.command) == False:
+			self.__dialog_command_failed__ ()
+			return	False
+		
+		
+		if (self.backend.get_not_inform_working_dir_crontab() != True):
+			dia2 = gtk.MessageDialog (self.widget, gtk.DIALOG_MODAL | gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_WARNING, gtk.BUTTONS_NONE, _("Note about working directory of executed tasks:\n\nRecurrent tasks will be run from the home directory."))
+			dia2.add_buttons ("_Don't show again", gtk.RESPONSE_CLOSE, gtk.STOCK_OK, gtk.RESPONSE_OK, gtk.STOCK_CANCEL, gtk.RESPONSE_CANCEL)
+			dia2.set_title (_("Warning: Working directory of executed tasks"))
+			response = dia2.run ()
+			if response == gtk.RESPONSE_CANCEL:
+				dia2.destroy ()
+				del dia2
+				return
+			elif response == gtk.RESPONSE_CLOSE:
+				self.backend.set_not_inform_working_dir_crontab (True)
+			else:
+				pass
+			dia2.destroy ()
+			del dia2
+			
+		if self.mode == 1:
+			self.scheduler.update (self.minute, self.hour, self.day, self.month, self.weekday, self.command, self.linenumber, self.parentiter, self.nooutput, self.job_id, self.comment, self.title, self.desc)
+			
+		elif self.mode == 0:
+			self.scheduler.append (self.minute, self.hour, self.day, self.month, self.weekday, self.command, self.nooutput, self.title)
+			
+		elif self.mode == 2:
+			if self.special != "":
+				try:
+					self.__check_field_format__ (self.special, "special")
+					record = self.special + " " + self.command	
+					self.minute = "@reboot"
+					self.hour = "@reboot"
+					self.day = "@reboot"
+					self.month = "@reboot"
+					self.weekday = "@reboot"
+				except ValueError, ex:
+					x, y, z = ex
+					self.__WrongRecordDialog__ (x, y, z)
+					return
+			else:
+				try:
+					# Type should not be translatable!
+					self.__check_field_format__ (self.minute, "minute")
+					self.__check_field_format__ (self.hour, "hour")
+					self.__check_field_format__ (self.day, "day")
+					self.__check_field_format__ (self.month, "month")
+					self.__check_field_format__ (self.weekday, "weekday")
+					record = self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday + " " + self.command
+				except ValueError, ex:
+					x, y, z = ex
+					self.__WrongRecordDialog__ (x, y, z)
+					return
+
+			if self.scheduler.check_command (self.command) == False:
+				self.__dialog_command_failed__ ()
+				return	False
+			
+			if self.special != "":
+				self.template.savetemplate_crontab (self.tid, self.title, self.command, self.nooutput, self.special)
+			else:
+				self.template.savetemplate_crontab (self.tid, self.title, self.command, self.nooutput, self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday)
+	
+			self.widget.hide ()
+			self.ParentClass.template_manager.reload_tv ()
+			return
 			
 		self.ParentClass.schedule_reload ()
-	
 		self.widget.hide ()
 
 
 	def __set_frequency_combo__ (self):
-		index = self.__getfrequency__ (self.minute, self.hour, self.day, self.month, self.weekday)
-		self.frequency_combobox.set_active (index)
+		if self.noevents == False:
+			index = self.__getfrequency__ (self.minute, self.hour, self.day, self.month, self.weekday, self.special)
+			if index != -1:
+				self.frequency_combobox.set_active (index)
+			else:
+				self.rb_advanced.set_active (True)
 
 		
-	def __getfrequency__ (self, minute, hour, day, month, weekday):
-		# index = _("use advanced")
-		index = 0
-
-		# Must be translatable, it's the actual content of the combobox-entry
+	def __getfrequency__ (self, minute, hour, day, month, weekday, special):
+		index = -1
+		
 		if minute == "*" and hour == "*" and month == "*" and day == "*" and weekday == "*":
-			# index = self.translate_frequency ("minute")
-			index = 1
+			index = 0
 		if minute == "0" and hour == "*" and month == "*" and day == "*" and weekday == "*":
-			# index = self.translate_frequency ("hour")
-			index = 2
+			index = 1
 		if minute == "0" and hour == "0" and month == "*" and day == "*" and weekday == "*":
-			# index = self.translate_frequency ("day")
-			index = 3
+			index = 2
 		if minute == "0" and hour == "0" and month == "*" and day == "1" and weekday == "*":
-			# index = self.translate_frequency ("month")
+			index = 3
+		if minute == "0" and hour == "0" and month == "*" and day == "*" and weekday == "1":
 			index = 4
-		if minute == "0" and hour == "0" and month == "*" and day == "*" and weekday == "0":
-			# index = self.translate_frequency ("week")
+		if special != "":
 			index = 5
-		if minute == "@reboot":
-			index = 6
+			
 
 		return index
 
 		
 	def __update_textboxes__ (self):
 		self.noevents = True
-		self.chkNoOutput.set_active (self.nooutput)
-		self.command_entry.set_text (self.command)
-		self.title_entry.set_text (self.title)
+		self.cb_nooutput.set_active (self.nooutput)
+		self.entry_task.set_text (self.command)
+		self.entry_title.set_text (self.title)
 		self.minute_entry.set_text (self.minute)
 		self.hour_entry.set_text (self.hour)
 		self.day_entry.set_text (self.day)
 		self.month_entry.set_text (self.month)
 		self.weekday_entry.set_text (self.weekday)
-		try:
-			pixbuf = gtk.gdk.pixbuf_new_from_file_at_size (self.icon, 48, 48)
-			self.template_image.set_from_pixbuf(pixbuf)
-		except (gobject.GError, TypeError):
-			self.__loadicon__ ()
-
-		self.setting_label.set_text (self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday + " " + self.command)
-		self.__set_frequency_combo__()
+		self.update_preview ()
+		#self.__set_frequency_combo__()
 		self.noevents = False
 
+	def update_preview (self):
+		if self.special != "":
+			try:
+				self.__check_field_format__ (self.special, "special")
+				record = self.special + " " + self.command
+				minute = "@reboot"
+				hour = "@reboot"
+				day = "@reboot"
+				month = "@reboot"
+				weekday = "@reboot"
+				self.label_preview.set_text ("<b>" + self.scheduler.__easy__ (minute, hour, day, month, weekday) + "</b>")
+				
+			except ValueError, ex:
+				x, y, z = ex
+				self.label_preview.set_text (_("This is an invalid record! The problem could be in the %(field)s field. Reason: %(reason)s") % ({'field' : y, 'reason' : z}))
+				
+				
+		else:
+			try:
+				# Type should not be translatable!
+				self.__check_field_format__ (self.minute, "minute")
+				self.__check_field_format__ (self.hour, "hour")
+				self.__check_field_format__ (self.day, "day")
+				self.__check_field_format__ (self.month, "month")
+				self.__check_field_format__ (self.weekday, "weekday")
+				
+				# Day of Month
+				# Crontab bug? Let's not support
+				# dom behaves like minute
+				"""
+				dom = self.day
+				if dom.isdigit() == False:
+					dom = dom.lower ()
+					for day in self.scheduler.downumbers:
+						dom = dom.replace (day, self.scheduler.downumbers[day])
+				"""
+						
+				# Month of Year
+				moy = self.month
+				if moy.isdigit () == False:
+					moy = moy.lower ()
+					for m in self.scheduler.monthnumbers:
+						moy = moy.replace (m, self.scheduler.monthnumbers[m])
+					
+			
+				# Day of Week
+				dow = self.weekday
+				if dow.isdigit() == False:
+					dow = dow.lower ()
+					for day in self.scheduler.downumbers:
+						dow = dow.replace (day, self.scheduler.downumbers[day])
+				self.label_preview.set_text ("<b>" + self.scheduler.__easy__ (self.minute, self.hour, self.day, moy, dow) + "</b>")
+			except ValueError, ex:
+				x, y, z = ex
+				self.label_preview.set_text (_("This is an invalid record! The problem could be in the %(field)s field. Reason: %(reason)s") % ({'field' : y, 'reason' : z}))
 
+		self.label_preview.set_use_markup (True)
+			
+			
 	def on_anyadvanced_entry_changed (self, *args):
 		if self.noevents == False:
 			self.minute = self.minute_entry.get_text ()
@@ -528,49 +642,43 @@ class CrontabEditor:
 			self.day = self.day_entry.get_text ()
 			self.month = self.month_entry.get_text ()
 			self.weekday = self.weekday_entry.get_text ()
-			self.nooutput = self.chkNoOutput.get_active()
-			# self.set_frequency_combo ()
-			self.template_combobox.set_active (0)
+			self.nooutput = self.cb_nooutput.get_active()
+			
 			self.__update_textboxes__ ()
 
 
 	def on_anybasic_entry_changed (self, *args):
 		if self.noevents == False:
-			self.command = self.command_entry.get_text ()
-			self.title = self.title_entry.get_text ()
-			self.nooutput = self.chkNoOutput.get_active()
+			self.command = self.entry_task.get_text ()
+			self.title = self.entry_title.get_text ()
+			self.nooutput = self.cb_nooutput.get_active()
 			self.__update_textboxes__ ()
-
-			if self.nooutput:
-				self.nooutput_label.show ()
-			else:
-				self.nooutput_label.hide ()
 
 
 	def on_frequency_combobox_changed (self, bin):
 		iter = self.frequency_combobox.get_active_iter ()
 		frequency = self.frequency_combobox_model.get_value(iter, 1)
 		if frequency != None:
-			self.minute, self.hour, self.day, self.month, self.weekday = frequency
+			self.minute, self.hour, self.day, self.month, self.weekday, self.special = frequency
 			self.__update_textboxes__()
-
-
+		
+	
 	def on_fieldHelp_clicked(self, widget, *args):
 		name = widget.get_name()
 		field = "minute"
-		if name == "btnMinuteHelp" :
+		if name == "help_minute" :
 			field = "minute"
 			expression = self.minute_entry.get_text()
-		if name == "btnHourHelp" :
+		if name == "help_hour" :
 			field = "hour"
 			expression = self.hour_entry.get_text()
-		if name == "btnDayHelp" :
+		if name == "help_day" :
 			field = "day"
 			expression = self.day_entry.get_text()
-		if name == "btnMonthHelp" :
+		if name == "help_month" :
 			field = "month"
 			expression = self.month_entry.get_text()
-		if name == "btnWeekdayHelp" :
+		if name == "help_weekday" :
 			field = "weekday"
 			expression = self.weekday_entry.get_text()
 

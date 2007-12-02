@@ -160,20 +160,15 @@ class CrontabEditorHelper:
 
 		#show the form
 		if field == "minute":
-			self.header.set_markup("<b>"+_("Minute settings")+"</b>")
-			self.widget.set_title(_("Edit Time Expression for minute"))
+			self.widget.set_title(_("Edit minute"))
 		elif field == "hour":
-			self.header.set_markup("<b>"+_("Hour settings")+"</b>")
-			self.widget.set_title(_("Edit Time Expression for hour"))
+			self.widget.set_title(_("Edit hour"))
 		elif field == "day":
-			self.header.set_markup("<b>"+_("Day settings")+"</b>")
-			self.widget.set_title(_("Edit Time Expression for day"))
+			self.widget.set_title(_("Edit day"))
 		elif field == "month":
-			self.header.set_markup("<b>"+_("Month settings")+"</b>")
-			self.widget.set_title(_("Edit Time Expression for month"))
+			self.widget.set_title(_("Edit month"))
 		elif field == "weekday":
-			self.header.set_markup("<b>"+_("Weekday settings")+"</b>")
-			self.widget.set_title(_("Edit Time Expression for weekday"))
+			self.widget.set_title(_("Edit weekday"))
 			
 		self.widget.set_transient_for(self.ParentClass.widget)
 		self.widget.set_position(gtk.WIN_POS_CENTER_ON_PARENT)
