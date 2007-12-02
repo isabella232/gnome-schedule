@@ -1,4 +1,0 @@
-USER=root
-PROGRAM=@prefix@/bin/gnome-schedule
-SESSION=true
-FALLBACK=true
