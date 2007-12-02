@@ -1,3 +1,6 @@
+2007-12-02:
+        Since this file was updated the last time versions: 1.0.0, 1.0.1 and 1.2.0 has been released.
+
 2006-09-17:
 	Both at and crontab are using data files in the directory $HOME/.gnome/gnome-schedule/at|crontab
 	New crontab parser merged into HEAD.
