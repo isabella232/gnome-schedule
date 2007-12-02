@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-12-01 18:26+0100\n"
+"POT-Creation-Date: 2007-12-02 17:56+0100\n"
 "PO-Revision-Date: 2004-12-06 00:30+0800\n"
 "Last-Translator: Funda Wang <fundawang@linux.net.cn>\n"
 "Language-Team: zh_CN <i18n-translation@lists.linux.net.cn>\n"
@@ -1015,7 +1015,8 @@ msgid "Gnome Schedule"
 msgstr ""
 
 #: ../src/mainWindow.py:511
-msgid "Copyright (c) 2004-2008 Gaute Hope."
+#, python-format
+msgid "Copyright (c) %(year)s %(name)s."
 msgstr ""
 
 #: ../src/mainWindow.py:524

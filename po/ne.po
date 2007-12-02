@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule.HEAD.ne\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-12-01 18:26+0100\n"
+"POT-Creation-Date: 2007-12-02 17:56+0100\n"
 "PO-Revision-Date: 2006-06-11 15:58+0545\n"
 "Last-Translator: Mahesh subedi <submanesh@hotmail.com>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -1004,9 +1004,9 @@ msgid "Gnome Schedule"
 msgstr "जिनोम कार्यतालिका"
 
 #: ../src/mainWindow.py:511
-#, fuzzy
-msgid "Copyright (c) 2004-2008 Gaute Hope."
-msgstr "प्रतिलिपि अधिकार (c) 2004-2005 गेट होप"
+#, python-format
+msgid "Copyright (c) %(year)s %(name)s."
+msgstr ""
 
 #: ../src/mainWindow.py:524
 msgid "translator-credits"
@@ -1031,6 +1031,10 @@ msgstr ""
 #, python-format
 msgid "This is an invalid record! The problem could be: %s"
 msgstr "यो अवैध रेकर्ड हो! समस्या हुन सक्थ्यो: %s"
+
+#, fuzzy
+#~ msgid "Copyright (c) 2004-2008 Gaute Hope."
+#~ msgstr "प्रतिलिपि अधिकार (c) 2004-2005 गेट होप"
 
 #~ msgid "Schedule"
 #~ msgstr "कार्य तालिका"

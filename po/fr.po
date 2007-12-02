@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-12-01 18:26+0100\n"
+"POT-Creation-Date: 2007-12-02 17:56+0100\n"
 "PO-Revision-Date: 2007-04-22 09:27+0200\n"
 "Last-Translator: Stéphane Raimbault <stephane.raimbault@gmail.com>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
@@ -1022,9 +1022,9 @@ msgid "Gnome Schedule"
 msgstr "Planificateur de tâches de GNOME"
 
 #: ../src/mainWindow.py:511
-#, fuzzy
-msgid "Copyright (c) 2004-2008 Gaute Hope."
-msgstr "Copyright (c) 2004-2007 Gaute Hope."
+#, python-format
+msgid "Copyright (c) %(year)s %(name)s."
+msgstr ""
 
 #: ../src/mainWindow.py:524
 msgid "translator-credits"
@@ -1054,6 +1054,10 @@ msgstr ""
 #, python-format
 msgid "This is an invalid record! The problem could be: %s"
 msgstr "Ce n'est pas un enregistrement valide. Le problème pourrait être : %s"
+
+#, fuzzy
+#~ msgid "Copyright (c) 2004-2008 Gaute Hope."
+#~ msgstr "Copyright (c) 2004-2007 Gaute Hope."
 
 #~ msgid "Schedule"
 #~ msgstr "Planificateur de tâches"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arabic\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-12-01 18:26+0100\n"
+"POT-Creation-Date: 2007-12-02 17:56+0100\n"
 "PO-Revision-Date: 2007-04-14 18:49+0100\n"
 "Last-Translator: Djihed Afifi <djihed@gmail.com>\n"
 "Language-Team: Arabeyes <doc@arabeyes.org>\n"
@@ -1076,9 +1076,9 @@ msgid "Gnome Schedule"
 msgstr "أهلا جنوم"
 
 #: ../src/mainWindow.py:511
-#, fuzzy
-msgid "Copyright (c) 2004-2008 Gaute Hope."
-msgstr "حقوق النسخ © 2004-2007 أليكس جرافيلي"
+#, python-format
+msgid "Copyright (c) %(year)s %(name)s."
+msgstr ""
 
 #: ../src/mainWindow.py:524
 #, fuzzy
@@ -1108,6 +1108,10 @@ msgid "This is an invalid record! The problem could be: %s"
 msgstr ""
 "هذا ليس ملف لوحة مفاتيح سليم:\n"
 "%s"
+
+#, fuzzy
+#~ msgid "Copyright (c) 2004-2008 Gaute Hope."
+#~ msgstr "حقوق النسخ © 2004-2007 أليكس جرافيلي"
 
 #, fuzzy
 #~ msgid "Schedule"

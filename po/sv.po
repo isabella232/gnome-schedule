@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-12-01 18:26+0100\n"
+"POT-Creation-Date: 2007-12-02 17:56+0100\n"
 "PO-Revision-Date: 2007-11-22 23:49+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
@@ -1022,8 +1022,9 @@ msgid "Gnome Schedule"
 msgstr "Gnome-schemaläggaren"
 
 #: ../src/mainWindow.py:511
-msgid "Copyright (c) 2004-2008 Gaute Hope."
-msgstr "Copyright © 2004-2008 Gaute Hope."
+#, python-format
+msgid "Copyright (c) %(year)s %(name)s."
+msgstr ""
 
 #: ../src/mainWindow.py:524
 msgid "translator-credits"
@@ -1056,6 +1057,9 @@ msgstr ""
 #, python-format
 msgid "This is an invalid record! The problem could be: %s"
 msgstr "Detta är en ogiltig post! Problemet kan vara: %s"
+
+#~ msgid "Copyright (c) 2004-2008 Gaute Hope."
+#~ msgstr "Copyright © 2004-2008 Gaute Hope."
 
 #~ msgid "Schedule"
 #~ msgstr "Schema"

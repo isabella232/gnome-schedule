@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: el\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-12-01 18:26+0100\n"
+"POT-Creation-Date: 2007-12-02 17:56+0100\n"
 "PO-Revision-Date: 2005-01-03 12:40+0200\n"
 "Last-Translator: Kostas Papadimas <pkst@gnome.org>\n"
 "Language-Team: Greek <nls@tux.hellug.gr>\n"
@@ -1057,9 +1057,9 @@ msgid "Gnome Schedule"
 msgstr "Gnome Schedule"
 
 #: ../src/mainWindow.py:511
-#, fuzzy
-msgid "Copyright (c) 2004-2008 Gaute Hope."
-msgstr "Πνευματικά δικαιώματα (c) 2004-2005 Gaute Hope."
+#, python-format
+msgid "Copyright (c) %(year)s %(name)s."
+msgstr ""
 
 #: ../src/mainWindow.py:524
 #, fuzzy
@@ -1086,6 +1086,10 @@ msgstr ""
 msgid "This is an invalid record! The problem could be: %s"
 msgstr ""
 "Αυτή δεν είναι μια έγκυρη εγγραφή!, Το πρόβλημα μπορεί να βρίσκεται : %s "
+
+#, fuzzy
+#~ msgid "Copyright (c) 2004-2008 Gaute Hope."
+#~ msgstr "Πνευματικά δικαιώματα (c) 2004-2005 Gaute Hope."
 
 #~ msgid "Schedule"
 #~ msgstr "Πρoγραμματισμός"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-12-01 18:26+0100\n"
+"POT-Creation-Date: 2007-12-02 17:56+0100\n"
 "PO-Revision-Date: 2007-08-19 20:32+0200\n"
 "Last-Translator: Yannig MARCHEGAY (Kokoyaya) <yannig@marchegay.org>\n"
 "Language-Team: Occitan (post 1500) <ubuntu-l10n-oci@lists.ubuntu.com>\n"
@@ -968,9 +968,9 @@ msgid "Gnome Schedule"
 msgstr "Gnome Schedule"
 
 #: ../src/mainWindow.py:511
-#, fuzzy
-msgid "Copyright (c) 2004-2008 Gaute Hope."
-msgstr "Copyright (c) 2004-2007 Gaute Hope."
+#, python-format
+msgid "Copyright (c) %(year)s %(name)s."
+msgstr ""
 
 #: ../src/mainWindow.py:524
 msgid "translator-credits"
@@ -995,3 +995,7 @@ msgstr ""
 #, python-format
 msgid "This is an invalid record! The problem could be: %s"
 msgstr ""
+
+#, fuzzy
+#~ msgid "Copyright (c) 2004-2008 Gaute Hope."
+#~ msgstr "Copyright (c) 2004-2007 Gaute Hope."

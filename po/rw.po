@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-12-01 18:26+0100\n"
+"POT-Creation-Date: 2007-12-02 17:56+0100\n"
 "PO-Revision-Date: 2005-03-31 20:55-0700\n"
 "Last-Translator: Steve Murphy <murf@e-tools.com>\n"
 "Language-Team: Kinyarwanda <translation-team-rw@lists.sourceforge.net>\n"
@@ -1147,9 +1147,9 @@ msgid "Gnome Schedule"
 msgstr ""
 
 #: ../src/mainWindow.py:511
-#, fuzzy
-msgid "Copyright (c) 2004-2008 Gaute Hope."
-msgstr "C"
+#, python-format
+msgid "Copyright (c) %(year)s %(name)s."
+msgstr ""
 
 #: ../src/mainWindow.py:524
 #, fuzzy
@@ -1175,6 +1175,10 @@ msgstr ""
 #, fuzzy, python-format
 msgid "This is an invalid record! The problem could be: %s"
 msgstr "ni Sibyo Icyabitswe"
+
+#, fuzzy
+#~ msgid "Copyright (c) 2004-2008 Gaute Hope."
+#~ msgstr "C"
 
 # scaddins/source\analysis\analysis.src:RID_ANALYSIS_FUNCTION_DESCRIPTIONS.ANALYSIS_Fvschedule.4.text
 #~ msgid "Schedule"

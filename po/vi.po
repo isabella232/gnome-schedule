@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule Gnome HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-12-01 18:26+0100\n"
+"POT-Creation-Date: 2007-12-02 17:56+0100\n"
 "PO-Revision-Date: 2006-01-15 18:13+1030\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <gnomevi-list@lists.sourceforge.net>\n"
@@ -1008,9 +1008,9 @@ msgid "Gnome Schedule"
 msgstr "Lịch biểu Gnome"
 
 #: ../src/mainWindow.py:511
-#, fuzzy
-msgid "Copyright (c) 2004-2008 Gaute Hope."
-msgstr "Bản quyền © năm 2004-2005 Gaute Hope."
+#, python-format
+msgid "Copyright (c) %(year)s %(name)s."
+msgstr ""
 
 #: ../src/mainWindow.py:524
 msgid "translator-credits"
@@ -1037,6 +1037,10 @@ msgid "This is an invalid record! The problem could be: %s"
 msgstr ""
 "• Đây là mục ghi không hợp lệ. •\n"
 "Có lé vấn đề là: %s"
+
+#, fuzzy
+#~ msgid "Copyright (c) 2004-2008 Gaute Hope."
+#~ msgstr "Bản quyền © năm 2004-2005 Gaute Hope."
 
 #~ msgid "Schedule"
 #~ msgstr "Lịch biểu"

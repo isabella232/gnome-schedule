@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-12-01 18:26+0100\n"
+"POT-Creation-Date: 2007-12-02 17:56+0100\n"
 "PO-Revision-Date: 2005-04-21 01:33+0300\n"
 "Last-Translator: Žygimantas Beručka <uid0@akl.lt>\n"
 "Language-Team: Lithuanian <komp_lt@konferencijos.lt>\n"
@@ -1046,9 +1046,9 @@ msgid "Gnome Schedule"
 msgstr "Gnome tvarkaraštis"
 
 #: ../src/mainWindow.py:511
-#, fuzzy
-msgid "Copyright (c) 2004-2008 Gaute Hope."
-msgstr "Autorinės teisės (c) 2004-2005 Gaute Hope."
+#, python-format
+msgid "Copyright (c) %(year)s %(name)s."
+msgstr ""
 
 #: ../src/mainWindow.py:524
 msgid "translator-credits"
@@ -1073,6 +1073,10 @@ msgstr ""
 #, python-format
 msgid "This is an invalid record! The problem could be: %s"
 msgstr "Netinkamas įrašas! Problema gali būti: %s"
+
+#, fuzzy
+#~ msgid "Copyright (c) 2004-2008 Gaute Hope."
+#~ msgstr "Autorinės teisės (c) 2004-2005 Gaute Hope."
 
 #~ msgid "Schedule"
 #~ msgstr "Tvarkaraštis"

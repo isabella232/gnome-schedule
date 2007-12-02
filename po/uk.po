@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-12-01 18:26+0100\n"
+"POT-Creation-Date: 2007-12-02 17:56+0100\n"
 "PO-Revision-Date: 2005-08-12 00:17+0200\n"
 "Last-Translator: Maxim Dziumanenko <mvd@mylinux.com.ua>\n"
 "Language-Team: Ukrainian <uk@li.org>\n"
@@ -1022,9 +1022,9 @@ msgid "Gnome Schedule"
 msgstr "Планувальник для Gnome"
 
 #: ../src/mainWindow.py:511
-#, fuzzy
-msgid "Copyright (c) 2004-2008 Gaute Hope."
-msgstr "Авторське право (c) 2004-2005 Gaute Hope."
+#, python-format
+msgid "Copyright (c) %(year)s %(name)s."
+msgstr ""
 
 #: ../src/mainWindow.py:524
 msgid "translator-credits"
@@ -1049,6 +1049,10 @@ msgstr ""
 #, python-format
 msgid "This is an invalid record! The problem could be: %s"
 msgstr "Неправильний запис! Можлива проблема: %s"
+
+#, fuzzy
+#~ msgid "Copyright (c) 2004-2008 Gaute Hope."
+#~ msgstr "Авторське право (c) 2004-2005 Gaute Hope."
 
 #~ msgid "Schedule"
 #~ msgstr "Розклад"

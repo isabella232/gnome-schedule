@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule-it 1.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-12-01 18:26+0100\n"
+"POT-Creation-Date: 2007-12-02 17:56+0100\n"
 "PO-Revision-Date: 2007-09-05 19:22+0200\n"
 "Last-Translator: Andrea Zagli <azagli@inwind.it>\n"
 "Language-Team: Italian <tp@lists.linux.it>\n"
@@ -1022,9 +1022,9 @@ msgid "Gnome Schedule"
 msgstr "Gnome Schedule"
 
 #: ../src/mainWindow.py:511
-#, fuzzy
-msgid "Copyright (c) 2004-2008 Gaute Hope."
-msgstr "Copyright (c) 2004-2007 Gaute Hope."
+#, python-format
+msgid "Copyright (c) %(year)s %(name)s."
+msgstr ""
 
 #: ../src/mainWindow.py:524
 msgid "translator-credits"
@@ -1052,6 +1052,10 @@ msgstr ""
 #, python-format
 msgid "This is an invalid record! The problem could be: %s"
 msgstr "Questa impostazione non è valida! Il problema potrebbe essere: %s"
+
+#, fuzzy
+#~ msgid "Copyright (c) 2004-2008 Gaute Hope."
+#~ msgstr "Copyright (c) 2004-2007 Gaute Hope."
 
 #~ msgid "Schedule"
 #~ msgstr "Pianifica"
