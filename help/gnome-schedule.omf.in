@@ -1,9 +1,0 @@
-<?xml version="1.0" standalone="no"?>
-<omf>
-  <resource>
-    <subject category="GNOME|Applications|System Tools"/>
-    <type>user's guide</type>
-    <relation seriesid="99b9d364-1547-11da-900c-b688f26179c7"/>
-    <rights type="GNU FDL" license.version="1.1" holder="GNOME Foundation"/>
-  </resource>
-</omf>

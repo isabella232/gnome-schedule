@@ -1,2 +1,0 @@
-#! /bin/sh
-PYTHONPATH=@PYTHONPATH@/gtk-2.0/:$PYTHONPATH @PYTHON_CONFIG@ @prefix@/share/gnome-schedule/gnome-schedule.py $1
