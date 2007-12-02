@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: el\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-12-02 17:56+0100\n"
+"POT-Creation-Date: 2007-12-02 20:04+0100\n"
 "PO-Revision-Date: 2005-01-03 12:40+0200\n"
 "Last-Translator: Kostas Papadimas <pkst@gnome.org>\n"
 "Language-Team: Greek <nls@tux.hellug.gr>\n"
@@ -42,145 +42,154 @@ msgstr "Gnome Schedule"
 msgid "System tools"
 msgstr ""
 
-#: ../src/at.py:491
+#: ../src/at.py:486
 #, python-format
 msgid "DANGEROUS PARSE: %(preview)s"
 msgstr ""
 
 #. TODO: localize time and date formats
-#: ../src/at.py:498
+#: ../src/at.py:493
 #, python-format
 msgid "On %(date)s at %(time)s"
 msgstr ""
 
-#: ../src/at.py:503 ../src/at.py:508
+#: ../src/at.py:498 ../src/at.py:503
 msgid "Once"
 msgstr ""
 
-#: ../src/at.py:512
+#: ../src/at.py:507
 msgid "Warning: a line in atq's output didn't parse"
 msgstr ""
 
-#: ../src/crontab.py:74
+#: ../src/crontab.py:77
 #, fuzzy
 msgid "Minute"
 msgstr "λεπτό"
 
-#: ../src/crontab.py:75
+#: ../src/crontab.py:78
 #, fuzzy
 msgid "Hour"
 msgstr "ώρα"
 
-#: ../src/crontab.py:76
+#: ../src/crontab.py:79
 #, fuzzy
 msgid "Day of Month"
 msgstr "ημέρα του μήνα:"
 
-#: ../src/crontab.py:77
+#: ../src/crontab.py:80
 #, fuzzy
 msgid "Month"
 msgstr "μήνας"
 
-#: ../src/crontab.py:78
+#: ../src/crontab.py:81
 #, fuzzy
 msgid "Weekday"
 msgstr "εργάσιμη ημέρα"
 
-#: ../src/crontab.py:192 ../src/crontab.py:197 ../src/crontab.py:201
+#: ../src/crontab.py:172 ../src/gnome-schedule.glade.h:16
+msgid "Basic"
+msgstr "Βασικές"
+
+#: ../src/crontab.py:172
+#, fuzzy, python-format
+msgid "This is not a valid special record: %(record)s"
+msgstr "Αυτό δεν είναι έγκυρο. Λόγος: %s "
+
+#: ../src/crontab.py:200 ../src/crontab.py:205 ../src/crontab.py:209
 #, fuzzy, python-format
 msgid "Must be between %(min)s and %(max)s"
 msgstr "πρέπει να είναι ανάμεσα σε 0 και 7"
 
-#: ../src/crontab.py:199
+#: ../src/crontab.py:207
 #, python-format
 msgid "%s is not a number"
 msgstr "το %s δεν είναι αριθμός"
 
-#: ../src/crontab.py:253 ../src/crontab.py:310 ../src/crontabEditor.py:192
-#: ../src/atEditor.py:110
+#: ../src/crontab.py:261 ../src/crontab.py:317 ../src/crontabEditor.py:270
+#: ../src/atEditor.py:112 ../src/atEditor.py:367 ../src/atEditor.py:391
 msgid "Untitled"
 msgstr "Ανώνυμο"
 
-#. add task to treemodel in mainWindow
-#: ../src/crontab.py:412
+#: ../src/crontab.py:416 ../src/crontab.py:418 ../src/template_chooser.py:92
+#: ../src/template_manager.py:93
 msgid "Recurrent"
 msgstr ""
 
-#: ../src/crontab.py:424
+#: ../src/crontab.py:416 ../src/crontabEditor.py:75 ../src/lang.py:149
+msgid "At reboot"
+msgstr ""
+
+#: ../src/crontab.py:430
 msgid "minute"
 msgstr "λεπτό"
 
-#: ../src/crontab.py:426
+#: ../src/crontab.py:432
 msgid "hour"
 msgstr "ώρα"
 
-#: ../src/crontab.py:428
+#: ../src/crontab.py:434
 msgid "day"
 msgstr "ημέρα"
 
-#: ../src/crontab.py:430
+#: ../src/crontab.py:436
 msgid "month"
 msgstr "μήνας"
 
-#: ../src/crontab.py:432
+#: ../src/crontab.py:438
 msgid "weekday"
 msgstr "εργάσιμη ημέρα"
 
-#: ../src/crontab.py:533
+#: ../src/crontab.py:537
 msgid ""
 "Failed to parse the Day of Month field, possibly due to a bug in crontab."
 msgstr ""
 
-#: ../src/crontabEditor.py:80
-#, fuzzy
-msgid "Use advanced"
-msgstr "χρήση προχωρημένων"
-
-#: ../src/crontabEditor.py:81 ../src/crontabEditorHelper.py:87
-#: ../src/gnome-schedule.glade.h:28
+#: ../src/crontabEditor.py:70 ../src/crontabEditorHelper.py:87
+#: ../src/gnome-schedule.glade.h:29
 #, fuzzy
 msgid "Every minute"
 msgstr "κάθε λεπτό"
 
-#: ../src/crontabEditor.py:82 ../src/crontabEditorHelper.py:93
+#: ../src/crontabEditor.py:71 ../src/crontabEditorHelper.py:93
+#: ../src/gnome-schedule.glade.h:28
 #, fuzzy
 msgid "Every hour"
 msgstr "κάθε ώρα"
 
-#: ../src/crontabEditor.py:83 ../src/crontabEditorHelper.py:99
+#: ../src/crontabEditor.py:72 ../src/crontabEditorHelper.py:99
 #, fuzzy
 msgid "Every day"
 msgstr "Κάθε"
 
-#: ../src/crontabEditor.py:84 ../src/crontabEditorHelper.py:105
+#: ../src/crontabEditor.py:73 ../src/crontabEditorHelper.py:105
 #, fuzzy
 msgid "Every month"
 msgstr "κάθε μήνα"
 
-#: ../src/crontabEditor.py:85
+#: ../src/crontabEditor.py:74
 #, fuzzy
 msgid "Every week"
 msgstr "Κάθε"
 
-#: ../src/crontabEditor.py:86 ../src/lang.py:149
-msgid "At reboot"
-msgstr ""
-
-#: ../src/crontabEditor.py:131 ../src/atEditor.py:112
+#. add new task
+#: ../src/crontabEditor.py:130 ../src/crontabEditor.py:140
+#: ../src/atEditor.py:114 ../src/atEditor.py:128
 #, fuzzy
 msgid "Create a New Scheduled Task"
 msgstr "Δημιουργία μιας νέας προγραμματισμένης εργασίας"
 
-#: ../src/crontabEditor.py:153 ../src/atEditor.py:151
+#. edit template
+#: ../src/crontabEditor.py:200 ../src/atEditor.py:144
+msgid "Edit template"
+msgstr ""
+
+#: ../src/crontabEditor.py:239 ../src/atEditor.py:184
 #, fuzzy
 msgid "Edit a Scheduled Task"
 msgstr "Επεξεργασία μιας προγραμματισμένης εργασίας"
 
-#: ../src/crontabEditor.py:210 ../src/atEditor.py:333
-msgid "Don't use a preset"
-msgstr "Να μην χρησιμοποιηθεί μια προκαθορισμένη ρύθμιση"
-
-#: ../src/crontabEditor.py:268
+#: ../src/crontabEditor.py:297 ../src/crontabEditor.py:593
+#: ../src/crontabEditor.py:633
 #, fuzzy, python-format
 msgid ""
 "This is an invalid record! The problem could be in the %(field)s field. "
@@ -189,40 +198,25 @@ msgstr ""
 "Αυτή δεν είναι μια έγκυρη εγγραφή! Το πρόβλημα πιθανόν να βρίσκεται στο "
 "πεδίο %s. Λόγος: %s"
 
-#: ../src/crontabEditor.py:273
+#: ../src/crontabEditor.py:302
 msgid ""
 "Your command contains one or more of the character %, this is special for "
 "cron and cannot be used with Gnome-schedule because of the format it uses to "
 "store extra information on the crontab line. Please use the | redirector "
 "character to acheieve the same functionality. Refer to the crontab manual "
 "for more information about the % character. If you don not want to use it "
-"for redirection it must be properly escaped with the \\ letter. I.e.: \\"
-"$HOME."
+"for redirection it must be properly escaped with the \\ letter."
 msgstr ""
 
-#: ../src/crontabEditor.py:304 ../src/atEditor.py:303
-msgid "The preset has not been saved"
+#: ../src/crontabEditor.py:470
+msgid ""
+"Note about working directory of executed tasks:\n"
+"\n"
+"Recurrent tasks will be run from the home directory."
 msgstr ""
 
-#: ../src/crontabEditor.py:306 ../src/atEditor.py:305
-msgid "To delete a preset, you first need to select one"
-msgstr ""
-
-#: ../src/crontabEditor.py:316 ../src/atEditor.py:316
-msgid "To save a preset, you first have to choose a name for it"
-msgstr ""
-
-#: ../src/crontabEditor.py:326 ../src/atEditor.py:407
-#, fuzzy
-msgid "Choose an Icon for this Scheduled Task"
-msgstr "Επιλέξτε ένα εικονίδιο για αυτήν την προγραμματισμένη εργασία"
-
-#: ../src/crontabEditor.py:390
-msgid "command"
-msgstr "εντολή"
-
-#: ../src/crontabEditor.py:427 ../src/mainWindow.py:545 ../src/atEditor.py:531
-msgid "Could not display help"
+#: ../src/crontabEditor.py:472 ../src/mainWindow.py:642 ../src/atEditor.py:441
+msgid "Warning: Working directory of executed tasks"
 msgstr ""
 
 #: ../src/crontabEditorHelper.py:111
@@ -231,132 +225,110 @@ msgid "Every weekday"
 msgstr "εργάσιμη ημέρα"
 
 #: ../src/crontabEditorHelper.py:163
-msgid "Minute settings"
-msgstr ""
-
-#: ../src/crontabEditorHelper.py:164
 #, fuzzy
-msgid "Edit Time Expression for minute"
-msgstr "Επεξεργασία χρονικής έκφρασης για:"
+msgid "Edit minute"
+msgstr "λεπτό"
 
-#: ../src/crontabEditorHelper.py:166
-msgid "Hour settings"
-msgstr ""
+#: ../src/crontabEditorHelper.py:165
+#, fuzzy
+msgid "Edit hour"
+msgstr "κάθε ώρα"
 
 #: ../src/crontabEditorHelper.py:167
-#, fuzzy
-msgid "Edit Time Expression for hour"
-msgstr "Επεξεργασία χρονικής έκφρασης για:"
+msgid "Edit day"
+msgstr ""
 
 #: ../src/crontabEditorHelper.py:169
 #, fuzzy
-msgid "Day settings"
-msgstr "<b>Ρύθμιση ημερομηνίας</b>"
+msgid "Edit month"
+msgstr "μήνας"
 
-#: ../src/crontabEditorHelper.py:170
+#: ../src/crontabEditorHelper.py:171
 #, fuzzy
-msgid "Edit Time Expression for day"
-msgstr "Επεξεργασία χρονικής έκφρασης για:"
+msgid "Edit weekday"
+msgstr "εργάσιμη ημέρα"
 
-#: ../src/crontabEditorHelper.py:172
-msgid "Month settings"
-msgstr ""
-
-#: ../src/crontabEditorHelper.py:173
-#, fuzzy
-msgid "Edit Time Expression for month"
-msgstr "Επεξεργασία χρονικής έκφρασης για:"
-
-#: ../src/crontabEditorHelper.py:175
-msgid "Weekday settings"
-msgstr ""
-
-#: ../src/crontabEditorHelper.py:176
-#, fuzzy
-msgid "Edit Time Expression for weekday"
-msgstr "Επεξεργασία χρονικής έκφρασης για:"
-
-#: ../src/crontabEditorHelper.py:190
+#: ../src/crontabEditorHelper.py:185
 #, python-format
 msgid "This is invalid. Reason: %s"
 msgstr "Αυτό δεν είναι έγκυρο. Λόγος: %s "
 
 #. minute
-#: ../src/crontabEditorHelper.py:236 ../src/gnome-schedule.glade.h:15
+#: ../src/crontabEditorHelper.py:231 ../src/gnome-schedule.glade.h:15
 #, fuzzy
 msgid "At an exact minute"
 msgstr "Κάθε λεπτό"
 
-#: ../src/crontabEditorHelper.py:237 ../src/gnome-schedule.glade.h:42
+#: ../src/crontabEditorHelper.py:232 ../src/gnome-schedule.glade.h:41
 #, fuzzy
 msgid "Minute:"
 msgstr "λεπτό:"
 
 #. hour
-#: ../src/crontabEditorHelper.py:240
+#: ../src/crontabEditorHelper.py:235
 msgid "At an exact hour"
 msgstr ""
 
-#: ../src/crontabEditorHelper.py:241
+#: ../src/crontabEditorHelper.py:236 ../src/gnome-schedule.glade.h:37
 #, fuzzy
 msgid "Hour:"
 msgstr "ώρα: "
 
 #. day
-#: ../src/crontabEditorHelper.py:244
+#: ../src/crontabEditorHelper.py:239
 msgid "On a day"
 msgstr ""
 
-#: ../src/crontabEditorHelper.py:245
+#: ../src/crontabEditorHelper.py:240 ../src/gnome-schedule.glade.h:23
 msgid "Day:"
 msgstr ""
 
 #. month
-#: ../src/crontabEditorHelper.py:248
+#: ../src/crontabEditorHelper.py:243
 #, fuzzy
 msgid "In a month"
 msgstr "μήνας"
 
-#: ../src/crontabEditorHelper.py:249
+#: ../src/crontabEditorHelper.py:244 ../src/gnome-schedule.glade.h:43
 #, fuzzy
 msgid "Month:"
 msgstr "μήνας:"
 
 #. weekday
-#: ../src/crontabEditorHelper.py:252
+#: ../src/crontabEditorHelper.py:247
 #, fuzzy
 msgid "On a weekday"
 msgstr "εργάσιμη ημέρα"
 
-#: ../src/crontabEditorHelper.py:253
+#: ../src/crontabEditorHelper.py:248 ../src/gnome-schedule.glade.h:55
 #, fuzzy
 msgid "Weekday:"
 msgstr "εργάσιμη ημέρα"
 
-#: ../src/crontabEditorHelper.py:258 ../src/gnome-schedule.glade.h:40
+#: ../src/crontabEditorHelper.py:253 ../src/gnome-schedule.glade.h:39
 msgid "In a step width"
 msgstr ""
 
-#: ../src/crontabEditorHelper.py:260 ../src/gnome-schedule.glade.h:43
+#: ../src/crontabEditorHelper.py:255 ../src/gnome-schedule.glade.h:42
 #, fuzzy
 msgid "Minutes:"
 msgstr "λεπτό:"
 
-#: ../src/crontabEditorHelper.py:262
+#: ../src/crontabEditorHelper.py:257
 #, fuzzy
 msgid "Hours:"
 msgstr "ώρα: "
 
-#: ../src/crontabEditorHelper.py:264
+#: ../src/crontabEditorHelper.py:259
 msgid "Days:"
 msgstr ""
 
-#: ../src/crontabEditorHelper.py:266
+#: ../src/crontabEditorHelper.py:261
 #, fuzzy
 msgid "Months:"
 msgstr "μήνας:"
 
-#: ../src/crontabEditorHelper.py:268
+#: ../src/crontabEditorHelper.py:263
 #, fuzzy
 msgid "Weekdays:"
 msgstr "εργάσιμη ημέρα"
@@ -370,7 +342,7 @@ msgstr ""
 msgid "_Add a task"
 msgstr "Προσ_θήκη εργασίας"
 
-#: ../src/gnome-schedule-applet.xml.h:3 ../src/gnome-schedule.glade.h:64
+#: ../src/gnome-schedule-applet.xml.h:3
 msgid "_Help"
 msgstr ""
 
@@ -380,55 +352,53 @@ msgid "_Manage tasks"
 msgstr "Διαχείριση του εργασιών συστήματος"
 
 #: ../src/gnome-schedule.glade.h:1
+msgid "*"
+msgstr "*"
+
+#: ../src/gnome-schedule.glade.h:2
+msgid "-"
+msgstr ""
+
+#: ../src/gnome-schedule.glade.h:3
+msgid "0"
+msgstr "0"
+
+#: ../src/gnome-schedule.glade.h:4
+msgid ":"
+msgstr ":"
+
+#: ../src/gnome-schedule.glade.h:5
+msgid "<b>Choose a template to create a task from:</b>"
+msgstr ""
+
+#: ../src/gnome-schedule.glade.h:6
 msgid "<b>Choose the user whose tasks you want to modify</b>"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:2
-#, fuzzy
-msgid "<b>Date and Time Settings</b>"
-msgstr "<b>Ρύθμιση ημερομηνίας</b>"
-
-#: ../src/gnome-schedule.glade.h:3
-msgid "<b>Execution Time</b>"
-msgstr ""
-
-#: ../src/gnome-schedule.glade.h:4
-#, fuzzy
-msgid "<b>General</b>"
-msgstr "<b>Προεπισκόπηση</b>"
-
-#: ../src/gnome-schedule.glade.h:5
-#, fuzzy
-msgid "<b>Minute settings</b>"
-msgstr "<b>Ρύθμιση ημερομηνίας</b>"
-
-#: ../src/gnome-schedule.glade.h:6
-msgid "<b>Preview</b>"
-msgstr "<b>Προεπισκόπηση</b>"
-
 #: ../src/gnome-schedule.glade.h:7
-msgid "<b>Select the type of the scheduled task</b>"
-msgstr "<b>Επιλέξτε το είδος της προγραμματισμένης εργασίαςk</b>"
+#, fuzzy
+msgid "<b>Manage templates</b>"
+msgstr "<b>Ρύθμιση ημερομηνίας</b>"
 
 #: ../src/gnome-schedule.glade.h:8
 #, fuzzy
-msgid "<b>Task</b>"
-msgstr "<b>Ρύθμιση ημερομηνίας</b>"
+msgid "<b>Select the type of the scheduled task:</b>"
+msgstr "<b>Επιλέξτε το είδος της προγραμματισμένης εργασίαςk</b>"
 
 #: ../src/gnome-schedule.glade.h:9
-#, fuzzy
-msgid "A scheduled task that will launch _recurrently"
-msgstr "Μια προγρεαμματισμένη εργασία θα ξεκινήσει με συχνότητα"
+msgid ""
+"<b>To create a new template you need to use the <i>Add as template</i> "
+"button in the windows where you create new tasks</b>"
+msgstr ""
 
 #: ../src/gnome-schedule.glade.h:10
 #, fuzzy
-msgid "A scheduled task that will launch only once in the _future"
-msgstr ""
-"Μια προγραμματισμένη εργασία που θα ξεκινήσει σε καθορισμένο χρόνο στο μέλλον"
+msgid "<big>Preview</big>"
+msgstr "<b>Προεπισκόπηση</b>"
 
 #: ../src/gnome-schedule.glade.h:11
-msgid "About this application"
-msgstr "Περί αυτής της εφαρμογής"
+msgid "<big>Time &amp; Date</big>"
+msgstr ""
 
 #: ../src/gnome-schedule.glade.h:12
 #, fuzzy
@@ -436,48 +406,40 @@ msgid "Add a Scheduled Task"
 msgstr "Προσθήκη μιας προγραμματισμένης εργασίας"
 
 #: ../src/gnome-schedule.glade.h:13
-msgid "Add a new scheduled task"
-msgstr "Προσθήκη μιας νέας προγραμματισμένης εργασίας"
+#, fuzzy
+msgid "Add as template"
+msgstr "Προσ_θήκη εργασίας"
 
 #: ../src/gnome-schedule.glade.h:14
 msgid "Advanced"
 msgstr "Για προχωρημένους"
-
-#: ../src/gnome-schedule.glade.h:16
-msgid "Basic"
-msgstr "Βασικές"
 
 #: ../src/gnome-schedule.glade.h:17
 msgid "Change User"
 msgstr ""
 
 #: ../src/gnome-schedule.glade.h:18
-msgid "Change _User"
+msgid "Choose template"
 msgstr ""
 
 #: ../src/gnome-schedule.glade.h:19
-#, fuzzy
-msgid "Choose an icon for this scheduled task"
-msgstr "Επιλέξτε ένα εικονίδιο για αυτήν την προγραμματισμένη εργασία"
-
-#: ../src/gnome-schedule.glade.h:20
 msgid "Choose the user whose tasks you want to modify"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:21
+#: ../src/gnome-schedule.glade.h:20
 #, fuzzy
-msgid "Co_mmand:"
+msgid "Command:"
 msgstr "εντολή"
 
-#: ../src/gnome-schedule.glade.h:22
+#: ../src/gnome-schedule.glade.h:21
 #, fuzzy
 msgid "Configure Scheduled Tasks"
 msgstr "Ρύθμιση προγραμματισμένων εργασιών"
 
-#: ../src/gnome-schedule.glade.h:23
+#: ../src/gnome-schedule.glade.h:22
 #, fuzzy
-msgid "Date and Time"
-msgstr "Ημερομηνία και ώρα"
+msgid "Date:"
+msgstr "_Διαγραφή"
 
 #: ../src/gnome-schedule.glade.h:24
 msgid "Delete a scheduled task"
@@ -485,24 +447,29 @@ msgstr "Διαγραφή μιας προγραμματισμένης εργασ�
 
 #: ../src/gnome-schedule.glade.h:25
 #, fuzzy
-msgid "Delete the selected template"
-msgstr "Θα διαγράψει την επιλεγμένη προκαθορισμένη ρύθμιση"
+msgid "Description:"
+msgstr "Δέσμη ενεργειών"
 
 #: ../src/gnome-schedule.glade.h:26
-msgid "Desc_ription:"
-msgstr ""
+#, fuzzy
+msgid "Edit a periodical task"
+msgstr "Επεξεργασία μιας προγραμματισμένης εργασίας"
 
 #: ../src/gnome-schedule.glade.h:27
 msgid "Edit a scheduled task"
 msgstr "Επεξεργασία μιας προγραμματισμένης εργασίας"
 
-#: ../src/gnome-schedule.glade.h:29
+#: ../src/gnome-schedule.glade.h:30
+msgid "Execute at:"
+msgstr ""
+
+#: ../src/gnome-schedule.glade.h:31
 #, fuzzy
 msgid "Execution at a specific minute, hour, day, weekday or month."
 msgstr ""
 "Συμβαίνει συνέχεια. Για παράδειγμα, συμβαίνει κάθε λεπτό, ώρα. ημέρα,ή μήνα."
 
-#: ../src/gnome-schedule.glade.h:30
+#: ../src/gnome-schedule.glade.h:32
 #, fuzzy
 msgid ""
 "Execution at a step width. For example every five minutes, hours, days, "
@@ -511,194 +478,108 @@ msgstr ""
 "Συμβαίνει σε κάθε x επανάληψη. Για παράδειγμα κάιε δύο λεπτά, ώρες, ημέρες,"
 "εργάσιμες ημέρες ή μήνες."
 
-#: ../src/gnome-schedule.glade.h:31
+#: ../src/gnome-schedule.glade.h:33
 #, fuzzy
 msgid "Execution at every minute, hour, day, weekday or month."
 msgstr ""
 "Συμβαίνει συνέχεια. Για παράδειγμα, συμβαίνει κάθε λεπτό, ώρα. ημέρα,ή μήνα."
 
-#: ../src/gnome-schedule.glade.h:32
+#: ../src/gnome-schedule.glade.h:34
 msgid "Execution in a range."
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:33
+#: ../src/gnome-schedule.glade.h:35
 #, fuzzy
 msgid "Expression:"
 msgstr "Άλλη έκφραση"
 
-#: ../src/gnome-schedule.glade.h:34
-#, fuzzy
-msgid "For example at 04:10 tomorrow, next week or in three days"
-msgstr ""
-"Για παράδειγμα στις 04:10 αύριο, την επόμενη εβδομάδα ή σε τρείς μέρες."
-
-#: ../src/gnome-schedule.glade.h:35
-#, fuzzy
-msgid "For example every first hour of the day"
-msgstr "Για παράδειγμα κάθε πρώτη ώρα της ημέρας."
-
 #: ../src/gnome-schedule.glade.h:36
-#, fuzzy
-msgid "For experienced users"
-msgstr "Για προχωρημένους χρήστες μόνο"
-
-#: ../src/gnome-schedule.glade.h:37
 msgid "From:"
 msgstr ""
 
 #: ../src/gnome-schedule.glade.h:38
-#, fuzzy
-msgid "Ico_n:"
-msgstr "Εικονίδιο"
-
-#: ../src/gnome-schedule.glade.h:39
 msgid "In a range"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:41
+#: ../src/gnome-schedule.glade.h:40
 #, fuzzy
-msgid "Mi_nutes:"
-msgstr "λεπτό:"
+msgid "Manage templates"
+msgstr "Διαχείριση του εργασιών συστήματος"
 
 #: ../src/gnome-schedule.glade.h:44
-#, fuzzy
-msgid "No out_put"
-msgstr "Χωρίς αποτέλεσμα"
-
-#: ../src/gnome-schedule.glade.h:45
 msgid "Other"
 msgstr ""
 
+#: ../src/gnome-schedule.glade.h:45
+#, fuzzy
+msgid "Run task"
+msgstr "Εκτέλεση στις:"
+
 #: ../src/gnome-schedule.glade.h:46
-msgid ""
-"Quit the application. This will not stop the system scheduling. It will, "
-"however, quit this system schedule maintenance tool."
-msgstr ""
-"Έξοδος από την  εφαρμογή. Αυτό δεν θα σταματήσει το προγραμματισμό "
-"συστήματος. Θα σταματήσειμόνο το εργαλείο ρύθμισης προγραμματισμού "
-"συστήματος."
-
-#: ../src/gnome-schedule.glade.h:47
-msgid "Rec_urrence:"
-msgstr ""
-
-#: ../src/gnome-schedule.glade.h:48
-msgid "Save the current information as a template"
-msgstr ""
-
-#: ../src/gnome-schedule.glade.h:49
 msgid "Scheduled and active tasks"
 msgstr "Προγραμματισμένες και ενεργές εργασίες"
 
-#: ../src/gnome-schedule.glade.h:50
-#, fuzzy
-msgid "Scri_pt:"
-msgstr "Δέσμη ενεργειών"
-
-#: ../src/gnome-schedule.glade.h:51
+#: ../src/gnome-schedule.glade.h:47
 msgid "See \"man 5 crontab\" for information about the crontab format."
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:52
-#, fuzzy
-msgid "Select..."
-msgstr "Επιλο_γή"
-
-#: ../src/gnome-schedule.glade.h:53
+#: ../src/gnome-schedule.glade.h:48
 msgid "Show help"
 msgstr "Εμφάνιση βοήθειας"
 
-#: ../src/gnome-schedule.glade.h:54
-msgid "Show the manual"
-msgstr "Εμφάνιση του εγχειριδίου"
+#: ../src/gnome-schedule.glade.h:49
+msgid "Task description:"
+msgstr ""
 
-#: ../src/gnome-schedule.glade.h:55
+#: ../src/gnome-schedule.glade.h:50
+msgid "Task:"
+msgstr ""
+
+#: ../src/gnome-schedule.glade.h:51 ../src/mainWindow.py:184
+msgid "Templates"
+msgstr ""
+
+#: ../src/gnome-schedule.glade.h:52
 msgid "Time expression help"
 msgstr "Βοήθεια χρονικής έκφρασης"
 
-#: ../src/gnome-schedule.glade.h:56
+#: ../src/gnome-schedule.glade.h:53
+#, fuzzy
+msgid "Time:"
+msgstr "Ώρα "
+
+#: ../src/gnome-schedule.glade.h:54
 msgid "To:"
 msgstr ""
 
+#: ../src/gnome-schedule.glade.h:56
+#, fuzzy
+msgid "_No output (>/dev/null 2>&1)"
+msgstr " >/dev/null 2>&1"
+
 #: ../src/gnome-schedule.glade.h:57
-#, fuzzy
-msgid ""
-"Tomorrow\n"
-"Next week"
-msgstr ""
-"σήμερα\n"
-"επόμενη εβδομάδα"
-
-#: ../src/gnome-schedule.glade.h:59
-msgid ""
-"When selected, no output will be generated. When scheduled tasks in the "
-"crontab do have output and this option is not checked, the output will by "
-"default be send to the UNIX mailbox of the user."
-msgstr ""
-
-#: ../src/gnome-schedule.glade.h:60
-msgid "_About"
-msgstr ""
-
-#: ../src/gnome-schedule.glade.h:61
-#, fuzzy
-msgid "_Advanced"
-msgstr "Για προχωρημένους"
-
-#: ../src/gnome-schedule.glade.h:62
-#, fuzzy
-msgid "_Date:"
-msgstr "_Διαγραφή"
-
-#: ../src/gnome-schedule.glade.h:63
-#, fuzzy
-msgid "_Days of month:"
-msgstr "ημέρα του μήνα:"
-
-#: ../src/gnome-schedule.glade.h:65
-#, fuzzy
-msgid "_Hour:"
-msgstr "ώρα: "
-
-#: ../src/gnome-schedule.glade.h:66
-#, fuzzy
-msgid "_Hours:"
-msgstr "ώρα: "
-
-#: ../src/gnome-schedule.glade.h:67
-msgid "_Manual"
-msgstr "_Χειροκίνητα"
-
-#: ../src/gnome-schedule.glade.h:68
-#, fuzzy
-msgid "_Minute:"
-msgstr "λεπτό:"
-
-#: ../src/gnome-schedule.glade.h:69
-#, fuzzy
-msgid "_Months:"
-msgstr "μήνας:"
-
-#: ../src/gnome-schedule.glade.h:70
-msgid "_Task"
-msgstr ""
-
-#: ../src/gnome-schedule.glade.h:71
-msgid "_Template:"
-msgstr ""
-
-#: ../src/gnome-schedule.glade.h:72
 msgid "_User:"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:73
-msgid "_View"
+#: ../src/gnome-schedule.glade.h:58
+msgid "gtk-apply"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:74
-#, fuzzy
-msgid "_Weekdays:"
-msgstr "εργάσιμη ημέρα"
+#: ../src/gnome-schedule.glade.h:59
+msgid "gtk-cancel"
+msgstr ""
+
+#: ../src/gnome-schedule.glade.h:60
+msgid "gtk-delete"
+msgstr ""
+
+#: ../src/gnome-schedule.glade.h:61
+msgid "gtk-edit"
+msgstr ""
+
+#: ../src/gnome-schedule.glade.h:62
+msgid "ls -l"
+msgstr ""
 
 #: ../src/gnome-schedule.py:62 ../src/scheduleapplet.py:63
 msgid ""
@@ -1004,67 +885,118 @@ msgstr "εργάσιμη ημέρα"
 msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 msgstr ""
 
-#: ../src/mainWindow.py:211 ../src/mainWindow.py:289
+#: ../src/mainWindow.py:111
+msgid "Recurrent task"
+msgstr ""
+
+#: ../src/mainWindow.py:122
+msgid "One-time task"
+msgstr ""
+
+#: ../src/mainWindow.py:133
+msgid "From template"
+msgstr ""
+
+#: ../src/mainWindow.py:152
+#, fuzzy
+msgid "Add a new task"
+msgstr "Προσ_θήκη εργασίας"
+
+#: ../src/mainWindow.py:285 ../src/mainWindow.py:396
 #, python-format
 msgid "Editing user: %s"
 msgstr ""
 
-#: ../src/mainWindow.py:263 ../src/scheduleapplet.py:115
+#: ../src/mainWindow.py:336 ../src/mainWindow.py:357 ../src/mainWindow.py:367
+#: ../src/scheduleapplet.py:115
 msgid "ERROR: Could not load icon"
 msgstr ""
 
-#: ../src/mainWindow.py:273
+#: ../src/mainWindow.py:377
 msgid "ERROR: Could not load glade file"
 msgstr ""
 
-#: ../src/mainWindow.py:324
-msgid "Icon"
-msgstr "Εικονίδιο"
+#: ../src/mainWindow.py:431 ../src/template_chooser.py:61
+#: ../src/template_manager.py:62
+msgid "Task"
+msgstr ""
 
-#: ../src/mainWindow.py:329 ../src/mainWindow.py:362
-msgid "Type"
-msgstr "Είδος"
-
-#: ../src/mainWindow.py:333 ../src/mainWindow.py:358
+#: ../src/mainWindow.py:444 ../src/mainWindow.py:470
+#: ../src/template_chooser.py:70 ../src/template_manager.py:71
 msgid "Description"
 msgstr ""
 
-#: ../src/mainWindow.py:337 ../src/mainWindow.py:349
+#: ../src/mainWindow.py:448 ../src/mainWindow.py:461
 #, fuzzy
-msgid "Date and Time Settings"
+msgid "Date and Time"
 msgstr "Ημερομηνία και ώρα"
 
-#: ../src/mainWindow.py:341 ../src/mainWindow.py:353
-msgid "Preview"
-msgstr "Προεπισκόπηση"
+#: ../src/mainWindow.py:452 ../src/mainWindow.py:465
+msgid "Command preview"
+msgstr ""
 
-#: ../src/mainWindow.py:397 ../src/mainWindow.py:460
+#. print ex
+#: ../src/mainWindow.py:521 ../src/mainWindow.py:584
 #, fuzzy
 msgid "Please select a task"
 msgstr "Αλλαγή μιας προγραμματισμένης εργασίας"
 
-#: ../src/mainWindow.py:404
+#: ../src/mainWindow.py:528
 msgid "Do you want to delete this task?"
 msgstr ""
 
-#: ../src/mainWindow.py:508
+#: ../src/mainWindow.py:629
+msgid ""
+"Are you sure you want to run this task now?\n"
+"\n"
+"This is used to preview the task and initiates a one-time run, this does not "
+"affect the normal scheduled run times."
+msgstr ""
+
+#: ../src/mainWindow.py:631
+msgid "Are you sure you want to run this task?"
+msgstr ""
+
+#: ../src/mainWindow.py:640
+msgid ""
+"Note about working directory of executed tasks:\n"
+"\n"
+"Recurrent tasks will be run from the home directory, one-time tasks from the "
+"directory where Gnome schedule was run from at the time of task creation "
+"(normally the home directory)."
+msgstr ""
+
+#: ../src/mainWindow.py:695
+msgid "Press ENTER to continue and close this window."
+msgstr ""
+
+#: ../src/mainWindow.py:703
+#, fuzzy
+msgid "Please select a task!"
+msgstr "Αλλαγή μιας προγραμματισμένης εργασίας"
+
+#: ../src/mainWindow.py:711
 #, fuzzy
 msgid "About Gnome Schedule"
 msgstr "Gnome Schedule"
 
-#: ../src/mainWindow.py:509
+#: ../src/mainWindow.py:712
 msgid "Gnome Schedule"
 msgstr "Gnome Schedule"
 
-#: ../src/mainWindow.py:511
+#: ../src/mainWindow.py:714
 #, python-format
 msgid "Copyright (c) %(year)s %(name)s."
 msgstr ""
 
-#: ../src/mainWindow.py:524
+#: ../src/mainWindow.py:727
 #, fuzzy
 msgid "translator-credits"
 msgstr "Κώστας Παπαδήμας <pkst@gnome.org>"
+
+#: ../src/mainWindow.py:748
+msgid "Could not display help"
+msgstr ""
 
 #: ../src/scheduleapplet.py:131
 msgid "ERROR: Could not load menu xml file"
@@ -1074,18 +1006,228 @@ msgstr ""
 msgid "No such user"
 msgstr ""
 
-#: ../src/atEditor.py:278
-msgid ""
-"In one or both of the fields hour and minute there was entered a letter or a "
-"number out of range. Remember an hour only has 60 minutes and a day only 24 "
-"hours."
+#: ../src/addWindow.py:48
+#, fuzzy
+msgid "A task that launches recurrently"
+msgstr "Μια προγρεαμματισμένη εργασία θα ξεκινήσει με συχνότητα"
+
+#: ../src/addWindow.py:61
+msgid "A task that launches one time"
 msgstr ""
 
-#: ../src/atEditor.py:543
+#: ../src/addWindow.py:74
+msgid "A task from a predefined template"
+msgstr ""
+
+#: ../src/atEditor.py:76
+msgid "Calendar"
+msgstr ""
+
+#: ../src/atEditor.py:359
+msgid ""
+"In one or both of the fields hour and minute there was entered a letter, or "
+"a number out of range. Remember an hour only has 60 minutes and a day only "
+"24 hours."
+msgstr ""
+
+#: ../src/atEditor.py:418
 #, fuzzy, python-format
 msgid "This is an invalid record! The problem could be: %s"
 msgstr ""
 "Αυτή δεν είναι μια έγκυρη εγγραφή!, Το πρόβλημα μπορεί να βρίσκεται : %s "
+
+#: ../src/atEditor.py:439
+msgid ""
+"Note about working directory of executed tasks:\n"
+"\n"
+"One-time tasks will be run from the directory where Gnome schedule is run "
+"from (normally the home directory)."
+msgstr ""
+
+#: ../src/thoughicon.py:70
+msgid "ICON: Using dummy icon"
+msgstr ""
+
+#: ../src/thoughicon.py:73
+#, python-format
+msgid "ICON: Doesn't handle absolute paths: '%s'"
+msgstr ""
+
+#: ../src/thoughicon.py:82
+#, python-format
+msgid "ICON: Icon '%s' is not in theme"
+msgstr ""
+
+#: ../src/thoughicon.py:94
+#, python-format
+msgid "ICON: Got badly sized icon for %s"
+msgstr ""
+
+#: ../src/template_chooser.py:83 ../src/template_manager.py:84
+msgid "One-time"
+msgstr ""
+
+#, fuzzy
+#~ msgid "Use advanced"
+#~ msgstr "χρήση προχωρημένων"
+
+#~ msgid "Don't use a preset"
+#~ msgstr "Να μην χρησιμοποιηθεί μια προκαθορισμένη ρύθμιση"
+
+#, fuzzy
+#~ msgid "Choose an Icon for this Scheduled Task"
+#~ msgstr "Επιλέξτε ένα εικονίδιο για αυτήν την προγραμματισμένη εργασία"
+
+#~ msgid "command"
+#~ msgstr "εντολή"
+
+#, fuzzy
+#~ msgid "Edit Time Expression for minute"
+#~ msgstr "Επεξεργασία χρονικής έκφρασης για:"
+
+#, fuzzy
+#~ msgid "Edit Time Expression for hour"
+#~ msgstr "Επεξεργασία χρονικής έκφρασης για:"
+
+#, fuzzy
+#~ msgid "Day settings"
+#~ msgstr "<b>Ρύθμιση ημερομηνίας</b>"
+
+#, fuzzy
+#~ msgid "Edit Time Expression for day"
+#~ msgstr "Επεξεργασία χρονικής έκφρασης για:"
+
+#, fuzzy
+#~ msgid "Edit Time Expression for month"
+#~ msgstr "Επεξεργασία χρονικής έκφρασης για:"
+
+#, fuzzy
+#~ msgid "Edit Time Expression for weekday"
+#~ msgstr "Επεξεργασία χρονικής έκφρασης για:"
+
+#, fuzzy
+#~ msgid "<b>Date and Time Settings</b>"
+#~ msgstr "<b>Ρύθμιση ημερομηνίας</b>"
+
+#, fuzzy
+#~ msgid "<b>General</b>"
+#~ msgstr "<b>Προεπισκόπηση</b>"
+
+#, fuzzy
+#~ msgid "<b>Task</b>"
+#~ msgstr "<b>Ρύθμιση ημερομηνίας</b>"
+
+#, fuzzy
+#~ msgid "A scheduled task that will launch only once in the _future"
+#~ msgstr ""
+#~ "Μια προγραμματισμένη εργασία που θα ξεκινήσει σε καθορισμένο χρόνο στο "
+#~ "μέλλον"
+
+#~ msgid "About this application"
+#~ msgstr "Περί αυτής της εφαρμογής"
+
+#~ msgid "Add a new scheduled task"
+#~ msgstr "Προσθήκη μιας νέας προγραμματισμένης εργασίας"
+
+#, fuzzy
+#~ msgid "Choose an icon for this scheduled task"
+#~ msgstr "Επιλέξτε ένα εικονίδιο για αυτήν την προγραμματισμένη εργασία"
+
+#, fuzzy
+#~ msgid "Delete the selected template"
+#~ msgstr "Θα διαγράψει την επιλεγμένη προκαθορισμένη ρύθμιση"
+
+#, fuzzy
+#~ msgid "For example at 04:10 tomorrow, next week or in three days"
+#~ msgstr ""
+#~ "Για παράδειγμα στις 04:10 αύριο, την επόμενη εβδομάδα ή σε τρείς μέρες."
+
+#, fuzzy
+#~ msgid "For example every first hour of the day"
+#~ msgstr "Για παράδειγμα κάθε πρώτη ώρα της ημέρας."
+
+#, fuzzy
+#~ msgid "For experienced users"
+#~ msgstr "Για προχωρημένους χρήστες μόνο"
+
+#, fuzzy
+#~ msgid "Ico_n:"
+#~ msgstr "Εικονίδιο"
+
+#, fuzzy
+#~ msgid "Mi_nutes:"
+#~ msgstr "λεπτό:"
+
+#, fuzzy
+#~ msgid "No out_put"
+#~ msgstr "Χωρίς αποτέλεσμα"
+
+#~ msgid ""
+#~ "Quit the application. This will not stop the system scheduling. It will, "
+#~ "however, quit this system schedule maintenance tool."
+#~ msgstr ""
+#~ "Έξοδος από την  εφαρμογή. Αυτό δεν θα σταματήσει το προγραμματισμό "
+#~ "συστήματος. Θα σταματήσειμόνο το εργαλείο ρύθμισης προγραμματισμού "
+#~ "συστήματος."
+
+#, fuzzy
+#~ msgid "Select..."
+#~ msgstr "Επιλο_γή"
+
+#~ msgid "Show the manual"
+#~ msgstr "Εμφάνιση του εγχειριδίου"
+
+#, fuzzy
+#~ msgid ""
+#~ "Tomorrow\n"
+#~ "Next week"
+#~ msgstr ""
+#~ "σήμερα\n"
+#~ "επόμενη εβδομάδα"
+
+#, fuzzy
+#~ msgid "_Advanced"
+#~ msgstr "Για προχωρημένους"
+
+#, fuzzy
+#~ msgid "_Days of month:"
+#~ msgstr "ημέρα του μήνα:"
+
+#, fuzzy
+#~ msgid "_Hour:"
+#~ msgstr "ώρα: "
+
+#, fuzzy
+#~ msgid "_Hours:"
+#~ msgstr "ώρα: "
+
+#~ msgid "_Manual"
+#~ msgstr "_Χειροκίνητα"
+
+#, fuzzy
+#~ msgid "_Minute:"
+#~ msgstr "λεπτό:"
+
+#, fuzzy
+#~ msgid "_Months:"
+#~ msgstr "μήνας:"
+
+#, fuzzy
+#~ msgid "_Weekdays:"
+#~ msgstr "εργάσιμη ημέρα"
+
+#~ msgid "Icon"
+#~ msgstr "Εικονίδιο"
+
+#~ msgid "Type"
+#~ msgstr "Είδος"
+
+#, fuzzy
+#~ msgid "Date and Time Settings"
+#~ msgstr "Ημερομηνία και ώρα"
+
+#~ msgid "Preview"
+#~ msgstr "Προεπισκόπηση"
 
 #, fuzzy
 #~ msgid "Copyright (c) 2004-2008 Gaute Hope."
@@ -1149,17 +1291,8 @@ msgstr ""
 #~ msgid "     "
 #~ msgstr "     "
 
-#~ msgid " >/dev/null 2>&1"
-#~ msgstr " >/dev/null 2>&1"
-
-#~ msgid "*"
-#~ msgstr "*"
-
 #~ msgid "* * * * * command"
 #~ msgstr "* * * * * εντολή"
-
-#~ msgid "0"
-#~ msgstr "0"
 
 #~ msgid "0-23"
 #~ msgstr "0-23"
@@ -1181,9 +1314,6 @@ msgstr ""
 
 #~ msgid "59"
 #~ msgstr "59"
-
-#~ msgid ":"
-#~ msgstr ":"
 
 #~ msgid "<b>Basic settings</b>"
 #~ msgstr "<b> Βασικές ρυθμίσεις</b>"
@@ -1232,9 +1362,6 @@ msgstr ""
 #~ msgid "Run"
 #~ msgstr "Εκτέλεση"
 
-#~ msgid "Run at:"
-#~ msgstr "Εκτέλεση στις:"
-
 #~ msgid "Select a different user"
 #~ msgstr "Επιλογή ενός διαφορετικού χρήση"
 
@@ -1261,9 +1388,6 @@ msgstr ""
 
 #~ msgid "The date when the script will launch"
 #~ msgstr "Η ημερομηνία όταν θα εκκινηθεί η δέσμη ενεργειών"
-
-#~ msgid "Time: "
-#~ msgstr "Ώρα "
 
 #~ msgid "Treeview"
 #~ msgstr "Προβολή δένδρου"

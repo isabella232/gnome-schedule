@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-12-02 17:56+0100\n"
+"POT-Creation-Date: 2007-12-02 20:04+0100\n"
 "PO-Revision-Date: 2006-10-24 17:42+0300\n"
 "Last-Translator: Ilkka Tuohela <hile@iki.fi>\n"
 "Language-Team: Finnish <gnome-fi-laatu@lists.sourceforge.net>\n"
@@ -38,132 +38,143 @@ msgstr "Gnome-ajastus"
 msgid "System tools"
 msgstr "Järjestelmätyökalut"
 
-#: ../src/at.py:491
+#: ../src/at.py:486
 #, python-format
 msgid "DANGEROUS PARSE: %(preview)s"
 msgstr "VAARALLINEN TULKINTA: %(preview)s"
 
 #. TODO: localize time and date formats
-#: ../src/at.py:498
+#: ../src/at.py:493
 #, python-format
 msgid "On %(date)s at %(time)s"
 msgstr "%(date)s kello %(time)s"
 
-#: ../src/at.py:503 ../src/at.py:508
+#: ../src/at.py:498 ../src/at.py:503
 msgid "Once"
 msgstr "Kerran"
 
-#: ../src/at.py:512
+#: ../src/at.py:507
 msgid "Warning: a line in atq's output didn't parse"
 msgstr "Varoitus: riviä atq:n tulosteessa ei voi tulkita"
 
-#: ../src/crontab.py:74
+#: ../src/crontab.py:77
 msgid "Minute"
 msgstr "Minuutti"
 
-#: ../src/crontab.py:75
+#: ../src/crontab.py:78
 msgid "Hour"
 msgstr "Tunti"
 
-#: ../src/crontab.py:76
+#: ../src/crontab.py:79
 msgid "Day of Month"
 msgstr "Kuukauden päivä"
 
-#: ../src/crontab.py:77
+#: ../src/crontab.py:80
 msgid "Month"
 msgstr "Kuukausi"
 
-#: ../src/crontab.py:78
+#: ../src/crontab.py:81
 msgid "Weekday"
 msgstr "Viikonpäivä"
 
-#: ../src/crontab.py:192 ../src/crontab.py:197 ../src/crontab.py:201
+#: ../src/crontab.py:172 ../src/gnome-schedule.glade.h:16
+msgid "Basic"
+msgstr "Perus"
+
+#: ../src/crontab.py:172
+#, fuzzy, python-format
+msgid "This is not a valid special record: %(record)s"
+msgstr "Tämä on virheellinen. Syy: %s"
+
+#: ../src/crontab.py:200 ../src/crontab.py:205 ../src/crontab.py:209
 #, python-format
 msgid "Must be between %(min)s and %(max)s"
 msgstr "Täytyy olla väliltä %(min)s ja %(max)s"
 
-#: ../src/crontab.py:199
+#: ../src/crontab.py:207
 #, python-format
 msgid "%s is not a number"
 msgstr "%s ei ole numero"
 
-#: ../src/crontab.py:253 ../src/crontab.py:310 ../src/crontabEditor.py:192
-#: ../src/atEditor.py:110
+#: ../src/crontab.py:261 ../src/crontab.py:317 ../src/crontabEditor.py:270
+#: ../src/atEditor.py:112 ../src/atEditor.py:367 ../src/atEditor.py:391
 msgid "Untitled"
 msgstr "Nimetön"
 
-#. add task to treemodel in mainWindow
-#: ../src/crontab.py:412
+#: ../src/crontab.py:416 ../src/crontab.py:418 ../src/template_chooser.py:92
+#: ../src/template_manager.py:93
 msgid "Recurrent"
 msgstr "Toistuva"
 
-#: ../src/crontab.py:424
+#: ../src/crontab.py:416 ../src/crontabEditor.py:75 ../src/lang.py:149
+msgid "At reboot"
+msgstr "Käynnistettäessä"
+
+#: ../src/crontab.py:430
 msgid "minute"
 msgstr "minuutti"
 
-#: ../src/crontab.py:426
+#: ../src/crontab.py:432
 msgid "hour"
 msgstr "tunti"
 
-#: ../src/crontab.py:428
+#: ../src/crontab.py:434
 msgid "day"
 msgstr "päivä"
 
-#: ../src/crontab.py:430
+#: ../src/crontab.py:436
 msgid "month"
 msgstr "kuukausi"
 
-#: ../src/crontab.py:432
+#: ../src/crontab.py:438
 msgid "weekday"
 msgstr "viikonpäivä"
 
-#: ../src/crontab.py:533
+#: ../src/crontab.py:537
 msgid ""
 "Failed to parse the Day of Month field, possibly due to a bug in crontab."
 msgstr ""
 
-#: ../src/crontabEditor.py:80
-msgid "Use advanced"
-msgstr "Käytä lisäasetuksia"
-
-#: ../src/crontabEditor.py:81 ../src/crontabEditorHelper.py:87
-#: ../src/gnome-schedule.glade.h:28
+#: ../src/crontabEditor.py:70 ../src/crontabEditorHelper.py:87
+#: ../src/gnome-schedule.glade.h:29
 msgid "Every minute"
 msgstr "Joka minuutti"
 
-#: ../src/crontabEditor.py:82 ../src/crontabEditorHelper.py:93
+#: ../src/crontabEditor.py:71 ../src/crontabEditorHelper.py:93
+#: ../src/gnome-schedule.glade.h:28
 msgid "Every hour"
 msgstr "Joka tunti"
 
-#: ../src/crontabEditor.py:83 ../src/crontabEditorHelper.py:99
+#: ../src/crontabEditor.py:72 ../src/crontabEditorHelper.py:99
 msgid "Every day"
 msgstr "Joka päivä"
 
-#: ../src/crontabEditor.py:84 ../src/crontabEditorHelper.py:105
+#: ../src/crontabEditor.py:73 ../src/crontabEditorHelper.py:105
 msgid "Every month"
 msgstr "Joka kuukausi"
 
-#: ../src/crontabEditor.py:85
+#: ../src/crontabEditor.py:74
 msgid "Every week"
 msgstr "Joka viikko"
 
-#: ../src/crontabEditor.py:86 ../src/lang.py:149
-msgid "At reboot"
-msgstr "Käynnistettäessä"
-
-#: ../src/crontabEditor.py:131 ../src/atEditor.py:112
+#. add new task
+#: ../src/crontabEditor.py:130 ../src/crontabEditor.py:140
+#: ../src/atEditor.py:114 ../src/atEditor.py:128
 msgid "Create a New Scheduled Task"
 msgstr "Luo uusi ajastettu tehtävä"
 
-#: ../src/crontabEditor.py:153 ../src/atEditor.py:151
+#. edit template
+#: ../src/crontabEditor.py:200 ../src/atEditor.py:144
+#, fuzzy
+msgid "Edit template"
+msgstr "_Malli:"
+
+#: ../src/crontabEditor.py:239 ../src/atEditor.py:184
 msgid "Edit a Scheduled Task"
 msgstr "Muokkaa ajastettua tehtävää"
 
-#: ../src/crontabEditor.py:210 ../src/atEditor.py:333
-msgid "Don't use a preset"
-msgstr "Älä käytä esiasetusta"
-
-#: ../src/crontabEditor.py:268
+#: ../src/crontabEditor.py:297 ../src/crontabEditor.py:593
+#: ../src/crontabEditor.py:633
 #, python-format
 msgid ""
 "This is an invalid record! The problem could be in the %(field)s field. "
@@ -172,15 +183,15 @@ msgstr ""
 "Tämä on virheellinen tietue! Ongelma saattaa olla kentässä %(field)s.Syy: %"
 "(reason)s"
 
-#: ../src/crontabEditor.py:273
+#: ../src/crontabEditor.py:302
+#, fuzzy
 msgid ""
 "Your command contains one or more of the character %, this is special for "
 "cron and cannot be used with Gnome-schedule because of the format it uses to "
 "store extra information on the crontab line. Please use the | redirector "
 "character to acheieve the same functionality. Refer to the crontab manual "
 "for more information about the % character. If you don not want to use it "
-"for redirection it must be properly escaped with the \\ letter. I.e.: \\"
-"$HOME."
+"for redirection it must be properly escaped with the \\ letter."
 msgstr ""
 "Komentosi sisältää yhden tai useampia %-merkkejä, joka on cronin "
 "erikoismerkki. Sitä ei voi käyttää  Gnome-schedulesta, koska sitä käytetään "
@@ -189,145 +200,116 @@ msgstr ""
 "et halua käyttää sitä uudelleenohjaukseen, se tulee suojata kunnolla \\-"
 "merkillä, esimerkiksi \\$HOME."
 
-#: ../src/crontabEditor.py:304 ../src/atEditor.py:303
-msgid "The preset has not been saved"
-msgstr "Esiasetusta ei tallennettu"
+#: ../src/crontabEditor.py:470
+msgid ""
+"Note about working directory of executed tasks:\n"
+"\n"
+"Recurrent tasks will be run from the home directory."
+msgstr ""
 
-#: ../src/crontabEditor.py:306 ../src/atEditor.py:305
-msgid "To delete a preset, you first need to select one"
-msgstr "Esiasetus täytyy valita ennen kuin voit poistaa sen"
-
-#: ../src/crontabEditor.py:316 ../src/atEditor.py:316
-msgid "To save a preset, you first have to choose a name for it"
-msgstr "Esiasetukselle täytyy antaa nimi ennen kuin sen voi tallentaa"
-
-#: ../src/crontabEditor.py:326 ../src/atEditor.py:407
-msgid "Choose an Icon for this Scheduled Task"
-msgstr "Valitse kuvake tälle ajastetulle tehtävälle"
-
-#: ../src/crontabEditor.py:390
-msgid "command"
-msgstr "komento"
-
-#: ../src/crontabEditor.py:427 ../src/mainWindow.py:545 ../src/atEditor.py:531
-msgid "Could not display help"
-msgstr "Ohjetta ei voi näyttää"
+#: ../src/crontabEditor.py:472 ../src/mainWindow.py:642 ../src/atEditor.py:441
+msgid "Warning: Working directory of executed tasks"
+msgstr ""
 
 #: ../src/crontabEditorHelper.py:111
 msgid "Every weekday"
 msgstr "Joka viikonpäivä"
 
 #: ../src/crontabEditorHelper.py:163
-msgid "Minute settings"
-msgstr "Minuuttiasetukset"
+#, fuzzy
+msgid "Edit minute"
+msgstr "minuutti"
 
-#: ../src/crontabEditorHelper.py:164
-msgid "Edit Time Expression for minute"
-msgstr "Muokkaa aikaesityksen minuutteja"
-
-#: ../src/crontabEditorHelper.py:166
-msgid "Hour settings"
-msgstr "Tuntiasetukset"
+#: ../src/crontabEditorHelper.py:165
+#, fuzzy
+msgid "Edit hour"
+msgstr "Joka tunti"
 
 #: ../src/crontabEditorHelper.py:167
-msgid "Edit Time Expression for hour"
-msgstr "Muokkaa aikaesityksen tunteja"
+msgid "Edit day"
+msgstr ""
 
 #: ../src/crontabEditorHelper.py:169
-msgid "Day settings"
-msgstr "Päiväasetukset"
+#, fuzzy
+msgid "Edit month"
+msgstr "kuukausi"
 
-#: ../src/crontabEditorHelper.py:170
-msgid "Edit Time Expression for day"
-msgstr "Muokkaa aikaesityksen päiviä"
+#: ../src/crontabEditorHelper.py:171
+#, fuzzy
+msgid "Edit weekday"
+msgstr "viikonpäivä"
 
-#: ../src/crontabEditorHelper.py:172
-msgid "Month settings"
-msgstr "Kuukausiasetukset"
-
-#: ../src/crontabEditorHelper.py:173
-msgid "Edit Time Expression for month"
-msgstr "Muokkaa aikaesityksen kuukausia"
-
-#: ../src/crontabEditorHelper.py:175
-msgid "Weekday settings"
-msgstr "Viikonpäiväasetukset"
-
-#: ../src/crontabEditorHelper.py:176
-msgid "Edit Time Expression for weekday"
-msgstr "Muokkaa aikalauseketta viikonpäivälle"
-
-#: ../src/crontabEditorHelper.py:190
+#: ../src/crontabEditorHelper.py:185
 #, python-format
 msgid "This is invalid. Reason: %s"
 msgstr "Tämä on virheellinen. Syy: %s"
 
 #. minute
-#: ../src/crontabEditorHelper.py:236 ../src/gnome-schedule.glade.h:15
+#: ../src/crontabEditorHelper.py:231 ../src/gnome-schedule.glade.h:15
 msgid "At an exact minute"
 msgstr "Tiettynä minuuttina"
 
-#: ../src/crontabEditorHelper.py:237 ../src/gnome-schedule.glade.h:42
+#: ../src/crontabEditorHelper.py:232 ../src/gnome-schedule.glade.h:41
 msgid "Minute:"
 msgstr "Minuutti:"
 
 #. hour
-#: ../src/crontabEditorHelper.py:240
+#: ../src/crontabEditorHelper.py:235
 msgid "At an exact hour"
 msgstr "Tiettynä tuntina"
 
-#: ../src/crontabEditorHelper.py:241
+#: ../src/crontabEditorHelper.py:236 ../src/gnome-schedule.glade.h:37
 msgid "Hour:"
 msgstr "Tunti:"
 
 #. day
-#: ../src/crontabEditorHelper.py:244
+#: ../src/crontabEditorHelper.py:239
 msgid "On a day"
 msgstr "Päivänä"
 
-#: ../src/crontabEditorHelper.py:245
+#: ../src/crontabEditorHelper.py:240 ../src/gnome-schedule.glade.h:23
 msgid "Day:"
 msgstr "Päivä:"
 
 #. month
-#: ../src/crontabEditorHelper.py:248
+#: ../src/crontabEditorHelper.py:243
 msgid "In a month"
 msgstr "Kuukadessa"
 
-#: ../src/crontabEditorHelper.py:249
+#: ../src/crontabEditorHelper.py:244 ../src/gnome-schedule.glade.h:43
 msgid "Month:"
 msgstr "Kuukausi:"
 
 #. weekday
-#: ../src/crontabEditorHelper.py:252
+#: ../src/crontabEditorHelper.py:247
 msgid "On a weekday"
 msgstr "viikonpäivinä"
 
-#: ../src/crontabEditorHelper.py:253
+#: ../src/crontabEditorHelper.py:248 ../src/gnome-schedule.glade.h:55
 msgid "Weekday:"
 msgstr "Viikonpäivä:"
 
-#: ../src/crontabEditorHelper.py:258 ../src/gnome-schedule.glade.h:40
+#: ../src/crontabEditorHelper.py:253 ../src/gnome-schedule.glade.h:39
 msgid "In a step width"
 msgstr "Askelvälillä"
 
-#: ../src/crontabEditorHelper.py:260 ../src/gnome-schedule.glade.h:43
+#: ../src/crontabEditorHelper.py:255 ../src/gnome-schedule.glade.h:42
 msgid "Minutes:"
 msgstr "Minuuttia:"
 
-#: ../src/crontabEditorHelper.py:262
+#: ../src/crontabEditorHelper.py:257
 msgid "Hours:"
 msgstr "Tunteja:"
 
-#: ../src/crontabEditorHelper.py:264
+#: ../src/crontabEditorHelper.py:259
 msgid "Days:"
 msgstr "Päiviä:"
 
-#: ../src/crontabEditorHelper.py:266
+#: ../src/crontabEditorHelper.py:261
 msgid "Months:"
 msgstr "Kuukausia:"
 
-#: ../src/crontabEditorHelper.py:268
+#: ../src/crontabEditorHelper.py:263
 msgid "Weekdays:"
 msgstr "Viikonpäiviä:"
 
@@ -339,7 +321,7 @@ msgstr "_Tietoja"
 msgid "_Add a task"
 msgstr "_Lisää tehtävä"
 
-#: ../src/gnome-schedule-applet.xml.h:3 ../src/gnome-schedule.glade.h:64
+#: ../src/gnome-schedule-applet.xml.h:3
 msgid "_Help"
 msgstr "O_hje"
 
@@ -348,115 +330,121 @@ msgid "_Manage tasks"
 msgstr "_Hallitse tehtäviä"
 
 #: ../src/gnome-schedule.glade.h:1
+msgid "*"
+msgstr ""
+
+#: ../src/gnome-schedule.glade.h:2
+msgid "-"
+msgstr ""
+
+#: ../src/gnome-schedule.glade.h:3
+msgid "0"
+msgstr ""
+
+#: ../src/gnome-schedule.glade.h:4
+msgid ":"
+msgstr ""
+
+#: ../src/gnome-schedule.glade.h:5
+msgid "<b>Choose a template to create a task from:</b>"
+msgstr ""
+
+#: ../src/gnome-schedule.glade.h:6
 msgid "<b>Choose the user whose tasks you want to modify</b>"
 msgstr "<b>Valitse käyttäjä, jonka tehtviä haluat muokata</b>"
 
-#: ../src/gnome-schedule.glade.h:2
-msgid "<b>Date and Time Settings</b>"
-msgstr "<b>Aika ja päivämääräasetukset</b>"
-
-#: ../src/gnome-schedule.glade.h:3
-msgid "<b>Execution Time</b>"
-msgstr "<b>Suoritushetki</b>"
-
-#: ../src/gnome-schedule.glade.h:4
-msgid "<b>General</b>"
-msgstr "<b>Yleinen</b>"
-
-#: ../src/gnome-schedule.glade.h:5
-msgid "<b>Minute settings</b>"
+#: ../src/gnome-schedule.glade.h:7
+#, fuzzy
+msgid "<b>Manage templates</b>"
 msgstr "<b>Minuuttiasetukset</b>"
 
-#: ../src/gnome-schedule.glade.h:6
-msgid "<b>Preview</b>"
-msgstr "<b>Esikatselu</b>"
-
-#: ../src/gnome-schedule.glade.h:7
-msgid "<b>Select the type of the scheduled task</b>"
+#: ../src/gnome-schedule.glade.h:8
+#, fuzzy
+msgid "<b>Select the type of the scheduled task:</b>"
 msgstr "<b>Valitse ajastetun tehtävän tyyppi</b>"
 
-#: ../src/gnome-schedule.glade.h:8
-msgid "<b>Task</b>"
-msgstr "<b>Tehtävä</b>"
-
 #: ../src/gnome-schedule.glade.h:9
-msgid "A scheduled task that will launch _recurrently"
-msgstr "_Toistuvasti käynnistyvä ajastettu tehtävä"
+msgid ""
+"<b>To create a new template you need to use the <i>Add as template</i> "
+"button in the windows where you create new tasks</b>"
+msgstr ""
 
 #: ../src/gnome-schedule.glade.h:10
-msgid "A scheduled task that will launch only once in the _future"
-msgstr "_Kerran suoritettava ajastettu tehtävä"
+#, fuzzy
+msgid "<big>Preview</big>"
+msgstr "<b>Esikatselu</b>"
 
 #: ../src/gnome-schedule.glade.h:11
-msgid "About this application"
-msgstr "Tietoja tästä sovelluksesta"
+msgid "<big>Time &amp; Date</big>"
+msgstr ""
 
 #: ../src/gnome-schedule.glade.h:12
 msgid "Add a Scheduled Task"
 msgstr "Lisää ajastettu tehtävä"
 
 #: ../src/gnome-schedule.glade.h:13
-msgid "Add a new scheduled task"
-msgstr "Lisää uusi ajastettu tehtävä"
+#, fuzzy
+msgid "Add as template"
+msgstr "_Lisää tehtävä"
 
 #: ../src/gnome-schedule.glade.h:14
 msgid "Advanced"
 msgstr "Lisäasetukset"
-
-#: ../src/gnome-schedule.glade.h:16
-msgid "Basic"
-msgstr "Perus"
 
 #: ../src/gnome-schedule.glade.h:17
 msgid "Change User"
 msgstr "Vaihda käyttäjää"
 
 #: ../src/gnome-schedule.glade.h:18
-msgid "Change _User"
-msgstr "Vaihda _käyttäjää"
+msgid "Choose template"
+msgstr ""
 
 #: ../src/gnome-schedule.glade.h:19
-msgid "Choose an icon for this scheduled task"
-msgstr "Valitse kuvake tälle ajastetulle tehtävälle"
-
-#: ../src/gnome-schedule.glade.h:20
 msgid "Choose the user whose tasks you want to modify"
 msgstr "Valitse käyttäjä, jonka tehtäviä haluat muokata"
 
-#: ../src/gnome-schedule.glade.h:21
-msgid "Co_mmand:"
+#: ../src/gnome-schedule.glade.h:20
+#, fuzzy
+msgid "Command:"
 msgstr "Ko_mento:"
 
-#: ../src/gnome-schedule.glade.h:22
+#: ../src/gnome-schedule.glade.h:21
 msgid "Configure Scheduled Tasks"
 msgstr "Muokkaa ajastettuja tehtäviä"
 
-#: ../src/gnome-schedule.glade.h:23
-msgid "Date and Time"
-msgstr "Aika ja päiväys"
+#: ../src/gnome-schedule.glade.h:22
+#, fuzzy
+msgid "Date:"
+msgstr "_Päiväys:"
 
 #: ../src/gnome-schedule.glade.h:24
 msgid "Delete a scheduled task"
 msgstr "Poista ajastettu tehtävä"
 
 #: ../src/gnome-schedule.glade.h:25
-msgid "Delete the selected template"
-msgstr "Poista valittu malli"
+#, fuzzy
+msgid "Description:"
+msgstr "_Kuvaus:"
 
 #: ../src/gnome-schedule.glade.h:26
-msgid "Desc_ription:"
-msgstr "_Kuvaus:"
+#, fuzzy
+msgid "Edit a periodical task"
+msgstr "Muokkaa ajastettua tehtävää"
 
 #: ../src/gnome-schedule.glade.h:27
 msgid "Edit a scheduled task"
 msgstr "Muokkaa ajastettua tehtävää"
 
-#: ../src/gnome-schedule.glade.h:29
+#: ../src/gnome-schedule.glade.h:30
+msgid "Execute at:"
+msgstr ""
+
+#: ../src/gnome-schedule.glade.h:31
 msgid "Execution at a specific minute, hour, day, weekday or month."
 msgstr ""
 "Suoritus tiettynä minuuttina, tuntina, päivänä, viikonpäivänä tai kuukautena."
 
-#: ../src/gnome-schedule.glade.h:30
+#: ../src/gnome-schedule.glade.h:32
 msgid ""
 "Execution at a step width. For example every five minutes, hours, days, "
 "weekdays or months."
@@ -464,175 +452,105 @@ msgstr ""
 "Suoritus tietyllä askelvälillä, kuten joka viides minuutti, joka toinen "
 "päivä ja niin edelleen."
 
-#: ../src/gnome-schedule.glade.h:31
+#: ../src/gnome-schedule.glade.h:33
 msgid "Execution at every minute, hour, day, weekday or month."
 msgstr "Suoritetaan joka minuutti, tunti, äivä, viikonpäivä tai kuukausi."
 
-#: ../src/gnome-schedule.glade.h:32
+#: ../src/gnome-schedule.glade.h:34
 msgid "Execution in a range."
 msgstr "Suoritetaan tietyllä välillä."
 
-#: ../src/gnome-schedule.glade.h:33
+#: ../src/gnome-schedule.glade.h:35
 msgid "Expression:"
 msgstr "Ilmaisu:"
 
-#: ../src/gnome-schedule.glade.h:34
-msgid "For example at 04:10 tomorrow, next week or in three days"
-msgstr "Esimerkiksi 04:10 huomenna, ensiviikolla tai kolmen päivän päästä"
-
-#: ../src/gnome-schedule.glade.h:35
-msgid "For example every first hour of the day"
-msgstr "Esimerkiksi joka päivän ensimmäisenä tuntina"
-
 #: ../src/gnome-schedule.glade.h:36
-msgid "For experienced users"
-msgstr "Kokeneille käyttäjille"
-
-#: ../src/gnome-schedule.glade.h:37
 msgid "From:"
 msgstr "Alkaen:"
 
 #: ../src/gnome-schedule.glade.h:38
-msgid "Ico_n:"
-msgstr "_Kuvake"
-
-#: ../src/gnome-schedule.glade.h:39
 msgid "In a range"
 msgstr "Välillä"
 
-#: ../src/gnome-schedule.glade.h:41
-msgid "Mi_nutes:"
-msgstr "_Minuutti"
+#: ../src/gnome-schedule.glade.h:40
+#, fuzzy
+msgid "Manage templates"
+msgstr "_Hallitse tehtäviä"
 
 #: ../src/gnome-schedule.glade.h:44
-msgid "No out_put"
-msgstr "Ei _tulostetta"
-
-#: ../src/gnome-schedule.glade.h:45
 msgid "Other"
 msgstr "Muu"
 
-#: ../src/gnome-schedule.glade.h:46
-msgid ""
-"Quit the application. This will not stop the system scheduling. It will, "
-"however, quit this system schedule maintenance tool."
+#: ../src/gnome-schedule.glade.h:45
+msgid "Run task"
 msgstr ""
-"Sulje ohjelma. Tämä ei lopeta järjestelmä ajastustoimintoja, vaan sulkee "
-"ainoastaan tämän hallintatyökalun."
 
-#: ../src/gnome-schedule.glade.h:47
-msgid "Rec_urrence:"
-msgstr "Toi_stuvuus:"
-
-#: ../src/gnome-schedule.glade.h:48
-msgid "Save the current information as a template"
-msgstr "Tallenna valitut tiedot pohjaksi"
-
-#: ../src/gnome-schedule.glade.h:49
+#: ../src/gnome-schedule.glade.h:46
 msgid "Scheduled and active tasks"
 msgstr "Ajastetut ja suorituksessa olevat tehtävät"
 
-#: ../src/gnome-schedule.glade.h:50
-msgid "Scri_pt:"
-msgstr "Skri_pti:"
-
-#: ../src/gnome-schedule.glade.h:51
+#: ../src/gnome-schedule.glade.h:47
 msgid "See \"man 5 crontab\" for information about the crontab format."
 msgstr "Katso lisätietoa crontab-muotoilusta komennolla \"man 5 crontab\"."
 
-#: ../src/gnome-schedule.glade.h:52
-msgid "Select..."
-msgstr "Valitse..."
-
-#: ../src/gnome-schedule.glade.h:53
+#: ../src/gnome-schedule.glade.h:48
 msgid "Show help"
 msgstr "Näytä ohje"
 
-#: ../src/gnome-schedule.glade.h:54
-msgid "Show the manual"
-msgstr "Näytä käyttöopas"
+#: ../src/gnome-schedule.glade.h:49
+#, fuzzy
+msgid "Task description:"
+msgstr "_Kuvaus:"
 
-#: ../src/gnome-schedule.glade.h:55
+#: ../src/gnome-schedule.glade.h:50
+#, fuzzy
+msgid "Task:"
+msgstr "_Tehtävä"
+
+#: ../src/gnome-schedule.glade.h:51 ../src/mainWindow.py:184
+#, fuzzy
+msgid "Templates"
+msgstr "_Malli:"
+
+#: ../src/gnome-schedule.glade.h:52
 msgid "Time expression help"
 msgstr "Aikailmaisun ohje"
 
-#: ../src/gnome-schedule.glade.h:56
+#: ../src/gnome-schedule.glade.h:53
+msgid "Time:"
+msgstr "Aika:"
+
+#: ../src/gnome-schedule.glade.h:54
 msgid "To:"
 msgstr "Saakka:"
 
+#: ../src/gnome-schedule.glade.h:56
+msgid "_No output (>/dev/null 2>&1)"
+msgstr ""
+
 #: ../src/gnome-schedule.glade.h:57
-msgid ""
-"Tomorrow\n"
-"Next week"
-msgstr ""
-"Huomenna\n"
-"Ensi viikolla"
-
-#: ../src/gnome-schedule.glade.h:59
-msgid ""
-"When selected, no output will be generated. When scheduled tasks in the "
-"crontab do have output and this option is not checked, the output will by "
-"default be send to the UNIX mailbox of the user."
-msgstr ""
-"Piilota tulosteet, jos tämä on valittu. Kun crontabista ajastetut tehtävät "
-"kirjoittavat viestejä eikä tämä asetus ole asetettu, lähetetään viestit "
-"oletuksena käyttäjän UNIX-postilaatikkoon."
-
-#: ../src/gnome-schedule.glade.h:60
-msgid "_About"
-msgstr "_Tietoja"
-
-#: ../src/gnome-schedule.glade.h:61
-msgid "_Advanced"
-msgstr "_Lisäasetukset"
-
-#: ../src/gnome-schedule.glade.h:62
-msgid "_Date:"
-msgstr "_Päiväys:"
-
-#: ../src/gnome-schedule.glade.h:63
-msgid "_Days of month:"
-msgstr "_Kuukauden päivät:"
-
-#: ../src/gnome-schedule.glade.h:65
-msgid "_Hour:"
-msgstr "_Tunti:"
-
-#: ../src/gnome-schedule.glade.h:66
-msgid "_Hours:"
-msgstr "_Tunnit:"
-
-#: ../src/gnome-schedule.glade.h:67
-msgid "_Manual"
-msgstr "_Manuaalinen"
-
-#: ../src/gnome-schedule.glade.h:68
-msgid "_Minute:"
-msgstr "_Minuutti:"
-
-#: ../src/gnome-schedule.glade.h:69
-msgid "_Months:"
-msgstr "_Kuukausia:"
-
-#: ../src/gnome-schedule.glade.h:70
-msgid "_Task"
-msgstr "_Tehtävä"
-
-#: ../src/gnome-schedule.glade.h:71
-msgid "_Template:"
-msgstr "_Malli:"
-
-#: ../src/gnome-schedule.glade.h:72
 msgid "_User:"
 msgstr "_Käyttäjä:"
 
-#: ../src/gnome-schedule.glade.h:73
-msgid "_View"
-msgstr "_Näytä"
+#: ../src/gnome-schedule.glade.h:58
+msgid "gtk-apply"
+msgstr ""
 
-#: ../src/gnome-schedule.glade.h:74
-msgid "_Weekdays:"
-msgstr "_Viikonpäivät:"
+#: ../src/gnome-schedule.glade.h:59
+msgid "gtk-cancel"
+msgstr ""
+
+#: ../src/gnome-schedule.glade.h:60
+msgid "gtk-delete"
+msgstr ""
+
+#: ../src/gnome-schedule.glade.h:61
+msgid "gtk-edit"
+msgstr ""
+
+#: ../src/gnome-schedule.glade.h:62
+msgid "ls -l"
+msgstr ""
 
 #: ../src/gnome-schedule.py:62 ../src/scheduleapplet.py:63
 msgid ""
@@ -959,67 +877,123 @@ msgstr "viikonpäivä: %s"
 msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 msgstr "%(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 
-#: ../src/mainWindow.py:211 ../src/mainWindow.py:289
+#: ../src/mainWindow.py:111
+#, fuzzy
+msgid "Recurrent task"
+msgstr "Toistuva"
+
+#: ../src/mainWindow.py:122
+#, fuzzy
+msgid "One-time task"
+msgstr "Kerran"
+
+#: ../src/mainWindow.py:133
+#, fuzzy
+msgid "From template"
+msgstr "_Malli:"
+
+#: ../src/mainWindow.py:152
+#, fuzzy
+msgid "Add a new task"
+msgstr "_Lisää tehtävä"
+
+#: ../src/mainWindow.py:285 ../src/mainWindow.py:396
 #, python-format
 msgid "Editing user: %s"
 msgstr "Muokataan käyttäjää: %s"
 
-#: ../src/mainWindow.py:263 ../src/scheduleapplet.py:115
+#: ../src/mainWindow.py:336 ../src/mainWindow.py:357 ../src/mainWindow.py:367
+#: ../src/scheduleapplet.py:115
 msgid "ERROR: Could not load icon"
 msgstr "VIRHE: kuvaketta ei voitu ladata"
 
-#: ../src/mainWindow.py:273
+#: ../src/mainWindow.py:377
 msgid "ERROR: Could not load glade file"
 msgstr "VIRHE: Glade-tiedostoa ei voitu ladata"
 
-#: ../src/mainWindow.py:324
-msgid "Icon"
-msgstr "Kuvake"
+#: ../src/mainWindow.py:431 ../src/template_chooser.py:61
+#: ../src/template_manager.py:62
+#, fuzzy
+msgid "Task"
+msgstr "_Tehtävä"
 
-#: ../src/mainWindow.py:329 ../src/mainWindow.py:362
-msgid "Type"
-msgstr "Tyyppi"
-
-#: ../src/mainWindow.py:333 ../src/mainWindow.py:358
+#: ../src/mainWindow.py:444 ../src/mainWindow.py:470
+#: ../src/template_chooser.py:70 ../src/template_manager.py:71
 msgid "Description"
 msgstr "Kuvaus"
 
-#: ../src/mainWindow.py:337 ../src/mainWindow.py:349
-msgid "Date and Time Settings"
-msgstr "Päivän ja ajan asetukset"
+#: ../src/mainWindow.py:448 ../src/mainWindow.py:461
+msgid "Date and Time"
+msgstr "Aika ja päiväys"
 
-#: ../src/mainWindow.py:341 ../src/mainWindow.py:353
-msgid "Preview"
-msgstr "Esikatselu"
+#: ../src/mainWindow.py:452 ../src/mainWindow.py:465
+msgid "Command preview"
+msgstr ""
 
-#: ../src/mainWindow.py:397 ../src/mainWindow.py:460
+#. print ex
+#: ../src/mainWindow.py:521 ../src/mainWindow.py:584
 msgid "Please select a task"
 msgstr "Valitse tehtävä"
 
-#: ../src/mainWindow.py:404
+#: ../src/mainWindow.py:528
 msgid "Do you want to delete this task?"
 msgstr "Haluatko poistaa tämän tehtävän?"
 
-#: ../src/mainWindow.py:508
+#: ../src/mainWindow.py:629
+msgid ""
+"Are you sure you want to run this task now?\n"
+"\n"
+"This is used to preview the task and initiates a one-time run, this does not "
+"affect the normal scheduled run times."
+msgstr ""
+
+#: ../src/mainWindow.py:631
+#, fuzzy
+msgid "Are you sure you want to run this task?"
+msgstr "Haluatko poistaa tämän tehtävän?"
+
+#: ../src/mainWindow.py:640
+msgid ""
+"Note about working directory of executed tasks:\n"
+"\n"
+"Recurrent tasks will be run from the home directory, one-time tasks from the "
+"directory where Gnome schedule was run from at the time of task creation "
+"(normally the home directory)."
+msgstr ""
+
+#: ../src/mainWindow.py:695
+msgid "Press ENTER to continue and close this window."
+msgstr ""
+
+#: ../src/mainWindow.py:703
+#, fuzzy
+msgid "Please select a task!"
+msgstr "Valitse tehtävä"
+
+#: ../src/mainWindow.py:711
 msgid "About Gnome Schedule"
 msgstr "Tietoja Gnome-ajastuksesta"
 
-#: ../src/mainWindow.py:509
+#: ../src/mainWindow.py:712
 msgid "Gnome Schedule"
 msgstr "Gnome-ajastus"
 
-#: ../src/mainWindow.py:511
+#: ../src/mainWindow.py:714
 #, python-format
 msgid "Copyright (c) %(year)s %(name)s."
 msgstr ""
 
-#: ../src/mainWindow.py:524
+#: ../src/mainWindow.py:727
 msgid "translator-credits"
 msgstr ""
 "Ilkka Tuohela, 2006-2007\n"
 "Tommi Vainikainen, 2005\n"
 "\n"
 "http://gnome.fi/"
+
+#: ../src/mainWindow.py:748
+msgid "Could not display help"
+msgstr "Ohjetta ei voi näyttää"
 
 #: ../src/scheduleapplet.py:131
 msgid "ERROR: Could not load menu xml file"
@@ -1029,20 +1003,248 @@ msgstr "VIRHE: valikon XML-tiedostoa ei voitu ladata"
 msgid "No such user"
 msgstr "Käyttäjä on tuntematon"
 
-#: ../src/atEditor.py:278
+#: ../src/addWindow.py:48
+#, fuzzy
+msgid "A task that launches recurrently"
+msgstr "_Toistuvasti käynnistyvä ajastettu tehtävä"
+
+#: ../src/addWindow.py:61
+msgid "A task that launches one time"
+msgstr ""
+
+#: ../src/addWindow.py:74
+msgid "A task from a predefined template"
+msgstr ""
+
+#: ../src/atEditor.py:76
+msgid "Calendar"
+msgstr ""
+
+#: ../src/atEditor.py:359
+#, fuzzy
 msgid ""
-"In one or both of the fields hour and minute there was entered a letter or a "
-"number out of range. Remember an hour only has 60 minutes and a day only 24 "
-"hours."
+"In one or both of the fields hour and minute there was entered a letter, or "
+"a number out of range. Remember an hour only has 60 minutes and a day only "
+"24 hours."
 msgstr ""
 "Joko tunti- tai minuuttikenttään syötettiin kirjain tai numero, joka ei ole "
 "kelvollinen. Muistathan että tunnissa on vain 60 minuuttia ja päivässä 24 "
 "tuntia."
 
-#: ../src/atEditor.py:543
+#: ../src/atEditor.py:418
 #, python-format
 msgid "This is an invalid record! The problem could be: %s"
 msgstr "Virheellinen tietue! Mahdollinen ongelma: %s"
+
+#: ../src/atEditor.py:439
+msgid ""
+"Note about working directory of executed tasks:\n"
+"\n"
+"One-time tasks will be run from the directory where Gnome schedule is run "
+"from (normally the home directory)."
+msgstr ""
+
+#: ../src/thoughicon.py:70
+msgid "ICON: Using dummy icon"
+msgstr ""
+
+#: ../src/thoughicon.py:73
+#, python-format
+msgid "ICON: Doesn't handle absolute paths: '%s'"
+msgstr ""
+
+#: ../src/thoughicon.py:82
+#, python-format
+msgid "ICON: Icon '%s' is not in theme"
+msgstr ""
+
+#: ../src/thoughicon.py:94
+#, python-format
+msgid "ICON: Got badly sized icon for %s"
+msgstr ""
+
+#: ../src/template_chooser.py:83 ../src/template_manager.py:84
+msgid "One-time"
+msgstr "Kerran"
+
+#~ msgid "Use advanced"
+#~ msgstr "Käytä lisäasetuksia"
+
+#~ msgid "Don't use a preset"
+#~ msgstr "Älä käytä esiasetusta"
+
+#~ msgid "The preset has not been saved"
+#~ msgstr "Esiasetusta ei tallennettu"
+
+#~ msgid "To delete a preset, you first need to select one"
+#~ msgstr "Esiasetus täytyy valita ennen kuin voit poistaa sen"
+
+#~ msgid "To save a preset, you first have to choose a name for it"
+#~ msgstr "Esiasetukselle täytyy antaa nimi ennen kuin sen voi tallentaa"
+
+#~ msgid "Choose an Icon for this Scheduled Task"
+#~ msgstr "Valitse kuvake tälle ajastetulle tehtävälle"
+
+#~ msgid "command"
+#~ msgstr "komento"
+
+#~ msgid "Minute settings"
+#~ msgstr "Minuuttiasetukset"
+
+#~ msgid "Edit Time Expression for minute"
+#~ msgstr "Muokkaa aikaesityksen minuutteja"
+
+#~ msgid "Hour settings"
+#~ msgstr "Tuntiasetukset"
+
+#~ msgid "Edit Time Expression for hour"
+#~ msgstr "Muokkaa aikaesityksen tunteja"
+
+#~ msgid "Day settings"
+#~ msgstr "Päiväasetukset"
+
+#~ msgid "Edit Time Expression for day"
+#~ msgstr "Muokkaa aikaesityksen päiviä"
+
+#~ msgid "Month settings"
+#~ msgstr "Kuukausiasetukset"
+
+#~ msgid "Edit Time Expression for month"
+#~ msgstr "Muokkaa aikaesityksen kuukausia"
+
+#~ msgid "Weekday settings"
+#~ msgstr "Viikonpäiväasetukset"
+
+#~ msgid "Edit Time Expression for weekday"
+#~ msgstr "Muokkaa aikalauseketta viikonpäivälle"
+
+#~ msgid "<b>Date and Time Settings</b>"
+#~ msgstr "<b>Aika ja päivämääräasetukset</b>"
+
+#~ msgid "<b>Execution Time</b>"
+#~ msgstr "<b>Suoritushetki</b>"
+
+#~ msgid "<b>General</b>"
+#~ msgstr "<b>Yleinen</b>"
+
+#~ msgid "<b>Task</b>"
+#~ msgstr "<b>Tehtävä</b>"
+
+#~ msgid "A scheduled task that will launch only once in the _future"
+#~ msgstr "_Kerran suoritettava ajastettu tehtävä"
+
+#~ msgid "About this application"
+#~ msgstr "Tietoja tästä sovelluksesta"
+
+#~ msgid "Add a new scheduled task"
+#~ msgstr "Lisää uusi ajastettu tehtävä"
+
+#~ msgid "Change _User"
+#~ msgstr "Vaihda _käyttäjää"
+
+#~ msgid "Choose an icon for this scheduled task"
+#~ msgstr "Valitse kuvake tälle ajastetulle tehtävälle"
+
+#~ msgid "Delete the selected template"
+#~ msgstr "Poista valittu malli"
+
+#~ msgid "For example at 04:10 tomorrow, next week or in three days"
+#~ msgstr "Esimerkiksi 04:10 huomenna, ensiviikolla tai kolmen päivän päästä"
+
+#~ msgid "For example every first hour of the day"
+#~ msgstr "Esimerkiksi joka päivän ensimmäisenä tuntina"
+
+#~ msgid "For experienced users"
+#~ msgstr "Kokeneille käyttäjille"
+
+#~ msgid "Ico_n:"
+#~ msgstr "_Kuvake"
+
+#~ msgid "Mi_nutes:"
+#~ msgstr "_Minuutti"
+
+#~ msgid "No out_put"
+#~ msgstr "Ei _tulostetta"
+
+#~ msgid ""
+#~ "Quit the application. This will not stop the system scheduling. It will, "
+#~ "however, quit this system schedule maintenance tool."
+#~ msgstr ""
+#~ "Sulje ohjelma. Tämä ei lopeta järjestelmä ajastustoimintoja, vaan sulkee "
+#~ "ainoastaan tämän hallintatyökalun."
+
+#~ msgid "Rec_urrence:"
+#~ msgstr "Toi_stuvuus:"
+
+#~ msgid "Save the current information as a template"
+#~ msgstr "Tallenna valitut tiedot pohjaksi"
+
+#~ msgid "Scri_pt:"
+#~ msgstr "Skri_pti:"
+
+#~ msgid "Select..."
+#~ msgstr "Valitse..."
+
+#~ msgid "Show the manual"
+#~ msgstr "Näytä käyttöopas"
+
+#~ msgid ""
+#~ "Tomorrow\n"
+#~ "Next week"
+#~ msgstr ""
+#~ "Huomenna\n"
+#~ "Ensi viikolla"
+
+#~ msgid ""
+#~ "When selected, no output will be generated. When scheduled tasks in the "
+#~ "crontab do have output and this option is not checked, the output will by "
+#~ "default be send to the UNIX mailbox of the user."
+#~ msgstr ""
+#~ "Piilota tulosteet, jos tämä on valittu. Kun crontabista ajastetut "
+#~ "tehtävät kirjoittavat viestejä eikä tämä asetus ole asetettu, lähetetään "
+#~ "viestit oletuksena käyttäjän UNIX-postilaatikkoon."
+
+#~ msgid "_About"
+#~ msgstr "_Tietoja"
+
+#~ msgid "_Advanced"
+#~ msgstr "_Lisäasetukset"
+
+#~ msgid "_Days of month:"
+#~ msgstr "_Kuukauden päivät:"
+
+#~ msgid "_Hour:"
+#~ msgstr "_Tunti:"
+
+#~ msgid "_Hours:"
+#~ msgstr "_Tunnit:"
+
+#~ msgid "_Manual"
+#~ msgstr "_Manuaalinen"
+
+#~ msgid "_Minute:"
+#~ msgstr "_Minuutti:"
+
+#~ msgid "_Months:"
+#~ msgstr "_Kuukausia:"
+
+#~ msgid "_View"
+#~ msgstr "_Näytä"
+
+#~ msgid "_Weekdays:"
+#~ msgstr "_Viikonpäivät:"
+
+#~ msgid "Icon"
+#~ msgstr "Kuvake"
+
+#~ msgid "Type"
+#~ msgstr "Tyyppi"
+
+#~ msgid "Date and Time Settings"
+#~ msgstr "Päivän ja ajan asetukset"
+
+#~ msgid "Preview"
+#~ msgstr "Esikatselu"
 
 #, fuzzy
 #~ msgid "Copyright (c) 2004-2008 Gaute Hope."
@@ -1082,9 +1284,6 @@ msgstr "Virheellinen tietue! Mahdollinen ongelma: %s"
 #~ msgid "to"
 #~ msgstr "-"
 
-#~ msgid "One-time"
-#~ msgstr "Kerran"
-
 #~ msgid "week"
 #~ msgstr "viikko"
 
@@ -1105,9 +1304,6 @@ msgstr "Virheellinen tietue! Mahdollinen ongelma: %s"
 
 #~ msgid "Set user"
 #~ msgstr "Aseta käyttäjä"
-
-#~ msgid "Time:"
-#~ msgstr "Aika:"
 
 #~ msgid "Treeview"
 #~ msgstr "Puunäkymä"

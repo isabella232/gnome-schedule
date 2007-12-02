@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-12-01 17:55+0100\n"
+"POT-Creation-Date: 2007-12-02 20:04+0100\n"
 "PO-Revision-Date: 2007-12-01 17:04+0100\n"
 "Last-Translator: Gaute Hope <eg@gaute.vetsj.org>\n"
 "Language-Team: Norwegian/Nynorsk <nn@li.org>\n"
@@ -1052,10 +1052,10 @@ msgstr "Om Gnome Schedule"
 msgid "Gnome Schedule"
 msgstr "Gnome Schedule"
 
-#
 #: ../src/mainWindow.py:714
-msgid "Copyright (c) 2004-2008 Gaute Hope."
-msgstr "Kopieringsrett (c) 2004-2006 Gaute Hope."
+#, python-format
+msgid "Copyright (c) %(year)s %(name)s."
+msgstr ""
 
 #: ../src/mainWindow.py:727
 msgid "translator-credits"
@@ -1139,3 +1139,7 @@ msgstr "IKON: Fekk dårleg ikon med dårleg storleik: %s"
 #: ../src/template_chooser.py:83 ../src/template_manager.py:84
 msgid "One-time"
 msgstr "Ein-gong"
+
+#
+#~ msgid "Copyright (c) 2004-2008 Gaute Hope."
+#~ msgstr "Kopieringsrett (c) 2004-2006 Gaute Hope."
