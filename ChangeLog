@@ -1,7 +1,11 @@
+2007-12-03  Gaute Hope  <eg@gaute.vetsj.com>
+
+	* Bug 463863: Removed Encoding field in desktop entry, is deprecated
+
 2007-12-02  Gaute Hope  <eg@gaute.vetsj.com>
 
 	* Released 1.2.1 and merged new-ui to trunk/
-	
+
 2007-12-01  Gaute Hope  <eg@gaute.vetsj.com>
 
 	* Merged tweakings from trunk concerning text strings in dom fields.
