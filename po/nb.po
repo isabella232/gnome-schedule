@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule 0.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-12-02 20:04+0100\n"
+"POT-Creation-Date: 2007-12-09 20:39+0100\n"
 "PO-Revision-Date: 2005-01-16 15:36+0100\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Noksk bokmal <i18n-nb@lister.ping.uio.no>\n"
@@ -403,7 +403,8 @@ msgstr ""
 msgid "Choose the user whose tasks you want to modify"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:20
+#: ../src/gnome-schedule.glade.h:20 ../src/template.py:188
+#: ../src/template.py:198
 #, fuzzy
 msgid "Command:"
 msgstr "kommando"
@@ -1017,6 +1018,20 @@ msgstr ""
 msgid "ICON: Got badly sized icon for %s"
 msgstr ""
 
+#: ../src/template.py:188 ../src/template.py:198
+#, fuzzy
+msgid "Title:"
+msgstr "Tittel"
+
+#: ../src/template.py:198
+#, fuzzy
+msgid "Run:"
+msgstr "Kjør"
+
+#: ../src/template.py:200
+msgid "No output"
+msgstr ""
+
 #: ../src/template_chooser.py:83 ../src/template_manager.py:84
 msgid "One-time"
 msgstr ""
@@ -1097,11 +1112,5 @@ msgstr ""
 #~ msgid "Active user"
 #~ msgstr "Aktiv bruker"
 
-#~ msgid "Run"
-#~ msgstr "Kjør"
-
 #~ msgid "Set user"
 #~ msgstr "Sett bruker"
-
-#~ msgid "Title"
-#~ msgstr "Tittel"

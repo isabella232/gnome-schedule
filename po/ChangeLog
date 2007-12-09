@@ -1,3 +1,8 @@
+2007-12-09  Kjartan Maraas  <kmaraas@gnome.org>
+
+	* POTFILES.in: Added template.py.
+	* nb.po: Update some.
+
 2007-12-01  Gaute Hope  <eg@gaute.vetsj.com>
 
 	* nn.po: Updated norwegian translation.
