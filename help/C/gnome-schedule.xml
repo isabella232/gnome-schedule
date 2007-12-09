@@ -61,7 +61,7 @@
 	any of this. -->
 
     <authorgroup> 
-      <author> 
+        <author role="maintainer">
 		<firstname>Rodrigo</firstname> 
 		<surname>Marcos Fombellida</surname> 
 		<affiliation> 

@@ -1,3 +1,9 @@
+2007-12-08  Gaute Hope  <eg@gaute.vetsj.com>
+
+	* Some minor tweaks from: https://bugs.launchpad.net/ubuntu/+source/gnome-schedule/+bug/174467
+	* Changed version to 1.9.0
+	* Moved icon to System subcategory
+	
 2007-12-03  Gaute Hope  <eg@gaute.vetsj.com>
 
 	* Bug 463863: Removed Encoding field in desktop entry, is deprecated
