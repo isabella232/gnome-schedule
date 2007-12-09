@@ -1,3 +1,9 @@
+2007-12-08  Gaute Hope  <eg@gaute.vetsj.com>
+
+	* Created branch for continued development on gs-1.x
+	* Some minor tweaks from: https://bugs.launchpad.net/ubuntu/+source/gnome-schedule/+bug/174467
+	* Moved icon to System subcategory
+	
 2007-12-01  Gaute Hope  <eg@gaute.vetsj.com>
 
 	* Changed version number to 1.2.1
