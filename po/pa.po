@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pa\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-12-13 18:16+0100\n"
+"POT-Creation-Date: 2007-12-13 20:52+0100\n"
 "PO-Revision-Date: 2004-12-07 19:10+0530\n"
 "Last-Translator: Amanpreet Singh Alam <aalam@redhat.com>\n"
 "Language-Team: Punjabi <fedora-trans-pa@redhat.com>\n"
@@ -82,7 +82,7 @@ msgstr "ਮਹੀਨਾ"
 msgid "Weekday"
 msgstr "ਹਫਤਾ"
 
-#: ../src/crontab.py:172 ../src/gnome-schedule.glade.h:16
+#: ../src/crontab.py:172 ../src/gnome-schedule.glade.h:17
 msgid "Basic"
 msgstr "ਮੂਲ"
 
@@ -141,13 +141,13 @@ msgid ""
 msgstr ""
 
 #: ../src/crontabEditor.py:69 ../src/crontabEditorHelper.py:87
-#: ../src/gnome-schedule.glade.h:29
+#: ../src/gnome-schedule.glade.h:33
 #, fuzzy
 msgid "Every minute"
 msgstr "ਹਰ ਮਿੰਟ"
 
 #: ../src/crontabEditor.py:70 ../src/crontabEditorHelper.py:93
-#: ../src/gnome-schedule.glade.h:28
+#: ../src/gnome-schedule.glade.h:32
 #, fuzzy
 msgid "Every hour"
 msgstr "ਹਰ ਘੰਟੇ"
@@ -248,12 +248,12 @@ msgid "This is invalid. Reason: %s"
 msgstr ""
 
 #. minute
-#: ../src/crontabEditorHelper.py:231 ../src/gnome-schedule.glade.h:15
+#: ../src/crontabEditorHelper.py:231 ../src/gnome-schedule.glade.h:16
 #, fuzzy
 msgid "At an exact minute"
 msgstr "ਹਰ ਮਿੰਟ"
 
-#: ../src/crontabEditorHelper.py:232 ../src/gnome-schedule.glade.h:41
+#: ../src/crontabEditorHelper.py:232 ../src/gnome-schedule.glade.h:45
 #, fuzzy
 msgid "Minute:"
 msgstr "ਮਿੰਟ: "
@@ -263,7 +263,7 @@ msgstr "ਮਿੰਟ: "
 msgid "At an exact hour"
 msgstr ""
 
-#: ../src/crontabEditorHelper.py:236 ../src/gnome-schedule.glade.h:37
+#: ../src/crontabEditorHelper.py:236 ../src/gnome-schedule.glade.h:41
 #, fuzzy
 msgid "Hour:"
 msgstr "ਘੰਟਾ: "
@@ -273,7 +273,7 @@ msgstr "ਘੰਟਾ: "
 msgid "On a day"
 msgstr ""
 
-#: ../src/crontabEditorHelper.py:240 ../src/gnome-schedule.glade.h:23
+#: ../src/crontabEditorHelper.py:240 ../src/gnome-schedule.glade.h:25
 msgid "Day:"
 msgstr ""
 
@@ -283,7 +283,7 @@ msgstr ""
 msgid "In a month"
 msgstr "ਮਹੀਨਾ"
 
-#: ../src/crontabEditorHelper.py:244 ../src/gnome-schedule.glade.h:43
+#: ../src/crontabEditorHelper.py:244 ../src/gnome-schedule.glade.h:47
 #, fuzzy
 msgid "Month:"
 msgstr "ਮਹੀਨਾ"
@@ -294,16 +294,16 @@ msgstr "ਮਹੀਨਾ"
 msgid "On a weekday"
 msgstr "ਹਫਤਾ"
 
-#: ../src/crontabEditorHelper.py:248 ../src/gnome-schedule.glade.h:55
+#: ../src/crontabEditorHelper.py:248 ../src/gnome-schedule.glade.h:61
 #, fuzzy
 msgid "Weekday:"
 msgstr "ਹਫਤਾ"
 
-#: ../src/crontabEditorHelper.py:253 ../src/gnome-schedule.glade.h:39
+#: ../src/crontabEditorHelper.py:253 ../src/gnome-schedule.glade.h:43
 msgid "In a step width"
 msgstr ""
 
-#: ../src/crontabEditorHelper.py:255 ../src/gnome-schedule.glade.h:42
+#: ../src/crontabEditorHelper.py:255 ../src/gnome-schedule.glade.h:46
 #, fuzzy
 msgid "Minutes:"
 msgstr "ਮਿੰਟ: "
@@ -394,176 +394,186 @@ msgid "<big>Time &amp; Date</big>"
 msgstr ""
 
 #: ../src/gnome-schedule.glade.h:12
+msgid "About Gnome-schedule"
+msgstr ""
+
+#: ../src/gnome-schedule.glade.h:13
 #, fuzzy
 msgid "Add a Scheduled Task"
 msgstr "ਇੱਕ ਕੰਮ ਸਮਾਂ ਤਬਦੀਲ"
 
-#: ../src/gnome-schedule.glade.h:13
+#: ../src/gnome-schedule.glade.h:14
 #, fuzzy
 msgid "Add as template"
 msgstr "ਕੰਮ ਸ਼ਾਮਿਲ(_A)"
 
-#: ../src/gnome-schedule.glade.h:14
+#: ../src/gnome-schedule.glade.h:15
 msgid "Advanced"
 msgstr "ਤਕਨੀਕੀ"
 
-#: ../src/gnome-schedule.glade.h:17
+#: ../src/gnome-schedule.glade.h:18
 msgid "Change User"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:18
+#: ../src/gnome-schedule.glade.h:19
+msgid "Change edit mode"
+msgstr ""
+
+#: ../src/gnome-schedule.glade.h:20
 msgid "Choose template"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:19
+#: ../src/gnome-schedule.glade.h:21
 msgid "Choose the user whose tasks you want to modify"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:20 ../src/template.py:188
+#: ../src/gnome-schedule.glade.h:22 ../src/template.py:188
 #: ../src/template.py:198
 #, fuzzy
 msgid "Command:"
 msgstr "ਕਮਾਂਡ"
 
-#: ../src/gnome-schedule.glade.h:21
+#: ../src/gnome-schedule.glade.h:23
 msgid "Configure Scheduled Tasks"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:22
+#: ../src/gnome-schedule.glade.h:24
 #, fuzzy
 msgid "Date:"
 msgstr "ਹਟਾਉ(_D)"
 
-#: ../src/gnome-schedule.glade.h:24
+#: ../src/gnome-schedule.glade.h:26
 msgid "Delete a scheduled task"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:25
+#: ../src/gnome-schedule.glade.h:27
+msgid "Delete selected template"
+msgstr ""
+
+#: ../src/gnome-schedule.glade.h:28
 #, fuzzy
 msgid "Description:"
 msgstr "ਸਕ੍ਰਿਪਟ"
 
-#: ../src/gnome-schedule.glade.h:26
+#: ../src/gnome-schedule.glade.h:29
 #, fuzzy
 msgid "Edit a periodical task"
 msgstr "ਇੱਕ ਕੰਮ ਸਮਾਂ ਤਬਦੀਲ"
 
-#: ../src/gnome-schedule.glade.h:27
+#: ../src/gnome-schedule.glade.h:30
 msgid "Edit a scheduled task"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:30
+#: ../src/gnome-schedule.glade.h:31
+#, fuzzy
+msgid "Edit selected template"
+msgstr "ਕੰਮ ਸ਼ਾਮਿਲ(_A)"
+
+#: ../src/gnome-schedule.glade.h:34
 msgid "Execute at:"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:31
+#: ../src/gnome-schedule.glade.h:35
 msgid "Execution at a specific minute, hour, day, weekday or month."
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:32
+#: ../src/gnome-schedule.glade.h:36
 msgid ""
 "Execution at a step width. For example every five minutes, hours, days, "
 "weekdays or months."
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:33
+#: ../src/gnome-schedule.glade.h:37
 msgid "Execution at every minute, hour, day, weekday or month."
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:34
+#: ../src/gnome-schedule.glade.h:38
 msgid "Execution in a range."
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:35
+#: ../src/gnome-schedule.glade.h:39
 #, fuzzy
 msgid "Expression:"
 msgstr "ਹੋਰ ਸਮੀਕਰਨ"
 
-#: ../src/gnome-schedule.glade.h:36
+#: ../src/gnome-schedule.glade.h:40
 msgid "From:"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:38
+#: ../src/gnome-schedule.glade.h:42
 msgid "In a range"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:40
+#: ../src/gnome-schedule.glade.h:44
 #, fuzzy
 msgid "Manage templates"
 msgstr "ਆਪਣੇ ਸਿਸਟਮ ਦੇ ਕੰਮਾਂ ਦਾ ਪ੍ਰਬੰਧ"
 
-#: ../src/gnome-schedule.glade.h:44
+#: ../src/gnome-schedule.glade.h:48
 msgid "Other"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:45
+#: ../src/gnome-schedule.glade.h:49
+#, fuzzy
+msgid "Run selected task"
+msgstr "ਇੱਕ ਕੰਮ ਸਮਾਂ ਤਬਦੀਲ"
+
+#: ../src/gnome-schedule.glade.h:50
 #, fuzzy
 msgid "Run task"
 msgstr "ਇਸ ਤੇ ਚਲਾਉ:"
 
-#: ../src/gnome-schedule.glade.h:46
+#: ../src/gnome-schedule.glade.h:51
 msgid "Scheduled and active tasks"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:47
+#: ../src/gnome-schedule.glade.h:52
 msgid "See \"man 5 crontab\" for information about the crontab format."
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:48
+#: ../src/gnome-schedule.glade.h:53
 msgid "Show help"
 msgstr "ਸਹਾਇਤਾ ਵੇਖਾਉ"
 
-#: ../src/gnome-schedule.glade.h:49
+#: ../src/gnome-schedule.glade.h:54
 msgid "Task description:"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:50
+#: ../src/gnome-schedule.glade.h:55
 msgid "Task:"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:51 ../src/mainWindow.py:184
+#: ../src/gnome-schedule.glade.h:56 ../src/mainWindow.py:184
 msgid "Templates"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:52
+#: ../src/gnome-schedule.glade.h:57
 msgid "Time expression help"
 msgstr "ਸਮਾਂ ਸਮੀਕਰਨ ਸਹਾਇਤਾ"
 
-#: ../src/gnome-schedule.glade.h:53
+#: ../src/gnome-schedule.glade.h:58
 #, fuzzy
 msgid "Time:"
 msgstr "ਸਮਾਂ: "
 
-#: ../src/gnome-schedule.glade.h:54
+#: ../src/gnome-schedule.glade.h:59
 msgid "To:"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:56
+#: ../src/gnome-schedule.glade.h:60
+msgid "Use the selected template"
+msgstr ""
+
+#: ../src/gnome-schedule.glade.h:62
 #, fuzzy
 msgid "_No output (>/dev/null 2>&1)"
 msgstr " >/dev/null 2>&1"
 
-#: ../src/gnome-schedule.glade.h:57
+#: ../src/gnome-schedule.glade.h:63
 msgid "_User:"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:58
-msgid "gtk-apply"
-msgstr ""
-
-#: ../src/gnome-schedule.glade.h:59
-msgid "gtk-cancel"
-msgstr ""
-
-#: ../src/gnome-schedule.glade.h:60
-msgid "gtk-delete"
-msgstr ""
-
-#: ../src/gnome-schedule.glade.h:61
-msgid "gtk-edit"
-msgstr ""
-
-#: ../src/gnome-schedule.glade.h:62
+#: ../src/gnome-schedule.glade.h:64
 msgid "ls -l"
 msgstr ""
 

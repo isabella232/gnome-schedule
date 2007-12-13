@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-12-13 18:16+0100\n"
+"POT-Creation-Date: 2007-12-13 20:52+0100\n"
 "PO-Revision-Date: 2006-07-05 21:19+0400\n"
 "Last-Translator: Nickolay V. Shmyrev <nshmyrev@yandex.ru>\n"
 "Language-Team: Russian <gnome-cyr@gnome.org>\n"
@@ -74,7 +74,7 @@ msgstr "Месяц"
 msgid "Weekday"
 msgstr "День недели"
 
-#: ../src/crontab.py:172 ../src/gnome-schedule.glade.h:16
+#: ../src/crontab.py:172 ../src/gnome-schedule.glade.h:17
 msgid "Basic"
 msgstr "Основные"
 
@@ -133,12 +133,12 @@ msgid ""
 msgstr ""
 
 #: ../src/crontabEditor.py:69 ../src/crontabEditorHelper.py:87
-#: ../src/gnome-schedule.glade.h:29
+#: ../src/gnome-schedule.glade.h:33
 msgid "Every minute"
 msgstr "Каждую минуту"
 
 #: ../src/crontabEditor.py:70 ../src/crontabEditorHelper.py:93
-#: ../src/gnome-schedule.glade.h:28
+#: ../src/gnome-schedule.glade.h:32
 msgid "Every hour"
 msgstr "Каждый час"
 
@@ -235,11 +235,11 @@ msgid "This is invalid. Reason: %s"
 msgstr "Значение некорректно. Причина: %s"
 
 #. minute
-#: ../src/crontabEditorHelper.py:231 ../src/gnome-schedule.glade.h:15
+#: ../src/crontabEditorHelper.py:231 ../src/gnome-schedule.glade.h:16
 msgid "At an exact minute"
 msgstr "Точно в минуту"
 
-#: ../src/crontabEditorHelper.py:232 ../src/gnome-schedule.glade.h:41
+#: ../src/crontabEditorHelper.py:232 ../src/gnome-schedule.glade.h:45
 msgid "Minute:"
 msgstr "Минуты:"
 
@@ -248,7 +248,7 @@ msgstr "Минуты:"
 msgid "At an exact hour"
 msgstr "Точно в час"
 
-#: ../src/crontabEditorHelper.py:236 ../src/gnome-schedule.glade.h:37
+#: ../src/crontabEditorHelper.py:236 ../src/gnome-schedule.glade.h:41
 msgid "Hour:"
 msgstr "Час:"
 
@@ -257,7 +257,7 @@ msgstr "Час:"
 msgid "On a day"
 msgstr "Точно в день"
 
-#: ../src/crontabEditorHelper.py:240 ../src/gnome-schedule.glade.h:23
+#: ../src/crontabEditorHelper.py:240 ../src/gnome-schedule.glade.h:25
 msgid "Day:"
 msgstr "День:"
 
@@ -266,7 +266,7 @@ msgstr "День:"
 msgid "In a month"
 msgstr "Точно в месяц"
 
-#: ../src/crontabEditorHelper.py:244 ../src/gnome-schedule.glade.h:43
+#: ../src/crontabEditorHelper.py:244 ../src/gnome-schedule.glade.h:47
 msgid "Month:"
 msgstr "Месяц:"
 
@@ -275,15 +275,15 @@ msgstr "Месяц:"
 msgid "On a weekday"
 msgstr "Точно в день недели"
 
-#: ../src/crontabEditorHelper.py:248 ../src/gnome-schedule.glade.h:55
+#: ../src/crontabEditorHelper.py:248 ../src/gnome-schedule.glade.h:61
 msgid "Weekday:"
 msgstr "День недели:"
 
-#: ../src/crontabEditorHelper.py:253 ../src/gnome-schedule.glade.h:39
+#: ../src/crontabEditorHelper.py:253 ../src/gnome-schedule.glade.h:43
 msgid "In a step width"
 msgstr "С шагом"
 
-#: ../src/crontabEditorHelper.py:255 ../src/gnome-schedule.glade.h:42
+#: ../src/crontabEditorHelper.py:255 ../src/gnome-schedule.glade.h:46
 msgid "Minutes:"
 msgstr "Минуты:"
 
@@ -369,72 +369,91 @@ msgid "<big>Time &amp; Date</big>"
 msgstr ""
 
 #: ../src/gnome-schedule.glade.h:12
+#, fuzzy
+msgid "About Gnome-schedule"
+msgstr "О программе \"Расписание GNOME\""
+
+#: ../src/gnome-schedule.glade.h:13
 msgid "Add a Scheduled Task"
 msgstr "Запланировать задачу"
 
-#: ../src/gnome-schedule.glade.h:13
+#: ../src/gnome-schedule.glade.h:14
 #, fuzzy
 msgid "Add as template"
 msgstr "_Добавить задание"
 
-#: ../src/gnome-schedule.glade.h:14
+#: ../src/gnome-schedule.glade.h:15
 msgid "Advanced"
 msgstr "Дополнительные"
 
-#: ../src/gnome-schedule.glade.h:17
+#: ../src/gnome-schedule.glade.h:18
 msgid "Change User"
 msgstr "Сменить пользователя"
 
-#: ../src/gnome-schedule.glade.h:18
+#: ../src/gnome-schedule.glade.h:19
+msgid "Change edit mode"
+msgstr ""
+
+#: ../src/gnome-schedule.glade.h:20
 msgid "Choose template"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:19
+#: ../src/gnome-schedule.glade.h:21
 msgid "Choose the user whose tasks you want to modify"
 msgstr "Выберить пользователя, чьи задания вы хотите изменить"
 
-#: ../src/gnome-schedule.glade.h:20 ../src/template.py:188
+#: ../src/gnome-schedule.glade.h:22 ../src/template.py:188
 #: ../src/template.py:198
 #, fuzzy
 msgid "Command:"
 msgstr "_Команда:"
 
-#: ../src/gnome-schedule.glade.h:21
+#: ../src/gnome-schedule.glade.h:23
 msgid "Configure Scheduled Tasks"
 msgstr "Правка запланированных заданий"
 
-#: ../src/gnome-schedule.glade.h:22
+#: ../src/gnome-schedule.glade.h:24
 #, fuzzy
 msgid "Date:"
 msgstr "_Дата:"
 
-#: ../src/gnome-schedule.glade.h:24
+#: ../src/gnome-schedule.glade.h:26
 msgid "Delete a scheduled task"
 msgstr "Удалить запланированное задание"
 
-#: ../src/gnome-schedule.glade.h:25
+#: ../src/gnome-schedule.glade.h:27
+#, fuzzy
+msgid "Delete selected template"
+msgstr "Удалить выбранный шаблон"
+
+#: ../src/gnome-schedule.glade.h:28
 #, fuzzy
 msgid "Description:"
 msgstr "_Описание:"
 
-#: ../src/gnome-schedule.glade.h:26
+#: ../src/gnome-schedule.glade.h:29
 #, fuzzy
 msgid "Edit a periodical task"
 msgstr "Правка запланированного задания"
 
-#: ../src/gnome-schedule.glade.h:27
+#: ../src/gnome-schedule.glade.h:30
 msgid "Edit a scheduled task"
 msgstr "Правка запланированного задания"
 
-#: ../src/gnome-schedule.glade.h:30
+#: ../src/gnome-schedule.glade.h:31
+#, fuzzy
+msgid "Edit selected template"
+msgstr "Удалить выбранный шаблон"
+
+#: ../src/gnome-schedule.glade.h:34
 msgid "Execute at:"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:31
+#: ../src/gnome-schedule.glade.h:35
 msgid "Execution at a specific minute, hour, day, weekday or month."
 msgstr "Выполнение в заданную минуту, час, день, день недели или месяц."
 
-#: ../src/gnome-schedule.glade.h:32
+#: ../src/gnome-schedule.glade.h:36
 msgid ""
 "Execution at a step width. For example every five minutes, hours, days, "
 "weekdays or months."
@@ -442,104 +461,98 @@ msgstr ""
 "Выполнить с шагом. Например, каждые пять минут, часов, дней, дней недели или "
 "месяцев."
 
-#: ../src/gnome-schedule.glade.h:33
+#: ../src/gnome-schedule.glade.h:37
 msgid "Execution at every minute, hour, day, weekday or month."
 msgstr "Выполнение каждую минуту, час, день, день недели или месяц."
 
-#: ../src/gnome-schedule.glade.h:34
+#: ../src/gnome-schedule.glade.h:38
 msgid "Execution in a range."
 msgstr "Execution in a range."
 
-#: ../src/gnome-schedule.glade.h:35
+#: ../src/gnome-schedule.glade.h:39
 msgid "Expression:"
 msgstr "Выражение:"
 
-#: ../src/gnome-schedule.glade.h:36
+#: ../src/gnome-schedule.glade.h:40
 msgid "From:"
 msgstr "Из:"
 
-#: ../src/gnome-schedule.glade.h:38
+#: ../src/gnome-schedule.glade.h:42
 msgid "In a range"
 msgstr "В промежутке"
 
-#: ../src/gnome-schedule.glade.h:40
+#: ../src/gnome-schedule.glade.h:44
 #, fuzzy
 msgid "Manage templates"
 msgstr "_Управление заданиями"
 
-#: ../src/gnome-schedule.glade.h:44
+#: ../src/gnome-schedule.glade.h:48
 msgid "Other"
 msgstr "Другое"
 
-#: ../src/gnome-schedule.glade.h:45
+#: ../src/gnome-schedule.glade.h:49
+#, fuzzy
+msgid "Run selected task"
+msgstr "Пожалуйста, выберите задание"
+
+#: ../src/gnome-schedule.glade.h:50
 msgid "Run task"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:46
+#: ../src/gnome-schedule.glade.h:51
 msgid "Scheduled and active tasks"
 msgstr "Запланированные и активные задания"
 
-#: ../src/gnome-schedule.glade.h:47
+#: ../src/gnome-schedule.glade.h:52
 msgid "See \"man 5 crontab\" for information about the crontab format."
 msgstr ""
 "Выполните \"man 5 crontab\" для получение информации о формате crontab."
 
-#: ../src/gnome-schedule.glade.h:48
+#: ../src/gnome-schedule.glade.h:53
 msgid "Show help"
 msgstr "Справка"
 
-#: ../src/gnome-schedule.glade.h:49
+#: ../src/gnome-schedule.glade.h:54
 #, fuzzy
 msgid "Task description:"
 msgstr "_Описание:"
 
-#: ../src/gnome-schedule.glade.h:50
+#: ../src/gnome-schedule.glade.h:55
 #, fuzzy
 msgid "Task:"
 msgstr "_Задача"
 
-#: ../src/gnome-schedule.glade.h:51 ../src/mainWindow.py:184
+#: ../src/gnome-schedule.glade.h:56 ../src/mainWindow.py:184
 #, fuzzy
 msgid "Templates"
 msgstr "_Шаблон:"
 
-#: ../src/gnome-schedule.glade.h:52
+#: ../src/gnome-schedule.glade.h:57
 msgid "Time expression help"
 msgstr "Помощь по описанию времени"
 
-#: ../src/gnome-schedule.glade.h:53
+#: ../src/gnome-schedule.glade.h:58
 msgid "Time:"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:54
+#: ../src/gnome-schedule.glade.h:59
 msgid "To:"
 msgstr "В:"
 
-#: ../src/gnome-schedule.glade.h:56
+#: ../src/gnome-schedule.glade.h:60
+#, fuzzy
+msgid "Use the selected template"
+msgstr "Удалить выбранный шаблон"
+
+#: ../src/gnome-schedule.glade.h:62
 msgid "_No output (>/dev/null 2>&1)"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:57
+#: ../src/gnome-schedule.glade.h:63
 msgid "_User:"
 msgstr "_Пользователь:"
 
-#: ../src/gnome-schedule.glade.h:58
-msgid "gtk-apply"
-msgstr ""
-
-#: ../src/gnome-schedule.glade.h:59
-msgid "gtk-cancel"
-msgstr ""
-
-#: ../src/gnome-schedule.glade.h:60
-msgid "gtk-delete"
-msgstr ""
-
-#: ../src/gnome-schedule.glade.h:61
-msgid "gtk-edit"
-msgstr ""
-
-#: ../src/gnome-schedule.glade.h:62
+#: ../src/gnome-schedule.glade.h:64
 msgid "ls -l"
 msgstr ""
 
@@ -1138,9 +1151,6 @@ msgstr ""
 
 #~ msgid "Choose an icon for this scheduled task"
 #~ msgstr "Выберить значок для запланированного задания"
-
-#~ msgid "Delete the selected template"
-#~ msgstr "Удалить выбранный шаблон"
 
 #~ msgid "For example at 04:10 tomorrow, next week or in three days"
 #~ msgstr "Например в 04:10 завтра, на следующей неделе, или три дня подряд"
