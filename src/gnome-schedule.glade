@@ -1561,7 +1561,7 @@
                       <widget class="GtkLabel" id="label10">
                         <property name="visible">True</property>
                         <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
-                        <property name="label" translatable="yes">-</property>
+                        <property name="label">-</property>
                         <property name="width_chars">0</property>
                       </widget>
                       <packing>
