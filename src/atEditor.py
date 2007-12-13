@@ -30,7 +30,6 @@ import calendar
 
 #custom modules
 import config
-import preset
 
 
 class AtEditor:

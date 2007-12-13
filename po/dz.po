@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule.HEAD.pot\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-12-02 20:04+0100\n"
+"POT-Creation-Date: 2007-12-13 18:16+0100\n"
 "PO-Revision-Date: 2007-06-22 11:26+0530\n"
 "Last-Translator: yumkee lhamo <yumkeyl08@hotmail.com>\n"
 "Language-Team: Dzongkha <pgeyleg@dit.gov.bt>\n"
@@ -98,8 +98,8 @@ msgstr "%(min)s དང་ %(max)s གཉིས་ཀྱི་སྦུག་ན�
 msgid "%s is not a number"
 msgstr "%s འདི་ ཨང་གྲངས་མེན་"
 
-#: ../src/crontab.py:261 ../src/crontab.py:317 ../src/crontabEditor.py:270
-#: ../src/atEditor.py:112 ../src/atEditor.py:367 ../src/atEditor.py:391
+#: ../src/crontab.py:261 ../src/crontab.py:317 ../src/crontabEditor.py:269
+#: ../src/atEditor.py:111 ../src/atEditor.py:366 ../src/atEditor.py:390
 msgid "Untitled"
 msgstr "མགོ་མིང་མ་བཏགསཔ་"
 
@@ -108,7 +108,7 @@ msgstr "མགོ་མིང་མ་བཏགསཔ་"
 msgid "Recurrent"
 msgstr "ལོག་འབྱུང་བའི་"
 
-#: ../src/crontab.py:416 ../src/crontabEditor.py:75 ../src/lang.py:149
+#: ../src/crontab.py:416 ../src/crontabEditor.py:74 ../src/lang.py:149
 msgid "At reboot"
 msgstr "རི་བུཊི་ལུ་"
 
@@ -137,46 +137,46 @@ msgid ""
 "Failed to parse the Day of Month field, possibly due to a bug in crontab."
 msgstr ""
 
-#: ../src/crontabEditor.py:70 ../src/crontabEditorHelper.py:87
+#: ../src/crontabEditor.py:69 ../src/crontabEditorHelper.py:87
 #: ../src/gnome-schedule.glade.h:29
 msgid "Every minute"
 msgstr "སྐར་མ་རེ་རེ་ནང་"
 
-#: ../src/crontabEditor.py:71 ../src/crontabEditorHelper.py:93
+#: ../src/crontabEditor.py:70 ../src/crontabEditorHelper.py:93
 #: ../src/gnome-schedule.glade.h:28
 msgid "Every hour"
 msgstr "ཆུ་ཚོད་རེ་རེ་ནང་"
 
-#: ../src/crontabEditor.py:72 ../src/crontabEditorHelper.py:99
+#: ../src/crontabEditor.py:71 ../src/crontabEditorHelper.py:99
 msgid "Every day"
 msgstr "ཉིནམ་ཨ་རྟག་ར་"
 
-#: ../src/crontabEditor.py:73 ../src/crontabEditorHelper.py:105
+#: ../src/crontabEditor.py:72 ../src/crontabEditorHelper.py:105
 msgid "Every month"
 msgstr "ཟླཝ་ཨ་རྟག་ར་"
 
-#: ../src/crontabEditor.py:74
+#: ../src/crontabEditor.py:73
 msgid "Every week"
 msgstr "བདུན་ཕྲག་ཨ་རྟག་ར་"
 
 #. add new task
-#: ../src/crontabEditor.py:130 ../src/crontabEditor.py:140
-#: ../src/atEditor.py:114 ../src/atEditor.py:128
+#: ../src/crontabEditor.py:129 ../src/crontabEditor.py:139
+#: ../src/atEditor.py:113 ../src/atEditor.py:127
 msgid "Create a New Scheduled Task"
 msgstr "འཆར་རིམ་ཅན་གྱི་ལས་ཀ་ཅིག་ གསར་བསྐྲུན་འབད་"
 
 #. edit template
-#: ../src/crontabEditor.py:200 ../src/atEditor.py:144
+#: ../src/crontabEditor.py:199 ../src/atEditor.py:143
 #, fuzzy
 msgid "Edit template"
 msgstr "ཊེམ་པེལེཊི་:(_T)"
 
-#: ../src/crontabEditor.py:239 ../src/atEditor.py:184
+#: ../src/crontabEditor.py:238 ../src/atEditor.py:183
 msgid "Edit a Scheduled Task"
 msgstr "འཆར་རིམ་ཅན་གྱི་ལས་ཀ་ཅིག་ ཞུན་དག་འབད་"
 
-#: ../src/crontabEditor.py:297 ../src/crontabEditor.py:593
-#: ../src/crontabEditor.py:633
+#: ../src/crontabEditor.py:296 ../src/crontabEditor.py:592
+#: ../src/crontabEditor.py:632
 #, python-format
 msgid ""
 "This is an invalid record! The problem could be in the %(field)s field. "
@@ -185,7 +185,7 @@ msgstr ""
 "འ་ནི་འདི་ ནུས་མེད་ཀྱི་དྲན་ཐོ་ཨིན་! དཀའ་ངལ་འདི་ %(field)s ས་སྒོ་ནན་ལུ་ཨིན་དགོ རྒྱུ་མཚན་:  %"
 "(reason)s"
 
-#: ../src/crontabEditor.py:302
+#: ../src/crontabEditor.py:301
 #, fuzzy
 msgid ""
 "Your command contains one or more of the character %, this is special for "
@@ -202,14 +202,14 @@ msgstr ""
 "དོན་ཧེང་བཀལ་གྱི་དོན་ལུ་ ཀོརཱོན་ཊེབ་ལག་ཐོག་ལུ་གཞི་བསྟུན་འབད། ལོག་བཀོད་དཔོན་གྱི་དོན་ལུ་ཁྱོད་ཀྱིས་ལག་ལེན་"
 "འཐབ་དགོ་མ་མནོ་བ་ཅིན་\\ letter. I.e.: \\$HOME ཚུལ་ལྡན་དང་བཅས་ འདི་ཐར་དགོ།"
 
-#: ../src/crontabEditor.py:470
+#: ../src/crontabEditor.py:469
 msgid ""
 "Note about working directory of executed tasks:\n"
 "\n"
 "Recurrent tasks will be run from the home directory."
 msgstr ""
 
-#: ../src/crontabEditor.py:472 ../src/mainWindow.py:642 ../src/atEditor.py:441
+#: ../src/crontabEditor.py:471 ../src/mainWindow.py:642 ../src/atEditor.py:440
 msgid "Warning: Working directory of executed tasks"
 msgstr ""
 
@@ -405,7 +405,8 @@ msgstr ""
 msgid "Choose the user whose tasks you want to modify"
 msgstr "ཁྱོད་ཀྱིས་ ག་གི་ལས་ཀ་ཚུ་ལེགས་བཅོས་འབད་ནི་ཨིན་ན་ གདམ་ཁ་རྐྱབས་"
 
-#: ../src/gnome-schedule.glade.h:20
+#: ../src/gnome-schedule.glade.h:20 ../src/template.py:188
+#: ../src/template.py:198
 #, fuzzy
 msgid "Command:"
 msgstr "བརྡ་བཀོད་:"
@@ -1011,11 +1012,11 @@ msgstr ""
 msgid "A task from a predefined template"
 msgstr ""
 
-#: ../src/atEditor.py:76
+#: ../src/atEditor.py:75
 msgid "Calendar"
 msgstr ""
 
-#: ../src/atEditor.py:359
+#: ../src/atEditor.py:358
 #, fuzzy
 msgid ""
 "In one or both of the fields hour and minute there was entered a letter, or "
@@ -1026,12 +1027,12 @@ msgstr ""
 "བཀོད་དེ་འདུགཉིམ་གཅིག་ནང་ཆུ་ཚོད་ ༢༤ རྐྱངམ་ཅིག་དང་ཚུ་ཚོད་ཅིག་ནང་སྐར་མ་ ༦༠ རྐྱངམ་ཅིག་ཡོདཔ་ཨིནམ་སེམས་"
 "ཁར་བཞག"
 
-#: ../src/atEditor.py:418
+#: ../src/atEditor.py:417
 #, python-format
 msgid "This is an invalid record! The problem could be: %s"
 msgstr "འ་ནི་འདི་ནུས་མེད་ཀྱི་དྲན་ཐོ་ཨིན་! དཀའ་ངལ་འདི་ཡང་ : %s ཨིན་དགོ"
 
-#: ../src/atEditor.py:439
+#: ../src/atEditor.py:438
 msgid ""
 "Note about working directory of executed tasks:\n"
 "\n"
@@ -1057,6 +1058,20 @@ msgstr ""
 #, python-format
 msgid "ICON: Got badly sized icon for %s"
 msgstr ""
+
+#: ../src/template.py:188 ../src/template.py:198
+#, fuzzy
+msgid "Title:"
+msgstr "དཀར་མ་:"
+
+#: ../src/template.py:198
+msgid "Run:"
+msgstr ""
+
+#: ../src/template.py:200
+#, fuzzy
+msgid "No output"
+msgstr "ཨའུཊི་པུཊི་མེད་(_p)"
 
 #: ../src/template_chooser.py:83 ../src/template_manager.py:84
 msgid "One-time"
@@ -1157,9 +1172,6 @@ msgstr ""
 
 #~ msgid "Mi_nutes:"
 #~ msgstr "དཀར་མ་ཚུ་:(_n)"
-
-#~ msgid "No out_put"
-#~ msgstr "ཨའུཊི་པུཊི་མེད་(_p)"
 
 #~ msgid ""
 #~ "Quit the application. This will not stop the system scheduling. It will, "

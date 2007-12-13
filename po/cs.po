@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-12-02 20:04+0100\n"
+"POT-Creation-Date: 2007-12-13 18:16+0100\n"
 "PO-Revision-Date: 2005-08-29 22:38+0200\n"
 "Last-Translator: Miloslav Trmac <mitr@volny.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -97,8 +97,8 @@ msgstr "Musí být mezi %(min)s a %(max)s"
 msgid "%s is not a number"
 msgstr "%s není číslo"
 
-#: ../src/crontab.py:261 ../src/crontab.py:317 ../src/crontabEditor.py:270
-#: ../src/atEditor.py:112 ../src/atEditor.py:367 ../src/atEditor.py:391
+#: ../src/crontab.py:261 ../src/crontab.py:317 ../src/crontabEditor.py:269
+#: ../src/atEditor.py:111 ../src/atEditor.py:366 ../src/atEditor.py:390
 msgid "Untitled"
 msgstr "Nepojmenovaný"
 
@@ -107,7 +107,7 @@ msgstr "Nepojmenovaný"
 msgid "Recurrent"
 msgstr "Opakovaná"
 
-#: ../src/crontab.py:416 ../src/crontabEditor.py:75 ../src/lang.py:149
+#: ../src/crontab.py:416 ../src/crontabEditor.py:74 ../src/lang.py:149
 msgid "At reboot"
 msgstr ""
 
@@ -136,46 +136,46 @@ msgid ""
 "Failed to parse the Day of Month field, possibly due to a bug in crontab."
 msgstr ""
 
-#: ../src/crontabEditor.py:70 ../src/crontabEditorHelper.py:87
+#: ../src/crontabEditor.py:69 ../src/crontabEditorHelper.py:87
 #: ../src/gnome-schedule.glade.h:29
 msgid "Every minute"
 msgstr "Každou minutu"
 
-#: ../src/crontabEditor.py:71 ../src/crontabEditorHelper.py:93
+#: ../src/crontabEditor.py:70 ../src/crontabEditorHelper.py:93
 #: ../src/gnome-schedule.glade.h:28
 msgid "Every hour"
 msgstr "Každou hodinu"
 
-#: ../src/crontabEditor.py:72 ../src/crontabEditorHelper.py:99
+#: ../src/crontabEditor.py:71 ../src/crontabEditorHelper.py:99
 msgid "Every day"
 msgstr "Každý den"
 
-#: ../src/crontabEditor.py:73 ../src/crontabEditorHelper.py:105
+#: ../src/crontabEditor.py:72 ../src/crontabEditorHelper.py:105
 msgid "Every month"
 msgstr "Každý měsíc"
 
-#: ../src/crontabEditor.py:74
+#: ../src/crontabEditor.py:73
 msgid "Every week"
 msgstr "Každý týden"
 
 #. add new task
-#: ../src/crontabEditor.py:130 ../src/crontabEditor.py:140
-#: ../src/atEditor.py:114 ../src/atEditor.py:128
+#: ../src/crontabEditor.py:129 ../src/crontabEditor.py:139
+#: ../src/atEditor.py:113 ../src/atEditor.py:127
 msgid "Create a New Scheduled Task"
 msgstr "Vytvořit novou plánovanou úlohu"
 
 #. edit template
-#: ../src/crontabEditor.py:200 ../src/atEditor.py:144
+#: ../src/crontabEditor.py:199 ../src/atEditor.py:143
 #, fuzzy
 msgid "Edit template"
 msgstr "_Šablona:"
 
-#: ../src/crontabEditor.py:239 ../src/atEditor.py:184
+#: ../src/crontabEditor.py:238 ../src/atEditor.py:183
 msgid "Edit a Scheduled Task"
 msgstr "Upravit plánovanou úlohu"
 
-#: ../src/crontabEditor.py:297 ../src/crontabEditor.py:593
-#: ../src/crontabEditor.py:633
+#: ../src/crontabEditor.py:296 ../src/crontabEditor.py:592
+#: ../src/crontabEditor.py:632
 #, fuzzy, python-format
 msgid ""
 "This is an invalid record! The problem could be in the %(field)s field. "
@@ -183,7 +183,7 @@ msgid ""
 msgstr ""
 "Toto není platný záznam! Problém je možná v poli %(field)s. Důvod: %(reason)s"
 
-#: ../src/crontabEditor.py:302
+#: ../src/crontabEditor.py:301
 msgid ""
 "Your command contains one or more of the character %, this is special for "
 "cron and cannot be used with Gnome-schedule because of the format it uses to "
@@ -193,14 +193,14 @@ msgid ""
 "for redirection it must be properly escaped with the \\ letter."
 msgstr ""
 
-#: ../src/crontabEditor.py:470
+#: ../src/crontabEditor.py:469
 msgid ""
 "Note about working directory of executed tasks:\n"
 "\n"
 "Recurrent tasks will be run from the home directory."
 msgstr ""
 
-#: ../src/crontabEditor.py:472 ../src/mainWindow.py:642 ../src/atEditor.py:441
+#: ../src/crontabEditor.py:471 ../src/mainWindow.py:642 ../src/atEditor.py:440
 msgid "Warning: Working directory of executed tasks"
 msgstr ""
 
@@ -399,7 +399,8 @@ msgstr ""
 msgid "Choose the user whose tasks you want to modify"
 msgstr "Zvolte uživatele, jehož úlohy chcete upravit"
 
-#: ../src/gnome-schedule.glade.h:20
+#: ../src/gnome-schedule.glade.h:20 ../src/template.py:188
+#: ../src/template.py:198
 #, fuzzy
 msgid "Command:"
 msgstr "_Příkaz:"
@@ -1002,23 +1003,23 @@ msgstr ""
 msgid "A task from a predefined template"
 msgstr ""
 
-#: ../src/atEditor.py:76
+#: ../src/atEditor.py:75
 msgid "Calendar"
 msgstr ""
 
-#: ../src/atEditor.py:359
+#: ../src/atEditor.py:358
 msgid ""
 "In one or both of the fields hour and minute there was entered a letter, or "
 "a number out of range. Remember an hour only has 60 minutes and a day only "
 "24 hours."
 msgstr ""
 
-#: ../src/atEditor.py:418
+#: ../src/atEditor.py:417
 #, python-format
 msgid "This is an invalid record! The problem could be: %s"
 msgstr "Toto není platný záznam! Problém je možná: %s "
 
-#: ../src/atEditor.py:439
+#: ../src/atEditor.py:438
 msgid ""
 "Note about working directory of executed tasks:\n"
 "\n"
@@ -1044,6 +1045,20 @@ msgstr ""
 #, python-format
 msgid "ICON: Got badly sized icon for %s"
 msgstr ""
+
+#: ../src/template.py:188 ../src/template.py:198
+#, fuzzy
+msgid "Title:"
+msgstr "Nadpis"
+
+#: ../src/template.py:198
+msgid "Run:"
+msgstr ""
+
+#: ../src/template.py:200
+#, fuzzy
+msgid "No output"
+msgstr "_Žádný výstup"
 
 #: ../src/template_chooser.py:83 ../src/template_manager.py:84
 msgid "One-time"
@@ -1144,9 +1159,6 @@ msgstr ""
 
 #~ msgid "Mi_nutes:"
 #~ msgstr "_Minut:"
-
-#~ msgid "No out_put"
-#~ msgstr "_Žádný výstup"
 
 #~ msgid ""
 #~ "Quit the application. This will not stop the system scheduling. It will, "

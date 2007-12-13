@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule.HEAD.ne\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-12-02 20:04+0100\n"
+"POT-Creation-Date: 2007-12-13 18:16+0100\n"
 "PO-Revision-Date: 2006-06-11 15:58+0545\n"
 "Last-Translator: Mahesh subedi <submanesh@hotmail.com>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -102,8 +102,8 @@ msgstr " %(min)s र %(max)sको बीचमा हुनुपर्दछ "
 msgid "%s is not a number"
 msgstr "%s सङ्ख्या होइन "
 
-#: ../src/crontab.py:261 ../src/crontab.py:317 ../src/crontabEditor.py:270
-#: ../src/atEditor.py:112 ../src/atEditor.py:367 ../src/atEditor.py:391
+#: ../src/crontab.py:261 ../src/crontab.py:317 ../src/crontabEditor.py:269
+#: ../src/atEditor.py:111 ../src/atEditor.py:366 ../src/atEditor.py:390
 msgid "Untitled"
 msgstr "शीर्षक विहिन "
 
@@ -112,7 +112,7 @@ msgstr "शीर्षक विहिन "
 msgid "Recurrent"
 msgstr "पुनराबृत्ति"
 
-#: ../src/crontab.py:416 ../src/crontabEditor.py:75 ../src/lang.py:149
+#: ../src/crontab.py:416 ../src/crontabEditor.py:74 ../src/lang.py:149
 msgid "At reboot"
 msgstr ""
 
@@ -141,46 +141,46 @@ msgid ""
 "Failed to parse the Day of Month field, possibly due to a bug in crontab."
 msgstr ""
 
-#: ../src/crontabEditor.py:70 ../src/crontabEditorHelper.py:87
+#: ../src/crontabEditor.py:69 ../src/crontabEditorHelper.py:87
 #: ../src/gnome-schedule.glade.h:29
 msgid "Every minute"
 msgstr "प्रत्येक मिनेट"
 
-#: ../src/crontabEditor.py:71 ../src/crontabEditorHelper.py:93
+#: ../src/crontabEditor.py:70 ../src/crontabEditorHelper.py:93
 #: ../src/gnome-schedule.glade.h:28
 msgid "Every hour"
 msgstr "प्रत्येक घण्टा"
 
-#: ../src/crontabEditor.py:72 ../src/crontabEditorHelper.py:99
+#: ../src/crontabEditor.py:71 ../src/crontabEditorHelper.py:99
 msgid "Every day"
 msgstr "प्रत्येक दिन"
 
-#: ../src/crontabEditor.py:73 ../src/crontabEditorHelper.py:105
+#: ../src/crontabEditor.py:72 ../src/crontabEditorHelper.py:105
 msgid "Every month"
 msgstr "प्रत्येक महिना"
 
-#: ../src/crontabEditor.py:74
+#: ../src/crontabEditor.py:73
 msgid "Every week"
 msgstr "प्रत्येक हप्ता"
 
 #. add new task
-#: ../src/crontabEditor.py:130 ../src/crontabEditor.py:140
-#: ../src/atEditor.py:114 ../src/atEditor.py:128
+#: ../src/crontabEditor.py:129 ../src/crontabEditor.py:139
+#: ../src/atEditor.py:113 ../src/atEditor.py:127
 msgid "Create a New Scheduled Task"
 msgstr "एक नयाँ कार्यतालिका कार्य निर्माण गर्नुहोस्"
 
 #. edit template
-#: ../src/crontabEditor.py:200 ../src/atEditor.py:144
+#: ../src/crontabEditor.py:199 ../src/atEditor.py:143
 #, fuzzy
 msgid "Edit template"
 msgstr "टेम्प्लेट:"
 
-#: ../src/crontabEditor.py:239 ../src/atEditor.py:184
+#: ../src/crontabEditor.py:238 ../src/atEditor.py:183
 msgid "Edit a Scheduled Task"
 msgstr "कार्य तालिकामा भएको कार्य सम्पादन गर्नुहोस्"
 
-#: ../src/crontabEditor.py:297 ../src/crontabEditor.py:593
-#: ../src/crontabEditor.py:633
+#: ../src/crontabEditor.py:296 ../src/crontabEditor.py:592
+#: ../src/crontabEditor.py:632
 #, python-format
 msgid ""
 "This is an invalid record! The problem could be in the %(field)s field. "
@@ -189,7 +189,7 @@ msgstr ""
 "यो अमान्य रेकर्ड हो ! यो समस्याको कारण फाँट %(field)sको असफलता पनि हुनसक्छ। कारण: %"
 "(reason)s"
 
-#: ../src/crontabEditor.py:302
+#: ../src/crontabEditor.py:301
 msgid ""
 "Your command contains one or more of the character %, this is special for "
 "cron and cannot be used with Gnome-schedule because of the format it uses to "
@@ -199,14 +199,14 @@ msgid ""
 "for redirection it must be properly escaped with the \\ letter."
 msgstr ""
 
-#: ../src/crontabEditor.py:470
+#: ../src/crontabEditor.py:469
 msgid ""
 "Note about working directory of executed tasks:\n"
 "\n"
 "Recurrent tasks will be run from the home directory."
 msgstr ""
 
-#: ../src/crontabEditor.py:472 ../src/mainWindow.py:642 ../src/atEditor.py:441
+#: ../src/crontabEditor.py:471 ../src/mainWindow.py:642 ../src/atEditor.py:440
 msgid "Warning: Working directory of executed tasks"
 msgstr ""
 
@@ -402,7 +402,8 @@ msgstr ""
 msgid "Choose the user whose tasks you want to modify"
 msgstr "प्रयोगकर्ता रोज्नुहोस् जसको कार्यहरू तपाईँ परिमार्जन गर्न चाहनुहुन्छ "
 
-#: ../src/gnome-schedule.glade.h:20
+#: ../src/gnome-schedule.glade.h:20 ../src/template.py:188
+#: ../src/template.py:198
 #, fuzzy
 msgid "Command:"
 msgstr "आदेश:"
@@ -1005,23 +1006,23 @@ msgstr ""
 msgid "A task from a predefined template"
 msgstr ""
 
-#: ../src/atEditor.py:76
+#: ../src/atEditor.py:75
 msgid "Calendar"
 msgstr ""
 
-#: ../src/atEditor.py:359
+#: ../src/atEditor.py:358
 msgid ""
 "In one or both of the fields hour and minute there was entered a letter, or "
 "a number out of range. Remember an hour only has 60 minutes and a day only "
 "24 hours."
 msgstr ""
 
-#: ../src/atEditor.py:418
+#: ../src/atEditor.py:417
 #, python-format
 msgid "This is an invalid record! The problem could be: %s"
 msgstr "यो अवैध रेकर्ड हो! समस्या हुन सक्थ्यो: %s"
 
-#: ../src/atEditor.py:439
+#: ../src/atEditor.py:438
 msgid ""
 "Note about working directory of executed tasks:\n"
 "\n"
@@ -1047,6 +1048,20 @@ msgstr ""
 #, python-format
 msgid "ICON: Got badly sized icon for %s"
 msgstr ""
+
+#: ../src/template.py:188 ../src/template.py:198
+#, fuzzy
+msgid "Title:"
+msgstr "मिनेट"
+
+#: ../src/template.py:198
+msgid "Run:"
+msgstr ""
+
+#: ../src/template.py:200
+#, fuzzy
+msgid "No output"
+msgstr "निर्गत छैन"
 
 #: ../src/template_chooser.py:83 ../src/template_manager.py:84
 msgid "One-time"
@@ -1147,9 +1162,6 @@ msgstr ""
 
 #~ msgid "Mi_nutes:"
 #~ msgstr "मिनेट:"
-
-#~ msgid "No out_put"
-#~ msgstr "निर्गत छैन"
 
 #~ msgid ""
 #~ "Quit the application. This will not stop the system scheduling. It will, "

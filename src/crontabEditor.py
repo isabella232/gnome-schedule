@@ -28,7 +28,6 @@ import os
 
 #custom modules
 import config
-import preset
 import crontabEditorHelper
 
 

@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-12-02 20:04+0100\n"
+"POT-Creation-Date: 2007-12-13 18:16+0100\n"
 "PO-Revision-Date: 2005-03-31 20:55-0700\n"
 "Last-Translator: Steve Murphy <murf@e-tools.com>\n"
 "Language-Team: Kinyarwanda <translation-team-rw@lists.sourceforge.net>\n"
@@ -115,8 +115,8 @@ msgid "%s is not a number"
 msgstr "%sni OYA a Umubare"
 
 # filter/source\xsltdialog\xmlfilterdialogstrings.src:STR_DEFAULT_UI_NAME.text
-#: ../src/crontab.py:261 ../src/crontab.py:317 ../src/crontabEditor.py:270
-#: ../src/atEditor.py:112 ../src/atEditor.py:367 ../src/atEditor.py:391
+#: ../src/crontab.py:261 ../src/crontab.py:317 ../src/crontabEditor.py:269
+#: ../src/atEditor.py:111 ../src/atEditor.py:366 ../src/atEditor.py:390
 msgid "Untitled"
 msgstr "Nta mutwe"
 
@@ -125,7 +125,7 @@ msgstr "Nta mutwe"
 msgid "Recurrent"
 msgstr ""
 
-#: ../src/crontab.py:416 ../src/crontabEditor.py:75 ../src/lang.py:149
+#: ../src/crontab.py:416 ../src/crontabEditor.py:74 ../src/lang.py:149
 msgid "At reboot"
 msgstr ""
 
@@ -163,61 +163,61 @@ msgid ""
 "Failed to parse the Day of Month field, possibly due to a bug in crontab."
 msgstr ""
 
-#: ../src/crontabEditor.py:70 ../src/crontabEditorHelper.py:87
+#: ../src/crontabEditor.py:69 ../src/crontabEditorHelper.py:87
 #: ../src/gnome-schedule.glade.h:29
 #, fuzzy
 msgid "Every minute"
 msgstr "buri UMUNOTA"
 
-#: ../src/crontabEditor.py:71 ../src/crontabEditorHelper.py:93
+#: ../src/crontabEditor.py:70 ../src/crontabEditorHelper.py:93
 #: ../src/gnome-schedule.glade.h:28
 #, fuzzy
 msgid "Every hour"
 msgstr "buri ISAHA"
 
 # sw/source\ui\misc\linenum.src:TP_LINENUMBERING.FT_DIV_INTERVAL.text
-#: ../src/crontabEditor.py:72 ../src/crontabEditorHelper.py:99
+#: ../src/crontabEditor.py:71 ../src/crontabEditorHelper.py:99
 #, fuzzy
 msgid "Every day"
 msgstr "Buri"
 
-#: ../src/crontabEditor.py:73 ../src/crontabEditorHelper.py:105
+#: ../src/crontabEditor.py:72 ../src/crontabEditorHelper.py:105
 #, fuzzy
 msgid "Every month"
 msgstr "buri Ukwezi"
 
 # sw/source\ui\misc\linenum.src:TP_LINENUMBERING.FT_DIV_INTERVAL.text
-#: ../src/crontabEditor.py:74
+#: ../src/crontabEditor.py:73
 #, fuzzy
 msgid "Every week"
 msgstr "Buri"
 
 #. add new task
-#: ../src/crontabEditor.py:130 ../src/crontabEditor.py:140
-#: ../src/atEditor.py:114 ../src/atEditor.py:128
+#: ../src/crontabEditor.py:129 ../src/crontabEditor.py:139
+#: ../src/atEditor.py:113 ../src/atEditor.py:127
 #, fuzzy
 msgid "Create a New Scheduled Task"
 msgstr "a Gishya Igikorwa"
 
 #. edit template
-#: ../src/crontabEditor.py:200 ../src/atEditor.py:144
+#: ../src/crontabEditor.py:199 ../src/atEditor.py:143
 msgid "Edit template"
 msgstr ""
 
-#: ../src/crontabEditor.py:239 ../src/atEditor.py:184
+#: ../src/crontabEditor.py:238 ../src/atEditor.py:183
 #, fuzzy
 msgid "Edit a Scheduled Task"
 msgstr "a Igikorwa"
 
-#: ../src/crontabEditor.py:297 ../src/crontabEditor.py:593
-#: ../src/crontabEditor.py:633
+#: ../src/crontabEditor.py:296 ../src/crontabEditor.py:592
+#: ../src/crontabEditor.py:632
 #, fuzzy, python-format
 msgid ""
 "This is an invalid record! The problem could be in the %(field)s field. "
 "Reason: %(reason)s"
 msgstr "ni Sibyo Icyabitswe ku i Umwanya"
 
-#: ../src/crontabEditor.py:302
+#: ../src/crontabEditor.py:301
 msgid ""
 "Your command contains one or more of the character %, this is special for "
 "cron and cannot be used with Gnome-schedule because of the format it uses to "
@@ -227,14 +227,14 @@ msgid ""
 "for redirection it must be properly escaped with the \\ letter."
 msgstr ""
 
-#: ../src/crontabEditor.py:470
+#: ../src/crontabEditor.py:469
 msgid ""
 "Note about working directory of executed tasks:\n"
 "\n"
 "Recurrent tasks will be run from the home directory."
 msgstr ""
 
-#: ../src/crontabEditor.py:472 ../src/mainWindow.py:642 ../src/atEditor.py:441
+#: ../src/crontabEditor.py:471 ../src/mainWindow.py:642 ../src/atEditor.py:440
 msgid "Warning: Working directory of executed tasks"
 msgstr ""
 
@@ -467,7 +467,8 @@ msgid "Choose the user whose tasks you want to modify"
 msgstr ""
 
 # padmin/source\rtsetup.src:RID_RTS_RTSDIALOG.RID_RTS_RTSDIALOG_TABCONTROL.RID_RTS_COMMANDPAGE.text
-#: ../src/gnome-schedule.glade.h:20
+#: ../src/gnome-schedule.glade.h:20 ../src/template.py:188
+#: ../src/template.py:198
 #, fuzzy
 msgid "Command:"
 msgstr "Icyo wifuza"
@@ -1096,23 +1097,23 @@ msgstr ""
 msgid "A task from a predefined template"
 msgstr ""
 
-#: ../src/atEditor.py:76
+#: ../src/atEditor.py:75
 msgid "Calendar"
 msgstr ""
 
-#: ../src/atEditor.py:359
+#: ../src/atEditor.py:358
 msgid ""
 "In one or both of the fields hour and minute there was entered a letter, or "
 "a number out of range. Remember an hour only has 60 minutes and a day only "
 "24 hours."
 msgstr ""
 
-#: ../src/atEditor.py:418
+#: ../src/atEditor.py:417
 #, fuzzy, python-format
 msgid "This is an invalid record! The problem could be: %s"
 msgstr "ni Sibyo Icyabitswe"
 
-#: ../src/atEditor.py:439
+#: ../src/atEditor.py:438
 msgid ""
 "Note about working directory of executed tasks:\n"
 "\n"
@@ -1138,6 +1139,25 @@ msgstr ""
 #, python-format
 msgid "ICON: Got badly sized icon for %s"
 msgstr ""
+
+#: ../src/template.py:188 ../src/template.py:198
+#, fuzzy
+msgid "Title:"
+msgstr "Umutwe"
+
+# #-#-#-#-#  basctl.pot (PACKAGE VERSION)  #-#-#-#-#
+# basctl/source\basicide\basidesh.src:RID_BASICIDE_OBJECTBAR.SID_BASICRUN.text
+# #-#-#-#-#  basctl.pot (PACKAGE VERSION)  #-#-#-#-#
+# basctl/source\basicide\macrodlg.src:RID_STR_RUN.text
+#: ../src/template.py:198
+#, fuzzy
+msgid "Run:"
+msgstr "Gukoresha"
+
+#: ../src/template.py:200
+#, fuzzy
+msgid "No output"
+msgstr "Ibisohoka"
 
 # wizards/source\schedule\schedule.src:dlgCalEventOnce.text
 #: ../src/template_chooser.py:83 ../src/template_manager.py:84
@@ -1254,10 +1274,6 @@ msgstr "Icyarimwe"
 #~ msgstr "UMUNOTA"
 
 #, fuzzy
-#~ msgid "No out_put"
-#~ msgstr "Ibisohoka"
-
-#, fuzzy
 #~ msgid ""
 #~ "Quit the application. This will not stop the system scheduling. It will, "
 #~ "however, quit this system schedule maintenance tool."
@@ -1348,9 +1364,6 @@ msgstr "Icyarimwe"
 #~ msgid "Schedule"
 #~ msgstr "Igenabihe"
 
-#~ msgid "Title"
-#~ msgstr "Umutwe"
-
 #, fuzzy
 #~ msgid "Must be between %s and %s"
 #~ msgstr "hagati Na"
@@ -1418,13 +1431,6 @@ msgstr "Icyarimwe"
 #, fuzzy
 #~ msgid "Happens from"
 #~ msgstr "Bivuye"
-
-# #-#-#-#-#  basctl.pot (PACKAGE VERSION)  #-#-#-#-#
-# basctl/source\basicide\basidesh.src:RID_BASICIDE_OBJECTBAR.SID_BASICRUN.text
-# #-#-#-#-#  basctl.pot (PACKAGE VERSION)  #-#-#-#-#
-# basctl/source\basicide\macrodlg.src:RID_STR_RUN.text
-#~ msgid "Run"
-#~ msgstr "Gukoresha"
 
 #, fuzzy
 #~ msgid "Select a different user"
