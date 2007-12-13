@@ -1138,23 +1138,19 @@ msgid "ICON: Got badly sized icon for %s"
 msgstr "IKON: Fekk dårleg ikon med dårleg storleik: %s"
 
 #
+#
 #: ../src/template.py:188 ../src/template.py:198
-#, fuzzy
 msgid "Title:"
-msgstr "Tid:"
+msgstr "Tittel:"
 
 #: ../src/template.py:198
 msgid "Run:"
-msgstr ""
+msgstr "Køyr:"
 
 #: ../src/template.py:200
 msgid "No output"
-msgstr ""
+msgstr "Ingen utdata"
 
 #: ../src/template_chooser.py:83 ../src/template_manager.py:84
 msgid "One-time"
 msgstr "Ein-gong"
-
-#
-#~ msgid "Copyright (c) 2004-2008 Gaute Hope."
-#~ msgstr "Kopieringsrett (c) 2004-2006 Gaute Hope."

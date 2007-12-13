@@ -1,7 +1,9 @@
 2007-12-13  Gaute Hope  <eg@gaute.vetsj.com>
 
 	* removed import preset from ateditor and crontabeditor
-	
+	* Version 2.0.0-rc1
+	* update-po
+
 2007-12-08  Gaute Hope  <eg@gaute.vetsj.com>
 
 	* Some minor tweaks from: https://bugs.launchpad.net/ubuntu/+source/gnome-schedule/+bug/174467
