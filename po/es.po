@@ -992,7 +992,7 @@ msgstr ""
 "Alejandro Valdes Jimenez <avaldes@utalca.cl>, 2007\n"
 "Jorge González <jorgegonz@svn.gnome.org>, 2007\n"
 "Rodrigo Marcos Fombellida <rmarcos@cvs.gnome.org>, 2005-2006\n"
-"QA: "Jorge González <jorgegonz@svn.gnome.org>, 2007\n"
+"QA: Jorge González <jorgegonz@svn.gnome.org>, 2007\n"
 "QA: Francisco Javier F. Serrador <serrador@cvs.gnome.org>, 2004-2006"
 
 #: ../src/mainWindow.py:748
