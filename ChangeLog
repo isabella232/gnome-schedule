@@ -1,3 +1,9 @@
+2007-12-19  Gaute Hope  <eg@gaute.vetsj.com>
+
+	* Added crontab.svg, view-refresh.svg from the tango-project.
+	* Removed thoughicon.py and references.
+	* Calendar positions correctly when decorators are included in get_position, hopefully also works when decorators are _not_ included in get_position
+	
 2007-12-13  Gaute Hope  <eg@gaute.vetsj.com>
 
 	* removed import preset from ateditor and crontabeditor

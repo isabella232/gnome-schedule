@@ -240,6 +240,9 @@ class AtEditor:
 				
 	def __show_calendar__ (self):
 		x, y = self.widget.get_position ()
+		xoff, yoff, i, j, k = self.widget.window.get_geometry ()
+		x = x + xoff
+		y = y + yoff
 		button_rect = self.cal_button.get_allocation ()
 		x = x + button_rect.x
 		y = y + button_rect.y + button_rect.height
@@ -257,6 +260,7 @@ class AtEditor:
 		self.cal_window.hide_all ()
 		self.cal_button.set_active (False)
 		self.widget.set_modal (True)
+		
 		
 	def on_worded_label_event (self, *args):
 		#TODO highlight on mouseover

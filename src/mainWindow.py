@@ -44,7 +44,6 @@ import template
 import template_chooser
 import template_manager
 
-import thoughicon
 
 gtk.glade.bindtextdomain(config.GETTEXT_PACKAGE(), config.GNOMELOCALEDIR())
 
@@ -321,12 +320,7 @@ class main:
 
 			
 		
-	##
-
-	# TODO: pixbuf or pixmap? gtkImage
 	def __loadIcon__(self):
-		self.ti_theme = thoughicon.ToughIconTheme()
-		
 		if os.access("../icons/gnome-schedule.svg", os.F_OK):
 			self.iconPixbuf = gtk.gdk.pixbuf_new_from_file_at_size ("../icons/gnome-schedule.svg", 52, 52)
 		else:
@@ -334,14 +328,17 @@ class main:
 				self.iconPixbuf = gtk.gdk.pixbuf_new_from_file_at_size (config.getImagedir() + "/gnome-schedule.svg", 52, 52)
 			except:
 				print _("ERROR: Could not load icon")
-		
-		self.iconatstring = gtk.STOCK_DIALOG_WARNING
-		self.iconcrontabstring = gtk.STOCK_REFRESH
-		self.icontemplatestring = gtk.STOCK_INDEX
-		
-		self.iconcrontab  = self.ti_theme.load_icon (self.iconcrontabstring, 19, 0)
-		self.bigiconcrontab = self.ti_theme.load_icon (self.iconcrontabstring, 49, 0)
-		
+
+		if os.access ("../icons/crontab.svg", os.F_OK):
+			self.iconcrontab = gtk.gdk.pixbuf_new_from_file_at_size ("../icons/crontab.svg", 19, 19)
+			self.bigiconcrontab = gtk.gdk.pixbuf_new_from_file_at_size ("../icons/crontab.svg", 49, 49)
+		else:
+			try:
+				self.iconcrontab = gtk.gdk.pixbuf_new_from_file_at_size (config.getImagedir() + "/crontab.svg", 19, 19)
+				self.bigiconcrontab = gtk.gdk.pixbuf_new_from_file_at_size (config.getImagedir() + "/crontab.svg", 49, 49)
+			except:
+				print _("ERROR: Could not load icon")		
+
 		if os.access ("../icons/template.svg", os.F_OK):
 			self.icontemplate = gtk.gdk.pixbuf_new_from_file_at_size ("../icons/template.svg", 19, 19)
 			self.normalicontemplate = gtk.gdk.pixbuf_new_from_file_at_size ("../icons/template.svg", 25, 25)
