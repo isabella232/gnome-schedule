@@ -98,11 +98,18 @@ class AtEditor:
 		self.xml.signal_connect("on_at_button_cancel_clicked", self.on_button_cancel_clicked)
 		self.xml.signal_connect ("on_at_button_template_clicked", self.on_button_template_clicked)
 		
+		self.check_spin_running = False
+		
 		self.xml.signal_connect("on_at_spin_hour_changed", self.on_spin_hour_changed)
 		self.xml.signal_connect("on_at_spin_minute_changed", self.on_spin_minute_changed)
 		self.xml.signal_connect ("on_at_spin_year_changed", self.on_spin_year_changed)
 		self.xml.signal_connect ("on_at_spin_month_changed", self.on_spin_month_changed)
 		self.xml.signal_connect ("on_at_spin_day_changed", self.on_spin_day_changed)
+		
+		ctime = time.localtime()
+		year = ctime[0]
+		self.spin_year.set_range (year, year + 2000) # TODO: Year 4007 incompatible
+		self.timeout_handler_id = gobject.timeout_add(60 * 1000, self.__check_spins__)
 		
 		
 	def showadd (self):
@@ -287,21 +294,126 @@ class AtEditor:
 	def on_entry_title_changed (self, *args):
 		self.title = self.entry_title.get_text()
 
-	def on_spin_day_changed (self, *args):		
+	def on_spin_day_changed (self, *args):	
+		self.__check_spins__ ()	
 		self.__update_time_cal__()
 
 	def on_spin_month_changed (self, *args):
+		self.__check_spins__ ()
 		self.__update_time_cal__()
 	
 	def on_spin_year_changed (self, *args):
+		self.__check_spins__ ()
 		self.__update_time_cal__()
 
 	def on_spin_hour_changed (self, *args):
+		self.__check_spins__ ()
 		self.__update_time_cal__()
 
 	def on_spin_minute_changed (self, *args):
 		self.__update_time_cal__()
 
+	def __check_spins__ (self):
+		if self.check_spin_running != True:
+			print "check_spin"
+			self.check_spin_running = True
+			# is also run every minute
+			ctime = time.localtime()
+			year = ctime[0]
+			month = ctime[1]
+			day = ctime[2]
+			hour = ctime[3]
+			minute = ctime[4]
+			
+			cyear = False
+			cmonth = False
+			cday = False
+			chour = False
+			
+			syear = self.spin_year.get_value_as_int ()
+			if (syear == year):
+				cyear = True
+			
+			smonth = self.spin_month.get_value_as_int ()
+			mi, ma = self.spin_month.get_range ()
+			if cyear:
+				if (mi != month):
+					self.spin_month.set_range (month, 12)
+					mi = month
+			else: 
+				if ((mi != 1) or (ma != 12)):
+					self.spin_month.set_range (1, 12)
+			if (mi <= smonth <= ma):
+				self.spin_month.set_value (smonth)
+			else:
+				if (smonth > ma):
+					self.spin_month.set_value (ma)
+				else:
+					self.spin_month.set_value (mi)
+			smonth = self.spin_month.get_value_as_int ()
+			if (smonth == month):
+				cmonth = True
+			
+			sday = self.spin_day.get_value_as_int ()		
+			mi, ma = self.spin_day.get_range ()
+			w, days = calendar.monthrange (syear, smonth)
+			if (cmonth and cyear):
+				if (mi != day):
+					self.spin_day.set_range (day, days)
+					mi = day
+			else:
+				if ((mi != 1) or (ma != days)):
+					self.spin_day.set_range (day, days)
+			if (mi <= sday <= days):
+				self.spin_day.set_value (sday)
+			else:
+				if (sday > days):
+					self.spin_day.set_value (days)
+				else:
+					self.spin_day.set_value (mi)
+			sday = self.spin_day.get_value_as_int ()
+			if (sday == day):
+				cday = True
+			
+			shour = self.spin_hour.get_value_as_int ()
+			mi, ma = self.spin_hour.get_range ()
+			if (cyear and cmonth and cday):
+				if (mi != hour):
+					self.spin_hour.set_range (hour, 24)
+					mi = hour
+			else:
+				if ((mi != 0) or (ma != 24)):
+					self.spin_hour.set_range (0, 24)
+			if (mi <= shour <= ma):
+				self.spin_hour.set_value (shour)
+			else:
+				if (shour > ma):
+					self.spin_hour.set_value (ma)
+				else:
+					self.spin_hour.set_value (mi)
+			shour = self.spin_hour.get_value_as_int ()
+			if (shour == hour):
+				chour = True
+			
+			sminute = self.spin_minute.get_value_as_int ()
+			mi, ma = self.spin_minute.get_range ()
+			if (cyear and cmonth and cday and chour):
+				if (mi != minute):
+					self.spin_minute.set_range (minute, 59)
+					mi = minute
+			else:
+				if ((mi != 0) or (ma != 59)):
+					self.spin_minute.set_range (0, 59)
+			if (mi <= sminute <= ma):
+				self.spin_minute.set_value (sminute)
+			else:
+				if (sminute > ma):
+					self.spin_minute.set_value (ma)
+				else:
+					self.spin_minute.set_value (mi)
+								
+			self.check_spin_running = False
+		
 	
 	def __update_time_cal__ (self):
 		year = self.spin_year.get_text ()
