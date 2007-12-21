@@ -1,3 +1,15 @@
+2007-12-21  Gaute Hope  <eg@gaute.vetsj.com>
+
+	* Various tweaks based on review from Jeff:
+	* No subtitle/extra icon/extra text in template windows
+	* Toolbar in template manager, new button that opens the addwindow
+	* Buttons grey out when no template is selected
+	* New 'Use template' button replacing 'Apply' stockbutton
+	* Removed explaining/confusing text about how to create a new task in template manager
+	* Not possible to reorganize tasks in main window
+	* Doublecliking anywhere in any of the treeviews while an item is selected results in it being opened.. not that logical, but neither important.
+	* at editor: spin buttons emits signal when edit is finished, enabling editing by typing in numbers.
+
 2007-12-20  Gaute Hope  <eg@gaute.vetsj.com>
 
 	* Spin buttons in ateditor checks if date is valid as they change.
