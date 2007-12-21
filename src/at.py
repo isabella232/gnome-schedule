@@ -472,7 +472,7 @@ class At:
 			
 				
 	def read (self):
-		
+		self.standard_locale ()
 		data = []
 		#do 'atq'
 		execute = config.getAtqbin ()
@@ -509,7 +509,7 @@ class At:
 				#print _("added %(id)s") % { "id": job_id	}
 			else:
 				print _("Warning: a line in atq's output didn't parse")	
-		
+		self.restore_locale ()
 		return data
 
 	
