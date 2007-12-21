@@ -1,7 +1,7 @@
 [Desktop Entry]
 _Name=Scheduled tasks
 _Comment=Manage your system tasks
-Categories=GTK;GNOME;System;Settings
+Categories=System;
 OnlyShowIn=GNOME
 Icon=gnome-schedule.png
 Exec=@prefix@/bin/gnome-schedule

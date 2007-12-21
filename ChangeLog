@@ -9,6 +9,7 @@
 	* Not possible to reorganize tasks in main window
 	* Doublecliking anywhere in any of the treeviews while an item is selected results in it being opened.. not that logical, but neither important.
 	* at editor: spin buttons emits signal when edit is finished, enabling editing by typing in numbers.
+	* desktop file: set categories=system
 
 2007-12-20  Gaute Hope  <eg@gaute.vetsj.com>
 
