@@ -2,6 +2,7 @@
 
 	* Spin buttons in ateditor checks if date is valid as they change.
 	* Removed cal_focus_lost from lots of events in at editor; now keeping the calendar when date is changed. Hopefully works good.
+	* at.py: Parsing of records matching regexp 2 tweaked to Gentoo, hopefully works.
 
 2007-12-19  Gaute Hope  <eg@gaute.vetsj.com>
 

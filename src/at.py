@@ -122,8 +122,6 @@ class At:
 					
 					
 				if m != None:
-					#print m.groups ()
-					
 					if regexp == 3:
 						job_id = m.groups ()[0]
 						
@@ -146,13 +144,19 @@ class At:
 						time = dt.strftime ("%H:%M:%S")
 						class_id = m.groups ()[2]
 						user = m.groups ()[3]
-						
+					elif regexp == 2:
+						job_id = m.groups ()[0]
+						date = m.groups ()[1]
+						time = m.groups ()[2]
+						class_id = m.groups ()[3]
+						user = m.groups ()[4]
 					else:
 						job_id = m.groups ()[0]
 						date = m.groups ()[4]
 						time = m.groups ()[5]
 						class_id = m.groups ()[6]
 						user = m.groups ()[7]
+						
 					execute = config.getAtbin() + " -c " + job_id
 					# read lines and detect starter
 					script = os.popen(execute).read()
