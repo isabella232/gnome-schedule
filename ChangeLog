@@ -1,6 +1,7 @@
 2007-12-20  Gaute Hope  <eg@gaute.vetsj.com>
 
-	* Spin buttons in ateditor checks if date is valid as they change. Calendar closes as soon as something is pressed.. needs to be made insenstive if calendar is active.
+	* Spin buttons in ateditor checks if date is valid as they change.
+	* Removed cal_focus_lost from lots of events in at editor; now keeping the calendar when date is changed. Hopefully works good.
 
 2007-12-19  Gaute Hope  <eg@gaute.vetsj.com>
 

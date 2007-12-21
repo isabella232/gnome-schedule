@@ -82,7 +82,7 @@ class AtEditor:
 		
 		self.cal_loaded = False
 		self.x, self.y = self.widget.get_position ()
-		self.height, self.width = self.widget.get_size ()
+		self.height, self.wid9847th = self.widget.get_size ()
 		self.cal_active = True
 		
 		self.xml.signal_connect ("on_at_editor_size_changed", self.on_at_editor_size_changed)
@@ -108,7 +108,7 @@ class AtEditor:
 		
 		ctime = time.localtime()
 		year = ctime[0]
-		self.spin_year.set_range (year, year + 2000) # TODO: Year 4007 incompatible
+		self.spin_year.set_range (year, year + 5847) # TODO: Year +5847 compatability
 		self.timeout_handler_id = gobject.timeout_add(60 * 1000, self.__check_spins__)
 		
 		
@@ -153,7 +153,7 @@ class AtEditor:
 		self.__setup_calendar__ ()
 		self.widget.show_all ()
 		
-		# grey out time settings
+		# hide time settings
 		self.at_vbox_time.hide ()
 		
 		# save and cancel buttons
@@ -208,9 +208,6 @@ class AtEditor:
 			if ((x != self.x) or (y != self.y) or (height != self.height) or (width != self.width)):
 				self.__hide_calendar__ ()
 				
-		
-		
-			
 	def on_cal_button_toggled (self, *args):
 		if self.cal_button.get_active ():
 			self.__show_calendar__ ()
@@ -311,13 +308,14 @@ class AtEditor:
 		self.__update_time_cal__()
 
 	def on_spin_minute_changed (self, *args):
+		self.__check_spins__ ()
 		self.__update_time_cal__()
 
 	def __check_spins__ (self):
+		# Is additionally run every minute
 		if self.check_spin_running != True:
-			print "check_spin"
 			self.check_spin_running = True
-			# is also run every minute
+			
 			ctime = time.localtime()
 			year = ctime[0]
 			month = ctime[1]
