@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule.HEAD.ne\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-12-13 21:21+0100\n"
+"POT-Creation-Date: 2007-12-21 02:01+0100\n"
 "PO-Revision-Date: 2006-06-11 15:58+0545\n"
 "Last-Translator: Mahesh subedi <submanesh@hotmail.com>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -44,22 +44,22 @@ msgstr "जिनोम कार्यतालिका"
 msgid "System tools"
 msgstr "प्रणाली उपकरणहरू"
 
-#: ../src/at.py:486
+#: ../src/at.py:490
 #, python-format
 msgid "DANGEROUS PARSE: %(preview)s"
 msgstr "DANGEROUS PARSE: %(preview)s"
 
 #. TODO: localize time and date formats
-#: ../src/at.py:493
+#: ../src/at.py:497
 #, python-format
 msgid "On %(date)s at %(time)s"
 msgstr " %(date)s at %(time)s मा"
 
-#: ../src/at.py:498 ../src/at.py:503
+#: ../src/at.py:502 ../src/at.py:507
 msgid "Once"
 msgstr "एकपटक "
 
-#: ../src/at.py:507
+#: ../src/at.py:511
 msgid "Warning: a line in atq's output didn't parse"
 msgstr "चेतावनी: atq's एउटा लाइनमा निर्गत पद वर्णन गरेन"
 
@@ -103,7 +103,7 @@ msgid "%s is not a number"
 msgstr "%s सङ्ख्या होइन "
 
 #: ../src/crontab.py:261 ../src/crontab.py:317 ../src/crontabEditor.py:269
-#: ../src/atEditor.py:111 ../src/atEditor.py:366 ../src/atEditor.py:390
+#: ../src/atEditor.py:118 ../src/atEditor.py:480 ../src/atEditor.py:504
 msgid "Untitled"
 msgstr "शीर्षक विहिन "
 
@@ -165,17 +165,17 @@ msgstr "प्रत्येक हप्ता"
 
 #. add new task
 #: ../src/crontabEditor.py:129 ../src/crontabEditor.py:139
-#: ../src/atEditor.py:113 ../src/atEditor.py:127
+#: ../src/atEditor.py:120 ../src/atEditor.py:134
 msgid "Create a New Scheduled Task"
 msgstr "एक नयाँ कार्यतालिका कार्य निर्माण गर्नुहोस्"
 
 #. edit template
-#: ../src/crontabEditor.py:199 ../src/atEditor.py:143
+#: ../src/crontabEditor.py:199 ../src/atEditor.py:150
 #, fuzzy
 msgid "Edit template"
 msgstr "टेम्प्लेट:"
 
-#: ../src/crontabEditor.py:238 ../src/atEditor.py:183
+#: ../src/crontabEditor.py:238 ../src/atEditor.py:190
 msgid "Edit a Scheduled Task"
 msgstr "कार्य तालिकामा भएको कार्य सम्पादन गर्नुहोस्"
 
@@ -206,7 +206,7 @@ msgid ""
 "Recurrent tasks will be run from the home directory."
 msgstr ""
 
-#: ../src/crontabEditor.py:471 ../src/mainWindow.py:642 ../src/atEditor.py:440
+#: ../src/crontabEditor.py:471 ../src/mainWindow.py:639 ../src/atEditor.py:554
 msgid "Warning: Working directory of executed tasks"
 msgstr ""
 
@@ -526,7 +526,7 @@ msgstr "वर्णन:"
 msgid "Task:"
 msgstr "कार्य"
 
-#: ../src/gnome-schedule.glade.h:55 ../src/mainWindow.py:184
+#: ../src/gnome-schedule.glade.h:55 ../src/mainWindow.py:183
 #, fuzzy
 msgid "Templates"
 msgstr "टेम्प्लेट:"
@@ -881,68 +881,68 @@ msgstr "हप्तादिन: %s"
 msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 msgstr " %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s मा"
 
-#: ../src/mainWindow.py:111
+#: ../src/mainWindow.py:110
 #, fuzzy
 msgid "Recurrent task"
 msgstr "पुनराबृत्ति"
 
-#: ../src/mainWindow.py:122
+#: ../src/mainWindow.py:121
 msgid "One-time task"
 msgstr ""
 
-#: ../src/mainWindow.py:133
+#: ../src/mainWindow.py:132
 #, fuzzy
 msgid "From template"
 msgstr "टेम्प्लेट:"
 
-#: ../src/mainWindow.py:152
+#: ../src/mainWindow.py:151
 #, fuzzy
 msgid "Add a new task"
 msgstr "कार्य थप्नुहोस्"
 
-#: ../src/mainWindow.py:285 ../src/mainWindow.py:396
+#: ../src/mainWindow.py:284 ../src/mainWindow.py:393
 #, python-format
 msgid "Editing user: %s"
 msgstr "प्रयोगकर्ता सम्पादन गर्दै: %s"
 
-#: ../src/mainWindow.py:336 ../src/mainWindow.py:357 ../src/mainWindow.py:367
-#: ../src/scheduleapplet.py:115
+#: ../src/mainWindow.py:330 ../src/mainWindow.py:340 ../src/mainWindow.py:354
+#: ../src/mainWindow.py:364 ../src/scheduleapplet.py:115
 msgid "ERROR: Could not load icon"
 msgstr "त्रुटि: प्रतिमा लोड गर्न सकेन"
 
-#: ../src/mainWindow.py:377
+#: ../src/mainWindow.py:374
 msgid "ERROR: Could not load glade file"
 msgstr "त्रुटि: ग्लेड फाइल लोड गर्न सकेन"
 
-#: ../src/mainWindow.py:431 ../src/template_chooser.py:61
+#: ../src/mainWindow.py:428 ../src/template_chooser.py:61
 #: ../src/template_manager.py:62
 #, fuzzy
 msgid "Task"
 msgstr "कार्य"
 
-#: ../src/mainWindow.py:444 ../src/mainWindow.py:470
+#: ../src/mainWindow.py:441 ../src/mainWindow.py:467
 #: ../src/template_chooser.py:70 ../src/template_manager.py:71
 msgid "Description"
 msgstr "वर्णन"
 
-#: ../src/mainWindow.py:448 ../src/mainWindow.py:461
+#: ../src/mainWindow.py:445 ../src/mainWindow.py:458
 msgid "Date and Time"
 msgstr "मिति र समय"
 
-#: ../src/mainWindow.py:452 ../src/mainWindow.py:465
+#: ../src/mainWindow.py:449 ../src/mainWindow.py:462
 msgid "Command preview"
 msgstr ""
 
 #. print ex
-#: ../src/mainWindow.py:521 ../src/mainWindow.py:584
+#: ../src/mainWindow.py:518 ../src/mainWindow.py:581
 msgid "Please select a task"
 msgstr "कृपया कार्य चयन गर्नुहोस्"
 
-#: ../src/mainWindow.py:528
+#: ../src/mainWindow.py:525
 msgid "Do you want to delete this task?"
 msgstr "तपाईँ यो कार्य मेट्न चाहनुहुन्छ ?"
 
-#: ../src/mainWindow.py:629
+#: ../src/mainWindow.py:626
 msgid ""
 "Are you sure you want to run this task now?\n"
 "\n"
@@ -950,12 +950,12 @@ msgid ""
 "affect the normal scheduled run times."
 msgstr ""
 
-#: ../src/mainWindow.py:631
+#: ../src/mainWindow.py:628
 #, fuzzy
 msgid "Are you sure you want to run this task?"
 msgstr "तपाईँ यो कार्य मेट्न चाहनुहुन्छ ?"
 
-#: ../src/mainWindow.py:640
+#: ../src/mainWindow.py:637
 msgid ""
 "Note about working directory of executed tasks:\n"
 "\n"
@@ -964,33 +964,33 @@ msgid ""
 "(normally the home directory)."
 msgstr ""
 
-#: ../src/mainWindow.py:695
+#: ../src/mainWindow.py:692
 msgid "Press ENTER to continue and close this window."
 msgstr ""
 
-#: ../src/mainWindow.py:703
+#: ../src/mainWindow.py:700
 #, fuzzy
 msgid "Please select a task!"
 msgstr "कृपया कार्य चयन गर्नुहोस्"
 
-#: ../src/mainWindow.py:711
+#: ../src/mainWindow.py:708
 msgid "About Gnome Schedule"
 msgstr "जिनोम कार्यतालिकाका बारेमा"
 
-#: ../src/mainWindow.py:712
+#: ../src/mainWindow.py:709
 msgid "Gnome Schedule"
 msgstr "जिनोम कार्यतालिका"
 
-#: ../src/mainWindow.py:714
+#: ../src/mainWindow.py:711
 #, python-format
 msgid "Copyright (c) %(year)s %(name)s."
 msgstr ""
 
-#: ../src/mainWindow.py:727
+#: ../src/mainWindow.py:724
 msgid "translator-credits"
 msgstr "Mahesh Subedi<submanesh@gmail.com>"
 
-#: ../src/mainWindow.py:748
+#: ../src/mainWindow.py:745
 msgid "Could not display help"
 msgstr "मद्दत प्रदर्शन गर्न सकेन"
 
@@ -1019,43 +1019,24 @@ msgstr ""
 msgid "Calendar"
 msgstr ""
 
-#: ../src/atEditor.py:358
+#: ../src/atEditor.py:472
 msgid ""
 "In one or both of the fields hour and minute there was entered a letter, or "
 "a number out of range. Remember an hour only has 60 minutes and a day only "
 "24 hours."
 msgstr ""
 
-#: ../src/atEditor.py:417
+#: ../src/atEditor.py:531
 #, python-format
 msgid "This is an invalid record! The problem could be: %s"
 msgstr "यो अवैध रेकर्ड हो! समस्या हुन सक्थ्यो: %s"
 
-#: ../src/atEditor.py:438
+#: ../src/atEditor.py:552
 msgid ""
 "Note about working directory of executed tasks:\n"
 "\n"
 "One-time tasks will be run from the directory where Gnome schedule is run "
 "from (normally the home directory)."
-msgstr ""
-
-#: ../src/thoughicon.py:70
-msgid "ICON: Using dummy icon"
-msgstr ""
-
-#: ../src/thoughicon.py:73
-#, python-format
-msgid "ICON: Doesn't handle absolute paths: '%s'"
-msgstr ""
-
-#: ../src/thoughicon.py:82
-#, python-format
-msgid "ICON: Icon '%s' is not in theme"
-msgstr ""
-
-#: ../src/thoughicon.py:94
-#, python-format
-msgid "ICON: Got badly sized icon for %s"
 msgstr ""
 
 #: ../src/template.py:188 ../src/template.py:198

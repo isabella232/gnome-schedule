@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-12-13 21:21+0100\n"
+"POT-Creation-Date: 2007-12-21 02:01+0100\n"
 "PO-Revision-Date: 2007-12-13 15:04-0500\n"
 "Last-Translator: Jeff Fortin <nekohayo ~at~ gmail.com>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
@@ -39,22 +39,22 @@ msgstr "Planificateur de tâches pour GNOME"
 msgid "System tools"
 msgstr "Outils système"
 
-#: ../src/at.py:486
+#: ../src/at.py:490
 #, python-format
 msgid "DANGEROUS PARSE: %(preview)s"
 msgstr "ANALYSE DANGEREUSE : %(preview)s"
 
 #. TODO: localize time and date formats
-#: ../src/at.py:493
+#: ../src/at.py:497
 #, python-format
 msgid "On %(date)s at %(time)s"
 msgstr "Le %(date)s à %(time)s"
 
-#: ../src/at.py:498 ../src/at.py:503
+#: ../src/at.py:502 ../src/at.py:507
 msgid "Once"
 msgstr "Une seule fois"
 
-#: ../src/at.py:507
+#: ../src/at.py:511
 msgid "Warning: a line in atq's output didn't parse"
 msgstr "Avertissement : une ligne de la sortie de atq n'a pas pu être analysée"
 
@@ -98,7 +98,7 @@ msgid "%s is not a number"
 msgstr "%s n'est pas un nombre"
 
 #: ../src/crontab.py:261 ../src/crontab.py:317 ../src/crontabEditor.py:269
-#: ../src/atEditor.py:111 ../src/atEditor.py:366 ../src/atEditor.py:390
+#: ../src/atEditor.py:118 ../src/atEditor.py:480 ../src/atEditor.py:504
 msgid "Untitled"
 msgstr "Sans titre"
 
@@ -135,8 +135,8 @@ msgstr "jour de la semaine"
 msgid ""
 "Failed to parse the Day of Month field, possibly due to a bug in crontab."
 msgstr ""
-"Erreur d'interprétation du champ « Jour du mois », probablement dû à un "
-"bogue de crontab."
+"Erreur d'interprétation du champ « Jour du mois », probablement dû à un bogue "
+"de crontab."
 
 #: ../src/crontabEditor.py:69 ../src/crontabEditorHelper.py:87
 #: ../src/gnome-schedule.glade.h:32
@@ -162,16 +162,16 @@ msgstr "Toutes les semaines"
 
 #. add new task
 #: ../src/crontabEditor.py:129 ../src/crontabEditor.py:139
-#: ../src/atEditor.py:113 ../src/atEditor.py:127
+#: ../src/atEditor.py:120 ../src/atEditor.py:134
 msgid "Create a New Scheduled Task"
 msgstr "Création d'une nouvelle tâche planifiée"
 
 #. edit template
-#: ../src/crontabEditor.py:199 ../src/atEditor.py:143
+#: ../src/crontabEditor.py:199 ../src/atEditor.py:150
 msgid "Edit template"
 msgstr "Modifier le modèle"
 
-#: ../src/crontabEditor.py:238 ../src/atEditor.py:183
+#: ../src/crontabEditor.py:238 ../src/atEditor.py:190
 msgid "Edit a Scheduled Task"
 msgstr "Édition d'une tâche planifiée"
 
@@ -209,10 +209,10 @@ msgid ""
 msgstr ""
 "Note à propos du dossier de travail des tâches effectuées :\n"
 "\n"
-"Les tâches récurrentes seront exécutées à partir de votre « dossier "
-"personnel »."
+"Les tâches récurrentes seront exécutées à partir de votre « dossier personnel "
+"»."
 
-#: ../src/crontabEditor.py:471 ../src/mainWindow.py:642 ../src/atEditor.py:440
+#: ../src/crontabEditor.py:471 ../src/mainWindow.py:639 ../src/atEditor.py:554
 msgid "Warning: Working directory of executed tasks"
 msgstr "Avertissement : dossier de travail des tâches lors de leur exécution"
 
@@ -519,7 +519,7 @@ msgstr "Description de la tâche :"
 msgid "Task:"
 msgstr "Tâche :"
 
-#: ../src/gnome-schedule.glade.h:55 ../src/mainWindow.py:184
+#: ../src/gnome-schedule.glade.h:55 ../src/mainWindow.py:183
 msgid "Templates"
 msgstr "Modèles"
 
@@ -889,64 +889,64 @@ msgstr "jour de la semaine : %s"
 msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 msgstr "À : %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 
-#: ../src/mainWindow.py:111
+#: ../src/mainWindow.py:110
 msgid "Recurrent task"
 msgstr "Tâche récurrente"
 
-#: ../src/mainWindow.py:122
+#: ../src/mainWindow.py:121
 msgid "One-time task"
 msgstr "Tâche à usage unique"
 
-#: ../src/mainWindow.py:133
+#: ../src/mainWindow.py:132
 msgid "From template"
 msgstr "À partir d'un modèle"
 
-#: ../src/mainWindow.py:152
+#: ../src/mainWindow.py:151
 msgid "Add a new task"
 msgstr "Ajouter une tâche"
 
-#: ../src/mainWindow.py:285 ../src/mainWindow.py:396
+#: ../src/mainWindow.py:284 ../src/mainWindow.py:393
 #, python-format
 msgid "Editing user: %s"
 msgstr "Édition pour l'utilisateur : %s"
 
-#: ../src/mainWindow.py:336 ../src/mainWindow.py:357 ../src/mainWindow.py:367
-#: ../src/scheduleapplet.py:115
+#: ../src/mainWindow.py:330 ../src/mainWindow.py:340 ../src/mainWindow.py:354
+#: ../src/mainWindow.py:364 ../src/scheduleapplet.py:115
 msgid "ERROR: Could not load icon"
 msgstr "ERREUR : impossible de charger une icône"
 
-#: ../src/mainWindow.py:377
+#: ../src/mainWindow.py:374
 msgid "ERROR: Could not load glade file"
 msgstr "ERREUR : impossible de charger un fichier glade"
 
-#: ../src/mainWindow.py:431 ../src/template_chooser.py:61
+#: ../src/mainWindow.py:428 ../src/template_chooser.py:61
 #: ../src/template_manager.py:62
 msgid "Task"
 msgstr "Tâche"
 
-#: ../src/mainWindow.py:444 ../src/mainWindow.py:470
+#: ../src/mainWindow.py:441 ../src/mainWindow.py:467
 #: ../src/template_chooser.py:70 ../src/template_manager.py:71
 msgid "Description"
 msgstr "Description"
 
-#: ../src/mainWindow.py:448 ../src/mainWindow.py:461
+#: ../src/mainWindow.py:445 ../src/mainWindow.py:458
 msgid "Date and Time"
 msgstr "Date et heure"
 
-#: ../src/mainWindow.py:452 ../src/mainWindow.py:465
+#: ../src/mainWindow.py:449 ../src/mainWindow.py:462
 msgid "Command preview"
 msgstr "Aperçu de la commande"
 
 #. print ex
-#: ../src/mainWindow.py:521 ../src/mainWindow.py:584
+#: ../src/mainWindow.py:518 ../src/mainWindow.py:581
 msgid "Please select a task"
 msgstr "Veuillez sélectionner une tâche"
 
-#: ../src/mainWindow.py:528
+#: ../src/mainWindow.py:525
 msgid "Do you want to delete this task?"
 msgstr "Voulez-vous réellement supprimer cette tâche ?"
 
-#: ../src/mainWindow.py:629
+#: ../src/mainWindow.py:626
 msgid ""
 "Are you sure you want to run this task now?\n"
 "\n"
@@ -958,11 +958,11 @@ msgstr ""
 "Ceci sert à avoir un aperçu de la tâche et lance une exécution unique. Cette "
 "dernière n'affecte pas la planification « normale » de la tâche."
 
-#: ../src/mainWindow.py:631
+#: ../src/mainWindow.py:628
 msgid "Are you sure you want to run this task?"
 msgstr "Voulez-vous réellement lancer cette tâche ?"
 
-#: ../src/mainWindow.py:640
+#: ../src/mainWindow.py:637
 msgid ""
 "Note about working directory of executed tasks:\n"
 "\n"
@@ -972,33 +972,32 @@ msgid ""
 msgstr ""
 "Note à propos du dossier de travail des tâches effectuées :\n"
 "\n"
-"Les tâches récurrentes seront exécutées à partir de votre « dossier "
-"personnel », alors que les tâches à usage unique sont exécutées à partir du "
-"dossier où gnome-schedule a été lancé (normalement, votre « dossier "
-"personnel »)."
+"Les tâches récurrentes seront exécutées à partir de votre « dossier personnel "
+"», alors que les tâches à usage unique sont exécutées à partir du dossier où "
+"gnome-schedule a été lancé (normalement, votre « dossier personnel »)."
 
-#: ../src/mainWindow.py:695
+#: ../src/mainWindow.py:692
 msgid "Press ENTER to continue and close this window."
 msgstr "Appuyez sur « Entrée » pour continuer et fermer cette fenêtre."
 
-#: ../src/mainWindow.py:703
+#: ../src/mainWindow.py:700
 msgid "Please select a task!"
 msgstr "Veuillez sélectionner une tâche"
 
-#: ../src/mainWindow.py:711
+#: ../src/mainWindow.py:708
 msgid "About Gnome Schedule"
 msgstr "À propos du planificateur de tâches de GNOME"
 
-#: ../src/mainWindow.py:712
+#: ../src/mainWindow.py:709
 msgid "Gnome Schedule"
 msgstr "Planificateur de tâches de GNOME"
 
-#: ../src/mainWindow.py:714
+#: ../src/mainWindow.py:711
 #, python-format
 msgid "Copyright (c) %(year)s %(name)s."
 msgstr ""
 
-#: ../src/mainWindow.py:727
+#: ../src/mainWindow.py:724
 msgid "translator-credits"
 msgstr ""
 "Jean-François Fortin Tam <nekohayo@gmail.com>\n"
@@ -1008,7 +1007,7 @@ msgstr ""
 "Jonathan Ernst <jonathan@ernstfamily.ch>\n"
 "Stéphane Raimbault <stephane.raimbault@gmail.com>"
 
-#: ../src/mainWindow.py:748
+#: ../src/mainWindow.py:745
 msgid "Could not display help"
 msgstr "Impossible d'afficher l'aide"
 
@@ -1036,7 +1035,7 @@ msgstr "Une tâche à partir d'un modèle"
 msgid "Calendar"
 msgstr "Calendrier"
 
-#: ../src/atEditor.py:358
+#: ../src/atEditor.py:472
 msgid ""
 "In one or both of the fields hour and minute there was entered a letter, or "
 "a number out of range. Remember an hour only has 60 minutes and a day only "
@@ -1046,12 +1045,12 @@ msgstr ""
 "pour l'heure ou les minutes. Une heure n'a que 60 minutes, et une journée ne "
 "peut avoir que 24 heures."
 
-#: ../src/atEditor.py:417
+#: ../src/atEditor.py:531
 #, python-format
 msgid "This is an invalid record! The problem could be: %s"
 msgstr "Ce n'est pas un enregistrement valide. Le problème pourrait être : %s"
 
-#: ../src/atEditor.py:438
+#: ../src/atEditor.py:552
 msgid ""
 "Note about working directory of executed tasks:\n"
 "\n"
@@ -1062,25 +1061,6 @@ msgstr ""
 "\n"
 "Les tâches à usage unique seront exécutées à partir du dossier où gnome-"
 "schedule a été lancé (normalement, votre « dossier personnel »)."
-
-#: ../src/thoughicon.py:70
-msgid "ICON: Using dummy icon"
-msgstr "ICÔNE: Utilisation d'une icône de rechange"
-
-#: ../src/thoughicon.py:73
-#, python-format
-msgid "ICON: Doesn't handle absolute paths: '%s'"
-msgstr "ICÔNE: « %s » ne gère pas les chemins absolus"
-
-#: ../src/thoughicon.py:82
-#, python-format
-msgid "ICON: Icon '%s' is not in theme"
-msgstr "ICÔNE: « %s » ne fait pas partie du thème"
-
-#: ../src/thoughicon.py:94
-#, python-format
-msgid "ICON: Got badly sized icon for %s"
-msgstr "ICÔNE: Mauvaise taille de l'icône %s"
 
 #: ../src/template.py:188 ../src/template.py:198
 msgid "Title:"
@@ -1097,3 +1077,15 @@ msgstr "Aucun résultat"
 #: ../src/template_chooser.py:83 ../src/template_manager.py:84
 msgid "One-time"
 msgstr "Usage unique"
+
+#~ msgid "ICON: Using dummy icon"
+#~ msgstr "ICÔNE: Utilisation d'une icône de rechange"
+
+#~ msgid "ICON: Doesn't handle absolute paths: '%s'"
+#~ msgstr "ICÔNE: « %s » ne gère pas les chemins absolus"
+
+#~ msgid "ICON: Icon '%s' is not in theme"
+#~ msgstr "ICÔNE: « %s » ne fait pas partie du thème"
+
+#~ msgid "ICON: Got badly sized icon for %s"
+#~ msgstr "ICÔNE: Mauvaise taille de l'icône %s"

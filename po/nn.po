@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the gnome-schedule package.
 # Gaute Hope <eg@gaute.vetsj.org>, 2007.
 #  <>, 2007.
-# 
-# 
+#
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-12-13 21:21+0100\n"
+"POT-Creation-Date: 2007-12-21 02:01+0100\n"
 "PO-Revision-Date: 2007-12-13 20:52+0100\n"
 "Last-Translator: Gaute Hope <eg@gaute.vetsj.com>\n"
 "Language-Team: Norwegian/Nynorsk <i18n-nn@lister.ping.uio.no>\n"
@@ -37,26 +37,26 @@ msgstr "Gnome Schedule"
 msgid "System tools"
 msgstr "Systemverkty"
 
-#: ../src/at.py:486
+#: ../src/at.py:490
 #, python-format
 msgid "DANGEROUS PARSE: %(preview)s"
 msgstr "FARLEG ANALYSERING: %(preview)s"
 
 # python-format
-# 
-# 
+#
+#
 #. TODO: localize time and date formats
-#: ../src/at.py:493
+#: ../src/at.py:497
 #, python-format
 msgid "On %(date)s at %(time)s"
 msgstr "Den %(date)s kl %(time)s"
 
 #
-#: ../src/at.py:498 ../src/at.py:503
+#: ../src/at.py:502 ../src/at.py:507
 msgid "Once"
 msgstr "Ein gong"
 
-#: ../src/at.py:507
+#: ../src/at.py:511
 msgid "Warning: a line in atq's output didn't parse"
 msgstr "Advarsel: Ei linje i utdataen frå atq kunne ikkje analyserast"
 
@@ -103,7 +103,7 @@ msgid "%s is not a number"
 msgstr "%s er ikkje eit nummer"
 
 #: ../src/crontab.py:261 ../src/crontab.py:317 ../src/crontabEditor.py:269
-#: ../src/atEditor.py:111 ../src/atEditor.py:366 ../src/atEditor.py:390
+#: ../src/atEditor.py:118 ../src/atEditor.py:480 ../src/atEditor.py:504
 msgid "Untitled"
 msgstr "Namnlaus"
 
@@ -167,17 +167,17 @@ msgstr "Kvar veke"
 
 #. add new task
 #: ../src/crontabEditor.py:129 ../src/crontabEditor.py:139
-#: ../src/atEditor.py:113 ../src/atEditor.py:127
+#: ../src/atEditor.py:120 ../src/atEditor.py:134
 msgid "Create a New Scheduled Task"
 msgstr "Lag ei ny oppgåve"
 
 #
 #. edit template
-#: ../src/crontabEditor.py:199 ../src/atEditor.py:143
+#: ../src/crontabEditor.py:199 ../src/atEditor.py:150
 msgid "Edit template"
 msgstr "Rediger førehandsoppsett"
 
-#: ../src/crontabEditor.py:238 ../src/atEditor.py:183
+#: ../src/crontabEditor.py:238 ../src/atEditor.py:190
 msgid "Edit a Scheduled Task"
 msgstr "Rediger ei planlagt oppgåve"
 
@@ -220,7 +220,7 @@ msgstr ""
 "\n"
 "Gjentakane oppgåver vil bli køyrde frå heimemappa."
 
-#: ../src/crontabEditor.py:471 ../src/mainWindow.py:642 ../src/atEditor.py:440
+#: ../src/crontabEditor.py:471 ../src/mainWindow.py:639 ../src/atEditor.py:554
 msgid "Warning: Working directory of executed tasks"
 msgstr "Advarsel: Arbeidsmappe til oppgåver"
 
@@ -543,7 +543,7 @@ msgid "Task:"
 msgstr "Oppgåve:"
 
 #
-#: ../src/gnome-schedule.glade.h:55 ../src/mainWindow.py:184
+#: ../src/gnome-schedule.glade.h:55 ../src/mainWindow.py:183
 msgid "Templates"
 msgstr "Førhandsoppsett"
 
@@ -953,68 +953,68 @@ msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 msgstr "På %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 
 #
-#: ../src/mainWindow.py:111
+#: ../src/mainWindow.py:110
 msgid "Recurrent task"
 msgstr "Gjentakande oppgåve"
 
-#: ../src/mainWindow.py:122
+#: ../src/mainWindow.py:121
 msgid "One-time task"
 msgstr "Eingongs oppgåve"
 
 #
-#: ../src/mainWindow.py:133
+#: ../src/mainWindow.py:132
 msgid "From template"
 msgstr "Frå førehandsoppsett"
 
 #
-#: ../src/mainWindow.py:152
+#: ../src/mainWindow.py:151
 msgid "Add a new task"
 msgstr "Legg til ei ny oppgåve"
 
 # python-format
-#: ../src/mainWindow.py:285 ../src/mainWindow.py:396
+#: ../src/mainWindow.py:284 ../src/mainWindow.py:393
 #, python-format
 msgid "Editing user: %s"
 msgstr "Redigerar brukar: %s"
 
-#: ../src/mainWindow.py:336 ../src/mainWindow.py:357 ../src/mainWindow.py:367
-#: ../src/scheduleapplet.py:115
+#: ../src/mainWindow.py:330 ../src/mainWindow.py:340 ../src/mainWindow.py:354
+#: ../src/mainWindow.py:364 ../src/scheduleapplet.py:115
 msgid "ERROR: Could not load icon"
 msgstr "FEIL: Kunne ikkje laste ikon"
 
-#: ../src/mainWindow.py:377
+#: ../src/mainWindow.py:374
 msgid "ERROR: Could not load glade file"
 msgstr "FEIL: Kunne ikkje laste glade-fil"
 
 #
-#: ../src/mainWindow.py:431 ../src/template_chooser.py:61
+#: ../src/mainWindow.py:428 ../src/template_chooser.py:61
 #: ../src/template_manager.py:62
 msgid "Task"
 msgstr "Oppgåve"
 
-#: ../src/mainWindow.py:444 ../src/mainWindow.py:470
+#: ../src/mainWindow.py:441 ../src/mainWindow.py:467
 #: ../src/template_chooser.py:70 ../src/template_manager.py:71
 msgid "Description"
 msgstr "Skildring"
 
-#: ../src/mainWindow.py:448 ../src/mainWindow.py:461
+#: ../src/mainWindow.py:445 ../src/mainWindow.py:458
 msgid "Date and Time"
 msgstr "Dato og tid"
 
-#: ../src/mainWindow.py:452 ../src/mainWindow.py:465
+#: ../src/mainWindow.py:449 ../src/mainWindow.py:462
 msgid "Command preview"
 msgstr "Kommando førehandsvisning"
 
 #. print ex
-#: ../src/mainWindow.py:521 ../src/mainWindow.py:584
+#: ../src/mainWindow.py:518 ../src/mainWindow.py:581
 msgid "Please select a task"
 msgstr "Velg ei oppgåve"
 
-#: ../src/mainWindow.py:528
+#: ../src/mainWindow.py:525
 msgid "Do you want to delete this task?"
 msgstr "Er du sikker på at du vil slette denne oppgåva?"
 
-#: ../src/mainWindow.py:629
+#: ../src/mainWindow.py:626
 msgid ""
 "Are you sure you want to run this task now?\n"
 "\n"
@@ -1026,11 +1026,11 @@ msgstr ""
 "Denne funksjonen er brukt til å prøve ei oppgåve og køyrer den ein gang, "
 "dette påverkar ikkje dei normale planlagte utføringstidspunkta."
 
-#: ../src/mainWindow.py:631
+#: ../src/mainWindow.py:628
 msgid "Are you sure you want to run this task?"
 msgstr "Er du sikker på at du vil køyre denne oppgåva?"
 
-#: ../src/mainWindow.py:640
+#: ../src/mainWindow.py:637
 msgid ""
 "Note about working directory of executed tasks:\n"
 "\n"
@@ -1044,32 +1044,32 @@ msgstr ""
 "mappa der Gnome Schedule vart starta frå på tidspunktet for opprettinga av "
 "oppgåva (nomalt heimemappa)"
 
-#: ../src/mainWindow.py:695
+#: ../src/mainWindow.py:692
 msgid "Press ENTER to continue and close this window."
 msgstr "Trykk ENTER for å fortsette og lukke dette vindauget."
 
-#: ../src/mainWindow.py:703
+#: ../src/mainWindow.py:700
 msgid "Please select a task!"
 msgstr "Velg ei oppgåve!"
 
-#: ../src/mainWindow.py:711
+#: ../src/mainWindow.py:708
 msgid "About Gnome Schedule"
 msgstr "Om Gnome Schedule"
 
-#: ../src/mainWindow.py:712
+#: ../src/mainWindow.py:709
 msgid "Gnome Schedule"
 msgstr "Gnome Schedule"
 
-#: ../src/mainWindow.py:714
+#: ../src/mainWindow.py:711
 #, python-format
 msgid "Copyright (c) %(year)s %(name)s."
 msgstr "Kopibeskytta (c) %(year)s %(name)s."
 
-#: ../src/mainWindow.py:727
+#: ../src/mainWindow.py:724
 msgid "translator-credits"
 msgstr "Gaute Hope <eg@gaute.vetsj.com>"
 
-#: ../src/mainWindow.py:748
+#: ../src/mainWindow.py:745
 msgid "Could not display help"
 msgstr "Kunne ikkje vise hjelpa"
 
@@ -1097,7 +1097,7 @@ msgstr "Ei oppgåve frå eit førhandsoppsett"
 msgid "Calendar"
 msgstr "Kalendar"
 
-#: ../src/atEditor.py:358
+#: ../src/atEditor.py:472
 msgid ""
 "In one or both of the fields hour and minute there was entered a letter, or "
 "a number out of range. Remember an hour only has 60 minutes and a day only "
@@ -1108,12 +1108,12 @@ msgstr ""
 "dag kun 24 timar."
 
 # python-format
-#: ../src/atEditor.py:417
+#: ../src/atEditor.py:531
 #, python-format
 msgid "This is an invalid record! The problem could be: %s"
 msgstr "Dette er eit ugyldig tidsuttrykk! Problemet kan vere: %s"
 
-#: ../src/atEditor.py:438
+#: ../src/atEditor.py:552
 msgid ""
 "Note about working directory of executed tasks:\n"
 "\n"
@@ -1124,25 +1124,6 @@ msgstr ""
 "\n"
 "Eingongs oppgåver vil bli køyrd frå mappa der Gnome Schedule vart starta frå "
 "(nomalt heimemappa)"
-
-#: ../src/thoughicon.py:70
-msgid "ICON: Using dummy icon"
-msgstr "IKON: Bruk dummy ikon"
-
-#: ../src/thoughicon.py:73
-#, python-format
-msgid "ICON: Doesn't handle absolute paths: '%s'"
-msgstr "IKON: Taklar ikkje absolutte baner: '%s'"
-
-#: ../src/thoughicon.py:82
-#, python-format
-msgid "ICON: Icon '%s' is not in theme"
-msgstr "IKON: Ikon '%s' er ikkje i drakta"
-
-#: ../src/thoughicon.py:94
-#, python-format
-msgid "ICON: Got badly sized icon for %s"
-msgstr "IKON: Fekk dårleg ikon med dårleg storleik: %s"
 
 #
 #
@@ -1161,3 +1142,15 @@ msgstr "Ingen utdata"
 #: ../src/template_chooser.py:83 ../src/template_manager.py:84
 msgid "One-time"
 msgstr "Ein-gong"
+
+#~ msgid "ICON: Using dummy icon"
+#~ msgstr "IKON: Bruk dummy ikon"
+
+#~ msgid "ICON: Doesn't handle absolute paths: '%s'"
+#~ msgstr "IKON: Taklar ikkje absolutte baner: '%s'"
+
+#~ msgid "ICON: Icon '%s' is not in theme"
+#~ msgstr "IKON: Ikon '%s' er ikkje i drakta"
+
+#~ msgid "ICON: Got badly sized icon for %s"
+#~ msgstr "IKON: Fekk dårleg ikon med dårleg storleik: %s"
