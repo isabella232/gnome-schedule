@@ -521,7 +521,9 @@ class At:
 		# it's done prepending, we will start recording the custom commands
 		# once the first two lines have been found
 
-		#Later: It now seems like this is incorrect, and may vary upon distribution. I therefore determine the prepended stuff by making a test job and then removing the length of it. in gentoo it adds to newlines at the end of the script
+		# Later: It now seems like this is incorrect, and may vary upon distribution. I therefore determine the prepended stuff by making a test job and then removing the length of it. in gentoo it adds to newlines at the end of the script
+		
+		# If the script is created by Gnome Schedule the script is seperated by a delimiter.
 
 		dangerous = 0
 		string = self.SCRIPT_DELIMITER
