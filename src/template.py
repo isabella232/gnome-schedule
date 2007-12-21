@@ -115,6 +115,8 @@ class Template:
 				
 		self.gconf_client.unset ("/apps/gnome-schedule/templates/crontab/installed")
 		self.gconf_client.set_string("/apps/gnome-schedule/templates/crontab/installed", installed)
+		self.parent.template_manager.reload_tv ()
+		self.parent.template_chooser.reload_tv ()
 		
 		
 	def gettemplateids (self, type):
@@ -182,6 +184,8 @@ class Template:
 				
 		self.gconf_client.unset ("/apps/gnome-schedule/templates/at/installed")
 		self.gconf_client.set_string("/apps/gnome-schedule/templates/at/installed", installed)
+		self.parent.template_manager.reload_tv ()
+		self.parent.template_chooser.reload_tv ()
 		
 	def format_at (self, title, command):
 		command = self.parent.at.__make_preview__ (command, 0)

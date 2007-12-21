@@ -29,23 +29,33 @@ class TemplateManager:
 		self.widget = self.xml.get_widget ("template_manager")
 		self.widget.connect("delete-event", self.widget.hide_on_delete)
 		
-		self.title_box = self.xml.get_widget ("tm_title_box")
-		
-		self.image_icon = gtk.Image ()
-		self.image_icon.set_from_pixbuf (self.parent.bigicontemplate)
-		self.title_box.pack_start (self.image_icon, False, False, 0)
-		self.title_box.reorder_child (self.image_icon, 0)
-		self.image_icon.show ()
-		
 		self.treeview = self.xml.get_widget ("tm_treeview")
 		self.button_use = self.xml.get_widget ("tm_button_use")
+		hbox = gtk.HBox ()
+		icon = gtk.Image ()
+		icon.set_from_pixbuf (self.parent.normalicontemplate)
+		label = gtk.Label (_("Use template"))
+		icon.set_alignment (0.5, 0.5)
+		label.set_justify (gtk.JUSTIFY_CENTER)
+		label.set_alignment (0.5, 0.5)
+		hbox.pack_start (icon, True, True, 0)
+		hbox.pack_start (label, True, True, 0)
+		self.button_use.add (hbox)
+		self.button_use.show_all ()
+		
 		self.button_cancel = self.xml.get_widget ("tm_button_cancel")
 		
+		self.xml.signal_connect ("on_tm_button_new_clicked", self.on_new_clicked)
 		self.xml.signal_connect ("on_tm_button_use_clicked", self.on_use_clicked)
 		self.xml.signal_connect ("on_tm_button_cancel_clicked", self.on_cancel_clicked)
 		self.xml.signal_connect ("on_tm_button_edit_clicked", self.on_edit_clicked)
 		self.xml.signal_connect ("on_tm_button_delete_clicked", self.on_delete_clicked)
 		self.xml.signal_connect ("on_tm_treeview_button_press_event", self.on_tv_pressed)
+		
+		self.button_edit = self.xml.get_widget ("tm_button_edit")
+		self.button_delete = self.xml.get_widget ("tm_button_delete")
+		
+		self.treeview.get_selection().connect("changed", self.on_tv_changed)
 				
 		# setup liststore
 		# [template id, type, type-string, formatted text, icon/pixbuf]
@@ -71,7 +81,15 @@ class TemplateManager:
         	column = gtk.TreeViewColumn(_("Description"), rend, markup=3)
         	self.treeview.append_column(column)  
 
-	
+	def on_tv_changed (self, *args):
+		if self.treeview.get_selection().count_selected_rows() > 0 :
+			value = True
+		else:
+			value = False
+		self.button_use.set_sensitive (value)
+		self.button_edit.set_sensitive (value)
+		self.button_delete.set_sensitive (value)
+		
 	def reload_tv (self):
 		self.treemodel.clear ()
 		at = self.template.gettemplateids ("at")
@@ -110,7 +128,8 @@ class TemplateManager:
 					self.parent.crontab_editor.showedit_template (id2, title, command, nooutput, timeexpression)
 		self.reload_tv ()
 		
-
+	def on_new_clicked (self, *args):
+		self.parent.addWindow.ShowAddWindow ()
 	
 	def on_delete_clicked (self, *args):
 		store, iter = self.treeview.get_selection().get_selected()

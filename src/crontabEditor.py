@@ -525,7 +525,6 @@ class CrontabEditor:
 				self.template.savetemplate_crontab (self.tid, self.title, self.command, self.nooutput, self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday)
 	
 			self.widget.hide ()
-			self.ParentClass.template_manager.reload_tv ()
 			return
 			
 		self.ParentClass.schedule_reload ()

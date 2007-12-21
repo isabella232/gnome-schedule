@@ -145,7 +145,6 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="tooltip" translatable="yes">Scheduled and active tasks</property>
-                <property name="reorderable">True</property>
                 <signal name="button_press_event" handler="on_treeview_button_press_event"/>
                 <signal name="key_press_event" handler="on_treeview_key_press_event"/>
               </widget>
@@ -1468,7 +1467,7 @@
                         <property name="can_focus">True</property>
                         <property name="adjustment">1 0 60 1 10 10</property>
                         <property name="climb_rate">1</property>
-                        <signal name="changed" handler="on_at_spin_minute_changed"/>
+                        <signal name="value_changed" handler="on_at_spin_minute_changed"/>
                       </widget>
                       <packing>
                         <property name="left_attach">3</property>
@@ -1496,7 +1495,7 @@
                         <property name="can_focus">True</property>
                         <property name="adjustment">0 0 24 1 10 10</property>
                         <property name="climb_rate">1</property>
-                        <signal name="changed" handler="on_at_spin_hour_changed"/>
+                        <signal name="value_changed" handler="on_at_spin_hour_changed"/>
                       </widget>
                       <packing>
                         <property name="left_attach">1</property>
@@ -1511,7 +1510,7 @@
                         <property name="can_focus">True</property>
                         <property name="adjustment">1 1 31 1 10 10</property>
                         <property name="climb_rate">1</property>
-                        <signal name="changed" handler="on_at_spin_day_changed"/>
+                        <signal name="value_changed" handler="on_at_spin_day_changed"/>
                       </widget>
                       <packing>
                         <property name="left_attach">5</property>
@@ -1537,7 +1536,7 @@
                         <property name="can_focus">True</property>
                         <property name="adjustment">1 1 12 1 10 10</property>
                         <property name="climb_rate">1</property>
-                        <signal name="changed" handler="on_at_spin_month_changed"/>
+                        <signal name="value_changed" handler="on_at_spin_month_changed"/>
                       </widget>
                       <packing>
                         <property name="left_attach">3</property>
@@ -1563,7 +1562,7 @@
                         <property name="can_focus">True</property>
                         <property name="adjustment">2007 2007 4000 1 10 10</property>
                         <property name="climb_rate">1</property>
-                        <signal name="changed" handler="on_at_spin_year_changed"/>
+                        <signal name="value_changed" handler="on_at_spin_year_changed"/>
                       </widget>
                       <packing>
                         <property name="left_attach">1</property>
@@ -1737,112 +1736,72 @@
         <property name="visible">True</property>
         <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
         <child>
-          <widget class="GtkHBox" id="tm_title_box">
+          <widget class="GtkToolbar" id="toolbar1">
             <property name="visible">True</property>
             <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+            <property name="toolbar_style">GTK_TOOLBAR_BOTH_HORIZ</property>
             <child>
-              <placeholder/>
-            </child>
-            <child>
-              <widget class="GtkLabel" id="label9">
+              <widget class="GtkToolButton" id="tm_button_new">
                 <property name="visible">True</property>
                 <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
-                <property name="xalign">0</property>
-                <property name="xpad">5</property>
-                <property name="label" translatable="yes">&lt;b&gt;Manage templates&lt;/b&gt;</property>
-                <property name="use_markup">True</property>
+                <property name="tooltip" translatable="yes">Create a new template.
+
+Choose 'Add as template' when you have customized your task.</property>
+                <property name="is_important">True</property>
+                <property name="label" translatable="yes">Ny</property>
+                <property name="stock_id">gtk-new</property>
+                <signal name="clicked" handler="on_tm_button_new_clicked"/>
               </widget>
               <packing>
                 <property name="expand">False</property>
-                <property name="fill">False</property>
-                <property name="position">1</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkToolButton" id="tm_button_edit">
+                <property name="visible">True</property>
+                <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                <property name="tooltip" translatable="yes">Edit the selected template</property>
+                <property name="is_important">True</property>
+                <property name="stock_id">gtk-edit</property>
+                <signal name="clicked" handler="on_tm_button_edit_clicked"/>
+              </widget>
+              <packing>
+                <property name="expand">False</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkToolButton" id="tm_button_delete">
+                <property name="visible">True</property>
+                <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                <property name="tooltip" translatable="yes">Delete the selected template</property>
+                <property name="is_important">True</property>
+                <property name="stock_id">gtk-delete</property>
+                <signal name="clicked" handler="on_tm_button_delete_clicked"/>
+              </widget>
+              <packing>
+                <property name="expand">False</property>
               </packing>
             </child>
           </widget>
           <packing>
             <property name="expand">False</property>
-            <property name="padding">5</property>
           </packing>
         </child>
         <child>
-          <widget class="GtkHBox" id="hbox1">
+          <widget class="GtkScrolledWindow" id="scrolledwindow3">
             <property name="visible">True</property>
+            <property name="can_focus">True</property>
             <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+            <property name="hscrollbar_policy">GTK_POLICY_AUTOMATIC</property>
+            <property name="vscrollbar_policy">GTK_POLICY_AUTOMATIC</property>
             <child>
-              <widget class="GtkScrolledWindow" id="scrolledwindow3">
+              <widget class="GtkTreeView" id="tm_treeview">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
-                <property name="hscrollbar_policy">GTK_POLICY_AUTOMATIC</property>
-                <property name="vscrollbar_policy">GTK_POLICY_AUTOMATIC</property>
-                <child>
-                  <widget class="GtkTreeView" id="tm_treeview">
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
-                    <property name="headers_clickable">True</property>
-                    <signal name="button_press_event" handler="on_tm_treeview_button_press_event"/>
-                  </widget>
-                </child>
+                <property name="headers_clickable">True</property>
+                <signal name="button_press_event" handler="on_tm_treeview_button_press_event"/>
               </widget>
-            </child>
-            <child>
-              <widget class="GtkVButtonBox" id="vbuttonbox1">
-                <property name="visible">True</property>
-                <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
-                <property name="spacing">5</property>
-                <property name="layout_style">GTK_BUTTONBOX_START</property>
-                <child>
-                  <widget class="GtkButton" id="tm_button_use">
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">True</property>
-                    <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
-                    <property name="tooltip" translatable="yes">Use the selected template</property>
-                    <property name="label">gtk-apply</property>
-                    <property name="use_stock">True</property>
-                    <property name="response_id">0</property>
-                    <signal name="clicked" handler="on_tm_button_use_clicked"/>
-                  </widget>
-                </child>
-                <child>
-                  <widget class="GtkButton" id="tm_button_edit">
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">True</property>
-                    <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
-                    <property name="tooltip" translatable="yes">Edit selected template</property>
-                    <property name="label">gtk-edit</property>
-                    <property name="use_stock">True</property>
-                    <property name="response_id">0</property>
-                    <signal name="clicked" handler="on_tm_button_edit_clicked"/>
-                  </widget>
-                  <packing>
-                    <property name="position">1</property>
-                  </packing>
-                </child>
-                <child>
-                  <widget class="GtkButton" id="tm_button_delete">
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">True</property>
-                    <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
-                    <property name="tooltip" translatable="yes">Delete selected template</property>
-                    <property name="label">gtk-delete</property>
-                    <property name="use_stock">True</property>
-                    <property name="response_id">0</property>
-                    <signal name="clicked" handler="on_tm_button_delete_clicked"/>
-                  </widget>
-                  <packing>
-                    <property name="position">2</property>
-                  </packing>
-                </child>
-              </widget>
-              <packing>
-                <property name="expand">False</property>
-                <property name="padding">5</property>
-                <property name="position">1</property>
-              </packing>
             </child>
           </widget>
           <packing>
@@ -1850,31 +1809,12 @@
           </packing>
         </child>
         <child>
-          <widget class="GtkLabel" id="label11">
-            <property name="visible">True</property>
-            <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
-            <property name="xalign">0</property>
-            <property name="xpad">5</property>
-            <property name="label" translatable="yes">&lt;b&gt;To create a new template you need to use the &lt;i&gt;Add as template&lt;/i&gt; button in the windows where you create new tasks&lt;/b&gt;</property>
-            <property name="use_markup">True</property>
-            <property name="wrap">True</property>
-            <property name="wrap_mode">PANGO_WRAP_WORD_CHAR</property>
-            <property name="angle">0.0099999997764825821</property>
-          </widget>
-          <packing>
-            <property name="expand">False</property>
-            <property name="fill">False</property>
-            <property name="padding">3</property>
-            <property name="position">2</property>
-          </packing>
-        </child>
-        <child>
-          <widget class="GtkHButtonBox" id="hbuttonbox1">
+          <widget class="GtkHButtonBox" id="tm_hbuttonbox">
             <property name="visible">True</property>
             <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
             <property name="border_width">5</property>
             <property name="spacing">5</property>
-            <property name="layout_style">GTK_BUTTONBOX_END</property>
+            <property name="layout_style">GTK_BUTTONBOX_EDGE</property>
             <child>
               <widget class="GtkButton" id="tm_button_cancel">
                 <property name="visible">True</property>
@@ -1888,12 +1828,29 @@
                 <accelerator key="Escape" modifiers="" signal="clicked"/>
               </widget>
             </child>
+            <child>
+              <widget class="GtkButton" id="tm_button_use">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                <property name="tooltip" translatable="yes">Create a new task from the selected template</property>
+                <property name="response_id">0</property>
+                <signal name="clicked" handler="on_tm_button_use_clicked"/>
+                <child>
+                  <placeholder/>
+                </child>
+              </widget>
+              <packing>
+                <property name="position">1</property>
+              </packing>
+            </child>
           </widget>
           <packing>
             <property name="expand">False</property>
             <property name="fill">False</property>
             <property name="padding">5</property>
-            <property name="position">3</property>
+            <property name="position">2</property>
           </packing>
         </child>
       </widget>
@@ -1911,34 +1868,6 @@
       <widget class="GtkVBox" id="vbox4">
         <property name="visible">True</property>
         <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
-        <child>
-          <widget class="GtkHBox" id="tc_title_box">
-            <property name="visible">True</property>
-            <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
-            <child>
-              <placeholder/>
-            </child>
-            <child>
-              <widget class="GtkLabel" id="label13">
-                <property name="visible">True</property>
-                <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
-                <property name="xalign">0</property>
-                <property name="xpad">5</property>
-                <property name="label" translatable="yes">&lt;b&gt;Choose a template to create a task from:&lt;/b&gt;</property>
-                <property name="use_markup">True</property>
-              </widget>
-              <packing>
-                <property name="expand">False</property>
-                <property name="fill">False</property>
-                <property name="position">1</property>
-              </packing>
-            </child>
-          </widget>
-          <packing>
-            <property name="expand">False</property>
-            <property name="padding">5</property>
-          </packing>
-        </child>
         <child>
           <widget class="GtkHBox" id="hbox9">
             <property name="visible">True</property>
@@ -1962,9 +1891,6 @@
               </widget>
             </child>
           </widget>
-          <packing>
-            <property name="position">1</property>
-          </packing>
         </child>
         <child>
           <widget class="GtkHButtonBox" id="hbuttonbox5">
@@ -1992,10 +1918,12 @@
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
                 <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
-                <property name="label">gtk-apply</property>
-                <property name="use_stock">True</property>
+                <property name="tooltip" translatable="yes">Create a new task from the selected template</property>
                 <property name="response_id">0</property>
                 <signal name="clicked" handler="on_tc_button_use_clicked"/>
+                <child>
+                  <placeholder/>
+                </child>
               </widget>
               <packing>
                 <property name="position">1</property>
@@ -2006,7 +1934,7 @@
             <property name="expand">False</property>
             <property name="fill">False</property>
             <property name="padding">5</property>
-            <property name="position">2</property>
+            <property name="position">1</property>
           </packing>
         </child>
       </widget>

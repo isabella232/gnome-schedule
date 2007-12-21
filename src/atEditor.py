@@ -539,7 +539,6 @@ class AtEditor:
 	def on_button_save_clicked (self, *args):
 		if self.mode == 2:
 			self.template.savetemplate_at (self.tid, self.title, self.command)
-			self.ParentClass.template_manager.reload_tv ()
 			self.widget.hide ()
 			return
 			
