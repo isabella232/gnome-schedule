@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-12-21 02:01+0100\n"
+"POT-Creation-Date: 2007-12-21 19:03+0100\n"
 "PO-Revision-Date: 2006-06-23 01:25+0800\n"
 "Last-Translator: Kevin Tse <kevinkit@netvigator.com>\n"
 "Language-Team: Chinese (Taiwan) <zh-l10n@linux.org.tw>\n"
@@ -75,7 +75,7 @@ msgstr "月"
 msgid "Weekday"
 msgstr ""
 
-#: ../src/crontab.py:172 ../src/gnome-schedule.glade.h:16
+#: ../src/crontab.py:172 ../src/gnome-schedule.glade.h:13
 msgid "Basic"
 msgstr "基本"
 
@@ -99,8 +99,8 @@ msgstr "%s 不是一個數字"
 msgid "Untitled"
 msgstr "無標題"
 
-#: ../src/crontab.py:416 ../src/crontab.py:418 ../src/template_chooser.py:92
-#: ../src/template_manager.py:93
+#: ../src/crontab.py:416 ../src/crontab.py:418 ../src/template_chooser.py:105
+#: ../src/template_manager.py:111
 msgid "Recurrent"
 msgstr "循環"
 
@@ -134,12 +134,12 @@ msgid ""
 msgstr ""
 
 #: ../src/crontabEditor.py:69 ../src/crontabEditorHelper.py:87
-#: ../src/gnome-schedule.glade.h:32
+#: ../src/gnome-schedule.glade.h:33
 msgid "Every minute"
 msgstr "每分鐘"
 
 #: ../src/crontabEditor.py:70 ../src/crontabEditorHelper.py:93
-#: ../src/gnome-schedule.glade.h:31
+#: ../src/gnome-schedule.glade.h:32
 msgid "Every hour"
 msgstr "每小時"
 
@@ -171,8 +171,8 @@ msgstr "模板(_T)："
 msgid "Edit a Scheduled Task"
 msgstr "編輯一項已安排的工作"
 
-#: ../src/crontabEditor.py:296 ../src/crontabEditor.py:592
-#: ../src/crontabEditor.py:632
+#: ../src/crontabEditor.py:296 ../src/crontabEditor.py:591
+#: ../src/crontabEditor.py:631
 #, python-format
 msgid ""
 "This is an invalid record! The problem could be in the %(field)s field. "
@@ -196,7 +196,7 @@ msgid ""
 "Recurrent tasks will be run from the home directory."
 msgstr ""
 
-#: ../src/crontabEditor.py:471 ../src/mainWindow.py:639 ../src/atEditor.py:554
+#: ../src/crontabEditor.py:471 ../src/mainWindow.py:639 ../src/atEditor.py:553
 msgid "Warning: Working directory of executed tasks"
 msgstr ""
 
@@ -234,11 +234,11 @@ msgid "This is invalid. Reason: %s"
 msgstr "這是無效的。原因：%s"
 
 #. minute
-#: ../src/crontabEditorHelper.py:231 ../src/gnome-schedule.glade.h:15
+#: ../src/crontabEditorHelper.py:231 ../src/gnome-schedule.glade.h:12
 msgid "At an exact minute"
 msgstr "在確切的某分鐘"
 
-#: ../src/crontabEditorHelper.py:232 ../src/gnome-schedule.glade.h:44
+#: ../src/crontabEditorHelper.py:232 ../src/gnome-schedule.glade.h:45
 msgid "Minute:"
 msgstr "分鐘："
 
@@ -247,7 +247,7 @@ msgstr "分鐘："
 msgid "At an exact hour"
 msgstr "在確切的某小時"
 
-#: ../src/crontabEditorHelper.py:236 ../src/gnome-schedule.glade.h:40
+#: ../src/crontabEditorHelper.py:236 ../src/gnome-schedule.glade.h:41
 msgid "Hour:"
 msgstr "小時："
 
@@ -256,7 +256,7 @@ msgstr "小時："
 msgid "On a day"
 msgstr "在一個月的某一日"
 
-#: ../src/crontabEditorHelper.py:240 ../src/gnome-schedule.glade.h:24
+#: ../src/crontabEditorHelper.py:240 ../src/gnome-schedule.glade.h:25
 msgid "Day:"
 msgstr "日："
 
@@ -265,7 +265,7 @@ msgstr "日："
 msgid "In a month"
 msgstr "在某個月"
 
-#: ../src/crontabEditorHelper.py:244 ../src/gnome-schedule.glade.h:46
+#: ../src/crontabEditorHelper.py:244 ../src/gnome-schedule.glade.h:47
 msgid "Month:"
 msgstr "月份："
 
@@ -274,15 +274,15 @@ msgstr "月份："
 msgid "On a weekday"
 msgstr "在一星期的某一日"
 
-#: ../src/crontabEditorHelper.py:248 ../src/gnome-schedule.glade.h:60
+#: ../src/crontabEditorHelper.py:248 ../src/gnome-schedule.glade.h:61
 msgid "Weekday:"
 msgstr "星期："
 
-#: ../src/crontabEditorHelper.py:253 ../src/gnome-schedule.glade.h:42
+#: ../src/crontabEditorHelper.py:253 ../src/gnome-schedule.glade.h:43
 msgid "In a step width"
 msgstr "每隔一段時間"
 
-#: ../src/crontabEditorHelper.py:255 ../src/gnome-schedule.glade.h:45
+#: ../src/crontabEditorHelper.py:255 ../src/gnome-schedule.glade.h:46
 msgid "Minutes:"
 msgstr "分鐘："
 
@@ -331,220 +331,216 @@ msgid ":"
 msgstr ""
 
 #: ../src/gnome-schedule.glade.h:4
-msgid "<b>Choose a template to create a task from:</b>"
-msgstr ""
-
-#: ../src/gnome-schedule.glade.h:5
 msgid "<b>Choose the user whose tasks you want to modify</b>"
 msgstr "<b>請選擇你想更改哪個用戶的工作</b>"
 
-#: ../src/gnome-schedule.glade.h:6
-#, fuzzy
-msgid "<b>Manage templates</b>"
-msgstr "<b>「分」之設定</b>"
-
-#: ../src/gnome-schedule.glade.h:7
+#: ../src/gnome-schedule.glade.h:5
 #, fuzzy
 msgid "<b>Select the type of the scheduled task:</b>"
 msgstr "<b>選擇已安排的工作之類型</b>"
 
-#: ../src/gnome-schedule.glade.h:8
-msgid ""
-"<b>To create a new template you need to use the <i>Add as template</i> "
-"button in the windows where you create new tasks</b>"
-msgstr ""
-
-#: ../src/gnome-schedule.glade.h:9
+#: ../src/gnome-schedule.glade.h:6
 #, fuzzy
 msgid "<big>Preview</big>"
 msgstr "<b>預覽</b>"
 
-#: ../src/gnome-schedule.glade.h:10
+#: ../src/gnome-schedule.glade.h:7
 msgid "<big>Time &amp; Date</big>"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:11
+#: ../src/gnome-schedule.glade.h:8
 #, fuzzy
 msgid "About Gnome-schedule"
 msgstr "關於 GNOME 工作排程"
 
-#: ../src/gnome-schedule.glade.h:12
+#: ../src/gnome-schedule.glade.h:9
 msgid "Add a Scheduled Task"
 msgstr "加入一項工作"
 
-#: ../src/gnome-schedule.glade.h:13
+#: ../src/gnome-schedule.glade.h:10
 #, fuzzy
 msgid "Add as template"
 msgstr "加入一項工作(_A)"
 
-#: ../src/gnome-schedule.glade.h:14
+#: ../src/gnome-schedule.glade.h:11
 msgid "Advanced"
 msgstr "進階"
 
-#: ../src/gnome-schedule.glade.h:17
+#: ../src/gnome-schedule.glade.h:14
 msgid "Change User"
 msgstr "更改用戶"
 
-#: ../src/gnome-schedule.glade.h:18
+#: ../src/gnome-schedule.glade.h:15
 msgid "Change edit mode"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:19
+#: ../src/gnome-schedule.glade.h:16
 msgid "Choose template"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:20
+#: ../src/gnome-schedule.glade.h:17
 msgid "Choose the user whose tasks you want to modify"
 msgstr "請選擇你想更改哪個用戶的工作"
 
-#: ../src/gnome-schedule.glade.h:21 ../src/template.py:188
-#: ../src/template.py:198
+#: ../src/gnome-schedule.glade.h:18 ../src/template.py:192
+#: ../src/template.py:202
 #, fuzzy
 msgid "Command:"
 msgstr "指令(_M)："
 
-#: ../src/gnome-schedule.glade.h:22
+#: ../src/gnome-schedule.glade.h:19
 msgid "Configure Scheduled Tasks"
 msgstr "設定已安排的工作"
 
-#: ../src/gnome-schedule.glade.h:23
+#: ../src/gnome-schedule.glade.h:20
+#, fuzzy
+msgid "Create a new task from the selected template"
+msgstr "刪除已選取的模板"
+
+#: ../src/gnome-schedule.glade.h:21
+msgid ""
+"Create a new template.\n"
+"\n"
+"Choose 'Add as template' when you have customized your task."
+msgstr ""
+
+#: ../src/gnome-schedule.glade.h:24
 #, fuzzy
 msgid "Date:"
 msgstr "日期(_D)："
 
-#: ../src/gnome-schedule.glade.h:25
+#: ../src/gnome-schedule.glade.h:26
 msgid "Delete a scheduled task"
 msgstr "刪除一項已安排的工作"
 
-#: ../src/gnome-schedule.glade.h:26
+#: ../src/gnome-schedule.glade.h:27
 #, fuzzy
-msgid "Delete selected template"
+msgid "Delete the selected template"
 msgstr "刪除已選取的模板"
 
-#: ../src/gnome-schedule.glade.h:27
+#: ../src/gnome-schedule.glade.h:28
 #, fuzzy
 msgid "Description:"
 msgstr "描述(_R)："
 
-#: ../src/gnome-schedule.glade.h:28
+#: ../src/gnome-schedule.glade.h:29
 #, fuzzy
 msgid "Edit a periodical task"
 msgstr "編輯一項已安排的工作"
 
-#: ../src/gnome-schedule.glade.h:29
+#: ../src/gnome-schedule.glade.h:30
 msgid "Edit a scheduled task"
 msgstr "編輯一項已安排的工作"
 
-#: ../src/gnome-schedule.glade.h:30
+#: ../src/gnome-schedule.glade.h:31
 #, fuzzy
-msgid "Edit selected template"
+msgid "Edit the selected template"
 msgstr "刪除已選取的模板"
 
-#: ../src/gnome-schedule.glade.h:33
+#: ../src/gnome-schedule.glade.h:34
 msgid "Execute at:"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:34
+#: ../src/gnome-schedule.glade.h:35
 msgid "Execution at a specific minute, hour, day, weekday or month."
 msgstr "在每一個特定的分鐘、小時、日期、星期或月裏執行。"
 
-#: ../src/gnome-schedule.glade.h:35
+#: ../src/gnome-schedule.glade.h:36
 msgid ""
 "Execution at a step width. For example every five minutes, hours, days, "
 "weekdays or months."
 msgstr "每隔一段時間執行，例如每五分鐘、五小時、五個星期或五個月。"
 
-#: ../src/gnome-schedule.glade.h:36
+#: ../src/gnome-schedule.glade.h:37
 msgid "Execution at every minute, hour, day, weekday or month."
 msgstr "每分鐘、每小時、每天、每個星期或每個月執行。"
 
-#: ../src/gnome-schedule.glade.h:37
+#: ../src/gnome-schedule.glade.h:38
 msgid "Execution in a range."
 msgstr "在一個範圍的時間裏執行。"
 
-#: ../src/gnome-schedule.glade.h:38
+#: ../src/gnome-schedule.glade.h:39
 msgid "Expression:"
 msgstr "顯示方式："
 
-#: ../src/gnome-schedule.glade.h:39
+#: ../src/gnome-schedule.glade.h:40
 msgid "From:"
 msgstr "由："
 
-#: ../src/gnome-schedule.glade.h:41
+#: ../src/gnome-schedule.glade.h:42
 msgid "In a range"
 msgstr "在一個範圍內"
 
-#: ../src/gnome-schedule.glade.h:43
+#: ../src/gnome-schedule.glade.h:44
 #, fuzzy
 msgid "Manage templates"
 msgstr "管理工作(_M)"
 
-#: ../src/gnome-schedule.glade.h:47
+#: ../src/gnome-schedule.glade.h:48
+msgid "Ny"
+msgstr ""
+
+#: ../src/gnome-schedule.glade.h:49
 msgid "Other"
 msgstr "其它"
 
-#: ../src/gnome-schedule.glade.h:48
+#: ../src/gnome-schedule.glade.h:50
 #, fuzzy
 msgid "Run selected task"
 msgstr "請選取一項工作"
 
-#: ../src/gnome-schedule.glade.h:49
+#: ../src/gnome-schedule.glade.h:51
 msgid "Run task"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:50
+#: ../src/gnome-schedule.glade.h:52
 msgid "Scheduled and active tasks"
 msgstr "已安排及現行的工作"
 
-#: ../src/gnome-schedule.glade.h:51
+#: ../src/gnome-schedule.glade.h:53
 msgid "See \"man 5 crontab\" for information about the crontab format."
 msgstr "如欲得知有關 crontab 格式的資料，請執行 \"man 5 crontab\" 指令。"
 
-#: ../src/gnome-schedule.glade.h:52
+#: ../src/gnome-schedule.glade.h:54
 msgid "Show help"
 msgstr "顯示說明文件"
 
-#: ../src/gnome-schedule.glade.h:53
+#: ../src/gnome-schedule.glade.h:55
 #, fuzzy
 msgid "Task description:"
 msgstr "描述(_R)："
 
-#: ../src/gnome-schedule.glade.h:54
+#: ../src/gnome-schedule.glade.h:56
 #, fuzzy
 msgid "Task:"
 msgstr "工作(_T)"
 
-#: ../src/gnome-schedule.glade.h:55 ../src/mainWindow.py:183
+#: ../src/gnome-schedule.glade.h:57 ../src/mainWindow.py:183
 #, fuzzy
 msgid "Templates"
 msgstr "模板(_T)："
 
-#: ../src/gnome-schedule.glade.h:56
+#: ../src/gnome-schedule.glade.h:58
 msgid "Time expression help"
 msgstr "時間顯示方式之說明"
 
-#: ../src/gnome-schedule.glade.h:57
+#: ../src/gnome-schedule.glade.h:59
 msgid "Time:"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:58
+#: ../src/gnome-schedule.glade.h:60
 msgid "To:"
 msgstr "至："
 
-#: ../src/gnome-schedule.glade.h:59
-#, fuzzy
-msgid "Use the selected template"
-msgstr "刪除已選取的模板"
-
-#: ../src/gnome-schedule.glade.h:61
+#: ../src/gnome-schedule.glade.h:62
 msgid "_No output (>/dev/null 2>&1)"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:62
+#: ../src/gnome-schedule.glade.h:63
 msgid "_User:"
 msgstr "用戶(_U)："
 
-#: ../src/gnome-schedule.glade.h:63
+#: ../src/gnome-schedule.glade.h:64
 msgid "ls -l"
 msgstr ""
 
@@ -895,14 +891,14 @@ msgstr "錯誤：無法載入圖示"
 msgid "ERROR: Could not load glade file"
 msgstr "錯誤：無法載入 glade 檔案"
 
-#: ../src/mainWindow.py:428 ../src/template_chooser.py:61
-#: ../src/template_manager.py:62
+#: ../src/mainWindow.py:428 ../src/template_chooser.py:68
+#: ../src/template_manager.py:72
 #, fuzzy
 msgid "Task"
 msgstr "工作(_T)"
 
 #: ../src/mainWindow.py:441 ../src/mainWindow.py:467
-#: ../src/template_chooser.py:70 ../src/template_manager.py:71
+#: ../src/template_chooser.py:77 ../src/template_manager.py:81
 msgid "Description"
 msgstr "描述"
 
@@ -1017,7 +1013,7 @@ msgstr ""
 msgid "This is an invalid record! The problem could be: %s"
 msgstr "這項紀錄無效！這個問題可能是：%s"
 
-#: ../src/atEditor.py:552
+#: ../src/atEditor.py:551
 msgid ""
 "Note about working directory of executed tasks:\n"
 "\n"
@@ -1025,23 +1021,32 @@ msgid ""
 "from (normally the home directory)."
 msgstr ""
 
-#: ../src/template.py:188 ../src/template.py:198
+#: ../src/template.py:192 ../src/template.py:202
 #, fuzzy
 msgid "Title:"
 msgstr "分鐘："
 
-#: ../src/template.py:198
+#: ../src/template.py:202
 msgid "Run:"
 msgstr ""
 
-#: ../src/template.py:200
+#: ../src/template.py:204
 #, fuzzy
 msgid "No output"
 msgstr "不顯示執行結果(_P)"
 
-#: ../src/template_chooser.py:83 ../src/template_manager.py:84
+#: ../src/template_chooser.py:39 ../src/template_manager.py:37
+#, fuzzy
+msgid "Use template"
+msgstr "加入一項工作(_A)"
+
+#: ../src/template_chooser.py:96 ../src/template_manager.py:102
 msgid "One-time"
 msgstr ""
+
+#, fuzzy
+#~ msgid "<b>Manage templates</b>"
+#~ msgstr "<b>「分」之設定</b>"
 
 #~ msgid "Use advanced"
 #~ msgstr "使用「進階」"
