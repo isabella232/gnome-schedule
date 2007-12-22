@@ -338,7 +338,17 @@ class main:
 				self.bigiconcrontab = gtk.gdk.pixbuf_new_from_file_at_size (config.getImagedir() + "/crontab.svg", 49, 49)
 			except:
 				print _("ERROR: Could not load icon")		
-
+				
+		if os.access ("../icons/calendar.svg", os.F_OK):
+			self.iconcalendar = gtk.gdk.pixbuf_new_from_file_at_size ("../icons/calendar.svg", 19, 19)
+			self.bigiconcalendar = gtk.gdk.pixbuf_new_from_file_at_size ("../icons/calendar.svg", 49, 49)
+		else:
+			try:
+				self.iconcalendar = gtk.gdk.pixbuf_new_from_file_at_size (config.getImagedir() + "/calendar.svg", 19, 19)
+				self.bigiconcalendar = gtk.gdk.pixbuf_new_from_file_at_size (config.getImagedir() + "/calendar.svg", 49, 49)
+			except:
+				print _("ERROR: Could not load icon")
+				
 		if os.access ("../icons/template.svg", os.F_OK):
 			self.icontemplate = gtk.gdk.pixbuf_new_from_file_at_size ("../icons/template.svg", 19, 19)
 			self.normalicontemplate = gtk.gdk.pixbuf_new_from_file_at_size ("../icons/template.svg", 25, 25)

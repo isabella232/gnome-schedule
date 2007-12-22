@@ -71,8 +71,11 @@ class AtEditor:
 		
 		self.cal_button = self.xml.get_widget ("cal_button")
 		self.cal_hbox = gtk.HBox ()
+		self.calicon = gtk.Image ()
+		self.calicon.set_from_pixbuf (self.ParentClass.iconcalendar)
 		self.arrow = gtk.Arrow (gtk.ARROW_DOWN, gtk.SHADOW_OUT)
 		self.cal_label = gtk.Label (_("Calendar"))
+		self.cal_hbox.add (self.calicon)
 		self.cal_hbox.add (self.cal_label)
 		self.cal_hbox.add (self.arrow)
 		self.cal_button.add (self.cal_hbox)
@@ -361,7 +364,7 @@ class AtEditor:
 					mi = day
 			else:
 				if ((mi != 1) or (ma != days)):
-					self.spin_day.set_range (day, days)
+					self.spin_day.set_range (1, days)
 			if (mi <= sday <= days):
 				self.spin_day.set_value (sday)
 			else:
@@ -408,8 +411,7 @@ class AtEditor:
 				if (sminute > ma):
 					self.spin_minute.set_value (ma)
 				else:
-					self.spin_minute.set_value (mi)
-								
+					self.spin_minute.set_value (mi)	
 			self.check_spin_running = False
 		
 	
