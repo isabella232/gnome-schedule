@@ -23,6 +23,7 @@ import gtk
 class AddWindow:
 	def __init__(self, parent):
 		self.ParentClass = parent
+		self.transient = self.ParentClass.widget
 		self.xml = self.ParentClass.xml
 		self.widget = self.xml.get_widget ("addWindow")
 		self.widget.connect("delete-event", self.widget.hide_on_delete)
@@ -80,8 +81,9 @@ class AddWindow:
 		self.button_template.show_all ()
 
 
-	def ShowAddWindow (self):
-		self.widget.set_transient_for(self.ParentClass.widget)
+	def ShowAddWindow (self, transient):
+		self.transient = transient
+		self.widget.set_transient_for(transient)
 		self.widget.set_position(gtk.WIN_POS_CENTER_ON_PARENT)
 		self.widget.show_all()
 		
@@ -91,15 +93,15 @@ class AddWindow:
 		
 	def on_button_template_clicked (self, *args):
 		self.widget.hide ()
-		self.ParentClass.template_chooser.show ()
+		self.ParentClass.template_chooser.show (self.transient)
 				
 	def on_button_crontab_clicked (self, *args):
 		self.widget.hide ()
 		self.ParentClass.editor = self.ParentClass.crontab_editor
-		self.ParentClass.editor.showadd ()
+		self.ParentClass.editor.showadd (self.transient)
 		
 	def on_button_at_clicked (self, *args):
 		self.widget.hide ()
 		self.ParentClass.editor = self.ParentClass.at_editor
-		self.ParentClass.editor.showadd ()	
+		self.ParentClass.editor.showadd (self.transient)	
 		

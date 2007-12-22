@@ -24,6 +24,7 @@ class TemplateChooser:
 	def __init__ (self, parent, template):
 		self.parent = parent
 		self.template = template
+		self.transient = self.parent.widget
 
 		# setup window
 		self.xml = self.parent.xml
@@ -105,11 +106,11 @@ class TemplateChooser:
 					iter = self.treemodel.append ([int (id), "crontab", _("Recurrent"), formatted, self.parent.bigiconcrontab])
 					
 					
-	def show (self):
+	def show (self, transient):
 		# populate treeview
 		self.reload_tv ()
-		
-		self.widget.set_transient_for(self.parent.widget)
+		self.transient = transient
+		self.widget.set_transient_for (transient)
 		self.widget.set_position(gtk.WIN_POS_CENTER_ON_PARENT)
 		self.widget.show_all ()
 	
@@ -126,12 +127,12 @@ class TemplateChooser:
 				t = self.template.gettemplate ("at", int (id))	
 				if t != False:
 					id2, title, command = t
-					self.parent.at_editor.showadd_template (title, command)
+					self.parent.at_editor.showadd_template (self.transient, title, command)
 			elif type == "crontab":
 				t = self.template.gettemplate ("crontab", int (id))
 				if t != False:
 					id2, title, command, nooutput, timeexpression = t
-					self.parent.crontab_editor.showadd_template (title, command, nooutput, timeexpression)
+					self.parent.crontab_editor.showadd_template (self.transient, title, command, nooutput, timeexpression)
 			
 			self.widget.hide ()
 		

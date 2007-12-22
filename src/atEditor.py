@@ -115,34 +115,36 @@ class AtEditor:
 		self.timeout_handler_id = gobject.timeout_add(60 * 1000, self.__check_spins__)
 		
 		
-	def showadd (self):
+	def showadd (self, transient):
 		self.button_save.set_label (gtk.STOCK_ADD)
 		self.__reset__ ()
 		self.title = _("Untitled")
 		self.mode = 0 # add new task
 		self.widget.set_title(_("Create a New Scheduled Task"))
-		self.widget.set_transient_for(self.ParentClass.widget)
+		self.widget.set_transient_for(transient)
 		self.widget.set_position(gtk.WIN_POS_CENTER_ON_PARENT)
 		self.__setup_calendar__ ()
+		self.button_add_template.show ()
 		self.widget.show_all ()
 		
 		self.__update_textboxes__()
 	
-	def showadd_template (self, title, command):
+	def showadd_template (self, transient, title, command):
 		self.button_save.set_label (gtk.STOCK_ADD)
 		self.__reset__ ()
 		self.title = title
 		self.command = command
 		self.mode = 0 # add new task
 		self.widget.set_title(_("Create a New Scheduled Task"))
-		self.widget.set_transient_for(self.ParentClass.widget)
+		self.widget.set_transient_for(transient)
 		self.widget.set_position(gtk.WIN_POS_CENTER_ON_PARENT)
 		self.__setup_calendar__ ()
+		self.button_add_template.show ()
 		self.widget.show_all ()
 		
 		self.__update_textboxes__()
 	
-	def showedit_template (self, id, title, command):
+	def showedit_template (self, transient, id, title, command):
 		self.button_save.set_label (gtk.STOCK_ADD)
 		self.__reset__ ()
 		self.tid = id
@@ -151,7 +153,7 @@ class AtEditor:
 		self.mode = 2 # edit template
 		
 		self.widget.set_title(_("Edit template"))
-		self.widget.set_transient_for(self.ParentClass.widget)
+		self.widget.set_transient_for(transient)
 		self.widget.set_position(gtk.WIN_POS_CENTER_ON_PARENT)
 		self.__setup_calendar__ ()
 		self.widget.show_all ()
@@ -165,7 +167,7 @@ class AtEditor:
 		
 		self.__update_textboxes__()
 		
-	def showedit (self, record, job_id, iter):
+	def showedit (self, transient, record, job_id, iter):
 		self.button_save.set_label (gtk.STOCK_APPLY)
 		self.mode = 1 # edit task
 		self.job_id = job_id
@@ -194,9 +196,10 @@ class AtEditor:
 		
 		self.__update_textboxes__ ()
 		self.parentiter = iter
-		self.widget.set_transient_for(self.ParentClass.widget)
+		self.widget.set_transient_for(transient)
 		self.widget.set_position(gtk.WIN_POS_CENTER_ON_PARENT)
 		self.__setup_calendar__ ()
+		self.button_add_template.show ()
 		self.widget.show_all ()
 
 		

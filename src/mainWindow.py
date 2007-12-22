@@ -497,10 +497,10 @@ class main:
 		self.addWindow.on_button_template_clicked  (*args)
 
 	def on_template_manager_button (self, *args):
-		self.template_manager.show ()
+		self.template_manager.show (self.widget)
 		
 	def on_add_scheduled_task_menu_activate (self, *args):
-		self.addWindow.ShowAddWindow ()
+		self.addWindow.ShowAddWindow (self.widget)
 
 	def on_properties_menu_activate (self, *args):
 		store, iter = self.treeview.get_selection().get_selected()
@@ -518,10 +518,10 @@ class main:
 			if self.schedule.get_type() == "crontab":
 				self.editor = self.crontab_editor
 				job_id = self.treemodel.get_value (iter, 9)
-				self.editor.showedit (record, job_id, linenumber, iter)
+				self.editor.showedit (self.widget, record, job_id, linenumber, iter)
 			else:
 				self.editor = self.at_editor
-				self.editor.showedit (record, linenumber, iter)
+				self.editor.showedit (self.widget, record, linenumber, iter)
 
 		except Exception, ex:
 			#print ex

@@ -122,23 +122,25 @@ class CrontabEditor:
 		
 			
 		
-	def showadd (self):
+	def showadd (self, transient):
 		self.button_apply.set_label (gtk.STOCK_ADD)
 		self.__reset__ ()
 		self.mode = 0
 		self.widget.set_title(_("Create a New Scheduled Task"))
-		self.widget.set_transient_for(self.ParentClass.widget)
+		self.widget.set_transient_for(transient)
 		self.widget.set_position(gtk.WIN_POS_CENTER_ON_PARENT)
+		self.button_template.show ()
 		self.widget.show ()
 		self.cb_nooutput.set_active (True)
 
-	def showadd_template (self, title, command, nooutput,timeexpression):
+	def showadd_template (self, transient, title, command, nooutput,timeexpression):
 		self.button_apply.set_label (gtk.STOCK_ADD)
 		self.__reset__ ()
 		self.mode = 0
 		self.widget.set_title(_("Create a New Scheduled Task"))
-		self.widget.set_transient_for(self.ParentClass.widget)
+		self.widget.set_transient_for(transient)
 		self.widget.set_position(gtk.WIN_POS_CENTER_ON_PARENT)
+		self.button_template.show ()
 		self.widget.show ()
 		
 		self.nooutput = nooutput
@@ -174,7 +176,7 @@ class CrontabEditor:
 			self.cb_nooutput.set_active (False)
 			
 			
-	def showedit_template (self, id, title, command, nooutput, timeexpression):
+	def showedit_template (self, transient, id, title, command, nooutput, timeexpression):
 		self.button_apply.set_label (gtk.STOCK_SAVE)
 		
 		self.mode = 2
@@ -199,7 +201,7 @@ class CrontabEditor:
 		self.widget.set_title(_("Edit template"))		
 		self.__update_textboxes__ ()
 		
-		self.widget.set_transient_for(self.ParentClass.widget)
+		self.widget.set_transient_for(transient)
 		self.widget.set_position(gtk.WIN_POS_CENTER_ON_PARENT)
 		self.widget.show ()
 		self.button_template.hide ()
@@ -218,7 +220,7 @@ class CrontabEditor:
 		else:
 			self.cb_nooutput.set_active (False)
 				
-	def showedit (self, record, job_id, linenumber, iter):
+	def showedit (self, transient, record, job_id, linenumber, iter):
 		self.button_apply.set_label (gtk.STOCK_APPLY)
 		self.mode = 1
 		self.linenumber = linenumber
@@ -238,8 +240,9 @@ class CrontabEditor:
 		self.widget.set_title(_("Edit a Scheduled Task"))		
 		self.__update_textboxes__ ()
 		self.parentiter = iter
-		self.widget.set_transient_for(self.ParentClass.widget)
+		self.widget.set_transient_for(transient)
 		self.widget.set_position(gtk.WIN_POS_CENTER_ON_PARENT)
+		self.button_template.show ()
 		self.widget.show ()
 		i = self.__getfrequency__ (self.minute, self.hour, self.day, self.month, self.weekday, self.special)
 		if i == -1:
