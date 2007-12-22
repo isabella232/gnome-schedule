@@ -1,3 +1,6 @@
+2007-12-13:
+        This branch, GS_1, is going to be for updates to the 1.x series, have a look at trunk/NEWS for more updated information.
+
 2007-12-02:
 
         It is time for the (most likely) last release in the 1.x series, there are fairly few updates since the recent 1.2.0 release, but although it was meant as a last translation update I found some significant bugs.
