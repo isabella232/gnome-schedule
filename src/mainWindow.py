@@ -724,9 +724,9 @@ class main:
  		dlg.set_website ("http://gnome-schedule.sourceforge.net")
  		dlg.set_website_label("http://gnome-schedule.sourceforge.net")
  		dlg.set_authors (
- 			["Philip Van Hoof <pvanhoof at gnome dot org>",
- 			"Kristof Vansant <de_lupus at pandora dot be>",
- 			"Gaute Hope <eg@gaute.vetsj.com>"]
+ 			["Gaute Hope <eg@gaute.vetsj.com>",
+                         "Philip Van Hoof <pvanhoof at gnome dot org>",
+ 			 "Kristof Vansant <de_lupus at pandora dot be>"]
  			)
  		dlg.set_documenters (
  			["Rodrigo Marcos Fombellida <rmarcos_geo@yahoo.es>"]
