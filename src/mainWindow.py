@@ -645,7 +645,7 @@ class main:
 		
 		if (self.backend.get_not_inform_working_dir() != True):
 			dia2 = gtk.MessageDialog (self.widget, gtk.DIALOG_MODAL | gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_WARNING, gtk.BUTTONS_NONE, _("Note about working directory of executed tasks:\n\nRecurrent tasks will be run from the home directory, one-time tasks from the directory where Gnome schedule was run from at the time of task creation (normally the home directory)."))
-			dia2.add_buttons ("_Don't show again", gtk.RESPONSE_CLOSE, gtk.STOCK_OK, gtk.RESPONSE_OK, gtk.STOCK_CANCEL, gtk.RESPONSE_CANCEL)
+			dia2.add_buttons (_("_Don't show again"), gtk.RESPONSE_CLOSE, gtk.STOCK_OK, gtk.RESPONSE_OK, gtk.STOCK_CANCEL, gtk.RESPONSE_CANCEL)
 			dia2.set_title (_("Warning: Working directory of executed tasks"))
 			response = dia2.run ()
 			if response == gtk.RESPONSE_CANCEL:
