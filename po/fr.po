@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-12-22 19:47+0100\n"
+"POT-Creation-Date: 2007-12-24 12:36+0100\n"
 "PO-Revision-Date: 2007-12-13 15:04-0500\n"
 "Last-Translator: Jeff Fortin <nekohayo ~at~ gmail.com>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
@@ -211,6 +211,10 @@ msgstr ""
 "\n"
 "Les tâches récurrentes seront exécutées à partir de votre « dossier personnel "
 "»."
+
+#: ../src/crontabEditor.py:473 ../src/mainWindow.py:648 ../src/atEditor.py:557
+msgid "_Don't show again"
+msgstr ""
 
 #: ../src/crontabEditor.py:474 ../src/mainWindow.py:649 ../src/atEditor.py:558
 msgid "Warning: Working directory of executed tasks"

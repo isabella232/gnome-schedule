@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-12-22 19:47+0100\n"
+"POT-Creation-Date: 2007-12-24 12:36+0100\n"
 "PO-Revision-Date: 2005-08-27 17:03-0400\n"
 "Last-Translator: Adam Weinberger <adamw@gnome.org>\n"
 "Language-Team: Canadian English <adamw@gnome.org>\n"
@@ -197,6 +197,10 @@ msgid ""
 "Note about working directory of executed tasks:\n"
 "\n"
 "Recurrent tasks will be run from the home directory."
+msgstr ""
+
+#: ../src/crontabEditor.py:473 ../src/mainWindow.py:648 ../src/atEditor.py:557
+msgid "_Don't show again"
 msgstr ""
 
 #: ../src/crontabEditor.py:474 ../src/mainWindow.py:649 ../src/atEditor.py:558
