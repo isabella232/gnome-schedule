@@ -1746,9 +1746,7 @@
               <widget class="GtkToolButton" id="tm_button_new">
                 <property name="visible">True</property>
                 <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
-                <property name="tooltip" translatable="yes">Create a new template.
-
-Choose 'Add as template' when you have customized your task.</property>
+                <property name="tooltip" translatable="yes">Create a new template.</property>
                 <property name="is_important">True</property>
                 <property name="stock_id">gtk-new</property>
                 <signal name="clicked" handler="on_tm_button_new_clicked"/>
@@ -1763,6 +1761,7 @@ Choose 'Add as template' when you have customized your task.</property>
                 <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                 <property name="tooltip" translatable="yes">Edit the selected template</property>
                 <property name="is_important">True</property>
+                <property name="label" translatable="yes">Edit</property>
                 <property name="stock_id">gtk-edit</property>
                 <signal name="clicked" handler="on_tm_button_edit_clicked"/>
               </widget>
