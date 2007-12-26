@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2.10\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-12-24 12:36+0100\n"
+"POT-Creation-Date: 2007-12-26 14:56+0100\n"
 "PO-Revision-Date: 2004-12-11 13:30+0000\n"
 "Last-Translator: Duarte Loreto <happyguy_pt@hotmail.com>\n"
 "Language-Team: Portuguese <gnome_pt@yahoogroups.com>\n"
@@ -101,8 +101,8 @@ msgstr "tem de ser entre 0 e 7"
 msgid "%s is not a number"
 msgstr "%s não é um número"
 
-#: ../src/crontab.py:261 ../src/crontab.py:317 ../src/crontabEditor.py:272
-#: ../src/atEditor.py:121 ../src/atEditor.py:485 ../src/atEditor.py:509
+#: ../src/crontab.py:261 ../src/crontab.py:317 ../src/crontabEditor.py:289
+#: ../src/atEditor.py:121 ../src/atEditor.py:503 ../src/atEditor.py:527
 msgid "Untitled"
 msgstr "Sem título"
 
@@ -180,13 +180,19 @@ msgstr "Criar uma nova tarefa calendarizada"
 msgid "Edit template"
 msgstr ""
 
-#: ../src/crontabEditor.py:240 ../src/atEditor.py:195
+#. edit template
+#: ../src/crontabEditor.py:231 ../src/atEditor.py:176
+#, fuzzy
+msgid "New template"
+msgstr "_Adicionar tarefa"
+
+#: ../src/crontabEditor.py:257 ../src/atEditor.py:216
 #, fuzzy
 msgid "Edit a Scheduled Task"
 msgstr "Editar uma tarefa calendarizada"
 
-#: ../src/crontabEditor.py:299 ../src/crontabEditor.py:594
-#: ../src/crontabEditor.py:634
+#: ../src/crontabEditor.py:316 ../src/crontabEditor.py:611
+#: ../src/crontabEditor.py:651
 #, fuzzy, python-format
 msgid ""
 "This is an invalid record! The problem could be in the %(field)s field. "
@@ -194,7 +200,7 @@ msgid ""
 msgstr ""
 "Este é um registo inválido! O problema poderá estar no campo %s. Motivo: %s"
 
-#: ../src/crontabEditor.py:304
+#: ../src/crontabEditor.py:321
 msgid ""
 "Your command contains one or more of the character %, this is special for "
 "cron and cannot be used with Gnome-schedule because of the format it uses to "
@@ -204,18 +210,18 @@ msgid ""
 "for redirection it must be properly escaped with the \\ letter."
 msgstr ""
 
-#: ../src/crontabEditor.py:472
+#: ../src/crontabEditor.py:489
 msgid ""
 "Note about working directory of executed tasks:\n"
 "\n"
 "Recurrent tasks will be run from the home directory."
 msgstr ""
 
-#: ../src/crontabEditor.py:473 ../src/mainWindow.py:648 ../src/atEditor.py:557
+#: ../src/crontabEditor.py:490 ../src/mainWindow.py:648 ../src/atEditor.py:575
 msgid "_Don't show again"
 msgstr ""
 
-#: ../src/crontabEditor.py:474 ../src/mainWindow.py:649 ../src/atEditor.py:558
+#: ../src/crontabEditor.py:491 ../src/mainWindow.py:649 ../src/atEditor.py:576
 msgid "Warning: Working directory of executed tasks"
 msgstr ""
 
@@ -1031,16 +1037,16 @@ msgstr ""
 msgid "No such user"
 msgstr ""
 
-#: ../src/addWindow.py:49
+#: ../src/addWindow.py:51
 #, fuzzy
 msgid "A task that launches recurrently"
 msgstr "Uma tarefa calendarizada que se irá iniciar com uma frequência de "
 
-#: ../src/addWindow.py:62
+#: ../src/addWindow.py:64
 msgid "A task that launches one time"
 msgstr ""
 
-#: ../src/addWindow.py:75
+#: ../src/addWindow.py:77
 msgid "A task from a predefined template"
 msgstr ""
 
@@ -1048,19 +1054,19 @@ msgstr ""
 msgid "Calendar"
 msgstr ""
 
-#: ../src/atEditor.py:477
+#: ../src/atEditor.py:495
 msgid ""
 "In one or both of the fields hour and minute there was entered a letter, or "
 "a number out of range. Remember an hour only has 60 minutes and a day only "
 "24 hours."
 msgstr ""
 
-#: ../src/atEditor.py:536
+#: ../src/atEditor.py:554
 #, fuzzy, python-format
 msgid "This is an invalid record! The problem could be: %s"
 msgstr "Este é um registo inválido! O problema poderá ser: %s "
 
-#: ../src/atEditor.py:556
+#: ../src/atEditor.py:574
 msgid ""
 "Note about working directory of executed tasks:\n"
 "\n"
