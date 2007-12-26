@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arabic\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-12-26 14:56+0100\n"
+"POT-Creation-Date: 2007-12-26 16:04+0100\n"
 "PO-Revision-Date: 2007-04-14 18:49+0100\n"
 "Last-Translator: Djihed Afifi <djihed@gmail.com>\n"
 "Language-Team: Arabeyes <doc@arabeyes.org>\n"
@@ -146,13 +146,13 @@ msgid ""
 msgstr ""
 
 #: ../src/crontabEditor.py:69 ../src/crontabEditorHelper.py:87
-#: ../src/gnome-schedule.glade.h:33
+#: ../src/gnome-schedule.glade.h:34
 #, fuzzy
 msgid "Every minute"
 msgstr "خمس دقائق"
 
 #: ../src/crontabEditor.py:70 ../src/crontabEditorHelper.py:93
-#: ../src/gnome-schedule.glade.h:32
+#: ../src/gnome-schedule.glade.h:33
 #, fuzzy
 msgid "Every hour"
 msgstr "كل سنة"
@@ -266,7 +266,7 @@ msgstr "هذه %s، اصدارة %s"
 msgid "At an exact minute"
 msgstr "دقيقة واحدة"
 
-#: ../src/crontabEditorHelper.py:232 ../src/gnome-schedule.glade.h:45
+#: ../src/crontabEditorHelper.py:232 ../src/gnome-schedule.glade.h:46
 #, fuzzy
 msgid "Minute:"
 msgstr "الدّقيقة"
@@ -276,7 +276,7 @@ msgstr "الدّقيقة"
 msgid "At an exact hour"
 msgstr ""
 
-#: ../src/crontabEditorHelper.py:236 ../src/gnome-schedule.glade.h:41
+#: ../src/crontabEditorHelper.py:236 ../src/gnome-schedule.glade.h:42
 #, fuzzy
 msgid "Hour:"
 msgstr "السّاعة"
@@ -298,7 +298,7 @@ msgstr "اليوم"
 msgid "In a month"
 msgstr "خلال شهر"
 
-#: ../src/crontabEditorHelper.py:244 ../src/gnome-schedule.glade.h:47
+#: ../src/crontabEditorHelper.py:244 ../src/gnome-schedule.glade.h:48
 #, fuzzy
 msgid "Month:"
 msgstr "ال_شّهر:"
@@ -309,17 +309,17 @@ msgstr "ال_شّهر:"
 msgid "On a weekday"
 msgstr "مرّة في الأسبوع"
 
-#: ../src/crontabEditorHelper.py:248 ../src/gnome-schedule.glade.h:60
+#: ../src/crontabEditorHelper.py:248 ../src/gnome-schedule.glade.h:61
 #, fuzzy
 msgid "Weekday:"
 msgstr "الأربعاء"
 
-#: ../src/crontabEditorHelper.py:253 ../src/gnome-schedule.glade.h:43
+#: ../src/crontabEditorHelper.py:253 ../src/gnome-schedule.glade.h:44
 #, fuzzy
 msgid "In a step width"
 msgstr "عرض الأيقونة صفر"
 
-#: ../src/crontabEditorHelper.py:255 ../src/gnome-schedule.glade.h:46
+#: ../src/crontabEditorHelper.py:255 ../src/gnome-schedule.glade.h:47
 #, fuzzy
 msgid "Minutes:"
 msgstr "دقائق"
@@ -475,127 +475,132 @@ msgstr "ال_وصف:"
 
 #: ../src/gnome-schedule.glade.h:29
 #, fuzzy
-msgid "Edit a periodical task"
-msgstr "ينفذ الأفعال المجدولة"
+msgid "Edit"
+msgstr "كل سنة"
 
 #: ../src/gnome-schedule.glade.h:30
 #, fuzzy
-msgid "Edit a scheduled task"
+msgid "Edit a periodical task"
 msgstr "ينفذ الأفعال المجدولة"
 
 #: ../src/gnome-schedule.glade.h:31
 #, fuzzy
+msgid "Edit a scheduled task"
+msgstr "ينفذ الأفعال المجدولة"
+
+#: ../src/gnome-schedule.glade.h:32
+#, fuzzy
 msgid "Edit the selected template"
 msgstr "حذف القالب المحدد"
 
-#: ../src/gnome-schedule.glade.h:34
+#: ../src/gnome-schedule.glade.h:35
 msgid "Execute at:"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:35
+#: ../src/gnome-schedule.glade.h:36
 msgid "Execution at a specific minute, hour, day, weekday or month."
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:36
+#: ../src/gnome-schedule.glade.h:37
 msgid ""
 "Execution at a step width. For example every five minutes, hours, days, "
 "weekdays or months."
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:37
+#: ../src/gnome-schedule.glade.h:38
 msgid "Execution at every minute, hour, day, weekday or month."
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:38
+#: ../src/gnome-schedule.glade.h:39
 #, fuzzy
 msgid "Execution in a range."
 msgstr "قيد التحقق..."
 
-#: ../src/gnome-schedule.glade.h:39
+#: ../src/gnome-schedule.glade.h:40
 #, fuzzy
 msgid "Expression:"
 msgstr "تعبير"
 
-#: ../src/gnome-schedule.glade.h:40
+#: ../src/gnome-schedule.glade.h:41
 msgid "From:"
 msgstr "من:"
 
-#: ../src/gnome-schedule.glade.h:42
+#: ../src/gnome-schedule.glade.h:43
 #, fuzzy
 msgid "In a range"
 msgstr "غرانج"
 
-#: ../src/gnome-schedule.glade.h:44
+#: ../src/gnome-schedule.glade.h:45
 #, fuzzy
 msgid "Manage templates"
 msgstr "إدارة الدِسكلت"
 
-#: ../src/gnome-schedule.glade.h:48
+#: ../src/gnome-schedule.glade.h:49
 #, fuzzy
 msgid "Other"
 msgstr "أخ_رى"
 
-#: ../src/gnome-schedule.glade.h:49
+#: ../src/gnome-schedule.glade.h:50
 #, fuzzy
 msgid "Run selected task"
 msgstr "من فضلك اختر رمز دال:"
 
-#: ../src/gnome-schedule.glade.h:50
+#: ../src/gnome-schedule.glade.h:51
 msgid "Run task"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:51
+#: ../src/gnome-schedule.glade.h:52
 #, fuzzy
 msgid "Scheduled and active tasks"
 msgstr "أرسل واستقبل الفاكسات"
 
-#: ../src/gnome-schedule.glade.h:52
+#: ../src/gnome-schedule.glade.h:53
 #, fuzzy
 msgid "See \"man 5 crontab\" for information about the crontab format."
 msgstr "اعرض معلومات عن الملف الحالي"
 
-#: ../src/gnome-schedule.glade.h:53
+#: ../src/gnome-schedule.glade.h:54
 #, fuzzy
 msgid "Show help"
 msgstr "إظهار المساعدة"
 
-#: ../src/gnome-schedule.glade.h:54
+#: ../src/gnome-schedule.glade.h:55
 #, fuzzy
 msgid "Task description:"
 msgstr "ال_وصف:"
 
-#: ../src/gnome-schedule.glade.h:55
+#: ../src/gnome-schedule.glade.h:56
 #, fuzzy
 msgid "Task:"
 msgstr "_مهمّة"
 
-#: ../src/gnome-schedule.glade.h:56 ../src/mainWindow.py:183
+#: ../src/gnome-schedule.glade.h:57 ../src/mainWindow.py:183
 #, fuzzy
 msgid "Templates"
 msgstr "قالب:"
 
-#: ../src/gnome-schedule.glade.h:57
+#: ../src/gnome-schedule.glade.h:58
 #, fuzzy
 msgid "Time expression help"
 msgstr "جملة غير صالحة"
 
-#: ../src/gnome-schedule.glade.h:58
+#: ../src/gnome-schedule.glade.h:59
 msgid "Time:"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:59
+#: ../src/gnome-schedule.glade.h:60
 msgid "To:"
 msgstr "إلى:"
 
-#: ../src/gnome-schedule.glade.h:61
+#: ../src/gnome-schedule.glade.h:62
 msgid "_No output (>/dev/null 2>&1)"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:62
+#: ../src/gnome-schedule.glade.h:63
 msgid "_User:"
 msgstr "_مستخدم:"
 
-#: ../src/gnome-schedule.glade.h:63
+#: ../src/gnome-schedule.glade.h:64
 msgid "ls -l"
 msgstr ""
 
