@@ -166,6 +166,27 @@ class AtEditor:
 		self.button_add_template.hide ()
 		
 		self.__update_textboxes__()
+	
+	def shownew_template (self, transient):
+		self.button_save.set_label (gtk.STOCK_ADD)
+		self.__reset__ ()
+		self.tid = 0
+		self.mode = 2 # edit template
+		
+		self.widget.set_title(_("New template"))
+		self.widget.set_transient_for(transient)
+		self.widget.set_position(gtk.WIN_POS_CENTER_ON_PARENT)
+		self.__setup_calendar__ ()
+		self.widget.show_all ()
+		
+		# hide time settings
+		self.at_vbox_time.hide ()
+		
+		# save and cancel buttons
+		self.button_save.set_label (gtk.STOCK_ADD)
+		self.button_add_template.hide ()
+		
+		self.__update_textboxes__()
 		
 	def showedit (self, transient, record, job_id, iter):
 		self.button_save.set_label (gtk.STOCK_APPLY)
@@ -249,10 +270,7 @@ class AtEditor:
 		self.__hide_calendar__ ()
 				
 	def __show_calendar__ (self):
-		x, y = self.widget.get_position ()
-		xoff, yoff, i, j, k = self.widget.window.get_geometry ()
-		x = x + xoff
-		y = y + yoff
+		x, y = self.widget.window.get_origin ()
 		button_rect = self.cal_button.get_allocation ()
 		x = x + button_rect.x
 		y = y + button_rect.y + button_rect.height

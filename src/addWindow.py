@@ -28,6 +28,8 @@ class AddWindow:
 		self.widget = self.xml.get_widget ("addWindow")
 		self.widget.connect("delete-event", self.widget.hide_on_delete)
 
+		self.mode = 0
+		
 		self.cancel_button = self.xml.get_widget ("select_cancel_button")
 		self.ok_button = self.xml.get_widget ("select_ok_button")
 
@@ -81,11 +83,17 @@ class AddWindow:
 		self.button_template.show_all ()
 
 
-	def ShowAddWindow (self, transient):
+	# mode: 0 = normal add, 1 = new template
+	def ShowAddWindow (self, transient, mode = 0):
+		self.mode = mode
 		self.transient = transient
 		self.widget.set_transient_for(transient)
 		self.widget.set_position(gtk.WIN_POS_CENTER_ON_PARENT)
 		self.widget.show_all()
+		if (mode == 1):
+			self.button_template.hide ()
+		elif (mode == 0):
+			self.button_template.show_all ()
 		
 
 	def on_cancel_button_clicked (self, *args):
@@ -98,10 +106,16 @@ class AddWindow:
 	def on_button_crontab_clicked (self, *args):
 		self.widget.hide ()
 		self.ParentClass.editor = self.ParentClass.crontab_editor
-		self.ParentClass.editor.showadd (self.transient)
+		if (self.mode == 1):
+			self.ParentClass.editor.shownew_template (self.transient)
+		elif (self.mode == 0):
+			self.ParentClass.editor.showadd (self.transient)
 		
 	def on_button_at_clicked (self, *args):
 		self.widget.hide ()
 		self.ParentClass.editor = self.ParentClass.at_editor
-		self.ParentClass.editor.showadd (self.transient)	
+		if (self.mode == 1):
+			self.ParentClass.editor.shownew_template (self.transient)
+		elif (self.mode == 0):
+			self.ParentClass.editor.showadd (self.transient)	
 		

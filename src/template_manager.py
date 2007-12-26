@@ -129,7 +129,7 @@ class TemplateManager:
 		self.reload_tv ()
 		
 	def on_new_clicked (self, *args):
-		self.parent.addWindow.ShowAddWindow (self.widget)
+		self.parent.addWindow.ShowAddWindow (self.widget, 1)
 	
 	def on_delete_clicked (self, *args):
 		store, iter = self.treeview.get_selection().get_selected()

@@ -1,3 +1,8 @@
+2007-12-26  Gaute Hope  <eg@gaute.vetsj.com>
+
+	* Only add button and relevant fields visible when adding a new template in the template manager.
+	* mainWindow.py: Using gtk.gdk.window.get_origin () to calculate calendar window position.
+	
 2007-12-24  Gaute Hope  <eg@gaute.vetsj.com>
 
 	* Don't show again is now translatable

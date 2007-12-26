@@ -219,6 +219,23 @@ class CrontabEditor:
 			
 		else:
 			self.cb_nooutput.set_active (False)
+			
+	def shownew_template (self, transient):
+		self.button_apply.set_label (gtk.STOCK_ADD)
+		
+		self.mode = 2
+		self.tid = 0
+		self.__reset__ ()
+
+			
+		self.widget.set_title(_("New template"))		
+		self.__update_textboxes__ ()
+		
+		self.widget.set_transient_for(transient)
+		self.widget.set_position(gtk.WIN_POS_CENTER_ON_PARENT)
+		self.widget.show ()
+		self.button_template.hide ()
+
 				
 	def showedit (self, transient, record, job_id, linenumber, iter):
 		self.button_apply.set_label (gtk.STOCK_APPLY)
