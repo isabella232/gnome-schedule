@@ -488,12 +488,15 @@ class main:
 				self.backend.set_advanced_option(1)
 
 	def on_add_at_task (self, *args):
+		self.addWindow.mode = 0
 		self.addWindow.on_button_at_clicked (*args)
 		
 	def on_add_crontab_task (self, *args):
+		self.addWindow.mode = 0
 		self.addWindow.on_button_crontab_clicked  (*args)
 	
 	def on_add_from_template (self, *args):
+		self.addWindow.mode = 0
 		self.addWindow.on_button_template_clicked  (*args)
 
 	def on_template_manager_button (self, *args):
