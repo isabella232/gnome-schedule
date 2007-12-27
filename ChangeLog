@@ -1,6 +1,6 @@
 2007-12-27  Gaute Hope  <eg@gaute.vetsj.com>
 
-	* Mainwindow resets the edit mode in addwindow when using the on_*_button_clicked methods directly.
+	* Mainwindow resets the edit mode in addwindow when using the on_button_*_clicked methods directly.
 	
 2007-12-26  Gaute Hope  <eg@gaute.vetsj.com>
 
