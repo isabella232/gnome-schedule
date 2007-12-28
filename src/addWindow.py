@@ -1,6 +1,6 @@
 # setuserWindow.py - UI code for changing user
 # Copyright (C) 2004, 2005  Philip Van Hoof <me at pvanhoof dot be>
-# Copyright (C) 2004 - 2008 Gaute Hope <eg at gaute dot vetsj dot org>
+# Copyright (C) 2004 - 2008 Gaute Hope <eg at gaute dot vetsj dot com>
 # Copyright (C) 2004, 2005  Kristof Vansant <de_lupus at pandora dot be>
 
 # This program is free software; you can redistribute it and/or modify
