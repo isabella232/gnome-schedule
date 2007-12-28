@@ -20,11 +20,13 @@
 
 tar=/bin/tar
 
+echo -e "pactranslations.sh: Simple script to pack the translation files in a tar archive for use on launchpad."
+echo "Copyright (c) 2007, 2008 Gaute Hope <eg@gaute.vetsj.com>"
+
 if [ "$1" ]
 then
 	if [ "$1" = "pack" ]
 	then
-		echo -e "Remember to run the configure script before this one, otherwise some files will be missing.\n"
 		echo "Packing.."
 		rm -f gnome-schedule.l10n.tar.gz
 		make Makefile gnome-schedule.pot > update_log 2>&1
@@ -36,16 +38,12 @@ then
 		rm gnome-schedule.l10n.tar.gz
 		rm update_log
 		echo "done"
-	else 
-		echo -e "pactranslations.sh: Simple script to pack the translation files in a tar archive for use on launchpad\n"
+	else 	
 		echo "Usage: ./packtranslations.sh [ pack | clean ]"
-		echo -e "Remember to run the configure script before this one, otherwise some files will be missing.\n"
-		echo "Copyright (c) 2007, 2008 Gaute Hope <eg@gaute.vetsj.com>"		
+		echo -e "Remember to run the configure script before this one, otherwise some files will be missing.\n"		
 	fi
 else
-	echo -e "pactranslations.sh: Simple script to pack the translation files in a tar archive for use on launchpad\n"
 	echo "Usage: ./packtranslations.sh [ pack | clean ]"
 	echo -e "Remember to run the configure script before this one, otherwise some files will be missing.\n"
-	echo "Copyright (c) 2007, 2008 Gaute Hope <eg@gaute.vetsj.com>"
 fi
 
