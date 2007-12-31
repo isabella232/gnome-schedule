@@ -1,3 +1,7 @@
+2007-12-31  Gaute Hope  <eg@gaute.vetsj.com>
+
+	* Changed to close stock buttons in template manager/chooser, using label from stock edit button in the template windows.
+
 2007-12-28  Gaute Hope  <eg@gaute.vetsj.com>
 
 	* Added po/packtranslations.sh: Simple script that packs the translation files
