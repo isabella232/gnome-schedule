@@ -9,13 +9,13 @@ msgstr ""
 "Project-Id-Version: gnome-schedule HEAD\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-12-26 16:24+0100\n"
-"PO-Revision-Date: 2007-08-19 20:32+0200\n"
+"PO-Revision-Date: 2007-12-31 22:23+0100\n"
 "Last-Translator: Yannig MARCHEGAY (Kokoyaya) <yannig@marchegay.org>\n"
 "Language-Team: Occitan (post 1500) <ubuntu-l10n-oci@lists.ubuntu.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);"
 
 #: ../desktop/gnome-schedule.desktop.in.in.h:1
 msgid "Manage your system tasks"
@@ -164,15 +164,13 @@ msgstr ""
 
 #. edit template
 #: ../src/crontabEditor.py:201 ../src/atEditor.py:155
-#, fuzzy
 msgid "Edit template"
-msgstr "_Modèl :"
+msgstr "Modificar lo modèl"
 
 #. edit template
 #: ../src/crontabEditor.py:231 ../src/atEditor.py:176
-#, fuzzy
 msgid "New template"
-msgstr "_Modèl :"
+msgstr ""
 
 #: ../src/crontabEditor.py:257 ../src/atEditor.py:216
 msgid "Edit a Scheduled Task"
@@ -216,23 +214,20 @@ msgid "Every weekday"
 msgstr ""
 
 #: ../src/crontabEditorHelper.py:163
-#, fuzzy
 msgid "Edit minute"
-msgstr "minuta"
+msgstr ""
 
 #: ../src/crontabEditorHelper.py:165
-#, fuzzy
 msgid "Edit hour"
-msgstr "ora"
+msgstr ""
 
 #: ../src/crontabEditorHelper.py:167
 msgid "Edit day"
 msgstr ""
 
 #: ../src/crontabEditorHelper.py:169
-#, fuzzy
 msgid "Edit month"
-msgstr "mes"
+msgstr ""
 
 #: ../src/crontabEditorHelper.py:171
 msgid "Edit weekday"
@@ -330,15 +325,15 @@ msgstr ""
 
 #: ../src/gnome-schedule.glade.h:1
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: ../src/gnome-schedule.glade.h:2
 msgid "0"
-msgstr ""
+msgstr "0"
 
 #: ../src/gnome-schedule.glade.h:3
 msgid ":"
-msgstr ""
+msgstr ":"
 
 #: ../src/gnome-schedule.glade.h:4
 msgid "<b>Choose the user whose tasks you want to modify</b>"
@@ -349,18 +344,16 @@ msgid "<b>Select the type of the scheduled task:</b>"
 msgstr ""
 
 #: ../src/gnome-schedule.glade.h:6
-#, fuzzy
 msgid "<big>Preview</big>"
-msgstr "<b>Ulhada</b>"
+msgstr "<big>Ulhada</big>"
 
 #: ../src/gnome-schedule.glade.h:7
 msgid "<big>Time &amp; Date</big>"
 msgstr ""
 
 #: ../src/gnome-schedule.glade.h:8
-#, fuzzy
 msgid "About Gnome-schedule"
-msgstr "A prepaus de Gnome Schedule"
+msgstr ""
 
 #: ../src/gnome-schedule.glade.h:9
 msgid "Add a Scheduled Task"
@@ -372,7 +365,7 @@ msgstr ""
 
 #: ../src/gnome-schedule.glade.h:11
 msgid "Advanced"
-msgstr "Avançat"
+msgstr "A_vançat"
 
 #: ../src/gnome-schedule.glade.h:14
 msgid "Change User"
@@ -392,9 +385,8 @@ msgstr ""
 
 #: ../src/gnome-schedule.glade.h:18 ../src/template.py:192
 #: ../src/template.py:202
-#, fuzzy
 msgid "Command:"
-msgstr "Co_manda :"
+msgstr "Comanda :"
 
 #: ../src/gnome-schedule.glade.h:19
 msgid "Configure Scheduled Tasks"
@@ -405,33 +397,28 @@ msgid "Create a new task from the selected template"
 msgstr ""
 
 #: ../src/gnome-schedule.glade.h:21
-#, fuzzy
 msgid "Create a new template."
-msgstr "_Modèl :"
+msgstr ""
 
 #: ../src/gnome-schedule.glade.h:22
-#, fuzzy
 msgid "Date:"
-msgstr "_Data :"
+msgstr "Data :"
 
 #: ../src/gnome-schedule.glade.h:24
 msgid "Delete a scheduled task"
 msgstr ""
 
 #: ../src/gnome-schedule.glade.h:25
-#, fuzzy
 msgid "Delete the selected template"
-msgstr "_Modèl :"
+msgstr ""
 
 #: ../src/gnome-schedule.glade.h:26
-#, fuzzy
 msgid "Description:"
-msgstr "Descripcion"
+msgstr "Descripcion :"
 
 #: ../src/gnome-schedule.glade.h:27
-#, fuzzy
 msgid "Edit"
-msgstr "ora"
+msgstr "Edicion"
 
 #: ../src/gnome-schedule.glade.h:28
 msgid "Edit a periodical task"
@@ -442,9 +429,8 @@ msgid "Edit a scheduled task"
 msgstr ""
 
 #: ../src/gnome-schedule.glade.h:30
-#, fuzzy
 msgid "Edit the selected template"
-msgstr "_Modèl :"
+msgstr "Modificar lo modèl seleccionat"
 
 #: ../src/gnome-schedule.glade.h:33
 msgid "Execute at:"
@@ -509,19 +495,16 @@ msgid "Show help"
 msgstr ""
 
 #: ../src/gnome-schedule.glade.h:53
-#, fuzzy
 msgid "Task description:"
-msgstr "Descripcion"
+msgstr "Descripcion del prètzfach :"
 
 #: ../src/gnome-schedule.glade.h:54
-#, fuzzy
 msgid "Task:"
-msgstr "_Prètzfach"
+msgstr "Prètzfach :"
 
 #: ../src/gnome-schedule.glade.h:55 ../src/mainWindow.py:183
-#, fuzzy
 msgid "Templates"
-msgstr "_Modèl :"
+msgstr "Modèls"
 
 #: ../src/gnome-schedule.glade.h:56
 msgid "Time expression help"
@@ -529,7 +512,7 @@ msgstr ""
 
 #: ../src/gnome-schedule.glade.h:57
 msgid "Time:"
-msgstr ""
+msgstr "Títol:"
 
 #: ../src/gnome-schedule.glade.h:58
 msgid "To:"
@@ -859,9 +842,8 @@ msgid "One-time task"
 msgstr ""
 
 #: ../src/mainWindow.py:132
-#, fuzzy
 msgid "From template"
-msgstr "_Modèl :"
+msgstr "A partir del modèl"
 
 #: ../src/mainWindow.py:151
 msgid "Add a new task"
@@ -884,9 +866,8 @@ msgstr ""
 
 #: ../src/mainWindow.py:438 ../src/template_chooser.py:69
 #: ../src/template_manager.py:72
-#, fuzzy
 msgid "Task"
-msgstr "_Prètzfach"
+msgstr "Prètzfach (Task)"
 
 #: ../src/mainWindow.py:451 ../src/mainWindow.py:477
 #: ../src/template_chooser.py:78 ../src/template_manager.py:81
@@ -954,11 +935,11 @@ msgstr ""
 
 #: ../src/mainWindow.py:734
 msgid "translator-credits"
-msgstr "Yannig Marchegay (Kokoyaya) <yannig@marchegay.org)"
+msgstr "Yannig Marchegay (Kokoyaya) <yannig@marchegay.org>"
 
 #: ../src/mainWindow.py:755
 msgid "Could not display help"
-msgstr "Impossible de mostrar l'ajuda"
+msgstr "Impossible de visualizar l'ajuda"
 
 #: ../src/scheduleapplet.py:131
 msgid "ERROR: Could not load menu xml file"
@@ -982,7 +963,7 @@ msgstr ""
 
 #: ../src/atEditor.py:77
 msgid "Calendar"
-msgstr ""
+msgstr "Calendièr"
 
 #: ../src/atEditor.py:495
 msgid ""
@@ -1005,9 +986,8 @@ msgid ""
 msgstr ""
 
 #: ../src/template.py:192 ../src/template.py:202
-#, fuzzy
 msgid "Title:"
-msgstr "Minuta :"
+msgstr "Títol:"
 
 #: ../src/template.py:202
 msgid "Run:"
@@ -1018,59 +998,10 @@ msgid "No output"
 msgstr ""
 
 #: ../src/template_chooser.py:40 ../src/template_manager.py:37
-#, fuzzy
 msgid "Use template"
-msgstr "_Modèl :"
+msgstr "Utilizar lo modèl"
 
 #: ../src/template_chooser.py:97 ../src/template_manager.py:102
 msgid "One-time"
 msgstr ""
 
-#~ msgid "<b>General</b>"
-#~ msgstr "<b>General</b>"
-
-#~ msgid "About this application"
-#~ msgstr "A prepaus del logicial"
-
-#~ msgid "Mi_nutes:"
-#~ msgstr "Mi_nutas :"
-
-#~ msgid "Select..."
-#~ msgstr "Seleccionar..."
-
-#~ msgid "_About"
-#~ msgstr "_A prepaus"
-
-#~ msgid "_Advanced"
-#~ msgstr "_Avançat"
-
-#~ msgid "_Hour:"
-#~ msgstr "_Ora :"
-
-#~ msgid "_Hours:"
-#~ msgstr "_Oras :"
-
-#~ msgid "_Manual"
-#~ msgstr "_Manual"
-
-#~ msgid "_Minute:"
-#~ msgstr "_Minuta :"
-
-#~ msgid "_Months:"
-#~ msgstr "_Meses :"
-
-#~ msgid "_View"
-#~ msgstr "_Mostrar"
-
-#~ msgid "Icon"
-#~ msgstr "Icòna"
-
-#~ msgid "Type"
-#~ msgstr "Tipe"
-
-#~ msgid "Preview"
-#~ msgstr "Ulhada"
-
-#, fuzzy
-#~ msgid "Copyright (c) 2004-2008 Gaute Hope."
-#~ msgstr "Copyright (c) 2004-2007 Gaute Hope."
