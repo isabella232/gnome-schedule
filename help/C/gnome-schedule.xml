@@ -2,9 +2,9 @@
 <!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN" 
 "http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd" [
   <!ENTITY legal SYSTEM "legal.xml">
-  <!ENTITY appversion "1.0.0">
-  <!ENTITY manrevision "2.1">
-  <!ENTITY date "June 2006">
+  <!ENTITY appversion "2.0.0">
+  <!ENTITY manrevision "2.2">
+  <!ENTITY date "January 2008">
   <!ENTITY app "<application>Gnome Schedule</application>">
   <!-- Information about the entities
        The legal.xml file contains legal information, there is no need to edit the file. 
@@ -19,7 +19,7 @@
   This is the Gnome Schedule User Guide
   This file is distributed under the terms of the GNU Free Documentation 
   License (GFDL)
-  Copyright (C) 2005, 2006 The GNOME Documentation Project
+  Copyright (C) 2005, 2006, 2007, 2008 The GNOME Documentation Project
 ================================================================================ -->
 
 <!-- <abstract role="description"><para>User manual for the CPU Frequency Scaling applet.</para></abstract>
@@ -37,8 +37,8 @@
     <title>Gnome Schedule User Guide V&manrevision;</title>       
     <abstract role="description"><para>User Guide for the application Gnome Schedule</para></abstract>
     <copyright> 
-      <year>2005</year> 
-      <holder>Rodrigo Marcos Fombellida rmarcos@cvs.gnome.org</holder> 
+      <year>2005-2008</year> 
+      <holder>Rodrigo Marcos Fombellida rmarcos@svn.gnome.org</holder> 
     </copyright>
 <!-- translators: uncomment this:
 
@@ -66,7 +66,7 @@
 		<surname>Marcos Fombellida</surname> 
 		<affiliation> 
 	  		<orgname>GNOME Documentation Project</orgname> 
-	  		<address> <email>rmarcos@cvs.gnome.org</email> </address> 
+	  		<address> <email>rmarcos@svn.gnome.org</email> </address> 
 		</affiliation> 
       </author> 
       
@@ -85,15 +85,17 @@
       </othercredit>
       
 <!-- Next is to omit the gnome-doc-utils warning: missing element with role maintainer: -->
+<!--
     <othercredit role="maintainer">
       <firstname>Rodrigo</firstname> 
 		  <surname>Marcos Fombellida</surname> 
 		  <affiliation> 
 	  		<orgname>GNOME Documentation Project</orgname> 
-	  		<address> <email>rmarcos@cvs.gnome.org</email> </address> 
+	  		<address> <email>rmarcos@svn.gnome.org</email> </address> 
 		  </affiliation>
 		  <contrib>Gnome Schedule User Guide maintainance</contrib>
 	  </othercredit> 
+-->
     </authorgroup>
 
 
@@ -129,6 +131,15 @@
 	  		<para role="publisher">GNOME Documentation Project</para>
 		</revdescription> 
       </revision> 
+      <revision> 
+		<revnumber>Gnome Schedule User Guide V2.2</revnumber> 
+		<date>January 2008</date> 
+		<revdescription> 
+	  		<para role="author">Rodrigo Marcos Fombellida 
+	    	<email>rmarcos@svn.gnome.org</email></para>
+	  		<para role="publisher">GNOME Documentation Project</para>
+		</revdescription> 
+      </revision> 
     </revhistory> 
     
     <releaseinfo>This manual describes version &appversion; of Gnome Schedule.
@@ -160,14 +171,14 @@
     <para>&app; is a graphical tool that lets you schedule tasks with ease, to be run unattended at a specified time
       or periodically. These tasks, also known as jobs, can be either a command with its corresponding
       parameters or a script file with multiple instructions.</para>
-    <para>You can use &app; to program repetitive tasks in your daily work that can be automated
-      or to run a heavy task at night while you are sleeping, for example, backing-up your documents.</para>
+    <para>You can use &app; to program repetitive tasks in your daily work that can be automated. You can
+      also run a heavy task at night while you are sleeping, for example, backing up your documents.</para>
     
     <sect2 id="myapp-introduction-how">
       <title>How does &app; work?</title>
       <para>&app; uses <application>cron</application> and <application>at</application> to program job executions. 
         These are two system services commonly used by Linux-like systems. &app; provides 
-        a single graphical interface to configure both of them and present jobs in a way easy to understand for everyone.</para>
+        a single graphical interface to configure both and present jobs in a way easy to understand for everyone.</para>
 	  </sect2>
 	  
     <sect2 id="myapp-introduction-about">
@@ -255,14 +266,14 @@ at&gt; <userinput>Ctrl + D</userinput>
 
     <!-- ==== Figure ==== -->
       <figure id="main-fig"> 
-	       <title>Start Up Window</title> 
+	       <title>Main Window</title> 
 	       <screenshot> 
 	         <mediaobject> 
 	           <imageobject><imagedata
 		            fileref="figures/gnome-schedule_main.png" format="PNG"/> 
 	           </imageobject>
 	  	       <textobject> 
-	               <phrase>Shows &app; main window. Contains title bar, menu bar, tool bar, and task list.</phrase> 
+	               <phrase>Shows &app; main window. Contains title bar, tool bar, and task list.</phrase> 
 	           </textobject> 
 	         </mediaobject> 
 	       </screenshot> 
@@ -275,46 +286,38 @@ at&gt; <userinput>Ctrl + D</userinput>
     <para>The &app; main window contains the following elements:
     </para>
       <variablelist>
-	<varlistentry>
-	<term>Menu bar. </term>
-	<listitem>
-	<para>The menus on the menu bar gives you access to every option in the application.</para>
-	</listitem>
-	</varlistentry>
-	<varlistentry>
-	<term>Tool bar. </term>
-	<listitem>
-	<para> The tool bar gives you direct access to the most common options from the menubar.</para>
-	</listitem>
-	</varlistentry>
-	<varlistentry>
-	<term>Task list. </term>
-	<listitem>
-	<para>The Task list shows information about current scheduled tasks and pending jobs.
-	   For every task, the following information is detailed:
-	  <variablelist>
-	    <varlistentry><term>Icon:</term>
-	      <listitem><para>Image associated to the task.</para></listitem>
-	    </varlistentry>
-	    <varlistentry><term>Type:</term>
-  	    <listitem><para>Describes the type of the task: "Recurrent" or "Once".</para></listitem>
-  	  </varlistentry>
-  	  <varlistentry><term>Title:</term>
-  	    <listitem><para>Shows the name of the task.</para></listitem>
-  	  </varlistentry>
-  	  <varlistentry><term>Date and Time Settings:</term>
-	      <listitem><para>Shows when the task is going to be executed.</para></listitem>
-	    </varlistentry>
-	    <varlistentry><term>Preview:</term>
-	      <listitem><para>Shows the command that is going to be executed.</para></listitem>
-	    </varlistentry>
-	  </variablelist>
-	</para>
-	</listitem>
-	</varlistentry>
-	</variablelist>
+				<varlistentry>
+					<term>The tool bar.</term>
+					<listitem>
+						<para> The tool bar contains buttons that give you access to every function in the application.</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry>
+					<term>Task list.</term>
+					<listitem>
+						<para>The Task list shows information about current scheduled tasks and pending jobs.
+							 For every task, the following information is detailed:
+							<variablelist>
+								<varlistentry><term>Task:</term>
+									<listitem><para>Describes the type of the task: "Recurrent", when the task runs
+							repeatedly or "Once", when the task is done only once.</para></listitem>
+								</varlistentry>
+								<varlistentry><term>Description:</term>
+									<listitem><para>Shows a brief description of the task.</para></listitem>
+								</varlistentry>
+								<varlistentry><term>Date and Time:</term>
+									<listitem><para>Shows when the task is going to be executed.</para></listitem>
+								</varlistentry>
+								<varlistentry><term>Command preview:</term>
+									<listitem><para>Shows the command that is going to be executed.</para></listitem>
+								</varlistentry>
+							</variablelist>
+						</para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
   <tip>
-    <para>You can read a brief description of some of the objects on the 
+    <para>You can read a brief description of some of the objects and icons on the 
       &app; interface, by pointing them with the mouse and waiting for a few seconds.</para>
   </tip>
   </sect2>
@@ -323,12 +326,13 @@ at&gt; <userinput>Ctrl + D</userinput>
 <!-- ================ Adding tasks ================================ -->
   <sect1 id="myapp-adding"> 
     <title>Adding a New Scheduled Task</title> 
-    <para>You can add a new scheduled task by pressing the <guibutton>Add</guibutton> button in the main window tool bar or by selecting
-      <menuchoice>
-        <guimenu>Task</guimenu>
-        <guimenuitem>New</guimenuitem> 
-      </menuchoice> in the menu bar.</para>
-    <para>The following dialog window will appear letting you to choose the type of task you want to schedule:</para>
+<!-- ==================== Subsection Choosing the type of task to add ==========--> 
+	<sect2 id="myapp-adding-choosingType">
+		<title>Choosing the type of task to add</title>
+    <para>You can add a new scheduled task by pressing the <guibutton>New</guibutton> 
+			button in the main window tool bar.</para>
+    <para>The following dialog window will appear letting you to choose the type of task 
+				you want to schedule:</para>
     <!-- ==== Figure ==== -->
       <figure id="new_task-fig"> 
 	       <title>Task Type Selection Dialog Window</title> 
@@ -346,12 +350,15 @@ at&gt; <userinput>Ctrl + D</userinput>
     <!-- ==== End of Figure ==== -->
     
     <itemizedlist>
-    <listitem><para>by selecting the first option you will be able to schedule a task that will be executed periodically.
+    <listitem><para>by pressing the first button you will be able to schedule a task that will be executed periodically.
     </para></listitem>
-    <listitem><para>by selecting the second option you will be able to schedule a task that will only be executed once.
+    <listitem><para>by pressing the second button you will be able to schedule a task that will only be executed once.
+   </para></listitem>
+ <listitem><para>by pressing the third button you will be able to create a task from a template. Templates
+		usage is explained in <xref linkend="myapp-templates"/>.
    </para></listitem>
     </itemizedlist>
-    
+    </sect2>
 <!-- ==================== Subsection adding recurrent tasks=====================-->    
     <sect2 id="myapp-adding-recurrent">
       <title>Adding a scheduled task that will launch recurrently</title>
@@ -371,36 +378,29 @@ at&gt; <userinput>Ctrl + D</userinput>
 	       </screenshot> 
       </figure>
     <!-- ==== End of Figure ==== -->
-  
+
     <variablelist>
-    <title>Basic tab</title>
-	    <varlistentry><term>Preset</term>
-	      <listitem><para>If you want to use a preset to create a task faster, choose it from the drop-down list.
-	       For more information about using, creating and deleting presets see <xref linkend="myapp-presets"/>.</para>
-	      </listitem>
-	    </varlistentry>
 	    <varlistentry><term>Description</term>
   	    <listitem><para>Lets you add a brief description of the task.</para></listitem>
   	  </varlistentry>
-  	  <varlistentry><term>Icon</term>
-  	    <listitem><para>You can associate a custom icon to the task by pressing the image button.</para></listitem>
+  	  <varlistentry><term>Command</term>
+  	    <listitem><para>Enter here the command or script that will be periodically executed 
+						 by this task.</para></listitem>
   	  </varlistentry>
-  	  <varlistentry><term>Recurrence</term>
-	      <listitem><para>Lets you select when the task is going to be executed. If the basic time options 
-	        are not enough, you can create a custom time expression in the 
-	        <guilabel>Advanced</guilabel> tab.</para></listitem>
+		</variablelist>
+		<para><guilabel>Time &amp; Date</guilabel></para>
+			<variablelist>
+  	  <varlistentry><term>Basic</term>
+	      <listitem><para>Lets you select the frecuency for task execution 
+					among a list of common intervals.</para></listitem>
 	    </varlistentry>
-	    <varlistentry><term>Command</term>
-	      <listitem><para>Enter here the command or script that will be executed periodically by this task.</para></listitem>
-	    </varlistentry>
-	    <varlistentry><term>No output</term>
-	      <listitem><para>Check this option if you want to hide the command output.</para></listitem>
+	    <varlistentry><term>Advanced</term>
+	      <listitem><para>Lets you create custom time expressions in case you need more flexibility. 
+	      </para></listitem>
 	    </varlistentry>
 	  </variablelist>
-	  
-    <para><guilabel>Advanced tab</guilabel></para>
-	    <para>Lets you create custom time expressions in case you need more flexibility. 
-	      See <xref linkend="myapp-advanced"/> for more information.
+    <para><guilabel>Preview</guilabel></para>
+	    <para>Lets the user check if the selected frecuency is correct.
 	    </para>
     </sect2>    
     
@@ -424,135 +424,85 @@ at&gt; <userinput>Ctrl + D</userinput>
       </figure>
       <!-- ==== End of Figure ==== -->
       
-    <variablelist>
-    <title>Basic tab</title>
-	    <varlistentry><term>Preset</term>
-	      <listitem><para>If you want to use a preset to create a task faster, choose it from the drop-down list.
-	       For more information about using, creating and deleting presets see <xref linkend="myapp-presets"/>.</para>
-	      </listitem>
-	    </varlistentry>
-	    <varlistentry><term>Description</term>
-  	    <listitem><para>Lets you add a brief description of the task.</para></listitem>
-  	  </varlistentry>
-  	  <varlistentry><term>Icon</term>
-  	    <listitem><para>By pressing the <guibutton>Icon</guibutton> button you can associate a custom icon to the task.</para></listitem>
-  	  </varlistentry>
-  	  <varlistentry><term>Script</term>
-	      <listitem><para>Enter here the command or commands that will be executed once by this task.</para></listitem>
-	    </varlistentry>
-	  </variablelist>
-	  <variablelist>
-      <title>Date and Time tab</title>
-	    <varlistentry><term>Execution Time</term>
-	      <listitem><para>Lets you select the date and time when the new task will be executed.</para>
-	      </listitem>
-	    </varlistentry>
-	  </variablelist>
-
+   
     </sect2>
   </sect1>
   <!-- ============= Editing tasks ============================= -->
   <sect1 id="myapp-editing"> 
     <title>Modifying a Scheduled Task</title> 
-    <para>You can modify a scheduled task by selecting it from the <guilabel>Task list</guilabel> with one click and by pressing the <guibutton>Properties</guibutton> button in the main window tool bar or, alternatively, by selecting
-        <menuchoice>
-          <guimenu>Task</guimenu>
-          <guimenuitem>Properties</guimenuitem>
-        </menuchoice> on the menu bar. Then, the <guilabel>Edit a Scheduled Task</guilabel> window will be 
+    <para>You can modify a scheduled task by selecting it from the <guilabel>Task list</guilabel> with one click and by pressing the <guibutton>Edit</guibutton> button from the main window tool bar. Then, the <guilabel>Edit a Scheduled Task</guilabel> window will be 
       opened showing the task properties.</para>
     <para>Now, you will be able to modify any field you want. When you have finished you can press 
-      <guibutton>OK</guibutton> button to save the changes or <guibutton>Cancel</guibutton> button to omit them.</para>
+      <guibutton>Apply</guibutton> button to save the changes or <guibutton>Cancel</guibutton> button to omit them.</para>
     <tip>
-      <para>You can edit a task faster by simply double-clicking on it.</para>
+      <para>You can edit a task faster by simply double-clicking on it in the task list.</para>
     </tip>
   </sect1>
   
 <!-- ==============Deleting tasks ============================ -->
   <sect1 id="myapp-deleting">
     <title>Deleting a Scheduled Task</title>
-    <para>You can delete a scheduled task by selecting it from the <guilabel>Task list</guilabel> with one click and by pressing 
-      the <guibutton>Delete</guibutton> button in the main window tool bar or by selecting
-        <menuchoice>
-          <guimenu>Task</guimenu>
-          <guimenuitem>Delete</guimenuitem>
-        </menuchoice>. Next, you will be asked for confirmation.
-      By pressing the <guibutton>OK</guibutton> button, the scheduled task will be removed from the <guilabel>Task list</guilabel>.</para>
+    <para>You can delete a scheduled task by selecting it from the 
+				<guilabel>Task list</guilabel> with one click and by pressing 
+      the <guibutton>Delete</guibutton> button in the main window tool bar. Next, you will be asked for confirmation. By answering <guibutton>Yes</guibutton>, the scheduled task will be removed from the <guilabel>Task list</guilabel>.</para>
+		<tip>
+		<para>Non-recurrent tasks disapear automatically from the list when they are done.</para>
+		</tip>
   </sect1>
 
-<!-- ============== Using presets ============================ -->
-  <sect1 id="myapp-presets">
-    <title>Using Presets</title>
-    <para>&app; lets you save tasks as presets in order to reuse it later. So, you will be able to create new scheduled tasks faster.</para>
-    <para>To manage presets use the <guilabel>Preset</guilabel> drop-down list on the properties window when you are adding or editing a tasks.</para>
-    <variablelist>
- 	    <varlistentry><term>Creating a preset</term>
-	      <listitem><para>To create a new preset, first write a name for it in the <guilabel>Preset</guilabel> drop-down list. 
-	        Next, fill in the fields you want to save in the preset. 
-	        And, finally, press <guibutton>Save</guibutton> button.</para>
-	      </listitem>
-	    </varlistentry>
-	    <varlistentry><term>Modifying a preset</term>
-  	    <listitem><para>To modify a preset, first choose it from the drop-down list.
-  	      Next, change the fields you want to modify.
-  	      And, finally, press <guibutton>Save</guibutton> button.</para></listitem>
-  	  </varlistentry>
-  	  <varlistentry><term>Deleting a preset</term>
-  	    <listitem><para>To delete a preset choose it from the drop-down list and then press 
-  	      the <guibutton>Delete</guibutton> button.</para></listitem>
-  	  </varlistentry>
-  	  <varlistentry><term>Using a previously saved preset</term>
-	      <listitem><para>To use a previously saved preset drop-down the list and select it. The fields will be automatically filled in with the preset options.</para></listitem>
-	    </varlistentry>
-	  </variablelist>
-	    
-	   <para>If you do not want to use presets select the default option <guilabel>Don't use a preset</guilabel> from the drop-down list.</para>
-    <tip><para>
-	      You can have common tasks saved as presets. So, you will not have to write the same stuff again and again!
-	  </para></tip>
+<!-- ============== Running scheduled tasks ============================ -->
+  <sect1 id="myapp-runningTasks">
+    <title>Manually Running Scheduled Task</title>
+    <para>You can trigger a scheduled task by selecting it from the 
+				<guilabel>Task list</guilabel> with one click and by pressing 
+      the <guibutton>Run task</guibutton> button in the main window tool bar.
+		</para>
+		<para>The task will be executed and its output will be displayed in a terminal window, letting you check
+			if the task is correctly set.</para>
   </sect1>
-  
-<!-- ============== Advanced view ============================ -->
-  <sect1 id="myapp-advanced">
-    <title>Using the Advanced View</title>
-    <para>&app; lets you add, edit and view scheduled task in a crontab-like style.</para>
-    <para>You can activate the advanced view by choosing
-      <menuchoice>
-        <guimenu>View</guimenu>
-        <guimenuitem>Advanced</guimenuitem>
-      </menuchoice> on the main window menu bar. You will notice that the 
-      information shown in the <guilabel>Task list</guilabel> change into a crontab-like style. Now, if you try to add a new recurrent task the 
-      <guilabel>Advanced</guilabel> tab will be shown by default in the <guilabel>Create a New Scheduled Task</guilabel> window.</para>
-      <!-- ==== Figure ==== -->
-      <figure id="advanced-fig"> 
-	       <title>The Advanced tab</title> 
+
+
+<!-- ============== Using templates ============================ -->
+  <sect1 id="myapp-templates">
+    <title>Using Templates</title>
+    <para>&app; lets you save tasks as templates in order to reuse it later. This way, you will be able to create new scheduled tasks faster.</para>
+    <para>To manage templates press the <guilabel>Template</guilabel> button on the main window tool bar.
+			A new window will show you a list of available templates. From this window you can create, 
+			modify, delete and use templates.</para>
+
+    <!-- ==== Figure ==== -->
+      <figure id="templates-fig"> 
+	       <title>Template manager window</title> 
 	       <screenshot> 
 	         <mediaobject> 
 	           <imageobject><imagedata
-		            fileref="figures/gnome-schedule_advanced.png" format="PNG"/> 
+		            fileref="figures/gnome-schedule_templates.png" format="PNG"/> 
 	           </imageobject>
 	  	       <textobject> 
-	               <phrase>Shows the Advanced tab in the "Create a New Scheduled Task" window</phrase> 
+	               <phrase>Shows the "Manage templates" window</phrase> 
 	           </textobject> 
 	         </mediaobject> 
 	       </screenshot> 
       </figure>
       <!-- ==== End of Figure ==== -->
-    <para>Those who feel comfortable using <command>crontab</command> will find this option very interesting.</para>
+
+    <tip><para>
+	      You can have common tasks saved as templates. So, you will not have to write the same stuff again and again!
+	  </para></tip>
   </sect1>
+  
   
   <!-- ============== Using as root ============================ -->
   <sect1 id="myapp-superuser">
     <title>Using &app; as root</title>
     <para>When you use &app; as superuser, you can view, edit and add other users scheduled tasks.</para>
-    <para>You can change the user by pressing the <guibutton>Change User</guibutton> button in the main window tool bar
-      or, alternatively, by selecting
-       <menuchoice>
-         <guimenu>Task</guimenu>
-         <guimenuitem>Change User</guimenuitem>
-       </menuchoice> from the menu bar. Then, a dialog window will be shown. Choose the 
+    <para>You can change the user by pressing the <guibutton>Change User</guibutton> button in the main window tool bar. Then, a dialog window will be shown. Choose the 
        desired user from the drop-down list and press <guibutton>OK</guibutton> button. 
        Now the main window will show the scheduled tasks of the selected user.
      </para>
+
+		<tip><para>Please, keep in mind that this option is only available for
+				system administrators.</para></tip>
   </sect1>
 
 <!-- ================ Run graphical apps =================== -->

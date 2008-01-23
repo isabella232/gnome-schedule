@@ -1,3 +1,8 @@
+2008-01-23  Gaute Hope  <eg@gaute.vetsj.com>
+
+	* Added updated documentation from: Rodrigo M. Fombellida, see help/C
+	* Changed to version 2.0.0-rc2, should be ready for release.
+
 2007-12-31  Gaute Hope  <eg@gaute.vetsj.com>
 
 	* Changed to close stock buttons in template manager/chooser, using label from stock edit button in the template windows.

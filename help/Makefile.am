@@ -9,6 +9,7 @@ DOC_FIGURES = \
 	figures/gnome-schedule_main.png \
 	figures/gnome-schedule_new_task_once.png \
 	figures/gnome-schedule_new_task.png \
-	figures/gnome-schedule_new_task_recurrent.png
+	figures/gnome-schedule_new_task_recurrent.png \
+	figures/gnome-schedule_templates.png
 
 DOC_LINGUAS = es it oc sv
