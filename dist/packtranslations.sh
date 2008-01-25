@@ -20,7 +20,7 @@
 
 tar=/bin/tar
 
-echo -e "pactranslations.sh: Simple script to pack the translation files in a tar archive for use on launchpad."
+echo -e "pactranslations.sh: Simple script to pack the translation files in a tar archive for use on launchpad. Should be used from the po/ sub-directory."
 echo "Copyright (c) 2007, 2008 Gaute Hope <eg@gaute.vetsj.com>"
 
 if [ "$1" ]

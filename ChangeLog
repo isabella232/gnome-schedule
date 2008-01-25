@@ -1,3 +1,7 @@
+2008-01-25  Gaute Hope  <eg@gaute.vetsj.com>
+
+	* Moved po/packtranslations.sh to dist/ not going to use launchpad's translation management system.
+
 2008-01-23  Gaute Hope  <eg@gaute.vetsj.com>
 
 	* Added updated documentation from: Rodrigo M. Fombellida, see help/C
