@@ -1,3 +1,7 @@
+2008-01-28  Gaute Hope <eg@gaute.vetsj.com>
+
+	* removed all gnome-schedule_advanced.png's since they are not anymore referenced in Makefile.am and thus shouldn't be included anyways. Would however be great if the documentations could be updated to the new version made by Rodrigo M- Fombellida.
+
 2008-01-25  Rodrigo Marcos Fombellida <rmarcos@svn.gnome.org>
 
 	* es/es.po: Updated Spanish translation.
