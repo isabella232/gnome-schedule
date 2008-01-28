@@ -1,3 +1,8 @@
+2008-01-28  Gaute Hope  <eg@gaute.vetsj.com>
+
+	* Applied updated translations for both UI and documentation from Rodrigo M. Fombellida.
+	* Removed: help/C/figures/gnome-schedule_advanced.png
+
 2008-01-25  Gaute Hope  <eg@gaute.vetsj.com>
 
 	* Moved po/packtranslations.sh to dist/ not going to use launchpad's translation management system.

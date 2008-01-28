@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: gnome-schedule.HEAD\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-12-31 00:24+0000\n"
-"PO-Revision-Date: 2008-01-25 00:01+0100\n"
+"PO-Revision-Date: 2008-01-25 21:16+0100\n"
 "Last-Translator: Rodrigo Marcos Fombellida <rmarcos@svn.gnome.org>\n"
 "Language-Team: Spanish <traductores@es.gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -915,7 +915,7 @@ msgstr "Fecha y hora"
 
 #: ../src/mainWindow.py:459 ../src/mainWindow.py:472
 msgid "Command preview"
-msgstr "Comando de vista previa"
+msgstr "Vista previa del comando"
 
 #. print ex
 #: ../src/mainWindow.py:531 ../src/mainWindow.py:594
