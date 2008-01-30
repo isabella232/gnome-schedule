@@ -16,7 +16,7 @@ Dependencies
 	o. Python
 	o. PyGTK >= 2.3
 	o. Python GConf
-        o. su
+   o. su
 
 Support
 -------
@@ -24,9 +24,10 @@ Support
   o. Mailinglists: You can talk to the developers and some other users
      of gnome-schedule here:
  
-	o. http://lists.sourceforge.net/mailman/listinfo/gnome-schedule-users
-        There is also a development list here:
-        o. http://lists.sourceforge.net/mailman/listinfo/gnome-schedule-devel
+  o. http://lists.sourceforge.net/mailman/listinfo/gnome-schedule-users
+  
+  There is also a development list here:
+  o. http://lists.sourceforge.net/mailman/listinfo/gnome-schedule-devel
 
 INSTALL from source:
 -------------------------------------------------------------
@@ -91,6 +92,7 @@ Compiling and HACKING
 	   the other intl tools for translations. You should contact
 	   the GNOME Translation team as they are the responsible
 	   organisation for the translation of the GNOME desktop
+	o. Check out the help/ directory for translations of the documentation
 	o. Other than only the generated po-files you should also
 	   check out the file src/lang.py
 
