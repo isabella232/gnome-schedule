@@ -1,5 +1,5 @@
 version = "@VERSION@"
-image_dir = "@prefix@/share/icons"
+image_dir = "@prefix@/share/pixmaps/gnome-schedule"
 glade_dir = "@prefix@/share/gnome-schedule"
 locale_dir = "@prefix@/share/locale"
 crontabbin = "@CRONTAB_CONFIG@"

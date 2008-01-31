@@ -1,3 +1,11 @@
+2008-01-31  Gaute Hope  <eg@gaute.vetsj.com>
+
+	* Applied patch from Frank Arnold fixing mainwindow template button.
+	* desktop/gnome-schedule.desktop.in.in: Now using .svg, not removed .png icon
+	* icons/Makefile.am: Installing icons under $prefix/share/pixmaps/gnome-schedule
+	* src/config.py.in: Updated image path
+	* src/mainWindow.py, src/scheduleapplet.py: Only trying to load data files from current location if launched with '--debug'
+	
 2008-01-30  Gaute Hope  <eg@gaute.vetsj.com>
 
 	* Release 2.0.0

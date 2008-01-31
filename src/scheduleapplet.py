@@ -71,8 +71,9 @@ pr = gnome.program_init ("gnome-schedule", config.getVersion(), properties=props
 
 
 class ScheduleApplet(gnomeapplet.Applet):
-	def __init__(self, applet, iid, gprogram):
+	def __init__(self, applet, iid, gprogram, debug_flag):
 		self.__gobject_init__()
+		self.debug_flag = debug_flag
 		
 		gettext.bindtextdomain(config.GETTEXT_PACKAGE(), config.GNOMELOCALEDIR())
 		gettext.textdomain(config.GETTEXT_PACKAGE())
@@ -106,11 +107,12 @@ class ScheduleApplet(gnomeapplet.Applet):
 
 	
 	def __loadIcon__(self):
-		if os.access("../icons/gnome-schedule.svg", os.F_OK):
-			self.iconPixbuf = gtk.gdk.pixbuf_new_from_file_at_size ("../icons/gnome-schedule.svg", 19, 19)
+		if self.debug_flag:
+			if os.access("../icons/gnome-schedule.svg", os.F_OK):
+				self.iconPixbuf = gtk.gdk.pixbuf_new_from_file_at_size ("../icons/gnome-schedule.svg", 52, 52)
 		else:
 			try:
-				self.iconPixbuf = gtk.gdk.pixbuf_new_from_file_at_size (config.getImagedir() + "/gnome-schedule.svg", 19, 19)
+				self.iconPixbuf = gtk.gdk.pixbuf_new_from_file_at_size (config.getImagedir() + "/gnome-schedule.svg", 52, 52)
 			except:
 				print _("ERROR: Could not load icon")
 
@@ -122,14 +124,16 @@ class ScheduleApplet(gnomeapplet.Applet):
 				]
 		
 		#check for file in current dir
-		if os.access ("gnome-schedule-applet.xml", os.F_OK):
-			datadir = './'
+		if self.debug_flag:
+			if os.access ("gnome-schedule-applet.xml", os.F_OK):
+				datadir = './'
 		else:
 			if os.access (config.getGladedir() + "/gnome-schedule-applet.xml", os.F_OK):
 				datadir = config.getGladedir()
 			else:
 				print _("ERROR: Could not load menu xml file")
 				datadir = ''
+				quit ()
 				
 		self.applet.setup_menu_from_file(datadir,  "gnome-schedule-applet.xml", "gnome-schedule", self.verbs)
 			
@@ -170,7 +174,7 @@ gobject.type_register(ScheduleApplet)
 
 #factory
 def schedule_applet_factory(applet, iid):
-    ScheduleApplet(applet, iid, pr)
+    ScheduleApplet(applet, iid, pr, debug_flag)
     return True
   
 gnomeapplet.bonobo_factory("OAFIID:GNOME_GnomeSchedule_Factory",

@@ -175,9 +175,9 @@ class main:
 		self.run_button.set_sensitive (False)
 	
 		self.button_tb = self.button_template.get_child ()
-		self.tvbox = self.button_tb.get_child ()
-		for w in self.tvbox.get_children ():
-			self.tvbox.remove (w)
+		self.button_tb.remove(self.button_tb.get_child())
+		self.tvbox = gtk.HBox()
+		self.button_tb.add(self.tvbox)
 		icon = gtk.Image ()
 		icon.set_from_pixbuf (self.normalicontemplate)
 		label = gtk.Label (_("Templates"))
@@ -321,39 +321,43 @@ class main:
 			
 		
 	def __loadIcon__(self):
-		if os.access("../icons/gnome-schedule.svg", os.F_OK):
-			self.iconPixbuf = gtk.gdk.pixbuf_new_from_file_at_size ("../icons/gnome-schedule.svg", 52, 52)
+		if self.debug_flag:
+			if os.access("../icons/gnome-schedule.svg", os.F_OK):
+				self.iconPixbuf = gtk.gdk.pixbuf_new_from_file_at_size ("../icons/gnome-schedule.svg", 52, 52)
 		else:
 			try:
 				self.iconPixbuf = gtk.gdk.pixbuf_new_from_file_at_size (config.getImagedir() + "/gnome-schedule.svg", 52, 52)
 			except:
 				print _("ERROR: Could not load icon")
 
-		if os.access ("../icons/crontab.svg", os.F_OK):
-			self.iconcrontab = gtk.gdk.pixbuf_new_from_file_at_size ("../icons/crontab.svg", 19, 19)
-			self.bigiconcrontab = gtk.gdk.pixbuf_new_from_file_at_size ("../icons/crontab.svg", 49, 49)
+		if self.debug_flag:
+			if os.access ("../icons/crontab.svg", os.F_OK):
+				self.iconcrontab = gtk.gdk.pixbuf_new_from_file_at_size ("../icons/crontab.svg", 19, 19)
+				self.bigiconcrontab = gtk.gdk.pixbuf_new_from_file_at_size ("../icons/crontab.svg", 49, 49)
 		else:
 			try:
 				self.iconcrontab = gtk.gdk.pixbuf_new_from_file_at_size (config.getImagedir() + "/crontab.svg", 19, 19)
 				self.bigiconcrontab = gtk.gdk.pixbuf_new_from_file_at_size (config.getImagedir() + "/crontab.svg", 49, 49)
 			except:
 				print _("ERROR: Could not load icon")		
-				
-		if os.access ("../icons/calendar.svg", os.F_OK):
-			self.iconcalendar = gtk.gdk.pixbuf_new_from_file_at_size ("../icons/calendar.svg", 19, 19)
-			self.bigiconcalendar = gtk.gdk.pixbuf_new_from_file_at_size ("../icons/calendar.svg", 49, 49)
+			
+		if self.debug_flag:				
+			if os.access ("../icons/calendar.svg", os.F_OK):
+				self.iconcalendar = gtk.gdk.pixbuf_new_from_file_at_size ("../icons/calendar.svg", 19, 19)
+				self.bigiconcalendar = gtk.gdk.pixbuf_new_from_file_at_size ("../icons/calendar.svg", 49, 49)
 		else:
 			try:
 				self.iconcalendar = gtk.gdk.pixbuf_new_from_file_at_size (config.getImagedir() + "/calendar.svg", 19, 19)
 				self.bigiconcalendar = gtk.gdk.pixbuf_new_from_file_at_size (config.getImagedir() + "/calendar.svg", 49, 49)
 			except:
 				print _("ERROR: Could not load icon")
-				
-		if os.access ("../icons/template.svg", os.F_OK):
-			self.icontemplate = gtk.gdk.pixbuf_new_from_file_at_size ("../icons/template.svg", 19, 19)
-			self.normalicontemplate = gtk.gdk.pixbuf_new_from_file_at_size ("../icons/template.svg", 25, 25)
-			self.bigicontemplate = gtk.gdk.pixbuf_new_from_file_at_size ("../icons/template.svg", 49, 49)
-			self.pathicontemplate = "../icons/template.svg"
+		
+		if self.debug_flag:		
+			if os.access ("../icons/template.svg", os.F_OK):
+				self.icontemplate = gtk.gdk.pixbuf_new_from_file_at_size ("../icons/template.svg", 19, 19)
+				self.normalicontemplate = gtk.gdk.pixbuf_new_from_file_at_size ("../icons/template.svg", 25, 25)
+				self.bigicontemplate = gtk.gdk.pixbuf_new_from_file_at_size ("../icons/template.svg", 49, 49)
+				self.pathicontemplate = "../icons/template.svg"
 		else:
 			try:
 				self.icontemplate = gtk.gdk.pixbuf_new_from_file_at_size (config.getImagedir() + "/template.svg", 19, 19)
@@ -362,10 +366,11 @@ class main:
 				self.pathicontemplate = config.getImagedir() + "/template.svg"
 			except:
 				print _("ERROR: Could not load icon")
-				
-		if os.access ("../icons/at.svg", os.F_OK):
-			self.iconat = gtk.gdk.pixbuf_new_from_file_at_size ("../icons/at.svg", 19, 19)
-			self.bigiconat = gtk.gdk.pixbuf_new_from_file_at_size ("../icons/at.svg", 49, 49)
+		
+		if self.debug_flag:		
+			if os.access ("../icons/at.svg", os.F_OK):
+				self.iconat = gtk.gdk.pixbuf_new_from_file_at_size ("../icons/at.svg", 19, 19)
+				self.bigiconat = gtk.gdk.pixbuf_new_from_file_at_size ("../icons/at.svg", 49, 49)
 		else:
 			try:
 				self.iconat = gtk.gdk.pixbuf_new_from_file_at_size (config.getImagedir() + "/at.svg", 19, 19)
@@ -375,13 +380,19 @@ class main:
 				
 		
 	def __loadGlade__(self):
-		if os.access("gnome-schedule.glade", os.F_OK):
-			self.xml = gtk.glade.XML ("gnome-schedule.glade", domain="gnome-schedule")
+		if self.debug_flag:
+			if os.access("gnome-schedule.glade", os.F_OK):
+				try:
+					self.xml = gtk.glade.XML ("gnome-schedule.glade", domain="gnome-schedule")
+				except:
+					print _("ERROR: Coul not load glade file")
+					quit ()
 		else:
 			try:
 				self.xml = gtk.glade.XML (config.getGladedir() + "/gnome-schedule.glade", domain="gnome-schedule")
 			except:
 				print _("ERROR: Could not load glade file")
+				quit ()
 
 	
 	

@@ -1,4 +1,4 @@
-gnomeschedule_iconsdir = $(prefix)/share/icons
+gnomeschedule_iconsdir = $(prefix)/share/pixmaps/gnome-schedule
 
 gnomeschedule_icons_DATA = \
 	gnome-schedule.svg \
