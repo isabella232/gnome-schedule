@@ -1,7 +1,11 @@
+2008-02-01  Gaute Hope  <eg@gaute.vetsj.com>
+
+	* Bug 513330: Applied patch from Frank Arnold fixing wrong locale categori (LC_ALL -> LC_TIME)
+
 2008-01-31  Gaute Hope  <eg@gaute.vetsj.com>
 
-	* Applied patch from Frank Arnold fixing mainwindow template button.
-	* desktop/gnome-schedule.desktop.in.in: Now using .svg, not removed .png icon
+	* Bug 513330: Applied patch from Frank Arnold fixing mainwindow template button.
+	* desktop/gnome-schedule.desktop.in.in: Now using .svg, not removed .png, icon
 	* icons/Makefile.am: Installing icons under $prefix/share/pixmaps/gnome-schedule
 	* src/config.py.in: Updated image path
 	* src/mainWindow.py, src/scheduleapplet.py: Only trying to load data files from current location if launched with '--debug'

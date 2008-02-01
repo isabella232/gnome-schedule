@@ -71,7 +71,7 @@ class At:
 				pass
 				# FAILED TO CREATE DATADIR
 				
-		self.currentlocale = locale.getlocale (locale.LC_ALL)
+		self.currentlocale = locale.getlocale (locale.LC_TIME)
 		
 	def set_rights(self,user,uid,gid, ud):
 		self.user = user
@@ -85,10 +85,10 @@ class At:
 		return "at"
 
 	def standard_locale (self):
-		locale.setlocale (locale.LC_ALL, 'C')
+		locale.setlocale (locale.LC_TIME, 'C')
 	
 	def restore_locale (self):
-		locale.setlocale (locale.LC_ALL, self.currentlocale)
+		locale.setlocale (locale.LC_TIME, self.currentlocale)
 		
 	def parse (self, line, output = True):
 		if (output == True):
