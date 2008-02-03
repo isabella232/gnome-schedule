@@ -176,7 +176,7 @@ class main:
 	
 		self.button_tb = self.button_template.get_child ()
 		self.button_tb.remove(self.button_tb.get_child())
-		self.tvbox = gtk.HBox()
+		self.tvbox = gtk.VBox()
 		self.button_tb.add(self.tvbox)
 		icon = gtk.Image ()
 		icon.set_from_pixbuf (self.normalicontemplate)
