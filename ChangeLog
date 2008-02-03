@@ -1,6 +1,12 @@
+2008-02-02  Gaute Hope  <eg@gaute.vetsj.com>
+  
+  * configure.ac: Version 2.0.1
+  * Updated NEWS
+  * src/mainWindow.py: Moved label on main window template button label underneath the icon
+  
 2008-02-01  Gaute Hope  <eg@gaute.vetsj.com>
 
-	* Bug 513330: Applied patch from Frank Arnold fixing wrong locale categori (LC_ALL -> LC_TIME)
+	* Bug 513330: Applied patch from Frank Arnold fixing wrong locale category (LC_ALL -> LC_TIME)
 
 2008-01-31  Gaute Hope  <eg@gaute.vetsj.com>
 
