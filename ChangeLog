@@ -1,3 +1,9 @@
+2008-02-05  Gaute Hope  <eg@gaute.vetsj.com>
+
+  * src/gnome-schedule.py, src/scheduleapplet.py: Changed POSIX_CORRECT to POSIXLY_CORRECT.
+  * Updated at parser to fit POSIXLY_CORRECT, appending and updating doesn't work yet <- they need to use a different time format.
+  * _not working_
+
 2008-02-02  Gaute Hope  <eg@gaute.vetsj.com>
   
   * configure.ac: Version 2.0.1

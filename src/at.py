@@ -24,7 +24,6 @@ import tempfile
 import commands
 import time
 import datetime
-import locale
 
 #custom modules
 import config
@@ -50,7 +49,7 @@ class At:
 			re.compile('([0-9]+)\s([0-9]4-[0-9]2-[0-9]2)\s([0-9]2:[0-9]2)\s([a]1)\s(.*)'),
 			re.compile('([^\s]+)\s((.*)\s(..:..:..\s....)|([^\s]+)\s([^\s]+))\s([^\s]+)\s([^\s]+)'), 
 			re.compile('([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)'),
-			re.compile('^([\d]+)[\t]([\w]{3,3}[\s][\w]{3,3}[\s]*[\d]+[\s][\d]{2,2}[:][\d]{2,2}[:][\d]{2,2}[\s][\d]{4,4})[\s]([\w])[\s]([\w]+)')
+			re.compile('^([\d]+)[\t]([\w]{3,3})[\s]([\w]{3,3})[\s]*([\d]+)[\s]([\d]{2,2}[:][\d]{2,2}[:][\d]{2,2})[\s]([\d]{4,4})[\s]([\w])[\s]([\w]+)')
 			]
 			
 
@@ -71,7 +70,20 @@ class At:
 				pass
 				# FAILED TO CREATE DATADIR
 				
-		self.currentlocale = locale.getlocale (locale.LC_TIME)
+		self.months = {
+			'Jan' : '1',
+			'Feb' : '2',
+			'Mar' : '3',
+			'Apr' : '4',
+			'May' : '5',
+			'Jun' : '6',
+			'Jul' : '7',
+			'Aug' : '8',
+			'Sep' : '9',
+			'Oct' : '10',
+			'Nov' : '11',
+			'Dec' : '12'
+		}
 		
 	def set_rights(self,user,uid,gid, ud):
 		self.user = user
@@ -83,79 +95,25 @@ class At:
 	
 	def get_type (self):
 		return "at"
-
-	def standard_locale (self):
-		locale.setlocale (locale.LC_TIME, 'C')
-	
-	def restore_locale (self):
-		locale.setlocale (locale.LC_TIME, self.currentlocale)
 		
 	def parse (self, line, output = True):
 		if (output == True):
 			if len (line) > 1 and line[0] != '#':
-				regexp = 0
-				m = self.atRecordRegex[0].match(line)
-				if m == None:
-					m = self.atRecordRegex[3].match(line)
-					if m != None:
-						#print "regexp: 3"
-						regexp = 3
-						
-					else:
-						m = self.atRecordRegex[2].match(line)
-						if m != None:
-							#print "regexp: 2"
-							regexp = 2
-						else:
-							m = self.atRecordRegex[1].match(line)
-							if m != None:
-								#print "regexp: 1"
-								regexp = 1
-							else:
-								# Exception
-								#print "regexp: failed"
-								return False
-						
-				else:
-					regexp = 0
-					#print "regexp: 0"
-					
-					
+				m = self.atRecordRegex[3].match(line)
 				if m != None:
-					if regexp == 3:
-						job_id = m.groups ()[0]
-						
-						self.standard_locale ()
-						try:
-							dt = datetime.datetime.strptime (m.groups ()[1], "%a %b  %d %H:%M:%S %Y")
-							#print "datetime, first try succeseeded"
-						except:	
-							try:
-								dt = datetime.datetime.strptime (m.groups ()[1], "%a %b %d %H:%M:%S %Y")
-								#print "datetime, second try succseeded"
-							except:
-								#print "datetime failed to parse"
-								self.restore_locale ()
-								return False
-						
-						self.restore_locale ()
+					print m.groups ()
 					
-						date = dt.strftime ("%Y-%m-%d")
-						time = dt.strftime ("%H:%M:%S")
-						class_id = m.groups ()[2]
-						user = m.groups ()[3]
-					elif regexp == 2:
-						job_id = m.groups ()[0]
-						date = m.groups ()[1]
-						time = m.groups ()[2]
-						class_id = m.groups ()[3]
-						user = m.groups ()[4]
-					else:
-						job_id = m.groups ()[0]
-						date = m.groups ()[4]
-						time = m.groups ()[5]
-						class_id = m.groups ()[6]
-						user = m.groups ()[7]
+					# Time
+					time = m.groups ()[4]
+					
+					# Date
+					date= m.groups ()[5] + "-" + m.groups ()[2] + "-" + m.groups ()[3]
+					for monthname in self.months:
+						date = date.replace (monthname, self.months[monthname])
+
+					job_id = m.groups ()[0]
+					class_id = m.groups ()[6]
+					user = m.groups ()[7]
 						
 					execute = config.getAtbin() + " -c " + job_id
 					# read lines and detect starter
@@ -366,6 +324,7 @@ class At:
 
 		
 	def append (self, runat, command, title):
+		print "append"
 		tmpfile = tempfile.mkstemp ()
 		fd, path = tmpfile
 		tmp = os.fdopen(fd, 'w')
@@ -375,7 +334,6 @@ class At:
 		
 		temp = None
 
-		self.standard_locale ()
 		if self.root == 1:
 			if self.user != "root":
 				#changes the ownership
@@ -390,10 +348,10 @@ class At:
 			child_stdin, child_stdout, child_stderr = os.popen3(execute)
 
 
-		self.restore_locale ()
 		err = child_stderr.readlines ()
 		job_id = 0
 		for line in err:
+			print line
 			t = self.parse (line, False)
 			if t != False:
 				job_id = t
@@ -431,7 +389,6 @@ class At:
 		tmp.write (command + "\n")
 		tmp.close ()
 
-		self.standard_locale ()
 		if self.root == 1:
 			if self.user != "root":
 				#changes the ownership
@@ -445,7 +402,6 @@ class At:
 			execute = config.getAtbin() + " " + runat + " -f " + path
 			child_stdin, child_stdout, child_stderr = os.popen3(execute)
 
-		self.restore_locale ()
 		err = child_stderr.readlines ()
 		job_id = 0
 		for line in err:
@@ -472,7 +428,6 @@ class At:
 			
 				
 	def read (self):
-		self.standard_locale ()
 		data = []
 		#do 'atq'
 		execute = config.getAtqbin ()
@@ -509,7 +464,6 @@ class At:
 				#print _("added %(id)s") % { "id": job_id	}
 			else:
 				print _("Warning: a line in atq's output didn't parse")	
-		self.restore_locale ()
 		return data
 
 	

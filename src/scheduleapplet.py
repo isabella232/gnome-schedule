@@ -25,7 +25,7 @@ import os
 import config
 import mainWindow
 
-os.putenv ("POSIX_CORRECT", "enabled")
+os.putenv ("POSIXLY_CORRECT", "enabled")
 
 ##
 ## I18N
