@@ -206,7 +206,7 @@ class AtEditor:
 			
 		#parse 	
 		(hour, minute, day, month, year) = self.__parse_time__(self.time, self.date)
-		self.runat = hour + ":" + minute  + " " + year + "-" + month + "-" + day 
+		self.runat = hour + minute  + " " + day + "." + month + "." + year
 		self.spin_year.set_value (int (year))
 		self.spin_month.set_value (int (month))
 		self.spin_day.set_value (int (day))
@@ -488,7 +488,7 @@ class AtEditor:
 		else:
 			day = str(day)
 
-		self.runat = hour + ":" + minute + " " + year + "-" + month + "-" + day
+		self.runat = hour + minute + " " + day + "." + month + "." + year
 
 
 	def popup_error_no_digit (self, field):
@@ -510,7 +510,7 @@ class AtEditor:
 		hour = ctime[3]
 		minute = ctime[4]
 		
-		self.runat = str(hour) + ":" + str(minute) + " " + str (year) + "-" + str (month) + "-" + str(day)
+		self.runat = str(hour) + str(minute) + " " + str(day) + "." + str(month) + "." + str (year)
 
 		self.spin_hour.set_value(int(hour))
 		self.spin_minute.set_value(int(minute))
@@ -530,7 +530,9 @@ class AtEditor:
 		self.text_task_buffer.set_text(self.command)
 
 	def __parse_time__ (self, time, date):
-		regexp_date = re.compile("([0-9][0-9][0-9][0-9])-([0-9][0-9])-([0-9][0-9])")
+		print time
+		print date
+		regexp_date = re.compile("([0-9][0-9])\.([0-9][0-9])\.([0-9][0-9][0-9][0-9])")
 		regexp_time = re.compile("([0-9][0-9]):([0-9][0-9])")
 
 		time_g = regexp_time.match(time)
@@ -539,7 +541,7 @@ class AtEditor:
 
 		date_g = regexp_date.match(date)
 		if date_g:
-			(year, month, day) = date_g.groups()	
+			(day, month, year) = date_g.groups()	
 		
 		return hour, minute, day, month, year
 

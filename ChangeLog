@@ -1,3 +1,8 @@
+2008-02-06  Gaute Hope  <eg@gaute.vetsj.com>
+
+	* The append and update code in at.py has been updated for the POSIXLY_CORRECT formatted date/time format, and everything should be working again
+	* All code depending on the 'locale' module has been removed and it is no longer imported.
+
 2008-02-05  Gaute Hope  <eg@gaute.vetsj.com>
 
   * src/gnome-schedule.py, src/scheduleapplet.py: Changed POSIX_CORRECT to POSIXLY_CORRECT.

@@ -100,16 +100,23 @@ class At:
 		if (output == True):
 			if len (line) > 1 and line[0] != '#':
 				m = self.atRecordRegex[3].match(line)
-				if m != None:
-					print m.groups ()
-					
+				if m != None:			
 					# Time
-					time = m.groups ()[4]
+					time = m.groups ()[4][:-3]
 					
 					# Date
-					date= m.groups ()[5] + "-" + m.groups ()[2] + "-" + m.groups ()[3]
+					day = m.groups ()[3]
+					month = m.groups ()[2]
+					
 					for monthname in self.months:
-						date = date.replace (monthname, self.months[monthname])
+						month = month.replace (monthname, self.months[monthname])
+						
+					if int (day) < 10:
+						day = "0" + day
+					if int (month) < 10:
+						month = "0" + month
+						
+					date = day + "." + month + "." + m.groups ()[5]
 
 					job_id = m.groups ()[0]
 					class_id = m.groups ()[6]
@@ -203,8 +210,8 @@ class At:
 		# print "$" + runat + "$"
 		#regexp1 = re.compile("([0-9][0-9]):([0-9][0-9])\ ([0-9][0-9])\.([0-9][0-9])\.([0-9][0-9][0-9][0-9])")
 		#print "Testing: " + runat
-		regexp1 = re.compile ("([0-9][0-9]):([0-9][0-9])\ ([0-9][0-9][0-9][0-9])\-([0-9][0-9])\-([0-9][0-9])")
-		regexp2 = re.compile("([0-9][0-9]):([0-9][0-9])")
+		regexp1 = re.compile ("([0-9][0-9])([0-9][0-9])\ ([0-9][0-9])\.([0-9][0-9])\.([0-9][0-9][0-9][0-9])")
+		regexp2 = re.compile("([0-9][0-9])([0-9][0-9])")
 		regexp3 = re.compile("([0-9][0-9])\.([0-9][0-9])\.([0-9][0-9][0-9][0-9])")
 		
 		runat_g1 = regexp1.match(runat)
@@ -218,7 +225,7 @@ class At:
 		cminute = ctime[4]
 	
 		if runat_g1:
-			(hour, minute, year, month, day) =  runat_g1.groups()
+			(hour, minute, day, month, year) =  runat_g1.groups()
 			hour = int(hour)
 			minute = int(minute)
 			year = int(year)
@@ -324,7 +331,6 @@ class At:
 
 		
 	def append (self, runat, command, title):
-		print "append"
 		tmpfile = tempfile.mkstemp ()
 		fd, path = tmpfile
 		tmp = os.fdopen(fd, 'w')
@@ -338,20 +344,19 @@ class At:
 			if self.user != "root":
 				#changes the ownership
 				os.chown(path, self.uid, self.gid)
-				execute = config.getSubin() + " " + self.user + " -c \"" + config.getAtbin() + " " + runat + " -f " + path + " && exit\""
+				execute = config.getSubin() + " " + self.user + " -c \"" + config.getAtbin() +  " -f " + path + " " + runat + " && exit\""
 				child_stdin, child_stdout, child_stderr = os.popen3(execute)
 			else:
-				execute = config.getAtbin() + " " + runat + " -f " + path
+				execute = config.getAtbin() + " -f " + path + " " + runat
 				child_stdin, child_stdout, child_stderr = os.popen3(execute)
 		else:
-			execute = config.getAtbin() + " " + runat + " -f " + path
+			execute = config.getAtbin() + " -f " + path + " " + runat
 			child_stdin, child_stdout, child_stderr = os.popen3(execute)
 
 
 		err = child_stderr.readlines ()
 		job_id = 0
 		for line in err:
-			print line
 			t = self.parse (line, False)
 			if t != False:
 				job_id = t
@@ -393,13 +398,13 @@ class At:
 			if self.user != "root":
 				#changes the ownership
 				os.chown(path, self.uid, self.gid)
-				execute = config.getSubin() + " " + self.ParentClass.user + " -c \"" + config.getAtbin() + " " + runat + " -f " + path + " && exit\""
+				execute = config.getSubin() + " " + self.user + " -c \"" + config.getAtbin() +  " -f " + path + " " + runat + " && exit\""
 				child_stdin, child_stdout, child_stderr = os.popen3(execute)
 			else:
-				execute = config.getAtbin() + " " + runat + " -f " + path
+				execute = config.getAtbin() + " -f " + path + " " + runat
 				child_stdin, child_stdout, child_stderr = os.popen3(execute)
 		else:
-			execute = config.getAtbin() + " " + runat + " -f " + path
+			execute = config.getAtbin() + " -f " + path + " " + runat
 			child_stdin, child_stdout, child_stderr = os.popen3(execute)
 
 		err = child_stderr.readlines ()
