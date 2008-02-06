@@ -530,8 +530,6 @@ class AtEditor:
 		self.text_task_buffer.set_text(self.command)
 
 	def __parse_time__ (self, time, date):
-		print time
-		print date
 		regexp_date = re.compile("([0-9][0-9])\.([0-9][0-9])\.([0-9][0-9][0-9][0-9])")
 		regexp_time = re.compile("([0-9][0-9]):([0-9][0-9])")
 

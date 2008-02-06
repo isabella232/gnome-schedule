@@ -45,12 +45,7 @@ class At:
 		# 14	2006-09-21 10:54 a gaute
 		# 3	Tue May  8 01:01:00 2007 a gaute
 
-		self.atRecordRegex = [ 
-			re.compile('([0-9]+)\s([0-9]4-[0-9]2-[0-9]2)\s([0-9]2:[0-9]2)\s([a]1)\s(.*)'),
-			re.compile('([^\s]+)\s((.*)\s(..:..:..\s....)|([^\s]+)\s([^\s]+))\s([^\s]+)\s([^\s]+)'), 
-			re.compile('([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)'),
-			re.compile('^([\d]+)[\t]([\w]{3,3})[\s]([\w]{3,3})[\s]*([\d]+)[\s]([\d]{2,2}[:][\d]{2,2}[:][\d]{2,2})[\s]([\d]{4,4})[\s]([\w])[\s]([\w]+)')
-			]
+		self.atRecordRegex = re.compile('^([\d]+)[\t]([\w]{3,3})[\s]([\w]{3,3})[\s]*([\d]+)[\s]([\d]{2,2}[:][\d]{2,2}[:][\d]{2,2})[\s]([\d]{4,4})[\s]([\w])[\s]([\w]+)')
 			
 
 		# after you add a job, this line is printed to stderr
@@ -99,7 +94,7 @@ class At:
 	def parse (self, line, output = True):
 		if (output == True):
 			if len (line) > 1 and line[0] != '#':
-				m = self.atRecordRegex[3].match(line)
+				m = self.atRecordRegex.match(line)
 				if m != None:			
 					# Time
 					time = m.groups ()[4][:-3]

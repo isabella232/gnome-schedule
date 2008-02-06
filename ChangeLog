@@ -2,6 +2,8 @@
 
 	* The append and update code in at.py has been updated for the POSIXLY_CORRECT formatted date/time format, and everything should be working again
 	* All code depending on the 'locale' module has been removed and it is no longer imported.
+	* src/at.py: Removed unused regexps
+	* src/atEditor.py: Removed debug messages
 
 2008-02-05  Gaute Hope  <eg@gaute.vetsj.com>
 
