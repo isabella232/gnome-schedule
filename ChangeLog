@@ -2,6 +2,8 @@
 
 	* src/at.py, src/gnome-schedule.py, src/scheduleapplet.py: Unsets the POSIXLY_CORRECT variable in at script when manually set by gnome-schedule.
 	* Added manual_poscorrect to at datafiles, needed for parsing in case the environment changes.
+	* Update applet to use SVG, does it work ?
+	* src/scheduleapplet.py: Changed applet icon size to 24x24
 
 2008-02-06  Gaute Hope  <eg@gaute.vetsj.com>
 

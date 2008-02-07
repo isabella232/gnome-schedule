@@ -21,6 +21,6 @@
                 <oaf_attribute name="name" type="string" _value="Gnome schedule"/>
                 <oaf_attribute name="description" type="string" _value="Configures your scheduled tasks"/>
                 <oaf_attribute name="panel:category" type="string" _value="System tools"/>
-                <oaf_attribute name="panel:icon" type="string" value="@prefix@/share/pixmaps/gnome-schedule.png"/>
+                <oaf_attribute name="panel:icon" type="string" value="@prefix@/share/pixmaps/gnome-schedule/gnome-schedule.svg"/>
         </oaf_server>
         </oaf_info>

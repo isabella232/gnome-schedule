@@ -114,10 +114,10 @@ class ScheduleApplet(gnomeapplet.Applet):
 	def __loadIcon__(self):
 		if self.debug_flag:
 			if os.access("../icons/gnome-schedule.svg", os.F_OK):
-				self.iconPixbuf = gtk.gdk.pixbuf_new_from_file_at_size ("../icons/gnome-schedule.svg", 52, 52)
+				self.iconPixbuf = gtk.gdk.pixbuf_new_from_file_at_size ("../icons/gnome-schedule.svg", 18, 18)
 		else:
 			try:
-				self.iconPixbuf = gtk.gdk.pixbuf_new_from_file_at_size (config.getImagedir() + "/gnome-schedule.svg", 52, 52)
+				self.iconPixbuf = gtk.gdk.pixbuf_new_from_file_at_size (config.getImagedir() + "/gnome-schedule.svg", 24, 24)
 			except:
 				print _("ERROR: Could not load icon")
 
