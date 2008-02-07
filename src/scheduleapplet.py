@@ -25,7 +25,11 @@ import os
 import config
 import mainWindow
 
-os.putenv ("POSIXLY_CORRECT", "enabled")
+poscorrect_isset = os.getenv ("POSIXLY_CORRECT", False)
+manual_poscorrect = False
+if poscorrect_isset == False:
+	os.putenv ("POSIXLY_CORRECT", "enabled")
+	manual_poscorrect = True
 
 ##
 ## I18N
@@ -71,9 +75,10 @@ pr = gnome.program_init ("gnome-schedule", config.getVersion(), properties=props
 
 
 class ScheduleApplet(gnomeapplet.Applet):
-	def __init__(self, applet, iid, gprogram, debug_flag):
+	def __init__(self, applet, iid, gprogram, debug_flag, manual_poscorrect):
 		self.__gobject_init__()
 		self.debug_flag = debug_flag
+		self.manual_poscorrect = manual_poscorrect
 		
 		gettext.bindtextdomain(config.GETTEXT_PACKAGE(), config.GNOMELOCALEDIR())
 		gettext.textdomain(config.GETTEXT_PACKAGE())
@@ -145,7 +150,7 @@ class ScheduleApplet(gnomeapplet.Applet):
 	def show_main_window(self, *args):
 		if self.main_loaded == False:
 			self.main_loaded = True
-			self.main_window = mainWindow.main(None, True, self.gprogram)
+			self.main_window = mainWindow.main(None, True, self.gprogram, self.manual_poscorrect)
 		else:
 			self.main_window.widget.show ()
 			self.main_window.schedule_reload()
@@ -174,7 +179,7 @@ gobject.type_register(ScheduleApplet)
 
 #factory
 def schedule_applet_factory(applet, iid):
-    ScheduleApplet(applet, iid, pr, debug_flag)
+    ScheduleApplet(applet, iid, pr, debug_flag, manual_poscorrect)
     return True
   
 gnomeapplet.bonobo_factory("OAFIID:GNOME_GnomeSchedule_Factory",

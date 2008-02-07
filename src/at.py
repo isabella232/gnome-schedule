@@ -30,13 +30,14 @@ import config
 
 
 class At:
-	def __init__(self,root,user,uid,gid,user_home_dir):
+	def __init__(self,root,user,uid,gid,user_home_dir,manual_poscorrect):
 	
 		#default preview length
 		self.preview_len = 50
 		self.root =	root
 		self.set_rights(user,uid,gid, user_home_dir)
 		self.user_home_dir = user_home_dir
+		self.manual_poscorrect = manual_poscorrect
 
 
 		# 16       2006-01-08 13:01 a gaute
@@ -56,7 +57,12 @@ class At:
 		self.nooutput = 0
 		self.SCRIPT_DELIMITER = "###### ---- GNOME_SCHEDULE_SCRIPT_DELIMITER #####"
 		
-		self.atdatafileversion = 2
+		# If normally this variable is unset the user would not expect it 
+		# to be set, which it will be because Gnome Schedule needs it.
+		# Therefore we unset it in the script.
+		self.POSIXLY_CORRECT_UNSET = "unset POSIXLY_CORRECT\n"
+		
+		self.atdatafileversion = 3
 		self.atdata = self.user_home_dir + "/.gnome/gnome-schedule/at"
 		if os.path.exists(self.atdata) != True:
 			if os.makedirs(self.atdata, 0700):
@@ -117,12 +123,14 @@ class At:
 					class_id = m.groups ()[6]
 					user = m.groups ()[7]
 						
+					title, desc, manual_poscorrect = self.get_job_data (int (job_id))
+					# manual_poscorrect is only used during preparation of script
+
 					execute = config.getAtbin() + " -c " + job_id
 					# read lines and detect starter
 					script = os.popen(execute).read()
-					script, prelen, dangerous = self.__prepare_script__ (script)
-					
-					title, desc = self.get_job_data (int (job_id))
+					script, prelen, dangerous = self.__prepare_script__ (script, manual_poscorrect)
+										
 					#removing ending newlines, but keep one
 					#if a date in the past is selected the record is removed by at, this creates an error, and generally if the script is of zero length
 					# TODO: complain about it as well
@@ -139,6 +147,7 @@ class At:
 							done = 1
 
 					return job_id, date, time, class_id, user, script, title, prelen, dangerous
+					
 		elif (output == False):
 			if len (line) > 1 and line[0] != '#':
 				m = self.atRecordRegexAdd.search(line)
@@ -159,8 +168,6 @@ class At:
 		if os.access (f, os.R_OK):
 			fh = open (f, 'r')
 			d = fh.read ()
-				
-			d = d.strip ()
 			
 			ver_p = d.find ("ver=")
 			if ver_p == -1:
@@ -174,19 +181,27 @@ class At:
 			d = d[d.find ("\n") + 1:]
 			
 			# icons out
-			if ver < 2 or ver == 3:
+			if ver < 2:
 				icon = d[5:d.find ("\n")]
 				d = d[d.find ("\n") + 1:]
 			
 			desc = d[5:d.find ("\n")]
 			d = d[d.find ("\n") + 1:]
 			
+			manual_poscorrect_b = False
+			if ver > 2:
+				manual_poscorrect = d[18:d.find ("\n")]
+				d = d[d.find ("\n") + 1:]
+				if manual_poscorrect == "true":
+					manual_poscorrect_b = True
+				elif manual_poscorrect == "false":
+					manual_poscorrect_b = False
 			fh.close ()
 			
-			return title, desc
+			return title, desc, manual_poscorrect_b
 			
 		else: 
-			return "", ""
+			return "", "", False
 			
 	def write_job_data (self, job_id, title, desc):
 		# Create and write data file
@@ -198,6 +213,12 @@ class At:
 		fh.write ("ver=" + str(self.atdatafileversion) + "\n")
 		fh.write ("title=" + title + "\n")
 		fh.write ("desc=" + desc + "\n")
+		
+		# This one doesn't need to be passed independently for each job since the job data is only updated together with a task being appended or updated (also new added), and the variable depends on each session. Not job.
+		if self.manual_poscorrect == True:
+			fh.write ("manual_poscorrect=true\n")
+		else:
+			fh.write ("manual_poscorrect=false\n")
 		fh.close ()
 			
 	def checkfield (self, runat):
@@ -330,6 +351,8 @@ class At:
 		fd, path = tmpfile
 		tmp = os.fdopen(fd, 'w')
 		tmp.write (self.SCRIPT_DELIMITER + "\n")
+		if self.manual_poscorrect:
+			tmp.write (self.POSIXLY_CORRECT_UNSET)
 		tmp.write (command + "\n")
 		tmp.close ()
 		
@@ -377,15 +400,10 @@ class At:
 		tmpfile = tempfile.mkstemp ()
 		fd, path = tmpfile
 		tmp = os.fdopen(fd, 'w')
-		#if title:
-	#		tmp.write("TITLE=" + title + "\n")
-	#	else:
-#			tmp.write("TITLE=Untitled\n")
-#		if icon:
-#			tmp.write("ICON=" + icon + "\n")
-#		else:
-#			tmp.write("ICON=None\n")
+
 		tmp.write (self.SCRIPT_DELIMITER + "\n")
+		if self.manual_poscorrect:
+			tmp.write (self.POSIXLY_CORRECT_UNSET)
 		tmp.write (command + "\n")
 		tmp.close ()
 
@@ -467,7 +485,7 @@ class At:
 		return data
 
 	
-	def __prepare_script__ (self, script):
+	def __prepare_script__ (self, script, manual_poscorrect):
 	
 		# It looks like at prepends a bunch of stuff to each script
 		# Luckily it delimits that using two newlines
@@ -480,17 +498,22 @@ class At:
 		# If the script is created by Gnome Schedule the script is seperated by a delimiter.
 
 		dangerous = 0
+		prelen = 0
 		string = self.SCRIPT_DELIMITER
 		scriptstart = script.find(string)
-		#print titlestart
+
 		if scriptstart != -1:
-			script = script[scriptstart:]				
-			prelen = len(self.SCRIPT_DELIMITER) + 1
+			script = script[scriptstart:]
+			if manual_poscorrect == True:
+				scriptstart = script.find (self.POSIXLY_CORRECT_UNSET)
+				if scriptstart != -1:
+					script = script[scriptstart:]
+					prelen = len (self.POSIXLY_CORRECT_UNSET)
+			else:
+				prelen = len(self.SCRIPT_DELIMITER) + 1
 
 		else:
-			#print "method 2"
 			dangerous = 1
-			#tries method 2
 
 			string = " || {\n	 echo 'Execution directory inaccessible' >&2\n	 exit 1\n}\n"
 			string_len = len(string)

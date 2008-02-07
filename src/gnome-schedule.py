@@ -33,7 +33,11 @@ import mainWindow
 import gettext
 gettext.install(config.GETTEXT_PACKAGE(), config.GNOMELOCALEDIR(), unicode=1)
 
-os.putenv ("POSIXLY_CORRECT", "enabled")
+poscorrect_isset = os.getenv ("POSIXLY_CORRECT", False)
+manual_poscorrect = False
+if poscorrect_isset == False:
+	os.putenv ("POSIXLY_CORRECT", "enabled")
+	manual_poscorrect = True
 
 if __name__ == "__main__":
 	signal.signal (signal.SIGINT, signal.SIG_DFL)
@@ -67,5 +71,5 @@ except:
 props = { gnome.PARAM_APP_DATADIR : config.getPrefix() + "/share" }
 pr = gnome.program_init ("gnome-schedule", config.getVersion(), properties=props)
 
-mainWindow = mainWindow.main(debug_flag, False, pr)
+mainWindow = mainWindow.main(debug_flag, False, pr, manual_poscorrect)
 

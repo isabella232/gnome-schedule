@@ -51,10 +51,11 @@ gtk.glade.bindtextdomain(config.GETTEXT_PACKAGE(), config.GNOMELOCALEDIR())
 ## The MainWindow class
 ##
 class main:
-	def __init__(self, debug_flag=None, inapplet=False, gprogram = None):
+	def __init__(self, debug_flag=None, inapplet=False, gprogram = None, manual_poscorrect=False):
 		self.debug_flag = debug_flag
 		self.inapplet = inapplet
 		self.gprogram = gprogram
+		self.manual_poscorrect = manual_poscorrect
 		
 		self.__loadIcon__()
 		self.__loadGlade__()
@@ -241,7 +242,7 @@ class main:
 		##
 		
 		##create at
-		self.at = at.At(self.root, self.user, self.uid, self.gid, self.user_home_dir)
+		self.at = at.At(self.root, self.user, self.uid, self.gid, self.user_home_dir, self.manual_poscorrect)
 		self.at_editor = atEditor.AtEditor (self, self.backend, self.at, self.template)
 		##
 		
