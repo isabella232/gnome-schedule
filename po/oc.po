@@ -9,13 +9,13 @@ msgstr ""
 "Project-Id-Version: gnome-schedule HEAD\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-02-19 20:23+0100\n"
-"PO-Revision-Date: 2007-12-31 22:23+0100\n"
+"PO-Revision-Date: 2008-02-26 23:08+0100\n"
 "Last-Translator: Yannig MARCHEGAY (Kokoyaya) <yannig@marchegay.org>\n"
 "Language-Team: Occitan (post 1500) <ubuntu-l10n-oci@lists.ubuntu.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);"
 
 #: ../desktop/gnome-schedule.desktop.in.in.h:1
 msgid "Manage your system tasks"
@@ -137,12 +137,12 @@ msgstr ""
 #: ../src/crontabEditor.py:69 ../src/crontabEditorHelper.py:87
 #: ../src/gnome-schedule.glade.h:31
 msgid "Every minute"
-msgstr ""
+msgstr "Cada minuta"
 
 #: ../src/crontabEditor.py:70 ../src/crontabEditorHelper.py:93
 #: ../src/gnome-schedule.glade.h:30
 msgid "Every hour"
-msgstr ""
+msgstr "Cada ora"
 
 #: ../src/crontabEditor.py:71 ../src/crontabEditorHelper.py:99
 msgid "Every day"
@@ -150,7 +150,7 @@ msgstr "Cada jorn"
 
 #: ../src/crontabEditor.py:72 ../src/crontabEditorHelper.py:105
 msgid "Every month"
-msgstr ""
+msgstr "Cada mes"
 
 #: ../src/crontabEditor.py:73
 msgid "Every week"
@@ -211,7 +211,7 @@ msgstr ""
 
 #: ../src/crontabEditorHelper.py:111
 msgid "Every weekday"
-msgstr ""
+msgstr "Cada jorn de la setmana"
 
 #: ../src/crontabEditorHelper.py:163
 msgid "Edit minute"
@@ -219,11 +219,11 @@ msgstr ""
 
 #: ../src/crontabEditorHelper.py:165
 msgid "Edit hour"
-msgstr ""
+msgstr "Modificar l'ora"
 
 #: ../src/crontabEditorHelper.py:167
 msgid "Edit day"
-msgstr ""
+msgstr "Modificar lo jorn"
 
 #: ../src/crontabEditorHelper.py:169
 msgid "Edit month"
@@ -241,7 +241,7 @@ msgstr ""
 #. minute
 #: ../src/crontabEditorHelper.py:231 ../src/gnome-schedule.glade.h:12
 msgid "At an exact minute"
-msgstr ""
+msgstr "A una minuta exacta"
 
 #: ../src/crontabEditorHelper.py:232 ../src/gnome-schedule.glade.h:43
 msgid "Minute:"
@@ -250,7 +250,7 @@ msgstr "Minuta :"
 #. hour
 #: ../src/crontabEditorHelper.py:235
 msgid "At an exact hour"
-msgstr ""
+msgstr "A una ora exacta"
 
 #: ../src/crontabEditorHelper.py:236 ../src/gnome-schedule.glade.h:39
 msgid "Hour:"
@@ -268,7 +268,7 @@ msgstr "Jorn :"
 #. month
 #: ../src/crontabEditorHelper.py:243
 msgid "In a month"
-msgstr ""
+msgstr "Dins un mes"
 
 #: ../src/crontabEditorHelper.py:244 ../src/gnome-schedule.glade.h:45
 msgid "Month:"
@@ -452,7 +452,7 @@ msgstr ""
 
 #: ../src/gnome-schedule.glade.h:37
 msgid "Expression:"
-msgstr ""
+msgstr "Expression :"
 
 #: ../src/gnome-schedule.glade.h:38
 msgid "From:"
@@ -524,7 +524,7 @@ msgstr "_Utilizaire :"
 
 #: ../src/gnome-schedule.glade.h:61
 msgid "ls -l"
-msgstr ""
+msgstr "ls -l"
 
 #: ../src/gnome-schedule.py:66 ../src/scheduleapplet.py:67
 msgid ""
@@ -780,7 +780,7 @@ msgstr ""
 
 #: ../src/lang.py:271
 msgid "every minute"
-msgstr ""
+msgstr "cada minuta"
 
 #: ../src/lang.py:273
 #, python-format
@@ -798,7 +798,7 @@ msgstr "ora : %s"
 
 #: ../src/lang.py:281
 msgid "every day of month"
-msgstr ""
+msgstr "cada jorn del mes"
 
 #: ../src/lang.py:283
 #, python-format
@@ -843,7 +843,7 @@ msgstr "A partir del modèl"
 
 #: ../src/mainWindow.py:152
 msgid "Add a new task"
-msgstr ""
+msgstr "Apondre un prètzfach novèl"
 
 #: ../src/mainWindow.py:285 ../src/mainWindow.py:415
 #, python-format
