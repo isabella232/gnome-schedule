@@ -5,24 +5,25 @@
 # Yannick Marchegay <yannick.marchegay@lokanova.com>, 2004.
 # Claude Paroz <claude@2xlibre.net>, 2006-2007.
 # Jonathan Ernst <jonathan@ernstfamily.ch>, 2007.
-# Stéphane Raimbault <stephane.raimbault@gmail.com>, 2007.
+# Stéphane Raimbault <stephane.raimbault@gmail.com>, 2007-2008.
 # Jeff Fortin <nekohayo ~at~ gmail.com>, 2007.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-01-01 13:36+0100\n"
-"PO-Revision-Date: 2008-01-01 13:40+0100\n"
-"Last-Translator: Claude Paroz <claude@2xlibre.net>\n"
+"POT-Creation-Date: 2008-03-05 23:32+0100\n"
+"PO-Revision-Date: 2008-03-05 23:33+0100\n"
+"Last-Translator: Stéphane Raimbault <stephane.raimbault@gmail.com>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+# Utilisation de l'infinitif dans les infobulles du Bureau
 #: ../desktop/gnome-schedule.desktop.in.in.h:1
 msgid "Manage your system tasks"
-msgstr "Gère les tâches de votre système"
+msgstr "Gèrer les tâches de votre système"
 
 #: ../desktop/gnome-schedule.desktop.in.in.h:2
 msgid "Scheduled tasks"
@@ -40,22 +41,22 @@ msgstr "Planificateur de tâches pour GNOME"
 msgid "System tools"
 msgstr "Outils système"
 
-#: ../src/at.py:490
+#: ../src/at.py:463
 #, python-format
 msgid "DANGEROUS PARSE: %(preview)s"
 msgstr "ANALYSE DANGEREUSE : %(preview)s"
 
 #. TODO: localize time and date formats
-#: ../src/at.py:497
+#: ../src/at.py:470
 #, python-format
 msgid "On %(date)s at %(time)s"
 msgstr "Le %(date)s à %(time)s"
 
-#: ../src/at.py:502 ../src/at.py:507
+#: ../src/at.py:475 ../src/at.py:480
 msgid "Once"
 msgstr "Une seule fois"
 
-#: ../src/at.py:511
+#: ../src/at.py:484
 msgid "Warning: a line in atq's output didn't parse"
 msgstr "Avertissement : une ligne de la sortie de atq n'a pas pu être analysée"
 
@@ -220,11 +221,11 @@ msgstr ""
 "Les tâches récurrentes seront exécutées à partir de votre « dossier "
 "personnel »."
 
-#: ../src/crontabEditor.py:490 ../src/mainWindow.py:651 ../src/atEditor.py:575
+#: ../src/crontabEditor.py:490 ../src/mainWindow.py:663 ../src/atEditor.py:575
 msgid "_Don't show again"
 msgstr "Ne _plus réafficher"
 
-#: ../src/crontabEditor.py:491 ../src/mainWindow.py:652 ../src/atEditor.py:576
+#: ../src/crontabEditor.py:491 ../src/mainWindow.py:664 ../src/atEditor.py:576
 msgid "Warning: Working directory of executed tasks"
 msgstr ""
 "Avertissement : répertoire de travail des tâches lors de leur exécution"
@@ -524,7 +525,7 @@ msgstr "Description de la tâche :"
 msgid "Task:"
 msgstr "Tâche :"
 
-#: ../src/gnome-schedule.glade.h:54 ../src/mainWindow.py:183
+#: ../src/gnome-schedule.glade.h:54 ../src/mainWindow.py:184
 msgid "Templates"
 msgstr "Modèles"
 
@@ -552,7 +553,7 @@ msgstr "_Utilisateur :"
 msgid "ls -l"
 msgstr "ls -l"
 
-#: ../src/gnome-schedule.py:62 ../src/scheduleapplet.py:63
+#: ../src/gnome-schedule.py:66 ../src/scheduleapplet.py:67
 msgid ""
 "You need to install pyGTK or GTKv2,\n"
 "or set your PYTHONPATH correctly.\n"
@@ -890,65 +891,69 @@ msgstr "jour de la semaine : %s"
 msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 msgstr "À : %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 
-#: ../src/mainWindow.py:110
+#: ../src/mainWindow.py:111
 msgid "Recurrent task"
 msgstr "Tâche récurrente"
 
-#: ../src/mainWindow.py:121
+#: ../src/mainWindow.py:122
 msgid "One-time task"
 msgstr "Tâche à usage unique"
 
-#: ../src/mainWindow.py:132
+#: ../src/mainWindow.py:133
 msgid "From template"
 msgstr "À partir d'un modèle"
 
-#: ../src/mainWindow.py:151
+#: ../src/mainWindow.py:152
 msgid "Add a new task"
 msgstr "Ajouter une tâche"
 
-#: ../src/mainWindow.py:284 ../src/mainWindow.py:403
+#: ../src/mainWindow.py:285 ../src/mainWindow.py:415
 #, python-format
 msgid "Editing user: %s"
 msgstr "Édition pour l'utilisateur : %s"
 
-#: ../src/mainWindow.py:330 ../src/mainWindow.py:340 ../src/mainWindow.py:350
-#: ../src/mainWindow.py:364 ../src/mainWindow.py:374
-#: ../src/scheduleapplet.py:115
+#: ../src/mainWindow.py:332 ../src/mainWindow.py:343 ../src/mainWindow.py:354
+#: ../src/mainWindow.py:369 ../src/mainWindow.py:380
+#: ../src/scheduleapplet.py:122
 msgid "ERROR: Could not load icon"
 msgstr "ERREUR : impossible de charger une icône"
 
-#: ../src/mainWindow.py:384
+#: ../src/mainWindow.py:389
+msgid "ERROR: Coul not load glade file"
+msgstr "ERREUR : impossible de charger un fichier glade"
+
+#: ../src/mainWindow.py:395
 msgid "ERROR: Could not load glade file"
 msgstr "ERREUR : impossible de charger un fichier glade"
 
-#: ../src/mainWindow.py:438 ../src/template_chooser.py:69
+#: ../src/mainWindow.py:450 ../src/template_chooser.py:69
 #: ../src/template_manager.py:72
 msgid "Task"
 msgstr "Tâche"
 
-#: ../src/mainWindow.py:451 ../src/mainWindow.py:477
+#: ../src/mainWindow.py:463 ../src/mainWindow.py:489
 #: ../src/template_chooser.py:78 ../src/template_manager.py:81
 msgid "Description"
 msgstr "Description"
 
-#: ../src/mainWindow.py:455 ../src/mainWindow.py:468
+#: ../src/mainWindow.py:467 ../src/mainWindow.py:480
 msgid "Date and Time"
 msgstr "Date et heure"
 
-#: ../src/mainWindow.py:459 ../src/mainWindow.py:472
+#: ../src/mainWindow.py:471 ../src/mainWindow.py:484
 msgid "Command preview"
 msgstr "Aperçu de la commande"
 
 #. print ex
-#: ../src/mainWindow.py:531 ../src/mainWindow.py:594
+#: ../src/mainWindow.py:543 ../src/mainWindow.py:606
 msgid "Please select a task"
 msgstr "Veuillez sélectionner une tâche"
 
-#: ../src/mainWindow.py:538
+#: ../src/mainWindow.py:550
 msgid "Do you want to delete this task?"
 msgstr "Voulez-vous réellement supprimer cette tâche ?"
 
-#: ../src/mainWindow.py:639
+#: ../src/mainWindow.py:651
 msgid ""
 "Are you sure you want to run this task now?\n"
 "\n"
@@ -960,11 +965,11 @@ msgstr ""
 "Ceci permet de tester la tâche et de lancer une exécution unique. La "
 "planification « normale » de la tâche n'en est pas affectée."
 
-#: ../src/mainWindow.py:641
+#: ../src/mainWindow.py:653
 msgid "Are you sure you want to run this task?"
 msgstr "Voulez-vous réellement lancer cette tâche ?"
 
-#: ../src/mainWindow.py:650
+#: ../src/mainWindow.py:662
 msgid ""
 "Note about working directory of executed tasks:\n"
 "\n"
@@ -979,28 +984,28 @@ msgstr ""
 "gnome-schedule a été lancé lors de leur création (normalement, votre "
 "« dossier personnel »)."
 
-#: ../src/mainWindow.py:705
+#: ../src/mainWindow.py:717
 msgid "Press ENTER to continue and close this window."
 msgstr "Appuyez sur « Entrée » pour continuer et fermer cette fenêtre."
 
-#: ../src/mainWindow.py:713
+#: ../src/mainWindow.py:725
 msgid "Please select a task!"
 msgstr "Veuillez sélectionner une tâche"
 
-#: ../src/mainWindow.py:721
+#: ../src/mainWindow.py:733
 msgid "About Gnome Schedule"
 msgstr "À propos du planificateur de tâches de GNOME"
 
-#: ../src/mainWindow.py:722
+#: ../src/mainWindow.py:734
 msgid "Gnome Schedule"
 msgstr "Planificateur de tâches de GNOME"
 
-#: ../src/mainWindow.py:724
+#: ../src/mainWindow.py:736
 #, python-format
 msgid "Copyright (c) %(year)s %(name)s."
 msgstr "Copyright (c) %(year)s %(name)s."
 
-#: ../src/mainWindow.py:737
+#: ../src/mainWindow.py:749
 msgid "translator-credits"
 msgstr ""
 "Jean-François Fortin Tam <nekohayo@gmail.com>\n"
@@ -1010,11 +1015,11 @@ msgstr ""
 "Jonathan Ernst <jonathan@ernstfamily.ch>\n"
 "Stéphane Raimbault <stephane.raimbault@gmail.com>"
 
-#: ../src/mainWindow.py:758
+#: ../src/mainWindow.py:770
 msgid "Could not display help"
 msgstr "Impossible d'afficher l'aide"
 
-#: ../src/scheduleapplet.py:131
+#: ../src/scheduleapplet.py:139
 msgid "ERROR: Could not load menu xml file"
 msgstr "ERREUR : impossible de charger le fichier XML des menus"
 
