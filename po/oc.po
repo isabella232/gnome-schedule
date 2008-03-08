@@ -8,14 +8,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-02-19 20:23+0100\n"
-"PO-Revision-Date: 2008-02-26 23:08+0100\n"
+"POT-Creation-Date: 2008-03-07 10:21+0100\n"
+"PO-Revision-Date: 2008-02-29 01:31+0100\n"
 "Last-Translator: Yannig MARCHEGAY (Kokoyaya) <yannig@marchegay.org>\n"
 "Language-Team: Occitan (post 1500) <ubuntu-l10n-oci@lists.ubuntu.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: ../desktop/gnome-schedule.desktop.in.in.h:1
 msgid "Manage your system tasks"
@@ -313,7 +313,7 @@ msgstr "A _prepaus"
 
 #: ../src/gnome-schedule-applet.xml.h:2
 msgid "_Add a task"
-msgstr ""
+msgstr "_Apondre un prètzfach"
 
 #: ../src/gnome-schedule-applet.xml.h:3
 msgid "_Help"
@@ -353,7 +353,7 @@ msgstr ""
 
 #: ../src/gnome-schedule.glade.h:8
 msgid "About Gnome-schedule"
-msgstr ""
+msgstr "A prepaus de gnome-schedule"
 
 #: ../src/gnome-schedule.glade.h:9
 msgid "Add a Scheduled Task"
@@ -361,7 +361,7 @@ msgstr ""
 
 #: ../src/gnome-schedule.glade.h:10
 msgid "Add as template"
-msgstr ""
+msgstr "Apondre coma modèl"
 
 #: ../src/gnome-schedule.glade.h:11
 msgid "Advanced"
@@ -557,7 +557,7 @@ msgstr ""
 
 #: ../src/lang.py:166
 msgid "At every minute"
-msgstr ""
+msgstr "Cada minuta"
 
 #: ../src/lang.py:168
 #, python-format
