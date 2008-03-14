@@ -386,7 +386,7 @@ class main:
 				try:
 					self.xml = gtk.glade.XML ("gnome-schedule.glade", domain="gnome-schedule")
 				except:
-					print _("ERROR: Coul not load glade file")
+					print _("ERROR: Could not load glade file")
 					quit ()
 		else:
 			try:
