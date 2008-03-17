@@ -64,12 +64,17 @@ class At:
 		
 		self.atdatafileversion = 3
 		self.atdata = self.user_home_dir + "/.gnome/gnome-schedule/at"
+		if os.path.exists (self.user_home_dir + "/.gnome") != True:
+			os.mkdir (self.user_home_dir + "/.gnome", 0700)
+			os.chown (self.user_home_dir + "/.gnome", self.uid, self.gid)
 		if os.path.exists(self.atdata) != True:
-			if os.makedirs(self.atdata, 0700):
-				pass
-			else:
-				pass
-				# FAILED TO CREATE DATADIR
+			try:
+				os.makedirs(self.atdata, 0700)
+				if self.root == 1:
+					os.chown (self.user_home_dir + "/.gnome/gnome-schedule", self.uid, self.gid)
+					os.chown (self.atdata, self.uid, self.gid)
+			except:
+				print _("Failed to create data dir! Make sure ~/.gnome and ~/.gnome/gnome-schedule are writable.")
 				
 		self.months = {
 			'Jan' : '1',
@@ -92,6 +97,17 @@ class At:
 		self.gid = gid
 		self.user_home_dir = ud
 		self.atdata = self.user_home_dir + "/.gnome/gnome-schedule/at"
+		if os.path.exists (self.user_home_dir + "/.gnome") != True:
+			os.mkdir (self.user_home_dir + "/.gnome", 0700)
+			os.chown (self.user_home_dir + "/.gnome", self.uid, self.gid)
+		if os.path.exists(self.atdata) != True:
+			try:
+				os.makedirs(self.atdata, 0700)
+				if self.root == 1:
+					os.chown (self.user_home_dir + "/.gnome/gnome-schedule", self.uid, self.gid)
+					os.chown (self.atdata, self.uid, self.gid)
+			except:
+				print (_("Failed to create data dir: %s. Make sure ~/.gnome and ~/.gnome/gnome-schedule are writable.") % (self.atdata))
 
 	
 	def get_type (self):
@@ -220,6 +236,8 @@ class At:
 		else:
 			fh.write ("manual_poscorrect=false\n")
 		fh.close ()
+		os.chown (f, self.uid, self.gid)
+		os.chmod (f, 0600)
 			
 	def checkfield (self, runat):
 		#TODO: fix bug $0:19 2004-12-8$ not valid by regexp

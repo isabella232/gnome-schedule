@@ -44,12 +44,17 @@ class Crontab:
 		self.crontabdata = self.user_home_dir + "/.gnome/gnome-schedule/crontab"
 		self.crontabdatafileversion = 3
 		
+		if os.path.exists (self.user_home_dir + "/.gnome") != True:
+			os.mkdir (self.user_home_dir + "/.gnome", 0700)
+			os.chown (self.user_home_dir + "/.gnome", self.uid, self.gid)
 		if os.path.exists(self.crontabdata) != True:
-			if os.makedirs(self.crontabdata, 0700):
-				pass
-			else:
-				pass
-				# FAILED TO CREATE DATADIR
+			try:
+				os.makedirs(self.crontabdata, 0700)
+				if self.root == 1:
+					os.chown (self.user_home_dir + "/.gnome/gnome-schedule", self.uid, self.gid)
+					os.chown (self.crontabdata, self.uid, self.gid)
+			except:
+				print _("Failed to create data dir! Make sure ~/.gnome and ~/.gnome/gnome-schedule are writable.")
 			
 		
 		
@@ -139,7 +144,17 @@ class Crontab:
 		self.gid = gid
 		self.user_home_dir = ud
 		self.crontabdata = self.user_home_dir + "/.gnome/gnome-schedule/crontab"
-
+		if os.path.exists (self.user_home_dir + "/.gnome") != True:
+			os.mkdir (self.user_home_dir + "/.gnome", 0700)
+			os.chown (self.user_home_dir + "/.gnome", self.uid, self.gid)
+		if os.path.exists(self.crontabdata) != True:
+			try:
+				os.makedirs(self.crontabdata, 0700)
+				if self.root == 1:
+					os.chown (self.user_home_dir + "/.gnome/gnome-schedule", self.uid, self.gid)
+					os.chown (self.crontabdata, self.uid, self.gid)
+			except:
+				print (_("Failed to create data dir: %s. Make sure ~/.gnome and ~/.gnome/gnome-schedule are writable.") % (self.crontabdata))
 
 	def get_type (self):
 		return "crontab"
@@ -246,14 +261,15 @@ class Crontab:
 				fh.truncate (1)
 				fh.write ( str(job_id))
 				fh.close ()
-				
-				
 			else:
 				job_id = 1
 				fh = open (f, 'w')
 				fh.write ('1')
 				fh.close ()
-				
+
+			os.chown (f, self.uid, self.gid)
+			os.chmod (f, 0600)					
+			
 			record = record + " # JOB_ID_" + str (job_id)
 			
 			
@@ -273,7 +289,9 @@ class Crontab:
 		else:
 			fh.write ("nooutput=0\n")
 		fh.close ()	
-
+		os.chown (f, self.uid, self.gid)
+		os.chmod (f, 0600)
+		
 		self.lines[linenumber] = record
 		
 		# TODO: let write trow an exception if failed
@@ -335,14 +353,15 @@ class Crontab:
 			fh.seek (0)
 			fh.truncate (1)
 			fh.write ( str(job_id))
-			fh.close ()
-			
-				
+			fh.close ()	
 		else:
 			job_id = 1
 			fh = open (f, 'w')
 			fh.write ('1')
 			fh.close ()
+			
+		os.chown (f, self.uid, self.gid)
+		os.chmod (f, 0600)
 		
 		f = os.path.join (self.crontabdata, str(job_id))
 			
@@ -358,6 +377,8 @@ class Crontab:
 			fh.write ("nooutput=0\n")
 		
 		fh.close ()
+		os.chown (f, self.uid, self.gid)
+		os.chmod (f, 0600)
 				
 		record = record + " # JOB_ID_" + str (job_id)
 			
