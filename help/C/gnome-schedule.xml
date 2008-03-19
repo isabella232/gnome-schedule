@@ -73,7 +73,7 @@
 <!-- This is appropriate place for other contributors: translators,
      maintainers,  etc. Commented out by default.-->
      
-<!-- Please translator, add here your personal information. Thanks for your work ;) -->
+<!-- Please translator, add here your personal information. Thanks for your work ;)
       <othercredit role="translator">
 		<firstname>Translator: Your first name here</firstname> 
 		<surname>Translator: Your surname here</surname> 
@@ -83,6 +83,7 @@
 		</affiliation>
 		<contrib>Translator: Write here your contribution, e.g. Latin translation</contrib>
       </othercredit>
+-->
       
 <!-- Next is to omit the gnome-doc-utils warning: missing element with role maintainer: -->
 <!--
@@ -234,7 +235,7 @@ at&gt; <userinput>Ctrl + D</userinput>
 
     <sect2 id="myapp-start">
     <title>To Start &app;</title>
-    <para>You can start <application>&app;</application> in the following ways:
+    <para>You can start &app; in the following ways:
     </para> 
     <variablelist>
     	<varlistentry>
@@ -250,7 +251,7 @@ at&gt; <userinput>Ctrl + D</userinput>
     	<varlistentry>
     		<term>Command line</term>
     		<listitem>
-    		<para>To start <application>&app;</application> from a command line, type the following command, 
+    		<para>To start &app; from a command line, type the following command, 
     		then press <keycap>Return</keycap>:</para>
     		<para> 
 			<command>gnome-schedule</command> 
@@ -262,7 +263,7 @@ at&gt; <userinput>Ctrl + D</userinput>
 
     <sect2 id="myapp-when-start">
     <title>When You Start &app;</title>
-    <para>When you start <application>&app;</application>, the main window is displayed:</para>
+    <para>When you start &app;, the main window is displayed:</para>
 
     <!-- ==== Figure ==== -->
       <figure id="main-fig"> 
@@ -391,7 +392,7 @@ at&gt; <userinput>Ctrl + D</userinput>
 		<para><guilabel>Time &amp; Date</guilabel></para>
 			<variablelist>
   	  <varlistentry><term>Basic</term>
-	      <listitem><para>Lets you select the frecuency for task execution 
+	      <listitem><para>Lets you select the frequency for task execution 
 					among a list of common intervals.</para></listitem>
 	    </varlistentry>
 	    <varlistentry><term>Advanced</term>
@@ -400,7 +401,7 @@ at&gt; <userinput>Ctrl + D</userinput>
 	    </varlistentry>
 	  </variablelist>
     <para><guilabel>Preview</guilabel></para>
-	    <para>Lets the user check if the selected frecuency is correct.
+	    <para>Lets the user check if the selected frequency is correct.
 	    </para>
     </sect2>    
     
@@ -508,7 +509,7 @@ at&gt; <userinput>Ctrl + D</userinput>
 <!-- ================ Run graphical apps =================== -->
 <sect1 id="myapp-graphical_apps">
 <title>Using &app; to launch graphical applications</title>
-<para>You can use Gnome Schedule to launch a graphical application automatically, but
+<para>You can use &app; to launch a graphical application automatically, but
 there are some information you would consider before:</para>
 
 <sect2 id="myapp-graphical_apps-sub1">
@@ -533,7 +534,7 @@ in the script text box. Make the definition at the begining of the script.</para
 
 <sect2 id="myapp-graphical_apps-sub3">
 <title>Setting DISPLAY variable for tasks that will launch recurrently</title>
-<para>Gnome Schedule does not support yet setting environment variables for recurrent
+<para>&app; does not support yet setting environment variables for recurrent
 tasks, but it will do soon. In the meantime, you can manually create a script 
 that first defines DISPLAY variable and then calls the graphical application.
 Finally, you can create a recurrent task to launch the script.</para>

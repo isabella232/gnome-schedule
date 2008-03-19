@@ -1,3 +1,11 @@
+2008-03-19  Claude Paroz  <claude@2xlibre.net>
+
+	* C/gnome-schedule.xml: Translator credit is managed by gnome-doc-utils.
+	Some other minor cleanups. Fixes bug #523415.
+	* Makefile.am: Added fr to DOC_LINGUAS.
+	* fr/fr.po: Added French translation.
+	* fr/figures/*.png: Added translated screenshots.
+
 2008-01-28  Gaute Hope <eg@gaute.vetsj.com>
 
 	* removed all gnome-schedule_advanced.png's since they are not anymore referenced in Makefile.am and thus shouldn't be included anyways. Would however be great if the documentations could be updated to the new version made by Rodrigo M- Fombellida.
