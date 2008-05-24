@@ -1,21 +1,21 @@
-# translation of gnome-schedule.HEAD.po to Spanish
+# translation of gnome-schedule.HEAD.po to Español
 # translation of gnome-schedule to Spanish
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) 2007 THE PACKAGE'S COPYRIGHT HOLDER.
 #
 # Francisco Javier F. Serrador <serrador@cvs.gnome.org>, 2004, 2005, 2006.
 # Rodrigo Marcos Fombellida <rmarcos_geo@yahoo.es>, 2005.
-# Jorge González <jorgegonz@svn.gnome.org>, 2007.
+# Jorge González <jorgegonz@svn.gnome.org>, 2007, 2008.
 # Alejandro Valdes Jimenez <avaldes@utalca.cl>, 2007.
 # Rodrigo Marcos Fombellida <rmarcos@svn.gnome.org>, 2008.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule.HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-12-31 00:24+0000\n"
-"PO-Revision-Date: 2008-01-25 21:16+0100\n"
-"Last-Translator: Rodrigo Marcos Fombellida <rmarcos@svn.gnome.org>\n"
-"Language-Team: Spanish <traductores@es.gnome.org>\n"
+"POT-Creation-Date: 2008-03-17 15:30+0000\n"
+"PO-Revision-Date: 2008-05-24 12:04+0200\n"
+"Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
+"Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -42,99 +42,116 @@ msgstr "Planificador de Gnome"
 msgid "System tools"
 msgstr "Herramientas del sistema"
 
-#: ../src/at.py:490
+#: ../src/at.py:77 ../src/crontab.py:57
+msgid ""
+"Failed to create data dir! Make sure ~/.gnome and ~/.gnome/gnome-schedule "
+"are writable."
+msgstr ""
+"Falló al crear el directorio de datos. Asegúrese de que se puede escribir en "
+"~/.gnome y ~/.gnome/gnome-schedule "
+
+#: ../src/at.py:110 ../src/crontab.py:157
+#, python-format
+msgid ""
+"Failed to create data dir: %s. Make sure ~/.gnome and ~/.gnome/gnome-"
+"schedule are writable."
+msgstr ""
+"Falló al crear el directorio de datos: %s. Asegúrese de que se puede escribir en "
+"~/.gnome y ~/.gnome/gnome-schedule"
+
+#: ../src/at.py:481
 #, python-format
 msgid "DANGEROUS PARSE: %(preview)s"
 msgstr "ANÁLISIS PELIGROSO: %(preview)s"
 
 #. TODO: localize time and date formats
-#: ../src/at.py:497
+#: ../src/at.py:488
 #, python-format
 msgid "On %(date)s at %(time)s"
 msgstr "El %(date)s a las %(time)s"
 
-#: ../src/at.py:502 ../src/at.py:507
+#: ../src/at.py:493 ../src/at.py:498
 msgid "Once"
 msgstr "Una vez"
 
-#: ../src/at.py:511
+#: ../src/at.py:502
 msgid "Warning: a line in atq's output didn't parse"
 msgstr "Advertencia: una línea en la salida de atq no se analizó"
 
-#: ../src/crontab.py:77
+#: ../src/crontab.py:82
 msgid "Minute"
 msgstr "Minuto"
 
-#: ../src/crontab.py:78
+#: ../src/crontab.py:83
 msgid "Hour"
 msgstr "Hora"
 
-#: ../src/crontab.py:79
+#: ../src/crontab.py:84
 msgid "Day of Month"
 msgstr "Día del mes"
 
-#: ../src/crontab.py:80
+#: ../src/crontab.py:85
 msgid "Month"
 msgstr "Mes"
 
-#: ../src/crontab.py:81
+#: ../src/crontab.py:86
 msgid "Weekday"
 msgstr "Día de la semana"
 
-#: ../src/crontab.py:172 ../src/gnome-schedule.glade.h:13
+#: ../src/crontab.py:187 ../src/gnome-schedule.glade.h:13
 msgid "Basic"
 msgstr "Básico"
 
-#: ../src/crontab.py:172
+#: ../src/crontab.py:187
 #, python-format
 msgid "This is not a valid special record: %(record)s"
 msgstr "Este no es un registro especial válido: %(record)s"
 
-#: ../src/crontab.py:200 ../src/crontab.py:205 ../src/crontab.py:209
+#: ../src/crontab.py:215 ../src/crontab.py:220 ../src/crontab.py:224
 #, python-format
 msgid "Must be between %(min)s and %(max)s"
 msgstr "debe estar entre %(min)s y %(max)s"
 
-#: ../src/crontab.py:207
+#: ../src/crontab.py:222
 #, python-format
 msgid "%s is not a number"
 msgstr "%s no es un número"
 
-#: ../src/crontab.py:261 ../src/crontab.py:317 ../src/crontabEditor.py:289
+#: ../src/crontab.py:277 ../src/crontab.py:335 ../src/crontabEditor.py:289
 #: ../src/atEditor.py:121 ../src/atEditor.py:503 ../src/atEditor.py:527
 msgid "Untitled"
 msgstr "Sin título"
 
-#: ../src/crontab.py:416 ../src/crontab.py:418 ../src/template_chooser.py:106
+#: ../src/crontab.py:437 ../src/crontab.py:439 ../src/template_chooser.py:106
 #: ../src/template_manager.py:111
 msgid "Recurrent"
 msgstr "Repetitiva"
 
-#: ../src/crontab.py:416 ../src/crontabEditor.py:74 ../src/lang.py:149
+#: ../src/crontab.py:437 ../src/crontabEditor.py:74 ../src/lang.py:149
 msgid "At reboot"
 msgstr "Al reiniciar"
 
-#: ../src/crontab.py:430
+#: ../src/crontab.py:451
 msgid "minute"
 msgstr "minuto"
 
-#: ../src/crontab.py:432
+#: ../src/crontab.py:453
 msgid "hour"
 msgstr "hora"
 
-#: ../src/crontab.py:434
+#: ../src/crontab.py:455
 msgid "day"
 msgstr "día"
 
-#: ../src/crontab.py:436
+#: ../src/crontab.py:457
 msgid "month"
 msgstr "mes"
 
-#: ../src/crontab.py:438
+#: ../src/crontab.py:459
 msgid "weekday"
 msgstr "día de la semana"
 
-#: ../src/crontab.py:537
+#: ../src/crontab.py:558
 msgid "Failed to parse the Day of Month field, possibly due to a bug in crontab."
 msgstr ""
 "No se ha podido analizar el campo Día del mes, posiblemente debido a un "
@@ -218,11 +235,11 @@ msgstr ""
 "\n"
 "Las tareas periódicas se ejecutarán desde el directorio personal."
 
-#: ../src/crontabEditor.py:490 ../src/mainWindow.py:651 ../src/atEditor.py:575
+#: ../src/crontabEditor.py:490 ../src/mainWindow.py:663 ../src/atEditor.py:575
 msgid "_Don't show again"
 msgstr "_No mostrar de nuevo"
 
-#: ../src/crontabEditor.py:491 ../src/mainWindow.py:652 ../src/atEditor.py:576
+#: ../src/crontabEditor.py:491 ../src/mainWindow.py:664 ../src/atEditor.py:576
 msgid "Warning: Working directory of executed tasks"
 msgstr "Advertencia: Directorio de trabajo de las tareas ejecutadas"
 
@@ -517,7 +534,7 @@ msgstr "Descripción de la tarea:"
 msgid "Task:"
 msgstr "Tarea:"
 
-#: ../src/gnome-schedule.glade.h:54 ../src/mainWindow.py:183
+#: ../src/gnome-schedule.glade.h:54 ../src/mainWindow.py:184
 msgid "Templates"
 msgstr "Plantillas"
 
@@ -545,7 +562,7 @@ msgstr "_Usuario:"
 msgid "ls -l"
 msgstr "ls -l"
 
-#: ../src/gnome-schedule.py:62 ../src/scheduleapplet.py:63
+#: ../src/gnome-schedule.py:66 ../src/scheduleapplet.py:67
 msgid ""
 "You need to install pyGTK or GTKv2,\n"
 "or set your PYTHONPATH correctly.\n"
@@ -868,65 +885,65 @@ msgstr "día de la semana: %s"
 msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 msgstr "A las %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 
-#: ../src/mainWindow.py:110
+#: ../src/mainWindow.py:111
 msgid "Recurrent task"
 msgstr "Tarea repetitiva"
 
-#: ../src/mainWindow.py:121
+#: ../src/mainWindow.py:122
 msgid "One-time task"
 msgstr "Una tarea no repetitiva"
 
-#: ../src/mainWindow.py:132
+#: ../src/mainWindow.py:133
 msgid "From template"
 msgstr "Desde plantilla"
 
-#: ../src/mainWindow.py:151
+#: ../src/mainWindow.py:152
 msgid "Add a new task"
 msgstr "Añadir una tarea nueva"
 
-#: ../src/mainWindow.py:284 ../src/mainWindow.py:403
+#: ../src/mainWindow.py:285 ../src/mainWindow.py:415
 #, python-format
 msgid "Editing user: %s"
 msgstr "Editando usuario: %s"
 
-#: ../src/mainWindow.py:330 ../src/mainWindow.py:340 ../src/mainWindow.py:350
-#: ../src/mainWindow.py:364 ../src/mainWindow.py:374
-#: ../src/scheduleapplet.py:115
+#: ../src/mainWindow.py:332 ../src/mainWindow.py:343 ../src/mainWindow.py:354
+#: ../src/mainWindow.py:369 ../src/mainWindow.py:380
+#: ../src/scheduleapplet.py:122
 msgid "ERROR: Could not load icon"
 msgstr "ERROR: No se pudo cargar el icono"
 
-#: ../src/mainWindow.py:384
+#: ../src/mainWindow.py:389 ../src/mainWindow.py:395
 msgid "ERROR: Could not load glade file"
 msgstr "ERROR: No se pudo cargar el archivo glade"
 
-#: ../src/mainWindow.py:438 ../src/template_chooser.py:69
+#: ../src/mainWindow.py:450 ../src/template_chooser.py:69
 #: ../src/template_manager.py:72
 msgid "Task"
 msgstr "Tarea"
 
-#: ../src/mainWindow.py:451 ../src/mainWindow.py:477
+#: ../src/mainWindow.py:463 ../src/mainWindow.py:489
 #: ../src/template_chooser.py:78 ../src/template_manager.py:81
 msgid "Description"
 msgstr "Descripción"
 
-#: ../src/mainWindow.py:455 ../src/mainWindow.py:468
+#: ../src/mainWindow.py:467 ../src/mainWindow.py:480
 msgid "Date and Time"
 msgstr "Fecha y hora"
 
-#: ../src/mainWindow.py:459 ../src/mainWindow.py:472
+#: ../src/mainWindow.py:471 ../src/mainWindow.py:484
 msgid "Command preview"
 msgstr "Vista previa del comando"
 
 #. print ex
-#: ../src/mainWindow.py:531 ../src/mainWindow.py:594
+#: ../src/mainWindow.py:543 ../src/mainWindow.py:606
 msgid "Please select a task"
 msgstr "Por favor seleccione una tarea"
 
-#: ../src/mainWindow.py:538
+#: ../src/mainWindow.py:550
 msgid "Do you want to delete this task?"
 msgstr "¿Quiere eliminar esta tarea?"
 
-#: ../src/mainWindow.py:639
+#: ../src/mainWindow.py:651
 msgid ""
 "Are you sure you want to run this task now?\n"
 "\n"
@@ -938,11 +955,11 @@ msgstr ""
 "Esto se usa para previsualizar la tarea e iniciarla una vez, esto no afecta "
 "la normal ejecución de las tareas programadas."
 
-#: ../src/mainWindow.py:641
+#: ../src/mainWindow.py:653
 msgid "Are you sure you want to run this task?"
 msgstr "¿Está seguro de que quiere ejectar esta tarea?"
 
-#: ../src/mainWindow.py:650
+#: ../src/mainWindow.py:662
 msgid ""
 "Note about working directory of executed tasks:\n"
 "\n"
@@ -957,41 +974,41 @@ msgstr ""
 "Planificador de GNOME en el momento de crear la tarea (normalmente el "
 "directorio personal)"
 
-#: ../src/mainWindow.py:705
+#: ../src/mainWindow.py:717
 msgid "Press ENTER to continue and close this window."
 msgstr "Presione INTRO para continuar y cerrar esta ventana."
 
-#: ../src/mainWindow.py:713
+#: ../src/mainWindow.py:725
 msgid "Please select a task!"
 msgstr "Por favor seleccione una tarea"
 
-#: ../src/mainWindow.py:721
+#: ../src/mainWindow.py:733
 msgid "About Gnome Schedule"
 msgstr "Acerca del Planificador de GNOME"
 
-#: ../src/mainWindow.py:722
+#: ../src/mainWindow.py:734
 msgid "Gnome Schedule"
 msgstr "Planificador de GNOME"
 
-#: ../src/mainWindow.py:724
+#: ../src/mainWindow.py:736
 #, python-format
 msgid "Copyright (c) %(year)s %(name)s."
 msgstr "Derechos de autor (c) %(year)s %(name)s"
 
-#: ../src/mainWindow.py:737
+#: ../src/mainWindow.py:749
 msgid "translator-credits"
 msgstr ""
 "Alejandro Valdes Jimenez <avaldes@utalca.cl>, 2007\n"
-"Jorge González <jorgegonz@svn.gnome.org>, 2007\n"
+"Jorge González <jorgegonz@svn.gnome.org>, 2007-2008\n"
 "Rodrigo Marcos Fombellida <rmarcos@cvs.gnome.org>, 2005-2006\n"
 "QA: Jorge González <jorgegonz@svn.gnome.org>, 2007\n"
 "QA: Francisco Javier F. Serrador <serrador@cvs.gnome.org>, 2004-2006"
 
-#: ../src/mainWindow.py:758
+#: ../src/mainWindow.py:770
 msgid "Could not display help"
 msgstr "No se pudo mostrar la ayuda"
 
-#: ../src/scheduleapplet.py:131
+#: ../src/scheduleapplet.py:139
 msgid "ERROR: Could not load menu xml file"
 msgstr "ERROR: No se pudo cargar el archivo xml del menú"
 
