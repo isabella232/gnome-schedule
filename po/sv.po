@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-03-02 00:16+0100\n"
-"PO-Revision-Date: 2008-03-02 00:16+0100\n"
+"POT-Creation-Date: 2008-06-24 00:45+0200\n"
+"PO-Revision-Date: 2008-06-24 00:45+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "MIME-Version: 1.0\n"
@@ -37,70 +37,81 @@ msgstr "Gnome-schema"
 msgid "System tools"
 msgstr "Systemverktyg"
 
-#: ../src/at.py:463
+#: ../src/at.py:77
+#: ../src/crontab.py:57
+msgid "Failed to create data dir! Make sure ~/.gnome and ~/.gnome/gnome-schedule are writable."
+msgstr "Misslyckades med att skapa datakatalog! Försäkra dig om att ~/.gnome och ~/.gnome/gnome-schedule är skrivbara."
+
+#: ../src/at.py:110
+#: ../src/crontab.py:157
+#, python-format
+msgid "Failed to create data dir: %s. Make sure ~/.gnome and ~/.gnome/gnome-schedule are writable."
+msgstr "Misslyckades med att skapa datakatalog: %s. Försäkra dig om att ~/.gnome och ~/.gnome/gnome-schedule är skrivbara."
+
+#: ../src/at.py:481
 #, python-format
 msgid "DANGEROUS PARSE: %(preview)s"
 msgstr "FARLIG TOLKNING: %(preview)s"
 
 #. TODO: localize time and date formats
-#: ../src/at.py:470
+#: ../src/at.py:488
 #, python-format
 msgid "On %(date)s at %(time)s"
 msgstr "Den %(date)s klockan %(time)s"
 
-#: ../src/at.py:475
-#: ../src/at.py:480
+#: ../src/at.py:493
+#: ../src/at.py:498
 msgid "Once"
 msgstr "En gång"
 
-#: ../src/at.py:484
+#: ../src/at.py:502
 msgid "Warning: a line in atq's output didn't parse"
 msgstr "Varning: en rad i atq:s utdata kunde inte tolkas"
 
-#: ../src/crontab.py:77
+#: ../src/crontab.py:82
 msgid "Minute"
 msgstr "Minut"
 
-#: ../src/crontab.py:78
+#: ../src/crontab.py:83
 msgid "Hour"
 msgstr "Timme"
 
-#: ../src/crontab.py:79
+#: ../src/crontab.py:84
 msgid "Day of Month"
 msgstr "Dag i månaden"
 
-#: ../src/crontab.py:80
+#: ../src/crontab.py:85
 msgid "Month"
 msgstr "Månad"
 
-#: ../src/crontab.py:81
+#: ../src/crontab.py:86
 msgid "Weekday"
 msgstr "Veckodag"
 
-#: ../src/crontab.py:172
+#: ../src/crontab.py:187
 #: ../src/gnome-schedule.glade.h:13
 msgid "Basic"
 msgstr "Grundläggande"
 
-#: ../src/crontab.py:172
+#: ../src/crontab.py:187
 #, python-format
 msgid "This is not a valid special record: %(record)s"
 msgstr "Det här är inte en giltig specialpost: %(record)s"
 
-#: ../src/crontab.py:200
-#: ../src/crontab.py:205
-#: ../src/crontab.py:209
+#: ../src/crontab.py:215
+#: ../src/crontab.py:220
+#: ../src/crontab.py:224
 #, python-format
 msgid "Must be between %(min)s and %(max)s"
 msgstr "Måste vara mellan %(min)s och %(max)s"
 
-#: ../src/crontab.py:207
+#: ../src/crontab.py:222
 #, python-format
 msgid "%s is not a number"
 msgstr "%s är inte ett tal"
 
-#: ../src/crontab.py:261
-#: ../src/crontab.py:317
+#: ../src/crontab.py:277
+#: ../src/crontab.py:335
 #: ../src/crontabEditor.py:289
 #: ../src/atEditor.py:121
 #: ../src/atEditor.py:503
@@ -108,40 +119,40 @@ msgstr "%s är inte ett tal"
 msgid "Untitled"
 msgstr "Namnlös"
 
-#: ../src/crontab.py:416
-#: ../src/crontab.py:418
+#: ../src/crontab.py:437
+#: ../src/crontab.py:439
 #: ../src/template_chooser.py:106
 #: ../src/template_manager.py:111
 msgid "Recurrent"
 msgstr "Återkommande"
 
-#: ../src/crontab.py:416
+#: ../src/crontab.py:437
 #: ../src/crontabEditor.py:74
 #: ../src/lang.py:149
 msgid "At reboot"
 msgstr "Vid omstart"
 
-#: ../src/crontab.py:430
+#: ../src/crontab.py:451
 msgid "minute"
 msgstr "minut"
 
-#: ../src/crontab.py:432
+#: ../src/crontab.py:453
 msgid "hour"
 msgstr "timme"
 
-#: ../src/crontab.py:434
+#: ../src/crontab.py:455
 msgid "day"
 msgstr "dag"
 
-#: ../src/crontab.py:436
+#: ../src/crontab.py:457
 msgid "month"
 msgstr "månad"
 
-#: ../src/crontab.py:438
+#: ../src/crontab.py:459
 msgid "weekday"
 msgstr "veckodag"
 
-#: ../src/crontab.py:537
+#: ../src/crontab.py:558
 msgid "Failed to parse the Day of Month field, possibly due to a bug in crontab."
 msgstr "Misslyckades med att tolka fältet för dag i månad, antagligen på grund av ett fel i crontab."
 
@@ -868,9 +879,6 @@ msgid "ERROR: Could not load icon"
 msgstr "FEL: Kunde inte läsa in ikon"
 
 #: ../src/mainWindow.py:389
-msgid "ERROR: Coul not load glade file"
-msgstr "FEL: Kunde inte läsa in glade-fil"
-
 #: ../src/mainWindow.py:395
 msgid "ERROR: Could not load glade file"
 msgstr "FEL: Kunde inte läsa in glade-fil"
@@ -1033,6 +1041,9 @@ msgstr "Använd mall"
 #: ../src/template_manager.py:102
 msgid "One-time"
 msgstr "En gång"
+
+#~ msgid "ERROR: Coul not load glade file"
+#~ msgstr "FEL: Kunde inte läsa in glade-fil"
 
 #, fuzzy
 #~ msgid "Edit"
