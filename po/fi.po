@@ -1,15 +1,15 @@
 # Finnish translations for gnome-schedule package.
-# Copyright (C) 2005 Free Software Foundation, Inc.
+# Copyright (C) 2006-2008 Free Software Foundation, Inc.
 # This file is distributed under the same license as the gnome-schedule package.
 # Tommi Vainikainen <Tommi.Vainikainen@iki.fi>, 2005.
-# Ilkka Tuohela <hile@iki.fi>, 2006.
+# Ilkka Tuohela <hile@iki.fi>, 2006-2008.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-02-19 11:26+0300\n"
-"PO-Revision-Date: 2006-10-24 17:42+0300\n"
+"POT-Creation-Date: 2008-09-18 15:39+0300\n"
+"PO-Revision-Date: 2008-09-18 15:30+0300\n"
 "Last-Translator: Ilkka Tuohela <hile@iki.fi>\n"
 "Language-Team: Finnish <gnome-fi-laatu@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -37,103 +37,121 @@ msgstr "Gnome-ajastus"
 msgid "System tools"
 msgstr "Järjestelmätyökalut"
 
-#: ../src/at.py:463
+#: ../src/at.py:77 ../src/crontab.py:57
+msgid ""
+"Failed to create data dir! Make sure ~/.gnome and ~/.gnome/gnome-schedule "
+"are writable."
+msgstr ""
+"Datakansiota ei voitu luoda. Varmista, että kansiot ~/.gnome ja "
+"~/.gnome/gnome-schedule ovat kirjoitettavissa."
+
+#: ../src/at.py:110 ../src/crontab.py:157
+#, python-format
+msgid ""
+"Failed to create data dir: %s. Make sure ~/.gnome and ~/.gnome/gnome-"
+"schedule are writable."
+msgstr ""
+"Datakansiota ei voitu luoda: %s. Varmista, että kansiot ~/.gnome ja "
+"~/.gnome/gnome-schedule ovat kirjoitettavissa."
+
+#: ../src/at.py:481
 #, python-format
 msgid "DANGEROUS PARSE: %(preview)s"
 msgstr "VAARALLINEN TULKINTA: %(preview)s"
 
 #. TODO: localize time and date formats
-#: ../src/at.py:470
+#: ../src/at.py:488
 #, python-format
 msgid "On %(date)s at %(time)s"
 msgstr "%(date)s kello %(time)s"
 
-#: ../src/at.py:475 ../src/at.py:480
+#: ../src/at.py:493 ../src/at.py:498
 msgid "Once"
 msgstr "Kerran"
 
-#: ../src/at.py:484
+#: ../src/at.py:502
 msgid "Warning: a line in atq's output didn't parse"
 msgstr "Varoitus: riviä atq:n tulosteessa ei voi tulkita"
 
-#: ../src/crontab.py:77
+#: ../src/crontab.py:82
 msgid "Minute"
 msgstr "Minuutti"
 
-#: ../src/crontab.py:78
+#: ../src/crontab.py:83
 msgid "Hour"
 msgstr "Tunti"
 
-#: ../src/crontab.py:79
+#: ../src/crontab.py:84
 msgid "Day of Month"
 msgstr "Kuukauden päivä"
 
-#: ../src/crontab.py:80
+#: ../src/crontab.py:85
 msgid "Month"
 msgstr "Kuukausi"
 
-#: ../src/crontab.py:81
+#: ../src/crontab.py:86
 msgid "Weekday"
 msgstr "Viikonpäivä"
 
-#: ../src/crontab.py:172 ../src/gnome-schedule.glade.h:13
+#: ../src/crontab.py:187 ../src/gnome-schedule.glade.h:13
 msgid "Basic"
 msgstr "Perus"
 
-#: ../src/crontab.py:172
+#: ../src/crontab.py:187
 #, python-format
 msgid "This is not a valid special record: %(record)s"
 msgstr "Tämä ei ole kelvollinen erikoiskenttä: %(record)s"
 
-#: ../src/crontab.py:200 ../src/crontab.py:205 ../src/crontab.py:209
+#: ../src/crontab.py:215 ../src/crontab.py:220 ../src/crontab.py:224
 #, python-format
 msgid "Must be between %(min)s and %(max)s"
 msgstr "Täytyy olla väliltä %(min)s ja %(max)s"
 
-#: ../src/crontab.py:207
+#: ../src/crontab.py:222
 #, python-format
 msgid "%s is not a number"
 msgstr "%s ei ole numero"
 
-#: ../src/crontab.py:261 ../src/crontab.py:317 ../src/crontabEditor.py:289
+#: ../src/crontab.py:277 ../src/crontab.py:335 ../src/crontabEditor.py:289
 #: ../src/atEditor.py:121 ../src/atEditor.py:503 ../src/atEditor.py:527
 msgid "Untitled"
 msgstr "Nimetön"
 
-#: ../src/crontab.py:416 ../src/crontab.py:418 ../src/template_chooser.py:106
+#: ../src/crontab.py:437 ../src/crontab.py:439 ../src/template_chooser.py:106
 #: ../src/template_manager.py:111
 msgid "Recurrent"
 msgstr "Toistuva"
 
-#: ../src/crontab.py:416 ../src/crontabEditor.py:74 ../src/lang.py:149
+#: ../src/crontab.py:437 ../src/crontabEditor.py:74 ../src/lang.py:149
 msgid "At reboot"
 msgstr "Käynnistettäessä"
 
-#: ../src/crontab.py:430
+#: ../src/crontab.py:451
 msgid "minute"
 msgstr "minuutti"
 
-#: ../src/crontab.py:432
+#: ../src/crontab.py:453
 msgid "hour"
 msgstr "tunti"
 
-#: ../src/crontab.py:434
+#: ../src/crontab.py:455
 msgid "day"
 msgstr "päivä"
 
-#: ../src/crontab.py:436
+#: ../src/crontab.py:457
 msgid "month"
 msgstr "kuukausi"
 
-#: ../src/crontab.py:438
+#: ../src/crontab.py:459
 msgid "weekday"
 msgstr "viikonpäivä"
 
-#: ../src/crontab.py:537
+#: ../src/crontab.py:558
 msgid ""
 "Failed to parse the Day of Month field, possibly due to a bug in crontab."
 msgstr ""
-"Ei voitu tulkita kuukauden päivä -kenttää. Tämä saattaa olla bugi crontabissa."
+"Ei voitu tulkita kuukauden päivä -kenttää. Tämä saattaa olla bugi "
+"crontabissa."
 
 #: ../src/crontabEditor.py:69 ../src/crontabEditorHelper.py:87
 #: ../src/gnome-schedule.glade.h:31
@@ -199,8 +217,8 @@ msgstr ""
 "Komentosi sisältää yhden tai useampia %-merkkejä, joka on cronin "
 "erikoismerkki. Sitä ei voi käyttää  Gnome-schedulesta, koska sitä käytetään "
 "tallentaa lisätietoja crontab-riville. Käytä ohjainta |, jolla saat aikaan "
-"saman tuloksen. Lue lisätietoja %-merkistä crontabin manuaalisivulta. Jos "
-"et halua käyttää sitä uudelleenohjaukseen, se tulee suojata \\-merkillä."
+"saman tuloksen. Lue lisätietoja %-merkistä crontabin manuaalisivulta. Jos et "
+"halua käyttää sitä uudelleenohjaukseen, se tulee suojata \\-merkillä."
 
 #: ../src/crontabEditor.py:489
 msgid ""
@@ -683,7 +701,7 @@ msgid "On every weekday: %(weekday)s at every full hour"
 msgstr "Joka viikonpäivä: %(weekday)s joka tunnilla"
 
 #: ../src/lang.py:218
-#,  python-format
+#, python-format
 msgid "On every weekday: %(weekday)s at every minute"
 msgstr "Joka viikonpäivä: %(weekday)s joka minuutilla"
 
@@ -697,8 +715,9 @@ msgstr "Joka viikonpäivä: %(weekday)s joka tunnin minuutilla %(minute)s"
 msgid ""
 "On every weekday: %(weekday)s at every minute between %(time_from)s and %"
 "(time_to)s"
-msgstr "Joka viikonpäivä: %(weekday)s joka minuutilla välillä "
-"%(time_from)s - %(time_to)s"
+msgstr ""
+"Joka viikonpäivä: %(weekday)s joka minuutilla välillä %(time_from)s - %"
+"(time_to)s"
 
 #: ../src/lang.py:224
 #, python-format
@@ -711,8 +730,8 @@ msgid ""
 "On day %(monthday)s of every month and every weekday: %(weekday)s at every "
 "full hour"
 msgstr ""
-"Joka kuun %(monthday)s päivä joka kuussa ja joka viikonpäivä: joka "
-"%(weekday)s kerran tunnissa"
+"Joka kuun %(monthday)s päivä joka kuussa ja joka viikonpäivä: joka %(weekday)"
+"s kerran tunnissa"
 
 #: ../src/lang.py:231
 #, python-format
@@ -720,8 +739,8 @@ msgid ""
 "On day %(monthday)s of every month and every weekday: %(weekday)s at every "
 "minute"
 msgstr ""
-"Joka kuun %(monthday)s. päivä joka kuussa ja joka viikonpäivä: joka "
-"%(weekday)s joka minuutti"
+"Joka kuun %(monthday)s. päivä joka kuussa ja joka viikonpäivä: joka %"
+"(weekday)s joka minuutti"
 
 #: ../src/lang.py:233
 #, python-format
@@ -729,8 +748,8 @@ msgid ""
 "On day %(monthday)s of every month and every weekday: %(weekday)s at minute %"
 "(minute)s of every hour"
 msgstr ""
-"Joka kuun %(monthday)s. päivä joka kuussa ja joka viikonpäivä: joka "
-"%(weekday)s joka tunnin %(minute)s minuutilla"
+"Joka kuun %(monthday)s. päivä joka kuussa ja joka viikonpäivä: joka %"
+"(weekday)s joka tunnin %(minute)s minuutilla"
 
 #: ../src/lang.py:235
 #, python-format
@@ -738,16 +757,16 @@ msgid ""
 "On day %(monthday)s of every month and every weekday: %(weekday)s at every "
 "minute between %(time_from)s and %(time_to)s"
 msgstr ""
-"Joka kuun %(monthday)s. päivä joka kuussa ja joka viikonpäivä: joka "
-"%(weekday)s joka minuutilla välillä %(time_from)s - %(time_to)s"
+"Joka kuun %(monthday)s. päivä joka kuussa ja joka viikonpäivä: joka %"
+"(weekday)s joka minuutilla välillä %(time_from)s - %(time_to)s"
 
 #: ../src/lang.py:237
 #, python-format
 msgid ""
 "On day %(monthday)s of every month and every weekday: %(weekday)s at %(time)s"
 msgstr ""
-"Joka kuun %(monthday)s. päivä joka kuussa ja joka viikonpäivä: "
-"joka %(weekday)s kello %(time)s"
+"Joka kuun %(monthday)s. päivä joka kuussa ja joka viikonpäivä: joka %"
+"(weekday)s kello %(time)s"
 
 #: ../src/lang.py:242
 #, python-format
@@ -764,7 +783,8 @@ msgstr "Joka viikonpäivä: %(weekday)s kuussa %(month)s kerran minuutissa"
 msgid ""
 "On every weekday: %(weekday)s in %(month)s at minute %(minute)s of every hour"
 msgstr ""
-"Joka viikonpäivä: %(weekday)s kuussa %(month)s joka tunnin %(minute)s minuutilla"
+"Joka viikonpäivä: %(weekday)s kuussa %(month)s joka tunnin %(minute)s "
+"minuutilla"
 
 #: ../src/lang.py:248
 #, python-format
@@ -772,8 +792,8 @@ msgid ""
 "On every weekday: %(weekday)s in %(month)s at every minute between %"
 "(time_from)s and %(time_to)s"
 msgstr ""
-"Joka viikonpäivä: %(weekday)s kuussa %(month)s joka minuutilla välillä "
-"%(time_from)s - %(time_to)s"
+"Joka viikonpäivä: %(weekday)s kuussa %(month)s joka minuutilla välillä %"
+"(time_from)s - %(time_to)s"
 
 #: ../src/lang.py:250
 #, python-format
@@ -786,8 +806,8 @@ msgid ""
 "On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
 "every full hour"
 msgstr ""
-"Joka viikonpäivä: %(weekday)s kuussa %(month)s ja joka vuosi %(date)s "
-"kerran tunnissa"
+"Joka viikonpäivä: %(weekday)s kuussa %(month)s ja joka vuosi %(date)s kerran "
+"tunnissa"
 
 #: ../src/lang.py:257
 #, python-format
@@ -795,8 +815,8 @@ msgid ""
 "On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
 "every minute"
 msgstr ""
-"Joka viikonpäivä: %(weekday)s kuussa %(month)s ja joka vuosi %(date)s "
-"kerran minuutissa"
+"Joka viikonpäivä: %(weekday)s kuussa %(month)s ja joka vuosi %(date)s kerran "
+"minuutissa"
 
 #: ../src/lang.py:259
 #, python-format
@@ -804,8 +824,8 @@ msgid ""
 "On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
 "minute %(minute)s of every hour"
 msgstr ""
-"Joka viikonpäivä: %(weekday)s kuussa %(month)s ja joka vuosi %(date)s "
-"joka tunnin %(minute)s minuutilla"
+"Joka viikonpäivä: %(weekday)s kuussa %(month)s ja joka vuosi %(date)s joka "
+"tunnin %(minute)s minuutilla"
 
 #: ../src/lang.py:261
 #, python-format
@@ -813,8 +833,8 @@ msgid ""
 "On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
 "every minute between %(time_from)s and %(time_to)s"
 msgstr ""
-"Joka viikonpäivä: %(weekday)s kuussa %(month)s ja joka vuosi %(date)s "
-"joka minuutilla välillä %(time_from)s - %(time_to)s"
+"Joka viikonpäivä: %(weekday)s kuussa %(month)s ja joka vuosi %(date)s joka "
+"minuutilla välillä %(time_from)s - %(time_to)s"
 
 #: ../src/lang.py:263
 #, python-format
@@ -822,8 +842,8 @@ msgid ""
 "On every weekday: %(weekday)s in %(month)s and on %(date)s every year at %"
 "(time)s"
 msgstr ""
-"Joka  viikonpäivä: %(weekday)s kuussa %(month)s ja joka vuosi %(date)s "
-"kello %(time)s"
+"Joka  viikonpäivä: %(weekday)s kuussa %(month)s ja joka vuosi %(date)s kello "
+"%(time)s"
 
 #: ../src/lang.py:271
 msgid "every minute"
@@ -903,11 +923,7 @@ msgstr "Muokataan käyttäjää: %s"
 msgid "ERROR: Could not load icon"
 msgstr "VIRHE: kuvaketta ei voitu ladata"
 
-#: ../src/mainWindow.py:389
-msgid "ERROR: Coul not load glade file"
-msgstr "VIRHE: Glade-tiedostoa ei voitu ladata"
-
-#: ../src/mainWindow.py:395
+#: ../src/mainWindow.py:389 ../src/mainWindow.py:395
 msgid "ERROR: Could not load glade file"
 msgstr "VIRHE: Glade-tiedostoa ei voitu ladata"
 
@@ -1032,8 +1048,8 @@ msgid ""
 "24 hours."
 msgstr ""
 "Joko tunti- tai minuuttikenttään syötettiin kirjain tai numero, jonka arvo "
-"ei ole sallittu. Muistathan että tunnissa on vain 60 minuuttia ja päivässä 24 "
-"tuntia."
+"ei ole sallittu. Muistathan että tunnissa on vain 60 minuuttia ja päivässä "
+"24 tuntia."
 
 #: ../src/atEditor.py:554
 #, python-format
@@ -1072,3 +1088,5 @@ msgstr "Käytä mallia"
 msgid "One-time"
 msgstr "Kerran"
 
+#~ msgid "ERROR: Coul not load glade file"
+#~ msgstr "VIRHE: Glade-tiedostoa ei voitu ladata"
