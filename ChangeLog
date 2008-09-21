@@ -1,3 +1,7 @@
+2008-09-21  Gaute Hope  <eg@gaute.vetsj.com>
+
+	* src/crontabEditor.py: Applied patch from bug 534706, thanks to Fabricio Godoy
+
 2008-03-17  Gaute Hope  <eg@gaute.vetsj.com>
 
 	* src/at.py, src/crontab.py: Setting the right permission on datafiles when editing as root.
