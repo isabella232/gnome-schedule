@@ -21,7 +21,6 @@
 import gtk
 import gtk.glade
 import gobject
-import thread
 
 # TODO: gnome specific
 import gnome
