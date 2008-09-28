@@ -21,6 +21,7 @@
 import gtk
 import gtk.glade
 import gobject
+import thread
 
 # TODO: gnome specific
 import gnome
@@ -30,6 +31,7 @@ from gnome import url_show
 import os
 import pwd
 import tempfile
+import stat
 
 #custom modules
 import config
@@ -260,6 +262,9 @@ class main:
 
 		self.timeout_handler_id = gobject.timeout_add(9000, self.update_schedule)
 
+		# temporary files to be deleted
+		self.temp_files = []
+		
 		if inapplet == False:
 			gtk.main()
 		
@@ -647,6 +652,8 @@ class main:
  	def open_url (self, *args):
  		url_show("http://gnome-schedule.sourceforge.net")
  	
+
+ 	
  	def on_run_button_clicked (self, *args):
 		dialog = gtk.MessageDialog(self.widget, gtk.DIALOG_MODAL|gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_QUESTION, gtk.BUTTONS_NONE, _("Are you sure you want to run this task now?\n\nThis is used to preview the task and initiates a one-time run, this does not affect the normal scheduled run times."))
 		dialog.add_buttons (gtk.STOCK_EXECUTE, gtk.RESPONSE_YES, gtk.STOCK_CANCEL, gtk.RESPONSE_CANCEL)
@@ -688,37 +695,29 @@ class main:
 			
 			commands = self.treemodel.get_value(iter, 3)
 			linenumber = self.treemodel.get_value(iter, 4)
-			script = "#!" + self.user_shell + "\n"
+			
+			
 			if self.schedule.get_type () == "at":
-				if self.root == 1:
-					if self.user != "root":
-						script = script + "su " + self.user + " -c \"source " + path + "\"\n"
-						os.chown(path, self.uid, self.gid)
-					else:
-						script = script + "source " + path + "\n"
-				else:
-					script = script + "source " + path + "\n"		
-				execute = config.getAtbin () + " -c " + str (linenumber)
-				tmp.write (os.popen (execute).read () + "\n")
-				
+				script = os.popen (config.getAtbin () + " -c " + str (linenumber)).read ()
 			elif self.schedule.get_type () == "crontab":
-				if self.root == 1:
-					if self.user != "root":
-						script = script + "su " + self.user + " -c \"source " + path + "\"\n"
-						os.chown(path, self.uid, self.gid)
-					else:
-						script = script + "source " + path + "\n"
-				else:
-					script = script + "source " + path + "\n"
-					
-				tmp.write (self.schedule.parse (commands)[1][5])
+				script = self.schedule.parse (commands)[1][5]
 			
-			tmp.close ()
 			script = script + "\necho " + _("Press ENTER to continue and close this window.") + "\n"
-			script = script + "read\nrm " + path + "\nexit\n"
+			script = script + "read\nexit\n"
+			tmp.write (script)
 			
-			gnome.execute_terminal_shell (self.user_home_dir, script)
-
+			
+			execute = self.user_shell + " " + path
+			if self.root == 1:
+				if self.user != "root":
+					execute = "su " + self.user + " -c \"" + self.user_shell + " " + path
+					os.chown (path, self.uid, self.gid)
+			os.chmod (path, stat.S_IEXEC | stat.S_IREAD)
+			
+			tmp.flush ()
+			gnome.execute_terminal_shell_fds (self.user_home_dir, execute, True)
+			self.temp_files.append ((tmp, path))
+			
 				
 		except Exception, ex:
 			print ex
@@ -775,7 +774,12 @@ class main:
 
  	#quit program
  	def __quit__(self, *args):
- 		#save state
+ 		for t in self.temp_files:
+ 			f, p = t
+ 			f.close ()
+ 			os.remove (p)
+ 			
+  		# save state
  		x,y = self.widget.get_position ()
  		h, w = self.widget.get_size ()
  		self.backend.set_window_state(x, y, h, w)
