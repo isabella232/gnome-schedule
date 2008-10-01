@@ -701,21 +701,25 @@ class main:
 			elif self.schedule.get_type () == "crontab":
 				script = self.schedule.parse (commands)[1][5]
 			
-			script = script + "\necho " + _("Press ENTER to continue and close this window.") + "\n"
+			# left untranslated to protect against any 'translation attacks'..
+			script = script + "\necho " + "Press ENTER to continue and close this window." + "\n"
 			script = script + "read\nexit\n"
 			tmp.write (script)
+			tmp.flush ()
+			self.temp_files.append ((tmp, path))
 			
 			
 			execute = self.user_shell + " " + path
+			
 			if self.root == 1:
 				if self.user != "root":
 					execute = "su " + self.user + " -c \"" + self.user_shell + " " + path
 					os.chown (path, self.uid, self.gid)
 			os.chmod (path, stat.S_IEXEC | stat.S_IREAD)
 			
-			tmp.flush ()
-			gnome.execute_terminal_shell_fds (self.user_home_dir, execute, True)
-			self.temp_files.append ((tmp, path))
+			
+			gnome.execute_terminal_shell (self.user_home_dir, execute)
+			
 			
 				
 		except Exception, ex:
