@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-24 00:45+0200\n"
-"PO-Revision-Date: 2008-06-24 00:45+0100\n"
+"POT-Creation-Date: 2008-10-01 08:19+0200\n"
+"PO-Revision-Date: 2008-10-01 08:19+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "MIME-Version: 1.0\n"
@@ -215,7 +215,7 @@ msgid "This is an invalid record! The problem could be in the %(field)s field. R
 msgstr "Detta är en ogiltig post! Problemet kan vara i fältet %(field)s. Orsak: %(reason)s"
 
 #: ../src/crontabEditor.py:321
-msgid "Your command contains one or more of the character %, this is special for cron and cannot be used with Gnome-schedule because of the format it uses to store extra information on the crontab line. Please use the | redirector character to acheieve the same functionality. Refer to the crontab manual for more information about the % character. If you don not want to use it for redirection it must be properly escaped with the \\ letter."
+msgid "Your command contains one or more of the character %, this is special for cron and cannot be used with Gnome-schedule because of the format it uses to store extra information on the crontab line. Please use the | redirector character to achieve the same functionality. Refer to the crontab manual for more information about the % character. If you don not want to use it for redirection it must be properly escaped with the \\ letter."
 msgstr "Ditt kommando innehåller ett eller flera %-tecken. Det används specifikt för cron och kan inte användas i Gnome-schemaläggaren därför att formatet används för att lagra extra information om crontab-raden. Använd omdirigeringstecknet | för att uppnå samma funktionalitet. Referera till manualsidan för crontab för mer information om %-tecknet. Om du inte vill använda det för omdirigering så måste det föregås med korrekta \\-tecken."
 
 #: ../src/crontabEditor.py:489
@@ -229,13 +229,13 @@ msgstr ""
 "Återkommande uppgifter kommer att köras från hemkatalogen."
 
 #: ../src/crontabEditor.py:490
-#: ../src/mainWindow.py:663
+#: ../src/mainWindow.py:669
 #: ../src/atEditor.py:575
 msgid "_Don't show again"
 msgstr "Visa _inte igen"
 
 #: ../src/crontabEditor.py:491
-#: ../src/mainWindow.py:664
+#: ../src/mainWindow.py:670
 #: ../src/atEditor.py:576
 msgid "Warning: Working directory of executed tasks"
 msgstr "Varning: Arbetskatalog för körda uppgifter"
@@ -539,7 +539,7 @@ msgid "Task:"
 msgstr "Uppgift:"
 
 #: ../src/gnome-schedule.glade.h:54
-#: ../src/mainWindow.py:184
+#: ../src/mainWindow.py:185
 msgid "Templates"
 msgstr "Mallar"
 
@@ -847,76 +847,76 @@ msgstr "veckodag: %s"
 msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 msgstr "Vid %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 
-#: ../src/mainWindow.py:111
+#: ../src/mainWindow.py:112
 msgid "Recurrent task"
 msgstr "Återkommande uppgift"
 
-#: ../src/mainWindow.py:122
+#: ../src/mainWindow.py:123
 msgid "One-time task"
 msgstr "Engångsuppgift"
 
-#: ../src/mainWindow.py:133
+#: ../src/mainWindow.py:134
 msgid "From template"
 msgstr "Från mall"
 
-#: ../src/mainWindow.py:152
+#: ../src/mainWindow.py:153
 msgid "Add a new task"
 msgstr "Lägg till en uppgift"
 
-#: ../src/mainWindow.py:285
-#: ../src/mainWindow.py:415
+#: ../src/mainWindow.py:289
+#: ../src/mainWindow.py:419
 #, python-format
 msgid "Editing user: %s"
 msgstr "Redigerar användare: %s"
 
-#: ../src/mainWindow.py:332
-#: ../src/mainWindow.py:343
-#: ../src/mainWindow.py:354
-#: ../src/mainWindow.py:369
-#: ../src/mainWindow.py:380
+#: ../src/mainWindow.py:336
+#: ../src/mainWindow.py:347
+#: ../src/mainWindow.py:358
+#: ../src/mainWindow.py:373
+#: ../src/mainWindow.py:384
 #: ../src/scheduleapplet.py:122
 msgid "ERROR: Could not load icon"
 msgstr "FEL: Kunde inte läsa in ikon"
 
-#: ../src/mainWindow.py:389
-#: ../src/mainWindow.py:395
+#: ../src/mainWindow.py:393
+#: ../src/mainWindow.py:399
 msgid "ERROR: Could not load glade file"
 msgstr "FEL: Kunde inte läsa in glade-fil"
 
-#: ../src/mainWindow.py:450
+#: ../src/mainWindow.py:454
 #: ../src/template_chooser.py:69
 #: ../src/template_manager.py:72
 msgid "Task"
 msgstr "Uppgift"
 
-#: ../src/mainWindow.py:463
-#: ../src/mainWindow.py:489
+#: ../src/mainWindow.py:467
+#: ../src/mainWindow.py:493
 #: ../src/template_chooser.py:78
 #: ../src/template_manager.py:81
 msgid "Description"
 msgstr "Beskrivning"
 
-#: ../src/mainWindow.py:467
-#: ../src/mainWindow.py:480
+#: ../src/mainWindow.py:471
+#: ../src/mainWindow.py:484
 msgid "Date and Time"
 msgstr "Datum och tid"
 
-#: ../src/mainWindow.py:471
-#: ../src/mainWindow.py:484
+#: ../src/mainWindow.py:475
+#: ../src/mainWindow.py:488
 msgid "Command preview"
 msgstr "Förhandsvisning av kommando"
 
 #. print ex
-#: ../src/mainWindow.py:543
-#: ../src/mainWindow.py:606
+#: ../src/mainWindow.py:547
+#: ../src/mainWindow.py:610
 msgid "Please select a task"
 msgstr "Välj en uppgift"
 
-#: ../src/mainWindow.py:550
+#: ../src/mainWindow.py:554
 msgid "Do you want to delete this task?"
 msgstr "Vill du ta bort denna uppgift?"
 
-#: ../src/mainWindow.py:651
+#: ../src/mainWindow.py:657
 msgid ""
 "Are you sure you want to run this task now?\n"
 "\n"
@@ -926,11 +926,11 @@ msgstr ""
 "\n"
 "Den här används för att förhandsgranska uppgiften och initierar en första körning, den påverkar inte de normala schemalagda körtiderna."
 
-#: ../src/mainWindow.py:653
+#: ../src/mainWindow.py:659
 msgid "Are you sure you want to run this task?"
 msgstr "Är du säker på att du vill köra denna uppgift?"
 
-#: ../src/mainWindow.py:662
+#: ../src/mainWindow.py:668
 msgid ""
 "Note about working directory of executed tasks:\n"
 "\n"
@@ -940,28 +940,28 @@ msgstr ""
 "\n"
 "Återkommande uppgifter kommer att köras från hemkatalogen, engångsuppgifter från katalogen där Gnome-schemaläggaren kördes från när uppgiften skapades (vanligtvis hemkatalogen)."
 
-#: ../src/mainWindow.py:717
+#: ../src/mainWindow.py:704
 msgid "Press ENTER to continue and close this window."
 msgstr "Tryck på ENTER för att fortsätta och stäng detta fönster."
 
-#: ../src/mainWindow.py:725
+#: ../src/mainWindow.py:723
 msgid "Please select a task!"
 msgstr "Välj en uppgift!"
 
-#: ../src/mainWindow.py:733
+#: ../src/mainWindow.py:731
 msgid "About Gnome Schedule"
 msgstr "Om Gnome-schemaläggaren"
 
-#: ../src/mainWindow.py:734
+#: ../src/mainWindow.py:732
 msgid "Gnome Schedule"
 msgstr "Gnome-schemaläggaren"
 
-#: ../src/mainWindow.py:736
+#: ../src/mainWindow.py:734
 #, python-format
 msgid "Copyright (c) %(year)s %(name)s."
 msgstr "Copyright © %(year)s %(name)s."
 
-#: ../src/mainWindow.py:749
+#: ../src/mainWindow.py:747
 msgid "translator-credits"
 msgstr ""
 "Daniel Nylander\n"
@@ -970,7 +970,7 @@ msgstr ""
 "Skicka synpunkter på översättningen till\n"
 "tp-sv@listor.tp-sv.se"
 
-#: ../src/mainWindow.py:770
+#: ../src/mainWindow.py:768
 msgid "Could not display help"
 msgstr "Kunde inte visa hjälp"
 
