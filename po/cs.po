@@ -9,9 +9,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-10 02:29+0200\n"
-"PO-Revision-Date: 2008-07-10 02:27+0100\n"
-"Last-Translator: Petr Kovar <pknbe@volny.cz>\n"
+"POT-Creation-Date: 2008-10-12 17:33+0200\n"
+"PO-Revision-Date: 2008-10-08 21:12+0100\n"
+"Last-Translator: Lucas Lommer <llommer@svn.gnome.org>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,29 +22,28 @@ msgid "Manage your system tasks"
 msgstr "Spravovat vaše systémové úlohy"
 
 #: ../desktop/gnome-schedule.desktop.in.in.h:2
-#, fuzzy
 msgid "Scheduled tasks"
-msgstr "Přidat plánovanou úlohu"
+msgstr "Naplánované úlohy"
 
 #: ../servers/GNOME_GnomeSchedule.server.in.in.h:1
-#, fuzzy
 msgid "Configures your scheduled tasks"
 msgstr "Nastavit plánované úlohy"
 
 #: ../servers/GNOME_GnomeSchedule.server.in.in.h:2
-#, fuzzy
 msgid "Gnome schedule"
 msgstr "Gnome Schedule"
 
 #: ../servers/GNOME_GnomeSchedule.server.in.in.h:3
 msgid "System tools"
-msgstr ""
+msgstr "Systémové nástroje"
 
 #: ../src/at.py:77 ../src/crontab.py:57
 msgid ""
 "Failed to create data dir! Make sure ~/.gnome and ~/.gnome/gnome-schedule "
 "are writable."
 msgstr ""
+"Nemohu vytvořit adresář pro data! Ujistěte se, že je do ~/.gnome a ~/.gnome/"
+"gnome-schedule povolen zápis."
 
 #: ../src/at.py:110 ../src/crontab.py:157
 #, python-format
@@ -52,6 +51,8 @@ msgid ""
 "Failed to create data dir: %s. Make sure ~/.gnome and ~/.gnome/gnome-"
 "schedule are writable."
 msgstr ""
+"Nelze vytvořit adresář pro data: %s. Ujistěte se, že je do ~/.gnome a ~/."
+"gnome/gnome-schedule povolen zápis."
 
 #: ../src/at.py:481
 #, python-format
@@ -70,7 +71,7 @@ msgstr "Jednou"
 
 #: ../src/at.py:502
 msgid "Warning: a line in atq's output didn't parse"
-msgstr ""
+msgstr "Varování: Nelze parsovat řádek ve výstupu atq"
 
 #: ../src/crontab.py:82
 msgid "Minute"
@@ -97,9 +98,9 @@ msgid "Basic"
 msgstr "Základní"
 
 #: ../src/crontab.py:187
-#, fuzzy, python-format
+#, python-format
 msgid "This is not a valid special record: %(record)s"
-msgstr "Toto není platné. Důvod: %s"
+msgstr "Toto není platný zvláštní záznam: %(record)s"
 
 #: ../src/crontab.py:215 ../src/crontab.py:220 ../src/crontab.py:224
 #, python-format
@@ -123,7 +124,7 @@ msgstr "Opakovaná"
 
 #: ../src/crontab.py:437 ../src/crontabEditor.py:74 ../src/lang.py:149
 msgid "At reboot"
-msgstr ""
+msgstr "Při restartu"
 
 #: ../src/crontab.py:451
 msgid "minute"
@@ -149,6 +150,7 @@ msgstr "den v týdnu"
 msgid ""
 "Failed to parse the Day of Month field, possibly due to a bug in crontab."
 msgstr ""
+"Chyba při parsování pole dne v měsíci, pravděpodobně kvůli chybě v crontabu."
 
 #: ../src/crontabEditor.py:69 ../src/crontabEditorHelper.py:87
 #: ../src/gnome-schedule.glade.h:31
@@ -185,9 +187,8 @@ msgstr "Upravit šablonu"
 
 #. edit template
 #: ../src/crontabEditor.py:231 ../src/atEditor.py:176
-#, fuzzy
 msgid "New template"
-msgstr "_Přidat úlohu"
+msgstr "Nová šablona"
 
 #: ../src/crontabEditor.py:257 ../src/atEditor.py:216
 msgid "Edit a Scheduled Task"
@@ -195,22 +196,29 @@ msgstr "Upravit plánovanou úlohu"
 
 #: ../src/crontabEditor.py:316 ../src/crontabEditor.py:611
 #: ../src/crontabEditor.py:651
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "This is an invalid record! The problem could be in the %(field)s field. "
 "Reason: %(reason)s"
 msgstr ""
 "Toto není platný záznam! Problém je možná v poli %(field)s. Důvod: %(reason)s"
 
+# Should be "If you do not want to"
 #: ../src/crontabEditor.py:321
 msgid ""
 "Your command contains one or more of the character %, this is special for "
 "cron and cannot be used with Gnome-schedule because of the format it uses to "
 "store extra information on the crontab line. Please use the | redirector "
-"character to acheieve the same functionality. Refer to the crontab manual "
-"for more information about the % character. If you don not want to use it "
-"for redirection it must be properly escaped with the \\ letter."
+"character to achieve the same functionality. Refer to the crontab manual for "
+"more information about the % character. If you don not want to use it for "
+"redirection it must be properly escaped with the \\ letter."
 msgstr ""
+"Váš příkaz obsahuje jeden nebo více výskytů znaku %, který má specifickou "
+"funkci v cronu a nelze jej s Gnome Schedule použít z důvodu formátu ukládání "
+"zvláštních informací do řádky v cronu. Namísto něj použijte prosím znak |. "
+"Více informací o znaku % naleznete na manuálové stránce příkazu crontab. "
+"Pokud jej nechcete použít pro přesměrování, musí být správne escapován "
+"znakem \\."
 
 #: ../src/crontabEditor.py:489
 msgid ""
@@ -218,42 +226,41 @@ msgid ""
 "\n"
 "Recurrent tasks will be run from the home directory."
 msgstr ""
+"Pornámka k pracovním adresářům spouštěných úloh:\n"
+"\n"
+"Opakované úlohy budou spouštěny z domovského adresáře."
 
-#: ../src/crontabEditor.py:490 ../src/mainWindow.py:663 ../src/atEditor.py:575
+#: ../src/crontabEditor.py:490 ../src/mainWindow.py:669 ../src/atEditor.py:575
 msgid "_Don't show again"
-msgstr ""
+msgstr "_Příště již nezobrazovat"
 
-#: ../src/crontabEditor.py:491 ../src/mainWindow.py:664 ../src/atEditor.py:576
+#: ../src/crontabEditor.py:491 ../src/mainWindow.py:670 ../src/atEditor.py:576
 msgid "Warning: Working directory of executed tasks"
-msgstr ""
+msgstr "Varování: Pracovní adresář spuštěných úloh"
 
 #: ../src/crontabEditorHelper.py:111
 msgid "Every weekday"
 msgstr "Každý týden v týdnu"
 
 #: ../src/crontabEditorHelper.py:163
-#, fuzzy
 msgid "Edit minute"
-msgstr "minuta"
+msgstr "Upravit minutu"
 
 #: ../src/crontabEditorHelper.py:165
-#, fuzzy
 msgid "Edit hour"
-msgstr "Každou hodinu"
+msgstr "Upravit hodinu"
 
 #: ../src/crontabEditorHelper.py:167
 msgid "Edit day"
-msgstr ""
+msgstr "Upravit den"
 
 #: ../src/crontabEditorHelper.py:169
-#, fuzzy
 msgid "Edit month"
-msgstr "měsíc"
+msgstr "Upravit měsíc"
 
 #: ../src/crontabEditorHelper.py:171
-#, fuzzy
 msgid "Edit weekday"
-msgstr "den v týdnu"
+msgstr "Upravit den v týdnu"
 
 #: ../src/crontabEditorHelper.py:185
 #, python-format
@@ -280,9 +287,8 @@ msgstr "Hodina:"
 
 #. day
 #: ../src/crontabEditorHelper.py:239
-#, fuzzy
 msgid "On a day"
-msgstr "V přesný den"
+msgstr "Ve dni"
 
 #: ../src/crontabEditorHelper.py:240 ../src/gnome-schedule.glade.h:23
 msgid "Day:"
@@ -290,9 +296,8 @@ msgstr "Den:"
 
 #. month
 #: ../src/crontabEditorHelper.py:243
-#, fuzzy
 msgid "In a month"
-msgstr "V přesný měsíc"
+msgstr "V měsíci"
 
 #: ../src/crontabEditorHelper.py:244 ../src/gnome-schedule.glade.h:45
 msgid "Month:"
@@ -300,9 +305,8 @@ msgstr "Měsíc:"
 
 #. weekday
 #: ../src/crontabEditorHelper.py:247
-#, fuzzy
 msgid "On a weekday"
-msgstr "den v týdnu"
+msgstr "Ve dni v týdnu"
 
 #: ../src/crontabEditorHelper.py:248 ../src/gnome-schedule.glade.h:58
 msgid "Weekday:"
@@ -350,47 +354,43 @@ msgstr "_Spravovat úlohy"
 
 #: ../src/gnome-schedule.glade.h:1
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: ../src/gnome-schedule.glade.h:2
 msgid "0"
-msgstr ""
+msgstr "0"
 
 #: ../src/gnome-schedule.glade.h:3
 msgid ":"
-msgstr ""
+msgstr ":"
 
 #: ../src/gnome-schedule.glade.h:4
 msgid "<b>Choose the user whose tasks you want to modify</b>"
 msgstr "<b>Zvolte uživatele, jehož úlohy chcete upravit</b>"
 
 #: ../src/gnome-schedule.glade.h:5
-#, fuzzy
 msgid "<b>Select the type of the scheduled task:</b>"
-msgstr "<b>Zvolte typ plánované úlohy</b>"
+msgstr "<b>Zvolte typ plánované úlohy:</b>"
 
 #: ../src/gnome-schedule.glade.h:6
-#, fuzzy
 msgid "<big>Preview</big>"
-msgstr "<b>Náhled</b>"
+msgstr "<big>Náhled</big>"
 
 #: ../src/gnome-schedule.glade.h:7
 msgid "<big>Time &amp; Date</big>"
-msgstr ""
+msgstr "<big>Čas a datum</big>"
 
 #: ../src/gnome-schedule.glade.h:8
-#, fuzzy
 msgid "About Gnome-schedule"
-msgstr "Gnome Schedule"
+msgstr "O Gnome Schedule"
 
 #: ../src/gnome-schedule.glade.h:9
 msgid "Add a Scheduled Task"
 msgstr "Přidat plánovanou úlohu"
 
 #: ../src/gnome-schedule.glade.h:10
-#, fuzzy
 msgid "Add as template"
-msgstr "_Přidat úlohu"
+msgstr "Přidat jako šablonu"
 
 #: ../src/gnome-schedule.glade.h:11
 msgid "Advanced"
@@ -402,11 +402,11 @@ msgstr "Změnit uživatele"
 
 #: ../src/gnome-schedule.glade.h:15
 msgid "Change edit mode"
-msgstr ""
+msgstr "Změnit mód úprav"
 
 #: ../src/gnome-schedule.glade.h:16
 msgid "Choose template"
-msgstr ""
+msgstr "Vybrat šablonu"
 
 #: ../src/gnome-schedule.glade.h:17
 msgid "Choose the user whose tasks you want to modify"
@@ -414,60 +414,52 @@ msgstr "Zvolte uživatele, jehož úlohy chcete upravit"
 
 #: ../src/gnome-schedule.glade.h:18 ../src/template.py:192
 #: ../src/template.py:202
-#, fuzzy
 msgid "Command:"
-msgstr "_Příkaz:"
+msgstr "Příkaz:"
 
 #: ../src/gnome-schedule.glade.h:19
 msgid "Configure Scheduled Tasks"
 msgstr "Nastavit plánované úlohy"
 
 #: ../src/gnome-schedule.glade.h:20
-#, fuzzy
 msgid "Create a new task from the selected template"
-msgstr "Odstranit zvolenou šablonu"
+msgstr "Vytvořit novou úlohu ze zvolené šablony"
 
 #: ../src/gnome-schedule.glade.h:21
-#, fuzzy
 msgid "Create a new template."
-msgstr "_Přidat úlohu"
+msgstr "Vytvořit novou šablonu."
 
 #: ../src/gnome-schedule.glade.h:22
-#, fuzzy
 msgid "Date:"
-msgstr "_Datum:"
+msgstr "Datum:"
 
 #: ../src/gnome-schedule.glade.h:24
 msgid "Delete a scheduled task"
 msgstr "Odstranit plánovanou úlohu"
 
 #: ../src/gnome-schedule.glade.h:25
-#, fuzzy
 msgid "Delete the selected template"
 msgstr "Odstranit zvolenou šablonu"
 
 #: ../src/gnome-schedule.glade.h:26
-#, fuzzy
 msgid "Description:"
-msgstr "_Popis:"
+msgstr "Popis:"
 
 #: ../src/gnome-schedule.glade.h:27
-#, fuzzy
 msgid "Edit a periodical task"
-msgstr "Upravit plánovanou úlohu"
+msgstr "Upravit opakující se úlohu"
 
 #: ../src/gnome-schedule.glade.h:28
 msgid "Edit a scheduled task"
 msgstr "Upravit plánovanou úlohu"
 
 #: ../src/gnome-schedule.glade.h:29
-#, fuzzy
 msgid "Edit the selected template"
-msgstr "Odstranit zvolenou šablonu"
+msgstr "Upravit zvolenou šablonu"
 
 #: ../src/gnome-schedule.glade.h:32
 msgid "Execute at:"
-msgstr ""
+msgstr "Spustit v:"
 
 #: ../src/gnome-schedule.glade.h:33
 msgid "Execution at a specific minute, hour, day, weekday or month."
@@ -502,46 +494,42 @@ msgid "In a range"
 msgstr "V rozsahu"
 
 #: ../src/gnome-schedule.glade.h:42
-#, fuzzy
 msgid "Manage templates"
-msgstr "_Spravovat úlohy"
+msgstr "Spravovat šablony"
 
 #: ../src/gnome-schedule.glade.h:46
 msgid "Other"
 msgstr "Jiné"
 
 #: ../src/gnome-schedule.glade.h:47
-#, fuzzy
 msgid "Run selected task"
-msgstr "Zvolte prosím úlohu"
+msgstr "Spustit zvolenou úlohu"
 
 #: ../src/gnome-schedule.glade.h:48
 msgid "Run task"
-msgstr ""
+msgstr "Spustit úlohu"
 
 #: ../src/gnome-schedule.glade.h:49
 msgid "Scheduled and active tasks"
 msgstr "Plánované a aktiní úlohy"
 
 #: ../src/gnome-schedule.glade.h:50
-#, fuzzy
 msgid "See \"man 5 crontab\" for information about the crontab format."
-msgstr "Pro informace o formátu crontab viz \"man 5 crontab\"."
+msgstr "Více informací o formátu crontab naleznete v \"man 5 crontab\"."
 
 #: ../src/gnome-schedule.glade.h:51
 msgid "Show help"
 msgstr "Zobrazit nápovědu"
 
 #: ../src/gnome-schedule.glade.h:52
-#, fuzzy
 msgid "Task description:"
-msgstr "_Popis:"
+msgstr "Popis úlohy:"
 
 #: ../src/gnome-schedule.glade.h:53
 msgid "Task:"
 msgstr "Úloha:"
 
-#: ../src/gnome-schedule.glade.h:54 ../src/mainWindow.py:184
+#: ../src/gnome-schedule.glade.h:54 ../src/mainWindow.py:185
 msgid "Templates"
 msgstr "Šablony"
 
@@ -550,9 +538,8 @@ msgid "Time expression help"
 msgstr "Nápověda o výrazech času"
 
 #: ../src/gnome-schedule.glade.h:56
-#, fuzzy
 msgid "Time:"
-msgstr "Nadpis"
+msgstr "Čas:"
 
 #: ../src/gnome-schedule.glade.h:57
 msgid "To:"
@@ -560,7 +547,7 @@ msgstr "Do:"
 
 #: ../src/gnome-schedule.glade.h:59
 msgid "_No output (>/dev/null 2>&1)"
-msgstr ""
+msgstr "Žád_ný výstup (>/dev/null 2>&1)"
 
 #: ../src/gnome-schedule.glade.h:60
 msgid "_User:"
@@ -568,7 +555,7 @@ msgstr "_Uživatel:"
 
 #: ../src/gnome-schedule.glade.h:61
 msgid "ls -l"
-msgstr ""
+msgstr "ls -l"
 
 #: ../src/gnome-schedule.py:66 ../src/scheduleapplet.py:67
 msgid ""
@@ -576,6 +563,9 @@ msgid ""
 "or set your PYTHONPATH correctly.\n"
 "try: export PYTHONPATH= "
 msgstr ""
+"Musíte nainstalovat pyGTK nebo GTKv2,\n"
+"nebo správně nastavit proměnnou PYTHONPATH.\n"
+"Zkuste: export PYTHONPATH= "
 
 #. Translators: Date format for expressions like 'January 21'. %B is month, %d is day number.
 #. Run the command 'man strftime' to read more about these and other available specifiers.
@@ -701,140 +691,152 @@ msgid "Every year on %(date)s at %(time)s"
 msgstr "Každý rok %(date)s v %(time)s"
 
 #: ../src/lang.py:216
-#, fuzzy, python-format
+#, python-format
 msgid "On every weekday: %(weekday)s at every full hour"
-msgstr "Každý %(weekday)s každou celou hodinu"
+msgstr "Každý den v týdnu: %(weekday)s v každou celou hodinu"
 
 #: ../src/lang.py:218
-#, fuzzy, python-format
+#, python-format
 msgid "On every weekday: %(weekday)s at every minute"
-msgstr "Každý %(weekday)s každou minutu"
+msgstr "Každý den v týdnu: %(weekday)s každou minutu"
 
 #: ../src/lang.py:220
-#, fuzzy, python-format
+#, python-format
 msgid "On every weekday: %(weekday)s at minute %(minute)s of every hour"
-msgstr "Každý %(weekday)s v minutu %(minute)s každé hodiny"
+msgstr "Každý den v týdnu: %(weekday)s v %(minute)s. minutě každé hodiny"
 
 #: ../src/lang.py:222
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "On every weekday: %(weekday)s at every minute between %(time_from)s and %"
 "(time_to)s"
-msgstr "Každý %(weekday)s každou minutu mezi %(time_from)s a %(time_to)s"
+msgstr ""
+"Každý den v týdnu: %(weekday)s každou minutu mezi %(time_from)s a %(time_to)s"
 
 #: ../src/lang.py:224
-#, fuzzy, python-format
+#, python-format
 msgid "On every weekday: %(weekday)s at %(time)s"
-msgstr "Každý %(weekday)s v %(time)s"
+msgstr "Každý den v týdnu: %(weekday)s v %(time)s"
 
 #: ../src/lang.py:229
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "On day %(monthday)s of every month and every weekday: %(weekday)s at every "
 "full hour"
-msgstr "%(monthday)s každého měsíce a každý %(weekday)s každou celou hodinu"
+msgstr ""
+"%(monthday)s. den každého měsíce a každý den v týdnu: %(weekday)s každou "
+"celou hodinu"
 
 #: ../src/lang.py:231
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "On day %(monthday)s of every month and every weekday: %(weekday)s at every "
 "minute"
-msgstr "%(monthday)s každého měsíce a každý %(weekday)s každou minutu"
+msgstr ""
+"%(monthday)s. den každého měsíce a každý den v týdnu: %(weekday)s každou "
+"minutu"
 
 #: ../src/lang.py:233
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "On day %(monthday)s of every month and every weekday: %(weekday)s at minute %"
 "(minute)s of every hour"
 msgstr ""
-"%(monthday)s každého měsíce a každý %(weekday)s v minutu %(minute)s každé "
-"hodiny"
+"%(monthday)s. den každého měsíce a každý den v týdnu: %(weekday)s v minutu %"
+"(minute)s každé hodiny"
 
 #: ../src/lang.py:235
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "On day %(monthday)s of every month and every weekday: %(weekday)s at every "
 "minute between %(time_from)s and %(time_to)s"
 msgstr ""
-"%(monthday)s každého měsíce a každý %(weekday)s každou minutu mezi %"
-"(time_from)s a %(time_to)s"
+"%(monthday)s. den každého měsíce a každý den v týdnu: %(weekday)s každou "
+"minutu mezi %(time_from)s a %(time_to)s"
 
 #: ../src/lang.py:237
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "On day %(monthday)s of every month and every weekday: %(weekday)s at %(time)s"
-msgstr "%(monthday)s každého měsíce a každý %(weekday)s v %(time)s"
+msgstr ""
+"%(monthday)s. den každého měsíce a každý den v týdnu: %(weekday)s v %(time)s"
 
 #: ../src/lang.py:242
-#, fuzzy, python-format
+#, python-format
 msgid "On every weekday: %(weekday)s in %(month)s at every full hour"
-msgstr "Každý %(weekday)s v měsíci %(month)s každou celou hodinu"
+msgstr "Každý den v týdnu: %(weekday)s v měsíci %(month)s každou celou hodinu"
 
 #: ../src/lang.py:244
-#, fuzzy, python-format
+#, python-format
 msgid "On every weekday: %(weekday)s in %(month)s at every minute"
-msgstr "Každý %(weekday)s v měsíci %(month)s každou minutu"
+msgstr "Každý den v týdnu: %(weekday)s v měsíci %(month)s každou minutu"
 
 #: ../src/lang.py:246
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "On every weekday: %(weekday)s in %(month)s at minute %(minute)s of every hour"
-msgstr "Každý %(weekday)s v měsíci %(month)s v minutu %(minute)s každé hodiny"
+msgstr ""
+"Každý den v týdnu: %(weekday)s v měsíci %(month)s v minutu %(minute)s každé "
+"hodiny"
 
 #: ../src/lang.py:248
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "On every weekday: %(weekday)s in %(month)s at every minute between %"
 "(time_from)s and %(time_to)s"
 msgstr ""
-"Každý %(weekday)s v měsíci %(month)s každou minutu mezi %(time_from)s a %"
-"(time_to)s"
+"Každý den v týdnu: %(weekday)s v měsíci %(month)s každou minutu mezi %"
+"(time_from)s a %(time_to)s"
 
 #: ../src/lang.py:250
-#, fuzzy, python-format
+#, python-format
 msgid "On every weekday: %(weekday)s in %(month)s at %(time)s"
-msgstr "Každý %(weekday)s v měsíci %(month)s v %(time)s"
+msgstr "Každý den v týdnu: %(weekday)s v měsíci %(month)s v %(time)s"
 
 #: ../src/lang.py:255
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
 "every full hour"
 msgstr ""
-"Každý %(weekday)s v měsíci %(month)s a %(date)s každý rok každou celou hodinu"
+"Každý den v týdnu: %(weekday)s v měsíci %(month)s a %(date)s každý rok "
+"každou celou hodinu"
 
 #: ../src/lang.py:257
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
 "every minute"
 msgstr ""
-"Každý %(weekday)s v měsíci %(month)s a %(date)s každý rok každou minutu"
+"Každý den v týdnu: %(weekday)s v měsíci %(month)s a %(date)s každý rok "
+"každou minutu"
 
 #: ../src/lang.py:259
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
 "minute %(minute)s of every hour"
 msgstr ""
-"Každý %(weekday)s v měsíci %(month)s a %(date)s každý rok v minutu %(minute)"
-"s každou hodinu"
+"Každý den v týdnu: %(weekday)s v měsíci %(month)s a %(date)s každý rok v "
+"minutu %(minute)s každou hodinu"
 
 #: ../src/lang.py:261
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
 "every minute between %(time_from)s and %(time_to)s"
 msgstr ""
-"Každý %(weekday)s v měsíci %(month)s a %(date)s každý rok každou minutu mezi "
-"%(time_from)s a %(time_to)s"
+"Každý den v týdnu: %(weekday)s v měsíci %(month)s a %(date)s každý rok "
+"každou minutu mezi %(time_from)s a %(time_to)s"
 
 #: ../src/lang.py:263
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "On every weekday: %(weekday)s in %(month)s and on %(date)s every year at %"
 "(time)s"
-msgstr "Každý %(weekday)s v měsíci %(month)s a %(date)s každý rok v %(time)s"
+msgstr ""
+"Každý den v týdnu: %(weekday)s v měsíci %(month)s a %(date)s každý rok v %"
+"(time)s"
 
 #: ../src/lang.py:271
 msgid "every minute"
@@ -887,81 +889,81 @@ msgstr "den v týdnu: %s"
 msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 msgstr "V %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 
-#: ../src/mainWindow.py:111
-#, fuzzy
+#: ../src/mainWindow.py:112
 msgid "Recurrent task"
-msgstr "Opakovaná"
+msgstr "Opakovaná úloha"
 
-#: ../src/mainWindow.py:122
+#: ../src/mainWindow.py:123
 msgid "One-time task"
-msgstr ""
+msgstr "Jednorázová úloha"
 
-#: ../src/mainWindow.py:133
+#: ../src/mainWindow.py:134
 msgid "From template"
 msgstr "Z šablony"
 
-#: ../src/mainWindow.py:152
-#, fuzzy
+#: ../src/mainWindow.py:153
 msgid "Add a new task"
-msgstr "_Přidat úlohu"
+msgstr "Přidat novou úlohu"
 
-#: ../src/mainWindow.py:285 ../src/mainWindow.py:415
+#: ../src/mainWindow.py:289 ../src/mainWindow.py:419
 #, python-format
 msgid "Editing user: %s"
 msgstr "Upravuji uživatele: %s"
 
-#: ../src/mainWindow.py:332 ../src/mainWindow.py:343 ../src/mainWindow.py:354
-#: ../src/mainWindow.py:369 ../src/mainWindow.py:380
+#: ../src/mainWindow.py:336 ../src/mainWindow.py:347 ../src/mainWindow.py:358
+#: ../src/mainWindow.py:373 ../src/mainWindow.py:384
 #: ../src/scheduleapplet.py:122
 msgid "ERROR: Could not load icon"
-msgstr ""
+msgstr "CHYBA: Nelze načíst ikonu"
 
-#: ../src/mainWindow.py:389 ../src/mainWindow.py:395
+#: ../src/mainWindow.py:393 ../src/mainWindow.py:399
 msgid "ERROR: Could not load glade file"
-msgstr ""
+msgstr "CHYBA: Nelze načíst soubor glade"
 
-#: ../src/mainWindow.py:450 ../src/template_chooser.py:69
+#: ../src/mainWindow.py:454 ../src/template_chooser.py:69
 #: ../src/template_manager.py:72
 msgid "Task"
 msgstr "Úloha"
 
-#: ../src/mainWindow.py:463 ../src/mainWindow.py:489
+#: ../src/mainWindow.py:467 ../src/mainWindow.py:493
 #: ../src/template_chooser.py:78 ../src/template_manager.py:81
-#, fuzzy
 msgid "Description"
-msgstr "_Popis:"
+msgstr "Popis"
 
-#: ../src/mainWindow.py:467 ../src/mainWindow.py:480
+#: ../src/mainWindow.py:471 ../src/mainWindow.py:484
 msgid "Date and Time"
 msgstr "Datum a čas"
 
-#: ../src/mainWindow.py:471 ../src/mainWindow.py:484
+#: ../src/mainWindow.py:475 ../src/mainWindow.py:488
 msgid "Command preview"
-msgstr ""
+msgstr "Náhled příkazu"
 
 #. print ex
-#: ../src/mainWindow.py:543 ../src/mainWindow.py:606
+#: ../src/mainWindow.py:547 ../src/mainWindow.py:610
 msgid "Please select a task"
 msgstr "Zvolte prosím úlohu"
 
-#: ../src/mainWindow.py:550
+#: ../src/mainWindow.py:554
 msgid "Do you want to delete this task?"
 msgstr "Chcete odstranit tuto úlohu?"
 
-#: ../src/mainWindow.py:651
+#: ../src/mainWindow.py:657
 msgid ""
 "Are you sure you want to run this task now?\n"
 "\n"
 "This is used to preview the task and initiates a one-time run, this does not "
 "affect the normal scheduled run times."
 msgstr ""
+"Opravdu si přejete spustit tuto úlohu?\n"
+"\n"
+"Toto se používá pro náhled úloh a provede se jednorázové spuštění "
+"neovlivňující naplánované časy spouštění."
 
-#: ../src/mainWindow.py:653
-#, fuzzy
+#: ../src/mainWindow.py:659
 msgid "Are you sure you want to run this task?"
-msgstr "Chcete odstranit tuto úlohu?"
+msgstr "Opravdu chcete spustit tuto úlohu?"
 
-#: ../src/mainWindow.py:662
+#: ../src/mainWindow.py:668
 msgid ""
 "Note about working directory of executed tasks:\n"
 "\n"
@@ -969,62 +971,62 @@ msgid ""
 "directory where Gnome schedule was run from at the time of task creation "
 "(normally the home directory)."
 msgstr ""
+"Pornámka k pracovním adresářům spouštěných úloh:\n"
+"\n"
+"Opakované úlohy budou spouštěny z domovského adresáře, jednorázové úlohy z "
+"adresáře, ze kterého byla spuštěna aplikace Gnome Schedule v okamžiku "
+"vytvoření úlohy (obvykle domovský adresář)."
 
-#: ../src/mainWindow.py:717
-msgid "Press ENTER to continue and close this window."
-msgstr ""
-
-#: ../src/mainWindow.py:725
-#, fuzzy
+#: ../src/mainWindow.py:727
 msgid "Please select a task!"
-msgstr "Zvolte prosím úlohu"
+msgstr "Zvolte prosím úlohu!"
 
-#: ../src/mainWindow.py:733
-#, fuzzy
+#: ../src/mainWindow.py:735
 msgid "About Gnome Schedule"
-msgstr "Gnome Schedule"
+msgstr "O Gnome Schedule"
 
-#: ../src/mainWindow.py:734
+#: ../src/mainWindow.py:736
 msgid "Gnome Schedule"
 msgstr "Gnome Schedule"
 
-#: ../src/mainWindow.py:736
+#: ../src/mainWindow.py:738
 #, python-format
 msgid "Copyright (c) %(year)s %(name)s."
-msgstr ""
+msgstr "Copyright (c) %(year)s %(name)s."
 
-#: ../src/mainWindow.py:749
+#: ../src/mainWindow.py:751
 msgid "translator-credits"
-msgstr "Miloslav Trmač <mitr@volny.cz>"
-
-#: ../src/mainWindow.py:770
-msgid "Could not display help"
 msgstr ""
+"Miloslav Trmač <mitr@volny.cz>\n"
+"Lucas Lommer <llommer@svn.gnome.org>"
+
+#: ../src/mainWindow.py:772
+msgid "Could not display help"
+msgstr "Nelze zobrazit nápovědu"
 
 #: ../src/scheduleapplet.py:139
 msgid "ERROR: Could not load menu xml file"
-msgstr ""
+msgstr "CHYBA: Nelze načíst XML soubor s nabídkou"
 
 #: ../src/setuserWindow.py:84
 msgid "No such user"
-msgstr ""
+msgstr "Takový uživatel neexistuje"
 
 #: ../src/addWindow.py:51
-#, fuzzy
 msgid "A task that launches recurrently"
-msgstr "Plánovaná úloha, která bude spouštěna _opakovaně"
+msgstr "Úloha, která bude spouštěna opakovaně"
 
 #: ../src/addWindow.py:64
 msgid "A task that launches one time"
-msgstr ""
+msgstr "Úloha, která se spustí jen jednou"
 
 #: ../src/addWindow.py:77
 msgid "A task from a predefined template"
-msgstr ""
+msgstr "Úloha z předdefinované šablony"
 
 #: ../src/atEditor.py:77
 msgid "Calendar"
-msgstr ""
+msgstr "Kalendář"
 
 #: ../src/atEditor.py:495
 msgid ""
@@ -1032,11 +1034,13 @@ msgid ""
 "a number out of range. Remember an hour only has 60 minutes and a day only "
 "24 hours."
 msgstr ""
+"V jednom nebo obou polích pro zadání hodin a minut jste zadali písmeno nebo "
+"číslo mimo rozsah. Pamatujte, že hodina má jen 60 minut a den jenom 24 hodin."
 
 #: ../src/atEditor.py:554
 #, python-format
 msgid "This is an invalid record! The problem could be: %s"
-msgstr "Toto není platný záznam! Problém je možná: %s "
+msgstr "Toto není platný záznam! Problémem je možná: %s"
 
 #: ../src/atEditor.py:574
 msgid ""
@@ -1045,234 +1049,27 @@ msgid ""
 "One-time tasks will be run from the directory where Gnome schedule is run "
 "from (normally the home directory)."
 msgstr ""
+"Poznámka o pracovním adresáři spuštěných úloh:\n"
+"\n"
+"Jednorázové úlohy budou spuštěny v adresáři, odkud byla spuštěna aplikace "
+"Gnome Schedule (obvykle domovský adresář)."
 
 #: ../src/template.py:192 ../src/template.py:202
-#, fuzzy
 msgid "Title:"
-msgstr "Nadpis"
+msgstr "Nadpis:"
 
 #: ../src/template.py:202
 msgid "Run:"
-msgstr ""
+msgstr "Spustit:"
 
 #: ../src/template.py:204
 msgid "No output"
 msgstr "Bez výstupu"
 
 #: ../src/template_chooser.py:40 ../src/template_manager.py:37
-#, fuzzy
 msgid "Use template"
-msgstr "_Přidat úlohu"
+msgstr "Použít šablonu"
 
 #: ../src/template_chooser.py:97 ../src/template_manager.py:102
 msgid "One-time"
-msgstr ""
-
-#, fuzzy
-#~ msgid "Edit"
-#~ msgstr "Každou hodinu"
-
-#, fuzzy
-#~ msgid "<b>Manage templates</b>"
-#~ msgstr "<b>Nastavení minut</b>"
-
-#~ msgid "Use advanced"
-#~ msgstr "Používat pokročilé"
-
-#~ msgid "Don't use a preset"
-#~ msgstr "Nepoužívat šablonu"
-
-#~ msgid "The preset has not been saved"
-#~ msgstr "Šablona nebyla uložena"
-
-#~ msgid "To delete a preset, you first need to select one"
-#~ msgstr "Pro odstranění šablony musíte nejdříve některou vybrat"
-
-#~ msgid "To save a preset, you first have to choose a name for it"
-#~ msgstr "Pro uložení šablony pro ni musíte zvolit název"
-
-#~ msgid "Choose an Icon for this Scheduled Task"
-#~ msgstr "Zvolte ikonu pro tuto plánovanou úlohu"
-
-#~ msgid "command"
-#~ msgstr "příkaz"
-
-#~ msgid "Minute settings"
-#~ msgstr "Nastavení minut"
-
-#~ msgid "Edit Time Expression for minute"
-#~ msgstr "Upravit výraz času pro minutu"
-
-#~ msgid "Hour settings"
-#~ msgstr "Nastavení hodiny"
-
-#~ msgid "Edit Time Expression for hour"
-#~ msgstr "Upravit výraz času pro hodinu"
-
-#~ msgid "Day settings"
-#~ msgstr "Nastavení dne"
-
-#~ msgid "Edit Time Expression for day"
-#~ msgstr "Upravit výraz času pro den"
-
-#~ msgid "Month settings"
-#~ msgstr "Nastavení měsíce"
-
-#~ msgid "Edit Time Expression for month"
-#~ msgstr "Upravit výraz času pro měsíc"
-
-#~ msgid "Weekday settings"
-#~ msgstr "Nastavení dne v týdnu"
-
-#~ msgid "Edit Time Expression for weekday"
-#~ msgstr "Upravit výraz času pro den v týdnu"
-
-#~ msgid "<b>Date and Time Settings</b>"
-#~ msgstr "<b>Nastavení data a času</b>"
-
-#~ msgid "<b>Execution Time</b>"
-#~ msgstr "<b>Čas spouštění</b>"
-
-#~ msgid "<b>General</b>"
-#~ msgstr "<b>Obecné</b>"
-
-#~ msgid "<b>Task</b>"
-#~ msgstr "<b>Úloha</b>"
-
-#~ msgid "A scheduled task that will launch only once in the _future"
-#~ msgstr "Plánovaná úloha, která bude spuštěna jen jednou v _budoucnosti"
-
-#~ msgid "About this application"
-#~ msgstr "O této aplikaci"
-
-#~ msgid "Add a new scheduled task"
-#~ msgstr "Přidat novou plánovanou úlohu"
-
-#~ msgid "Change _User"
-#~ msgstr "Změnit _uživatele"
-
-#~ msgid "Choose an icon for this scheduled task"
-#~ msgstr "Zvolte ikonu pro tuto plánovanou úlohu"
-
-#~ msgid "For example at 04:10 tomorrow, next week or in three days"
-#~ msgstr "Například zítra v 4:10, příští týden nebo za tři dny"
-
-#~ msgid "For example every first hour of the day"
-#~ msgstr "Například každou první hodinu dne"
-
-#~ msgid "For experienced users"
-#~ msgstr "Jen pro pokročilé uživatele"
-
-#~ msgid "Ico_n:"
-#~ msgstr "_Ikona:"
-
-#~ msgid "Mi_nutes:"
-#~ msgstr "_Minut:"
-
-#~ msgid ""
-#~ "Quit the application. This will not stop the system scheduling. It will, "
-#~ "however, quit this system schedule maintenance tool."
-#~ msgstr ""
-#~ "Ukončit aplikaci. To nezastaví systémové plánování, ale ukončí tento "
-#~ "nástroj pro správu plánu systému."
-
-#~ msgid "Rec_urrence:"
-#~ msgstr "_Opakování:"
-
-#~ msgid "Save the current information as a template"
-#~ msgstr "Uložit aktuální informace jako šablonu"
-
-#~ msgid "Scri_pt:"
-#~ msgstr "_Skript:"
-
-#~ msgid "Select..."
-#~ msgstr "Vybrat..."
-
-#~ msgid "Show the manual"
-#~ msgstr "Zobrazit příručku"
-
-#~ msgid ""
-#~ "Tomorrow\n"
-#~ "Next week"
-#~ msgstr ""
-#~ "Zítra\n"
-#~ "Příští týden"
-
-#~ msgid ""
-#~ "When selected, no output will be generated. When scheduled tasks in the "
-#~ "crontab do have output and this option is not checked, the output will by "
-#~ "default be send to the UNIX mailbox of the user."
-#~ msgstr ""
-#~ "Je-li zvoleno, nebude generován žádný výstup. Když mají plánované úlohy v "
-#~ "crontab výstup a tato volba není zaškrtnuta, výstup bude implicitně "
-#~ "poslán do unixové poštovní schránky uživatele."
-
-#~ msgid "_About"
-#~ msgstr "O _aplikaci"
-
-#~ msgid "_Advanced"
-#~ msgstr "_Pokročilé"
-
-#~ msgid "_Days of month:"
-#~ msgstr "_Dny v měsíci:"
-
-#~ msgid "_Hour:"
-#~ msgstr "_Hodina:"
-
-#~ msgid "_Hours:"
-#~ msgstr "_Hodiny:"
-
-#~ msgid "_Manual"
-#~ msgstr "_Příručka"
-
-#~ msgid "_Minute:"
-#~ msgstr "_Minuta:"
-
-#~ msgid "_Months:"
-#~ msgstr "_Měsíce:"
-
-#~ msgid "_View"
-#~ msgstr "_Zobrazit"
-
-#~ msgid "_Weekdays:"
-#~ msgstr "_Dny v týdnu:"
-
-#~ msgid "Icon"
-#~ msgstr "Ikona"
-
-#~ msgid "Type"
-#~ msgstr "Typ"
-
-#~ msgid "Date and Time Settings"
-#~ msgstr "Nastavení data a času"
-
-#~ msgid "Preview"
-#~ msgstr "Náhled"
-
-#, fuzzy
-#~ msgid "Copyright (c) 2004-2008 Gaute Hope."
-#~ msgstr "Copyright © 2004-2005 Gaute Hope."
-
-#~ msgid "Schedule"
-#~ msgstr "Plán"
-
-#~ msgid "ERROR: Failed to parse crontab record"
-#~ msgstr "CHYBA: Nemohu zpracovat záznam crontab"
-
-#~ msgid "Must be between %s and %s"
-#~ msgstr "Musí být mezi %s a %s"
-
-#~ msgid "At an exact weekday"
-#~ msgstr "V přesný den v týdnu"
-
-#~ msgid "You need to install pyGTK or GTKv2, "
-#~ msgstr "Musíte nainstalovat pyGTK nebo GTKv2, "
-
-#~ msgid "or set your PYTHONPATH correctly."
-#~ msgstr "nebo správně nastavit vaši PYTHONPATH."
-
-#~ msgid "try: export PYTHONPATH= "
-#~ msgstr "zkuste: export PYTHONPATH= "
-
-#~ msgid "This software is distributed under the GPL. "
-#~ msgstr "Toto software je šířeno pod podmínkami GPL. "
+msgstr "Jen jednou"
