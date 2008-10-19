@@ -3,13 +3,14 @@
 # Jorge González <jorge.gonzalez.gonzalez@hispalinux.es>, 2006.
 # Francisco Javier F. Serrador <serrador@cvs.gnome.org>, 2006.
 # Rodrigo Marcos Fombellida <rmarcos@svn.gnome.org>, 2008.
+# Jorge González <jorgegonz@svn.gnome.org>, 2008.
 msgid ""
 msgstr ""
 "Project-Id-Version: help.HEAD\n"
-"POT-Creation-Date: 2008-01-23 14:24+0000\n"
-"PO-Revision-Date: 2008-01-25 22:34+0100\n"
-"Last-Translator: Rodrigo Marcos Fombellida <rmarcos@svn.gnome.org>\n"
-"Language-Team: Spanish <traductores@es.gnome.org>\n"
+"POT-Creation-Date: 2008-03-19 19:26+0000\n"
+"PO-Revision-Date: 2008-10-19 19:45+0200\n"
+"Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
+"Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -18,7 +19,7 @@ msgstr ""
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: C/gnome-schedule.xml:273(None)
+#: C/gnome-schedule.xml:274(None)
 msgid ""
 "@@image: 'figures/gnome-schedule_main.png'; "
 "md5=a330f285d64bd1070bf0b2ea61926c40"
@@ -28,7 +29,7 @@ msgstr ""
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: C/gnome-schedule.xml:342(None)
+#: C/gnome-schedule.xml:343(None)
 msgid ""
 "@@image: 'figures/gnome-schedule_new_task.png'; "
 "md5=c13fbc3a2faa6145c9370a9137dc86ba"
@@ -38,7 +39,7 @@ msgstr ""
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: C/gnome-schedule.xml:372(None)
+#: C/gnome-schedule.xml:373(None)
 msgid ""
 "@@image: 'figures/gnome-schedule_new_task_recurrent.png'; "
 "md5=7502298e8a4a17232ed9a6d28855426a"
@@ -48,7 +49,7 @@ msgstr ""
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: C/gnome-schedule.xml:417(None)
+#: C/gnome-schedule.xml:418(None)
 msgid ""
 "@@image: 'figures/gnome-schedule_new_task_once.png'; "
 "md5=a8e20668ea7afd0ada8f6f5e66cdbff8"
@@ -58,7 +59,7 @@ msgstr ""
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: C/gnome-schedule.xml:479(None)
+#: C/gnome-schedule.xml:480(None)
 msgid ""
 "@@image: 'figures/gnome-schedule_templates.png'; "
 "md5=884d645f5cb300b4a2ad434ad5db2916"
@@ -66,7 +67,7 @@ msgstr ""
 "@@image: 'figures/gnome-schedule_templates.png'; "
 "md5=884d645f5cb300b4a2ad434ad5db2916"
 
-#: C/gnome-schedule.xml:37(title) C/gnome-schedule.xml:135(revnumber)
+#: C/gnome-schedule.xml:37(title) C/gnome-schedule.xml:136(revnumber)
 msgid "Gnome Schedule User Guide V2.2"
 msgstr "Guía de usuario del Planificador de GNOME V2.2"
 
@@ -83,8 +84,8 @@ msgid "Rodrigo Marcos Fombellida rmarcos@svn.gnome.org"
 msgstr "Rodrigo Marcos Fombellida rmarcos@svn.gnome.org"
 
 #: C/gnome-schedule.xml:55(publishername) C/gnome-schedule.xml:68(orgname)
-#: C/gnome-schedule.xml:122(para) C/gnome-schedule.xml:131(para)
-#: C/gnome-schedule.xml:140(para)
+#: C/gnome-schedule.xml:123(para) C/gnome-schedule.xml:132(para)
+#: C/gnome-schedule.xml:141(para)
 msgid "GNOME Documentation Project"
 msgstr "Proyecto de documentación de GNOME"
 
@@ -207,63 +208,43 @@ msgstr "Marcos Fombellida"
 msgid "rmarcos@svn.gnome.org"
 msgstr "rmarcos@svn.gnome.org"
 
-#: C/gnome-schedule.xml:78(firstname)
-msgid "Translator: Your first name here"
-msgstr "Rodrigo"
-
-#: C/gnome-schedule.xml:79(surname)
-msgid "Translator: Your surname here"
-msgstr "Marcos Fombellida"
-
-#: C/gnome-schedule.xml:81(orgname)
-msgid "Translator: The name of your translation team here"
-msgstr "Equipo de traducción de GNOME al español"
-
-#: C/gnome-schedule.xml:82(email)
-msgid "Translator: Your mail here"
-msgstr "rmarcos@svn.gnome.org"
-
-#: C/gnome-schedule.xml:84(contrib)
-msgid "Translator: Write here your contribution, e.g. Latin translation"
-msgstr "Traducción al español"
-
-#: C/gnome-schedule.xml:117(revnumber)
+#: C/gnome-schedule.xml:118(revnumber)
 msgid "Gnome Schedule User Guide V2.0"
 msgstr "Guía de usuario del Planificador de GNOME V2.0"
 
-#: C/gnome-schedule.xml:118(date)
+#: C/gnome-schedule.xml:119(date)
 msgid "August 2005"
 msgstr "Agosto de 2005"
 
-#: C/gnome-schedule.xml:120(para) C/gnome-schedule.xml:129(para)
+#: C/gnome-schedule.xml:121(para) C/gnome-schedule.xml:130(para)
 msgid "Rodrigo Marcos Fombellida <email>rmarcos@cvs.gnome.org</email>"
 msgstr "Rodrigo Marcos Fombellida <email>rmarcos@cvs.gnome.org</email>"
 
-#: C/gnome-schedule.xml:126(revnumber)
+#: C/gnome-schedule.xml:127(revnumber)
 msgid "Gnome Schedule User Guide V2.1"
 msgstr "Guía de usuario del Planificador de GNOME V2.1"
 
-#: C/gnome-schedule.xml:127(date)
+#: C/gnome-schedule.xml:128(date)
 msgid "June 2006"
 msgstr "Junio de 2006"
 
-#: C/gnome-schedule.xml:136(date)
+#: C/gnome-schedule.xml:137(date)
 msgid "January 2008"
 msgstr "Enero de 2008"
 
-#: C/gnome-schedule.xml:138(para)
+#: C/gnome-schedule.xml:139(para)
 msgid "Rodrigo Marcos Fombellida <email>rmarcos@svn.gnome.org</email>"
 msgstr "Rodrigo Marcos Fombellida <email>rmarcos@svn.gnome.org</email>"
 
-#: C/gnome-schedule.xml:145(releaseinfo)
+#: C/gnome-schedule.xml:146(releaseinfo)
 msgid "This manual describes version 2.0.0 of Gnome Schedule."
 msgstr "Este manual describe la versión 2.0.0 del Planificador de GNOME."
 
-#: C/gnome-schedule.xml:148(title)
+#: C/gnome-schedule.xml:149(title)
 msgid "Feedback"
 msgstr "Sugerencias"
 
-#: C/gnome-schedule.xml:149(para)
+#: C/gnome-schedule.xml:150(para)
 msgid ""
 "To report a bug or make a suggestion regarding the <application>Gnome "
 "Schedule</application> application or this manual, follow the directions in "
@@ -275,15 +256,15 @@ msgstr ""
 "las instrucciones en la <ulink url=\"ghelp:gnome-feedback\" type=\"help"
 "\">Página de sugerencias de GNOME</ulink>."
 
-#: C/gnome-schedule.xml:159(primary) C/gnome-schedule.xml:0(application)
+#: C/gnome-schedule.xml:160(primary) C/gnome-schedule.xml:0(application)
 msgid "Gnome Schedule"
 msgstr "Planificador de GNOME"
 
-#: C/gnome-schedule.xml:170(title)
+#: C/gnome-schedule.xml:171(title)
 msgid "Introduction"
 msgstr "Introducción"
 
-#: C/gnome-schedule.xml:171(para)
+#: C/gnome-schedule.xml:172(para)
 msgid ""
 "<application>Gnome Schedule</application> is a graphical tool that lets you "
 "schedule tasks with ease, to be run unattended at a specified time or "
@@ -297,7 +278,7 @@ msgstr ""
 "sus parámetros correspondientes o en un archivo de script con varias "
 "instrucciones."
 
-#: C/gnome-schedule.xml:174(para)
+#: C/gnome-schedule.xml:175(para)
 msgid ""
 "You can use <application>Gnome Schedule</application> to program repetitive "
 "tasks in your daily work that can be automated. You can also run a heavy "
@@ -308,11 +289,11 @@ msgstr ""
 "automatizadas. También para ejecutar una tarea «pesada» por la noche mientras "
 "duerme, por ejemplo, realizar la copia de seguridad de sus documentos."
 
-#: C/gnome-schedule.xml:178(title)
+#: C/gnome-schedule.xml:179(title)
 msgid "How does <application>Gnome Schedule</application> work?"
 msgstr "¿Cómo funciona el <application>Planificador de GNOME</application>?"
 
-#: C/gnome-schedule.xml:179(para)
+#: C/gnome-schedule.xml:180(para)
 msgid ""
 "<application>Gnome Schedule</application> uses <application>cron</"
 "application> and <application>at</application> to program job executions. "
@@ -328,15 +309,15 @@ msgstr ""
 "application> proporciona una interfaz gráfica única para configurarlos y "
 "presentar los trabajos de forma fácil de entender por cualquiera."
 
-#: C/gnome-schedule.xml:185(title)
+#: C/gnome-schedule.xml:186(title)
 msgid "About cron and at"
 msgstr "Acerca de cron y at"
 
-#: C/gnome-schedule.xml:187(guilabel)
+#: C/gnome-schedule.xml:188(guilabel)
 msgid "Cron"
 msgstr "Cron"
 
-#: C/gnome-schedule.xml:189(para)
+#: C/gnome-schedule.xml:190(para)
 msgid ""
 "If you were to configure <application>cron</application> manually to execute "
 "a command, for example every Tuesday, you would have to use the command "
@@ -352,7 +333,7 @@ msgstr ""
 "<userinput>* * * * 2 &lt;command&gt;  #comments</userinput>\n"
 "\t      </screen>"
 
-#: C/gnome-schedule.xml:199(para)
+#: C/gnome-schedule.xml:200(para)
 msgid ""
 "See <command>man cron</command> and <command>man crontab</command> for more "
 "information about <application>cron</application>"
@@ -360,11 +341,11 @@ msgstr ""
 "Vea <command>man cron</command> y <command>man crontab</command> para "
 "obtener más información sobre <application>cron</application>"
 
-#: C/gnome-schedule.xml:204(guilabel)
+#: C/gnome-schedule.xml:205(guilabel)
 msgid "At"
 msgstr "At"
 
-#: C/gnome-schedule.xml:206(para)
+#: C/gnome-schedule.xml:207(para)
 msgid ""
 "If you were to configure <application>at</application> manually to execute a "
 "command, for example tomorrow at this time, you would have to use the "
@@ -383,7 +364,7 @@ msgstr ""
 "at&gt; <userinput>Ctrl + D</userinput>\n"
 "        </screen>"
 
-#: C/gnome-schedule.xml:217(para)
+#: C/gnome-schedule.xml:218(para)
 msgid ""
 "See <command>man at</command> for more information about <application>at</"
 "application>"
@@ -391,27 +372,27 @@ msgstr ""
 "Vea <command>man at</command> para obtener más información sobre "
 "<application>at</application>"
 
-#: C/gnome-schedule.xml:233(title)
+#: C/gnome-schedule.xml:234(title)
 msgid "Getting Started"
 msgstr "Cómo empezar"
 
-#: C/gnome-schedule.xml:236(title)
+#: C/gnome-schedule.xml:237(title)
 msgid "To Start <application>Gnome Schedule</application>"
 msgstr "Para iniciar el <application>Planificador de GNOME</application>"
 
-#: C/gnome-schedule.xml:237(para)
+#: C/gnome-schedule.xml:238(para)
 msgid ""
-"You can start <application><application>Gnome Schedule</application></"
-"application> in the following ways:"
+"You can start <application>Gnome Schedule</application> in the following "
+"ways:"
 msgstr ""
 "Puede iniciar el <application>Planificador de GNOME</application> de las "
-"formas siguientes:"
+"siguientes formas:"
 
-#: C/gnome-schedule.xml:241(term)
+#: C/gnome-schedule.xml:242(term)
 msgid "<guimenu>Applications</guimenu> menu"
 msgstr "Menú <guimenu>Aplicaciones</guimenu>"
 
-#: C/gnome-schedule.xml:243(para)
+#: C/gnome-schedule.xml:244(para)
 msgid ""
 "Choose <menuchoice><guisubmenu>System Tools</"
 "guisubmenu><guimenuitem>Schedule</guimenuitem></menuchoice>."
@@ -419,41 +400,40 @@ msgstr ""
 "Elija <menuchoice><guisubmenu>Herramientas del sistema</"
 "guisubmenu><guimenuitem>Planificador de tareas</guimenuitem></menuchoice>."
 
-#: C/gnome-schedule.xml:251(term)
+#: C/gnome-schedule.xml:252(term)
 msgid "Command line"
 msgstr "Línea de comandos"
 
-#: C/gnome-schedule.xml:253(para)
+#: C/gnome-schedule.xml:254(para)
 msgid ""
-"To start <application><application>Gnome Schedule</application></"
-"application> from a command line, type the following command, then press "
-"<keycap>Return</keycap>:"
+"To start <application>Gnome Schedule</application> from a command line, type "
+"the following command, then press <keycap>Return</keycap>:"
 msgstr ""
 "Para iniciar el <application>Planificador de GNOME</application> desde la "
 "línea de comandos, escriba el siguiente comando y a continuación pulse "
-"<keycap>Enter</keycap>:"
+"<keycap>Intro</keycap>:"
 
-#: C/gnome-schedule.xml:256(command)
+#: C/gnome-schedule.xml:257(command)
 msgid "gnome-schedule"
 msgstr "gnome-schedule"
 
-#: C/gnome-schedule.xml:264(title)
+#: C/gnome-schedule.xml:265(title)
 msgid "When You Start <application>Gnome Schedule</application>"
 msgstr "Cuando se inicia el <application>Planificador de GNOME</application>"
 
-#: C/gnome-schedule.xml:265(para)
+#: C/gnome-schedule.xml:266(para)
 msgid ""
-"When you start <application><application>Gnome Schedule</application></"
-"application>, the main window is displayed:"
+"When you start <application>Gnome Schedule</application>, the main window is "
+"displayed:"
 msgstr ""
 "Cuando se inicia el <application>Planificador de GNOME</application>, se "
 "muestra la ventana principal:"
 
-#: C/gnome-schedule.xml:269(title)
+#: C/gnome-schedule.xml:270(title)
 msgid "Main Window"
 msgstr "Ventana principal"
 
-#: C/gnome-schedule.xml:276(phrase)
+#: C/gnome-schedule.xml:277(phrase)
 msgid ""
 "Shows <placeholder-1/> main window. Contains title bar, tool bar, and task "
 "list."
@@ -463,7 +443,7 @@ msgstr ""
 "herramientas y lista de tareas."
 
 #. for example, the items on the menubar and on the tool bar. This section is optional.
-#: C/gnome-schedule.xml:286(para)
+#: C/gnome-schedule.xml:287(para)
 msgid ""
 "The <application>Gnome Schedule</application> main window contains the "
 "following elements:"
@@ -471,55 +451,59 @@ msgstr ""
 "La ventana principal del <application>Planificador de GNOME</application> "
 "contiene los siguientes elementos:"
 
-#: C/gnome-schedule.xml:290(term)
+#: C/gnome-schedule.xml:291(term)
 msgid "The tool bar."
 msgstr "La barra de herramientas."
 
-#: C/gnome-schedule.xml:292(para)
+#: C/gnome-schedule.xml:293(para)
 msgid ""
 "The tool bar contains buttons that give you access to every function in the "
 "application."
-msgstr "La barra de herramientas contiene botones que dan acceso a todas las funciones de la aplicación."
+msgstr ""
+"La barra de herramientas contiene botones que dan acceso a todas las "
+"funciones de la aplicación."
 
-#: C/gnome-schedule.xml:296(term)
+#: C/gnome-schedule.xml:297(term)
 msgid "Task list."
 msgstr "La lista de tareas."
 
-#: C/gnome-schedule.xml:301(term)
+#: C/gnome-schedule.xml:302(term)
 msgid "Task:"
 msgstr "Tarea:"
 
-#: C/gnome-schedule.xml:302(para)
+#: C/gnome-schedule.xml:303(para)
 msgid ""
 "Describes the type of the task: \"Recurrent\", when the task runs repeatedly "
 "or \"Once\", when the task is done only once."
-msgstr "Describe el tipo de la tarea: «Repetitiva»; cuando la tarea se ejecuta repetidamente. «Una vez»; cuando la tarea se lleva a cabo una sóla vez."
+msgstr ""
+"Describe el tipo de la tarea: «Repetitiva»; cuando la tarea se ejecuta "
+"repetidamente. «Una vez»; cuando la tarea se lleva a cabo una sóla vez."
 
-#: C/gnome-schedule.xml:305(term)
+#: C/gnome-schedule.xml:306(term)
 msgid "Description:"
 msgstr "Descripción:"
 
-#: C/gnome-schedule.xml:306(para)
+#: C/gnome-schedule.xml:307(para)
 msgid "Shows a brief description of the task."
 msgstr "Muestra una descripción breve de la tarea."
 
-#: C/gnome-schedule.xml:308(term)
+#: C/gnome-schedule.xml:309(term)
 msgid "Date and Time:"
 msgstr "Fecha y hora:"
 
-#: C/gnome-schedule.xml:309(para)
+#: C/gnome-schedule.xml:310(para)
 msgid "Shows when the task is going to be executed."
 msgstr "Muestra cuándo se va a ejecutar la tarea."
 
-#: C/gnome-schedule.xml:311(term)
+#: C/gnome-schedule.xml:312(term)
 msgid "Command preview:"
 msgstr "Vista previa del comando:"
 
-#: C/gnome-schedule.xml:312(para)
+#: C/gnome-schedule.xml:313(para)
 msgid "Shows the command that is going to be executed."
 msgstr "Muestra el comando que va a ser ejecutado."
 
-#: C/gnome-schedule.xml:298(para)
+#: C/gnome-schedule.xml:299(para)
 msgid ""
 "The Task list shows information about current scheduled tasks and pending "
 "jobs. For every task, the following information is detailed: <placeholder-1/>"
@@ -528,25 +512,25 @@ msgstr ""
 "trabajos pendientes. Para cada tarea se detalla la siguiente información: "
 "<placeholder-1/>"
 
-#: C/gnome-schedule.xml:320(para)
+#: C/gnome-schedule.xml:321(para)
 msgid ""
 "You can read a brief description of some of the objects and icons on the "
 "<application>Gnome Schedule</application> interface, by pointing them with "
 "the mouse and waiting for a few seconds."
 msgstr ""
-"Puede leer una descripción breve de algunos de los objetos e iconos de la interfaz "
-"del <application>Planificador de GNOME</application>, señalándolos con el "
-"puntero del ratón y esperando unos segundos."
+"Puede leer una descripción breve de algunos de los objetos e iconos de la "
+"interfaz del <application>Planificador de GNOME</application>, señalándolos "
+"con el puntero del ratón y esperando unos segundos."
 
-#: C/gnome-schedule.xml:328(title)
+#: C/gnome-schedule.xml:329(title)
 msgid "Adding a New Scheduled Task"
 msgstr "Cómo añadir una tarea programada nueva"
 
-#: C/gnome-schedule.xml:331(title)
+#: C/gnome-schedule.xml:332(title)
 msgid "Choosing the type of task to add"
 msgstr "Eligiendo el tipo de tarea a añadir"
 
-#: C/gnome-schedule.xml:332(para)
+#: C/gnome-schedule.xml:333(para)
 msgid ""
 "You can add a new scheduled task by pressing the <guibutton>New</guibutton> "
 "button in the main window tool bar."
@@ -554,7 +538,7 @@ msgstr ""
 "Puede añadir una tarea programada nueva pulsando el botón <guibutton>Nuevo</"
 "guibutton> en la barra de herramientas de la ventana principal."
 
-#: C/gnome-schedule.xml:334(para)
+#: C/gnome-schedule.xml:335(para)
 msgid ""
 "The following dialog window will appear letting you to choose the type of "
 "task you want to schedule:"
@@ -562,68 +546,72 @@ msgstr ""
 "La siguiente ventana de diálogo aparecerá permitiéndole escoger el tipo de "
 "tarea que quiere programar:"
 
-#: C/gnome-schedule.xml:338(title)
+#: C/gnome-schedule.xml:339(title)
 msgid "Task Type Selection Dialog Window"
 msgstr "Ventana de diálogo de selección del tipo de tarea"
 
-#: C/gnome-schedule.xml:345(phrase)
+#: C/gnome-schedule.xml:346(phrase)
 msgid "Shows <placeholder-1/> task type selection dialog window."
-msgstr "Muestra la ventana de selección del tipo de tarea del <guilabel>Planificador de GNOME</guilabel>."
+msgstr ""
+"Muestra la ventana de selección del tipo de tarea del <guilabel>Planificador "
+"de GNOME</guilabel>."
 
-#: C/gnome-schedule.xml:353(para)
+#: C/gnome-schedule.xml:354(para)
 msgid ""
 "by pressing the first button you will be able to schedule a task that will "
 "be executed periodically."
 msgstr ""
-"pulsando el primer botón podrá programar una tarea para que se "
-"ejecute periódicamente."
+"pulsando el primer botón podrá programar una tarea para que se ejecute "
+"periódicamente."
 
-#: C/gnome-schedule.xml:355(para)
+#: C/gnome-schedule.xml:356(para)
 msgid ""
 "by pressing the second button you will be able to schedule a task that will "
 "only be executed once."
 msgstr ""
-"pulsando el segundo botón podrá programar una tarea para que se "
-"ejecute una vez."
+"pulsando el segundo botón podrá programar una tarea para que se ejecute una "
+"vez."
 
-#: C/gnome-schedule.xml:357(para)
+#: C/gnome-schedule.xml:358(para)
 msgid ""
 "by pressing the third button you will be able to create a task from a "
 "template. Templates usage is explained in <xref linkend=\"myapp-templates\"/"
 ">."
-msgstr "pulsando el tercer botón podrá crear una tarea a partir de una plantilla. El uso de plantillas se explica en  <xref linkend=\"myapp-templates\"/>."
+msgstr ""
+"pulsando el tercer botón podrá crear una tarea a partir de una plantilla. El "
+"uso de plantillas se explica en  <xref linkend=\"myapp-templates\"/>."
 
-#: C/gnome-schedule.xml:364(title)
+#: C/gnome-schedule.xml:365(title)
 msgid "Adding a scheduled task that will launch recurrently"
 msgstr "Añadir una tarea programada que se ejecutará repetidamente"
 
-#: C/gnome-schedule.xml:365(para)
+#: C/gnome-schedule.xml:366(para)
 msgid "Choosing this option, the following dialog window is shown:"
 msgstr "Si elige esta opción se muestra la siguiente ventana:"
 
-#: C/gnome-schedule.xml:368(title) C/gnome-schedule.xml:413(title)
+#: C/gnome-schedule.xml:369(title) C/gnome-schedule.xml:414(title)
 msgid "\"Create a New Scheduled Task\" window"
 msgstr "Ventana «Crear una tarea programada nueva»"
 
-#: C/gnome-schedule.xml:375(phrase)
+#: C/gnome-schedule.xml:376(phrase)
 msgid "Shows <placeholder-1/> \"Create a New Scheduled Task\" window."
 msgstr ""
-"Muestra la ventana «Crear una tarea programada nueva» del <application>Planificador de GNOME</"
-"application>."
+"Muestra la ventana «Crear una tarea programada nueva» del "
+"<application>Planificador de GNOME</application>."
 
-#: C/gnome-schedule.xml:383(term)
+#: C/gnome-schedule.xml:384(term)
 msgid "Description"
 msgstr "Descripción"
 
-#: C/gnome-schedule.xml:384(para)
+#: C/gnome-schedule.xml:385(para)
 msgid "Lets you add a brief description of the task."
 msgstr "Le permite añadir una descripción breve de la tarea."
 
-#: C/gnome-schedule.xml:386(term)
+#: C/gnome-schedule.xml:387(term)
 msgid "Command"
 msgstr "Comando"
 
-#: C/gnome-schedule.xml:387(para)
+#: C/gnome-schedule.xml:388(para)
 msgid ""
 "Enter here the command or script that will be periodically executed by this "
 "task."
@@ -631,57 +619,61 @@ msgstr ""
 "Introduzca aquí el comando o script que será ejecutado periódicamente por "
 "esta tarea."
 
-#: C/gnome-schedule.xml:391(guilabel)
+#: C/gnome-schedule.xml:392(guilabel)
 msgid "Time &amp; Date"
 msgstr "Hora y fecha"
 
-#: C/gnome-schedule.xml:393(term)
+#: C/gnome-schedule.xml:394(term)
 msgid "Basic"
 msgstr "Básico"
 
-#: C/gnome-schedule.xml:394(para)
+#: C/gnome-schedule.xml:395(para)
 msgid ""
-"Lets you select the frecuency for task execution among a list of common "
+"Lets you select the frequency for task execution among a list of common "
 "intervals."
-msgstr "Le permite seleccionar la frecuencia de repetición de la tarea entre una lista de intervalos comunes."
+msgstr ""
+"Le permite seleccionar la frecuencia de repetición de la tarea entre una "
+"lista de intervalos comunes."
 
-#: C/gnome-schedule.xml:397(term)
+#: C/gnome-schedule.xml:398(term)
 msgid "Advanced"
 msgstr "Avanzado"
 
-#: C/gnome-schedule.xml:398(para)
-msgid "Lets you create custom time expressions in case you need more flexibility."
+#: C/gnome-schedule.xml:399(para)
+msgid ""
+"Lets you create custom time expressions in case you need more flexibility."
 msgstr ""
 "Le permite crear expresiones de tiempo personalizadas en caso de que "
 "necesite mayor flexibilidad."
 
-#: C/gnome-schedule.xml:402(guilabel)
+#: C/gnome-schedule.xml:403(guilabel)
 msgid "Preview"
 msgstr "Vista previa"
 
-#: C/gnome-schedule.xml:403(para)
-msgid "Lets the user check if the selected frecuency is correct."
-msgstr "Permite al usuario comprobar si la frecuencia seleccionada es correcta."
+#: C/gnome-schedule.xml:404(para)
+msgid "Lets the user check if the selected frequency is correct."
+msgstr ""
+"Permite al usuario comprobar si la frecuencia seleccionada es correcta."
 
-#: C/gnome-schedule.xml:409(title)
+#: C/gnome-schedule.xml:410(title)
 msgid "Adding a scheduled task that will launch once"
 msgstr "Añadir una tarea programada que se ejecutará una vez"
 
-#: C/gnome-schedule.xml:410(para)
+#: C/gnome-schedule.xml:411(para)
 msgid "Choosing this option the following dialog window is shown:"
 msgstr "Si elige esta opción se muestra la siguiente ventana:"
 
-#: C/gnome-schedule.xml:420(phrase)
+#: C/gnome-schedule.xml:421(phrase)
 msgid "Shows <placeholder-1/> \"Create a New Scheduled Task\" window"
 msgstr ""
-"Muestra la ventana «Crear una tarea programada nueva» <application>Planificador de GNOME</"
-"application>."
+"Muestra la ventana «Crear una tarea programada nueva» "
+"<application>Planificador de GNOME</application>."
 
-#: C/gnome-schedule.xml:432(title)
+#: C/gnome-schedule.xml:433(title)
 msgid "Modifying a Scheduled Task"
 msgstr "Cómo modificar una tarea programada"
 
-#: C/gnome-schedule.xml:433(para)
+#: C/gnome-schedule.xml:434(para)
 msgid ""
 "You can modify a scheduled task by selecting it from the <guilabel>Task "
 "list</guilabel> with one click and by pressing the <guibutton>Edit</"
@@ -689,12 +681,12 @@ msgid ""
 "Scheduled Task</guilabel> window will be opened showing the task properties."
 msgstr ""
 "Puede modificar una tarea programada seleccionándola con el ratón en la "
-"<guilabel>Lista de tareas</guilabel> y presionado el botón "
-"<guibutton>Edit</guibutton> de la barra de herramientas de la ventana "
-"principal. Entonces la ventana <guilabel>«Editar una tarea programada»</"
-"guilabel> se abrirá mostrando las propiedades de la tarea."
+"<guilabel>Lista de tareas</guilabel> y presionado el botón <guibutton>Edit</"
+"guibutton> de la barra de herramientas de la ventana principal. Entonces la "
+"ventana <guilabel>«Editar una tarea programada»</guilabel> se abrirá "
+"mostrando las propiedades de la tarea."
 
-#: C/gnome-schedule.xml:435(para)
+#: C/gnome-schedule.xml:436(para)
 msgid ""
 "Now, you will be able to modify any field you want. When you have finished "
 "you can press <guibutton>Apply</guibutton> button to save the changes or "
@@ -704,17 +696,18 @@ msgstr ""
 "presione el botón <guibutton>Aplicar</guibutton> para salvar los cambios o "
 "el botón <guibutton>Cancelar</guibutton> para omitirlos."
 
-#: C/gnome-schedule.xml:438(para)
-msgid "You can edit a task faster by simply double-clicking on it in the task list."
+#: C/gnome-schedule.xml:439(para)
+msgid ""
+"You can edit a task faster by simply double-clicking on it in the task list."
 msgstr ""
 "Puede editar una tarea más rápido realizando una doble pulsación con el "
 "ratón sobre ella."
 
-#: C/gnome-schedule.xml:444(title)
+#: C/gnome-schedule.xml:445(title)
 msgid "Deleting a Scheduled Task"
 msgstr "Cómo borrar una tarea programada"
 
-#: C/gnome-schedule.xml:445(para)
+#: C/gnome-schedule.xml:446(para)
 msgid ""
 "You can delete a scheduled task by selecting it from the <guilabel>Task "
 "list</guilabel> with one click and by pressing the <guibutton>Delete</"
@@ -722,39 +715,46 @@ msgid ""
 "confirmation. By answering <guibutton>Yes</guibutton>, the scheduled task "
 "will be removed from the <guilabel>Task list</guilabel>."
 msgstr ""
-"Puede borrar una tarea programada seleccionándola en la "
-"<guilabel>Lista de tareas</guilabel> y pulsando el botón "
-"<guibutton>Borrar</guibutton> de la barra de herramientas en la ventana "
-"principal. A continuación se le "
-"pedirá confirmación. Respondiendo <guibutton>Si</guibutton>, la tarea "
-"programada se eliminará de la <guilabel>Lista de tareas</guilabel>."
+"Puede borrar una tarea programada seleccionándola en la <guilabel>Lista de "
+"tareas</guilabel> y pulsando el botón <guibutton>Borrar</guibutton> de la "
+"barra de herramientas en la ventana principal. A continuación se le pedirá "
+"confirmación. Respondiendo <guibutton>Si</guibutton>, la tarea programada se "
+"eliminará de la <guilabel>Lista de tareas</guilabel>."
 
-#: C/gnome-schedule.xml:449(para)
-msgid "Non-recurrent tasks disapear automatically from the list when they are done."
-msgstr "Las tareas sin repetición desaparecen automáticamente de la lista cuando se realizan."
+#: C/gnome-schedule.xml:450(para)
+msgid ""
+"Non-recurrent tasks disapear automatically from the list when they are done."
+msgstr ""
+"Las tareas sin repetición desaparecen automáticamente de la lista cuando se "
+"realizan."
 
-#: C/gnome-schedule.xml:455(title)
+#: C/gnome-schedule.xml:456(title)
 msgid "Manually Running Scheduled Task"
 msgstr "Ejecutar tareas de forma manual"
 
-#: C/gnome-schedule.xml:456(para)
+#: C/gnome-schedule.xml:457(para)
 msgid ""
 "You can trigger a scheduled task by selecting it from the <guilabel>Task "
 "list</guilabel> with one click and by pressing the <guibutton>Run task</"
 "guibutton> button in the main window tool bar."
-msgstr "Puede ejecutar una tarea programada seleccionándola en la <guilabel>lista de tareas</guilabel> y pulsando el botón <guibutton>Ejecutar tarea</guibutton> de la barra de herramientas de la ventana principal."
+msgstr ""
+"Puede ejecutar una tarea programada seleccionándola en la <guilabel>lista de "
+"tareas</guilabel> y pulsando el botón <guibutton>Ejecutar tarea</guibutton> "
+"de la barra de herramientas de la ventana principal."
 
-#: C/gnome-schedule.xml:460(para)
+#: C/gnome-schedule.xml:461(para)
 msgid ""
 "The task will be executed and its output will be displayed in a terminal "
 "window, letting you check if the task is correctly set."
-msgstr "La tarea se realizará y su salida se mostrará en una ventana de terminal, permitiéndole comprobar si la tarea está configurada correctamente."
+msgstr ""
+"La tarea se realizará y su salida se mostrará en una ventana de terminal, "
+"permitiéndole comprobar si la tarea está configurada correctamente."
 
-#: C/gnome-schedule.xml:467(title)
+#: C/gnome-schedule.xml:468(title)
 msgid "Using Templates"
 msgstr "Cómo utilizar plantillas "
 
-#: C/gnome-schedule.xml:468(para)
+#: C/gnome-schedule.xml:469(para)
 msgid ""
 "<application>Gnome Schedule</application> lets you save tasks as templates "
 "in order to reuse it later. This way, you will be able to create new "
@@ -764,22 +764,26 @@ msgstr ""
 "como plantillas para poder reutilizarlas posteriormente. De esta forma puede "
 "crear nuevas tareas más rápido."
 
-#: C/gnome-schedule.xml:469(para)
+#: C/gnome-schedule.xml:470(para)
 msgid ""
 "To manage templates press the <guilabel>Template</guilabel> button on the "
 "main window tool bar. A new window will show you a list of available "
 "templates. From this window you can create, modify, delete and use templates."
-msgstr "Para administrar las plantillas pulse el botón <guilabel>Plantillas</guilabel> en la barra de herramientas de la ventana principal. En una ventana nueva se mostrará una lista de plantillas disponibles. Desde esta ventana puede crear, modificar, borrar y usar las plantillas."
+msgstr ""
+"Para administrar las plantillas pulse el botón <guilabel>Plantillas</"
+"guilabel> en la barra de herramientas de la ventana principal. En una "
+"ventana nueva se mostrará una lista de plantillas disponibles. Desde esta "
+"ventana puede crear, modificar, borrar y usar las plantillas."
 
-#: C/gnome-schedule.xml:475(title)
+#: C/gnome-schedule.xml:476(title)
 msgid "Template manager window"
 msgstr "Ventana del administrador de plantillas"
 
-#: C/gnome-schedule.xml:482(phrase)
+#: C/gnome-schedule.xml:483(phrase)
 msgid "Shows the \"Manage templates\" window"
 msgstr "Muestra la ventana «Administrar plantillas»"
 
-#: C/gnome-schedule.xml:489(para)
+#: C/gnome-schedule.xml:490(para)
 msgid ""
 "You can have common tasks saved as templates. So, you will not have to write "
 "the same stuff again and again!"
@@ -787,11 +791,12 @@ msgstr ""
 "Puede guardar tareas comunes como plantillas. De esta manera, no tendrá que "
 "escribir lo mismo una y otra vez."
 
-#: C/gnome-schedule.xml:497(title)
+#: C/gnome-schedule.xml:498(title)
 msgid "Using <application>Gnome Schedule</application> as root"
-msgstr "Cómo usar el <application>Planificador de GNOME</application> como root"
+msgstr ""
+"Cómo usar el <application>Planificador de GNOME</application> como root"
 
-#: C/gnome-schedule.xml:498(para)
+#: C/gnome-schedule.xml:499(para)
 msgid ""
 "When you use <application>Gnome Schedule</application> as superuser, you can "
 "view, edit and add other users scheduled tasks."
@@ -800,7 +805,7 @@ msgstr ""
 "superusuario, puede ver, modificar y crear tareas programadas de otros "
 "usuarios."
 
-#: C/gnome-schedule.xml:499(para)
+#: C/gnome-schedule.xml:500(para)
 msgid ""
 "You can change the user by pressing the <guibutton>Change User</guibutton> "
 "button in the main window tool bar. Then, a dialog window will be shown. "
@@ -809,38 +814,42 @@ msgid ""
 "selected user."
 msgstr ""
 "Puede cambiar el usuario pulsando el botón <guibutton>Cambiar de usuario</"
-"guibutton> en la barra de herramientas de la ventana principal. Se mostrará una "
-"ventana de diálogo. Escoja un usuario de la lista desplegable y pulse el "
+"guibutton> en la barra de herramientas de la ventana principal. Se mostrará "
+"una ventana de diálogo. Escoja un usuario de la lista desplegable y pulse el "
 "botón <guilabel>Aceptar</guilabel>. Ahora, la ventana principal del "
 "<application>Planificador de GNOME</application> mostrará las tareas "
 "programadas del usuario elegido."
 
-#: C/gnome-schedule.xml:504(para)
+#: C/gnome-schedule.xml:505(para)
 msgid ""
 "Please, keep in mind that this option is only available for system "
 "administrators."
-msgstr "Por favor, tenga en cuenta que esta opción sólo está disponible para los administradores del sistema."
+msgstr ""
+"Por favor, tenga en cuenta que esta opción sólo está disponible para los "
+"administradores del sistema."
 
-#: C/gnome-schedule.xml:510(title)
+#: C/gnome-schedule.xml:511(title)
 msgid ""
 "Using <application>Gnome Schedule</application> to launch graphical "
 "applications"
-msgstr "Cómo usar el <application>Planificador de GNOME</application> como root"
-
-#: C/gnome-schedule.xml:511(para)
-msgid ""
-"You can use Gnome Schedule to launch a graphical application automatically, "
-"but there are some information you would consider before:"
 msgstr ""
-"Puede usar el Planificador de GNOME para iniciar una aplicación gráfica "
-"automáticamente, pero hay alguna información que debería considerar "
-"previamente:"
+"Cómo usar el <application>Planificador de GNOME</application> como root"
 
-#: C/gnome-schedule.xml:515(title)
+#: C/gnome-schedule.xml:512(para)
+msgid ""
+"You can use <application>Gnome Schedule</application> to launch a graphical "
+"application automatically, but there are some information you would consider "
+"before:"
+msgstr ""
+"Puede usar el <application>Planificador de GNOME</application> para iniciar "
+"una aplicación gráfica automáticamente, pero hay alguna información que "
+"debería considerar previamente:"
+
+#: C/gnome-schedule.xml:516(title)
 msgid "About DISPLAY environment variable"
 msgstr "Acerca de la variable de entorno DISPLAY"
 
-#: C/gnome-schedule.xml:516(para)
+#: C/gnome-schedule.xml:517(para)
 msgid ""
 "When you run a graphical application from the command line you must first "
 "set the environment variable DISPLAY. This variable is used to tell your "
@@ -854,15 +863,16 @@ msgstr ""
 "querrá usar el instalado en su propio equipo. En ese caso deberá establecer "
 "la variable DISPLAY de esta manera:"
 
-#: C/gnome-schedule.xml:521(command)
+#: C/gnome-schedule.xml:522(command)
 msgid "DISPLAY=:0.0"
 msgstr "DISPLAY=:0.0"
 
-#: C/gnome-schedule.xml:522(para)
-msgid "where :0.0 means use screen 0 of X server 0 in this computer."
-msgstr "donde :0.0 significa usar la pantalla 0 del servidor X 0 en este equipo"
-
 #: C/gnome-schedule.xml:523(para)
+msgid "where :0.0 means use screen 0 of X server 0 in this computer."
+msgstr ""
+"donde :0.0 significa usar la pantalla 0 del servidor X 0 en este equipo"
+
+#: C/gnome-schedule.xml:524(para)
 msgid ""
 "If you want display the application in a remote screen you can specify the "
 "IP address of the remote X server:"
@@ -870,15 +880,15 @@ msgstr ""
 "Si quiere mostrar la aplicación en una pantalla remota puede especificar la "
 "dirección IP del servidor X remoto:"
 
-#: C/gnome-schedule.xml:525(command)
+#: C/gnome-schedule.xml:526(command)
 msgid "DISPLAY=192.168.0.25:0.0"
 msgstr "DISPLAY=192.168.0.25:0.0"
 
-#: C/gnome-schedule.xml:529(title)
+#: C/gnome-schedule.xml:530(title)
 msgid "Setting DISPLAY variable for tasks that will launch once"
 msgstr "Añadir una tarea programada que se ejecutará una vez"
 
-#: C/gnome-schedule.xml:530(para)
+#: C/gnome-schedule.xml:531(para)
 msgid ""
 "When you are creating or modifying a task, you can define the DISPLAY "
 "variable in the script text box. Make the definition at the begining of the "
@@ -888,29 +898,29 @@ msgstr ""
 "DISPLAY en el campo de texto script. Cree la definición al comienzo del "
 "script."
 
-#: C/gnome-schedule.xml:535(title)
+#: C/gnome-schedule.xml:536(title)
 msgid "Setting DISPLAY variable for tasks that will launch recurrently"
 msgstr "Añadir una tarea programada que se ejecutará repetidamente"
 
-#: C/gnome-schedule.xml:536(para)
+#: C/gnome-schedule.xml:537(para)
 msgid ""
-"Gnome Schedule does not support yet setting environment variables for "
-"recurrent tasks, but it will do soon. In the meantime, you can manually "
-"create a script that first defines DISPLAY variable and then calls the "
-"graphical application. Finally, you can create a recurrent task to launch "
-"the script."
+"<application>Gnome Schedule</application> does not support yet setting "
+"environment variables for recurrent tasks, but it will do soon. In the "
+"meantime, you can manually create a script that first defines DISPLAY "
+"variable and then calls the graphical application. Finally, you can create a "
+"recurrent task to launch the script."
 msgstr ""
-"El Planificador de GNOME aún no soporta las variables de entorno para tareas "
-"repetitivas, pero pronto lo hará. Por el momento, puede crear un script "
-"manualmente que primeramente defina la variable DISPLAY y después haga una "
-"llamada a la aplicación gráfica. Finalmente, puede crear una tarea "
-"repetitiva para lanzar el script."
+"El <application>Planificador de GNOME</application> aún no soporta las "
+"variables de entorno para tareas repetitivas, pero pronto lo hará. Por el "
+"momento, puede crear un script manualmente que primeramente defina la "
+"variable DISPLAY y después haga una llamada a la aplicación gráfica. "
+"Finalmente, puede crear una tarea repetitiva para lanzar el script."
 
-#: C/gnome-schedule.xml:543(title)
+#: C/gnome-schedule.xml:544(title)
 msgid "About X server"
 msgstr "Acerca del servidor X"
 
-#: C/gnome-schedule.xml:544(para)
+#: C/gnome-schedule.xml:545(para)
 msgid ""
 "The X server is part of the X Window System. It is in charge of drawing "
 "windows on the screen and processing the user input from a keyboard or any "
@@ -920,7 +930,7 @@ msgstr ""
 "encargado de dibujar ventanas en la pantalla y procesar las entradas del "
 "usuario desde un teclado u otro cualquier periférico."
 
-#: C/gnome-schedule.xml:547(para)
+#: C/gnome-schedule.xml:548(para)
 msgid ""
 "If you need more information about X server or the X Window System you can "
 "read its <ulink url=\"http://en.wikipedia.org/wiki/X_Window_System\" type="
@@ -930,15 +940,15 @@ msgstr ""
 "Window puede leer su <ulink url=\"http://es.wikipedia.org/wiki/"
 "X_Window_System\" type=\"http\">entrada</ulink> en la Wikipedia."
 
-#: C/gnome-schedule.xml:573(title)
+#: C/gnome-schedule.xml:574(title)
 msgid "About <application>Gnome Schedule</application>"
 msgstr "Acerca del <application>Planificador de GNOME</application>"
 
-#: C/gnome-schedule.xml:575(title)
+#: C/gnome-schedule.xml:576(title)
 msgid "Authors"
 msgstr "Autores"
 
-#: C/gnome-schedule.xml:576(para)
+#: C/gnome-schedule.xml:577(para)
 msgid ""
 "<application>Gnome Schedule</application> was written by Philip Van Hoof "
 "(<email>pvanhoof@gnome.org</email>), Kristof Vansant (<email>de_lupus at "
@@ -952,14 +962,14 @@ msgstr ""
 "(<email>de_lupus at pandora dot be</email>) y Gaute Hope (<email>eg@gaute."
 "vetsj.com</email>). Para encontrar más información sobre el "
 "<application>Planificador de GNOME</application>, por favor visite la <ulink "
-"url=\"http://gnome-schedule.sourceforge.net/\" type=\"http\"> página web "
-"del <application>Planificador de GNOME</application></ulink>."
+"url=\"http://gnome-schedule.sourceforge.net/\" type=\"http\"> página web del "
+"<application>Planificador de GNOME</application></ulink>."
 
-#: C/gnome-schedule.xml:585(title)
+#: C/gnome-schedule.xml:586(title)
 msgid "Reporting Bugs"
 msgstr "Cómo informar de un error"
 
-#: C/gnome-schedule.xml:586(para)
+#: C/gnome-schedule.xml:587(para)
 msgid ""
 "To report a bug or make a suggestion regarding this application or this "
 "manual, follow the directions in this <ulink url=\"ghelp:gnome-feedback\" "
@@ -969,11 +979,11 @@ msgstr ""
 "sobre este manual, siga las explicaciones en este <ulink url=\"ghelp:gnome-"
 "feedback\" type=\"help\">documento</ulink>."
 
-#: C/gnome-schedule.xml:594(title)
+#: C/gnome-schedule.xml:595(title)
 msgid "License"
 msgstr "Licencia"
 
-#: C/gnome-schedule.xml:595(para)
+#: C/gnome-schedule.xml:596(para)
 msgid ""
 "This program is distributed under the terms of the GNU General Public "
 "license as published by the Free Software Foundation; either version 2 of "
@@ -992,6 +1002,20 @@ msgstr ""
 #: C/gnome-schedule.xml:0(None)
 msgid "translator-credits"
 msgstr ""
-"Rodrigo Marcos Fombellida <rmarcos@svn.gnome.org>, 2005, 2008.\n"
-"Jorge González González <jorge.gonzalez.gonzalez@hispalinux.es>, 2006."
+"Rodrigo Marcos Fombellida <rmarcos@svn.gnome.org>, 2005, 2008\n"
+"Jorge González <jorgegonz@svn.gnome.org>, 2006, 2008"
 
+#~ msgid "Translator: Your first name here"
+#~ msgstr "Rodrigo"
+
+#~ msgid "Translator: Your surname here"
+#~ msgstr "Marcos Fombellida"
+
+#~ msgid "Translator: The name of your translation team here"
+#~ msgstr "Equipo de traducción de GNOME al español"
+
+#~ msgid "Translator: Your mail here"
+#~ msgstr "rmarcos@svn.gnome.org"
+
+#~ msgid "Translator: Write here your contribution, e.g. Latin translation"
+#~ msgstr "Traducción al español"
