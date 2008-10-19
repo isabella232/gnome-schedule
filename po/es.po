@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule.HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-03-17 15:30+0000\n"
-"PO-Revision-Date: 2008-05-24 12:04+0200\n"
+"POT-Creation-Date: 2008-10-02 03:20+0000\n"
+"PO-Revision-Date: 2008-10-19 19:41+0200\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -56,8 +56,8 @@ msgid ""
 "Failed to create data dir: %s. Make sure ~/.gnome and ~/.gnome/gnome-"
 "schedule are writable."
 msgstr ""
-"Falló al crear el directorio de datos: %s. Asegúrese de que se puede escribir en "
-"~/.gnome y ~/.gnome/gnome-schedule"
+"Falló al crear el directorio de datos: %s. Asegúrese de que se puede "
+"escribir en ~/.gnome y ~/.gnome/gnome-schedule"
 
 #: ../src/at.py:481
 #, python-format
@@ -152,7 +152,8 @@ msgid "weekday"
 msgstr "día de la semana"
 
 #: ../src/crontab.py:558
-msgid "Failed to parse the Day of Month field, possibly due to a bug in crontab."
+msgid ""
+"Failed to parse the Day of Month field, possibly due to a bug in crontab."
 msgstr ""
 "No se ha podido analizar el campo Día del mes, posiblemente debido a un "
 "error en crontab."
@@ -214,16 +215,17 @@ msgid ""
 "Your command contains one or more of the character %, this is special for "
 "cron and cannot be used with Gnome-schedule because of the format it uses to "
 "store extra information on the crontab line. Please use the | redirector "
-"character to acheieve the same functionality. Refer to the crontab manual "
-"for more information about the % character. If you don not want to use it "
-"for redirection it must be properly escaped with the \\ letter."
+"character to achieve the same functionality. Refer to the crontab manual for "
+"more information about the % character. If you don not want to use it for "
+"redirection it must be properly escaped with the \\ letter."
 msgstr ""
 "Su comando contiene uno o más caracteres %, este carácter es especial para "
 "cron y no se puede usar con el Planificador de GNOME por el formato que usa "
 "para almacenar la información adicional en la línea del crontab. Use el "
 "carácter de redirección «|» para conseguir la misma funcionalidad. Consulte "
 "el manual de crontab para obtener más información sobre el carácter %. Si no "
-"quiere usar este carácter para la redirección debe escaparlo con «\\»."
+"quiere usar este carácter para la redirección debe escaparlo con el carácter "
+"«\\»."
 
 #: ../src/crontabEditor.py:489
 msgid ""
@@ -235,11 +237,11 @@ msgstr ""
 "\n"
 "Las tareas periódicas se ejecutarán desde el directorio personal."
 
-#: ../src/crontabEditor.py:490 ../src/mainWindow.py:663 ../src/atEditor.py:575
+#: ../src/crontabEditor.py:490 ../src/mainWindow.py:669 ../src/atEditor.py:575
 msgid "_Don't show again"
 msgstr "_No mostrar de nuevo"
 
-#: ../src/crontabEditor.py:491 ../src/mainWindow.py:664 ../src/atEditor.py:576
+#: ../src/crontabEditor.py:491 ../src/mainWindow.py:670 ../src/atEditor.py:576
 msgid "Warning: Working directory of executed tasks"
 msgstr "Advertencia: Directorio de trabajo de las tareas ejecutadas"
 
@@ -520,7 +522,8 @@ msgstr "Tareas programadas y activas"
 
 #: ../src/gnome-schedule.glade.h:50
 msgid "See \"man 5 crontab\" for information about the crontab format."
-msgstr "Vea «man 5 crontab» para obtener información acerca del formato de crontab."
+msgstr ""
+"Vea «man 5 crontab» para obtener información acerca del formato de crontab."
 
 #: ../src/gnome-schedule.glade.h:51
 msgid "Show help"
@@ -534,7 +537,7 @@ msgstr "Descripción de la tarea:"
 msgid "Task:"
 msgstr "Tarea:"
 
-#: ../src/gnome-schedule.glade.h:54 ../src/mainWindow.py:184
+#: ../src/gnome-schedule.glade.h:54 ../src/mainWindow.py:185
 msgid "Templates"
 msgstr "Plantillas"
 
@@ -688,8 +691,10 @@ msgstr "Cada año el día %(date)s en el minuto %(minute)s de cada hora"
 
 #: ../src/lang.py:209
 #, python-format
-msgid "Every year on %(date)s at every minute between %(time_from)s and %(time_to)s"
-msgstr "Cada año el día %(date)s a cada minuto entre %(time_from)s y %(time_to)s"
+msgid ""
+"Every year on %(date)s at every minute between %(time_from)s and %(time_to)s"
+msgstr ""
+"Cada año el día %(date)s a cada minuto entre %(time_from)s y %(time_to)s"
 
 #: ../src/lang.py:211
 #, python-format
@@ -716,7 +721,8 @@ msgstr "Cada %(weekday)s en el minuto %(minute)s de cada hora"
 msgid ""
 "On every weekday: %(weekday)s at every minute between %(time_from)s and %"
 "(time_to)s"
-msgstr "Cada %(weekday)s a cada minuto entre las %(time_from)s y las %(time_to)s"
+msgstr ""
+"Cada %(weekday)s a cada minuto entre las %(time_from)s y las %(time_to)s"
 
 #: ../src/lang.py:224
 #, python-format
@@ -728,7 +734,8 @@ msgstr "Cada %(weekday)s a las %(time)s"
 msgid ""
 "On day %(monthday)s of every month and every weekday: %(weekday)s at every "
 "full hour"
-msgstr "El día %(monthday)s de cada mes y cada %(weekday)s a cada hora completa"
+msgstr ""
+"El día %(monthday)s de cada mes y cada %(weekday)s a cada hora completa"
 
 #: ../src/lang.py:231
 #, python-format
@@ -757,7 +764,8 @@ msgstr ""
 
 #: ../src/lang.py:237
 #, python-format
-msgid "On day %(monthday)s of every month and every weekday: %(weekday)s at %(time)s"
+msgid ""
+"On day %(monthday)s of every month and every weekday: %(weekday)s at %(time)s"
 msgstr "El día %(monthday)s de cada mes y cada %(weekday)s a las %(time)s"
 
 #: ../src/lang.py:242
@@ -772,7 +780,8 @@ msgstr "Cada %(weekday)s de %(month)s a cada minuto"
 
 #: ../src/lang.py:246
 #, python-format
-msgid "On every weekday: %(weekday)s in %(month)s at minute %(minute)s of every hour"
+msgid ""
+"On every weekday: %(weekday)s in %(month)s at minute %(minute)s of every hour"
 msgstr "Cada %(weekday)s de %(month)s en el minuto %(minute)s de cada hora"
 
 #: ../src/lang.py:248
@@ -885,65 +894,65 @@ msgstr "día de la semana: %s"
 msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 msgstr "A las %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 
-#: ../src/mainWindow.py:111
+#: ../src/mainWindow.py:112
 msgid "Recurrent task"
 msgstr "Tarea repetitiva"
 
-#: ../src/mainWindow.py:122
+#: ../src/mainWindow.py:123
 msgid "One-time task"
 msgstr "Una tarea no repetitiva"
 
-#: ../src/mainWindow.py:133
+#: ../src/mainWindow.py:134
 msgid "From template"
 msgstr "Desde plantilla"
 
-#: ../src/mainWindow.py:152
+#: ../src/mainWindow.py:153
 msgid "Add a new task"
 msgstr "Añadir una tarea nueva"
 
-#: ../src/mainWindow.py:285 ../src/mainWindow.py:415
+#: ../src/mainWindow.py:289 ../src/mainWindow.py:419
 #, python-format
 msgid "Editing user: %s"
 msgstr "Editando usuario: %s"
 
-#: ../src/mainWindow.py:332 ../src/mainWindow.py:343 ../src/mainWindow.py:354
-#: ../src/mainWindow.py:369 ../src/mainWindow.py:380
+#: ../src/mainWindow.py:336 ../src/mainWindow.py:347 ../src/mainWindow.py:358
+#: ../src/mainWindow.py:373 ../src/mainWindow.py:384
 #: ../src/scheduleapplet.py:122
 msgid "ERROR: Could not load icon"
 msgstr "ERROR: No se pudo cargar el icono"
 
-#: ../src/mainWindow.py:389 ../src/mainWindow.py:395
+#: ../src/mainWindow.py:393 ../src/mainWindow.py:399
 msgid "ERROR: Could not load glade file"
 msgstr "ERROR: No se pudo cargar el archivo glade"
 
-#: ../src/mainWindow.py:450 ../src/template_chooser.py:69
+#: ../src/mainWindow.py:454 ../src/template_chooser.py:69
 #: ../src/template_manager.py:72
 msgid "Task"
 msgstr "Tarea"
 
-#: ../src/mainWindow.py:463 ../src/mainWindow.py:489
+#: ../src/mainWindow.py:467 ../src/mainWindow.py:493
 #: ../src/template_chooser.py:78 ../src/template_manager.py:81
 msgid "Description"
 msgstr "Descripción"
 
-#: ../src/mainWindow.py:467 ../src/mainWindow.py:480
+#: ../src/mainWindow.py:471 ../src/mainWindow.py:484
 msgid "Date and Time"
 msgstr "Fecha y hora"
 
-#: ../src/mainWindow.py:471 ../src/mainWindow.py:484
+#: ../src/mainWindow.py:475 ../src/mainWindow.py:488
 msgid "Command preview"
 msgstr "Vista previa del comando"
 
 #. print ex
-#: ../src/mainWindow.py:543 ../src/mainWindow.py:606
+#: ../src/mainWindow.py:547 ../src/mainWindow.py:610
 msgid "Please select a task"
 msgstr "Por favor seleccione una tarea"
 
-#: ../src/mainWindow.py:550
+#: ../src/mainWindow.py:554
 msgid "Do you want to delete this task?"
 msgstr "¿Quiere eliminar esta tarea?"
 
-#: ../src/mainWindow.py:651
+#: ../src/mainWindow.py:657
 msgid ""
 "Are you sure you want to run this task now?\n"
 "\n"
@@ -955,11 +964,11 @@ msgstr ""
 "Esto se usa para previsualizar la tarea e iniciarla una vez, esto no afecta "
 "la normal ejecución de las tareas programadas."
 
-#: ../src/mainWindow.py:653
+#: ../src/mainWindow.py:659
 msgid "Are you sure you want to run this task?"
 msgstr "¿Está seguro de que quiere ejectar esta tarea?"
 
-#: ../src/mainWindow.py:662
+#: ../src/mainWindow.py:668
 msgid ""
 "Note about working directory of executed tasks:\n"
 "\n"
@@ -974,28 +983,24 @@ msgstr ""
 "Planificador de GNOME en el momento de crear la tarea (normalmente el "
 "directorio personal)"
 
-#: ../src/mainWindow.py:717
-msgid "Press ENTER to continue and close this window."
-msgstr "Presione INTRO para continuar y cerrar esta ventana."
-
-#: ../src/mainWindow.py:725
+#: ../src/mainWindow.py:727
 msgid "Please select a task!"
 msgstr "Por favor seleccione una tarea"
 
-#: ../src/mainWindow.py:733
+#: ../src/mainWindow.py:735
 msgid "About Gnome Schedule"
 msgstr "Acerca del Planificador de GNOME"
 
-#: ../src/mainWindow.py:734
+#: ../src/mainWindow.py:736
 msgid "Gnome Schedule"
 msgstr "Planificador de GNOME"
 
-#: ../src/mainWindow.py:736
+#: ../src/mainWindow.py:738
 #, python-format
 msgid "Copyright (c) %(year)s %(name)s."
 msgstr "Derechos de autor (c) %(year)s %(name)s"
 
-#: ../src/mainWindow.py:749
+#: ../src/mainWindow.py:751
 msgid "translator-credits"
 msgstr ""
 "Alejandro Valdes Jimenez <avaldes@utalca.cl>, 2007\n"
@@ -1004,7 +1009,7 @@ msgstr ""
 "QA: Jorge González <jorgegonz@svn.gnome.org>, 2007\n"
 "QA: Francisco Javier F. Serrador <serrador@cvs.gnome.org>, 2004-2006"
 
-#: ../src/mainWindow.py:770
+#: ../src/mainWindow.py:772
 msgid "Could not display help"
 msgstr "No se pudo mostrar la ayuda"
 
@@ -1080,3 +1085,5 @@ msgstr "Usar plantilla"
 msgid "One-time"
 msgstr "Una sola vez"
 
+#~ msgid "Press ENTER to continue and close this window."
+#~ msgstr "Presione INTRO para continuar y cerrar esta ventana."
