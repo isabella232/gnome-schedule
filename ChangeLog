@@ -2,6 +2,7 @@
 
 	* xwrapper.py: Wrapper around crontab commands running in X
 	* Added xoutput, display to datafile, popped to version 4
+	* new x-output-support branch: broken at the moment
 
 2008-10-01  Gaute Hope  <eg@gaute.vetsj.com>
 
