@@ -42,7 +42,7 @@ class Crontab:
 		self.env_vars = [ ]
 		
 		self.crontabdata = self.user_home_dir + "/.gnome/gnome-schedule/crontab"
-		self.crontabdatafileversion = 3
+		self.crontabdatafileversion = 4
 		
 		if os.path.exists (self.user_home_dir + "/.gnome") != True:
 			os.mkdir (self.user_home_dir + "/.gnome", 0700)
@@ -224,7 +224,7 @@ class Crontab:
 					raise ValueError("fixed", self.timenames[type], _("Must be between %(min)s and %(max)s") % { "min": min(timerange), "max": max(timerange) } )
 	
 
-	def update (self, minute, hour, day, month, weekday, command, linenumber, parentiter, nooutput, job_id, comment, title, desc):
+	def update (self, minute, hour, day, month, weekday, command, linenumber, parentiter, nooutput, job_id, comment, title, desc, xoutput = 0, display = ""):
 		if self.check_command (command) == False:
 			return False
 			
@@ -288,6 +288,8 @@ class Crontab:
 			fh.write ("nooutput=1\n")
 		else:
 			fh.write ("nooutput=0\n")
+		fh.write ("xoutput=" + str(xoutput) + "\n")
+		fh.write ("display=" + display + "\n")	
 		fh.close ()	
 		os.chown (f, self.uid, self.gid)
 		os.chmod (f, 0600)
@@ -316,7 +318,7 @@ class Crontab:
 		self.__write__ ()
 		
 		
-	def append (self, minute, hour, day, month, weekday, command, nooutput, title, desc = None):
+	def append (self, minute, hour, day, month, weekday, command, nooutput, title, desc = None, xoutput = 0, display = ""):
 		if self.check_command (command) == False:
 			return False
 			
@@ -375,7 +377,8 @@ class Crontab:
 			fh.write ("nooutput=1\n")
 		else:
 			fh.write ("nooutput=0\n")
-		
+		fh.write ("xoutput=" + str(xoutput) + "\n")
+		fh.write ("display=" + display + "\n")		
 		fh.close ()
 		os.chown (f, self.uid, self.gid)
 		os.chmod (f, 0600)
@@ -425,7 +428,7 @@ class Crontab:
 			array_or_false = self.parse (line)
 			if array_or_false != False:
 				if array_or_false[0] == 2:
-					(minute, hour, day, month, weekday, command, comment, job_id, title, desc, nooutput) = array_or_false[1]
+					(minute, hour, day, month, weekday, command, comment, job_id, title, desc, nooutput, xoutput, display) = array_or_false[1]
 					
 					time = minute + " " + hour + " " + day + " " + month + " " + weekday
 
@@ -434,9 +437,9 @@ class Crontab:
 				
 					#add task to treemodel in mainWindow
 					if minute == "@reboot":
-						data.append([title, self.__easy__ (minute, hour, day, month, weekday), preview, line, linecount, time, self, None, job_id, "", "","", _("Recurrent"), "crontab", nooutput, _("At reboot")])
+						data.append([title, self.__easy__ (minute, hour, day, month, weekday), preview, line, linecount, time, self, None, job_id, "", "","", _("Recurrent"), "crontab", nooutput, _("At reboot"), xoutput, display])
 					else:
-						data.append([title, self.__easy__ (minute, hour, day, month, weekday), preview, line, linecount, time, self, None, job_id, "", "","", _("Recurrent"), "crontab", nooutput, time])
+						data.append([title, self.__easy__ (minute, hour, day, month, weekday), preview, line, linecount, time, self, None, job_id, "", "","", _("Recurrent"), "crontab", nooutput, time, xoutput, display])
 				
 				
 			linecount = linecount + 1	
@@ -587,12 +590,15 @@ class Crontab:
 		# Retrive title and icon data
 		if nofile == False:
 			if job_id:
-				ver, title, desc, nooutput = self.get_job_data (job_id)
+				success, ver, title, desc, nooutput, xoutput, display = self.get_job_data (job_id)
 			else:
+				success = True
 				ver = 1
 				title = ""
 				desc = ""
 				nooutput = 0
+				xoutput = False
+				display = ""
 			
 			if nooutput != 0:
 				# remove devnull part of command
@@ -614,7 +620,7 @@ class Crontab:
 			command = command.strip ()	
 				
 				
-			return [2, [minute, hour, dom, moy, dow, command, comment, job_id, title, desc, nooutput]]
+			return [2, [minute, hour, dom, moy, dow, command, comment, job_id, title, desc, nooutput, xoutput, display]]
 		else:
 			return minute, hour, dom, moy, dow, command
 		
@@ -647,18 +653,32 @@ class Crontab:
 				nooutput_str = d[9:d.find ("\n")]
 				if (nooutput_str == "0") or (nooutput_str == "1"):
 					nooutput = int (nooutput_str)
+					d = d[d.find ("\n") + 1:]
 				else:
 					nooutput = 0
 			else:
 				nooutput = 0
+				
+			if ver >= 4:
+				xoutput_str = d[8:d.find ("\n")]
+				if (xoutput_str == "0") or (xoutput_str == "1"):
+					xoutput = int (xoutput_str)
+					d = d[d.find ("\n") + 1:]
+				else:
+					xoutput = 0
+				
+				display = d[8:d.find ("\n")]
+				d = d[d.find ("\n") + 1:]
+				if (len (display) < 1) or (xoutput == 0):
+					display = ""
 			
 			fh.close ()
 
-			return ver, title, desc, nooutput
+			return True, ver, title, desc, nooutput, xoutput, display
 			
 			
 		else: 
-			return "", "", "", 0
+			return False, "", "", "", 0, 0, ""
 			
 			
 		
