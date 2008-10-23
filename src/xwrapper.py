@@ -1,3 +1,4 @@
+#! @PYTHON@
 # xwrapper.py - wrapper around X applications
 # Copyright (C) 2004 - 2008  Gaute Hope <eg at gaute dot vetsj dot com>
 
@@ -39,23 +40,23 @@ if poscorrect_isset == False:
 	
 if (len (sys.argv) < 4):
 	print _("Minium number of arguments is 4.")
-	exit ()
+	sys.exit ()
 
 if sys.argv[1] == "c":
 	job_type = 0
 else:
 	print _("Unknown type of job: Wrapper only useful on crontab tasks.")
-	exit ()
+	sys.exit ()
 
 try:
 	job_id = int (sys.argv[2])
 except:
 	print _("Invalid job id.")
-	exit ()
+	sys.exit ()
 	
 if job_id < 0:
 	print _("Invalid job id.")
-	exit ()
+	sys.exit ()
 
 i = 4
 command = ""
@@ -65,7 +66,7 @@ while (i < len (sys.argv)):
 
 if len (command) < 2:
 	print _("Invalid command, must be longer than 2.")
-	exit ()
+	sys.exit ()
 
 uid = os.geteuid ()
 gid = os.getegid ()
@@ -83,20 +84,24 @@ if job_type == 0:
 	success, ver, title, desc, nooutput, xoutput, display = c.get_job_data (job_id)
 	if success == False:
 		print _("Could not get job data, might be an old version - try recreating the task")
-		exit ()
+		sys.exit ()
 	
 	print _("Launching %s.." % title)
 	if (xoutput == 0):
 		print _("xoutput==0: Why am I launched?")
-		exit ()
+		sys.exit ()
 	if (len (display) < 2):
 		print :("len(display)<2: No proper DISPLAY variable")
-		exit ()
+		sys.exit ()
 		
 	#### TODO: LAUNCH ####
+	ex = "export DISPLAY=" + display + " " + command
+	os.system (ex)
+	sys.exit ()
+	
 else:
 	print _("I will never be displayed.")
-	exit ()
+	sys.exit ()
 	
 print _("xwrapper.py: completed")
 		
