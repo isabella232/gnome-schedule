@@ -37,9 +37,11 @@ manual_poscorrect = False
 if poscorrect_isset == False:
 	os.putenv ("POSIXLY_CORRECT", "enabled")
 	manual_poscorrect = True
-	
+
 if (len (sys.argv) < 4):
-	print _("Minium number of arguments is 4.")
+	print _("Minium number of arguments is 3.")
+	
+	print _("Wrapper script for Gnome-schedule (http://gnome-schedule.sf.net) for applications to be run from crontab under X. Use through gnome-schedule.")
 	sys.exit ()
 
 if sys.argv[1] == "c":
@@ -58,7 +60,7 @@ if job_id < 0:
 	print _("Invalid job id.")
 	sys.exit ()
 
-i = 4
+i = 3
 command = ""
 while (i < len (sys.argv)):
 	command = command + sys.argv[i]
@@ -83,7 +85,11 @@ if job_type == 0:
 	c = crontab.Crontab (is_root, user, uid, gid, home_dir)
 	success, ver, title, desc, nooutput, xoutput, display = c.get_job_data (job_id)
 	if success == False:
-		print _("Could not get job data, might be an old version - try recreating the task")
+		print _("Could not get job data, the task might have been created with an old version - try recreating the task.")
+		sys.exit ()
+	
+	if ver < 4:
+		print _("Data file too old. Recreate task.")
 		sys.exit ()
 	
 	print _("Launching %s.." % title)
@@ -91,7 +97,7 @@ if job_type == 0:
 		print _("xoutput==0: Why am I launched?")
 		sys.exit ()
 	if (len (display) < 2):
-		print :("len(display)<2: No proper DISPLAY variable")
+		print _("len(display)<2: No proper DISPLAY variable")
 		sys.exit ()
 		
 	#### TODO: LAUNCH ####
@@ -104,7 +110,4 @@ else:
 	sys.exit ()
 	
 print _("xwrapper.py: completed")
-		
-	
-
 
