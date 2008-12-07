@@ -172,26 +172,15 @@ class main:
 		self.edit_mode_button = self.xml.get_widget ("edit_mode_button")
 		self.button_template = self.xml.get_widget ("button_m_template")
 
+		icon = gtk.Image ()
+		icon.set_from_pixbuf (self.normalicontemplate)
+		self.button_template.set_icon_widget (icon)
+		icon.show ()
+
 		self.prop_button.set_sensitive (False)
 		self.del_button.set_sensitive (False)
 		self.run_button.set_sensitive (False)
-	
-		self.button_tb = self.button_template.get_child ()
-		self.button_tb.remove(self.button_tb.get_child())
-		self.tvbox = gtk.VBox()
-		self.button_tb.add(self.tvbox)
-		icon = gtk.Image ()
-		icon.set_from_pixbuf (self.normalicontemplate)
-		label = gtk.Label (_("Templates"))
-		icon.set_alignment (0.5, 0.5)
-		label.set_justify (gtk.JUSTIFY_CENTER)
-		label.set_alignment (0.5, 0.5)
-		self.tvbox.pack_start (icon, True, True, 0)
-		self.tvbox.pack_start (label, True, True, 0)
-		self.tvbox.show_all ()
-		
-	
-			
+
 		self.xml.signal_connect("on_prop_button_clicked", self.on_prop_button_clicked)
 		self.xml.signal_connect("on_del_button_clicked", self.on_del_button_clicked)
 		self.xml.signal_connect("on_help_button_clicked", self.on_help_button_clicked)
