@@ -1,3 +1,7 @@
+2008-12-07  Gaute Hope  <eg@gaute.vetsj.com>
+	
+	* Bug 563600: Fixed text position on template ToolButton in mainWindow.
+
 2008-10-01  Gaute Hope  <eg@gaute.vetsj.com>
 
 	* Cleaned up the run function a bit more.. problem persists - can't take care of differencies between shells that don't act like they should.
