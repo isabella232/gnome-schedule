@@ -100,7 +100,7 @@ if job_type == 0:
 		print _("len(display)<2: No proper DISPLAY variable")
 		sys.exit ()
 		
-	#### TODO: LAUNCH ####
+	#TODO: Check for DISPLAY and user
 	ex = "export DISPLAY=" + display + " " + command
 	os.system (ex)
 	sys.exit ()

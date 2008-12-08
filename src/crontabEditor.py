@@ -74,7 +74,16 @@ class CrontabEditor:
 		self.frequency_combobox_model.append([_("At reboot"), ["", "", "", "", "", "@reboot"]])
 		self.frequency_combobox.set_model (self.frequency_combobox_model)
 		
-		self.cb_nooutput = self.xml.get_widget("cb_nooutput")
+		#self.cb_nooutput = self.xml.get_widget("cb_nooutput")
+		self.cb_output = self.xml.get_widget ("combo_output")
+		self.cb_o_model = gtk.ListStore (gobject.TYPE_STRING)
+		self.cb_o_model.append ([""])
+		self.cb_o_model.append ([_("Supress output")])
+		self.cb_o_model.append ([_("X application")])
+		self.cb_o_model.append ([_("X application: supress output")])
+		self.cb_output.set_model (self.cb_o_model)
+		self.cb_output.show ()
+
 				
 		#self.help_button = self.xml.get_widget ("cron_help_button")
 		
@@ -91,7 +100,7 @@ class CrontabEditor:
 		self.xml.signal_connect("on_anyadvanced_entry_changed", self.on_anyadvanced_entry_changed)
 		self.xml.signal_connect("on_anybasic_entry_changed", self.on_anybasic_entry_changed)
 		self.xml.signal_connect("on_frequency_combobox_changed", self.on_frequency_combobox_changed)
-		self.xml.signal_connect("on_cb_nooutput_toggeled", self.on_anybasic_entry_changed)
+		self.xml.signal_connect ("on_combo_output_changed", self.on_anybasic_entry_changed)
 
 		self.xml.signal_connect("on_help_clicked", self.on_fieldHelp_clicked)
 		
@@ -99,9 +108,6 @@ class CrontabEditor:
 		self.xml.signal_connect("on_rb_basic_toggled", self.on_editmode_toggled)
 		
 		self.xml.signal_connect ("on_button_template_clicked", self.on_template_clicked)
-		
-		
-		##
 		
 		##advanced
 		self.minute_entry = self.xml.get_widget ("minute_entry")
@@ -115,8 +121,6 @@ class CrontabEditor:
 		self.help_day = self.xml.get_widget ("help_day")
 		self.help_month = self.xml.get_widget ("help_month")
 		self.help_weekday = self.xml.get_widget ("help_weekday")
-		##
-		
 		
 		self.editorhelper = crontabEditorHelper.CrontabEditorHelper(self)
 		
@@ -131,9 +135,9 @@ class CrontabEditor:
 		self.widget.set_position(gtk.WIN_POS_CENTER_ON_PARENT)
 		self.button_template.show ()
 		self.widget.show ()
-		self.cb_nooutput.set_active (True)
+		self.cb_output.set_active (0)
 
-	def showadd_template (self, transient, title, command, nooutput,timeexpression):
+	def showadd_template (self, transient, title, command, output,timeexpression):
 		self.button_apply.set_label (gtk.STOCK_ADD)
 		self.__reset__ ()
 		self.mode = 0
@@ -143,7 +147,7 @@ class CrontabEditor:
 		self.button_template.show ()
 		self.widget.show ()
 		
-		self.nooutput = nooutput
+		self.output = output 
 		# hehe again, why make it less complicated..
 		timeexpression = timeexpression + " echo hehe"
 		self.minute, self.hour, self.day, self.month, self.weekday, hehe = self.scheduler.parse (timeexpression, True)
@@ -168,15 +172,10 @@ class CrontabEditor:
 			self.rb_basic.set_active (True)
 			self.frequency_combobox.set_active (i)
 
-		if self.nooutput:
-			self.entry_task.set_text (self.command)
-			self.cb_nooutput.set_active (True)
-			
-		else:
-			self.cb_nooutput.set_active (False)
+		self.cb_output.set_active (self.output)
 			
 			
-	def showedit_template (self, transient, id, title, command, nooutput, timeexpression):
+	def showedit_template (self, transient, id, title, command, output, timeexpression):
 		self.button_apply.set_label (gtk.STOCK_SAVE)
 		
 		self.mode = 2
@@ -185,7 +184,7 @@ class CrontabEditor:
 		
 		self.command = command
 		self.title = title
-		self.nooutput = nooutput
+		self.output = output
 		
 		timeexpression = timeexpression + " echo hehe"
 		self.minute, self.hour, self.day, self.month, self.weekday, hehe = self.scheduler.parse (timeexpression, True)
@@ -213,13 +212,8 @@ class CrontabEditor:
 			self.rb_basic.set_active (True)
 			self.frequency_combobox.set_active (i)
 
-		if self.nooutput:
-			self.entry_task.set_text (self.command)
-			self.cb_nooutput.set_active (True)
-			
-		else:
-			self.cb_nooutput.set_active (False)
-			
+		self.cb_output.set_active (self.output)
+
 	def shownew_template (self, transient):
 		self.button_apply.set_label (gtk.STOCK_ADD)
 		
@@ -244,7 +238,7 @@ class CrontabEditor:
 		self.record = record
 		self.job_id = job_id
 		self.__reset__ ()
-		(self.minute, self.hour, self.day, self.month, self.weekday, self.command, self.comment, self.job_id, self.title, self.desc, self.nooutput) = self.scheduler.parse (record)[1]
+		(self.minute, self.hour, self.day, self.month, self.weekday, self.command, self.comment, self.job_id, self.title, self.desc, self.output) = self.scheduler.parse (record)[1]
 		self.special = ""
 		if self.minute == "@reboot":
 			self.special = "@reboot"
@@ -269,13 +263,7 @@ class CrontabEditor:
 			self.rb_basic.set_active (True)
 			self.frequency_combobox.set_active (i)
 
-		if self.nooutput:
-			self.entry_task.set_text (self.command)
-			self.cb_nooutput.set_active (True)
-			
-		else:
-			self.cb_nooutput.set_active (False)
-			
+		self.cb_outpute.set_active (self.output)		
 
 	def __reset__ (self):
 		self.noevents = True
@@ -287,7 +275,7 @@ class CrontabEditor:
 		self.special = ""
 		self.command = "ls"
 		self.title = _("Untitled")
-		self.nooutput = 1
+		self.output = 0
 		self.frequency_combobox.set_active (1)
 		self.rb_basic.set_active (True)
 		self.minute_entry.set_editable (False)
@@ -305,7 +293,7 @@ class CrontabEditor:
 		self.help_day.set_sensitive (False)
 		self.help_month.set_sensitive (False)
 		self.help_weekday.set_sensitive (False)
-		self.cb_nooutput.set_active (True)
+		self.cb_output.set_active (0)
 		self.frequency_combobox.set_sensitive (True)
 		self.__update_textboxes__ ()
 		self.noevents = False
@@ -446,9 +434,9 @@ class CrontabEditor:
 			return	False
 			
 		if self.special != "":
-			self.template.savetemplate_crontab (0, self.title, self.command, self.nooutput, self.special)
+			self.template.savetemplate_crontab (0, self.title, self.command, self.output, self.special)
 		else:
-			self.template.savetemplate_crontab (0, self.title, self.command, self.nooutput, self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday)
+			self.template.savetemplate_crontab (0, self.title, self.command, self.output, self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday)
 		
 		self.widget.hide ()
 		
@@ -502,10 +490,10 @@ class CrontabEditor:
 			del dia2
 			
 		if self.mode == 1:
-			self.scheduler.update (self.minute, self.hour, self.day, self.month, self.weekday, self.command, self.linenumber, self.parentiter, self.nooutput, self.job_id, self.comment, self.title, self.desc)
+			self.scheduler.update (self.minute, self.hour, self.day, self.month, self.weekday, self.command, self.linenumber, self.parentiter, self.output, self.job_id, self.comment, self.title, self.desc)
 			
 		elif self.mode == 0:
-			self.scheduler.append (self.minute, self.hour, self.day, self.month, self.weekday, self.command, self.nooutput, self.title)
+			self.scheduler.append (self.minute, self.hour, self.day, self.month, self.weekday, self.command, self.output, self.title)
 			
 		elif self.mode == 2:
 			if self.special != "":
@@ -540,9 +528,9 @@ class CrontabEditor:
 				return	False
 			
 			if self.special != "":
-				self.template.savetemplate_crontab (self.tid, self.title, self.command, self.nooutput, self.special)
+				self.template.savetemplate_crontab (self.tid, self.title, self.command, self.output, self.special)
 			else:
-				self.template.savetemplate_crontab (self.tid, self.title, self.command, self.nooutput, self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday)
+				self.template.savetemplate_crontab (self.tid, self.title, self.command, self.output, self.minute + " " + self.hour + " " + self.day + " " + self.month + " " + self.weekday)
 	
 			self.widget.hide ()
 			return
@@ -582,7 +570,7 @@ class CrontabEditor:
 		
 	def __update_textboxes__ (self):
 		self.noevents = True
-		self.cb_nooutput.set_active (self.nooutput)
+		self.cb_output.set_active (self.output)
 		self.entry_task.set_text (self.command)
 		self.entry_title.set_text (self.title)
 		self.minute_entry.set_text (self.minute)
@@ -660,7 +648,7 @@ class CrontabEditor:
 			self.day = self.day_entry.get_text ()
 			self.month = self.month_entry.get_text ()
 			self.weekday = self.weekday_entry.get_text ()
-			self.nooutput = self.cb_nooutput.get_active()
+			self.output = self.cb_output.get_active()
 			
 			self.__update_textboxes__ ()
 
@@ -669,7 +657,7 @@ class CrontabEditor:
 		if self.noevents == False:
 			self.command = self.entry_task.get_text ()
 			self.title = self.entry_title.get_text ()
-			self.nooutput = self.cb_nooutput.get_active()
+			self.output = self.cb_output.get_active()
 			self.__update_textboxes__ ()
 
 

@@ -6,10 +6,8 @@ or check out the latest code from the subversion repository
 in case work has allready been started on some of the features.
 
 Development:
-check bug: 419392, http://bugzilla.gnome.org/show_bug.cgi?id=419392
 
 * labels should be expanded
-* toolbar template button, icon should work with different toolbar setups (appearance -> interface in user settings)
 
  Wishlist (need a new branch and/or will not be included in the next release)
   * Show the next-run time for crontab records

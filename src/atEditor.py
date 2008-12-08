@@ -85,7 +85,7 @@ class AtEditor:
 		
 		self.cal_loaded = False
 		self.x, self.y = self.widget.get_position ()
-		self.height, self.wid9847th = self.widget.get_size ()
+		self.height, self.width = self.widget.get_size ()
 		self.cal_active = True
 		
 		self.xml.signal_connect ("on_at_editor_size_changed", self.on_at_editor_size_changed)
