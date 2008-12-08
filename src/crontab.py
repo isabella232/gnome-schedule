@@ -731,5 +731,7 @@ class Crontab:
 			cnt = cnt + 1
 		if cnt > preview_len:
 			result = result + "..."
+
+		result = result.replace ("&", "&amp;")
 		return result
 

@@ -575,6 +575,7 @@ class At:
 			result = lines[prelen:(-1 - prelen)]
 
 		result = result.replace("\n",";")
+		result = result.replace ("&", "&amp;")
 		#remove ending newlines, not if result len = 0
 		if len(result) < 2:
 			done = 1
