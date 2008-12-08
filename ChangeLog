@@ -1,6 +1,7 @@
 2008-12-07  Gaute Hope  <eg@gaute.vetsj.com>
 	
 	* Bug 563600: Fixed text position on template ToolButton in mainWindow.
+	* Bug 563618: Escape &
 
 2008-10-01  Gaute Hope  <eg@gaute.vetsj.com>
 
