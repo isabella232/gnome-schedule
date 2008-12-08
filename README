@@ -80,6 +80,14 @@ Compiling and HACKING
 	o. autoconf and the other auto* tools (version >= 1.7)
 	o. gnome-common which you can pull from the svn.gnome.org
 
+  To run GNOME Schedule from the source directory 
+
+    o. Enter src/
+	o. run 'python gnome-schedule.py --debug'
+
+	This will use images and datafiles from the current directory. Remember this is only for debugging and might not always work as expected.
+
+
   To make contributions you should first read
 
 	o. HACKING
