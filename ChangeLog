@@ -1,3 +1,9 @@
+2008-12-13  Gaute Hope  <eg@gaute.vetsj.com>
+	
+	* Experimental X support for crontab.
+	* xwrapper.py.in -> xwrapper.py - no need for a shebang
+	* Still not working, both xwrapper script and editing of output=2 tasks.. possible problem with data file
+
 2008-12-07  Gaute Hope  <eg@gaute.vetsj.com>
 
 	* Bug 563600: Fixed text position on template ToolButton in mainWindow

@@ -36,7 +36,12 @@ class Crontab:
 		self.set_rights(user,uid,gid, user_home_dir)
 		self.user_home_dir = user_home_dir
 		
-		self.nooutputtag = ">/dev/null 2>&1"
+		self.output = ["",
+						">/dev/null 2>&1",
+						config.gs_dir + "/xwrapper.py",
+						">/dev/null 2>&1",
+					  ]
+
 		self.crontabRecordRegex = re.compile('([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^#\n$]*)(\s#\s([^\n$]*)|$)')
 		self.__setup_timespec__()
 		self.env_vars = [ ]
@@ -224,22 +229,14 @@ class Crontab:
 					raise ValueError("fixed", self.timenames[type], _("Must be between %(min)s and %(max)s") % { "min": min(timerange), "max": max(timerange) } )
 	
 
-	def update (self, minute, hour, day, month, weekday, command, linenumber, parentiter, nooutput, job_id, comment, title, desc, xoutput = 0, display = ""):
+	def update (self, minute, hour, day, month, weekday, command, linenumber, parentiter, output, job_id, comment, title, desc):
 		if self.check_command (command) == False:
 			return False
 			
 		# update crontab
-		if minute == "@reboot":
-			record = "@reboot " + command
-		else:
-			record = minute + " " + hour + " " + day + " " + month + " " + weekday + " " + command
-		#print "crontab:update:record=" + record
 		
 		easystring = self.__easy__ (minute, hour, day, month, weekday)
 
-		if nooutput:
-			record = record + " " + self.nooutputtag
-		
 		if comment:
 			record = record + " #" + comment
 		
@@ -270,8 +267,29 @@ class Crontab:
 			os.chown (f, self.uid, self.gid)
 			os.chmod (f, 0600)					
 			
-			record = record + " # JOB_ID_" + str (job_id)
-			
+		record = command
+		display = "0"
+		if output == 1:
+			space = " "
+			if record[len(record)-1] == " ":
+				space = ""
+			record = record + space + self.output[1]
+		elif (output == 2) or (output == 3):
+			display = os.getenv ('DISPLAY')
+			if output == 3:
+				space = " " 
+				if record[len (record) - 1] == " ":
+					space = ""
+				record = record + space + self.output [3]
+
+			record = config.xwrapper_exec + " c " + str (job_id) + " " + record
+
+		if minute == "@reboot":
+			record = "@reboot " + record 
+		else:
+			record = minute + " " + hour + " " + day + " " + month + " " + weekday + " " + record 
+
+		record = record + " # JOB_ID_" + str (job_id)
 			
 		if title == None:
 			title = _("Untitled")
@@ -284,11 +302,7 @@ class Crontab:
 		fh.write ("ver=" + str(self.crontabdatafileversion) + "\n")
 		fh.write ("title=" + title + "\n")
 		fh.write ("desc=" + desc + "\n")
-		if nooutput:
-			fh.write ("nooutput=1\n")
-		else:
-			fh.write ("nooutput=0\n")
-		fh.write ("xoutput=" + str(xoutput) + "\n")
+		fh.write ("output=" + str (output) + "\n")
 		fh.write ("display=" + display + "\n")	
 		fh.close ()	
 		os.chown (f, self.uid, self.gid)
@@ -318,20 +332,9 @@ class Crontab:
 		self.__write__ ()
 		
 		
-	def append (self, minute, hour, day, month, weekday, command, nooutput, title, desc = None, xoutput = 0, display = ""):
+	def append (self, minute, hour, day, month, weekday, command, output, title, desc = None):
 		if self.check_command (command) == False:
 			return False
-			
-		if minute == "@reboot":
-			record = "@reboot " + command
-		else:
-			record = minute + " " + hour + " " + day + " " + month + " " + weekday + " " + command
-
-		if nooutput:
-			space = " "
-			if record[len(record)-1] == " ":
-				space = ""
-			record = record + space + self.nooutputtag
 			
 		if title == None:
 			title = _("Untitled")
@@ -365,28 +368,43 @@ class Crontab:
 		os.chown (f, self.uid, self.gid)
 		os.chmod (f, 0600)
 		
+		record = command
+		display = "0"
+		if output == 1:
+			space = " "
+			if record[len(record)-1] == " ":
+				space = ""
+			record = record + space + self.output[1]
+		elif (output == 2) or (output == 3):
+			display = os.getenv ('DISPLAY')
+			if output == 3:
+				space = " " 
+				if record[len (record) - 1] == " ":
+					space = ""
+				record = record + space + self.output [3]
+			record = config.xwrapper_exec + " c " + str (job_id) + " " + record
+
+		if minute == "@reboot":
+			record = "@reboot " + record
+		else:
+			record = minute + " " + hour + " " + day + " " + month + " " + weekday + " " + record 
+
+		record = record + " # JOB_ID_" + str (job_id)
+
+		self.lines.append (record)
+		
 		f = os.path.join (self.crontabdata, str(job_id))
-			
 		fh = open (f, 'w')
 		fh.truncate (1)
 		fh.seek (0)
 		fh.write ("ver=" + str(self.crontabdatafileversion) + "\n")
 		fh.write ("title=" + title + "\n")
 		fh.write ("desc=" + desc + "\n")
-		if nooutput:
-			fh.write ("nooutput=1\n")
-		else:
-			fh.write ("nooutput=0\n")
-		fh.write ("xoutput=" + str(xoutput) + "\n")
+		fh.write ("output=" + str(output) + "\n")
 		fh.write ("display=" + display + "\n")		
 		fh.close ()
 		os.chown (f, self.uid, self.gid)
 		os.chmod (f, 0600)
-				
-		record = record + " # JOB_ID_" + str (job_id)
-			
-		self.lines.append (record)
-		
 		# TODO: let write trow an exception if failed
 		self.__write__ ()
 		
@@ -428,7 +446,7 @@ class Crontab:
 			array_or_false = self.parse (line)
 			if array_or_false != False:
 				if array_or_false[0] == 2:
-					(minute, hour, day, month, weekday, command, comment, job_id, title, desc, nooutput, xoutput, display) = array_or_false[1]
+					(minute, hour, day, month, weekday, command, comment, job_id, title, desc, output, display) = array_or_false[1]
 					
 					time = minute + " " + hour + " " + day + " " + month + " " + weekday
 
@@ -437,9 +455,9 @@ class Crontab:
 				
 					#add task to treemodel in mainWindow
 					if minute == "@reboot":
-						data.append([title, self.__easy__ (minute, hour, day, month, weekday), preview, line, linecount, time, self, None, job_id, "", "","", _("Recurrent"), "crontab", nooutput, _("At reboot"), xoutput, display])
+						data.append([title, self.__easy__ (minute, hour, day, month, weekday), preview, line, linecount, time, self, None, job_id, "", "","", _("Recurrent"), "crontab", output, _("At reboot")])
 					else:
-						data.append([title, self.__easy__ (minute, hour, day, month, weekday), preview, line, linecount, time, self, None, job_id, "", "","", _("Recurrent"), "crontab", nooutput, time, xoutput, display])
+						data.append([title, self.__easy__ (minute, hour, day, month, weekday), preview, line, linecount, time, self, None, job_id, "", "","", _("Recurrent"), "crontab", output, time])
 				
 				
 			linecount = linecount + 1	
@@ -590,37 +608,39 @@ class Crontab:
 		# Retrive title and icon data
 		if nofile == False:
 			if job_id:
-				success, ver, title, desc, nooutput, xoutput, display = self.get_job_data (job_id)
+				success, ver, title, desc, output, display = self.get_job_data (job_id)
 			else:
 				success = True
 				ver = 1
 				title = ""
 				desc = ""
-				nooutput = 0
-				xoutput = False
+				output = 0
 				display = ""
 			
-			if nooutput != 0:
+			if (output == 0) or (output == 3):
 				# remove devnull part of command
-				# searching reverse, and only if nooutput is saved in the datafile
-				pos = command.rfind (self.nooutputtag)
+				# searching reverse, and only if output is saved in the datafile
+				pos = command.rfind (self.output[1])
 				if pos != -1:
 					command = command[:pos]
+			if output == 2:
+				s = config.xwrapper_exec + " c " + str (job_id) + " "
+				command = command[len (s):]
 			
 			# support older datafiles/entries without removing the no output tag	
 			if ver <= 1:
 				# old version, no output declaration in datafile, migration
-				pos = command.rfind (self.nooutputtag)
+				pos = command.rfind (self.output[1])
 				if pos != -1:
 					command = command[:pos]
-					nooutput = 1
+					output = 1
 				else:
-					nooutput = 0
+					output = 0
 			
 			command = command.strip ()	
 				
 				
-			return [2, [minute, hour, dom, moy, dow, command, comment, job_id, title, desc, nooutput, xoutput, display]]
+			return [2, [minute, hour, dom, moy, dow, command, comment, job_id, title, desc, output, display]]
 		else:
 			return minute, hour, dom, moy, dow, command
 		
@@ -652,36 +672,26 @@ class Crontab:
 			if ver >= 2:
 				nooutput_str = d[9:d.find ("\n")]
 				if (nooutput_str == "0") or (nooutput_str == "1"):
-					nooutput = int (nooutput_str)
+					output = int (nooutput_str)
 					d = d[d.find ("\n") + 1:]
 				else:
-					nooutput = 0
+					output = 0
 			else:
-				nooutput = 0
+				output = 0
 				
 			if ver >= 4:
-				xoutput_str = d[8:d.find ("\n")]
-				if (xoutput_str == "0") or (xoutput_str == "1"):
-					xoutput = int (xoutput_str)
-					d = d[d.find ("\n") + 1:]
-				else:
-					xoutput = 0
-				
 				display = d[8:d.find ("\n")]
 				d = d[d.find ("\n") + 1:]
-				if (len (display) < 1) or (xoutput == 0):
+				if (len (display) < 1) or (output == 0):
 					display = ""
 			
 			fh.close ()
 
-			return True, ver, title, desc, nooutput, xoutput, display
+			return True, ver, title, desc, output, display
 			
 			
 		else: 
 			return False, "", "", "", 0, 0, ""
-			
-			
-		
 				
 	def get_exp_sec (self, line):
 		line = line.lstrip ()

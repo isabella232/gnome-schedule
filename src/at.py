@@ -139,7 +139,7 @@ class At:
 					class_id = m.groups ()[6]
 					user = m.groups ()[7]
 						
-					success, title, desc, manual_poscorrect, xoutput, display = self.get_job_data (int (job_id))
+					success, title, desc, manual_poscorrect = self.get_job_data (int (job_id))
 					# manual_poscorrect is only used during preparation of script
 
 					execute = config.getAtbin() + " -c " + job_id
@@ -162,7 +162,7 @@ class At:
 						else:
 							done = 1
 
-					return job_id, date, time, class_id, user, script, title, prelen, dangerous, xoutput, display
+					return job_id, date, time, class_id, user, script, title, prelen, dangerous
 					
 		elif (output == False):
 			if len (line) > 1 and line[0] != '#':
@@ -212,28 +212,15 @@ class At:
 					manual_poscorrect_b = True
 				elif manual_poscorrect == "false":
 					manual_poscorrect_b = False
-
-			if ver >= 4:
-				xoutput_str = d[8:d.find ("\n")]
-				if (xoutput_str == "0") or (xoutput_str == "1"):
-					xoutput = int (xoutput_str)
-					d = d[d.find ("\n") + 1:]
-				else:
-					xoutput = 0
-				
-				display = d[8:d.find ("\n")]
-				d = d[d.find ("\n") + 1:]
-				if (len (display) < 1) or (xoutput == 0):
-					display = ""
 			
 			fh.close ()
 			
-			return True, title, desc, manual_poscorrect_b, xoutput, display
+			return True, title, desc, manual_poscorrect_b
 			
 		else: 
 			return False, "", "", False, 0, ""
 			
-	def write_job_data (self, job_id, title, desc, xoutput, display):
+	def write_job_data (self, job_id, title, desc):
 		# Create and write data file
 		f = os.path.join (self.atdata, str(job_id))
 		#print f
@@ -249,8 +236,6 @@ class At:
 			fh.write ("manual_poscorrect=true\n")
 		else:
 			fh.write ("manual_poscorrect=false\n")
-		fh.write ("xoutput=" + str(xoutput) + "\n")
-		fh.write ("display=" + display + "\n")
 		fh.close ()
 		os.chown (f, self.uid, self.gid)
 		os.chmod (f, 0600)
@@ -380,7 +365,7 @@ class At:
 		return True, "ok"
 
 		
-	def append (self, runat, command, title, xoutput, display):
+	def append (self, runat, command, title):
 		tmpfile = tempfile.mkstemp ()
 		fd, path = tmpfile
 		tmp = os.fdopen(fd, 'w')
@@ -416,12 +401,12 @@ class At:
 		#print job_id
 		
 		desc = ""
-		self.write_job_data (job_id, title, desc, xoutput, display)
+		self.write_job_data (job_id, title, desc)
 		
 		os.unlink (path)
 
 
-	def update (self, job_id, runat, command, title, xoutput, display):
+	def update (self, job_id, runat, command, title):
 		#print "update" + str (job_id) + runat + command + title
 		#remove old
 		f = os.path.join (self.atdata, str (job_id))
@@ -464,7 +449,7 @@ class At:
 		#print job_id
 		
 		desc = ""
-		self.write_job_data (job_id, title, desc, xoutput, display)
+		self.write_job_data (job_id, title, desc)
 		
 		os.unlink (path)
 		
@@ -489,7 +474,7 @@ class At:
 			array_or_false = self.parse (line)
 			#print array_or_false
 			if array_or_false != False:
-				(job_id, date, time, class_id, user, lines, title, prelen, dangerous, xoutput, display) = array_or_false
+				(job_id, date, time, class_id, user, lines, title, prelen, dangerous) = array_or_false
 
 			
 				preview = self.__make_preview__ (lines, prelen)
@@ -506,12 +491,12 @@ class At:
 				# TODO: looks like it could be one append
 				if self.root == 1:
 					if self.user == user:
-						data.append([title, timestring_show, preview, lines, int(job_id), timestring, self, None, date, class_id, user, time, _("Once"), "at", self.nooutput, timestring, xoutput, display])
+						data.append([title, timestring_show, preview, lines, int(job_id), timestring, self, None, date, class_id, user, time, _("Once"), "at", self.nooutput, timestring])
 					else: 
 						#print "Record omitted, not current user"
 						pass
 				else:
-					data.append([title, timestring_show, preview, lines, int(job_id), timestring, self, None, date, class_id, user, time, _("Once"), "at", self.nooutput, timestring, xoutput, display])
+					data.append([title, timestring_show, preview, lines, int(job_id), timestring, self, None, date, class_id, user, time, _("Once"), "at", self.nooutput, timestring])
 
 				#print _("added %(id)s") % { "id": job_id	}
 			else:

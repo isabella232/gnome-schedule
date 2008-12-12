@@ -74,19 +74,17 @@ class CrontabEditor:
 		self.frequency_combobox_model.append([_("At reboot"), ["", "", "", "", "", "@reboot"]])
 		self.frequency_combobox.set_model (self.frequency_combobox_model)
 		
-		#self.cb_nooutput = self.xml.get_widget("cb_nooutput")
 		self.cb_output = self.xml.get_widget ("combo_output")
-		self.cb_o_model = gtk.ListStore (gobject.TYPE_STRING)
-		self.cb_o_model.append ([""])
-		self.cb_o_model.append ([_("Supress output")])
-		self.cb_o_model.append ([_("X application")])
-		self.cb_o_model.append ([_("X application: supress output")])
+		self.cb_o_model = gtk.ListStore (gobject.TYPE_STRING, gobject.TYPE_INT)
+		self.cb_o_model.append (["", 0])
+		self.cb_o_model.append ([_("Supress output"), 1])
+		self.cb_o_model.append ([_("X application"), 2])
+		self.cb_o_model.append ([_("X application: supress output"), 3])
 		self.cb_output.set_model (self.cb_o_model)
-		self.cb_output.show ()
+		cell = gtk.CellRendererText ()
+		self.cb_output.pack_start (cell, True)
+		self.cb_output.add_attribute (cell, "text", 0)
 
-				
-		#self.help_button = self.xml.get_widget ("cron_help_button")
-		
 		self.button_cancel = self.xml.get_widget ("button_cancel")
 		self.button_apply = self.xml.get_widget ("button_apply")
 		self.button_template = self.xml.get_widget ("button_template")
@@ -238,7 +236,7 @@ class CrontabEditor:
 		self.record = record
 		self.job_id = job_id
 		self.__reset__ ()
-		(self.minute, self.hour, self.day, self.month, self.weekday, self.command, self.comment, self.job_id, self.title, self.desc, self.output) = self.scheduler.parse (record)[1]
+		(self.minute, self.hour, self.day, self.month, self.weekday, self.command, self.comment, self.job_id, self.title, self.desc, self.output, display) = self.scheduler.parse (record)[1]
 		self.special = ""
 		if self.minute == "@reboot":
 			self.special = "@reboot"
@@ -263,7 +261,7 @@ class CrontabEditor:
 			self.rb_basic.set_active (True)
 			self.frequency_combobox.set_active (i)
 
-		self.cb_outpute.set_active (self.output)		
+		self.cb_output.set_active (self.output)		
 
 	def __reset__ (self):
 		self.noevents = True
@@ -317,25 +315,6 @@ class CrontabEditor:
 		except ValueError, ex:
 			raise ex
 
-	#TODO: Help button?
-	"""
-	def on_cron_help_button_clicked (self, *args):
-		try:
-			gnome.help_display_with_doc_id (
-					self.ParentClass.gprogram, '',
-					'gnome-schedule.xml',
-					'myapp-adding-recurrent')
-		except gobject.GError, error:
-			dialog = gtk.MessageDialog (
-					self.widget,
-					gtk.DIALOG_DESTROY_WITH_PARENT,
-					gtk.MESSAGE_ERROR, gtk.BUTTONS_CLOSE)
-			dialog.set_markup ("<b>" + _("Could not display help") + "</b>")
-			dialog.format_secondary_text ("%s" % error)
-			dialog.run ()
-			dialog.destroy ()
-
-	"""
 	def on_editmode_toggled (self, widget, *args):
 		if widget.get_active() == True:
 			if self.noevents == False:

@@ -1,4 +1,3 @@
-#! @PYTHON@
 # xwrapper.py - wrapper around X applications
 # Copyright (C) 2004 - 2008  Gaute Hope <eg at gaute dot vetsj dot com>
 
@@ -83,7 +82,7 @@ else:
 # get data
 if job_type == 0:
 	c = crontab.Crontab (is_root, user, uid, gid, home_dir)
-	success, ver, title, desc, nooutput, xoutput, display = c.get_job_data (job_id)
+	success, ver, title, desc, output, display = c.get_job_data (job_id)
 	if success == False:
 		print _("Could not get job data, the task might have been created with an old version - try recreating the task.")
 		sys.exit ()
@@ -93,8 +92,8 @@ if job_type == 0:
 		sys.exit ()
 	
 	print _("Launching %s.." % title)
-	if (xoutput == 0):
-		print _("xoutput==0: Why am I launched?")
+	if (int (output) == 0):
+		print _("output==0: Why am I launched?")
 		sys.exit ()
 	if (len (display) < 2):
 		print _("len(display)<2: No proper DISPLAY variable")

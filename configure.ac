@@ -121,7 +121,6 @@ Makefile
 src/config.py
 src/Makefile
 src/gnome-schedule
-src/xwrapper.py
 icons/Makefile
 po/Makefile.in
 desktop/Makefile

@@ -32,8 +32,7 @@ DISTCLEANFILES = \
 	config.py \
 	gnome-schedule.glade.bak \
 	gnome-schedule.gladep.bak \
-	gnome-schedule.gladep \
-	xwrapper.py
+	gnome-schedule.gladep 
 
 EXTRA_DIST =  \
 	$(bin_SCRIPTS) \
