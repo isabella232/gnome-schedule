@@ -76,7 +76,7 @@ class CrontabEditor:
 		
 		self.cb_output = self.xml.get_widget ("combo_output")
 		self.cb_o_model = gtk.ListStore (gobject.TYPE_STRING, gobject.TYPE_INT)
-		self.cb_o_model.append (["", 0])
+		self.cb_o_model.append ([_("Default behaviour"), 0])
 		self.cb_o_model.append ([_("Supress output"), 1])
 		self.cb_o_model.append ([_("X application"), 2])
 		self.cb_o_model.append ([_("X application: supress output"), 3])
