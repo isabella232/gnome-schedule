@@ -100,7 +100,8 @@ if job_type == 0:
 		sys.exit ()
 		
 	#TODO: Check for DISPLAY and user
-	ex = "export DISPLAY=" + display + " " + command
+	ex = "/bin/sh -c \"DISPLAY=" + display + " " + command + "\""
+	print ex
 	os.system (ex)
 	sys.exit ()
 	

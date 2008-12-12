@@ -237,9 +237,6 @@ class Crontab:
 		
 		easystring = self.__easy__ (minute, hour, day, month, weekday)
 
-		if comment:
-			record = record + " #" + comment
-		
 		if job_id == False:
 			## Create a job_id for an existing task
 			f = os.path.join (self.crontabdata, "last_id")
@@ -604,6 +601,7 @@ class Crontab:
 			job_id = int (comment[i + 7:].rstrip ())
 		else:
 			job_id = False
+
 		
 		# Retrive title and icon data
 		if nofile == False:
@@ -669,15 +667,15 @@ class Crontab:
 			desc = d[5:d.find ("\n")]
 			d = d[d.find ("\n") + 1:]
 			
-			if ver >= 2:
-				nooutput_str = d[9:d.find ("\n")]
-				if (nooutput_str == "0") or (nooutput_str == "1"):
-					output = int (nooutput_str)
-					d = d[d.find ("\n") + 1:]
-				else:
-					output = 0
-			else:
-				output = 0
+			if (ver >= 2) and (ver < 4):
+				output_str = d[9:d.find ("\n")]
+				output = int (output_str)
+				d = d[d.find("\n")]
+
+			if ver >= 4:
+				output_str = d[7:d.find ("\n")]
+				output = int (output_str)
+				d = d[d.find ("\n") + 1:]
 				
 			if ver >= 4:
 				display = d[8:d.find ("\n")]
