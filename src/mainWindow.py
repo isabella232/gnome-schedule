@@ -66,6 +66,14 @@ class main:
 		
 		self.noevents = False
 					
+		# Common string representation for the different output modes
+		self.output_strings = [
+								_("Default behaviour"),
+								_("Supress output"), 
+								_("X application"), 
+								_("X application: supress output"),
+						]
+
 		#start the backend where all the user configuration is stored
 		self.backend = data.ConfigBackend(self, "gconf")
 		self.template = template.Template (self, self.backend)

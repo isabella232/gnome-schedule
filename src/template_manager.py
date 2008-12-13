@@ -106,8 +106,8 @@ class TemplateManager:
 			for id in crontab:
 				t = self.template.gettemplate ("crontab", int (id))
 				if t != False:
-					id2, title, command, nooutput, timeexpression = t
-					formatted = self.template.format_crontab (title, command, nooutput, timeexpression)
+					id2, title, command, output, timeexpression = t
+					formatted = self.template.format_crontab (title, command, output, timeexpression)
 					iter = self.treemodel.append ([int (id), "crontab", _("Recurrent"), formatted, self.parent.bigiconcrontab])
 					
 	def on_edit_clicked (self, *args):
@@ -124,12 +124,12 @@ class TemplateManager:
 			elif type == "crontab":
 				t = self.template.gettemplate ("crontab", int (id)	)
 				if t != False:
-					id2, title, command, nooutput, timeexpression = t
-					self.parent.crontab_editor.showedit_template (self.widget, id2, title, command, nooutput, timeexpression)
+					id2, title, command, output, timeexpression = t
+					self.parent.crontab_editor.showedit_template (self.widget, id2, title, command, output, timeexpression)
 		self.reload_tv ()
 		
 	def on_new_clicked (self, *args):
-		relf.parent.addWindow.ShowAddWindow (self.widget, 1)
+		self.parent.addWindow.ShowAddWindow (self.widget, 1)
 	
 	def on_delete_clicked (self, *args):
 		store, iter = self.treeview.get_selection().get_selected()
@@ -170,8 +170,8 @@ class TemplateManager:
 			elif type == "crontab":
 				t = self.template.gettemplate ("crontab", int (id)	)
 				if t != False:
-					id2, title, command, nooutput, timeexpression = t
-					self.parent.crontab_editor.showadd_template (self.widget, title, command, nooutput, timeexpression)
+					id2, title, command, output, timeexpression = t
+					self.parent.crontab_editor.showadd_template (self.widget, title, command, output, timeexpression)
 		
 			self.widget.hide ()
 		

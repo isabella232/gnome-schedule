@@ -101,8 +101,8 @@ class TemplateChooser:
 			for id in crontab:
 				t = self.template.gettemplate ("crontab", int (id))
 				if t != False:
-					id2, title, command, nooutput, timeexpression = t
-					formatted = self.template.format_crontab (title, command, nooutput, timeexpression)
+					id2, title, command, output, timeexpression = t
+					formatted = self.template.format_crontab (title, command, output, timeexpression)
 					iter = self.treemodel.append ([int (id), "crontab", _("Recurrent"), formatted, self.parent.bigiconcrontab])
 					
 					
@@ -131,8 +131,8 @@ class TemplateChooser:
 			elif type == "crontab":
 				t = self.template.gettemplate ("crontab", int (id))
 				if t != False:
-					id2, title, command, nooutput, timeexpression = t
-					self.parent.crontab_editor.showadd_template (self.transient, title, command, nooutput, timeexpression)
+					id2, title, command, output, timeexpression = t
+					self.parent.crontab_editor.showadd_template (self.transient, title, command, output, timeexpression)
 			
 			self.widget.hide ()
 		

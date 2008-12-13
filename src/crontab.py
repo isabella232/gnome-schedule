@@ -746,19 +746,15 @@ class Crontab:
 		os.unlink (path)
 		
 		
-	#TODO: check into
-	#if a command his lenght is to long the last part is removed 
 	def __make_preview__ (self, str, preview_len = 0):
 		if preview_len == 0:
 			preview_len = self.preview_len
-		cnt = 0
-		result = ""
-		for a in str:
-			if cnt <= preview_len:
-				result = result + a
-			cnt = cnt + 1
-		if cnt > preview_len:
-			result = result + "..."
-		result = result.replace ("&", "&amp;")
+	
+		str = str.replace ("&", "&amp")
+
+		if len (str) <= preview_len:
+			return str
+		else:
+			return str[:preview_len] + "..."
 
 

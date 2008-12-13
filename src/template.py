@@ -72,7 +72,7 @@ class Template:
 		self.gconf_client.unset("/apps/gnome-schedule/templates/crontab/%s/title" % (str (template_id)))
 		self.gconf_client.unset("/apps/gnome-schedule/templates/crontab/%s/command" % (str (template_id)))
 		self.gconf_client.unset("/apps/gnome-schedule/templates/crontab/%s/timeexpression" % (str (template_id)))
-		self.gconf_client.unset("/apps/gnome-schedule/templates/crontab/%s/nooutput" % (str (template_id)))
+		self.gconf_client.unset("/apps/gnome-schedule/templates/crontab/%s/output" % (str (template_id)))
 			
 		if newstring == "   ":
 			self.gconf_client.unset ("/apps/gnome-schedule/templates/crontab/installed")
@@ -90,7 +90,7 @@ class Template:
 			self.gconf_client.set_int ("/apps/gnome-schedule/templates/crontab/last_id", i)
 			return i
 			
-	def savetemplate_crontab (self, template_id, title, command, nooutput, timeexpression):	
+	def savetemplate_crontab (self, template_id, title, command, output, timeexpression):	
 
 		if (template_id == 0):
 			template_id = self.create_new_id_crontab ()
@@ -98,7 +98,7 @@ class Template:
 		self.gconf_client.set_string("/apps/gnome-schedule/templates/crontab/%s/timeexpression" % (str (template_id)), timeexpression)
 		self.gconf_client.set_string("/apps/gnome-schedule/templates/crontab/%s/title" % (str (template_id)), title)
 		self.gconf_client.set_string("/apps/gnome-schedule/templates/crontab/%s/command" % (str (template_id)), command)
-		self.gconf_client.set_bool("/apps/gnome-schedule/templates/crontab/%s/nooutput" % (str (template_id)), nooutput)
+		self.gconf_client.set_int("/apps/gnome-schedule/templates/crontab/%s/output" % (str (template_id)), output)
 		
 		installed = self.gconf_client.get_string("/apps/gnome-schedule/templates/crontab/installed")
 		if installed == None:
@@ -134,9 +134,9 @@ class Template:
 			try:
 				command = self.gconf_client.get_string("/apps/gnome-schedule/templates/crontab/%s/command" % (str (template_id)))
 				title = self.gconf_client.get_string("/apps/gnome-schedule/templates/crontab/%s/title" % (str (template_id)))
-				nooutput = self.gconf_client.get_bool("/apps/gnome-schedule/templates/" + type + "/%s/nooutput" % (template_id))
+				output = self.gconf_client.get_int("/apps/gnome-schedule/templates/" + type + "/%s/output" % (str (template_id)))
 				timeexpression = self.gconf_client.get_string("/apps/gnome-schedule/templates/" + type + "/%s/timeexpression" % (template_id))
-				return template_id, title, command, nooutput, timeexpression
+				return template_id, title, command, output, timeexpression
 	
 			except Exception, ex:
 				return False
@@ -192,15 +192,17 @@ class Template:
 		s = "<b>" + _("Title:") + "</b> " + title + "\n<b>" + _("Command:") + "</b> " + command
 		return s
 		
-	def format_crontab (self, title, command, nooutput, timeexpression):
+	def format_crontab (self, title, command, output, timeexpression):
 		command = self.parent.crontab.__make_preview__ (command)
 		if self.parent.edit_mode == "simple":
 			# hehe.. :)
 			timeexpression = timeexpression + " echo hehe"
 			minute, hour, dom, moy, dow, hehe = self.parent.crontab.parse (timeexpression, True)
 			timeexpression = self.parent.crontab.__easy__ (minute, hour, dom, moy, dow)
+
 		s = "<b>" + _("Title:") + "</b> " + title + "\n<b>" + _("Run:") + "</b> " + timeexpression + "\n<b>" + _("Command:") + "</b> " + command
-		if nooutput:
-			s = s + " <i>(" + _("No output") + ")</i>"
+
+		if output:
+			s = (s + " <i>(" + "%s"  + ")</i>") % (str (self.parent.output_strings[output]))
 		
 		return s
