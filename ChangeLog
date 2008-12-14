@@ -4,6 +4,7 @@
 	* New option ui and new variable in gconf
 	* xwrapper.py: Still needs some more failchecking - is only run by cron
 	tasks. Perhaps it could serve as a test in the at script..
+	* at.py: removed all the prelen stuff - not useful, only storing the unique script
 
 2008-12-13  Gaute Hope  <eg@gaute.vetsj.com>
 	
