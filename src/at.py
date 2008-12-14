@@ -54,15 +54,16 @@ class At:
 		self.atRecordRegexAdd = re.compile('^job\s([0-9]+)\sat')
 		
 		self.atRecordRegexAdded = re.compile('[^\s]+\s([0-9]+)\sat')
-		self.nooutput = 0
 		self.SCRIPT_DELIMITER = "###### ---- GNOME_SCHEDULE_SCRIPT_DELIMITER #####"
 		
+		self.DISPLAY = "DISPLAY=%s; export DISPLAY\n"
+
 		# If normally this variable is unset the user would not expect it 
 		# to be set, which it will be because Gnome Schedule needs it.
 		# Therefore we unset it in the script.
 		self.POSIXLY_CORRECT_UNSET = "unset POSIXLY_CORRECT\n"
 		
-		self.atdatafileversion = 4
+		self.atdatafileversion = 5
 		self.atdata = self.user_home_dir + "/.gnome/gnome-schedule/at"
 		if os.path.exists (self.user_home_dir + "/.gnome") != True:
 			os.mkdir (self.user_home_dir + "/.gnome", 0700)
@@ -139,13 +140,13 @@ class At:
 					class_id = m.groups ()[6]
 					user = m.groups ()[7]
 						
-					success, title, desc, manual_poscorrect = self.get_job_data (int (job_id))
+					success, title, desc, manual_poscorrect, output, display = self.get_job_data (int (job_id))
 					# manual_poscorrect is only used during preparation of script
 
 					execute = config.getAtbin() + " -c " + job_id
 					# read lines and detect starter
 					script = os.popen(execute).read()
-					script, prelen, dangerous = self.__prepare_script__ (script, manual_poscorrect)
+					script,  dangerous = self.__prepare_script__ (script, manual_poscorrect, output, display)
 										
 					#removing ending newlines, but keep one
 					#if a date in the past is selected the record is removed by at, this creates an error, and generally if the script is of zero length
@@ -162,7 +163,7 @@ class At:
 						else:
 							done = 1
 
-					return job_id, date, time, class_id, user, script, title, prelen, dangerous
+					return job_id, date, time, class_id, user, script, title, dangerous, output
 					
 		elif (output == False):
 			if len (line) > 1 and line[0] != '#':
@@ -213,14 +214,29 @@ class At:
 				elif manual_poscorrect == "false":
 					manual_poscorrect_b = False
 			
+			if ver >= 5:
+				output_str = d[7:d.find ("\n")]
+				output = int (output_str)
+				d = d[d.find("\n") + 1:]
+			else:
+				output = 0
+
+			if ver >= 5:
+				display = d[8:d.find ("\n")]
+				d = d[d.find ("\n") + 1:]
+				if (len (display) < 1) or (output == 0):
+					display = ""
+			else:
+				display = ""
+
 			fh.close ()
 			
-			return True, title, desc, manual_poscorrect_b
+			return True, title, desc, manual_poscorrect_b, output, display
 			
 		else: 
 			return False, "", "", False, 0, ""
 			
-	def write_job_data (self, job_id, title, desc):
+	def write_job_data (self, job_id, title, desc, output, display):
 		# Create and write data file
 		f = os.path.join (self.atdata, str(job_id))
 		#print f
@@ -236,6 +252,10 @@ class At:
 			fh.write ("manual_poscorrect=true\n")
 		else:
 			fh.write ("manual_poscorrect=false\n")
+
+		fh.write ("output=" + str (output) + "\n")
+		fh.write ("display=" + display + "\n")
+
 		fh.close ()
 		os.chown (f, self.uid, self.gid)
 		os.chmod (f, 0600)
@@ -365,13 +385,19 @@ class At:
 		return True, "ok"
 
 		
-	def append (self, runat, command, title):
+	def append (self, runat, command, title, output):
 		tmpfile = tempfile.mkstemp ()
 		fd, path = tmpfile
 		tmp = os.fdopen(fd, 'w')
 		tmp.write (self.SCRIPT_DELIMITER + "\n")
 		if self.manual_poscorrect:
 			tmp.write (self.POSIXLY_CORRECT_UNSET)
+
+		display = ""
+		if output > 0:
+			display = os.getenv ('DISPLAY')
+			tmp.write (self.DISPLAY % display)
+			
 		tmp.write (command + "\n")
 		tmp.close ()
 		
@@ -401,12 +427,12 @@ class At:
 		#print job_id
 		
 		desc = ""
-		self.write_job_data (job_id, title, desc)
+		self.write_job_data (job_id, title, desc, output, display)
 		
 		os.unlink (path)
 
 
-	def update (self, job_id, runat, command, title):
+	def update (self, job_id, runat, command, title, output):
 		#print "update" + str (job_id) + runat + command + title
 		#remove old
 		f = os.path.join (self.atdata, str (job_id))
@@ -423,6 +449,12 @@ class At:
 		tmp.write (self.SCRIPT_DELIMITER + "\n")
 		if self.manual_poscorrect:
 			tmp.write (self.POSIXLY_CORRECT_UNSET)
+
+		display = ""
+		if output > 0:
+			display = os.getenv ('DISPLAY')
+			tmp.write (self.DISPLAY % display)
+
 		tmp.write (command + "\n")
 		tmp.close ()
 
@@ -449,7 +481,7 @@ class At:
 		#print job_id
 		
 		desc = ""
-		self.write_job_data (job_id, title, desc)
+		self.write_job_data (job_id, title, desc, output, display)
 		
 		os.unlink (path)
 		
@@ -474,14 +506,13 @@ class At:
 			array_or_false = self.parse (line)
 			#print array_or_false
 			if array_or_false != False:
-				(job_id, date, time, class_id, user, lines, title, prelen, dangerous) = array_or_false
+				(job_id, date, time, class_id, user, lines, title, dangerous, output) = array_or_false
 
 			
-				preview = self.__make_preview__ (lines, prelen)
+				preview = self.__make_preview__ (lines)
 				if dangerous == 1:
 						preview = _("DANGEROUS PARSE: %(preview)s") % {'preview':  preview}
 				#chopping of script delimiter
-				lines = lines[prelen:]
 				lines.strip ()
 					
 				timestring = "%s %s" % (date, time)
@@ -491,12 +522,12 @@ class At:
 				# TODO: looks like it could be one append
 				if self.root == 1:
 					if self.user == user:
-						data.append([title, timestring_show, preview, lines, int(job_id), timestring, self, None, date, class_id, user, time, _("Once"), "at", self.nooutput, timestring])
+						data.append([title, timestring_show, preview, lines, int(job_id), timestring, self, None, date, class_id, user, time, _("Once"), "at", output, timestring])
 					else: 
 						#print "Record omitted, not current user"
 						pass
 				else:
-					data.append([title, timestring_show, preview, lines, int(job_id), timestring, self, None, date, class_id, user, time, _("Once"), "at", self.nooutput, timestring])
+					data.append([title, timestring_show, preview, lines, int(job_id), timestring, self, None, date, class_id, user, time, _("Once"), "at", output, timestring])
 
 				#print _("added %(id)s") % { "id": job_id	}
 			else:
@@ -504,7 +535,7 @@ class At:
 		return data
 
 	
-	def __prepare_script__ (self, script, manual_poscorrect):
+	def __prepare_script__ (self, script, manual_poscorrect, output, display):
 	
 		# It looks like at prepends a bunch of stuff to each script
 		# Luckily it delimits that using two newlines
@@ -517,19 +548,21 @@ class At:
 		# If the script is created by Gnome Schedule the script is seperated by a delimiter.
 
 		dangerous = 0
-		prelen = 0
-		string = self.SCRIPT_DELIMITER
-		scriptstart = script.find(string)
+		scriptstart = script.find(self.SCRIPT_DELIMITER)
 
 		if scriptstart != -1:
 			script = script[scriptstart:]
 			if manual_poscorrect == True:
 				scriptstart = script.find (self.POSIXLY_CORRECT_UNSET)
 				if scriptstart != -1:
-					script = script[scriptstart:]
-					prelen = len (self.POSIXLY_CORRECT_UNSET)
+					script = script[scriptstart + len(self.POSIXLY_CORRECT_UNSET):]
 			else:
-				prelen = len(self.SCRIPT_DELIMITER) + 1
+				script = script[len(self.SCRIPT_DELIMITER) + 1:]
+
+			if output > 0:
+				scriptstart = script.find (self.DISPLAY % display)
+				if scriptstart != -1:
+					script = script [scriptstart + len (self.DISPLAY % display):]
 
 		else:
 			dangerous = 1
@@ -560,20 +593,19 @@ class At:
 			else:
 				icon = None 
 
-		return script, prelen, dangerous
+			script = script[prelen:]
+
+		return script, dangerous
 
 
-	def __make_preview__ (self, lines, prelen, preview_len = 0):
+	def __make_preview__ (self, lines, preview_len = 0):
 		if preview_len == 0:
 			preview_len = self.preview_len
-		try:
-			if prelen:
-				result = lines[(0 + prelen):(preview_len + prelen)]
-			else:
-				result = lines[0:preview_len]
-		except:
-			#print "short preview"
-			result = lines[prelen:(-1 - prelen)]
+
+		if len (lines) > preview_len:
+			result = lines[0:preview_len]
+		else:
+			result = lines
 
 		result = result.replace("\n",";")
 		result = result.replace ("&", "&amp;")

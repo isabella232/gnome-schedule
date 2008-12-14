@@ -97,8 +97,8 @@ class TemplateManager:
 			for id in at:
 				t = self.template.gettemplate ("at", int (id))
 				if t != False:
-					id2, title, command = t
-					formatted = self.template.format_at (title, command)
+					id2, title, command, output = t
+					formatted = self.template.format_at (title, command, output)
 					iter = self.treemodel.append ([int (id), "at", _("One-time"), formatted, self.parent.bigiconat])
 
 		crontab = self.template.gettemplateids ("crontab")
@@ -165,8 +165,8 @@ class TemplateManager:
 			if type == "at":
 				t = self.template.gettemplate ("at", int (id))	
 				if t != False:
-					id2, title, command = t
-					self.parent.at_editor.showadd_template (self.widget, title, command)
+					id2, title, command, output = t
+					self.parent.at_editor.showadd_template (self.widget, title, command, output)
 			elif type == "crontab":
 				t = self.template.gettemplate ("crontab", int (id)	)
 				if t != False:

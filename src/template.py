@@ -48,6 +48,7 @@ class Template:
 		
 		self.gconf_client.unset("/apps/gnome-schedule/templates/at/%s/title" % (str (template_id)))
 		self.gconf_client.unset("/apps/gnome-schedule/templates/at/%s/command" % (str (template_id)))
+		self.gconf_client.unset ("/apps/gnome-schedule/templates/at/%s/output" % (str (template_id)))
 			
 		if newstring == "   ":
 			self.gconf_client.unset ("/apps/gnome-schedule/templates/at/installed")
@@ -145,7 +146,8 @@ class Template:
 			try:
 				command = self.gconf_client.get_string("/apps/gnome-schedule/templates/at/%s/command" % (str (template_id)))
 				title = self.gconf_client.get_string("/apps/gnome-schedule/templates/at/%s/title" % (str (template_id)))
-				return template_id, title, command
+				output = self.gconf_client.get_int ("/apps/gnome-schedule/templates/at/%s/output" % (str (template_id)))
+				return template_id, title, command, output
 	
 			except Exception, ex:
 				return False
@@ -160,13 +162,16 @@ class Template:
 			self.gconf_client.set_int ("/apps/gnome-schedule/templates/at/last_id", i)
 			return i	
 
-	def savetemplate_at (self, template_id, title, command):
+	def savetemplate_at (self, template_id, title, command, output):
+		print "savetemplate"
 
 		if (template_id == 0):
 			template_id = self.create_new_id_at ()
+			print "got new id"
 			
 		self.gconf_client.set_string("/apps/gnome-schedule/templates/at/%s/title" % (str (template_id)), title)
 		self.gconf_client.set_string("/apps/gnome-schedule/templates/at/%s/command" % (str (template_id)), command)
+		self.gconf_client.set_int ("/apps/gnome-schedule/templates/at/%s/output" % ( str(template_id)), output)
 
 		
 		installed = self.gconf_client.get_string("/apps/gnome-schedule/templates/at/installed")
@@ -187,9 +192,13 @@ class Template:
 		self.parent.template_manager.reload_tv ()
 		self.parent.template_chooser.reload_tv ()
 		
-	def format_at (self, title, command):
+	# TODO: output
+	def format_at (self, title, command, output):
 		command = self.parent.at.__make_preview__ (command, 0)
 		s = "<b>" + _("Title:") + "</b> " + title + "\n<b>" + _("Command:") + "</b> " + command
+		if output > 0:
+			s = (s + " <i>(%s)</i>") % (str (self.parent.output_strings [2]))
+
 		return s
 		
 	def format_crontab (self, title, command, output, timeexpression):
@@ -202,7 +211,7 @@ class Template:
 
 		s = "<b>" + _("Title:") + "</b> " + title + "\n<b>" + _("Run:") + "</b> " + timeexpression + "\n<b>" + _("Command:") + "</b> " + command
 
-		if output:
-			s = (s + " <i>(" + "%s"  + ")</i>") % (str (self.parent.output_strings[output]))
+		if output > 0:
+			s = (s + " <i>(%s)</i>") % (str (self.parent.output_strings[output]))
 		
 		return s

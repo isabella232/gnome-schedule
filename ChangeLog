@@ -1,3 +1,10 @@
+2008-12-14  Gaute Hope  <eg@gaute.vetsj.com>
+
+	* X support for at tasks and at templates
+	* New option ui and new variable in gconf
+	* xwrapper.py: Still needs some more failchecking - is only run by cron
+	tasks. Perhaps it could serve as a test in the at script..
+
 2008-12-13  Gaute Hope  <eg@gaute.vetsj.com>
 	
 	* Experimental X support for crontab now working.

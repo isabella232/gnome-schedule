@@ -53,7 +53,8 @@ class AtEditor:
 		self.text_task_buffer = self.text_task.get_buffer()
 		self.button_add_template = self.xml.get_widget ("at_button_template")
 		self.at_vbox_time = self.xml.get_widget ("at_vbox_time")
-		
+
+		self.cb_xoutput = self.xml.get_widget ("cb_xoutput")
 
 		self.spin_hour = self.xml.get_widget ("at_spin_hour")
 		self.spin_minute = self.xml.get_widget ("at_spin_minute")
@@ -82,6 +83,7 @@ class AtEditor:
 		self.cal_button.show_all ()
 		
 		self.xml.signal_connect ("on_cal_button_toggled", self.on_cal_button_toggled)
+		self.xml.signal_connect ("on_cb_xoutput_toggled", self.on_cb_xoutput_toggled)
 		
 		self.cal_loaded = False
 		self.x, self.y = self.widget.get_position ()
@@ -126,15 +128,19 @@ class AtEditor:
 		self.__setup_calendar__ ()
 		self.button_add_template.show ()
 		self.widget.show_all ()
+		self.output = 0
+		self.cb_xoutput.set_active (0)
 		
 		self.__update_textboxes__()
 	
-	def showadd_template (self, transient, title, command):
+	def showadd_template (self, transient, title, command, output):
 		self.button_save.set_label (gtk.STOCK_ADD)
 		self.__reset__ ()
 		self.title = title
 		self.command = command
 		self.mode = 0 # add new task
+		self.output = output 
+		self.cb_xoutput.set_active (output)
 		self.widget.set_title(_("Create a New Scheduled Task"))
 		self.widget.set_transient_for(transient)
 		self.widget.set_position(gtk.WIN_POS_CENTER_ON_PARENT)
@@ -144,14 +150,15 @@ class AtEditor:
 		
 		self.__update_textboxes__()
 	
-	def showedit_template (self, transient, id, title, command):
+	def showedit_template (self, transient, id, title, command, output):
 		self.button_save.set_label (gtk.STOCK_ADD)
 		self.__reset__ ()
 		self.tid = id
 		self.title = title
 		self.command = command
 		self.mode = 2 # edit template
-		
+		self.output = output	
+		self.cb_xoutput.set_active (output)
 		self.widget.set_title(_("Edit template"))
 		self.widget.set_transient_for(transient)
 		self.widget.set_position(gtk.WIN_POS_CENTER_ON_PARENT)
@@ -172,7 +179,8 @@ class AtEditor:
 		self.__reset__ ()
 		self.tid = 0
 		self.mode = 2 # edit template
-		
+		self.output = 0	
+		self.cb_xoutput.set_active (0)
 		self.widget.set_title(_("New template"))
 		self.widget.set_transient_for(transient)
 		self.widget.set_position(gtk.WIN_POS_CENTER_ON_PARENT)
@@ -195,9 +203,11 @@ class AtEditor:
 		self.date = self.ParentClass.treemodel.get_value(iter, 9)
 		self.time = self.ParentClass.treemodel.get_value(iter, 12)
 		self.title = self.ParentClass.treemodel.get_value(iter, 0)
-		self.class_id = self.ParentClass.treemodel.get_value(iter, 9)
-		self.user = self.ParentClass.treemodel.get_value(iter, 10)
+		self.class_id = self.ParentClass.treemodel.get_value(iter, 10)
+		self.user = self.ParentClass.treemodel.get_value(iter, 11)
 		self.command = self.ParentClass.treemodel.get_value(iter, 3)
+		self.output = self.ParentClass.treemodel.get_value (iter, 15)
+		self.cb_xoutput.set_active (self.output)
 		# removing beginning newlines.. wherever they come from..
 		i = self.command.find ('\n', 0)
 		while i == 0:
@@ -235,6 +245,12 @@ class AtEditor:
 			if ((x != self.x) or (y != self.y) or (height != self.height) or (width != self.width)):
 				self.__hide_calendar__ ()
 				
+	def on_cb_xoutput_toggled (self, *args):
+		if self.cb_xoutput.get_active ():
+			self.output = 1
+		else:
+			self.output = 0
+
 	def on_cal_button_toggled (self, *args):
 		if self.cal_button.get_active ():
 			self.__show_calendar__ ()
@@ -509,6 +525,8 @@ class AtEditor:
 		day = ctime[2]
 		hour = ctime[3]
 		minute = ctime[4]
+
+		self.output = 0
 		
 		self.runat = str(hour) + str(minute) + " " + str(day) + "." + str(month) + "." + str (year)
 
@@ -556,12 +574,12 @@ class AtEditor:
 		self.wrongdialog.destroy()
 
 	def on_button_template_clicked (self, *args):
-		self.template.savetemplate_at (0, self.title, self.command)
+		self.template.savetemplate_at (0, self.title, self.command, self.output)
 		self.widget.hide ()
 
 	def on_button_save_clicked (self, *args):
 		if self.mode == 2:
-			self.template.savetemplate_at (self.tid, self.title, self.command)
+			self.template.savetemplate_at (self.tid, self.title, self.command, self.output)
 			self.widget.hide ()
 			return
 			
@@ -587,9 +605,9 @@ class AtEditor:
 			del dia2
 		
 		if self.mode == 1:
-			self.scheduler.update (self.job_id, self.runat, self.command, self.title)
+			self.scheduler.update (self.job_id, self.runat, self.command, self.title, self.output)
 		else:
-			self.scheduler.append (self.runat, self.command, self.title)
+			self.scheduler.append (self.runat, self.command, self.title, self.output)
 		
 		self.ParentClass.schedule_reload ()
 			
