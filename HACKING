@@ -12,3 +12,6 @@ entry.
 
 Major changes should be submitted for approval to the maintainer(s).
 
+Coding style:
+    Use expanded tabs, 4 of them, on all *.py files.
+
