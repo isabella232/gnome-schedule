@@ -24,4 +24,4 @@ src/atEditor.py
 src/template.py
 src/template_chooser.py
 src/template_manager.py
-src/xwrapper.py.in
+src/xwrapper.py
