@@ -1,6 +1,8 @@
 version = "@VERSION@"
 image_dir = "@prefix@/share/pixmaps/gnome-schedule"
-glade_dir = "@prefix@/share/gnome-schedule"
+gs_dir = "@prefix@/share/gnome-schedule"
+glade_dir = gs_dir
+xwrapper_exec = "PYTHONPATH=@PYTHONPATH@/gtk-2.0/:$PYTHONPATH @PYTHON@ @prefix@/share/gnome-schedule/xwrapper.py"
 locale_dir = "@prefix@/share/locale"
 crontabbin = "@CRONTAB_CONFIG@"
 atbin = "@AT_CONFIG@"

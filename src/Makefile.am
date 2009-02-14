@@ -17,7 +17,8 @@ gnomeschedule_PYTHON = \
 	scheduleapplet.py \
 	template.py \
 	template_chooser.py \
-	template_manager.py
+	template_manager.py \
+	xwrapper.py
 
 
 uidir = $(datadir)/gnome-schedule
@@ -31,7 +32,7 @@ DISTCLEANFILES = \
 	config.py \
 	gnome-schedule.glade.bak \
 	gnome-schedule.gladep.bak \
-	gnome-schedule.gladep
+	gnome-schedule.gladep 
 
 EXTRA_DIST =  \
 	$(bin_SCRIPTS) \

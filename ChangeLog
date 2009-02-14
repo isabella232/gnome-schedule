@@ -1,7 +1,39 @@
-2008-12-07  Gaute Hope  <eg@gaute.vetsj.com>
+2009-02-14  Gaute Hope  <eg@gaute.vetsj.com>
+
+	* X support ready for testing
+	* xwrapper.py: checks for X connection in both crontab and at
+	* xwrapper.py: works for at
+	* Merged x-output-support onto trunk
+
+2009-01-14  Gaute Hope  <eg@gaute.vetsj.com>
+
+	* Expanded tabs (4) in *.py
+
+2008-12-14  Gaute Hope  <eg@gaute.vetsj.com>
+
+	* X support for at tasks and at templates
+	* New option ui and new variable in gconf
+	* xwrapper.py: Still needs some more failchecking - is only run by cron
+	tasks. Perhaps it could serve as a test in the at script..
+	* at.py: removed all the prelen stuff - not useful, only storing the unique script
+
+2008-12-13  Gaute Hope  <eg@gaute.vetsj.com>
 	
-	* Bug 563600: Fixed text position on template ToolButton in mainWindow.
+	* Experimental X support for crontab now working.
+	* xwrapper.py.in -> xwrapper.py - no need for a shebang
+	* Expect /bin/sh to be present
+	* crontab: Template saving and editing respects output setting
+
+2008-12-07  Gaute Hope  <eg@gaute.vetsj.com>
+
+	* Bug 563600: Fixed text position on template ToolButton in mainWindow
 	* Bug 563618: Escape &
+
+2008-10-21  Gaute Hope  <eg@gaute.vetsj.com>
+
+	* xwrapper.py: Wrapper around crontab commands running in X
+	* Added xoutput, display to datafile, popped to version 4
+	* new x-output-support branch: broken at the moment
 
 2008-10-01  Gaute Hope  <eg@gaute.vetsj.com>
 

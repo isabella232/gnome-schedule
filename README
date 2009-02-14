@@ -87,6 +87,7 @@ Compiling and HACKING
 
 	This will use images and datafiles from the current directory. Remember this is only for debugging and might not always work as expected.
 
+
   To make contributions you should first read
 
 	o. HACKING

@@ -27,66 +27,66 @@ import os
 import config
 
 class ConfigBackend:
-	
-	def __init__(self, parent, type):
-		
-		self.parent = parent
-		self.type = "gconf"
-		
-		self.gconf_client = gconf.client_get_default()
-		self.gconf_client.add_dir ("/apps/gnome-schedule", gconf.CLIENT_PRELOAD_NONE)	
-		self.gconf_client.notify_add ("/apps/gnome-schedule/advanced", self.on_gconfkey_advanced_changed)
+    
+    def __init__(self, parent, type):
+        
+        self.parent = parent
+        self.type = "gconf"
+        
+        self.gconf_client = gconf.client_get_default()
+        self.gconf_client.add_dir ("/apps/gnome-schedule", gconf.CLIENT_PRELOAD_NONE)   
+        self.gconf_client.notify_add ("/apps/gnome-schedule/advanced", self.on_gconfkey_advanced_changed)
 
-	def get_not_inform_working_dir (self):
-		if ((self.get_not_inform_working_dir_crontab () and self.get_not_inform_working_dir_at ()) or self.gconf_client.get_bool ("/apps/gnome-schedule/inform_working_dir")):
-			return True
-		else:
-			return False
-			
-	
-	def set_not_inform_working_dir (self, value):
-		self.gconf_client.set_bool ("/apps/gnome-schedule/inform_working_dir", value)
-	
-	def get_not_inform_working_dir_crontab (self):
-		return self.gconf_client.get_bool ("/apps/gnome-schedule/inform_working_dir_crontab")
-	
-	def set_not_inform_working_dir_crontab (self, value):
-		self.gconf_client.set_bool ("/apps/gnome-schedule/inform_working_dir_crontab", value)
-		
-	def get_not_inform_working_dir_at (self):
-		return self.gconf_client.get_bool ("/apps/gnome-schedule/inform_working_dir_at")
-	
-	def set_not_inform_working_dir_at (self, value):
-		self.gconf_client.set_bool ("/apps/gnome-schedule/inform_working_dir_at", value)
-		
-		
-	def set_window_state (self, x, y, height, width):
-		self.gconf_client.set_int ("/apps/gnome-schedule/x", x)
-		self.gconf_client.set_int ("/apps/gnome-schedule/y", y)
-		self.gconf_client.set_int ("/apps/gnome-schedule/height", height)
-		self.gconf_client.set_int ("/apps/gnome-schedule/width", width)
-	
-	def get_window_state (self):
-		h = self.gconf_client.get_int ("/apps/gnome-schedule/height")
-		w = self.gconf_client.get_int ("/apps/gnome-schedule/width")
-		x = self.gconf_client.get_int ("/apps/gnome-schedule/x")
-		y = self.gconf_client.get_int ("/apps/gnome-schedule/y")
-		return x, y, h, w
-		
-	def get_advanced_option(self):
-		return self.gconf_client.get_bool ("/apps/gnome-schedule/advanced")
+    def get_not_inform_working_dir (self):
+        if ((self.get_not_inform_working_dir_crontab () and self.get_not_inform_working_dir_at ()) or self.gconf_client.get_bool ("/apps/gnome-schedule/inform_working_dir")):
+            return True
+        else:
+            return False
+            
+    
+    def set_not_inform_working_dir (self, value):
+        self.gconf_client.set_bool ("/apps/gnome-schedule/inform_working_dir", value)
+    
+    def get_not_inform_working_dir_crontab (self):
+        return self.gconf_client.get_bool ("/apps/gnome-schedule/inform_working_dir_crontab")
+    
+    def set_not_inform_working_dir_crontab (self, value):
+        self.gconf_client.set_bool ("/apps/gnome-schedule/inform_working_dir_crontab", value)
+        
+    def get_not_inform_working_dir_at (self):
+        return self.gconf_client.get_bool ("/apps/gnome-schedule/inform_working_dir_at")
+    
+    def set_not_inform_working_dir_at (self, value):
+        self.gconf_client.set_bool ("/apps/gnome-schedule/inform_working_dir_at", value)
+        
+        
+    def set_window_state (self, x, y, height, width):
+        self.gconf_client.set_int ("/apps/gnome-schedule/x", x)
+        self.gconf_client.set_int ("/apps/gnome-schedule/y", y)
+        self.gconf_client.set_int ("/apps/gnome-schedule/height", height)
+        self.gconf_client.set_int ("/apps/gnome-schedule/width", width)
+    
+    def get_window_state (self):
+        h = self.gconf_client.get_int ("/apps/gnome-schedule/height")
+        w = self.gconf_client.get_int ("/apps/gnome-schedule/width")
+        x = self.gconf_client.get_int ("/apps/gnome-schedule/x")
+        y = self.gconf_client.get_int ("/apps/gnome-schedule/y")
+        return x, y, h, w
+        
+    def get_advanced_option(self):
+        return self.gconf_client.get_bool ("/apps/gnome-schedule/advanced")
 
-		
-	def set_advanced_option(self,value):
-		self.gconf_client.set_bool ("/apps/gnome-schedule/advanced", value)
+        
+    def set_advanced_option(self,value):
+        self.gconf_client.set_bool ("/apps/gnome-schedule/advanced", value)
 
 
-	def on_gconfkey_advanced_changed (self, client, connection_id, entry, args):
-		val = self.gconf_client.get_bool ("/apps/gnome-schedule/advanced")
-		if val:
-			self.parent.switchView("advanced")
-		else:
-			self.parent.switchView("simple")
+    def on_gconfkey_advanced_changed (self, client, connection_id, entry, args):
+        val = self.gconf_client.get_bool ("/apps/gnome-schedule/advanced")
+        if val:
+            self.parent.switchView("advanced")
+        else:
+            self.parent.switchView("simple")
 
 
 

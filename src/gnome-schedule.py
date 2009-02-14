@@ -36,20 +36,20 @@ gettext.install(config.GETTEXT_PACKAGE(), config.GNOMELOCALEDIR(), unicode=1)
 poscorrect_isset = os.getenv ("POSIXLY_CORRECT", False)
 manual_poscorrect = False
 if poscorrect_isset == False:
-	os.putenv ("POSIXLY_CORRECT", "enabled")
-	manual_poscorrect = True
+    os.putenv ("POSIXLY_CORRECT", "enabled")
+    manual_poscorrect = True
 
 if __name__ == "__main__":
-	signal.signal (signal.SIGINT, signal.SIG_DFL)
+    signal.signal (signal.SIGINT, signal.SIG_DFL)
 
 debug_flag = None
 if '--debug' in sys.argv:
-	debug_flag = 1
+    debug_flag = 1
 
 try:
-	import pygtk
-  	#tell pyGTK, if possible, that we want GTKv2
-  	pygtk.require("2.0")
+    import pygtk
+    #tell pyGTK, if possible, that we want GTKv2
+    pygtk.require("2.0")
   
 except:
   #Some distributions come with GTK2, but not pyGTK
@@ -61,7 +61,7 @@ try:
   # TODO: Gnome specific
   import gnome
   import gnome.ui
-	
+    
 except:
   print _("You need to install pyGTK or GTKv2,\n"
           "or set your PYTHONPATH correctly.\n"
