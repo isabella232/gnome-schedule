@@ -20,6 +20,7 @@ import sys
 import os
 import pwd
 
+
 # g-s modules
 import config
 import crontab
@@ -31,43 +32,59 @@ import crontab
 import gettext
 gettext.install(config.GETTEXT_PACKAGE(), config.GNOMELOCALEDIR(), unicode=1)
 
+def check_X (display):
+    #Checking if I can use X 
+    os.putenv ('DISPLAY', display)
+
+    try:
+        import pygtk
+        pygtk.require("2.0")
+
+    except:
+        pass
+
+    try:
+        import gtk
+
+    except:
+        print _("You need to install pyGTK or GTKv2,\n"
+                "or set your PYTHONPATH correctly.\n"
+                "try: export PYTHONPATH= ")
+        sys.exit(1)
+
+    try:
+        gtk.init_check () 
+
+    except Exception as e: 
+        print _("Could not open a  connection to X!")
+        print e
+        sys.exit (1)
+
 poscorrect_isset = os.getenv ("POSIXLY_CORRECT", False)
 manual_poscorrect = False
 if poscorrect_isset == False:
     os.putenv ("POSIXLY_CORRECT", "enabled")
     manual_poscorrect = True
 
-if (len (sys.argv) < 4):
-    print _("Minium number of arguments is 3.")
-    
+if (len (sys.argv) < 2):
+    print _("Wrong number of arguments.")
+
     print _("Wrapper script for Gnome-schedule (http://gnome-schedule.sf.net) for applications to be run from crontab under X. Use through gnome-schedule.")
-    sys.exit ()
+    sys.exit (1)
 
 if sys.argv[1] == "c":
     job_type = 0
+    if (len (sys.argv) != 3):
+        print _("Wrong number of arguments.")
+
+        print _("Wrapper script for Gnome-schedule (http://gnome-schedule.sf.net) for applications to be run from crontab under X. Use through gnome-schedule.")
+        sys.exit (1)
+
+elif sys.argv[1] == "a":
+    job_type = 1
 else:
-    print _("Unknown type of job: Wrapper only useful on crontab tasks.")
-    sys.exit ()
-
-try:
-    job_id = int (sys.argv[2])
-except:
-    print _("Invalid job id.")
-    sys.exit ()
-    
-if job_id < 0:
-    print _("Invalid job id.")
-    sys.exit ()
-
-i = 3
-command = ""
-while (i < len (sys.argv)):
-    command = command + sys.argv[i]
-    i = i + 1
-
-if len (command) < 2:
-    print _("Invalid command, must be longer than 2.")
-    sys.exit ()
+    print _("Unknown type of job.")
+    sys.exit (1)
 
 uid = os.geteuid ()
 gid = os.getegid ()
@@ -79,35 +96,60 @@ if uid == 0:
 else:
     is_root = False
 
-# get data
+# CRONTAB
 if job_type == 0:
+
+    try:
+        job_id = int (sys.argv[2])
+    except:
+        print _("Invalid job id.")
+        sys.exit (1)
+
+    if job_id < 0:
+        print _("Invalid job id.")
+        sys.exit (1)
+
     c = crontab.Crontab (is_root, user, uid, gid, home_dir)
-    success, ver, title, desc, output, display = c.get_job_data (job_id)
+    success, ver, title, desc, output, display, command = c.get_job_data (job_id)
+
     if success == False:
         print _("Could not get job data, the task might have been created with an old version - try recreating the task.")
-        sys.exit ()
-    
-    if ver < 4:
+        sys.exit (1)
+
+    if ver < 5:
         print _("Data file too old. Recreate task.")
-        sys.exit ()
-    
+        sys.exit (1)
+
+
     print _("Launching %s.." % title)
-    if (int (output) == 0):
-        print _("output==0: Why am I launched?")
-        sys.exit ()
+    if (output < 2):
+        print _("output<0: Why am I launched?")
+        sys.exit (1)
     if (len (display) < 2):
         print _("len(display)<2: No proper DISPLAY variable")
-        sys.exit ()
-        
-    #TODO: Check for DISPLAY and user
-    ex = "/bin/sh -c \"DISPLAY=" + display + " " + command + "\""
-    print ex
-    os.system (ex)
+        sys.exit (1)
+
+
+    check_X (display)
+
+    # Execute task
+    sh = os.popen ("/bin/sh -s", 'w')
+    sh.write ("export DISPLAY=" + display + "\n")
+    sh.write (command + "\n")
+    sh.close ()
+
     sys.exit ()
-    
+
+# AT
+elif (job_type == 1):
+    display = os.getenv ('DISPLAY')
+    check_X (display)
+    sys.exit (0) # All fine
+
 else:
     print _("I will never be displayed.")
-    sys.exit ()
-    
+    sys.exit (1)
+
 print _("xwrapper.py: completed")
+
 

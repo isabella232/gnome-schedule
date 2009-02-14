@@ -47,7 +47,7 @@ class Crontab:
         self.env_vars = [ ]
         
         self.crontabdata = self.user_home_dir + "/.gnome/gnome-schedule/crontab"
-        self.crontabdatafileversion = 4
+        self.crontabdatafileversion = 5
         
         if os.path.exists (self.user_home_dir + "/.gnome") != True:
             os.mkdir (self.user_home_dir + "/.gnome", 0700)
@@ -273,13 +273,9 @@ class Crontab:
             record = record + space + self.output[1]
         elif (output == 2) or (output == 3):
             display = os.getenv ('DISPLAY')
+            record = config.xwrapper_exec + " c " + str (job_id)
             if output == 3:
-                space = " " 
-                if record[len (record) - 1] == " ":
-                    space = ""
-                record = record + space + self.output [3]
-
-            record = config.xwrapper_exec + " c " + str (job_id) + " " + record
+                record = record + " " + self.output [3]
 
         if minute == "@reboot":
             record = "@reboot " + record 
@@ -301,6 +297,7 @@ class Crontab:
         fh.write ("desc=" + desc + "\n")
         fh.write ("output=" + str (output) + "\n")
         fh.write ("display=" + display + "\n")  
+        fh.write ("command_d=" + command + "\n")
         fh.close () 
         os.chown (f, self.uid, self.gid)
         os.chmod (f, 0600)
@@ -374,12 +371,9 @@ class Crontab:
             record = record + space + self.output[1]
         elif (output == 2) or (output == 3):
             display = os.getenv ('DISPLAY')
+            record = config.xwrapper_exec + " c " + str (job_id)
             if output == 3:
-                space = " " 
-                if record[len (record) - 1] == " ":
-                    space = ""
-                record = record + space + self.output [3]
-            record = config.xwrapper_exec + " c " + str (job_id) + " " + record
+                record = record + " " + self.output [3]
 
         if minute == "@reboot":
             record = "@reboot " + record
@@ -399,6 +393,7 @@ class Crontab:
         fh.write ("desc=" + desc + "\n")
         fh.write ("output=" + str(output) + "\n")
         fh.write ("display=" + display + "\n")      
+        fh.write ("command_d=" + command + "\n")
         fh.close ()
         os.chown (f, self.uid, self.gid)
         os.chmod (f, 0600)
@@ -606,7 +601,7 @@ class Crontab:
         # Retrive title and icon data
         if nofile == False:
             if job_id:
-                success, ver, title, desc, output, display = self.get_job_data (job_id)
+                success, ver, title, desc, output, display, command_d = self.get_job_data (job_id)
             else:
                 success = True
                 ver = 1
@@ -614,6 +609,7 @@ class Crontab:
                 desc = ""
                 output = 0
                 display = ""
+                command_d = ""
             
             if (output == 0) or (output == 3):
                 # remove devnull part of command
@@ -621,10 +617,10 @@ class Crontab:
                 pos = command.rfind (self.output[1])
                 if pos != -1:
                     command = command[:pos]
-            if output == 2:
-                s = config.xwrapper_exec + " c " + str (job_id) + " "
-                command = command[len (s):]
-            
+            if output >= 2:
+                # rely on command from datafile, command from crontab line only contains xwrapper stuff
+                command = command_d            
+
             # support older datafiles/entries without removing the no output tag    
             if ver <= 1:
                 # old version, no output declaration in datafile, migration
@@ -680,12 +676,18 @@ class Crontab:
             if ver >= 4:
                 display = d[8:d.find ("\n")]
                 d = d[d.find ("\n") + 1:]
-                if (len (display) < 1) or (output == 0):
+                if (len (display) < 1) or (output < 2):
                     display = ""
+
+            if ver >= 5:
+                command_d = d[10:d.find ("\n")]
+                d = d[d.find ("\n") + 1:]
+                if (len (command_d) < 1) or (output < 2):
+                    command_d = ""
             
             fh.close ()
 
-            return True, ver, title, desc, output, display
+            return True, ver, title, desc, output, display, command_d
             
             
         else: 

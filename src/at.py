@@ -56,11 +56,21 @@ class At:
         self.atRecordRegexAdded = re.compile('[^\s]+\s([0-9]+)\sat')
         self.SCRIPT_DELIMITER = "###### ---- GNOME_SCHEDULE_SCRIPT_DELIMITER #####"
         
-        self.DISPLAY = "DISPLAY=%s; export DISPLAY\n"
+        self.DISPLAY = "DISPLAY=%s; export DISPLAY;\n"
+        self.DISPLAY = self.DISPLAY + config.xwrapper_exec + " a\n"
+        self.DISPLAY = self.DISPLAY + """
+xwrapper=$?;
+if [ $xwrapper -eq 0 ]; then
+    echo "all fine";
+else
+    echo "xwrapper failed.";
+    exit;
+fi
+"""
 
         # If normally this variable is unset the user would not expect it 
         # to be set, which it will be because Gnome Schedule needs it.
-        # Therefore we unset it in the script.
+        # Therefore we unset it in the script. 
         self.POSIXLY_CORRECT_UNSET = "unset POSIXLY_CORRECT\n"
         
         self.atdatafileversion = 5
@@ -396,7 +406,7 @@ class At:
         display = ""
         if output > 0:
             display = os.getenv ('DISPLAY')
-            tmp.write (self.DISPLAY % display)
+            tmp.write (self.DISPLAY %  display )
             
         tmp.write (command + "\n")
         tmp.close ()
@@ -453,7 +463,7 @@ class At:
         display = ""
         if output > 0:
             display = os.getenv ('DISPLAY')
-            tmp.write (self.DISPLAY % display)
+            tmp.write (self.DISPLAY %  display )
 
         tmp.write (command + "\n")
         tmp.close ()

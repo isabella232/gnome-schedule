@@ -1,3 +1,9 @@
+2009-02-14  Gaute Hope  <eg@gaute.vetsj.com>
+
+	* X support ready for testing
+	* xwrapper.py: checks for X connection in both crontab and at
+	* xwrapper.py: works for at
+
 2009-01-14  Gaute Hope  <eg@gaute.vetsj.com>
 
 	* Expanded tabs (4) in *.py
