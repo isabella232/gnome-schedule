@@ -1,3 +1,8 @@
+2009-02-15  Gaute Hope  <eg@gaute.vetsj.com>
+
+	* nn.po: Updated Norwegian (nynorsk) translation.
+	* make update-po
+
 2008-10-19  Jorge Gonzalez  <jorgegonz@svn.gnome.org>
 
 	* es.po: Updated Spanish translation

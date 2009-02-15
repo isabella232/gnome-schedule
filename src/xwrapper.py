@@ -69,7 +69,7 @@ if poscorrect_isset == False:
 if (len (sys.argv) < 2):
     print _("Wrong number of arguments.")
 
-    print _("Wrapper script for Gnome-schedule (http://gnome-schedule.sf.net) for applications to be run from crontab under X. Use through gnome-schedule.")
+    print _("Wrapper script for Gnome-schedule (http://gnome-schedule.sf.net) for applications to be run from crontab or at under X. Use through gnome-schedule.")
     sys.exit (1)
 
 if sys.argv[1] == "c":
@@ -77,7 +77,7 @@ if sys.argv[1] == "c":
     if (len (sys.argv) != 3):
         print _("Wrong number of arguments.")
 
-        print _("Wrapper script for Gnome-schedule (http://gnome-schedule.sf.net) for applications to be run from crontab under X. Use through gnome-schedule.")
+        print _("Wrapper script for Gnome-schedule (http://gnome-schedule.sf.net) for applications to be run from crontab or at under X. Use through gnome-schedule.")
         sys.exit (1)
 
 elif sys.argv[1] == "a":

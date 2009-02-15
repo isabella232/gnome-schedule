@@ -2,14 +2,13 @@
 # Copyright (C) 2007 Gaute Hope
 # This file is distributed under the same license as the gnome-schedule package.
 # Gaute Hope <eg@gaute.vetsj.org>, 2007.
-#  <>, 2007.
 #
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-schedule 1.0\n"
+"Project-Id-Version: gnome-schedule 2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-12-26 16:24+0100\n"
+"POT-Creation-Date: 2009-02-15 10:03+0100\n"
 "PO-Revision-Date: 2007-12-26 16:25+0100\n"
 "Last-Translator: Gaute Hope <eg@gaute.vetsj.com>\n"
 "Language-Team: Norwegian/Nynorsk <i18n-nn@lister.ping.uio.no>\n"
@@ -37,7 +36,24 @@ msgstr "Gnome Schedule"
 msgid "System tools"
 msgstr "Systemverkty"
 
-#: ../src/at.py:490
+#: ../src/at.py:88 ../src/crontab.py:62
+msgid ""
+"Failed to create data dir! Make sure ~/.gnome and ~/.gnome/gnome-schedule "
+"are writable."
+msgstr ""
+"Klarte ikkje å lage data mappa! Sjekk at du har skriveløyve på ~/.gnome og "
+"~/.gnome/gnome-schedule"
+
+#: ../src/at.py:121 ../src/crontab.py:162
+#, python-format
+msgid ""
+"Failed to create data dir: %s. Make sure ~/.gnome and ~/.gnome/gnome-"
+"schedule are writable."
+msgstr ""
+"Klarte ikkje lage data mappe: %s. Sjekk at du har skriveløyve på~/.gnome og "
+"~/.gnome/gnome-schedule."
+
+#: ../src/at.py:524
 #, python-format
 msgid "DANGEROUS PARSE: %(preview)s"
 msgstr "FARLEG ANALYSERING: %(preview)s"
@@ -46,97 +62,97 @@ msgstr "FARLEG ANALYSERING: %(preview)s"
 #
 #
 #. TODO: localize time and date formats
-#: ../src/at.py:497
+#: ../src/at.py:530
 #, python-format
 msgid "On %(date)s at %(time)s"
 msgstr "Den %(date)s kl %(time)s"
 
 #
-#: ../src/at.py:502 ../src/at.py:507
+#: ../src/at.py:535 ../src/at.py:540
 msgid "Once"
 msgstr "Ein gong"
 
-#: ../src/at.py:511
+#: ../src/at.py:544
 msgid "Warning: a line in atq's output didn't parse"
 msgstr "Advarsel: Ei linje i utdataen frå atq kunne ikkje analyserast"
 
-#: ../src/crontab.py:77
+#: ../src/crontab.py:87
 msgid "Minute"
 msgstr "Minutt"
 
-#: ../src/crontab.py:78
+#: ../src/crontab.py:88
 msgid "Hour"
 msgstr "Time"
 
-#: ../src/crontab.py:79
+#: ../src/crontab.py:89
 msgid "Day of Month"
 msgstr "Dag av månade"
 
-#: ../src/crontab.py:80
+#: ../src/crontab.py:90
 msgid "Month"
 msgstr "Månad"
 
-#: ../src/crontab.py:81
+#: ../src/crontab.py:91
 msgid "Weekday"
 msgstr "Vekedag"
 
-#: ../src/crontab.py:172 ../src/gnome-schedule.glade.h:13
+#: ../src/crontab.py:192 ../src/gnome-schedule.glade.h:13
 msgid "Basic"
 msgstr "Enkel"
 
 # python-format
-#: ../src/crontab.py:172
+#: ../src/crontab.py:192
 #, python-format
 msgid "This is not a valid special record: %(record)s"
 msgstr "Dette er eit ugyldig spesialuttrykk: %(record)s"
 
 # python-format
-#: ../src/crontab.py:200 ../src/crontab.py:205 ../src/crontab.py:209
+#: ../src/crontab.py:220 ../src/crontab.py:225 ../src/crontab.py:229
 #, python-format
 msgid "Must be between %(min)s and %(max)s"
 msgstr "Må vere mellom %(min)s og %(max)s"
 
 # python-format
-#: ../src/crontab.py:207
+#: ../src/crontab.py:227
 #, python-format
 msgid "%s is not a number"
 msgstr "%s er ikkje eit nummer"
 
-#: ../src/crontab.py:261 ../src/crontab.py:317 ../src/crontabEditor.py:289
-#: ../src/atEditor.py:121 ../src/atEditor.py:503 ../src/atEditor.py:527
+#: ../src/crontab.py:288 ../src/crontab.py:334 ../src/crontabEditor.py:275
+#: ../src/atEditor.py:123 ../src/atEditor.py:519 ../src/atEditor.py:545
 msgid "Untitled"
 msgstr "Namnlaus"
 
-#: ../src/crontab.py:416 ../src/crontab.py:418 ../src/template_chooser.py:106
+#: ../src/crontab.py:450 ../src/crontab.py:452 ../src/template_chooser.py:106
 #: ../src/template_manager.py:111
 msgid "Recurrent"
 msgstr "Gjentakande"
 
-#: ../src/crontab.py:416 ../src/crontabEditor.py:74 ../src/lang.py:149
+#: ../src/crontab.py:450 ../src/crontabEditor.py:74 ../src/lang.py:149
 msgid "At reboot"
 msgstr "Ved omstart"
 
-#: ../src/crontab.py:430
+#: ../src/crontab.py:464
 msgid "minute"
 msgstr "minutt"
 
-#: ../src/crontab.py:432
+#: ../src/crontab.py:466
 msgid "hour"
 msgstr "time"
 
-#: ../src/crontab.py:434
+#: ../src/crontab.py:468
 msgid "day"
 msgstr "dag"
 
-#: ../src/crontab.py:436
+#: ../src/crontab.py:470
 msgid "month"
 msgstr "månad"
 
-#: ../src/crontab.py:438
+#: ../src/crontab.py:472
 msgid "weekday"
 msgstr "vekedag"
 
-#: ../src/crontab.py:537
+#: ../src/crontab.py:571
 msgid ""
 "Failed to parse the Day of Month field, possibly due to a bug in crontab."
 msgstr ""
@@ -144,12 +160,12 @@ msgstr ""
 "crontab."
 
 #: ../src/crontabEditor.py:69 ../src/crontabEditorHelper.py:87
-#: ../src/gnome-schedule.glade.h:32
+#: ../src/gnome-schedule.glade.h:31
 msgid "Every minute"
 msgstr "Kvart minutt"
 
 #: ../src/crontabEditor.py:70 ../src/crontabEditorHelper.py:93
-#: ../src/gnome-schedule.glade.h:31
+#: ../src/gnome-schedule.glade.h:30
 msgid "Every hour"
 msgstr "Kvar time"
 
@@ -166,30 +182,28 @@ msgid "Every week"
 msgstr "Kvar veke"
 
 #. add new task
-#: ../src/crontabEditor.py:129 ../src/crontabEditor.py:140
-#: ../src/atEditor.py:123 ../src/atEditor.py:138
+#: ../src/crontabEditor.py:131 ../src/crontabEditor.py:142
+#: ../src/atEditor.py:125 ../src/atEditor.py:144
 msgid "Create a New Scheduled Task"
 msgstr "Lag ei ny oppgåve"
 
 #
-#. edit template
-#: ../src/crontabEditor.py:201 ../src/atEditor.py:155
+#: ../src/crontabEditor.py:198 ../src/atEditor.py:162
 msgid "Edit template"
 msgstr "Rediger førehandsoppsett"
 
 #
-#. edit template
-#: ../src/crontabEditor.py:231 ../src/atEditor.py:176
+#: ../src/crontabEditor.py:223 ../src/atEditor.py:184
 msgid "New template"
 msgstr "Nytt førehandsoppsett"
 
-#: ../src/crontabEditor.py:257 ../src/atEditor.py:216
+#: ../src/crontabEditor.py:249 ../src/atEditor.py:226
 msgid "Edit a Scheduled Task"
 msgstr "Rediger ei planlagt oppgåve"
 
 # python-format
-#: ../src/crontabEditor.py:316 ../src/crontabEditor.py:611
-#: ../src/crontabEditor.py:651
+#: ../src/crontabEditor.py:302 ../src/crontabEditor.py:578
+#: ../src/crontabEditor.py:618
 #, python-format
 msgid ""
 "This is an invalid record! The problem could be in the %(field)s field. "
@@ -199,14 +213,14 @@ msgstr ""
 "Grunn: %(reason)s"
 
 #
-#: ../src/crontabEditor.py:321
+#: ../src/crontabEditor.py:307
 msgid ""
 "Your command contains one or more of the character %, this is special for "
 "cron and cannot be used with Gnome-schedule because of the format it uses to "
 "store extra information on the crontab line. Please use the | redirector "
-"character to acheieve the same functionality. Refer to the crontab manual "
-"for more information about the % character. If you don not want to use it "
-"for redirection it must be properly escaped with the \\ letter."
+"character to achieve the same functionality. Refer to the crontab manual for "
+"more information about the % character. If you don not want to use it for "
+"redirection it must be properly escaped with the \\ letter."
 msgstr ""
 "Kommandoen din inneheld ein eller fleire innslag av teiknet %, dette er eit "
 "spesielt teikn for cron og kan ikkje nyttast i Gnome-schedule grunna "
@@ -216,7 +230,7 @@ msgstr ""
 "likevel ynkjer å bruke teiknet, men ikkje for omdirrigering, må det vere "
 "skikkeleg utkommentert med \\ teiknet."
 
-#: ../src/crontabEditor.py:489
+#: ../src/crontabEditor.py:456
 msgid ""
 "Note about working directory of executed tasks:\n"
 "\n"
@@ -226,11 +240,11 @@ msgstr ""
 "\n"
 "Gjentakane oppgåver vil bli køyrde frå heimemappa."
 
-#: ../src/crontabEditor.py:490 ../src/mainWindow.py:648 ../src/atEditor.py:575
+#: ../src/crontabEditor.py:457 ../src/mainWindow.py:666 ../src/atEditor.py:593
 msgid "_Don't show again"
 msgstr "_Ikkje vis igjen"
 
-#: ../src/crontabEditor.py:491 ../src/mainWindow.py:649 ../src/atEditor.py:576
+#: ../src/crontabEditor.py:458 ../src/mainWindow.py:667 ../src/atEditor.py:594
 msgid "Warning: Working directory of executed tasks"
 msgstr "Advarsel: Arbeidsmappe til oppgåver"
 
@@ -273,7 +287,7 @@ msgstr "Dette er ugyldig. Grunn: %s"
 msgid "At an exact minute"
 msgstr "På eit spesifikt minutt"
 
-#: ../src/crontabEditorHelper.py:232 ../src/gnome-schedule.glade.h:44
+#: ../src/crontabEditorHelper.py:232 ../src/gnome-schedule.glade.h:43
 msgid "Minute:"
 msgstr "Minutt:"
 
@@ -282,7 +296,7 @@ msgstr "Minutt:"
 msgid "At an exact hour"
 msgstr "På ein spesifikk time"
 
-#: ../src/crontabEditorHelper.py:236 ../src/gnome-schedule.glade.h:40
+#: ../src/crontabEditorHelper.py:236 ../src/gnome-schedule.glade.h:39
 msgid "Hour:"
 msgstr "Time:"
 
@@ -300,7 +314,7 @@ msgstr "Dag:"
 msgid "In a month"
 msgstr "I ein månad"
 
-#: ../src/crontabEditorHelper.py:244 ../src/gnome-schedule.glade.h:46
+#: ../src/crontabEditorHelper.py:244 ../src/gnome-schedule.glade.h:45
 msgid "Month:"
 msgstr "Månad:"
 
@@ -309,15 +323,15 @@ msgstr "Månad:"
 msgid "On a weekday"
 msgstr "På ein vekedag"
 
-#: ../src/crontabEditorHelper.py:248 ../src/gnome-schedule.glade.h:59
+#: ../src/crontabEditorHelper.py:248 ../src/gnome-schedule.glade.h:58
 msgid "Weekday:"
 msgstr "Vekedag:"
 
-#: ../src/crontabEditorHelper.py:253 ../src/gnome-schedule.glade.h:42
+#: ../src/crontabEditorHelper.py:253 ../src/gnome-schedule.glade.h:41
 msgid "In a step width"
 msgstr "Med eit mellomrom"
 
-#: ../src/crontabEditorHelper.py:255 ../src/gnome-schedule.glade.h:45
+#: ../src/crontabEditorHelper.py:255 ../src/gnome-schedule.glade.h:44
 msgid "Minutes:"
 msgstr "Minutt:"
 
@@ -417,8 +431,8 @@ msgid "Choose the user whose tasks you want to modify"
 msgstr "Velg brukaren som du vil endre oppgåvene for"
 
 #
-#: ../src/gnome-schedule.glade.h:18 ../src/template.py:192
-#: ../src/template.py:202
+#: ../src/gnome-schedule.glade.h:18 ../src/template.py:198
+#: ../src/template.py:212
 msgid "Command:"
 msgstr "Kommando:"
 
@@ -454,33 +468,29 @@ msgstr "Slett merka førehandsoppsett"
 msgid "Description:"
 msgstr "Skildring:"
 
-#: ../src/gnome-schedule.glade.h:27
-msgid "Edit"
-msgstr "Rediger"
-
 #
-#: ../src/gnome-schedule.glade.h:28
+#: ../src/gnome-schedule.glade.h:27
 msgid "Edit a periodical task"
 msgstr "Rediger ei oppgåve"
 
-#: ../src/gnome-schedule.glade.h:29
+#: ../src/gnome-schedule.glade.h:28
 msgid "Edit a scheduled task"
 msgstr "Rediger ei planlagt oppgåve"
 
 #
-#: ../src/gnome-schedule.glade.h:30
+#: ../src/gnome-schedule.glade.h:29
 msgid "Edit the selected template"
 msgstr "Rediger merka førehandsoppsett"
 
-#: ../src/gnome-schedule.glade.h:33
+#: ../src/gnome-schedule.glade.h:32
 msgid "Execute at:"
 msgstr "Køyr:"
 
-#: ../src/gnome-schedule.glade.h:34
+#: ../src/gnome-schedule.glade.h:33
 msgid "Execution at a specific minute, hour, day, weekday or month."
 msgstr "Utføring på eit minutt, ein time, dag, vekedag eller månad."
 
-#: ../src/gnome-schedule.glade.h:35
+#: ../src/gnome-schedule.glade.h:34
 msgid ""
 "Execution at a step width. For example every five minutes, hours, days, "
 "weekdays or months."
@@ -488,96 +498,97 @@ msgstr ""
 "Utføring i eit tidsrom på for eksempel fem minutt, timar, dagar, vekedagar "
 "eller månadar."
 
-#: ../src/gnome-schedule.glade.h:36
+#: ../src/gnome-schedule.glade.h:35
 msgid "Execution at every minute, hour, day, weekday or month."
 msgstr "Utføring kvart minutt, time, dag, vekedag, eller månad."
 
-#: ../src/gnome-schedule.glade.h:37
+#: ../src/gnome-schedule.glade.h:36
 msgid "Execution in a range."
 msgstr "Utføring i eit tidsrom."
 
-#: ../src/gnome-schedule.glade.h:38
+#: ../src/gnome-schedule.glade.h:37
 msgid "Expression:"
 msgstr "Uttrykk:"
 
-#: ../src/gnome-schedule.glade.h:39
+#: ../src/gnome-schedule.glade.h:38
 msgid "From:"
 msgstr "Frå:"
 
-#: ../src/gnome-schedule.glade.h:41
+#: ../src/gnome-schedule.glade.h:40
 msgid "In a range"
 msgstr "I eit tidsrom"
 
 #
-#: ../src/gnome-schedule.glade.h:43
+#: ../src/gnome-schedule.glade.h:42
 msgid "Manage templates"
 msgstr "Administrer førehandsoppsett"
 
-#: ../src/gnome-schedule.glade.h:47
+#: ../src/gnome-schedule.glade.h:46
 msgid "Other"
 msgstr "Anna"
 
-#: ../src/gnome-schedule.glade.h:48
+#: ../src/gnome-schedule.glade.h:47
 msgid "Run selected task"
 msgstr "Køyr merka oppgåve"
 
-#: ../src/gnome-schedule.glade.h:49
+#: ../src/gnome-schedule.glade.h:48
 msgid "Run task"
 msgstr "Køyr oppgåve"
 
-#: ../src/gnome-schedule.glade.h:50
+#: ../src/gnome-schedule.glade.h:49
 msgid "Scheduled and active tasks"
 msgstr "Planlagte og aktive oppgåver"
 
-#: ../src/gnome-schedule.glade.h:51
+#: ../src/gnome-schedule.glade.h:50
 msgid "See \"man 5 crontab\" for information about the crontab format."
 msgstr "Sjå \"man 5 crontab\" for meir informasjon om crontab formatet."
 
-#: ../src/gnome-schedule.glade.h:52
+#: ../src/gnome-schedule.glade.h:51
 msgid "Show help"
 msgstr "Vis hjelp"
 
 #
-#: ../src/gnome-schedule.glade.h:53
+#: ../src/gnome-schedule.glade.h:52
 msgid "Task description:"
 msgstr "Oppgåve skildring"
 
 #
-#: ../src/gnome-schedule.glade.h:54
+#: ../src/gnome-schedule.glade.h:53
 msgid "Task:"
 msgstr "Oppgåve:"
 
 #
-#: ../src/gnome-schedule.glade.h:55 ../src/mainWindow.py:183
+#: ../src/gnome-schedule.glade.h:54
 msgid "Templates"
 msgstr "Førhandsoppsett"
 
-#: ../src/gnome-schedule.glade.h:56
+#: ../src/gnome-schedule.glade.h:55
 msgid "Time expression help"
 msgstr "Tidsuttrykk hjelp"
 
 #
-#: ../src/gnome-schedule.glade.h:57
+#: ../src/gnome-schedule.glade.h:56
 msgid "Time:"
 msgstr "Tid:"
 
-#: ../src/gnome-schedule.glade.h:58
+#: ../src/gnome-schedule.glade.h:57
 msgid "To:"
 msgstr "Til:"
 
-#: ../src/gnome-schedule.glade.h:60
-msgid "_No output (>/dev/null 2>&1)"
-msgstr "_Ingen utdata (>/dev/null 2>&1)"
+#: ../src/gnome-schedule.glade.h:59 ../src/mainWindow.py:73
+msgid "X application"
+msgstr "X applikasjon"
 
-#: ../src/gnome-schedule.glade.h:61
+#: ../src/gnome-schedule.glade.h:60
 msgid "_User:"
 msgstr "_Brukar:"
 
-#: ../src/gnome-schedule.glade.h:62
+#: ../src/gnome-schedule.glade.h:61
 msgid "ls -l"
 msgstr "ls -l"
 
-#: ../src/gnome-schedule.py:62 ../src/scheduleapplet.py:63
+#: ../src/gnome-schedule.py:66 ../src/scheduleapplet.py:67
+#: ../src/xwrapper.py:50
 msgid ""
 "You need to install pyGTK or GTKv2,\n"
 "or set your PYTHONPATH correctly.\n"
@@ -952,70 +963,82 @@ msgstr "vekedag: %s"
 msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 msgstr "På %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 
+#: ../src/mainWindow.py:71
+msgid "Default behaviour"
+msgstr "Standard oppførsel"
+
+#: ../src/mainWindow.py:72
+msgid "Suppress output"
+msgstr "Skjul utdata"
+
+#: ../src/mainWindow.py:74
+msgid "X application: suppress output"
+msgstr "X applikasjon: Skjul utdata"
+
 #
-#: ../src/mainWindow.py:110
+#: ../src/mainWindow.py:120
 msgid "Recurrent task"
 msgstr "Gjentakande oppgåve"
 
-#: ../src/mainWindow.py:121
+#: ../src/mainWindow.py:131
 msgid "One-time task"
 msgstr "Eingongs oppgåve"
 
 #
-#: ../src/mainWindow.py:132
+#: ../src/mainWindow.py:142
 msgid "From template"
 msgstr "Frå førehandsoppsett"
 
 #
-#: ../src/mainWindow.py:151
+#: ../src/mainWindow.py:161
 msgid "Add a new task"
 msgstr "Legg til ei ny oppgåve"
 
 # python-format
-#: ../src/mainWindow.py:284 ../src/mainWindow.py:403
+#: ../src/mainWindow.py:286 ../src/mainWindow.py:416
 #, python-format
 msgid "Editing user: %s"
 msgstr "Redigerar brukar: %s"
 
-#: ../src/mainWindow.py:330 ../src/mainWindow.py:340 ../src/mainWindow.py:350
-#: ../src/mainWindow.py:364 ../src/mainWindow.py:374
-#: ../src/scheduleapplet.py:115
+#: ../src/mainWindow.py:333 ../src/mainWindow.py:344 ../src/mainWindow.py:355
+#: ../src/mainWindow.py:370 ../src/mainWindow.py:381
+#: ../src/scheduleapplet.py:122
 msgid "ERROR: Could not load icon"
 msgstr "FEIL: Kunne ikkje laste ikon"
 
-#: ../src/mainWindow.py:384
+#: ../src/mainWindow.py:390 ../src/mainWindow.py:396
 msgid "ERROR: Could not load glade file"
 msgstr "FEIL: Kunne ikkje laste glade-fil"
 
 #
-#: ../src/mainWindow.py:438 ../src/template_chooser.py:69
+#: ../src/mainWindow.py:451 ../src/template_chooser.py:69
 #: ../src/template_manager.py:72
 msgid "Task"
 msgstr "Oppgåve"
 
-#: ../src/mainWindow.py:451 ../src/mainWindow.py:477
+#: ../src/mainWindow.py:464 ../src/mainWindow.py:490
 #: ../src/template_chooser.py:78 ../src/template_manager.py:81
 msgid "Description"
 msgstr "Skildring"
 
-#: ../src/mainWindow.py:455 ../src/mainWindow.py:468
+#: ../src/mainWindow.py:468 ../src/mainWindow.py:481
 msgid "Date and Time"
 msgstr "Dato og tid"
 
-#: ../src/mainWindow.py:459 ../src/mainWindow.py:472
+#: ../src/mainWindow.py:472 ../src/mainWindow.py:485
 msgid "Command preview"
 msgstr "Kommando førehandsvisning"
 
 #. print ex
-#: ../src/mainWindow.py:528 ../src/mainWindow.py:591
+#: ../src/mainWindow.py:544 ../src/mainWindow.py:607
 msgid "Please select a task"
 msgstr "Velg ei oppgåve"
 
-#: ../src/mainWindow.py:535
+#: ../src/mainWindow.py:551
 msgid "Do you want to delete this task?"
 msgstr "Er du sikker på at du vil slette denne oppgåva?"
 
-#: ../src/mainWindow.py:636
+#: ../src/mainWindow.py:654
 msgid ""
 "Are you sure you want to run this task now?\n"
 "\n"
@@ -1027,11 +1050,11 @@ msgstr ""
 "Denne funksjonen er brukt til å prøve ei oppgåve og køyrer den ein gang, "
 "dette påverkar ikkje dei normale planlagte utføringstidspunkta."
 
-#: ../src/mainWindow.py:638
+#: ../src/mainWindow.py:656
 msgid "Are you sure you want to run this task?"
 msgstr "Er du sikker på at du vil køyre denne oppgåva?"
 
-#: ../src/mainWindow.py:647
+#: ../src/mainWindow.py:665
 msgid ""
 "Note about working directory of executed tasks:\n"
 "\n"
@@ -1045,36 +1068,32 @@ msgstr ""
 "mappa der Gnome Schedule vart starta frå på tidspunktet for opprettinga av "
 "oppgåva (nomalt heimemappa)"
 
-#: ../src/mainWindow.py:702
-msgid "Press ENTER to continue and close this window."
-msgstr "Trykk ENTER for å fortsette og lukke dette vindauget."
-
-#: ../src/mainWindow.py:710
+#: ../src/mainWindow.py:724
 msgid "Please select a task!"
 msgstr "Velg ei oppgåve!"
 
-#: ../src/mainWindow.py:718
+#: ../src/mainWindow.py:732
 msgid "About Gnome Schedule"
 msgstr "Om Gnome Schedule"
 
-#: ../src/mainWindow.py:719
+#: ../src/mainWindow.py:733
 msgid "Gnome Schedule"
 msgstr "Gnome Schedule"
 
-#: ../src/mainWindow.py:721
+#: ../src/mainWindow.py:735
 #, python-format
 msgid "Copyright (c) %(year)s %(name)s."
 msgstr "Kopibeskytta (c) %(year)s %(name)s."
 
-#: ../src/mainWindow.py:734
+#: ../src/mainWindow.py:748
 msgid "translator-credits"
 msgstr "Gaute Hope <eg@gaute.vetsj.com>"
 
-#: ../src/mainWindow.py:755
+#: ../src/mainWindow.py:769
 msgid "Could not display help"
 msgstr "Kunne ikkje vise hjelpa"
 
-#: ../src/scheduleapplet.py:131
+#: ../src/scheduleapplet.py:139
 msgid "ERROR: Could not load menu xml file"
 msgstr "FEIL: Kunne ikkje laste meny xml-fila"
 
@@ -1094,11 +1113,11 @@ msgstr "Ei oppgåve som køyrar ein gong"
 msgid "A task from a predefined template"
 msgstr "Ei oppgåve frå eit førhandsoppsett"
 
-#: ../src/atEditor.py:77
+#: ../src/atEditor.py:78
 msgid "Calendar"
 msgstr "Kalendar"
 
-#: ../src/atEditor.py:495
+#: ../src/atEditor.py:511
 msgid ""
 "In one or both of the fields hour and minute there was entered a letter, or "
 "a number out of range. Remember an hour only has 60 minutes and a day only "
@@ -1109,12 +1128,12 @@ msgstr ""
 "dag kun 24 timar."
 
 # python-format
-#: ../src/atEditor.py:554
+#: ../src/atEditor.py:572
 #, python-format
 msgid "This is an invalid record! The problem could be: %s"
 msgstr "Dette er eit ugyldig tidsuttrykk! Problemet kan vere: %s"
 
-#: ../src/atEditor.py:574
+#: ../src/atEditor.py:592
 msgid ""
 "Note about working directory of executed tasks:\n"
 "\n"
@@ -1128,17 +1147,13 @@ msgstr ""
 
 #
 #
-#: ../src/template.py:192 ../src/template.py:202
+#: ../src/template.py:198 ../src/template.py:212
 msgid "Title:"
 msgstr "Tittel:"
 
-#: ../src/template.py:202
+#: ../src/template.py:212
 msgid "Run:"
 msgstr "Køyr:"
-
-#: ../src/template.py:204
-msgid "No output"
-msgstr "Ingen utdata"
 
 #
 #: ../src/template_chooser.py:40 ../src/template_manager.py:37
@@ -1149,39 +1164,61 @@ msgstr "Bruk førehandsoppsett"
 msgid "One-time"
 msgstr "Ein-gong"
 
-#~ msgid ""
-#~ "Create a new template.\n"
-#~ "\n"
-#~ "Choose 'Add as template' when you have customized your task."
-#~ msgstr ""
-#~ "Lag eit nytt førhandsoppsett.\n"
-#~ "\n"
-#~ "Velg 'Legg til som førehandsoppsett' når du har tilpassa oppgåva di."
+#: ../src/xwrapper.py:59
+msgid "Could not open a  connection to X!"
+msgstr "Kunne ikkje opne ei tilkobling til X!"
 
-#~ msgid "<b>Choose a template to create a task from:</b>"
-#~ msgstr "<b>Velg eit fÃžrhandsoppsett Ã¥ lage ei oppgÃ¥ve frÃ¥:</b>"
+#: ../src/xwrapper.py:70 ../src/xwrapper.py:78
+msgid "Wrong number of arguments."
+msgstr "Feil antal argument."
 
-#
-#
-#~ msgid "<b>Manage templates</b>"
-#~ msgstr "<b>Administrer fÃžrhandsoppsett</b>"
+#: ../src/xwrapper.py:72 ../src/xwrapper.py:80
+msgid ""
+"Wrapper script for Gnome-schedule (http://gnome-schedule.sf.net) for "
+"applications to be run from crontab or at under X. Use through gnome-"
+"schedule."
+msgstr ""
+"Omslagskript for Gnome-schedule (http://gnome-schedule.sf.net) "
+"forapplikasjona som skal køyrast frå crontab eller at på X. Bruk gjennom "
+"gnome-schedule."
 
-#
-#~ msgid ""
-#~ "<b>To create a new template you need to use the <i>Add as template</i> "
-#~ "button in the windows where you create new tasks</b>"
-#~ msgstr ""
-#~ "<b>For Ã¥ lage eit nytt fÃžrehandsoppsett mÃ¥ du bruke <i>Legg til som "
-#~ "fÃžrehandsoppsett</i> knappen i vindauga der du kan lage nye oppgÃ¥ver</b>"
+#: ../src/xwrapper.py:86
+msgid "Unknown type of job."
+msgstr "Ukjend type jobb."
 
-#~ msgid "ICON: Using dummy icon"
-#~ msgstr "IKON: Bruk dummy ikon"
+#: ../src/xwrapper.py:105 ../src/xwrapper.py:109
+msgid "Invalid job id."
+msgstr "Ugyldig job id."
 
-#~ msgid "ICON: Doesn't handle absolute paths: '%s'"
-#~ msgstr "IKON: Taklar ikkje absolutte baner: '%s'"
+#: ../src/xwrapper.py:116
+msgid ""
+"Could not get job data, the task might have been created with an old version "
+"- try recreating the task."
+msgstr ""
+"Kunne ikkje hente job data, oppgåva kan ha vorte laga med ein gamalversion - "
+"prøv å lage den på nytt."
 
-#~ msgid "ICON: Icon '%s' is not in theme"
-#~ msgstr "IKON: Ikon '%s' er ikkje i drakta"
+#: ../src/xwrapper.py:120
+msgid "Data file too old. Recreate task."
+msgstr "Data fila er for gammal. Lag oppgåva på nytt."
 
-#~ msgid "ICON: Got badly sized icon for %s"
-#~ msgstr "IKON: Fekk dÃ¥rleg ikon med dÃ¥rleg storleik: %s"
+#: ../src/xwrapper.py:124
+#, python-format
+msgid "Launching %s.."
+msgstr "Køyrer %s.."
+
+#: ../src/xwrapper.py:126
+msgid "output<0: Why am I launched?"
+msgstr "output<0: Kvifor blir eg køyrd?"
+
+#: ../src/xwrapper.py:129
+msgid "len(display)<2: No proper DISPLAY variable"
+msgstr "len(display)<2: Ingne skikkeleg DISPLAY variabel"
+
+#: ../src/xwrapper.py:150
+msgid "I will never be displayed."
+msgstr "Eg vil aldri bli vist."
+
+#: ../src/xwrapper.py:153
+msgid "xwrapper.py: completed"
+msgstr "xwrapper.py: ferdig"

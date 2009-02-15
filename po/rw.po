@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-12-26 16:24+0100\n"
+"POT-Creation-Date: 2009-02-15 10:03+0100\n"
 "PO-Revision-Date: 2005-03-31 20:55-0700\n"
 "Last-Translator: Steve Murphy <murf@e-tools.com>\n"
 "Language-Team: Kinyarwanda <translation-team-rw@lists.sourceforge.net>\n"
@@ -49,98 +49,111 @@ msgstr "Igenabihe"
 msgid "System tools"
 msgstr ""
 
-#: ../src/at.py:490
+#: ../src/at.py:88 ../src/crontab.py:62
+msgid ""
+"Failed to create data dir! Make sure ~/.gnome and ~/.gnome/gnome-schedule "
+"are writable."
+msgstr ""
+
+#: ../src/at.py:121 ../src/crontab.py:162
+#, python-format
+msgid ""
+"Failed to create data dir: %s. Make sure ~/.gnome and ~/.gnome/gnome-"
+"schedule are writable."
+msgstr ""
+
+#: ../src/at.py:524
 #, python-format
 msgid "DANGEROUS PARSE: %(preview)s"
 msgstr ""
 
 #. TODO: localize time and date formats
-#: ../src/at.py:497
+#: ../src/at.py:530
 #, fuzzy, python-format
 msgid "On %(date)s at %(time)s"
 msgstr "Itariki S ku Igihe S"
 
-#: ../src/at.py:502 ../src/at.py:507
+#: ../src/at.py:535 ../src/at.py:540
 msgid "Once"
 msgstr ""
 
-#: ../src/at.py:511
+#: ../src/at.py:544
 msgid "Warning: a line in atq's output didn't parse"
 msgstr ""
 
 # sc/source\core\src\compiler.src:RID_SC_FUNCTION_NAMES.SC_OPCODE_GET_MIN.text
-#: ../src/crontab.py:77
+#: ../src/crontab.py:87
 #, fuzzy
 msgid "Minute"
 msgstr "UMUNOTA"
 
 # sc/source\core\src\compiler.src:RID_SC_FUNCTION_NAMES.SC_OPCODE_GET_HOUR.text
-#: ../src/crontab.py:78
+#: ../src/crontab.py:88
 #, fuzzy
 msgid "Hour"
 msgstr "ISAHA"
 
-#: ../src/crontab.py:79
+#: ../src/crontab.py:89
 #, fuzzy
 msgid "Day of Month"
 msgstr "Bya"
 
 # sw/source\ui\utlui\initui.src:STR_AUTH_FIELD_MONTH.text
-#: ../src/crontab.py:80
+#: ../src/crontab.py:90
 msgid "Month"
 msgstr "Ukwezi"
 
 # 6515
-#: ../src/crontab.py:81
+#: ../src/crontab.py:91
 msgid "Weekday"
 msgstr "UmunsiW'Icyumweru"
 
-#: ../src/crontab.py:172 ../src/gnome-schedule.glade.h:13
+#: ../src/crontab.py:192 ../src/gnome-schedule.glade.h:13
 msgid "Basic"
 msgstr "By'ibanze"
 
-#: ../src/crontab.py:172
+#: ../src/crontab.py:192
 #, fuzzy, python-format
 msgid "This is not a valid special record: %(record)s"
 msgstr "ni Sibyo"
 
-#: ../src/crontab.py:200 ../src/crontab.py:205 ../src/crontab.py:209
+#: ../src/crontab.py:220 ../src/crontab.py:225 ../src/crontab.py:229
 #, fuzzy, python-format
 msgid "Must be between %(min)s and %(max)s"
 msgstr "hagati Na"
 
-#: ../src/crontab.py:207
+#: ../src/crontab.py:227
 #, fuzzy, python-format
 msgid "%s is not a number"
 msgstr "%sni OYA a Umubare"
 
 # filter/source\xsltdialog\xmlfilterdialogstrings.src:STR_DEFAULT_UI_NAME.text
-#: ../src/crontab.py:261 ../src/crontab.py:317 ../src/crontabEditor.py:289
-#: ../src/atEditor.py:121 ../src/atEditor.py:503 ../src/atEditor.py:527
+#: ../src/crontab.py:288 ../src/crontab.py:334 ../src/crontabEditor.py:275
+#: ../src/atEditor.py:123 ../src/atEditor.py:519 ../src/atEditor.py:545
 msgid "Untitled"
 msgstr "Nta mutwe"
 
-#: ../src/crontab.py:416 ../src/crontab.py:418 ../src/template_chooser.py:106
+#: ../src/crontab.py:450 ../src/crontab.py:452 ../src/template_chooser.py:106
 #: ../src/template_manager.py:111
 msgid "Recurrent"
 msgstr ""
 
-#: ../src/crontab.py:416 ../src/crontabEditor.py:74 ../src/lang.py:149
+#: ../src/crontab.py:450 ../src/crontabEditor.py:74 ../src/lang.py:149
 msgid "At reboot"
 msgstr ""
 
 # sc/source\ui\src\scfuncs.src:RID_SC_FUNCTION_DESCRIPTIONS1.SC_OPCODE_GET_TIME.4.text
-#: ../src/crontab.py:430
+#: ../src/crontab.py:464
 msgid "minute"
 msgstr "iminota"
 
 # sc/source\ui\src\scfuncs.src:RID_SC_FUNCTION_DESCRIPTIONS1.SC_OPCODE_GET_TIME.2.text
-#: ../src/crontab.py:432
+#: ../src/crontab.py:466
 msgid "hour"
 msgstr "isaha"
 
 # sc/source\ui\src\scfuncs.src:RID_SC_FUNCTION_DESCRIPTIONS1.SC_OPCODE_GET_DATE.6.text
-#: ../src/crontab.py:434
+#: ../src/crontab.py:468
 msgid "day"
 msgstr "umunsi"
 
@@ -148,29 +161,29 @@ msgstr "umunsi"
 # sc/source\ui\src\scfuncs.src:RID_SC_FUNCTION_DESCRIPTIONS1.SC_OPCODE_GET_DATE.4.text
 # #-#-#-#-#  sc.pot (PACKAGE VERSION)  #-#-#-#-#
 # sc/source\ui\src\scfuncs.src:RID_SC_FUNCTION_DESCRIPTIONS1.SC_OPCODE_GDA_2.10.text
-#: ../src/crontab.py:436
+#: ../src/crontab.py:470
 msgid "month"
 msgstr "ukwezi"
 
 # sc/source\core\src\compiler.src:RID_SC_FUNCTION_NAMES.SC_OPCODE_GET_DAY_OF_WEEK.text
-#: ../src/crontab.py:438
+#: ../src/crontab.py:472
 #, fuzzy
 msgid "weekday"
 msgstr "UMUNSIICYUMWERU"
 
-#: ../src/crontab.py:537
+#: ../src/crontab.py:571
 msgid ""
 "Failed to parse the Day of Month field, possibly due to a bug in crontab."
 msgstr ""
 
 #: ../src/crontabEditor.py:69 ../src/crontabEditorHelper.py:87
-#: ../src/gnome-schedule.glade.h:32
+#: ../src/gnome-schedule.glade.h:31
 #, fuzzy
 msgid "Every minute"
 msgstr "buri UMUNOTA"
 
 #: ../src/crontabEditor.py:70 ../src/crontabEditorHelper.py:93
-#: ../src/gnome-schedule.glade.h:31
+#: ../src/gnome-schedule.glade.h:30
 #, fuzzy
 msgid "Every hour"
 msgstr "buri ISAHA"
@@ -193,58 +206,56 @@ msgid "Every week"
 msgstr "Buri"
 
 #. add new task
-#: ../src/crontabEditor.py:129 ../src/crontabEditor.py:140
-#: ../src/atEditor.py:123 ../src/atEditor.py:138
+#: ../src/crontabEditor.py:131 ../src/crontabEditor.py:142
+#: ../src/atEditor.py:125 ../src/atEditor.py:144
 #, fuzzy
 msgid "Create a New Scheduled Task"
 msgstr "a Gishya Igikorwa"
 
-#. edit template
-#: ../src/crontabEditor.py:201 ../src/atEditor.py:155
+#: ../src/crontabEditor.py:198 ../src/atEditor.py:162
 msgid "Edit template"
 msgstr ""
 
-#. edit template
-#: ../src/crontabEditor.py:231 ../src/atEditor.py:176
+#: ../src/crontabEditor.py:223 ../src/atEditor.py:184
 #, fuzzy
 msgid "New template"
 msgstr "Igikorwa"
 
-#: ../src/crontabEditor.py:257 ../src/atEditor.py:216
+#: ../src/crontabEditor.py:249 ../src/atEditor.py:226
 #, fuzzy
 msgid "Edit a Scheduled Task"
 msgstr "a Igikorwa"
 
-#: ../src/crontabEditor.py:316 ../src/crontabEditor.py:611
-#: ../src/crontabEditor.py:651
+#: ../src/crontabEditor.py:302 ../src/crontabEditor.py:578
+#: ../src/crontabEditor.py:618
 #, fuzzy, python-format
 msgid ""
 "This is an invalid record! The problem could be in the %(field)s field. "
 "Reason: %(reason)s"
 msgstr "ni Sibyo Icyabitswe ku i Umwanya"
 
-#: ../src/crontabEditor.py:321
+#: ../src/crontabEditor.py:307
 msgid ""
 "Your command contains one or more of the character %, this is special for "
 "cron and cannot be used with Gnome-schedule because of the format it uses to "
 "store extra information on the crontab line. Please use the | redirector "
-"character to acheieve the same functionality. Refer to the crontab manual "
-"for more information about the % character. If you don not want to use it "
-"for redirection it must be properly escaped with the \\ letter."
+"character to achieve the same functionality. Refer to the crontab manual for "
+"more information about the % character. If you don not want to use it for "
+"redirection it must be properly escaped with the \\ letter."
 msgstr ""
 
-#: ../src/crontabEditor.py:489
+#: ../src/crontabEditor.py:456
 msgid ""
 "Note about working directory of executed tasks:\n"
 "\n"
 "Recurrent tasks will be run from the home directory."
 msgstr ""
 
-#: ../src/crontabEditor.py:490 ../src/mainWindow.py:648 ../src/atEditor.py:575
+#: ../src/crontabEditor.py:457 ../src/mainWindow.py:666 ../src/atEditor.py:593
 msgid "_Don't show again"
 msgstr ""
 
-#: ../src/crontabEditor.py:491 ../src/mainWindow.py:649 ../src/atEditor.py:576
+#: ../src/crontabEditor.py:458 ../src/mainWindow.py:667 ../src/atEditor.py:594
 msgid "Warning: Working directory of executed tasks"
 msgstr ""
 
@@ -296,7 +307,7 @@ msgid "At an exact minute"
 msgstr "buri UMUNOTA"
 
 # sc/source\core\src\compiler.src:RID_SC_FUNCTION_NAMES.SC_OPCODE_GET_MIN.text
-#: ../src/crontabEditorHelper.py:232 ../src/gnome-schedule.glade.h:44
+#: ../src/crontabEditorHelper.py:232 ../src/gnome-schedule.glade.h:43
 #, fuzzy
 msgid "Minute:"
 msgstr "UMUNOTA"
@@ -307,7 +318,7 @@ msgid "At an exact hour"
 msgstr ""
 
 # sc/source\core\src\compiler.src:RID_SC_FUNCTION_NAMES.SC_OPCODE_GET_HOUR.text
-#: ../src/crontabEditorHelper.py:236 ../src/gnome-schedule.glade.h:40
+#: ../src/crontabEditorHelper.py:236 ../src/gnome-schedule.glade.h:39
 #, fuzzy
 msgid "Hour:"
 msgstr "ISAHA"
@@ -332,7 +343,7 @@ msgid "In a month"
 msgstr "ukwezi"
 
 # sw/source\ui\utlui\initui.src:STR_AUTH_FIELD_MONTH.text
-#: ../src/crontabEditorHelper.py:244 ../src/gnome-schedule.glade.h:46
+#: ../src/crontabEditorHelper.py:244 ../src/gnome-schedule.glade.h:45
 #, fuzzy
 msgid "Month:"
 msgstr "Ukwezi"
@@ -345,17 +356,17 @@ msgid "On a weekday"
 msgstr "UMUNSIICYUMWERU"
 
 # 6515
-#: ../src/crontabEditorHelper.py:248 ../src/gnome-schedule.glade.h:59
+#: ../src/crontabEditorHelper.py:248 ../src/gnome-schedule.glade.h:58
 #, fuzzy
 msgid "Weekday:"
 msgstr "UmunsiW'Icyumweru"
 
-#: ../src/crontabEditorHelper.py:253 ../src/gnome-schedule.glade.h:42
+#: ../src/crontabEditorHelper.py:253 ../src/gnome-schedule.glade.h:41
 msgid "In a step width"
 msgstr ""
 
 # sc/source\core\src\compiler.src:RID_SC_FUNCTION_NAMES.SC_OPCODE_GET_MIN.text
-#: ../src/crontabEditorHelper.py:255 ../src/gnome-schedule.glade.h:45
+#: ../src/crontabEditorHelper.py:255 ../src/gnome-schedule.glade.h:44
 #, fuzzy
 msgid "Minutes:"
 msgstr "UMUNOTA"
@@ -468,8 +479,8 @@ msgid "Choose the user whose tasks you want to modify"
 msgstr ""
 
 # padmin/source\rtsetup.src:RID_RTS_RTSDIALOG.RID_RTS_RTSDIALOG_TABCONTROL.RID_RTS_COMMANDPAGE.text
-#: ../src/gnome-schedule.glade.h:18 ../src/template.py:192
-#: ../src/template.py:202
+#: ../src/gnome-schedule.glade.h:18 ../src/template.py:198
+#: ../src/template.py:212
 #, fuzzy
 msgid "Command:"
 msgstr "Icyo wifuza"
@@ -516,34 +527,29 @@ msgstr "Inyandiko-porogaramu"
 
 #: ../src/gnome-schedule.glade.h:27
 #, fuzzy
-msgid "Edit"
-msgstr "buri ISAHA"
-
-#: ../src/gnome-schedule.glade.h:28
-#, fuzzy
 msgid "Edit a periodical task"
 msgstr "a Igikorwa"
 
-#: ../src/gnome-schedule.glade.h:29
+#: ../src/gnome-schedule.glade.h:28
 #, fuzzy
 msgid "Edit a scheduled task"
 msgstr "a Igikorwa"
 
-#: ../src/gnome-schedule.glade.h:30
+#: ../src/gnome-schedule.glade.h:29
 #, fuzzy
 msgid "Edit the selected template"
 msgstr "Gusiba i Byahiswemo"
 
-#: ../src/gnome-schedule.glade.h:33
+#: ../src/gnome-schedule.glade.h:32
 msgid "Execute at:"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:34
+#: ../src/gnome-schedule.glade.h:33
 #, fuzzy
 msgid "Execution at a specific minute, hour, day, weekday or month."
 msgstr "ku a UMUNOTA ISAHA UMUNSI UMUNSIICYUMWERU Cyangwa Ukwezi"
 
-#: ../src/gnome-schedule.glade.h:35
+#: ../src/gnome-schedule.glade.h:34
 #, fuzzy
 msgid ""
 "Execution at a step width. For example every five minutes, hours, days, "
@@ -552,101 +558,103 @@ msgstr ""
 "ku a Intera Ubugari Urugero buri Iminota amasaha Iminsi Uminsi y'akazi "
 "Cyangwa Amezi"
 
-#: ../src/gnome-schedule.glade.h:36
+#: ../src/gnome-schedule.glade.h:35
 #, fuzzy
 msgid "Execution at every minute, hour, day, weekday or month."
 msgstr "ku buri UMUNOTA ISAHA UMUNSI UMUNSIICYUMWERU Cyangwa Ukwezi"
 
-#: ../src/gnome-schedule.glade.h:37
+#: ../src/gnome-schedule.glade.h:36
 #, fuzzy
 msgid "Execution in a range."
 msgstr "in a Urutonde"
 
-#: ../src/gnome-schedule.glade.h:38
+#: ../src/gnome-schedule.glade.h:37
 #, fuzzy
 msgid "Expression:"
 msgstr "imvugo"
 
-#: ../src/gnome-schedule.glade.h:39
+#: ../src/gnome-schedule.glade.h:38
 msgid "From:"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:41
+#: ../src/gnome-schedule.glade.h:40
 msgid "In a range"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:43
+#: ../src/gnome-schedule.glade.h:42
 #, fuzzy
 msgid "Manage templates"
 msgstr "Sisitemu Ibikorwa"
 
-#: ../src/gnome-schedule.glade.h:47
+#: ../src/gnome-schedule.glade.h:46
 msgid "Other"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:48
+#: ../src/gnome-schedule.glade.h:47
 #, fuzzy
 msgid "Run selected task"
 msgstr "Guhitamo a Igikorwa"
 
-#: ../src/gnome-schedule.glade.h:49
+#: ../src/gnome-schedule.glade.h:48
 #, fuzzy
 msgid "Run task"
 msgstr "ku"
 
-#: ../src/gnome-schedule.glade.h:50
+#: ../src/gnome-schedule.glade.h:49
 #, fuzzy
 msgid "Scheduled and active tasks"
 msgstr "Na Gikora Ibikorwa"
 
-#: ../src/gnome-schedule.glade.h:51
+#: ../src/gnome-schedule.glade.h:50
 #, fuzzy
 msgid "See \"man 5 crontab\" for information about the crontab format."
 msgstr "5 kugirango Ibyerekeye i Imiterere"
 
-#: ../src/gnome-schedule.glade.h:52
+#: ../src/gnome-schedule.glade.h:51
 #, fuzzy
 msgid "Show help"
 msgstr "Ifashayobora"
 
-#: ../src/gnome-schedule.glade.h:53
+#: ../src/gnome-schedule.glade.h:52
 msgid "Task description:"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:54
+#: ../src/gnome-schedule.glade.h:53
 msgid "Task:"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:55 ../src/mainWindow.py:183
+#: ../src/gnome-schedule.glade.h:54
 msgid "Templates"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:56
+#: ../src/gnome-schedule.glade.h:55
 #, fuzzy
 msgid "Time expression help"
 msgstr "imvugo Ifashayobora"
 
-#: ../src/gnome-schedule.glade.h:57
+#: ../src/gnome-schedule.glade.h:56
 msgid "Time:"
 msgstr "Igihe:"
 
-#: ../src/gnome-schedule.glade.h:58
+#: ../src/gnome-schedule.glade.h:57
 msgid "To:"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:60
-msgid "_No output (>/dev/null 2>&1)"
-msgstr ""
+#: ../src/gnome-schedule.glade.h:59 ../src/mainWindow.py:73
+#, fuzzy
+msgid "X application"
+msgstr "iyi Porogaramu"
 
-#: ../src/gnome-schedule.glade.h:61
+#: ../src/gnome-schedule.glade.h:60
 msgid "_User:"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:62
+#: ../src/gnome-schedule.glade.h:61
 msgid "ls -l"
 msgstr ""
 
-#: ../src/gnome-schedule.py:62 ../src/scheduleapplet.py:63
+#: ../src/gnome-schedule.py:66 ../src/scheduleapplet.py:67
+#: ../src/xwrapper.py:50
 msgid ""
 "You need to install pyGTK or GTKv2,\n"
 "or set your PYTHONPATH correctly.\n"
@@ -976,71 +984,83 @@ msgstr "UMUNSIICYUMWERU"
 msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 msgstr "UMUNOTA S ISAHA S S Ukwezi S UMUNSIICYUMWERU S"
 
-#: ../src/mainWindow.py:110
+#: ../src/mainWindow.py:71
+msgid "Default behaviour"
+msgstr ""
+
+#: ../src/mainWindow.py:72
+msgid "Suppress output"
+msgstr ""
+
+#: ../src/mainWindow.py:74
+msgid "X application: suppress output"
+msgstr ""
+
+#: ../src/mainWindow.py:120
 msgid "Recurrent task"
 msgstr ""
 
 # wizards/source\schedule\schedule.src:dlgCalEventOnce.text
-#: ../src/mainWindow.py:121
+#: ../src/mainWindow.py:131
 #, fuzzy
 msgid "One-time task"
 msgstr "Icyarimwe"
 
-#: ../src/mainWindow.py:132
+#: ../src/mainWindow.py:142
 msgid "From template"
 msgstr ""
 
-#: ../src/mainWindow.py:151
+#: ../src/mainWindow.py:161
 #, fuzzy
 msgid "Add a new task"
 msgstr "Igikorwa"
 
-#: ../src/mainWindow.py:284 ../src/mainWindow.py:403
+#: ../src/mainWindow.py:286 ../src/mainWindow.py:416
 #, fuzzy, python-format
 msgid "Editing user: %s"
 msgstr "Ukoresha:"
 
-#: ../src/mainWindow.py:330 ../src/mainWindow.py:340 ../src/mainWindow.py:350
-#: ../src/mainWindow.py:364 ../src/mainWindow.py:374
-#: ../src/scheduleapplet.py:115
+#: ../src/mainWindow.py:333 ../src/mainWindow.py:344 ../src/mainWindow.py:355
+#: ../src/mainWindow.py:370 ../src/mainWindow.py:381
+#: ../src/scheduleapplet.py:122
 msgid "ERROR: Could not load icon"
 msgstr ""
 
-#: ../src/mainWindow.py:384
+#: ../src/mainWindow.py:390 ../src/mainWindow.py:396
 msgid "ERROR: Could not load glade file"
 msgstr ""
 
-#: ../src/mainWindow.py:438 ../src/template_chooser.py:69
+#: ../src/mainWindow.py:451 ../src/template_chooser.py:69
 #: ../src/template_manager.py:72
 msgid "Task"
 msgstr ""
 
-#: ../src/mainWindow.py:451 ../src/mainWindow.py:477
+#: ../src/mainWindow.py:464 ../src/mainWindow.py:490
 #: ../src/template_chooser.py:78 ../src/template_manager.py:81
 msgid "Description"
 msgstr ""
 
 # sfx2/source\dialog\versdlg.src:DLG_VERSIONS.FT_DATETIME.text
-#: ../src/mainWindow.py:455 ../src/mainWindow.py:468
+#: ../src/mainWindow.py:468 ../src/mainWindow.py:481
 #, fuzzy
 msgid "Date and Time"
 msgstr "Itariki n'igihe"
 
-#: ../src/mainWindow.py:459 ../src/mainWindow.py:472
+#: ../src/mainWindow.py:472 ../src/mainWindow.py:485
 msgid "Command preview"
 msgstr ""
 
 #. print ex
-#: ../src/mainWindow.py:528 ../src/mainWindow.py:591
+#: ../src/mainWindow.py:544 ../src/mainWindow.py:607
 #, fuzzy
 msgid "Please select a task"
 msgstr "Guhitamo a Igikorwa"
 
-#: ../src/mainWindow.py:535
+#: ../src/mainWindow.py:551
 msgid "Do you want to delete this task?"
 msgstr ""
 
-#: ../src/mainWindow.py:636
+#: ../src/mainWindow.py:654
 msgid ""
 "Are you sure you want to run this task now?\n"
 "\n"
@@ -1048,11 +1068,11 @@ msgid ""
 "affect the normal scheduled run times."
 msgstr ""
 
-#: ../src/mainWindow.py:638
+#: ../src/mainWindow.py:656
 msgid "Are you sure you want to run this task?"
 msgstr ""
 
-#: ../src/mainWindow.py:647
+#: ../src/mainWindow.py:665
 msgid ""
 "Note about working directory of executed tasks:\n"
 "\n"
@@ -1061,38 +1081,34 @@ msgid ""
 "(normally the home directory)."
 msgstr ""
 
-#: ../src/mainWindow.py:702
-msgid "Press ENTER to continue and close this window."
-msgstr ""
-
-#: ../src/mainWindow.py:710
+#: ../src/mainWindow.py:724
 #, fuzzy
 msgid "Please select a task!"
 msgstr "Guhitamo a Igikorwa"
 
-#: ../src/mainWindow.py:718
+#: ../src/mainWindow.py:732
 msgid "About Gnome Schedule"
 msgstr ""
 
-#: ../src/mainWindow.py:719
+#: ../src/mainWindow.py:733
 msgid "Gnome Schedule"
 msgstr ""
 
-#: ../src/mainWindow.py:721
+#: ../src/mainWindow.py:735
 #, python-format
 msgid "Copyright (c) %(year)s %(name)s."
 msgstr ""
 
-#: ../src/mainWindow.py:734
+#: ../src/mainWindow.py:748
 #, fuzzy
 msgid "translator-credits"
 msgstr "Umusemuzi"
 
-#: ../src/mainWindow.py:755
+#: ../src/mainWindow.py:769
 msgid "Could not display help"
 msgstr ""
 
-#: ../src/scheduleapplet.py:131
+#: ../src/scheduleapplet.py:139
 msgid "ERROR: Could not load menu xml file"
 msgstr ""
 
@@ -1113,23 +1129,23 @@ msgstr ""
 msgid "A task from a predefined template"
 msgstr ""
 
-#: ../src/atEditor.py:77
+#: ../src/atEditor.py:78
 msgid "Calendar"
 msgstr ""
 
-#: ../src/atEditor.py:495
+#: ../src/atEditor.py:511
 msgid ""
 "In one or both of the fields hour and minute there was entered a letter, or "
 "a number out of range. Remember an hour only has 60 minutes and a day only "
 "24 hours."
 msgstr ""
 
-#: ../src/atEditor.py:554
+#: ../src/atEditor.py:572
 #, fuzzy, python-format
 msgid "This is an invalid record! The problem could be: %s"
 msgstr "ni Sibyo Icyabitswe"
 
-#: ../src/atEditor.py:574
+#: ../src/atEditor.py:592
 msgid ""
 "Note about working directory of executed tasks:\n"
 "\n"
@@ -1137,7 +1153,7 @@ msgid ""
 "from (normally the home directory)."
 msgstr ""
 
-#: ../src/template.py:192 ../src/template.py:202
+#: ../src/template.py:198 ../src/template.py:212
 #, fuzzy
 msgid "Title:"
 msgstr "Umutwe"
@@ -1146,15 +1162,10 @@ msgstr "Umutwe"
 # basctl/source\basicide\basidesh.src:RID_BASICIDE_OBJECTBAR.SID_BASICRUN.text
 # #-#-#-#-#  basctl.pot (PACKAGE VERSION)  #-#-#-#-#
 # basctl/source\basicide\macrodlg.src:RID_STR_RUN.text
-#: ../src/template.py:202
+#: ../src/template.py:212
 #, fuzzy
 msgid "Run:"
 msgstr "Gukoresha"
-
-#: ../src/template.py:204
-#, fuzzy
-msgid "No output"
-msgstr "Ibisohoka"
 
 #: ../src/template_chooser.py:40 ../src/template_manager.py:37
 #, fuzzy
@@ -1166,6 +1177,68 @@ msgstr "Igikorwa"
 #, fuzzy
 msgid "One-time"
 msgstr "Icyarimwe"
+
+#: ../src/xwrapper.py:59
+msgid "Could not open a  connection to X!"
+msgstr ""
+
+#: ../src/xwrapper.py:70 ../src/xwrapper.py:78
+msgid "Wrong number of arguments."
+msgstr ""
+
+#: ../src/xwrapper.py:72 ../src/xwrapper.py:80
+msgid ""
+"Wrapper script for Gnome-schedule (http://gnome-schedule.sf.net) for "
+"applications to be run from crontab or at under X. Use through gnome-"
+"schedule."
+msgstr ""
+
+#: ../src/xwrapper.py:86
+msgid "Unknown type of job."
+msgstr ""
+
+#: ../src/xwrapper.py:105 ../src/xwrapper.py:109
+msgid "Invalid job id."
+msgstr ""
+
+#: ../src/xwrapper.py:116
+msgid ""
+"Could not get job data, the task might have been created with an old version "
+"- try recreating the task."
+msgstr ""
+
+#: ../src/xwrapper.py:120
+msgid "Data file too old. Recreate task."
+msgstr ""
+
+#: ../src/xwrapper.py:124
+#, python-format
+msgid "Launching %s.."
+msgstr ""
+
+#: ../src/xwrapper.py:126
+msgid "output<0: Why am I launched?"
+msgstr ""
+
+#: ../src/xwrapper.py:129
+msgid "len(display)<2: No proper DISPLAY variable"
+msgstr ""
+
+#: ../src/xwrapper.py:150
+msgid "I will never be displayed."
+msgstr ""
+
+#: ../src/xwrapper.py:153
+msgid "xwrapper.py: completed"
+msgstr ""
+
+#, fuzzy
+#~ msgid "Edit"
+#~ msgstr "buri ISAHA"
+
+#, fuzzy
+#~ msgid "No output"
+#~ msgstr "Ibisohoka"
 
 #, fuzzy
 #~ msgid "<b>Manage templates</b>"
@@ -1244,10 +1317,6 @@ msgstr "Icyarimwe"
 #, fuzzy
 #~ msgid "A scheduled task that will launch only once in the _future"
 #~ msgstr "A Igikorwa Rimwe in i"
-
-#, fuzzy
-#~ msgid "About this application"
-#~ msgstr "iyi Porogaramu"
 
 #, fuzzy
 #~ msgid "Add a new scheduled task"

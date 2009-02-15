@@ -69,9 +69,9 @@ class main:
         # Common string representation for the different output modes
         self.output_strings = [
                                 _("Default behaviour"),
-                                _("Supress output"), 
+                                _("Suppress output"), 
                                 _("X application"), 
-                                _("X application: supress output"),
+                                _("X application: suppress output"),
                         ]
 
         #start the backend where all the user configuration is stored
