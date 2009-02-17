@@ -1,7 +1,9 @@
 # at.py - code to interfere with at
+#
 # Copyright (C) 2004, 2005  Philip Van Hoof <me at pvanhoof dot be>
-# Copyright (C) 2004 - 2008 Gaute Hope <eg at gaute dot vetsj dot com>
+# Copyright (C) 2004 - 2009 Gaute Hope <eg at gaute dot vetsj dot com>
 # Copyright (C) 2004, 2005  Kristof Vansant <de_lupus at pandora dot be>
+#
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation; either version 2 of the License, or
@@ -527,7 +529,10 @@ fi
                     
                 timestring = "%s %s" % (date, time)
                 # TODO: localize time and date formats
-                timestring_show = _("On %(date)s at %(time)s") % {'date': date, 'time': time}
+
+                date_o = datetime.datetime.strptime (date + " " + time, "%d.%m.%Y %H:%M")
+                timestring_show = _("On %(timestring)s") % { 'timestring' : date_o.strftime ("%c") }
+
                 
                 # TODO: looks like it could be one append
                 if self.root == 1:

@@ -1,3 +1,13 @@
+2009-02-17  Gaute Hope  <eg@gaute.vetsj.com>
+
+	* Bug 572167: At uses locale specific date and time formatting, 
+				  inspired by patch from Steve Tyler 
+				  <stephent98@hotmail.com>
+
+2009-02-16  Gaute Hope  <eg@gaute.vetsj.com>
+
+	* file header cleanup
+
 2009-02-15  Gaute Hope  <eg@gaute.vetsj.com>
 
 	* Fixed typo, updated translations
