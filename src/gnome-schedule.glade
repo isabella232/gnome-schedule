@@ -527,6 +527,7 @@
                     <property name="can_focus">True</property>
                     <property name="wrap_mode">word-char</property>
                     <property name="left_margin">5</property>
+                    <property name="wrap_mode">word-char</property>
                     <property name="right_margin">2</property>
                     <signal name="popup_menu" handler="on_at_text_task_popup_menu"/>
                     <signal name="key_release_event" handler="on_at_text_task_key_release_event"/>

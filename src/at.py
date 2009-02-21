@@ -523,12 +523,11 @@ fi
             
                 preview = self.__make_preview__ (lines)
                 if dangerous == 1:
-                        preview = _("DANGEROUS PARSE: %(preview)s") % {'preview':  preview}
+                        preview = _("Warning! Unknown task: %(preview)s") % {'preview':  preview}
                 #chopping of script delimiter
                 lines.strip ()
                     
                 timestring = "%s %s" % (date, time)
-                # TODO: localize time and date formats
 
                 date_o = datetime.datetime.strptime (date + " " + time, "%d.%m.%Y %H:%M")
                 timestring_show = _("On %(timestring)s") % { 'timestring' : date_o.strftime ("%c") }
