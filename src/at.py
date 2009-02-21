@@ -251,7 +251,6 @@ fi
     def write_job_data (self, job_id, title, desc, output, display):
         # Create and write data file
         f = os.path.join (self.atdata, str(job_id))
-        #print f
         fh = open (f, 'w')
         fh.truncate (1)
         fh.seek (0)
@@ -273,10 +272,6 @@ fi
         os.chmod (f, 0600)
             
     def checkfield (self, runat):
-        #TODO: fix bug $0:19 2004-12-8$ not valid by regexp
-        # print "$" + runat + "$"
-        #regexp1 = re.compile("([0-9][0-9]):([0-9][0-9])\ ([0-9][0-9])\.([0-9][0-9])\.([0-9][0-9][0-9][0-9])")
-        #print "Testing: " + runat
         regexp1 = re.compile ("([0-9][0-9])([0-9][0-9])\ ([0-9][0-9])\.([0-9][0-9])\.([0-9][0-9][0-9][0-9])")
         regexp2 = re.compile("([0-9][0-9])([0-9][0-9])")
         regexp3 = re.compile("([0-9][0-9])\.([0-9][0-9])\.([0-9][0-9][0-9][0-9])")

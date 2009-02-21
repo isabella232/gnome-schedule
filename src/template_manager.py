@@ -176,7 +176,6 @@ class TemplateManager:
             self.widget.hide ()
         
     def on_cancel_clicked (self, *args):
-        print "cancelled"
         self.widget.hide ()
     
 
