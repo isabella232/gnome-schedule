@@ -1,3 +1,7 @@
+2009-02-21  Gaute Hope  <eg@gaute.vetsj.com>
+
+	* Bug 572444: TextEdit now wrap words. And at_editor doesn't expand.
+
 2009-02-17  Gaute Hope  <eg@gaute.vetsj.com>
 
 	* Bug 572167: At uses locale specific date and time formatting, 

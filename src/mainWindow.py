@@ -717,7 +717,6 @@ class main:
             
             gnome.execute_terminal_shell (self.user_home_dir, execute)
             
-            
                 
         except Exception, ex:
             print ex
