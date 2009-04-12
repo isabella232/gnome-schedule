@@ -1,6 +1,7 @@
 2009-02-21  Gaute Hope  <eg@gaute.vetsj.com>
 
 	* Bug 572444: TextEdit now wrap words. And at_editor doesn't expand.
+	* Bug 572619: dangerous parse -> Warning: Unknown task: %s
 	* Fix copyright: 2009
 	* Misc cleanup
 
