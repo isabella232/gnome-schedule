@@ -1,3 +1,8 @@
+2009-04-21  Mario Blättermann  <mariobl@gnome.org>   
+
+	* de/de.po: Added German translation
+	* Makefile.am: Added de
+
 2008-10-19  Jorge Gonzalez  <jorgegonz@svn.gnome.org>   
 
 	* es/es.po: Updated Spanish translation
