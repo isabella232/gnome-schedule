@@ -1,11 +1,11 @@
 # German translation of the gnome-schedule manual.
-# Mario Blättermann <mariobl@gnome.org>.
+# Mario Blättermann <mariobl@gnome.org>, 2009.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule\n"
 "POT-Creation-Date: 2009-04-17 16:37+0000\n"
-"PO-Revision-Date: 2009-04-21 15:37+0100\n"
+"PO-Revision-Date: 2009-05-02 18:12+0100\n"
 "Last-Translator: Mario Blättermann <mariobl@gnome.org>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -263,6 +263,11 @@ msgid ""
 "periodically. These tasks, also known as jobs, can be either a command with "
 "its corresponding parameters or a script file with multiple instructions."
 msgstr ""
+"<application>Gnome Schedule</application> ist ein grafisches Werkzeug, das "
+"Ihnen die leichte Planung von Aufgaben ermöglicht, die ohne weiteren Zugriff "
+"zu einer bestimmten Zeit oder wiederkehrend ausgeführt werden sollen. Diese "
+"Aufgaben können entweder durch einen Befehl mit den zugehörigen Argumenten "
+"oder durch ein Skript mit ausführlichen Instruktionen angegeben werden."
 
 #: C/gnome-schedule.xml:175(para)
 msgid ""
@@ -270,6 +275,10 @@ msgid ""
 "tasks in your daily work that can be automated. You can also run a heavy task "
 "at night while you are sleeping, for example, backing up your documents."
 msgstr ""
+"Sie können <application>Gnome Schedule</application> dazu verwenden, "
+"wiederkehrende Aufgaben zur Automatisierung Ihrer täglichen arbeit zu "
+"programmieren. eine schwere Aufgabe kann auch nachts ausgeführt werden, ohne "
+"dass Sie anwesend sein müssen, beispielsweise die Sicherung Ihrer Dokumente."
 
 #: C/gnome-schedule.xml:179(title)
 msgid "How does <application>Gnome Schedule</application> work?"
@@ -284,6 +293,12 @@ msgid ""
 "interface to configure both and present jobs in a way easy to understand for "
 "everyone."
 msgstr ""
+"<application>Gnome Schedule</application> verwendet <application>cron</"
+"application> und <application>at</application> zur Programmierung der "
+"Ausführung von Aufgaben. Diese zwei Systemdienste werden üblicherweise auf "
+"Linux-Systemen verwendet. <application>Gnome Schedule</application> stellt "
+"für beide eine grafische Einstellungsoberfläche bereit und stellt die "
+"Aufgaben in einer allgemein verständlichen Ansicht dar."
 
 #: C/gnome-schedule.xml:186(title)
 msgid "About cron and at"
@@ -302,6 +317,12 @@ msgid ""
 "<userinput>* * * * 2 &lt;command&gt; --parameters  #comments</userinput>\n"
 "\t      </screen>"
 msgstr ""
+"Wenn Sie <application>cron</application> manuell mit der Ausführung einer "
+"Aufgabe beauftragen wollen, beispielsweise jeden Dienstag, müssen Sie den "
+"Befehl <command>crontab</command> folgendermaßen eingeben: <screen>\n"
+"$ <userinput>crontab -e</userinput>\n"
+"<userinput>* * * * 2 &lt;command&gt; --parameters  #comments</userinput>\n"
+"\t      </screen>"
 
 #: C/gnome-schedule.xml:200(para)
 msgid ""
@@ -326,6 +347,14 @@ msgid ""
 "at&gt; <userinput>Ctrl + D</userinput>\n"
 "        </screen>"
 msgstr ""
+"Wenn Sie <application>at</application> manuell mit der Ausführung einer "
+"Aufgabe beauftragen wollen, beispielsweise morgen zu dieser Zeit, müssen Sie "
+"den Befehl <command>at</command> folgendermaßen eingeben: <screen>\n"
+"$ <userinput>at tomorrow</userinput>\n"
+"at&gt; <userinput>&lt;command_1&gt; --parameters </userinput>\n"
+"at&gt; <userinput>&lt;command_2&gt; --parameters </userinput>\n"
+"at&gt; <userinput>Ctrl + D</userinput>\n"
+"        </screen>"
 
 #: C/gnome-schedule.xml:218(para)
 msgid ""
@@ -359,6 +388,8 @@ msgid ""
 "Choose <menuchoice><guisubmenu>System Tools</"
 "guisubmenu><guimenuitem>Schedule</guimenuitem></menuchoice>."
 msgstr ""
+"Wählen Sie <menuchoice><guisubmenu>Systemwerkzeuge</"
+"guisubmenu><guimenuitem>Zeitgesteuerte Aufgaben</guimenuitem></menuchoice>."
 
 #: C/gnome-schedule.xml:252(term)
 msgid "Command line"
@@ -435,6 +466,9 @@ msgid ""
 "Describes the type of the task: \"Recurrent\", when the task runs repeatedly "
 "or \"Once\", when the task is done only once."
 msgstr ""
+"Beschreibt den Typ der Aufgabe: »Wiederholend«, wenn die Aufgabe wiederkehrend "
+"ausgeführt werden soll, oder »Einmalig«, wenn die Aufgabe nur einmalig "
+"ausgeführt werden soll."
 
 #: C/gnome-schedule.xml:306(term)
 msgid "Description:"
@@ -446,7 +480,7 @@ msgstr "Zeigt eine Kurzbeschreibung der Aufgabe an."
 
 #: C/gnome-schedule.xml:309(term)
 msgid "Date and Time:"
-msgstr ""
+msgstr "Zeit und Datum:"
 
 #: C/gnome-schedule.xml:310(para)
 msgid "Shows when the task is going to be executed."
@@ -465,6 +499,9 @@ msgid ""
 "The Task list shows information about current scheduled tasks and pending "
 "jobs. For every task, the following information is detailed: <placeholder-1/>"
 msgstr ""
+"Die Aufgabenliste zeigt Informationen über die gegenwärtig geplanten Aufgaben "
+"und ausstehende Aufträge an. Für jede der Aufgaben werden die folgenden "
+"Informationen detailliert dargestellt: <placeholder-1/>"
 
 #: C/gnome-schedule.xml:321(para)
 msgid ""
@@ -472,6 +509,9 @@ msgid ""
 "<application>Gnome Schedule</application> interface, by pointing them with "
 "the mouse and waiting for a few seconds."
 msgstr ""
+"Eine Kurzbeschreibung einiger der Objekte und Symbole in der "
+"Benutzeroberfläche von <application>Gnome Schedule</application> wird "
+"angezeigt, wenn Sie mit der Maus darüberfahren und einige Sekunden warten."
 
 #: C/gnome-schedule.xml:329(title)
 msgid "Adding a New Scheduled Task"
@@ -486,12 +526,16 @@ msgid ""
 "You can add a new scheduled task by pressing the <guibutton>New</guibutton> "
 "button in the main window tool bar."
 msgstr ""
+"Sie können eine neue geplante Aufgabe hinzufügen, indem Sie auf den Knopf "
+"<guibutton>Neu</guibutton> in der Werkzeugleiste des Hauptfensters klicken."
 
 #: C/gnome-schedule.xml:335(para)
 msgid ""
 "The following dialog window will appear letting you to choose the type of "
 "task you want to schedule:"
 msgstr ""
+"Das folgende Dialogfenster erscheint, in welchem Sie den Typ der geplanten "
+"Aufgabe auswählen können:"
 
 #: C/gnome-schedule.xml:339(title)
 msgid "Task Type Selection Dialog Window"
@@ -507,22 +551,29 @@ msgid ""
 "by pressing the first button you will be able to schedule a task that will be "
 "executed periodically."
 msgstr ""
+"Anklicken des ersten Knopfes, was Ihnen die Planung einer wiederkehrend "
+"auszuführenden Aufgabe ermöglicht."
 
 #: C/gnome-schedule.xml:356(para)
 msgid ""
 "by pressing the second button you will be able to schedule a task that will "
 "only be executed once."
 msgstr ""
+"Anklicken des zweiten Knopfes, was Ihnen die Planung einer einmalig "
+"auszuführenden Aufgabe ermöglicht."
 
 #: C/gnome-schedule.xml:358(para)
 msgid ""
 "by pressing the third button you will be able to create a task from a "
 "template. Templates usage is explained in <xref linkend=\"myapp-templates\"/>."
 msgstr ""
+"Anklicken des dritten Knopfes, was Ihnen die Erstellung einer Aufgabe aus "
+"einer Vorlage ermöglicht. Die Verwendung von Vorlagen wird in <xref linkend="
+"\"myapp-templates\"/> erklärt."
 
 #: C/gnome-schedule.xml:365(title)
 msgid "Adding a scheduled task that will launch recurrently"
-msgstr ""
+msgstr "Das Hinzufügen einer neuen Aufgabe wird gegenwärtig ausgeführt durch"
 
 #: C/gnome-schedule.xml:366(para)
 msgid "Choosing this option, the following dialog window is shown:"
@@ -530,11 +581,11 @@ msgstr "Wenn Sie diese Option wählen, wird der folgende Dialog angezeigt:"
 
 #: C/gnome-schedule.xml:369(title) C/gnome-schedule.xml:414(title)
 msgid "\"Create a New Scheduled Task\" window"
-msgstr ""
+msgstr "Das Fenster »Eine neue Aufgabe erstellen«"
 
 #: C/gnome-schedule.xml:376(phrase)
 msgid "Shows <placeholder-1/> \"Create a New Scheduled Task\" window."
-msgstr ""
+msgstr "Zeigt das Fenster »Eine neue Aufgabe erstellen« von <placeholder-1/>"
 
 #: C/gnome-schedule.xml:384(term)
 msgid "Description"
@@ -569,15 +620,19 @@ msgid ""
 "Lets you select the frequency for task execution among a list of common "
 "intervals."
 msgstr ""
+"Hier können Sie den zeitlichen Abstand der Ausführung aus einer Liste häufig "
+"verwendeter Werte wählen."
 
 #: C/gnome-schedule.xml:398(term)
 msgid "Advanced"
-msgstr ""
+msgstr "Erweitert"
 
 #: C/gnome-schedule.xml:399(para)
 msgid ""
 "Lets you create custom time expressions in case you need more flexibility."
 msgstr ""
+"Hier können Sie benutzerdefinierte Zeitausdrücke wählen, falls Sie hierfür "
+"mehr Flexibilität benötigen."
 
 #: C/gnome-schedule.xml:403(guilabel)
 msgid "Preview"
@@ -585,23 +640,23 @@ msgstr "Vorschau"
 
 #: C/gnome-schedule.xml:404(para)
 msgid "Lets the user check if the selected frequency is correct."
-msgstr ""
+msgstr "Hier können Sie überprüfen, ob die gewählte Häufigkeit korrekt ist."
 
 #: C/gnome-schedule.xml:410(title)
 msgid "Adding a scheduled task that will launch once"
-msgstr ""
+msgstr "Hinzufügen einer einmalig auszuführenden Aufgabe"
 
 #: C/gnome-schedule.xml:411(para)
 msgid "Choosing this option the following dialog window is shown:"
-msgstr ""
+msgstr "Wenn Sie diese Option wählen, wird folgendes Dialogfenster angezeigt:"
 
 #: C/gnome-schedule.xml:421(phrase)
 msgid "Shows <placeholder-1/> \"Create a New Scheduled Task\" window"
-msgstr ""
+msgstr "Zeigt das Fenster »Eine neue Aufgabe erstellen« von <placeholder-1/>"
 
 #: C/gnome-schedule.xml:433(title)
 msgid "Modifying a Scheduled Task"
-msgstr ""
+msgstr "Ändern einer geplanten Aufgabe"
 
 #: C/gnome-schedule.xml:434(para)
 msgid ""
@@ -610,6 +665,11 @@ msgid ""
 "button from the main window tool bar. Then, the <guilabel>Edit a Scheduled "
 "Task</guilabel> window will be opened showing the task properties."
 msgstr ""
+"Sie können eine geplante Aufgabe ändern, indem Sie sie in der Aufgabenliste "
+"mit einem einfachen Klick auswählen und dann auf den Knopf "
+"<guibutton>Bearbeiten</guibutton> in der Werkzeugleiste des Hauptfensters "
+"klicken. Das Fenster <guilabel>Eine Aufgabe bearbeiten</guilabel> wird "
+"geöffnet, welches die Eigenschaften der geplanten Aufgabe anzeigt."
 
 #: C/gnome-schedule.xml:436(para)
 msgid ""
@@ -617,15 +677,21 @@ msgid ""
 "you can press <guibutton>Apply</guibutton> button to save the changes or "
 "<guibutton>Cancel</guibutton> button to omit them."
 msgstr ""
+"Nun können Sie jedes gewünschte Feld Ihren Wünschen anpassen. Sobald Sie "
+"fertig sind, klicken Sie auf <guibutton>Anwenden</guibutton>, um die "
+"Änderungen zu speichern, oder auf <guibutton>Abbrechen</guibutton>, um die "
+"Änderungen zu verwerfen."
 
 #: C/gnome-schedule.xml:439(para)
 msgid ""
 "You can edit a task faster by simply double-clicking on it in the task list."
 msgstr ""
+"Sie können eine Aufgabe schneller bearbeiten, indem Sie in der Aufgabenliste "
+"darauf doppelklicken."
 
 #: C/gnome-schedule.xml:445(title)
 msgid "Deleting a Scheduled Task"
-msgstr ""
+msgstr "Entfernen einer geplanten Aufgabe"
 
 #: C/gnome-schedule.xml:446(para)
 msgid ""
@@ -635,15 +701,23 @@ msgid ""
 "By answering <guibutton>Yes</guibutton>, the scheduled task will be removed "
 "from the <guilabel>Task list</guilabel>."
 msgstr ""
+"Sie können eine geplante Aufgabe löschen, indem Sie sie mit einem einfachen "
+"Klick in der <guilabel>Aufgabenliste</guilabel> auswählen und dann auf den "
+"Knopf <guibutton>Löschen</guibutton> in der Werkzeugleiste des Hauptfensters "
+"klicken. Daraufhin werden Sie um Bestätigung gebeten. Wenn Sie mit "
+"<guibutton>Ja</guibutton> antworten, wird die geplante Aufgabe aus der "
+"<guilabel>Aufgabenliste</guilabel> entfernt."
 
 #: C/gnome-schedule.xml:450(para)
 msgid ""
 "Non-recurrent tasks disapear automatically from the list when they are done."
 msgstr ""
+"Nicht wiederkehrende Aufgaben verschwinden automatisch aus der Liste, sobald "
+"sie ausgeführt wurden."
 
 #: C/gnome-schedule.xml:456(title)
 msgid "Manually Running Scheduled Task"
-msgstr ""
+msgstr "Manuelle Ausführung einer geplanten Aufgabe"
 
 #: C/gnome-schedule.xml:457(para)
 msgid ""
@@ -651,12 +725,19 @@ msgid ""
 "list</guilabel> with one click and by pressing the <guibutton>Run task</"
 "guibutton> button in the main window tool bar."
 msgstr ""
+"Sie können die Ausführung einer geplanten Aufgabe auslösen, indem Sie sie in "
+"der <guilabel>Aufgabenliste</guilabel> mit einem einfachen Klick auswählen "
+"und danach auf den Knopf <guibutton>Aufgabe ausführen</guibutton> in der "
+"Werkzeugleiste des Hauptfensters klicken."
 
 #: C/gnome-schedule.xml:461(para)
 msgid ""
 "The task will be executed and its output will be displayed in a terminal "
 "window, letting you check if the task is correctly set."
 msgstr ""
+"Die Aufgabe wird ausgeführt und die Ausgabe in einem Terminalfenster "
+"angezeigt. So können Sie überprüfen, ob die Aufgabe korrekt konfiguriert "
+"wurde."
 
 #: C/gnome-schedule.xml:468(title)
 msgid "Using Templates"
@@ -689,7 +770,7 @@ msgstr "Fenster der Vorlagenverwaltung"
 
 #: C/gnome-schedule.xml:483(phrase)
 msgid "Shows the \"Manage templates\" window"
-msgstr ""
+msgstr "Zeigt das Fenster »Vorlagen verwalten«"
 
 #: C/gnome-schedule.xml:490(para)
 msgid ""
@@ -722,18 +803,28 @@ msgid ""
 "guibutton> button. Now the main window will show the scheduled tasks of the "
 "selected user."
 msgstr ""
+"Sie können den Benutzer wechseln, indem Sie auf den Knopf <guibutton>Benutzer "
+"wechseln</guibutton> in der Werkzeugleiste des Hauptfensters klicken. "
+"Daraufhin wird ein Dialogfenster angezeigt. Wählen Sie den gewünschten "
+"Benutzer in der Auswahlliste aus und klicken Sie auf <guibutton>OK</"
+"guibutton>. Nun zeigt das Hauptfenster die geplanten Aufgaben des "
+"ausgewählten Benutzers an."
 
 #: C/gnome-schedule.xml:505(para)
 msgid ""
 "Please, keep in mind that this option is only available for system "
 "administrators."
 msgstr ""
+"Bitte beachten Sie, dass diese Option nur für Systemverwalter zur Verfügung "
+"steht."
 
 #: C/gnome-schedule.xml:511(title)
 msgid ""
 "Using <application>Gnome Schedule</application> to launch graphical "
 "applications"
 msgstr ""
+"Benutzung von <application>Gnome Schedule</application> zur Ausführung "
+"grafischer Anwendungen"
 
 #: C/gnome-schedule.xml:512(para)
 msgid ""
@@ -741,6 +832,9 @@ msgid ""
 "application automatically, but there are some information you would consider "
 "before:"
 msgstr ""
+"Sie können <application>Gnome Schedule</application> zur automatischen "
+"Ausführung grafischer Anwendungen verwenden, aber zuvor sollten Sie über "
+"Folgendes informiert sein:"
 
 #: C/gnome-schedule.xml:516(title)
 msgid "About DISPLAY environment variable"
@@ -754,6 +848,12 @@ msgid ""
 "one installed on your own computer. In that case you need to set the DISPLAY "
 "variable in this way:"
 msgstr ""
+"Wenn Sie eine grafische Anwendung in einer Befehlszeile ausführen, muss "
+"zuerst die Umgebungsvariable DISPLAY gesetzt werden. Diese Variable "
+"informiert Ihre grafische Anwendung darüber, welcher X-Server benutzt werden "
+"soll. Normalerweise werden Sie den einzigen auf Ihrem eigenen Rechner "
+"installierten X-Server benutzen wollen. In diesem Fall müssen Sie die DISPLAY-"
+"Variable folgendermaßen setzen:"
 
 #: C/gnome-schedule.xml:522(command)
 msgid "DISPLAY=:0.0"
@@ -762,12 +862,16 @@ msgstr "DISPLAY=:0.0"
 #: C/gnome-schedule.xml:523(para)
 msgid "where :0.0 means use screen 0 of X server 0 in this computer."
 msgstr ""
+"0.0 bedeutet hierbei, dass die Anzeige 0 des X-Servers 0 auf diesem Rechner "
+"verwendet wird."
 
 #: C/gnome-schedule.xml:524(para)
 msgid ""
 "If you want display the application in a remote screen you can specify the IP "
 "address of the remote X server:"
 msgstr ""
+"Wenn Sie die Anwendung auf einem entfernten Bildschirm anzeigen lassen "
+"wollen, können Sie die IP-Adresse des entfernten X-Servers angeben."
 
 #: C/gnome-schedule.xml:526(command)
 msgid "DISPLAY=192.168.0.25:0.0"
@@ -775,7 +879,7 @@ msgstr "DISPLAY=192.168.0.25:0.0"
 
 #: C/gnome-schedule.xml:530(title)
 msgid "Setting DISPLAY variable for tasks that will launch once"
-msgstr ""
+msgstr "Setzen der DISPLAY-Variable für einmalig auszuführende Aufgaben"
 
 #: C/gnome-schedule.xml:531(para)
 msgid ""
@@ -783,10 +887,13 @@ msgid ""
 "variable in the script text box. Make the definition at the begining of the "
 "script."
 msgstr ""
+"Beim Erstellen oder Bearbeiten einer Aufgabe können Sie die DISPLAY-Variable "
+"im Skript-Textfeld angeben. Stellen Sie diese Definition an den Anfang des "
+"Skripts."
 
 #: C/gnome-schedule.xml:536(title)
 msgid "Setting DISPLAY variable for tasks that will launch recurrently"
-msgstr ""
+msgstr "Setzen der DISPLAY-Variable für wiederkehrend auszuführende Aufgaben"
 
 #: C/gnome-schedule.xml:537(para)
 msgid ""
@@ -796,6 +903,12 @@ msgid ""
 "variable and then calls the graphical application. Finally, you can create a "
 "recurrent task to launch the script."
 msgstr ""
+"<application>Gnome Schedule</application> unterstützt noch nicht das Setzen "
+"von Umgebungsvariablen für wiederkehrende Aufgaben, aber diese Funktion ist "
+"geplant. In der Zwischenzeit können Sie manuell ein Skript erstellen, welches "
+"zuerst die DISPLAY-Variable setzt und danach erst die grafische Anwendung "
+"aufruft. Zum Schluss erstellen Sie eine wiederkehrend auszuführende Aufgabe, "
+"die ihrerseits das Skript aufruft."
 
 #: C/gnome-schedule.xml:544(title)
 msgid "About X server"
