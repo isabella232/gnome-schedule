@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule\n"
 "POT-Creation-Date: 2009-04-17 16:37+0000\n"
-"PO-Revision-Date: 2009-05-02 18:12+0100\n"
+"PO-Revision-Date: 2009-05-02 18:56+0100\n"
 "Last-Translator: Mario Blättermann <mariobl@gnome.org>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -20,7 +20,7 @@ msgstr ""
 msgid ""
 "@@image: 'figures/gnome-schedule_main.png'; "
 "md5=a330f285d64bd1070bf0b2ea61926c40"
-msgstr ""
+msgstr "a"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
@@ -28,7 +28,7 @@ msgstr ""
 msgid ""
 "@@image: 'figures/gnome-schedule_new_task.png'; "
 "md5=c13fbc3a2faa6145c9370a9137dc86ba"
-msgstr ""
+msgstr "a"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
@@ -36,7 +36,7 @@ msgstr ""
 msgid ""
 "@@image: 'figures/gnome-schedule_new_task_recurrent.png'; "
 "md5=7502298e8a4a17232ed9a6d28855426a"
-msgstr ""
+msgstr "a"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
@@ -44,7 +44,7 @@ msgstr ""
 msgid ""
 "@@image: 'figures/gnome-schedule_new_task_once.png'; "
 "md5=a8e20668ea7afd0ada8f6f5e66cdbff8"
-msgstr ""
+msgstr "a"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
@@ -52,7 +52,7 @@ msgstr ""
 msgid ""
 "@@image: 'figures/gnome-schedule_templates.png'; "
 "md5=884d645f5cb300b4a2ad434ad5db2916"
-msgstr ""
+msgstr "a"
 
 #: C/gnome-schedule.xml:37(title) C/gnome-schedule.xml:136(revnumber)
 msgid "Gnome Schedule User Guide V2.2"
