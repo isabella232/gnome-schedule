@@ -2,7 +2,6 @@
 _Name=Scheduled tasks
 _Comment=Manage your system tasks
 Categories=System;
-OnlyShowIn=GNOME
 Icon=@prefix@/share/pixmaps/gnome-schedule/gnome-schedule.svg
 Exec=@prefix@/bin/gnome-schedule
 Type=Application
