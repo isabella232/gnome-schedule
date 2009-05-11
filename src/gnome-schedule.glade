@@ -385,7 +385,7 @@
                       <widget class="GtkSpinButton" id="at_spin_year">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
-                        <property name="adjustment">2007 2007 4000 1 10 10</property>
+                        <property name="adjustment">2009 2009 4000 1 1 0</property>
                         <property name="climb_rate">1</property>
                         <signal name="value_changed" handler="on_at_spin_year_changed"/>
                       </widget>
@@ -411,8 +411,10 @@
                       <widget class="GtkSpinButton" id="at_spin_month">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
-                        <property name="adjustment">1 1 12 1 10 10</property>
+                        <property name="adjustment">1 1 12 1 1 0</property>
                         <property name="climb_rate">1</property>
+                        <property name="snap_to_ticks">True</property>
+                        <property name="numeric">True</property>
                         <signal name="value_changed" handler="on_at_spin_month_changed"/>
                       </widget>
                       <packing>
@@ -437,8 +439,10 @@
                       <widget class="GtkSpinButton" id="at_spin_day">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
-                        <property name="adjustment">1 1 31 1 10 10</property>
+                        <property name="adjustment">1 1 31 1 1 0</property>
                         <property name="climb_rate">1</property>
+                        <property name="snap_to_ticks">True</property>
+                        <property name="numeric">True</property>
                         <signal name="value_changed" handler="on_at_spin_day_changed"/>
                       </widget>
                       <packing>
@@ -450,8 +454,10 @@
                       <widget class="GtkSpinButton" id="at_spin_hour">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
-                        <property name="adjustment">0 0 24 1 10 10</property>
+                        <property name="adjustment">1 0 24 1 1 0</property>
                         <property name="climb_rate">1</property>
+                        <property name="snap_to_ticks">True</property>
+                        <property name="numeric">True</property>
                         <signal name="value_changed" handler="on_at_spin_hour_changed"/>
                       </widget>
                       <packing>
@@ -478,8 +484,10 @@
                       <widget class="GtkSpinButton" id="at_spin_minute">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
-                        <property name="adjustment">1 0 60 1 10 10</property>
+                        <property name="adjustment">1 0 60 1 1 0</property>
                         <property name="climb_rate">1</property>
+                        <property name="snap_to_ticks">True</property>
+                        <property name="numeric">True</property>
                         <signal name="value_changed" handler="on_at_spin_minute_changed"/>
                       </widget>
                       <packing>
