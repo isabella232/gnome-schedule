@@ -32,9 +32,10 @@ import crontab
 import gettext
 gettext.install(config.GETTEXT_PACKAGE(), config.GNOMELOCALEDIR(), unicode=1)
 
-def check_X (display):
-    #Checking if I can use X 
+def check_X (display, xauth):
+    # Checking if I can use X 
     os.putenv ('DISPLAY', display)
+    os.putenv ('XAUTHORITY', xauth)
 
     try:
         import pygtk
@@ -129,12 +130,15 @@ if job_type == 0:
         print _("len(display)<2: No proper DISPLAY variable")
         sys.exit (1)
 
+    # TODO: Can/Does this change ?
+    xauth = home_dir + "/.Xauthority" 
 
-    check_X (display)
+    check_X (display, xauth)
 
     # Execute task
     sh = os.popen ("/bin/sh -s", 'w')
     sh.write ("export DISPLAY=" + display + "\n")
+    sh.write ("export XAUTHORITY=" + xauth + "\n")
     sh.write (command + "\n")
     sh.close ()
 
