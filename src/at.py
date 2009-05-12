@@ -59,6 +59,7 @@ class At:
         self.SCRIPT_DELIMITER = "###### ---- GNOME_SCHEDULE_SCRIPT_DELIMITER #####"
         
         self.DISPLAY = "DISPLAY=%s; export DISPLAY;\n"
+        self.DISPLAY = self.DISPLAY + "XAUTHORITY=" + user_home_dir + "/.Xauthority; export XAUTHORITY;\n"        
         self.DISPLAY = self.DISPLAY + config.xwrapper_exec + " a\n"
         self.DISPLAY = self.DISPLAY + """
 xwrapper=$?;

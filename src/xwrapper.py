@@ -147,7 +147,8 @@ if job_type == 0:
 # AT
 elif (job_type == 1):
     display = os.getenv ('DISPLAY')
-    check_X (display)
+    xauth = home_dir + "/.Xauthority" 
+    check_X (display, xauth)
     sys.exit (0) # All fine
 
 else:
