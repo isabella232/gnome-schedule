@@ -5,13 +5,9 @@ Remember to send an email to the gnome-schedule-devel list
 or check out the latest code from the subversion repository
 in case work has allready been started on some of the features.
 
+This list has a tendency to get outdated and forgotten.
+
 Development:
-
-For 2.1:
-    * Bug: Use FreeDesktop directory spec
-    * X support
-    * Bug: Template description changes 
-
 * labels should be expanded
 
  Wishlist (need a new branch and/or will not be included in the next release)
