@@ -1,3 +1,17 @@
+2009-05-18  Gaute Hope  <eg@gaute.vetsj.com>
+
+	* Bug 583131: By Jonathan Price, make sure get_exp_sec doesn't go out of its array.
+
+2009-05-16  Gaute Hope  <eg@gaute.vetsj.com>
+
+	* Released 2.1.0
+
+2009-05-11  Gaute Hope  <eg@gaute.vetsj.com>
+
+	* Remove OnlyGnome from desktop icon
+	* Fix LP bug: 370754
+	* Add XAUTHORITY env. variable to xwrapper script
+
 2009-02-21  Gaute Hope  <eg@gaute.vetsj.com>
 
 	* Bug 572444: TextEdit now wrap words. And at_editor doesn't expand.

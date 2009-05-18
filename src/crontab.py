@@ -700,7 +700,7 @@ class Crontab:
         ## find next whitespace
         i = 0
         found = False
-        while (i <= len(line)) and (found == False):
+        while (i < len(line)) and (found == False):
             if line[i] in string.whitespace:
                 found = True
                 #print "found: " + str (i)
