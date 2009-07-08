@@ -40,7 +40,7 @@ o. If you want to use the sources pulled from the subversion server you need aut
 
 o. The following commands will install gnome-schedule on a system that has python and automake-1.7 and some tools like gmake installed.
 
-     $ svn checkout http://svn.gnome.org/svn/gnome-schedule/trunk gnome-schedule
+     $ git clone git://git.gnome.org/git/gnome-schedule 
      $ pushd gnome-schedule
      $ ./autogen.sh --prefix=/usr/local
      $ make
@@ -74,11 +74,11 @@ Compiling and HACKING
 
 	o. http://lists.sourceforge.net/mailman/listinfo/gnome-schedule-devel
 
-  To compile GNOME Schedule from subversion you will also need
+  To compile GNOME Schedule from git you will also need
 
-	o. A subversion client
+	o. A git client
 	o. autoconf and the other auto* tools (version >= 1.7)
-	o. gnome-common which you can pull from the svn.gnome.org
+	o. gnome-common which you can pull from the git.gnome.org
 
   To run GNOME Schedule from the source directory 
 
