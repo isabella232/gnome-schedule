@@ -663,6 +663,7 @@ class Crontab:
             desc = d[5:d.find ("\n")]
             d = d[d.find ("\n") + 1:]
             
+            output = 0
             if (ver >= 2) and (ver < 4):
                 output_str = d[9:d.find ("\n")]
                 output = int (output_str)
@@ -673,12 +674,14 @@ class Crontab:
                 output = int (output_str)
                 d = d[d.find ("\n") + 1:]
                 
+            display = ""
             if ver >= 4:
                 display = d[8:d.find ("\n")]
                 d = d[d.find ("\n") + 1:]
                 if (len (display) < 1) or (output < 2):
                     display = ""
 
+            command_d = ""
             if ver >= 5:
                 command_d = d[10:d.find ("\n")]
                 d = d[d.find ("\n") + 1:]
