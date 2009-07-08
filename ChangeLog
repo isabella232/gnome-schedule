@@ -1,3 +1,8 @@
+2009-07-08  Gaute Hope  <eg@gaute.vetsj.com>
+
+	* Bug 588091: By Paul Hodges <phodges4@gmail.com>: make sure display,
+	output and command_d have default values in crontab.py:get_job_data ()
+
 2009-05-18  Gaute Hope  <eg@gaute.vetsj.com>
 
 	* Bug 583131: By Jonathan Price, make sure get_exp_sec doesn't go out of its array.
