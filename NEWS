@@ -1,3 +1,7 @@
+2009-05-16:
+  * Released 2.1.0, contains X support in both at and crontab.
+  * Gnome-schedule is now using git: http://git.gnome.org/cgit/gnome-schedule
+
 2009-02-14:
   X output support ready for testing, merged onto trunk/
 
