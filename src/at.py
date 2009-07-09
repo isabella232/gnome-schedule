@@ -33,7 +33,7 @@ import config
 
 class At:
     def __init__(self,root,user,uid,gid,user_home_dir,manual_poscorrect):
-    
+
         #default preview length
         self.preview_len = 50
         self.root = root
@@ -49,17 +49,17 @@ class At:
         # 3 Tue May  8 01:01:00 2007 a gaute
 
         self.atRecordRegex = re.compile('^([\d]+)[\t]([\w]{3,3})[\s]([\w]{3,3})[\s]*([\d]+)[\s]([\d]{2,2}[:][\d]{2,2}[:][\d]{2,2})[\s]([\d]{4,4})[\s]([\w])[\s]([\w]+)')
-            
+
 
         # after you add a job, this line is printed to stderr
         # job 10 at 2006-09-18 12:38
         self.atRecordRegexAdd = re.compile('^job\s([0-9]+)\sat')
-        
+
         self.atRecordRegexAdded = re.compile('[^\s]+\s([0-9]+)\sat')
         self.SCRIPT_DELIMITER = "###### ---- GNOME_SCHEDULE_SCRIPT_DELIMITER #####"
-        
+
         self.DISPLAY = "DISPLAY=%s; export DISPLAY;\n"
-        self.DISPLAY = self.DISPLAY + "XAUTHORITY=" + user_home_dir + "/.Xauthority; export XAUTHORITY;\n"        
+        self.DISPLAY = self.DISPLAY + "XAUTHORITY=" + user_home_dir + "/.Xauthority; export XAUTHORITY;\n"
         self.DISPLAY = self.DISPLAY + config.xwrapper_exec + " a\n"
         self.DISPLAY = self.DISPLAY + """
 xwrapper=$?;
@@ -71,11 +71,11 @@ else
 fi
 """
 
-        # If normally this variable is unset the user would not expect it 
+        # If normally this variable is unset the user would not expect it
         # to be set, which it will be because Gnome Schedule needs it.
-        # Therefore we unset it in the script. 
+        # Therefore we unset it in the script.
         self.POSIXLY_CORRECT_UNSET = "unset POSIXLY_CORRECT\n"
-        
+
         self.atdatafileversion = 5
         self.atdata = self.user_home_dir + "/.gnome/gnome-schedule/at"
         if os.path.exists (self.user_home_dir + "/.gnome") != True:
@@ -89,7 +89,7 @@ fi
                     os.chown (self.atdata, self.uid, self.gid)
             except:
                 print _("Failed to create data dir! Make sure ~/.gnome and ~/.gnome/gnome-schedule are writable.")
-                
+
         self.months = {
             'Jan' : '1',
             'Feb' : '2',
@@ -104,7 +104,7 @@ fi
             'Nov' : '11',
             'Dec' : '12'
         }
-        
+
     def set_rights(self,user,uid,gid, ud):
         self.user = user
         self.uid = uid
@@ -123,36 +123,36 @@ fi
             except:
                 print (_("Failed to create data dir: %s. Make sure ~/.gnome and ~/.gnome/gnome-schedule are writable.") % (self.atdata))
 
-    
+
     def get_type (self):
         return "at"
-        
+
     def parse (self, line, output = True):
         if (output == True):
             if len (line) > 1 and line[0] != '#':
                 m = self.atRecordRegex.match(line)
-                if m != None:           
+                if m != None:
                     # Time
                     time = m.groups ()[4][:-3]
-                    
+
                     # Date
                     day = m.groups ()[3]
                     month = m.groups ()[2]
-                    
+
                     for monthname in self.months:
                         month = month.replace (monthname, self.months[monthname])
-                        
+
                     if int (day) < 10:
                         day = "0" + day
                     if int (month) < 10:
                         month = "0" + month
-                        
+
                     date = day + "." + month + "." + m.groups ()[5]
 
                     job_id = m.groups ()[0]
                     class_id = m.groups ()[6]
                     user = m.groups ()[7]
-                        
+
                     success, title, desc, manual_poscorrect, output, display = self.get_job_data (int (job_id))
                     # manual_poscorrect is only used during preparation of script
 
@@ -160,11 +160,11 @@ fi
                     # read lines and detect starter
                     script = os.popen(execute).read()
                     script,  dangerous = self.__prepare_script__ (script, manual_poscorrect, output, display)
-                                        
+
                     #removing ending newlines, but keep one
                     #if a date in the past is selected the record is removed by at, this creates an error, and generally if the script is of zero length
                     # TODO: complain about it as well
-                    
+
                     if len(script) < 2:
                         done = 1
                     else:
@@ -177,7 +177,7 @@ fi
                             done = 1
 
                     return job_id, date, time, class_id, user, script, title, dangerous, output
-                    
+
         elif (output == False):
             if len (line) > 1 and line[0] != '#':
                 m = self.atRecordRegexAdd.search(line)
@@ -198,7 +198,7 @@ fi
         if os.access (f, os.R_OK):
             fh = open (f, 'r')
             d = fh.read ()
-            
+
             ver_p = d.find ("ver=")
             if ver_p == -1:
                 ver = 1
@@ -206,18 +206,18 @@ fi
                 ver_s = d[ver_p + 4:d.find ("\n")]
                 d = d[d.find ("\n") + 1:]
                 ver = int (ver_s)
-                
+
             title = d[6:d.find ("\n")]
             d = d[d.find ("\n") + 1:]
-            
+
             # icons out
             if ver < 2:
                 icon = d[5:d.find ("\n")]
                 d = d[d.find ("\n") + 1:]
-            
+
             desc = d[5:d.find ("\n")]
             d = d[d.find ("\n") + 1:]
-            
+
             manual_poscorrect_b = False
             if ver > 2:
                 manual_poscorrect = d[18:d.find ("\n")]
@@ -226,7 +226,7 @@ fi
                     manual_poscorrect_b = True
                 elif manual_poscorrect == "false":
                     manual_poscorrect_b = False
-            
+
             if ver >= 5:
                 output_str = d[7:d.find ("\n")]
                 output = int (output_str)
@@ -243,12 +243,12 @@ fi
                 display = ""
 
             fh.close ()
-            
+
             return True, title, desc, manual_poscorrect_b, output, display
-            
-        else: 
+
+        else:
             return False, "", "", False, 0, ""
-            
+
     def write_job_data (self, job_id, title, desc, output, display):
         # Create and write data file
         f = os.path.join (self.atdata, str(job_id))
@@ -258,7 +258,7 @@ fi
         fh.write ("ver=" + str(self.atdatafileversion) + "\n")
         fh.write ("title=" + title + "\n")
         fh.write ("desc=" + desc + "\n")
-        
+
         # This one doesn't need to be passed independently for each job since the job data is only updated together with a task being appended or updated (also new added), and the variable depends on each session. Not job.
         if self.manual_poscorrect == True:
             fh.write ("manual_poscorrect=true\n")
@@ -271,12 +271,12 @@ fi
         fh.close ()
         os.chown (f, self.uid, self.gid)
         os.chmod (f, 0600)
-            
+
     def checkfield (self, runat):
         regexp1 = re.compile ("([0-9][0-9])([0-9][0-9])\ ([0-9][0-9])\.([0-9][0-9])\.([0-9][0-9][0-9][0-9])")
         regexp2 = re.compile("([0-9][0-9])([0-9][0-9])")
         regexp3 = re.compile("([0-9][0-9])\.([0-9][0-9])\.([0-9][0-9][0-9][0-9])")
-        
+
         runat_g1 = regexp1.match(runat)
         runat_g2 = regexp2.match(runat)
         runat_g3 = regexp3.match(runat)
@@ -286,7 +286,7 @@ fi
         cday = ctime[2]
         chour = ctime[3]
         cminute = ctime[4]
-    
+
         if runat_g1:
             (hour, minute, day, month, year) =  runat_g1.groups()
             hour = int(hour)
@@ -297,20 +297,20 @@ fi
 
             if hour > 24 or hour < 0:
                 return False, "hour"
-            
+
             if minute > 60 or minute < 0:
                 return False, "minute"
-            
+
             if month > 12 or month < 0:
                 return False, "month"
-                
+
             if day > 31 or day < 0:
                 return False, "day"
-                
+
             if year < 0:
                 return False, "year"
-                
-            if year >= cyear: 
+
+            if year >= cyear:
                 if year == cyear:
                     syear = True
                     if (month >= cmonth):
@@ -348,7 +348,7 @@ fi
             minute = int(minute)
             if hour > 24 or hour < 0:
                 return False, "hour"
-    
+
             if minute > 60 or minute < 0:
                 return False, "minute"
 
@@ -369,14 +369,14 @@ fi
         else:
             #lowercase
             runat = runat.lower()
-        
+
             #some timespecs:
             days = ['sun','mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sunday','monday','tuesday','wednesday','thursday','friday','saturday']
             relative_days = ['tomorrow','next week','today']
             relative_hour = ['noon','teatime','midnight','next hour']
             relative_minute = ['next minute']
             relative_month = ['next month']
-            
+
             if runat in days:
                 pass
             elif runat in relative_days:
@@ -392,7 +392,7 @@ fi
 
         return True, "ok"
 
-        
+
     def append (self, runat, command, title, output):
         tmpfile = tempfile.mkstemp ()
         fd, path = tmpfile
@@ -405,10 +405,10 @@ fi
         if output > 0:
             display = os.getenv ('DISPLAY')
             tmp.write (self.DISPLAY %  display )
-            
+
         tmp.write (command + "\n")
         tmp.close ()
-        
+
         temp = None
 
         if self.root == 1:
@@ -431,12 +431,12 @@ fi
             t = self.parse (line, False)
             if t != False:
                 job_id = t
-        
+
         #print job_id
-        
+
         desc = ""
         self.write_job_data (job_id, title, desc, output, display)
-        
+
         os.unlink (path)
 
 
@@ -448,7 +448,7 @@ fi
             os.unlink (f)
         execute = config.getAtrmbin()+ " " + str(job_id)
         commands.getoutput(execute)
-        
+
         #add new
         tmpfile = tempfile.mkstemp ()
         fd, path = tmpfile
@@ -485,14 +485,14 @@ fi
             t = self.parse (line, False)
             if t != False:
                 job_id = t
-        
+
         #print job_id
-        
+
         desc = ""
         self.write_job_data (job_id, title, desc, output, display)
-        
+
         os.unlink (path)
-        
+
 
     def delete (self, job_id, iter):
         if job_id:
@@ -502,38 +502,38 @@ fi
                 os.unlink (f)
             execute = config.getAtrmbin()+ " " + str(job_id)
             commands.getoutput(execute)
-            
-                
+
+
     def read (self):
         data = []
         #do 'atq'
         execute = config.getAtqbin ()
         self.lines = os.popen(execute).readlines()
         for line in self.lines:
-            
+
             array_or_false = self.parse (line)
             #print array_or_false
             if array_or_false != False:
                 (job_id, date, time, class_id, user, lines, title, dangerous, output) = array_or_false
 
-            
+
                 preview = self.__make_preview__ (lines)
                 if dangerous == 1:
                         preview = _("Warning! Unknown task: %(preview)s") % {'preview':  preview}
                 #chopping of script delimiter
                 lines.strip ()
-                    
+
                 timestring = "%s %s" % (date, time)
 
                 date_o = datetime.datetime.strptime (date + " " + time, "%d.%m.%Y %H:%M")
                 timestring_show = _("On %(timestring)s") % { 'timestring' : date_o.strftime ("%c") }
 
-                
+
                 # TODO: looks like it could be one append
                 if self.root == 1:
                     if self.user == user:
                         data.append([title, timestring_show, preview, lines, int(job_id), timestring, self, None, date, class_id, user, time, _("Once"), "at", output, timestring])
-                    else: 
+                    else:
                         #print "Record omitted, not current user"
                         pass
                 else:
@@ -541,12 +541,12 @@ fi
 
                 #print _("added %(id)s") % { "id": job_id   }
             else:
-                print _("Warning: a line in atq's output didn't parse") 
+                print _("Warning: a line in atq's output didn't parse")
         return data
 
-    
+
     def __prepare_script__ (self, script, manual_poscorrect, output, display):
-    
+
         # It looks like at prepends a bunch of stuff to each script
         # Luckily it delimits that using two newlines
         # So assuming that at never prepends two newlines unless
@@ -554,7 +554,7 @@ fi
         # once the first two lines have been found
 
         # Later: It now seems like this is incorrect, and may vary upon distribution. I therefore determine the prepended stuff by making a test job and then removing the length of it. in gentoo it adds to newlines at the end of the script
-        
+
         # If the script is created by Gnome Schedule the script is seperated by a delimiter.
 
         dangerous = 0
@@ -593,15 +593,15 @@ fi
             else:
                 title = "Untitled"
             # If the string contains ICON=
-            iconstart = script.find ("ICON=") 
+            iconstart = script.find ("ICON=")
             if iconstart != -1:
                 iconend = script.find ("\n", iconstart)
                 icon = script[(iconstart + 5):iconend]
-            
+
                 prelen = prelen + len(icon) + 6
-        
+
             else:
-                icon = None 
+                icon = None
 
             script = script[prelen:]
 
@@ -644,4 +644,4 @@ fi
             result = result + "..."
 
         return result
-        
+

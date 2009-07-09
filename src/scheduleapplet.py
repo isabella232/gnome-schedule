@@ -49,7 +49,7 @@ try:
     import pygtk
     #tell pyGTK, if possible, that we want GTKv2
     pygtk.require("2.0")
-  
+
 except:
   #Some distributions come with GTK2, but not pyGTK
   pass
@@ -62,7 +62,7 @@ try:
   import gnome.ui
   import gnomeapplet
   import gobject
-    
+
 except:
   print _("You need to install pyGTK or GTKv2,\n"
           "or set your PYTHONPATH correctly.\n"
@@ -79,38 +79,38 @@ class ScheduleApplet(gnomeapplet.Applet):
         self.__gobject_init__()
         self.debug_flag = debug_flag
         self.manual_poscorrect = manual_poscorrect
-        
+
         gettext.bindtextdomain(config.GETTEXT_PACKAGE(), config.GNOMELOCALEDIR())
         gettext.textdomain(config.GETTEXT_PACKAGE())
 
         locale.bindtextdomain(config.GETTEXT_PACKAGE(), config.GNOMELOCALEDIR())
         locale.textdomain(config.GETTEXT_PACKAGE())
-        
-        
+
+
         self.applet = applet
         self.gprogram = gprogram
         self.__loadIcon__()
-        
+
 
         self.ev_box = gtk.EventBox()
-        
+
         self.image = gtk.Image()
         self.image.set_from_pixbuf(self.iconPixbuf)
-        
+
         self.main_loaded = False
-        
+
         self.ev_box.add(self.image)
         self.ev_box.show()
         self.ev_box.set_events(gtk.gdk.BUTTON_PRESS_MASK)
         self.ev_box.connect("button_press_event", self.event_box_clicked)
         self.applet.add(self.ev_box)
-        
+
         self.create_menu()
         self.applet.show_all()
 
-        
 
-    
+
+
     def __loadIcon__(self):
         if self.debug_flag:
             if os.access("../icons/gnome-schedule.svg", os.F_OK):
@@ -122,12 +122,12 @@ class ScheduleApplet(gnomeapplet.Applet):
                 print _("ERROR: Could not load icon")
 
     def create_menu(self):
-        self.verbs =    [       ("show_main", self.show_main_window), 
+        self.verbs =    [       ("show_main", self.show_main_window),
                         ("add", self.add_task),
                         ("help", self.show_help),
                         ("about", self.show_about)
                 ]
-        
+
         #check for file in current dir
         if self.debug_flag:
             if os.access ("gnome-schedule-applet.xml", os.F_OK):
@@ -139,14 +139,14 @@ class ScheduleApplet(gnomeapplet.Applet):
                 print _("ERROR: Could not load menu xml file")
                 datadir = ''
                 quit ()
-                
+
         self.applet.setup_menu_from_file(datadir,  "gnome-schedule-applet.xml", "gnome-schedule", self.verbs)
-            
+
 
     def event_box_clicked (self, widget, event):
         if event.type == gtk.gdk._2BUTTON_PRESS:
             self.show_main_window()
-        
+
     def show_main_window(self, *args):
         if self.main_loaded == False:
             self.main_loaded = True
@@ -154,7 +154,7 @@ class ScheduleApplet(gnomeapplet.Applet):
         else:
             self.main_window.widget.show ()
             self.main_window.schedule_reload()
-        
+
 
     def add_task(self, *args):
         if self.main_loaded == False:
@@ -162,7 +162,7 @@ class ScheduleApplet(gnomeapplet.Applet):
             self.main_window.widget.hide()
         self.main_window.on_add_scheduled_task_menu_activate()
 
-        
+
     def show_help(self, *args):
         if self.main_loaded == False:
             self.show_main_window()
@@ -181,7 +181,7 @@ gobject.type_register(ScheduleApplet)
 def schedule_applet_factory(applet, iid):
     ScheduleApplet(applet, iid, pr, debug_flag, manual_poscorrect)
     return True
-  
+
 gnomeapplet.bonobo_factory("OAFIID:GNOME_GnomeSchedule_Factory",
-                                ScheduleApplet.__gtype__, 
+                                ScheduleApplet.__gtype__,
                                 "GnomeScheduleApplet", "0", schedule_applet_factory)

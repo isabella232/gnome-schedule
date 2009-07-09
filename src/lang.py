@@ -95,14 +95,14 @@ language = locale.getlocale()[0]
 if language == None:
     language = "C"
 
-# Some locale stuff in this section to get 
-# translated time expressions out of system. 
-# Don't touch this. Change settings through gettext (po files) 
+# Some locale stuff in this section to get
+# translated time expressions out of system.
+# Don't touch this. Change settings through gettext (po files)
 def lc_weekday (weekday):
     weekday = int(weekday)
     if weekday >= 0 and weekday < 7:
         weekday = str(weekday)
-    else: 
+    else:
         weekday = "0"
     timevalue = time.strptime(weekday, "%w")
     expression = time.strftime("%A", timevalue)
@@ -119,14 +119,14 @@ def lc_date (day,month,year = None):
     month = "%02d" % int(month)
     if year == None:
         timevalue = time.strptime(("%s.%s" % (day, month)), "%d.%m")
-        # Translators: Date format for expressions like 'January 21'. %B is month, %d is day number. 
+        # Translators: Date format for expressions like 'January 21'. %B is month, %d is day number.
         # Run the command 'man strftime' to read more about these and other available specifiers.
         expression = time.strftime(_("%B %d"), timevalue)
     else:
         year = str(year)[-2:]
         year = "%02d" % int(year)
         timevalue = time.strptime(("%s.%s.%s" % (day, month, year)), "%d.%m.%y")
-        # Translators: Date format for expressions like 'January 21, 2005'. %B is month, %d is day number, %Y is year with century. 
+        # Translators: Date format for expressions like 'January 21, 2005'. %B is month, %d is day number, %Y is year with century.
         # Run the command 'man strftime' to read more about these and other available specifiers.
         expression = time.strftime(_("%B %d, %Y"), timevalue)
     return unicode(expression, encoding, 'ignore')
@@ -136,7 +136,7 @@ def lc_time (hour,minute,second = None):
     minute = "%02d" % int(minute)
     if second == None:
         timevalue = time.strptime(("%s:%s" % (hour, minute)), "%H:%M")
-        # Translators: Time without seconds. %H is hour, %M is minute. 
+        # Translators: Time without seconds. %H is hour, %M is minute.
         # Run the command 'man strftime' to read more about these and other available specifiers.
         expression = time.strftime(_("%H:%M"), timevalue)
     else:
@@ -155,18 +155,18 @@ def translate_crontab_easy (minute, hour, day, month, weekday):
 #   Add support for your language here
 #   if language.find ("whatever") != -1:
 #       return translate_crontab_easy_whatever (minute, hour, day, month, weekday)
-#   else:   
+#   else:
         return translate_crontab_easy_common (minute, hour, day, month, weekday)
 
 # Translate Crontab expressions to human readable ones.
 # Don't touch this function. Copy and modify it to create a special translation.
-# Changes on this function affects all translations made through po files.  
+# Changes on this function affects all translations made through po files.
 def translate_crontab_easy_common (minute, hour, day, month, weekday):
 
     # reboot
     if minute == "@reboot":
         return _("At reboot")
-        
+
     # These are unsupported cases
     if minute.find ("/") != -1 or hour.find ("/") != -1 or day.find ("/") != -1 or month.find ("/") != -1 or weekday.find ("/") != -1:
         return translate_crontab_easy_fallback (minute, hour, day, month, weekday)
@@ -174,7 +174,7 @@ def translate_crontab_easy_common (minute, hour, day, month, weekday):
         return translate_crontab_easy_fallback (minute, hour, day, month, weekday)
     if minute.find (",") != -1 or hour.find (",") != -1 or day.find (",") != -1 or month.find (",") != -1 or weekday.find (",") != -1:
         return translate_crontab_easy_fallback (minute, hour, day, month, weekday)
-        
+
     # So if our case is supported:
 
     # Minute and hour cases

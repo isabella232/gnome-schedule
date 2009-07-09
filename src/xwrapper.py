@@ -33,7 +33,7 @@ import gettext
 gettext.install(config.GETTEXT_PACKAGE(), config.GNOMELOCALEDIR(), unicode=1)
 
 def check_X (display, xauth):
-    # Checking if I can use X 
+    # Checking if I can use X
     os.putenv ('DISPLAY', display)
     os.putenv ('XAUTHORITY', xauth)
 
@@ -54,9 +54,9 @@ def check_X (display, xauth):
         sys.exit(1)
 
     try:
-        gtk.init_check () 
+        gtk.init_check ()
 
-    except Exception as e: 
+    except Exception as e:
         print _("Could not open a  connection to X!")
         print e
         sys.exit (1)
@@ -131,7 +131,7 @@ if job_type == 0:
         sys.exit (1)
 
     # TODO: Can/Does this change ?
-    xauth = home_dir + "/.Xauthority" 
+    xauth = home_dir + "/.Xauthority"
 
     check_X (display, xauth)
 
@@ -147,7 +147,7 @@ if job_type == 0:
 # AT
 elif (job_type == 1):
     display = os.getenv ('DISPLAY')
-    xauth = home_dir + "/.Xauthority" 
+    xauth = home_dir + "/.Xauthority"
     check_X (display, xauth)
     sys.exit (0) # All fine
 

@@ -50,7 +50,7 @@ try:
     import pygtk
     #tell pyGTK, if possible, that we want GTKv2
     pygtk.require("2.0")
-  
+
 except:
   #Some distributions come with GTK2, but not pyGTK
   pass
@@ -61,7 +61,7 @@ try:
   # TODO: Gnome specific
   import gnome
   import gnome.ui
-    
+
 except:
   print _("You need to install pyGTK or GTKv2,\n"
           "or set your PYTHONPATH correctly.\n"

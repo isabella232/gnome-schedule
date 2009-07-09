@@ -26,15 +26,15 @@ import re
 class CrontabEditorHelper:
     def __init__(self, parent):
         self.ParentClass = parent
-            
+
         self.xml = self.ParentClass.xml
-        
+
         self.NoExpressionEvents = False
         self.fieldRegex = self.ParentClass.fieldRegex
-        
+
         self.widget = self.xml.get_widget("crontabEditorHelper")
         self.widget.connect("delete-event", self.widget.hide_on_delete)
-        
+
         self.radAll = self.xml.get_widget("radAll")
         self.radEvery = self.xml.get_widget("radEvery")
         self.radRange = self.xml.get_widget("radRange")
@@ -46,7 +46,7 @@ class CrontabEditorHelper:
         self.entFix = self.xml.get_widget("entFix")
         self.entRangeStart = self.xml.get_widget("entRangeStart")
         self.entRangeEnd = self.xml.get_widget("entRangeEnd")
-    
+
         self.header = self.xml.get_widget("label_crontab_editor_title")
 
         self.lblEveryEntity = self.xml.get_widget("lblEveryEntity")
@@ -97,7 +97,7 @@ class CrontabEditorHelper:
             self.entRangeStart.set_text ("1")
             self.entFix.set_text("1")
             self.radAll.set_label(_("Every day"))
-            
+
         if field == "month":
             self.entRangeEnd.set_text ("12")
             self.entRangeStart.set_text ("1")
@@ -115,9 +115,9 @@ class CrontabEditorHelper:
         self.entExpression.set_text ("*")
 
         self.trans_field = self.ParentClass.scheduler.translate_frequency (field)
-        
-        
-        
+
+
+
         self.do_label_magic ()
 
 
@@ -169,7 +169,7 @@ class CrontabEditorHelper:
             self.widget.set_title(_("Edit month"))
         elif field == "weekday":
             self.widget.set_title(_("Edit weekday"))
-            
+
         self.widget.set_transient_for(self.ParentClass.widget)
         self.widget.set_position(gtk.WIN_POS_CENTER_ON_PARENT)
         self.widget.show_all()
@@ -192,7 +192,7 @@ class CrontabEditorHelper:
         if self.field == "day": self.ParentClass.day_entry.set_text(expression)
         if self.field == "month": self.ParentClass.month_entry.set_text(expression)
         if self.field == "weekday": self.ParentClass.weekday_entry.set_text(expression)
-        
+
         self.widget.hide()
 
 
@@ -249,7 +249,7 @@ class CrontabEditorHelper:
 
         self.radFix.set_label (translated[0])
         self.lblFixEntity.set_label (translated[1])
-        
+
         translated[0] = _("In a step width")
         if self.field == "minute":
             translated[1] = _("Minutes:")
@@ -261,10 +261,10 @@ class CrontabEditorHelper:
             translated[1] = _("Months:")
         elif self.field == "weekday":
             translated[1] = _("Weekdays:")
-            
+
         self.radEvery.set_label (translated[0])
         self.lblEveryEntity.set_label (translated[1])
-                    
+
 
     def entExpressionChanged(self, *args):
         if self.NoExpressionEvents == False:

@@ -29,7 +29,7 @@ class Template:
         self.parent = parent
         self.configbackend = configbackend
         self.gconf_client = self.configbackend.gconf_client
-        
+
 
     def removetemplate_at (self, template_id):
         installed = self.gconf_client.get_string("/apps/gnome-schedule/templates/at/installed")
@@ -45,17 +45,17 @@ class Template:
                         first = False
                     else:
                         newstring = newstring + ", " + t
-        
+
         self.gconf_client.unset("/apps/gnome-schedule/templates/at/%s/title" % (str (template_id)))
         self.gconf_client.unset("/apps/gnome-schedule/templates/at/%s/command" % (str (template_id)))
         self.gconf_client.unset ("/apps/gnome-schedule/templates/at/%s/output" % (str (template_id)))
-            
+
         if newstring == "   ":
             self.gconf_client.unset ("/apps/gnome-schedule/templates/at/installed")
         else:
             self.gconf_client.set_string("/apps/gnome-schedule/templates/at/installed", newstring)
-            
-    def removetemplate_crontab (self, template_id): 
+
+    def removetemplate_crontab (self, template_id):
         installed = self.gconf_client.get_string("/apps/gnome-schedule/templates/crontab/installed")
         newstring = installed
         if installed != None:
@@ -69,18 +69,18 @@ class Template:
                         first = False
                     else:
                         newstring = newstring + ", " + t
-        
+
         self.gconf_client.unset("/apps/gnome-schedule/templates/crontab/%s/title" % (str (template_id)))
         self.gconf_client.unset("/apps/gnome-schedule/templates/crontab/%s/command" % (str (template_id)))
         self.gconf_client.unset("/apps/gnome-schedule/templates/crontab/%s/timeexpression" % (str (template_id)))
         self.gconf_client.unset("/apps/gnome-schedule/templates/crontab/%s/output" % (str (template_id)))
-            
+
         if newstring == "   ":
             self.gconf_client.unset ("/apps/gnome-schedule/templates/crontab/installed")
         else:
             self.gconf_client.set_string("/apps/gnome-schedule/templates/crontab/installed", newstring)
-        
-    
+
+
     def create_new_id_crontab (self):
         i = self.gconf_client.get_int ("/apps/gnome-schedule/templates/crontab/last_id")
         if i == None:
@@ -90,17 +90,17 @@ class Template:
             i = i + 1
             self.gconf_client.set_int ("/apps/gnome-schedule/templates/crontab/last_id", i)
             return i
-            
-    def savetemplate_crontab (self, template_id, title, command, output, timeexpression):   
+
+    def savetemplate_crontab (self, template_id, title, command, output, timeexpression):
 
         if (template_id == 0):
             template_id = self.create_new_id_crontab ()
-            
+
         self.gconf_client.set_string("/apps/gnome-schedule/templates/crontab/%s/timeexpression" % (str (template_id)), timeexpression)
         self.gconf_client.set_string("/apps/gnome-schedule/templates/crontab/%s/title" % (str (template_id)), title)
         self.gconf_client.set_string("/apps/gnome-schedule/templates/crontab/%s/command" % (str (template_id)), command)
         self.gconf_client.set_int("/apps/gnome-schedule/templates/crontab/%s/output" % (str (template_id)), output)
-        
+
         installed = self.gconf_client.get_string("/apps/gnome-schedule/templates/crontab/installed")
         if installed == None:
             installed = str(template_id)
@@ -110,16 +110,16 @@ class Template:
             for t in installed.split (", "):
                 if t == str (template_id):
                     found = True
-        
+
             if found == False:
                 installed = installed + ", " + str (template_id)
-                
+
         self.gconf_client.unset ("/apps/gnome-schedule/templates/crontab/installed")
         self.gconf_client.set_string("/apps/gnome-schedule/templates/crontab/installed", installed)
         self.parent.template_manager.reload_tv ()
         self.parent.template_chooser.reload_tv ()
-        
-        
+
+
     def gettemplateids (self, type):
         strlist = self.gconf_client.get_string("/apps/gnome-schedule/templates/" + type + "/installed")
         if strlist != None:
@@ -138,17 +138,17 @@ class Template:
                 output = self.gconf_client.get_int("/apps/gnome-schedule/templates/" + type + "/%s/output" % (str (template_id)))
                 timeexpression = self.gconf_client.get_string("/apps/gnome-schedule/templates/" + type + "/%s/timeexpression" % (template_id))
                 return template_id, title, command, output, timeexpression
-    
+
             except Exception, ex:
                 return False
-                
+
         elif type == "at":
             try:
                 command = self.gconf_client.get_string("/apps/gnome-schedule/templates/at/%s/command" % (str (template_id)))
                 title = self.gconf_client.get_string("/apps/gnome-schedule/templates/at/%s/title" % (str (template_id)))
                 output = self.gconf_client.get_int ("/apps/gnome-schedule/templates/at/%s/output" % (str (template_id)))
                 return template_id, title, command, output
-    
+
             except Exception, ex:
                 return False
 
@@ -160,7 +160,7 @@ class Template:
         else:
             i = i + 1
             self.gconf_client.set_int ("/apps/gnome-schedule/templates/at/last_id", i)
-            return i    
+            return i
 
     def savetemplate_at (self, template_id, title, command, output):
         print "savetemplate"
@@ -168,12 +168,12 @@ class Template:
         if (template_id == 0):
             template_id = self.create_new_id_at ()
             print "got new id"
-            
+
         self.gconf_client.set_string("/apps/gnome-schedule/templates/at/%s/title" % (str (template_id)), title)
         self.gconf_client.set_string("/apps/gnome-schedule/templates/at/%s/command" % (str (template_id)), command)
         self.gconf_client.set_int ("/apps/gnome-schedule/templates/at/%s/output" % ( str(template_id)), output)
 
-        
+
         installed = self.gconf_client.get_string("/apps/gnome-schedule/templates/at/installed")
         if installed == None:
             installed = str(template_id)
@@ -183,15 +183,15 @@ class Template:
             for t in installed.split (", "):
                 if t == str (template_id):
                     found = True
-        
+
             if found == False:
                 installed = installed + ", " + str (template_id)
-                
+
         self.gconf_client.unset ("/apps/gnome-schedule/templates/at/installed")
         self.gconf_client.set_string("/apps/gnome-schedule/templates/at/installed", installed)
         self.parent.template_manager.reload_tv ()
         self.parent.template_chooser.reload_tv ()
-        
+
     # TODO: output
     def format_at (self, title, command, output):
         command = self.parent.at.__make_preview__ (command, 0)
@@ -200,7 +200,7 @@ class Template:
             s = (s + " <i>(%s)</i>") % (str (self.parent.output_strings [2]))
 
         return s
-        
+
     def format_crontab (self, title, command, output, timeexpression):
         command = self.parent.crontab.__make_preview__ (command)
         if self.parent.edit_mode == "simple":
@@ -213,5 +213,5 @@ class Template:
 
         if output > 0:
             s = (s + " <i>(%s)</i>") % (str (self.parent.output_strings[output]))
-        
+
         return s

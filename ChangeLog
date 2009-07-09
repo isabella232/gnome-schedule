@@ -1,3 +1,9 @@
+2009-07-09  Gaute Hope  <eg@gaute.vetsj.com>
+
+	* Bug 588091: By Paul Hodges <phodeges4@gmail.com>: Make sure return
+	types are correct in get_job_data of crontab.py
+	* Remove trailing whitespaces
+
 2009-07-08  Gaute Hope  <eg@gaute.vetsj.com>
 
 	* Bug 588091: By Paul Hodges <phodges4@gmail.com>: make sure display,

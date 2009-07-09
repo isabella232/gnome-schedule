@@ -30,8 +30,8 @@ class TemplateChooser:
         self.xml = self.parent.xml
         self.widget = self.xml.get_widget ("template_chooser")
         self.widget.connect("delete-event", self.widget.hide_on_delete)
-        
-        
+
+
         self.treeview = self.xml.get_widget ("tc_treeview")
         self.button_use = self.xml.get_widget ("tc_button_use")
         hbox = gtk.HBox ()
@@ -45,38 +45,38 @@ class TemplateChooser:
         hbox.pack_start (label, True, True, 0)
         self.button_use.add (hbox)
         self.button_use.show_all ()
-        
+
         self.button_cancel = self.xml.get_widget ("tc_button_cancel")
-    
+
         self.xml.signal_connect ("on_tc_button_use_clicked", self.on_use_clicked)
         self.xml.signal_connect ("on_tc_button_cancel_clicked", self.on_cancel_clicked)
         self.xml.signal_connect ("on_tc_treeview_button_press_event", self.on_tv_pressed)
-        
+
         self.treeview.get_selection().connect("changed", self.on_tv_changed)
-                
+
         # setup liststore
         # [template id, type, type-string, formatted text, icon/pixbuf]
         self.treemodel = gtk.ListStore (gobject.TYPE_INT, gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING, gtk.gdk.Pixbuf)
-        
+
         # setup treeview
         self.treeview.set_model (self.treemodel)
         self.treeview.set_headers_visible (True)
-        
-        
+
+
         rend1 = gtk.CellRendererPixbuf ()
         rend2 = gtk.CellRendererText ()
-        
+
         column = gtk.TreeViewColumn(_("Task"))
         column.pack_start (rend1, True)
         column.pack_end (rend2, True)
         column.add_attribute (rend1, "pixbuf", 4)
         column.add_attribute (rend2, "text", 2)
         self.treeview.append_column(column)
-     
-                
+
+
         rend = gtk.CellRendererText ()
         column = gtk.TreeViewColumn(_("Description"), rend, markup=3)
-        self.treeview.append_column(column)  
+        self.treeview.append_column(column)
 
     def on_tv_changed (self, *args):
         if self.treeview.get_selection().count_selected_rows() > 0 :
@@ -84,7 +84,7 @@ class TemplateChooser:
         else:
             value = False
         self.button_use.set_sensitive (value)
-        
+
     def reload_tv (self):
         self.treemodel.clear ()
         at = self.template.gettemplateids ("at")
@@ -104,8 +104,8 @@ class TemplateChooser:
                     id2, title, command, output, timeexpression = t
                     formatted = self.template.format_crontab (title, command, output, timeexpression)
                     iter = self.treemodel.append ([int (id), "crontab", _("Recurrent"), formatted, self.parent.bigiconcrontab])
-                    
-                    
+
+
     def show (self, transient):
         # populate treeview
         self.reload_tv ()
@@ -113,18 +113,18 @@ class TemplateChooser:
         self.widget.set_transient_for (transient)
         self.widget.set_position(gtk.WIN_POS_CENTER_ON_PARENT)
         self.widget.show_all ()
-    
+
     def on_tv_pressed (self, widget, event):
         if event.type == gtk.gdk._2BUTTON_PRESS:
             self.on_use_clicked(self, widget)
-            
+
     def on_use_clicked (self, *args):
         store, iter = self.treeview.get_selection().get_selected()
         if iter != None:
             type = self.treemodel.get_value(iter, 1)
             id = self.treemodel.get_value(iter, 0)
             if type == "at":
-                t = self.template.gettemplate ("at", int (id))  
+                t = self.template.gettemplate ("at", int (id))
                 if t != False:
                     id2, title, command, output = t
                     self.parent.at_editor.showadd_template (self.transient, title, command, output)
@@ -133,10 +133,10 @@ class TemplateChooser:
                 if t != False:
                     id2, title, command, output, timeexpression = t
                     self.parent.crontab_editor.showadd_template (self.transient, title, command, output, timeexpression)
-            
+
             self.widget.hide ()
-        
+
     def on_cancel_clicked (self, *args):
         self.widget.hide ()
-    
+
 
