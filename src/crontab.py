@@ -35,7 +35,7 @@ class Crontab:
         self.root = root
         self.set_rights(user,uid,gid, user_home_dir)
         self.user_home_dir = user_home_dir
-        
+
         self.output = ["",
                         ">/dev/null 2>&1",
                         config.gs_dir + "/xwrapper.py",
@@ -45,10 +45,10 @@ class Crontab:
         self.crontabRecordRegex = re.compile('([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^\s]+)\s([^#\n$]*)(\s#\s([^\n$]*)|$)')
         self.__setup_timespec__()
         self.env_vars = [ ]
-        
+
         self.crontabdata = self.user_home_dir + "/.gnome/gnome-schedule/crontab"
         self.crontabdatafileversion = 5
-        
+
         if os.path.exists (self.user_home_dir + "/.gnome") != True:
             os.mkdir (self.user_home_dir + "/.gnome", 0700)
             os.chown (self.user_home_dir + "/.gnome", self.uid, self.gid)
@@ -60,9 +60,9 @@ class Crontab:
                     os.chown (self.crontabdata, self.uid, self.gid)
             except:
                 print _("Failed to create data dir! Make sure ~/.gnome and ~/.gnome/gnome-schedule are writable.")
-            
-        
-        
+
+
+
     def __setup_timespec__ (self):
         self.special = {
             "@reboot"  : '@reboot',
@@ -74,9 +74,9 @@ class Crontab:
             "@annually": '0 0 1 1 *',
             "@midnight": '0 0 * * *'
             }
-                
-        self.timeranges = { 
-            "minute"   : range(0,60), 
+
+        self.timeranges = {
+            "minute"   : range(0,60),
             "hour"     : range(0,24),
             "day"      : range(1,32),
             "month"    : range(1,13),
@@ -90,7 +90,7 @@ class Crontab:
             "month"    : _("Month"),
             "weekday"  : _("Weekday")
             }
-    
+
         self.monthnames = {
             "1"        : "jan",
             "2"        : "feb",
@@ -119,7 +119,7 @@ class Crontab:
             "nov"   : "11",
             "dec"   : "12"
             }
-            
+
         self.downames = {
             "0"        : "sun",
             "1"        : "mon",
@@ -130,7 +130,7 @@ class Crontab:
             "6"        : "sat",
             "7"        : "sun"
             }
-        
+
         self.downumbers = {
             "sun"   : "0",
             "mon"   : "1",
@@ -141,7 +141,7 @@ class Crontab:
             "sat"   : "6",
             "sun"   : "7"
             }
-        
+
 
     def set_rights(self,user,uid,gid, ud):
         self.user = user
@@ -163,7 +163,7 @@ class Crontab:
 
     def get_type (self):
         return "crontab"
-    
+
     def checkfield (self, expr, type):
         """Verifies format of Crontab timefields
 
@@ -173,15 +173,15 @@ class Crontab:
         a "first to last" expression. Then the expression will be splitted
         into the comma separated subexpressions.
 
-        Each subexpression will run through: 
+        Each subexpression will run through:
         1. Check for stepwidth in range (if it has one)
         2. Check for validness of range-expression (if it is one)
         3. If it is no range: Check for simple numeric
         4. If it is numeric: Check if it's in range
 
         If one of this checks failed, an exception is raised. Otherwise it will
-        do nothing. Therefore this function should be used with 
-        a try/except construct.  
+        do nothing. Therefore this function should be used with
+        a try/except construct.
         """
 
         # reboot?
@@ -193,8 +193,8 @@ class Crontab:
         else:
             timerange = self.timeranges[type]
 
-            # Replace alias names only if no leading and following alphanumeric and 
-            # no leading slash is present. Otherwise terms like "JanJan" or 
+            # Replace alias names only if no leading and following alphanumeric and
+            # no leading slash is present. Otherwise terms like "JanJan" or
             # "1Feb" would give a valid check. Values after a slash are stepwidths
             # and shouldn't have an alias.
             if type == "month": alias = self.monthnames.copy()
@@ -207,7 +207,7 @@ class Crontab:
                     expr = re.sub("(?<!\w|/)" + value + "(?!\w)", key, expr)
 
             expr = expr.replace("*", str(min(timerange)) + "-" + str(max(timerange)) )
-        
+
             list = expr.split(",")
             rexp_step = re.compile("^(\d+-\d+)/(\d+)$")
             rexp_range = re.compile("^(\d+)-(\d+)$")
@@ -218,23 +218,23 @@ class Crontab:
                     field = result.groups()[0]
                     if int(result.groups()[1]) not in timerange:
                         raise ValueError("stepwidth", self.timenames[type], _("Must be between %(min)s and %(max)s") % { "min": min(timerange), "max": max(timerange) } )
-    
+
                 result = rexp_range.match(field)
-                if (result != None): 
+                if (result != None):
                     if (int(result.groups()[0]) not in timerange) or (int(result.groups()[1]) not in timerange):
                         raise ValueError("range", self.timenames[type], _("Must be between %(min)s and %(max)s") % { "min": min(timerange), "max": max(timerange) } )
                 elif field.isdigit() != True:
                     raise ValueError("fixed", self.timenames[type], _("%s is not a number") % ( field ) )
                 elif int(field) not in timerange:
                     raise ValueError("fixed", self.timenames[type], _("Must be between %(min)s and %(max)s") % { "min": min(timerange), "max": max(timerange) } )
-    
+
 
     def update (self, minute, hour, day, month, weekday, command, linenumber, parentiter, output, job_id, comment, title, desc):
         if self.check_command (command) == False:
             return False
-            
+
         # update crontab
-        
+
         easystring = self.__easy__ (minute, hour, day, month, weekday)
 
         if job_id == False:
@@ -247,7 +247,7 @@ class Crontab:
                     last_id = 1
                 else:
                     last_id = int (r)
-                    
+
                 #print "last_id" + str (last_id)
                 job_id = last_id + 1
                 #print "job_id" + str (job_id)
@@ -262,106 +262,8 @@ class Crontab:
                 fh.close ()
 
             os.chown (f, self.uid, self.gid)
-            os.chmod (f, 0600)                  
-            
-        record = command
-        display = "0"
-        if output == 1:
-            space = " "
-            if record[len(record)-1] == " ":
-                space = ""
-            record = record + space + self.output[1]
-        elif (output == 2) or (output == 3):
-            display = os.getenv ('DISPLAY')
-            record = config.xwrapper_exec + " c " + str (job_id)
-            if output == 3:
-                record = record + " " + self.output [3]
+            os.chmod (f, 0600)
 
-        if minute == "@reboot":
-            record = "@reboot " + record 
-        else:
-            record = minute + " " + hour + " " + day + " " + month + " " + weekday + " " + record 
-
-        record = record + " # JOB_ID_" + str (job_id)
-            
-        if title == None:
-            title = _("Untitled")
-    
-        f = os.path.join (self.crontabdata, str(job_id))
-        #print f
-        fh = open (f, 'w')
-        fh.truncate (1)
-        fh.seek (0)
-        fh.write ("ver=" + str(self.crontabdatafileversion) + "\n")
-        fh.write ("title=" + title + "\n")
-        fh.write ("desc=" + desc + "\n")
-        fh.write ("output=" + str (output) + "\n")
-        fh.write ("display=" + display + "\n")  
-        fh.write ("command_d=" + command + "\n")
-        fh.close () 
-        os.chown (f, self.uid, self.gid)
-        os.chmod (f, 0600)
-        
-        self.lines[linenumber] = record
-        
-        # TODO: let write trow an exception if failed
-        self.__write__ ()
-    
-    
-    def delete (self, linenumber, iter, job_id):
-        # delete file
-        f = os.path.join (self.crontabdata, job_id)
-        if os.access(f, os.F_OK):
-            os.unlink (f)
-        
-        number = 0
-        newlines = list ()
-        for line in self.lines:
-            if number != linenumber:
-                newlines.append (line)
-            number = number + 1
-
-        self.lines = newlines
-        # TODO: let write trow an exception if failed
-        self.__write__ ()
-        
-        
-    def append (self, minute, hour, day, month, weekday, command, output, title, desc = None):
-        if self.check_command (command) == False:
-            return False
-            
-        if title == None:
-            title = _("Untitled")
-            
-        if desc == None:
-            desc = ""
-                
-        # Create and write data file
-        f = os.path.join (self.crontabdata, "last_id")
-        if os.access (f, os.R_OK):
-            fh = open (f, 'r+')
-            r = fh.read ()
-            if r == "":
-                last_id = 1
-            else:
-                last_id = int (r)
-                
-            
-            job_id = last_id + 1
-            
-            fh.seek (0)
-            fh.truncate (1)
-            fh.write ( str(job_id))
-            fh.close () 
-        else:
-            job_id = 1
-            fh = open (f, 'w')
-            fh.write ('1')
-            fh.close ()
-            
-        os.chown (f, self.uid, self.gid)
-        os.chmod (f, 0600)
-        
         record = command
         display = "0"
         if output == 1:
@@ -378,12 +280,110 @@ class Crontab:
         if minute == "@reboot":
             record = "@reboot " + record
         else:
-            record = minute + " " + hour + " " + day + " " + month + " " + weekday + " " + record 
+            record = minute + " " + hour + " " + day + " " + month + " " + weekday + " " + record
+
+        record = record + " # JOB_ID_" + str (job_id)
+
+        if title == None:
+            title = _("Untitled")
+
+        f = os.path.join (self.crontabdata, str(job_id))
+        #print f
+        fh = open (f, 'w')
+        fh.truncate (1)
+        fh.seek (0)
+        fh.write ("ver=" + str(self.crontabdatafileversion) + "\n")
+        fh.write ("title=" + title + "\n")
+        fh.write ("desc=" + desc + "\n")
+        fh.write ("output=" + str (output) + "\n")
+        fh.write ("display=" + display + "\n")
+        fh.write ("command_d=" + command + "\n")
+        fh.close ()
+        os.chown (f, self.uid, self.gid)
+        os.chmod (f, 0600)
+
+        self.lines[linenumber] = record
+
+        # TODO: let write trow an exception if failed
+        self.__write__ ()
+
+
+    def delete (self, linenumber, iter, job_id):
+        # delete file
+        f = os.path.join (self.crontabdata, job_id)
+        if os.access(f, os.F_OK):
+            os.unlink (f)
+
+        number = 0
+        newlines = list ()
+        for line in self.lines:
+            if number != linenumber:
+                newlines.append (line)
+            number = number + 1
+
+        self.lines = newlines
+        # TODO: let write trow an exception if failed
+        self.__write__ ()
+
+
+    def append (self, minute, hour, day, month, weekday, command, output, title, desc = None):
+        if self.check_command (command) == False:
+            return False
+
+        if title == None:
+            title = _("Untitled")
+
+        if desc == None:
+            desc = ""
+
+        # Create and write data file
+        f = os.path.join (self.crontabdata, "last_id")
+        if os.access (f, os.R_OK):
+            fh = open (f, 'r+')
+            r = fh.read ()
+            if r == "":
+                last_id = 1
+            else:
+                last_id = int (r)
+
+
+            job_id = last_id + 1
+
+            fh.seek (0)
+            fh.truncate (1)
+            fh.write ( str(job_id))
+            fh.close ()
+        else:
+            job_id = 1
+            fh = open (f, 'w')
+            fh.write ('1')
+            fh.close ()
+
+        os.chown (f, self.uid, self.gid)
+        os.chmod (f, 0600)
+
+        record = command
+        display = "0"
+        if output == 1:
+            space = " "
+            if record[len(record)-1] == " ":
+                space = ""
+            record = record + space + self.output[1]
+        elif (output == 2) or (output == 3):
+            display = os.getenv ('DISPLAY')
+            record = config.xwrapper_exec + " c " + str (job_id)
+            if output == 3:
+                record = record + " " + self.output [3]
+
+        if minute == "@reboot":
+            record = "@reboot " + record
+        else:
+            record = minute + " " + hour + " " + day + " " + month + " " + weekday + " " + record
 
         record = record + " # JOB_ID_" + str (job_id)
 
         self.lines.append (record)
-        
+
         f = os.path.join (self.crontabdata, str(job_id))
         fh = open (f, 'w')
         fh.truncate (1)
@@ -392,14 +392,14 @@ class Crontab:
         fh.write ("title=" + title + "\n")
         fh.write ("desc=" + desc + "\n")
         fh.write ("output=" + str(output) + "\n")
-        fh.write ("display=" + display + "\n")      
+        fh.write ("display=" + display + "\n")
         fh.write ("command_d=" + command + "\n")
         fh.close ()
         os.chown (f, self.uid, self.gid)
         os.chmod (f, 0600)
         # TODO: let write trow an exception if failed
         self.__write__ ()
-        
+
 
     #check command for problems
     def check_command (self, command):
@@ -414,23 +414,23 @@ class Crontab:
                 escaped = escaped + 1
                 part = part[0:len(part) - 1]
                 e = part.rfind ("\\")
-                
+
             if (escaped % 2 == 0):
                 return False
-                
+
             i = command.find ("%")
         return True
-        
+
     #read tasks in crontab
     def read (self):
-        
+
         data = []
 
         if self.root:
             execute = config.getCrontabbin () + " -l -u " + self.user
         else:
             execute = config.getCrontabbin () + " -l"
-        
+
         linecount = 0
         self.lines = os.popen(execute).readlines()
         for line in self.lines:
@@ -439,22 +439,22 @@ class Crontab:
             if array_or_false != False:
                 if array_or_false[0] == 2:
                     (minute, hour, day, month, weekday, command, comment, job_id, title, desc, output, display) = array_or_false[1]
-                    
+
                     time = minute + " " + hour + " " + day + " " + month + " " + weekday
 
                     #make the command smaller if the lenght is to long
                     preview = self.__make_preview__ (command)
-                
+
                     #add task to treemodel in mainWindow
                     if minute == "@reboot":
                         data.append([title, self.__easy__ (minute, hour, day, month, weekday), preview, line, linecount, time, self, None, job_id, "", "","", _("Recurrent"), "crontab", output, _("At reboot")])
                     else:
                         data.append([title, self.__easy__ (minute, hour, day, month, weekday), preview, line, linecount, time, self, None, job_id, "", "","", _("Recurrent"), "crontab", output, time])
-                
-                
-            linecount = linecount + 1   
-        
-        
+
+
+            linecount = linecount + 1
+
+
         return data
 
 
@@ -472,26 +472,26 @@ class Crontab:
             return _("weekday")
 
         return frequency
-    
-    
+
+
     #get info out of task line
     def parse (self, line, nofile = False):
         # nofile: no datafile for title and icon available
-        
+
         # Format of gnome-schedule job line
         # * * * * * ls -l >/dev/null >2&1 # JOB_ID_1
-        
+
         # Return types
         # 0: Special expression
         # 1: Enivornment variable
         # 2: Standard expression
         # 3: Comment
-        
+
         origline = line
         line = line.lstrip()
         comment = ""
-        
-        
+
+
         if line != "":
             #print "Parsing line: " + line
             if line[0] == "#":
@@ -501,20 +501,20 @@ class Crontab:
             else:
                 if (line.find ('#') != -1):
                     line, comment = line.rsplit('#', 1)
-                
+
             comment = comment.strip ()
             line = line.strip ()
-        
+
         if line == "":
             #Empty
             if comment != "":
                 return [3, comment]
             else:
                 return False
-        #special expressions        
+        #special expressions
         elif line[0] == "@":
             special_expression, line = self.get_exp_sec (line)
-                                
+
             if special_expression == "@reboot":
                 minute = "@reboot"
                 hour = "@reboot"
@@ -529,20 +529,20 @@ class Crontab:
 
                     # Minute
                     minute, line = self.get_exp_sec (line)
-            
+
                     # Hour
                     hour, line = self.get_exp_sec (line)
-                
+
                     # Day of Month
                     dom, line = self.get_exp_sec (line)
-            
+
                     # Month of Year
                     moy, line = self.get_exp_sec (line)
-            
+
                     # Day of Week
                     dow, line = self.get_exp_sec (line)
-                        
-    
+
+
         elif (line[0].isalpha()):
             if line[0] != '*':
                 #ENVIRONMENT VARIABLE
@@ -550,10 +550,10 @@ class Crontab:
         else:
             # Minute
             minute, line = self.get_exp_sec (line)
-            
+
             # Hour
             hour, line = self.get_exp_sec (line)
-        
+
             # Day of Month
             dom, line = self.get_exp_sec (line)
             # Crontab bug? Let's not support
@@ -570,34 +570,34 @@ class Crontab:
             except ValueError, ex:
                 print _("Failed to parse the Day of Month field, possibly due to a bug in crontab.")
                 return
-                    
+
             # Month of Year
             moy, line = self.get_exp_sec (line)
             if moy.isdigit () == False:
                 moy = moy.lower ()
                 for m in self.monthnumbers:
                     moy = moy.replace (m, self.monthnumbers[m])
-                    
-            
+
+
             # Day of Week
             dow, line = self.get_exp_sec (line)
             if dow.isdigit() == False:
                 dow = dow.lower ()
                 for day in self.downumbers:
                     dow = dow.replace (day, self.downumbers[day])
-            
-            
-        
+
+
+
         command = line.strip ()
-        
+
         # Retrive jobid
         i = comment.find ('JOB_ID_')
-        if (i != -1):           
+        if (i != -1):
             job_id = int (comment[i + 7:].rstrip ())
         else:
             job_id = False
 
-        
+
         # Retrive title and icon data
         if nofile == False:
             if job_id:
@@ -610,7 +610,7 @@ class Crontab:
                 output = 0
                 display = ""
                 command_d = ""
-            
+
             if (output == 0) or (output == 3):
                 # remove devnull part of command
                 # searching reverse, and only if output is saved in the datafile
@@ -619,9 +619,9 @@ class Crontab:
                     command = command[:pos]
             if output >= 2:
                 # rely on command from datafile, command from crontab line only contains xwrapper stuff
-                command = command_d            
+                command = command_d
 
-            # support older datafiles/entries without removing the no output tag    
+            # support older datafiles/entries without removing the no output tag
             if ver <= 1:
                 # old version, no output declaration in datafile, migration
                 pos = command.rfind (self.output[1])
@@ -630,20 +630,20 @@ class Crontab:
                     output = 1
                 else:
                     output = 0
-            
-            command = command.strip ()  
-                
-                
+
+            command = command.strip ()
+
+
             return [2, [minute, hour, dom, moy, dow, command, comment, job_id, title, desc, output, display]]
         else:
             return minute, hour, dom, moy, dow, command
-        
+
     def get_job_data (self, job_id):
         f = os.path.join (self.crontabdata, str (job_id))
         if os.access (f, os.R_OK):
             fh = open (f, 'r')
             d = fh.read ()
-                
+
             ver_p = d.find ("ver=")
             if ver_p == -1:
                 ver = 1
@@ -651,18 +651,18 @@ class Crontab:
                 ver_s = d[ver_p + 4:d.find ("\n")]
                 d = d[d.find ("\n") + 1:]
                 ver = int (ver_s)
-                
+
             title = d[6:d.find ("\n")]
             d = d[d.find ("\n") + 1:]
-            
+
             if ver < 3:
-                # not in use
+                # not in use, is discarded
                 icon = d[5:d.find ("\n")]
                 d = d[d.find ("\n") + 1:]
-            
+
             desc = d[5:d.find ("\n")]
             d = d[d.find ("\n") + 1:]
-            
+
             output = 0
             if (ver >= 2) and (ver < 4):
                 output_str = d[9:d.find ("\n")]
@@ -673,7 +673,7 @@ class Crontab:
                 output_str = d[7:d.find ("\n")]
                 output = int (output_str)
                 d = d[d.find ("\n") + 1:]
-                
+
             display = ""
             if ver >= 4:
                 display = d[8:d.find ("\n")]
@@ -687,19 +687,18 @@ class Crontab:
                 d = d[d.find ("\n") + 1:]
                 if (len (command_d) < 1) or (output < 2):
                     command_d = ""
-            
+
             fh.close ()
 
             return True, ver, title, desc, output, display, command_d
-            
-            
-        else: 
-            return False, "", "", "", 0, 0, ""
-                
+
+        else:
+            return False, 0, "", "", 0, "", ""
+
     def get_exp_sec (self, line):
         line = line.lstrip ()
         #print "line: \"" + line + "\""
-        
+
         ## find next whitespace
         i = 0
         found = False
@@ -713,7 +712,7 @@ class Crontab:
         #print "sec: \"" + sec + "\""
         line = line[i + 1:]
         return sec, line
-        
+
     def __easy__ (self, minute, hour, day, month, weekday):
         return lang.translate_crontab_easy (minute, hour, day, month, weekday)
 
@@ -749,12 +748,12 @@ class Crontab:
             os.system (config.getCrontabbin () + " " + path)
 
         os.unlink (path)
-        
-        
+
+
     def __make_preview__ (self, str, preview_len = 0):
         if preview_len == 0:
             preview_len = self.preview_len
-    
+
         str = str.replace ("&", "&amp")
 
         if len (str) <= preview_len:
