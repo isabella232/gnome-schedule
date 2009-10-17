@@ -8,9 +8,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-04-26 12:22+0200\n"
-"PO-Revision-Date: 2009-04-26 13:29+0100\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"schedule&component=general\n"
+"POT-Creation-Date: 2009-04-26 12:35+0000\n"
+"PO-Revision-Date: 2009-10-17 17:35+0100\n"
 "Last-Translator: Mario Blättermann <mariobl@gnome.org>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -99,7 +100,7 @@ msgstr "Grundlegend"
 #: ../src/crontab.py:192
 #, python-format
 msgid "This is not a valid special record: %(record)s"
-msgstr ""
+msgstr "Dies ist keine gültige spezielle Aufzeichnung: %(record)s"
 
 #: ../src/crontab.py:220 ../src/crontab.py:225 ../src/crontab.py:229
 #, python-format
@@ -1016,7 +1017,8 @@ msgstr "Copyright (c) %(year)s %(name)s."
 
 #: ../src/mainWindow.py:747
 msgid "translator-credits"
-msgstr "Frank Arnold <frank@scirocco-5v-turbo.de>\n"
+msgstr ""
+"Frank Arnold <frank@scirocco-5v-turbo.de>\n"
 "Hendrik Richter <hendrikr@gnome.org>\n"
 "Mario Blättermann <mariobl@gnome.org>"
 
@@ -1136,7 +1138,7 @@ msgstr "%s wird gestartet ..."
 
 #: ../src/xwrapper.py:126
 msgid "output<0: Why am I launched?"
-msgstr ""
+msgstr "output<0: Warum wurde ich gestartet?"
 
 #: ../src/xwrapper.py:129
 msgid "len(display)<2: No proper DISPLAY variable"
