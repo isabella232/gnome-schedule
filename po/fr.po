@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-03-10 16:06+0100\n"
+"POT-Creation-Date: 2009-11-19 15:56+0100\n"
 "PO-Revision-Date: 2009-03-10 16:19+0100\n"
 "Last-Translator: Claude Paroz <claude@2xlibre.net>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
@@ -41,38 +41,38 @@ msgstr "Planificateur de tâches pour GNOME"
 msgid "System tools"
 msgstr "Outils système"
 
-#: ../src/at.py:90 ../src/crontab.py:62
+#: ../src/at.py:91 ../src/crontab.py:62
 msgid ""
 "Failed to create data dir! Make sure ~/.gnome and ~/.gnome/gnome-schedule "
 "are writable."
 msgstr ""
-"La création du répertoire de données a échoué. Vérifiez que ~/.gnome "
-"et ~/.gnome/gnome-schedule sont accessibles en écriture."
+"La création du répertoire de données a échoué. Vérifiez que ~/.gnome et ~/."
+"gnome/gnome-schedule sont accessibles en écriture."
 
-#: ../src/at.py:123 ../src/crontab.py:162
+#: ../src/at.py:124 ../src/crontab.py:162
 #, python-format
 msgid ""
 "Failed to create data dir: %s. Make sure ~/.gnome and ~/.gnome/gnome-"
 "schedule are writable."
 msgstr ""
-"La création du répertoire de données a échoué : %s. Vérifiez que ~/.gnome "
-"et ~/.gnome/gnome-schedule sont accessibles en écriture."
+"La création du répertoire de données a échoué : %s. Vérifiez que ~/.gnome et "
+"~/.gnome/gnome-schedule sont accessibles en écriture."
 
-#: ../src/at.py:521
+#: ../src/at.py:522
 #, python-format
 msgid "Warning! Unknown task: %(preview)s"
 msgstr "Attention ! Tâche inconnue : %(preview)s"
 
-#: ../src/at.py:528
+#: ../src/at.py:529
 #, python-format
 msgid "On %(timestring)s"
 msgstr "Le %(timestring)s"
 
-#: ../src/at.py:534 ../src/at.py:539
+#: ../src/at.py:535 ../src/at.py:540
 msgid "Once"
 msgstr "Une seule fois"
 
-#: ../src/at.py:543
+#: ../src/at.py:544
 msgid "Warning: a line in atq's output didn't parse"
 msgstr "Avertissement : une ligne de la sortie de atq n'a pas pu être analysée"
 
@@ -568,7 +568,7 @@ msgid "ls -l"
 msgstr "ls -l"
 
 #: ../src/gnome-schedule.py:66 ../src/scheduleapplet.py:67
-#: ../src/xwrapper.py:50
+#: ../src/xwrapper.py:51
 msgid ""
 "You need to install pyGTK or GTKv2,\n"
 "or set your PYTHONPATH correctly.\n"
@@ -1105,15 +1105,15 @@ msgstr "Choisir un modèle"
 msgid "One-time"
 msgstr "Usage unique"
 
-#: ../src/xwrapper.py:59
+#: ../src/xwrapper.py:60
 msgid "Could not open a  connection to X!"
 msgstr "Impossible d'ouvrir une connexion à X."
 
-#: ../src/xwrapper.py:70 ../src/xwrapper.py:78
+#: ../src/xwrapper.py:71 ../src/xwrapper.py:79
 msgid "Wrong number of arguments."
 msgstr "Nombre de paramètres incorrect."
 
-#: ../src/xwrapper.py:72 ../src/xwrapper.py:80
+#: ../src/xwrapper.py:73 ../src/xwrapper.py:81
 msgid ""
 "Wrapper script for Gnome-schedule (http://gnome-schedule.sf.net) for "
 "applications to be run from crontab or at under X. Use through gnome-"
@@ -1123,15 +1123,15 @@ msgstr ""
 "pour le lancement d'applications à partir de crontab ou at sous X. À "
 "utiliser via gnome-schedule."
 
-#: ../src/xwrapper.py:86
+#: ../src/xwrapper.py:87
 msgid "Unknown type of job."
 msgstr "Type de tâche inconnu."
 
-#: ../src/xwrapper.py:105 ../src/xwrapper.py:109
+#: ../src/xwrapper.py:106 ../src/xwrapper.py:110
 msgid "Invalid job id."
 msgstr "Identifiant de tâche inconnu."
 
-#: ../src/xwrapper.py:116
+#: ../src/xwrapper.py:117
 msgid ""
 "Could not get job data, the task might have been created with an old version "
 "- try recreating the task."
@@ -1139,27 +1139,27 @@ msgstr ""
 "Impossible d'obtenir les données de la tâche, celle-ci a peut-être été créée "
 "avec une ancienne version. Essayez de recréer la tâche."
 
-#: ../src/xwrapper.py:120
+#: ../src/xwrapper.py:121
 msgid "Data file too old. Recreate task."
 msgstr "Fichier de données trop ancien. Recréez la tâche."
 
-#: ../src/xwrapper.py:124
+#: ../src/xwrapper.py:125
 #, python-format
 msgid "Launching %s.."
 msgstr "Lancement de %s..."
 
-#: ../src/xwrapper.py:126
+#: ../src/xwrapper.py:127
 msgid "output<0: Why am I launched?"
 msgstr "output<0 : pourquoi suis-je lancé ?"
 
-#: ../src/xwrapper.py:129
+#: ../src/xwrapper.py:130
 msgid "len(display)<2: No proper DISPLAY variable"
 msgstr "len(display)<2 : pas de variable DISPLAY correcte"
 
-#: ../src/xwrapper.py:150
+#: ../src/xwrapper.py:155
 msgid "I will never be displayed."
 msgstr "Je ne serai jamais affiché."
 
-#: ../src/xwrapper.py:153
+#: ../src/xwrapper.py:158
 msgid "xwrapper.py: completed"
 msgstr "xwrapper.py : terminé"

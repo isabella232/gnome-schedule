@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: el\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-02-15 10:03+0100\n"
+"POT-Creation-Date: 2009-11-19 15:56+0100\n"
 "PO-Revision-Date: 2005-01-03 12:40+0200\n"
 "Last-Translator: Kostas Papadimas <pkst@gnome.org>\n"
 "Language-Team: Greek <nls@tux.hellug.gr>\n"
@@ -42,28 +42,27 @@ msgstr "Gnome Schedule"
 msgid "System tools"
 msgstr ""
 
-#: ../src/at.py:88 ../src/crontab.py:62
+#: ../src/at.py:91 ../src/crontab.py:62
 msgid ""
 "Failed to create data dir! Make sure ~/.gnome and ~/.gnome/gnome-schedule "
 "are writable."
 msgstr ""
 
-#: ../src/at.py:121 ../src/crontab.py:162
+#: ../src/at.py:124 ../src/crontab.py:162
 #, python-format
 msgid ""
 "Failed to create data dir: %s. Make sure ~/.gnome and ~/.gnome/gnome-"
 "schedule are writable."
 msgstr ""
 
-#: ../src/at.py:524
+#: ../src/at.py:522
 #, python-format
-msgid "DANGEROUS PARSE: %(preview)s"
+msgid "Warning! Unknown task: %(preview)s"
 msgstr ""
 
-#. TODO: localize time and date formats
-#: ../src/at.py:530
+#: ../src/at.py:529
 #, python-format
-msgid "On %(date)s at %(time)s"
+msgid "On %(timestring)s"
 msgstr ""
 
 #: ../src/at.py:535 ../src/at.py:540
@@ -128,7 +127,7 @@ msgstr "Ανώνυμο"
 msgid "Recurrent"
 msgstr ""
 
-#: ../src/crontab.py:450 ../src/crontabEditor.py:74 ../src/lang.py:149
+#: ../src/crontab.py:450 ../src/crontabEditor.py:74 ../src/lang.py:168
 msgid "At reboot"
 msgstr ""
 
@@ -603,7 +602,7 @@ msgid "ls -l"
 msgstr ""
 
 #: ../src/gnome-schedule.py:66 ../src/scheduleapplet.py:67
-#: ../src/xwrapper.py:50
+#: ../src/xwrapper.py:51
 msgid ""
 "You need to install pyGTK or GTKv2,\n"
 "or set your PYTHONPATH correctly.\n"
@@ -612,297 +611,297 @@ msgstr ""
 
 #. Translators: Date format for expressions like 'January 21'. %B is month, %d is day number.
 #. Run the command 'man strftime' to read more about these and other available specifiers.
-#: ../src/lang.py:105
+#: ../src/lang.py:124
 msgid "%B %d"
 msgstr "%B %d"
 
 #. Translators: Date format for expressions like 'January 21, 2005'. %B is month, %d is day number, %Y is year with century.
 #. Run the command 'man strftime' to read more about these and other available specifiers.
-#: ../src/lang.py:112
+#: ../src/lang.py:131
 msgid "%B %d, %Y"
 msgstr "%B %d, %Y"
 
 #. Translators: Time without seconds. %H is hour, %M is minute.
 #. Run the command 'man strftime' to read more about these and other available specifiers.
-#: ../src/lang.py:122
+#: ../src/lang.py:141
 msgid "%H:%M"
 msgstr "%H:%M"
 
-#: ../src/lang.py:164
+#: ../src/lang.py:183
 msgid "At every full hour"
 msgstr "Κάθε πλήρης ώρα"
 
-#: ../src/lang.py:166
+#: ../src/lang.py:185
 msgid "At every minute"
 msgstr "Κάθε λεπτό"
 
-#: ../src/lang.py:168
+#: ../src/lang.py:187
 #, python-format
 msgid "At minute %(minute)s of every hour"
 msgstr ""
 
-#: ../src/lang.py:170
+#: ../src/lang.py:189
 #, python-format
 msgid "At every minute between %(time_from)s and %(time_to)s"
 msgstr ""
 
-#: ../src/lang.py:172
+#: ../src/lang.py:191
 #, python-format
 msgid "On every day at %(time)s"
 msgstr ""
 
-#: ../src/lang.py:177
+#: ../src/lang.py:196
 #, python-format
 msgid "On day %(monthday)s of every month at every full hour"
 msgstr ""
 
-#: ../src/lang.py:179
+#: ../src/lang.py:198
 #, python-format
 msgid "On day %(monthday)s of every month at every minute"
 msgstr ""
 
-#: ../src/lang.py:181
+#: ../src/lang.py:200
 #, python-format
 msgid "On day %(monthday)s of every month at minute %(minute)s of every hour"
 msgstr ""
 
-#: ../src/lang.py:183
+#: ../src/lang.py:202
 #, python-format
 msgid ""
 "On day %(monthday)s of every month at every minute between %(time_from)s and "
 "%(time_to)s"
 msgstr ""
 
-#: ../src/lang.py:185
+#: ../src/lang.py:204
 #, python-format
 msgid "On day %(monthday)s of every month at %(time)s"
 msgstr ""
 
-#: ../src/lang.py:190
+#: ../src/lang.py:209
 #, python-format
 msgid "On every day in %(month)s at every full hour"
 msgstr ""
 
-#: ../src/lang.py:192
+#: ../src/lang.py:211
 #, python-format
 msgid "On every day in %(month)s at every minute"
 msgstr ""
 
-#: ../src/lang.py:194
+#: ../src/lang.py:213
 #, python-format
 msgid "On every day in %(month)s at minute %(minute)s of every hour"
 msgstr ""
 
-#: ../src/lang.py:196
+#: ../src/lang.py:215
 #, python-format
 msgid ""
 "On every day in %(month)s at every minute between %(time_from)s and %"
 "(time_to)s"
 msgstr ""
 
-#: ../src/lang.py:198
+#: ../src/lang.py:217
 #, python-format
 msgid "On every day in %(month)s at %(time)s"
 msgstr ""
 
-#: ../src/lang.py:203
+#: ../src/lang.py:222
 #, python-format
 msgid "Every year on %(date)s at every full hour"
 msgstr ""
 
-#: ../src/lang.py:205
+#: ../src/lang.py:224
 #, python-format
 msgid "Every year on %(date)s at every minute"
 msgstr ""
 
-#: ../src/lang.py:207
+#: ../src/lang.py:226
 #, python-format
 msgid "Every year on %(date)s at minute %(minute)s of every hour"
 msgstr ""
 
-#: ../src/lang.py:209
+#: ../src/lang.py:228
 #, python-format
 msgid ""
 "Every year on %(date)s at every minute between %(time_from)s and %(time_to)s"
 msgstr ""
 
-#: ../src/lang.py:211
+#: ../src/lang.py:230
 #, python-format
 msgid "Every year on %(date)s at %(time)s"
 msgstr ""
 
-#: ../src/lang.py:216
+#: ../src/lang.py:235
 #, python-format
 msgid "On every weekday: %(weekday)s at every full hour"
 msgstr ""
 
-#: ../src/lang.py:218
+#: ../src/lang.py:237
 #, python-format
 msgid "On every weekday: %(weekday)s at every minute"
 msgstr ""
 
-#: ../src/lang.py:220
+#: ../src/lang.py:239
 #, python-format
 msgid "On every weekday: %(weekday)s at minute %(minute)s of every hour"
 msgstr ""
 
-#: ../src/lang.py:222
+#: ../src/lang.py:241
 #, python-format
 msgid ""
 "On every weekday: %(weekday)s at every minute between %(time_from)s and %"
 "(time_to)s"
 msgstr ""
 
-#: ../src/lang.py:224
+#: ../src/lang.py:243
 #, python-format
 msgid "On every weekday: %(weekday)s at %(time)s"
 msgstr ""
 
-#: ../src/lang.py:229
+#: ../src/lang.py:248
 #, python-format
 msgid ""
 "On day %(monthday)s of every month and every weekday: %(weekday)s at every "
 "full hour"
 msgstr ""
 
-#: ../src/lang.py:231
+#: ../src/lang.py:250
 #, python-format
 msgid ""
 "On day %(monthday)s of every month and every weekday: %(weekday)s at every "
 "minute"
 msgstr ""
 
-#: ../src/lang.py:233
+#: ../src/lang.py:252
 #, python-format
 msgid ""
 "On day %(monthday)s of every month and every weekday: %(weekday)s at minute %"
 "(minute)s of every hour"
 msgstr ""
 
-#: ../src/lang.py:235
+#: ../src/lang.py:254
 #, python-format
 msgid ""
 "On day %(monthday)s of every month and every weekday: %(weekday)s at every "
 "minute between %(time_from)s and %(time_to)s"
 msgstr ""
 
-#: ../src/lang.py:237
+#: ../src/lang.py:256
 #, python-format
 msgid ""
 "On day %(monthday)s of every month and every weekday: %(weekday)s at %(time)s"
 msgstr ""
 
-#: ../src/lang.py:242
+#: ../src/lang.py:261
 #, python-format
 msgid "On every weekday: %(weekday)s in %(month)s at every full hour"
 msgstr ""
 
-#: ../src/lang.py:244
+#: ../src/lang.py:263
 #, python-format
 msgid "On every weekday: %(weekday)s in %(month)s at every minute"
 msgstr ""
 
-#: ../src/lang.py:246
+#: ../src/lang.py:265
 #, python-format
 msgid ""
 "On every weekday: %(weekday)s in %(month)s at minute %(minute)s of every hour"
 msgstr ""
 
-#: ../src/lang.py:248
+#: ../src/lang.py:267
 #, python-format
 msgid ""
 "On every weekday: %(weekday)s in %(month)s at every minute between %"
 "(time_from)s and %(time_to)s"
 msgstr ""
 
-#: ../src/lang.py:250
+#: ../src/lang.py:269
 #, python-format
 msgid "On every weekday: %(weekday)s in %(month)s at %(time)s"
 msgstr ""
 
-#: ../src/lang.py:255
+#: ../src/lang.py:274
 #, python-format
 msgid ""
 "On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
 "every full hour"
 msgstr ""
 
-#: ../src/lang.py:257
+#: ../src/lang.py:276
 #, python-format
 msgid ""
 "On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
 "every minute"
 msgstr ""
 
-#: ../src/lang.py:259
+#: ../src/lang.py:278
 #, python-format
 msgid ""
 "On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
 "minute %(minute)s of every hour"
 msgstr ""
 
-#: ../src/lang.py:261
+#: ../src/lang.py:280
 #, python-format
 msgid ""
 "On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
 "every minute between %(time_from)s and %(time_to)s"
 msgstr ""
 
-#: ../src/lang.py:263
+#: ../src/lang.py:282
 #, python-format
 msgid ""
 "On every weekday: %(weekday)s in %(month)s and on %(date)s every year at %"
 "(time)s"
 msgstr ""
 
-#: ../src/lang.py:271
+#: ../src/lang.py:290
 msgid "every minute"
 msgstr "κάθε λεπτό"
 
-#: ../src/lang.py:273
+#: ../src/lang.py:292
 #, fuzzy, python-format
 msgid "minute: %s"
 msgstr "λεπτό:"
 
-#: ../src/lang.py:276
+#: ../src/lang.py:295
 msgid "every hour"
 msgstr "κάθε ώρα"
 
-#: ../src/lang.py:278
+#: ../src/lang.py:297
 #, fuzzy, python-format
 msgid "hour: %s"
 msgstr "ώρα: "
 
-#: ../src/lang.py:281
+#: ../src/lang.py:300
 #, fuzzy
 msgid "every day of month"
 msgstr "κάθε μέρα του μήνα"
 
-#: ../src/lang.py:283
+#: ../src/lang.py:302
 #, fuzzy, python-format
 msgid "day of month: %s"
 msgstr "ημέρα του μήνα:"
 
-#: ../src/lang.py:286
+#: ../src/lang.py:305
 msgid "every month"
 msgstr "κάθε μήνα"
 
-#: ../src/lang.py:288
+#: ../src/lang.py:307
 #, fuzzy, python-format
 msgid "month: %s"
 msgstr "μήνας:"
 
-#: ../src/lang.py:291
+#: ../src/lang.py:310
 #, python-format
 msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s"
 msgstr ""
 
-#: ../src/lang.py:293
+#: ../src/lang.py:312
 #, fuzzy, python-format
 msgid "weekday: %s"
 msgstr "εργάσιμη ημέρα"
 
-#: ../src/lang.py:294
+#: ../src/lang.py:313
 #, python-format
 msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 msgstr ""
@@ -1001,31 +1000,31 @@ msgid ""
 "(normally the home directory)."
 msgstr ""
 
-#: ../src/mainWindow.py:724
+#: ../src/mainWindow.py:723
 #, fuzzy
 msgid "Please select a task!"
 msgstr "Αλλαγή μιας προγραμματισμένης εργασίας"
 
-#: ../src/mainWindow.py:732
+#: ../src/mainWindow.py:731
 #, fuzzy
 msgid "About Gnome Schedule"
 msgstr "Gnome Schedule"
 
-#: ../src/mainWindow.py:733
+#: ../src/mainWindow.py:732
 msgid "Gnome Schedule"
 msgstr "Gnome Schedule"
 
-#: ../src/mainWindow.py:735
+#: ../src/mainWindow.py:734
 #, python-format
 msgid "Copyright (c) %(year)s %(name)s."
 msgstr ""
 
-#: ../src/mainWindow.py:748
+#: ../src/mainWindow.py:747
 #, fuzzy
 msgid "translator-credits"
 msgstr "Κώστας Παπαδήμας <pkst@gnome.org>"
 
-#: ../src/mainWindow.py:769
+#: ../src/mainWindow.py:768
 msgid "Could not display help"
 msgstr ""
 
@@ -1094,58 +1093,58 @@ msgstr "Προσ_θήκη εργασίας"
 msgid "One-time"
 msgstr ""
 
-#: ../src/xwrapper.py:59
+#: ../src/xwrapper.py:60
 msgid "Could not open a  connection to X!"
 msgstr ""
 
-#: ../src/xwrapper.py:70 ../src/xwrapper.py:78
+#: ../src/xwrapper.py:71 ../src/xwrapper.py:79
 msgid "Wrong number of arguments."
 msgstr ""
 
-#: ../src/xwrapper.py:72 ../src/xwrapper.py:80
+#: ../src/xwrapper.py:73 ../src/xwrapper.py:81
 msgid ""
 "Wrapper script for Gnome-schedule (http://gnome-schedule.sf.net) for "
 "applications to be run from crontab or at under X. Use through gnome-"
 "schedule."
 msgstr ""
 
-#: ../src/xwrapper.py:86
+#: ../src/xwrapper.py:87
 msgid "Unknown type of job."
 msgstr ""
 
-#: ../src/xwrapper.py:105 ../src/xwrapper.py:109
+#: ../src/xwrapper.py:106 ../src/xwrapper.py:110
 #, fuzzy
 msgid "Invalid job id."
 msgstr "Μη έγκυρο"
 
-#: ../src/xwrapper.py:116
+#: ../src/xwrapper.py:117
 msgid ""
 "Could not get job data, the task might have been created with an old version "
 "- try recreating the task."
 msgstr ""
 
-#: ../src/xwrapper.py:120
+#: ../src/xwrapper.py:121
 msgid "Data file too old. Recreate task."
 msgstr ""
 
-#: ../src/xwrapper.py:124
+#: ../src/xwrapper.py:125
 #, python-format
 msgid "Launching %s.."
 msgstr ""
 
-#: ../src/xwrapper.py:126
+#: ../src/xwrapper.py:127
 msgid "output<0: Why am I launched?"
 msgstr ""
 
-#: ../src/xwrapper.py:129
+#: ../src/xwrapper.py:130
 msgid "len(display)<2: No proper DISPLAY variable"
 msgstr ""
 
-#: ../src/xwrapper.py:150
+#: ../src/xwrapper.py:155
 msgid "I will never be displayed."
 msgstr ""
 
-#: ../src/xwrapper.py:153
+#: ../src/xwrapper.py:158
 msgid "xwrapper.py: completed"
 msgstr ""
 

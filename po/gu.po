@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule.master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-schedule&component=general\n"
-"POT-Creation-Date: 2009-05-16 16:56+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-11-19 15:56+0100\n"
 "PO-Revision-Date: 2009-05-18 12:29+0530\n"
 "Last-Translator: Sweta Kothari <swkothar@redhat.com>\n"
 "Language-Team: Gujarati\n"
@@ -142,7 +142,8 @@ msgid "weekday"
 msgstr "અઠવાડિયાનાં દિવસ"
 
 #: ../src/crontab.py:571
-msgid "Failed to parse the Day of Month field, possibly due to a bug in crontab."
+msgid ""
+"Failed to parse the Day of Month field, possibly due to a bug in crontab."
 msgstr ""
 
 #: ../src/crontabEditor.py:69 ../src/crontabEditorHelper.py:87
@@ -655,7 +656,8 @@ msgstr ""
 
 #: ../src/lang.py:228
 #, python-format
-msgid "Every year on %(date)s at every minute between %(time_from)s and %(time_to)s"
+msgid ""
+"Every year on %(date)s at every minute between %(time_from)s and %(time_to)s"
 msgstr ""
 
 #: ../src/lang.py:230
@@ -720,7 +722,8 @@ msgstr ""
 
 #: ../src/lang.py:256
 #, python-format
-msgid "On day %(monthday)s of every month and every weekday: %(weekday)s at %(time)s"
+msgid ""
+"On day %(monthday)s of every month and every weekday: %(weekday)s at %(time)s"
 msgstr ""
 
 #: ../src/lang.py:261
@@ -735,7 +738,8 @@ msgstr ""
 
 #: ../src/lang.py:265
 #, python-format
-msgid "On every weekday: %(weekday)s in %(month)s at minute %(minute)s of every hour"
+msgid ""
+"On every weekday: %(weekday)s in %(month)s at minute %(minute)s of every hour"
 msgstr ""
 
 #: ../src/lang.py:267
@@ -997,7 +1001,8 @@ msgid ""
 msgstr ""
 "ચલાવેલ કાર્યોની કામ કરતી ડિરેક્ટરી વિશે નોંધ:\n"
 "\n"
-"એકજ-સમયે કાર્યો અ ડિરેક્ટરી માંથી ચલાવાશે જ્યાં Gnome સુનિશ્ચિત એ (સામાન્ય રીતે ઘર ડિરેક્ટરી) માંથી ચલાવાય છે."
+"એકજ-સમયે કાર્યો અ ડિરેક્ટરી માંથી ચલાવાશે જ્યાં Gnome સુનિશ્ચિત એ (સામાન્ય રીતે ઘર "
+"ડિરેક્ટરી) માંથી ચલાવાય છે."
 
 #: ../src/template.py:198 ../src/template.py:212
 msgid "Title:"
@@ -1029,8 +1034,8 @@ msgid ""
 "applications to be run from crontab or at under X. Use through gnome-"
 "schedule."
 msgstr ""
-"ક્રોનટેબ અથવા X ની હેઠળ માંથી ચલાવવા માટે કાર્યક્રમો માટે Gnome-schedule (http://gnome-schedule.sf.net) "
-"રેપર સ્ક્રિપ્ટ. gnome-schedule મારફતે વાપરો."
+"ક્રોનટેબ અથવા X ની હેઠળ માંથી ચલાવવા માટે કાર્યક્રમો માટે Gnome-schedule (http://"
+"gnome-schedule.sf.net) રેપર સ્ક્રિપ્ટ. gnome-schedule મારફતે વાપરો."
 
 #: ../src/xwrapper.py:87
 msgid "Unknown type of job."
@@ -1044,7 +1049,9 @@ msgstr "અયોગ્ય જોબ id."
 msgid ""
 "Could not get job data, the task might have been created with an old version "
 "- try recreating the task."
-msgstr "જોબ માહિતીને મેળવી શકાઇ નહિં, કાર્ય ને બનાવી શકાય છે જૂની આવૃત્તિ સાથે- કાર્યને પુન:પ્રયત્ન કરવાનું પ્રયત્ન કરો."
+msgstr ""
+"જોબ માહિતીને મેળવી શકાઇ નહિં, કાર્ય ને બનાવી શકાય છે જૂની આવૃત્તિ સાથે- કાર્યને પુન:પ્રયત્ન "
+"કરવાનું પ્રયત્ન કરો."
 
 #: ../src/xwrapper.py:121
 msgid "Data file too old. Recreate task."
@@ -1070,4 +1077,3 @@ msgstr "હું કદી દર્શાવીશ નહિં."
 #: ../src/xwrapper.py:158
 msgid "xwrapper.py: completed"
 msgstr "xwrapper.py: સમાપ્ત થયેલ છે"
-

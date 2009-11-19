@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-03-24 18:53+0100\n"
+"POT-Creation-Date: 2009-11-19 15:56+0100\n"
 "PO-Revision-Date: 2009-03-07 00:43+0100\n"
 "Last-Translator: Lucas Lommer <llommer@svn.gnome.org>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
@@ -37,7 +37,7 @@ msgstr "Gnome Schedule"
 msgid "System tools"
 msgstr "Systémové nástroje"
 
-#: ../src/at.py:90 ../src/crontab.py:62
+#: ../src/at.py:91 ../src/crontab.py:62
 msgid ""
 "Failed to create data dir! Make sure ~/.gnome and ~/.gnome/gnome-schedule "
 "are writable."
@@ -45,7 +45,7 @@ msgstr ""
 "Nemohu vytvořit adresář pro data! Ujistěte se, že je do ~/.gnome a ~/.gnome/"
 "gnome-schedule povolen zápis."
 
-#: ../src/at.py:123 ../src/crontab.py:162
+#: ../src/at.py:124 ../src/crontab.py:162
 #, python-format
 msgid ""
 "Failed to create data dir: %s. Make sure ~/.gnome and ~/.gnome/gnome-"
@@ -54,21 +54,21 @@ msgstr ""
 "Nelze vytvořit adresář pro data: %s. Ujistěte se, že je do ~/.gnome a ~/."
 "gnome/gnome-schedule povolen zápis."
 
-#: ../src/at.py:521
+#: ../src/at.py:522
 #, python-format
 msgid "Warning! Unknown task: %(preview)s"
 msgstr "Varování! Neznámá úloha: %(preview)s"
 
-#: ../src/at.py:528
+#: ../src/at.py:529
 #, python-format
 msgid "On %(timestring)s"
 msgstr "V %(timestring)s"
 
-#: ../src/at.py:534 ../src/at.py:539
+#: ../src/at.py:535 ../src/at.py:540
 msgid "Once"
 msgstr "Jednou"
 
-#: ../src/at.py:543
+#: ../src/at.py:544
 msgid "Warning: a line in atq's output didn't parse"
 msgstr "Varování: Nelze parsovat řádek ve výstupu atq"
 
@@ -555,7 +555,7 @@ msgid "ls -l"
 msgstr "ls -l"
 
 #: ../src/gnome-schedule.py:66 ../src/scheduleapplet.py:67
-#: ../src/xwrapper.py:50
+#: ../src/xwrapper.py:51
 msgid ""
 "You need to install pyGTK or GTKv2,\n"
 "or set your PYTHONPATH correctly.\n"
@@ -1080,15 +1080,15 @@ msgstr "Použít šablonu"
 msgid "One-time"
 msgstr "Jen jednou"
 
-#: ../src/xwrapper.py:59
+#: ../src/xwrapper.py:60
 msgid "Could not open a  connection to X!"
 msgstr "Nelze otevřít připojení na X!"
 
-#: ../src/xwrapper.py:70 ../src/xwrapper.py:78
+#: ../src/xwrapper.py:71 ../src/xwrapper.py:79
 msgid "Wrong number of arguments."
 msgstr "Špatný počet argumentů."
 
-#: ../src/xwrapper.py:72 ../src/xwrapper.py:80
+#: ../src/xwrapper.py:73 ../src/xwrapper.py:81
 msgid ""
 "Wrapper script for Gnome-schedule (http://gnome-schedule.sf.net) for "
 "applications to be run from crontab or at under X. Use through gnome-"
@@ -1098,15 +1098,15 @@ msgstr ""
 "aplikace spuštěné z crontab nebo pod X serverem. Použijte skrze gnome-"
 "schedule."
 
-#: ../src/xwrapper.py:86
+#: ../src/xwrapper.py:87
 msgid "Unknown type of job."
 msgstr "Neznámý typ úkolu."
 
-#: ../src/xwrapper.py:105 ../src/xwrapper.py:109
+#: ../src/xwrapper.py:106 ../src/xwrapper.py:110
 msgid "Invalid job id."
 msgstr "Neplatné ID úkolu."
 
-#: ../src/xwrapper.py:116
+#: ../src/xwrapper.py:117
 msgid ""
 "Could not get job data, the task might have been created with an old version "
 "- try recreating the task."
@@ -1114,28 +1114,28 @@ msgstr ""
 "Nelze získat data úkolu, úloha mohla být vytvořena pomocí staré verze - "
 "zkuste znovu vytvořit úlohu."
 
-#: ../src/xwrapper.py:120
+#: ../src/xwrapper.py:121
 msgid "Data file too old. Recreate task."
 msgstr "Soubor s daty je příliš starý. Vytvořte úlohu znovu."
 
-#: ../src/xwrapper.py:124
+#: ../src/xwrapper.py:125
 #, python-format
 msgid "Launching %s.."
 msgstr "Spouští se %s..."
 
-#: ../src/xwrapper.py:126
+#: ../src/xwrapper.py:127
 msgid "output<0: Why am I launched?"
 msgstr "output<0: Proč mne spouštíš?"
 
-#: ../src/xwrapper.py:129
+#: ../src/xwrapper.py:130
 msgid "len(display)<2: No proper DISPLAY variable"
 msgstr "len(display)<2: Neexistuje vhodná proměnná DISPLAY"
 
-#: ../src/xwrapper.py:150
+#: ../src/xwrapper.py:155
 msgid "I will never be displayed."
 msgstr "Nebudu nikdy zobrazena."
 
-#: ../src/xwrapper.py:153
+#: ../src/xwrapper.py:158
 msgid "xwrapper.py: completed"
 msgstr "xwrapper.py: dokončeno"
 

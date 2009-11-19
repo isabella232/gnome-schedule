@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-02-15 10:03+0100\n"
+"POT-Creation-Date: 2009-11-19 15:56+0100\n"
 "PO-Revision-Date: 2005-04-21 01:33+0300\n"
 "Last-Translator: Žygimantas Beručka <uid0@akl.lt>\n"
 "Language-Team: Lithuanian <komp_lt@konferencijos.lt>\n"
@@ -38,28 +38,27 @@ msgstr "Gnome tvarkaraštis"
 msgid "System tools"
 msgstr ""
 
-#: ../src/at.py:88 ../src/crontab.py:62
+#: ../src/at.py:91 ../src/crontab.py:62
 msgid ""
 "Failed to create data dir! Make sure ~/.gnome and ~/.gnome/gnome-schedule "
 "are writable."
 msgstr ""
 
-#: ../src/at.py:121 ../src/crontab.py:162
+#: ../src/at.py:124 ../src/crontab.py:162
 #, python-format
 msgid ""
 "Failed to create data dir: %s. Make sure ~/.gnome and ~/.gnome/gnome-"
 "schedule are writable."
 msgstr ""
 
-#: ../src/at.py:524
+#: ../src/at.py:522
 #, python-format
-msgid "DANGEROUS PARSE: %(preview)s"
+msgid "Warning! Unknown task: %(preview)s"
 msgstr ""
 
-#. TODO: localize time and date formats
-#: ../src/at.py:530
-#, python-format
-msgid "On %(date)s at %(time)s"
+#: ../src/at.py:529
+#, fuzzy, python-format
+msgid "On %(timestring)s"
 msgstr "%(date)s  %(time)s"
 
 #: ../src/at.py:535 ../src/at.py:540
@@ -119,7 +118,7 @@ msgstr "Nepavadinta"
 msgid "Recurrent"
 msgstr "Pasikartojanti"
 
-#: ../src/crontab.py:450 ../src/crontabEditor.py:74 ../src/lang.py:149
+#: ../src/crontab.py:450 ../src/crontabEditor.py:74 ../src/lang.py:168
 msgid "At reboot"
 msgstr ""
 
@@ -587,7 +586,7 @@ msgid "ls -l"
 msgstr ""
 
 #: ../src/gnome-schedule.py:66 ../src/scheduleapplet.py:67
-#: ../src/xwrapper.py:50
+#: ../src/xwrapper.py:51
 msgid ""
 "You need to install pyGTK or GTKv2,\n"
 "or set your PYTHONPATH correctly.\n"
@@ -596,62 +595,62 @@ msgstr ""
 
 #. Translators: Date format for expressions like 'January 21'. %B is month, %d is day number.
 #. Run the command 'man strftime' to read more about these and other available specifiers.
-#: ../src/lang.py:105
+#: ../src/lang.py:124
 msgid "%B %d"
 msgstr "%B %d"
 
 #. Translators: Date format for expressions like 'January 21, 2005'. %B is month, %d is day number, %Y is year with century.
 #. Run the command 'man strftime' to read more about these and other available specifiers.
-#: ../src/lang.py:112
+#: ../src/lang.py:131
 msgid "%B %d, %Y"
 msgstr "%Y %B %d"
 
 #. Translators: Time without seconds. %H is hour, %M is minute.
 #. Run the command 'man strftime' to read more about these and other available specifiers.
-#: ../src/lang.py:122
+#: ../src/lang.py:141
 msgid "%H:%M"
 msgstr "%H:%M"
 
-#: ../src/lang.py:164
+#: ../src/lang.py:183
 msgid "At every full hour"
 msgstr "Kiekvieną valandą"
 
-#: ../src/lang.py:166
+#: ../src/lang.py:185
 msgid "At every minute"
 msgstr "Kiekvieną minutę"
 
-#: ../src/lang.py:168
+#: ../src/lang.py:187
 #, python-format
 msgid "At minute %(minute)s of every hour"
 msgstr "Kiekvienos valandos %(minute)s minutę"
 
-#: ../src/lang.py:170
+#: ../src/lang.py:189
 #, python-format
 msgid "At every minute between %(time_from)s and %(time_to)s"
 msgstr "Kiekvieną minutę tarp %(time_from)s ir %(time_to)s"
 
-#: ../src/lang.py:172
+#: ../src/lang.py:191
 #, python-format
 msgid "On every day at %(time)s"
 msgstr "Kasdien %(time)s"
 
-#: ../src/lang.py:177
+#: ../src/lang.py:196
 #, python-format
 msgid "On day %(monthday)s of every month at every full hour"
 msgstr "Kiekvieno mėnesio %(monthday)s dieną kiekvieną pilną valandą"
 
-#: ../src/lang.py:179
+#: ../src/lang.py:198
 #, python-format
 msgid "On day %(monthday)s of every month at every minute"
 msgstr "Kiekvieno mėnesio %(monthday)s dieną kiekvieną minutę"
 
-#: ../src/lang.py:181
+#: ../src/lang.py:200
 #, python-format
 msgid "On day %(monthday)s of every month at minute %(minute)s of every hour"
 msgstr ""
 "Kiekvieno mėnesio %(monthday)s dieną kiekvienos valandos %(minute)s minutę"
 
-#: ../src/lang.py:183
+#: ../src/lang.py:202
 #, python-format
 msgid ""
 "On day %(monthday)s of every month at every minute between %(time_from)s and "
@@ -660,28 +659,28 @@ msgstr ""
 "Kiekvieno mėnesio %(monthday)s dieną kiekvieną minutę tarp %(time_from)s ir %"
 "(time_to)s"
 
-#: ../src/lang.py:185
+#: ../src/lang.py:204
 #, python-format
 msgid "On day %(monthday)s of every month at %(time)s"
 msgstr "%(monthday)s kiekvieno mėnesio dieną %(time)s"
 
-#: ../src/lang.py:190
+#: ../src/lang.py:209
 #, python-format
 msgid "On every day in %(month)s at every full hour"
 msgstr "Kiekvieną %(month)s mėnesio dieną kiekvieną pilną valandą"
 
-#: ../src/lang.py:192
+#: ../src/lang.py:211
 #, python-format
 msgid "On every day in %(month)s at every minute"
 msgstr "Kiekvieną %(month)s mėnesio dieną kiekvieną minutę"
 
-#: ../src/lang.py:194
+#: ../src/lang.py:213
 #, python-format
 msgid "On every day in %(month)s at minute %(minute)s of every hour"
 msgstr ""
 "Kiekvieną %(month)s mėnesio dieną %(minute)s kiekvienos valandos minutę"
 
-#: ../src/lang.py:196
+#: ../src/lang.py:215
 #, python-format
 msgid ""
 "On every day in %(month)s at every minute between %(time_from)s and %"
@@ -690,27 +689,27 @@ msgstr ""
 "Kiekvieną %(month)s mėnesio dieną kiekvieną minutę tarp %(time_from)s ir %"
 "(time_to)s"
 
-#: ../src/lang.py:198
+#: ../src/lang.py:217
 #, python-format
 msgid "On every day in %(month)s at %(time)s"
 msgstr "Kiekvieną %(month)s mėnesio dieną %(time)s"
 
-#: ../src/lang.py:203
+#: ../src/lang.py:222
 #, python-format
 msgid "Every year on %(date)s at every full hour"
 msgstr "Kiekvienais metais %(date)s kiekvieną pilną valandą"
 
-#: ../src/lang.py:205
+#: ../src/lang.py:224
 #, python-format
 msgid "Every year on %(date)s at every minute"
 msgstr "Kiekvienais metais %(date)s kiekvieną minutę"
 
-#: ../src/lang.py:207
+#: ../src/lang.py:226
 #, python-format
 msgid "Every year on %(date)s at minute %(minute)s of every hour"
 msgstr "Kiekvienais metais %(date)s kiekvienos valandos %(minute)s minutę"
 
-#: ../src/lang.py:209
+#: ../src/lang.py:228
 #, python-format
 msgid ""
 "Every year on %(date)s at every minute between %(time_from)s and %(time_to)s"
@@ -718,28 +717,28 @@ msgstr ""
 "Kiekvienais metais %(date)s kiekvieną minutę tarp %(time_from)s ir %(time_to)"
 "s"
 
-#: ../src/lang.py:211
+#: ../src/lang.py:230
 #, python-format
 msgid "Every year on %(date)s at %(time)s"
 msgstr "Kiekvienais metais %(date)s %(time)s"
 
-#: ../src/lang.py:216
+#: ../src/lang.py:235
 #, fuzzy, python-format
 msgid "On every weekday: %(weekday)s at every full hour"
 msgstr "Kiekvieną %(weekday)s savaitės dieną kiekvieną pilną valandą"
 
-#: ../src/lang.py:218
+#: ../src/lang.py:237
 #, fuzzy, python-format
 msgid "On every weekday: %(weekday)s at every minute"
 msgstr "Kiekvieną %(weekday)s savaitės dieną kiekvieną minutę"
 
-#: ../src/lang.py:220
+#: ../src/lang.py:239
 #, fuzzy, python-format
 msgid "On every weekday: %(weekday)s at minute %(minute)s of every hour"
 msgstr ""
 "Kiekvieną %(weekday)s savaitės dieną kiekvienos valandos %(minute)s minutę"
 
-#: ../src/lang.py:222
+#: ../src/lang.py:241
 #, fuzzy, python-format
 msgid ""
 "On every weekday: %(weekday)s at every minute between %(time_from)s and %"
@@ -748,12 +747,12 @@ msgstr ""
 "Kiekvieną %(weekday)s savaitės dieną kiekvieną minutę tarp %(time_from)s ir %"
 "(time_to)s"
 
-#: ../src/lang.py:224
+#: ../src/lang.py:243
 #, fuzzy, python-format
 msgid "On every weekday: %(weekday)s at %(time)s"
 msgstr "Kiekvieną %(weekday)s savaitės dieną %(time)s"
 
-#: ../src/lang.py:229
+#: ../src/lang.py:248
 #, fuzzy, python-format
 msgid ""
 "On day %(monthday)s of every month and every weekday: %(weekday)s at every "
@@ -762,7 +761,7 @@ msgstr ""
 "Kiekvieno mėnesio %(monthday)s dieną ir kiekvieną %(weekday)s savaitės dieną "
 "kiekvieną pilną valandą"
 
-#: ../src/lang.py:231
+#: ../src/lang.py:250
 #, fuzzy, python-format
 msgid ""
 "On day %(monthday)s of every month and every weekday: %(weekday)s at every "
@@ -771,7 +770,7 @@ msgstr ""
 "Kiekvieno mėnesio %(monthday)s dieną ir kiekvieną %(weekday)s savaitės dieną "
 "kiekvieną minutę"
 
-#: ../src/lang.py:233
+#: ../src/lang.py:252
 #, fuzzy, python-format
 msgid ""
 "On day %(monthday)s of every month and every weekday: %(weekday)s at minute %"
@@ -780,7 +779,7 @@ msgstr ""
 "Kiekvieno mėnesio %(monthday)s dieną ir kiekvieną %(weekday)s savaitės dieną "
 "kiekvienos valandos %(minute)s minutę"
 
-#: ../src/lang.py:235
+#: ../src/lang.py:254
 #, fuzzy, python-format
 msgid ""
 "On day %(monthday)s of every month and every weekday: %(weekday)s at every "
@@ -789,7 +788,7 @@ msgstr ""
 "Kiekvieno mėnesio %(monthday)s dieną ir kiekvieną %(weekday)s kiekvieną "
 "minutę tarp %(time_from)s ir %(time_to)s"
 
-#: ../src/lang.py:237
+#: ../src/lang.py:256
 #, fuzzy, python-format
 msgid ""
 "On day %(monthday)s of every month and every weekday: %(weekday)s at %(time)s"
@@ -797,18 +796,18 @@ msgstr ""
 "Kiekvieno mėnesio %(monthday)s dieną ir kiekvieną %(weekday)s savaitės dieną "
 "%(time)s"
 
-#: ../src/lang.py:242
+#: ../src/lang.py:261
 #, fuzzy, python-format
 msgid "On every weekday: %(weekday)s in %(month)s at every full hour"
 msgstr "Kiekviena %(month)s mėnesio %(weekday)s dieną kiekvieną pilną valandą"
 
-#: ../src/lang.py:244
+#: ../src/lang.py:263
 #, fuzzy, python-format
 msgid "On every weekday: %(weekday)s in %(month)s at every minute"
 msgstr ""
 "Kiekvieną %(month)s mėnesio %(weekday)s savaitės dieną kiekvieną minutę"
 
-#: ../src/lang.py:246
+#: ../src/lang.py:265
 #, fuzzy, python-format
 msgid ""
 "On every weekday: %(weekday)s in %(month)s at minute %(minute)s of every hour"
@@ -816,7 +815,7 @@ msgstr ""
 "Kiekvieną %(month)s mėnesio %(weekday)s savaitės dieną kiekvienos valandos %"
 "(minute)s minutę"
 
-#: ../src/lang.py:248
+#: ../src/lang.py:267
 #, fuzzy, python-format
 msgid ""
 "On every weekday: %(weekday)s in %(month)s at every minute between %"
@@ -825,12 +824,12 @@ msgstr ""
 "Kiekvieną %(month)s mėnesio %(weekday)s savaitės dieną kievieną minutę tarp %"
 "(time_from)s ir %(time_to)s"
 
-#: ../src/lang.py:250
+#: ../src/lang.py:269
 #, fuzzy, python-format
 msgid "On every weekday: %(weekday)s in %(month)s at %(time)s"
 msgstr "Kiekvieną %(month)s mėnesio %(weekday)s savaitės dieną %(time)s"
 
-#: ../src/lang.py:255
+#: ../src/lang.py:274
 #, fuzzy, python-format
 msgid ""
 "On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
@@ -839,7 +838,7 @@ msgstr ""
 "Kiekvienų metų %(date)s ir %(month)s mėnesio kiekvieną %(weekday)s savaitės "
 "dieną kiekvieną pilną valandą"
 
-#: ../src/lang.py:257
+#: ../src/lang.py:276
 #, fuzzy, python-format
 msgid ""
 "On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
@@ -848,7 +847,7 @@ msgstr ""
 "Kiekvienų metų %(date)s ir %(month)s mėnesio kiekvieną %(weekday)s dieną "
 "kiekvieną minutę"
 
-#: ../src/lang.py:259
+#: ../src/lang.py:278
 #, fuzzy, python-format
 msgid ""
 "On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
@@ -857,7 +856,7 @@ msgstr ""
 "Kiekvienų metų %(date)s ir %(month)s mėnesio kiekvieną %(weekday)s savaitės "
 "dieną kiekvienos valandos %(minute)s minutę"
 
-#: ../src/lang.py:261
+#: ../src/lang.py:280
 #, fuzzy, python-format
 msgid ""
 "On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
@@ -866,7 +865,7 @@ msgstr ""
 "Kiekvienų metų %(date)s ir %(month)s mėnesio kiekvieną %(weekday)s savaitės "
 "dieną kiekvieną minutę tarp %(time_from)s ir %(time_to)s"
 
-#: ../src/lang.py:263
+#: ../src/lang.py:282
 #, fuzzy, python-format
 msgid ""
 "On every weekday: %(weekday)s in %(month)s and on %(date)s every year at %"
@@ -875,53 +874,53 @@ msgstr ""
 "Kiekvienų metų %(date)s ir %(month)s mėnesio kiekvieną %(weekday)s dieną %"
 "(time)s"
 
-#: ../src/lang.py:271
+#: ../src/lang.py:290
 msgid "every minute"
 msgstr "kiekvieną minutę"
 
-#: ../src/lang.py:273
+#: ../src/lang.py:292
 #, python-format
 msgid "minute: %s"
 msgstr "minutė: %s"
 
-#: ../src/lang.py:276
+#: ../src/lang.py:295
 msgid "every hour"
 msgstr "kiekvieną valandą"
 
-#: ../src/lang.py:278
+#: ../src/lang.py:297
 #, python-format
 msgid "hour: %s"
 msgstr "valanda: %s"
 
-#: ../src/lang.py:281
+#: ../src/lang.py:300
 msgid "every day of month"
 msgstr "kiekvieną mėnesio dieną"
 
-#: ../src/lang.py:283
+#: ../src/lang.py:302
 #, python-format
 msgid "day of month: %s"
 msgstr "mėnesio diena: %s"
 
-#: ../src/lang.py:286
+#: ../src/lang.py:305
 msgid "every month"
 msgstr "kiekvieną mėnesį"
 
-#: ../src/lang.py:288
+#: ../src/lang.py:307
 #, python-format
 msgid "month: %s"
 msgstr "mėnuo: %s"
 
-#: ../src/lang.py:291
+#: ../src/lang.py:310
 #, python-format
 msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s"
 msgstr "%(minute)s, %(hour)s, %(monthday)s, %(month)s"
 
-#: ../src/lang.py:293
+#: ../src/lang.py:312
 #, python-format
 msgid "weekday: %s"
 msgstr "savaitės diena: %s"
 
-#: ../src/lang.py:294
+#: ../src/lang.py:313
 #, python-format
 msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 msgstr "%(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
@@ -1023,30 +1022,30 @@ msgid ""
 "(normally the home directory)."
 msgstr ""
 
-#: ../src/mainWindow.py:724
+#: ../src/mainWindow.py:723
 #, fuzzy
 msgid "Please select a task!"
 msgstr "Prašau pasirinkite užduotį"
 
-#: ../src/mainWindow.py:732
+#: ../src/mainWindow.py:731
 #, fuzzy
 msgid "About Gnome Schedule"
 msgstr "Gnome tvarkaraštis"
 
-#: ../src/mainWindow.py:733
+#: ../src/mainWindow.py:732
 msgid "Gnome Schedule"
 msgstr "Gnome tvarkaraštis"
 
-#: ../src/mainWindow.py:735
+#: ../src/mainWindow.py:734
 #, python-format
 msgid "Copyright (c) %(year)s %(name)s."
 msgstr ""
 
-#: ../src/mainWindow.py:748
+#: ../src/mainWindow.py:747
 msgid "translator-credits"
 msgstr "Žygimantas Beručka <uid0@akl.lt>"
 
-#: ../src/mainWindow.py:769
+#: ../src/mainWindow.py:768
 msgid "Could not display help"
 msgstr ""
 
@@ -1114,57 +1113,57 @@ msgstr "_Pridėti užduotį"
 msgid "One-time"
 msgstr "Vieną kartą"
 
-#: ../src/xwrapper.py:59
+#: ../src/xwrapper.py:60
 msgid "Could not open a  connection to X!"
 msgstr ""
 
-#: ../src/xwrapper.py:70 ../src/xwrapper.py:78
+#: ../src/xwrapper.py:71 ../src/xwrapper.py:79
 msgid "Wrong number of arguments."
 msgstr ""
 
-#: ../src/xwrapper.py:72 ../src/xwrapper.py:80
+#: ../src/xwrapper.py:73 ../src/xwrapper.py:81
 msgid ""
 "Wrapper script for Gnome-schedule (http://gnome-schedule.sf.net) for "
 "applications to be run from crontab or at under X. Use through gnome-"
 "schedule."
 msgstr ""
 
-#: ../src/xwrapper.py:86
+#: ../src/xwrapper.py:87
 msgid "Unknown type of job."
 msgstr ""
 
-#: ../src/xwrapper.py:105 ../src/xwrapper.py:109
+#: ../src/xwrapper.py:106 ../src/xwrapper.py:110
 msgid "Invalid job id."
 msgstr ""
 
-#: ../src/xwrapper.py:116
+#: ../src/xwrapper.py:117
 msgid ""
 "Could not get job data, the task might have been created with an old version "
 "- try recreating the task."
 msgstr ""
 
-#: ../src/xwrapper.py:120
+#: ../src/xwrapper.py:121
 msgid "Data file too old. Recreate task."
 msgstr ""
 
-#: ../src/xwrapper.py:124
+#: ../src/xwrapper.py:125
 #, python-format
 msgid "Launching %s.."
 msgstr ""
 
-#: ../src/xwrapper.py:126
+#: ../src/xwrapper.py:127
 msgid "output<0: Why am I launched?"
 msgstr ""
 
-#: ../src/xwrapper.py:129
+#: ../src/xwrapper.py:130
 msgid "len(display)<2: No proper DISPLAY variable"
 msgstr ""
 
-#: ../src/xwrapper.py:150
+#: ../src/xwrapper.py:155
 msgid "I will never be displayed."
 msgstr ""
 
-#: ../src/xwrapper.py:153
+#: ../src/xwrapper.py:158
 msgid "xwrapper.py: completed"
 msgstr ""
 
