@@ -611,7 +611,7 @@ class Crontab:
                 display = ""
                 command_d = ""
 
-            if (output == 0) or (output == 3):
+            if (output == 1) or (output == 3):
                 # remove devnull part of command
                 # searching reverse, and only if output is saved in the datafile
                 pos = command.rfind (self.output[1])
