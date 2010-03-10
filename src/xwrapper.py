@@ -57,7 +57,7 @@ def check_X (display, xauth):
         gtk.init_check ()
 
     except Exception as e:
-        print _("Could not open a  connection to X!")
+        print _("Could not open a connection to X!")
         print e
         sys.exit (1)
 
