@@ -11,8 +11,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule HEAD\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-11-19 15:56+0100\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"schedule&component=general\n"
+"POT-Creation-Date: 2010-03-10 10:32+0000\n"
 "PO-Revision-Date: 2009-03-10 16:19+0100\n"
 "Last-Translator: Claude Paroz <claude@2xlibre.net>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
@@ -1106,7 +1107,7 @@ msgid "One-time"
 msgstr "Usage unique"
 
 #: ../src/xwrapper.py:60
-msgid "Could not open a  connection to X!"
+msgid "Could not open a connection to X!"
 msgstr "Impossible d'ouvrir une connexion à X."
 
 #: ../src/xwrapper.py:71 ../src/xwrapper.py:79
