@@ -1,5 +1,5 @@
 # xwrapper.py - wrapper around X applications
-# Copyright (C) 2004 - 2009  Gaute Hope <eg at gaute dot vetsj dot com>
+# Copyright (C) 2004 - 2010  Gaute Hope <eg at gaute dot vetsj dot com>
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by

@@ -1,6 +1,6 @@
 # mainWindow.py - mainWindow of the crontab configuration tool
+# Copyright (C) 2004 - 2010  Gaute Hope <eg at gaute dot vetsj dot com>
 # Copyright (C) 2004, 2005   Philip Van Hoof <me at pvanhoof dot be>
-# Copyright (C) 2004 - 2009  Gaute Hope <eg at gaute dot vetsj dot com>
 # Copyright (C) 2004, 2005   Kristof Vansant <de_lupus at pandora dot be>
 #
 # This program is free software; you can redistribute it and/or modify
@@ -705,15 +705,14 @@ class main:
             tmp.flush ()
             self.temp_files.append ((tmp, path))
 
-
-            execute = self.user_shell + " " + path
-
             if self.root == 1:
                 if self.user != "root":
                     execute = "su " + self.user + " -c \"" + self.user_shell + " " + path
                     os.chown (path, self.uid, self.gid)
-            os.chmod (path, stat.S_IEXEC | stat.S_IREAD)
+            else:
+                execute = self.user_shell + " " + path
 
+            os.chmod (path, stat.S_IEXEC | stat.S_IREAD)
 
             gnome.execute_terminal_shell (self.user_home_dir, execute)
 
@@ -731,7 +730,7 @@ class main:
         dlg.set_title (_("About Gnome Schedule"))
         dlg.set_name (_("Gnome Schedule"))
         dlg.set_version (config.getVersion())
-        dlg.set_copyright (_("Copyright (c) %(year)s %(name)s.") % ({ 'year' : "2004-2009", 'name' : "Gaute Hope"}))
+        dlg.set_copyright (_("Copyright (c) %(year)s %(name)s.") % ({ 'year' : "2004-2010", 'name' : "Gaute Hope"}))
         #dlg.set_comments ()
         #dlg.set_license ()
         dlg.set_website ("http://gnome-schedule.sourceforge.net")
@@ -787,4 +786,6 @@ class main:
         else:
             gtk.main_quit ()
         return True
+
+# vim: set noai sw=4 tw=4 ts=4:
 
