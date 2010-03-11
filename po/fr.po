@@ -24,7 +24,7 @@ msgstr ""
 # Utilisation de l'infinitif dans les infobulles du Bureau
 #: ../desktop/gnome-schedule.desktop.in.in.h:1
 msgid "Manage your system tasks"
-msgstr "Gèrer les tâches de votre système"
+msgstr "Gérer les tâches de votre système"
 
 #: ../desktop/gnome-schedule.desktop.in.in.h:2
 msgid "Scheduled tasks"
@@ -231,7 +231,7 @@ msgid ""
 "\n"
 "Recurrent tasks will be run from the home directory."
 msgstr ""
-"Note à propos du répertoire de travail des tâches effectuées :\n"
+"Note à propos du répertoire de travail des tâches effectuées :\n"
 "\n"
 "Les tâches récurrentes seront exécutées à partir de votre « dossier "
 "personnel »."
@@ -434,7 +434,7 @@ msgstr "Crée une nouvelle tâche à partir du modèle sélectionné"
 
 #: ../src/gnome-schedule.glade.h:21
 msgid "Create a new template."
-msgstr "Crée un nouveau modèle"
+msgstr "Crée un nouveau modèle."
 
 #: ../src/gnome-schedule.glade.h:22
 msgid "Date:"
@@ -466,7 +466,7 @@ msgstr "Modifie le modèle sélectionné"
 
 #: ../src/gnome-schedule.glade.h:32
 msgid "Execute at:"
-msgstr "Lancer à :"
+msgstr "Lancer à :"
 
 #: ../src/gnome-schedule.glade.h:33
 msgid "Execution at a specific minute, hour, day, weekday or month."
@@ -984,7 +984,7 @@ msgid ""
 "This is used to preview the task and initiates a one-time run, this does not "
 "affect the normal scheduled run times."
 msgstr ""
-"Voulez-vous lancer cette tâche maintenant ?\n"
+"Voulez-vous lancer cette tâche maintenant ?\n"
 "\n"
 "Ceci permet de tester la tâche et de lancer une exécution unique. La "
 "planification « normale » de la tâche n'en est pas affectée."
@@ -1085,7 +1085,7 @@ msgid ""
 "One-time tasks will be run from the directory where Gnome schedule is run "
 "from (normally the home directory)."
 msgstr ""
-"Note à propos du répertoire de travail des tâches effectuées :\n"
+"Note à propos du répertoire de travail des tâches effectuées :\n"
 "\n"
 "Les tâches à usage unique sont exécutées à partir du dossier où gnome-"
 "schedule a été lancé (normalement, votre dossier personnel)."
