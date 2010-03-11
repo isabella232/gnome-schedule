@@ -8,10 +8,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-11-19 15:56+0100\n"
-"PO-Revision-Date: 2009-03-07 00:43+0100\n"
-"Last-Translator: Lucas Lommer <llommer@svn.gnome.org>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"schedule&component=general\n"
+"POT-Creation-Date: 2010-03-11 08:39+0000\n"
+"PO-Revision-Date: 2010-03-11 12:01+0100\n"
+"Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -42,8 +43,8 @@ msgid ""
 "Failed to create data dir! Make sure ~/.gnome and ~/.gnome/gnome-schedule "
 "are writable."
 msgstr ""
-"Nemohu vytvořit adresář pro data! Ujistěte se, že je do ~/.gnome a ~/.gnome/"
-"gnome-schedule povolen zápis."
+"Selhalo vytvoření adresáře pro data! Ujistěte se, že je do ~/.gnome a ~/."
+"gnome/gnome-schedule povolen zápis."
 
 #: ../src/at.py:124 ../src/crontab.py:162
 #, python-format
@@ -51,7 +52,7 @@ msgid ""
 "Failed to create data dir: %s. Make sure ~/.gnome and ~/.gnome/gnome-"
 "schedule are writable."
 msgstr ""
-"Nelze vytvořit adresář pro data: %s. Ujistěte se, že je do ~/.gnome a ~/."
+"Selhalo vytvoření adresáře pro data: %s. Ujistěte se, že je do ~/.gnome a ~/."
 "gnome/gnome-schedule povolen zápis."
 
 #: ../src/at.py:522
@@ -70,7 +71,7 @@ msgstr "Jednou"
 
 #: ../src/at.py:544
 msgid "Warning: a line in atq's output didn't parse"
-msgstr "Varování: Nelze parsovat řádek ve výstupu atq"
+msgstr "Varování: Nelze analyzovat řádek ve výstupu atq"
 
 #: ../src/crontab.py:87
 msgid "Minute"
@@ -114,7 +115,7 @@ msgstr "%s není číslo"
 #: ../src/crontab.py:288 ../src/crontab.py:334 ../src/crontabEditor.py:275
 #: ../src/atEditor.py:123 ../src/atEditor.py:519 ../src/atEditor.py:545
 msgid "Untitled"
-msgstr "Nepojmenovaný"
+msgstr "Nepojmenovaná"
 
 #: ../src/crontab.py:450 ../src/crontab.py:452 ../src/template_chooser.py:106
 #: ../src/template_manager.py:111
@@ -149,7 +150,7 @@ msgstr "den v týdnu"
 msgid ""
 "Failed to parse the Day of Month field, possibly due to a bug in crontab."
 msgstr ""
-"Chyba při parsování pole dne v měsíci, pravděpodobně kvůli chybě v crontabu."
+"Chyba při analýze pole dne v měsíci, pravděpodobně kvůli chybě v crontab."
 
 #: ../src/crontabEditor.py:69 ../src/crontabEditorHelper.py:87
 #: ../src/gnome-schedule.glade.h:31
@@ -177,7 +178,7 @@ msgstr "Každý týden"
 #: ../src/crontabEditor.py:131 ../src/crontabEditor.py:142
 #: ../src/atEditor.py:125 ../src/atEditor.py:144
 msgid "Create a New Scheduled Task"
-msgstr "Vytvořit novou plánovanou úlohu"
+msgstr "Vytvoření nové plánované úlohy"
 
 #: ../src/crontabEditor.py:198 ../src/atEditor.py:162
 msgid "Edit template"
@@ -189,7 +190,7 @@ msgstr "Nová šablona"
 
 #: ../src/crontabEditor.py:249 ../src/atEditor.py:226
 msgid "Edit a Scheduled Task"
-msgstr "Upravit plánovanou úlohu"
+msgstr "Upravit naplánovanou úlohu"
 
 #: ../src/crontabEditor.py:302 ../src/crontabEditor.py:578
 #: ../src/crontabEditor.py:618
@@ -211,11 +212,11 @@ msgid ""
 "redirection it must be properly escaped with the \\ letter."
 msgstr ""
 "Váš příkaz obsahuje jeden nebo více výskytů znaku %, který má specifickou "
-"funkci v cronu a nelze jej s Gnome Schedule použít z důvodu formátu ukládání "
-"zvláštních informací do řádky v cronu. Namísto něj použijte prosím znak |. "
-"Více informací o znaku % naleznete na manuálové stránce příkazu crontab. "
-"Pokud jej nechcete použít pro přesměrování, musí být správne escapován "
-"znakem \\."
+"funkci pro cron a nelze jej s Gnome Schedule použít z důvodu formátu, který "
+"se používá pro ukládání zvláštních informací do řádku v crontab. Namísto něj "
+"použijte prosím znak |. Více informací o znaku % naleznete na manuálové "
+"stránce příkazu crontab. Pokud jej nechcete použít pro přesměrování, musí "
+"být správně ošetřen jako sekvence escape znakem \\."
 
 #: ../src/crontabEditor.py:456
 msgid ""
@@ -269,7 +270,7 @@ msgstr "Toto není platné. Důvod: %s"
 msgid "At an exact minute"
 msgstr "V přesnou minutu"
 
-#: ../src/crontabEditorHelper.py:232 ../src/gnome-schedule.glade.h:43
+#: ../src/crontabEditorHelper.py:232 ../src/gnome-schedule.glade.h:44
 msgid "Minute:"
 msgstr "Minuta:"
 
@@ -278,7 +279,7 @@ msgstr "Minuta:"
 msgid "At an exact hour"
 msgstr "V přesnou hodinu"
 
-#: ../src/crontabEditorHelper.py:236 ../src/gnome-schedule.glade.h:39
+#: ../src/crontabEditorHelper.py:236 ../src/gnome-schedule.glade.h:40
 msgid "Hour:"
 msgstr "Hodina:"
 
@@ -296,7 +297,7 @@ msgstr "Den:"
 msgid "In a month"
 msgstr "V měsíci"
 
-#: ../src/crontabEditorHelper.py:244 ../src/gnome-schedule.glade.h:45
+#: ../src/crontabEditorHelper.py:244 ../src/gnome-schedule.glade.h:46
 msgid "Month:"
 msgstr "Měsíc:"
 
@@ -305,15 +306,15 @@ msgstr "Měsíc:"
 msgid "On a weekday"
 msgstr "Ve dni v týdnu"
 
-#: ../src/crontabEditorHelper.py:248 ../src/gnome-schedule.glade.h:58
+#: ../src/crontabEditorHelper.py:248 ../src/gnome-schedule.glade.h:59
 msgid "Weekday:"
 msgstr "Den v týdnu:"
 
-#: ../src/crontabEditorHelper.py:253 ../src/gnome-schedule.glade.h:41
+#: ../src/crontabEditorHelper.py:253 ../src/gnome-schedule.glade.h:42
 msgid "In a step width"
-msgstr "V krocích o šířce"
+msgstr "V krocích o délce"
 
-#: ../src/crontabEditorHelper.py:255 ../src/gnome-schedule.glade.h:44
+#: ../src/crontabEditorHelper.py:255 ../src/gnome-schedule.glade.h:45
 msgid "Minutes:"
 msgstr "Minuty:"
 
@@ -383,7 +384,7 @@ msgstr "O Gnome Schedule"
 
 #: ../src/gnome-schedule.glade.h:9
 msgid "Add a Scheduled Task"
-msgstr "Přidat plánovanou úlohu"
+msgstr "Přidání plánované úlohy"
 
 #: ../src/gnome-schedule.glade.h:10
 msgid "Add as template"
@@ -399,7 +400,7 @@ msgstr "Změnit uživatele"
 
 #: ../src/gnome-schedule.glade.h:15
 msgid "Change edit mode"
-msgstr "Změnit mód úprav"
+msgstr "Změnit režim úprav"
 
 #: ../src/gnome-schedule.glade.h:16
 msgid "Choose template"
@@ -454,15 +455,16 @@ msgstr "Upravit plánovanou úlohu"
 msgid "Edit the selected template"
 msgstr "Upravit zvolenou šablonu"
 
-#: ../src/gnome-schedule.glade.h:32
+#. This comes before the time and date input boxes in the One-time task editor
+#: ../src/gnome-schedule.glade.h:33
 msgid "Execute at:"
 msgstr "Spustit v:"
 
-#: ../src/gnome-schedule.glade.h:33
+#: ../src/gnome-schedule.glade.h:34
 msgid "Execution at a specific minute, hour, day, weekday or month."
 msgstr "Spouštění v určitou minutu, hodinu, den, den v týdnu nebo měsíc."
 
-#: ../src/gnome-schedule.glade.h:34
+#: ../src/gnome-schedule.glade.h:35
 msgid ""
 "Execution at a step width. For example every five minutes, hours, days, "
 "weekdays or months."
@@ -470,87 +472,87 @@ msgstr ""
 "Spouštění s pravidelným intervalem. Například každých pět minut, hodin, dnů, "
 "dnů v týdnu nebo měsíců."
 
-#: ../src/gnome-schedule.glade.h:35
+#: ../src/gnome-schedule.glade.h:36
 msgid "Execution at every minute, hour, day, weekday or month."
 msgstr "Spouštění každou minutu, hodinu, den, den v týdnu nebo měsíc."
 
-#: ../src/gnome-schedule.glade.h:36
+#: ../src/gnome-schedule.glade.h:37
 msgid "Execution in a range."
 msgstr "Spouštění v rozsahu."
 
-#: ../src/gnome-schedule.glade.h:37
+#: ../src/gnome-schedule.glade.h:38
 msgid "Expression:"
 msgstr "Výraz:"
 
-#: ../src/gnome-schedule.glade.h:38
+#: ../src/gnome-schedule.glade.h:39
 msgid "From:"
 msgstr "Od:"
 
-#: ../src/gnome-schedule.glade.h:40
+#: ../src/gnome-schedule.glade.h:41
 msgid "In a range"
 msgstr "V rozsahu"
 
-#: ../src/gnome-schedule.glade.h:42
+#: ../src/gnome-schedule.glade.h:43
 msgid "Manage templates"
 msgstr "Spravovat šablony"
 
-#: ../src/gnome-schedule.glade.h:46
+#: ../src/gnome-schedule.glade.h:47
 msgid "Other"
 msgstr "Jiné"
 
-#: ../src/gnome-schedule.glade.h:47
+#: ../src/gnome-schedule.glade.h:48
 msgid "Run selected task"
 msgstr "Spustit zvolenou úlohu"
 
-#: ../src/gnome-schedule.glade.h:48
+#: ../src/gnome-schedule.glade.h:49
 msgid "Run task"
 msgstr "Spustit úlohu"
 
-#: ../src/gnome-schedule.glade.h:49
+#: ../src/gnome-schedule.glade.h:50
 msgid "Scheduled and active tasks"
 msgstr "Plánované a aktiní úlohy"
 
-#: ../src/gnome-schedule.glade.h:50
-msgid "See \"man 5 crontab\" for information about the crontab format."
-msgstr "Více informací o formátu crontab naleznete v \"man 5 crontab\"."
-
 #: ../src/gnome-schedule.glade.h:51
+msgid "See \"man 5 crontab\" for information about the crontab format."
+msgstr "Více informací o formátu crontab naleznete v „man 5 crontab“."
+
+#: ../src/gnome-schedule.glade.h:52
 msgid "Show help"
 msgstr "Zobrazit nápovědu"
 
-#: ../src/gnome-schedule.glade.h:52
+#: ../src/gnome-schedule.glade.h:53
 msgid "Task description:"
 msgstr "Popis úlohy:"
 
-#: ../src/gnome-schedule.glade.h:53
+#: ../src/gnome-schedule.glade.h:54
 msgid "Task:"
 msgstr "Úloha:"
 
-#: ../src/gnome-schedule.glade.h:54
+#: ../src/gnome-schedule.glade.h:55
 msgid "Templates"
 msgstr "Šablony"
 
-#: ../src/gnome-schedule.glade.h:55
+#: ../src/gnome-schedule.glade.h:56
 msgid "Time expression help"
 msgstr "Nápověda o výrazech času"
 
-#: ../src/gnome-schedule.glade.h:56
+#: ../src/gnome-schedule.glade.h:57
 msgid "Time:"
 msgstr "Čas:"
 
-#: ../src/gnome-schedule.glade.h:57
+#: ../src/gnome-schedule.glade.h:58
 msgid "To:"
 msgstr "Do:"
 
-#: ../src/gnome-schedule.glade.h:59 ../src/mainWindow.py:73
+#: ../src/gnome-schedule.glade.h:60 ../src/mainWindow.py:73
 msgid "X application"
 msgstr "Aplikace pro X"
 
-#: ../src/gnome-schedule.glade.h:60
+#: ../src/gnome-schedule.glade.h:61
 msgid "_User:"
 msgstr "_Uživatel:"
 
-#: ../src/gnome-schedule.glade.h:61
+#: ../src/gnome-schedule.glade.h:62
 msgid "ls -l"
 msgstr "ls -l"
 
@@ -987,30 +989,30 @@ msgstr ""
 "adresáře, ze kterého byla spuštěna aplikace Gnome Schedule v okamžiku "
 "vytvoření úlohy (obvykle domovský adresář)."
 
-#: ../src/mainWindow.py:723
+#: ../src/mainWindow.py:722
 msgid "Please select a task!"
 msgstr "Zvolte prosím úlohu!"
 
-#: ../src/mainWindow.py:731
+#: ../src/mainWindow.py:730
 msgid "About Gnome Schedule"
 msgstr "O Gnome Schedule"
 
-#: ../src/mainWindow.py:732
+#: ../src/mainWindow.py:731
 msgid "Gnome Schedule"
 msgstr "Gnome Schedule"
 
-#: ../src/mainWindow.py:734
+#: ../src/mainWindow.py:733
 #, python-format
 msgid "Copyright (c) %(year)s %(name)s."
 msgstr "Copyright (c) %(year)s %(name)s."
 
-#: ../src/mainWindow.py:747
+#: ../src/mainWindow.py:746
 msgid "translator-credits"
 msgstr ""
 "Miloslav Trmač <mitr@volny.cz>\n"
 "Lucas Lommer <llommer@svn.gnome.org>"
 
-#: ../src/mainWindow.py:768
+#: ../src/mainWindow.py:767
 msgid "Could not display help"
 msgstr "Nelze zobrazit nápovědu"
 
@@ -1081,8 +1083,8 @@ msgid "One-time"
 msgstr "Jen jednou"
 
 #: ../src/xwrapper.py:60
-msgid "Could not open a  connection to X!"
-msgstr "Nelze otevřít připojení na X!"
+msgid "Could not open a connection to X!"
+msgstr "Nelze otevřít připojení k X!"
 
 #: ../src/xwrapper.py:71 ../src/xwrapper.py:79
 msgid "Wrong number of arguments."
@@ -1094,7 +1096,7 @@ msgid ""
 "applications to be run from crontab or at under X. Use through gnome-"
 "schedule."
 msgstr ""
-"Skript wrapperu aplikace Gnome-schedule (http://gnome-schedule.sf.net) pro "
+"Obalující skript aplikace Gnome-schedule (http://gnome-schedule.sf.net) pro "
 "aplikace spuštěné z crontab nebo pod X serverem. Použijte skrze gnome-"
 "schedule."
 
@@ -1139,11 +1141,3 @@ msgstr "Nebudu nikdy zobrazena."
 msgid "xwrapper.py: completed"
 msgstr "xwrapper.py: dokončeno"
 
-#~ msgid "DANGEROUS PARSE: %(preview)s"
-#~ msgstr "NEBEZPEČNÉ ZPRACOVÁNÍ: %(preview)s"
-
-#~ msgid "_No output (>/dev/null 2>&1)"
-#~ msgstr "Žád_ný výstup (>/dev/null 2>&1)"
-
-#~ msgid "No output"
-#~ msgstr "Bez výstupu"
