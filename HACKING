@@ -12,7 +12,7 @@ maintainers.
 
 Coding style:
     Use expanded tabs, 4 of them, on all *.py files.
-    Vim modeline suggestion: # vim: set noai sw=4 tw=4 ts=4:
+    Vim modeline suggestion: # vim : set sw=4 :
 
 Patches:
     Please send patches using 'git format-patch'
