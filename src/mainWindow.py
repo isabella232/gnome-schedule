@@ -714,7 +714,12 @@ class main:
 
             os.chmod (path, stat.S_IEXEC | stat.S_IREAD)
 
+            # unset POSIXLY_CORRECT if manually set, bug 612459
+            if self.manual_poscorrect: os.unsetenv ('POSIXLY_CORRECT')
+
             gnome.execute_terminal_shell (self.user_home_dir, execute)
+
+            if self.manual_poscorrect: os.putenv ('POSIXLY_CORRECT', 'enabled')
 
 
         except Exception, ex:
@@ -787,5 +792,5 @@ class main:
             gtk.main_quit ()
         return True
 
-# vim: set noai sw=4 tw=4 ts=4:
+# vim : set sw=4 :
 
