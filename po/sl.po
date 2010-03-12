@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-schedule&component=general\n"
-"POT-Creation-Date: 2009-12-14 20:27+0000\n"
-"PO-Revision-Date: 2010-01-07 13:32+0100\n"
+"POT-Creation-Date: 2010-03-11 14:46+0000\n"
+"PO-Revision-Date: 2010-03-12 11:11+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -276,7 +276,7 @@ msgid "At an exact minute"
 msgstr "Ob točni minuti"
 
 #: ../src/crontabEditorHelper.py:232
-#: ../src/gnome-schedule.glade.h:43
+#: ../src/gnome-schedule.glade.h:44
 msgid "Minute:"
 msgstr "Minute:"
 
@@ -286,7 +286,7 @@ msgid "At an exact hour"
 msgstr "Ob točni uri"
 
 #: ../src/crontabEditorHelper.py:236
-#: ../src/gnome-schedule.glade.h:39
+#: ../src/gnome-schedule.glade.h:40
 msgid "Hour:"
 msgstr "Ura:"
 
@@ -306,7 +306,7 @@ msgid "In a month"
 msgstr "V mesecu"
 
 #: ../src/crontabEditorHelper.py:244
-#: ../src/gnome-schedule.glade.h:45
+#: ../src/gnome-schedule.glade.h:46
 msgid "Month:"
 msgstr "Mesec:"
 
@@ -316,17 +316,17 @@ msgid "On a weekday"
 msgstr "Na delavni dan"
 
 #: ../src/crontabEditorHelper.py:248
-#: ../src/gnome-schedule.glade.h:58
+#: ../src/gnome-schedule.glade.h:59
 msgid "Weekday:"
 msgstr "Dan v tednu:"
 
 #: ../src/crontabEditorHelper.py:253
-#: ../src/gnome-schedule.glade.h:41
+#: ../src/gnome-schedule.glade.h:42
 msgid "In a step width"
 msgstr "V korak z"
 
 #: ../src/crontabEditorHelper.py:255
-#: ../src/gnome-schedule.glade.h:44
+#: ../src/gnome-schedule.glade.h:45
 msgid "Minutes:"
 msgstr "Minute:"
 
@@ -468,100 +468,101 @@ msgstr "Uredi načrtovano nalogo"
 msgid "Edit the selected template"
 msgstr "Uredi izbrano predlogo"
 
-#: ../src/gnome-schedule.glade.h:32
+#. This comes before the time and date input boxes in the One-time task editor
+#: ../src/gnome-schedule.glade.h:33
 msgid "Execute at:"
 msgstr "Izvedi ob:"
 
-#: ../src/gnome-schedule.glade.h:33
+#: ../src/gnome-schedule.glade.h:34
 msgid "Execution at a specific minute, hour, day, weekday or month."
 msgstr "Izvedba ob določeni minuti, uri, dnevu, tednu ali mesecu."
 
-#: ../src/gnome-schedule.glade.h:34
+#: ../src/gnome-schedule.glade.h:35
 msgid "Execution at a step width. For example every five minutes, hours, days, weekdays or months."
 msgstr "Izvedba po korakih. Na primer: izvedba vsakih nekaj minut, ur, dni, tednov ali mesecev."
 
-#: ../src/gnome-schedule.glade.h:35
+#: ../src/gnome-schedule.glade.h:36
 msgid "Execution at every minute, hour, day, weekday or month."
 msgstr "Izvedba ob vsaki minuti, uri, dnevu, tednu ali mesecu."
 
-#: ../src/gnome-schedule.glade.h:36
+#: ../src/gnome-schedule.glade.h:37
 msgid "Execution in a range."
 msgstr "Izvedba v območju."
 
-#: ../src/gnome-schedule.glade.h:37
+#: ../src/gnome-schedule.glade.h:38
 msgid "Expression:"
 msgstr "Izraz:"
 
-#: ../src/gnome-schedule.glade.h:38
+#: ../src/gnome-schedule.glade.h:39
 msgid "From:"
 msgstr "Od:"
 
-#: ../src/gnome-schedule.glade.h:40
+#: ../src/gnome-schedule.glade.h:41
 msgid "In a range"
 msgstr "V območju"
 
-#: ../src/gnome-schedule.glade.h:42
+#: ../src/gnome-schedule.glade.h:43
 msgid "Manage templates"
 msgstr "Upravljanje z nalogami"
 
-#: ../src/gnome-schedule.glade.h:46
+#: ../src/gnome-schedule.glade.h:47
 msgid "Other"
 msgstr "Ostalo"
 
-#: ../src/gnome-schedule.glade.h:47
+#: ../src/gnome-schedule.glade.h:48
 msgid "Run selected task"
 msgstr "Zaženi izbrano nalogo"
 
-#: ../src/gnome-schedule.glade.h:48
+#: ../src/gnome-schedule.glade.h:49
 msgid "Run task"
 msgstr "Zaženi nalogo"
 
-#: ../src/gnome-schedule.glade.h:49
+#: ../src/gnome-schedule.glade.h:50
 msgid "Scheduled and active tasks"
 msgstr "Načrtovane in dejavne naloge"
 
-#: ../src/gnome-schedule.glade.h:50
+#: ../src/gnome-schedule.glade.h:51
 msgid "See \"man 5 crontab\" for information about the crontab format."
 msgstr "Več podrobnosti o crontab obliki najdete v \"man 5 crontab\" ."
 
-#: ../src/gnome-schedule.glade.h:51
+#: ../src/gnome-schedule.glade.h:52
 msgid "Show help"
 msgstr "Kaži pomoč"
 
-#: ../src/gnome-schedule.glade.h:52
+#: ../src/gnome-schedule.glade.h:53
 msgid "Task description:"
 msgstr "Opis naloge:"
 
-#: ../src/gnome-schedule.glade.h:53
+#: ../src/gnome-schedule.glade.h:54
 msgid "Task:"
 msgstr "Naloga:"
 
-#: ../src/gnome-schedule.glade.h:54
+#: ../src/gnome-schedule.glade.h:55
 msgid "Templates"
 msgstr "Predloga"
 
-#: ../src/gnome-schedule.glade.h:55
+#: ../src/gnome-schedule.glade.h:56
 msgid "Time expression help"
 msgstr "Pomoč o časovnem zapisu"
 
-#: ../src/gnome-schedule.glade.h:56
+#: ../src/gnome-schedule.glade.h:57
 msgid "Time:"
 msgstr "Čas:"
 
-#: ../src/gnome-schedule.glade.h:57
+#: ../src/gnome-schedule.glade.h:58
 msgid "To:"
 msgstr "Na:"
 
-#: ../src/gnome-schedule.glade.h:59
+#: ../src/gnome-schedule.glade.h:60
 #: ../src/mainWindow.py:73
 msgid "X application"
 msgstr "Program za X"
 
-#: ../src/gnome-schedule.glade.h:60
+#: ../src/gnome-schedule.glade.h:61
 msgid "_User:"
 msgstr "_Uporabnik:"
 
-#: ../src/gnome-schedule.glade.h:61
+#: ../src/gnome-schedule.glade.h:62
 msgid "ls -l"
 msgstr "ls -l"
 
@@ -949,28 +950,28 @@ msgstr ""
 "\n"
 "Ponavljujoče se naloge bodo izvedene iz domače mape, enkratne naloge iz mape, kjer je zagnan program (običajno je to domača mapa)."
 
-#: ../src/mainWindow.py:723
+#: ../src/mainWindow.py:722
 msgid "Please select a task!"
 msgstr "Izberite nalogo."
 
-#: ../src/mainWindow.py:731
+#: ../src/mainWindow.py:730
 msgid "About Gnome Schedule"
 msgstr "O GNOME Urniku"
 
-#: ../src/mainWindow.py:732
+#: ../src/mainWindow.py:731
 msgid "Gnome Schedule"
 msgstr "Gnome urnik"
 
-#: ../src/mainWindow.py:734
+#: ../src/mainWindow.py:733
 #, python-format
 msgid "Copyright (c) %(year)s %(name)s."
 msgstr "Avtorske pravice (c) %(year)s %(name)s."
 
-#: ../src/mainWindow.py:747
+#: ../src/mainWindow.py:746
 msgid "translator-credits"
 msgstr "Matej Urbančič"
 
-#: ../src/mainWindow.py:768
+#: ../src/mainWindow.py:767
 msgid "Could not display help"
 msgstr "Ni mogoče prikazati pomoči"
 
@@ -1037,7 +1038,7 @@ msgid "One-time"
 msgstr "Enkrat"
 
 #: ../src/xwrapper.py:60
-msgid "Could not open a  connection to X!"
+msgid "Could not open a connection to X!"
 msgstr "Ni mogoče odpreti povezave s strežnikom X!"
 
 #: ../src/xwrapper.py:71
