@@ -124,7 +124,7 @@ if job_type == 0:
 
     print _("Launching %s.." % title)
     if (output < 2):
-        print _("output<0: Why am I launched?")
+        print _("output<2: Why am I launched?")
         sys.exit (1)
     if (len (display) < 2):
         print _("len(display)<2: No proper DISPLAY variable")
