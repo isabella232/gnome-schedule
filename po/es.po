@@ -13,8 +13,8 @@ msgstr ""
 "Project-Id-Version: gnome-schedule.HEAD\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "schedule&component=general\n"
-"POT-Creation-Date: 2010-03-10 10:32+0000\n"
-"PO-Revision-Date: 2010-03-14 23:08+0100\n"
+"POT-Creation-Date: 2010-03-15 08:22+0000\n"
+"PO-Revision-Date: 2010-03-15 19:24+0100\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -277,7 +277,7 @@ msgstr "Esto no es válido. Razón: %s"
 msgid "At an exact minute"
 msgstr "En un minuto exacto"
 
-#: ../src/crontabEditorHelper.py:232 ../src/gnome-schedule.glade.h:43
+#: ../src/crontabEditorHelper.py:232 ../src/gnome-schedule.glade.h:44
 msgid "Minute:"
 msgstr "Minuto:"
 
@@ -286,7 +286,7 @@ msgstr "Minuto:"
 msgid "At an exact hour"
 msgstr "En una hora exacta"
 
-#: ../src/crontabEditorHelper.py:236 ../src/gnome-schedule.glade.h:39
+#: ../src/crontabEditorHelper.py:236 ../src/gnome-schedule.glade.h:40
 msgid "Hour:"
 msgstr "Hora:"
 
@@ -304,7 +304,7 @@ msgstr "Día:"
 msgid "In a month"
 msgstr "En un mes"
 
-#: ../src/crontabEditorHelper.py:244 ../src/gnome-schedule.glade.h:45
+#: ../src/crontabEditorHelper.py:244 ../src/gnome-schedule.glade.h:46
 msgid "Month:"
 msgstr "Mes:"
 
@@ -313,15 +313,15 @@ msgstr "Mes:"
 msgid "On a weekday"
 msgstr "En un día de la semana"
 
-#: ../src/crontabEditorHelper.py:248 ../src/gnome-schedule.glade.h:58
+#: ../src/crontabEditorHelper.py:248 ../src/gnome-schedule.glade.h:59
 msgid "Weekday:"
 msgstr "Día de la semana:"
 
-#: ../src/crontabEditorHelper.py:253 ../src/gnome-schedule.glade.h:41
+#: ../src/crontabEditorHelper.py:253 ../src/gnome-schedule.glade.h:42
 msgid "In a step width"
 msgstr "Cada cierto tiempo"
 
-#: ../src/crontabEditorHelper.py:255 ../src/gnome-schedule.glade.h:44
+#: ../src/crontabEditorHelper.py:255 ../src/gnome-schedule.glade.h:45
 msgid "Minutes:"
 msgstr "Minutos:"
 
@@ -462,15 +462,16 @@ msgstr "Editar una tarea programada"
 msgid "Edit the selected template"
 msgstr "Editar la plantilla seleccionada"
 
-#: ../src/gnome-schedule.glade.h:32
+#. This comes before the time and date input boxes in the One-time task editor
+#: ../src/gnome-schedule.glade.h:33
 msgid "Execute at:"
 msgstr "Ejecutar en:"
 
-#: ../src/gnome-schedule.glade.h:33
+#: ../src/gnome-schedule.glade.h:34
 msgid "Execution at a specific minute, hour, day, weekday or month."
 msgstr "Se ejecuta en un minuto, hora, día, día de la semana o mes específico."
 
-#: ../src/gnome-schedule.glade.h:34
+#: ../src/gnome-schedule.glade.h:35
 msgid ""
 "Execution at a step width. For example every five minutes, hours, days, "
 "weekdays or months."
@@ -478,88 +479,88 @@ msgstr ""
 "Se ejecuta cada cierto tiempo. Por ejemplo cada cinco minutos, horas, días, "
 "días de la semana o meses."
 
-#: ../src/gnome-schedule.glade.h:35
+#: ../src/gnome-schedule.glade.h:36
 msgid "Execution at every minute, hour, day, weekday or month."
 msgstr "Se ejecuta cada minuto, hora, día, día de la semana o mes."
 
-#: ../src/gnome-schedule.glade.h:36
+#: ../src/gnome-schedule.glade.h:37
 msgid "Execution in a range."
 msgstr "Se ejecuta en un rango."
 
-#: ../src/gnome-schedule.glade.h:37
+#: ../src/gnome-schedule.glade.h:38
 msgid "Expression:"
 msgstr "Expresión:"
 
-#: ../src/gnome-schedule.glade.h:38
+#: ../src/gnome-schedule.glade.h:39
 msgid "From:"
 msgstr "Desde:"
 
-#: ../src/gnome-schedule.glade.h:40
+#: ../src/gnome-schedule.glade.h:41
 msgid "In a range"
 msgstr "En un rango"
 
-#: ../src/gnome-schedule.glade.h:42
+#: ../src/gnome-schedule.glade.h:43
 msgid "Manage templates"
 msgstr "Administrar plantillas"
 
-#: ../src/gnome-schedule.glade.h:46
+#: ../src/gnome-schedule.glade.h:47
 msgid "Other"
 msgstr "Otra"
 
-#: ../src/gnome-schedule.glade.h:47
+#: ../src/gnome-schedule.glade.h:48
 msgid "Run selected task"
 msgstr "Ejectar la tarea seleccionada"
 
-#: ../src/gnome-schedule.glade.h:48
+#: ../src/gnome-schedule.glade.h:49
 msgid "Run task"
 msgstr "Ejecutar tarea"
 
-#: ../src/gnome-schedule.glade.h:49
+#: ../src/gnome-schedule.glade.h:50
 msgid "Scheduled and active tasks"
 msgstr "Tareas programadas y activas"
 
-#: ../src/gnome-schedule.glade.h:50
+#: ../src/gnome-schedule.glade.h:51
 msgid "See \"man 5 crontab\" for information about the crontab format."
 msgstr ""
 "Vea «man 5 crontab» para obtener información acerca del formato de crontab."
 
-#: ../src/gnome-schedule.glade.h:51
+#: ../src/gnome-schedule.glade.h:52
 msgid "Show help"
 msgstr "Mostrar ayuda"
 
-#: ../src/gnome-schedule.glade.h:52
+#: ../src/gnome-schedule.glade.h:53
 msgid "Task description:"
 msgstr "Descripción de la tarea:"
 
-#: ../src/gnome-schedule.glade.h:53
+#: ../src/gnome-schedule.glade.h:54
 msgid "Task:"
 msgstr "Tarea:"
 
-#: ../src/gnome-schedule.glade.h:54
+#: ../src/gnome-schedule.glade.h:55
 msgid "Templates"
 msgstr "Plantillas"
 
-#: ../src/gnome-schedule.glade.h:55
+#: ../src/gnome-schedule.glade.h:56
 msgid "Time expression help"
 msgstr "Ayuda de la expresión del tiempo"
 
-#: ../src/gnome-schedule.glade.h:56
+#: ../src/gnome-schedule.glade.h:57
 msgid "Time:"
 msgstr "Tiempo:"
 
-#: ../src/gnome-schedule.glade.h:57
+#: ../src/gnome-schedule.glade.h:58
 msgid "To:"
 msgstr "Hasta:"
 
-#: ../src/gnome-schedule.glade.h:59 ../src/mainWindow.py:73
+#: ../src/gnome-schedule.glade.h:60 ../src/mainWindow.py:73
 msgid "X application"
 msgstr "Aplicación X"
 
-#: ../src/gnome-schedule.glade.h:60
+#: ../src/gnome-schedule.glade.h:61
 msgid "_User:"
 msgstr "_Usuario:"
 
-#: ../src/gnome-schedule.glade.h:61
+#: ../src/gnome-schedule.glade.h:62
 msgid "ls -l"
 msgstr "ls -l"
 
@@ -994,33 +995,33 @@ msgstr ""
 "Planificador de GNOME en el momento de crear la tarea (normalmente el "
 "directorio personal)"
 
-#: ../src/mainWindow.py:723
+#: ../src/mainWindow.py:727
 msgid "Please select a task!"
 msgstr "Por favor seleccione una tarea"
 
-#: ../src/mainWindow.py:731
+#: ../src/mainWindow.py:735
 msgid "About Gnome Schedule"
 msgstr "Acerca del Planificador de GNOME"
 
-#: ../src/mainWindow.py:732
+#: ../src/mainWindow.py:736
 msgid "Gnome Schedule"
 msgstr "Planificador de GNOME"
 
-#: ../src/mainWindow.py:734
+#: ../src/mainWindow.py:738
 #, python-format
 msgid "Copyright (c) %(year)s %(name)s."
 msgstr "Derechos de autor (c) %(year)s %(name)s"
 
-#: ../src/mainWindow.py:747
+#: ../src/mainWindow.py:751
 msgid "translator-credits"
 msgstr ""
 "Alejandro Valdes Jimenez <avaldes@utalca.cl>, 2007\n"
-"Jorge González <jorgegonz@svn.gnome.org>, 2007-2008\n"
+"Jorge González <jorgegonz@svn.gnome.org>, 2007-2010\n"
 "Rodrigo Marcos Fombellida <rmarcos@cvs.gnome.org>, 2005-2006\n"
 "QA: Jorge González <jorgegonz@svn.gnome.org>, 2007\n"
 "QA: Francisco Javier F. Serrador <serrador@cvs.gnome.org>, 2004-2006"
 
-#: ../src/mainWindow.py:768
+#: ../src/mainWindow.py:772
 msgid "Could not display help"
 msgstr "No se pudo mostrar la ayuda"
 
@@ -1093,7 +1094,6 @@ msgid "One-time"
 msgstr "Una sola vez"
 
 #: ../src/xwrapper.py:60
-#| msgid "Could not open a  connection to X!"
 msgid "Could not open a connection to X!"
 msgstr "No se pudo abrir una conexión con las X"
 
@@ -1137,8 +1137,9 @@ msgid "Launching %s.."
 msgstr "Lanzando %s..."
 
 #: ../src/xwrapper.py:127
-msgid "output<0: Why am I launched?"
-msgstr "salida<0: ¿Por qué se lanzó?"
+#| msgid "output<0: Why am I launched?"
+msgid "output<2: Why am I launched?"
+msgstr "salida<2: ¿Por qué se lanzó?"
 
 #: ../src/xwrapper.py:130
 msgid "len(display)<2: No proper DISPLAY variable"
