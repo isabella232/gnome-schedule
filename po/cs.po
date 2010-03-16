@@ -8,10 +8,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
-"schedule&component=general\n"
-"POT-Creation-Date: 2010-03-11 08:39+0000\n"
-"PO-Revision-Date: 2010-03-11 12:01+0100\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-03-16 19:23+0100\n"
+"PO-Revision-Date: 2010-03-15 12:27+0100\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -989,30 +988,30 @@ msgstr ""
 "adresáře, ze kterého byla spuštěna aplikace Gnome Schedule v okamžiku "
 "vytvoření úlohy (obvykle domovský adresář)."
 
-#: ../src/mainWindow.py:722
+#: ../src/mainWindow.py:727
 msgid "Please select a task!"
 msgstr "Zvolte prosím úlohu!"
 
-#: ../src/mainWindow.py:730
+#: ../src/mainWindow.py:735
 msgid "About Gnome Schedule"
 msgstr "O Gnome Schedule"
 
-#: ../src/mainWindow.py:731
+#: ../src/mainWindow.py:736
 msgid "Gnome Schedule"
 msgstr "Gnome Schedule"
 
-#: ../src/mainWindow.py:733
+#: ../src/mainWindow.py:738
 #, python-format
 msgid "Copyright (c) %(year)s %(name)s."
 msgstr "Copyright (c) %(year)s %(name)s."
 
-#: ../src/mainWindow.py:746
+#: ../src/mainWindow.py:751
 msgid "translator-credits"
 msgstr ""
 "Miloslav Trmač <mitr@volny.cz>\n"
 "Lucas Lommer <llommer@svn.gnome.org>"
 
-#: ../src/mainWindow.py:767
+#: ../src/mainWindow.py:772
 msgid "Could not display help"
 msgstr "Nelze zobrazit nápovědu"
 
@@ -1126,8 +1125,8 @@ msgid "Launching %s.."
 msgstr "Spouští se %s..."
 
 #: ../src/xwrapper.py:127
-msgid "output<0: Why am I launched?"
-msgstr "output<0: Proč mne spouštíš?"
+msgid "output<2: Why am I launched?"
+msgstr "output<2: Proč mne spouštíš?"
 
 #: ../src/xwrapper.py:130
 msgid "len(display)<2: No proper DISPLAY variable"
@@ -1140,4 +1139,3 @@ msgstr "Nebudu nikdy zobrazena."
 #: ../src/xwrapper.py:158
 msgid "xwrapper.py: completed"
 msgstr "xwrapper.py: dokončeno"
-
