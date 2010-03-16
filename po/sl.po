@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-schedule&component=general\n"
-"POT-Creation-Date: 2010-03-11 14:46+0000\n"
-"PO-Revision-Date: 2010-03-12 11:11+0100\n"
+"POT-Creation-Date: 2010-03-16 18:23+0000\n"
+"PO-Revision-Date: 2010-03-16 21:54+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -950,28 +950,28 @@ msgstr ""
 "\n"
 "Ponavljujoče se naloge bodo izvedene iz domače mape, enkratne naloge iz mape, kjer je zagnan program (običajno je to domača mapa)."
 
-#: ../src/mainWindow.py:722
+#: ../src/mainWindow.py:727
 msgid "Please select a task!"
 msgstr "Izberite nalogo."
 
-#: ../src/mainWindow.py:730
+#: ../src/mainWindow.py:735
 msgid "About Gnome Schedule"
 msgstr "O GNOME Urniku"
 
-#: ../src/mainWindow.py:731
+#: ../src/mainWindow.py:736
 msgid "Gnome Schedule"
 msgstr "Gnome urnik"
 
-#: ../src/mainWindow.py:733
+#: ../src/mainWindow.py:738
 #, python-format
 msgid "Copyright (c) %(year)s %(name)s."
 msgstr "Avtorske pravice (c) %(year)s %(name)s."
 
-#: ../src/mainWindow.py:746
+#: ../src/mainWindow.py:751
 msgid "translator-credits"
 msgstr "Matej Urbančič"
 
-#: ../src/mainWindow.py:767
+#: ../src/mainWindow.py:772
 msgid "Could not display help"
 msgstr "Ni mogoče prikazati pomoči"
 
@@ -1074,8 +1074,8 @@ msgid "Launching %s.."
 msgstr "Zaganjanje %s ..."
 
 #: ../src/xwrapper.py:127
-msgid "output<0: Why am I launched?"
-msgstr "odvod<0: Zakaj je progrtam zagnan?"
+msgid "output<2: Why am I launched?"
+msgstr "odvod<2: Zakaj je program zagnan?"
 
 #: ../src/xwrapper.py:130
 msgid "len(display)<2: No proper DISPLAY variable"
