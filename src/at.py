@@ -164,17 +164,7 @@ fi
                     #removing ending newlines, but keep one
                     #if a date in the past is selected the record is removed by at, this creates an error, and generally if the script is of zero length
                     # TODO: complain about it as well
-
-                    if len(script) < 2:
-                        done = 1
-                    else:
-                        done = 0
-
-                    while done == 0:
-                        if script[-1] == "\n":
-                            script = script[0:-1]
-                        else:
-                            done = 1
+                    script = script.rstrip()
 
                     return job_id, date, time, class_id, user, script, title, dangerous, output
 
@@ -620,25 +610,7 @@ fi
         result = result.replace("\n",";")
         result = result.replace ("&", "&amp;")
         #remove ending newlines, not if result len = 0
-        if len(result) < 2:
-            done = 1
-        else:
-            done = 0
-        while done == 0:
-            if result[-1] == ";":
-                result = result[0:-1]
-            else:
-                done = 1
-        #remove beginning newlines
-        if len(result) < 2:
-            done = 1
-        else:
-            done = 0
-        while done == 0:
-            if result[0] == ";":
-                result = result[1:]
-            else:
-                done = 1
+        result = result.strip ()
 
         if len(result) >= preview_len :
             result = result + "..."
