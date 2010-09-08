@@ -25,7 +25,7 @@ msgstr "Διαχείριση του εργασιών συστήματος"
 
 #: ../desktop/gnome-schedule.desktop.in.in.h:2
 msgid "Scheduled tasks"
-msgstr "Προγραμματισμένες εργασίας"
+msgstr "Προγραμματισμένες εργασίες"
 
 #: ../servers/GNOME_GnomeSchedule.server.in.in.h:1
 msgid "Configures your scheduled tasks"
@@ -391,7 +391,7 @@ msgstr "<big>Ώρα και Ημερομηνία</big>"
 
 #: ../src/gnome-schedule.glade.h:8
 msgid "About Gnome-schedule"
-msgstr "Περί Gnome Schedule"
+msgstr "Περί του Gnome Schedule"
 
 #: ../src/gnome-schedule.glade.h:9
 msgid "Add a Scheduled Task"
@@ -554,11 +554,11 @@ msgstr "Προς:"
 #: ../src/gnome-schedule.glade.h:59
 #: ../src/mainWindow.py:73
 msgid "X application"
-msgstr "Εφαρμογή Χ"
+msgstr "Εφαρμογή γραφικού περιβάλλοντος"
 
 #: ../src/gnome-schedule.glade.h:60
 msgid "_User:"
-msgstr "_Χρήστη:"
+msgstr "_Χρήστης:"
 
 #: ../src/gnome-schedule.glade.h:61
 msgid "ls -l"
@@ -853,7 +853,7 @@ msgstr "Καταστολή μηνυμάτων εξόδου"
 
 #: ../src/mainWindow.py:74
 msgid "X application: suppress output"
-msgstr "Εφαρμογή Χ: καταστολή μηνυμάτων εξόδου"
+msgstr "Εφαρμογή γραφικού περιβάλλοντος: καταστολή μηνυμάτων εξόδου"
 
 #: ../src/mainWindow.py:120
 msgid "Recurrent task"
@@ -985,7 +985,7 @@ msgstr "Δεν υπάρχει τέτοιος χρήστης"
 
 #: ../src/addWindow.py:51
 msgid "A task that launches recurrently"
-msgstr "Μια εργασία που επαναλαμβάνεται"
+msgstr "Μια επαναλαμβανόμενη εργασία"
 
 #: ../src/addWindow.py:64
 msgid "A task that launches one time"
