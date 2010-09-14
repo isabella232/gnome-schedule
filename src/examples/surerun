@@ -1,0 +1,45 @@
+#! /bin/bash
+
+# Copyright Gaute Hope <eg@gaute.vetsj.com> (c) 2010
+# This script is released under the GNU General Public Licence v2
+
+# Checks if a task has been run since midnight; otherwisely run it
+# and update timestamp.
+
+# State is saved in ~/.surerun; use at own risk and modify for your use
+
+# usage: ./surerun title command *args
+
+if [ $# -lt 2 ]; then
+  echo "Not enough arguments given"
+  exit 1
+fi
+
+title=$1
+shift
+command=$@
+
+statedir=~/.surerun
+
+midnight=$(date -d "00:00" +%s)
+
+if [ -e "${statedir}/${title}" ]; then
+  # exists, check last run
+  lastrun=$(cat "${statedir}/${title}")
+  echo "Last run: ${lastrun}"
+else
+  lastrun=0
+fi
+
+if [ "${lastrun}" -le "${midnight}" ]; then
+  if [ ! -d "${statedir}" ]; then
+    mkdir -p "${statedir}"
+  fi
+  date +%s > "${statedir}/${title}"
+
+  # run task
+  echo "Running: ${title}.."
+  $@
+fi
+
+
