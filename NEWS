@@ -1,3 +1,6 @@
+2010-09-16:
+  * Released 2.1.2, bug fixes and translations to 2.1.1
+
 2009-09-11:
   * Released 2.1.1, bug fixes and translations to 2.1.0
 
@@ -13,20 +16,20 @@
 
 2008-02-03:
   Releasing 2.0.1 to fix a few bugs in 2.0.0
-  
+
 2008-01-30:
 	2.0.0 released.
-	
+
 2008-01-23:
 	2.0.0-rc2 released.
 
 2007-12-13:
-	Silent release: Release Candiate 1 for gnome-schedule 2.0 is out. 
+	Silent release: Release Candiate 1 for gnome-schedule 2.0 is out.
 	Updates to the 1.x series is going to be committed in branches/GS_1.
 
 2007-12-02:
 	Merged the new-ui branch into trunk.
-	
+
 2007-12-02:
 
         It is time for the (most likely) last release in the 1.x series, there are fairly few updates since the recent 1.2.0 release, but although it was meant as a last translation update I found some significant bugs.
@@ -50,15 +53,15 @@ Other than that it is not much to say about this one. Happy scheduling!
 	Both at and crontab are using data files in the directory $HOME/.gnome/gnome-schedule/at|crontab
 	New crontab parser merged into HEAD.
 	Hope there will be a new release soon.
-	
+
 2005-07-29:
 	Version 0.9.0 released.
-	
+
 2004-10-12:
 	Version 0.1.0 released.
 	At support implemented.
-	
+
 2004-06-11:
 	Version 0.0.1 released.
 	Crontab support implemented.
-	
+
