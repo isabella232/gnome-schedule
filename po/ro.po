@@ -1,0 +1,1159 @@
+# Romanian translation for gnome-schedule.
+# Copyright (C) 2010 gnome-schedule's COPYRIGHT HOLDER
+# This file is distributed under the same license as the gnome-schedule package.
+# cristy_hereg93 <cristy_hereg93@yahoo.com>, 2010.
+# Iacobescu Cristian <cristy_hereg93@yahoo.com>, 2010.
+# Lucian Adrian Grijincu <lucian.grijincu@gmail.com>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-schedule master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"schedule&component=general\n"
+"POT-Creation-Date: 2010-10-22 12:43+0000\n"
+"PO-Revision-Date: 2010-12-02 20:32+0300\n"
+"Last-Translator: Lucian Adrian Grijincu <lucian.grijincu@gmail.com>\n"
+"Language-Team: Romanian Gnome Team <gnomero-list@lists.sourceforge.net>\n"
+"Language: ro\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
+"20)) ? 1 : 2);;\n"
+"X-Generator: Virtaal 0.6.1\n"
+
+#: ../desktop/gnome-schedule.desktop.in.in.h:1
+msgid "Manage your system tasks"
+msgstr "Gestionează sarcinile sistemului"
+
+#: ../desktop/gnome-schedule.desktop.in.in.h:2
+msgid "Scheduled tasks"
+msgstr "Sarcini planificate"
+
+#: ../servers/GNOME_GnomeSchedule.server.in.in.h:1
+msgid "Configures your scheduled tasks"
+msgstr "Configurează sarcinile planificate ale sistemului"
+
+#: ../servers/GNOME_GnomeSchedule.server.in.in.h:2
+msgid "Gnome schedule"
+msgstr "Planificator Gnome"
+
+#: ../servers/GNOME_GnomeSchedule.server.in.in.h:3
+msgid "System tools"
+msgstr "Instrumente de sistem"
+
+#: ../src/at.py:91 ../src/crontab.py:62
+msgid ""
+"Failed to create data dir! Make sure ~/.gnome and ~/.gnome/gnome-schedule "
+"are writable."
+msgstr ""
+"Eșec la crearea dosarului de date! Asigurați-vă că ~/.gnome și ~/.gnome"
+"/gnome-schedule pot fi scrise."
+
+#: ../src/at.py:124 ../src/crontab.py:162
+#, python-format
+msgid ""
+"Failed to create data dir: %s. Make sure ~/.gnome and ~/.gnome/gnome-"
+"schedule are writable."
+msgstr ""
+"Eșec la crearea datei dir: %s. Asigurați-vă că ~/.gnome și ~/.gnome/gnome-"
+"schedule pot fi scrise."
+
+#: ../src/at.py:512
+#, python-format
+msgid "Warning! Unknown task: %(preview)s"
+msgstr "Atenție! Sarcină necunoscută: %(preview)s"
+
+#: ../src/at.py:519
+#, python-format
+msgid "On %(timestring)s"
+msgstr "Pe %(timestring)s"
+
+#: ../src/at.py:525 ../src/at.py:530
+msgid "Once"
+msgstr "O dată"
+
+#: ../src/at.py:534
+msgid "Warning: a line in atq's output didn't parse"
+msgstr "Atenție: o linie în ieșirea programului atq nu a putut fi parsată"
+
+#: ../src/crontab.py:87
+msgid "Minute"
+msgstr "Minut"
+
+#: ../src/crontab.py:88
+msgid "Hour"
+msgstr "Oră"
+
+#: ../src/crontab.py:89
+msgid "Day of Month"
+msgstr "Zi din lună"
+
+#: ../src/crontab.py:90
+msgid "Month"
+msgstr "Lună"
+
+#: ../src/crontab.py:91
+msgid "Weekday"
+msgstr "Zi de lucru"
+
+#: ../src/crontab.py:192 ../src/gnome-schedule.glade.h:13
+msgid "Basic"
+msgstr "De bază"
+
+#: ../src/crontab.py:192
+#, python-format
+msgid "This is not a valid special record: %(record)s"
+msgstr "Aceasta nu este o înregistrare specială validă:  %(record)s"
+
+#: ../src/crontab.py:220 ../src/crontab.py:225 ../src/crontab.py:229
+#, python-format
+msgid "Must be between %(min)s and %(max)s"
+msgstr "Trebuie să fie între %(min)s și %(max)s"
+
+#: ../src/crontab.py:227
+#, python-format
+msgid "%s is not a number"
+msgstr "%s nu este un număr"
+
+#: ../src/crontab.py:288 ../src/crontab.py:334 ../src/crontabEditor.py:275
+#: ../src/atEditor.py:123 ../src/atEditor.py:519 ../src/atEditor.py:545
+msgid "Untitled"
+msgstr "Fără titlu"
+
+#: ../src/crontab.py:450 ../src/crontab.py:452 ../src/template_chooser.py:106
+#: ../src/template_manager.py:111
+msgid "Recurrent"
+msgstr "Recurent"
+
+#: ../src/crontab.py:450 ../src/crontabEditor.py:74 ../src/lang.py:168
+msgid "At reboot"
+msgstr "La repornire"
+
+#: ../src/crontab.py:464
+msgid "minute"
+msgstr "minute"
+
+#: ../src/crontab.py:466
+msgid "hour"
+msgstr "oră"
+
+#: ../src/crontab.py:468
+msgid "day"
+msgstr "zi"
+
+#: ../src/crontab.py:470
+msgid "month"
+msgstr "lună"
+
+#: ../src/crontab.py:472
+msgid "weekday"
+msgstr "zi de lucru"
+
+#: ../src/crontab.py:571
+msgid ""
+"Failed to parse the Day of Month field, possibly due to a bug in crontab."
+msgstr ""
+"Eșec la analiza câmpului Zi din lună, posibil din cauza unei probleme în "
+"crontab."
+
+#: ../src/crontabEditor.py:69 ../src/crontabEditorHelper.py:87
+#: ../src/gnome-schedule.glade.h:31
+msgid "Every minute"
+msgstr "În fiecare minut"
+
+#: ../src/crontabEditor.py:70 ../src/crontabEditorHelper.py:93
+#: ../src/gnome-schedule.glade.h:30
+msgid "Every hour"
+msgstr "În fiecare oră"
+
+#: ../src/crontabEditor.py:71 ../src/crontabEditorHelper.py:99
+msgid "Every day"
+msgstr "În fiecare zi"
+
+#: ../src/crontabEditor.py:72 ../src/crontabEditorHelper.py:105
+msgid "Every month"
+msgstr "În fiecare lună"
+
+#: ../src/crontabEditor.py:73
+msgid "Every week"
+msgstr "În fiecare săptămână"
+
+#. add new task
+#: ../src/crontabEditor.py:131 ../src/crontabEditor.py:142
+#: ../src/atEditor.py:125 ../src/atEditor.py:144
+msgid "Create a New Scheduled Task"
+msgstr "Creați o nouă sarcină planificată"
+
+#: ../src/crontabEditor.py:198 ../src/atEditor.py:162
+msgid "Edit template"
+msgstr "Editează șablonul"
+
+#: ../src/crontabEditor.py:223 ../src/atEditor.py:184
+msgid "New template"
+msgstr "Șablon nou"
+
+#: ../src/crontabEditor.py:249 ../src/atEditor.py:226
+msgid "Edit a Scheduled Task"
+msgstr "Editează o sarcină planificată"
+
+#: ../src/crontabEditor.py:302 ../src/crontabEditor.py:578
+#: ../src/crontabEditor.py:618
+#, python-format
+msgid ""
+"This is an invalid record! The problem could be in the %(field)s field. "
+"Reason: %(reason)s"
+msgstr ""
+"Această înregistrare nu este validă! Problema poate fi în câmpul %(field)s. "
+"Motiv: %(reason)s"
+
+#: ../src/crontabEditor.py:307
+msgid ""
+"Your command contains one or more of the character %, this is special for "
+"cron and cannot be used with Gnome-schedule because of the format it uses to "
+"store extra information on the crontab line. Please use the | redirector "
+"character to achieve the same functionality. Refer to the crontab manual for "
+"more information about the % character. If you don not want to use it for "
+"redirection it must be properly escaped with the \\ letter."
+msgstr ""
+"Comanda dumneavoastră conține una sau mai multe caractere %, aceasta este "
+"specială pentru cron și nu poate fi utilizată cu planificatorul-Gnome "
+"deoarece formatul este folosit pentru a stoca informația suplimentară pe "
+"linia crontab. Folosiți caracterul redirector „|”  pentru a obține aceeași "
+"funcționalitate. Adresați-vă manualului crontab pentru mai multe informații "
+"despre caracterul % . Dacă nu doriți să-l folosiți pentru redirectare, "
+"acesta trebuie in mod corespunzator înlocuit cu litera \\ ."
+
+#: ../src/crontabEditor.py:456
+msgid ""
+"Note about working directory of executed tasks:\n"
+"\n"
+"Recurrent tasks will be run from the home directory."
+msgstr ""
+"Notă despre directorul de lucru cu privire la sarcinile planificate:\n"
+"\n"
+"Sarcinile recurente vor fi rulate din dosarul de pornire."
+
+#: ../src/crontabEditor.py:457 ../src/mainWindow.py:666 ../src/atEditor.py:593
+msgid "_Don't show again"
+msgstr "Nu arăta _din nou"
+
+#: ../src/crontabEditor.py:458 ../src/mainWindow.py:667 ../src/atEditor.py:594
+msgid "Warning: Working directory of executed tasks"
+msgstr "Atenție: Dosarul de lucru al sarcinilor planificate"
+
+#: ../src/crontabEditorHelper.py:111
+msgid "Every weekday"
+msgstr "În fiecare zi de lucru"
+
+#: ../src/crontabEditorHelper.py:163
+msgid "Edit minute"
+msgstr "Editează minutul"
+
+#: ../src/crontabEditorHelper.py:165
+msgid "Edit hour"
+msgstr "Editează ora"
+
+#: ../src/crontabEditorHelper.py:167
+msgid "Edit day"
+msgstr "Editează ziua"
+
+#: ../src/crontabEditorHelper.py:169
+msgid "Edit month"
+msgstr "Editează luna"
+
+#: ../src/crontabEditorHelper.py:171
+msgid "Edit weekday"
+msgstr "Editează ziua de lucru"
+
+#: ../src/crontabEditorHelper.py:185
+#, python-format
+msgid "This is invalid. Reason: %s"
+msgstr "Nu este nevalid. Cauza: %s"
+
+#. minute
+#: ../src/crontabEditorHelper.py:231 ../src/gnome-schedule.glade.h:12
+msgid "At an exact minute"
+msgstr "La un minut exact"
+
+#: ../src/crontabEditorHelper.py:232 ../src/gnome-schedule.glade.h:44
+msgid "Minute:"
+msgstr "Minut:"
+
+#. hour
+#: ../src/crontabEditorHelper.py:235
+msgid "At an exact hour"
+msgstr "La o oră exactă"
+
+#: ../src/crontabEditorHelper.py:236 ../src/gnome-schedule.glade.h:40
+msgid "Hour:"
+msgstr "Ora:"
+
+#. day
+#: ../src/crontabEditorHelper.py:239
+msgid "On a day"
+msgstr "Într-o zi"
+
+#: ../src/crontabEditorHelper.py:240 ../src/gnome-schedule.glade.h:23
+msgid "Day:"
+msgstr "Ziua:"
+
+#. month
+#: ../src/crontabEditorHelper.py:243
+msgid "In a month"
+msgstr "Într-o lună:"
+
+#: ../src/crontabEditorHelper.py:244 ../src/gnome-schedule.glade.h:46
+msgid "Month:"
+msgstr "Luna:"
+
+#. weekday
+#: ../src/crontabEditorHelper.py:247
+msgid "On a weekday"
+msgstr "Într-o zi de lucru:"
+
+#: ../src/crontabEditorHelper.py:248 ../src/gnome-schedule.glade.h:59
+msgid "Weekday:"
+msgstr "Zi de lucru:"
+
+#: ../src/crontabEditorHelper.py:253 ../src/gnome-schedule.glade.h:42
+msgid "In a step width"
+msgstr "La o lățime pas"
+
+#: ../src/crontabEditorHelper.py:255 ../src/gnome-schedule.glade.h:45
+msgid "Minutes:"
+msgstr "Minute:"
+
+#: ../src/crontabEditorHelper.py:257
+msgid "Hours:"
+msgstr "Ore:"
+
+#: ../src/crontabEditorHelper.py:259
+msgid "Days:"
+msgstr "Zile:"
+
+#: ../src/crontabEditorHelper.py:261
+msgid "Months:"
+msgstr "Luni:"
+
+#: ../src/crontabEditorHelper.py:263
+msgid "Weekdays:"
+msgstr "Zile de lucru:"
+
+#: ../src/gnome-schedule-applet.xml.h:1
+msgid "A_bout"
+msgstr "_Despre"
+
+#: ../src/gnome-schedule-applet.xml.h:2
+msgid "_Add a task"
+msgstr "_Adaugă sarcină"
+
+#: ../src/gnome-schedule-applet.xml.h:3
+msgid "_Help"
+msgstr "_Ajutor"
+
+#: ../src/gnome-schedule-applet.xml.h:4
+msgid "_Manage tasks"
+msgstr "_Gestionează sarcinile"
+
+#: ../src/gnome-schedule.glade.h:1
+msgid "*"
+msgstr "*"
+
+#: ../src/gnome-schedule.glade.h:2
+msgid "0"
+msgstr "0"
+
+#: ../src/gnome-schedule.glade.h:3
+msgid ":"
+msgstr ":"
+
+#: ../src/gnome-schedule.glade.h:4
+msgid "<b>Choose the user whose tasks you want to modify</b>"
+msgstr ""
+"<b>Alegeți utilizatorul ale cărui sarcini planificate doriți să le "
+"modificați</b>"
+
+#: ../src/gnome-schedule.glade.h:5
+msgid "<b>Select the type of the scheduled task:</b>"
+msgstr "<b>Selectați tipul de sarcină planificată:</b>"
+
+#: ../src/gnome-schedule.glade.h:6
+msgid "<big>Preview</big>"
+msgstr "<big>Previzualizare</big>"
+
+#: ../src/gnome-schedule.glade.h:7
+msgid "<big>Time &amp; Date</big>"
+msgstr "<big>Oră și dată</big>"
+
+#: ../src/gnome-schedule.glade.h:8
+msgid "About Gnome-schedule"
+msgstr "Despre planificatorul Gnome"
+
+#: ../src/gnome-schedule.glade.h:9
+msgid "Add a Scheduled Task"
+msgstr "Adaugă o sarcină planificată"
+
+#: ../src/gnome-schedule.glade.h:10
+msgid "Add as template"
+msgstr "Adaugă ca șablon"
+
+#: ../src/gnome-schedule.glade.h:11
+msgid "Advanced"
+msgstr "Avansat"
+
+#: ../src/gnome-schedule.glade.h:14
+msgid "Change User"
+msgstr "Schimbă utilizatorul"
+
+#: ../src/gnome-schedule.glade.h:15
+msgid "Change edit mode"
+msgstr "Schimbă modul de editare"
+
+#: ../src/gnome-schedule.glade.h:16
+msgid "Choose template"
+msgstr "Alege șablon"
+
+#: ../src/gnome-schedule.glade.h:17
+msgid "Choose the user whose tasks you want to modify"
+msgstr ""
+"Alegeți utilizatorul ale cărui sarcini planificate doriți să le modificați"
+
+#: ../src/gnome-schedule.glade.h:18 ../src/template.py:198
+#: ../src/template.py:212
+msgid "Command:"
+msgstr "Comanda:"
+
+#: ../src/gnome-schedule.glade.h:19
+msgid "Configure Scheduled Tasks"
+msgstr "Configurează sarcinile planificate"
+
+#: ../src/gnome-schedule.glade.h:20
+msgid "Create a new task from the selected template"
+msgstr "Creează o nouă sarcină din șablonul selectat"
+
+#: ../src/gnome-schedule.glade.h:21
+msgid "Create a new template."
+msgstr "Creează un șablon nou."
+
+#: ../src/gnome-schedule.glade.h:22
+msgid "Date:"
+msgstr "Data:"
+
+#: ../src/gnome-schedule.glade.h:24
+msgid "Delete a scheduled task"
+msgstr "Șterge sarcina planificată"
+
+#: ../src/gnome-schedule.glade.h:25
+msgid "Delete the selected template"
+msgstr "Șterge șablonul selectat"
+
+#: ../src/gnome-schedule.glade.h:26
+msgid "Description:"
+msgstr "Descriere:"
+
+#: ../src/gnome-schedule.glade.h:27
+msgid "Edit a periodical task"
+msgstr "Editează o sarcină periodică"
+
+#: ../src/gnome-schedule.glade.h:28
+msgid "Edit a scheduled task"
+msgstr "Editează o sarcină planificată"
+
+#: ../src/gnome-schedule.glade.h:29
+msgid "Edit the selected template"
+msgstr "Editează șablonul selectat"
+
+#. This comes before the time and date input boxes in the One-time task editor
+#: ../src/gnome-schedule.glade.h:33
+msgid "Execute at:"
+msgstr "Execută la:"
+
+#: ../src/gnome-schedule.glade.h:34
+msgid "Execution at a specific minute, hour, day, weekday or month."
+msgstr "Execuție la un anumit minut, oră, zi, zi de lucru sau lună."
+
+#: ../src/gnome-schedule.glade.h:35
+msgid ""
+"Execution at a step width. For example every five minutes, hours, days, "
+"weekdays or months."
+msgstr ""
+"Execuție la o lățime pas. De exemplu, la fiecare cinci minute, ore, zile, "
+"zile lucrătoare sau luni."
+
+#: ../src/gnome-schedule.glade.h:36
+msgid "Execution at every minute, hour, day, weekday or month."
+msgstr "Execuție la fiecare minut, ora, zi, zi de lucru sau lună."
+
+#: ../src/gnome-schedule.glade.h:37
+msgid "Execution in a range."
+msgstr "Execuție într-un interval."
+
+#: ../src/gnome-schedule.glade.h:38
+msgid "Expression:"
+msgstr "Expresie:"
+
+#: ../src/gnome-schedule.glade.h:39
+msgid "From:"
+msgstr "De la:"
+
+#: ../src/gnome-schedule.glade.h:41
+msgid "In a range"
+msgstr "Într-un interval"
+
+#: ../src/gnome-schedule.glade.h:43
+msgid "Manage templates"
+msgstr "Administrează șabloanele"
+
+#: ../src/gnome-schedule.glade.h:47
+msgid "Other"
+msgstr "Alte"
+
+#: ../src/gnome-schedule.glade.h:48
+msgid "Run selected task"
+msgstr "Rulează sarcinile selectate"
+
+#: ../src/gnome-schedule.glade.h:49
+msgid "Run task"
+msgstr "Rulează sarcina"
+
+#: ../src/gnome-schedule.glade.h:50
+msgid "Scheduled and active tasks"
+msgstr "Sarcini planificate și active"
+
+#: ../src/gnome-schedule.glade.h:51
+msgid "See \"man 5 crontab\" for information about the crontab format."
+msgstr "Consultați „man 5 crontab” pentru informații despre formatul crontab."
+
+#: ../src/gnome-schedule.glade.h:52
+msgid "Show help"
+msgstr "Arată ajutorul"
+
+#: ../src/gnome-schedule.glade.h:53
+msgid "Task description:"
+msgstr "Descrierea sarcinii:"
+
+#: ../src/gnome-schedule.glade.h:54
+msgid "Task:"
+msgstr "Sarcina:"
+
+#: ../src/gnome-schedule.glade.h:55
+msgid "Templates"
+msgstr "Șabloane"
+
+#: ../src/gnome-schedule.glade.h:56
+msgid "Time expression help"
+msgstr "Ajutor expresie de timp"
+
+#: ../src/gnome-schedule.glade.h:57
+msgid "Time:"
+msgstr "Data:"
+
+#: ../src/gnome-schedule.glade.h:58
+msgid "To:"
+msgstr "Pentru:"
+
+#: ../src/gnome-schedule.glade.h:60 ../src/mainWindow.py:73
+msgid "X application"
+msgstr "Aplicație X"
+
+#: ../src/gnome-schedule.glade.h:61
+msgid "_User:"
+msgstr "_Utilizator:"
+
+#: ../src/gnome-schedule.glade.h:62
+msgid "ls -l"
+msgstr "ls -l"
+
+#: ../src/gnome-schedule.py:66 ../src/scheduleapplet.py:67
+#: ../src/xwrapper.py:51
+msgid ""
+"You need to install pyGTK or GTKv2,\n"
+"or set your PYTHONPATH correctly.\n"
+"try: export PYTHONPATH= "
+msgstr ""
+"Trebuie sa instalați pyGTK sau GTKv2,\n"
+"sau să definiți PYTHONPATH corect.\n"
+"Încercați: exportă PYTHONPATH= "
+
+#. Translators: Date format for expressions like 'January 21'. %B is month, %d is day number.
+#. Run the command 'man strftime' to read more about these and other available specifiers.
+#: ../src/lang.py:124
+msgid "%B %d"
+msgstr "%d %B"
+
+#. Translators: Date format for expressions like 'January 21, 2005'. %B is month, %d is day number, %Y is year with century.
+#. Run the command 'man strftime' to read more about these and other available specifiers.
+#: ../src/lang.py:131
+msgid "%B %d, %Y"
+msgstr "%d %B %Y"
+
+#. Translators: Time without seconds. %H is hour, %M is minute.
+#. Run the command 'man strftime' to read more about these and other available specifiers.
+#: ../src/lang.py:141
+msgid "%H:%M"
+msgstr "%H:%M"
+
+#: ../src/lang.py:183
+msgid "At every full hour"
+msgstr "La fiecare oră întreagă"
+
+#: ../src/lang.py:185
+msgid "At every minute"
+msgstr "La fiecare minut"
+
+#: ../src/lang.py:187
+#, python-format
+msgid "At minute %(minute)s of every hour"
+msgstr "La minutul %(minute)s al fiecărei ore"
+
+#: ../src/lang.py:189
+#, python-format
+msgid "At every minute between %(time_from)s and %(time_to)s"
+msgstr "La fiecare minut dintre %(time_from)s și %(time_to)s"
+
+#: ../src/lang.py:191
+#, python-format
+msgid "On every day at %(time)s"
+msgstr "În fiecare zi la %(time)s"
+
+#: ../src/lang.py:196
+#, python-format
+msgid "On day %(monthday)s of every month at every full hour"
+msgstr "În ziua %(monthday)s a fiecărei luni la fiecare oră întreagă"
+
+#: ../src/lang.py:198
+#, python-format
+msgid "On day %(monthday)s of every month at every minute"
+msgstr "În ziua %(monthday)s a fiecărei luni la fiecare minut"
+
+#: ../src/lang.py:200
+#, python-format
+msgid "On day %(monthday)s of every month at minute %(minute)s of every hour"
+msgstr ""
+"În ziua %(monthday)s a fiecărei luni la minutul %(minute)s al fiecărei ore"
+
+#: ../src/lang.py:202
+#, python-format
+msgid ""
+"On day %(monthday)s of every month at every minute between %(time_from)s and "
+"%(time_to)s"
+msgstr ""
+"În ziua %(monthday)s a fiecărei luni la fiecare minut între %(time_from)s și "
+"%(time_to)s"
+
+#: ../src/lang.py:204
+#, python-format
+msgid "On day %(monthday)s of every month at %(time)s"
+msgstr "În ziua %(monthday)s a fiecărei luni la %(time)s"
+
+#: ../src/lang.py:209
+#, python-format
+msgid "On every day in %(month)s at every full hour"
+msgstr "În fiecare zi în %(month)s la fiecare oră întreagă"
+
+#: ../src/lang.py:211
+#, python-format
+msgid "On every day in %(month)s at every minute"
+msgstr "În fiecare zi în %(month)s la fiecare minut"
+
+#: ../src/lang.py:213
+#, python-format
+msgid "On every day in %(month)s at minute %(minute)s of every hour"
+msgstr "În fiecare zi în %(month)s la minutul %(minute)s al fiecărei ore"
+
+#: ../src/lang.py:215
+#, python-format
+msgid ""
+"On every day in %(month)s at every minute between %(time_from)s and %"
+"(time_to)s"
+msgstr ""
+"În fiecare zi în %(month)s la fiecare minut între %(time_from)s și %"
+"(time_to)s"
+
+#: ../src/lang.py:217
+#, python-format
+msgid "On every day in %(month)s at %(time)s"
+msgstr "În fiecare zi din %(month)s la %(time)s"
+
+#: ../src/lang.py:222
+#, python-format
+msgid "Every year on %(date)s at every full hour"
+msgstr "În fiecare an pe %(date)s la fiecare oră întreagă"
+
+#: ../src/lang.py:224
+#, python-format
+msgid "Every year on %(date)s at every minute"
+msgstr "În fiecare an pe %(date)s la fiecare minut"
+
+#: ../src/lang.py:226
+#, python-format
+msgid "Every year on %(date)s at minute %(minute)s of every hour"
+msgstr "În fiecare an pe %(date)s la minutul %(minute)s al fiecărei ore"
+
+#: ../src/lang.py:228
+#, python-format
+msgid ""
+"Every year on %(date)s at every minute between %(time_from)s and %(time_to)s"
+msgstr ""
+"În fiecare an pe %(date)s la fiecare minut între %(time_from)s și %"
+"(time_to)s"
+
+#: ../src/lang.py:230
+#, python-format
+msgid "Every year on %(date)s at %(time)s"
+msgstr "În fiecare an pe %(date)s și %(time)s"
+
+#: ../src/lang.py:235
+#, python-format
+msgid "On every weekday: %(weekday)s at every full hour"
+msgstr "În fiecare zi de lucru: %(weekday)s la fiecare oră întreagă"
+
+#: ../src/lang.py:237
+#, python-format
+msgid "On every weekday: %(weekday)s at every minute"
+msgstr "În fiecare zi de lucru: %(weekday)s la fiecare minut"
+
+#: ../src/lang.py:239
+#, python-format
+msgid "On every weekday: %(weekday)s at minute %(minute)s of every hour"
+msgstr ""
+"În fiecare zi de lucru: %(weekday)s la minutul %(minute)s al fiecărei ore"
+
+#: ../src/lang.py:241
+#, python-format
+msgid ""
+"On every weekday: %(weekday)s at every minute between %(time_from)s and %"
+"(time_to)s"
+msgstr ""
+"În fiecare zi de lucru: %(weekday)s la fiecare minut între %(time_from)s și "
+"%(time_to)s"
+
+#: ../src/lang.py:243
+#, python-format
+msgid "On every weekday: %(weekday)s at %(time)s"
+msgstr "În fiecare zi de lucru: %(weekday)s la %(time)s"
+
+#: ../src/lang.py:248
+#, python-format
+msgid ""
+"On day %(monthday)s of every month and every weekday: %(weekday)s at every "
+"full hour"
+msgstr ""
+"În ziua %(monthday)s a fiecărei luni și fiecare zi de lucru: %(weekday)s la "
+"fiecare oră întreagă"
+
+#: ../src/lang.py:250
+#, python-format
+msgid ""
+"On day %(monthday)s of every month and every weekday: %(weekday)s at every "
+"minute"
+msgstr ""
+"În ziua %(monthday)s a fiecărei luni și fiecare zi de lucru: %(weekday)s la "
+"fiecare minut"
+
+#: ../src/lang.py:252
+#, python-format
+msgid ""
+"On day %(monthday)s of every month and every weekday: %(weekday)s at minute %"
+"(minute)s of every hour"
+msgstr ""
+"În ziua %(monthday)s a fiecărei luni și fiecare zi de lucru: %(weekday)s la "
+"minutul %(minute)s al fiecărei ore"
+
+#: ../src/lang.py:254
+#, python-format
+msgid ""
+"On day %(monthday)s of every month and every weekday: %(weekday)s at every "
+"minute between %(time_from)s and %(time_to)s"
+msgstr ""
+"În ziua %(monthday)s al fiecărei luni și fiecare zi de lucru: %(weekday)s la "
+"fiecare minut între %(time_from)s și %(time_to)s"
+
+#: ../src/lang.py:256
+#, python-format
+msgid ""
+"On day %(monthday)s of every month and every weekday: %(weekday)s at %(time)s"
+msgstr ""
+"În ziua %(monthday)s al fiecărei luni și fiecare zi de lucru: %(weekday)s la "
+"%(time)s"
+
+#: ../src/lang.py:261
+#, python-format
+msgid "On every weekday: %(weekday)s in %(month)s at every full hour"
+msgstr ""
+"În fiecare zi de lucru: %(weekday)s în %(month)s la fiecare oră întreagă"
+
+#: ../src/lang.py:263
+#, python-format
+msgid "On every weekday: %(weekday)s in %(month)s at every minute"
+msgstr "În fiecare zi de lucru: %(weekday)s în %(month)s la fiecare minut"
+
+#: ../src/lang.py:265
+#, python-format
+msgid ""
+"On every weekday: %(weekday)s in %(month)s at minute %(minute)s of every hour"
+msgstr ""
+"În fiecare zi de lucru: %(weekday)s în %(month)s la minutul %(minute)s al "
+"fiecărei ore"
+
+#: ../src/lang.py:267
+#, python-format
+msgid ""
+"On every weekday: %(weekday)s in %(month)s at every minute between %"
+"(time_from)s and %(time_to)s"
+msgstr ""
+"În fiecare zi de lucru: %(weekday)s în %(month)s la fiecare minut între %"
+"(time_from)s și %(time_to)s"
+
+#: ../src/lang.py:269
+#, python-format
+msgid "On every weekday: %(weekday)s in %(month)s at %(time)s"
+msgstr "În fiecare zi de lucru: %(weekday)s în %(month)s la %(time)s"
+
+#: ../src/lang.py:274
+#, python-format
+msgid ""
+"On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
+"every full hour"
+msgstr ""
+"În fiecare zi de lucru: %(weekday)s în %(month)s și pe %(date)s în fiecare "
+"an la fiecare oră întreagă"
+
+#: ../src/lang.py:276
+#, python-format
+msgid ""
+"On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
+"every minute"
+msgstr ""
+"În fiecare zi de lucru: %(weekday)s în %(month)s și pe %(date)s în fiecare "
+"an la fiecare minut"
+
+#: ../src/lang.py:278
+#, python-format
+msgid ""
+"On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
+"minute %(minute)s of every hour"
+msgstr ""
+"În fiecare zi de lucru: %(weekday)s în %(month)s și pe %(date)s în fiecare "
+"an la minutul %(minute)s al fiecărei ore"
+
+#: ../src/lang.py:280
+#, python-format
+msgid ""
+"On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
+"every minute between %(time_from)s and %(time_to)s"
+msgstr ""
+"În fiecare zi de lucru: %(weekday)s în %(month)s și pe %(date)s în fiecare "
+"an la fiecare minut între %(time_from)s și %(time_to)s"
+
+#: ../src/lang.py:282
+#, python-format
+msgid ""
+"On every weekday: %(weekday)s in %(month)s and on %(date)s every year at %"
+"(time)s"
+msgstr ""
+"În fiecare zi de lucru: %(weekday)s în %(month)s și pe %(date)s în fiecare "
+"an la %(time)s"
+
+#: ../src/lang.py:290
+msgid "every minute"
+msgstr "în fiecare minut"
+
+#: ../src/lang.py:292
+#, python-format
+msgid "minute: %s"
+msgstr "minutul: %s"
+
+#: ../src/lang.py:295
+msgid "every hour"
+msgstr "în fiecare oră"
+
+#: ../src/lang.py:297
+#, python-format
+msgid "hour: %s"
+msgstr "ora: %s"
+
+#: ../src/lang.py:300
+msgid "every day of month"
+msgstr "în fiecare zi din lună"
+
+#: ../src/lang.py:302
+#, python-format
+msgid "day of month: %s"
+msgstr "zi din lună: %s"
+
+#: ../src/lang.py:305
+msgid "every month"
+msgstr "în fiecare lună"
+
+#: ../src/lang.py:307
+#, python-format
+msgid "month: %s"
+msgstr "luna: %s"
+
+#: ../src/lang.py:310
+#, python-format
+msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s"
+msgstr "La %(minute)s, %(hour)s, %(monthday)s, %(month)s"
+
+#: ../src/lang.py:312
+#, python-format
+msgid "weekday: %s"
+msgstr "zi de lucru: %s"
+
+#: ../src/lang.py:313
+#, python-format
+msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
+msgstr "La %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
+
+#: ../src/mainWindow.py:71
+msgid "Default behaviour"
+msgstr "Comportament implicit"
+
+#: ../src/mainWindow.py:72
+msgid "Suppress output"
+msgstr "Suprimă ieșirea"
+
+#: ../src/mainWindow.py:74
+msgid "X application: suppress output"
+msgstr "Aplicație X: suprimă ieșirea"
+
+#: ../src/mainWindow.py:120
+msgid "Recurrent task"
+msgstr "Sarcină recurentă"
+
+#: ../src/mainWindow.py:131
+msgid "One-time task"
+msgstr "Sarcină planificată o singură dată"
+
+#: ../src/mainWindow.py:142
+msgid "From template"
+msgstr "Din șablon"
+
+#: ../src/mainWindow.py:161
+msgid "Add a new task"
+msgstr "Adaugă o sarcină nouă"
+
+#: ../src/mainWindow.py:286 ../src/mainWindow.py:416
+#, python-format
+msgid "Editing user: %s"
+msgstr "Editează utilizatorul: %s"
+
+#: ../src/mainWindow.py:333 ../src/mainWindow.py:344 ../src/mainWindow.py:355
+#: ../src/mainWindow.py:370 ../src/mainWindow.py:381
+#: ../src/scheduleapplet.py:122
+msgid "ERROR: Could not load icon"
+msgstr "EROARE: Nu s-a putut încărca iconița"
+
+#: ../src/mainWindow.py:390 ../src/mainWindow.py:396
+msgid "ERROR: Could not load glade file"
+msgstr "EROARE: Nu s-a putut încărca fișierul glade"
+
+#: ../src/mainWindow.py:451 ../src/template_chooser.py:69
+#: ../src/template_manager.py:72
+msgid "Task"
+msgstr "Sarcină"
+
+#: ../src/mainWindow.py:464 ../src/mainWindow.py:490
+#: ../src/template_chooser.py:78 ../src/template_manager.py:81
+msgid "Description"
+msgstr "Descriere"
+
+#: ../src/mainWindow.py:468 ../src/mainWindow.py:481
+msgid "Date and Time"
+msgstr "Data și ora"
+
+#: ../src/mainWindow.py:472 ../src/mainWindow.py:485
+msgid "Command preview"
+msgstr "Previzualizare comandă"
+
+#. print ex
+#: ../src/mainWindow.py:544 ../src/mainWindow.py:607
+msgid "Please select a task"
+msgstr "Selectați o sarcină"
+
+#: ../src/mainWindow.py:551
+msgid "Do you want to delete this task?"
+msgstr "Doriți să ștergeți această sarcină?"
+
+#: ../src/mainWindow.py:654
+msgid ""
+"Are you sure you want to run this task now?\n"
+"\n"
+"This is used to preview the task and initiates a one-time run, this does not "
+"affect the normal scheduled run times."
+msgstr ""
+"Sigur doriți să executați această activitate acum?\n"
+"\n"
+"Acest lucru este utilizat pentru a examina activitatea și inițiază o singură "
+"rulare a sarcinii, acest fapt nu afectează timpii de rulare ai sarcinilor."
+
+#: ../src/mainWindow.py:656
+msgid "Are you sure you want to run this task?"
+msgstr "Sigur doriți să rulați această sarcină?"
+
+#: ../src/mainWindow.py:665
+msgid ""
+"Note about working directory of executed tasks:\n"
+"\n"
+"Recurrent tasks will be run from the home directory, one-time tasks from the "
+"directory where Gnome schedule was run from at the time of task creation "
+"(normally the home directory)."
+msgstr ""
+"Notă de lucru cu privire la dosarul de lucru al sarcinilor executate:\n"
+"\n"
+"Sarcinile recurente vor fi rulate din dosarul personal al utilizatorului, "
+"sarcinile planificate pentru a fi rulate o singură dată vor fi executate din "
+"dosarul în care programul gnome-schedule a fost executat la crearea "
+"sarcinii (în mod normal, dosarul personal al utilizatorului)."
+
+#: ../src/mainWindow.py:727
+msgid "Please select a task!"
+msgstr "Selectați o sarcină!"
+
+#: ../src/mainWindow.py:735
+msgid "About Gnome Schedule"
+msgstr "Despre Planificatorul Gnome"
+
+#: ../src/mainWindow.py:736
+msgid "Gnome Schedule"
+msgstr "Planificatorul Gnome"
+
+#: ../src/mainWindow.py:738
+#, python-format
+msgid "Copyright (c) %(year)s %(name)s."
+msgstr "Drepturi de autor (c) %(year)s %(name)s."
+
+#: ../src/mainWindow.py:751
+msgid "translator-credits"
+msgstr "Iacobescu Cristian <cristy_hereg93@yahoo.com>"
+
+#: ../src/mainWindow.py:772
+msgid "Could not display help"
+msgstr "Nu se poate afișa ajutorul"
+
+#: ../src/scheduleapplet.py:139
+msgid "ERROR: Could not load menu xml file"
+msgstr "EROARE: Nu s-a putut încărca fișierul xml al meniului"
+
+#: ../src/setuserWindow.py:84
+msgid "No such user"
+msgstr "Nu există un astfel de utilizator"
+
+#: ../src/addWindow.py:51
+msgid "A task that launches recurrently"
+msgstr "O sarcină lansată periodic"
+
+#: ../src/addWindow.py:64
+msgid "A task that launches one time"
+msgstr "O sarcină lansată o singură dată"
+
+#: ../src/addWindow.py:77
+msgid "A task from a predefined template"
+msgstr "O sarcină dintr-un șablon predefinit"
+
+#: ../src/atEditor.py:78
+msgid "Calendar"
+msgstr "Calendar"
+
+#: ../src/atEditor.py:511
+msgid ""
+"In one or both of the fields hour and minute there was entered a letter, or "
+"a number out of range. Remember an hour only has 60 minutes and a day only "
+"24 hours."
+msgstr ""
+"În una sau ambele dintre câmpurile oră și minut a fost introdusă o literă, "
+"sau un număr din afara intervalului. Nu uitați că o oră are doar 60 de "
+"minute și o zi are doar 24 de ore."
+
+#: ../src/atEditor.py:572
+#, python-format
+msgid "This is an invalid record! The problem could be: %s"
+msgstr "Aceasta este o înregistrare nevalidă! Problema poate fi: %s"
+
+#: ../src/atEditor.py:592
+msgid ""
+"Note about working directory of executed tasks:\n"
+"\n"
+"One-time tasks will be run from the directory where Gnome schedule is run "
+"from (normally the home directory)."
+msgstr ""
+"Notă de lucru cu privire la dosarul de lucru al sarcinilor executate:\n"
+"\n"
+"Sarcinile planificate pentru a fi rulate o singură dată vor fi executate din "
+"dosarul în care programul gnome-schedule a fost executat la crearea "
+"sarcinii (în mod normal, dosarul personal al utilizatorului)."
+
+#: ../src/template.py:198 ../src/template.py:212
+msgid "Title:"
+msgstr "Titlu:"
+
+#: ../src/template.py:212
+msgid "Run:"
+msgstr "Rulează:"
+
+#: ../src/template_chooser.py:40 ../src/template_manager.py:37
+msgid "Use template"
+msgstr "Utilizează șablon"
+
+#: ../src/template_chooser.py:97 ../src/template_manager.py:102
+msgid "One-time"
+msgstr "O singură dată"
+
+#: ../src/xwrapper.py:60
+msgid "Could not open a connection to X!"
+msgstr "Nu se poate deschide o conexiune către X!"
+
+#: ../src/xwrapper.py:71 ../src/xwrapper.py:79
+msgid "Wrong number of arguments."
+msgstr "Număr greșit de argumente."
+
+#: ../src/xwrapper.py:73 ../src/xwrapper.py:81
+msgid ""
+"Wrapper script for Gnome-schedule (http://gnome-schedule.sf.net) for "
+"applications to be run from crontab or at under X. Use through gnome-"
+"schedule."
+msgstr ""
+"Script pentru Gnome-schedule (http://gnome-schedule.sf.net) pentru aplicații "
+"de rula din crontab sau sub X."
+
+#: ../src/xwrapper.py:87
+msgid "Unknown type of job."
+msgstr "Tip sarcină necunoscut."
+
+#: ../src/xwrapper.py:106 ../src/xwrapper.py:110
+msgid "Invalid job id."
+msgstr "ID sarcină nevalid."
+
+#: ../src/xwrapper.py:117
+msgid ""
+"Could not get job data, the task might have been created with an old version "
+"- try recreating the task."
+msgstr ""
+"Nu s-au putut obține datele despre sarcină, este posibil ca sarcina să fi "
+"fost creată cu o versiune mai veche - încercați refacerea sarcinii."
+
+#: ../src/xwrapper.py:121
+msgid "Data file too old. Recreate task."
+msgstr "Fișierul de date estet prea vechi. Recreați sarcina."
+
+#: ../src/xwrapper.py:125
+#, python-format
+msgid "Launching %s.."
+msgstr "Se pornește %s.."
+
+#: ../src/xwrapper.py:127
+msgid "output<2: Why am I launched?"
+msgstr "output<2: De ce am fost lansat?"
+
+#: ../src/xwrapper.py:130
+msgid "len(display)<2: No proper DISPLAY variable"
+msgstr "len(display)<2: Variabila DISPLAY nu este corectă"
+
+#: ../src/xwrapper.py:155
+msgid "I will never be displayed."
+msgstr "Nu se va mai afișa niciodată."
+
+#: ../src/xwrapper.py:158
+msgid "xwrapper.py: completed"
+msgstr "xwrapper.py: complet"
