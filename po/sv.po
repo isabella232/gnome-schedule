@@ -9,10 +9,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-13 22:31+0100\n"
-"PO-Revision-Date: 2010-03-13 22:32+0100\n"
+"POT-Creation-Date: 2010-12-29 14:49+0100\n"
+"PO-Revision-Date: 2010-12-29 18:53+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
+"Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -48,22 +49,22 @@ msgstr "Misslyckades med att skapa datakatalog! Försäkra dig om att ~/.gnome o
 msgid "Failed to create data dir: %s. Make sure ~/.gnome and ~/.gnome/gnome-schedule are writable."
 msgstr "Misslyckades med att skapa datakatalog: %s. Försäkra dig om att ~/.gnome och ~/.gnome/gnome-schedule är skrivbara."
 
-#: ../src/at.py:522
+#: ../src/at.py:512
 #, python-format
 msgid "Warning! Unknown task: %(preview)s"
 msgstr "Varning! Okänd aktivitet: %(preview)s"
 
-#: ../src/at.py:529
+#: ../src/at.py:519
 #, python-format
 msgid "On %(timestring)s"
 msgstr "Klockan %(timestring)s"
 
-#: ../src/at.py:535
-#: ../src/at.py:540
+#: ../src/at.py:525
+#: ../src/at.py:530
 msgid "Once"
 msgstr "En gång"
 
-#: ../src/at.py:544
+#: ../src/at.py:534
 msgid "Warning: a line in atq's output didn't parse"
 msgstr "Varning: en rad i atq:s utdata kunde inte tolkas"
 
@@ -1080,8 +1081,8 @@ msgid "Launching %s.."
 msgstr "Startar %s.."
 
 #: ../src/xwrapper.py:127
-msgid "output<0: Why am I launched?"
-msgstr "output<0: Varför startades jag?"
+msgid "output<2: Why am I launched?"
+msgstr "output<2: Varför startades jag?"
 
 #: ../src/xwrapper.py:130
 msgid "len(display)<2: No proper DISPLAY variable"
