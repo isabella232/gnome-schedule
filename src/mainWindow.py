@@ -1,5 +1,5 @@
 # mainWindow.py - mainWindow of the crontab configuration tool
-# Copyright (C) 2004 - 2010  Gaute Hope <eg at gaute dot vetsj dot com>
+# Copyright (C) 2004 - 2011  Gaute Hope <eg at gaute dot vetsj dot com>
 # Copyright (C) 2004, 2005   Philip Van Hoof <me at pvanhoof dot be>
 # Copyright (C) 2004, 2005   Kristof Vansant <de_lupus at pandora dot be>
 #
@@ -735,7 +735,7 @@ class main:
         dlg.set_title (_("About Gnome Schedule"))
         dlg.set_name (_("Gnome Schedule"))
         dlg.set_version (config.getVersion())
-        dlg.set_copyright (_("Copyright (c) %(year)s %(name)s.") % ({ 'year' : "2004-2010", 'name' : "Gaute Hope"}))
+        dlg.set_copyright (_("Copyright (c) %(year)s %(name)s.") % ({ 'year' : "2004-2011", 'name' : "Gaute Hope"}))
         #dlg.set_comments ()
         #dlg.set_license ()
         dlg.set_website ("http://gnome-schedule.sourceforge.net")
