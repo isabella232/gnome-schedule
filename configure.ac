@@ -3,6 +3,8 @@ AM_INIT_AUTOMAKE(gnome-schedule, 2.1.2)
 
 dnl check for python
 dnl AM_PATH_PYTHON
+dnl Until PyGtk supports Python 3 we look for Python 2 first
+AC_PATH_PROG(PYTHON, python2 python2.7 python2.6 python2.5 python)
 AM_PATH_PYTHON
 
 PKG_CHECK_MODULES(PYGTK, pygtk-2.0 >= 2.6)
