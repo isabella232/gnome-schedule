@@ -26,6 +26,7 @@ sys.path.append ("./")
 # g-s modules
 import config
 import crontab
+import at
 
 # NEEDED FOR SUBMODULES
 ##
@@ -49,17 +50,42 @@ if uid == 0: is_root = True
 else: is_root = False
 
 # CRONTAB
+# Common string representation for the different output modes
+output_strings = [
+                        _("Default behaviour"),
+                        _("Suppress output"),
+                        _("X application"),
+                        _("X application: suppress output"),
+                ]
+
 c = crontab.Crontab (is_root, user, uid, gid, home_dir)
 tasks = c.read ()
-print "Crontab tasks:"
+print "Crontab (recurrent) tasks:"
 for task in tasks:
   print "Task:         ", task[0]
   print "When:         ", task[1], "[", task[5], "]"
   print "Command:      ", task[2]
   print "Crontab line: ", task[3].strip()
   print "Job ID:       ", task[8]
+  print "Output:       ", task[14], "[", output_strings[task[14]], "]"
   print "Type:         ", task[12], "[", task[13], "]"
   print ""
 
-sys.exit ()
+# AT
+print
+print "At (one-time) tasks:"
+a = at.At(is_root, user, uid, gid, home_dir, manual_poscorrect)
+tasks = a.read ()
+for task in tasks:
+  print "Task:         ", task[0]
+  print "User:         ", task[10]
+  print "When:         ", task[1], "[", task[5], "]"
+  print "Command:      ", task[2]
+  print "Job ID:       ", task[4]
+  print "X application ", task[14], "[", ("yes" if (task[14] == 1) else "no"), "]"
+  print "Type:         ", task[12], "[", task[13], "]"
+  print "Full script:  "
+  print task[3]
+  print ""
+
 
