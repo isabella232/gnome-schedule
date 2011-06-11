@@ -1,0 +1,2 @@
+#! /bin/sh
+PYTHONPATH=::/usr/lib/python2.7/site-packages/gtk-2.0/:$PYTHONPATH /usr/bin/python2 /home/gaute/dev/gnome/gs/rep/inst/share/gnome-schedule/gnome-schedule-export.py $1

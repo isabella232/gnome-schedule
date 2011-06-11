@@ -123,6 +123,8 @@ Makefile
 src/config.py
 src/Makefile
 src/gnome-schedule
+src/gnome-schedule-export
+src/gnome-schedule-import
 icons/Makefile
 po/Makefile.in
 desktop/Makefile
