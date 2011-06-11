@@ -7,9 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
-"schedule&component=general\n"
-"POT-Creation-Date: 2010-10-22 12:43+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-06-11 14:35+0200\n"
 "PO-Revision-Date: 2010-12-02 20:32+0300\n"
 "Last-Translator: Lucian Adrian Grijincu <lucian.grijincu@gmail.com>\n"
 "Language-Team: Romanian Gnome Team <gnomero-list@lists.sourceforge.net>\n"
@@ -46,8 +45,8 @@ msgid ""
 "Failed to create data dir! Make sure ~/.gnome and ~/.gnome/gnome-schedule "
 "are writable."
 msgstr ""
-"Eșec la crearea dosarului de date! Asigurați-vă că ~/.gnome și ~/.gnome"
-"/gnome-schedule pot fi scrise."
+"Eșec la crearea dosarului de date! Asigurați-vă că ~/.gnome și ~/.gnome/"
+"gnome-schedule pot fi scrise."
 
 #: ../src/at.py:124 ../src/crontab.py:162
 #, python-format
@@ -575,6 +574,90 @@ msgstr ""
 "sau să definiți PYTHONPATH corect.\n"
 "Încercați: exportă PYTHONPATH= "
 
+#: ../src/gnome-schedule-export.py:45
+#, fuzzy
+msgid "Gnome Schedule: Export tasks."
+msgstr "Planificatorul Gnome"
+
+#: ../src/gnome-schedule-export.py:46
+#, python-format
+msgid "Usage: %s [output file]"
+msgstr ""
+
+#: ../src/gnome-schedule-export.py:47
+msgid "       No file means export to stdout."
+msgstr ""
+
+#: ../src/gnome-schedule-export.py:70
+msgid "File exists already."
+msgstr ""
+
+#: ../src/gnome-schedule-export.py:79
+#, fuzzy, python-format
+msgid "Could not open file for writing: %s"
+msgstr "Nu se poate deschide o conexiune către X!"
+
+#: ../src/gnome-schedule-export.py:89
+#, python-format
+msgid "Exporting crontab task: %s"
+msgstr ""
+
+#: ../src/gnome-schedule-export.py:101
+msgid "Exporting at task: "
+msgstr ""
+
+#: ../src/gnome-schedule-export.py:111
+#, python-format
+msgid "Finished, exported: %d tasks total"
+msgstr ""
+
+#: ../src/gnome-schedule-import.py:63
+msgid "Gnome Schedule: Import tasks tasks."
+msgstr ""
+
+#: ../src/gnome-schedule-import.py:64
+#, python-format
+msgid "Usage: %s [input file]"
+msgstr ""
+
+#: ../src/gnome-schedule-import.py:65
+msgid "       No file means import from stdin."
+msgstr ""
+
+#: ../src/gnome-schedule-import.py:70
+msgid "File does not exist."
+msgstr ""
+
+#: ../src/gnome-schedule-import.py:75
+msgid "Reading from stdin.."
+msgstr ""
+
+#. Reading file
+#: ../src/gnome-schedule-import.py:80
+#, python-format
+msgid "Reading file: %s.."
+msgstr ""
+
+#: ../src/gnome-schedule-import.py:82
+#, fuzzy, python-format
+msgid "Could not open file for reading: %s"
+msgstr "Nu se poate deschide o conexiune către X!"
+
+#: ../src/gnome-schedule-import.py:93
+#, python-format
+msgid "Importing crontab task: %s"
+msgstr ""
+
+#: ../src/gnome-schedule-import.py:105
+#, python-format
+msgid "Importing at task: %s"
+msgstr ""
+
+#: ../src/gnome-schedule-import.py:109
+#, python-format
+msgid "Finished, imported: %d tasks total."
+msgstr ""
+
 #. Translators: Date format for expressions like 'January 21'. %B is month, %d is day number.
 #. Run the command 'man strftime' to read more about these and other available specifiers.
 #: ../src/lang.py:124
@@ -664,11 +747,11 @@ msgstr "În fiecare zi în %(month)s la minutul %(minute)s al fiecărei ore"
 #: ../src/lang.py:215
 #, python-format
 msgid ""
-"On every day in %(month)s at every minute between %(time_from)s and %"
-"(time_to)s"
+"On every day in %(month)s at every minute between %(time_from)s and "
+"%(time_to)s"
 msgstr ""
-"În fiecare zi în %(month)s la fiecare minut între %(time_from)s și %"
-"(time_to)s"
+"În fiecare zi în %(month)s la fiecare minut între %(time_from)s și "
+"%(time_to)s"
 
 #: ../src/lang.py:217
 #, python-format
@@ -695,8 +778,7 @@ msgstr "În fiecare an pe %(date)s la minutul %(minute)s al fiecărei ore"
 msgid ""
 "Every year on %(date)s at every minute between %(time_from)s and %(time_to)s"
 msgstr ""
-"În fiecare an pe %(date)s la fiecare minut între %(time_from)s și %"
-"(time_to)s"
+"În fiecare an pe %(date)s la fiecare minut între %(time_from)s și %(time_to)s"
 
 #: ../src/lang.py:230
 #, python-format
@@ -722,8 +804,8 @@ msgstr ""
 #: ../src/lang.py:241
 #, python-format
 msgid ""
-"On every weekday: %(weekday)s at every minute between %(time_from)s and %"
-"(time_to)s"
+"On every weekday: %(weekday)s at every minute between %(time_from)s and "
+"%(time_to)s"
 msgstr ""
 "În fiecare zi de lucru: %(weekday)s la fiecare minut între %(time_from)s și "
 "%(time_to)s"
@@ -754,8 +836,8 @@ msgstr ""
 #: ../src/lang.py:252
 #, python-format
 msgid ""
-"On day %(monthday)s of every month and every weekday: %(weekday)s at minute %"
-"(minute)s of every hour"
+"On day %(monthday)s of every month and every weekday: %(weekday)s at minute "
+"%(minute)s of every hour"
 msgstr ""
 "În ziua %(monthday)s a fiecărei luni și fiecare zi de lucru: %(weekday)s la "
 "minutul %(minute)s al fiecărei ore"
@@ -799,11 +881,11 @@ msgstr ""
 #: ../src/lang.py:267
 #, python-format
 msgid ""
-"On every weekday: %(weekday)s in %(month)s at every minute between %"
-"(time_from)s and %(time_to)s"
+"On every weekday: %(weekday)s in %(month)s at every minute between "
+"%(time_from)s and %(time_to)s"
 msgstr ""
-"În fiecare zi de lucru: %(weekday)s în %(month)s la fiecare minut între %"
-"(time_from)s și %(time_to)s"
+"În fiecare zi de lucru: %(weekday)s în %(month)s la fiecare minut între "
+"%(time_from)s și %(time_to)s"
 
 #: ../src/lang.py:269
 #, python-format
@@ -849,8 +931,8 @@ msgstr ""
 #: ../src/lang.py:282
 #, python-format
 msgid ""
-"On every weekday: %(weekday)s in %(month)s and on %(date)s every year at %"
-"(time)s"
+"On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
+"%(time)s"
 msgstr ""
 "În fiecare zi de lucru: %(weekday)s în %(month)s și pe %(date)s în fiecare "
 "an la %(time)s"
@@ -1004,8 +1086,8 @@ msgstr ""
 "\n"
 "Sarcinile recurente vor fi rulate din dosarul personal al utilizatorului, "
 "sarcinile planificate pentru a fi rulate o singură dată vor fi executate din "
-"dosarul în care programul gnome-schedule a fost executat la crearea "
-"sarcinii (în mod normal, dosarul personal al utilizatorului)."
+"dosarul în care programul gnome-schedule a fost executat la crearea sarcinii "
+"(în mod normal, dosarul personal al utilizatorului)."
 
 #: ../src/mainWindow.py:727
 msgid "Please select a task!"
@@ -1081,8 +1163,8 @@ msgstr ""
 "Notă de lucru cu privire la dosarul de lucru al sarcinilor executate:\n"
 "\n"
 "Sarcinile planificate pentru a fi rulate o singură dată vor fi executate din "
-"dosarul în care programul gnome-schedule a fost executat la crearea "
-"sarcinii (în mod normal, dosarul personal al utilizatorului)."
+"dosarul în care programul gnome-schedule a fost executat la crearea sarcinii "
+"(în mod normal, dosarul personal al utilizatorului)."
 
 #: ../src/template.py:198 ../src/template.py:212
 msgid "Title:"

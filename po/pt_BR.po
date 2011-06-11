@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-13 22:24-0300\n"
+"POT-Creation-Date: 2011-06-11 14:35+0200\n"
 "PO-Revision-Date: 2010-06-04 11:17-0200\n"
 "Last-Translator: Djavan Fagundes <djavan@comum.org>\n"
 "Language-Team: Brazilian Portuguese <gnome-l10n-br@listas.cipsga.org.br>\n"
@@ -58,21 +58,21 @@ msgstr ""
 "Falha ao criar diretório de dados: %s. Garanta que ~/.gnome e ~/.gnome/gnome-"
 "schedule são graváveis."
 
-#: ../src/at.py:522
+#: ../src/at.py:512
 #, python-format
 msgid "Warning! Unknown task: %(preview)s"
 msgstr "Aviso! Tarefa desconhecida: %(preview)s"
 
-#: ../src/at.py:529
+#: ../src/at.py:519
 #, python-format
 msgid "On %(timestring)s"
 msgstr "Em %(timestring)s"
 
-#: ../src/at.py:535 ../src/at.py:540
+#: ../src/at.py:525 ../src/at.py:530
 msgid "Once"
 msgstr "Uma vez"
 
-#: ../src/at.py:544
+#: ../src/at.py:534
 msgid "Warning: a line in atq's output didn't parse"
 msgstr "Aviso: uma linha na saída do ATQ não pôde ser validada"
 
@@ -570,6 +570,90 @@ msgstr ""
 "Você precisa instalar pyGTK ou GTKv2,\n"
 "ou defina seu PYTHONPATH corretamente.\n"
 "tente: export PYTHONPATH= "
+
+#: ../src/gnome-schedule-export.py:45
+#, fuzzy
+msgid "Gnome Schedule: Export tasks."
+msgstr "Gnome Schedule"
+
+#: ../src/gnome-schedule-export.py:46
+#, python-format
+msgid "Usage: %s [output file]"
+msgstr ""
+
+#: ../src/gnome-schedule-export.py:47
+msgid "       No file means export to stdout."
+msgstr ""
+
+#: ../src/gnome-schedule-export.py:70
+msgid "File exists already."
+msgstr ""
+
+#: ../src/gnome-schedule-export.py:79
+#, fuzzy, python-format
+msgid "Could not open file for writing: %s"
+msgstr "Não foi possível abrir uma conexão para o X!"
+
+#: ../src/gnome-schedule-export.py:89
+#, python-format
+msgid "Exporting crontab task: %s"
+msgstr ""
+
+#: ../src/gnome-schedule-export.py:101
+msgid "Exporting at task: "
+msgstr ""
+
+#: ../src/gnome-schedule-export.py:111
+#, python-format
+msgid "Finished, exported: %d tasks total"
+msgstr ""
+
+#: ../src/gnome-schedule-import.py:63
+msgid "Gnome Schedule: Import tasks tasks."
+msgstr ""
+
+#: ../src/gnome-schedule-import.py:64
+#, python-format
+msgid "Usage: %s [input file]"
+msgstr ""
+
+#: ../src/gnome-schedule-import.py:65
+msgid "       No file means import from stdin."
+msgstr ""
+
+#: ../src/gnome-schedule-import.py:70
+msgid "File does not exist."
+msgstr ""
+
+#: ../src/gnome-schedule-import.py:75
+msgid "Reading from stdin.."
+msgstr ""
+
+#. Reading file
+#: ../src/gnome-schedule-import.py:80
+#, python-format
+msgid "Reading file: %s.."
+msgstr ""
+
+#: ../src/gnome-schedule-import.py:82
+#, fuzzy, python-format
+msgid "Could not open file for reading: %s"
+msgstr "Não foi possível abrir uma conexão para o X!"
+
+#: ../src/gnome-schedule-import.py:93
+#, python-format
+msgid "Importing crontab task: %s"
+msgstr ""
+
+#: ../src/gnome-schedule-import.py:105
+#, python-format
+msgid "Importing at task: %s"
+msgstr ""
+
+#: ../src/gnome-schedule-import.py:109
+#, python-format
+msgid "Finished, imported: %d tasks total."
+msgstr ""
 
 #. Translators: Date format for expressions like 'January 21'. %B is month, %d is day number.
 #. Run the command 'man strftime' to read more about these and other available specifiers.
