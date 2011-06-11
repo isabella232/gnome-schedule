@@ -16,10 +16,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-15 00:17+0100\n"
+"POT-Creation-Date: 2011-06-11 16:04+0200\n"
 "PO-Revision-Date: 2010-02-21 15:50+0100\n"
 "Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
 "Language-Team: Danish <dansk@klid.dk>\n"
+"Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -61,21 +62,21 @@ msgstr ""
 "Kunne ikke oprette datamappe: %s. Sikr dig at ~/.gnome and ~/.gnome/gnome-"
 "schedule er skrivbare."
 
-#: ../src/at.py:522
+#: ../src/at.py:512
 #, python-format
 msgid "Warning! Unknown task: %(preview)s"
 msgstr "Advarsel! Ukendt opgave: %(preview)s"
 
-#: ../src/at.py:529
+#: ../src/at.py:519
 #, python-format
 msgid "On %(timestring)s"
 msgstr "Den %(timestring)s"
 
-#: ../src/at.py:535 ../src/at.py:540
+#: ../src/at.py:525 ../src/at.py:530
 msgid "Once"
 msgstr "En gang"
 
-#: ../src/at.py:544
+#: ../src/at.py:534
 msgid "Warning: a line in atq's output didn't parse"
 msgstr "Advarsel: En linje i atq's uddata kunne ikke fortolkes"
 
@@ -206,8 +207,8 @@ msgid ""
 "This is an invalid record! The problem could be in the %(field)s field. "
 "Reason: %(reason)s"
 msgstr ""
-"Dette er en ugyldig post! Problemet kan være ved feltet %(field)s. Grund: %"
-"(reason)s"
+"Dette er en ugyldig post! Problemet kan være ved feltet %(field)s. Grund: "
+"%(reason)s"
 
 #: ../src/crontabEditor.py:307
 msgid ""
@@ -665,8 +666,8 @@ msgstr "Hver dag i %(month)s på det %(minute)s minut i hver time"
 #: ../src/lang.py:215
 #, python-format
 msgid ""
-"On every day in %(month)s at every minute between %(time_from)s and %"
-"(time_to)s"
+"On every day in %(month)s at every minute between %(time_from)s and "
+"%(time_to)s"
 msgstr "Hver dag i %(month)s, hver minut mellem %(time_from)s og %(time_to)s"
 
 #: ../src/lang.py:217
@@ -718,8 +719,8 @@ msgstr "På hver ugedag: %(weekday)s på det %(minute)s minut af hver time"
 #: ../src/lang.py:241
 #, python-format
 msgid ""
-"On every weekday: %(weekday)s at every minute between %(time_from)s and %"
-"(time_to)s"
+"On every weekday: %(weekday)s at every minute between %(time_from)s and "
+"%(time_to)s"
 msgstr ""
 "På hver ugedag: %(weekday)s, hvert minut mellem %(time_from)s og %(time_to)s"
 
@@ -748,11 +749,11 @@ msgstr ""
 #: ../src/lang.py:252
 #, python-format
 msgid ""
-"On day %(monthday)s of every month and every weekday: %(weekday)s at minute %"
-"(minute)s of every hour"
+"On day %(monthday)s of every month and every weekday: %(weekday)s at minute "
+"%(minute)s of every hour"
 msgstr ""
-"På dagen %(monthday)s hver måned og hver ugedag: %(weekday)s på det %(minute)"
-"s minut hver hele time"
+"På dagen %(monthday)s hver måned og hver ugedag: %(weekday)s på det "
+"%(minute)s minut hver hele time"
 
 #: ../src/lang.py:254
 #, python-format
@@ -790,11 +791,11 @@ msgstr ""
 #: ../src/lang.py:267
 #, python-format
 msgid ""
-"On every weekday: %(weekday)s in %(month)s at every minute between %"
-"(time_from)s and %(time_to)s"
+"On every weekday: %(weekday)s in %(month)s at every minute between "
+"%(time_from)s and %(time_to)s"
 msgstr ""
-"På hver ugedag: %(weekday)s i %(month)s hvert minut mellem %(time_from)s og %"
-"(time_to)s"
+"På hver ugedag: %(weekday)s i %(month)s hvert minut mellem %(time_from)s og "
+"%(time_to)s"
 
 #: ../src/lang.py:269
 #, python-format
@@ -824,8 +825,8 @@ msgid ""
 "On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
 "minute %(minute)s of every hour"
 msgstr ""
-"På hver ugedag: %(weekday)s i %(month)s og den %(date)s hvert år på det %"
-"(minute)s minut i hver time"
+"På hver ugedag: %(weekday)s i %(month)s og den %(date)s hvert år på det "
+"%(minute)s minut i hver time"
 
 #: ../src/lang.py:280
 #, python-format
@@ -839,11 +840,11 @@ msgstr ""
 #: ../src/lang.py:282
 #, python-format
 msgid ""
-"On every weekday: %(weekday)s in %(month)s and on %(date)s every year at %"
-"(time)s"
+"On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
+"%(time)s"
 msgstr ""
-"På hver ugedag: %(weekday)s i %(month)s og den %(date)s hvert år klokken %"
-"(time)s"
+"På hver ugedag: %(weekday)s i %(month)s og den %(date)s hvert år klokken "
+"%(time)s"
 
 #: ../src/lang.py:290
 msgid "every minute"
@@ -1140,7 +1141,8 @@ msgid "Launching %s.."
 msgstr "Starter %s.."
 
 #: ../src/xwrapper.py:127
-msgid "output<0: Why am I launched?"
+#, fuzzy
+msgid "output<2: Why am I launched?"
 msgstr "uddata<0: Hvorfor er jeg startet op?"
 
 #: ../src/xwrapper.py:130

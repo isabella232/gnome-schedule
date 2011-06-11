@@ -8,12 +8,12 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
-"schedule&component=general\n"
-"POT-Creation-Date: 2010-03-15 08:22+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-06-11 16:04+0200\n"
 "PO-Revision-Date: 2010-03-20 22:23+0100\n"
 "Last-Translator: Mario Blättermann <mariobl@gnome.org>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -55,21 +55,21 @@ msgstr ""
 "Datenordner konnte nicht erstellt werden: %s. Stellen Sie sicher, dass Sie "
 "über Schreibrechte in ~/.gnome und ~/.gnome/gnome-schedule verfügen."
 
-#: ../src/at.py:522
+#: ../src/at.py:512
 #, python-format
 msgid "Warning! Unknown task: %(preview)s"
 msgstr "Warnung! Unbekannte Aufgabe: %(preview)s"
 
-#: ../src/at.py:529
+#: ../src/at.py:519
 #, python-format
 msgid "On %(timestring)s"
 msgstr "Um %(timestring)s"
 
-#: ../src/at.py:535 ../src/at.py:540
+#: ../src/at.py:525 ../src/at.py:530
 msgid "Once"
 msgstr "Einmalig"
 
-#: ../src/at.py:544
+#: ../src/at.py:534
 msgid "Warning: a line in atq's output didn't parse"
 msgstr ""
 "Warnung: Eine Zeile in der Ausgabe von »atq« konnte nicht geparst werden"
@@ -637,8 +637,8 @@ msgid ""
 "On day %(monthday)s of every month at every minute between %(time_from)s and "
 "%(time_to)s"
 msgstr ""
-"An Tag %(monthday)s jedes Monats zu jeder Minute zwischen %(time_from)s und %"
-"(time_to)s"
+"An Tag %(monthday)s jedes Monats zu jeder Minute zwischen %(time_from)s und "
+"%(time_to)s"
 
 #: ../src/lang.py:204
 #, python-format
@@ -663,8 +663,8 @@ msgstr "An jedem Tag im %(month)s zu Minute %(minute)s jeder Stunde"
 #: ../src/lang.py:215
 #, python-format
 msgid ""
-"On every day in %(month)s at every minute between %(time_from)s and %"
-"(time_to)s"
+"On every day in %(month)s at every minute between %(time_from)s and "
+"%(time_to)s"
 msgstr ""
 "Jeden Tag im %(month)s zu jeder Minute zwischen %(time_from)s und %(time_to)s"
 
@@ -718,11 +718,11 @@ msgstr "An jedem Wochentag. %(weekday)s zu Minute %(minute)s jeder Stunde"
 #: ../src/lang.py:241
 #, python-format
 msgid ""
-"On every weekday: %(weekday)s at every minute between %(time_from)s and %"
-"(time_to)s"
+"On every weekday: %(weekday)s at every minute between %(time_from)s and "
+"%(time_to)s"
 msgstr ""
-"An jedem Wochentag: %(weekday)s zu jeder Minute zwischen %(time_from)s und %"
-"(time_to)s"
+"An jedem Wochentag: %(weekday)s zu jeder Minute zwischen %(time_from)s und "
+"%(time_to)s"
 
 #: ../src/lang.py:243
 #, python-format
@@ -750,11 +750,11 @@ msgstr ""
 #: ../src/lang.py:252
 #, python-format
 msgid ""
-"On day %(monthday)s of every month and every weekday: %(weekday)s at minute %"
-"(minute)s of every hour"
+"On day %(monthday)s of every month and every weekday: %(weekday)s at minute "
+"%(minute)s of every hour"
 msgstr ""
-"An Tag %(monthday)s jedes Monats und jeden Wochentag. %(weekday)s zu Minute %"
-"(minute)s jeder Stunde"
+"An Tag %(monthday)s jedes Monats und jeden Wochentag. %(weekday)s zu Minute "
+"%(minute)s jeder Stunde"
 
 #: ../src/lang.py:254
 #, python-format
@@ -793,11 +793,11 @@ msgstr ""
 #: ../src/lang.py:267
 #, python-format
 msgid ""
-"On every weekday: %(weekday)s in %(month)s at every minute between %"
-"(time_from)s and %(time_to)s"
+"On every weekday: %(weekday)s in %(month)s at every minute between "
+"%(time_from)s and %(time_to)s"
 msgstr ""
-"An jedem Wochentag: %(weekday)s im %(month)s zu jeder Minute zwischen %"
-"(time_from)s und %(time_to)s"
+"An jedem Wochentag: %(weekday)s im %(month)s zu jeder Minute zwischen "
+"%(time_from)s und %(time_to)s"
 
 #: ../src/lang.py:269
 #, python-format
@@ -843,11 +843,11 @@ msgstr ""
 #: ../src/lang.py:282
 #, python-format
 msgid ""
-"On every weekday: %(weekday)s in %(month)s and on %(date)s every year at %"
-"(time)s"
+"On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
+"%(time)s"
 msgstr ""
-"An jedem Wochentag. %(weekday)s im %(month)s und jedes Jahr am %(date)s um %"
-"(time)s"
+"An jedem Wochentag. %(weekday)s im %(month)s und jedes Jahr am %(date)s um "
+"%(time)s"
 
 #: ../src/lang.py:290
 msgid "every minute"

@@ -9,10 +9,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-16 19:23+0100\n"
+"POT-Creation-Date: 2011-06-11 16:04+0200\n"
 "PO-Revision-Date: 2010-03-15 12:27+0100\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -54,21 +55,21 @@ msgstr ""
 "Selhalo vytvoření adresáře pro data: %s. Ujistěte se, že je do ~/.gnome a ~/."
 "gnome/gnome-schedule povolen zápis."
 
-#: ../src/at.py:522
+#: ../src/at.py:512
 #, python-format
 msgid "Warning! Unknown task: %(preview)s"
 msgstr "Varování! Neznámá úloha: %(preview)s"
 
-#: ../src/at.py:529
+#: ../src/at.py:519
 #, python-format
 msgid "On %(timestring)s"
 msgstr "V %(timestring)s"
 
-#: ../src/at.py:535 ../src/at.py:540
+#: ../src/at.py:525 ../src/at.py:530
 msgid "Once"
 msgstr "Jednou"
 
-#: ../src/at.py:544
+#: ../src/at.py:534
 msgid "Warning: a line in atq's output didn't parse"
 msgstr "Varování: Nelze analyzovat řádek ve výstupu atq"
 
@@ -653,8 +654,8 @@ msgstr "Každý den v měsíci %(month)s v minutu %(minute)s každé hodiny"
 #: ../src/lang.py:215
 #, python-format
 msgid ""
-"On every day in %(month)s at every minute between %(time_from)s and %"
-"(time_to)s"
+"On every day in %(month)s at every minute between %(time_from)s and "
+"%(time_to)s"
 msgstr ""
 "Každý den v měsíci %(month)s každou minutu mezi %(time_from)s a %(time_to)s"
 
@@ -707,8 +708,8 @@ msgstr "Každý den v týdnu: %(weekday)s v %(minute)s. minutě každé hodiny"
 #: ../src/lang.py:241
 #, python-format
 msgid ""
-"On every weekday: %(weekday)s at every minute between %(time_from)s and %"
-"(time_to)s"
+"On every weekday: %(weekday)s at every minute between %(time_from)s and "
+"%(time_to)s"
 msgstr ""
 "Každý den v týdnu: %(weekday)s každou minutu mezi %(time_from)s a %(time_to)s"
 
@@ -738,11 +739,11 @@ msgstr ""
 #: ../src/lang.py:252
 #, python-format
 msgid ""
-"On day %(monthday)s of every month and every weekday: %(weekday)s at minute %"
-"(minute)s of every hour"
+"On day %(monthday)s of every month and every weekday: %(weekday)s at minute "
+"%(minute)s of every hour"
 msgstr ""
-"%(monthday)s. den každého měsíce a každý den v týdnu: %(weekday)s v minutu %"
-"(minute)s každé hodiny"
+"%(monthday)s. den každého měsíce a každý den v týdnu: %(weekday)s v minutu "
+"%(minute)s každé hodiny"
 
 #: ../src/lang.py:254
 #, python-format
@@ -781,11 +782,11 @@ msgstr ""
 #: ../src/lang.py:267
 #, python-format
 msgid ""
-"On every weekday: %(weekday)s in %(month)s at every minute between %"
-"(time_from)s and %(time_to)s"
+"On every weekday: %(weekday)s in %(month)s at every minute between "
+"%(time_from)s and %(time_to)s"
 msgstr ""
-"Každý den v týdnu: %(weekday)s v měsíci %(month)s každou minutu mezi %"
-"(time_from)s a %(time_to)s"
+"Každý den v týdnu: %(weekday)s v měsíci %(month)s každou minutu mezi "
+"%(time_from)s a %(time_to)s"
 
 #: ../src/lang.py:269
 #, python-format
@@ -831,11 +832,11 @@ msgstr ""
 #: ../src/lang.py:282
 #, python-format
 msgid ""
-"On every weekday: %(weekday)s in %(month)s and on %(date)s every year at %"
-"(time)s"
+"On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
+"%(time)s"
 msgstr ""
-"Každý den v týdnu: %(weekday)s v měsíci %(month)s a %(date)s každý rok v %"
-"(time)s"
+"Každý den v týdnu: %(weekday)s v měsíci %(month)s a %(date)s každý rok v "
+"%(time)s"
 
 #: ../src/lang.py:290
 msgid "every minute"

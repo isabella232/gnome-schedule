@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-11-19 15:56+0100\n"
+"POT-Creation-Date: 2011-06-11 16:04+0200\n"
 "PO-Revision-Date: 2008-09-18 15:30+0300\n"
 "Last-Translator: Ilkka Tuohela <hile@iki.fi>\n"
 "Language-Team: Finnish <gnome-fi-laatu@lists.sourceforge.net>\n"
+"Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -54,21 +55,21 @@ msgstr ""
 "Datakansiota ei voitu luoda: %s. Varmista, että kansiot ~/.gnome ja ~/.gnome/"
 "gnome-schedule ovat kirjoitettavissa."
 
-#: ../src/at.py:522
+#: ../src/at.py:512
 #, python-format
 msgid "Warning! Unknown task: %(preview)s"
 msgstr ""
 
-#: ../src/at.py:529
+#: ../src/at.py:519
 #, fuzzy, python-format
 msgid "On %(timestring)s"
 msgstr "%(date)s kello %(time)s"
 
-#: ../src/at.py:535 ../src/at.py:540
+#: ../src/at.py:525 ../src/at.py:530
 msgid "Once"
 msgstr "Kerran"
 
-#: ../src/at.py:544
+#: ../src/at.py:534
 msgid "Warning: a line in atq's output didn't parse"
 msgstr "Varoitus: riviä atq:n tulosteessa ei voi tulkita"
 
@@ -199,8 +200,8 @@ msgid ""
 "This is an invalid record! The problem could be in the %(field)s field. "
 "Reason: %(reason)s"
 msgstr ""
-"Tämä on virheellinen tietue! Ongelma saattaa olla kentässä %(field)s.Syy: %"
-"(reason)s"
+"Tämä on virheellinen tietue! Ongelma saattaa olla kentässä %(field)s.Syy: "
+"%(reason)s"
 
 #: ../src/crontabEditor.py:307
 #, fuzzy
@@ -270,7 +271,7 @@ msgstr "Tämä on virheellinen. Syy: %s"
 msgid "At an exact minute"
 msgstr "Tiettynä minuuttina"
 
-#: ../src/crontabEditorHelper.py:232 ../src/gnome-schedule.glade.h:43
+#: ../src/crontabEditorHelper.py:232 ../src/gnome-schedule.glade.h:44
 msgid "Minute:"
 msgstr "Minuutti:"
 
@@ -279,7 +280,7 @@ msgstr "Minuutti:"
 msgid "At an exact hour"
 msgstr "Tiettynä tuntina"
 
-#: ../src/crontabEditorHelper.py:236 ../src/gnome-schedule.glade.h:39
+#: ../src/crontabEditorHelper.py:236 ../src/gnome-schedule.glade.h:40
 msgid "Hour:"
 msgstr "Tunti:"
 
@@ -297,7 +298,7 @@ msgstr "Päivä:"
 msgid "In a month"
 msgstr "Kuukadessa"
 
-#: ../src/crontabEditorHelper.py:244 ../src/gnome-schedule.glade.h:45
+#: ../src/crontabEditorHelper.py:244 ../src/gnome-schedule.glade.h:46
 msgid "Month:"
 msgstr "Kuukausi:"
 
@@ -306,15 +307,15 @@ msgstr "Kuukausi:"
 msgid "On a weekday"
 msgstr "viikonpäivinä"
 
-#: ../src/crontabEditorHelper.py:248 ../src/gnome-schedule.glade.h:58
+#: ../src/crontabEditorHelper.py:248 ../src/gnome-schedule.glade.h:59
 msgid "Weekday:"
 msgstr "Viikonpäivä:"
 
-#: ../src/crontabEditorHelper.py:253 ../src/gnome-schedule.glade.h:41
+#: ../src/crontabEditorHelper.py:253 ../src/gnome-schedule.glade.h:42
 msgid "In a step width"
 msgstr "Askelvälillä"
 
-#: ../src/crontabEditorHelper.py:255 ../src/gnome-schedule.glade.h:44
+#: ../src/crontabEditorHelper.py:255 ../src/gnome-schedule.glade.h:45
 msgid "Minutes:"
 msgstr "Minuuttia:"
 
@@ -455,16 +456,17 @@ msgstr "Muokkaa ajastettua tehtävää"
 msgid "Edit the selected template"
 msgstr "Muokkaa valittua malli"
 
-#: ../src/gnome-schedule.glade.h:32
+#. This comes before the time and date input boxes in the One-time task editor
+#: ../src/gnome-schedule.glade.h:33
 msgid "Execute at:"
 msgstr "Suorita kello:"
 
-#: ../src/gnome-schedule.glade.h:33
+#: ../src/gnome-schedule.glade.h:34
 msgid "Execution at a specific minute, hour, day, weekday or month."
 msgstr ""
 "Suoritus tiettynä minuuttina, tuntina, päivänä, viikonpäivänä tai kuukautena."
 
-#: ../src/gnome-schedule.glade.h:34
+#: ../src/gnome-schedule.glade.h:35
 msgid ""
 "Execution at a step width. For example every five minutes, hours, days, "
 "weekdays or months."
@@ -472,87 +474,87 @@ msgstr ""
 "Suoritus tietyllä askelvälillä, kuten joka viides minuutti, joka toinen "
 "päivä ja niin edelleen."
 
-#: ../src/gnome-schedule.glade.h:35
+#: ../src/gnome-schedule.glade.h:36
 msgid "Execution at every minute, hour, day, weekday or month."
 msgstr "Suoritetaan joka minuutti, tunti, äivä, viikonpäivä tai kuukausi."
 
-#: ../src/gnome-schedule.glade.h:36
+#: ../src/gnome-schedule.glade.h:37
 msgid "Execution in a range."
 msgstr "Suoritetaan tietyllä välillä."
 
-#: ../src/gnome-schedule.glade.h:37
+#: ../src/gnome-schedule.glade.h:38
 msgid "Expression:"
 msgstr "Ilmaisu:"
 
-#: ../src/gnome-schedule.glade.h:38
+#: ../src/gnome-schedule.glade.h:39
 msgid "From:"
 msgstr "Alkaen:"
 
-#: ../src/gnome-schedule.glade.h:40
+#: ../src/gnome-schedule.glade.h:41
 msgid "In a range"
 msgstr "Välillä"
 
-#: ../src/gnome-schedule.glade.h:42
+#: ../src/gnome-schedule.glade.h:43
 msgid "Manage templates"
 msgstr "Hallitse malleja"
 
-#: ../src/gnome-schedule.glade.h:46
+#: ../src/gnome-schedule.glade.h:47
 msgid "Other"
 msgstr "Muu"
 
-#: ../src/gnome-schedule.glade.h:47
+#: ../src/gnome-schedule.glade.h:48
 msgid "Run selected task"
 msgstr "Suorita valittu tehtävä"
 
-#: ../src/gnome-schedule.glade.h:48
+#: ../src/gnome-schedule.glade.h:49
 msgid "Run task"
 msgstr "Suorita tehtävä"
 
-#: ../src/gnome-schedule.glade.h:49
+#: ../src/gnome-schedule.glade.h:50
 msgid "Scheduled and active tasks"
 msgstr "Ajastetut ja suorituksessa olevat tehtävät"
 
-#: ../src/gnome-schedule.glade.h:50
+#: ../src/gnome-schedule.glade.h:51
 msgid "See \"man 5 crontab\" for information about the crontab format."
 msgstr "Katso lisätietoa crontab-muotoilusta komennolla \"man 5 crontab\"."
 
-#: ../src/gnome-schedule.glade.h:51
+#: ../src/gnome-schedule.glade.h:52
 msgid "Show help"
 msgstr "Näytä ohje"
 
-#: ../src/gnome-schedule.glade.h:52
+#: ../src/gnome-schedule.glade.h:53
 msgid "Task description:"
 msgstr "Tehtävän kuvaus:"
 
-#: ../src/gnome-schedule.glade.h:53
+#: ../src/gnome-schedule.glade.h:54
 msgid "Task:"
 msgstr "Tehtävä:"
 
-#: ../src/gnome-schedule.glade.h:54
+#: ../src/gnome-schedule.glade.h:55
 msgid "Templates"
 msgstr "Mallit"
 
-#: ../src/gnome-schedule.glade.h:55
+#: ../src/gnome-schedule.glade.h:56
 msgid "Time expression help"
 msgstr "Aikailmaisun ohje"
 
-#: ../src/gnome-schedule.glade.h:56
+#: ../src/gnome-schedule.glade.h:57
 msgid "Time:"
 msgstr "Aika:"
 
-#: ../src/gnome-schedule.glade.h:57
+#: ../src/gnome-schedule.glade.h:58
 msgid "To:"
 msgstr "Saakka:"
 
-#: ../src/gnome-schedule.glade.h:59 ../src/mainWindow.py:73
+#: ../src/gnome-schedule.glade.h:60 ../src/mainWindow.py:73
 msgid "X application"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:60
+#: ../src/gnome-schedule.glade.h:61
 msgid "_User:"
 msgstr "_Käyttäjä:"
 
-#: ../src/gnome-schedule.glade.h:61
+#: ../src/gnome-schedule.glade.h:62
 msgid "ls -l"
 msgstr "ls -l"
 
@@ -629,8 +631,8 @@ msgid ""
 "On day %(monthday)s of every month at every minute between %(time_from)s and "
 "%(time_to)s"
 msgstr ""
-"Joka kuun %(monthday)s. päivä joka minuutilla välillä %(time_from)s ja %"
-"(time_to)s"
+"Joka kuun %(monthday)s. päivä joka minuutilla välillä %(time_from)s ja "
+"%(time_to)s"
 
 #: ../src/lang.py:204
 #, python-format
@@ -655,11 +657,11 @@ msgstr "Joka päivä %(month)s joka tunnin %(minute)s. minuutilla"
 #: ../src/lang.py:215
 #, python-format
 msgid ""
-"On every day in %(month)s at every minute between %(time_from)s and %"
-"(time_to)s"
+"On every day in %(month)s at every minute between %(time_from)s and "
+"%(time_to)s"
 msgstr ""
-"Joka päivä kuussa %(month)s joka minuutilla väliltä %(time_from)s - %"
-"(time_to)s"
+"Joka päivä kuussa %(month)s joka minuutilla väliltä %(time_from)s - "
+"%(time_to)s"
 
 #: ../src/lang.py:217
 #, python-format
@@ -686,8 +688,8 @@ msgstr "Joka vuosi %(date)s päivänä joka tunnin %(minute)s minuutilla"
 msgid ""
 "Every year on %(date)s at every minute between %(time_from)s and %(time_to)s"
 msgstr ""
-"Joka vuosi %(date)s päivänä joka minuttina välillä %(time_from)s ja %"
-"(time_to)s"
+"Joka vuosi %(date)s päivänä joka minuttina välillä %(time_from)s ja "
+"%(time_to)s"
 
 #: ../src/lang.py:230
 #, python-format
@@ -712,11 +714,11 @@ msgstr "Joka viikonpäivä: %(weekday)s joka tunnin minuutilla %(minute)s"
 #: ../src/lang.py:241
 #, python-format
 msgid ""
-"On every weekday: %(weekday)s at every minute between %(time_from)s and %"
-"(time_to)s"
+"On every weekday: %(weekday)s at every minute between %(time_from)s and "
+"%(time_to)s"
 msgstr ""
-"Joka viikonpäivä: %(weekday)s joka minuutilla välillä %(time_from)s - %"
-"(time_to)s"
+"Joka viikonpäivä: %(weekday)s joka minuutilla välillä %(time_from)s - "
+"%(time_to)s"
 
 #: ../src/lang.py:243
 #, python-format
@@ -729,8 +731,8 @@ msgid ""
 "On day %(monthday)s of every month and every weekday: %(weekday)s at every "
 "full hour"
 msgstr ""
-"Joka kuun %(monthday)s päivä joka kuussa ja joka viikonpäivä: joka %(weekday)"
-"s kerran tunnissa"
+"Joka kuun %(monthday)s päivä joka kuussa ja joka viikonpäivä: joka "
+"%(weekday)s kerran tunnissa"
 
 #: ../src/lang.py:250
 #, python-format
@@ -738,17 +740,17 @@ msgid ""
 "On day %(monthday)s of every month and every weekday: %(weekday)s at every "
 "minute"
 msgstr ""
-"Joka kuun %(monthday)s. päivä joka kuussa ja joka viikonpäivä: joka %"
-"(weekday)s joka minuutti"
+"Joka kuun %(monthday)s. päivä joka kuussa ja joka viikonpäivä: joka "
+"%(weekday)s joka minuutti"
 
 #: ../src/lang.py:252
 #, python-format
 msgid ""
-"On day %(monthday)s of every month and every weekday: %(weekday)s at minute %"
-"(minute)s of every hour"
+"On day %(monthday)s of every month and every weekday: %(weekday)s at minute "
+"%(minute)s of every hour"
 msgstr ""
-"Joka kuun %(monthday)s. päivä joka kuussa ja joka viikonpäivä: joka %"
-"(weekday)s joka tunnin %(minute)s minuutilla"
+"Joka kuun %(monthday)s. päivä joka kuussa ja joka viikonpäivä: joka "
+"%(weekday)s joka tunnin %(minute)s minuutilla"
 
 #: ../src/lang.py:254
 #, python-format
@@ -756,16 +758,16 @@ msgid ""
 "On day %(monthday)s of every month and every weekday: %(weekday)s at every "
 "minute between %(time_from)s and %(time_to)s"
 msgstr ""
-"Joka kuun %(monthday)s. päivä joka kuussa ja joka viikonpäivä: joka %"
-"(weekday)s joka minuutilla välillä %(time_from)s - %(time_to)s"
+"Joka kuun %(monthday)s. päivä joka kuussa ja joka viikonpäivä: joka "
+"%(weekday)s joka minuutilla välillä %(time_from)s - %(time_to)s"
 
 #: ../src/lang.py:256
 #, python-format
 msgid ""
 "On day %(monthday)s of every month and every weekday: %(weekday)s at %(time)s"
 msgstr ""
-"Joka kuun %(monthday)s. päivä joka kuussa ja joka viikonpäivä: joka %"
-"(weekday)s kello %(time)s"
+"Joka kuun %(monthday)s. päivä joka kuussa ja joka viikonpäivä: joka "
+"%(weekday)s kello %(time)s"
 
 #: ../src/lang.py:261
 #, python-format
@@ -788,11 +790,11 @@ msgstr ""
 #: ../src/lang.py:267
 #, python-format
 msgid ""
-"On every weekday: %(weekday)s in %(month)s at every minute between %"
-"(time_from)s and %(time_to)s"
+"On every weekday: %(weekday)s in %(month)s at every minute between "
+"%(time_from)s and %(time_to)s"
 msgstr ""
-"Joka viikonpäivä: %(weekday)s kuussa %(month)s joka minuutilla välillä %"
-"(time_from)s - %(time_to)s"
+"Joka viikonpäivä: %(weekday)s kuussa %(month)s joka minuutilla välillä "
+"%(time_from)s - %(time_to)s"
 
 #: ../src/lang.py:269
 #, python-format
@@ -838,8 +840,8 @@ msgstr ""
 #: ../src/lang.py:282
 #, python-format
 msgid ""
-"On every weekday: %(weekday)s in %(month)s and on %(date)s every year at %"
-"(time)s"
+"On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
+"%(time)s"
 msgstr ""
 "Joka  viikonpäivä: %(weekday)s kuussa %(month)s ja joka vuosi %(date)s kello "
 "%(time)s"
@@ -995,24 +997,24 @@ msgstr ""
 "tehtävät kansiosta, josta Gnomen ajastin käynnistettiin luotaessa tehtävää "
 "(yleensä käyttäjän kotihakemisto)."
 
-#: ../src/mainWindow.py:723
+#: ../src/mainWindow.py:727
 msgid "Please select a task!"
 msgstr "Valitse tehtävä"
 
-#: ../src/mainWindow.py:731
+#: ../src/mainWindow.py:735
 msgid "About Gnome Schedule"
 msgstr "Tietoja Gnome-ajastuksesta"
 
-#: ../src/mainWindow.py:732
+#: ../src/mainWindow.py:736
 msgid "Gnome Schedule"
 msgstr "Gnome-ajastus"
 
-#: ../src/mainWindow.py:734
+#: ../src/mainWindow.py:738
 #, python-format
 msgid "Copyright (c) %(year)s %(name)s."
 msgstr "Tekijänoikeudet (©) %(year)s %(name)s."
 
-#: ../src/mainWindow.py:747
+#: ../src/mainWindow.py:751
 msgid "translator-credits"
 msgstr ""
 "Ilkka Tuohela, 2006-2008\n"
@@ -1020,7 +1022,7 @@ msgstr ""
 "\n"
 "http://gnome.fi/"
 
-#: ../src/mainWindow.py:768
+#: ../src/mainWindow.py:772
 msgid "Could not display help"
 msgstr "Ohjetta ei voi näyttää"
 
@@ -1092,7 +1094,7 @@ msgid "One-time"
 msgstr "Kerran"
 
 #: ../src/xwrapper.py:60
-msgid "Could not open a  connection to X!"
+msgid "Could not open a connection to X!"
 msgstr ""
 
 #: ../src/xwrapper.py:71 ../src/xwrapper.py:79
@@ -1130,7 +1132,7 @@ msgid "Launching %s.."
 msgstr ""
 
 #: ../src/xwrapper.py:127
-msgid "output<0: Why am I launched?"
+msgid "output<2: Why am I launched?"
 msgstr ""
 
 #: ../src/xwrapper.py:130

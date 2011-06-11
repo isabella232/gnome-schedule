@@ -7,10 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-11-19 15:56+0100\n"
+"POT-Creation-Date: 2011-06-11 16:04+0200\n"
 "PO-Revision-Date: 2005-01-31 19:53+0100\n"
 "Last-Translator: Elian Myftiu <elian@alblinux.net>\n"
 "Language-Team: Albanian <gnome-albanian-perkthyesit@lists.sourceforge.net>\n"
+"Language: sq\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -51,21 +52,21 @@ msgid ""
 "schedule are writable."
 msgstr ""
 
-#: ../src/at.py:522
+#: ../src/at.py:512
 #, python-format
 msgid "Warning! Unknown task: %(preview)s"
 msgstr ""
 
-#: ../src/at.py:529
+#: ../src/at.py:519
 #, fuzzy, python-format
 msgid "On %(timestring)s"
 msgstr "Më %(date)s në %(time)s"
 
-#: ../src/at.py:535 ../src/at.py:540
+#: ../src/at.py:525 ../src/at.py:530
 msgid "Once"
 msgstr ""
 
-#: ../src/at.py:544
+#: ../src/at.py:534
 msgid "Warning: a line in atq's output didn't parse"
 msgstr ""
 
@@ -270,7 +271,7 @@ msgstr "Kjo është e pavlefshme. Arsyea: %s"
 msgid "At an exact minute"
 msgstr "Çdo minutë"
 
-#: ../src/crontabEditorHelper.py:232 ../src/gnome-schedule.glade.h:43
+#: ../src/crontabEditorHelper.py:232 ../src/gnome-schedule.glade.h:44
 #, fuzzy
 msgid "Minute:"
 msgstr "Minutë"
@@ -280,7 +281,7 @@ msgstr "Minutë"
 msgid "At an exact hour"
 msgstr ""
 
-#: ../src/crontabEditorHelper.py:236 ../src/gnome-schedule.glade.h:39
+#: ../src/crontabEditorHelper.py:236 ../src/gnome-schedule.glade.h:40
 #, fuzzy
 msgid "Hour:"
 msgstr "Orë"
@@ -300,7 +301,7 @@ msgstr ""
 msgid "In a month"
 msgstr "muaj"
 
-#: ../src/crontabEditorHelper.py:244 ../src/gnome-schedule.glade.h:45
+#: ../src/crontabEditorHelper.py:244 ../src/gnome-schedule.glade.h:46
 #, fuzzy
 msgid "Month:"
 msgstr "Muaj"
@@ -311,16 +312,16 @@ msgstr "Muaj"
 msgid "On a weekday"
 msgstr "ditë jave"
 
-#: ../src/crontabEditorHelper.py:248 ../src/gnome-schedule.glade.h:58
+#: ../src/crontabEditorHelper.py:248 ../src/gnome-schedule.glade.h:59
 #, fuzzy
 msgid "Weekday:"
 msgstr "Ditë jave"
 
-#: ../src/crontabEditorHelper.py:253 ../src/gnome-schedule.glade.h:41
+#: ../src/crontabEditorHelper.py:253 ../src/gnome-schedule.glade.h:42
 msgid "In a step width"
 msgstr ""
 
-#: ../src/crontabEditorHelper.py:255 ../src/gnome-schedule.glade.h:44
+#: ../src/crontabEditorHelper.py:255 ../src/gnome-schedule.glade.h:45
 #, fuzzy
 msgid "Minutes:"
 msgstr "Minutë"
@@ -481,15 +482,16 @@ msgstr "Ndrysho një detyrë kohore"
 msgid "Edit the selected template"
 msgstr "Do fshijë paravendosjen e zgjedhur"
 
-#: ../src/gnome-schedule.glade.h:32
+#. This comes before the time and date input boxes in the One-time task editor
+#: ../src/gnome-schedule.glade.h:33
 msgid "Execute at:"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:33
+#: ../src/gnome-schedule.glade.h:34
 msgid "Execution at a specific minute, hour, day, weekday or month."
 msgstr "Ekzekutim në një minutë, orë, ditë, ditë jave apo muaj të veçantë."
 
-#: ../src/gnome-schedule.glade.h:34
+#: ../src/gnome-schedule.glade.h:35
 msgid ""
 "Execution at a step width. For example every five minutes, hours, days, "
 "weekdays or months."
@@ -497,93 +499,93 @@ msgstr ""
 "Ekzekutim në një shkallë të caktuar. Për shembull çdo 5 minuta, orë, ditë, "
 "ditë jave apo muaj."
 
-#: ../src/gnome-schedule.glade.h:35
+#: ../src/gnome-schedule.glade.h:36
 msgid "Execution at every minute, hour, day, weekday or month."
 msgstr "Ekzekutim çdo minutë, orë, ditë, ditë jave apo muaj."
 
-#: ../src/gnome-schedule.glade.h:36
+#: ../src/gnome-schedule.glade.h:37
 msgid "Execution in a range."
 msgstr "Ekzekutim në një shtrirje kohore."
 
-#: ../src/gnome-schedule.glade.h:37
+#: ../src/gnome-schedule.glade.h:38
 #, fuzzy
 msgid "Expression:"
 msgstr "Shprehje tjetër"
 
-#: ../src/gnome-schedule.glade.h:38
+#: ../src/gnome-schedule.glade.h:39
 msgid "From:"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:40
+#: ../src/gnome-schedule.glade.h:41
 msgid "In a range"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:42
+#: ../src/gnome-schedule.glade.h:43
 #, fuzzy
 msgid "Manage templates"
 msgstr "Organizo detyrat e sistemit tënd"
 
-#: ../src/gnome-schedule.glade.h:46
+#: ../src/gnome-schedule.glade.h:47
 msgid "Other"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:47
+#: ../src/gnome-schedule.glade.h:48
 #, fuzzy
 msgid "Run selected task"
 msgstr "Të lutem zgjidh një detyrë"
 
-#: ../src/gnome-schedule.glade.h:48
+#: ../src/gnome-schedule.glade.h:49
 #, fuzzy
 msgid "Run task"
 msgstr "Ekzekuto më:"
 
-#: ../src/gnome-schedule.glade.h:49
+#: ../src/gnome-schedule.glade.h:50
 msgid "Scheduled and active tasks"
 msgstr "Detyrat kohore aktive"
 
-#: ../src/gnome-schedule.glade.h:50
+#: ../src/gnome-schedule.glade.h:51
 #, fuzzy
 msgid "See \"man 5 crontab\" for information about the crontab format."
 msgstr "Shiko \"man 5 crontab\" për të dhëna rreth formatit crontab."
 
-#: ../src/gnome-schedule.glade.h:51
+#: ../src/gnome-schedule.glade.h:52
 msgid "Show help"
 msgstr "Shfaq ndihmën"
 
-#: ../src/gnome-schedule.glade.h:52
+#: ../src/gnome-schedule.glade.h:53
 msgid "Task description:"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:53
+#: ../src/gnome-schedule.glade.h:54
 msgid "Task:"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:54
+#: ../src/gnome-schedule.glade.h:55
 msgid "Templates"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:55
+#: ../src/gnome-schedule.glade.h:56
 msgid "Time expression help"
 msgstr "Ndihma e shprehjes së kohës"
 
-#: ../src/gnome-schedule.glade.h:56
+#: ../src/gnome-schedule.glade.h:57
 msgid "Time:"
 msgstr "Ora:"
 
-#: ../src/gnome-schedule.glade.h:57
+#: ../src/gnome-schedule.glade.h:58
 msgid "To:"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:59 ../src/mainWindow.py:73
+#: ../src/gnome-schedule.glade.h:60 ../src/mainWindow.py:73
 #, fuzzy
 msgid "X application"
 msgstr "Rreth këtij programi"
 
-#: ../src/gnome-schedule.glade.h:60
+#: ../src/gnome-schedule.glade.h:61
 msgid "_User:"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:61
+#: ../src/gnome-schedule.glade.h:62
 msgid "ls -l"
 msgstr ""
 
@@ -657,8 +659,8 @@ msgid ""
 "On day %(monthday)s of every month at every minute between %(time_from)s and "
 "%(time_to)s"
 msgstr ""
-"Në ditën %(monthday)s të çdo muaji në çdo minutë midis %(time_from)s dhe %"
-"(time_to)s"
+"Në ditën %(monthday)s të çdo muaji në çdo minutë midis %(time_from)s dhe "
+"%(time_to)s"
 
 #: ../src/lang.py:204
 #, python-format
@@ -683,8 +685,8 @@ msgstr "Në çdo ditë të %(month)s në çdo minutë %(minute)s të çdo ore"
 #: ../src/lang.py:215
 #, python-format
 msgid ""
-"On every day in %(month)s at every minute between %(time_from)s and %"
-"(time_to)s"
+"On every day in %(month)s at every minute between %(time_from)s and "
+"%(time_to)s"
 msgstr ""
 "Në çdo ditë të %(month)s në çdo minutë midis %(time_from)s dhe %(time_to)s"
 
@@ -737,8 +739,8 @@ msgstr "Në çdo %(weekday)s në minutën %(minute)s të çdo ore"
 #: ../src/lang.py:241
 #, fuzzy, python-format
 msgid ""
-"On every weekday: %(weekday)s at every minute between %(time_from)s and %"
-"(time_to)s"
+"On every weekday: %(weekday)s at every minute between %(time_from)s and "
+"%(time_to)s"
 msgstr "Në çdo %(weekday)s në çdo minutë midis %(time_from)s dhe %(time_to)s"
 
 #: ../src/lang.py:243
@@ -763,11 +765,11 @@ msgstr "Në ditën %(monthday)s të çdo muaji dhe çdo %(weekday)s çdo minutë
 #: ../src/lang.py:252
 #, fuzzy, python-format
 msgid ""
-"On day %(monthday)s of every month and every weekday: %(weekday)s at minute %"
-"(minute)s of every hour"
+"On day %(monthday)s of every month and every weekday: %(weekday)s at minute "
+"%(minute)s of every hour"
 msgstr ""
-"Në ditën %(monthday)s të çdo muaji dhe çdo %(weekday)s në çdo minutë %"
-"(minute)s të çdo ore"
+"Në ditën %(monthday)s të çdo muaji dhe çdo %(weekday)s në çdo minutë "
+"%(minute)s të çdo ore"
 
 #: ../src/lang.py:254
 #, fuzzy, python-format
@@ -775,8 +777,8 @@ msgid ""
 "On day %(monthday)s of every month and every weekday: %(weekday)s at every "
 "minute between %(time_from)s and %(time_to)s"
 msgstr ""
-"Në ditën %(monthday)s të çdo muaji dhe çdo %(weekday)s në çdo minutë midis %"
-"(time_from)s dhe %(time_to)s"
+"Në ditën %(monthday)s të çdo muaji dhe çdo %(weekday)s në çdo minutë midis "
+"%(time_from)s dhe %(time_to)s"
 
 #: ../src/lang.py:256
 #, fuzzy, python-format
@@ -803,11 +805,11 @@ msgstr "Në çdo %(weekday)s në %(month)s çdo minutë %(minute)s të çdo ore"
 #: ../src/lang.py:267
 #, fuzzy, python-format
 msgid ""
-"On every weekday: %(weekday)s in %(month)s at every minute between %"
-"(time_from)s and %(time_to)s"
+"On every weekday: %(weekday)s in %(month)s at every minute between "
+"%(time_from)s and %(time_to)s"
 msgstr ""
-"Në çdo %(weekday)s në %(month)s çdo minutë midis %(time_from)s dhe %(time_to)"
-"s"
+"Në çdo %(weekday)s në %(month)s çdo minutë midis %(time_from)s dhe "
+"%(time_to)s"
 
 #: ../src/lang.py:269
 #, fuzzy, python-format
@@ -835,8 +837,8 @@ msgid ""
 "On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
 "minute %(minute)s of every hour"
 msgstr ""
-"Në çdo %(weekday)s në %(month)s dhe më %(date)s çdo vit në minutën %(minute)"
-"s të çdo ore"
+"Në çdo %(weekday)s në %(month)s dhe më %(date)s çdo vit në minutën "
+"%(minute)s të çdo ore"
 
 #: ../src/lang.py:280
 #, fuzzy, python-format
@@ -844,14 +846,14 @@ msgid ""
 "On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
 "every minute between %(time_from)s and %(time_to)s"
 msgstr ""
-"Në çdo %(weekday)s në %(month)s dhe më %(date)s çdo vit në çdo minutë midis %"
-"(time_from)s dhe %(time_to)s"
+"Në çdo %(weekday)s në %(month)s dhe më %(date)s çdo vit në çdo minutë midis "
+"%(time_from)s dhe %(time_to)s"
 
 #: ../src/lang.py:282
 #, fuzzy, python-format
 msgid ""
-"On every weekday: %(weekday)s in %(month)s and on %(date)s every year at %"
-"(time)s"
+"On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
+"%(time)s"
 msgstr "Në çdo %(weekday)s në %(month)s dhe në %(date)s çdo vit më %(time)s"
 
 #: ../src/lang.py:290
@@ -1000,30 +1002,30 @@ msgid ""
 "(normally the home directory)."
 msgstr ""
 
-#: ../src/mainWindow.py:723
+#: ../src/mainWindow.py:727
 #, fuzzy
 msgid "Please select a task!"
 msgstr "Të lutem zgjidh një detyrë"
 
-#: ../src/mainWindow.py:731
+#: ../src/mainWindow.py:735
 #, fuzzy
 msgid "About Gnome Schedule"
 msgstr "Orari Gnome"
 
-#: ../src/mainWindow.py:732
+#: ../src/mainWindow.py:736
 msgid "Gnome Schedule"
 msgstr "Orari Gnome"
 
-#: ../src/mainWindow.py:734
+#: ../src/mainWindow.py:738
 #, python-format
 msgid "Copyright (c) %(year)s %(name)s."
 msgstr ""
 
-#: ../src/mainWindow.py:747
+#: ../src/mainWindow.py:751
 msgid "translator-credits"
 msgstr "Elian Myftiu <elian@alblinux.net>"
 
-#: ../src/mainWindow.py:768
+#: ../src/mainWindow.py:772
 msgid "Could not display help"
 msgstr ""
 
@@ -1092,7 +1094,7 @@ msgid "One-time"
 msgstr "Një herë"
 
 #: ../src/xwrapper.py:60
-msgid "Could not open a  connection to X!"
+msgid "Could not open a connection to X!"
 msgstr ""
 
 #: ../src/xwrapper.py:71 ../src/xwrapper.py:79
@@ -1130,7 +1132,7 @@ msgid "Launching %s.."
 msgstr ""
 
 #: ../src/xwrapper.py:127
-msgid "output<0: Why am I launched?"
+msgid "output<2: Why am I launched?"
 msgstr ""
 
 #: ../src/xwrapper.py:130
