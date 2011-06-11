@@ -42,9 +42,11 @@ if poscorrect_isset == False:
     os.putenv ("POSIXLY_CORRECT", "enabled")
     manual_poscorrect = True
 
-sys.stderr.write(_("Gnome Schedule: Export tasks.") + "\n")
-sys.stderr.write(_("Usage: %s [output file]" % sys.argv[0]) + "\n")
-sys.stderr.write(_("       No file means export to stdout.") + "\n\n")
+sys.stderr.write(_("Gnome Schedule: Export tasks") + "\n")
+if ("-h" in sys.argv) or ("--help" in sys.argv):
+  sys.stderr.write(_("Usage: %s [output file]" % sys.argv[0]) + "\n")
+  sys.stderr.write(_("       No file means export to stdout.") + "\n\n")
+  sys.exit(0)
 
 
 # Parse arguments

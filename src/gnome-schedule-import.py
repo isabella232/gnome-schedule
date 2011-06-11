@@ -60,9 +60,11 @@ user_shell = pwd.getpwuid (uid)[6]
 if uid == 0: is_root = True
 else: is_root = False
 
-sys.stderr.write(_("Gnome Schedule: Import tasks tasks.") + "\n")
-sys.stderr.write(_("Usage: %s [input file]" % sys.argv[0]) + "\n")
-sys.stderr.write(_("       No file means import from stdin.") + "\n\n")
+sys.stderr.write(_("Gnome Schedule: Import tasks") + "\n")
+if ("-h" in sys.argv) or ("--help" in sys.argv):
+  sys.stderr.write(_("Usage: %s [input file]" % sys.argv[0]) + "\n")
+  sys.stderr.write(_("       No file means import from stdin.") + "\n\n")
+  sys.exit(0)
 
 # Check file
 if outf != False:
