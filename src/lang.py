@@ -188,7 +188,7 @@ def translate_crontab_easy_common (minute, hour, day, month, weekday):
         elif minute == "*" and hour != "*":
             return (_("At every minute between %(time_from)s and %(time_to)s") % { "time_from": lc_time(hour, 0), "time_to": lc_time(hour, 59) } )
         elif hour != "*" and minute != "*":
-            return (_("On every day at %(time)s").decode('utf-8') % { "time": lc_time(hour, minute) } )
+            return (_("On every day at %(time)s") % { "time": lc_time(hour, minute) } )
 
     # Day cases
     if month == "*" and day != "*" and weekday == "*":
