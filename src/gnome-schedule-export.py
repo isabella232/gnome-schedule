@@ -84,7 +84,7 @@ else:
 d = GnomeScheduleDB ()
 
 c = crontab.Crontab (is_root, user, uid, gid, home_dir)
-tasks = c.read ()
+tasks = c.read (easy = False)
 crontabc = 0
 cl = []
 for task in tasks:

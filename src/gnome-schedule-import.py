@@ -88,7 +88,7 @@ else:
 d = pickle.load (of)
 
 c = crontab.Crontab (is_root, user, uid, gid, home_dir)
-c.read ()
+c.read (easy = False)
 
 crontabc = 0
 for task in d.crontab:
