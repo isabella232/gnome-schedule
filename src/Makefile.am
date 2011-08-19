@@ -17,28 +17,33 @@ gnomeschedule_PYTHON = \
 	addWindow.py \
 	atEditor.py \
 	data.py \
-	scheduleapplet.py \
 	template.py \
 	template_chooser.py \
 	template_manager.py \
 	xwrapper.py
 
+if APPLET
+gnomeschedule_PYTHON += scheduleapplet.py
+endif
 
 uidir = $(datadir)/gnome-schedule
 ui_DATA = \
-	gnome-schedule.glade \
-	gnome-schedule-applet.xml
-	
+	gnome-schedule.glade
+
+if APPLET
+ui_DATA += gnome-schedule-applet.xml
+endif
+
 
 DISTCLEANFILES = \
 	$(bin_SCRIPTS) \
 	config.py \
 	gnome-schedule.glade.bak \
 	gnome-schedule.gladep.bak \
-	gnome-schedule.gladep 
+	gnome-schedule.gladep
 
 EXTRA_DIST =  \
 	$(bin_SCRIPTS) \
 	$(gnomeschedule_PYTHON) \
 	$(ui_DATA)
-	
+
