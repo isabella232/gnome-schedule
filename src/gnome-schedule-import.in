@@ -1,0 +1,2 @@
+#! /bin/sh
+PYTHONPATH=@PYTHONPATH@/gtk-2.0/:$PYTHONPATH @PYTHON@ @prefix@/share/gnome-schedule/gnome-schedule-import.py $1

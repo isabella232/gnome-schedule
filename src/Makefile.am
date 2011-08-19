@@ -1,8 +1,11 @@
-bin_SCRIPTS = gnome-schedule
+bin_SCRIPTS = gnome-schedule gnome-schedule-export gnome-schedule-import
 
 gnomescheduledir = $(prefix)/share/gnome-schedule
 gnomeschedule_PYTHON = \
 	gnome-schedule.py \
+	gnome-schedule-export.py \
+	gnome-schedule-import.py \
+	db.py \
 	at.py \
 	config.py \
 	mainWindow.py \
