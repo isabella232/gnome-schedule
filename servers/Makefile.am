@@ -6,4 +6,6 @@ server_DATA = $(server_in_files:.server.in=.server)
 
 DISTCLEANFILES = $(server_DATA)
 
+if APPLET
 EXTRA_DIST = $(server_DATA)
+endif

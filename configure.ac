@@ -101,11 +101,25 @@ if test "$XSLTPROC" = "no"; then
 	AC_MSG_ERROR(xsltproc is required)
 fi
 
+dnl Enable applet, the applet is not compatible with GNOME 3
+dnl and should be explicitily enabled.
+AC_MSG_CHECKING(for whether to include GNOME panel applet..)
+AC_ARG_ENABLE(applet,
+              [  --enable-applet         enable applet for the GNOME panel (GNOME 2 only)],
+              [applet=yes])
+
+AM_CONDITIONAL([APPLET], [test x$applet = xyes])
+
+if test "$applet" = "yes"; then
+  AC_MSG_RESULT(yes)
+else
+  AC_MSG_RESULT(no)
+fi
 
 
 dnl *******************************
 dnl Internationalization
-dnl ******************************* 
+dnl *******************************
 GETTEXT_PACKAGE=gnome-schedule
 AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, "$GETTEXT_PACKAGE")
 AC_SUBST(GETTEXT_PACKAGE)
@@ -131,3 +145,4 @@ servers/Makefile
 servers/GNOME_GnomeSchedule.server.in
 help/Makefile
 ])
+
