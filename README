@@ -10,28 +10,28 @@ Dependencies
 ------------
 
  Gnome Schedule needs (at least)
- 
+
 	o. at
 	o. crontab
 	o. Python
 	o. PyGTK >= 2.3
 	o. Python GConf
-   o. su
+  o. su
 
 Support
 -------
 
   o. Mailinglists: You can talk to the developers and some other users
      of gnome-schedule here:
- 
+
   o. http://lists.sourceforge.net/mailman/listinfo/gnome-schedule-users
-  
+
   There is also a development list here:
   o. http://lists.sourceforge.net/mailman/listinfo/gnome-schedule-devel
 
 INSTALL from source:
 -------------------------------------------------------------
-o. Because some people dislike the fact that manually compiled 
+o. Because some people dislike the fact that manually compiled
    applications tamper with their distribution which is managed by the
    packaging system in use. We understand this and therefore made it
    possible to install the application outside of any default prefix.
@@ -40,7 +40,7 @@ o. If you want to use the sources pulled from the subversion server you need aut
 
 o. The following commands will install gnome-schedule on a system that has python and automake-1.7 and some tools like gmake installed.
 
-     $ git clone git://git.gnome.org/git/gnome-schedule 
+     $ git clone git://git.gnome.org/git/gnome-schedule
      $ pushd gnome-schedule
      $ ./autogen.sh --prefix=/usr/local
      $ make
@@ -53,7 +53,7 @@ o. The following commands will install gnome-schedule on a system that has pytho
      # manually. If PyGTK is not installed in your default prefix,
      # you, in case you are planning not to use the script, would have
      # to set the PYTHONPATH environment variable first! The generated
-     # script, however, will do all this for you (if you use the 
+     # script, however, will do all this for you (if you use the
      # script).
 
 Important notes
@@ -68,7 +68,7 @@ Compiling and HACKING
 
   GNOME Schedule is written using the programming language Python
   and uses the PyGTK and Python-GConf bindings.
-  
+
   You can talk to the developers of gnome-schedule about development
   related issues here:
 
@@ -80,9 +80,9 @@ Compiling and HACKING
 	o. autoconf and the other auto* tools (version >= 1.7)
 	o. gnome-common which you can pull from the git.gnome.org
 
-  To run GNOME Schedule from the source directory 
+  To run GNOME Schedule from the source directory
 
-    o. Enter src/
+  o. Enter src/
 	o. run 'python gnome-schedule.py --debug'
 
 	This will use images and datafiles from the current directory. Remember this is only for debugging and might not always work as expected.

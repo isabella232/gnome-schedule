@@ -31,5 +31,3 @@ Translations:
   * Also checkout the lang.py file!
   * Some of the translations are so outdated, and wrong that they hardly should be there.. ie: pa.po
 
-Build System
-  * add python version check to configure.ac
