@@ -1,10 +1,5 @@
 SUBDIRS = desktop src icons po help
 
-if APPLET
-SUBDIRS += servers
-endif
-
-
 intltool_extra = intltool-extract.in intltool-merge.in intltool-update.in
 
 

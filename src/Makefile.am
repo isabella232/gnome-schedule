@@ -22,17 +22,9 @@ gnomeschedule_PYTHON = \
 	template_manager.py \
 	xwrapper.py
 
-if APPLET
-gnomeschedule_PYTHON += scheduleapplet.py
-endif
-
 uidir = $(datadir)/gnome-schedule
 ui_DATA = \
 	gnome-schedule.glade
-
-if APPLET
-ui_DATA += gnome-schedule-applet.xml
-endif
 
 
 DISTCLEANFILES = \
