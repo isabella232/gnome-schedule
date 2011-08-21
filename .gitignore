@@ -4,7 +4,10 @@ inst/
 *.gmo
 *.mo
 *.omf
-*.xml
+help/*/*.xml
+*.gz
+*.bz2
+gnome-schedule-2*
 INSTALL
 Makefile
 Makefile.in
