@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-20 11:28+0200\n"
+"POT-Creation-Date: 2011-08-22 12:01+0200\n"
 "PO-Revision-Date: 2011-06-21 12:32+0200\n"
 "Last-Translator: \n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
@@ -43,8 +43,7 @@ msgid ""
 "are writable."
 msgstr ""
 "Huts egin du datuen direktorioa sortzean. Ziurtatu zaitez ~/.gnome eta ~/."
-"gnome/gnome-schedule "
-"idazgarria izateaz."
+"gnome/gnome-schedule idazgarria izateaz."
 
 #: ../src/at.py:124 ../src/crontab.py:162
 #, python-format
@@ -53,24 +52,23 @@ msgid ""
 "schedule are writable."
 msgstr ""
 "Huts egin du datuen direktorioa sortzean: %s. Ziurtatu zaitez ~/.gnome eta "
-"~/.gnome/gnome-schedule "
-"idazgarria izateaz."
+"~/.gnome/gnome-schedule idazgarria izateaz."
 
-#: ../src/at.py:522
+#: ../src/at.py:512
 #, python-format
 msgid "Warning! Unknown task: %(preview)s"
 msgstr "Abisua. Zeregin ezezaguna:  %(preview)s"
 
-#: ../src/at.py:529
+#: ../src/at.py:519
 #, python-format
 msgid "On %(timestring)s"
 msgstr "Noiz: %(timestring)s"
 
-#: ../src/at.py:535 ../src/at.py:540
+#: ../src/at.py:525 ../src/at.py:530
 msgid "Once"
 msgstr "Behin"
 
-#: ../src/at.py:544
+#: ../src/at.py:534
 msgid "Warning: a line in atq's output didn't parse"
 msgstr "Abisua: atq-ren irteerako lerro bat ez da analizatu"
 
@@ -151,8 +149,8 @@ msgstr "asteko eguna"
 msgid ""
 "Failed to parse the Day of Month field, possibly due to a bug in crontab."
 msgstr ""
-"Huts egin du 'Hilabeteko eguna' eremua analizatzean, baliteke "
-"crontab-eko akats bat izatea."
+"Huts egin du 'Hilabeteko eguna' eremua analizatzean, baliteke crontab-eko "
+"akats bat izatea."
 
 #: ../src/crontabEditor.py:69 ../src/crontabEditorHelper.py:87
 #: ../src/gnome-schedule.glade.h:31
@@ -213,14 +211,13 @@ msgid ""
 "more information about the % character. If you don not want to use it for "
 "redirection it must be properly escaped with the \\ letter."
 msgstr ""
-"Zure komandoak % karaktere bat edo gehiago ditu, hau karaktere "
-"berezia da cron-entzako eta ezin da Gnom-schedule aplikazioa erabili "
-"crontab-eko lerroaren informazio gehigarria gordetzeko erabiltzen baitu. "
-"Erabili kanalizazioa adierazten duen | karakterea funtzionalitate berdina "
-"lortzeko. Irakur ezazu crontab-en eskuliburua % karaktereari buruzko "
-"informazio gehiago eskuratzeko. Ez baduzu berbideratzeko erabiltzea nahi, "
-"alderantzizko barrarekin (\\ karakterea) erabil dezakezu ihes sekuentzia "
-"sortzeko."
+"Zure komandoak % karaktere bat edo gehiago ditu, hau karaktere berezia da "
+"cron-entzako eta ezin da Gnom-schedule aplikazioa erabili crontab-eko "
+"lerroaren informazio gehigarria gordetzeko erabiltzen baitu. Erabili "
+"kanalizazioa adierazten duen | karakterea funtzionalitate berdina lortzeko. "
+"Irakur ezazu crontab-en eskuliburua % karaktereari buruzko informazio "
+"gehiago eskuratzeko. Ez baduzu berbideratzeko erabiltzea nahi, alderantzizko "
+"barrarekin (\\ karakterea) erabil dezakezu ihes sekuentzia sortzeko."
 
 #: ../src/crontabEditor.py:456
 msgid ""
@@ -230,8 +227,7 @@ msgid ""
 msgstr ""
 "Exekutatutako zereginen laneko direktorioari buruzko oharra:\n"
 "\n"
-"Zeregin errepikatuak etxeko direktoriotik (karpeta nagusia) "
-"exekuta daiteke."
+"Zeregin errepikatuak etxeko direktoriotik (karpeta nagusia) exekuta daiteke."
 
 #: ../src/crontabEditor.py:457 ../src/mainWindow.py:666 ../src/atEditor.py:593
 msgid "_Don't show again"
@@ -275,7 +271,7 @@ msgstr "Baliogabea da. Zergatia: %s"
 msgid "At an exact minute"
 msgstr "Minutu zehatz batean"
 
-#: ../src/crontabEditorHelper.py:232 ../src/gnome-schedule.glade.h:43
+#: ../src/crontabEditorHelper.py:232 ../src/gnome-schedule.glade.h:44
 msgid "Minute:"
 msgstr "Minutua:"
 
@@ -284,7 +280,7 @@ msgstr "Minutua:"
 msgid "At an exact hour"
 msgstr "Ordu zehatz batean"
 
-#: ../src/crontabEditorHelper.py:236 ../src/gnome-schedule.glade.h:39
+#: ../src/crontabEditorHelper.py:236 ../src/gnome-schedule.glade.h:40
 msgid "Hour:"
 msgstr "Ordua:"
 
@@ -302,7 +298,7 @@ msgstr "Eguna:"
 msgid "In a month"
 msgstr "Hilabetean"
 
-#: ../src/crontabEditorHelper.py:244 ../src/gnome-schedule.glade.h:45
+#: ../src/crontabEditorHelper.py:244 ../src/gnome-schedule.glade.h:46
 msgid "Month:"
 msgstr "Hilabetea:"
 
@@ -311,15 +307,15 @@ msgstr "Hilabetea:"
 msgid "On a weekday"
 msgstr "Astegunean"
 
-#: ../src/crontabEditorHelper.py:248 ../src/gnome-schedule.glade.h:58
+#: ../src/crontabEditorHelper.py:248 ../src/gnome-schedule.glade.h:59
 msgid "Weekday:"
 msgstr "Asteguna"
 
-#: ../src/crontabEditorHelper.py:253 ../src/gnome-schedule.glade.h:41
+#: ../src/crontabEditorHelper.py:253 ../src/gnome-schedule.glade.h:42
 msgid "In a step width"
 msgstr "Aldiro"
 
-#: ../src/crontabEditorHelper.py:255 ../src/gnome-schedule.glade.h:44
+#: ../src/crontabEditorHelper.py:255 ../src/gnome-schedule.glade.h:45
 msgid "Minutes:"
 msgstr "Minutuak:"
 
@@ -354,6 +350,91 @@ msgstr "_Laguntza"
 #: ../src/gnome-schedule-applet.xml.h:4
 msgid "_Manage tasks"
 msgstr "_Kudeatu zereginak"
+
+#: ../src/gnome-schedule-export.py:45
+#, fuzzy
+msgid "Gnome Schedule: Export tasks"
+msgstr "Gnome Schedule"
+
+#: ../src/gnome-schedule-export.py:47
+#, python-format
+msgid "Usage: %s [output file]"
+msgstr ""
+
+#: ../src/gnome-schedule-export.py:48
+msgid "       No file means export to stdout."
+msgstr ""
+
+#: ../src/gnome-schedule-export.py:72
+msgid "File exists already."
+msgstr ""
+
+#: ../src/gnome-schedule-export.py:81
+#, fuzzy, python-format
+msgid "Could not open file for writing: %s"
+msgstr "Ezin izan da Xerako konexiorik ireki."
+
+#: ../src/gnome-schedule-export.py:91
+#, python-format
+msgid "Exporting crontab task: %s"
+msgstr ""
+
+#: ../src/gnome-schedule-export.py:103
+msgid "Exporting at task: "
+msgstr ""
+
+#: ../src/gnome-schedule-export.py:113
+#, python-format
+msgid "Finished, exported: %d tasks total"
+msgstr ""
+
+#: ../src/gnome-schedule-import.py:63
+#, fuzzy
+msgid "Gnome Schedule: Import tasks"
+msgstr "Gnome Schedule"
+
+#: ../src/gnome-schedule-import.py:65
+#, python-format
+msgid "Usage: %s [input file]"
+msgstr ""
+
+#: ../src/gnome-schedule-import.py:66
+msgid "       No file means import from stdin."
+msgstr ""
+
+#: ../src/gnome-schedule-import.py:72
+msgid "File does not exist."
+msgstr ""
+
+#: ../src/gnome-schedule-import.py:77
+msgid "Reading from stdin.."
+msgstr ""
+
+#. Reading file
+#: ../src/gnome-schedule-import.py:82
+#, python-format
+msgid "Reading file: %s.."
+msgstr ""
+
+#: ../src/gnome-schedule-import.py:84
+#, fuzzy, python-format
+msgid "Could not open file for reading: %s"
+msgstr "Ezin izan da Xerako konexiorik ireki."
+
+#: ../src/gnome-schedule-import.py:95
+#, python-format
+msgid "Importing crontab task: %s"
+msgstr ""
+
+#: ../src/gnome-schedule-import.py:107
+#, python-format
+msgid "Importing at task: %s"
+msgstr ""
+
+#: ../src/gnome-schedule-import.py:111
+#, python-format
+msgid "Finished, imported: %d tasks total."
+msgstr ""
 
 #: ../src/gnome-schedule.glade.h:1
 msgid "*"
@@ -460,15 +541,16 @@ msgstr "Editatu programatutako zeregina"
 msgid "Edit the selected template"
 msgstr "Editatu hautatutako txantiloia"
 
-#: ../src/gnome-schedule.glade.h:32
+#. This comes before the time and date input boxes in the One-time task editor
+#: ../src/gnome-schedule.glade.h:33
 msgid "Execute at:"
 msgstr "Exekutatu:"
 
-#: ../src/gnome-schedule.glade.h:33
+#: ../src/gnome-schedule.glade.h:34
 msgid "Execution at a specific minute, hour, day, weekday or month."
 msgstr "Minutu, ordu, egun, astegun edo hilabete zehatz bateko exekuzioa"
 
-#: ../src/gnome-schedule.glade.h:34
+#: ../src/gnome-schedule.glade.h:35
 msgid ""
 "Execution at a step width. For example every five minutes, hours, days, "
 "weekdays or months."
@@ -476,88 +558,88 @@ msgstr ""
 "Aldiroko exekuzioa. Adibidez, bost minuturo, orduro, egunero, astegunero edo "
 "hilabetero."
 
-#: ../src/gnome-schedule.glade.h:35
+#: ../src/gnome-schedule.glade.h:36
 msgid "Execution at every minute, hour, day, weekday or month."
 msgstr "Minutu, ordu, egun, astegun edo hilabete bakoitzeroko exekuzioa."
 
-#: ../src/gnome-schedule.glade.h:36
+#: ../src/gnome-schedule.glade.h:37
 msgid "Execution in a range."
 msgstr "Exekuzioa barruti batean."
 
-#: ../src/gnome-schedule.glade.h:37
+#: ../src/gnome-schedule.glade.h:38
 msgid "Expression:"
 msgstr "Adierazpena:"
 
-#: ../src/gnome-schedule.glade.h:38
+#: ../src/gnome-schedule.glade.h:39
 msgid "From:"
 msgstr "Noiztik:"
 
-#: ../src/gnome-schedule.glade.h:40
+#: ../src/gnome-schedule.glade.h:41
 msgid "In a range"
 msgstr "Barrutian"
 
-#: ../src/gnome-schedule.glade.h:42
+#: ../src/gnome-schedule.glade.h:43
 msgid "Manage templates"
 msgstr "Kudeatu txantiloiak"
 
-#: ../src/gnome-schedule.glade.h:46
+#: ../src/gnome-schedule.glade.h:47
 msgid "Other"
 msgstr "Bestelakoa"
 
-#: ../src/gnome-schedule.glade.h:47
+#: ../src/gnome-schedule.glade.h:48
 msgid "Run selected task"
 msgstr "Exekutatu hautatutako zeregina"
 
-#: ../src/gnome-schedule.glade.h:48
+#: ../src/gnome-schedule.glade.h:49
 msgid "Run task"
 msgstr "Exekutatu zeregina"
 
-#: ../src/gnome-schedule.glade.h:49
+#: ../src/gnome-schedule.glade.h:50
 msgid "Scheduled and active tasks"
 msgstr "Programatutako zeregin aktiboak"
 
-#: ../src/gnome-schedule.glade.h:50
+#: ../src/gnome-schedule.glade.h:51
 msgid "See \"man 5 crontab\" for information about the crontab format."
 msgstr ""
 "Irakurri \"man 5 crontab\" crontab-en formatuaren informazioa jakiteko."
 
-#: ../src/gnome-schedule.glade.h:51
+#: ../src/gnome-schedule.glade.h:52
 msgid "Show help"
 msgstr "Erakutsi laguntza"
 
-#: ../src/gnome-schedule.glade.h:52
+#: ../src/gnome-schedule.glade.h:53
 msgid "Task description:"
 msgstr "Zereginaren azalpena:"
 
-#: ../src/gnome-schedule.glade.h:53
+#: ../src/gnome-schedule.glade.h:54
 msgid "Task:"
 msgstr "Zeregina:"
 
-#: ../src/gnome-schedule.glade.h:54
+#: ../src/gnome-schedule.glade.h:55
 msgid "Templates"
 msgstr "Txantiloiak"
 
-#: ../src/gnome-schedule.glade.h:55
+#: ../src/gnome-schedule.glade.h:56
 msgid "Time expression help"
 msgstr "Orduaren adierazpenaren laguntza"
 
-#: ../src/gnome-schedule.glade.h:56
+#: ../src/gnome-schedule.glade.h:57
 msgid "Time:"
 msgstr "Ordua:"
 
-#: ../src/gnome-schedule.glade.h:57
+#: ../src/gnome-schedule.glade.h:58
 msgid "To:"
 msgstr "Noiz arte:"
 
-#: ../src/gnome-schedule.glade.h:59 ../src/mainWindow.py:73
+#: ../src/gnome-schedule.glade.h:60 ../src/mainWindow.py:73
 msgid "X application"
 msgstr "X aplikazioa"
 
-#: ../src/gnome-schedule.glade.h:60
+#: ../src/gnome-schedule.glade.h:61
 msgid "_User:"
 msgstr "_Erabiltzailea:"
 
-#: ../src/gnome-schedule.glade.h:61
+#: ../src/gnome-schedule.glade.h:62
 msgid "ls -l"
 msgstr "ls -l"
 
@@ -568,8 +650,7 @@ msgid ""
 "or set your PYTHONPATH correctly.\n"
 "try: export PYTHONPATH= "
 msgstr ""
-"pyGTK edo GTKv2 instalatu behar duzu "
-"edo zure PYTHONPATH ongi ezarri.\n"
+"pyGTK edo GTKv2 instalatu behar duzu edo zure PYTHONPATH ongi ezarri.\n"
 "saiatu: export PYTHONPATH= "
 
 #. Translators: Date format for expressions like 'January 21'. %B is month, %d is day number.
@@ -634,8 +715,7 @@ msgid ""
 "On day %(monthday)s of every month at every minute between %(time_from)s and "
 "%(time_to)s"
 msgstr ""
-"Hilabetero %(monthday)s egunean minuturo %(time_from)s eta "
-"%(time_to)s artean"
+"Hilabetero %(monthday)s egunean minuturo %(time_from)s eta %(time_to)s artean"
 
 #: ../src/lang.py:204
 #, python-format
@@ -662,9 +742,7 @@ msgstr "%(month)s hilean egunero orduro %(minute)s minutuan"
 msgid ""
 "On every day in %(month)s at every minute between %(time_from)s and "
 "%(time_to)s"
-msgstr ""
-"%(month)s hilean egunero minuturo %(time_from)s eta"
-"%(time_to)s artean"
+msgstr "%(month)s hilean egunero minuturo %(time_from)s eta%(time_to)s artean"
 
 #: ../src/lang.py:217
 #, python-format
@@ -717,9 +795,7 @@ msgstr "Astegunero: %(weekday)s  orduro %(minute)s minutuan"
 msgid ""
 "On every weekday: %(weekday)s at every minute between %(time_from)s and "
 "%(time_to)s"
-msgstr ""
-"Astegunero: %(weekday)s minuturo  %(time_from)s "
-"%(time_to)s artean"
+msgstr "Astegunero: %(weekday)s minuturo  %(time_from)s %(time_to)s artean"
 
 #: ../src/lang.py:243
 #, python-format
@@ -788,8 +864,8 @@ msgid ""
 "On every weekday: %(weekday)s in %(month)s at every minute between "
 "%(time_from)s and %(time_to)s"
 msgstr ""
-"Astegunero: %(month)s hileko %(weekday)s minuturo "
-"%(time_from)s eta %(time_to)s artean"
+"Astegunero: %(month)s hileko %(weekday)s minuturo %(time_from)s eta "
+"%(time_to)s artean"
 
 #: ../src/lang.py:269
 #, python-format
@@ -811,8 +887,8 @@ msgid ""
 "On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
 "every minute"
 msgstr ""
-"Astegunero: %(month)s hileko %(weekday)s egunean eta urteroko %(date)s "
-"datan minuturo"
+"Astegunero: %(month)s hileko %(weekday)s egunean eta urteroko %(date)s datan "
+"minuturo"
 
 #: ../src/lang.py:278
 #, python-format
@@ -820,8 +896,8 @@ msgid ""
 "On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
 "minute %(minute)s of every hour"
 msgstr ""
-"Astegunero: %(month)s hileko %(weekday)s egunean eta urteroko %(date)s "
-"datan orduro %(minute)s minutuan"
+"Astegunero: %(month)s hileko %(weekday)s egunean eta urteroko %(date)s datan "
+"orduro %(minute)s minutuan"
 
 #: ../src/lang.py:280
 #, python-format
@@ -829,8 +905,8 @@ msgid ""
 "On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
 "every minute between %(time_from)s and %(time_to)s"
 msgstr ""
-"Astegunero: %(month)s hileko %(weekday)s egunean eta urteroko %(date)s "
-"datan minuturo %(time_from)s eta %(time_to)s artean"
+"Astegunero: %(month)s hileko %(weekday)s egunean eta urteroko %(date)s datan "
+"minuturo %(time_from)s eta %(time_to)s artean"
 
 #: ../src/lang.py:282
 #, python-format
@@ -971,8 +1047,7 @@ msgid ""
 msgstr ""
 "Ziur zaude zeregin hau orain exekutatzea nahi duzula?\n"
 "\n"
-"Zereginaren aurrebistarako erabili ohi da eta exekuzioa behin "
-"abiarazten du, "
+"Zereginaren aurrebistarako erabili ohi da eta exekuzioa behin abiarazten du, "
 "honek ez dio programatutako exekuzio-denbora arruntari eragiten."
 
 #: ../src/mainWindow.py:656
@@ -989,34 +1064,34 @@ msgid ""
 msgstr ""
 "Exekutatutako zereginen direktorioari buruzko oharra:\n"
 "\n"
-"Zeregin errepikatua karpeta nagusitik exekuta daitezke, behin  "
-"abiarazteko zereginak berriz zeregina sortzean Gnome schedule exekutatu "
-"zen direktoriotik (karpeta nagusia izan ohi da)."
+"Zeregin errepikatua karpeta nagusitik exekuta daitezke, behin  abiarazteko "
+"zereginak berriz zeregina sortzean Gnome schedule exekutatu zen "
+"direktoriotik (karpeta nagusia izan ohi da)."
 
-#: ../src/mainWindow.py:723
+#: ../src/mainWindow.py:727
 msgid "Please select a task!"
 msgstr "Hautatu zeregin bat."
 
-#: ../src/mainWindow.py:731
+#: ../src/mainWindow.py:735
 msgid "About Gnome Schedule"
 msgstr "Gnome Schedule-ri buruz"
 
-#: ../src/mainWindow.py:732
+#: ../src/mainWindow.py:736
 msgid "Gnome Schedule"
 msgstr "Gnome Schedule"
 
-#: ../src/mainWindow.py:734
+#: ../src/mainWindow.py:738
 #, python-format
 msgid "Copyright (c) %(year)s %(name)s."
 msgstr "Copyright-a (c) %(year)s %(name)s."
 
-#: ../src/mainWindow.py:747
+#: ../src/mainWindow.py:751
 msgid "translator-credits"
 msgstr ""
 "Hizkuntza Politikarako Sailburuordetza <hizkpol@ej-gv.es>, 2011\n"
 "Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2011"
 
-#: ../src/mainWindow.py:768
+#: ../src/mainWindow.py:772
 msgid "Could not display help"
 msgstr "Ezin izan da laguntza bistaratu"
 
@@ -1051,8 +1126,8 @@ msgid ""
 "24 hours."
 msgstr ""
 "Ordu eta minutuaren eremuetatiko batean (edo bietan) hizki bat edo "
-"barrutitik kanpo dagoen zenbakia sartu da. "
-"Gogoratu ordu batek 60 minutu dituela soilik, eta egun batek 24 ordu."
+"barrutitik kanpo dagoen zenbakia sartu da. Gogoratu ordu batek 60 minutu "
+"dituela soilik, eta egun batek 24 ordu."
 
 #: ../src/atEditor.py:572
 #, python-format
@@ -1069,8 +1144,7 @@ msgstr ""
 "Exekutatutako zereginen laneko direktorioari buruzko oharra:\n"
 "\n"
 "Behin abiarazten diren zereginak berriz zeregina sortzean Gnome schedule "
-"exekutatu "
-"zen direktoriotik (karpeta nagusia izan ohi da)."
+"exekutatu zen direktoriotik (karpeta nagusia izan ohi da)."
 
 #: ../src/template.py:198 ../src/template.py:212
 msgid "Title:"
@@ -1089,7 +1163,8 @@ msgid "One-time"
 msgstr "Behin"
 
 #: ../src/xwrapper.py:60
-msgid "Could not open a  connection to X!"
+#, fuzzy
+msgid "Could not open a connection to X!"
 msgstr "Ezin izan da Xerako konexiorik ireki."
 
 #: ../src/xwrapper.py:71 ../src/xwrapper.py:79
@@ -1102,8 +1177,8 @@ msgid ""
 "applications to be run from crontab or at under X. Use through gnome-"
 "schedule."
 msgstr ""
-"GNOME Schedule-ren (http://gnome-schedule.sf.net) script bat da crontab "
-"edo X pean aplikazioak exekutatzeko. Erabili gnome-schedule bidez."
+"GNOME Schedule-ren (http://gnome-schedule.sf.net) script bat da crontab edo "
+"X pean aplikazioak exekutatzeko. Erabili gnome-schedule bidez."
 
 #: ../src/xwrapper.py:87
 msgid "Unknown type of job."
@@ -1118,8 +1193,8 @@ msgid ""
 "Could not get job data, the task might have been created with an old version "
 "- try recreating the task."
 msgstr ""
-"Ezin izan da lanaren daturik lortu, baliteke zeregina bertsio zahar "
-"batekin sortu izana. Saiatu zaitez zeregina berriro sortzen."
+"Ezin izan da lanaren daturik lortu, baliteke zeregina bertsio zahar batekin "
+"sortu izana. Saiatu zaitez zeregina berriro sortzen."
 
 #: ../src/xwrapper.py:121
 msgid "Data file too old. Recreate task."
@@ -1131,7 +1206,8 @@ msgid "Launching %s.."
 msgstr "%s abiarazten..."
 
 #: ../src/xwrapper.py:127
-msgid "output<0: Why am I launched?"
+#, fuzzy
+msgid "output<2: Why am I launched?"
 msgstr "output<0: Zergatik abiarazi zen?"
 
 #: ../src/xwrapper.py:130
@@ -1145,5 +1221,3 @@ msgstr "Ez da inoiz bistaratuko."
 #: ../src/xwrapper.py:158
 msgid "xwrapper.py: completed"
 msgstr "xwrapper.py: osatuta"
-
-
