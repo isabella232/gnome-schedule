@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-08-22 12:01+0200\n"
+"POT-Creation-Date: 2011-08-23 16:15+0200\n"
 "PO-Revision-Date: 2009-08-26 11:46+0200\n"
 "Last-Translator: Francisco Diéguez <fran.dieguez@mabishu.com>\n"
 "Language-Team: Galician <>\n"
@@ -620,6 +620,7 @@ msgid "To:"
 msgstr "Até:"
 
 #: ../src/gnome-schedule.glade.h:60 ../src/mainWindow.py:73
+#: ../src/examples/dump.py:57
 msgid "X application"
 msgstr "Aplicativo X"
 
@@ -939,15 +940,15 @@ msgstr "día da semana: %s"
 msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 msgstr ""
 
-#: ../src/mainWindow.py:71
+#: ../src/mainWindow.py:71 ../src/examples/dump.py:55
 msgid "Default behaviour"
 msgstr "Comportamento predefinido"
 
-#: ../src/mainWindow.py:72
+#: ../src/mainWindow.py:72 ../src/examples/dump.py:56
 msgid "Suppress output"
 msgstr "Eliminar saída"
 
-#: ../src/mainWindow.py:74
+#: ../src/mainWindow.py:74 ../src/examples/dump.py:58
 msgid "X application: suppress output"
 msgstr "Aplicativo X: eliminar saída"
 
