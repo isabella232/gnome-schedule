@@ -446,10 +446,15 @@ class Crontab:
                     preview = self.__make_preview__ (command)
 
                     #add task to treemodel in mainWindow
-                    if minute == "@reboot":
-                      data.append([title, (self.__easy__ (minute, hour, day, month, weekday) if easy else "") , preview, line, linecount, time, self, None, job_id, "", "","", _("Recurrent"), "crontab", output, _("At reboot")])
+                    if easy:
+                      easy_s = self.__easy__ (minute, hour, day, month, weekday)
                     else:
-                      data.append([title, (self.__easy__ (minute, hour, day, month, weekday) if easy else ""), preview, line, linecount, time, self, None, job_id, "", "","", _("Recurrent"), "crontab", output, time])
+                      easy_s = ""
+
+                    if minute == "@reboot":
+                      data.append([title, easy_s , preview, line, linecount, time, self, None, job_id, "", "","", _("Recurrent"), "crontab", output, _("At reboot")])
+                    else:
+                      data.append([title, easy_s, preview, line, linecount, time, self, None, job_id, "", "","", _("Recurrent"), "crontab", output, time])
 
 
             linecount = linecount + 1
