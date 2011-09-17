@@ -8,14 +8,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-schedule&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-08-23 14:17+0000\n"
-"PO-Revision-Date: 2011-09-15 22:26+0100\n"
+"POT-Creation-Date: 2011-09-03 12:04+0000\n"
+"PO-Revision-Date: 2011-09-07 21:35+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: \n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n%100==4 ? 3 : 0);\n"
 "X-Poedit-Language: Slovenian\n"
 "X-Poedit-Country: SLOVENIA\n"
@@ -364,9 +364,8 @@ msgid "_Manage tasks"
 msgstr "_Upravljaj z nalogami"
 
 #: ../src/gnome-schedule-export.py:45
-#, fuzzy
 msgid "Gnome Schedule: Export tasks"
-msgstr "Urnik Gnome: izvozi opravke"
+msgstr "Urnik Gnome: izvozi naloge"
 
 #: ../src/gnome-schedule-export.py:47
 #, python-format
@@ -374,9 +373,8 @@ msgid "Usage: %s [output file]"
 msgstr "Uporaba: %s [izhodna datoteka]"
 
 #: ../src/gnome-schedule-export.py:48
-#, fuzzy
 msgid "       No file means export to stdout."
-msgstr "       Če datoteka ni podana, pomeni izvoz na st. izhod (stdout)."
+msgstr "       Če datoteka ni podana, pomeni izvoz na standardni izhod."
 
 #: ../src/gnome-schedule-export.py:72
 msgid "File exists already."
@@ -388,24 +386,22 @@ msgid "Could not open file for writing: %s"
 msgstr "Datoteke ni mogoče odpreti za pisanje: %s"
 
 #: ../src/gnome-schedule-export.py:91
-#, fuzzy, python-format
+#, python-format
 msgid "Exporting crontab task: %s"
-msgstr "Izvažanje opravka crontab: %s"
+msgstr "Izvažanje naloge crontab: %s"
 
 #: ../src/gnome-schedule-export.py:103
-#, fuzzy
 msgid "Exporting at task: "
-msgstr "Izvažanje pri opravku: "
+msgstr "Izvažanje pri nalogi: "
 
 #: ../src/gnome-schedule-export.py:113
-#, fuzzy, python-format
+#, python-format
 msgid "Finished, exported: %d tasks total"
-msgstr "Dokončano, izvoženo: %d vseh opravkov"
+msgstr "Dokončano, izvoženo: %d vseh nalog"
 
 #: ../src/gnome-schedule-import.py:63
-#, fuzzy
 msgid "Gnome Schedule: Import tasks"
-msgstr "Urnik Gnome: uvozi opravke"
+msgstr "Urnik Gnome: uvozi naloge"
 
 #: ../src/gnome-schedule-import.py:65
 #, python-format
@@ -413,18 +409,16 @@ msgid "Usage: %s [input file]"
 msgstr "Uporaba: %s [vhodna datoteka]"
 
 #: ../src/gnome-schedule-import.py:66
-#, fuzzy
 msgid "       No file means import from stdin."
-msgstr "       Če datoteka ni podana, pomeni uvoz s st. vhoda (stdin)."
+msgstr "       Če datoteka ni podana, pomeni uvoz s standardnega vhoda."
 
 #: ../src/gnome-schedule-import.py:72
 msgid "File does not exist."
 msgstr "Datoteka ne obstaja."
 
 #: ../src/gnome-schedule-import.py:77
-#, fuzzy
 msgid "Reading from stdin.."
-msgstr "Branje s st. vhoda (stdin) ..."
+msgstr "Branje s standardnega vhoda ..."
 
 #. Reading file
 #: ../src/gnome-schedule-import.py:82
@@ -438,19 +432,19 @@ msgid "Could not open file for reading: %s"
 msgstr "Datoteke ni mogoče odpreti za branje: %s"
 
 #: ../src/gnome-schedule-import.py:95
-#, fuzzy, python-format
+#, python-format
 msgid "Importing crontab task: %s"
-msgstr "Uvažanje opravka crontab: %s"
+msgstr "Uvažanje naloge crontab: %s"
 
 #: ../src/gnome-schedule-import.py:107
-#, fuzzy, python-format
+#, python-format
 msgid "Importing at task: %s"
-msgstr "Uvažanje opravka: %s"
+msgstr "Uvažanje pri nalogi: %s"
 
 #: ../src/gnome-schedule-import.py:111
-#, fuzzy, python-format
+#, python-format
 msgid "Finished, imported: %d tasks total."
-msgstr "Dokončano, uvoženo: %d vseh opravkov."
+msgstr "Dokončano, uvoženo: %d vseh nalog."
 
 #: ../src/gnome-schedule.glade.h:1
 msgid "*"
@@ -1182,4 +1176,3 @@ msgstr "Nikoli ne bo pokazano."
 #: ../src/xwrapper.py:158
 msgid "xwrapper.py: completed"
 msgstr "xwrapper.py: končano"
-
