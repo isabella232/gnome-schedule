@@ -1,9 +1,9 @@
 # French translation of gnome-schedule.
-# Copyright (C) 2004-2009 The Free Software Foundation, Inc.
+# Copyright (C) 2004-2011 The Free Software Foundation, Inc.
 # This file is distributed under the same license as the gnome-schedule package.
 #
 # Yannick Marchegay <yannick.marchegay@lokanova.com>, 2004.
-# Claude Paroz <claude@2xlibre.net>, 2006-2009.
+# Claude Paroz <claude@2xlibre.net>, 2006-2011.
 # Jonathan Ernst <jonathan@ernstfamily.ch>, 2007.
 # Stéphane Raimbault <stephane.raimbault@gmail.com>, 2007-2008.
 # Jeff Fortin <nekohayo ~at~ gmail.com>, 2007.
@@ -11,15 +11,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule HEAD\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-08-23 16:15+0200\n"
-"PO-Revision-Date: 2009-03-10 16:19+0100\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"schedule&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2011-08-23 14:17+0000\n"
+"PO-Revision-Date: 2011-09-21 19:40+0200\n"
 "Last-Translator: Claude Paroz <claude@2xlibre.net>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: fr\n"
 
 # Utilisation de l'infinitif dans les infobulles du Bureau
 #: ../desktop/gnome-schedule.desktop.in.in.h:1
@@ -360,89 +361,87 @@ msgid "_Manage tasks"
 msgstr "_Gérer les tâches"
 
 #: ../src/gnome-schedule-export.py:45
-#, fuzzy
 msgid "Gnome Schedule: Export tasks"
-msgstr "Planificateur de tâches de GNOME"
+msgstr "Planificateur de tâches de GNOME : exportation de tâches"
 
 #: ../src/gnome-schedule-export.py:47
 #, python-format
 msgid "Usage: %s [output file]"
-msgstr ""
+msgstr "Utilisation : %s [fichier_sortie]"
 
 #: ../src/gnome-schedule-export.py:48
 msgid "       No file means export to stdout."
-msgstr ""
+msgstr "       Sans indication de fichier, l'exportation est envoyée à stdout."
 
 #: ../src/gnome-schedule-export.py:72
 msgid "File exists already."
-msgstr ""
+msgstr "Le fichier existe déjà."
 
 #: ../src/gnome-schedule-export.py:81
-#, fuzzy, python-format
+#, python-format
 msgid "Could not open file for writing: %s"
-msgstr "Impossible d'ouvrir une connexion à X."
+msgstr "Impossible d'ouvrir le fichier en écriture : %s"
 
 #: ../src/gnome-schedule-export.py:91
 #, python-format
 msgid "Exporting crontab task: %s"
-msgstr ""
+msgstr "Exportation de la tâche crontab : %s"
 
 #: ../src/gnome-schedule-export.py:103
 msgid "Exporting at task: "
-msgstr ""
+msgstr "Exportation à la tâche : "
 
 #: ../src/gnome-schedule-export.py:113
 #, python-format
 msgid "Finished, exported: %d tasks total"
-msgstr ""
+msgstr "Terminé, %d tâches exportées"
 
 #: ../src/gnome-schedule-import.py:63
-#, fuzzy
 msgid "Gnome Schedule: Import tasks"
-msgstr "Planificateur de tâches de GNOME"
+msgstr "Planificateur de tâches de GNOME : importation de tâches"
 
 #: ../src/gnome-schedule-import.py:65
 #, python-format
 msgid "Usage: %s [input file]"
-msgstr ""
+msgstr "Utilisation : %s [fichier_entrée]"
 
 #: ../src/gnome-schedule-import.py:66
 msgid "       No file means import from stdin."
-msgstr ""
+msgstr "       Sans indication de fichier, l'importation est lue dans stdin."
 
 #: ../src/gnome-schedule-import.py:72
 msgid "File does not exist."
-msgstr ""
+msgstr "Le fichier n'existe pas."
 
 #: ../src/gnome-schedule-import.py:77
 msgid "Reading from stdin.."
-msgstr ""
+msgstr "Lecture à partir de stdin..."
 
 #. Reading file
 #: ../src/gnome-schedule-import.py:82
 #, python-format
 msgid "Reading file: %s.."
-msgstr ""
+msgstr "Lecture du fichier : %s..."
 
 #: ../src/gnome-schedule-import.py:84
-#, fuzzy, python-format
+#, python-format
 msgid "Could not open file for reading: %s"
-msgstr "Impossible d'ouvrir une connexion à X."
+msgstr "Impossible d'ouvrir le fichier en lecture : %s"
 
 #: ../src/gnome-schedule-import.py:95
 #, python-format
 msgid "Importing crontab task: %s"
-msgstr ""
+msgstr "Importation de tâche crontab : %s"
 
 #: ../src/gnome-schedule-import.py:107
 #, python-format
 msgid "Importing at task: %s"
-msgstr ""
+msgstr "Importation à la tâche : %s"
 
 #: ../src/gnome-schedule-import.py:111
 #, python-format
 msgid "Finished, imported: %d tasks total."
-msgstr ""
+msgstr "Terminé, %d tâches importées."
 
 #: ../src/gnome-schedule.glade.h:1
 msgid "*"
@@ -757,11 +756,11 @@ msgstr ""
 #: ../src/lang.py:215
 #, python-format
 msgid ""
-"On every day in %(month)s at every minute between %(time_from)s and "
-"%(time_to)s"
+"On every day in %(month)s at every minute between %(time_from)s and %"
+"(time_to)s"
 msgstr ""
-"À chaque minute entre %(time_from)s et %(time_to)s de chaque jour de "
-"%(month)s"
+"À chaque minute entre %(time_from)s et %(time_to)s de chaque jour de %(month)"
+"s"
 
 #: ../src/lang.py:217
 #, python-format
@@ -815,8 +814,8 @@ msgstr "À la minute %(minute)s de toutes les heures de chaque %(weekday)s"
 #: ../src/lang.py:241
 #, python-format
 msgid ""
-"On every weekday: %(weekday)s at every minute between %(time_from)s and "
-"%(time_to)s"
+"On every weekday: %(weekday)s at every minute between %(time_from)s and %"
+"(time_to)s"
 msgstr ""
 "À chaque minute entre %(time_from)s et %(time_to)s de chaque %(weekday)s"
 
@@ -840,14 +839,14 @@ msgid ""
 "On day %(monthday)s of every month and every weekday: %(weekday)s at every "
 "minute"
 msgstr ""
-"À toutes les minutes du jour %(monthday)s de chaque mois et de chaque "
-"%(weekday)s"
+"À toutes les minutes du jour %(monthday)s de chaque mois et de chaque %"
+"(weekday)s"
 
 #: ../src/lang.py:252
 #, python-format
 msgid ""
-"On day %(monthday)s of every month and every weekday: %(weekday)s at minute "
-"%(minute)s of every hour"
+"On day %(monthday)s of every month and every weekday: %(weekday)s at minute %"
+"(minute)s of every hour"
 msgstr ""
 "À la minute %(minute)s de chaque heure du jour %(monthday)s de chaque mois "
 "et de chaque %(weekday)s"
@@ -888,11 +887,11 @@ msgstr ""
 #: ../src/lang.py:267
 #, python-format
 msgid ""
-"On every weekday: %(weekday)s in %(month)s at every minute between "
-"%(time_from)s and %(time_to)s"
+"On every weekday: %(weekday)s in %(month)s at every minute between %"
+"(time_from)s and %(time_to)s"
 msgstr ""
-"Chaque minute entre %(time_from)s et %(time_to)s de chaque %(weekday)s de "
-"%(month)s"
+"Chaque minute entre %(time_from)s et %(time_to)s de chaque %(weekday)s de %"
+"(month)s"
 
 #: ../src/lang.py:269
 #, python-format
@@ -923,8 +922,8 @@ msgid ""
 "On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
 "minute %(minute)s of every hour"
 msgstr ""
-"À la minute %(minute)s de toutes les heures de chaque %(weekday)s de "
-"%(month)s et le %(date)s de chaque année"
+"À la minute %(minute)s de toutes les heures de chaque %(weekday)s de %(month)"
+"s et le %(date)s de chaque année"
 
 #: ../src/lang.py:280
 #, python-format
@@ -932,14 +931,14 @@ msgid ""
 "On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
 "every minute between %(time_from)s and %(time_to)s"
 msgstr ""
-"Chaque minute entre %(time_from)s et %(time_to)s de chaque %(weekday)s de "
-"%(month)s et le %(date)s de chaque année"
+"Chaque minute entre %(time_from)s et %(time_to)s de chaque %(weekday)s de %"
+"(month)s et le %(date)s de chaque année"
 
 #: ../src/lang.py:282
 #, python-format
 msgid ""
-"On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
-"%(time)s"
+"On every weekday: %(weekday)s in %(month)s and on %(date)s every year at %"
+"(time)s"
 msgstr ""
 "Chaque %(weekday)s de %(month)s et le %(date)s de chaque année, à %(time)s"
 
