@@ -7,24 +7,24 @@
 # Rodrigo Marcos Fombellida <rmarcos_geo@yahoo.es>, 2005.
 # Alejandro Valdes Jimenez <avaldes@utalca.cl>, 2007.
 # Rodrigo Marcos Fombellida <rmarcos@svn.gnome.org>, 2008.
-# Jorge González <jorgegonz@svn.gnome.org>, 2007, 2009, 2010.
 # Daniel Mustieles <daniel.mustieles@gmail.com>, 2011.
+# Jorge González <jorgegonz@svn.gnome.org>, 2007, 2009, 2010, 2011.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule.HEAD\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "schedule&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-09-15 11:58+0000\n"
-"PO-Revision-Date: 2011-09-18 19:02+0200\n"
-"Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
-"Language-Team: Español <gnome-es-list@gnome.org>\n"
+"POT-Creation-Date: 2011-09-18 17:03+0000\n"
+"PO-Revision-Date: 2011-09-24 13:46+0200\n"
+"Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
+"Language-Team: Español; Castellano <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: \n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
 
 #: ../desktop/gnome-schedule.desktop.in.in.h:1
 msgid "Manage your system tasks"
@@ -385,7 +385,7 @@ msgstr "No se pudo abrir el archivo para escritura: %s"
 #: ../src/gnome-schedule-export.py:91
 #, python-format
 msgid "Exporting crontab task: %s"
-msgstr ""
+msgstr "Exportando la tarea crontab: %s"
 
 #: ../src/gnome-schedule-export.py:103
 msgid "Exporting at task: "
@@ -407,7 +407,7 @@ msgstr "Uso: %s [archivo de entrada]"
 
 #: ../src/gnome-schedule-import.py:66
 msgid "       No file means import from stdin."
-msgstr ""
+msgstr "       Ningún archivo significa importar desde stdin."
 
 #: ../src/gnome-schedule-import.py:72
 msgid "File does not exist."
@@ -431,7 +431,7 @@ msgstr "No se pudo abrir el archivo para lectura: %s"
 #: ../src/gnome-schedule-import.py:95
 #, python-format
 msgid "Importing crontab task: %s"
-msgstr ""
+msgstr "Importando la tarea crontab: %s"
 
 #: ../src/gnome-schedule-import.py:107
 #, python-format
