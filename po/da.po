@@ -5,7 +5,7 @@
 # This file is distributed under the same license as the gnome-schedule package.
 # Alex Thomsen Leth <alexl@stofanet.dk>, 2004.
 # Martin Willemoes Hansen <mwh@sysrq.dk>, 2005.
-# Joe Hansen (joedalton2@yahoo.dk), 2010.
+# Joe Hansen (joedalton2@yahoo.dk), 2010, 2011.
 #
 # Husk at tilføje dig i credit-listen (besked id "translator-credits")
 # Bug 611639 indsendt 2. marts 2010
@@ -16,8 +16,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-08-23 16:15+0200\n"
-"PO-Revision-Date: 2010-02-21 15:50+0100\n"
+"POT-Creation-Date: 2011-09-30 09:09+0200\n"
+"PO-Revision-Date: 2011-09-29 15:50+0100\n"
 "Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
 "Language-Team: Danish <dansk@klid.dk>\n"
 "Language: da\n"
@@ -362,91 +362,87 @@ msgid "_Manage tasks"
 msgstr "_Håndter opgaver"
 
 #: ../src/gnome-schedule-export.py:45
-#, fuzzy
 msgid "Gnome Schedule: Export tasks"
-msgstr "Gnomeplanlægning"
+msgstr "Gnomeplanlægning: Eksporter opgaver"
 
 #: ../src/gnome-schedule-export.py:47
 #, python-format
 msgid "Usage: %s [output file]"
-msgstr ""
+msgstr "Brug: %s [uddatafil]"
 
 #: ../src/gnome-schedule-export.py:48
 msgid "       No file means export to stdout."
-msgstr ""
+msgstr "       Ingen fil betyder eksport til standardud."
 
 #: ../src/gnome-schedule-export.py:72
 msgid "File exists already."
-msgstr ""
+msgstr "Fil findes allerede."
 
-# engelsk fejl dobbelt mellemrum
 #: ../src/gnome-schedule-export.py:81
-#, fuzzy, python-format
+#, python-format
 msgid "Could not open file for writing: %s"
-msgstr "Kunne ikke åben en forbindelse til X!"
+msgstr "Kunne ikke åben fil for skrivning: %s"
 
 #: ../src/gnome-schedule-export.py:91
 #, python-format
 msgid "Exporting crontab task: %s"
-msgstr ""
+msgstr "Eksporterer crontab-opgave: %s"
 
 #: ../src/gnome-schedule-export.py:103
 msgid "Exporting at task: "
-msgstr ""
+msgstr "Eksporter ved opgave: "
 
 #: ../src/gnome-schedule-export.py:113
 #, python-format
 msgid "Finished, exported: %d tasks total"
-msgstr ""
+msgstr "Færdig, eksporteret: %d opgaver i alt"
 
 #: ../src/gnome-schedule-import.py:63
-#, fuzzy
 msgid "Gnome Schedule: Import tasks"
-msgstr "Gnomeplanlægning"
+msgstr "Gnomeplanlægning: Importer opgaver"
 
 #: ../src/gnome-schedule-import.py:65
 #, python-format
 msgid "Usage: %s [input file]"
-msgstr ""
+msgstr "Brug: %s [inddatafil]"
 
 #: ../src/gnome-schedule-import.py:66
 msgid "       No file means import from stdin."
-msgstr ""
+msgstr "       Ingen fil betyder import fra standardind."
 
 #: ../src/gnome-schedule-import.py:72
 msgid "File does not exist."
-msgstr ""
+msgstr "Fil findes ikke."
 
 #: ../src/gnome-schedule-import.py:77
 msgid "Reading from stdin.."
-msgstr ""
+msgstr "Læser fra standardind.."
 
 #. Reading file
 #: ../src/gnome-schedule-import.py:82
 #, python-format
 msgid "Reading file: %s.."
-msgstr ""
+msgstr "Læser fil: %s.."
 
-# engelsk fejl dobbelt mellemrum
 #: ../src/gnome-schedule-import.py:84
-#, fuzzy, python-format
+#, python-format
 msgid "Could not open file for reading: %s"
-msgstr "Kunne ikke åben en forbindelse til X!"
+msgstr "Kunne ikke åbne fil for læsning: %s"
 
 #: ../src/gnome-schedule-import.py:95
 #, python-format
 msgid "Importing crontab task: %s"
-msgstr ""
+msgstr "Importerer crontab-opgave: %s"
 
 #: ../src/gnome-schedule-import.py:107
 #, python-format
 msgid "Importing at task: %s"
-msgstr ""
+msgstr "Importerer ved opgave: %s"
 
 #: ../src/gnome-schedule-import.py:111
 #, python-format
 msgid "Finished, imported: %d tasks total."
-msgstr ""
+msgstr "Færdig, importeret: %d opgaver i alt."
 
 #: ../src/gnome-schedule.glade.h:1
 msgid "*"
@@ -1105,7 +1101,7 @@ msgstr "Ophavsret %(year)s %(name)s."
 #: ../src/mainWindow.py:751
 msgid "translator-credits"
 msgstr ""
-"Joe Hansen, 2010\n"
+"Joe Hansen, 2010, 2011\n"
 "Alex Thomsen Leth\n"
 "Martin Willemoes Hansen\n"
 "\n"
@@ -1183,9 +1179,7 @@ msgstr "Brug skabelon"
 msgid "One-time"
 msgstr "En gang"
 
-# engelsk fejl dobbelt mellemrum
 #: ../src/xwrapper.py:60
-#, fuzzy
 msgid "Could not open a connection to X!"
 msgstr "Kunne ikke åben en forbindelse til X!"
 
@@ -1229,9 +1223,8 @@ msgid "Launching %s.."
 msgstr "Starter %s.."
 
 #: ../src/xwrapper.py:127
-#, fuzzy
 msgid "output<2: Why am I launched?"
-msgstr "uddata<0: Hvorfor er jeg startet op?"
+msgstr "uddata<2: Hvorfor er jeg startet op?"
 
 #: ../src/xwrapper.py:130
 msgid "len(display)<2: No proper DISPLAY variable"
