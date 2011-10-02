@@ -47,6 +47,11 @@ class At:
         # 1 2006-04-26 08:54 a gaute
         # 14    2006-09-21 10:54 a gaute
         # 3 Tue May  8 01:01:00 2007 a gaute
+        #
+        # FreeBSD:
+        #Date                Owner        Queue    Job#
+        #Fri Sep 30 23:40:00 MSK 2011    rm              c    2
+
 
         self.atRecordRegex = re.compile('^([\d]+)[\t]([\w]{3,3})[\s]([\w]{3,3})[\s]*([\d]+)[\s]([\d]{2,2}[:][\d]{2,2}[:][\d]{2,2})[\s]([\d]{4,4})[\s]([\w])[\s]([\w]+)')
 
@@ -55,7 +60,6 @@ class At:
         # job 10 at 2006-09-18 12:38
         self.atRecordRegexAdd = re.compile('^job\s([0-9]+)\sat')
 
-        self.atRecordRegexAdded = re.compile('[^\s]+\s([0-9]+)\sat')
         self.SCRIPT_DELIMITER = "###### ---- GNOME_SCHEDULE_SCRIPT_DELIMITER #####"
 
         self.DISPLAY = "DISPLAY=%s; export DISPLAY;\n"
