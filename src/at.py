@@ -53,12 +53,22 @@ class At:
         #Fri Sep 30 23:40:00 MSK 2011    rm              c    2
 
 
-        self.atRecordRegex = re.compile('^([\d]+)[\t]([\w]{3,3})[\s]([\w]{3,3})[\s]*([\d]+)[\s]([\d]{2,2}[:][\d]{2,2}[:][\d]{2,2})[\s]([\d]{4,4})[\s]([\w])[\s]([\w]+)')
+        self.sysname = os.uname ()[0]
+
+        # FreeBSD atq output, parser ignores time zone information
+        if self.sysname == 'FreeBSD':
+          self.atRecordRegex = re.compile ('^(?P<dow>.{3})(?P<month>\s.{3})\s(?P<day>[0-9]+)\s(?P<time>[0-2][0-9]:[0-5][0-9]:[0-5][0-9])\s(?:(?P<tzone>.*)\s|)(?P<year>[0-9]{4})\s*(?P<owner>.+)\s*(?P<queue>[a-z]|[A-Z])\s*(?P<jobid>[0-9]*)$')
+
+        # General Linux atq output
+        else:
+          self.atRecordRegex = re.compile('^(?P<jobid>[\d]+)[\t](?P<dow>[\w]{3,3})[\s](?P<month>[\w]{3,3})[\s]*(?P<day>[\d]+)[\s](?P<time>[\d]{2,2}[:][\d]{2,2}[:][\d]{2,2})[\s](?P<year>[\d]{4,4})[\s](?P<class>[\w])[\s](?P<user>[\w]+)')
+
+
 
 
         # after you add a job, this line is printed to stderr
         # job 10 at 2006-09-18 12:38
-        self.atRecordRegexAdd = re.compile('^job\s([0-9]+)\sat')
+        self.atRecordRegexAdd = re.compile('^job\s(?P<jobid>[0-9]+)\sat')
 
         self.SCRIPT_DELIMITER = "###### ---- GNOME_SCHEDULE_SCRIPT_DELIMITER #####"
 
@@ -137,11 +147,15 @@ fi
                 m = self.atRecordRegex.match(line)
                 if m != None:
                     # Time
-                    time = m.groups ()[4][:-3]
+                    time = m.group('time')
+
+                    # FreeBSD:
+                    # We are ignoring timezone and hope everything works
+                    # out in the end.
 
                     # Date
-                    day = m.groups ()[3]
-                    month = m.groups ()[2]
+                    day = m.group('day')
+                    month = m.group ('month')
 
                     for monthname in self.months:
                         month = month.replace (monthname, self.months[monthname])
@@ -153,9 +167,9 @@ fi
 
                     date = day + "." + month + "." + m.groups ()[5]
 
-                    job_id = m.groups ()[0]
-                    class_id = m.groups ()[6]
-                    user = m.groups ()[7]
+                    job_id = m.group ('jobid')
+                    class_id = m.group ('class')
+                    user = m.group ('user')
 
                     success, title, desc, manual_poscorrect, output, display = self.get_job_data (int (job_id))
                     # manual_poscorrect is only used during preparation of script
@@ -179,7 +193,7 @@ fi
                 if m != None:
                     #print "Parse successfull, groups: "
                     #print m.groups()
-                    job_id = m.groups ()[0]
+                    job_id = m.group('jobid')
                     return int(job_id)
                 else:
                     return False
@@ -519,7 +533,7 @@ fi
 
                 timestring = "%s %s" % (date, time)
 
-                date_o = datetime.datetime.strptime (date + " " + time, "%d.%m.%Y %H:%M")
+                date_o = datetime.datetime.strptime (date + " " + time, "%d.%m.%Y %H:%M:%S")
                 timestring_show = _("On %(timestring)s") % { 'timestring' : date_o.strftime ("%c") }
 
 
