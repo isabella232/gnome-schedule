@@ -58,10 +58,10 @@ class At:
         # FreeBSD atq output, parser ignores time zone information
         if self.sysname == 'FreeBSD':
           print "[AT] FreeBSD."
-          self.atRecordRegex = re.compile ('^(?P<dow>.{3})(?P<month>\s.{3})\s(?P<day>[0-9]+)\s(?P<time>[0-2][0-9]:[0-5][0-9]:[0-5][0-9])\s(?:(?P<tzone>.*)\s|)(?P<year>[0-9]{4})\s*(?P<owner>.+)\s*(?P<queue>[a-z]|[A-Z])\s*(?P<jobid>[0-9]*)$')
+          self.atRecordRegex = re.compile ('^(?P<dow>.{3})(?P<month>[\s].{3})[\s](?P<day>[0-9]+)[\s](?P<time>[0-2][0-9]:[0-5][0-9]:[0-5][0-9])[\s](?:(?P<tzone>.*)[\s]|)(?P<year>[0-9]{4})[\t]+(?P<owner>.+)[\s]+(?P<queue>[a-z]|[A-Z])[\t](?P<jobid>[0-9]*)$')
           # after you add a job, this line is printed to stderr
           # Job 5 will be executed using /bin/sh
-          self.atRecordRegexAdd = re.compile('^Job\s(?P<jobid>[0-9]+)\swill')
+          self.atRecordRegexAdd = re.compile('^Job[\s](?P<jobid>[0-9]+)[\s]will')
 
         # General Linux atq output
         else:
@@ -549,7 +549,8 @@ fi
 
                 #print _("added %(id)s") % { "id": job_id   }
             else:
-              print _("Warning: a line in atq's output didn't parse: %s") % line
+              print _("Warning: a line in atq's output didn't parse.")
+              print line
         return data
 
 
