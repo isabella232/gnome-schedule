@@ -58,16 +58,17 @@ class At:
         # FreeBSD atq output, parser ignores time zone information
         if self.sysname == 'FreeBSD':
           self.atRecordRegex = re.compile ('^(?P<dow>.{3})(?P<month>\s.{3})\s(?P<day>[0-9]+)\s(?P<time>[0-2][0-9]:[0-5][0-9]:[0-5][0-9])\s(?:(?P<tzone>.*)\s|)(?P<year>[0-9]{4})\s*(?P<owner>.+)\s*(?P<queue>[a-z]|[A-Z])\s*(?P<jobid>[0-9]*)$')
-          # after you add a job, this line is printed to stderr
-          # Job 5 will be executed using /bin/sh
-          self.atRecordRegexAdd = re.compile('^Job\s(?P<jobid>[0-9]+)\swill')
 
         # General Linux atq output
         else:
           self.atRecordRegex = re.compile('^(?P<jobid>[\d]+)[\t](?P<dow>[\w]{3,3})[\s](?P<month>[\w]{3,3})[\s]*(?P<day>[\d]+)[\s](?P<time>[\d]{2,2}[:][\d]{2,2}[:][\d]{2,2})[\s](?P<year>[\d]{4,4})[\s](?P<class>[\w])[\s](?P<user>[\w]+)')
-          # after you add a job, this line is printed to stderr
-          # job 10 at 2006-09-18 12:38
-          self.atRecordRegexAdd = re.compile('^job\s(?P<jobid>[0-9]+)\sat')
+
+
+
+
+        # after you add a job, this line is printed to stderr
+        # job 10 at 2006-09-18 12:38
+        self.atRecordRegexAdd = re.compile('^job\s(?P<jobid>[0-9]+)\sat')
 
         self.SCRIPT_DELIMITER = "###### ---- GNOME_SCHEDULE_SCRIPT_DELIMITER #####"
 
