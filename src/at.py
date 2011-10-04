@@ -517,8 +517,12 @@ fi
         #do 'atq'
         execute = config.getAtqbin ()
         self.lines = os.popen(execute).readlines()
-        for line in self.lines:
 
+        # Skip header: Date..
+        if self.system == 'FreeBSD':
+            self.lines = self.lines[1:]
+
+        for line in self.lines:
             array_or_false = self.parse (line)
             #print array_or_false
             if array_or_false != False:
@@ -549,8 +553,8 @@ fi
 
                 #print _("added %(id)s") % { "id": job_id   }
             else:
-              print _("Warning: a line in atq's output didn't parse.")
-              print line
+                print _("Warning: a line in atq's output didn't parse.")
+                print line
         return data
 
 
