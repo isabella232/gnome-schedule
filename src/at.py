@@ -519,7 +519,7 @@ fi
         self.lines = os.popen(execute).readlines()
 
         # Skip header: Date..
-        if self.system == 'FreeBSD':
+        if self.sysname == 'FreeBSD':
             self.lines = self.lines[1:]
 
         for line in self.lines:
