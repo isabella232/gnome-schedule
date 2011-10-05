@@ -585,7 +585,7 @@ fi
                 #remeber the length to remove this from the preview
                 prelen = len(title) + 7
             else:
-                title = "Untitled"
+                title = _("Untitled")
             # If the string contains ICON=
             iconstart = script.find ("ICON=")
             if iconstart != -1:
