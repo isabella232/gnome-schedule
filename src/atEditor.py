@@ -40,6 +40,11 @@ class AtEditor:
         self.scheduler = scheduler
         self.template = template
 
+        # FreeBSD supports time ranges between 0 and 23:59
+        if self.scheduler.sysname == 'FreeBSD':
+          self.HOUR_MAX = 23
+        else:
+          self.HOUR_MAX = 24
 
         self.widget = self.xml.get_widget("at_editor")
         self.xml.signal_connect("on_at_editor_delete", self.on_button_cancel_clicked)
@@ -115,7 +120,6 @@ class AtEditor:
         year = ctime[0]
         self.spin_year.set_range (year, year + 5847) # TODO: Year +5847 compatability
         self.timeout_handler_id = gobject.timeout_add(60 * 1000, self.__check_spins__)
-
 
     def showadd (self, transient):
         self.button_save.set_label (gtk.STOCK_ADD)
@@ -417,11 +421,11 @@ class AtEditor:
             mi, ma = self.spin_hour.get_range ()
             if (cyear and cmonth and cday):
                 if (mi != hour):
-                    self.spin_hour.set_range (hour, 24)
+                    self.spin_hour.set_range (hour, self.HOUR_MAX)
                     mi = hour
             else:
                 if ((mi != 0) or (ma != 24)):
-                    self.spin_hour.set_range (0, 24)
+                    self.spin_hour.set_range (0, self.HOUR_MAX)
             if (mi <= shour <= ma):
                 self.spin_hour.set_value (shour)
             else:
