@@ -92,10 +92,12 @@ fi
 
         # Environment used for executing 'at' to ensure reliable output
         # Setting locale to C
-        self.at_env = os.environ
+        self.at_env = os.environ.copy ()
         self.at_env["LC_ALL"] = "C"
+        self.PREPEND_SCRIPT = "LC_ALL=%s; export LC_ALL\n" % os.environ.get ("LC_ALL", "")
+        self.PREPEND_SCRIPT_LINES = 1
 
-        self.atdatafileversion = 5
+        self.atdatafileversion = 6
         self.atdata = self.user_home_dir + "/.gnome/gnome-schedule/at"
         if os.path.exists (self.user_home_dir + "/.gnome") != True:
             os.mkdir (self.user_home_dir + "/.gnome", 0700)
@@ -176,13 +178,13 @@ fi
                     class_id = m.group ('class')
                     user = m.group ('user')
 
-                    success, title, desc, manual_poscorrect, output, display = self.get_job_data (int (job_id))
+                    success, title, desc, manual_poscorrect, output, display, stdlocale = self.get_job_data (int (job_id))
                     # manual_poscorrect is only used during preparation of script
 
                     execute = config.getAtbin() + " -c " + job_id
                     # read lines and detect starter
                     script = Popen(execute, shell = True, env = self.at_env, stdout = PIPE).stdout.read()
-                    script,  dangerous = self.__prepare_script__ (script, manual_poscorrect, output, display)
+                    script,  dangerous = self.__prepare_script__ (script, manual_poscorrect, output, display, stdlocale)
 
                     #removing ending newlines, but keep one
                     #if a date in the past is selected the record is removed by at, this creates an error, and generally if the script is of zero length
@@ -255,12 +257,17 @@ fi
             else:
                 display = ""
 
+            if ver >= 6:
+                stdlocale = True
+            else:
+                stdlocale = False
+
             fh.close ()
 
-            return True, title, desc, manual_poscorrect_b, output, display
+            return True, title, desc, manual_poscorrect_b, output, display, stdlocale
 
         else:
-            return False, "", "", False, 0, ""
+            return False, "", "", False, 0, "", False
 
     def write_job_data (self, job_id, title, desc, output, display):
         # Create and write data file
@@ -411,6 +418,7 @@ fi
         fd, path = tmpfile
         tmp = os.fdopen(fd, 'w')
         tmp.write (self.SCRIPT_DELIMITER + "\n")
+        tmp.write (self.PREPEND_SCRIPT)
         if self.manual_poscorrect:
             tmp.write (self.POSIXLY_CORRECT_UNSET)
 
@@ -467,6 +475,7 @@ fi
         tmp = os.fdopen(fd, 'w')
 
         tmp.write (self.SCRIPT_DELIMITER + "\n")
+        tmp.write (self.PREPEND_SCRIPT)
         if self.manual_poscorrect:
             tmp.write (self.POSIXLY_CORRECT_UNSET)
 
@@ -562,7 +571,7 @@ fi
         return data
 
 
-    def __prepare_script__ (self, script, manual_poscorrect, output, display):
+    def __prepare_script__ (self, script, manual_poscorrect, output, display, stdlocale):
 
         # It looks like at prepends a bunch of stuff to each script
         # Luckily it delimits that using two newlines
@@ -579,6 +588,10 @@ fi
 
         if scriptstart != -1:
             script = script[scriptstart:]
+
+            if stdlocale:
+              script = script[self.PREPEND_SCRIPT_LINES:]
+
             if manual_poscorrect == True:
                 scriptstart = script.find (self.POSIXLY_CORRECT_UNSET)
                 if scriptstart != -1:
