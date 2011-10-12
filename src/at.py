@@ -90,6 +90,11 @@ fi
         # Therefore we unset it in the script.
         self.POSIXLY_CORRECT_UNSET = "unset POSIXLY_CORRECT\n"
 
+        # Environment used for executing 'at' to ensure reliable output
+        # Setting locale to C
+        self.at_env = os.environ
+        self.at_env["LC_ALL"] = "C"
+
         self.atdatafileversion = 5
         self.atdata = self.user_home_dir + "/.gnome/gnome-schedule/at"
         if os.path.exists (self.user_home_dir + "/.gnome") != True:
@@ -176,7 +181,7 @@ fi
 
                     execute = config.getAtbin() + " -c " + job_id
                     # read lines and detect starter
-                    script = Popen(execute, shell = True, stdout = PIPE).stdout.read()
+                    script = Popen(execute, shell = True, env = self.at_env, stdout = PIPE).stdout.read()
                     script,  dangerous = self.__prepare_script__ (script, manual_poscorrect, output, display)
 
                     #removing ending newlines, but keep one
@@ -429,7 +434,7 @@ fi
         else:
             execute = config.getAtbin() + " -f " + path + " " + runat
 
-        p = Popen (execute, shell = True, stdin = PIPE, stdout = PIPE, stderr = PIPE, close_fds = True)
+        p = Popen (execute, shell = True, env = self.at_env, stdin = PIPE, stdout = PIPE, stderr = PIPE, close_fds = True)
         (child_stdin, child_stdout, child_stderr) = (p.stdin, p.stdout, p.stderr)
 
         err = child_stderr.readlines ()
@@ -483,7 +488,7 @@ fi
         else:
             execute = config.getAtbin() + " -f " + path + " " + runat
 
-        p = Popen (execute, shell = True, stdin = PIPE, stdout = PIPE, stderr = PIPE, close_fds = True)
+        p = Popen (execute, shell = True, env = self.at_env, stdin = PIPE, stdout = PIPE, stderr = PIPE, close_fds = True)
         (child_stdin, child_stdout, child_stderr) = (p.stdin, p.stdout, p.stderr)
 
         err = child_stderr.readlines ()
@@ -515,7 +520,7 @@ fi
         data = []
         #do 'atq'
         execute = config.getAtqbin ()
-        self.lines = Popen(execute, shell = True, stdout = PIPE).stdout.readlines()
+        self.lines = Popen(execute, shell = True, env = self.at_env, stdout = PIPE).stdout.readlines()
 
         # Skip header: Date..
         if self.sysname == 'FreeBSD':
