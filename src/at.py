@@ -21,6 +21,7 @@
 #python modules
 import re
 import os
+from subprocess import Popen, PIPE
 import sys
 import tempfile
 import commands
@@ -175,7 +176,7 @@ fi
 
                     execute = config.getAtbin() + " -c " + job_id
                     # read lines and detect starter
-                    script = os.popen(execute).read()
+                    script = Popen(execute, shell = True, stdout = PIPE).stdout.read()
                     script,  dangerous = self.__prepare_script__ (script, manual_poscorrect, output, display)
 
                     #removing ending newlines, but keep one
@@ -423,14 +424,13 @@ fi
                 #changes the ownership
                 os.chown(path, self.uid, self.gid)
                 execute = config.getSubin() + " " + self.user + " -c \"" + config.getAtbin() +  " -f " + path + " " + runat + " && exit\""
-                child_stdin, child_stdout, child_stderr = os.popen3(execute)
             else:
                 execute = config.getAtbin() + " -f " + path + " " + runat
-                child_stdin, child_stdout, child_stderr = os.popen3(execute)
         else:
             execute = config.getAtbin() + " -f " + path + " " + runat
-            child_stdin, child_stdout, child_stderr = os.popen3(execute)
 
+        p = Popen (execute, shell = True, stdin = PIPE, stdout = PIPE, stderr = PIPE, close_fds = True)
+        (child_stdin, child_stdout, child_stderr) = (p.stdin, p.stdout, p.stderr)
 
         err = child_stderr.readlines ()
         job_id = 0
@@ -478,13 +478,13 @@ fi
                 #changes the ownership
                 os.chown(path, self.uid, self.gid)
                 execute = config.getSubin() + " " + self.user + " -c \"" + config.getAtbin() +  " -f " + path + " " + runat + " && exit\""
-                child_stdin, child_stdout, child_stderr = os.popen3(execute)
             else:
                 execute = config.getAtbin() + " -f " + path + " " + runat
-                child_stdin, child_stdout, child_stderr = os.popen3(execute)
         else:
             execute = config.getAtbin() + " -f " + path + " " + runat
-            child_stdin, child_stdout, child_stderr = os.popen3(execute)
+
+        p = Popen (execute, shell = True, stdin = PIPE, stdout = PIPE, stderr = PIPE, close_fds = True)
+        (child_stdin, child_stdout, child_stderr) = (p.stdin, p.stdout, p.stderr)
 
         err = child_stderr.readlines ()
         job_id = 0
@@ -515,7 +515,7 @@ fi
         data = []
         #do 'atq'
         execute = config.getAtqbin ()
-        self.lines = os.popen(execute).readlines()
+        self.lines = Popen(execute, shell = True, stdout = PIPE).stdout.readlines()
 
         # Skip header: Date..
         if self.sysname == 'FreeBSD':
