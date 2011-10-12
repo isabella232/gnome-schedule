@@ -590,7 +590,7 @@ fi
             script = script[scriptstart:]
 
             if stdlocale:
-              script = script[self.PREPEND_SCRIPT_LINES:]
+                script = script[self.PREPEND_SCRIPT_LINES:]
 
             if manual_poscorrect == True:
                 scriptstart = script.find (self.POSIXLY_CORRECT_UNSET)
