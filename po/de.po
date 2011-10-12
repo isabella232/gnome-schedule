@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: gnome-schedule\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "schedule&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-08-23 14:17+0000\n"
-"PO-Revision-Date: 2011-08-24 19:34+0100\n"
+"POT-Creation-Date: 2011-10-11 21:07+0000\n"
+"PO-Revision-Date: 2011-10-12 19:52+0100\n"
 "Last-Translator: Mario Blättermann <mariobl@freenet.de>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -42,7 +42,7 @@ msgstr "GNOME Schedule"
 msgid "System tools"
 msgstr "Systemwerkzeuge"
 
-#: ../src/at.py:91 ../src/crontab.py:62
+#: ../src/at.py:104 ../src/crontab.py:62
 msgid ""
 "Failed to create data dir! Make sure ~/.gnome and ~/.gnome/gnome-schedule are "
 "writable."
@@ -50,7 +50,7 @@ msgstr ""
 "Datenordner konnte nicht erstellt werden: Stellen Sie sicher, dass Sie über "
 "Schreibrechte in ~/.gnome und ~/.gnome/gnome-schedule verfügen."
 
-#: ../src/at.py:124 ../src/crontab.py:162
+#: ../src/at.py:137 ../src/crontab.py:162
 #, python-format
 msgid ""
 "Failed to create data dir: %s. Make sure ~/.gnome and ~/.gnome/gnome-schedule "
@@ -59,24 +59,30 @@ msgstr ""
 "Datenordner konnte nicht erstellt werden: %s. Stellen Sie sicher, dass Sie "
 "über Schreibrechte in ~/.gnome und ~/.gnome/gnome-schedule verfügen."
 
-#: ../src/at.py:512
+#: ../src/at.py:533
 #, python-format
 msgid "Warning! Unknown task: %(preview)s"
 msgstr "Warnung! Unbekannte Aufgabe: %(preview)s"
 
-#: ../src/at.py:519
+#: ../src/at.py:540
 #, python-format
 msgid "On %(timestring)s"
 msgstr "Um %(timestring)s"
 
-#: ../src/at.py:525 ../src/at.py:530
+#: ../src/at.py:546 ../src/at.py:551
 msgid "Once"
 msgstr "Einmalig"
 
-#: ../src/at.py:534
-msgid "Warning: a line in atq's output didn't parse"
+#: ../src/at.py:555
+msgid "Warning: a line in atq's output didn't parse:"
 msgstr ""
-"Warnung: Eine Zeile in der Ausgabe von »atq« konnte nicht geparst werden"
+"Warnung: Eine Zeile in der Ausgabe von »atq« konnte nicht verarbeitet werden:"
+
+#: ../src/at.py:606 ../src/crontab.py:288 ../src/crontab.py:334
+#: ../src/crontabEditor.py:275 ../src/atEditor.py:123 ../src/atEditor.py:519
+#: ../src/atEditor.py:545
+msgid "Untitled"
+msgstr "Unbenannt"
 
 #: ../src/crontab.py:87
 msgid "Minute"
@@ -117,46 +123,41 @@ msgstr "Muss eine Zahl zwischen %(min)s und %(max)s sein"
 msgid "%s is not a number"
 msgstr "%s ist keine Zahl"
 
-#: ../src/crontab.py:288 ../src/crontab.py:334 ../src/crontabEditor.py:275
-#: ../src/atEditor.py:123 ../src/atEditor.py:519 ../src/atEditor.py:545
-msgid "Untitled"
-msgstr "Unbenannt"
-
-#: ../src/crontab.py:450 ../src/crontab.py:452 ../src/template_chooser.py:106
+#: ../src/crontab.py:455 ../src/crontab.py:457 ../src/template_chooser.py:106
 #: ../src/template_manager.py:111
 msgid "Recurrent"
 msgstr "Wiederholend"
 
-#: ../src/crontab.py:450 ../src/crontabEditor.py:74 ../src/lang.py:168
+#: ../src/crontab.py:455 ../src/crontabEditor.py:74 ../src/lang.py:168
 msgid "At reboot"
 msgstr "Beim Neustart"
 
-#: ../src/crontab.py:464
+#: ../src/crontab.py:469
 msgid "minute"
 msgstr "Minute"
 
-#: ../src/crontab.py:466
+#: ../src/crontab.py:471
 msgid "hour"
 msgstr "Stunde"
 
-#: ../src/crontab.py:468
+#: ../src/crontab.py:473
 msgid "day"
 msgstr "Tag"
 
-#: ../src/crontab.py:470
+#: ../src/crontab.py:475
 msgid "month"
 msgstr "Monat"
 
-#: ../src/crontab.py:472
+#: ../src/crontab.py:477
 msgid "weekday"
 msgstr "Wochentag"
 
-#: ../src/crontab.py:571
+#: ../src/crontab.py:576
 msgid ""
 "Failed to parse the Day of Month field, possibly due to a bug in crontab."
 msgstr ""
-"Die Felder für Tag und Monat konnten nicht geparst werden. Möglicherweise ist "
-"crontab fehlerhaft."
+"Die Felder für Tag und Monat konnten nicht verarbeitet werden. Möglicherweise "
+"ist crontab fehlerhaft."
 
 #: ../src/crontabEditor.py:69 ../src/crontabEditorHelper.py:87
 #: ../src/gnome-schedule.glade.h:31
