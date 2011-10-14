@@ -7,24 +7,24 @@
 # Rodrigo Marcos Fombellida <rmarcos_geo@yahoo.es>, 2005.
 # Alejandro Valdes Jimenez <avaldes@utalca.cl>, 2007.
 # Rodrigo Marcos Fombellida <rmarcos@svn.gnome.org>, 2008.
-# Daniel Mustieles <daniel.mustieles@gmail.com>, 2011.
 # Jorge González <jorgegonz@svn.gnome.org>, 2007, 2009, 2010, 2011.
+# Daniel Mustieles <daniel.mustieles@gmail.com>, 2011.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule.HEAD\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "schedule&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-09-18 17:03+0000\n"
-"PO-Revision-Date: 2011-09-24 13:46+0200\n"
-"Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
-"Language-Team: Español; Castellano <gnome-es-list@gnome.org>\n"
+"POT-Creation-Date: 2011-10-11 21:07+0000\n"
+"PO-Revision-Date: 2011-10-14 11:41+0200\n"
+"Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
+"Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: \n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../desktop/gnome-schedule.desktop.in.in.h:1
 msgid "Manage your system tasks"
@@ -46,7 +46,7 @@ msgstr "Planificador de Gnome"
 msgid "System tools"
 msgstr "Herramientas del sistema"
 
-#: ../src/at.py:91 ../src/crontab.py:62
+#: ../src/at.py:104 ../src/crontab.py:62
 msgid ""
 "Failed to create data dir! Make sure ~/.gnome and ~/.gnome/gnome-schedule "
 "are writable."
@@ -54,7 +54,7 @@ msgstr ""
 "Falló al crear la carpeta de datos. Asegúrese de que se puede escribir en ~/."
 "gnome y ~/.gnome/gnome-schedule "
 
-#: ../src/at.py:124 ../src/crontab.py:162
+#: ../src/at.py:137 ../src/crontab.py:162
 #, python-format
 msgid ""
 "Failed to create data dir: %s. Make sure ~/.gnome and ~/.gnome/gnome-"
@@ -63,23 +63,30 @@ msgstr ""
 "Falló al crear la carpeta de datos: %s. Asegúrese de que se puede escribir "
 "en ~/.gnome y ~/.gnome/gnome-schedule"
 
-#: ../src/at.py:512
+#: ../src/at.py:533
 #, python-format
 msgid "Warning! Unknown task: %(preview)s"
 msgstr "Advertencia: Tarea desconocida: %(preview)s"
 
-#: ../src/at.py:519
+#: ../src/at.py:540
 #, python-format
 msgid "On %(timestring)s"
 msgstr "El %(timestring)s"
 
-#: ../src/at.py:525 ../src/at.py:530
+#: ../src/at.py:546 ../src/at.py:551
 msgid "Once"
 msgstr "Una vez"
 
-#: ../src/at.py:534
-msgid "Warning: a line in atq's output didn't parse"
-msgstr "Advertencia: una línea en la salida de atq no se analizó"
+#: ../src/at.py:555
+#| msgid "Warning: a line in atq's output didn't parse"
+msgid "Warning: a line in atq's output didn't parse:"
+msgstr "Advertencia: una línea en la salida de atq no se analizó:"
+
+#: ../src/at.py:606 ../src/crontab.py:288 ../src/crontab.py:334
+#: ../src/crontabEditor.py:275 ../src/atEditor.py:123 ../src/atEditor.py:519
+#: ../src/atEditor.py:545
+msgid "Untitled"
+msgstr "Sin título"
 
 #: ../src/crontab.py:87
 msgid "Minute"
@@ -120,41 +127,36 @@ msgstr "debe estar entre %(min)s y %(max)s"
 msgid "%s is not a number"
 msgstr "%s no es un número"
 
-#: ../src/crontab.py:288 ../src/crontab.py:334 ../src/crontabEditor.py:275
-#: ../src/atEditor.py:123 ../src/atEditor.py:519 ../src/atEditor.py:545
-msgid "Untitled"
-msgstr "Sin título"
-
-#: ../src/crontab.py:450 ../src/crontab.py:452 ../src/template_chooser.py:106
+#: ../src/crontab.py:455 ../src/crontab.py:457 ../src/template_chooser.py:106
 #: ../src/template_manager.py:111
 msgid "Recurrent"
 msgstr "Repetitiva"
 
-#: ../src/crontab.py:450 ../src/crontabEditor.py:74 ../src/lang.py:168
+#: ../src/crontab.py:455 ../src/crontabEditor.py:74 ../src/lang.py:168
 msgid "At reboot"
 msgstr "Al reiniciar"
 
-#: ../src/crontab.py:464
+#: ../src/crontab.py:469
 msgid "minute"
 msgstr "minuto"
 
-#: ../src/crontab.py:466
+#: ../src/crontab.py:471
 msgid "hour"
 msgstr "hora"
 
-#: ../src/crontab.py:468
+#: ../src/crontab.py:473
 msgid "day"
 msgstr "día"
 
-#: ../src/crontab.py:470
+#: ../src/crontab.py:475
 msgid "month"
 msgstr "mes"
 
-#: ../src/crontab.py:472
+#: ../src/crontab.py:477
 msgid "weekday"
 msgstr "día de la semana"
 
-#: ../src/crontab.py:571
+#: ../src/crontab.py:576
 msgid ""
 "Failed to parse the Day of Month field, possibly due to a bug in crontab."
 msgstr ""
@@ -208,8 +210,8 @@ msgid ""
 "This is an invalid record! The problem could be in the %(field)s field. "
 "Reason: %(reason)s"
 msgstr ""
-"¡Este es un registro inválido! El problema podría estar en el campo "
-"%(field)s. Razón: %(reason)s"
+"¡Este es un registro inválido! El problema podría estar en el campo %(field)"
+"s. Razón: %(reason)s"
 
 #: ../src/crontabEditor.py:307
 msgid ""
@@ -724,8 +726,8 @@ msgid ""
 "On day %(monthday)s of every month at every minute between %(time_from)s and "
 "%(time_to)s"
 msgstr ""
-"El día %(monthday)s de cada mes a cada minuto entre las %(time_from)s y las "
-"%(time_to)s"
+"El día %(monthday)s de cada mes a cada minuto entre las %(time_from)s y las %"
+"(time_to)s"
 
 #: ../src/lang.py:204
 #, python-format
@@ -750,11 +752,11 @@ msgstr "Cada día de %(month)s en el minuto %(minute)s de cada hora"
 #: ../src/lang.py:215
 #, python-format
 msgid ""
-"On every day in %(month)s at every minute between %(time_from)s and "
-"%(time_to)s"
+"On every day in %(month)s at every minute between %(time_from)s and %"
+"(time_to)s"
 msgstr ""
-"Cada día de %(month)s a cada minuto entre las %(time_from)s y las "
-"%(time_to)s horas"
+"Cada día de %(month)s a cada minuto entre las %(time_from)s y las %(time_to)"
+"s horas"
 
 #: ../src/lang.py:217
 #, python-format
@@ -806,8 +808,8 @@ msgstr "Cada %(weekday)s en el minuto %(minute)s de cada hora"
 #: ../src/lang.py:241
 #, python-format
 msgid ""
-"On every weekday: %(weekday)s at every minute between %(time_from)s and "
-"%(time_to)s"
+"On every weekday: %(weekday)s at every minute between %(time_from)s and %"
+"(time_to)s"
 msgstr ""
 "Cada %(weekday)s a cada minuto entre las %(time_from)s y las %(time_to)s"
 
@@ -834,8 +836,8 @@ msgstr "El día %(monthday)s de cada mes y cada %(weekday)s a cada minuto"
 #: ../src/lang.py:252
 #, python-format
 msgid ""
-"On day %(monthday)s of every month and every weekday: %(weekday)s at minute "
-"%(minute)s of every hour"
+"On day %(monthday)s of every month and every weekday: %(weekday)s at minute %"
+"(minute)s of every hour"
 msgstr ""
 "El día %(monthday)s de cada mes y cada %(weekday)s en el minuto %(minute)s "
 "de cada hora"
@@ -846,8 +848,8 @@ msgid ""
 "On day %(monthday)s of every month and every weekday: %(weekday)s at every "
 "minute between %(time_from)s and %(time_to)s"
 msgstr ""
-"El día %(monthday)s de cada mes y cada %(weekday)s a cada minuto entre las  "
-"%(time_from)s y las %(time_to)s"
+"El día %(monthday)s de cada mes y cada %(weekday)s a cada minuto entre las  %"
+"(time_from)s y las %(time_to)s"
 
 #: ../src/lang.py:256
 #, python-format
@@ -874,11 +876,11 @@ msgstr "Cada %(weekday)s de %(month)s en el minuto %(minute)s de cada hora"
 #: ../src/lang.py:267
 #, python-format
 msgid ""
-"On every weekday: %(weekday)s in %(month)s at every minute between "
-"%(time_from)s and %(time_to)s"
+"On every weekday: %(weekday)s in %(month)s at every minute between %"
+"(time_from)s and %(time_to)s"
 msgstr ""
-"Cada %(weekday)s de %(month)s a cada minuto entre las %(time_from)s y las "
-"%(time_to)s"
+"Cada %(weekday)s de %(month)s a cada minuto entre las %(time_from)s y las %"
+"(time_to)s"
 
 #: ../src/lang.py:269
 #, python-format
@@ -924,11 +926,11 @@ msgstr ""
 #: ../src/lang.py:282
 #, python-format
 msgid ""
-"On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
-"%(time)s"
+"On every weekday: %(weekday)s in %(month)s and on %(date)s every year at %"
+"(time)s"
 msgstr ""
-"Cada %(weekday)s del mes de %(month)s y el día %(date)s de cada año a las "
-"%(time)s"
+"Cada %(weekday)s del mes de %(month)s y el día %(date)s de cada año a las %"
+"(time)s"
 
 #: ../src/lang.py:290
 msgid "every minute"
