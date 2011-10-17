@@ -8,14 +8,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-schedule&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-09-03 12:04+0000\n"
-"PO-Revision-Date: 2011-09-07 21:35+0100\n"
+"POT-Creation-Date: 2011-10-16 07:51+0000\n"
+"PO-Revision-Date: 2011-10-17 10:35+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n%100==4 ? 3 : 0);\n"
 "X-Poedit-Language: Slovenian\n"
 "X-Poedit-Country: SLOVENIA\n"
@@ -41,35 +41,45 @@ msgstr "Urnik Gnome"
 msgid "System tools"
 msgstr "Sistemska orodja"
 
-#: ../src/at.py:91
+#: ../src/at.py:112
 #: ../src/crontab.py:62
 msgid "Failed to create data dir! Make sure ~/.gnome and ~/.gnome/gnome-schedule are writable."
 msgstr "Napaka med ustvarjanjem mape podatkov. Prepričajte se, da imata mapi ~/.gnome in ~/.gnome/gnome-schedule ustrezna dovoljenja za pisanje."
 
-#: ../src/at.py:124
+#: ../src/at.py:145
 #: ../src/crontab.py:162
 #, python-format
 msgid "Failed to create data dir: %s. Make sure ~/.gnome and ~/.gnome/gnome-schedule are writable."
 msgstr "Napaka med ustvarjanjem mape podatkov: %s. Prepričajte se, da imata mapi ~/.gnome in ~/.gnome/gnome-schedule ustrezna dovoljenja za pisanje."
 
-#: ../src/at.py:512
+#: ../src/at.py:547
 #, python-format
 msgid "Warning! Unknown task: %(preview)s"
 msgstr "Opozorilo! Neznana naloga: %(preview)s"
 
-#: ../src/at.py:519
+#: ../src/at.py:554
 #, python-format
 msgid "On %(timestring)s"
 msgstr "Ob %(timestring)s"
 
-#: ../src/at.py:525
-#: ../src/at.py:530
+#: ../src/at.py:560
+#: ../src/at.py:565
 msgid "Once"
 msgstr "Enkrat"
 
-#: ../src/at.py:534
-msgid "Warning: a line in atq's output didn't parse"
-msgstr "Opozorilo: vrstice v atq's odvodu ni mogoče razčleniti"
+#: ../src/at.py:569
+msgid "Warning: a line in atq's output didn't parse:"
+msgstr "Opozorilo: vrstice v atq's odvodu ni mogoče razčleniti:"
+
+#: ../src/at.py:624
+#: ../src/crontab.py:288
+#: ../src/crontab.py:334
+#: ../src/crontabEditor.py:275
+#: ../src/atEditor.py:127
+#: ../src/atEditor.py:523
+#: ../src/atEditor.py:549
+msgid "Untitled"
+msgstr "Brez naslova"
 
 #: ../src/crontab.py:87
 msgid "Minute"
@@ -113,49 +123,40 @@ msgstr "Vrednost mora biti med %(min)s in %(max)s"
 msgid "%s is not a number"
 msgstr "%s ni število"
 
-#: ../src/crontab.py:288
-#: ../src/crontab.py:334
-#: ../src/crontabEditor.py:275
-#: ../src/atEditor.py:123
-#: ../src/atEditor.py:519
-#: ../src/atEditor.py:545
-msgid "Untitled"
-msgstr "Brez naslova"
-
-#: ../src/crontab.py:450
-#: ../src/crontab.py:452
+#: ../src/crontab.py:455
+#: ../src/crontab.py:457
 #: ../src/template_chooser.py:106
 #: ../src/template_manager.py:111
 msgid "Recurrent"
 msgstr "Ponavljajoče"
 
-#: ../src/crontab.py:450
+#: ../src/crontab.py:455
 #: ../src/crontabEditor.py:74
 #: ../src/lang.py:168
 msgid "At reboot"
 msgstr "Med ponovnim zagonom"
 
-#: ../src/crontab.py:464
+#: ../src/crontab.py:469
 msgid "minute"
 msgstr "minute"
 
-#: ../src/crontab.py:466
+#: ../src/crontab.py:471
 msgid "hour"
 msgstr "ure"
 
-#: ../src/crontab.py:468
+#: ../src/crontab.py:473
 msgid "day"
 msgstr "dan"
 
-#: ../src/crontab.py:470
+#: ../src/crontab.py:475
 msgid "month"
 msgstr "mesec"
 
-#: ../src/crontab.py:472
+#: ../src/crontab.py:477
 msgid "weekday"
 msgstr "dan v tednu"
 
-#: ../src/crontab.py:571
+#: ../src/crontab.py:576
 msgid "Failed to parse the Day of Month field, possibly due to a bug in crontab."
 msgstr "Napaka med razčlenjevanjem polja dneva meseca; najverjetneje je to napaka crontab sistema."
 
@@ -188,23 +189,23 @@ msgstr "Vsak teden"
 #. add new task
 #: ../src/crontabEditor.py:131
 #: ../src/crontabEditor.py:142
-#: ../src/atEditor.py:125
-#: ../src/atEditor.py:144
+#: ../src/atEditor.py:129
+#: ../src/atEditor.py:148
 msgid "Create a New Scheduled Task"
 msgstr "Ustvari novo načrtovano nalogo."
 
 #: ../src/crontabEditor.py:198
-#: ../src/atEditor.py:162
+#: ../src/atEditor.py:166
 msgid "Edit template"
 msgstr "Uredi predlogo"
 
 #: ../src/crontabEditor.py:223
-#: ../src/atEditor.py:184
+#: ../src/atEditor.py:188
 msgid "New template"
 msgstr "Nova predloga"
 
 #: ../src/crontabEditor.py:249
-#: ../src/atEditor.py:226
+#: ../src/atEditor.py:230
 msgid "Edit a Scheduled Task"
 msgstr "Uredi načrtovano nalogo"
 
@@ -231,13 +232,13 @@ msgstr ""
 
 #: ../src/crontabEditor.py:457
 #: ../src/mainWindow.py:666
-#: ../src/atEditor.py:593
+#: ../src/atEditor.py:597
 msgid "_Don't show again"
 msgstr "_Sporočila ne pokaži več"
 
 #: ../src/crontabEditor.py:458
 #: ../src/mainWindow.py:667
-#: ../src/atEditor.py:594
+#: ../src/atEditor.py:598
 msgid "Warning: Working directory of executed tasks"
 msgstr "Opozorilo: delovna mapa izvedenih nalog"
 
@@ -1083,20 +1084,20 @@ msgstr "Naloga, ki se izvede le enkrat"
 msgid "A task from a predefined template"
 msgstr "Naloge iz predloge"
 
-#: ../src/atEditor.py:78
+#: ../src/atEditor.py:83
 msgid "Calendar"
 msgstr "Koledar"
 
-#: ../src/atEditor.py:511
+#: ../src/atEditor.py:515
 msgid "In one or both of the fields hour and minute there was entered a letter, or a number out of range. Remember an hour only has 60 minutes and a day only 24 hours."
 msgstr "V enem ali obeh poljih ure in minute je vnesena črka ali pa številčna vrednosti, ki je izven časovnega območja. Ura ima le 60 minut in dan le 24 ur."
 
-#: ../src/atEditor.py:572
+#: ../src/atEditor.py:576
 #, python-format
 msgid "This is an invalid record! The problem could be: %s"
 msgstr "Neveljaven zapis! Težava je lahko: %s"
 
-#: ../src/atEditor.py:592
+#: ../src/atEditor.py:596
 msgid ""
 "Note about working directory of executed tasks:\n"
 "\n"
@@ -1176,3 +1177,4 @@ msgstr "Nikoli ne bo pokazano."
 #: ../src/xwrapper.py:158
 msgid "xwrapper.py: completed"
 msgstr "xwrapper.py: končano"
+
