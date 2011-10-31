@@ -110,5 +110,7 @@ pickle.dump(d, of, -1)
 of.flush ()
 of.close ()
 
-sys.stderr.write (_("Finished, exported: %d tasks total" % (atc + crontabc)) + "\n")
+sys.stderr.write(gettext.ngettext("Finished, exported: %d task total.",
+                                  "Finished, exported: %d tasks total.",
+                                  atc + crontabc) % (atc + crontabc) + "\n")
 
