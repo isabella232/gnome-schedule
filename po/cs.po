@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: gnome-schedule\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "schedule&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-08-23 14:17+0000\n"
-"PO-Revision-Date: 2011-09-11 13:37+0200\n"
+"POT-Creation-Date: 2011-10-11 21:07+0000\n"
+"PO-Revision-Date: 2011-11-02 19:22+0100\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -41,7 +41,7 @@ msgstr "Gnome Schedule"
 msgid "System tools"
 msgstr "Systémové nástroje"
 
-#: ../src/at.py:91 ../src/crontab.py:62
+#: ../src/at.py:104 ../src/crontab.py:62
 msgid ""
 "Failed to create data dir! Make sure ~/.gnome and ~/.gnome/gnome-schedule "
 "are writable."
@@ -49,7 +49,7 @@ msgstr ""
 "Selhalo vytvoření adresáře pro data! Ujistěte se, že je do ~/.gnome a ~/."
 "gnome/gnome-schedule povolen zápis."
 
-#: ../src/at.py:124 ../src/crontab.py:162
+#: ../src/at.py:137 ../src/crontab.py:162
 #, python-format
 msgid ""
 "Failed to create data dir: %s. Make sure ~/.gnome and ~/.gnome/gnome-"
@@ -58,23 +58,30 @@ msgstr ""
 "Selhalo vytvoření adresáře pro data: %s. Ujistěte se, že je do ~/.gnome a ~/."
 "gnome/gnome-schedule povolen zápis."
 
-#: ../src/at.py:512
+#: ../src/at.py:533
 #, python-format
 msgid "Warning! Unknown task: %(preview)s"
 msgstr "Varování! Neznámá úloha: %(preview)s"
 
-#: ../src/at.py:519
+#: ../src/at.py:540
 #, python-format
 msgid "On %(timestring)s"
 msgstr "V %(timestring)s"
 
-#: ../src/at.py:525 ../src/at.py:530
+#: ../src/at.py:546 ../src/at.py:551
 msgid "Once"
 msgstr "Jednou"
 
-#: ../src/at.py:534
-msgid "Warning: a line in atq's output didn't parse"
-msgstr "Varování: Nelze analyzovat řádek ve výstupu atq"
+#: ../src/at.py:555
+#| msgid "Warning: a line in atq's output didn't parse"
+msgid "Warning: a line in atq's output didn't parse:"
+msgstr "Varování: nelze analyzovat řádek ve výstupu atq:"
+
+#: ../src/at.py:606 ../src/crontab.py:288 ../src/crontab.py:334
+#: ../src/crontabEditor.py:275 ../src/atEditor.py:123 ../src/atEditor.py:519
+#: ../src/atEditor.py:545
+msgid "Untitled"
+msgstr "Nepojmenovaná"
 
 #: ../src/crontab.py:87
 msgid "Minute"
@@ -115,41 +122,36 @@ msgstr "Musí být mezi %(min)s a %(max)s"
 msgid "%s is not a number"
 msgstr "%s není číslo"
 
-#: ../src/crontab.py:288 ../src/crontab.py:334 ../src/crontabEditor.py:275
-#: ../src/atEditor.py:123 ../src/atEditor.py:519 ../src/atEditor.py:545
-msgid "Untitled"
-msgstr "Nepojmenovaná"
-
-#: ../src/crontab.py:450 ../src/crontab.py:452 ../src/template_chooser.py:106
+#: ../src/crontab.py:455 ../src/crontab.py:457 ../src/template_chooser.py:106
 #: ../src/template_manager.py:111
 msgid "Recurrent"
 msgstr "Opakovaná"
 
-#: ../src/crontab.py:450 ../src/crontabEditor.py:74 ../src/lang.py:168
+#: ../src/crontab.py:455 ../src/crontabEditor.py:74 ../src/lang.py:168
 msgid "At reboot"
 msgstr "Při restartu"
 
-#: ../src/crontab.py:464
+#: ../src/crontab.py:469
 msgid "minute"
 msgstr "minuta"
 
-#: ../src/crontab.py:466
+#: ../src/crontab.py:471
 msgid "hour"
 msgstr "hodina"
 
-#: ../src/crontab.py:468
+#: ../src/crontab.py:473
 msgid "day"
 msgstr "den"
 
-#: ../src/crontab.py:470
+#: ../src/crontab.py:475
 msgid "month"
 msgstr "měsíc"
 
-#: ../src/crontab.py:472
+#: ../src/crontab.py:477
 msgid "weekday"
 msgstr "den v týdnu"
 
-#: ../src/crontab.py:571
+#: ../src/crontab.py:576
 msgid ""
 "Failed to parse the Day of Month field, possibly due to a bug in crontab."
 msgstr ""
