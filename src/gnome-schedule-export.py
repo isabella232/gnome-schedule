@@ -100,7 +100,7 @@ tasks = a.read ()
 atc = 0
 al = []
 for task in tasks:
-  sys.stderr.write(_("Exporting at task: " % task[0]) + "\n")
+  sys.stderr.write(_("Exporting at task: %s" % task[0]) + "\n")
   atc = atc + 1
   al.append([task[0], task[8], task[11], task[2], task[3], task[14]])
 
