@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-11 16:04+0200\n"
+"POT-Creation-Date: 2011-08-23 16:15+0200\n"
 "PO-Revision-Date: 2009-08-26 11:46+0200\n"
 "Last-Translator: Francisco Diéguez <fran.dieguez@mabishu.com>\n"
 "Language-Team: Galician <>\n"
@@ -341,6 +341,91 @@ msgstr "_Axuda"
 msgid "_Manage tasks"
 msgstr "_Xestionar tarefas "
 
+#: ../src/gnome-schedule-export.py:45
+#, fuzzy
+msgid "Gnome Schedule: Export tasks"
+msgstr "Gnome Schedule"
+
+#: ../src/gnome-schedule-export.py:47
+#, python-format
+msgid "Usage: %s [output file]"
+msgstr ""
+
+#: ../src/gnome-schedule-export.py:48
+msgid "       No file means export to stdout."
+msgstr ""
+
+#: ../src/gnome-schedule-export.py:72
+msgid "File exists already."
+msgstr ""
+
+#: ../src/gnome-schedule-export.py:81
+#, fuzzy, python-format
+msgid "Could not open file for writing: %s"
+msgstr "Non foi posíbel abrir unha conexión con X!"
+
+#: ../src/gnome-schedule-export.py:91
+#, python-format
+msgid "Exporting crontab task: %s"
+msgstr ""
+
+#: ../src/gnome-schedule-export.py:103
+msgid "Exporting at task: "
+msgstr ""
+
+#: ../src/gnome-schedule-export.py:113
+#, python-format
+msgid "Finished, exported: %d tasks total"
+msgstr ""
+
+#: ../src/gnome-schedule-import.py:63
+#, fuzzy
+msgid "Gnome Schedule: Import tasks"
+msgstr "Gnome Schedule"
+
+#: ../src/gnome-schedule-import.py:65
+#, python-format
+msgid "Usage: %s [input file]"
+msgstr ""
+
+#: ../src/gnome-schedule-import.py:66
+msgid "       No file means import from stdin."
+msgstr ""
+
+#: ../src/gnome-schedule-import.py:72
+msgid "File does not exist."
+msgstr ""
+
+#: ../src/gnome-schedule-import.py:77
+msgid "Reading from stdin.."
+msgstr ""
+
+#. Reading file
+#: ../src/gnome-schedule-import.py:82
+#, python-format
+msgid "Reading file: %s.."
+msgstr ""
+
+#: ../src/gnome-schedule-import.py:84
+#, fuzzy, python-format
+msgid "Could not open file for reading: %s"
+msgstr "Non foi posíbel abrir unha conexión con X!"
+
+#: ../src/gnome-schedule-import.py:95
+#, python-format
+msgid "Importing crontab task: %s"
+msgstr ""
+
+#: ../src/gnome-schedule-import.py:107
+#, python-format
+msgid "Importing at task: %s"
+msgstr ""
+
+#: ../src/gnome-schedule-import.py:111
+#, python-format
+msgid "Finished, imported: %d tasks total."
+msgstr ""
+
 #: ../src/gnome-schedule.glade.h:1
 msgid "*"
 msgstr "*"
@@ -535,6 +620,7 @@ msgid "To:"
 msgstr "Até:"
 
 #: ../src/gnome-schedule.glade.h:60 ../src/mainWindow.py:73
+#: ../src/examples/dump.py:57
 msgid "X application"
 msgstr "Aplicativo X"
 
@@ -854,15 +940,15 @@ msgstr "día da semana: %s"
 msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 msgstr ""
 
-#: ../src/mainWindow.py:71
+#: ../src/mainWindow.py:71 ../src/examples/dump.py:55
 msgid "Default behaviour"
 msgstr "Comportamento predefinido"
 
-#: ../src/mainWindow.py:72
+#: ../src/mainWindow.py:72 ../src/examples/dump.py:56
 msgid "Suppress output"
 msgstr "Eliminar saída"
 
-#: ../src/mainWindow.py:74
+#: ../src/mainWindow.py:74 ../src/examples/dump.py:58
 msgid "X application: suppress output"
 msgstr "Aplicativo X: eliminar saída"
 

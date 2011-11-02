@@ -12,6 +12,8 @@ src/crontab.py
 src/crontabEditor.py
 src/crontabEditorHelper.py
 src/gnome-schedule-applet.xml
+src/gnome-schedule-export.py
+src/gnome-schedule-import.py
 src/gnome-schedule.glade
 src/gnome-schedule.py
 src/lang.py
@@ -25,3 +27,4 @@ src/template.py
 src/template_chooser.py
 src/template_manager.py
 src/xwrapper.py
+src/examples/dump.py

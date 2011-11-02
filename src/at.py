@@ -21,6 +21,7 @@
 #python modules
 import re
 import os
+from subprocess import Popen, PIPE
 import sys
 import tempfile
 import commands
@@ -47,15 +48,28 @@ class At:
         # 1 2006-04-26 08:54 a gaute
         # 14    2006-09-21 10:54 a gaute
         # 3 Tue May  8 01:01:00 2007 a gaute
+        #
+        # FreeBSD:
+        #Date                Owner        Queue    Job#
+        #Fri Sep 30 23:40:00 MSK 2011    rm              c    2
 
-        self.atRecordRegex = re.compile('^([\d]+)[\t]([\w]{3,3})[\s]([\w]{3,3})[\s]*([\d]+)[\s]([\d]{2,2}[:][\d]{2,2}[:][\d]{2,2})[\s]([\d]{4,4})[\s]([\w])[\s]([\w]+)')
 
+        self.sysname = os.uname ()[0]
 
-        # after you add a job, this line is printed to stderr
-        # job 10 at 2006-09-18 12:38
-        self.atRecordRegexAdd = re.compile('^job\s([0-9]+)\sat')
+        # FreeBSD atq output, parser ignores time zone information
+        if self.sysname == 'FreeBSD':
+          self.atRecordRegex = re.compile ('^(?P<dow>[\w]{3})[\s](?P<month>[\w]{3})[\s](?P<day>[0-9]+)[\s](?P<time>[0-2][0-9]:[0-5][0-9]:[0-5][0-9])[\s](?:(?P<tzone>.*)[\s]|)(?P<year>[0-9]{4})[\t]+(?P<user>.+)[\s]+(?P<class>[a-z]|[A-Z])[\t](?P<jobid>[0-9]*)$')
+          # after you add a job, this line is printed to stderr
+          # Job 5 will be executed using /bin/sh
+          self.atRecordRegexAdd = re.compile('^Job[\s](?P<jobid>[0-9]+)[\s]will')
 
-        self.atRecordRegexAdded = re.compile('[^\s]+\s([0-9]+)\sat')
+        # General Linux atq output
+        else:
+          self.atRecordRegex = re.compile('^(?P<jobid>[\d]+)[\t](?P<dow>[\w]{3,3})[\s](?P<month>[\w]{3,3})[\s]*(?P<day>[\d]+)[\s](?P<time>[\d]{2,2}[:][\d]{2,2}[:][\d]{2,2})[\s](?P<year>[\d]{4,4})[\s](?P<class>[\w])[\s](?P<user>[\w]+)')
+          # after you add a job, this line is printed to stderr
+          # job 10 at 2006-09-18 12:38
+          self.atRecordRegexAdd = re.compile('^job\s(?P<jobid>[0-9]+)\sat')
+
         self.SCRIPT_DELIMITER = "###### ---- GNOME_SCHEDULE_SCRIPT_DELIMITER #####"
 
         self.DISPLAY = "DISPLAY=%s; export DISPLAY;\n"
@@ -76,7 +90,14 @@ fi
         # Therefore we unset it in the script.
         self.POSIXLY_CORRECT_UNSET = "unset POSIXLY_CORRECT\n"
 
-        self.atdatafileversion = 5
+        # Environment used for executing 'at' to ensure reliable output
+        # Setting locale to C
+        self.at_env = os.environ.copy ()
+        self.at_env["LC_ALL"] = "C"
+        self.PREPEND_SCRIPT = "LC_ALL=%s; export LC_ALL\n" % os.environ.get ("LC_ALL", "")
+        self.PREPEND_SCRIPT_LINES = 1
+
+        self.atdatafileversion = 6
         self.atdata = self.user_home_dir + "/.gnome/gnome-schedule/at"
         if os.path.exists (self.user_home_dir + "/.gnome") != True:
             os.mkdir (self.user_home_dir + "/.gnome", 0700)
@@ -133,11 +154,15 @@ fi
                 m = self.atRecordRegex.match(line)
                 if m != None:
                     # Time
-                    time = m.groups ()[4][:-3]
+                    time = m.group('time')
+
+                    # FreeBSD:
+                    # We are ignoring timezone and hope everything works
+                    # out in the end.
 
                     # Date
-                    day = m.groups ()[3]
-                    month = m.groups ()[2]
+                    day = m.group('day')
+                    month = m.group ('month')
 
                     for monthname in self.months:
                         month = month.replace (monthname, self.months[monthname])
@@ -149,17 +174,17 @@ fi
 
                     date = day + "." + month + "." + m.groups ()[5]
 
-                    job_id = m.groups ()[0]
-                    class_id = m.groups ()[6]
-                    user = m.groups ()[7]
+                    job_id = m.group ('jobid')
+                    class_id = m.group ('class')
+                    user = m.group ('user')
 
-                    success, title, desc, manual_poscorrect, output, display = self.get_job_data (int (job_id))
+                    success, title, desc, manual_poscorrect, output, display, stdlocale = self.get_job_data (int (job_id))
                     # manual_poscorrect is only used during preparation of script
 
                     execute = config.getAtbin() + " -c " + job_id
                     # read lines and detect starter
-                    script = os.popen(execute).read()
-                    script,  dangerous = self.__prepare_script__ (script, manual_poscorrect, output, display)
+                    script = Popen(execute, shell = True, env = self.at_env, stdout = PIPE).stdout.read()
+                    script,  dangerous = self.__prepare_script__ (script, manual_poscorrect, output, display, stdlocale)
 
                     #removing ending newlines, but keep one
                     #if a date in the past is selected the record is removed by at, this creates an error, and generally if the script is of zero length
@@ -175,7 +200,7 @@ fi
                 if m != None:
                     #print "Parse successfull, groups: "
                     #print m.groups()
-                    job_id = m.groups ()[0]
+                    job_id = m.group('jobid')
                     return int(job_id)
                 else:
                     return False
@@ -232,12 +257,17 @@ fi
             else:
                 display = ""
 
+            if ver >= 6:
+                stdlocale = True
+            else:
+                stdlocale = False
+
             fh.close ()
 
-            return True, title, desc, manual_poscorrect_b, output, display
+            return True, title, desc, manual_poscorrect_b, output, display, stdlocale
 
         else:
-            return False, "", "", False, 0, ""
+            return False, "", "", False, 0, "", False
 
     def write_job_data (self, job_id, title, desc, output, display):
         # Create and write data file
@@ -388,6 +418,7 @@ fi
         fd, path = tmpfile
         tmp = os.fdopen(fd, 'w')
         tmp.write (self.SCRIPT_DELIMITER + "\n")
+        tmp.write (self.PREPEND_SCRIPT)
         if self.manual_poscorrect:
             tmp.write (self.POSIXLY_CORRECT_UNSET)
 
@@ -406,14 +437,13 @@ fi
                 #changes the ownership
                 os.chown(path, self.uid, self.gid)
                 execute = config.getSubin() + " " + self.user + " -c \"" + config.getAtbin() +  " -f " + path + " " + runat + " && exit\""
-                child_stdin, child_stdout, child_stderr = os.popen3(execute)
             else:
                 execute = config.getAtbin() + " -f " + path + " " + runat
-                child_stdin, child_stdout, child_stderr = os.popen3(execute)
         else:
             execute = config.getAtbin() + " -f " + path + " " + runat
-            child_stdin, child_stdout, child_stderr = os.popen3(execute)
 
+        p = Popen (execute, shell = True, env = self.at_env, stdin = PIPE, stdout = PIPE, stderr = PIPE, close_fds = True)
+        (child_stdin, child_stdout, child_stderr) = (p.stdin, p.stdout, p.stderr)
 
         err = child_stderr.readlines ()
         job_id = 0
@@ -445,6 +475,7 @@ fi
         tmp = os.fdopen(fd, 'w')
 
         tmp.write (self.SCRIPT_DELIMITER + "\n")
+        tmp.write (self.PREPEND_SCRIPT)
         if self.manual_poscorrect:
             tmp.write (self.POSIXLY_CORRECT_UNSET)
 
@@ -461,13 +492,13 @@ fi
                 #changes the ownership
                 os.chown(path, self.uid, self.gid)
                 execute = config.getSubin() + " " + self.user + " -c \"" + config.getAtbin() +  " -f " + path + " " + runat + " && exit\""
-                child_stdin, child_stdout, child_stderr = os.popen3(execute)
             else:
                 execute = config.getAtbin() + " -f " + path + " " + runat
-                child_stdin, child_stdout, child_stderr = os.popen3(execute)
         else:
             execute = config.getAtbin() + " -f " + path + " " + runat
-            child_stdin, child_stdout, child_stderr = os.popen3(execute)
+
+        p = Popen (execute, shell = True, env = self.at_env, stdin = PIPE, stdout = PIPE, stderr = PIPE, close_fds = True)
+        (child_stdin, child_stdout, child_stderr) = (p.stdin, p.stdout, p.stderr)
 
         err = child_stderr.readlines ()
         job_id = 0
@@ -498,9 +529,13 @@ fi
         data = []
         #do 'atq'
         execute = config.getAtqbin ()
-        self.lines = os.popen(execute).readlines()
-        for line in self.lines:
+        self.lines = Popen(execute, shell = True, env = self.at_env, stdout = PIPE).stdout.readlines()
 
+        # Skip header: Date..
+        if self.sysname == 'FreeBSD':
+            self.lines = self.lines[1:]
+
+        for line in self.lines:
             array_or_false = self.parse (line)
             #print array_or_false
             if array_or_false != False:
@@ -515,7 +550,7 @@ fi
 
                 timestring = "%s %s" % (date, time)
 
-                date_o = datetime.datetime.strptime (date + " " + time, "%d.%m.%Y %H:%M")
+                date_o = datetime.datetime.strptime (date + " " + time, "%d.%m.%Y %H:%M:%S")
                 timestring_show = _("On %(timestring)s") % { 'timestring' : date_o.strftime ("%c") }
 
 
@@ -531,11 +566,12 @@ fi
 
                 #print _("added %(id)s") % { "id": job_id   }
             else:
-                print _("Warning: a line in atq's output didn't parse")
+                print _("Warning: a line in atq's output didn't parse:")
+                print line
         return data
 
 
-    def __prepare_script__ (self, script, manual_poscorrect, output, display):
+    def __prepare_script__ (self, script, manual_poscorrect, output, display, stdlocale):
 
         # It looks like at prepends a bunch of stuff to each script
         # Luckily it delimits that using two newlines
@@ -552,6 +588,10 @@ fi
 
         if scriptstart != -1:
             script = script[scriptstart:]
+
+            if stdlocale:
+                script = script[self.PREPEND_SCRIPT_LINES:]
+
             if manual_poscorrect == True:
                 scriptstart = script.find (self.POSIXLY_CORRECT_UNSET)
                 if scriptstart != -1:
@@ -581,7 +621,7 @@ fi
                 #remeber the length to remove this from the preview
                 prelen = len(title) + 7
             else:
-                title = "Untitled"
+                title = _("Untitled")
             # If the string contains ICON=
             iconstart = script.find ("ICON=")
             if iconstart != -1:

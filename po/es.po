@@ -7,19 +7,22 @@
 # Rodrigo Marcos Fombellida <rmarcos_geo@yahoo.es>, 2005.
 # Alejandro Valdes Jimenez <avaldes@utalca.cl>, 2007.
 # Rodrigo Marcos Fombellida <rmarcos@svn.gnome.org>, 2008.
-# Jorge González <jorgegonz@svn.gnome.org>, 2007, 2009, 2010.
+# Jorge González <jorgegonz@svn.gnome.org>, 2007, 2009, 2010, 2011.
+# Daniel Mustieles <daniel.mustieles@gmail.com>, 2011.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule.HEAD\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-11 16:04+0200\n"
-"PO-Revision-Date: 2010-03-15 19:24+0100\n"
-"Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"schedule&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2011-10-11 21:07+0000\n"
+"PO-Revision-Date: 2011-10-14 11:41+0200\n"
+"Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
@@ -43,40 +46,47 @@ msgstr "Planificador de Gnome"
 msgid "System tools"
 msgstr "Herramientas del sistema"
 
-#: ../src/at.py:91 ../src/crontab.py:62
+#: ../src/at.py:104 ../src/crontab.py:62
 msgid ""
 "Failed to create data dir! Make sure ~/.gnome and ~/.gnome/gnome-schedule "
 "are writable."
 msgstr ""
-"Falló al crear el directorio de datos. Asegúrese de que se puede escribir en "
-"~/.gnome y ~/.gnome/gnome-schedule "
+"Falló al crear la carpeta de datos. Asegúrese de que se puede escribir en ~/."
+"gnome y ~/.gnome/gnome-schedule "
 
-#: ../src/at.py:124 ../src/crontab.py:162
+#: ../src/at.py:137 ../src/crontab.py:162
 #, python-format
 msgid ""
 "Failed to create data dir: %s. Make sure ~/.gnome and ~/.gnome/gnome-"
 "schedule are writable."
 msgstr ""
-"Falló al crear el directorio de datos: %s. Asegúrese de que se puede "
-"escribir en ~/.gnome y ~/.gnome/gnome-schedule"
+"Falló al crear la carpeta de datos: %s. Asegúrese de que se puede escribir "
+"en ~/.gnome y ~/.gnome/gnome-schedule"
 
-#: ../src/at.py:512
+#: ../src/at.py:533
 #, python-format
 msgid "Warning! Unknown task: %(preview)s"
 msgstr "Advertencia: Tarea desconocida: %(preview)s"
 
-#: ../src/at.py:519
+#: ../src/at.py:540
 #, python-format
 msgid "On %(timestring)s"
 msgstr "El %(timestring)s"
 
-#: ../src/at.py:525 ../src/at.py:530
+#: ../src/at.py:546 ../src/at.py:551
 msgid "Once"
 msgstr "Una vez"
 
-#: ../src/at.py:534
-msgid "Warning: a line in atq's output didn't parse"
-msgstr "Advertencia: una línea en la salida de atq no se analizó"
+#: ../src/at.py:555
+#| msgid "Warning: a line in atq's output didn't parse"
+msgid "Warning: a line in atq's output didn't parse:"
+msgstr "Advertencia: una línea en la salida de atq no se analizó:"
+
+#: ../src/at.py:606 ../src/crontab.py:288 ../src/crontab.py:334
+#: ../src/crontabEditor.py:275 ../src/atEditor.py:123 ../src/atEditor.py:519
+#: ../src/atEditor.py:545
+msgid "Untitled"
+msgstr "Sin título"
 
 #: ../src/crontab.py:87
 msgid "Minute"
@@ -117,41 +127,36 @@ msgstr "debe estar entre %(min)s y %(max)s"
 msgid "%s is not a number"
 msgstr "%s no es un número"
 
-#: ../src/crontab.py:288 ../src/crontab.py:334 ../src/crontabEditor.py:275
-#: ../src/atEditor.py:123 ../src/atEditor.py:519 ../src/atEditor.py:545
-msgid "Untitled"
-msgstr "Sin título"
-
-#: ../src/crontab.py:450 ../src/crontab.py:452 ../src/template_chooser.py:106
+#: ../src/crontab.py:455 ../src/crontab.py:457 ../src/template_chooser.py:106
 #: ../src/template_manager.py:111
 msgid "Recurrent"
 msgstr "Repetitiva"
 
-#: ../src/crontab.py:450 ../src/crontabEditor.py:74 ../src/lang.py:168
+#: ../src/crontab.py:455 ../src/crontabEditor.py:74 ../src/lang.py:168
 msgid "At reboot"
 msgstr "Al reiniciar"
 
-#: ../src/crontab.py:464
+#: ../src/crontab.py:469
 msgid "minute"
 msgstr "minuto"
 
-#: ../src/crontab.py:466
+#: ../src/crontab.py:471
 msgid "hour"
 msgstr "hora"
 
-#: ../src/crontab.py:468
+#: ../src/crontab.py:473
 msgid "day"
 msgstr "día"
 
-#: ../src/crontab.py:470
+#: ../src/crontab.py:475
 msgid "month"
 msgstr "mes"
 
-#: ../src/crontab.py:472
+#: ../src/crontab.py:477
 msgid "weekday"
 msgstr "día de la semana"
 
-#: ../src/crontab.py:571
+#: ../src/crontab.py:576
 msgid ""
 "Failed to parse the Day of Month field, possibly due to a bug in crontab."
 msgstr ""
@@ -205,8 +210,8 @@ msgid ""
 "This is an invalid record! The problem could be in the %(field)s field. "
 "Reason: %(reason)s"
 msgstr ""
-"¡Este es un registro inválido! El problema podría estar en el campo "
-"%(field)s. Razón: %(reason)s"
+"¡Este es un registro inválido! El problema podría estar en el campo %(field)"
+"s. Razón: %(reason)s"
 
 #: ../src/crontabEditor.py:307
 msgid ""
@@ -231,9 +236,9 @@ msgid ""
 "\n"
 "Recurrent tasks will be run from the home directory."
 msgstr ""
-"Nota acerca del directorio de trabajo de las tareas ejecutadas:\n"
+"Nota acerca de la carpeta de trabajo de las tareas ejecutadas:\n"
 "\n"
-"Las tareas periódicas se ejecutarán desde el directorio personal."
+"Las tareas periódicas se ejecutarán desde la carpeta personal."
 
 #: ../src/crontabEditor.py:457 ../src/mainWindow.py:666 ../src/atEditor.py:593
 msgid "_Don't show again"
@@ -241,7 +246,7 @@ msgstr "_No mostrar de nuevo"
 
 #: ../src/crontabEditor.py:458 ../src/mainWindow.py:667 ../src/atEditor.py:594
 msgid "Warning: Working directory of executed tasks"
-msgstr "Advertencia: Directorio de trabajo de las tareas ejecutadas"
+msgstr "Advertencia: carpeta de trabajo de las tareas ejecutadas"
 
 #: ../src/crontabEditorHelper.py:111
 msgid "Every weekday"
@@ -356,6 +361,89 @@ msgstr "Ay_uda"
 #: ../src/gnome-schedule-applet.xml.h:4
 msgid "_Manage tasks"
 msgstr "A_dministrar tareas"
+
+#: ../src/gnome-schedule-export.py:45
+msgid "Gnome Schedule: Export tasks"
+msgstr "Planificador de GNOME: exportar tareas"
+
+#: ../src/gnome-schedule-export.py:47
+#, python-format
+msgid "Usage: %s [output file]"
+msgstr "Uso: %s [archivo de salida]"
+
+#: ../src/gnome-schedule-export.py:48
+msgid "       No file means export to stdout."
+msgstr "       Ningún archivo significa exportar a stdout"
+
+#: ../src/gnome-schedule-export.py:72
+msgid "File exists already."
+msgstr "El archivo ya existe."
+
+#: ../src/gnome-schedule-export.py:81
+#, python-format
+msgid "Could not open file for writing: %s"
+msgstr "No se pudo abrir el archivo para escritura: %s"
+
+#: ../src/gnome-schedule-export.py:91
+#, python-format
+msgid "Exporting crontab task: %s"
+msgstr "Exportando la tarea crontab: %s"
+
+#: ../src/gnome-schedule-export.py:103
+msgid "Exporting at task: "
+msgstr "Exportando a la tarea: "
+
+#: ../src/gnome-schedule-export.py:113
+#, python-format
+msgid "Finished, exported: %d tasks total"
+msgstr "Exportación terminada: %d tareas en total"
+
+#: ../src/gnome-schedule-import.py:63
+msgid "Gnome Schedule: Import tasks"
+msgstr "Planificador de GNOME: importar tareas"
+
+#: ../src/gnome-schedule-import.py:65
+#, python-format
+msgid "Usage: %s [input file]"
+msgstr "Uso: %s [archivo de entrada]"
+
+#: ../src/gnome-schedule-import.py:66
+msgid "       No file means import from stdin."
+msgstr "       Ningún archivo significa importar desde stdin."
+
+#: ../src/gnome-schedule-import.py:72
+msgid "File does not exist."
+msgstr "El archivo no existe."
+
+#: ../src/gnome-schedule-import.py:77
+msgid "Reading from stdin.."
+msgstr "Leyendo de stdin…"
+
+#. Reading file
+#: ../src/gnome-schedule-import.py:82
+#, python-format
+msgid "Reading file: %s.."
+msgstr "Leyendo archivo: %s…"
+
+#: ../src/gnome-schedule-import.py:84
+#, python-format
+msgid "Could not open file for reading: %s"
+msgstr "No se pudo abrir el archivo para lectura: %s"
+
+#: ../src/gnome-schedule-import.py:95
+#, python-format
+msgid "Importing crontab task: %s"
+msgstr "Importando la tarea crontab: %s"
+
+#: ../src/gnome-schedule-import.py:107
+#, python-format
+msgid "Importing at task: %s"
+msgstr "Importando en la tarea: %s"
+
+#: ../src/gnome-schedule-import.py:111
+#, python-format
+msgid "Finished, imported: %d tasks total."
+msgstr "Importación terminada: %d tareas en total."
 
 #: ../src/gnome-schedule.glade.h:1
 msgid "*"
@@ -553,6 +641,7 @@ msgid "To:"
 msgstr "Hasta:"
 
 #: ../src/gnome-schedule.glade.h:60 ../src/mainWindow.py:73
+#: ../src/examples/dump.py:57
 msgid "X application"
 msgstr "Aplicación X"
 
@@ -637,8 +726,8 @@ msgid ""
 "On day %(monthday)s of every month at every minute between %(time_from)s and "
 "%(time_to)s"
 msgstr ""
-"El día %(monthday)s de cada mes a cada minuto entre las %(time_from)s y las "
-"%(time_to)s"
+"El día %(monthday)s de cada mes a cada minuto entre las %(time_from)s y las %"
+"(time_to)s"
 
 #: ../src/lang.py:204
 #, python-format
@@ -663,11 +752,11 @@ msgstr "Cada día de %(month)s en el minuto %(minute)s de cada hora"
 #: ../src/lang.py:215
 #, python-format
 msgid ""
-"On every day in %(month)s at every minute between %(time_from)s and "
-"%(time_to)s"
+"On every day in %(month)s at every minute between %(time_from)s and %"
+"(time_to)s"
 msgstr ""
-"Cada día de %(month)s a cada minuto entre las %(time_from)s y las "
-"%(time_to)s horas"
+"Cada día de %(month)s a cada minuto entre las %(time_from)s y las %(time_to)"
+"s horas"
 
 #: ../src/lang.py:217
 #, python-format
@@ -719,8 +808,8 @@ msgstr "Cada %(weekday)s en el minuto %(minute)s de cada hora"
 #: ../src/lang.py:241
 #, python-format
 msgid ""
-"On every weekday: %(weekday)s at every minute between %(time_from)s and "
-"%(time_to)s"
+"On every weekday: %(weekday)s at every minute between %(time_from)s and %"
+"(time_to)s"
 msgstr ""
 "Cada %(weekday)s a cada minuto entre las %(time_from)s y las %(time_to)s"
 
@@ -747,8 +836,8 @@ msgstr "El día %(monthday)s de cada mes y cada %(weekday)s a cada minuto"
 #: ../src/lang.py:252
 #, python-format
 msgid ""
-"On day %(monthday)s of every month and every weekday: %(weekday)s at minute "
-"%(minute)s of every hour"
+"On day %(monthday)s of every month and every weekday: %(weekday)s at minute %"
+"(minute)s of every hour"
 msgstr ""
 "El día %(monthday)s de cada mes y cada %(weekday)s en el minuto %(minute)s "
 "de cada hora"
@@ -759,8 +848,8 @@ msgid ""
 "On day %(monthday)s of every month and every weekday: %(weekday)s at every "
 "minute between %(time_from)s and %(time_to)s"
 msgstr ""
-"El día %(monthday)s de cada mes y cada %(weekday)s a cada minuto entre las  "
-"%(time_from)s y las %(time_to)s"
+"El día %(monthday)s de cada mes y cada %(weekday)s a cada minuto entre las  %"
+"(time_from)s y las %(time_to)s"
 
 #: ../src/lang.py:256
 #, python-format
@@ -787,11 +876,11 @@ msgstr "Cada %(weekday)s de %(month)s en el minuto %(minute)s de cada hora"
 #: ../src/lang.py:267
 #, python-format
 msgid ""
-"On every weekday: %(weekday)s in %(month)s at every minute between "
-"%(time_from)s and %(time_to)s"
+"On every weekday: %(weekday)s in %(month)s at every minute between %"
+"(time_from)s and %(time_to)s"
 msgstr ""
-"Cada %(weekday)s de %(month)s a cada minuto entre las %(time_from)s y las "
-"%(time_to)s"
+"Cada %(weekday)s de %(month)s a cada minuto entre las %(time_from)s y las %"
+"(time_to)s"
 
 #: ../src/lang.py:269
 #, python-format
@@ -837,11 +926,11 @@ msgstr ""
 #: ../src/lang.py:282
 #, python-format
 msgid ""
-"On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
-"%(time)s"
+"On every weekday: %(weekday)s in %(month)s and on %(date)s every year at %"
+"(time)s"
 msgstr ""
-"Cada %(weekday)s del mes de %(month)s y el día %(date)s de cada año a las "
-"%(time)s"
+"Cada %(weekday)s del mes de %(month)s y el día %(date)s de cada año a las %"
+"(time)s"
 
 #: ../src/lang.py:290
 msgid "every minute"
@@ -894,15 +983,15 @@ msgstr "día de la semana: %s"
 msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 msgstr "A las %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 
-#: ../src/mainWindow.py:71
+#: ../src/mainWindow.py:71 ../src/examples/dump.py:55
 msgid "Default behaviour"
 msgstr "Comportamiento predeterminado"
 
-#: ../src/mainWindow.py:72
+#: ../src/mainWindow.py:72 ../src/examples/dump.py:56
 msgid "Suppress output"
 msgstr "Suprimir salida"
 
-#: ../src/mainWindow.py:74
+#: ../src/mainWindow.py:74 ../src/examples/dump.py:58
 msgid "X application: suppress output"
 msgstr "Aplicación X: suprimir salida"
 
@@ -988,12 +1077,12 @@ msgid ""
 "directory where Gnome schedule was run from at the time of task creation "
 "(normally the home directory)."
 msgstr ""
-"Nota acerca del directorio de trabajo de las tareas ejecutadas:\n"
+"Nota acerca de la carpeta de trabajo de las tareas ejecutadas:\n"
 "\n"
-"Las tareas periódicas se ejecutarán desde el directorio personal, las tareas "
-"que se realizan una sola vez, desde el directorio en el cual se ejecutó el "
-"Planificador de GNOME en el momento de crear la tarea (normalmente el "
-"directorio personal)"
+"Las tareas periódicas se ejecutarán desde la carpeta personal, las tareas "
+"que se realizan una sola vez, desde la carpeta en la que se ejecutó el "
+"Planificador de GNOME en el momento de crear la tarea (normalmente la "
+"carpeta personal)"
 
 #: ../src/mainWindow.py:727
 msgid "Please select a task!"
@@ -1071,11 +1160,11 @@ msgid ""
 "One-time tasks will be run from the directory where Gnome schedule is run "
 "from (normally the home directory)."
 msgstr ""
-"Nota acerca del directorio de trabajo de las tareas ejecutadas:\n"
+"Nota acerca de la carpeta de trabajo de las tareas ejecutadas:\n"
 "\n"
-"Las tareas que se realizarán una sola vez se ejecutarán desde el directorio "
-"en el cual el Planificador de GNOME se está ejecutando (normalmente el "
-"directorio personal)"
+"Las tareas que se realizarán una sola vez se ejecutarán desde la carpeta en "
+"la que el Planificador de GNOME se está ejecutando (normalmente la carpeta "
+"personal)"
 
 #: ../src/template.py:198 ../src/template.py:212
 msgid "Title:"
@@ -1134,7 +1223,7 @@ msgstr "El archivo de datos es demasiado viejo. Vuelva a crear la tarea."
 #: ../src/xwrapper.py:125
 #, python-format
 msgid "Launching %s.."
-msgstr "Lanzando %s..."
+msgstr "Lanzando %s…"
 
 #: ../src/xwrapper.py:127
 msgid "output<2: Why am I launched?"

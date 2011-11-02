@@ -3,20 +3,24 @@
 # This file is distributed under the same license as the gnome-schedule package.
 # Frank Arnold <frank@scirocco-5v-turbo.de>, 2004, 2005.
 # Hendrik Richter <hendrikr@gnome.org>, 2006.
-# Mario Blättermann <mariobl@gnome.org>, 2009, 2010.
+# Mario Blättermann <mariobl@freenet.de>, 2009-2011.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-11 16:04+0200\n"
-"PO-Revision-Date: 2010-03-20 22:23+0100\n"
-"Last-Translator: Mario Blättermann <mariobl@gnome.org>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"schedule&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2011-10-11 21:07+0000\n"
+"PO-Revision-Date: 2011-10-12 19:52+0100\n"
+"Last-Translator: Mario Blättermann <mariobl@freenet.de>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
-"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: de\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"X-Poedit-Language: German\n"
+"X-Poedit-Country: GERMANY\n"
 
 #: ../desktop/gnome-schedule.desktop.in.in.h:1
 msgid "Manage your system tasks"
@@ -38,41 +42,47 @@ msgstr "GNOME Schedule"
 msgid "System tools"
 msgstr "Systemwerkzeuge"
 
-#: ../src/at.py:91 ../src/crontab.py:62
+#: ../src/at.py:104 ../src/crontab.py:62
 msgid ""
-"Failed to create data dir! Make sure ~/.gnome and ~/.gnome/gnome-schedule "
-"are writable."
+"Failed to create data dir! Make sure ~/.gnome and ~/.gnome/gnome-schedule are "
+"writable."
 msgstr ""
 "Datenordner konnte nicht erstellt werden: Stellen Sie sicher, dass Sie über "
 "Schreibrechte in ~/.gnome und ~/.gnome/gnome-schedule verfügen."
 
-#: ../src/at.py:124 ../src/crontab.py:162
+#: ../src/at.py:137 ../src/crontab.py:162
 #, python-format
 msgid ""
-"Failed to create data dir: %s. Make sure ~/.gnome and ~/.gnome/gnome-"
-"schedule are writable."
+"Failed to create data dir: %s. Make sure ~/.gnome and ~/.gnome/gnome-schedule "
+"are writable."
 msgstr ""
 "Datenordner konnte nicht erstellt werden: %s. Stellen Sie sicher, dass Sie "
 "über Schreibrechte in ~/.gnome und ~/.gnome/gnome-schedule verfügen."
 
-#: ../src/at.py:512
+#: ../src/at.py:533
 #, python-format
 msgid "Warning! Unknown task: %(preview)s"
 msgstr "Warnung! Unbekannte Aufgabe: %(preview)s"
 
-#: ../src/at.py:519
+#: ../src/at.py:540
 #, python-format
 msgid "On %(timestring)s"
 msgstr "Um %(timestring)s"
 
-#: ../src/at.py:525 ../src/at.py:530
+#: ../src/at.py:546 ../src/at.py:551
 msgid "Once"
 msgstr "Einmalig"
 
-#: ../src/at.py:534
-msgid "Warning: a line in atq's output didn't parse"
+#: ../src/at.py:555
+msgid "Warning: a line in atq's output didn't parse:"
 msgstr ""
-"Warnung: Eine Zeile in der Ausgabe von »atq« konnte nicht geparst werden"
+"Warnung: Eine Zeile in der Ausgabe von »atq« konnte nicht verarbeitet werden:"
+
+#: ../src/at.py:606 ../src/crontab.py:288 ../src/crontab.py:334
+#: ../src/crontabEditor.py:275 ../src/atEditor.py:123 ../src/atEditor.py:519
+#: ../src/atEditor.py:545
+msgid "Untitled"
+msgstr "Unbenannt"
 
 #: ../src/crontab.py:87
 msgid "Minute"
@@ -113,45 +123,40 @@ msgstr "Muss eine Zahl zwischen %(min)s und %(max)s sein"
 msgid "%s is not a number"
 msgstr "%s ist keine Zahl"
 
-#: ../src/crontab.py:288 ../src/crontab.py:334 ../src/crontabEditor.py:275
-#: ../src/atEditor.py:123 ../src/atEditor.py:519 ../src/atEditor.py:545
-msgid "Untitled"
-msgstr "Unbenannt"
-
-#: ../src/crontab.py:450 ../src/crontab.py:452 ../src/template_chooser.py:106
+#: ../src/crontab.py:455 ../src/crontab.py:457 ../src/template_chooser.py:106
 #: ../src/template_manager.py:111
 msgid "Recurrent"
 msgstr "Wiederholend"
 
-#: ../src/crontab.py:450 ../src/crontabEditor.py:74 ../src/lang.py:168
+#: ../src/crontab.py:455 ../src/crontabEditor.py:74 ../src/lang.py:168
 msgid "At reboot"
 msgstr "Beim Neustart"
 
-#: ../src/crontab.py:464
+#: ../src/crontab.py:469
 msgid "minute"
 msgstr "Minute"
 
-#: ../src/crontab.py:466
+#: ../src/crontab.py:471
 msgid "hour"
 msgstr "Stunde"
 
-#: ../src/crontab.py:468
+#: ../src/crontab.py:473
 msgid "day"
 msgstr "Tag"
 
-#: ../src/crontab.py:470
+#: ../src/crontab.py:475
 msgid "month"
 msgstr "Monat"
 
-#: ../src/crontab.py:472
+#: ../src/crontab.py:477
 msgid "weekday"
 msgstr "Wochentag"
 
-#: ../src/crontab.py:571
+#: ../src/crontab.py:576
 msgid ""
 "Failed to parse the Day of Month field, possibly due to a bug in crontab."
 msgstr ""
-"Die Felder für Tag und Monat konnten nicht geparst werden. Möglicherweise "
+"Die Felder für Tag und Monat konnten nicht verarbeitet werden. Möglicherweise "
 "ist crontab fehlerhaft."
 
 #: ../src/crontabEditor.py:69 ../src/crontabEditorHelper.py:87
@@ -214,13 +219,13 @@ msgid ""
 "more information about the % character. If you don not want to use it for "
 "redirection it must be properly escaped with the \\ letter."
 msgstr ""
-"Ihr Befehl enthält ein oder mehrere %-Zeichen. Diese werden speziell für "
-"cron gedacht und können nicht mit GNOME-Schedule verwendet werden, weil sie "
-"für das Speichern zusätzlicher Daten in der crontab-Zeile verwendet werden. "
-"Bitte verwenden Sie das »|«-Zeichen, um zusätzliche Funktionalität "
-"hinzuzufügen. Ziehen sie das crontab-Handbuch zu Rate, um Informationen über "
-"die Verwendung des %-Zeichens zu erhalten. Falls Sie es nicht für "
-"Ersetzungen verwenden, muss es sauber mit einem \\-Zeichen maskiert werden."
+"Ihr Befehl enthält ein oder mehrere %-Zeichen. Diese werden speziell für cron "
+"gedacht und können nicht mit GNOME-Schedule verwendet werden, weil sie für "
+"das Speichern zusätzlicher Daten in der crontab-Zeile verwendet werden. Bitte "
+"verwenden Sie das »|«-Zeichen, um zusätzliche Funktionalität hinzuzufügen. "
+"Ziehen sie das crontab-Handbuch zu Rate, um Informationen über die Verwendung "
+"des %-Zeichens zu erhalten. Falls Sie es nicht für Ersetzungen verwenden, "
+"muss es sauber mit einem \\-Zeichen maskiert werden."
 
 #: ../src/crontabEditor.py:456
 msgid ""
@@ -353,6 +358,89 @@ msgstr "_Hilfe"
 #: ../src/gnome-schedule-applet.xml.h:4
 msgid "_Manage tasks"
 msgstr "Systemaufgaben _verwalten"
+
+#: ../src/gnome-schedule-export.py:45
+msgid "Gnome Schedule: Export tasks"
+msgstr "GNOME Schedule: Aufgaben exportieren"
+
+#: ../src/gnome-schedule-export.py:47
+#, python-format
+msgid "Usage: %s [output file]"
+msgstr "Aufruf: %s [Ausgabedatei]"
+
+#: ../src/gnome-schedule-export.py:48
+msgid "       No file means export to stdout."
+msgstr "       Ohne Dateiangabe wird in die Standardausgabe exportiert."
+
+#: ../src/gnome-schedule-export.py:72
+msgid "File exists already."
+msgstr "Datei existiert bereits."
+
+#: ../src/gnome-schedule-export.py:81
+#, python-format
+msgid "Could not open file for writing: %s"
+msgstr "Datei konnte nicht zum Schreiben geöffnet werden: %s"
+
+#: ../src/gnome-schedule-export.py:91
+#, python-format
+msgid "Exporting crontab task: %s"
+msgstr "Crontab-Aufgabe wird exportiert: %s"
+
+#: ../src/gnome-schedule-export.py:103
+msgid "Exporting at task: "
+msgstr "Aufgabe wird exportiert: "
+
+#: ../src/gnome-schedule-export.py:113
+#, python-format
+msgid "Finished, exported: %d tasks total"
+msgstr "Abgeschlossen, insgesamt %d Aufgaben wurden exportiert."
+
+#: ../src/gnome-schedule-import.py:63
+msgid "Gnome Schedule: Import tasks"
+msgstr "GNOME Schedule: Aufgaben importieren"
+
+#: ../src/gnome-schedule-import.py:65
+#, python-format
+msgid "Usage: %s [input file]"
+msgstr "Aufruf: %s [Eingabedatei]"
+
+#: ../src/gnome-schedule-import.py:66
+msgid "       No file means import from stdin."
+msgstr "       Ohne Dateiangabe wird aus der Standardeingabe importiert."
+
+#: ../src/gnome-schedule-import.py:72
+msgid "File does not exist."
+msgstr "Datei existiert nicht."
+
+#: ../src/gnome-schedule-import.py:77
+msgid "Reading from stdin.."
+msgstr "Aus Standardeingabe wird gelesen …"
+
+#. Reading file
+#: ../src/gnome-schedule-import.py:82
+#, python-format
+msgid "Reading file: %s.."
+msgstr "Datei wird gelesen: %s …"
+
+#: ../src/gnome-schedule-import.py:84
+#, python-format
+msgid "Could not open file for reading: %s"
+msgstr "Datei konnte nicht zum Lesen geöffnet werden: %s"
+
+#: ../src/gnome-schedule-import.py:95
+#, python-format
+msgid "Importing crontab task: %s"
+msgstr "Crontab-Aufgabe wird importiert: %s"
+
+#: ../src/gnome-schedule-import.py:107
+#, python-format
+msgid "Importing at task: %s"
+msgstr "Aufgabe wird importiert: %s"
+
+#: ../src/gnome-schedule-import.py:111
+#, python-format
+msgid "Finished, imported: %d tasks total."
+msgstr "Abgeschlossen, insgesamt %d Aufgaben wurden importiert."
 
 #: ../src/gnome-schedule.glade.h:1
 msgid "*"
@@ -553,6 +641,7 @@ msgid "To:"
 msgstr "Endend mit:"
 
 #: ../src/gnome-schedule.glade.h:60 ../src/mainWindow.py:73
+#: ../src/examples/dump.py:57
 msgid "X application"
 msgstr "X-Anwendung"
 
@@ -787,8 +876,7 @@ msgstr "An jedem Wochentag. %(weekday)s im %(month)s zu jeder Minute"
 msgid ""
 "On every weekday: %(weekday)s in %(month)s at minute %(minute)s of every hour"
 msgstr ""
-"An jedem Wochentag. %(weekday)s im %(month)s zu Minute %(minute)s jeder "
-"Stunde"
+"An jedem Wochentag. %(weekday)s im %(month)s zu Minute %(minute)s jeder Stunde"
 
 #: ../src/lang.py:267
 #, python-format
@@ -900,15 +988,15 @@ msgstr "Wochentag: %s"
 msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 msgstr "%(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 
-#: ../src/mainWindow.py:71
+#: ../src/mainWindow.py:71 ../src/examples/dump.py:55
 msgid "Default behaviour"
 msgstr "Vorgegebenes Verhalten"
 
-#: ../src/mainWindow.py:72
+#: ../src/mainWindow.py:72 ../src/examples/dump.py:56
 msgid "Suppress output"
 msgstr "Ausgabe unterdrücken"
 
-#: ../src/mainWindow.py:74
+#: ../src/mainWindow.py:74 ../src/examples/dump.py:58
 msgid "X application: suppress output"
 msgstr "X-Anwendung: Ausgabe unterdrücken"
 
@@ -1023,7 +1111,7 @@ msgid "translator-credits"
 msgstr ""
 "Frank Arnold <frank@scirocco-5v-turbo.de>\n"
 "Hendrik Richter <hendrikr@gnome.org>\n"
-"Mario Blättermann <mariobl@gnome.org>"
+"Mario Blättermann <mariobl@freenet.de>"
 
 #: ../src/mainWindow.py:772
 msgid "Could not display help"
@@ -1055,13 +1143,13 @@ msgstr "Kalender"
 
 #: ../src/atEditor.py:511
 msgid ""
-"In one or both of the fields hour and minute there was entered a letter, or "
-"a number out of range. Remember an hour only has 60 minutes and a day only "
-"24 hours."
+"In one or both of the fields hour and minute there was entered a letter, or a "
+"number out of range. Remember an hour only has 60 minutes and a day only 24 "
+"hours."
 msgstr ""
-"In einem oder beiden Feldern für Stunde und Minute wurden Werte außerhalb "
-"des möglichen Bereichs eingegeben. Beachten Sie, dass eine Stunde 60 Minuten "
-"hat und ein Tag 24 Stunden."
+"In einem oder beiden Feldern für Stunde und Minute wurden Werte außerhalb des "
+"möglichen Bereichs eingegeben. Beachten Sie, dass eine Stunde 60 Minuten hat "
+"und ein Tag 24 Stunden."
 
 #: ../src/atEditor.py:572
 #, python-format
@@ -1107,8 +1195,7 @@ msgstr "Falsche Anzahl von Argumenten."
 #: ../src/xwrapper.py:73 ../src/xwrapper.py:81
 msgid ""
 "Wrapper script for Gnome-schedule (http://gnome-schedule.sf.net) for "
-"applications to be run from crontab or at under X. Use through gnome-"
-"schedule."
+"applications to be run from crontab or at under X. Use through gnome-schedule."
 msgstr ""
 "Wrapper-Skript für Gnome-schedule (http://gnome-schedule.sf.net) zur "
 "Anwendungsausführung in der crontab oder unter X. Wird von gnome-schedule "

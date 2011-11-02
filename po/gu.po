@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule.master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-11 16:04+0200\n"
+"POT-Creation-Date: 2011-08-23 16:15+0200\n"
 "PO-Revision-Date: 2009-05-18 12:29+0530\n"
 "Last-Translator: Sweta Kothari <swkothar@redhat.com>\n"
 "Language-Team: Gujarati\n"
@@ -334,6 +334,91 @@ msgstr "મદદ (_H)"
 msgid "_Manage tasks"
 msgstr "કાર્યોને સંચાલિત કરો (_M)"
 
+#: ../src/gnome-schedule-export.py:45
+#, fuzzy
+msgid "Gnome Schedule: Export tasks"
+msgstr "Gnome સુનિશ્ચિત"
+
+#: ../src/gnome-schedule-export.py:47
+#, python-format
+msgid "Usage: %s [output file]"
+msgstr ""
+
+#: ../src/gnome-schedule-export.py:48
+msgid "       No file means export to stdout."
+msgstr ""
+
+#: ../src/gnome-schedule-export.py:72
+msgid "File exists already."
+msgstr ""
+
+#: ../src/gnome-schedule-export.py:81
+#, fuzzy, python-format
+msgid "Could not open file for writing: %s"
+msgstr "X ને જોડાવાનું ખોલી શકાયુ નહિં!"
+
+#: ../src/gnome-schedule-export.py:91
+#, python-format
+msgid "Exporting crontab task: %s"
+msgstr ""
+
+#: ../src/gnome-schedule-export.py:103
+msgid "Exporting at task: "
+msgstr ""
+
+#: ../src/gnome-schedule-export.py:113
+#, python-format
+msgid "Finished, exported: %d tasks total"
+msgstr ""
+
+#: ../src/gnome-schedule-import.py:63
+#, fuzzy
+msgid "Gnome Schedule: Import tasks"
+msgstr "Gnome સુનિશ્ચિત"
+
+#: ../src/gnome-schedule-import.py:65
+#, python-format
+msgid "Usage: %s [input file]"
+msgstr ""
+
+#: ../src/gnome-schedule-import.py:66
+msgid "       No file means import from stdin."
+msgstr ""
+
+#: ../src/gnome-schedule-import.py:72
+msgid "File does not exist."
+msgstr ""
+
+#: ../src/gnome-schedule-import.py:77
+msgid "Reading from stdin.."
+msgstr ""
+
+#. Reading file
+#: ../src/gnome-schedule-import.py:82
+#, python-format
+msgid "Reading file: %s.."
+msgstr ""
+
+#: ../src/gnome-schedule-import.py:84
+#, fuzzy, python-format
+msgid "Could not open file for reading: %s"
+msgstr "X ને જોડાવાનું ખોલી શકાયુ નહિં!"
+
+#: ../src/gnome-schedule-import.py:95
+#, python-format
+msgid "Importing crontab task: %s"
+msgstr ""
+
+#: ../src/gnome-schedule-import.py:107
+#, python-format
+msgid "Importing at task: %s"
+msgstr ""
+
+#: ../src/gnome-schedule-import.py:111
+#, python-format
+msgid "Finished, imported: %d tasks total."
+msgstr ""
+
 #: ../src/gnome-schedule.glade.h:1
 msgid "*"
 msgstr "*"
@@ -527,6 +612,7 @@ msgid "To:"
 msgstr "થી:"
 
 #: ../src/gnome-schedule.glade.h:60 ../src/mainWindow.py:73
+#: ../src/examples/dump.py:57
 msgid "X application"
 msgstr "X કાર્યક્રમ"
 
@@ -842,15 +928,15 @@ msgstr "અઠવાડિયાનાં દિવસ: %s"
 msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 msgstr "%(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s પર"
 
-#: ../src/mainWindow.py:71
+#: ../src/mainWindow.py:71 ../src/examples/dump.py:55
 msgid "Default behaviour"
 msgstr "મૂળભૂત વર્ણતૂક"
 
-#: ../src/mainWindow.py:72
+#: ../src/mainWindow.py:72 ../src/examples/dump.py:56
 msgid "Suppress output"
 msgstr "આઉટપુટને દાબી દો"
 
-#: ../src/mainWindow.py:74
+#: ../src/mainWindow.py:74 ../src/examples/dump.py:58
 msgid "X application: suppress output"
 msgstr "X કાર્યક્રમ: આઉટપુટ ને દાબી દો"
 

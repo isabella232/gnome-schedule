@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-11 16:04+0200\n"
+"POT-Creation-Date: 2011-08-23 16:15+0200\n"
 "PO-Revision-Date: 2010-07-31 09:25+0800\n"
 "Last-Translator: du baodao <centerpoint@139.com>\n"
 "Language-Team: Chinese (simplified) <i18n-zh@googlegroups.com>\n"
@@ -341,6 +341,91 @@ msgstr "帮助(_H)"
 msgid "_Manage tasks"
 msgstr "管理任务(_M)"
 
+#: ../src/gnome-schedule-export.py:45
+#, fuzzy
+msgid "Gnome Schedule: Export tasks"
+msgstr "Gnome 计划任务"
+
+#: ../src/gnome-schedule-export.py:47
+#, python-format
+msgid "Usage: %s [output file]"
+msgstr ""
+
+#: ../src/gnome-schedule-export.py:48
+msgid "       No file means export to stdout."
+msgstr ""
+
+#: ../src/gnome-schedule-export.py:72
+msgid "File exists already."
+msgstr ""
+
+#: ../src/gnome-schedule-export.py:81
+#, fuzzy, python-format
+msgid "Could not open file for writing: %s"
+msgstr "无法打开到 X 的连接！"
+
+#: ../src/gnome-schedule-export.py:91
+#, python-format
+msgid "Exporting crontab task: %s"
+msgstr ""
+
+#: ../src/gnome-schedule-export.py:103
+msgid "Exporting at task: "
+msgstr ""
+
+#: ../src/gnome-schedule-export.py:113
+#, python-format
+msgid "Finished, exported: %d tasks total"
+msgstr ""
+
+#: ../src/gnome-schedule-import.py:63
+#, fuzzy
+msgid "Gnome Schedule: Import tasks"
+msgstr "Gnome 计划任务"
+
+#: ../src/gnome-schedule-import.py:65
+#, python-format
+msgid "Usage: %s [input file]"
+msgstr ""
+
+#: ../src/gnome-schedule-import.py:66
+msgid "       No file means import from stdin."
+msgstr ""
+
+#: ../src/gnome-schedule-import.py:72
+msgid "File does not exist."
+msgstr ""
+
+#: ../src/gnome-schedule-import.py:77
+msgid "Reading from stdin.."
+msgstr ""
+
+#. Reading file
+#: ../src/gnome-schedule-import.py:82
+#, python-format
+msgid "Reading file: %s.."
+msgstr ""
+
+#: ../src/gnome-schedule-import.py:84
+#, fuzzy, python-format
+msgid "Could not open file for reading: %s"
+msgstr "无法打开到 X 的连接！"
+
+#: ../src/gnome-schedule-import.py:95
+#, python-format
+msgid "Importing crontab task: %s"
+msgstr ""
+
+#: ../src/gnome-schedule-import.py:107
+#, python-format
+msgid "Importing at task: %s"
+msgstr ""
+
+#: ../src/gnome-schedule-import.py:111
+#, python-format
+msgid "Finished, imported: %d tasks total."
+msgstr ""
+
 #: ../src/gnome-schedule.glade.h:1
 msgid "*"
 msgstr "*"
@@ -534,6 +619,7 @@ msgid "To:"
 msgstr "到："
 
 #: ../src/gnome-schedule.glade.h:60 ../src/mainWindow.py:73
+#: ../src/examples/dump.py:57
 msgid "X application"
 msgstr "X 应用程序"
 
@@ -862,15 +948,15 @@ msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 msgstr ""
 "在 %(month)s，%(monthday)s 日 ，星期 %(weekday)s ，%(hour)s 时，%(minute)s 分"
 
-#: ../src/mainWindow.py:71
+#: ../src/mainWindow.py:71 ../src/examples/dump.py:55
 msgid "Default behaviour"
 msgstr "默认行为"
 
-#: ../src/mainWindow.py:72
+#: ../src/mainWindow.py:72 ../src/examples/dump.py:56
 msgid "Suppress output"
 msgstr "禁用输出"
 
-#: ../src/mainWindow.py:74
+#: ../src/mainWindow.py:74 ../src/examples/dump.py:58
 msgid "X application: suppress output"
 msgstr "X 应用程序：禁用输出"
 

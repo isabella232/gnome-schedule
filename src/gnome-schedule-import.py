@@ -108,5 +108,7 @@ for task in d.at:
   a.append (task[2] + " " + task[1], task[4], task[0], task[5])
   atc = atc + 1
 
-sys.stderr.write (_("Finished, imported: %d tasks total." % (atc + crontabc)) + "\n")
+sys.stderr.write (gettext.ngettext("Finished, imported: %d task total.",
+                                   "Finished, imported: %d tasks total.",
+                                   atc + crontabc) % (atc + crontabc) + "\n")
 
