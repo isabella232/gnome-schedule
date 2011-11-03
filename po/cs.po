@@ -12,14 +12,15 @@ msgstr ""
 "Project-Id-Version: gnome-schedule\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "schedule&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-10-11 21:07+0000\n"
-"PO-Revision-Date: 2011-11-02 19:22+0100\n"
+"POT-Creation-Date: 2011-11-02 19:10+0000\n"
+"PO-Revision-Date: 2011-11-03 20:15+0100\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: cs\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #: ../desktop/gnome-schedule.desktop.in.in.h:1
 msgid "Manage your system tasks"
@@ -41,7 +42,7 @@ msgstr "Gnome Schedule"
 msgid "System tools"
 msgstr "Systémové nástroje"
 
-#: ../src/at.py:104 ../src/crontab.py:62
+#: ../src/at.py:112 ../src/crontab.py:62
 msgid ""
 "Failed to create data dir! Make sure ~/.gnome and ~/.gnome/gnome-schedule "
 "are writable."
@@ -49,7 +50,7 @@ msgstr ""
 "Selhalo vytvoření adresáře pro data! Ujistěte se, že je do ~/.gnome a ~/."
 "gnome/gnome-schedule povolen zápis."
 
-#: ../src/at.py:137 ../src/crontab.py:162
+#: ../src/at.py:145 ../src/crontab.py:162
 #, python-format
 msgid ""
 "Failed to create data dir: %s. Make sure ~/.gnome and ~/.gnome/gnome-"
@@ -58,28 +59,27 @@ msgstr ""
 "Selhalo vytvoření adresáře pro data: %s. Ujistěte se, že je do ~/.gnome a ~/."
 "gnome/gnome-schedule povolen zápis."
 
-#: ../src/at.py:533
+#: ../src/at.py:547
 #, python-format
 msgid "Warning! Unknown task: %(preview)s"
 msgstr "Varování! Neznámá úloha: %(preview)s"
 
-#: ../src/at.py:540
+#: ../src/at.py:554
 #, python-format
 msgid "On %(timestring)s"
 msgstr "V %(timestring)s"
 
-#: ../src/at.py:546 ../src/at.py:551
+#: ../src/at.py:560 ../src/at.py:565
 msgid "Once"
 msgstr "Jednou"
 
-#: ../src/at.py:555
-#| msgid "Warning: a line in atq's output didn't parse"
+#: ../src/at.py:569
 msgid "Warning: a line in atq's output didn't parse:"
 msgstr "Varování: nelze analyzovat řádek ve výstupu atq:"
 
-#: ../src/at.py:606 ../src/crontab.py:288 ../src/crontab.py:334
-#: ../src/crontabEditor.py:275 ../src/atEditor.py:123 ../src/atEditor.py:519
-#: ../src/atEditor.py:545
+#: ../src/at.py:624 ../src/crontab.py:288 ../src/crontab.py:334
+#: ../src/crontabEditor.py:275 ../src/atEditor.py:127 ../src/atEditor.py:523
+#: ../src/atEditor.py:549
 msgid "Untitled"
 msgstr "Nepojmenovaná"
 
@@ -181,19 +181,19 @@ msgstr "Každý týden"
 
 #. add new task
 #: ../src/crontabEditor.py:131 ../src/crontabEditor.py:142
-#: ../src/atEditor.py:125 ../src/atEditor.py:144
+#: ../src/atEditor.py:129 ../src/atEditor.py:148
 msgid "Create a New Scheduled Task"
 msgstr "Vytvoření nové plánované úlohy"
 
-#: ../src/crontabEditor.py:198 ../src/atEditor.py:162
+#: ../src/crontabEditor.py:198 ../src/atEditor.py:166
 msgid "Edit template"
 msgstr "Upravit šablonu"
 
-#: ../src/crontabEditor.py:223 ../src/atEditor.py:184
+#: ../src/crontabEditor.py:223 ../src/atEditor.py:188
 msgid "New template"
 msgstr "Nová šablona"
 
-#: ../src/crontabEditor.py:249 ../src/atEditor.py:226
+#: ../src/crontabEditor.py:249 ../src/atEditor.py:230
 msgid "Edit a Scheduled Task"
 msgstr "Upravit naplánovanou úlohu"
 
@@ -233,11 +233,11 @@ msgstr ""
 "\n"
 "Opakované úlohy budou spouštěny z domovského adresáře."
 
-#: ../src/crontabEditor.py:457 ../src/mainWindow.py:666 ../src/atEditor.py:593
+#: ../src/crontabEditor.py:457 ../src/mainWindow.py:666 ../src/atEditor.py:597
 msgid "_Don't show again"
 msgstr "_Příště již nezobrazovat"
 
-#: ../src/crontabEditor.py:458 ../src/mainWindow.py:667 ../src/atEditor.py:594
+#: ../src/crontabEditor.py:458 ../src/mainWindow.py:667 ../src/atEditor.py:598
 msgid "Warning: Working directory of executed tasks"
 msgstr "Varování: Pracovní adresář spuštěných úloh"
 
@@ -383,13 +383,17 @@ msgid "Exporting crontab task: %s"
 msgstr "Exportuje se úloha crontab: %s"
 
 #: ../src/gnome-schedule-export.py:103
-msgid "Exporting at task: "
-msgstr "Exportuje se v úlohách: "
+#, python-format
+msgid "Exporting at task: %s"
+msgstr "Exportuje se v úlohách: %s"
 
 #: ../src/gnome-schedule-export.py:113
 #, python-format
-msgid "Finished, exported: %d tasks total"
-msgstr "Dokončeno, vyexportováno: %d úloh celkem"
+msgid "Finished, exported: %d task total."
+msgid_plural "Finished, exported: %d tasks total."
+msgstr[0] "Dokončeno, vyexportováno: celkem %d úloha."
+msgstr[1] "Dokončeno, vyexportováno: celkem %d úlohy."
+msgstr[2] "Dokončeno, vyexportováno: celkem %d úloh."
 
 #: ../src/gnome-schedule-import.py:63
 msgid "Gnome Schedule: Import tasks"
@@ -435,8 +439,11 @@ msgstr "Importuje se v úlohách: %s"
 
 #: ../src/gnome-schedule-import.py:111
 #, python-format
-msgid "Finished, imported: %d tasks total."
-msgstr "Dokončeno, naimportováno: %d úloh celkem"
+msgid "Finished, imported: %d task total."
+msgid_plural "Finished, imported: %d tasks total."
+msgstr[0] "Dokončeno, naimportováno: celkem %d úloha."
+msgstr[1] "Dokončeno, naimportováno: celkem %d úlohy."
+msgstr[2] "Dokončeno, naimportováno: celkem %d úloh."
 
 #: ../src/gnome-schedule.glade.h:1
 msgid "*"
@@ -1126,11 +1133,11 @@ msgstr "Úloha, která se spustí jen jednou"
 msgid "A task from a predefined template"
 msgstr "Úloha z předdefinované šablony"
 
-#: ../src/atEditor.py:78
+#: ../src/atEditor.py:83
 msgid "Calendar"
 msgstr "Kalendář"
 
-#: ../src/atEditor.py:511
+#: ../src/atEditor.py:515
 msgid ""
 "In one or both of the fields hour and minute there was entered a letter, or "
 "a number out of range. Remember an hour only has 60 minutes and a day only "
@@ -1139,12 +1146,12 @@ msgstr ""
 "V jednom nebo obou polích pro zadání hodin a minut jste zadali písmeno nebo "
 "číslo mimo rozsah. Pamatujte, že hodina má jen 60 minut a den jenom 24 hodin."
 
-#: ../src/atEditor.py:572
+#: ../src/atEditor.py:576
 #, python-format
 msgid "This is an invalid record! The problem could be: %s"
 msgstr "Toto není platný záznam! Problémem je možná: %s"
 
-#: ../src/atEditor.py:592
+#: ../src/atEditor.py:596
 msgid ""
 "Note about working directory of executed tasks:\n"
 "\n"
