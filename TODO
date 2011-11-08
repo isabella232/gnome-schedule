@@ -5,18 +5,22 @@ Remember to send an email to the gnome-schedule-devel list
 or check out the latest code from the git repository
 in case work has already been started on some of the features.
 
-This list has a tendency to get outdated and forgotten.
-
 
 Gnome Schedule 3.0.0
 --------------------
+
+Development for version 3.0.0 happens on the branch 'three'.
+
   * Port to gtk 3
   * Checkbox to disable tasks
   * Working export and import of tasks
-
+  * Use ngettext in obvious places
 
 Overall
 -------
+
+This list has a tendency to get outdated and forgotten.
+
 Development:
 
  Wishlist (need a new branch and/or will not be included in the next release)
