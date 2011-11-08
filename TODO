@@ -5,29 +5,30 @@ Remember to send an email to the gnome-schedule-devel list
 or check out the latest code from the git repository
 in case work has already been started on some of the features.
 
+
+Gnome Schedule 3.0.0
+--------------------
+
+Development for version 3.0.0 happens on the branch 'three'.
+
+  * Port to gtk 3
+  * Checkbox to disable tasks
+  * Working export and import of tasks
+  * Use ngettext in obvious places
+
+Overall
+-------
+
 This list has a tendency to get outdated and forgotten.
 
 Development:
-* labels should be expanded
 
  Wishlist (need a new branch and/or will not be included in the next release)
   * Show the next-run time for crontab records
   * Support for mail direction in both cron and at
   * Support for classes in at(nice, priority)
   * make task for more then one user at once (for a group of users)
-  * add logging function? (http://docs.python.org/lib/module-logging.html)	 
+  * add logging function? (http://docs.python.org/lib/module-logging.html)
   * "gnome-schedule --addtemplate foo" (will add a template) (console only)
-  * "gnome-schedule --addtask task user" (will add a task for a user) (console only) 
+  * "gnome-schedule --addtask task user" (will add a task for a user) (console only)
     http://docs.python.org/lib/module-getopt.html
-    
-    
- Unassigned would make it to the release but are non-blocking it
-  * We need more exception handlers and let functions return if an operation failed
-    (in savetemplate for example)
-
-Translations:
-  * Check out the ngettext stuff for python, perhaps send python/gettext folks a note about the missing features. bug 325053
-  * Virtually any possible language 
-  * Also checkout the lang.py file!
-  * Some of the translations are so outdated, and wrong that they hardly should be there.. ie: pa.po
-
