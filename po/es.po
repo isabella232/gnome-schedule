@@ -15,8 +15,8 @@ msgstr ""
 "Project-Id-Version: gnome-schedule.HEAD\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "schedule&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-10-11 21:07+0000\n"
-"PO-Revision-Date: 2011-10-14 11:41+0200\n"
+"POT-Creation-Date: 2011-11-02 19:10+0000\n"
+"PO-Revision-Date: 2011-11-08 12:27+0100\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -46,7 +46,7 @@ msgstr "Planificador de Gnome"
 msgid "System tools"
 msgstr "Herramientas del sistema"
 
-#: ../src/at.py:104 ../src/crontab.py:62
+#: ../src/at.py:112 ../src/crontab.py:62
 msgid ""
 "Failed to create data dir! Make sure ~/.gnome and ~/.gnome/gnome-schedule "
 "are writable."
@@ -54,7 +54,7 @@ msgstr ""
 "Falló al crear la carpeta de datos. Asegúrese de que se puede escribir en ~/."
 "gnome y ~/.gnome/gnome-schedule "
 
-#: ../src/at.py:137 ../src/crontab.py:162
+#: ../src/at.py:145 ../src/crontab.py:162
 #, python-format
 msgid ""
 "Failed to create data dir: %s. Make sure ~/.gnome and ~/.gnome/gnome-"
@@ -63,28 +63,27 @@ msgstr ""
 "Falló al crear la carpeta de datos: %s. Asegúrese de que se puede escribir "
 "en ~/.gnome y ~/.gnome/gnome-schedule"
 
-#: ../src/at.py:533
+#: ../src/at.py:547
 #, python-format
 msgid "Warning! Unknown task: %(preview)s"
 msgstr "Advertencia: Tarea desconocida: %(preview)s"
 
-#: ../src/at.py:540
+#: ../src/at.py:554
 #, python-format
 msgid "On %(timestring)s"
 msgstr "El %(timestring)s"
 
-#: ../src/at.py:546 ../src/at.py:551
+#: ../src/at.py:560 ../src/at.py:565
 msgid "Once"
 msgstr "Una vez"
 
-#: ../src/at.py:555
-#| msgid "Warning: a line in atq's output didn't parse"
+#: ../src/at.py:569
 msgid "Warning: a line in atq's output didn't parse:"
 msgstr "Advertencia: una línea en la salida de atq no se analizó:"
 
-#: ../src/at.py:606 ../src/crontab.py:288 ../src/crontab.py:334
-#: ../src/crontabEditor.py:275 ../src/atEditor.py:123 ../src/atEditor.py:519
-#: ../src/atEditor.py:545
+#: ../src/at.py:624 ../src/crontab.py:288 ../src/crontab.py:334
+#: ../src/crontabEditor.py:275 ../src/atEditor.py:127 ../src/atEditor.py:523
+#: ../src/atEditor.py:549
 msgid "Untitled"
 msgstr "Sin título"
 
@@ -187,19 +186,19 @@ msgstr "Cada semana"
 
 #. add new task
 #: ../src/crontabEditor.py:131 ../src/crontabEditor.py:142
-#: ../src/atEditor.py:125 ../src/atEditor.py:144
+#: ../src/atEditor.py:129 ../src/atEditor.py:148
 msgid "Create a New Scheduled Task"
 msgstr "Crear una tarea programada nueva"
 
-#: ../src/crontabEditor.py:198 ../src/atEditor.py:162
+#: ../src/crontabEditor.py:198 ../src/atEditor.py:166
 msgid "Edit template"
 msgstr "Editar plantilla"
 
-#: ../src/crontabEditor.py:223 ../src/atEditor.py:184
+#: ../src/crontabEditor.py:223 ../src/atEditor.py:188
 msgid "New template"
 msgstr "Nueva plantilla"
 
-#: ../src/crontabEditor.py:249 ../src/atEditor.py:226
+#: ../src/crontabEditor.py:249 ../src/atEditor.py:230
 msgid "Edit a Scheduled Task"
 msgstr "Editar una tarea programada"
 
@@ -240,11 +239,11 @@ msgstr ""
 "\n"
 "Las tareas periódicas se ejecutarán desde la carpeta personal."
 
-#: ../src/crontabEditor.py:457 ../src/mainWindow.py:666 ../src/atEditor.py:593
+#: ../src/crontabEditor.py:457 ../src/mainWindow.py:666 ../src/atEditor.py:597
 msgid "_Don't show again"
 msgstr "_No mostrar de nuevo"
 
-#: ../src/crontabEditor.py:458 ../src/mainWindow.py:667 ../src/atEditor.py:594
+#: ../src/crontabEditor.py:458 ../src/mainWindow.py:667 ../src/atEditor.py:598
 msgid "Warning: Working directory of executed tasks"
 msgstr "Advertencia: carpeta de trabajo de las tareas ejecutadas"
 
@@ -390,13 +389,18 @@ msgid "Exporting crontab task: %s"
 msgstr "Exportando la tarea crontab: %s"
 
 #: ../src/gnome-schedule-export.py:103
-msgid "Exporting at task: "
-msgstr "Exportando a la tarea: "
+#, python-format
+#| msgid "Exporting at task: "
+msgid "Exporting at task: %s"
+msgstr "Exportando a la tarea: %s"
 
 #: ../src/gnome-schedule-export.py:113
 #, python-format
-msgid "Finished, exported: %d tasks total"
-msgstr "Exportación terminada: %d tareas en total"
+#| msgid "Finished, exported: %d tasks total"
+msgid "Finished, exported: %d task total."
+msgid_plural "Finished, exported: %d tasks total."
+msgstr[0] "Exportación terminada: %d tarea en total."
+msgstr[1] "Exportación terminada: %d tareas en total"
 
 #: ../src/gnome-schedule-import.py:63
 msgid "Gnome Schedule: Import tasks"
@@ -442,8 +446,11 @@ msgstr "Importando en la tarea: %s"
 
 #: ../src/gnome-schedule-import.py:111
 #, python-format
-msgid "Finished, imported: %d tasks total."
-msgstr "Importación terminada: %d tareas en total."
+#| msgid "Finished, imported: %d tasks total."
+msgid "Finished, imported: %d task total."
+msgid_plural "Finished, imported: %d tasks total."
+msgstr[0] "Importación terminada: %d tarea en total."
+msgstr[1] "Importación terminada: %d tareas en total."
 
 #: ../src/gnome-schedule.glade.h:1
 msgid "*"
@@ -1134,11 +1141,11 @@ msgstr "Una tarea que se lanza una sola vez"
 msgid "A task from a predefined template"
 msgstr "Una tarea desde una plantilla predefinida"
 
-#: ../src/atEditor.py:78
+#: ../src/atEditor.py:83
 msgid "Calendar"
 msgstr "Calendario"
 
-#: ../src/atEditor.py:511
+#: ../src/atEditor.py:515
 msgid ""
 "In one or both of the fields hour and minute there was entered a letter, or "
 "a number out of range. Remember an hour only has 60 minutes and a day only "
@@ -1148,12 +1155,12 @@ msgstr ""
 "fuera de rango. Recuerde que una hora sólo tiene 60 minutos y un día sólo "
 "tiene 24 horas."
 
-#: ../src/atEditor.py:572
+#: ../src/atEditor.py:576
 #, python-format
 msgid "This is an invalid record! The problem could be: %s"
 msgstr "¡Este es un registro inválido! El problema podría ser: %s"
 
-#: ../src/atEditor.py:592
+#: ../src/atEditor.py:596
 msgid ""
 "Note about working directory of executed tasks:\n"
 "\n"
