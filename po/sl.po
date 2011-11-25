@@ -8,14 +8,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-schedule&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-10-16 07:51+0000\n"
-"PO-Revision-Date: 2011-10-17 10:35+0100\n"
+"POT-Creation-Date: 2011-11-24 10:13+0000\n"
+"PO-Revision-Date: 2011-11-25 17:50+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: \n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n%100==4 ? 3 : 0);\n"
 "X-Poedit-Language: Slovenian\n"
 "X-Poedit-Country: SLOVENIA\n"
@@ -392,13 +392,18 @@ msgid "Exporting crontab task: %s"
 msgstr "Izvažanje naloge crontab: %s"
 
 #: ../src/gnome-schedule-export.py:103
-msgid "Exporting at task: "
-msgstr "Izvažanje pri nalogi: "
+#, python-format
+msgid "Exporting at task: %s"
+msgstr "Izvažanje pri nalogi: %s"
 
 #: ../src/gnome-schedule-export.py:113
 #, python-format
-msgid "Finished, exported: %d tasks total"
-msgstr "Dokončano, izvoženo: %d vseh nalog"
+msgid "Finished, exported: %d task total."
+msgid_plural "Finished, exported: %d tasks total."
+msgstr[0] "Opravilo je končano. Izvoženih je %d nalog."
+msgstr[1] "Opravilo je končano. Izvožena je %d naloga."
+msgstr[2] "Opravilo je končano. Izvoženi sta %d nalogi."
+msgstr[3] "Opravilo je končano. Izvožene so %d naloge."
 
 #: ../src/gnome-schedule-import.py:63
 msgid "Gnome Schedule: Import tasks"
@@ -444,8 +449,12 @@ msgstr "Uvažanje pri nalogi: %s"
 
 #: ../src/gnome-schedule-import.py:111
 #, python-format
-msgid "Finished, imported: %d tasks total."
-msgstr "Dokončano, uvoženo: %d vseh nalog."
+msgid "Finished, imported: %d task total."
+msgid_plural "Finished, imported: %d tasks total."
+msgstr[0] "Opravilo je končano. Uvoženih je %d nalog."
+msgstr[1] "Opravilo je končano. Uvožena je %d naloga."
+msgstr[2] "Opravilo je končano. Uvoženi sta %d nalogi."
+msgstr[3] "Opravilo je končano. Uvožene so %d naloge."
 
 #: ../src/gnome-schedule.glade.h:1
 msgid "*"
