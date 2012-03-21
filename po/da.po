@@ -5,7 +5,7 @@
 # This file is distributed under the same license as the gnome-schedule package.
 # Alex Thomsen Leth <alexl@stofanet.dk>, 2004.
 # Martin Willemoes Hansen <mwh@sysrq.dk>, 2005.
-# Joe Hansen (joedalton2@yahoo.dk), 2010, 2011.
+# Joe Hansen (joedalton2@yahoo.dk), 2010, 2011, 2012.
 #
 # Husk at tilføje dig i credit-listen (besked id "translator-credits")
 # Bug 611639 indsendt 2. marts 2010
@@ -16,36 +16,37 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-30 09:09+0200\n"
-"PO-Revision-Date: 2011-09-29 15:50+0100\n"
+"POT-Creation-Date: 2012-03-21 10:18+0100\n"
+"PO-Revision-Date: 2012-01-14 15:50+0100\n"
 "Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
 "Language-Team: Danish <dansk@klid.dk>\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../desktop/gnome-schedule.desktop.in.in.h:1
-msgid "Manage your system tasks"
-msgstr "Håndter dine systemopgaver"
-
-#: ../desktop/gnome-schedule.desktop.in.in.h:2
 msgid "Scheduled tasks"
 msgstr "Planlagte opgaver"
 
-#: ../servers/GNOME_GnomeSchedule.server.in.in.h:1
-msgid "Configures your scheduled tasks"
-msgstr "Konfigurerer dine planlagte opgaver"
+#: ../desktop/gnome-schedule.desktop.in.in.h:2
+msgid "Manage your system tasks"
+msgstr "Håndter dine systemopgaver"
 
-#: ../servers/GNOME_GnomeSchedule.server.in.in.h:2
+#: ../servers/GNOME_GnomeSchedule.server.in.in.h:1
 msgid "Gnome schedule"
 msgstr "Gnomeplanlægning"
+
+#: ../servers/GNOME_GnomeSchedule.server.in.in.h:2
+msgid "Configures your scheduled tasks"
+msgstr "Konfigurerer dine planlagte opgaver"
 
 #: ../servers/GNOME_GnomeSchedule.server.in.in.h:3
 msgid "System tools"
 msgstr "Systemværktøjer"
 
-#: ../src/at.py:91 ../src/crontab.py:62
+#: ../src/at.py:112 ../src/crontab.py:62
 msgid ""
 "Failed to create data dir! Make sure ~/.gnome and ~/.gnome/gnome-schedule "
 "are writable."
@@ -53,7 +54,7 @@ msgstr ""
 "Kunne ikke oprette datamappe! Sikr dig at ~/.gnome and ~/.gnome/gnome-"
 "schedule er skrivbare."
 
-#: ../src/at.py:124 ../src/crontab.py:162
+#: ../src/at.py:145 ../src/crontab.py:162
 #, python-format
 msgid ""
 "Failed to create data dir: %s. Make sure ~/.gnome and ~/.gnome/gnome-"
@@ -62,23 +63,29 @@ msgstr ""
 "Kunne ikke oprette datamappe: %s. Sikr dig at ~/.gnome and ~/.gnome/gnome-"
 "schedule er skrivbare."
 
-#: ../src/at.py:512
+#: ../src/at.py:547
 #, python-format
 msgid "Warning! Unknown task: %(preview)s"
 msgstr "Advarsel! Ukendt opgave: %(preview)s"
 
-#: ../src/at.py:519
+#: ../src/at.py:554
 #, python-format
 msgid "On %(timestring)s"
 msgstr "Den %(timestring)s"
 
-#: ../src/at.py:525 ../src/at.py:530
+#: ../src/at.py:560 ../src/at.py:565
 msgid "Once"
 msgstr "En gang"
 
-#: ../src/at.py:534
-msgid "Warning: a line in atq's output didn't parse"
-msgstr "Advarsel: En linje i atq's uddata kunne ikke fortolkes"
+#: ../src/at.py:569
+msgid "Warning: a line in atq's output didn't parse:"
+msgstr "Advarsel: En linje i atq's uddata kunne ikke fortolkes:"
+
+#: ../src/at.py:624 ../src/crontab.py:288 ../src/crontab.py:334
+#: ../src/crontabEditor.py:275 ../src/atEditor.py:127 ../src/atEditor.py:523
+#: ../src/atEditor.py:549
+msgid "Untitled"
+msgstr "Uden titel"
 
 #: ../src/crontab.py:87
 msgid "Minute"
@@ -100,7 +107,7 @@ msgstr "Måned"
 msgid "Weekday"
 msgstr "Ugedag"
 
-#: ../src/crontab.py:192 ../src/gnome-schedule.glade.h:13
+#: ../src/crontab.py:192 ../src/gnome-schedule.glade.h:23
 msgid "Basic"
 msgstr "Basis"
 
@@ -119,41 +126,36 @@ msgstr "Skal være mellem %(min)s og %(max)s"
 msgid "%s is not a number"
 msgstr "%s er ikke et tal"
 
-#: ../src/crontab.py:288 ../src/crontab.py:334 ../src/crontabEditor.py:275
-#: ../src/atEditor.py:123 ../src/atEditor.py:519 ../src/atEditor.py:545
-msgid "Untitled"
-msgstr "Uden titel"
-
-#: ../src/crontab.py:450 ../src/crontab.py:452 ../src/template_chooser.py:106
+#: ../src/crontab.py:455 ../src/crontab.py:457 ../src/template_chooser.py:106
 #: ../src/template_manager.py:111
 msgid "Recurrent"
 msgstr "Tilbagevendende"
 
-#: ../src/crontab.py:450 ../src/crontabEditor.py:74 ../src/lang.py:168
+#: ../src/crontab.py:455 ../src/crontabEditor.py:74 ../src/lang.py:168
 msgid "At reboot"
 msgstr "Ved genstart"
 
-#: ../src/crontab.py:464
+#: ../src/crontab.py:469
 msgid "minute"
 msgstr "minut"
 
-#: ../src/crontab.py:466
+#: ../src/crontab.py:471
 msgid "hour"
 msgstr "time"
 
-#: ../src/crontab.py:468
+#: ../src/crontab.py:473
 msgid "day"
 msgstr "dag"
 
-#: ../src/crontab.py:470
+#: ../src/crontab.py:475
 msgid "month"
 msgstr "måned"
 
-#: ../src/crontab.py:472
+#: ../src/crontab.py:477
 msgid "weekday"
 msgstr "ugedag"
 
-#: ../src/crontab.py:571
+#: ../src/crontab.py:576
 msgid ""
 "Failed to parse the Day of Month field, possibly due to a bug in crontab."
 msgstr ""
@@ -161,12 +163,12 @@ msgstr ""
 "crontab."
 
 #: ../src/crontabEditor.py:69 ../src/crontabEditorHelper.py:87
-#: ../src/gnome-schedule.glade.h:31
+#: ../src/gnome-schedule.glade.h:48
 msgid "Every minute"
 msgstr "Hvert minut"
 
 #: ../src/crontabEditor.py:70 ../src/crontabEditorHelper.py:93
-#: ../src/gnome-schedule.glade.h:30
+#: ../src/gnome-schedule.glade.h:21
 msgid "Every hour"
 msgstr "Hver time"
 
@@ -184,19 +186,19 @@ msgstr "Hver uge"
 
 #. add new task
 #: ../src/crontabEditor.py:131 ../src/crontabEditor.py:142
-#: ../src/atEditor.py:125 ../src/atEditor.py:144
+#: ../src/atEditor.py:129 ../src/atEditor.py:148
 msgid "Create a New Scheduled Task"
 msgstr "Opret en ny planlagt opgave"
 
-#: ../src/crontabEditor.py:198 ../src/atEditor.py:162
+#: ../src/crontabEditor.py:198 ../src/atEditor.py:166
 msgid "Edit template"
 msgstr "Rediger skabelon"
 
-#: ../src/crontabEditor.py:223 ../src/atEditor.py:184
+#: ../src/crontabEditor.py:223 ../src/atEditor.py:188
 msgid "New template"
 msgstr "Ny skabelon"
 
-#: ../src/crontabEditor.py:249 ../src/atEditor.py:226
+#: ../src/crontabEditor.py:249 ../src/atEditor.py:230
 msgid "Edit a Scheduled Task"
 msgstr "Rediger en planlagt opgave"
 
@@ -238,11 +240,11 @@ msgstr ""
 "\n"
 "Gentagende opgaver vil blive kørt fra hjemmemappen."
 
-#: ../src/crontabEditor.py:457 ../src/mainWindow.py:666 ../src/atEditor.py:593
+#: ../src/crontabEditor.py:457 ../src/mainWindow.py:666 ../src/atEditor.py:597
 msgid "_Don't show again"
 msgstr "_Vis ikke igen"
 
-#: ../src/crontabEditor.py:458 ../src/mainWindow.py:667 ../src/atEditor.py:594
+#: ../src/crontabEditor.py:458 ../src/mainWindow.py:667 ../src/atEditor.py:598
 msgid "Warning: Working directory of executed tasks"
 msgstr "Advarsel: Arbejdsmappe for kørte opgaver"
 
@@ -276,11 +278,11 @@ msgid "This is invalid. Reason: %s"
 msgstr "Dette er ugyldigt. Grund: %s"
 
 #. minute
-#: ../src/crontabEditorHelper.py:231 ../src/gnome-schedule.glade.h:12
+#: ../src/crontabEditorHelper.py:231 ../src/gnome-schedule.glade.h:44
 msgid "At an exact minute"
 msgstr "På et præcist minut"
 
-#: ../src/crontabEditorHelper.py:232 ../src/gnome-schedule.glade.h:44
+#: ../src/crontabEditorHelper.py:232 ../src/gnome-schedule.glade.h:28
 msgid "Minute:"
 msgstr "Minut:"
 
@@ -289,7 +291,7 @@ msgstr "Minut:"
 msgid "At an exact hour"
 msgstr "På en præcis time"
 
-#: ../src/crontabEditorHelper.py:236 ../src/gnome-schedule.glade.h:40
+#: ../src/crontabEditorHelper.py:236 ../src/gnome-schedule.glade.h:27
 msgid "Hour:"
 msgstr "Time:"
 
@@ -298,7 +300,7 @@ msgstr "Time:"
 msgid "On a day"
 msgstr "På en dag"
 
-#: ../src/crontabEditorHelper.py:240 ../src/gnome-schedule.glade.h:23
+#: ../src/crontabEditorHelper.py:240 ../src/gnome-schedule.glade.h:26
 msgid "Day:"
 msgstr "Dag:"
 
@@ -307,7 +309,7 @@ msgstr "Dag:"
 msgid "In a month"
 msgstr "I en måned"
 
-#: ../src/crontabEditorHelper.py:244 ../src/gnome-schedule.glade.h:46
+#: ../src/crontabEditorHelper.py:244 ../src/gnome-schedule.glade.h:29
 msgid "Month:"
 msgstr "Måned:"
 
@@ -316,16 +318,16 @@ msgstr "Måned:"
 msgid "On a weekday"
 msgstr "På en ugedag"
 
-#: ../src/crontabEditorHelper.py:248 ../src/gnome-schedule.glade.h:59
+#: ../src/crontabEditorHelper.py:248 ../src/gnome-schedule.glade.h:30
 msgid "Weekday:"
 msgstr "Ugedag:"
 
 # usikker her, fandt en på open-tran der var oversat sådan her.
-#: ../src/crontabEditorHelper.py:253 ../src/gnome-schedule.glade.h:42
+#: ../src/crontabEditorHelper.py:253 ../src/gnome-schedule.glade.h:50
 msgid "In a step width"
 msgstr "I intervaller"
 
-#: ../src/crontabEditorHelper.py:255 ../src/gnome-schedule.glade.h:45
+#: ../src/crontabEditorHelper.py:255 ../src/gnome-schedule.glade.h:41
 msgid "Minutes:"
 msgstr "Minutter:"
 
@@ -346,8 +348,8 @@ msgid "Weekdays:"
 msgstr "Ugedage:"
 
 #: ../src/gnome-schedule-applet.xml.h:1
-msgid "A_bout"
-msgstr "_Om"
+msgid "_Manage tasks"
+msgstr "_Håndter opgaver"
 
 #: ../src/gnome-schedule-applet.xml.h:2
 msgid "_Add a task"
@@ -358,8 +360,8 @@ msgid "_Help"
 msgstr "_Hjælp"
 
 #: ../src/gnome-schedule-applet.xml.h:4
-msgid "_Manage tasks"
-msgstr "_Håndter opgaver"
+msgid "A_bout"
+msgstr "_Om"
 
 #: ../src/gnome-schedule-export.py:45
 msgid "Gnome Schedule: Export tasks"
@@ -389,13 +391,16 @@ msgid "Exporting crontab task: %s"
 msgstr "Eksporterer crontab-opgave: %s"
 
 #: ../src/gnome-schedule-export.py:103
-msgid "Exporting at task: "
-msgstr "Eksporter ved opgave: "
+#, python-format
+msgid "Exporting at task: %s"
+msgstr "Eksporter ved opgave: %s"
 
 #: ../src/gnome-schedule-export.py:113
 #, python-format
-msgid "Finished, exported: %d tasks total"
-msgstr "Færdig, eksporteret: %d opgaver i alt"
+msgid "Finished, exported: %d task total."
+msgid_plural "Finished, exported: %d tasks total."
+msgstr[0] "Færdig, eksporteret: %d opgave i alt"
+msgstr[1] "Færdig, eksporteret: %d opgaver i alt"
 
 #: ../src/gnome-schedule-import.py:63
 msgid "Gnome Schedule: Import tasks"
@@ -441,68 +446,76 @@ msgstr "Importerer ved opgave: %s"
 
 #: ../src/gnome-schedule-import.py:111
 #, python-format
-msgid "Finished, imported: %d tasks total."
-msgstr "Færdig, importeret: %d opgaver i alt."
+msgid "Finished, imported: %d task total."
+msgid_plural "Finished, imported: %d tasks total."
+msgstr[0] "Færdig, importeret: %d opgave i alt."
+msgstr[1] "Færdig, importeret: %d opgaver i alt."
 
 #: ../src/gnome-schedule.glade.h:1
-msgid "*"
-msgstr "*"
-
-#: ../src/gnome-schedule.glade.h:2
-msgid "0"
-msgstr "0"
-
-#: ../src/gnome-schedule.glade.h:3
-msgid ":"
-msgstr ":"
-
-#: ../src/gnome-schedule.glade.h:4
-msgid "<b>Choose the user whose tasks you want to modify</b>"
-msgstr "<b>Vælg brugeren hvis opgaver du ønsker at ændre</b>"
-
-#: ../src/gnome-schedule.glade.h:5
-msgid "<b>Select the type of the scheduled task:</b>"
-msgstr "<b>Vælg typen af den planlagte opgave:</b>"
-
-#: ../src/gnome-schedule.glade.h:6
-msgid "<big>Preview</big>"
-msgstr "<big>Forhåndsvisning</big>"
-
-#: ../src/gnome-schedule.glade.h:7
-msgid "<big>Time &amp; Date</big>"
-msgstr "<big>Tid &amp; dato</big>"
-
-#: ../src/gnome-schedule.glade.h:8
-msgid "About Gnome-schedule"
-msgstr "Om Gnomeplanlægning"
-
-#: ../src/gnome-schedule.glade.h:9
-msgid "Add a Scheduled Task"
-msgstr "Tilføj en planlagt opgave"
-
-#: ../src/gnome-schedule.glade.h:10
-msgid "Add as template"
-msgstr "Tilføj som skabelon"
-
-#: ../src/gnome-schedule.glade.h:11
-msgid "Advanced"
-msgstr "Avanceret"
-
-#: ../src/gnome-schedule.glade.h:14
-msgid "Change User"
-msgstr "Ændr bruger"
-
-#: ../src/gnome-schedule.glade.h:15
-msgid "Change edit mode"
-msgstr "Ændr redigeringstilstand"
-
-#: ../src/gnome-schedule.glade.h:16
 msgid "Choose template"
 msgstr "Vælg skabelon"
 
+#: ../src/gnome-schedule.glade.h:2
+msgid "Create a new task from the selected template"
+msgstr "Opret en ny opgave ud fra den valgte skabelon"
+
+#: ../src/gnome-schedule.glade.h:3
+msgid "Manage templates"
+msgstr "Håndter skabeloner"
+
+#: ../src/gnome-schedule.glade.h:4
+msgid "Create a new template."
+msgstr "Opret en ny skabelon."
+
+#: ../src/gnome-schedule.glade.h:5
+msgid "Edit the selected template"
+msgstr "Rediger den valgte skabelon"
+
+#: ../src/gnome-schedule.glade.h:6
+msgid "Delete the selected template"
+msgstr "Slet den valgte skabelon"
+
+#: ../src/gnome-schedule.glade.h:7
+msgid "Task description:"
+msgstr "Opgavebeskrivelse:"
+
+#: ../src/gnome-schedule.glade.h:8 ../src/mainWindow.py:73
+#: ../src/examples/dump.py:57
+msgid "X application"
+msgstr "X-program"
+
+#. This comes before the time and date input boxes in the One-time task editor
+#: ../src/gnome-schedule.glade.h:10
+msgid "Execute at:"
+msgstr "Kør ved:"
+
+#: ../src/gnome-schedule.glade.h:11
+msgid "Date:"
+msgstr "Dato:"
+
+#: ../src/gnome-schedule.glade.h:12
+msgid "Time:"
+msgstr "Tid:"
+
+#: ../src/gnome-schedule.glade.h:13
+msgid ":"
+msgstr ":"
+
+#: ../src/gnome-schedule.glade.h:14
+msgid "Task:"
+msgstr "Opgave:"
+
+#: ../src/gnome-schedule.glade.h:15
+msgid "Add as template"
+msgstr "Tilføj som skabelon"
+
+#: ../src/gnome-schedule.glade.h:16
+msgid "Edit a periodical task"
+msgstr "Rediger en periodisk opgave"
+
 #: ../src/gnome-schedule.glade.h:17
-msgid "Choose the user whose tasks you want to modify"
-msgstr "Vælg brugeren hvis opgaver du ønsker at ændre"
+msgid "ls -l"
+msgstr "ls -l"
 
 #: ../src/gnome-schedule.glade.h:18 ../src/template.py:198
 #: ../src/template.py:212
@@ -510,56 +523,91 @@ msgid "Command:"
 msgstr "Kommando:"
 
 #: ../src/gnome-schedule.glade.h:19
-msgid "Configure Scheduled Tasks"
-msgstr "Konfigurer planlagte opgaver"
-
-#: ../src/gnome-schedule.glade.h:20
-msgid "Create a new task from the selected template"
-msgstr "Opret en ny opgave ud fra den valgte skabelon"
-
-#: ../src/gnome-schedule.glade.h:21
-msgid "Create a new template."
-msgstr "Opret en ny skabelon."
-
-#: ../src/gnome-schedule.glade.h:22
-msgid "Date:"
-msgstr "Dato:"
-
-#: ../src/gnome-schedule.glade.h:24
-msgid "Delete a scheduled task"
-msgstr "Slet en planlagt opgave"
-
-#: ../src/gnome-schedule.glade.h:25
-msgid "Delete the selected template"
-msgstr "Slet den valgte skabelon"
-
-#: ../src/gnome-schedule.glade.h:26
 msgid "Description:"
 msgstr "Beskrivelse:"
 
-#: ../src/gnome-schedule.glade.h:27
-msgid "Edit a periodical task"
-msgstr "Rediger en periodisk opgave"
+#: ../src/gnome-schedule.glade.h:20
+msgid "<big>Time &amp; Date</big>"
+msgstr "<big>Tid &amp; dato</big>"
 
-#: ../src/gnome-schedule.glade.h:28
-msgid "Edit a scheduled task"
-msgstr "Rediger planlagt opgave"
+#: ../src/gnome-schedule.glade.h:22
+msgid "Advanced"
+msgstr "Avanceret"
 
-#: ../src/gnome-schedule.glade.h:29
-msgid "Edit the selected template"
-msgstr "Rediger den valgte skabelon"
+#: ../src/gnome-schedule.glade.h:24
+msgid "0"
+msgstr "0"
 
-#. This comes before the time and date input boxes in the One-time task editor
+#: ../src/gnome-schedule.glade.h:25
+msgid "*"
+msgstr "*"
+
+#: ../src/gnome-schedule.glade.h:31
+msgid "<big>Preview</big>"
+msgstr "<big>Forhåndsvisning</big>"
+
+#: ../src/gnome-schedule.glade.h:32
+msgid "Change User"
+msgstr "Ændr bruger"
+
 #: ../src/gnome-schedule.glade.h:33
-msgid "Execute at:"
-msgstr "Kør ved:"
+msgid "<b>Choose the user whose tasks you want to modify</b>"
+msgstr "<b>Vælg brugeren hvis opgaver du ønsker at ændre</b>"
 
 #: ../src/gnome-schedule.glade.h:34
+msgid "_User:"
+msgstr "_Bruger:"
+
+#: ../src/gnome-schedule.glade.h:35
+msgid "Add a Scheduled Task"
+msgstr "Tilføj en planlagt opgave"
+
+#: ../src/gnome-schedule.glade.h:36
+msgid "<b>Select the type of the scheduled task:</b>"
+msgstr "<b>Vælg typen af den planlagte opgave:</b>"
+
+#: ../src/gnome-schedule.glade.h:37
+msgid "Time expression help"
+msgstr "Hjælp til tidsudtryk"
+
+#: ../src/gnome-schedule.glade.h:38
+msgid "Expression:"
+msgstr "Udtryk:"
+
+#: ../src/gnome-schedule.glade.h:39
+msgid "To:"
+msgstr "Til:"
+
+#: ../src/gnome-schedule.glade.h:40
+msgid "From:"
+msgstr "Fra:"
+
+#: ../src/gnome-schedule.glade.h:42
+msgid "Other"
+msgstr "Andet"
+
+#: ../src/gnome-schedule.glade.h:43
+msgid "See \"man 5 crontab\" for information about the crontab format."
+msgstr "Se \"man 5 crontab\" for information om crontab-formatet."
+
+#: ../src/gnome-schedule.glade.h:45
 msgid "Execution at a specific minute, hour, day, weekday or month."
 msgstr ""
 "Starter på et specifikt minut, en specifik time, dag, ugedag eller måned."
 
-#: ../src/gnome-schedule.glade.h:35
+#: ../src/gnome-schedule.glade.h:46
+msgid "In a range"
+msgstr "Indenfor et interval"
+
+#: ../src/gnome-schedule.glade.h:47
+msgid "Execution in a range."
+msgstr "Kørsel indenfor et interval."
+
+#: ../src/gnome-schedule.glade.h:49
+msgid "Execution at every minute, hour, day, weekday or month."
+msgstr "Starter hvert minut, hver time, dag, ugedag eller måned."
+
+#: ../src/gnome-schedule.glade.h:51
 msgid ""
 "Execution at a step width. For example every five minutes, hours, days, "
 "weekdays or months."
@@ -567,90 +615,49 @@ msgstr ""
 "Starter i intervaller. For eksempel hvert femte minut, time, dag, ugedag "
 "eller måned."
 
-#: ../src/gnome-schedule.glade.h:36
-msgid "Execution at every minute, hour, day, weekday or month."
-msgstr "Starter hvert minut, hver time, dag, ugedag eller måned."
+#: ../src/gnome-schedule.glade.h:52
+msgid "Configure Scheduled Tasks"
+msgstr "Konfigurer planlagte opgaver"
 
-#: ../src/gnome-schedule.glade.h:37
-msgid "Execution in a range."
-msgstr "Kørsel indenfor et interval."
+#: ../src/gnome-schedule.glade.h:53
+msgid "Edit a scheduled task"
+msgstr "Rediger planlagt opgave"
 
-#: ../src/gnome-schedule.glade.h:38
-msgid "Expression:"
-msgstr "Udtryk:"
+#: ../src/gnome-schedule.glade.h:54
+msgid "Delete a scheduled task"
+msgstr "Slet en planlagt opgave"
 
-#: ../src/gnome-schedule.glade.h:39
-msgid "From:"
-msgstr "Fra:"
-
-#: ../src/gnome-schedule.glade.h:41
-msgid "In a range"
-msgstr "Indenfor et interval"
-
-#: ../src/gnome-schedule.glade.h:43
-msgid "Manage templates"
-msgstr "Håndter skabeloner"
-
-#: ../src/gnome-schedule.glade.h:47
-msgid "Other"
-msgstr "Andet"
-
-#: ../src/gnome-schedule.glade.h:48
+#: ../src/gnome-schedule.glade.h:55
 msgid "Run selected task"
 msgstr "Kør valgte opgave"
 
-#: ../src/gnome-schedule.glade.h:49
+#: ../src/gnome-schedule.glade.h:56
 msgid "Run task"
 msgstr "Kør opgave"
 
-#: ../src/gnome-schedule.glade.h:50
-msgid "Scheduled and active tasks"
-msgstr "Planlagte og aktive opgaver"
-
-#: ../src/gnome-schedule.glade.h:51
-msgid "See \"man 5 crontab\" for information about the crontab format."
-msgstr "Se \"man 5 crontab\" for information om crontab-formatet."
-
-#: ../src/gnome-schedule.glade.h:52
-msgid "Show help"
-msgstr "Vis hjælp"
-
-#: ../src/gnome-schedule.glade.h:53
-msgid "Task description:"
-msgstr "Opgavebeskrivelse:"
-
-#: ../src/gnome-schedule.glade.h:54
-msgid "Task:"
-msgstr "Opgave:"
-
-#: ../src/gnome-schedule.glade.h:55
+#: ../src/gnome-schedule.glade.h:57
 msgid "Templates"
 msgstr "Skabeloner"
 
-#: ../src/gnome-schedule.glade.h:56
-msgid "Time expression help"
-msgstr "Hjælp til tidsudtryk"
-
-#: ../src/gnome-schedule.glade.h:57
-msgid "Time:"
-msgstr "Tid:"
-
 #: ../src/gnome-schedule.glade.h:58
-msgid "To:"
-msgstr "Til:"
+msgid "Change edit mode"
+msgstr "Ændr redigeringstilstand"
 
-#: ../src/gnome-schedule.glade.h:60 ../src/mainWindow.py:73
-#: ../src/examples/dump.py:57
-msgid "X application"
-msgstr "X-program"
+#: ../src/gnome-schedule.glade.h:59
+msgid "Choose the user whose tasks you want to modify"
+msgstr "Vælg brugeren hvis opgaver du ønsker at ændre"
+
+#: ../src/gnome-schedule.glade.h:60
+msgid "Show help"
+msgstr "Vis hjælp"
 
 #: ../src/gnome-schedule.glade.h:61
-msgid "_User:"
-msgstr "_Bruger:"
+msgid "About Gnome-schedule"
+msgstr "Om Gnomeplanlægning"
 
 #: ../src/gnome-schedule.glade.h:62
-msgid "ls -l"
-msgstr "ls -l"
+msgid "Scheduled and active tasks"
+msgstr "Planlagte og aktive opgaver"
 
 #: ../src/gnome-schedule.py:66 ../src/scheduleapplet.py:67
 #: ../src/xwrapper.py:51
@@ -1132,11 +1139,11 @@ msgstr "En opgave som starter en gang"
 msgid "A task from a predefined template"
 msgstr "En opgave fra en prædefineret skabelon"
 
-#: ../src/atEditor.py:78
+#: ../src/atEditor.py:83
 msgid "Calendar"
 msgstr "Kalender"
 
-#: ../src/atEditor.py:511
+#: ../src/atEditor.py:515
 msgid ""
 "In one or both of the fields hour and minute there was entered a letter, or "
 "a number out of range. Remember an hour only has 60 minutes and a day only "
@@ -1146,12 +1153,12 @@ msgstr ""
 "eller et tal uden for det accepterede interval. Husk at en time kun har 60 "
 "minutter og en dag kun 24 timer."
 
-#: ../src/atEditor.py:572
+#: ../src/atEditor.py:576
 #, python-format
 msgid "This is an invalid record! The problem could be: %s"
 msgstr "Dette er en ugyldig post! Problemet kan være: %s"
 
-#: ../src/atEditor.py:592
+#: ../src/atEditor.py:596
 msgid ""
 "Note about working directory of executed tasks:\n"
 "\n"
