@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: gnome-schedule.HEAD\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "schedule&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-11-02 19:10+0000\n"
+"POT-Creation-Date: 2011-11-08 11:33+0000\n"
 "PO-Revision-Date: 2011-11-08 12:27+0100\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
@@ -209,7 +209,7 @@ msgid ""
 "This is an invalid record! The problem could be in the %(field)s field. "
 "Reason: %(reason)s"
 msgstr ""
-"¡Este es un registro inválido! El problema podría estar en el campo %(field)"
+"¡Este no es un registro válido! El problema podría estar en el campo %(field)"
 "s. Razón: %(reason)s"
 
 #: ../src/crontabEditor.py:307
@@ -390,13 +390,11 @@ msgstr "Exportando la tarea crontab: %s"
 
 #: ../src/gnome-schedule-export.py:103
 #, python-format
-#| msgid "Exporting at task: "
 msgid "Exporting at task: %s"
 msgstr "Exportando a la tarea: %s"
 
 #: ../src/gnome-schedule-export.py:113
 #, python-format
-#| msgid "Finished, exported: %d tasks total"
 msgid "Finished, exported: %d task total."
 msgid_plural "Finished, exported: %d tasks total."
 msgstr[0] "Exportación terminada: %d tarea en total."
@@ -446,7 +444,6 @@ msgstr "Importando en la tarea: %s"
 
 #: ../src/gnome-schedule-import.py:111
 #, python-format
-#| msgid "Finished, imported: %d tasks total."
 msgid "Finished, imported: %d task total."
 msgid_plural "Finished, imported: %d tasks total."
 msgstr[0] "Importación terminada: %d tarea en total."
@@ -1158,7 +1155,7 @@ msgstr ""
 #: ../src/atEditor.py:576
 #, python-format
 msgid "This is an invalid record! The problem could be: %s"
-msgstr "¡Este es un registro inválido! El problema podría ser: %s"
+msgstr "¡Este no es un registro válido! El problema podría ser: %s"
 
 #: ../src/atEditor.py:596
 msgid ""
