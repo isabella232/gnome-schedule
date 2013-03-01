@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule.HEAD.hu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-08-23 16:15+0200\n"
+"POT-Creation-Date: 2013-03-01 17:05+0100\n"
 "PO-Revision-Date: 2006-01-06 18:37+0100\n"
 "Last-Translator: Gabor Kelemen <kelemeng@gnome.hu>\n"
 "Language-Team: Hungarian <gnome@gnome.hu>\n"
@@ -19,56 +19,62 @@ msgstr ""
 "Plural-Forms:   nplurals=2; plural=(n != 1);\n"
 
 #: ../desktop/gnome-schedule.desktop.in.in.h:1
-msgid "Manage your system tasks"
-msgstr "Rendszerfeladatok kezelése"
-
-#: ../desktop/gnome-schedule.desktop.in.in.h:2
 #, fuzzy
 msgid "Scheduled tasks"
 msgstr "Ütemezett feladat hozzáadása"
 
-#: ../servers/GNOME_GnomeSchedule.server.in.in.h:1
-msgid "Configures your scheduled tasks"
-msgstr "Ütemezett feladatok beállítása"
+#: ../desktop/gnome-schedule.desktop.in.in.h:2
+msgid "Manage your system tasks"
+msgstr "Rendszerfeladatok kezelése"
 
-#: ../servers/GNOME_GnomeSchedule.server.in.in.h:2
+#: ../servers/GNOME_GnomeSchedule.server.in.in.h:1
 msgid "Gnome schedule"
 msgstr "Gnome ütemező"
+
+#: ../servers/GNOME_GnomeSchedule.server.in.in.h:2
+msgid "Configures your scheduled tasks"
+msgstr "Ütemezett feladatok beállítása"
 
 #: ../servers/GNOME_GnomeSchedule.server.in.in.h:3
 msgid "System tools"
 msgstr "Rendszereszközök"
 
-#: ../src/at.py:91 ../src/crontab.py:62
+#: ../src/at.py:112 ../src/crontab.py:62
 msgid ""
 "Failed to create data dir! Make sure ~/.gnome and ~/.gnome/gnome-schedule "
 "are writable."
 msgstr ""
 
-#: ../src/at.py:124 ../src/crontab.py:162
+#: ../src/at.py:145 ../src/crontab.py:162
 #, python-format
 msgid ""
 "Failed to create data dir: %s. Make sure ~/.gnome and ~/.gnome/gnome-"
 "schedule are writable."
 msgstr ""
 
-#: ../src/at.py:512
+#: ../src/at.py:547
 #, python-format
 msgid "Warning! Unknown task: %(preview)s"
 msgstr ""
 
-#: ../src/at.py:519
+#: ../src/at.py:554
 #, fuzzy, python-format
 msgid "On %(timestring)s"
 msgstr "%(date)s napon %(time)s-kor"
 
-#: ../src/at.py:525 ../src/at.py:530
+#: ../src/at.py:560 ../src/at.py:565
 msgid "Once"
 msgstr "Egyszer"
 
-#: ../src/at.py:534
-msgid "Warning: a line in atq's output didn't parse"
+#: ../src/at.py:569
+msgid "Warning: a line in atq's output didn't parse:"
 msgstr ""
+
+#: ../src/at.py:624 ../src/crontab.py:288 ../src/crontab.py:334
+#: ../src/crontabEditor.py:275 ../src/atEditor.py:127 ../src/atEditor.py:523
+#: ../src/atEditor.py:549
+msgid "Untitled"
+msgstr "Névtelen"
 
 #: ../src/crontab.py:87
 msgid "Minute"
@@ -90,7 +96,7 @@ msgstr "Hónap"
 msgid "Weekday"
 msgstr "Hétköznap"
 
-#: ../src/crontab.py:192 ../src/gnome-schedule.glade.h:13
+#: ../src/crontab.py:192 ../src/gnome-schedule.glade.h:23
 msgid "Basic"
 msgstr "Alap"
 
@@ -109,52 +115,47 @@ msgstr "%(min)s és %(max)s között kell lennie"
 msgid "%s is not a number"
 msgstr "%s nem egy szám"
 
-#: ../src/crontab.py:288 ../src/crontab.py:334 ../src/crontabEditor.py:275
-#: ../src/atEditor.py:123 ../src/atEditor.py:519 ../src/atEditor.py:545
-msgid "Untitled"
-msgstr "Névtelen"
-
-#: ../src/crontab.py:450 ../src/crontab.py:452 ../src/template_chooser.py:106
+#: ../src/crontab.py:455 ../src/crontab.py:457 ../src/template_chooser.py:106
 #: ../src/template_manager.py:111
 msgid "Recurrent"
 msgstr "Ismétlődő"
 
-#: ../src/crontab.py:450 ../src/crontabEditor.py:74 ../src/lang.py:168
+#: ../src/crontab.py:455 ../src/crontabEditor.py:74 ../src/lang.py:168
 msgid "At reboot"
 msgstr ""
 
-#: ../src/crontab.py:464
+#: ../src/crontab.py:469
 msgid "minute"
 msgstr "perc"
 
-#: ../src/crontab.py:466
+#: ../src/crontab.py:471
 msgid "hour"
 msgstr "óra"
 
-#: ../src/crontab.py:468
+#: ../src/crontab.py:473
 msgid "day"
 msgstr "nap"
 
-#: ../src/crontab.py:470
+#: ../src/crontab.py:475
 msgid "month"
 msgstr "hónap"
 
-#: ../src/crontab.py:472
+#: ../src/crontab.py:477
 msgid "weekday"
 msgstr "hétköznap"
 
-#: ../src/crontab.py:571
+#: ../src/crontab.py:576
 msgid ""
 "Failed to parse the Day of Month field, possibly due to a bug in crontab."
 msgstr ""
 
 #: ../src/crontabEditor.py:69 ../src/crontabEditorHelper.py:87
-#: ../src/gnome-schedule.glade.h:31
+#: ../src/gnome-schedule.glade.h:48
 msgid "Every minute"
 msgstr "Minden percben"
 
 #: ../src/crontabEditor.py:70 ../src/crontabEditorHelper.py:93
-#: ../src/gnome-schedule.glade.h:30
+#: ../src/gnome-schedule.glade.h:21
 msgid "Every hour"
 msgstr "Minden órában"
 
@@ -172,21 +173,21 @@ msgstr "Minden héten"
 
 #. add new task
 #: ../src/crontabEditor.py:131 ../src/crontabEditor.py:142
-#: ../src/atEditor.py:125 ../src/atEditor.py:144
+#: ../src/atEditor.py:129 ../src/atEditor.py:148
 msgid "Create a New Scheduled Task"
 msgstr "Új ütemezett feladat létrehozása"
 
-#: ../src/crontabEditor.py:198 ../src/atEditor.py:162
+#: ../src/crontabEditor.py:198 ../src/atEditor.py:166
 #, fuzzy
 msgid "Edit template"
 msgstr "Sa_blon:"
 
-#: ../src/crontabEditor.py:223 ../src/atEditor.py:184
+#: ../src/crontabEditor.py:223 ../src/atEditor.py:188
 #, fuzzy
 msgid "New template"
 msgstr "Feladat _hozzáadása"
 
-#: ../src/crontabEditor.py:249 ../src/atEditor.py:226
+#: ../src/crontabEditor.py:249 ../src/atEditor.py:230
 msgid "Edit a Scheduled Task"
 msgstr "Ütemezett feladat szerkesztése"
 
@@ -217,11 +218,11 @@ msgid ""
 "Recurrent tasks will be run from the home directory."
 msgstr ""
 
-#: ../src/crontabEditor.py:457 ../src/mainWindow.py:666 ../src/atEditor.py:593
+#: ../src/crontabEditor.py:457 ../src/mainWindow.py:666 ../src/atEditor.py:597
 msgid "_Don't show again"
 msgstr ""
 
-#: ../src/crontabEditor.py:458 ../src/mainWindow.py:667 ../src/atEditor.py:594
+#: ../src/crontabEditor.py:458 ../src/mainWindow.py:667 ../src/atEditor.py:598
 msgid "Warning: Working directory of executed tasks"
 msgstr ""
 
@@ -259,11 +260,11 @@ msgid "This is invalid. Reason: %s"
 msgstr "Ez érvénytelen. Ok: %s"
 
 #. minute
-#: ../src/crontabEditorHelper.py:231 ../src/gnome-schedule.glade.h:12
+#: ../src/crontabEditorHelper.py:231 ../src/gnome-schedule.glade.h:44
 msgid "At an exact minute"
 msgstr "Egy adott percben"
 
-#: ../src/crontabEditorHelper.py:232 ../src/gnome-schedule.glade.h:44
+#: ../src/crontabEditorHelper.py:232 ../src/gnome-schedule.glade.h:28
 msgid "Minute:"
 msgstr "Perc:"
 
@@ -272,7 +273,7 @@ msgstr "Perc:"
 msgid "At an exact hour"
 msgstr "Egy adott órában"
 
-#: ../src/crontabEditorHelper.py:236 ../src/gnome-schedule.glade.h:40
+#: ../src/crontabEditorHelper.py:236 ../src/gnome-schedule.glade.h:27
 msgid "Hour:"
 msgstr "Óra:"
 
@@ -281,7 +282,7 @@ msgstr "Óra:"
 msgid "On a day"
 msgstr "Egy napon"
 
-#: ../src/crontabEditorHelper.py:240 ../src/gnome-schedule.glade.h:23
+#: ../src/crontabEditorHelper.py:240 ../src/gnome-schedule.glade.h:26
 msgid "Day:"
 msgstr "Nap:"
 
@@ -290,7 +291,7 @@ msgstr "Nap:"
 msgid "In a month"
 msgstr "Egy hónapban"
 
-#: ../src/crontabEditorHelper.py:244 ../src/gnome-schedule.glade.h:46
+#: ../src/crontabEditorHelper.py:244 ../src/gnome-schedule.glade.h:29
 msgid "Month:"
 msgstr "Hónap:"
 
@@ -299,16 +300,16 @@ msgstr "Hónap:"
 msgid "On a weekday"
 msgstr "Egy hétköznapon"
 
-#: ../src/crontabEditorHelper.py:248 ../src/gnome-schedule.glade.h:59
+#: ../src/crontabEditorHelper.py:248 ../src/gnome-schedule.glade.h:30
 msgid "Weekday:"
 msgstr "Hétköznap:"
 
 # fixme megnézni miez, jóez?
-#: ../src/crontabEditorHelper.py:253 ../src/gnome-schedule.glade.h:42
+#: ../src/crontabEditorHelper.py:253 ../src/gnome-schedule.glade.h:50
 msgid "In a step width"
 msgstr "Egy lépés szélességben"
 
-#: ../src/crontabEditorHelper.py:255 ../src/gnome-schedule.glade.h:45
+#: ../src/crontabEditorHelper.py:255 ../src/gnome-schedule.glade.h:41
 msgid "Minutes:"
 msgstr "Perc:"
 
@@ -329,8 +330,8 @@ msgid "Weekdays:"
 msgstr "Hétköznap:"
 
 #: ../src/gnome-schedule-applet.xml.h:1
-msgid "A_bout"
-msgstr "_Névjegy"
+msgid "_Manage tasks"
+msgstr "_Feladatok kezelése"
 
 #: ../src/gnome-schedule-applet.xml.h:2
 msgid "_Add a task"
@@ -341,8 +342,8 @@ msgid "_Help"
 msgstr "_Súgó"
 
 #: ../src/gnome-schedule-applet.xml.h:4
-msgid "_Manage tasks"
-msgstr "_Feladatok kezelése"
+msgid "A_bout"
+msgstr "_Névjegy"
 
 #: ../src/gnome-schedule-export.py:45
 #, fuzzy
@@ -373,13 +374,16 @@ msgid "Exporting crontab task: %s"
 msgstr ""
 
 #: ../src/gnome-schedule-export.py:103
-msgid "Exporting at task: "
+#, python-format
+msgid "Exporting at task: %s"
 msgstr ""
 
 #: ../src/gnome-schedule-export.py:113
 #, python-format
-msgid "Finished, exported: %d tasks total"
-msgstr ""
+msgid "Finished, exported: %d task total."
+msgid_plural "Finished, exported: %d tasks total."
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../src/gnome-schedule-import.py:63
 #, fuzzy
@@ -426,74 +430,88 @@ msgstr ""
 
 #: ../src/gnome-schedule-import.py:111
 #, python-format
-msgid "Finished, imported: %d tasks total."
-msgstr ""
+msgid "Finished, imported: %d task total."
+msgid_plural "Finished, imported: %d tasks total."
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../src/gnome-schedule.glade.h:1
-msgid "*"
+msgid "Choose template"
 msgstr ""
 
 #: ../src/gnome-schedule.glade.h:2
-msgid "0"
-msgstr ""
+#, fuzzy
+msgid "Create a new task from the selected template"
+msgstr "A kijelölt sablon eltávolítása"
 
 #: ../src/gnome-schedule.glade.h:3
-msgid ":"
-msgstr ""
+#, fuzzy
+msgid "Manage templates"
+msgstr "_Feladatok kezelése"
 
 #: ../src/gnome-schedule.glade.h:4
-msgid "<b>Choose the user whose tasks you want to modify</b>"
-msgstr ""
-"<b>Válassza ki a felhasználót, akinek a feladatait módosítani kívánja</b>"
+#, fuzzy
+msgid "Create a new template."
+msgstr "Feladat _hozzáadása"
 
 #: ../src/gnome-schedule.glade.h:5
 #, fuzzy
-msgid "<b>Select the type of the scheduled task:</b>"
-msgstr "<b>Válassza ki az ütemezett feladat típusát</b>"
+msgid "Edit the selected template"
+msgstr "A kijelölt sablon eltávolítása"
 
 #: ../src/gnome-schedule.glade.h:6
 #, fuzzy
-msgid "<big>Preview</big>"
-msgstr "<b>Előnézet</b>"
+msgid "Delete the selected template"
+msgstr "A kijelölt sablon eltávolítása"
 
 #: ../src/gnome-schedule.glade.h:7
-msgid "<big>Time &amp; Date</big>"
+#, fuzzy
+msgid "Task description:"
+msgstr "_Leírás:"
+
+#: ../src/gnome-schedule.glade.h:8 ../src/mainWindow.py:73
+#: ../src/examples/dump.py:57
+#, fuzzy
+msgid "X application"
+msgstr "Az alkalmazás névjegye"
+
+#. This comes before the time and date input boxes in the One-time task editor
+#: ../src/gnome-schedule.glade.h:10
+msgid "Execute at:"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:8
+#: ../src/gnome-schedule.glade.h:11
 #, fuzzy
-msgid "About Gnome-schedule"
-msgstr "A Gnome ütemező névjegye"
+msgid "Date:"
+msgstr "_Dátum:"
 
-#: ../src/gnome-schedule.glade.h:9
-msgid "Add a Scheduled Task"
-msgstr "Ütemezett feladat hozzáadása"
+#: ../src/gnome-schedule.glade.h:12
+#, fuzzy
+msgid "Time:"
+msgstr "Cím"
 
-#: ../src/gnome-schedule.glade.h:10
+#: ../src/gnome-schedule.glade.h:13
+msgid ":"
+msgstr ""
+
+#: ../src/gnome-schedule.glade.h:14
+#, fuzzy
+msgid "Task:"
+msgstr "_Feladat"
+
+#: ../src/gnome-schedule.glade.h:15
 #, fuzzy
 msgid "Add as template"
 msgstr "Feladat _hozzáadása"
 
-#: ../src/gnome-schedule.glade.h:11
-msgid "Advanced"
-msgstr "Haladó"
-
-#: ../src/gnome-schedule.glade.h:14
-msgid "Change User"
-msgstr "Felhasználó váltása"
-
-#: ../src/gnome-schedule.glade.h:15
-msgid "Change edit mode"
-msgstr ""
-
 #: ../src/gnome-schedule.glade.h:16
-msgid "Choose template"
-msgstr ""
+#, fuzzy
+msgid "Edit a periodical task"
+msgstr "Ütemezett feladat szerkesztése"
 
 #: ../src/gnome-schedule.glade.h:17
-msgid "Choose the user whose tasks you want to modify"
+msgid "ls -l"
 msgstr ""
-"Válassza ki a felhasználót, akinek az ütemezett feladatait módosítani kívánja"
 
 #: ../src/gnome-schedule.glade.h:18 ../src/template.py:198
 #: ../src/template.py:212
@@ -502,63 +520,97 @@ msgid "Command:"
 msgstr "_Parancs:"
 
 #: ../src/gnome-schedule.glade.h:19
-msgid "Configure Scheduled Tasks"
-msgstr "Ütemezett feladatok beállítása"
-
-#: ../src/gnome-schedule.glade.h:20
-#, fuzzy
-msgid "Create a new task from the selected template"
-msgstr "A kijelölt sablon eltávolítása"
-
-#: ../src/gnome-schedule.glade.h:21
-#, fuzzy
-msgid "Create a new template."
-msgstr "Feladat _hozzáadása"
-
-#: ../src/gnome-schedule.glade.h:22
-#, fuzzy
-msgid "Date:"
-msgstr "_Dátum:"
-
-#: ../src/gnome-schedule.glade.h:24
-msgid "Delete a scheduled task"
-msgstr "Ütemezett feladat törlése"
-
-#: ../src/gnome-schedule.glade.h:25
-#, fuzzy
-msgid "Delete the selected template"
-msgstr "A kijelölt sablon eltávolítása"
-
-#: ../src/gnome-schedule.glade.h:26
 #, fuzzy
 msgid "Description:"
 msgstr "_Leírás:"
 
-#: ../src/gnome-schedule.glade.h:27
-#, fuzzy
-msgid "Edit a periodical task"
-msgstr "Ütemezett feladat szerkesztése"
-
-#: ../src/gnome-schedule.glade.h:28
-msgid "Edit a scheduled task"
-msgstr "Ütemezett feladat szerkesztése"
-
-#: ../src/gnome-schedule.glade.h:29
-#, fuzzy
-msgid "Edit the selected template"
-msgstr "A kijelölt sablon eltávolítása"
-
-#. This comes before the time and date input boxes in the One-time task editor
-#: ../src/gnome-schedule.glade.h:33
-msgid "Execute at:"
+#: ../src/gnome-schedule.glade.h:20
+msgid "<big>Time &amp; Date</big>"
 msgstr ""
 
+#: ../src/gnome-schedule.glade.h:22
+msgid "Advanced"
+msgstr "Haladó"
+
+#: ../src/gnome-schedule.glade.h:24
+msgid "0"
+msgstr ""
+
+#: ../src/gnome-schedule.glade.h:25
+msgid "*"
+msgstr ""
+
+#: ../src/gnome-schedule.glade.h:31
+#, fuzzy
+msgid "<big>Preview</big>"
+msgstr "<b>Előnézet</b>"
+
+#: ../src/gnome-schedule.glade.h:32
+msgid "Change User"
+msgstr "Felhasználó váltása"
+
+#: ../src/gnome-schedule.glade.h:33
+msgid "<b>Choose the user whose tasks you want to modify</b>"
+msgstr ""
+"<b>Válassza ki a felhasználót, akinek a feladatait módosítani kívánja</b>"
+
 #: ../src/gnome-schedule.glade.h:34
+msgid "_User:"
+msgstr "_Felhasználó:"
+
+#: ../src/gnome-schedule.glade.h:35
+msgid "Add a Scheduled Task"
+msgstr "Ütemezett feladat hozzáadása"
+
+#: ../src/gnome-schedule.glade.h:36
+#, fuzzy
+msgid "<b>Select the type of the scheduled task:</b>"
+msgstr "<b>Válassza ki az ütemezett feladat típusát</b>"
+
+#: ../src/gnome-schedule.glade.h:37
+msgid "Time expression help"
+msgstr "Súgó az időkifejezéshez"
+
+#: ../src/gnome-schedule.glade.h:38
+msgid "Expression:"
+msgstr "Kifejezés:"
+
+#: ../src/gnome-schedule.glade.h:39
+msgid "To:"
+msgstr "Eddig:"
+
+#: ../src/gnome-schedule.glade.h:40
+msgid "From:"
+msgstr "Ettől:"
+
+#: ../src/gnome-schedule.glade.h:42
+msgid "Other"
+msgstr "Egyéb"
+
+#: ../src/gnome-schedule.glade.h:43
+msgid "See \"man 5 crontab\" for information about the crontab format."
+msgstr ""
+"A crontab formátumáról szóló információkért lásd a \"man 5 crontab\" "
+"kézikönyvoldalt."
+
+#: ../src/gnome-schedule.glade.h:45
 msgid "Execution at a specific minute, hour, day, weekday or month."
 msgstr ""
 "Végrehajtás egy adott percben, órában, napon, hétköznapon vagy hónapban."
 
-#: ../src/gnome-schedule.glade.h:35
+#: ../src/gnome-schedule.glade.h:46
+msgid "In a range"
+msgstr "Egy tartományban"
+
+#: ../src/gnome-schedule.glade.h:47
+msgid "Execution in a range."
+msgstr "Végrehajtás egy időközben."
+
+#: ../src/gnome-schedule.glade.h:49
+msgid "Execution at every minute, hour, day, weekday or month."
+msgstr "Végrehajtás minden percben, órában, napon, hétköznapon vagy hónapban."
+
+#: ../src/gnome-schedule.glade.h:51
 msgid ""
 "Execution at a step width. For example every five minutes, hours, days, "
 "weekdays or months."
@@ -566,99 +618,53 @@ msgstr ""
 "Végrehajtás megadott lépésközzel. Például, minden ötödik percben, órában, "
 "napon, hétköznapon vagy hónapban."
 
-#: ../src/gnome-schedule.glade.h:36
-msgid "Execution at every minute, hour, day, weekday or month."
-msgstr "Végrehajtás minden percben, órában, napon, hétköznapon vagy hónapban."
+#: ../src/gnome-schedule.glade.h:52
+msgid "Configure Scheduled Tasks"
+msgstr "Ütemezett feladatok beállítása"
 
-#: ../src/gnome-schedule.glade.h:37
-msgid "Execution in a range."
-msgstr "Végrehajtás egy időközben."
+#: ../src/gnome-schedule.glade.h:53
+msgid "Edit a scheduled task"
+msgstr "Ütemezett feladat szerkesztése"
 
-#: ../src/gnome-schedule.glade.h:38
-msgid "Expression:"
-msgstr "Kifejezés:"
+#: ../src/gnome-schedule.glade.h:54
+msgid "Delete a scheduled task"
+msgstr "Ütemezett feladat törlése"
 
-#: ../src/gnome-schedule.glade.h:39
-msgid "From:"
-msgstr "Ettől:"
-
-#: ../src/gnome-schedule.glade.h:41
-msgid "In a range"
-msgstr "Egy tartományban"
-
-#: ../src/gnome-schedule.glade.h:43
-#, fuzzy
-msgid "Manage templates"
-msgstr "_Feladatok kezelése"
-
-#: ../src/gnome-schedule.glade.h:47
-msgid "Other"
-msgstr "Egyéb"
-
-#: ../src/gnome-schedule.glade.h:48
+#: ../src/gnome-schedule.glade.h:55
 #, fuzzy
 msgid "Run selected task"
 msgstr "Kérem válasszon egy feladatot"
 
-#: ../src/gnome-schedule.glade.h:49
+#: ../src/gnome-schedule.glade.h:56
 msgid "Run task"
 msgstr ""
 
-#: ../src/gnome-schedule.glade.h:50
-msgid "Scheduled and active tasks"
-msgstr "Ütemezett és aktív feladatok"
-
-#: ../src/gnome-schedule.glade.h:51
-msgid "See \"man 5 crontab\" for information about the crontab format."
-msgstr ""
-"A crontab formátumáról szóló információkért lásd a \"man 5 crontab\" "
-"kézikönyvoldalt."
-
-#: ../src/gnome-schedule.glade.h:52
-msgid "Show help"
-msgstr "Súgó megjelenítése"
-
-#: ../src/gnome-schedule.glade.h:53
-#, fuzzy
-msgid "Task description:"
-msgstr "_Leírás:"
-
-#: ../src/gnome-schedule.glade.h:54
-#, fuzzy
-msgid "Task:"
-msgstr "_Feladat"
-
-#: ../src/gnome-schedule.glade.h:55
+#: ../src/gnome-schedule.glade.h:57
 #, fuzzy
 msgid "Templates"
 msgstr "Sa_blon:"
 
-#: ../src/gnome-schedule.glade.h:56
-msgid "Time expression help"
-msgstr "Súgó az időkifejezéshez"
-
-#: ../src/gnome-schedule.glade.h:57
-#, fuzzy
-msgid "Time:"
-msgstr "Cím"
-
 #: ../src/gnome-schedule.glade.h:58
-msgid "To:"
-msgstr "Eddig:"
+msgid "Change edit mode"
+msgstr ""
 
-#: ../src/gnome-schedule.glade.h:60 ../src/mainWindow.py:73
-#: ../src/examples/dump.py:57
-#, fuzzy
-msgid "X application"
-msgstr "Az alkalmazás névjegye"
+#: ../src/gnome-schedule.glade.h:59
+msgid "Choose the user whose tasks you want to modify"
+msgstr ""
+"Válassza ki a felhasználót, akinek az ütemezett feladatait módosítani kívánja"
+
+#: ../src/gnome-schedule.glade.h:60
+msgid "Show help"
+msgstr "Súgó megjelenítése"
 
 #: ../src/gnome-schedule.glade.h:61
-msgid "_User:"
-msgstr "_Felhasználó:"
+#, fuzzy
+msgid "About Gnome-schedule"
+msgstr "A Gnome ütemező névjegye"
 
 #: ../src/gnome-schedule.glade.h:62
-msgid "ls -l"
-msgstr ""
+msgid "Scheduled and active tasks"
+msgstr "Ütemezett és aktív feladatok"
 
 #: ../src/gnome-schedule.py:66 ../src/scheduleapplet.py:67
 #: ../src/xwrapper.py:51
@@ -1139,23 +1145,23 @@ msgstr ""
 msgid "A task from a predefined template"
 msgstr ""
 
-#: ../src/atEditor.py:78
+#: ../src/atEditor.py:83
 msgid "Calendar"
 msgstr ""
 
-#: ../src/atEditor.py:511
+#: ../src/atEditor.py:515
 msgid ""
 "In one or both of the fields hour and minute there was entered a letter, or "
 "a number out of range. Remember an hour only has 60 minutes and a day only "
 "24 hours."
 msgstr ""
 
-#: ../src/atEditor.py:572
+#: ../src/atEditor.py:576
 #, python-format
 msgid "This is an invalid record! The problem could be: %s"
 msgstr "Ez egy érvénytelen rekord! A hiba a következő lehet: %s "
 
-#: ../src/atEditor.py:592
+#: ../src/atEditor.py:596
 msgid ""
 "Note about working directory of executed tasks:\n"
 "\n"

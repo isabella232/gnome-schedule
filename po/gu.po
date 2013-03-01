@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule.master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-08-23 16:15+0200\n"
+"POT-Creation-Date: 2013-03-01 17:05+0100\n"
 "PO-Revision-Date: 2009-05-18 12:29+0530\n"
 "Last-Translator: Sweta Kothari <swkothar@redhat.com>\n"
 "Language-Team: Gujarati\n"
@@ -19,55 +19,61 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 
 #: ../desktop/gnome-schedule.desktop.in.in.h:1
-msgid "Manage your system tasks"
-msgstr "તમારા સિસ્ટમ કાર્યોને સંચાલિત કરો"
-
-#: ../desktop/gnome-schedule.desktop.in.in.h:2
 msgid "Scheduled tasks"
 msgstr "સુનિશ્ચિત થયેલ કાર્યો"
 
-#: ../servers/GNOME_GnomeSchedule.server.in.in.h:1
-msgid "Configures your scheduled tasks"
-msgstr "તમારા સુનિશ્ચિત કામોને રૂપરેખાંકિત કરો"
+#: ../desktop/gnome-schedule.desktop.in.in.h:2
+msgid "Manage your system tasks"
+msgstr "તમારા સિસ્ટમ કાર્યોને સંચાલિત કરો"
 
-#: ../servers/GNOME_GnomeSchedule.server.in.in.h:2
+#: ../servers/GNOME_GnomeSchedule.server.in.in.h:1
 msgid "Gnome schedule"
 msgstr "Gnome સુનિશ્ચિત"
+
+#: ../servers/GNOME_GnomeSchedule.server.in.in.h:2
+msgid "Configures your scheduled tasks"
+msgstr "તમારા સુનિશ્ચિત કામોને રૂપરેખાંકિત કરો"
 
 #: ../servers/GNOME_GnomeSchedule.server.in.in.h:3
 msgid "System tools"
 msgstr "સિસ્ટમ સાધનો"
 
-#: ../src/at.py:91 ../src/crontab.py:62
+#: ../src/at.py:112 ../src/crontab.py:62
 msgid ""
 "Failed to create data dir! Make sure ~/.gnome and ~/.gnome/gnome-schedule "
 "are writable."
 msgstr ""
 
-#: ../src/at.py:124 ../src/crontab.py:162
+#: ../src/at.py:145 ../src/crontab.py:162
 #, python-format
 msgid ""
 "Failed to create data dir: %s. Make sure ~/.gnome and ~/.gnome/gnome-"
 "schedule are writable."
 msgstr ""
 
-#: ../src/at.py:512
+#: ../src/at.py:547
 #, python-format
 msgid "Warning! Unknown task: %(preview)s"
 msgstr ""
 
-#: ../src/at.py:519
+#: ../src/at.py:554
 #, python-format
 msgid "On %(timestring)s"
 msgstr "%(timestring)s પર"
 
-#: ../src/at.py:525 ../src/at.py:530
+#: ../src/at.py:560 ../src/at.py:565
 msgid "Once"
 msgstr "એકવાર"
 
-#: ../src/at.py:534
-msgid "Warning: a line in atq's output didn't parse"
+#: ../src/at.py:569
+msgid "Warning: a line in atq's output didn't parse:"
 msgstr ""
+
+#: ../src/at.py:624 ../src/crontab.py:288 ../src/crontab.py:334
+#: ../src/crontabEditor.py:275 ../src/atEditor.py:127 ../src/atEditor.py:523
+#: ../src/atEditor.py:549
+msgid "Untitled"
+msgstr "શિર્ષક ન થયેલ"
 
 #: ../src/crontab.py:87
 msgid "Minute"
@@ -89,7 +95,7 @@ msgstr "મહિનો"
 msgid "Weekday"
 msgstr "અઠવાડિયાનાં દિવસ"
 
-#: ../src/crontab.py:192 ../src/gnome-schedule.glade.h:13
+#: ../src/crontab.py:192 ../src/gnome-schedule.glade.h:23
 msgid "Basic"
 msgstr "મૂળભૂત"
 
@@ -108,52 +114,47 @@ msgstr "%(min)s અને %(max)s વચ્ચે હોવુ જ જોઇએ"
 msgid "%s is not a number"
 msgstr "%s એ નંબર નથી"
 
-#: ../src/crontab.py:288 ../src/crontab.py:334 ../src/crontabEditor.py:275
-#: ../src/atEditor.py:123 ../src/atEditor.py:519 ../src/atEditor.py:545
-msgid "Untitled"
-msgstr "શિર્ષક ન થયેલ"
-
-#: ../src/crontab.py:450 ../src/crontab.py:452 ../src/template_chooser.py:106
+#: ../src/crontab.py:455 ../src/crontab.py:457 ../src/template_chooser.py:106
 #: ../src/template_manager.py:111
 msgid "Recurrent"
 msgstr ""
 
-#: ../src/crontab.py:450 ../src/crontabEditor.py:74 ../src/lang.py:168
+#: ../src/crontab.py:455 ../src/crontabEditor.py:74 ../src/lang.py:168
 msgid "At reboot"
 msgstr "પુન:બુટ પર"
 
-#: ../src/crontab.py:464
+#: ../src/crontab.py:469
 msgid "minute"
 msgstr "મિનિટ"
 
-#: ../src/crontab.py:466
+#: ../src/crontab.py:471
 msgid "hour"
 msgstr "કલાક"
 
-#: ../src/crontab.py:468
+#: ../src/crontab.py:473
 msgid "day"
 msgstr "દિવસ"
 
-#: ../src/crontab.py:470
+#: ../src/crontab.py:475
 msgid "month"
 msgstr "મહિનો"
 
-#: ../src/crontab.py:472
+#: ../src/crontab.py:477
 msgid "weekday"
 msgstr "અઠવાડિયાનાં દિવસ"
 
-#: ../src/crontab.py:571
+#: ../src/crontab.py:576
 msgid ""
 "Failed to parse the Day of Month field, possibly due to a bug in crontab."
 msgstr ""
 
 #: ../src/crontabEditor.py:69 ../src/crontabEditorHelper.py:87
-#: ../src/gnome-schedule.glade.h:31
+#: ../src/gnome-schedule.glade.h:48
 msgid "Every minute"
 msgstr "દરેક સમયે"
 
 #: ../src/crontabEditor.py:70 ../src/crontabEditorHelper.py:93
-#: ../src/gnome-schedule.glade.h:30
+#: ../src/gnome-schedule.glade.h:21
 msgid "Every hour"
 msgstr "દરેક કલાકે"
 
@@ -171,19 +172,19 @@ msgstr "દરેક અઠવાડિયે"
 
 #. add new task
 #: ../src/crontabEditor.py:131 ../src/crontabEditor.py:142
-#: ../src/atEditor.py:125 ../src/atEditor.py:144
+#: ../src/atEditor.py:129 ../src/atEditor.py:148
 msgid "Create a New Scheduled Task"
 msgstr "નવું સુનિશ્ચિત થયેલ કાર્ય ને બનાવો"
 
-#: ../src/crontabEditor.py:198 ../src/atEditor.py:162
+#: ../src/crontabEditor.py:198 ../src/atEditor.py:166
 msgid "Edit template"
 msgstr "ટેમ્પલ્ટમાં ફેરફાર કરો"
 
-#: ../src/crontabEditor.py:223 ../src/atEditor.py:184
+#: ../src/crontabEditor.py:223 ../src/atEditor.py:188
 msgid "New template"
 msgstr "નવું ટેમ્પલેટ"
 
-#: ../src/crontabEditor.py:249 ../src/atEditor.py:226
+#: ../src/crontabEditor.py:249 ../src/atEditor.py:230
 msgid "Edit a Scheduled Task"
 msgstr "સુનિશ્ચિત થયેલ કાર્યમાં ફેરફાર કરો"
 
@@ -212,11 +213,11 @@ msgid ""
 "Recurrent tasks will be run from the home directory."
 msgstr ""
 
-#: ../src/crontabEditor.py:457 ../src/mainWindow.py:666 ../src/atEditor.py:593
+#: ../src/crontabEditor.py:457 ../src/mainWindow.py:666 ../src/atEditor.py:597
 msgid "_Don't show again"
 msgstr "ફરીથા બતાવો નહિં (_D)"
 
-#: ../src/crontabEditor.py:458 ../src/mainWindow.py:667 ../src/atEditor.py:594
+#: ../src/crontabEditor.py:458 ../src/mainWindow.py:667 ../src/atEditor.py:598
 msgid "Warning: Working directory of executed tasks"
 msgstr "ચેતવણી: ચલાવેલ કાર્યોની કામ કરતી ડિરેક્ટરી"
 
@@ -250,11 +251,11 @@ msgid "This is invalid. Reason: %s"
 msgstr "આ અયોગ્ય છે. કારણ: %s"
 
 #. minute
-#: ../src/crontabEditorHelper.py:231 ../src/gnome-schedule.glade.h:12
+#: ../src/crontabEditorHelper.py:231 ../src/gnome-schedule.glade.h:44
 msgid "At an exact minute"
 msgstr "ચોક્કસ મિનિટે"
 
-#: ../src/crontabEditorHelper.py:232 ../src/gnome-schedule.glade.h:44
+#: ../src/crontabEditorHelper.py:232 ../src/gnome-schedule.glade.h:28
 msgid "Minute:"
 msgstr "મિનિટ:"
 
@@ -263,7 +264,7 @@ msgstr "મિનિટ:"
 msgid "At an exact hour"
 msgstr "ચોક્કસ કલાકે"
 
-#: ../src/crontabEditorHelper.py:236 ../src/gnome-schedule.glade.h:40
+#: ../src/crontabEditorHelper.py:236 ../src/gnome-schedule.glade.h:27
 msgid "Hour:"
 msgstr "કલાક:"
 
@@ -272,7 +273,7 @@ msgstr "કલાક:"
 msgid "On a day"
 msgstr "દિવસ પર"
 
-#: ../src/crontabEditorHelper.py:240 ../src/gnome-schedule.glade.h:23
+#: ../src/crontabEditorHelper.py:240 ../src/gnome-schedule.glade.h:26
 msgid "Day:"
 msgstr "દિવસ:"
 
@@ -281,7 +282,7 @@ msgstr "દિવસ:"
 msgid "In a month"
 msgstr "મહિનામાં"
 
-#: ../src/crontabEditorHelper.py:244 ../src/gnome-schedule.glade.h:46
+#: ../src/crontabEditorHelper.py:244 ../src/gnome-schedule.glade.h:29
 msgid "Month:"
 msgstr "મહિનો:"
 
@@ -290,15 +291,15 @@ msgstr "મહિનો:"
 msgid "On a weekday"
 msgstr "અઠવાડિયાનાં દિવસ પર"
 
-#: ../src/crontabEditorHelper.py:248 ../src/gnome-schedule.glade.h:59
+#: ../src/crontabEditorHelper.py:248 ../src/gnome-schedule.glade.h:30
 msgid "Weekday:"
 msgstr "અઠવાડિયાનાં દિવસ:"
 
-#: ../src/crontabEditorHelper.py:253 ../src/gnome-schedule.glade.h:42
+#: ../src/crontabEditorHelper.py:253 ../src/gnome-schedule.glade.h:50
 msgid "In a step width"
 msgstr "પગલાંની પહોળાઇમાં"
 
-#: ../src/crontabEditorHelper.py:255 ../src/gnome-schedule.glade.h:45
+#: ../src/crontabEditorHelper.py:255 ../src/gnome-schedule.glade.h:41
 msgid "Minutes:"
 msgstr "મિનિટો:"
 
@@ -319,8 +320,8 @@ msgid "Weekdays:"
 msgstr "અઠવાડિયાનાં દિવસો:"
 
 #: ../src/gnome-schedule-applet.xml.h:1
-msgid "A_bout"
-msgstr "વિશે (_b)"
+msgid "_Manage tasks"
+msgstr "કાર્યોને સંચાલિત કરો (_M)"
 
 #: ../src/gnome-schedule-applet.xml.h:2
 msgid "_Add a task"
@@ -331,8 +332,8 @@ msgid "_Help"
 msgstr "મદદ (_H)"
 
 #: ../src/gnome-schedule-applet.xml.h:4
-msgid "_Manage tasks"
-msgstr "કાર્યોને સંચાલિત કરો (_M)"
+msgid "A_bout"
+msgstr "વિશે (_b)"
 
 #: ../src/gnome-schedule-export.py:45
 #, fuzzy
@@ -363,13 +364,16 @@ msgid "Exporting crontab task: %s"
 msgstr ""
 
 #: ../src/gnome-schedule-export.py:103
-msgid "Exporting at task: "
+#, python-format
+msgid "Exporting at task: %s"
 msgstr ""
 
 #: ../src/gnome-schedule-export.py:113
 #, python-format
-msgid "Finished, exported: %d tasks total"
-msgstr ""
+msgid "Finished, exported: %d task total."
+msgid_plural "Finished, exported: %d tasks total."
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../src/gnome-schedule-import.py:63
 #, fuzzy
@@ -416,68 +420,76 @@ msgstr ""
 
 #: ../src/gnome-schedule-import.py:111
 #, python-format
-msgid "Finished, imported: %d tasks total."
-msgstr ""
+msgid "Finished, imported: %d task total."
+msgid_plural "Finished, imported: %d tasks total."
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../src/gnome-schedule.glade.h:1
-msgid "*"
-msgstr "*"
-
-#: ../src/gnome-schedule.glade.h:2
-msgid "0"
-msgstr "0"
-
-#: ../src/gnome-schedule.glade.h:3
-msgid ":"
-msgstr ":"
-
-#: ../src/gnome-schedule.glade.h:4
-msgid "<b>Choose the user whose tasks you want to modify</b>"
-msgstr "<b>વપરાશકર્તાને પસંદ કરો જેનાં કાર્યો તમે બદલવા માંગો છો</b>"
-
-#: ../src/gnome-schedule.glade.h:5
-msgid "<b>Select the type of the scheduled task:</b>"
-msgstr "<b>સુનિશ્ચિત થયેલ કાર્યનાં પ્રકારને પસંદ કરો:</b>"
-
-#: ../src/gnome-schedule.glade.h:6
-msgid "<big>Preview</big>"
-msgstr "<big>પૂર્વદર્શન</big>"
-
-#: ../src/gnome-schedule.glade.h:7
-msgid "<big>Time &amp; Date</big>"
-msgstr "<big>સમય &amp; તારીખ</big>"
-
-#: ../src/gnome-schedule.glade.h:8
-msgid "About Gnome-schedule"
-msgstr "Gnome-schedule વિશે"
-
-#: ../src/gnome-schedule.glade.h:9
-msgid "Add a Scheduled Task"
-msgstr "સુનિશ્ચિત કાર્યને ઉમેરો"
-
-#: ../src/gnome-schedule.glade.h:10
-msgid "Add as template"
-msgstr "ટેમ્પલેટને ઉમેરો"
-
-#: ../src/gnome-schedule.glade.h:11
-msgid "Advanced"
-msgstr "ઉન્નત થયેલ"
-
-#: ../src/gnome-schedule.glade.h:14
-msgid "Change User"
-msgstr "વપરાશકર્તાને બદલો"
-
-#: ../src/gnome-schedule.glade.h:15
-msgid "Change edit mode"
-msgstr "ફેરફાર સ્થિતિને બદલો"
-
-#: ../src/gnome-schedule.glade.h:16
 msgid "Choose template"
 msgstr "ટેમ્પલેટને પસંદ કરો"
 
+#: ../src/gnome-schedule.glade.h:2
+msgid "Create a new task from the selected template"
+msgstr "પસંદ થયેલ ટેમ્પલેટ માંથી નવા કાર્યને બનાવો"
+
+#: ../src/gnome-schedule.glade.h:3
+msgid "Manage templates"
+msgstr "ટેમ્પલેટોને સંચાલિત કરો"
+
+#: ../src/gnome-schedule.glade.h:4
+msgid "Create a new template."
+msgstr "નવા ટેમ્પલેટને બનાવો."
+
+#: ../src/gnome-schedule.glade.h:5
+msgid "Edit the selected template"
+msgstr "પસંદ થયેલ ટેમ્પલેટમાં ફેરફાર કરો"
+
+#: ../src/gnome-schedule.glade.h:6
+msgid "Delete the selected template"
+msgstr "પસંદ થયેલ ટેમ્પલેટને કાઢી નાંખો"
+
+#: ../src/gnome-schedule.glade.h:7
+msgid "Task description:"
+msgstr "કાર્ય વર્ણન:"
+
+#: ../src/gnome-schedule.glade.h:8 ../src/mainWindow.py:73
+#: ../src/examples/dump.py:57
+msgid "X application"
+msgstr "X કાર્યક્રમ"
+
+#. This comes before the time and date input boxes in the One-time task editor
+#: ../src/gnome-schedule.glade.h:10
+msgid "Execute at:"
+msgstr "પર ચલાવો:"
+
+#: ../src/gnome-schedule.glade.h:11
+msgid "Date:"
+msgstr "તારીખ:"
+
+#: ../src/gnome-schedule.glade.h:12
+msgid "Time:"
+msgstr "સમય:"
+
+#: ../src/gnome-schedule.glade.h:13
+msgid ":"
+msgstr ":"
+
+#: ../src/gnome-schedule.glade.h:14
+msgid "Task:"
+msgstr "કાર્ય:"
+
+#: ../src/gnome-schedule.glade.h:15
+msgid "Add as template"
+msgstr "ટેમ્પલેટને ઉમેરો"
+
+#: ../src/gnome-schedule.glade.h:16
+msgid "Edit a periodical task"
+msgstr "નિયતકાલિક કાર્યમાં ફેરફાર કરો"
+
 #: ../src/gnome-schedule.glade.h:17
-msgid "Choose the user whose tasks you want to modify"
-msgstr "વપરાશકર્તાને પસંદ કરો કે જેનાં કાર્યો તમે બદલવા માંગો છો"
+msgid "ls -l"
+msgstr "ls -l"
 
 #: ../src/gnome-schedule.glade.h:18 ../src/template.py:198
 #: ../src/template.py:212
@@ -485,144 +497,138 @@ msgid "Command:"
 msgstr "આદેશ:"
 
 #: ../src/gnome-schedule.glade.h:19
-msgid "Configure Scheduled Tasks"
-msgstr "સુનિશ્ચિત કાર્યોને રૂપરેખાંકિત કરો"
-
-#: ../src/gnome-schedule.glade.h:20
-msgid "Create a new task from the selected template"
-msgstr "પસંદ થયેલ ટેમ્પલેટ માંથી નવા કાર્યને બનાવો"
-
-#: ../src/gnome-schedule.glade.h:21
-msgid "Create a new template."
-msgstr "નવા ટેમ્પલેટને બનાવો."
-
-#: ../src/gnome-schedule.glade.h:22
-msgid "Date:"
-msgstr "તારીખ:"
-
-#: ../src/gnome-schedule.glade.h:24
-msgid "Delete a scheduled task"
-msgstr "સુનિશ્ચિત થયેલ કાર્ય ને કાઢી નાંખો"
-
-#: ../src/gnome-schedule.glade.h:25
-msgid "Delete the selected template"
-msgstr "પસંદ થયેલ ટેમ્પલેટને કાઢી નાંખો"
-
-#: ../src/gnome-schedule.glade.h:26
 msgid "Description:"
 msgstr "વર્ણન:"
 
-#: ../src/gnome-schedule.glade.h:27
-msgid "Edit a periodical task"
-msgstr "નિયતકાલિક કાર્યમાં ફેરફાર કરો"
+#: ../src/gnome-schedule.glade.h:20
+msgid "<big>Time &amp; Date</big>"
+msgstr "<big>સમય &amp; તારીખ</big>"
 
-#: ../src/gnome-schedule.glade.h:28
-msgid "Edit a scheduled task"
-msgstr "સુનિશ્ચિત થયેલ કાર્યમાં ફેરફાર કરો"
+#: ../src/gnome-schedule.glade.h:22
+msgid "Advanced"
+msgstr "ઉન્નત થયેલ"
 
-#: ../src/gnome-schedule.glade.h:29
-msgid "Edit the selected template"
-msgstr "પસંદ થયેલ ટેમ્પલેટમાં ફેરફાર કરો"
+#: ../src/gnome-schedule.glade.h:24
+msgid "0"
+msgstr "0"
 
-#. This comes before the time and date input boxes in the One-time task editor
+#: ../src/gnome-schedule.glade.h:25
+msgid "*"
+msgstr "*"
+
+#: ../src/gnome-schedule.glade.h:31
+msgid "<big>Preview</big>"
+msgstr "<big>પૂર્વદર્શન</big>"
+
+#: ../src/gnome-schedule.glade.h:32
+msgid "Change User"
+msgstr "વપરાશકર્તાને બદલો"
+
 #: ../src/gnome-schedule.glade.h:33
-msgid "Execute at:"
-msgstr "પર ચલાવો:"
+msgid "<b>Choose the user whose tasks you want to modify</b>"
+msgstr "<b>વપરાશકર્તાને પસંદ કરો જેનાં કાર્યો તમે બદલવા માંગો છો</b>"
 
 #: ../src/gnome-schedule.glade.h:34
-msgid "Execution at a specific minute, hour, day, weekday or month."
-msgstr "ચોક્કસ મિનિટ, કલાક, દિવસ, અઠવાડિયાનાં દિવસ અથવા મહિના પર ચલાવો."
+msgid "_User:"
+msgstr "વપરાશકર્તા (_U):"
 
 #: ../src/gnome-schedule.glade.h:35
-msgid ""
-"Execution at a step width. For example every five minutes, hours, days, "
-"weekdays or months."
-msgstr ""
+msgid "Add a Scheduled Task"
+msgstr "સુનિશ્ચિત કાર્યને ઉમેરો"
 
 #: ../src/gnome-schedule.glade.h:36
-msgid "Execution at every minute, hour, day, weekday or month."
-msgstr ""
+msgid "<b>Select the type of the scheduled task:</b>"
+msgstr "<b>સુનિશ્ચિત થયેલ કાર્યનાં પ્રકારને પસંદ કરો:</b>"
 
 #: ../src/gnome-schedule.glade.h:37
-msgid "Execution in a range."
-msgstr "સીમામાં ચલાવો."
+msgid "Time expression help"
+msgstr "સમયને વ્યક્ત કરવા માટે મદદ"
 
 #: ../src/gnome-schedule.glade.h:38
 msgid "Expression:"
 msgstr "વ્યક્ત કરવુ:"
 
 #: ../src/gnome-schedule.glade.h:39
-msgid "From:"
-msgstr "માંથી:"
-
-#: ../src/gnome-schedule.glade.h:41
-msgid "In a range"
-msgstr "સીમા માં"
-
-#: ../src/gnome-schedule.glade.h:43
-msgid "Manage templates"
-msgstr "ટેમ્પલેટોને સંચાલિત કરો"
-
-#: ../src/gnome-schedule.glade.h:47
-msgid "Other"
-msgstr "બીજા"
-
-#: ../src/gnome-schedule.glade.h:48
-msgid "Run selected task"
-msgstr "પસંદ થયેલ કાર્યને ચલાવો"
-
-#: ../src/gnome-schedule.glade.h:49
-msgid "Run task"
-msgstr "કાર્યને ચલાવો"
-
-#: ../src/gnome-schedule.glade.h:50
-msgid "Scheduled and active tasks"
-msgstr "કાર્યોને સક્રિય અને સુનિશ્ચિત કરો"
-
-#: ../src/gnome-schedule.glade.h:51
-msgid "See \"man 5 crontab\" for information about the crontab format."
-msgstr "ક્રોનટેબ બંધારણ વિશે વધારે જાણકારી માટે \"man 5 crontab\" જુઓ."
-
-#: ../src/gnome-schedule.glade.h:52
-msgid "Show help"
-msgstr "મદદ બતાવો"
-
-#: ../src/gnome-schedule.glade.h:53
-msgid "Task description:"
-msgstr "કાર્ય વર્ણન:"
-
-#: ../src/gnome-schedule.glade.h:54
-msgid "Task:"
-msgstr "કાર્ય:"
-
-#: ../src/gnome-schedule.glade.h:55
-msgid "Templates"
-msgstr "ટેમ્પલેટો"
-
-#: ../src/gnome-schedule.glade.h:56
-msgid "Time expression help"
-msgstr "સમયને વ્યક્ત કરવા માટે મદદ"
-
-#: ../src/gnome-schedule.glade.h:57
-msgid "Time:"
-msgstr "સમય:"
-
-#: ../src/gnome-schedule.glade.h:58
 msgid "To:"
 msgstr "થી:"
 
-#: ../src/gnome-schedule.glade.h:60 ../src/mainWindow.py:73
-#: ../src/examples/dump.py:57
-msgid "X application"
-msgstr "X કાર્યક્રમ"
+#: ../src/gnome-schedule.glade.h:40
+msgid "From:"
+msgstr "માંથી:"
+
+#: ../src/gnome-schedule.glade.h:42
+msgid "Other"
+msgstr "બીજા"
+
+#: ../src/gnome-schedule.glade.h:43
+msgid "See \"man 5 crontab\" for information about the crontab format."
+msgstr "ક્રોનટેબ બંધારણ વિશે વધારે જાણકારી માટે \"man 5 crontab\" જુઓ."
+
+#: ../src/gnome-schedule.glade.h:45
+msgid "Execution at a specific minute, hour, day, weekday or month."
+msgstr "ચોક્કસ મિનિટ, કલાક, દિવસ, અઠવાડિયાનાં દિવસ અથવા મહિના પર ચલાવો."
+
+#: ../src/gnome-schedule.glade.h:46
+msgid "In a range"
+msgstr "સીમા માં"
+
+#: ../src/gnome-schedule.glade.h:47
+msgid "Execution in a range."
+msgstr "સીમામાં ચલાવો."
+
+#: ../src/gnome-schedule.glade.h:49
+msgid "Execution at every minute, hour, day, weekday or month."
+msgstr ""
+
+#: ../src/gnome-schedule.glade.h:51
+msgid ""
+"Execution at a step width. For example every five minutes, hours, days, "
+"weekdays or months."
+msgstr ""
+
+#: ../src/gnome-schedule.glade.h:52
+msgid "Configure Scheduled Tasks"
+msgstr "સુનિશ્ચિત કાર્યોને રૂપરેખાંકિત કરો"
+
+#: ../src/gnome-schedule.glade.h:53
+msgid "Edit a scheduled task"
+msgstr "સુનિશ્ચિત થયેલ કાર્યમાં ફેરફાર કરો"
+
+#: ../src/gnome-schedule.glade.h:54
+msgid "Delete a scheduled task"
+msgstr "સુનિશ્ચિત થયેલ કાર્ય ને કાઢી નાંખો"
+
+#: ../src/gnome-schedule.glade.h:55
+msgid "Run selected task"
+msgstr "પસંદ થયેલ કાર્યને ચલાવો"
+
+#: ../src/gnome-schedule.glade.h:56
+msgid "Run task"
+msgstr "કાર્યને ચલાવો"
+
+#: ../src/gnome-schedule.glade.h:57
+msgid "Templates"
+msgstr "ટેમ્પલેટો"
+
+#: ../src/gnome-schedule.glade.h:58
+msgid "Change edit mode"
+msgstr "ફેરફાર સ્થિતિને બદલો"
+
+#: ../src/gnome-schedule.glade.h:59
+msgid "Choose the user whose tasks you want to modify"
+msgstr "વપરાશકર્તાને પસંદ કરો કે જેનાં કાર્યો તમે બદલવા માંગો છો"
+
+#: ../src/gnome-schedule.glade.h:60
+msgid "Show help"
+msgstr "મદદ બતાવો"
 
 #: ../src/gnome-schedule.glade.h:61
-msgid "_User:"
-msgstr "વપરાશકર્તા (_U):"
+msgid "About Gnome-schedule"
+msgstr "Gnome-schedule વિશે"
 
 #: ../src/gnome-schedule.glade.h:62
-msgid "ls -l"
-msgstr "ls -l"
+msgid "Scheduled and active tasks"
+msgstr "કાર્યોને સક્રિય અને સુનિશ્ચિત કરો"
 
 #: ../src/gnome-schedule.py:66 ../src/scheduleapplet.py:67
 #: ../src/xwrapper.py:51
@@ -1064,23 +1070,23 @@ msgstr "કાર્ય કે જે એકજ સમયે શરૂ કરે
 msgid "A task from a predefined template"
 msgstr "પહેલેથી થયેલ ટેમ્પલેટ માંથી કાર્ય"
 
-#: ../src/atEditor.py:78
+#: ../src/atEditor.py:83
 msgid "Calendar"
 msgstr "કેલેન્ડર"
 
-#: ../src/atEditor.py:511
+#: ../src/atEditor.py:515
 msgid ""
 "In one or both of the fields hour and minute there was entered a letter, or "
 "a number out of range. Remember an hour only has 60 minutes and a day only "
 "24 hours."
 msgstr ""
 
-#: ../src/atEditor.py:572
+#: ../src/atEditor.py:576
 #, python-format
 msgid "This is an invalid record! The problem could be: %s"
 msgstr "આ અયોગ્ય અહેવાલ છે! સમસ્યા આ હોઇ શકે છે: %s"
 
-#: ../src/atEditor.py:592
+#: ../src/atEditor.py:596
 msgid ""
 "Note about working directory of executed tasks:\n"
 "\n"

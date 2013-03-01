@@ -8,35 +8,34 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
-"schedule&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-11-02 19:10+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-03-01 17:05+0100\n"
 "PO-Revision-Date: 2011-11-06 21:30+0100\n"
 "Last-Translator: Mario Blättermann <mario.blaettermann@gmail.com>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: de\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "X-Poedit-Language: German\n"
 "X-Poedit-Country: GERMANY\n"
 
 #: ../desktop/gnome-schedule.desktop.in.in.h:1
-msgid "Manage your system tasks"
-msgstr "Zeitgesteuerte Systemaufgaben verwalten"
-
-#: ../desktop/gnome-schedule.desktop.in.in.h:2
 msgid "Scheduled tasks"
 msgstr "Geplante Aufgaben"
 
-#: ../servers/GNOME_GnomeSchedule.server.in.in.h:1
-msgid "Configures your scheduled tasks"
-msgstr "Bearbeiten zeitgesteuerter Systemaufgaben"
+#: ../desktop/gnome-schedule.desktop.in.in.h:2
+msgid "Manage your system tasks"
+msgstr "Zeitgesteuerte Systemaufgaben verwalten"
 
-#: ../servers/GNOME_GnomeSchedule.server.in.in.h:2
+#: ../servers/GNOME_GnomeSchedule.server.in.in.h:1
 msgid "Gnome schedule"
 msgstr "GNOME Schedule"
+
+#: ../servers/GNOME_GnomeSchedule.server.in.in.h:2
+msgid "Configures your scheduled tasks"
+msgstr "Bearbeiten zeitgesteuerter Systemaufgaben"
 
 #: ../servers/GNOME_GnomeSchedule.server.in.in.h:3
 msgid "System tools"
@@ -44,8 +43,8 @@ msgstr "Systemwerkzeuge"
 
 #: ../src/at.py:112 ../src/crontab.py:62
 msgid ""
-"Failed to create data dir! Make sure ~/.gnome and ~/.gnome/gnome-schedule are "
-"writable."
+"Failed to create data dir! Make sure ~/.gnome and ~/.gnome/gnome-schedule "
+"are writable."
 msgstr ""
 "Datenordner konnte nicht erstellt werden: Stellen Sie sicher, dass Sie über "
 "Schreibrechte in ~/.gnome und ~/.gnome/gnome-schedule verfügen."
@@ -53,8 +52,8 @@ msgstr ""
 #: ../src/at.py:145 ../src/crontab.py:162
 #, python-format
 msgid ""
-"Failed to create data dir: %s. Make sure ~/.gnome and ~/.gnome/gnome-schedule "
-"are writable."
+"Failed to create data dir: %s. Make sure ~/.gnome and ~/.gnome/gnome-"
+"schedule are writable."
 msgstr ""
 "Datenordner konnte nicht erstellt werden: %s. Stellen Sie sicher, dass Sie "
 "über Schreibrechte in ~/.gnome und ~/.gnome/gnome-schedule verfügen."
@@ -104,7 +103,7 @@ msgstr "Monat"
 msgid "Weekday"
 msgstr "Wochentag"
 
-#: ../src/crontab.py:192 ../src/gnome-schedule.glade.h:13
+#: ../src/crontab.py:192 ../src/gnome-schedule.glade.h:23
 msgid "Basic"
 msgstr "Grundlegend"
 
@@ -156,16 +155,16 @@ msgstr "Wochentag"
 msgid ""
 "Failed to parse the Day of Month field, possibly due to a bug in crontab."
 msgstr ""
-"Die Felder für Tag und Monat konnten nicht verarbeitet werden. Möglicherweise "
-"ist crontab fehlerhaft."
+"Die Felder für Tag und Monat konnten nicht verarbeitet werden. "
+"Möglicherweise ist crontab fehlerhaft."
 
 #: ../src/crontabEditor.py:69 ../src/crontabEditorHelper.py:87
-#: ../src/gnome-schedule.glade.h:31
+#: ../src/gnome-schedule.glade.h:48
 msgid "Every minute"
 msgstr "Jede Minute"
 
 #: ../src/crontabEditor.py:70 ../src/crontabEditorHelper.py:93
-#: ../src/gnome-schedule.glade.h:30
+#: ../src/gnome-schedule.glade.h:21
 msgid "Every hour"
 msgstr "Jede Stunde"
 
@@ -219,13 +218,13 @@ msgid ""
 "more information about the % character. If you don not want to use it for "
 "redirection it must be properly escaped with the \\ letter."
 msgstr ""
-"Ihr Befehl enthält ein oder mehrere %-Zeichen. Diese werden speziell für cron "
-"gedacht und können nicht mit GNOME-Schedule verwendet werden, weil sie für "
-"das Speichern zusätzlicher Daten in der crontab-Zeile verwendet werden. Bitte "
-"verwenden Sie das »|«-Zeichen, um zusätzliche Funktionalität hinzuzufügen. "
-"Ziehen sie das crontab-Handbuch zu Rate, um Informationen über die Verwendung "
-"des %-Zeichens zu erhalten. Falls Sie es nicht für Ersetzungen verwenden, "
-"muss es sauber mit einem \\-Zeichen maskiert werden."
+"Ihr Befehl enthält ein oder mehrere %-Zeichen. Diese werden speziell für "
+"cron gedacht und können nicht mit GNOME-Schedule verwendet werden, weil sie "
+"für das Speichern zusätzlicher Daten in der crontab-Zeile verwendet werden. "
+"Bitte verwenden Sie das »|«-Zeichen, um zusätzliche Funktionalität "
+"hinzuzufügen. Ziehen sie das crontab-Handbuch zu Rate, um Informationen über "
+"die Verwendung des %-Zeichens zu erhalten. Falls Sie es nicht für "
+"Ersetzungen verwenden, muss es sauber mit einem \\-Zeichen maskiert werden."
 
 #: ../src/crontabEditor.py:456
 msgid ""
@@ -275,11 +274,11 @@ msgid "This is invalid. Reason: %s"
 msgstr "Ungültige Angaben. Grund: %s"
 
 #. minute
-#: ../src/crontabEditorHelper.py:231 ../src/gnome-schedule.glade.h:12
+#: ../src/crontabEditorHelper.py:231 ../src/gnome-schedule.glade.h:44
 msgid "At an exact minute"
 msgstr "Zu einer bestimmten Minute"
 
-#: ../src/crontabEditorHelper.py:232 ../src/gnome-schedule.glade.h:44
+#: ../src/crontabEditorHelper.py:232 ../src/gnome-schedule.glade.h:28
 msgid "Minute:"
 msgstr "Minute:"
 
@@ -288,7 +287,7 @@ msgstr "Minute:"
 msgid "At an exact hour"
 msgstr "Zu einer bestimmten Stunde"
 
-#: ../src/crontabEditorHelper.py:236 ../src/gnome-schedule.glade.h:40
+#: ../src/crontabEditorHelper.py:236 ../src/gnome-schedule.glade.h:27
 msgid "Hour:"
 msgstr "Stunde:"
 
@@ -297,7 +296,7 @@ msgstr "Stunde:"
 msgid "On a day"
 msgstr "Zu einem bestimmten Tag"
 
-#: ../src/crontabEditorHelper.py:240 ../src/gnome-schedule.glade.h:23
+#: ../src/crontabEditorHelper.py:240 ../src/gnome-schedule.glade.h:26
 msgid "Day:"
 msgstr "Tag:"
 
@@ -306,7 +305,7 @@ msgstr "Tag:"
 msgid "In a month"
 msgstr "In einem bestimmten Monat"
 
-#: ../src/crontabEditorHelper.py:244 ../src/gnome-schedule.glade.h:46
+#: ../src/crontabEditorHelper.py:244 ../src/gnome-schedule.glade.h:29
 msgid "Month:"
 msgstr "Monat:"
 
@@ -315,15 +314,15 @@ msgstr "Monat:"
 msgid "On a weekday"
 msgstr "An einem bestimmten Wochentag"
 
-#: ../src/crontabEditorHelper.py:248 ../src/gnome-schedule.glade.h:59
+#: ../src/crontabEditorHelper.py:248 ../src/gnome-schedule.glade.h:30
 msgid "Weekday:"
 msgstr "Wochentag:"
 
-#: ../src/crontabEditorHelper.py:253 ../src/gnome-schedule.glade.h:42
+#: ../src/crontabEditorHelper.py:253 ../src/gnome-schedule.glade.h:50
 msgid "In a step width"
 msgstr "In einer Schrittweite"
 
-#: ../src/crontabEditorHelper.py:255 ../src/gnome-schedule.glade.h:45
+#: ../src/crontabEditorHelper.py:255 ../src/gnome-schedule.glade.h:41
 msgid "Minutes:"
 msgstr "Minuten:"
 
@@ -344,8 +343,8 @@ msgid "Weekdays:"
 msgstr "Wochentage:"
 
 #: ../src/gnome-schedule-applet.xml.h:1
-msgid "A_bout"
-msgstr "_Info"
+msgid "_Manage tasks"
+msgstr "Systemaufgaben _verwalten"
 
 #: ../src/gnome-schedule-applet.xml.h:2
 msgid "_Add a task"
@@ -356,8 +355,8 @@ msgid "_Help"
 msgstr "_Hilfe"
 
 #: ../src/gnome-schedule-applet.xml.h:4
-msgid "_Manage tasks"
-msgstr "Systemaufgaben _verwalten"
+msgid "A_bout"
+msgstr "_Info"
 
 #: ../src/gnome-schedule-export.py:45
 msgid "Gnome Schedule: Export tasks"
@@ -448,64 +447,70 @@ msgstr[0] "Abgeschlossen, insgesamt %d Aufgabe wurde importiert."
 msgstr[1] "Abgeschlossen, insgesamt %d Aufgaben wurden importiert."
 
 #: ../src/gnome-schedule.glade.h:1
-msgid "*"
-msgstr "*"
-
-#: ../src/gnome-schedule.glade.h:2
-msgid "0"
-msgstr "0"
-
-#: ../src/gnome-schedule.glade.h:3
-msgid ":"
-msgstr ":"
-
-#: ../src/gnome-schedule.glade.h:4
-msgid "<b>Choose the user whose tasks you want to modify</b>"
-msgstr "<b>Auswahl des Besitzers der zu bearbeitenden Systemaufgaben</b>"
-
-#: ../src/gnome-schedule.glade.h:5
-msgid "<b>Select the type of the scheduled task:</b>"
-msgstr "<b>Art der geplanten Aufgabe auswählen:</b>"
-
-#: ../src/gnome-schedule.glade.h:6
-msgid "<big>Preview</big>"
-msgstr "<b>Vorschau</b>"
-
-#: ../src/gnome-schedule.glade.h:7
-msgid "<big>Time &amp; Date</big>"
-msgstr "<big>Zeit und Datum</big>"
-
-#: ../src/gnome-schedule.glade.h:8
-msgid "About Gnome-schedule"
-msgstr "Info zu GNOME Schedule"
-
-#: ../src/gnome-schedule.glade.h:9
-msgid "Add a Scheduled Task"
-msgstr "Eine Aufgabe hinzufügen"
-
-#: ../src/gnome-schedule.glade.h:10
-msgid "Add as template"
-msgstr "Als Vorlage hinzufügen"
-
-#: ../src/gnome-schedule.glade.h:11
-msgid "Advanced"
-msgstr "Erweitert"
-
-#: ../src/gnome-schedule.glade.h:14
-msgid "Change User"
-msgstr "Benutzer wechseln"
-
-#: ../src/gnome-schedule.glade.h:15
-msgid "Change edit mode"
-msgstr "Bearbeitungsmodus wählen"
-
-#: ../src/gnome-schedule.glade.h:16
 msgid "Choose template"
 msgstr "Vorlage wählen"
 
+#: ../src/gnome-schedule.glade.h:2
+msgid "Create a new task from the selected template"
+msgstr "Eine neue Augabe aus der ausgewählten Vorlage erstellen"
+
+#: ../src/gnome-schedule.glade.h:3
+msgid "Manage templates"
+msgstr "Vorlagen verwalten"
+
+#: ../src/gnome-schedule.glade.h:4
+msgid "Create a new template."
+msgstr "Eine neue Vorlage erstellen."
+
+#: ../src/gnome-schedule.glade.h:5
+msgid "Edit the selected template"
+msgstr "Ausgewählte Vorlage bearbeiten"
+
+#: ../src/gnome-schedule.glade.h:6
+msgid "Delete the selected template"
+msgstr "Die ausgewählte Vorlage löschen"
+
+#: ../src/gnome-schedule.glade.h:7
+msgid "Task description:"
+msgstr "Beschreibung:"
+
+#: ../src/gnome-schedule.glade.h:8 ../src/mainWindow.py:73
+#: ../src/examples/dump.py:57
+msgid "X application"
+msgstr "X-Anwendung"
+
+#. This comes before the time and date input boxes in the One-time task editor
+#: ../src/gnome-schedule.glade.h:10
+msgid "Execute at:"
+msgstr "Ausführungszeitpunkt:"
+
+#: ../src/gnome-schedule.glade.h:11
+msgid "Date:"
+msgstr "Datum:"
+
+#: ../src/gnome-schedule.glade.h:12
+msgid "Time:"
+msgstr "Zeit:"
+
+#: ../src/gnome-schedule.glade.h:13
+msgid ":"
+msgstr ":"
+
+#: ../src/gnome-schedule.glade.h:14
+msgid "Task:"
+msgstr "Aufgabe:"
+
+#: ../src/gnome-schedule.glade.h:15
+msgid "Add as template"
+msgstr "Als Vorlage hinzufügen"
+
+#: ../src/gnome-schedule.glade.h:16
+msgid "Edit a periodical task"
+msgstr "Eine wiederkehrende Aufgabe bearbeiten"
+
 #: ../src/gnome-schedule.glade.h:17
-msgid "Choose the user whose tasks you want to modify"
-msgstr "Auswahl des Besitzers der zu bearbeitenden Systemaufgaben"
+msgid "ls -l"
+msgstr "ls -l"
 
 #: ../src/gnome-schedule.glade.h:18 ../src/template.py:198
 #: ../src/template.py:212
@@ -513,57 +518,94 @@ msgid "Command:"
 msgstr "Befehl:"
 
 #: ../src/gnome-schedule.glade.h:19
-msgid "Configure Scheduled Tasks"
-msgstr "Zeitgesteuerte Systemaufgaben bearbeiten"
-
-#: ../src/gnome-schedule.glade.h:20
-msgid "Create a new task from the selected template"
-msgstr "Eine neue Augabe aus der ausgewählten Vorlage erstellen"
-
-#: ../src/gnome-schedule.glade.h:21
-msgid "Create a new template."
-msgstr "Eine neue Vorlage erstellen."
-
-#: ../src/gnome-schedule.glade.h:22
-msgid "Date:"
-msgstr "Datum:"
-
-#: ../src/gnome-schedule.glade.h:24
-msgid "Delete a scheduled task"
-msgstr "Eine Aufgabe löschen"
-
-#: ../src/gnome-schedule.glade.h:25
-msgid "Delete the selected template"
-msgstr "Die ausgewählte Vorlage löschen"
-
-#: ../src/gnome-schedule.glade.h:26
 msgid "Description:"
 msgstr "Beschreibung:"
 
-#: ../src/gnome-schedule.glade.h:27
-msgid "Edit a periodical task"
-msgstr "Eine wiederkehrende Aufgabe bearbeiten"
+#: ../src/gnome-schedule.glade.h:20
+msgid "<big>Time &amp; Date</big>"
+msgstr "<big>Zeit und Datum</big>"
 
-#: ../src/gnome-schedule.glade.h:28
-msgid "Edit a scheduled task"
-msgstr "Eine Aufgabe bearbeiten"
+#: ../src/gnome-schedule.glade.h:22
+msgid "Advanced"
+msgstr "Erweitert"
 
-#: ../src/gnome-schedule.glade.h:29
-msgid "Edit the selected template"
-msgstr "Ausgewählte Vorlage bearbeiten"
+#: ../src/gnome-schedule.glade.h:24
+msgid "0"
+msgstr "0"
 
-#. This comes before the time and date input boxes in the One-time task editor
+#: ../src/gnome-schedule.glade.h:25
+msgid "*"
+msgstr "*"
+
+#: ../src/gnome-schedule.glade.h:31
+msgid "<big>Preview</big>"
+msgstr "<b>Vorschau</b>"
+
+#: ../src/gnome-schedule.glade.h:32
+msgid "Change User"
+msgstr "Benutzer wechseln"
+
 #: ../src/gnome-schedule.glade.h:33
-msgid "Execute at:"
-msgstr "Ausführungszeitpunkt:"
+msgid "<b>Choose the user whose tasks you want to modify</b>"
+msgstr "<b>Auswahl des Besitzers der zu bearbeitenden Systemaufgaben</b>"
 
 #: ../src/gnome-schedule.glade.h:34
+msgid "_User:"
+msgstr "_Benutzer:"
+
+#: ../src/gnome-schedule.glade.h:35
+msgid "Add a Scheduled Task"
+msgstr "Eine Aufgabe hinzufügen"
+
+#: ../src/gnome-schedule.glade.h:36
+msgid "<b>Select the type of the scheduled task:</b>"
+msgstr "<b>Art der geplanten Aufgabe auswählen:</b>"
+
+#: ../src/gnome-schedule.glade.h:37
+msgid "Time expression help"
+msgstr "Hilfe zum Zeitausdruck"
+
+#: ../src/gnome-schedule.glade.h:38
+msgid "Expression:"
+msgstr "Ausdruck:"
+
+#: ../src/gnome-schedule.glade.h:39
+msgid "To:"
+msgstr "Endend mit:"
+
+#: ../src/gnome-schedule.glade.h:40
+msgid "From:"
+msgstr "Beginnend bei:"
+
+#: ../src/gnome-schedule.glade.h:42
+msgid "Other"
+msgstr "Anderer Ausdruck"
+
+#: ../src/gnome-schedule.glade.h:43
+msgid "See \"man 5 crontab\" for information about the crontab format."
+msgstr "Siehe »man 5 crontab« für nähere Informationen zum Crontab-Format."
+
+#: ../src/gnome-schedule.glade.h:45
 msgid "Execution at a specific minute, hour, day, weekday or month."
 msgstr ""
 "Ausführung zu genau einer Minute, einer Stunde, einem Tag, einem Wochentag "
 "oder einem Monat."
 
-#: ../src/gnome-schedule.glade.h:35
+#: ../src/gnome-schedule.glade.h:46
+msgid "In a range"
+msgstr "In einer Spanne"
+
+#: ../src/gnome-schedule.glade.h:47
+msgid "Execution in a range."
+msgstr "Ausführung zu jedem Ereignis zwischen den beiden Angaben."
+
+#: ../src/gnome-schedule.glade.h:49
+msgid "Execution at every minute, hour, day, weekday or month."
+msgstr ""
+"Ausführung zu jeder Minute, jeder Stunde, jedem Tag, jedem Wochentag oder "
+"jedem Monat."
+
+#: ../src/gnome-schedule.glade.h:51
 msgid ""
 "Execution at a step width. For example every five minutes, hours, days, "
 "weekdays or months."
@@ -571,92 +613,49 @@ msgstr ""
 "Ausführung in bestimmten Abständen. Zum Beispiel alle fünf Minuten, Stunden, "
 "Tage, Wochentage oder Monate."
 
-#: ../src/gnome-schedule.glade.h:36
-msgid "Execution at every minute, hour, day, weekday or month."
-msgstr ""
-"Ausführung zu jeder Minute, jeder Stunde, jedem Tag, jedem Wochentag oder "
-"jedem Monat."
+#: ../src/gnome-schedule.glade.h:52
+msgid "Configure Scheduled Tasks"
+msgstr "Zeitgesteuerte Systemaufgaben bearbeiten"
 
-#: ../src/gnome-schedule.glade.h:37
-msgid "Execution in a range."
-msgstr "Ausführung zu jedem Ereignis zwischen den beiden Angaben."
+#: ../src/gnome-schedule.glade.h:53
+msgid "Edit a scheduled task"
+msgstr "Eine Aufgabe bearbeiten"
 
-#: ../src/gnome-schedule.glade.h:38
-msgid "Expression:"
-msgstr "Ausdruck:"
+#: ../src/gnome-schedule.glade.h:54
+msgid "Delete a scheduled task"
+msgstr "Eine Aufgabe löschen"
 
-#: ../src/gnome-schedule.glade.h:39
-msgid "From:"
-msgstr "Beginnend bei:"
-
-#: ../src/gnome-schedule.glade.h:41
-msgid "In a range"
-msgstr "In einer Spanne"
-
-#: ../src/gnome-schedule.glade.h:43
-msgid "Manage templates"
-msgstr "Vorlagen verwalten"
-
-#: ../src/gnome-schedule.glade.h:47
-msgid "Other"
-msgstr "Anderer Ausdruck"
-
-#: ../src/gnome-schedule.glade.h:48
+#: ../src/gnome-schedule.glade.h:55
 msgid "Run selected task"
 msgstr "Ausgewählte Aufgabe ausführen"
 
-#: ../src/gnome-schedule.glade.h:49
+#: ../src/gnome-schedule.glade.h:56
 msgid "Run task"
 msgstr "Auufgabe ausführen"
 
-#: ../src/gnome-schedule.glade.h:50
-msgid "Scheduled and active tasks"
-msgstr "Geplante und aktivierte Aufgaben"
-
-#: ../src/gnome-schedule.glade.h:51
-msgid "See \"man 5 crontab\" for information about the crontab format."
-msgstr "Siehe »man 5 crontab« für nähere Informationen zum Crontab-Format."
-
-#: ../src/gnome-schedule.glade.h:52
-msgid "Show help"
-msgstr "Hilfe anzeigen"
-
-#: ../src/gnome-schedule.glade.h:53
-msgid "Task description:"
-msgstr "Beschreibung:"
-
-#: ../src/gnome-schedule.glade.h:54
-msgid "Task:"
-msgstr "Aufgabe:"
-
-#: ../src/gnome-schedule.glade.h:55
+#: ../src/gnome-schedule.glade.h:57
 msgid "Templates"
 msgstr "Vorlagen"
 
-#: ../src/gnome-schedule.glade.h:56
-msgid "Time expression help"
-msgstr "Hilfe zum Zeitausdruck"
-
-#: ../src/gnome-schedule.glade.h:57
-msgid "Time:"
-msgstr "Zeit:"
-
 #: ../src/gnome-schedule.glade.h:58
-msgid "To:"
-msgstr "Endend mit:"
+msgid "Change edit mode"
+msgstr "Bearbeitungsmodus wählen"
 
-#: ../src/gnome-schedule.glade.h:60 ../src/mainWindow.py:73
-#: ../src/examples/dump.py:57
-msgid "X application"
-msgstr "X-Anwendung"
+#: ../src/gnome-schedule.glade.h:59
+msgid "Choose the user whose tasks you want to modify"
+msgstr "Auswahl des Besitzers der zu bearbeitenden Systemaufgaben"
+
+#: ../src/gnome-schedule.glade.h:60
+msgid "Show help"
+msgstr "Hilfe anzeigen"
 
 #: ../src/gnome-schedule.glade.h:61
-msgid "_User:"
-msgstr "_Benutzer:"
+msgid "About Gnome-schedule"
+msgstr "Info zu GNOME Schedule"
 
 #: ../src/gnome-schedule.glade.h:62
-msgid "ls -l"
-msgstr "ls -l"
+msgid "Scheduled and active tasks"
+msgstr "Geplante und aktivierte Aufgaben"
 
 #: ../src/gnome-schedule.py:66 ../src/scheduleapplet.py:67
 #: ../src/xwrapper.py:51
@@ -881,7 +880,8 @@ msgstr "An jedem Wochentag. %(weekday)s im %(month)s zu jeder Minute"
 msgid ""
 "On every weekday: %(weekday)s in %(month)s at minute %(minute)s of every hour"
 msgstr ""
-"An jedem Wochentag. %(weekday)s im %(month)s zu Minute %(minute)s jeder Stunde"
+"An jedem Wochentag. %(weekday)s im %(month)s zu Minute %(minute)s jeder "
+"Stunde"
 
 #: ../src/lang.py:267
 #, python-format
@@ -1148,13 +1148,13 @@ msgstr "Kalender"
 
 #: ../src/atEditor.py:515
 msgid ""
-"In one or both of the fields hour and minute there was entered a letter, or a "
-"number out of range. Remember an hour only has 60 minutes and a day only 24 "
-"hours."
+"In one or both of the fields hour and minute there was entered a letter, or "
+"a number out of range. Remember an hour only has 60 minutes and a day only "
+"24 hours."
 msgstr ""
-"In einem oder beiden Feldern für Stunde und Minute wurden Werte außerhalb des "
-"möglichen Bereichs eingegeben. Beachten Sie, dass eine Stunde 60 Minuten hat "
-"und ein Tag 24 Stunden."
+"In einem oder beiden Feldern für Stunde und Minute wurden Werte außerhalb "
+"des möglichen Bereichs eingegeben. Beachten Sie, dass eine Stunde 60 Minuten "
+"hat und ein Tag 24 Stunden."
 
 #: ../src/atEditor.py:576
 #, python-format
@@ -1200,7 +1200,8 @@ msgstr "Falsche Anzahl von Argumenten."
 #: ../src/xwrapper.py:73 ../src/xwrapper.py:81
 msgid ""
 "Wrapper script for Gnome-schedule (http://gnome-schedule.sf.net) for "
-"applications to be run from crontab or at under X. Use through gnome-schedule."
+"applications to be run from crontab or at under X. Use through gnome-"
+"schedule."
 msgstr ""
 "Wrapper-Skript für Gnome-schedule (http://gnome-schedule.sf.net) zur "
 "Anwendungsausführung in der crontab oder unter X. Wird von gnome-schedule "

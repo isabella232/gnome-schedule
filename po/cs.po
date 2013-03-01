@@ -10,33 +10,32 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
-"schedule&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-11-02 19:10+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-03-01 17:05+0100\n"
 "PO-Revision-Date: 2011-11-03 20:15+0100\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: cs\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #: ../desktop/gnome-schedule.desktop.in.in.h:1
-msgid "Manage your system tasks"
-msgstr "Spravovat vaše systémové úlohy"
-
-#: ../desktop/gnome-schedule.desktop.in.in.h:2
 msgid "Scheduled tasks"
 msgstr "Naplánované úlohy"
 
-#: ../servers/GNOME_GnomeSchedule.server.in.in.h:1
-msgid "Configures your scheduled tasks"
-msgstr "Nastavit plánované úlohy"
+#: ../desktop/gnome-schedule.desktop.in.in.h:2
+msgid "Manage your system tasks"
+msgstr "Spravovat vaše systémové úlohy"
 
-#: ../servers/GNOME_GnomeSchedule.server.in.in.h:2
+#: ../servers/GNOME_GnomeSchedule.server.in.in.h:1
 msgid "Gnome schedule"
 msgstr "Gnome Schedule"
+
+#: ../servers/GNOME_GnomeSchedule.server.in.in.h:2
+msgid "Configures your scheduled tasks"
+msgstr "Nastavit plánované úlohy"
 
 #: ../servers/GNOME_GnomeSchedule.server.in.in.h:3
 msgid "System tools"
@@ -103,7 +102,7 @@ msgstr "Měsíc"
 msgid "Weekday"
 msgstr "Den v týdnu"
 
-#: ../src/crontab.py:192 ../src/gnome-schedule.glade.h:13
+#: ../src/crontab.py:192 ../src/gnome-schedule.glade.h:23
 msgid "Basic"
 msgstr "Základní"
 
@@ -158,12 +157,12 @@ msgstr ""
 "Chyba při analýze pole dne v měsíci, pravděpodobně kvůli chybě v crontab."
 
 #: ../src/crontabEditor.py:69 ../src/crontabEditorHelper.py:87
-#: ../src/gnome-schedule.glade.h:31
+#: ../src/gnome-schedule.glade.h:48
 msgid "Every minute"
 msgstr "Každou minutu"
 
 #: ../src/crontabEditor.py:70 ../src/crontabEditorHelper.py:93
-#: ../src/gnome-schedule.glade.h:30
+#: ../src/gnome-schedule.glade.h:21
 msgid "Every hour"
 msgstr "Každou hodinu"
 
@@ -271,11 +270,11 @@ msgid "This is invalid. Reason: %s"
 msgstr "Toto není platné. Důvod: %s"
 
 #. minute
-#: ../src/crontabEditorHelper.py:231 ../src/gnome-schedule.glade.h:12
+#: ../src/crontabEditorHelper.py:231 ../src/gnome-schedule.glade.h:44
 msgid "At an exact minute"
 msgstr "V přesnou minutu"
 
-#: ../src/crontabEditorHelper.py:232 ../src/gnome-schedule.glade.h:44
+#: ../src/crontabEditorHelper.py:232 ../src/gnome-schedule.glade.h:28
 msgid "Minute:"
 msgstr "Minuta:"
 
@@ -284,7 +283,7 @@ msgstr "Minuta:"
 msgid "At an exact hour"
 msgstr "V přesnou hodinu"
 
-#: ../src/crontabEditorHelper.py:236 ../src/gnome-schedule.glade.h:40
+#: ../src/crontabEditorHelper.py:236 ../src/gnome-schedule.glade.h:27
 msgid "Hour:"
 msgstr "Hodina:"
 
@@ -293,7 +292,7 @@ msgstr "Hodina:"
 msgid "On a day"
 msgstr "Ve dni"
 
-#: ../src/crontabEditorHelper.py:240 ../src/gnome-schedule.glade.h:23
+#: ../src/crontabEditorHelper.py:240 ../src/gnome-schedule.glade.h:26
 msgid "Day:"
 msgstr "Den:"
 
@@ -302,7 +301,7 @@ msgstr "Den:"
 msgid "In a month"
 msgstr "V měsíci"
 
-#: ../src/crontabEditorHelper.py:244 ../src/gnome-schedule.glade.h:46
+#: ../src/crontabEditorHelper.py:244 ../src/gnome-schedule.glade.h:29
 msgid "Month:"
 msgstr "Měsíc:"
 
@@ -311,15 +310,15 @@ msgstr "Měsíc:"
 msgid "On a weekday"
 msgstr "Ve dni v týdnu"
 
-#: ../src/crontabEditorHelper.py:248 ../src/gnome-schedule.glade.h:59
+#: ../src/crontabEditorHelper.py:248 ../src/gnome-schedule.glade.h:30
 msgid "Weekday:"
 msgstr "Den v týdnu:"
 
-#: ../src/crontabEditorHelper.py:253 ../src/gnome-schedule.glade.h:42
+#: ../src/crontabEditorHelper.py:253 ../src/gnome-schedule.glade.h:50
 msgid "In a step width"
 msgstr "V krocích o délce"
 
-#: ../src/crontabEditorHelper.py:255 ../src/gnome-schedule.glade.h:45
+#: ../src/crontabEditorHelper.py:255 ../src/gnome-schedule.glade.h:41
 msgid "Minutes:"
 msgstr "Minuty:"
 
@@ -340,8 +339,8 @@ msgid "Weekdays:"
 msgstr "Dny v týdnu:"
 
 #: ../src/gnome-schedule-applet.xml.h:1
-msgid "A_bout"
-msgstr "O _aplikaci"
+msgid "_Manage tasks"
+msgstr "_Spravovat úlohy"
 
 #: ../src/gnome-schedule-applet.xml.h:2
 msgid "_Add a task"
@@ -352,8 +351,8 @@ msgid "_Help"
 msgstr "_Nápověda"
 
 #: ../src/gnome-schedule-applet.xml.h:4
-msgid "_Manage tasks"
-msgstr "_Spravovat úlohy"
+msgid "A_bout"
+msgstr "O _aplikaci"
 
 #: ../src/gnome-schedule-export.py:45
 msgid "Gnome Schedule: Export tasks"
@@ -446,64 +445,70 @@ msgstr[1] "Dokončeno, naimportováno: celkem %d úlohy."
 msgstr[2] "Dokončeno, naimportováno: celkem %d úloh."
 
 #: ../src/gnome-schedule.glade.h:1
-msgid "*"
-msgstr "*"
-
-#: ../src/gnome-schedule.glade.h:2
-msgid "0"
-msgstr "0"
-
-#: ../src/gnome-schedule.glade.h:3
-msgid ":"
-msgstr ":"
-
-#: ../src/gnome-schedule.glade.h:4
-msgid "<b>Choose the user whose tasks you want to modify</b>"
-msgstr "<b>Zvolte uživatele, jehož úlohy chcete upravit</b>"
-
-#: ../src/gnome-schedule.glade.h:5
-msgid "<b>Select the type of the scheduled task:</b>"
-msgstr "<b>Zvolte typ plánované úlohy:</b>"
-
-#: ../src/gnome-schedule.glade.h:6
-msgid "<big>Preview</big>"
-msgstr "<big>Náhled</big>"
-
-#: ../src/gnome-schedule.glade.h:7
-msgid "<big>Time &amp; Date</big>"
-msgstr "<big>Čas a datum</big>"
-
-#: ../src/gnome-schedule.glade.h:8
-msgid "About Gnome-schedule"
-msgstr "O Gnome Schedule"
-
-#: ../src/gnome-schedule.glade.h:9
-msgid "Add a Scheduled Task"
-msgstr "Přidání plánované úlohy"
-
-#: ../src/gnome-schedule.glade.h:10
-msgid "Add as template"
-msgstr "Přidat jako šablonu"
-
-#: ../src/gnome-schedule.glade.h:11
-msgid "Advanced"
-msgstr "Pokročilé"
-
-#: ../src/gnome-schedule.glade.h:14
-msgid "Change User"
-msgstr "Změnit uživatele"
-
-#: ../src/gnome-schedule.glade.h:15
-msgid "Change edit mode"
-msgstr "Změnit režim úprav"
-
-#: ../src/gnome-schedule.glade.h:16
 msgid "Choose template"
 msgstr "Vybrat šablonu"
 
+#: ../src/gnome-schedule.glade.h:2
+msgid "Create a new task from the selected template"
+msgstr "Vytvořit novou úlohu ze zvolené šablony"
+
+#: ../src/gnome-schedule.glade.h:3
+msgid "Manage templates"
+msgstr "Spravovat šablony"
+
+#: ../src/gnome-schedule.glade.h:4
+msgid "Create a new template."
+msgstr "Vytvořit novou šablonu."
+
+#: ../src/gnome-schedule.glade.h:5
+msgid "Edit the selected template"
+msgstr "Upravit zvolenou šablonu"
+
+#: ../src/gnome-schedule.glade.h:6
+msgid "Delete the selected template"
+msgstr "Odstranit zvolenou šablonu"
+
+#: ../src/gnome-schedule.glade.h:7
+msgid "Task description:"
+msgstr "Popis úlohy:"
+
+#: ../src/gnome-schedule.glade.h:8 ../src/mainWindow.py:73
+#: ../src/examples/dump.py:57
+msgid "X application"
+msgstr "Aplikace pro X"
+
+#. This comes before the time and date input boxes in the One-time task editor
+#: ../src/gnome-schedule.glade.h:10
+msgid "Execute at:"
+msgstr "Spustit v:"
+
+#: ../src/gnome-schedule.glade.h:11
+msgid "Date:"
+msgstr "Datum:"
+
+#: ../src/gnome-schedule.glade.h:12
+msgid "Time:"
+msgstr "Čas:"
+
+#: ../src/gnome-schedule.glade.h:13
+msgid ":"
+msgstr ":"
+
+#: ../src/gnome-schedule.glade.h:14
+msgid "Task:"
+msgstr "Úloha:"
+
+#: ../src/gnome-schedule.glade.h:15
+msgid "Add as template"
+msgstr "Přidat jako šablonu"
+
+#: ../src/gnome-schedule.glade.h:16
+msgid "Edit a periodical task"
+msgstr "Upravit opakující se úlohu"
+
 #: ../src/gnome-schedule.glade.h:17
-msgid "Choose the user whose tasks you want to modify"
-msgstr "Zvolte uživatele, jehož úlohy chcete upravit"
+msgid "ls -l"
+msgstr "ls -l"
 
 #: ../src/gnome-schedule.glade.h:18 ../src/template.py:198
 #: ../src/template.py:212
@@ -511,55 +516,90 @@ msgid "Command:"
 msgstr "Příkaz:"
 
 #: ../src/gnome-schedule.glade.h:19
-msgid "Configure Scheduled Tasks"
-msgstr "Nastavit plánované úlohy"
-
-#: ../src/gnome-schedule.glade.h:20
-msgid "Create a new task from the selected template"
-msgstr "Vytvořit novou úlohu ze zvolené šablony"
-
-#: ../src/gnome-schedule.glade.h:21
-msgid "Create a new template."
-msgstr "Vytvořit novou šablonu."
-
-#: ../src/gnome-schedule.glade.h:22
-msgid "Date:"
-msgstr "Datum:"
-
-#: ../src/gnome-schedule.glade.h:24
-msgid "Delete a scheduled task"
-msgstr "Odstranit plánovanou úlohu"
-
-#: ../src/gnome-schedule.glade.h:25
-msgid "Delete the selected template"
-msgstr "Odstranit zvolenou šablonu"
-
-#: ../src/gnome-schedule.glade.h:26
 msgid "Description:"
 msgstr "Popis:"
 
-#: ../src/gnome-schedule.glade.h:27
-msgid "Edit a periodical task"
-msgstr "Upravit opakující se úlohu"
+#: ../src/gnome-schedule.glade.h:20
+msgid "<big>Time &amp; Date</big>"
+msgstr "<big>Čas a datum</big>"
 
-#: ../src/gnome-schedule.glade.h:28
-msgid "Edit a scheduled task"
-msgstr "Upravit plánovanou úlohu"
+#: ../src/gnome-schedule.glade.h:22
+msgid "Advanced"
+msgstr "Pokročilé"
 
-#: ../src/gnome-schedule.glade.h:29
-msgid "Edit the selected template"
-msgstr "Upravit zvolenou šablonu"
+#: ../src/gnome-schedule.glade.h:24
+msgid "0"
+msgstr "0"
 
-#. This comes before the time and date input boxes in the One-time task editor
+#: ../src/gnome-schedule.glade.h:25
+msgid "*"
+msgstr "*"
+
+#: ../src/gnome-schedule.glade.h:31
+msgid "<big>Preview</big>"
+msgstr "<big>Náhled</big>"
+
+#: ../src/gnome-schedule.glade.h:32
+msgid "Change User"
+msgstr "Změnit uživatele"
+
 #: ../src/gnome-schedule.glade.h:33
-msgid "Execute at:"
-msgstr "Spustit v:"
+msgid "<b>Choose the user whose tasks you want to modify</b>"
+msgstr "<b>Zvolte uživatele, jehož úlohy chcete upravit</b>"
 
 #: ../src/gnome-schedule.glade.h:34
+msgid "_User:"
+msgstr "_Uživatel:"
+
+#: ../src/gnome-schedule.glade.h:35
+msgid "Add a Scheduled Task"
+msgstr "Přidání plánované úlohy"
+
+#: ../src/gnome-schedule.glade.h:36
+msgid "<b>Select the type of the scheduled task:</b>"
+msgstr "<b>Zvolte typ plánované úlohy:</b>"
+
+#: ../src/gnome-schedule.glade.h:37
+msgid "Time expression help"
+msgstr "Nápověda o výrazech času"
+
+#: ../src/gnome-schedule.glade.h:38
+msgid "Expression:"
+msgstr "Výraz:"
+
+#: ../src/gnome-schedule.glade.h:39
+msgid "To:"
+msgstr "Do:"
+
+#: ../src/gnome-schedule.glade.h:40
+msgid "From:"
+msgstr "Od:"
+
+#: ../src/gnome-schedule.glade.h:42
+msgid "Other"
+msgstr "Jiné"
+
+#: ../src/gnome-schedule.glade.h:43
+msgid "See \"man 5 crontab\" for information about the crontab format."
+msgstr "Více informací o formátu crontab naleznete v „man 5 crontab“."
+
+#: ../src/gnome-schedule.glade.h:45
 msgid "Execution at a specific minute, hour, day, weekday or month."
 msgstr "Spouštění v určitou minutu, hodinu, den, den v týdnu nebo měsíc."
 
-#: ../src/gnome-schedule.glade.h:35
+#: ../src/gnome-schedule.glade.h:46
+msgid "In a range"
+msgstr "V rozsahu"
+
+#: ../src/gnome-schedule.glade.h:47
+msgid "Execution in a range."
+msgstr "Spouštění v rozsahu."
+
+#: ../src/gnome-schedule.glade.h:49
+msgid "Execution at every minute, hour, day, weekday or month."
+msgstr "Spouštění každou minutu, hodinu, den, den v týdnu nebo měsíc."
+
+#: ../src/gnome-schedule.glade.h:51
 msgid ""
 "Execution at a step width. For example every five minutes, hours, days, "
 "weekdays or months."
@@ -567,90 +607,49 @@ msgstr ""
 "Spouštění s pravidelným intervalem. Například každých pět minut, hodin, dnů, "
 "dnů v týdnu nebo měsíců."
 
-#: ../src/gnome-schedule.glade.h:36
-msgid "Execution at every minute, hour, day, weekday or month."
-msgstr "Spouštění každou minutu, hodinu, den, den v týdnu nebo měsíc."
+#: ../src/gnome-schedule.glade.h:52
+msgid "Configure Scheduled Tasks"
+msgstr "Nastavit plánované úlohy"
 
-#: ../src/gnome-schedule.glade.h:37
-msgid "Execution in a range."
-msgstr "Spouštění v rozsahu."
+#: ../src/gnome-schedule.glade.h:53
+msgid "Edit a scheduled task"
+msgstr "Upravit plánovanou úlohu"
 
-#: ../src/gnome-schedule.glade.h:38
-msgid "Expression:"
-msgstr "Výraz:"
+#: ../src/gnome-schedule.glade.h:54
+msgid "Delete a scheduled task"
+msgstr "Odstranit plánovanou úlohu"
 
-#: ../src/gnome-schedule.glade.h:39
-msgid "From:"
-msgstr "Od:"
-
-#: ../src/gnome-schedule.glade.h:41
-msgid "In a range"
-msgstr "V rozsahu"
-
-#: ../src/gnome-schedule.glade.h:43
-msgid "Manage templates"
-msgstr "Spravovat šablony"
-
-#: ../src/gnome-schedule.glade.h:47
-msgid "Other"
-msgstr "Jiné"
-
-#: ../src/gnome-schedule.glade.h:48
+#: ../src/gnome-schedule.glade.h:55
 msgid "Run selected task"
 msgstr "Spustit zvolenou úlohu"
 
-#: ../src/gnome-schedule.glade.h:49
+#: ../src/gnome-schedule.glade.h:56
 msgid "Run task"
 msgstr "Spustit úlohu"
 
-#: ../src/gnome-schedule.glade.h:50
-msgid "Scheduled and active tasks"
-msgstr "Plánované a aktiní úlohy"
-
-#: ../src/gnome-schedule.glade.h:51
-msgid "See \"man 5 crontab\" for information about the crontab format."
-msgstr "Více informací o formátu crontab naleznete v „man 5 crontab“."
-
-#: ../src/gnome-schedule.glade.h:52
-msgid "Show help"
-msgstr "Zobrazit nápovědu"
-
-#: ../src/gnome-schedule.glade.h:53
-msgid "Task description:"
-msgstr "Popis úlohy:"
-
-#: ../src/gnome-schedule.glade.h:54
-msgid "Task:"
-msgstr "Úloha:"
-
-#: ../src/gnome-schedule.glade.h:55
+#: ../src/gnome-schedule.glade.h:57
 msgid "Templates"
 msgstr "Šablony"
 
-#: ../src/gnome-schedule.glade.h:56
-msgid "Time expression help"
-msgstr "Nápověda o výrazech času"
-
-#: ../src/gnome-schedule.glade.h:57
-msgid "Time:"
-msgstr "Čas:"
-
 #: ../src/gnome-schedule.glade.h:58
-msgid "To:"
-msgstr "Do:"
+msgid "Change edit mode"
+msgstr "Změnit režim úprav"
 
-#: ../src/gnome-schedule.glade.h:60 ../src/mainWindow.py:73
-#: ../src/examples/dump.py:57
-msgid "X application"
-msgstr "Aplikace pro X"
+#: ../src/gnome-schedule.glade.h:59
+msgid "Choose the user whose tasks you want to modify"
+msgstr "Zvolte uživatele, jehož úlohy chcete upravit"
+
+#: ../src/gnome-schedule.glade.h:60
+msgid "Show help"
+msgstr "Zobrazit nápovědu"
 
 #: ../src/gnome-schedule.glade.h:61
-msgid "_User:"
-msgstr "_Uživatel:"
+msgid "About Gnome-schedule"
+msgstr "O Gnome Schedule"
 
 #: ../src/gnome-schedule.glade.h:62
-msgid "ls -l"
-msgstr "ls -l"
+msgid "Scheduled and active tasks"
+msgstr "Plánované a aktiní úlohy"
 
 #: ../src/gnome-schedule.py:66 ../src/scheduleapplet.py:67
 #: ../src/xwrapper.py:51

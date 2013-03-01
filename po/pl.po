@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-11-27 21:18+0100\n"
+"POT-Creation-Date: 2013-03-01 17:05+0100\n"
 "PO-Revision-Date: 2011-11-27 21:19+0100\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <gnomepl@aviary.pl>\n"
@@ -22,20 +22,20 @@ msgstr ""
 "X-Poedit-Country: Poland\n"
 
 #: ../desktop/gnome-schedule.desktop.in.in.h:1
-msgid "Manage your system tasks"
-msgstr "Zarządzanie zadaniami systemowymi"
-
-#: ../desktop/gnome-schedule.desktop.in.in.h:2
 msgid "Scheduled tasks"
 msgstr "Zaplanowane zadania"
 
-#: ../servers/GNOME_GnomeSchedule.server.in.in.h:1
-msgid "Configures your scheduled tasks"
-msgstr "Konfiguracja zaplanowanych zadań"
+#: ../desktop/gnome-schedule.desktop.in.in.h:2
+msgid "Manage your system tasks"
+msgstr "Zarządzanie zadaniami systemowymi"
 
-#: ../servers/GNOME_GnomeSchedule.server.in.in.h:2
+#: ../servers/GNOME_GnomeSchedule.server.in.in.h:1
 msgid "Gnome schedule"
 msgstr "Terminarz GNOME"
+
+#: ../servers/GNOME_GnomeSchedule.server.in.in.h:2
+msgid "Configures your scheduled tasks"
+msgstr "Konfiguracja zaplanowanych zadań"
 
 #: ../servers/GNOME_GnomeSchedule.server.in.in.h:3
 msgid "System tools"
@@ -102,7 +102,7 @@ msgstr "Miesiąc"
 msgid "Weekday"
 msgstr "Dzień tygodnia"
 
-#: ../src/crontab.py:192 ../src/gnome-schedule.glade.h:13
+#: ../src/crontab.py:192 ../src/gnome-schedule.glade.h:23
 msgid "Basic"
 msgstr "Podstawowe"
 
@@ -158,12 +158,12 @@ msgstr ""
 "błędu w pliku crontab."
 
 #: ../src/crontabEditor.py:69 ../src/crontabEditorHelper.py:87
-#: ../src/gnome-schedule.glade.h:31
+#: ../src/gnome-schedule.glade.h:48
 msgid "Every minute"
 msgstr "Co minutę"
 
 #: ../src/crontabEditor.py:70 ../src/crontabEditorHelper.py:93
-#: ../src/gnome-schedule.glade.h:30
+#: ../src/gnome-schedule.glade.h:21
 msgid "Every hour"
 msgstr "Co godzinę"
 
@@ -271,11 +271,11 @@ msgid "This is invalid. Reason: %s"
 msgstr "To jest nieprawidłowe: Przyczyna: %s"
 
 #. minute
-#: ../src/crontabEditorHelper.py:231 ../src/gnome-schedule.glade.h:12
+#: ../src/crontabEditorHelper.py:231 ../src/gnome-schedule.glade.h:44
 msgid "At an exact minute"
 msgstr "O dokładnej minucie"
 
-#: ../src/crontabEditorHelper.py:232 ../src/gnome-schedule.glade.h:44
+#: ../src/crontabEditorHelper.py:232 ../src/gnome-schedule.glade.h:28
 msgid "Minute:"
 msgstr "Minuta:"
 
@@ -284,7 +284,7 @@ msgstr "Minuta:"
 msgid "At an exact hour"
 msgstr "O dokładnej godzinie"
 
-#: ../src/crontabEditorHelper.py:236 ../src/gnome-schedule.glade.h:40
+#: ../src/crontabEditorHelper.py:236 ../src/gnome-schedule.glade.h:27
 msgid "Hour:"
 msgstr "Godzina:"
 
@@ -293,7 +293,7 @@ msgstr "Godzina:"
 msgid "On a day"
 msgstr "Danego dnia"
 
-#: ../src/crontabEditorHelper.py:240 ../src/gnome-schedule.glade.h:23
+#: ../src/crontabEditorHelper.py:240 ../src/gnome-schedule.glade.h:26
 msgid "Day:"
 msgstr "Dzień:"
 
@@ -302,7 +302,7 @@ msgstr "Dzień:"
 msgid "In a month"
 msgstr "W miesiącu"
 
-#: ../src/crontabEditorHelper.py:244 ../src/gnome-schedule.glade.h:46
+#: ../src/crontabEditorHelper.py:244 ../src/gnome-schedule.glade.h:29
 msgid "Month:"
 msgstr "Miesiąc:"
 
@@ -311,15 +311,15 @@ msgstr "Miesiąc:"
 msgid "On a weekday"
 msgstr "Danego dnia tygodnia"
 
-#: ../src/crontabEditorHelper.py:248 ../src/gnome-schedule.glade.h:59
+#: ../src/crontabEditorHelper.py:248 ../src/gnome-schedule.glade.h:30
 msgid "Weekday:"
 msgstr "Dzień tygodnia:"
 
-#: ../src/crontabEditorHelper.py:253 ../src/gnome-schedule.glade.h:42
+#: ../src/crontabEditorHelper.py:253 ../src/gnome-schedule.glade.h:50
 msgid "In a step width"
 msgstr "Między podanym czasem"
 
-#: ../src/crontabEditorHelper.py:255 ../src/gnome-schedule.glade.h:45
+#: ../src/crontabEditorHelper.py:255 ../src/gnome-schedule.glade.h:41
 msgid "Minutes:"
 msgstr "Minuty:"
 
@@ -340,8 +340,8 @@ msgid "Weekdays:"
 msgstr "Dni tygodnia:"
 
 #: ../src/gnome-schedule-applet.xml.h:1
-msgid "A_bout"
-msgstr "_O programie"
+msgid "_Manage tasks"
+msgstr "_Zarządzaj zadaniami"
 
 #: ../src/gnome-schedule-applet.xml.h:2
 msgid "_Add a task"
@@ -352,8 +352,8 @@ msgid "_Help"
 msgstr "Pomo_c"
 
 #: ../src/gnome-schedule-applet.xml.h:4
-msgid "_Manage tasks"
-msgstr "_Zarządzaj zadaniami"
+msgid "A_bout"
+msgstr "_O programie"
 
 #: ../src/gnome-schedule-export.py:45
 msgid "Gnome Schedule: Export tasks"
@@ -446,64 +446,70 @@ msgstr[1] "Ukończono, zaimportowano: %d zadania."
 msgstr[2] "Ukończono, zaimportowano: %d zadań."
 
 #: ../src/gnome-schedule.glade.h:1
-msgid "*"
-msgstr "*"
-
-#: ../src/gnome-schedule.glade.h:2
-msgid "0"
-msgstr "0"
-
-#: ../src/gnome-schedule.glade.h:3
-msgid ":"
-msgstr ":"
-
-#: ../src/gnome-schedule.glade.h:4
-msgid "<b>Choose the user whose tasks you want to modify</b>"
-msgstr "<b>Proszę wybrać użytkownika, którego zadania modyfikować</b>"
-
-#: ../src/gnome-schedule.glade.h:5
-msgid "<b>Select the type of the scheduled task:</b>"
-msgstr "<b>Proszę wybrać typ zaplanowanego zadania:</b>"
-
-#: ../src/gnome-schedule.glade.h:6
-msgid "<big>Preview</big>"
-msgstr "<b>Podgląd</b>"
-
-#: ../src/gnome-schedule.glade.h:7
-msgid "<big>Time &amp; Date</big>"
-msgstr "<big>Czas i data</big>"
-
-#: ../src/gnome-schedule.glade.h:8
-msgid "About Gnome-schedule"
-msgstr "O programie Terminarz GNOME"
-
-#: ../src/gnome-schedule.glade.h:9
-msgid "Add a Scheduled Task"
-msgstr "Dodaj zaplanowane zadanie"
-
-#: ../src/gnome-schedule.glade.h:10
-msgid "Add as template"
-msgstr "Dodaj jako szablon"
-
-#: ../src/gnome-schedule.glade.h:11
-msgid "Advanced"
-msgstr "Zaawansowane"
-
-#: ../src/gnome-schedule.glade.h:14
-msgid "Change User"
-msgstr "Zmień użytkownika"
-
-#: ../src/gnome-schedule.glade.h:15
-msgid "Change edit mode"
-msgstr "Zmień tryb modyfikowania"
-
-#: ../src/gnome-schedule.glade.h:16
 msgid "Choose template"
 msgstr "Wybierz szablon"
 
+#: ../src/gnome-schedule.glade.h:2
+msgid "Create a new task from the selected template"
+msgstr "Tworzy nowe zadanie z zaznaczonego szablonu"
+
+#: ../src/gnome-schedule.glade.h:3
+msgid "Manage templates"
+msgstr "Zarządzaj szablonami"
+
+#: ../src/gnome-schedule.glade.h:4
+msgid "Create a new template."
+msgstr "Tworzy nowy szablon."
+
+#: ../src/gnome-schedule.glade.h:5
+msgid "Edit the selected template"
+msgstr "Modyfikuj zaznaczony szablon"
+
+#: ../src/gnome-schedule.glade.h:6
+msgid "Delete the selected template"
+msgstr "Usuń zaznaczony szablon"
+
+#: ../src/gnome-schedule.glade.h:7
+msgid "Task description:"
+msgstr "Opis zadania:"
+
+#: ../src/gnome-schedule.glade.h:8 ../src/mainWindow.py:73
+#: ../src/examples/dump.py:57
+msgid "X application"
+msgstr "Program X"
+
+#. This comes before the time and date input boxes in the One-time task editor
+#: ../src/gnome-schedule.glade.h:10
+msgid "Execute at:"
+msgstr "Wykonanie o:"
+
+#: ../src/gnome-schedule.glade.h:11
+msgid "Date:"
+msgstr "Data:"
+
+#: ../src/gnome-schedule.glade.h:12
+msgid "Time:"
+msgstr "Czas:"
+
+#: ../src/gnome-schedule.glade.h:13
+msgid ":"
+msgstr ":"
+
+#: ../src/gnome-schedule.glade.h:14
+msgid "Task:"
+msgstr "Zadanie:"
+
+#: ../src/gnome-schedule.glade.h:15
+msgid "Add as template"
+msgstr "Dodaj jako szablon"
+
+#: ../src/gnome-schedule.glade.h:16
+msgid "Edit a periodical task"
+msgstr "Modyfikuj zadanie okresowe"
+
 #: ../src/gnome-schedule.glade.h:17
-msgid "Choose the user whose tasks you want to modify"
-msgstr "Proszę wybrać użytkownika, którego zadania modyfikować"
+msgid "ls -l"
+msgstr "ls -l"
 
 #: ../src/gnome-schedule.glade.h:18 ../src/template.py:198
 #: ../src/template.py:212
@@ -511,56 +517,93 @@ msgid "Command:"
 msgstr "Polecenie:"
 
 #: ../src/gnome-schedule.glade.h:19
-msgid "Configure Scheduled Tasks"
-msgstr "Skonfiguruj zaplanowane zadania"
-
-#: ../src/gnome-schedule.glade.h:20
-msgid "Create a new task from the selected template"
-msgstr "Tworzy nowe zadanie z zaznaczonego szablonu"
-
-#: ../src/gnome-schedule.glade.h:21
-msgid "Create a new template."
-msgstr "Tworzy nowy szablon."
-
-#: ../src/gnome-schedule.glade.h:22
-msgid "Date:"
-msgstr "Data:"
-
-#: ../src/gnome-schedule.glade.h:24
-msgid "Delete a scheduled task"
-msgstr "Usuń zaplanowane zdanie"
-
-#: ../src/gnome-schedule.glade.h:25
-msgid "Delete the selected template"
-msgstr "Usuń zaznaczony szablon"
-
-#: ../src/gnome-schedule.glade.h:26
 msgid "Description:"
 msgstr "Opis:"
 
-#: ../src/gnome-schedule.glade.h:27
-msgid "Edit a periodical task"
-msgstr "Modyfikuj zadanie okresowe"
+#: ../src/gnome-schedule.glade.h:20
+msgid "<big>Time &amp; Date</big>"
+msgstr "<big>Czas i data</big>"
 
-#: ../src/gnome-schedule.glade.h:28
-msgid "Edit a scheduled task"
-msgstr "Modyfikuj zaplanowane zadanie"
+#: ../src/gnome-schedule.glade.h:22
+msgid "Advanced"
+msgstr "Zaawansowane"
 
-#: ../src/gnome-schedule.glade.h:29
-msgid "Edit the selected template"
-msgstr "Modyfikuj zaznaczony szablon"
+#: ../src/gnome-schedule.glade.h:24
+msgid "0"
+msgstr "0"
 
-#. This comes before the time and date input boxes in the One-time task editor
+#: ../src/gnome-schedule.glade.h:25
+msgid "*"
+msgstr "*"
+
+#: ../src/gnome-schedule.glade.h:31
+msgid "<big>Preview</big>"
+msgstr "<b>Podgląd</b>"
+
+#: ../src/gnome-schedule.glade.h:32
+msgid "Change User"
+msgstr "Zmień użytkownika"
+
 #: ../src/gnome-schedule.glade.h:33
-msgid "Execute at:"
-msgstr "Wykonanie o:"
+msgid "<b>Choose the user whose tasks you want to modify</b>"
+msgstr "<b>Proszę wybrać użytkownika, którego zadania modyfikować</b>"
 
 #: ../src/gnome-schedule.glade.h:34
+msgid "_User:"
+msgstr "_Użytkownik:"
+
+#: ../src/gnome-schedule.glade.h:35
+msgid "Add a Scheduled Task"
+msgstr "Dodaj zaplanowane zadanie"
+
+#: ../src/gnome-schedule.glade.h:36
+msgid "<b>Select the type of the scheduled task:</b>"
+msgstr "<b>Proszę wybrać typ zaplanowanego zadania:</b>"
+
+#: ../src/gnome-schedule.glade.h:37
+msgid "Time expression help"
+msgstr "Pomoc wyrażeń czasu"
+
+#: ../src/gnome-schedule.glade.h:38
+msgid "Expression:"
+msgstr "Wyrażenie:"
+
+#: ../src/gnome-schedule.glade.h:39
+msgid "To:"
+msgstr "Do:"
+
+#: ../src/gnome-schedule.glade.h:40
+msgid "From:"
+msgstr "Od:"
+
+#: ../src/gnome-schedule.glade.h:42
+msgid "Other"
+msgstr "Inne"
+
+#: ../src/gnome-schedule.glade.h:43
+msgid "See \"man 5 crontab\" for information about the crontab format."
+msgstr ""
+"Proszę zobaczyć \"man 5 crontab\", aby dowiedzieć się więcej o formacie "
+"crontab."
+
+#: ../src/gnome-schedule.glade.h:45
 msgid "Execution at a specific minute, hour, day, weekday or month."
 msgstr ""
 "Wykonanie o podanej minucie, godzinie, dniu, dniu tygodnia lub miesiącu."
 
-#: ../src/gnome-schedule.glade.h:35
+#: ../src/gnome-schedule.glade.h:46
+msgid "In a range"
+msgstr "W zakresie"
+
+#: ../src/gnome-schedule.glade.h:47
+msgid "Execution in a range."
+msgstr "Wykonanie w zakresie."
+
+#: ../src/gnome-schedule.glade.h:49
+msgid "Execution at every minute, hour, day, weekday or month."
+msgstr "Wykonanie co minutę, godzinę, dzień, dzień tygodnia lub miesiąc."
+
+#: ../src/gnome-schedule.glade.h:51
 msgid ""
 "Execution at a step width. For example every five minutes, hours, days, "
 "weekdays or months."
@@ -568,92 +611,49 @@ msgstr ""
 "Wykonanie między podanym czasem. Na przykład co pięć minut, godzin, dni, dni "
 "tygodnia lub miesięcy."
 
-#: ../src/gnome-schedule.glade.h:36
-msgid "Execution at every minute, hour, day, weekday or month."
-msgstr "Wykonanie co minutę, godzinę, dzień, dzień tygodnia lub miesiąc."
+#: ../src/gnome-schedule.glade.h:52
+msgid "Configure Scheduled Tasks"
+msgstr "Skonfiguruj zaplanowane zadania"
 
-#: ../src/gnome-schedule.glade.h:37
-msgid "Execution in a range."
-msgstr "Wykonanie w zakresie."
+#: ../src/gnome-schedule.glade.h:53
+msgid "Edit a scheduled task"
+msgstr "Modyfikuj zaplanowane zadanie"
 
-#: ../src/gnome-schedule.glade.h:38
-msgid "Expression:"
-msgstr "Wyrażenie:"
+#: ../src/gnome-schedule.glade.h:54
+msgid "Delete a scheduled task"
+msgstr "Usuń zaplanowane zdanie"
 
-#: ../src/gnome-schedule.glade.h:39
-msgid "From:"
-msgstr "Od:"
-
-#: ../src/gnome-schedule.glade.h:41
-msgid "In a range"
-msgstr "W zakresie"
-
-#: ../src/gnome-schedule.glade.h:43
-msgid "Manage templates"
-msgstr "Zarządzaj szablonami"
-
-#: ../src/gnome-schedule.glade.h:47
-msgid "Other"
-msgstr "Inne"
-
-#: ../src/gnome-schedule.glade.h:48
+#: ../src/gnome-schedule.glade.h:55
 msgid "Run selected task"
 msgstr "Uruchom zaznaczone zadanie"
 
-#: ../src/gnome-schedule.glade.h:49
+#: ../src/gnome-schedule.glade.h:56
 msgid "Run task"
 msgstr "Uruchom zadanie"
 
-#: ../src/gnome-schedule.glade.h:50
-msgid "Scheduled and active tasks"
-msgstr "Zaplanowane i aktywne zadania"
-
-#: ../src/gnome-schedule.glade.h:51
-msgid "See \"man 5 crontab\" for information about the crontab format."
-msgstr ""
-"Proszę zobaczyć \"man 5 crontab\", aby dowiedzieć się więcej o formacie "
-"crontab."
-
-#: ../src/gnome-schedule.glade.h:52
-msgid "Show help"
-msgstr "Wyświetl pomoc"
-
-#: ../src/gnome-schedule.glade.h:53
-msgid "Task description:"
-msgstr "Opis zadania:"
-
-#: ../src/gnome-schedule.glade.h:54
-msgid "Task:"
-msgstr "Zadanie:"
-
-#: ../src/gnome-schedule.glade.h:55
+#: ../src/gnome-schedule.glade.h:57
 msgid "Templates"
 msgstr "Szablony"
 
-#: ../src/gnome-schedule.glade.h:56
-msgid "Time expression help"
-msgstr "Pomoc wyrażeń czasu"
-
-#: ../src/gnome-schedule.glade.h:57
-msgid "Time:"
-msgstr "Czas:"
-
 #: ../src/gnome-schedule.glade.h:58
-msgid "To:"
-msgstr "Do:"
+msgid "Change edit mode"
+msgstr "Zmień tryb modyfikowania"
 
-#: ../src/gnome-schedule.glade.h:60 ../src/mainWindow.py:73
-#: ../src/examples/dump.py:57
-msgid "X application"
-msgstr "Program X"
+#: ../src/gnome-schedule.glade.h:59
+msgid "Choose the user whose tasks you want to modify"
+msgstr "Proszę wybrać użytkownika, którego zadania modyfikować"
+
+#: ../src/gnome-schedule.glade.h:60
+msgid "Show help"
+msgstr "Wyświetl pomoc"
 
 #: ../src/gnome-schedule.glade.h:61
-msgid "_User:"
-msgstr "_Użytkownik:"
+msgid "About Gnome-schedule"
+msgstr "O programie Terminarz GNOME"
 
 #: ../src/gnome-schedule.glade.h:62
-msgid "ls -l"
-msgstr "ls -l"
+msgid "Scheduled and active tasks"
+msgstr "Zaplanowane i aktywne zadania"
 
 #: ../src/gnome-schedule.py:66 ../src/scheduleapplet.py:67
 #: ../src/xwrapper.py:51
