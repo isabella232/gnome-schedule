@@ -43,7 +43,10 @@ DISTCLEANFILES = \
 	gnome-schedule.gladep
 
 EXTRA_DIST =  \
+	examples/dump.py \
+	examples/surerun.sh \
 	$(bin_SCRIPTS) \
 	$(gnomeschedule_PYTHON) \
-	$(ui_DATA)
+	gnome-schedule.glade \
+	gnome-schedule-applet.xml
 
