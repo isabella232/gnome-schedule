@@ -753,14 +753,14 @@ class main:
         dlg.set_title (_("About Gnome Schedule"))
         dlg.set_name (_("Gnome Schedule"))
         dlg.set_version (config.getVersion())
-        dlg.set_copyright (_("Copyright (c) %(year)s %(name)s.") % ({ 'year' : "2004-2011", 'name' : "Gaute Hope"}))
+        dlg.set_copyright (_("Copyright (c) %(year)s %(name)s.") % ({ 'year' : "2004-2013", 'name' : "Gaute Hope"}))
         #dlg.set_comments ()
         #dlg.set_license ()
         dlg.set_website ("http://gnome-schedule.sourceforge.net")
         dlg.set_website_label("http://gnome-schedule.sourceforge.net")
         dlg.set_authors (
             ["Gaute Hope <eg@gaute.vetsj.com>",
-                         "Philip Van Hoof <pvanhoof at gnome dot org>",
+             "Philip Van Hoof <pvanhoof at gnome dot org>",
              "Kristof Vansant <de_lupus at pandora dot be>"]
             )
         dlg.set_documenters (
