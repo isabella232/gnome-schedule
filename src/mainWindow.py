@@ -22,7 +22,6 @@ import gtk
 import gtk.glade
 import gobject
 
-
 #python modules
 import os
 import pwd
@@ -714,7 +713,29 @@ class main:
             # unset POSIXLY_CORRECT if manually set, bug 612459
             if self.manual_poscorrect: os.unsetenv ('POSIXLY_CORRECT')
 
-            subprocess.Popen('gnome-terminal --working-directory="' + self.user_home_dir + '" -e "' + execute + '"', shell=True)
+            # get terminal and exec params
+            terminal = None
+            terminalparam = None
+            try:
+              tex = ['gsettings', 'get', 'org.gnome.desktop.default-applications.terminal', 'exec']
+              terminal = subprocess.check_output (tex)
+
+              tex = ['gsettings', 'get', 'org.gnome.desktop.default-applications.terminal', 'exec-arg']
+              terminalparam = subprocess.check_output (tex)
+            except Exception, ex:
+              terminal = None
+              terminalparam = None
+
+              print ex
+              self.dialog = gtk.MessageDialog(self.widget, gtk.DIALOG_MODAL|gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_ERROR, gtk.BUTTONS_OK, _("No default graphical terminal for GNOME could be found."))
+              self.dialog.run ()
+              self.dialog.destroy ()
+
+              return
+
+
+            tex = terminal.strip () + ' ' + terminalparam.strip () + ' ' + execute
+            subprocess.Popen(tex, cwd = self.user_home_dir, shell=True)
 
             if self.manual_poscorrect: os.putenv ('POSIXLY_CORRECT', 'enabled')
 
