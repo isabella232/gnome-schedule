@@ -58,9 +58,6 @@ except:
 try:
   import gtk
   import gtk.glade
-  # TODO: Gnome specific
-  import gnome
-  import gnome.ui
 
 except:
   print _("You need to install pyGTK or GTKv2,\n"
@@ -68,8 +65,5 @@ except:
           "try: export PYTHONPATH= ")
   sys.exit(1)
 
-props = { gnome.PARAM_APP_DATADIR : config.getPrefix() + "/share" }
-pr = gnome.program_init ("gnome-schedule", config.getVersion(), properties=props)
-
-mainWindow = mainWindow.main(debug_flag, False, pr, manual_poscorrect)
+mainWindow = mainWindow.main(debug_flag, False, manual_poscorrect)
 

@@ -20,7 +20,6 @@
 #pygtk modules
 import gtk
 import gobject
-import gnome
 
 #python modules
 import os

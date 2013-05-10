@@ -58,8 +58,6 @@ try:
   import gtk
   import gtk.glade
   # TODO: Gnome specific
-  import gnome
-  import gnome.ui
   import gnomeapplet
   import gobject
 
@@ -69,13 +67,10 @@ except:
           "try: export PYTHONPATH= ")
   sys.exit(1)
 
-props = { gnome.PARAM_APP_DATADIR : config.getPrefix() + "/share"}
-pr = gnome.program_init ("gnome-schedule", config.getVersion(), properties=props)
-
 
 
 class ScheduleApplet(gnomeapplet.Applet):
-    def __init__(self, applet, iid, gprogram, debug_flag, manual_poscorrect):
+    def __init__(self, applet, iid, debug_flag, manual_poscorrect):
         self.__gobject_init__()
         self.debug_flag = debug_flag
         self.manual_poscorrect = manual_poscorrect
@@ -88,7 +83,6 @@ class ScheduleApplet(gnomeapplet.Applet):
 
 
         self.applet = applet
-        self.gprogram = gprogram
         self.__loadIcon__()
 
 
@@ -150,7 +144,7 @@ class ScheduleApplet(gnomeapplet.Applet):
     def show_main_window(self, *args):
         if self.main_loaded == False:
             self.main_loaded = True
-            self.main_window = mainWindow.main(None, True, self.gprogram, self.manual_poscorrect)
+            self.main_window = mainWindow.main(None, True, self.manual_poscorrect)
         else:
             self.main_window.widget.show ()
             self.main_window.schedule_reload()
@@ -179,7 +173,7 @@ gobject.type_register(ScheduleApplet)
 
 #factory
 def schedule_applet_factory(applet, iid):
-    ScheduleApplet(applet, iid, pr, debug_flag, manual_poscorrect)
+    ScheduleApplet(applet, iid, debug_flag, manual_poscorrect)
     return True
 
 gnomeapplet.bonobo_factory("OAFIID:GNOME_GnomeSchedule_Factory",

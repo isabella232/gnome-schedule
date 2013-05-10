@@ -22,15 +22,13 @@ import gtk
 import gtk.glade
 import gobject
 
-# gnome specific
-import gnome
-from gnome import url_show
 
 #python modules
 import os
 import pwd
 import tempfile
 import stat
+import subprocess
 
 #custom modules
 import config
@@ -52,10 +50,9 @@ gtk.glade.bindtextdomain(config.GETTEXT_PACKAGE(), config.GNOMELOCALEDIR())
 ## The MainWindow class
 ##
 class main:
-    def __init__(self, debug_flag=None, inapplet=False, gprogram = None, manual_poscorrect=False):
+    def __init__(self, debug_flag=None, inapplet=False, manual_poscorrect=False):
         self.debug_flag = debug_flag
         self.inapplet = inapplet
-        self.gprogram = gprogram
         self.manual_poscorrect = manual_poscorrect
 
         self.__loadIcon__()
@@ -646,7 +643,7 @@ class main:
 
     #about box
     def open_url (self, *args):
-        url_show("http://gnome-schedule.sourceforge.net")
+        gtk.show_uri(None, "http://gnome-schedule.sourceforge.net", 0)
 
 
 
@@ -717,7 +714,7 @@ class main:
             # unset POSIXLY_CORRECT if manually set, bug 612459
             if self.manual_poscorrect: os.unsetenv ('POSIXLY_CORRECT')
 
-            gnome.execute_terminal_shell (self.user_home_dir, execute)
+            subprocess.Popen('gnome-terminal --working-directory="' + self.user_home_dir + '" -e "' + execute + '"', shell=True)
 
             if self.manual_poscorrect: os.putenv ('POSIXLY_CORRECT', 'enabled')
 
@@ -761,9 +758,7 @@ class main:
     #open help
     def on_manual_menu_activate (self, *args):
         try:
-            gnome.help_display (
-                    'gnome-schedule',
-                    None)
+            gtk.show_uri(None, 'ghelp:gnome-schedule', 0)
         except gobject.GError, error:
             dialog = gtk.MessageDialog (
                     self.widget,
