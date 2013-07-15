@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-12 23:19+0200\n"
-"PO-Revision-Date: 2013-05-12 23:20+0200\n"
+"POT-Creation-Date: 2013-07-15 22:26+0200\n"
+"PO-Revision-Date: 2013-07-15 22:27+0200\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <gnomepl@aviary.pl>\n"
 "Language: pl\n"
@@ -460,8 +460,8 @@ msgid "Manage templates"
 msgstr "Zarządzaj szablonami"
 
 #: ../src/gnome-schedule.glade.h:4
-msgid "Create a new template."
-msgstr "Tworzy nowy szablon."
+msgid "Create a new template"
+msgstr "Tworzy nowy szablon"
 
 #: ../src/gnome-schedule.glade.h:5
 msgid "Edit the selected template"
