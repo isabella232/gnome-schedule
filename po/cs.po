@@ -29,7 +29,7 @@ msgstr "Naplánované úlohy"
 
 #: ../desktop/gnome-schedule.desktop.in.in.h:2
 msgid "Manage your system tasks"
-msgstr "Spravovat vaše systémové úlohy"
+msgstr "Spravovat své systémové úlohy"
 
 #: ../servers/GNOME_GnomeSchedule.server.in.in.h:1
 msgid "Gnome schedule"
@@ -48,7 +48,7 @@ msgid ""
 "Failed to create data dir! Make sure ~/.gnome and ~/.gnome/gnome-schedule "
 "are writable."
 msgstr ""
-"Selhalo vytvoření adresáře pro data! Ujistěte se, že je do ~/.gnome a ~/."
+"Selhalo vytvoření složky pro data! Ujistěte se, že je do ~/.gnome a ~/."
 "gnome/gnome-schedule povolen zápis."
 
 #: ../src/at.py:145 ../src/crontab.py:162
@@ -57,7 +57,7 @@ msgid ""
 "Failed to create data dir: %s. Make sure ~/.gnome and ~/.gnome/gnome-"
 "schedule are writable."
 msgstr ""
-"Selhalo vytvoření adresáře pro data: %s. Ujistěte se, že je do ~/.gnome a ~/."
+"Selhalo vytvoření složky pro data: %s. Ujistěte se, že je do ~/.gnome a ~/."
 "gnome/gnome-schedule povolen zápis."
 
 #: ../src/at.py:547
@@ -76,7 +76,7 @@ msgstr "Jednou"
 
 #: ../src/at.py:569
 msgid "Warning: a line in atq's output didn't parse:"
-msgstr "Varování: nelze analyzovat řádek ve výstupu atq:"
+msgstr "Varování: nelze zpracovat řádek ve výstupu atq:"
 
 #: ../src/at.py:624 ../src/crontab.py:288 ../src/crontab.py:334
 #: ../src/crontabEditor.py:274 ../src/atEditor.py:126 ../src/atEditor.py:522
@@ -230,9 +230,9 @@ msgid ""
 "\n"
 "Recurrent tasks will be run from the home directory."
 msgstr ""
-"Pornámka k pracovním adresářům spouštěných úloh:\n"
+"Pornámka k pracovním složkám spouštěných úloh:\n"
 "\n"
-"Opakované úlohy budou spouštěny z domovského adresáře."
+"Opakované úlohy budou spouštěny z domovské složky."
 
 #: ../src/crontabEditor.py:456 ../src/mainWindow.py:662 ../src/atEditor.py:596
 msgid "_Don't show again"
@@ -240,7 +240,7 @@ msgstr "_Příště již nezobrazovat"
 
 #: ../src/crontabEditor.py:457 ../src/mainWindow.py:663 ../src/atEditor.py:597
 msgid "Warning: Working directory of executed tasks"
-msgstr "Varování: Pracovní adresář spuštěných úloh"
+msgstr "Varování: Pracovní složka spuštěných úloh"
 
 #: ../src/crontabEditorHelper.py:111
 msgid "Every weekday"
@@ -1080,11 +1080,11 @@ msgid ""
 "directory where Gnome schedule was run from at the time of task creation "
 "(normally the home directory)."
 msgstr ""
-"Pornámka k pracovním adresářům spouštěných úloh:\n"
+"Pornámka k pracovním složkám spouštěných úloh:\n"
 "\n"
-"Opakované úlohy budou spouštěny z domovského adresáře, jednorázové úlohy z "
-"adresáře, ze kterého byla spuštěna aplikace Gnome Schedule v okamžiku "
-"vytvoření úlohy (obvykle domovský adresář)."
+"Opakované úlohy budou spouštěny z domovské složky, jednorázové úlohy ze "
+"složky, ze které byla spuštěna aplikace Gnome Schedule v okamžiku "
+"vytvoření úlohy (obvykle domovská složka)."
 
 #: ../src/mainWindow.py:730
 msgid "No default graphical terminal for GNOME could be found."
@@ -1163,10 +1163,10 @@ msgid ""
 "One-time tasks will be run from the directory where Gnome schedule is run "
 "from (normally the home directory)."
 msgstr ""
-"Poznámka o pracovním adresáři spuštěných úloh:\n"
+"Poznámka o pracovní složce spuštěných úloh:\n"
 "\n"
-"Jednorázové úlohy budou spuštěny v adresáři, odkud byla spuštěna aplikace "
-"Gnome Schedule (obvykle domovský adresář)."
+"Jednorázové úlohy budou spuštěny ve složce, odkud byla spuštěna aplikace "
+"Gnome Schedule (obvykle domovská složka)."
 
 #: ../src/template.py:198 ../src/template.py:212
 msgid "Title:"
