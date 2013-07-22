@@ -15,8 +15,8 @@ msgstr ""
 "Project-Id-Version: gnome-schedule.HEAD\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "schedule&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-05-10 09:53+0000\n"
-"PO-Revision-Date: 2013-05-13 12:35+0200\n"
+"POT-Creation-Date: 2013-07-18 13:05+0000\n"
+"PO-Revision-Date: 2013-07-22 13:40+0200\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "Language: \n"
@@ -462,8 +462,9 @@ msgid "Manage templates"
 msgstr "Administrar plantillas"
 
 #: ../src/gnome-schedule.glade.h:4
-msgid "Create a new template."
-msgstr "Crear una plantilla nueva."
+#| msgid "Create a new template."
+msgid "Create a new template"
+msgstr "Crear una plantilla nueva"
 
 #: ../src/gnome-schedule.glade.h:5
 msgid "Edit the selected template"
