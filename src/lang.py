@@ -23,6 +23,8 @@
 # editor (and tested everything, haha)
 
 # python modules
+import inspect
+import sys
 import time
 import warnings
 warnings.filterwarnings("once", "Locale not supported by Python. Using the fallback 'C' locale.")
@@ -88,7 +90,7 @@ else:
 try:
     locale.setlocale(locale.LC_ALL, language)
 except:
-    warnings.warn_explicit("Locale not supported by Python. Using the fallback 'C' locale.", Warning, "lang.py", "68")
+    warnings.warn_explicit("Locale not supported by Python. Using the fallback 'C' locale.", Warning, "lang.py", sys.exc_info()[2].tb_frame.f_back.f_lineno)
 
 encoding = locale.getpreferredencoding(False)
 language = locale.getlocale()[0]
