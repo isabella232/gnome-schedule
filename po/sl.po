@@ -2,24 +2,25 @@
 # Copyright (C) 2006 Free Software Foundation, Inc.
 # This file is distributed under the same license as the gnome-schedule package.
 #
-# Matej Urbančič <mateju@svn.gnome.org>, 2006 - 2010.
+# Matej Urbančič <mateju@svn.gnome.org>, 2006 - 2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-schedule&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-05-10 09:53+0000\n"
-"PO-Revision-Date: 2013-05-13 16:11+0100\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"schedule&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2013-07-31 17:15+0000\n"
+"PO-Revision-Date: 2013-08-17 15:28+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
-"Language: \n"
+"Language: sl_SI\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n%100==4 ? 3 : 0);\n"
-"X-Poedit-Language: Slovenian\n"
-"X-Poedit-Country: SLOVENIA\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
+"%100==4 ? 3 : 0);\n"
 "X-Poedit-SourceCharset: utf-8\n"
+"X-Generator: Poedit 1.5.4\n"
 
 #: ../desktop/gnome-schedule.desktop.in.in.h:1
 msgid "Scheduled tasks"
@@ -41,16 +42,22 @@ msgstr "Nastavitve načrtovanih nalog"
 msgid "System tools"
 msgstr "Sistemska orodja"
 
-#: ../src/at.py:112
-#: ../src/crontab.py:62
-msgid "Failed to create data dir! Make sure ~/.gnome and ~/.gnome/gnome-schedule are writable."
-msgstr "Napaka med ustvarjanjem mape podatkov. Prepričajte se, da imata mapi ~/.gnome in ~/.gnome/gnome-schedule ustrezna dovoljenja za pisanje."
+#: ../src/at.py:112 ../src/crontab.py:62
+msgid ""
+"Failed to create data dir! Make sure ~/.gnome and ~/.gnome/gnome-schedule "
+"are writable."
+msgstr ""
+"Napaka med ustvarjanjem mape podatkov. Prepričajte se, da imata mapi ~/."
+"gnome in ~/.gnome/gnome-schedule ustrezna dovoljenja za pisanje."
 
-#: ../src/at.py:145
-#: ../src/crontab.py:162
+#: ../src/at.py:145 ../src/crontab.py:162
 #, python-format
-msgid "Failed to create data dir: %s. Make sure ~/.gnome and ~/.gnome/gnome-schedule are writable."
-msgstr "Napaka med ustvarjanjem mape podatkov: %s. Prepričajte se, da imata mapi ~/.gnome in ~/.gnome/gnome-schedule ustrezna dovoljenja za pisanje."
+msgid ""
+"Failed to create data dir: %s. Make sure ~/.gnome and ~/.gnome/gnome-"
+"schedule are writable."
+msgstr ""
+"Napaka med ustvarjanjem mape podatkov: %s. Prepričajte se, da imata mapi ~/."
+"gnome in ~/.gnome/gnome-schedule ustrezna dovoljenja za pisanje."
 
 #: ../src/at.py:547
 #, python-format
@@ -62,8 +69,7 @@ msgstr "Opozorilo! Neznana naloga: %(preview)s"
 msgid "On %(timestring)s"
 msgstr "Ob %(timestring)s"
 
-#: ../src/at.py:560
-#: ../src/at.py:565
+#: ../src/at.py:560 ../src/at.py:565
 msgid "Once"
 msgstr "Enkrat"
 
@@ -71,12 +77,8 @@ msgstr "Enkrat"
 msgid "Warning: a line in atq's output didn't parse:"
 msgstr "Opozorilo: vrstice v atq's odvodu ni mogoče razčleniti:"
 
-#: ../src/at.py:624
-#: ../src/crontab.py:288
-#: ../src/crontab.py:334
-#: ../src/crontabEditor.py:274
-#: ../src/atEditor.py:126
-#: ../src/atEditor.py:522
+#: ../src/at.py:624 ../src/crontab.py:288 ../src/crontab.py:334
+#: ../src/crontabEditor.py:274 ../src/atEditor.py:126 ../src/atEditor.py:522
 #: ../src/atEditor.py:548
 msgid "Untitled"
 msgstr "Brez naslova"
@@ -101,8 +103,7 @@ msgstr "Mesec"
 msgid "Weekday"
 msgstr "Dan v tednu"
 
-#: ../src/crontab.py:192
-#: ../src/gnome-schedule.glade.h:23
+#: ../src/crontab.py:192 ../src/gnome-schedule.glade.h:23
 msgid "Basic"
 msgstr "Osnovno"
 
@@ -111,9 +112,7 @@ msgstr "Osnovno"
 msgid "This is not a valid special record: %(record)s"
 msgstr "To ni veljaven zapis: %(record)s"
 
-#: ../src/crontab.py:220
-#: ../src/crontab.py:225
-#: ../src/crontab.py:229
+#: ../src/crontab.py:220 ../src/crontab.py:225 ../src/crontab.py:229
 #, python-format
 msgid "Must be between %(min)s and %(max)s"
 msgstr "Vrednost mora biti med %(min)s in %(max)s"
@@ -123,16 +122,12 @@ msgstr "Vrednost mora biti med %(min)s in %(max)s"
 msgid "%s is not a number"
 msgstr "%s ni število"
 
-#: ../src/crontab.py:455
-#: ../src/crontab.py:457
-#: ../src/template_chooser.py:106
+#: ../src/crontab.py:455 ../src/crontab.py:457 ../src/template_chooser.py:106
 #: ../src/template_manager.py:111
 msgid "Recurrent"
 msgstr "Ponavljajoče"
 
-#: ../src/crontab.py:455
-#: ../src/crontabEditor.py:73
-#: ../src/lang.py:168
+#: ../src/crontab.py:455 ../src/crontabEditor.py:73 ../src/lang.py:170
 msgid "At reboot"
 msgstr "Med ponovnim zagonom"
 
@@ -157,28 +152,27 @@ msgid "weekday"
 msgstr "dan v tednu"
 
 #: ../src/crontab.py:576
-msgid "Failed to parse the Day of Month field, possibly due to a bug in crontab."
-msgstr "Napaka med razčlenjevanjem polja dneva meseca; najverjetneje je to napaka crontab sistema."
+msgid ""
+"Failed to parse the Day of Month field, possibly due to a bug in crontab."
+msgstr ""
+"Napaka med razčlenjevanjem polja dneva meseca; najverjetneje je to napaka "
+"crontab sistema."
 
-#: ../src/crontabEditor.py:68
-#: ../src/crontabEditorHelper.py:87
+#: ../src/crontabEditor.py:68 ../src/crontabEditorHelper.py:87
 #: ../src/gnome-schedule.glade.h:48
 msgid "Every minute"
 msgstr "Vsako minuto"
 
-#: ../src/crontabEditor.py:69
-#: ../src/crontabEditorHelper.py:93
+#: ../src/crontabEditor.py:69 ../src/crontabEditorHelper.py:93
 #: ../src/gnome-schedule.glade.h:21
 msgid "Every hour"
 msgstr "Vsako uro"
 
-#: ../src/crontabEditor.py:70
-#: ../src/crontabEditorHelper.py:99
+#: ../src/crontabEditor.py:70 ../src/crontabEditorHelper.py:99
 msgid "Every day"
 msgstr "Vsak dan"
 
-#: ../src/crontabEditor.py:71
-#: ../src/crontabEditorHelper.py:105
+#: ../src/crontabEditor.py:71 ../src/crontabEditorHelper.py:105
 msgid "Every month"
 msgstr "Vsak mesec"
 
@@ -187,38 +181,46 @@ msgid "Every week"
 msgstr "Vsak teden"
 
 #. add new task
-#: ../src/crontabEditor.py:130
-#: ../src/crontabEditor.py:141
-#: ../src/atEditor.py:128
-#: ../src/atEditor.py:147
+#: ../src/crontabEditor.py:130 ../src/crontabEditor.py:141
+#: ../src/atEditor.py:128 ../src/atEditor.py:147
 msgid "Create a New Scheduled Task"
 msgstr "Ustvari novo načrtovano nalogo."
 
-#: ../src/crontabEditor.py:197
-#: ../src/atEditor.py:165
+#: ../src/crontabEditor.py:197 ../src/atEditor.py:165
 msgid "Edit template"
 msgstr "Uredi predlogo"
 
-#: ../src/crontabEditor.py:222
-#: ../src/atEditor.py:187
+#: ../src/crontabEditor.py:222 ../src/atEditor.py:187
 msgid "New template"
 msgstr "Nova predloga"
 
-#: ../src/crontabEditor.py:248
-#: ../src/atEditor.py:229
+#: ../src/crontabEditor.py:248 ../src/atEditor.py:229
 msgid "Edit a Scheduled Task"
 msgstr "Uredi načrtovano nalogo"
 
-#: ../src/crontabEditor.py:301
-#: ../src/crontabEditor.py:577
+#: ../src/crontabEditor.py:301 ../src/crontabEditor.py:577
 #: ../src/crontabEditor.py:617
 #, python-format
-msgid "This is an invalid record! The problem could be in the %(field)s field. Reason: %(reason)s"
-msgstr "Zapis je neveljaven! Težava je lahko v polju %(field)s. Vzrok: %(reason)s"
+msgid ""
+"This is an invalid record! The problem could be in the %(field)s field. "
+"Reason: %(reason)s"
+msgstr ""
+"Zapis je neveljaven! Težava je lahko v polju %(field)s. Vzrok: %(reason)s"
 
 #: ../src/crontabEditor.py:306
-msgid "Your command contains one or more of the character %, this is special for cron and cannot be used with Gnome-schedule because of the format it uses to store extra information on the crontab line. Please use the | redirector character to achieve the same functionality. Refer to the crontab manual for more information about the % character. If you don not want to use it for redirection it must be properly escaped with the \\ letter."
-msgstr "Ukaz vsebuje enega ali več znakov %. Znak je rezerviran za cron in ga ni mogoče uporabljati z Urnikom Gnome. Uporabite | preusmeritev za dosego enakega učinka. Za več podrobnosti o znaku % si poglejte priročnik za crontab. V kolikor znaka ne želite uporabiti za preusmeritev, mora biti znak pravilno opuščen z \\. Primer: \\ črka."
+msgid ""
+"Your command contains one or more of the character %, this is special for "
+"cron and cannot be used with Gnome-schedule because of the format it uses to "
+"store extra information on the crontab line. Please use the | redirector "
+"character to achieve the same functionality. Refer to the crontab manual for "
+"more information about the % character. If you don not want to use it for "
+"redirection it must be properly escaped with the \\ letter."
+msgstr ""
+"Ukaz vsebuje enega ali več znakov %. Znak je rezerviran za cron in ga ni "
+"mogoče uporabljati z Urnikom Gnome. Uporabite | preusmeritev za dosego "
+"enakega učinka. Za več podrobnosti o znaku % si poglejte priročnik za "
+"crontab. V kolikor znaka ne želite uporabiti za preusmeritev, mora biti znak "
+"pravilno opuščen z \\. Primer: \\ črka."
 
 #: ../src/crontabEditor.py:455
 msgid ""
@@ -230,15 +232,11 @@ msgstr ""
 "\n"
 "Ponavljajoče se naloge bodo izvedene iz domače mape."
 
-#: ../src/crontabEditor.py:456
-#: ../src/mainWindow.py:662
-#: ../src/atEditor.py:596
+#: ../src/crontabEditor.py:456 ../src/mainWindow.py:665 ../src/atEditor.py:596
 msgid "_Don't show again"
 msgstr "_Sporočila ne pokaži več"
 
-#: ../src/crontabEditor.py:457
-#: ../src/mainWindow.py:663
-#: ../src/atEditor.py:597
+#: ../src/crontabEditor.py:457 ../src/mainWindow.py:666 ../src/atEditor.py:597
 msgid "Warning: Working directory of executed tasks"
 msgstr "Opozorilo: delovna mapa izvedenih nalog"
 
@@ -272,13 +270,11 @@ msgid "This is invalid. Reason: %s"
 msgstr "Izbor ni veljaven. Razlog: %s"
 
 #. minute
-#: ../src/crontabEditorHelper.py:231
-#: ../src/gnome-schedule.glade.h:44
+#: ../src/crontabEditorHelper.py:231 ../src/gnome-schedule.glade.h:44
 msgid "At an exact minute"
 msgstr "Ob točni minuti"
 
-#: ../src/crontabEditorHelper.py:232
-#: ../src/gnome-schedule.glade.h:28
+#: ../src/crontabEditorHelper.py:232 ../src/gnome-schedule.glade.h:28
 msgid "Minute:"
 msgstr "Minute:"
 
@@ -287,8 +283,7 @@ msgstr "Minute:"
 msgid "At an exact hour"
 msgstr "Ob točni uri"
 
-#: ../src/crontabEditorHelper.py:236
-#: ../src/gnome-schedule.glade.h:27
+#: ../src/crontabEditorHelper.py:236 ../src/gnome-schedule.glade.h:27
 msgid "Hour:"
 msgstr "Ura:"
 
@@ -297,8 +292,7 @@ msgstr "Ura:"
 msgid "On a day"
 msgstr "Na dan"
 
-#: ../src/crontabEditorHelper.py:240
-#: ../src/gnome-schedule.glade.h:26
+#: ../src/crontabEditorHelper.py:240 ../src/gnome-schedule.glade.h:26
 msgid "Day:"
 msgstr "Dan:"
 
@@ -307,8 +301,7 @@ msgstr "Dan:"
 msgid "In a month"
 msgstr "V mesecu"
 
-#: ../src/crontabEditorHelper.py:244
-#: ../src/gnome-schedule.glade.h:29
+#: ../src/crontabEditorHelper.py:244 ../src/gnome-schedule.glade.h:29
 msgid "Month:"
 msgstr "Mesec:"
 
@@ -317,18 +310,15 @@ msgstr "Mesec:"
 msgid "On a weekday"
 msgstr "Na delavni dan"
 
-#: ../src/crontabEditorHelper.py:248
-#: ../src/gnome-schedule.glade.h:30
+#: ../src/crontabEditorHelper.py:248 ../src/gnome-schedule.glade.h:30
 msgid "Weekday:"
 msgstr "Dan v tednu:"
 
-#: ../src/crontabEditorHelper.py:253
-#: ../src/gnome-schedule.glade.h:50
+#: ../src/crontabEditorHelper.py:253 ../src/gnome-schedule.glade.h:50
 msgid "In a step width"
 msgstr "V korak z"
 
-#: ../src/crontabEditorHelper.py:255
-#: ../src/gnome-schedule.glade.h:41
+#: ../src/crontabEditorHelper.py:255 ../src/gnome-schedule.glade.h:41
 msgid "Minutes:"
 msgstr "Minute:"
 
@@ -469,8 +459,8 @@ msgid "Manage templates"
 msgstr "Upravljanje z nalogami"
 
 #: ../src/gnome-schedule.glade.h:4
-msgid "Create a new template."
-msgstr "Ustvari novo predlogo."
+msgid "Create a new template"
+msgstr "Ustvari novo predlogo"
 
 #: ../src/gnome-schedule.glade.h:5
 msgid "Edit the selected template"
@@ -484,8 +474,7 @@ msgstr "Izbris izbrane predloge"
 msgid "Task description:"
 msgstr "Opis naloge:"
 
-#: ../src/gnome-schedule.glade.h:8
-#: ../src/mainWindow.py:69
+#: ../src/gnome-schedule.glade.h:8 ../src/mainWindow.py:72
 #: ../src/examples/dump.py:57
 msgid "X application"
 msgstr "Program za X"
@@ -523,8 +512,7 @@ msgstr "Uredi ponavljajočo se nalogo"
 msgid "ls -l"
 msgstr "ls -l"
 
-#: ../src/gnome-schedule.glade.h:18
-#: ../src/template.py:198
+#: ../src/gnome-schedule.glade.h:18 ../src/template.py:198
 #: ../src/template.py:212
 msgid "Command:"
 msgstr "Ukaz:"
@@ -614,8 +602,12 @@ msgid "Execution at every minute, hour, day, weekday or month."
 msgstr "Izvedba ob vsaki minuti, uri, dnevu, tednu ali mesecu."
 
 #: ../src/gnome-schedule.glade.h:51
-msgid "Execution at a step width. For example every five minutes, hours, days, weekdays or months."
-msgstr "Izvedba po korakih. Na primer: izvedba vsakih nekaj minut, ur, dni, tednov ali mesecev."
+msgid ""
+"Execution at a step width. For example every five minutes, hours, days, "
+"weekdays or months."
+msgstr ""
+"Izvedba po korakih. Na primer: izvedba vsakih nekaj minut, ur, dni, tednov "
+"ali mesecev."
 
 #: ../src/gnome-schedule.glade.h:52
 msgid "Configure Scheduled Tasks"
@@ -661,8 +653,7 @@ msgstr "O programu"
 msgid "Scheduled and active tasks"
 msgstr "Načrtovane in dejavne naloge"
 
-#: ../src/gnome-schedule.py:63
-#: ../src/scheduleapplet.py:65
+#: ../src/gnome-schedule.py:63 ../src/scheduleapplet.py:65
 #: ../src/xwrapper.py:51
 msgid ""
 "You need to install pyGTK or GTKv2,\n"
@@ -675,405 +666,448 @@ msgstr ""
 
 #. Translators: Date format for expressions like 'January 21'. %B is month, %d is day number.
 #. Run the command 'man strftime' to read more about these and other available specifiers.
-#: ../src/lang.py:124
+#: ../src/lang.py:126
 msgid "%B %d"
 msgstr "%d. %B"
 
 #. Translators: Date format for expressions like 'January 21, 2005'. %B is month, %d is day number, %Y is year with century.
 #. Run the command 'man strftime' to read more about these and other available specifiers.
-#: ../src/lang.py:131
+#: ../src/lang.py:133
 msgid "%B %d, %Y"
 msgstr "%d. %B %Y"
 
 #. Translators: Time without seconds. %H is hour, %M is minute.
 #. Run the command 'man strftime' to read more about these and other available specifiers.
-#: ../src/lang.py:141
+#: ../src/lang.py:143
 msgid "%H:%M"
 msgstr "%H:%M"
 
-#: ../src/lang.py:183
+#: ../src/lang.py:185
 msgid "At every full hour"
 msgstr "Ob vsaki polni uri"
 
-#: ../src/lang.py:185
+#: ../src/lang.py:187
 msgid "At every minute"
 msgstr "Ob vsaki minuti"
 
-#: ../src/lang.py:187
+#: ../src/lang.py:189
 #, python-format
 msgid "At minute %(minute)s of every hour"
 msgstr "Ob %(minute)s minuti vsake ure"
 
-#: ../src/lang.py:189
+#: ../src/lang.py:191
 #, python-format
 msgid "At every minute between %(time_from)s and %(time_to)s"
 msgstr "Ob vsaki minuti med %(time_from)s in %(time_to)s"
 
-#: ../src/lang.py:191
+#: ../src/lang.py:193
 #, python-format
 msgid "On every day at %(time)s"
 msgstr "Vsak dan ob %(time)s"
 
-#: ../src/lang.py:196
+#: ../src/lang.py:198
 #, python-format
 msgid "On day %(monthday)s of every month at every full hour"
 msgstr "Vsak %(monthday)s v mesecu ob polni uri"
 
-#: ../src/lang.py:198
+#: ../src/lang.py:200
 #, python-format
 msgid "On day %(monthday)s of every month at every minute"
 msgstr "Vsak %(monthday)s v mesecu na vsako minuto"
 
-#: ../src/lang.py:200
+#: ../src/lang.py:202
 #, python-format
 msgid "On day %(monthday)s of every month at minute %(minute)s of every hour"
 msgstr "Na %(monthday)s dan meseca ob %(minute)s minuti vsake ure"
 
-#: ../src/lang.py:202
-#, python-format
-msgid "On day %(monthday)s of every month at every minute between %(time_from)s and %(time_to)s"
-msgstr "Na %(monthday)s dan meseca na vsako minuto med %(time_from)s in %(time_to)s"
-
 #: ../src/lang.py:204
+#, python-format
+msgid ""
+"On day %(monthday)s of every month at every minute between %(time_from)s and "
+"%(time_to)s"
+msgstr ""
+"Na %(monthday)s dan meseca na vsako minuto med %(time_from)s in %(time_to)s"
+
+#: ../src/lang.py:206
 #, python-format
 msgid "On day %(monthday)s of every month at %(time)s"
 msgstr "Na %(monthday)s dan meseca ob %(time)s"
 
-#: ../src/lang.py:209
+#: ../src/lang.py:211
 #, python-format
 msgid "On every day in %(month)s at every full hour"
 msgstr "%(month)s, vsak dan ob vsaki polni uri"
 
-#: ../src/lang.py:211
+#: ../src/lang.py:213
 #, python-format
 msgid "On every day in %(month)s at every minute"
 msgstr "%(month)s, vsak dan ob vsaki minuti"
 
-#: ../src/lang.py:213
+#: ../src/lang.py:215
 #, python-format
 msgid "On every day in %(month)s at minute %(minute)s of every hour"
 msgstr "%(month)s, vsak dan ob %(minute)s minuto vsake ure"
 
-#: ../src/lang.py:215
+#: ../src/lang.py:217
 #, python-format
-msgid "On every day in %(month)s at every minute between %(time_from)s and %(time_to)s"
+msgid ""
+"On every day in %(month)s at every minute between %(time_from)s and "
+"%(time_to)s"
 msgstr "%(month)s, vsak dan ob vsaki minuti med %(time_from)s in %(time_to)s"
 
-#: ../src/lang.py:217
+#: ../src/lang.py:219
 #, python-format
 msgid "On every day in %(month)s at %(time)s"
 msgstr "%(month)s, vsak dan ob %(time)s"
 
-#: ../src/lang.py:222
+#: ../src/lang.py:224
 #, python-format
 msgid "Every year on %(date)s at every full hour"
 msgstr "Vsako leto na %(date)s ob vsaki polni uri"
 
-#: ../src/lang.py:224
+#: ../src/lang.py:226
 #, python-format
 msgid "Every year on %(date)s at every minute"
 msgstr "Vsako leto na %(date)s ob vsaki minuti"
 
-#: ../src/lang.py:226
+#: ../src/lang.py:228
 #, python-format
 msgid "Every year on %(date)s at minute %(minute)s of every hour"
 msgstr "Vsako leto na %(date)s ob %(minute)s minuti vsake ure"
 
-#: ../src/lang.py:228
-#, python-format
-msgid "Every year on %(date)s at every minute between %(time_from)s and %(time_to)s"
-msgstr "Vsako leto na %(date)s ob vsaki minuti med %(time_from)s in %(time_to)s"
-
 #: ../src/lang.py:230
+#, python-format
+msgid ""
+"Every year on %(date)s at every minute between %(time_from)s and %(time_to)s"
+msgstr ""
+"Vsako leto na %(date)s ob vsaki minuti med %(time_from)s in %(time_to)s"
+
+#: ../src/lang.py:232
 #, python-format
 msgid "Every year on %(date)s at %(time)s"
 msgstr "Vsako leto na %(date)s ob %(time)s"
 
-#: ../src/lang.py:235
+#: ../src/lang.py:237
 #, python-format
 msgid "On every weekday: %(weekday)s at every full hour"
 msgstr "Vsak delovnik: %(weekday)s vsako polno uro"
 
-#: ../src/lang.py:237
+#: ../src/lang.py:239
 #, python-format
 msgid "On every weekday: %(weekday)s at every minute"
 msgstr "Vsak delovnik: %(weekday)s na vsako minuto"
 
-#: ../src/lang.py:239
+#: ../src/lang.py:241
 #, python-format
 msgid "On every weekday: %(weekday)s at minute %(minute)s of every hour"
 msgstr "Vsak delovnik: %(weekday)s vsako %(minute)s minuto vsake ure"
 
-#: ../src/lang.py:241
-#, python-format
-msgid "On every weekday: %(weekday)s at every minute between %(time_from)s and %(time_to)s"
-msgstr "Vsak delovnik: %(weekday)s na vsako minuto med %(time_from)s in %(time_to)s"
-
 #: ../src/lang.py:243
+#, python-format
+msgid ""
+"On every weekday: %(weekday)s at every minute between %(time_from)s and "
+"%(time_to)s"
+msgstr ""
+"Vsak delovnik: %(weekday)s na vsako minuto med %(time_from)s in %(time_to)s"
+
+#: ../src/lang.py:245
 #, python-format
 msgid "On every weekday: %(weekday)s at %(time)s"
 msgstr "Vsak delovnik: %(weekday)s ob %(time)s"
 
-#: ../src/lang.py:248
-#, python-format
-msgid "On day %(monthday)s of every month and every weekday: %(weekday)s at every full hour"
-msgstr "Vsak %(monthday)s dan v mesecu in vsak delovnik: %(weekday)s vsako polno uro"
-
 #: ../src/lang.py:250
 #, python-format
-msgid "On day %(monthday)s of every month and every weekday: %(weekday)s at every minute"
-msgstr "Vsak %(monthday)s dan v mesecu in vsak delovnik: %(weekday)s na vsako minuto"
+msgid ""
+"On day %(monthday)s of every month and every weekday: %(weekday)s at every "
+"full hour"
+msgstr ""
+"Vsak %(monthday)s dan v mesecu in vsak delovnik: %(weekday)s vsako polno uro"
 
 #: ../src/lang.py:252
 #, python-format
-msgid "On day %(monthday)s of every month and every weekday: %(weekday)s at minute %(minute)s of every hour"
-msgstr "Vsak %(monthday)s dan v mesecu in vsak delovnik: %(weekday)s vsako %(minute)s minuto vsake ure"
+msgid ""
+"On day %(monthday)s of every month and every weekday: %(weekday)s at every "
+"minute"
+msgstr ""
+"Vsak %(monthday)s dan v mesecu in vsak delovnik: %(weekday)s na vsako minuto"
 
 #: ../src/lang.py:254
 #, python-format
-msgid "On day %(monthday)s of every month and every weekday: %(weekday)s at every minute between %(time_from)s and %(time_to)s"
-msgstr "Vsak %(monthday)s dan v mesecu in vsak delovnik: %(weekday)s na vsako minuto med %(time_from)s in %(time_to)s"
+msgid ""
+"On day %(monthday)s of every month and every weekday: %(weekday)s at minute "
+"%(minute)s of every hour"
+msgstr ""
+"Vsak %(monthday)s dan v mesecu in vsak delovnik: %(weekday)s vsako "
+"%(minute)s minuto vsake ure"
 
 #: ../src/lang.py:256
 #, python-format
-msgid "On day %(monthday)s of every month and every weekday: %(weekday)s at %(time)s"
-msgstr "Vsak %(monthday)s dan v mesecu in v vsak delovnik: %(weekday)s ob %(time)s"
+msgid ""
+"On day %(monthday)s of every month and every weekday: %(weekday)s at every "
+"minute between %(time_from)s and %(time_to)s"
+msgstr ""
+"Vsak %(monthday)s dan v mesecu in vsak delovnik: %(weekday)s na vsako minuto "
+"med %(time_from)s in %(time_to)s"
 
-#: ../src/lang.py:261
+#: ../src/lang.py:258
+#, python-format
+msgid ""
+"On day %(monthday)s of every month and every weekday: %(weekday)s at %(time)s"
+msgstr ""
+"Vsak %(monthday)s dan v mesecu in v vsak delovnik: %(weekday)s ob %(time)s"
+
+#: ../src/lang.py:263
 #, python-format
 msgid "On every weekday: %(weekday)s in %(month)s at every full hour"
 msgstr "Vsak delovnik: %(weekday)s v mesecu %(month)s vsako polno uro"
 
-#: ../src/lang.py:263
+#: ../src/lang.py:265
 #, python-format
 msgid "On every weekday: %(weekday)s in %(month)s at every minute"
 msgstr "Vsak delovnik: %(weekday)s v mesecu %(month)s na vsako minuto"
 
-#: ../src/lang.py:265
-#, python-format
-msgid "On every weekday: %(weekday)s in %(month)s at minute %(minute)s of every hour"
-msgstr "Vsak delovnik: %(weekday)s v mesecu %(month)s ob %(minute)s minuti vsake ure"
-
 #: ../src/lang.py:267
 #, python-format
-msgid "On every weekday: %(weekday)s in %(month)s at every minute between %(time_from)s and %(time_to)s"
-msgstr "Vsak delovnik: %(weekday)s v mesecu %(month)s na vsako minuto med %(time_from)s in %(time_to)s"
+msgid ""
+"On every weekday: %(weekday)s in %(month)s at minute %(minute)s of every hour"
+msgstr ""
+"Vsak delovnik: %(weekday)s v mesecu %(month)s ob %(minute)s minuti vsake ure"
 
 #: ../src/lang.py:269
+#, python-format
+msgid ""
+"On every weekday: %(weekday)s in %(month)s at every minute between "
+"%(time_from)s and %(time_to)s"
+msgstr ""
+"Vsak delovnik: %(weekday)s v mesecu %(month)s na vsako minuto med "
+"%(time_from)s in %(time_to)s"
+
+#: ../src/lang.py:271
 #, python-format
 msgid "On every weekday: %(weekday)s in %(month)s at %(time)s"
 msgstr "Vsak delovnik: %(weekday)s v mesecu %(month)s ob %(time)s"
 
-#: ../src/lang.py:274
-#, python-format
-msgid "On every weekday: %(weekday)s in %(month)s and on %(date)s every year at every full hour"
-msgstr "Vsak delovnik: %(weekday)s v mesecu %(month)s in na %(date)s vsako leto ob vsaki polni uri"
-
 #: ../src/lang.py:276
 #, python-format
-msgid "On every weekday: %(weekday)s in %(month)s and on %(date)s every year at every minute"
-msgstr "Vsak delovnik: %(weekday)s v mesecu %(month)s in na %(date)s vsako leto vsako minuto"
+msgid ""
+"On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
+"every full hour"
+msgstr ""
+"Vsak delovnik: %(weekday)s v mesecu %(month)s in na %(date)s vsako leto ob "
+"vsaki polni uri"
 
 #: ../src/lang.py:278
 #, python-format
-msgid "On every weekday: %(weekday)s in %(month)s and on %(date)s every year at minute %(minute)s of every hour"
-msgstr "Vsak delovnik: %(weekday)s v mesecu %(month)s in na %(date)s vsako leto na vsako %(minute)s minuto vsake ure"
+msgid ""
+"On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
+"every minute"
+msgstr ""
+"Vsak delovnik: %(weekday)s v mesecu %(month)s in na %(date)s vsako leto "
+"vsako minuto"
 
 #: ../src/lang.py:280
 #, python-format
-msgid "On every weekday: %(weekday)s in %(month)s and on %(date)s every year at every minute between %(time_from)s and %(time_to)s"
-msgstr "Vsak delovnik: %(weekday)s v mesecu %(month)s in na %(date)s vsako leto ob vsaki minuti med %(time_from)s in %(time_to)s"
+msgid ""
+"On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
+"minute %(minute)s of every hour"
+msgstr ""
+"Vsak delovnik: %(weekday)s v mesecu %(month)s in na %(date)s vsako leto na "
+"vsako %(minute)s minuto vsake ure"
 
 #: ../src/lang.py:282
 #, python-format
-msgid "On every weekday: %(weekday)s in %(month)s and on %(date)s every year at %(time)s"
-msgstr "Vsak delovnik: %(weekday)s v mesecu %(month)s in na %(date)s vsakega leta ob %(time)s"
+msgid ""
+"On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
+"every minute between %(time_from)s and %(time_to)s"
+msgstr ""
+"Vsak delovnik: %(weekday)s v mesecu %(month)s in na %(date)s vsako leto ob "
+"vsaki minuti med %(time_from)s in %(time_to)s"
 
-#: ../src/lang.py:290
+#: ../src/lang.py:284
+#, python-format
+msgid ""
+"On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
+"%(time)s"
+msgstr ""
+"Vsak delovnik: %(weekday)s v mesecu %(month)s in na %(date)s vsakega leta ob "
+"%(time)s"
+
+#: ../src/lang.py:292
 msgid "every minute"
 msgstr "vsako minuto"
 
-#: ../src/lang.py:292
+#: ../src/lang.py:294
 #, python-format
 msgid "minute: %s"
 msgstr "minute: %s"
 
-#: ../src/lang.py:295
+#: ../src/lang.py:297
 msgid "every hour"
 msgstr "vsako uro"
 
-#: ../src/lang.py:297
+#: ../src/lang.py:299
 #, python-format
 msgid "hour: %s"
 msgstr "ure: %s"
 
-#: ../src/lang.py:300
+#: ../src/lang.py:302
 msgid "every day of month"
 msgstr "vsak dan v mesecu"
 
-#: ../src/lang.py:302
+#: ../src/lang.py:304
 #, python-format
 msgid "day of month: %s"
 msgstr "dan v mesecu: %s"
 
-#: ../src/lang.py:305
+#: ../src/lang.py:307
 msgid "every month"
 msgstr "vsak mesec"
 
-#: ../src/lang.py:307
+#: ../src/lang.py:309
 #, python-format
 msgid "month: %s"
 msgstr "mesec: %s"
 
-#: ../src/lang.py:310
+#: ../src/lang.py:312
 #, python-format
 msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s"
 msgstr "Ob %(minute)s, %(hour)s, %(monthday)s, %(month)s"
 
-#: ../src/lang.py:312
+#: ../src/lang.py:314
 #, python-format
 msgid "weekday: %s"
 msgstr "dan v tednu: %s"
 
-#: ../src/lang.py:313
+#: ../src/lang.py:315
 #, python-format
 msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 msgstr "Ob %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 
-#: ../src/mainWindow.py:67
-#: ../src/examples/dump.py:55
+#: ../src/mainWindow.py:70 ../src/examples/dump.py:55
 msgid "Default behaviour"
 msgstr "Privzeto obnašanje"
 
-#: ../src/mainWindow.py:68
-#: ../src/examples/dump.py:56
+#: ../src/mainWindow.py:71 ../src/examples/dump.py:56
 msgid "Suppress output"
 msgstr "Prepreči odvajanje"
 
-#: ../src/mainWindow.py:70
-#: ../src/examples/dump.py:58
+#: ../src/mainWindow.py:73 ../src/examples/dump.py:58
 msgid "X application: suppress output"
 msgstr "program X: prepreči odvajanje"
 
-#: ../src/mainWindow.py:116
+#: ../src/mainWindow.py:119
 msgid "Recurrent task"
 msgstr "Ponavljajoča naoga"
 
-#: ../src/mainWindow.py:127
+#: ../src/mainWindow.py:130
 msgid "One-time task"
 msgstr "Enkratna naloga"
 
-#: ../src/mainWindow.py:138
+#: ../src/mainWindow.py:141
 msgid "From template"
 msgstr "Iz predloge"
 
-#: ../src/mainWindow.py:157
+#: ../src/mainWindow.py:160
 msgid "Add a new task"
 msgstr "Dodaj nalogo"
 
-#: ../src/mainWindow.py:282
-#: ../src/mainWindow.py:412
+#: ../src/mainWindow.py:285 ../src/mainWindow.py:415
 #, python-format
 msgid "Editing user: %s"
 msgstr "Urejanje uporabnika: %s"
 
-#: ../src/mainWindow.py:329
-#: ../src/mainWindow.py:340
-#: ../src/mainWindow.py:351
-#: ../src/mainWindow.py:366
-#: ../src/mainWindow.py:377
+#: ../src/mainWindow.py:332 ../src/mainWindow.py:343 ../src/mainWindow.py:354
+#: ../src/mainWindow.py:369 ../src/mainWindow.py:380
 #: ../src/scheduleapplet.py:116
 msgid "ERROR: Could not load icon"
 msgstr "NAPAKA: ni mogoče naložiti ikone"
 
-#: ../src/mainWindow.py:386
-#: ../src/mainWindow.py:392
+#: ../src/mainWindow.py:389 ../src/mainWindow.py:395
 msgid "ERROR: Could not load glade file"
 msgstr "NAPAKA: ni mogoče naložiti glade datoteke"
 
-#: ../src/mainWindow.py:447
-#: ../src/template_chooser.py:69
+#: ../src/mainWindow.py:450 ../src/template_chooser.py:69
 #: ../src/template_manager.py:72
 msgid "Task"
 msgstr "Naloga"
 
-#: ../src/mainWindow.py:460
-#: ../src/mainWindow.py:486
-#: ../src/template_chooser.py:78
-#: ../src/template_manager.py:81
+#: ../src/mainWindow.py:463 ../src/mainWindow.py:489
+#: ../src/template_chooser.py:78 ../src/template_manager.py:81
 msgid "Description"
 msgstr "Opis"
 
-#: ../src/mainWindow.py:464
-#: ../src/mainWindow.py:477
+#: ../src/mainWindow.py:467 ../src/mainWindow.py:480
 msgid "Date and Time"
 msgstr "Datum in čas"
 
-#: ../src/mainWindow.py:468
-#: ../src/mainWindow.py:481
+#: ../src/mainWindow.py:471 ../src/mainWindow.py:484
 msgid "Command preview"
 msgstr "Predogled ukaza"
 
 #. print ex
-#: ../src/mainWindow.py:540
-#: ../src/mainWindow.py:603
+#: ../src/mainWindow.py:543 ../src/mainWindow.py:606
 msgid "Please select a task"
 msgstr "Izberite nalogo."
 
-#: ../src/mainWindow.py:547
+#: ../src/mainWindow.py:550
 msgid "Do you want to delete this task?"
 msgstr "Ali želite izbrisati nalogo?"
 
-#: ../src/mainWindow.py:650
+#: ../src/mainWindow.py:653
 msgid ""
 "Are you sure you want to run this task now?\n"
 "\n"
-"This is used to preview the task and initiates a one-time run, this does not affect the normal scheduled run times."
+"This is used to preview the task and initiates a one-time run, this does not "
+"affect the normal scheduled run times."
 msgstr ""
 "Ali ste prepričani, da želite nalogo zagnati?\n"
 "\n"
-"Možnost omogoča predogled naloge in začne enkratni zagon, ki pa ni povezan z običajnim načrtovanim zagonom."
+"Možnost omogoča predogled naloge in začne enkratni zagon, ki pa ni povezan z "
+"običajnim načrtovanim zagonom."
 
-#: ../src/mainWindow.py:652
+#: ../src/mainWindow.py:655
 msgid "Are you sure you want to run this task?"
 msgstr "Ali želite zagnati to nalogo?"
 
-#: ../src/mainWindow.py:661
+#: ../src/mainWindow.py:664
 msgid ""
 "Note about working directory of executed tasks:\n"
 "\n"
-"Recurrent tasks will be run from the home directory, one-time tasks from the directory where Gnome schedule was run from at the time of task creation (normally the home directory)."
+"Recurrent tasks will be run from the home directory, one-time tasks from the "
+"directory where Gnome schedule was run from at the time of task creation "
+"(normally the home directory)."
 msgstr ""
 "Opomba o delovni mapi izvedenih nalog:\n"
 "\n"
-"Ponavljajoče se naloge bodo izvedene iz domače mape, enkratne naloge iz mape, kjer je zagnan program (običajno je to domača mapa)."
+"Ponavljajoče se naloge bodo izvedene iz domače mape, enkratne naloge iz "
+"mape, kjer je zagnan program (običajno je to domača mapa)."
 
-#: ../src/mainWindow.py:730
+#: ../src/mainWindow.py:733
 msgid "No default graphical terminal for GNOME could be found."
 msgstr "Privzetega grafičnega terminala za GNOME ni mogoče najti."
 
-#: ../src/mainWindow.py:745
+#: ../src/mainWindow.py:748
 msgid "Please select a task!"
 msgstr "Izberite nalogo."
 
-#: ../src/mainWindow.py:753
+#: ../src/mainWindow.py:756
 msgid "About Gnome Schedule"
 msgstr "O GNOME Urniku"
 
-#: ../src/mainWindow.py:754
+#: ../src/mainWindow.py:757
 msgid "Gnome Schedule"
 msgstr "Urnik Gnome"
 
-#: ../src/mainWindow.py:756
+#: ../src/mainWindow.py:759
 #, python-format
 msgid "Copyright (c) %(year)s %(name)s."
 msgstr "Avtorske pravice (c) %(year)s %(name)s."
 
-#: ../src/mainWindow.py:769
+#: ../src/mainWindow.py:772
 msgid "translator-credits"
 msgstr "Matej Urbančič"
 
-#: ../src/mainWindow.py:788
+#: ../src/mainWindow.py:791
 msgid "Could not display help"
 msgstr "Ni mogoče prikazati pomoči"
 
@@ -1102,8 +1136,14 @@ msgid "Calendar"
 msgstr "Koledar"
 
 #: ../src/atEditor.py:514
-msgid "In one or both of the fields hour and minute there was entered a letter, or a number out of range. Remember an hour only has 60 minutes and a day only 24 hours."
-msgstr "V enem ali obeh poljih ure in minute je vnesena črka ali pa številčna vrednosti, ki je izven časovnega območja. Ura ima le 60 minut in dan le 24 ur."
+msgid ""
+"In one or both of the fields hour and minute there was entered a letter, or "
+"a number out of range. Remember an hour only has 60 minutes and a day only "
+"24 hours."
+msgstr ""
+"V enem ali obeh poljih ure in minute je vnesena črka ali pa številčna "
+"vrednosti, ki je izven časovnega območja. Ura ima le 60 minut in dan le 24 "
+"ur."
 
 #: ../src/atEditor.py:575
 #, python-format
@@ -1114,14 +1154,15 @@ msgstr "Neveljaven zapis! Težava je lahko: %s"
 msgid ""
 "Note about working directory of executed tasks:\n"
 "\n"
-"One-time tasks will be run from the directory where Gnome schedule is run from (normally the home directory)."
+"One-time tasks will be run from the directory where Gnome schedule is run "
+"from (normally the home directory)."
 msgstr ""
 "Opomba o delovni mapi izvedenih nalog:\n"
 "\n"
-"Enkratne naloge bodo izvedene iz mape, kjer je zagnan program (običajno je to domača mapa)."
+"Enkratne naloge bodo izvedene iz mape, kjer je zagnan program (običajno je "
+"to domača mapa)."
 
-#: ../src/template.py:198
-#: ../src/template.py:212
+#: ../src/template.py:198 ../src/template.py:212
 msgid "Title:"
 msgstr "Naslov:"
 
@@ -1129,13 +1170,11 @@ msgstr "Naslov:"
 msgid "Run:"
 msgstr "Zaženi:"
 
-#: ../src/template_chooser.py:40
-#: ../src/template_manager.py:37
+#: ../src/template_chooser.py:40 ../src/template_manager.py:37
 msgid "Use template"
 msgstr "Uporabi predlogo"
 
-#: ../src/template_chooser.py:97
-#: ../src/template_manager.py:102
+#: ../src/template_chooser.py:97 ../src/template_manager.py:102
 msgid "One-time"
 msgstr "Enkrat"
 
@@ -1143,28 +1182,35 @@ msgstr "Enkrat"
 msgid "Could not open a connection to X!"
 msgstr "Ni mogoče odpreti povezave s strežnikom X!"
 
-#: ../src/xwrapper.py:71
-#: ../src/xwrapper.py:79
+#: ../src/xwrapper.py:71 ../src/xwrapper.py:79
 msgid "Wrong number of arguments."
 msgstr "Napačno število argumentov."
 
-#: ../src/xwrapper.py:73
-#: ../src/xwrapper.py:81
-msgid "Wrapper script for Gnome-schedule (http://gnome-schedule.sf.net) for applications to be run from crontab or at under X. Use through gnome-schedule."
-msgstr "Skript za Urnik Gnome (http://gnome-schedule.sf.net) za programe, ki jih je mogoče zagnati preko crontab sistema ali znotraj X strežnika. Možnost se uporablja preko programa gnome-schedule."
+#: ../src/xwrapper.py:73 ../src/xwrapper.py:81
+msgid ""
+"Wrapper script for Gnome-schedule (http://gnome-schedule.sf.net) for "
+"applications to be run from crontab or at under X. Use through gnome-"
+"schedule."
+msgstr ""
+"Skript za Urnik Gnome (http://gnome-schedule.sf.net) za programe, ki jih je "
+"mogoče zagnati preko crontab sistema ali znotraj X strežnika. Možnost se "
+"uporablja preko programa gnome-schedule."
 
 #: ../src/xwrapper.py:87
 msgid "Unknown type of job."
 msgstr "Neznana vrsta posla."
 
-#: ../src/xwrapper.py:106
-#: ../src/xwrapper.py:110
+#: ../src/xwrapper.py:106 ../src/xwrapper.py:110
 msgid "Invalid job id."
 msgstr "Neveljaven ID posla."
 
 #: ../src/xwrapper.py:117
-msgid "Could not get job data, the task might have been created with an old version - try recreating the task."
-msgstr "Ni mogoče pridobiti podatkov posla. Naloga je bila morda ustvarjena s starejšo različico programa - ponovno ustvarite nalogo."
+msgid ""
+"Could not get job data, the task might have been created with an old version "
+"- try recreating the task."
+msgstr ""
+"Ni mogoče pridobiti podatkov posla. Naloga je bila morda ustvarjena s "
+"starejšo različico programa - ponovno ustvarite nalogo."
 
 #: ../src/xwrapper.py:121
 msgid "Data file too old. Recreate task."
@@ -1190,4 +1236,3 @@ msgstr "Nikoli ne bo pokazano."
 #: ../src/xwrapper.py:158
 msgid "xwrapper.py: completed"
 msgstr "xwrapper.py: končano"
-
