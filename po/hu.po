@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: gnome-schedule.HEAD.hu\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "schedule&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-03-02 13:08+0000\n"
-"PO-Revision-Date: 2013-04-04 11:40+0200\n"
+"POT-Creation-Date: 2013-07-18 13:05+0000\n"
+"PO-Revision-Date: 2013-08-21 19:11+0200\n"
 "Last-Translator: Balázs Úr <urbalazs at gmail dot com>\n"
 "Language-Team: Hungarian <gnome@gnome.hu>\n"
 "Language: hu\n"
@@ -45,8 +45,8 @@ msgid ""
 "Failed to create data dir! Make sure ~/.gnome and ~/.gnome/gnome-schedule "
 "are writable."
 msgstr ""
-"Nem sikerült az adatkönyvtár létrehozása! Győződjön meg róla, hogy a ~/.gnome "
-"és a ~/.gnome/gnome-schedule írható."
+"Nem sikerült az adatkönyvtár létrehozása! Győződjön meg róla, hogy a ~/."
+"gnome és a ~/.gnome/gnome-schedule írható."
 
 #: ../src/at.py:145 ../src/crontab.py:162
 #, python-format
@@ -76,8 +76,8 @@ msgid "Warning: a line in atq's output didn't parse:"
 msgstr "Figyelmeztetés: egy sor az atq kimenetében nem dolgozható fel:"
 
 #: ../src/at.py:624 ../src/crontab.py:288 ../src/crontab.py:334
-#: ../src/crontabEditor.py:275 ../src/atEditor.py:127 ../src/atEditor.py:523
-#: ../src/atEditor.py:549
+#: ../src/crontabEditor.py:274 ../src/atEditor.py:126 ../src/atEditor.py:522
+#: ../src/atEditor.py:548
 msgid "Untitled"
 msgstr "Névtelen"
 
@@ -125,7 +125,7 @@ msgstr "%s nem egy szám"
 msgid "Recurrent"
 msgstr "Ismétlődő"
 
-#: ../src/crontab.py:455 ../src/crontabEditor.py:74 ../src/lang.py:168
+#: ../src/crontab.py:455 ../src/crontabEditor.py:73 ../src/lang.py:168
 msgid "At reboot"
 msgstr "Újraindításkor"
 
@@ -156,48 +156,48 @@ msgstr ""
 "A Hónap napja mező feldolgozása meghiúsult, valószínűleg egy crontabban lévő "
 "hiba miatt."
 
-#: ../src/crontabEditor.py:69 ../src/crontabEditorHelper.py:87
+#: ../src/crontabEditor.py:68 ../src/crontabEditorHelper.py:87
 #: ../src/gnome-schedule.glade.h:48
 msgid "Every minute"
 msgstr "Minden percben"
 
-#: ../src/crontabEditor.py:70 ../src/crontabEditorHelper.py:93
+#: ../src/crontabEditor.py:69 ../src/crontabEditorHelper.py:93
 #: ../src/gnome-schedule.glade.h:21
 msgid "Every hour"
 msgstr "Minden órában"
 
-#: ../src/crontabEditor.py:71 ../src/crontabEditorHelper.py:99
+#: ../src/crontabEditor.py:70 ../src/crontabEditorHelper.py:99
 msgid "Every day"
 msgstr "Minden nap"
 
-#: ../src/crontabEditor.py:72 ../src/crontabEditorHelper.py:105
+#: ../src/crontabEditor.py:71 ../src/crontabEditorHelper.py:105
 msgid "Every month"
 msgstr "Minden hónapban"
 
-#: ../src/crontabEditor.py:73
+#: ../src/crontabEditor.py:72
 msgid "Every week"
 msgstr "Minden héten"
 
 #. add new task
-#: ../src/crontabEditor.py:131 ../src/crontabEditor.py:142
-#: ../src/atEditor.py:129 ../src/atEditor.py:148
+#: ../src/crontabEditor.py:130 ../src/crontabEditor.py:141
+#: ../src/atEditor.py:128 ../src/atEditor.py:147
 msgid "Create a New Scheduled Task"
 msgstr "Új ütemezett feladat létrehozása"
 
-#: ../src/crontabEditor.py:198 ../src/atEditor.py:166
+#: ../src/crontabEditor.py:197 ../src/atEditor.py:165
 msgid "Edit template"
 msgstr "Sablon szerkesztése"
 
-#: ../src/crontabEditor.py:223 ../src/atEditor.py:188
+#: ../src/crontabEditor.py:222 ../src/atEditor.py:187
 msgid "New template"
 msgstr "Új sablon"
 
-#: ../src/crontabEditor.py:249 ../src/atEditor.py:230
+#: ../src/crontabEditor.py:248 ../src/atEditor.py:229
 msgid "Edit a Scheduled Task"
 msgstr "Ütemezett feladat szerkesztése"
 
-#: ../src/crontabEditor.py:302 ../src/crontabEditor.py:578
-#: ../src/crontabEditor.py:618
+#: ../src/crontabEditor.py:301 ../src/crontabEditor.py:577
+#: ../src/crontabEditor.py:617
 #, python-format
 msgid ""
 "This is an invalid record! The problem could be in the %(field)s field. "
@@ -206,7 +206,7 @@ msgstr ""
 "Ez egy érvénytelen rekord! A hiba a(z) %(field)s mezőnél lehet. Ok: "
 "%(reason)s"
 
-#: ../src/crontabEditor.py:307
+#: ../src/crontabEditor.py:306
 msgid ""
 "Your command contains one or more of the character %, this is special for "
 "cron and cannot be used with Gnome-schedule because of the format it uses to "
@@ -222,7 +222,7 @@ msgstr ""
 "kézikönyvét a % karakter további információiért. Ha nem szeretné "
 "átirányításra használni azt, akkor megfelelően el kell fednie a \\ jellel."
 
-#: ../src/crontabEditor.py:456
+#: ../src/crontabEditor.py:455
 msgid ""
 "Note about working directory of executed tasks:\n"
 "\n"
@@ -232,11 +232,11 @@ msgstr ""
 "\n"
 "Az ismétlődő feladatok a saját könyvtárból fognak futni."
 
-#: ../src/crontabEditor.py:457 ../src/mainWindow.py:666 ../src/atEditor.py:597
+#: ../src/crontabEditor.py:456 ../src/mainWindow.py:662 ../src/atEditor.py:596
 msgid "_Don't show again"
 msgstr "_Ne jelenjen meg újra"
 
-#: ../src/crontabEditor.py:458 ../src/mainWindow.py:667 ../src/atEditor.py:598
+#: ../src/crontabEditor.py:457 ../src/mainWindow.py:663 ../src/atEditor.py:597
 msgid "Warning: Working directory of executed tasks"
 msgstr "Figyelmeztetés: a végrehajtott feladatok munkakönyvtára"
 
@@ -456,8 +456,9 @@ msgid "Manage templates"
 msgstr "Sablonok kezelése"
 
 #: ../src/gnome-schedule.glade.h:4
-msgid "Create a new template."
-msgstr "Új sablon létrehozása."
+#| msgid "Create a new template."
+msgid "Create a new template"
+msgstr "Új sablon létrehozása"
 
 #: ../src/gnome-schedule.glade.h:5
 msgid "Edit the selected template"
@@ -471,7 +472,7 @@ msgstr "A kijelölt sablon törlése"
 msgid "Task description:"
 msgstr "Feladat leírása:"
 
-#: ../src/gnome-schedule.glade.h:8 ../src/mainWindow.py:73
+#: ../src/gnome-schedule.glade.h:8 ../src/mainWindow.py:69
 #: ../src/examples/dump.py:57
 msgid "X application"
 msgstr "X alkalmazás"
@@ -654,7 +655,7 @@ msgstr "A Gnome ütemező névjegye"
 msgid "Scheduled and active tasks"
 msgstr "Ütemezett és aktív feladatok"
 
-#: ../src/gnome-schedule.py:66 ../src/scheduleapplet.py:67
+#: ../src/gnome-schedule.py:63 ../src/scheduleapplet.py:65
 #: ../src/xwrapper.py:51
 msgid ""
 "You need to install pyGTK or GTKv2,\n"
@@ -861,8 +862,8 @@ msgstr ""
 msgid ""
 "On day %(monthday)s of every month and every weekday: %(weekday)s at %(time)s"
 msgstr ""
-"Minden hónap %(monthday)s napján és minden hétköznap: %(weekday)s napon %"
-"(time)s-kor"
+"Minden hónap %(monthday)s napján és minden hétköznap: %(weekday)s napon "
+"%(time)s-kor"
 
 #: ../src/lang.py:261
 #, python-format
@@ -880,8 +881,8 @@ msgstr "Minden hétköznap: %(weekday)s napon %(month)s hónap minden percében"
 msgid ""
 "On every weekday: %(weekday)s in %(month)s at minute %(minute)s of every hour"
 msgstr ""
-"Minden hétköznap: %(weekday)s napon %(month)s hónap minden órájának %"
-"(minute)s. percében "
+"Minden hétköznap: %(weekday)s napon %(month)s hónap minden órájának "
+"%(minute)s. percében "
 
 #: ../src/lang.py:267
 #, python-format
@@ -889,8 +890,8 @@ msgid ""
 "On every weekday: %(weekday)s in %(month)s at every minute between "
 "%(time_from)s and %(time_to)s"
 msgstr ""
-"Minden hétköznap: %(weekday)s napon %(month)s hónap minden percében %"
-"(time_from)s és %(time_to)s között"
+"Minden hétköznap: %(weekday)s napon %(month)s hónap minden percében "
+"%(time_from)s és %(time_to)s között"
 
 #: ../src/lang.py:269
 #, python-format
@@ -993,77 +994,77 @@ msgstr "hétköznap: %s"
 msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 msgstr "Ekkor: %(minute)s, %(hour)s, %(monthday)s, %(month)s %(weekday)s"
 
-#: ../src/mainWindow.py:71 ../src/examples/dump.py:55
+#: ../src/mainWindow.py:67 ../src/examples/dump.py:55
 msgid "Default behaviour"
 msgstr "Alapértelmezett viselkedés"
 
-#: ../src/mainWindow.py:72 ../src/examples/dump.py:56
+#: ../src/mainWindow.py:68 ../src/examples/dump.py:56
 msgid "Suppress output"
 msgstr "Kimenet elnyomása"
 
-#: ../src/mainWindow.py:74 ../src/examples/dump.py:58
+#: ../src/mainWindow.py:70 ../src/examples/dump.py:58
 msgid "X application: suppress output"
 msgstr "X alkalmazás: kimenet elnyomása"
 
-#: ../src/mainWindow.py:120
+#: ../src/mainWindow.py:116
 msgid "Recurrent task"
 msgstr "Ismétlődő feladat"
 
-#: ../src/mainWindow.py:131
+#: ../src/mainWindow.py:127
 msgid "One-time task"
 msgstr "Egyszeri feladat"
 
-#: ../src/mainWindow.py:142
+#: ../src/mainWindow.py:138
 msgid "From template"
 msgstr "Sablonból"
 
-#: ../src/mainWindow.py:161
+#: ../src/mainWindow.py:157
 msgid "Add a new task"
 msgstr "Új feladat hozzáadása"
 
-#: ../src/mainWindow.py:286 ../src/mainWindow.py:416
+#: ../src/mainWindow.py:282 ../src/mainWindow.py:412
 #, python-format
 msgid "Editing user: %s"
 msgstr "Felhasználó szerkesztése: %s"
 
-#: ../src/mainWindow.py:333 ../src/mainWindow.py:344 ../src/mainWindow.py:355
-#: ../src/mainWindow.py:370 ../src/mainWindow.py:381
-#: ../src/scheduleapplet.py:122
+#: ../src/mainWindow.py:329 ../src/mainWindow.py:340 ../src/mainWindow.py:351
+#: ../src/mainWindow.py:366 ../src/mainWindow.py:377
+#: ../src/scheduleapplet.py:116
 msgid "ERROR: Could not load icon"
 msgstr "HIBA: nem tölthető be az ikon"
 
-#: ../src/mainWindow.py:390 ../src/mainWindow.py:396
+#: ../src/mainWindow.py:386 ../src/mainWindow.py:392
 msgid "ERROR: Could not load glade file"
 msgstr "HIBA: nem tölthető be a glade fájl"
 
-#: ../src/mainWindow.py:451 ../src/template_chooser.py:69
+#: ../src/mainWindow.py:447 ../src/template_chooser.py:69
 #: ../src/template_manager.py:72
 msgid "Task"
 msgstr "Feladat"
 
-#: ../src/mainWindow.py:464 ../src/mainWindow.py:490
+#: ../src/mainWindow.py:460 ../src/mainWindow.py:486
 #: ../src/template_chooser.py:78 ../src/template_manager.py:81
 msgid "Description"
 msgstr "Leírás"
 
-#: ../src/mainWindow.py:468 ../src/mainWindow.py:481
+#: ../src/mainWindow.py:464 ../src/mainWindow.py:477
 msgid "Date and Time"
 msgstr "Dátum és idő"
 
-#: ../src/mainWindow.py:472 ../src/mainWindow.py:485
+#: ../src/mainWindow.py:468 ../src/mainWindow.py:481
 msgid "Command preview"
 msgstr "Parancs előnézet"
 
 #. print ex
-#: ../src/mainWindow.py:544 ../src/mainWindow.py:607
+#: ../src/mainWindow.py:540 ../src/mainWindow.py:603
 msgid "Please select a task"
 msgstr "Kérem válasszon egy feladatot"
 
-#: ../src/mainWindow.py:551
+#: ../src/mainWindow.py:547
 msgid "Do you want to delete this task?"
 msgstr "Törölni kívánja ezt a feladatot?"
 
-#: ../src/mainWindow.py:654
+#: ../src/mainWindow.py:650
 msgid ""
 "Are you sure you want to run this task now?\n"
 "\n"
@@ -1075,11 +1076,11 @@ msgstr ""
 "Ez a feladat előnézetére használható és előkészít egy egyszeri futást, nincs "
 "hatással a normál ütemezett futási időkre."
 
-#: ../src/mainWindow.py:656
+#: ../src/mainWindow.py:652
 msgid "Are you sure you want to run this task?"
 msgstr "Biztosan futtatni szeretné ezt a feladatot?"
 
-#: ../src/mainWindow.py:665
+#: ../src/mainWindow.py:661
 msgid ""
 "Note about working directory of executed tasks:\n"
 "\n"
@@ -1093,34 +1094,38 @@ msgstr ""
 "feladatok abból a könyvtárból, ahol a Gnome ütemező futott a feladat "
 "létrehozásakor (általában a saját könyvtár)."
 
-#: ../src/mainWindow.py:727
+#: ../src/mainWindow.py:730
+msgid "No default graphical terminal for GNOME could be found."
+msgstr "Nem található alapértelmezett grafikus terminál a GNOME-hoz."
+
+#: ../src/mainWindow.py:745
 msgid "Please select a task!"
 msgstr "Kérem válasszon egy feladatot!"
 
-#: ../src/mainWindow.py:735
+#: ../src/mainWindow.py:753
 msgid "About Gnome Schedule"
 msgstr "A Gnome ütemező névjegye"
 
-#: ../src/mainWindow.py:736
+#: ../src/mainWindow.py:754
 msgid "Gnome Schedule"
 msgstr "Gnome ütemező"
 
-#: ../src/mainWindow.py:738
+#: ../src/mainWindow.py:756
 #, python-format
 msgid "Copyright (c) %(year)s %(name)s."
 msgstr "Copyright © %(name)s, %(year)s."
 
-#: ../src/mainWindow.py:751
+#: ../src/mainWindow.py:769
 msgid "translator-credits"
 msgstr ""
 "Kelemen Gábor <kelemeng@gnome.hu>\n"
 "Úr Balázs <urbalazs@gmail.com>"
 
-#: ../src/mainWindow.py:772
+#: ../src/mainWindow.py:788
 msgid "Could not display help"
 msgstr "Nem jeleníthető meg a súgó"
 
-#: ../src/scheduleapplet.py:139
+#: ../src/scheduleapplet.py:133
 msgid "ERROR: Could not load menu xml file"
 msgstr "HIBA: nem tölthető be a menü xml fájl"
 
@@ -1140,26 +1145,26 @@ msgstr "Egy feladat, amely egyszer indul el"
 msgid "A task from a predefined template"
 msgstr "Egy feladat egy előre meghatározott sablonból"
 
-#: ../src/atEditor.py:83
+#: ../src/atEditor.py:82
 msgid "Calendar"
 msgstr "Naptár"
 
-#: ../src/atEditor.py:515
+#: ../src/atEditor.py:514
 msgid ""
 "In one or both of the fields hour and minute there was entered a letter, or "
 "a number out of range. Remember an hour only has 60 minutes and a day only "
 "24 hours."
 msgstr ""
 "Az óra és a perc egyikébe vagy mindkettőbe betű vagy egy tartományon kívüli "
-"szám lett megadva. Jusson eszébe, hogy egy óra csak 60 percből, a nap csak 24 "
-"órából áll."
+"szám lett megadva. Jusson eszébe, hogy egy óra csak 60 percből, a nap csak "
+"24 órából áll."
 
-#: ../src/atEditor.py:576
+#: ../src/atEditor.py:575
 #, python-format
 msgid "This is an invalid record! The problem could be: %s"
 msgstr "Ez egy érvénytelen rekord! A hiba a következő lehet: %s "
 
-#: ../src/atEditor.py:596
+#: ../src/atEditor.py:595
 msgid ""
 "Note about working directory of executed tasks:\n"
 "\n"
@@ -1202,8 +1207,8 @@ msgid ""
 "schedule."
 msgstr ""
 "Átalakító parancsfájl a Gnome ütemezőhöz (http://gnome-schedule.sf.net) a "
-"crontabból vagy az X alól futtatandó alkalmazásokhoz. Használja a "
-"gnome-schedule parancson keresztül."
+"crontabból vagy az X alól futtatandó alkalmazásokhoz. Használja a gnome-"
+"schedule parancson keresztül."
 
 #: ../src/xwrapper.py:87
 msgid "Unknown type of job."
@@ -1218,8 +1223,8 @@ msgid ""
 "Could not get job data, the task might have been created with an old version "
 "- try recreating the task."
 msgstr ""
-"Nem szerezhetők meg a feladat adatai, a feladat talán egy régi verzióval lett "
-"létrehozva - próbálja meg újra létrehozni a feladatot."
+"Nem szerezhetők meg a feladat adatai, a feladat talán egy régi verzióval "
+"lett létrehozva - próbálja meg újra létrehozni a feladatot."
 
 #: ../src/xwrapper.py:121
 msgid "Data file too old. Recreate task."
