@@ -2,22 +2,22 @@
 # Copyright (C) 2009 gnome-schedule's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-schedule package.
 # Fran Diéguez <fran.dieguez@glug.es>, 2009.
-# 
-# Fran Dieguez <frandieguez@gnome.org>, 2011.
-#
+# Fran Dieguez <frandieguez@gnome.org>, 2011, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-01 17:05+0100\n"
-"PO-Revision-Date: 2011-11-13 17:45+0100\n"
+"POT-Creation-Date: 2013-08-28 00:57+0200\n"
+"PO-Revision-Date: 2013-08-28 00:57+0200\n"
 "Last-Translator: Fran Dieguez <frandieguez@gnome.org>\n"
-"Language-Team: Galician <gnome-l10n-gl@gnome.org>\n"
+"Language-Team: gnome-l10n-gl@gnome.org\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Virtaal 0.7.1\n"
+"X-Project-Style: gnome\n"
 
 #: ../desktop/gnome-schedule.desktop.in.in.h:1
 msgid "Scheduled tasks"
@@ -75,8 +75,8 @@ msgid "Warning: a line in atq's output didn't parse:"
 msgstr "Aviso: non foi posíbel analizar unha liña da saída de atq:"
 
 #: ../src/at.py:624 ../src/crontab.py:288 ../src/crontab.py:334
-#: ../src/crontabEditor.py:275 ../src/atEditor.py:127 ../src/atEditor.py:523
-#: ../src/atEditor.py:549
+#: ../src/crontabEditor.py:274 ../src/atEditor.py:126 ../src/atEditor.py:522
+#: ../src/atEditor.py:548
 msgid "Untitled"
 msgstr "Sen título"
 
@@ -124,7 +124,7 @@ msgstr "%s non é un número"
 msgid "Recurrent"
 msgstr "Recurrente"
 
-#: ../src/crontab.py:455 ../src/crontabEditor.py:74 ../src/lang.py:168
+#: ../src/crontab.py:455 ../src/crontabEditor.py:73 ../src/lang.py:170
 msgid "At reboot"
 msgstr "Ao reinicio"
 
@@ -155,48 +155,48 @@ msgstr ""
 "Produciuse un fallo ao analizar o campo «Día da semana», posiblemente debido "
 "a un erro en crontab."
 
-#: ../src/crontabEditor.py:69 ../src/crontabEditorHelper.py:87
+#: ../src/crontabEditor.py:68 ../src/crontabEditorHelper.py:87
 #: ../src/gnome-schedule.glade.h:48
 msgid "Every minute"
 msgstr "Cada minuto"
 
-#: ../src/crontabEditor.py:70 ../src/crontabEditorHelper.py:93
+#: ../src/crontabEditor.py:69 ../src/crontabEditorHelper.py:93
 #: ../src/gnome-schedule.glade.h:21
 msgid "Every hour"
 msgstr "Cada hora"
 
-#: ../src/crontabEditor.py:71 ../src/crontabEditorHelper.py:99
+#: ../src/crontabEditor.py:70 ../src/crontabEditorHelper.py:99
 msgid "Every day"
 msgstr "Cada día"
 
-#: ../src/crontabEditor.py:72 ../src/crontabEditorHelper.py:105
+#: ../src/crontabEditor.py:71 ../src/crontabEditorHelper.py:105
 msgid "Every month"
 msgstr "Cada mes"
 
-#: ../src/crontabEditor.py:73
+#: ../src/crontabEditor.py:72
 msgid "Every week"
 msgstr "Cada semana"
 
 #. add new task
-#: ../src/crontabEditor.py:131 ../src/crontabEditor.py:142
-#: ../src/atEditor.py:129 ../src/atEditor.py:148
+#: ../src/crontabEditor.py:130 ../src/crontabEditor.py:141
+#: ../src/atEditor.py:128 ../src/atEditor.py:147
 msgid "Create a New Scheduled Task"
 msgstr "Crear unha nova tarefa planificada"
 
-#: ../src/crontabEditor.py:198 ../src/atEditor.py:166
+#: ../src/crontabEditor.py:197 ../src/atEditor.py:165
 msgid "Edit template"
 msgstr "Editar modelo"
 
-#: ../src/crontabEditor.py:223 ../src/atEditor.py:188
+#: ../src/crontabEditor.py:222 ../src/atEditor.py:187
 msgid "New template"
 msgstr "Novo modelo"
 
-#: ../src/crontabEditor.py:249 ../src/atEditor.py:230
+#: ../src/crontabEditor.py:248 ../src/atEditor.py:229
 msgid "Edit a Scheduled Task"
 msgstr "Editar unha tarefa seleccionada"
 
-#: ../src/crontabEditor.py:302 ../src/crontabEditor.py:578
-#: ../src/crontabEditor.py:618
+#: ../src/crontabEditor.py:301 ../src/crontabEditor.py:577
+#: ../src/crontabEditor.py:617
 #, python-format
 msgid ""
 "This is an invalid record! The problem could be in the %(field)s field. "
@@ -205,7 +205,7 @@ msgstr ""
 "Este non é un rexistro válido! O problema podería estar no campo %(field)s. "
 "Razón: %(reason)s"
 
-#: ../src/crontabEditor.py:307
+#: ../src/crontabEditor.py:306
 msgid ""
 "Your command contains one or more of the character %, this is special for "
 "cron and cannot be used with Gnome-schedule because of the format it uses to "
@@ -221,7 +221,7 @@ msgstr ""
 "crontab para máis información sobre o caracter %. Se non quere empregalo "
 "para redireccionar debe saír co símbolo /."
 
-#: ../src/crontabEditor.py:456
+#: ../src/crontabEditor.py:455
 msgid ""
 "Note about working directory of executed tasks:\n"
 "\n"
@@ -231,11 +231,11 @@ msgstr ""
 "\n"
 "As tarefas recurrentes executaranse no seu cartafol persoal."
 
-#: ../src/crontabEditor.py:457 ../src/mainWindow.py:666 ../src/atEditor.py:597
+#: ../src/crontabEditor.py:456 ../src/mainWindow.py:665 ../src/atEditor.py:596
 msgid "_Don't show again"
 msgstr "Non mostrar isto _de novo"
 
-#: ../src/crontabEditor.py:458 ../src/mainWindow.py:667 ../src/atEditor.py:598
+#: ../src/crontabEditor.py:457 ../src/mainWindow.py:666 ../src/atEditor.py:597
 msgid "Warning: Working directory of executed tasks"
 msgstr "Aviso: Cartafol de traballo das tarefas executadas"
 
@@ -455,8 +455,8 @@ msgid "Manage templates"
 msgstr "Xestionar modelos"
 
 #: ../src/gnome-schedule.glade.h:4
-msgid "Create a new template."
-msgstr "Crear un novo modelo."
+msgid "Create a new template"
+msgstr "Crear un novo modelo"
 
 #: ../src/gnome-schedule.glade.h:5
 msgid "Edit the selected template"
@@ -470,7 +470,7 @@ msgstr "Eliminar o modelo seleccionado"
 msgid "Task description:"
 msgstr "Descrición da tarefa:"
 
-#: ../src/gnome-schedule.glade.h:8 ../src/mainWindow.py:73
+#: ../src/gnome-schedule.glade.h:8 ../src/mainWindow.py:72
 #: ../src/examples/dump.py:57
 msgid "X application"
 msgstr "Aplicativo X"
@@ -650,7 +650,7 @@ msgstr "Sobre Gnome-schedule"
 msgid "Scheduled and active tasks"
 msgstr "Tarefas planificadas e activas"
 
-#: ../src/gnome-schedule.py:66 ../src/scheduleapplet.py:67
+#: ../src/gnome-schedule.py:63 ../src/scheduleapplet.py:65
 #: ../src/xwrapper.py:51
 msgid ""
 "You need to install pyGTK or GTKv2,\n"
@@ -664,61 +664,61 @@ msgstr ""
 
 #. Translators: Date format for expressions like 'January 21'. %B is month, %d is day number.
 #. Run the command 'man strftime' to read more about these and other available specifiers.
-#: ../src/lang.py:124
+#: ../src/lang.py:126
 msgid "%B %d"
 msgstr "%B %d"
 
 #. Translators: Date format for expressions like 'January 21, 2005'. %B is month, %d is day number, %Y is year with century.
 #. Run the command 'man strftime' to read more about these and other available specifiers.
-#: ../src/lang.py:131
+#: ../src/lang.py:133
 msgid "%B %d, %Y"
 msgstr "%d de %B de %Y"
 
 #. Translators: Time without seconds. %H is hour, %M is minute.
 #. Run the command 'man strftime' to read more about these and other available specifiers.
-#: ../src/lang.py:141
+#: ../src/lang.py:143
 msgid "%H:%M"
 msgstr "%H:%M"
 
-#: ../src/lang.py:183
+#: ../src/lang.py:185
 msgid "At every full hour"
 msgstr "A cada hora completa"
 
-#: ../src/lang.py:185
+#: ../src/lang.py:187
 msgid "At every minute"
 msgstr "A cada minuto"
 
-#: ../src/lang.py:187
+#: ../src/lang.py:189
 #, python-format
 msgid "At minute %(minute)s of every hour"
 msgstr "No minuto %(minute)s de cada hora"
 
-#: ../src/lang.py:189
+#: ../src/lang.py:191
 #, python-format
 msgid "At every minute between %(time_from)s and %(time_to)s"
 msgstr "A cada minuto entre %(time_from)s e %(time_to)s"
 
-#: ../src/lang.py:191
+#: ../src/lang.py:193
 #, python-format
 msgid "On every day at %(time)s"
 msgstr "Todos os días ás %(time)s"
 
-#: ../src/lang.py:196
+#: ../src/lang.py:198
 #, python-format
 msgid "On day %(monthday)s of every month at every full hour"
 msgstr "Cada día %(monthday)s de cada mes a cada hora"
 
-#: ../src/lang.py:198
+#: ../src/lang.py:200
 #, python-format
 msgid "On day %(monthday)s of every month at every minute"
 msgstr "Cada día %(monthday)s de cada mes a cada minuto"
 
-#: ../src/lang.py:200
+#: ../src/lang.py:202
 #, python-format
 msgid "On day %(monthday)s of every month at minute %(minute)s of every hour"
 msgstr "Cada día %(monthday)s de cada mes aos %(minute)s minutos de cada hora"
 
-#: ../src/lang.py:202
+#: ../src/lang.py:204
 #, python-format
 msgid ""
 "On day %(monthday)s of every month at every minute between %(time_from)s and "
@@ -727,27 +727,27 @@ msgstr ""
 "Cada día %(monthday)s de cada mes a cada minuto entre as %(time_from)s e as "
 "%(time_to)s"
 
-#: ../src/lang.py:204
+#: ../src/lang.py:206
 #, python-format
 msgid "On day %(monthday)s of every month at %(time)s"
 msgstr "O día %(monthday)s de cada mes ás %(time)s"
 
-#: ../src/lang.py:209
+#: ../src/lang.py:211
 #, python-format
 msgid "On every day in %(month)s at every full hour"
 msgstr "Cada día de %(month)s a cada hora completa"
 
-#: ../src/lang.py:211
+#: ../src/lang.py:213
 #, python-format
 msgid "On every day in %(month)s at every minute"
 msgstr "Todos os días de  %(month)s a cada minuto"
 
-#: ../src/lang.py:213
+#: ../src/lang.py:215
 #, python-format
 msgid "On every day in %(month)s at minute %(minute)s of every hour"
 msgstr "Todos os días de  %(month)s no minuto %(minute)s a cada hora"
 
-#: ../src/lang.py:215
+#: ../src/lang.py:217
 #, python-format
 msgid ""
 "On every day in %(month)s at every minute between %(time_from)s and "
@@ -756,54 +756,54 @@ msgstr ""
 "Todos os días de  %(month)s a cada minuto entre as %(time_from)s e as "
 "%(time_to)s"
 
-#: ../src/lang.py:217
+#: ../src/lang.py:219
 #, python-format
 msgid "On every day in %(month)s at %(time)s"
 msgstr "Todos os días de  %(month)s ás %(time)s"
 
-#: ../src/lang.py:222
+#: ../src/lang.py:224
 #, python-format
 msgid "Every year on %(date)s at every full hour"
 msgstr "O %(date)s de cada ano a todas as horas"
 
-#: ../src/lang.py:224
+#: ../src/lang.py:226
 #, python-format
 msgid "Every year on %(date)s at every minute"
 msgstr "O %(date)s de cada ano a cada minuto"
 
-#: ../src/lang.py:226
+#: ../src/lang.py:228
 #, python-format
 msgid "Every year on %(date)s at minute %(minute)s of every hour"
 msgstr "O %(date)s de cada ano ao minuto %(minute)s de todas as horas"
 
-#: ../src/lang.py:228
+#: ../src/lang.py:230
 #, python-format
 msgid ""
 "Every year on %(date)s at every minute between %(time_from)s and %(time_to)s"
 msgstr ""
 "O %(date)s de cada ano a cada minuto entre as %(time_from)s e as %(time_to)s"
 
-#: ../src/lang.py:230
+#: ../src/lang.py:232
 #, python-format
 msgid "Every year on %(date)s at %(time)s"
 msgstr "O %(date)s de cada ano ás %(time)s"
 
-#: ../src/lang.py:235
+#: ../src/lang.py:237
 #, python-format
 msgid "On every weekday: %(weekday)s at every full hour"
 msgstr "Todos os días laborábeis %(weekday)s a cada hora"
 
-#: ../src/lang.py:237
+#: ../src/lang.py:239
 #, python-format
 msgid "On every weekday: %(weekday)s at every minute"
 msgstr "Todos os días laborábeis %(weekday)s a cada minuto"
 
-#: ../src/lang.py:239
+#: ../src/lang.py:241
 #, python-format
 msgid "On every weekday: %(weekday)s at minute %(minute)s of every hour"
 msgstr "Todos os días laborábeis %(weekday)s no minuto %(minute)s de cada hora"
 
-#: ../src/lang.py:241
+#: ../src/lang.py:243
 #, python-format
 msgid ""
 "On every weekday: %(weekday)s at every minute between %(time_from)s and "
@@ -812,12 +812,12 @@ msgstr ""
 "Todos os días laborábeis %(weekday)s a cada minuto entre as %(time_from)s e "
 "as %(time_to)s"
 
-#: ../src/lang.py:243
+#: ../src/lang.py:245
 #, python-format
 msgid "On every weekday: %(weekday)s at %(time)s"
 msgstr "Todos os días laborábeis %(weekday)s ás %(time)s"
 
-#: ../src/lang.py:248
+#: ../src/lang.py:250
 #, python-format
 msgid ""
 "On day %(monthday)s of every month and every weekday: %(weekday)s at every "
@@ -826,7 +826,7 @@ msgstr ""
 "O día %(monthday)s de cada mes e cada día laborábel: %(weekday)s a todas as "
 "horas"
 
-#: ../src/lang.py:250
+#: ../src/lang.py:252
 #, python-format
 msgid ""
 "On day %(monthday)s of every month and every weekday: %(weekday)s at every "
@@ -835,7 +835,7 @@ msgstr ""
 "O día %(monthday)s de cada mes e cada día laborábel: %(weekday)s a cada "
 "minuto"
 
-#: ../src/lang.py:252
+#: ../src/lang.py:254
 #, python-format
 msgid ""
 "On day %(monthday)s of every month and every weekday: %(weekday)s at minute "
@@ -844,7 +844,7 @@ msgstr ""
 "O día %(monthday)s de cada mes e cada día laborábel: %(weekday)s no minuto "
 "%(minute)s de cada hora"
 
-#: ../src/lang.py:254
+#: ../src/lang.py:256
 #, python-format
 msgid ""
 "On day %(monthday)s of every month and every weekday: %(weekday)s at every "
@@ -853,31 +853,31 @@ msgstr ""
 "O día %(monthday)s de cada mes e cada día laborábel: %(weekday)s a cada "
 "minuto entre as %(time_from)s e as %(time_to)s"
 
-#: ../src/lang.py:256
+#: ../src/lang.py:258
 #, python-format
 msgid ""
 "On day %(monthday)s of every month and every weekday: %(weekday)s at %(time)s"
 msgstr ""
 "O día %(monthday)s de cada mes e cada día laborábel: %(weekday)s  ás %(time)s"
 
-#: ../src/lang.py:261
+#: ../src/lang.py:263
 #, python-format
 msgid "On every weekday: %(weekday)s in %(month)s at every full hour"
 msgstr "O día laborábel: %(weekday)s de %(month)s a cada hora"
 
-#: ../src/lang.py:263
+#: ../src/lang.py:265
 #, python-format
 msgid "On every weekday: %(weekday)s in %(month)s at every minute"
 msgstr "O día laborábel: %(weekday)s de %(month)s a cada minuto"
 
-#: ../src/lang.py:265
+#: ../src/lang.py:267
 #, python-format
 msgid ""
 "On every weekday: %(weekday)s in %(month)s at minute %(minute)s of every hour"
 msgstr ""
 "O día laborábel: %(weekday)s de %(month)s ao minuto %(minute)s de cada hora"
 
-#: ../src/lang.py:267
+#: ../src/lang.py:269
 #, python-format
 msgid ""
 "On every weekday: %(weekday)s in %(month)s at every minute between "
@@ -886,12 +886,12 @@ msgstr ""
 "O día laborábel: %(weekday)s de %(month)s a cada minuto entre as "
 "%(time_from)s e as %(time_to)s"
 
-#: ../src/lang.py:269
+#: ../src/lang.py:271
 #, python-format
 msgid "On every weekday: %(weekday)s in %(month)s at %(time)s"
 msgstr "O día laborábel: %(weekday)s de %(month)s ás %(time)s"
 
-#: ../src/lang.py:274
+#: ../src/lang.py:276
 #, python-format
 msgid ""
 "On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
@@ -900,7 +900,7 @@ msgstr ""
 "O día laborábel: %(weekday)s de %(month)s e o %(date)s todos os anos a cada "
 "hora"
 
-#: ../src/lang.py:276
+#: ../src/lang.py:278
 #, python-format
 msgid ""
 "On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
@@ -909,7 +909,7 @@ msgstr ""
 "O día laborábel: %(weekday)s de %(month)s e o %(date)s todos os anos a cada "
 "minuto"
 
-#: ../src/lang.py:278
+#: ../src/lang.py:280
 #, python-format
 msgid ""
 "On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
@@ -918,7 +918,7 @@ msgstr ""
 "O día laborábel: %(weekday)s de %(month)s e o %(date)s todos os anos no "
 "minuto %(minute)s de cada hora"
 
-#: ../src/lang.py:280
+#: ../src/lang.py:282
 #, python-format
 msgid ""
 "On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
@@ -927,7 +927,7 @@ msgstr ""
 "O día laborábel: %(weekday)s de %(month)s e o %(date)s todos os anos a cada "
 "minuto entre as %(time_from)s e as %(time_to)s"
 
-#: ../src/lang.py:282
+#: ../src/lang.py:284
 #, python-format
 msgid ""
 "On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
@@ -936,128 +936,128 @@ msgstr ""
 "O día laborábel: %(weekday)s de %(month)s e o %(date)s todos os anos ás "
 "%(time)s"
 
-#: ../src/lang.py:290
+#: ../src/lang.py:292
 msgid "every minute"
 msgstr "cada minuto"
 
-#: ../src/lang.py:292
+#: ../src/lang.py:294
 #, python-format
 msgid "minute: %s"
 msgstr "minuto: %s"
 
-#: ../src/lang.py:295
+#: ../src/lang.py:297
 msgid "every hour"
 msgstr "cada hora"
 
-#: ../src/lang.py:297
+#: ../src/lang.py:299
 #, python-format
 msgid "hour: %s"
 msgstr "hora: %s"
 
-#: ../src/lang.py:300
+#: ../src/lang.py:302
 msgid "every day of month"
 msgstr "cada día da semana"
 
-#: ../src/lang.py:302
+#: ../src/lang.py:304
 #, python-format
 msgid "day of month: %s"
 msgstr "día da semana: %s"
 
-#: ../src/lang.py:305
+#: ../src/lang.py:307
 msgid "every month"
 msgstr "cada mes"
 
-#: ../src/lang.py:307
+#: ../src/lang.py:309
 #, python-format
 msgid "month: %s"
 msgstr "mes: %s"
 
-#: ../src/lang.py:310
+#: ../src/lang.py:312
 #, python-format
 msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s"
 msgstr "Ás %(minute)s, %(hour)s, %(monthday)s, %(month)s"
 
-#: ../src/lang.py:312
+#: ../src/lang.py:314
 #, python-format
 msgid "weekday: %s"
 msgstr "día da semana: %s"
 
-#: ../src/lang.py:313
+#: ../src/lang.py:315
 #, python-format
 msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 msgstr "Ás %(minute)s , %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 
-#: ../src/mainWindow.py:71 ../src/examples/dump.py:55
+#: ../src/mainWindow.py:70 ../src/examples/dump.py:55
 msgid "Default behaviour"
 msgstr "Comportamento predeterminado"
 
-#: ../src/mainWindow.py:72 ../src/examples/dump.py:56
+#: ../src/mainWindow.py:71 ../src/examples/dump.py:56
 msgid "Suppress output"
 msgstr "Suprimir saída"
 
-#: ../src/mainWindow.py:74 ../src/examples/dump.py:58
+#: ../src/mainWindow.py:73 ../src/examples/dump.py:58
 msgid "X application: suppress output"
 msgstr "Aplicativo X: suprimir saída"
 
-#: ../src/mainWindow.py:120
+#: ../src/mainWindow.py:119
 msgid "Recurrent task"
 msgstr "Tarefa recurrente"
 
-#: ../src/mainWindow.py:131
+#: ../src/mainWindow.py:130
 msgid "One-time task"
 msgstr "Tarefa de unha soa vez"
 
-#: ../src/mainWindow.py:142
+#: ../src/mainWindow.py:141
 msgid "From template"
 msgstr "Desde o modelo"
 
-#: ../src/mainWindow.py:161
+#: ../src/mainWindow.py:160
 msgid "Add a new task"
 msgstr "Engadir unha nova tarefa"
 
-#: ../src/mainWindow.py:286 ../src/mainWindow.py:416
+#: ../src/mainWindow.py:285 ../src/mainWindow.py:415
 #, python-format
 msgid "Editing user: %s"
 msgstr "Editando usuarios: %s"
 
-#: ../src/mainWindow.py:333 ../src/mainWindow.py:344 ../src/mainWindow.py:355
-#: ../src/mainWindow.py:370 ../src/mainWindow.py:381
-#: ../src/scheduleapplet.py:122
+#: ../src/mainWindow.py:332 ../src/mainWindow.py:343 ../src/mainWindow.py:354
+#: ../src/mainWindow.py:369 ../src/mainWindow.py:380
+#: ../src/scheduleapplet.py:116
 msgid "ERROR: Could not load icon"
 msgstr "ERRO: Non foi posíbel cargar a icona"
 
-#: ../src/mainWindow.py:390 ../src/mainWindow.py:396
+#: ../src/mainWindow.py:389 ../src/mainWindow.py:395
 msgid "ERROR: Could not load glade file"
 msgstr "ERRO: Non foi posíbel cargar o ficheiro glade"
 
-#: ../src/mainWindow.py:451 ../src/template_chooser.py:69
+#: ../src/mainWindow.py:450 ../src/template_chooser.py:69
 #: ../src/template_manager.py:72
 msgid "Task"
 msgstr "Tarefa"
 
-#: ../src/mainWindow.py:464 ../src/mainWindow.py:490
+#: ../src/mainWindow.py:463 ../src/mainWindow.py:489
 #: ../src/template_chooser.py:78 ../src/template_manager.py:81
 msgid "Description"
 msgstr "Descrición"
 
-#: ../src/mainWindow.py:468 ../src/mainWindow.py:481
+#: ../src/mainWindow.py:467 ../src/mainWindow.py:480
 msgid "Date and Time"
 msgstr "Data e Hora"
 
-#: ../src/mainWindow.py:472 ../src/mainWindow.py:485
+#: ../src/mainWindow.py:471 ../src/mainWindow.py:484
 msgid "Command preview"
 msgstr "Previsualización da orde"
 
 #. print ex
-#: ../src/mainWindow.py:544 ../src/mainWindow.py:607
+#: ../src/mainWindow.py:543 ../src/mainWindow.py:606
 msgid "Please select a task"
 msgstr "Seleccione a tarefa"
 
-#: ../src/mainWindow.py:551
+#: ../src/mainWindow.py:550
 msgid "Do you want to delete this task?"
 msgstr "Esta seguro que quere eliminar esta tarefa?"
 
-#: ../src/mainWindow.py:654
+#: ../src/mainWindow.py:653
 msgid ""
 "Are you sure you want to run this task now?\n"
 "\n"
@@ -1069,11 +1069,11 @@ msgstr ""
 "Isto úsase para previsualizar a tarefa e iniciala unha vez, isto non afecta "
 "a normal execución das tarefas programadas."
 
-#: ../src/mainWindow.py:656
+#: ../src/mainWindow.py:655
 msgid "Are you sure you want to run this task?"
 msgstr "Está seguro que quere executar esta tarefa?"
 
-#: ../src/mainWindow.py:665
+#: ../src/mainWindow.py:664
 msgid ""
 "Note about working directory of executed tasks:\n"
 "\n"
@@ -1087,32 +1087,36 @@ msgstr ""
 "se realizan unha soa vez, desde o cartafol no cal se executou o Planificador "
 "de GNOME no momento de crear a tarefa (normalmente o cartafol persoal)."
 
-#: ../src/mainWindow.py:727
+#: ../src/mainWindow.py:733
+msgid "No default graphical terminal for GNOME could be found."
+msgstr "Non foi posíbel atopar un terminal gráfico por omisión para GNOME."
+
+#: ../src/mainWindow.py:748
 msgid "Please select a task!"
 msgstr "Seleccione unha tarefa"
 
-#: ../src/mainWindow.py:735
+#: ../src/mainWindow.py:756
 msgid "About Gnome Schedule"
 msgstr "Sobre Planificador de GNOME"
 
-#: ../src/mainWindow.py:736
+#: ../src/mainWindow.py:757
 msgid "Gnome Schedule"
 msgstr "Planificador de GNOME"
 
-#: ../src/mainWindow.py:738
+#: ../src/mainWindow.py:759
 #, python-format
 msgid "Copyright (c) %(year)s %(name)s."
 msgstr "Copyright (c) %(year)s %(name)s."
 
-#: ../src/mainWindow.py:751
+#: ../src/mainWindow.py:772
 msgid "translator-credits"
 msgstr "Fran Diéguez <fran.dieguez@glug.es>, 2009-2011."
 
-#: ../src/mainWindow.py:772
+#: ../src/mainWindow.py:791
 msgid "Could not display help"
 msgstr "Non foi posíbel mostrar a axuda"
 
-#: ../src/scheduleapplet.py:139
+#: ../src/scheduleapplet.py:133
 msgid "ERROR: Could not load menu xml file"
 msgstr "ERRO: Non foi posíbel cargar o ficheiro xml do menú"
 
@@ -1132,11 +1136,11 @@ msgstr "Unha tarefa que se lanza unha vez"
 msgid "A task from a predefined template"
 msgstr "Unha tarefa dende un modelo predefinido"
 
-#: ../src/atEditor.py:83
+#: ../src/atEditor.py:82
 msgid "Calendar"
 msgstr "Calendario"
 
-#: ../src/atEditor.py:515
+#: ../src/atEditor.py:514
 msgid ""
 "In one or both of the fields hour and minute there was entered a letter, or "
 "a number out of range. Remember an hour only has 60 minutes and a day only "
@@ -1146,12 +1150,12 @@ msgstr ""
 "campos de hora e minuto. Recorde: unha hora só ten 60 minutos e un día só 24 "
 "horas."
 
-#: ../src/atEditor.py:576
+#: ../src/atEditor.py:575
 #, python-format
 msgid "This is an invalid record! The problem could be: %s"
 msgstr "Este non é un rexistro válido! O problema podería ser: %s"
 
-#: ../src/atEditor.py:596
+#: ../src/atEditor.py:595
 msgid ""
 "Note about working directory of executed tasks:\n"
 "\n"
