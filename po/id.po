@@ -1,0 +1,1246 @@
+# Indonesian translation for gnome-schedule.
+# Copyright (C) 2013 gnome-schedule's COPYRIGHT HOLDER
+# This file is distributed under the same license as the gnome-schedule package.
+# Andika Triwidada <andika@gmail.com>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-schedule master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"schedule&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2013-08-27 22:58+0000\n"
+"PO-Revision-Date: 2013-10-12 08:09+0700\n"
+"Last-Translator: Andika Triwidada <andika@gmail.com>\n"
+"Language-Team: Indonesian <gnome@i15n.org>\n"
+"Language: id\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 1.5.7\n"
+
+#: ../desktop/gnome-schedule.desktop.in.in.h:1
+msgid "Scheduled tasks"
+msgstr "Tugas terjadwal"
+
+#: ../desktop/gnome-schedule.desktop.in.in.h:2
+msgid "Manage your system tasks"
+msgstr "Kelola tugas sistem Anda"
+
+#: ../servers/GNOME_GnomeSchedule.server.in.in.h:1
+msgid "Gnome schedule"
+msgstr "Gnome jadwal"
+
+#: ../servers/GNOME_GnomeSchedule.server.in.in.h:2
+msgid "Configures your scheduled tasks"
+msgstr "Tata tugas terjadwal Anda"
+
+#: ../servers/GNOME_GnomeSchedule.server.in.in.h:3
+msgid "System tools"
+msgstr "Perkakas sistem"
+
+#: ../src/at.py:112 ../src/crontab.py:62
+msgid ""
+"Failed to create data dir! Make sure ~/.gnome and ~/.gnome/gnome-schedule "
+"are writable."
+msgstr ""
+"Gagal membuat dir data! Pastikan bahwa ~/.gnome dan ~/.gnome/gnome-schedule "
+"dapat ditulisi."
+
+#: ../src/at.py:145 ../src/crontab.py:162
+#, python-format
+msgid ""
+"Failed to create data dir: %s. Make sure ~/.gnome and ~/.gnome/gnome-"
+"schedule are writable."
+msgstr ""
+"Gagal membuat dir data: %s. Pastikan bahwa ~/.gnome dan ~/.gnome/gnome-"
+"schedule dapat ditulisi."
+
+#: ../src/at.py:547
+#, python-format
+msgid "Warning! Unknown task: %(preview)s"
+msgstr "Peringatan! Tugas tak dikenal: %(preview)s"
+
+#: ../src/at.py:554
+#, python-format
+msgid "On %(timestring)s"
+msgstr "Pada %(timestring)s"
+
+#: ../src/at.py:560 ../src/at.py:565
+msgid "Once"
+msgstr "Sekali"
+
+#: ../src/at.py:569
+msgid "Warning: a line in atq's output didn't parse:"
+msgstr "Peringatan: suatu baris pada keluaran atq tak dapat diurai:"
+
+#: ../src/at.py:624 ../src/crontab.py:288 ../src/crontab.py:334
+#: ../src/crontabEditor.py:274 ../src/atEditor.py:126 ../src/atEditor.py:522
+#: ../src/atEditor.py:548
+msgid "Untitled"
+msgstr "Tanpa judul"
+
+#: ../src/crontab.py:87
+msgid "Minute"
+msgstr "Menit"
+
+#: ../src/crontab.py:88
+msgid "Hour"
+msgstr "Jam"
+
+#: ../src/crontab.py:89
+msgid "Day of Month"
+msgstr "Tanggal"
+
+#: ../src/crontab.py:90
+msgid "Month"
+msgstr "Bulan"
+
+#: ../src/crontab.py:91
+msgid "Weekday"
+msgstr "Hari"
+
+#: ../src/crontab.py:192 ../src/gnome-schedule.glade.h:23
+msgid "Basic"
+msgstr "Dasar"
+
+#: ../src/crontab.py:192
+#, python-format
+msgid "This is not a valid special record: %(record)s"
+msgstr "Ini bukan record khusus yang valid: %(record)s"
+
+#: ../src/crontab.py:220 ../src/crontab.py:225 ../src/crontab.py:229
+#, python-format
+msgid "Must be between %(min)s and %(max)s"
+msgstr "Mesti di antara %(min)s dan %(max)s"
+
+#: ../src/crontab.py:227
+#, python-format
+msgid "%s is not a number"
+msgstr "%s bukan suatu angka"
+
+#: ../src/crontab.py:455 ../src/crontab.py:457 ../src/template_chooser.py:106
+#: ../src/template_manager.py:111
+msgid "Recurrent"
+msgstr "Berulang"
+
+#: ../src/crontab.py:455 ../src/crontabEditor.py:73 ../src/lang.py:170
+msgid "At reboot"
+msgstr "Saat boot ulang"
+
+#: ../src/crontab.py:469
+msgid "minute"
+msgstr "menit"
+
+#: ../src/crontab.py:471
+msgid "hour"
+msgstr "jam"
+
+#: ../src/crontab.py:473
+msgid "day"
+msgstr "tanggal"
+
+#: ../src/crontab.py:475
+msgid "month"
+msgstr "bulan"
+
+#: ../src/crontab.py:477
+msgid "weekday"
+msgstr "hari"
+
+#: ../src/crontab.py:576
+msgid ""
+"Failed to parse the Day of Month field, possibly due to a bug in crontab."
+msgstr "Gagal mengurai field Tanggal, mungkin karena suatu kutu dalam crontab."
+
+#: ../src/crontabEditor.py:68 ../src/crontabEditorHelper.py:87
+#: ../src/gnome-schedule.glade.h:48
+msgid "Every minute"
+msgstr "Setiap menit"
+
+#: ../src/crontabEditor.py:69 ../src/crontabEditorHelper.py:93
+#: ../src/gnome-schedule.glade.h:21
+msgid "Every hour"
+msgstr "Setiap jam"
+
+#: ../src/crontabEditor.py:70 ../src/crontabEditorHelper.py:99
+msgid "Every day"
+msgstr "Setiap hari"
+
+#: ../src/crontabEditor.py:71 ../src/crontabEditorHelper.py:105
+msgid "Every month"
+msgstr "Setiap bulan"
+
+#: ../src/crontabEditor.py:72
+msgid "Every week"
+msgstr "Setiap minggu"
+
+#. add new task
+#: ../src/crontabEditor.py:130 ../src/crontabEditor.py:141
+#: ../src/atEditor.py:128 ../src/atEditor.py:147
+msgid "Create a New Scheduled Task"
+msgstr "Buat Suatu Tugas Terjadwal Baru"
+
+#: ../src/crontabEditor.py:197 ../src/atEditor.py:165
+msgid "Edit template"
+msgstr "Sunting template"
+
+#: ../src/crontabEditor.py:222 ../src/atEditor.py:187
+msgid "New template"
+msgstr "Template baru"
+
+#: ../src/crontabEditor.py:248 ../src/atEditor.py:229
+msgid "Edit a Scheduled Task"
+msgstr "Sunting Suatu Tugas Terjadwal"
+
+#: ../src/crontabEditor.py:301 ../src/crontabEditor.py:577
+#: ../src/crontabEditor.py:617
+#, python-format
+msgid ""
+"This is an invalid record! The problem could be in the %(field)s field. "
+"Reason: %(reason)s"
+msgstr ""
+"Ini adalah record yang tak valid! Masalah mungkin ada di field %(field)s. "
+"Alasan: %(reason)s"
+
+# typo on source string
+# don not want -> do not want
+#: ../src/crontabEditor.py:306
+msgid ""
+"Your command contains one or more of the character %, this is special for "
+"cron and cannot be used with Gnome-schedule because of the format it uses to "
+"store extra information on the crontab line. Please use the | redirector "
+"character to achieve the same functionality. Refer to the crontab manual for "
+"more information about the % character. If you don not want to use it for "
+"redirection it must be properly escaped with the \\ letter."
+msgstr ""
+"Perintah Anda memuat satu atau lebih karakter %, ini khusus bagi cron dan "
+"tak bisa digunakan dengan Gnome-jadwal karena format yang dipakainya untuk "
+"menyimpan informasi ekstra pada baris crontab. Harap gunakan karakter "
+"pengalih arah | untuk memperoleh fungsionalitas yang sama. Lihatlah panduan "
+"crontab untuk informasi lebih lanjut tentang karakter %. Bila Anda tak ingin "
+"memakainya untuk pengalihan arah, itu mesti di-escape secara benar memakai "
+"\\."
+
+#: ../src/crontabEditor.py:455
+msgid ""
+"Note about working directory of executed tasks:\n"
+"\n"
+"Recurrent tasks will be run from the home directory."
+msgstr ""
+"Catatan tentang direktori kerja dari tugas yang dijalanlan:\n"
+"\n"
+"Tugas berulang akan dijalankan dari direktori rumah."
+
+#: ../src/crontabEditor.py:456 ../src/mainWindow.py:665 ../src/atEditor.py:596
+msgid "_Don't show again"
+msgstr "Janga_n tunjukkan lagi"
+
+#: ../src/crontabEditor.py:457 ../src/mainWindow.py:666 ../src/atEditor.py:597
+msgid "Warning: Working directory of executed tasks"
+msgstr "Peringatan: Direktori kerja dari tugas yang dijalankan"
+
+#: ../src/crontabEditorHelper.py:111
+msgid "Every weekday"
+msgstr "Setiap hari"
+
+#: ../src/crontabEditorHelper.py:163
+msgid "Edit minute"
+msgstr "Sunting menit"
+
+#: ../src/crontabEditorHelper.py:165
+msgid "Edit hour"
+msgstr "Sunting jam"
+
+#: ../src/crontabEditorHelper.py:167
+msgid "Edit day"
+msgstr "Sunting tanggal"
+
+#: ../src/crontabEditorHelper.py:169
+msgid "Edit month"
+msgstr "Sunting bulan"
+
+#: ../src/crontabEditorHelper.py:171
+msgid "Edit weekday"
+msgstr "Sunting hari"
+
+#: ../src/crontabEditorHelper.py:185
+#, python-format
+msgid "This is invalid. Reason: %s"
+msgstr "Ini tak valid. Alasan: %s"
+
+#. minute
+#: ../src/crontabEditorHelper.py:231 ../src/gnome-schedule.glade.h:44
+msgid "At an exact minute"
+msgstr "Tepat pada suatu menit"
+
+#: ../src/crontabEditorHelper.py:232 ../src/gnome-schedule.glade.h:28
+msgid "Minute:"
+msgstr "Menit:"
+
+#. hour
+#: ../src/crontabEditorHelper.py:235
+msgid "At an exact hour"
+msgstr "Tepat pada suatu jam"
+
+#: ../src/crontabEditorHelper.py:236 ../src/gnome-schedule.glade.h:27
+msgid "Hour:"
+msgstr "Jam:"
+
+#. day
+#: ../src/crontabEditorHelper.py:239
+msgid "On a day"
+msgstr "Pada suatu tanggal"
+
+#: ../src/crontabEditorHelper.py:240 ../src/gnome-schedule.glade.h:26
+msgid "Day:"
+msgstr "Tanggal:"
+
+#. month
+#: ../src/crontabEditorHelper.py:243
+msgid "In a month"
+msgstr "Dalam suatu bulan"
+
+#: ../src/crontabEditorHelper.py:244 ../src/gnome-schedule.glade.h:29
+msgid "Month:"
+msgstr "Bulan:"
+
+#. weekday
+#: ../src/crontabEditorHelper.py:247
+msgid "On a weekday"
+msgstr "Pada suatu hari"
+
+#: ../src/crontabEditorHelper.py:248 ../src/gnome-schedule.glade.h:30
+msgid "Weekday:"
+msgstr "Hari:"
+
+#: ../src/crontabEditorHelper.py:253 ../src/gnome-schedule.glade.h:50
+msgid "In a step width"
+msgstr "Dalam suatu lebar jangkah"
+
+#: ../src/crontabEditorHelper.py:255 ../src/gnome-schedule.glade.h:41
+msgid "Minutes:"
+msgstr "Menit:"
+
+#: ../src/crontabEditorHelper.py:257
+msgid "Hours:"
+msgstr "Jam:"
+
+#: ../src/crontabEditorHelper.py:259
+msgid "Days:"
+msgstr "Tanggal:"
+
+#: ../src/crontabEditorHelper.py:261
+msgid "Months:"
+msgstr "Bulan:"
+
+# weekday dalam konteks ini adalah nama hari (minggu, senin, selasa, ...). sebenarnya pada cron yang dipakai adalah indeks hari dalam minggu (0..6 atau 1..7)
+#: ../src/crontabEditorHelper.py:263
+msgid "Weekdays:"
+msgstr "Hari:"
+
+#: ../src/gnome-schedule-applet.xml.h:1
+msgid "_Manage tasks"
+msgstr "_Kelola tugas"
+
+#: ../src/gnome-schedule-applet.xml.h:2
+msgid "_Add a task"
+msgstr "T_ambah tugas"
+
+#: ../src/gnome-schedule-applet.xml.h:3
+msgid "_Help"
+msgstr "_Bantuan"
+
+#: ../src/gnome-schedule-applet.xml.h:4
+msgid "A_bout"
+msgstr "_Tentang"
+
+#: ../src/gnome-schedule-export.py:45
+msgid "Gnome Schedule: Export tasks"
+msgstr "Gnome Jadwal: Ekspor tugas"
+
+#: ../src/gnome-schedule-export.py:47
+#, python-format
+msgid "Usage: %s [output file]"
+msgstr "Cara pakai: %s [berkas keluaran]"
+
+#: ../src/gnome-schedule-export.py:48
+msgid "       No file means export to stdout."
+msgstr "       Tanpa berkas berarti ekspor ke stdout."
+
+#: ../src/gnome-schedule-export.py:72
+msgid "File exists already."
+msgstr "Berkas telah ada."
+
+#: ../src/gnome-schedule-export.py:81
+#, python-format
+msgid "Could not open file for writing: %s"
+msgstr "Tak bisa membuka berkas untuk ditulisi: %s"
+
+#: ../src/gnome-schedule-export.py:91
+#, python-format
+msgid "Exporting crontab task: %s"
+msgstr "Mengekspor tugas crontab: %s"
+
+#: ../src/gnome-schedule-export.py:103
+#, python-format
+msgid "Exporting at task: %s"
+msgstr "Mengekspor pada tugas: %s"
+
+#: ../src/gnome-schedule-export.py:113
+#, python-format
+msgid "Finished, exported: %d task total."
+msgid_plural "Finished, exported: %d tasks total."
+msgstr[0] "Selesai, diekspor: total %d tugas."
+
+#: ../src/gnome-schedule-import.py:63
+msgid "Gnome Schedule: Import tasks"
+msgstr "Gnome Jadwal: Impor tugas"
+
+#: ../src/gnome-schedule-import.py:65
+#, python-format
+msgid "Usage: %s [input file]"
+msgstr "Cara pakai: %s [berkas masukan]"
+
+#: ../src/gnome-schedule-import.py:66
+msgid "       No file means import from stdin."
+msgstr "       Tanpa berkas berarti impor dari stdin."
+
+#: ../src/gnome-schedule-import.py:72
+msgid "File does not exist."
+msgstr "Berkas tak ada."
+
+#: ../src/gnome-schedule-import.py:77
+msgid "Reading from stdin.."
+msgstr "Membaca dari stdin.."
+
+#. Reading file
+#: ../src/gnome-schedule-import.py:82
+#, python-format
+msgid "Reading file: %s.."
+msgstr "Membaca berkas: %s.."
+
+#: ../src/gnome-schedule-import.py:84
+#, python-format
+msgid "Could not open file for reading: %s"
+msgstr "Tak bisa membuka berkas untuk membaca: %s"
+
+#: ../src/gnome-schedule-import.py:95
+#, python-format
+msgid "Importing crontab task: %s"
+msgstr "Mengimpor tugas crontab: %s"
+
+#: ../src/gnome-schedule-import.py:107
+#, python-format
+msgid "Importing at task: %s"
+msgstr "Mengimpor pada tugas: %s"
+
+#: ../src/gnome-schedule-import.py:111
+#, python-format
+msgid "Finished, imported: %d task total."
+msgid_plural "Finished, imported: %d tasks total."
+msgstr[0] "Selesai, diimpor: total %d tugas."
+
+#: ../src/gnome-schedule.glade.h:1
+msgid "Choose template"
+msgstr "Pilih template"
+
+#: ../src/gnome-schedule.glade.h:2
+msgid "Create a new task from the selected template"
+msgstr "Buat tugas baru dari template yang dipilih"
+
+#: ../src/gnome-schedule.glade.h:3
+msgid "Manage templates"
+msgstr "Kelola template"
+
+#: ../src/gnome-schedule.glade.h:4
+msgid "Create a new template"
+msgstr "Membuat template baru"
+
+#: ../src/gnome-schedule.glade.h:5
+msgid "Edit the selected template"
+msgstr "Sunting template yang dipilih"
+
+#: ../src/gnome-schedule.glade.h:6
+msgid "Delete the selected template"
+msgstr "Hapus template yang dipilih"
+
+#: ../src/gnome-schedule.glade.h:7
+msgid "Task description:"
+msgstr "Keterangan tugas:"
+
+#: ../src/gnome-schedule.glade.h:8 ../src/mainWindow.py:72
+#: ../src/examples/dump.py:57
+msgid "X application"
+msgstr "Aplikasi X"
+
+#. This comes before the time and date input boxes in the One-time task editor
+#: ../src/gnome-schedule.glade.h:10
+msgid "Execute at:"
+msgstr "Jalankan pada:"
+
+#: ../src/gnome-schedule.glade.h:11
+msgid "Date:"
+msgstr "Tanggal:"
+
+#: ../src/gnome-schedule.glade.h:12
+msgid "Time:"
+msgstr "Waktu:"
+
+#: ../src/gnome-schedule.glade.h:13
+msgid ":"
+msgstr ":"
+
+#: ../src/gnome-schedule.glade.h:14
+msgid "Task:"
+msgstr "Tugas:"
+
+#: ../src/gnome-schedule.glade.h:15
+msgid "Add as template"
+msgstr "Tambahkan sebagai template"
+
+#: ../src/gnome-schedule.glade.h:16
+msgid "Edit a periodical task"
+msgstr "Sunting suatu tugas periodik"
+
+#: ../src/gnome-schedule.glade.h:17
+msgid "ls -l"
+msgstr "ls -l"
+
+#: ../src/gnome-schedule.glade.h:18 ../src/template.py:198
+#: ../src/template.py:212
+msgid "Command:"
+msgstr "Perintah:"
+
+#: ../src/gnome-schedule.glade.h:19
+msgid "Description:"
+msgstr "Keterangan:"
+
+#: ../src/gnome-schedule.glade.h:20
+msgid "<big>Time &amp; Date</big>"
+msgstr "<big>Waktu &amp; Tanggal</big>"
+
+#: ../src/gnome-schedule.glade.h:22
+msgid "Advanced"
+msgstr "Tingkat lanjut"
+
+#: ../src/gnome-schedule.glade.h:24
+msgid "0"
+msgstr "0"
+
+#: ../src/gnome-schedule.glade.h:25
+msgid "*"
+msgstr "*"
+
+#: ../src/gnome-schedule.glade.h:31
+msgid "<big>Preview</big>"
+msgstr "<big>Pratinjau</big>"
+
+#: ../src/gnome-schedule.glade.h:32
+msgid "Change User"
+msgstr "Ubah Pengguna"
+
+#: ../src/gnome-schedule.glade.h:33
+msgid "<b>Choose the user whose tasks you want to modify</b>"
+msgstr "<b>Pilih pengguna yang tugasnya ingin Anda ubah</b>"
+
+#: ../src/gnome-schedule.glade.h:34
+msgid "_User:"
+msgstr "Pengg_una:"
+
+#: ../src/gnome-schedule.glade.h:35
+msgid "Add a Scheduled Task"
+msgstr "Tambah Suatu Tugas Terjadwal"
+
+#: ../src/gnome-schedule.glade.h:36
+msgid "<b>Select the type of the scheduled task:</b>"
+msgstr "<b>Pilih tipe dari tugas terjadwal:</b>"
+
+#: ../src/gnome-schedule.glade.h:37
+msgid "Time expression help"
+msgstr "Bantuan ekspresi waktu"
+
+#: ../src/gnome-schedule.glade.h:38
+msgid "Expression:"
+msgstr "Ekspresi:"
+
+#: ../src/gnome-schedule.glade.h:39
+msgid "To:"
+msgstr "Ke:"
+
+#: ../src/gnome-schedule.glade.h:40
+msgid "From:"
+msgstr "Dari:"
+
+#: ../src/gnome-schedule.glade.h:42
+msgid "Other"
+msgstr "Lainnya"
+
+#: ../src/gnome-schedule.glade.h:43
+msgid "See \"man 5 crontab\" for information about the crontab format."
+msgstr "Lihat \"man 5 crontab\" untuk informasi tentang format crontab."
+
+#: ../src/gnome-schedule.glade.h:45
+msgid "Execution at a specific minute, hour, day, weekday or month."
+msgstr "Eksekusi pada menit, jam, tanggal, hari, atau bulan. "
+
+#: ../src/gnome-schedule.glade.h:46
+msgid "In a range"
+msgstr "Dalam suatu jangkauan"
+
+#: ../src/gnome-schedule.glade.h:47
+msgid "Execution in a range."
+msgstr "Eksekusi dalam suatu jangkauan."
+
+#: ../src/gnome-schedule.glade.h:49
+msgid "Execution at every minute, hour, day, weekday or month."
+msgstr "Eksekusi pada setiap menit, jam, tanggal, hari, atau bulan."
+
+#: ../src/gnome-schedule.glade.h:51
+msgid ""
+"Execution at a step width. For example every five minutes, hours, days, "
+"weekdays or months."
+msgstr ""
+"Eksekusi pada suatu lebar jangkah. Misalnya setiap lima menit, jam, tanggal, "
+"hari, atau bulan."
+
+#: ../src/gnome-schedule.glade.h:52
+msgid "Configure Scheduled Tasks"
+msgstr "Tata Tugas Terjadwal"
+
+#: ../src/gnome-schedule.glade.h:53
+msgid "Edit a scheduled task"
+msgstr "Sunting suatu tugas terjadwal"
+
+#: ../src/gnome-schedule.glade.h:54
+msgid "Delete a scheduled task"
+msgstr "Hapus suatu tugas terjadwal"
+
+#: ../src/gnome-schedule.glade.h:55
+msgid "Run selected task"
+msgstr "Jalankan tugas yang dipilih"
+
+#: ../src/gnome-schedule.glade.h:56
+msgid "Run task"
+msgstr "Jalankan tugas"
+
+#: ../src/gnome-schedule.glade.h:57
+msgid "Templates"
+msgstr "Template"
+
+#: ../src/gnome-schedule.glade.h:58
+msgid "Change edit mode"
+msgstr "Ubah mode sunting"
+
+#: ../src/gnome-schedule.glade.h:59
+msgid "Choose the user whose tasks you want to modify"
+msgstr "Pilih pengguna yang tugasnya ingin Anda ubah"
+
+#: ../src/gnome-schedule.glade.h:60
+msgid "Show help"
+msgstr "Tampilkan bantuan"
+
+#: ../src/gnome-schedule.glade.h:61
+msgid "About Gnome-schedule"
+msgstr "Tentang Gnome Jadwal"
+
+#: ../src/gnome-schedule.glade.h:62
+msgid "Scheduled and active tasks"
+msgstr "Tugas aktif dan terjadwal"
+
+#: ../src/gnome-schedule.py:63 ../src/scheduleapplet.py:65
+#: ../src/xwrapper.py:51
+msgid ""
+"You need to install pyGTK or GTKv2,\n"
+"or set your PYTHONPATH correctly.\n"
+"try: export PYTHONPATH= "
+msgstr ""
+"Anda perlu memasang pyGTK atau GTKv2,\n"
+"atau menata PYTHONPATH dengan benar.\n"
+"cobalah: export PYTHONPATH="
+
+#. Translators: Date format for expressions like 'January 21'. %B is month, %d is day number.
+#. Run the command 'man strftime' to read more about these and other available specifiers.
+#: ../src/lang.py:126
+msgid "%B %d"
+msgstr "%d %B"
+
+#. Translators: Date format for expressions like 'January 21, 2005'. %B is month, %d is day number, %Y is year with century.
+#. Run the command 'man strftime' to read more about these and other available specifiers.
+#: ../src/lang.py:133
+msgid "%B %d, %Y"
+msgstr "%d %B %Y"
+
+#. Translators: Time without seconds. %H is hour, %M is minute.
+#. Run the command 'man strftime' to read more about these and other available specifiers.
+#: ../src/lang.py:143
+msgid "%H:%M"
+msgstr "%H:%M"
+
+#: ../src/lang.py:185
+msgid "At every full hour"
+msgstr "Pada setiap jam penuh"
+
+#: ../src/lang.py:187
+msgid "At every minute"
+msgstr "Pada setiap menit"
+
+#: ../src/lang.py:189
+#, python-format
+msgid "At minute %(minute)s of every hour"
+msgstr "Pada menit %(minute)s setiap jam"
+
+#: ../src/lang.py:191
+#, python-format
+msgid "At every minute between %(time_from)s and %(time_to)s"
+msgstr "Pada setiap menit antara %(time_from)s dan %(time_to)s"
+
+#: ../src/lang.py:193
+#, python-format
+msgid "On every day at %(time)s"
+msgstr "Pada setiap hari pukul %(time)s"
+
+#: ../src/lang.py:198
+#, python-format
+msgid "On day %(monthday)s of every month at every full hour"
+msgstr "Pada tanggal %(monthday)s setiap bulan pada setiap jam penuh"
+
+#: ../src/lang.py:200
+#, python-format
+msgid "On day %(monthday)s of every month at every minute"
+msgstr "Pada tanggal %(monthday)s setiap bulan pada setiap menit"
+
+#: ../src/lang.py:202
+#, python-format
+msgid "On day %(monthday)s of every month at minute %(minute)s of every hour"
+msgstr ""
+"Pada tanggal %(monthday)s setiap bulan pada menit ke %(minute)s setiap jam"
+
+#: ../src/lang.py:204
+#, python-format
+msgid ""
+"On day %(monthday)s of every month at every minute between %(time_from)s and "
+"%(time_to)s"
+msgstr ""
+"Pada tanggal %(monthday)s setiap bulan setiap menit antara pukul "
+"%(time_from)s dan %(time_to)s"
+
+#: ../src/lang.py:206
+#, python-format
+msgid "On day %(monthday)s of every month at %(time)s"
+msgstr "Pada tanggal %(monthday)s setiap bulan pada pukul %(time)s"
+
+#: ../src/lang.py:211
+#, python-format
+msgid "On every day in %(month)s at every full hour"
+msgstr "Pada setiap hari dalam %(month)s pada jam penuh"
+
+#: ../src/lang.py:213
+#, python-format
+msgid "On every day in %(month)s at every minute"
+msgstr "Pada setiap hari dalam %(month)s pada setiap menit"
+
+#: ../src/lang.py:215
+#, python-format
+msgid "On every day in %(month)s at minute %(minute)s of every hour"
+msgstr "Pada setiap hari dalam %(month)s pada menit %(minute)s setiap jam"
+
+#: ../src/lang.py:217
+#, python-format
+msgid ""
+"On every day in %(month)s at every minute between %(time_from)s and "
+"%(time_to)s"
+msgstr ""
+"Pada setiap hari dalam %(month)s pada setiap menit antara pukul "
+"%(time_from)s dan %(time_to)s"
+
+#: ../src/lang.py:219
+#, python-format
+msgid "On every day in %(month)s at %(time)s"
+msgstr "Pada setiap hari dalam %(month)s pada pukul %(time)s"
+
+#: ../src/lang.py:224
+#, python-format
+msgid "Every year on %(date)s at every full hour"
+msgstr "Setiap tahun pada tanggal %(date)s setiap jam"
+
+#: ../src/lang.py:226
+#, python-format
+msgid "Every year on %(date)s at every minute"
+msgstr "Setiap tahun pada tanggal %(date)s setiap menit"
+
+#: ../src/lang.py:228
+#, python-format
+msgid "Every year on %(date)s at minute %(minute)s of every hour"
+msgstr "Setiap tahun pada tanggal %(date)s pada menit %(minute)s setiap jam"
+
+#: ../src/lang.py:230
+#, python-format
+msgid ""
+"Every year on %(date)s at every minute between %(time_from)s and %(time_to)s"
+msgstr ""
+"Setiap tahun pada tanggal %(date)s setiap menit antara pukul %(time_from)s "
+"dan %(time_to)s"
+
+#: ../src/lang.py:232
+#, python-format
+msgid "Every year on %(date)s at %(time)s"
+msgstr "Setiap tahun pada tanggal %(date)s pukul %(time)s"
+
+#: ../src/lang.py:237
+#, python-format
+msgid "On every weekday: %(weekday)s at every full hour"
+msgstr "Pada setiap hari: %(weekday)s setiap jam penuh"
+
+#: ../src/lang.py:239
+#, python-format
+msgid "On every weekday: %(weekday)s at every minute"
+msgstr "Pada setiap hari: %(weekday)s setiap menit"
+
+#: ../src/lang.py:241
+#, python-format
+msgid "On every weekday: %(weekday)s at minute %(minute)s of every hour"
+msgstr "Pada setiap hari: %(weekday)s setiap jam pada menit %(minute)s"
+
+#: ../src/lang.py:243
+#, python-format
+msgid ""
+"On every weekday: %(weekday)s at every minute between %(time_from)s and "
+"%(time_to)s"
+msgstr ""
+"Pada setiap hari: %(weekday)s setiap menit antara pukul %(time_from)s dan "
+"%(time_to)s"
+
+#: ../src/lang.py:245
+#, python-format
+msgid "On every weekday: %(weekday)s at %(time)s"
+msgstr "Pada setiap hari: %(weekday)s pada pukul %(time)s"
+
+#: ../src/lang.py:250
+#, python-format
+msgid ""
+"On day %(monthday)s of every month and every weekday: %(weekday)s at every "
+"full hour"
+msgstr ""
+"Pada tanggal %(monthday)s setiap bulan dan setiap hari: %(weekday)s pada "
+"setiap jam penuh"
+
+#: ../src/lang.py:252
+#, python-format
+msgid ""
+"On day %(monthday)s of every month and every weekday: %(weekday)s at every "
+"minute"
+msgstr ""
+"Pada tanggal %(monthday)s setiap bulan dan setiap hari: %(weekday)s setiap "
+"menit"
+
+#: ../src/lang.py:254
+#, python-format
+msgid ""
+"On day %(monthday)s of every month and every weekday: %(weekday)s at minute "
+"%(minute)s of every hour"
+msgstr ""
+"Pada tanggal %(monthday)s setiap bulan dan setiap hari: %(weekday)s setiap "
+"jam pada menit %(minute)s"
+
+#: ../src/lang.py:256
+#, python-format
+msgid ""
+"On day %(monthday)s of every month and every weekday: %(weekday)s at every "
+"minute between %(time_from)s and %(time_to)s"
+msgstr ""
+"Pada tanggal %(monthday)s setiap bulan dan setiap hari: %(weekday)s setiap "
+"menit antara pukul %(time_from)s dan %(time_to)s"
+
+#: ../src/lang.py:258
+#, python-format
+msgid ""
+"On day %(monthday)s of every month and every weekday: %(weekday)s at %(time)s"
+msgstr ""
+"Pada tanggal %(monthday)s setiap bulan dan setiap hari: %(weekday)s pada "
+"pukul %(time)s"
+
+#: ../src/lang.py:263
+#, python-format
+msgid "On every weekday: %(weekday)s in %(month)s at every full hour"
+msgstr ""
+"Pada setiap hari: %(weekday)s dalam bulan %(month)s pada setiap jam penuh"
+
+#: ../src/lang.py:265
+#, python-format
+msgid "On every weekday: %(weekday)s in %(month)s at every minute"
+msgstr "Pada setiap hari: %(weekday)s dalam bulan %(month)s pada setiap menit"
+
+#: ../src/lang.py:267
+#, python-format
+msgid ""
+"On every weekday: %(weekday)s in %(month)s at minute %(minute)s of every hour"
+msgstr ""
+"Pada setiap hari: %(weekday)s dalam bulan %(month)s pada setiap jam menit "
+"ke %(minute)s "
+
+#: ../src/lang.py:269
+#, python-format
+msgid ""
+"On every weekday: %(weekday)s in %(month)s at every minute between "
+"%(time_from)s and %(time_to)s"
+msgstr ""
+"Pada setiap hari: %(weekday)s dalam bulan %(month)s pada setiap menit "
+"antara pukul %(time_from)s dan %(time_to)s"
+
+#: ../src/lang.py:271
+#, python-format
+msgid "On every weekday: %(weekday)s in %(month)s at %(time)s"
+msgstr ""
+"Pada setiap hari: %(weekday)s dalam bulan %(month)s pada pukul %(time)s"
+
+#: ../src/lang.py:276
+#, python-format
+msgid ""
+"On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
+"every full hour"
+msgstr ""
+"Pada setiap hari: %(weekday)s dalam bulan %(month)s dan pada tanggal "
+"%(date)s setiap tahun pada setiap jam penuh"
+
+#: ../src/lang.py:278
+#, python-format
+msgid ""
+"On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
+"every minute"
+msgstr ""
+"Pada setiap hari: %(weekday)s dalam bulan %(month)s dan pada tanggal "
+"%(date)s setiap tahun pada setiap menit"
+
+#: ../src/lang.py:280
+#, python-format
+msgid ""
+"On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
+"minute %(minute)s of every hour"
+msgstr ""
+"Pada setiap hari: %(weekday)s dalam bulan %(month)s dan pada tanggal "
+"%(date)s setiap tahun pada setiap jam menit ke %(minute)s"
+
+#: ../src/lang.py:282
+#, python-format
+msgid ""
+"On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
+"every minute between %(time_from)s and %(time_to)s"
+msgstr ""
+"Pada setiap hari: %(weekday)s dalam bulan %(month)s dan pada tanggal "
+"%(date)s setiap tahun setiap menit antara %(time_from)s dan %(time_to)s"
+
+#: ../src/lang.py:284
+#, python-format
+msgid ""
+"On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
+"%(time)s"
+msgstr ""
+"Pada setiap hari: %(weekday)s dalam bulan %(month)s dan pada tanggal "
+"%(date)s setiap tahun pada pukul %(time)s"
+
+#: ../src/lang.py:292
+msgid "every minute"
+msgstr "setiap menit"
+
+#: ../src/lang.py:294
+#, python-format
+msgid "minute: %s"
+msgstr "menit: %s"
+
+#: ../src/lang.py:297
+msgid "every hour"
+msgstr "setiap jam"
+
+#: ../src/lang.py:299
+#, python-format
+msgid "hour: %s"
+msgstr "jam: %s"
+
+#: ../src/lang.py:302
+msgid "every day of month"
+msgstr "setiap tanggal tertentu"
+
+#: ../src/lang.py:304
+#, python-format
+msgid "day of month: %s"
+msgstr "tanggal: %s"
+
+#: ../src/lang.py:307
+msgid "every month"
+msgstr "setiap bulan"
+
+#: ../src/lang.py:309
+#, python-format
+msgid "month: %s"
+msgstr "bulan: %s"
+
+#: ../src/lang.py:312
+#, python-format
+msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s"
+msgstr "Pada %(minute)s, %(hour)s, %(monthday)s, %(month)s"
+
+#: ../src/lang.py:314
+#, python-format
+msgid "weekday: %s"
+msgstr "hari: %s"
+
+#: ../src/lang.py:315
+#, python-format
+msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
+msgstr "Pada %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
+
+#: ../src/mainWindow.py:70 ../src/examples/dump.py:55
+msgid "Default behaviour"
+msgstr "Perilaku baku"
+
+#: ../src/mainWindow.py:71 ../src/examples/dump.py:56
+msgid "Suppress output"
+msgstr "Redam keluaran"
+
+#: ../src/mainWindow.py:73 ../src/examples/dump.py:58
+msgid "X application: suppress output"
+msgstr "Aplikasi X: redam keluaran"
+
+#: ../src/mainWindow.py:119
+msgid "Recurrent task"
+msgstr "Tugas berulang"
+
+#: ../src/mainWindow.py:130
+msgid "One-time task"
+msgstr "Tugas sekali"
+
+#: ../src/mainWindow.py:141
+msgid "From template"
+msgstr "Dari templat"
+
+#: ../src/mainWindow.py:160
+msgid "Add a new task"
+msgstr "Tambah tugas baru"
+
+#: ../src/mainWindow.py:285 ../src/mainWindow.py:415
+#, python-format
+msgid "Editing user: %s"
+msgstr "Menyunting pengguna: %s"
+
+#: ../src/mainWindow.py:332 ../src/mainWindow.py:343 ../src/mainWindow.py:354
+#: ../src/mainWindow.py:369 ../src/mainWindow.py:380
+#: ../src/scheduleapplet.py:116
+msgid "ERROR: Could not load icon"
+msgstr "GALAT: Tak bisa memuat ikon"
+
+#: ../src/mainWindow.py:389 ../src/mainWindow.py:395
+msgid "ERROR: Could not load glade file"
+msgstr "GALAT: Tak bisa memuat berkas glade"
+
+#: ../src/mainWindow.py:450 ../src/template_chooser.py:69
+#: ../src/template_manager.py:72
+msgid "Task"
+msgstr "Tugas"
+
+#: ../src/mainWindow.py:463 ../src/mainWindow.py:489
+#: ../src/template_chooser.py:78 ../src/template_manager.py:81
+msgid "Description"
+msgstr "Keterangan"
+
+#: ../src/mainWindow.py:467 ../src/mainWindow.py:480
+msgid "Date and Time"
+msgstr "Tanggal dan Waktu"
+
+#: ../src/mainWindow.py:471 ../src/mainWindow.py:484
+msgid "Command preview"
+msgstr "Pratinjau perintah"
+
+#. print ex
+#: ../src/mainWindow.py:543 ../src/mainWindow.py:606
+msgid "Please select a task"
+msgstr "Harap pilih suatu tugas"
+
+#: ../src/mainWindow.py:550
+msgid "Do you want to delete this task?"
+msgstr "Apakah Anda ingin menghapus tugas ini?"
+
+#: ../src/mainWindow.py:653
+msgid ""
+"Are you sure you want to run this task now?\n"
+"\n"
+"This is used to preview the task and initiates a one-time run, this does not "
+"affect the normal scheduled run times."
+msgstr ""
+"Apakah Anda yakin ingin menjalankan tugas ini sekarang?\n"
+"\n"
+"Ini dipakai untuk mempratinjau tugas dan menginisiasi untuk menjalankan "
+"sekali, yang tak mempengaruhi waktu eksekusi terjadwal yang normal."
+
+#: ../src/mainWindow.py:655
+msgid "Are you sure you want to run this task?"
+msgstr "Anda yakin ingin menjalankan tugas ini?"
+
+#: ../src/mainWindow.py:664
+msgid ""
+"Note about working directory of executed tasks:\n"
+"\n"
+"Recurrent tasks will be run from the home directory, one-time tasks from the "
+"directory where Gnome schedule was run from at the time of task creation "
+"(normally the home directory)."
+msgstr ""
+"Catatan tentang direktori kerja dari tugas yang dieksekusi:\n"
+"\n"
+"Tugas berulang akan dijalankan dari direktori rumah, tugas sekali waktu dari "
+"direktori dimana Gnome jadwal dijalankan saat pembuatan tugas (biasanya "
+"direktori rumah)."
+
+#: ../src/mainWindow.py:733
+msgid "No default graphical terminal for GNOME could be found."
+msgstr "Tak ada terminal grafis baku bagi GNOME yang dapat ditemukan."
+
+#: ../src/mainWindow.py:748
+msgid "Please select a task!"
+msgstr "Harap pilih sebuah tugas!"
+
+#: ../src/mainWindow.py:756
+msgid "About Gnome Schedule"
+msgstr "Tentang Gnome Jadwal"
+
+#: ../src/mainWindow.py:757
+msgid "Gnome Schedule"
+msgstr "Gnome Jadwal"
+
+#: ../src/mainWindow.py:759
+#, python-format
+msgid "Copyright (c) %(year)s %(name)s."
+msgstr "Hak cipta (c) %(year)s %(name)s."
+
+#: ../src/mainWindow.py:772
+msgid "translator-credits"
+msgstr "Andika Triwidada <andika@gmail.com>, 2013"
+
+#: ../src/mainWindow.py:791
+msgid "Could not display help"
+msgstr "Tak bisa tampilkan bantuan"
+
+#: ../src/scheduleapplet.py:133
+msgid "ERROR: Could not load menu xml file"
+msgstr "GALAT: Tak bisa memuat berkas xml menu"
+
+#: ../src/setuserWindow.py:84
+msgid "No such user"
+msgstr "Tak ada pengguna itu"
+
+#: ../src/addWindow.py:51
+msgid "A task that launches recurrently"
+msgstr "Suatu tugas yang meluncur berulang"
+
+#: ../src/addWindow.py:64
+msgid "A task that launches one time"
+msgstr "Suatu tugas yang meluncur sekali"
+
+#: ../src/addWindow.py:77
+msgid "A task from a predefined template"
+msgstr "Suatu tugas dari template terpradefinisi"
+
+#: ../src/atEditor.py:82
+msgid "Calendar"
+msgstr "Kalender"
+
+#: ../src/atEditor.py:514
+msgid ""
+"In one or both of the fields hour and minute there was entered a letter, or "
+"a number out of range. Remember an hour only has 60 minutes and a day only "
+"24 hours."
+msgstr ""
+"Dalam satu atau kedua ruas jam dan menit dimasukkan huruf, atau bilangan "
+"yang di luar jangkauan. Ingatlah bahwa satu jam hanya selama 60 menit dan "
+"satu hari hanya 24 jam."
+
+#: ../src/atEditor.py:575
+#, python-format
+msgid "This is an invalid record! The problem could be: %s"
+msgstr "Ini adalah record yang tak valid! Masalahnya bisa jadi: %s"
+
+#: ../src/atEditor.py:595
+msgid ""
+"Note about working directory of executed tasks:\n"
+"\n"
+"One-time tasks will be run from the directory where Gnome schedule is run "
+"from (normally the home directory)."
+msgstr ""
+"Catatan tentang direktori kerja dari tugas yang dieksekusi:\n"
+"\n"
+"Tugas sekali waktu akan dijalankan dari direktori rumah, tugas sekali waktu "
+"dari direktori dimana Gnome jadwal dijalankan (biasanya direktori rumah)."
+
+#: ../src/template.py:198 ../src/template.py:212
+msgid "Title:"
+msgstr "Judul:"
+
+#: ../src/template.py:212
+msgid "Run:"
+msgstr "Jalankan:"
+
+#: ../src/template_chooser.py:40 ../src/template_manager.py:37
+msgid "Use template"
+msgstr "Pakai template"
+
+#: ../src/template_chooser.py:97 ../src/template_manager.py:102
+msgid "One-time"
+msgstr "Sekali"
+
+#: ../src/xwrapper.py:60
+msgid "Could not open a connection to X!"
+msgstr "Tak bisa membuka koneksi ke X!"
+
+#: ../src/xwrapper.py:71 ../src/xwrapper.py:79
+msgid "Wrong number of arguments."
+msgstr "Cacah argumen salah."
+
+#: ../src/xwrapper.py:73 ../src/xwrapper.py:81
+msgid ""
+"Wrapper script for Gnome-schedule (http://gnome-schedule.sf.net) for "
+"applications to be run from crontab or at under X. Use through gnome-"
+"schedule."
+msgstr ""
+"Skrip pembungkus bagi Gnome-jadwal (http://gnome-schedule.sf.net) untuk "
+"aplikasi yang untuk dijalankan dari crontab atau di bawah X. Gunakan melalui "
+"gnome-schedule."
+
+#: ../src/xwrapper.py:87
+msgid "Unknown type of job."
+msgstr "Tipe pekerjaan tak dikenal."
+
+#: ../src/xwrapper.py:106 ../src/xwrapper.py:110
+msgid "Invalid job id."
+msgstr "Id pekerjaan tak valid."
+
+#: ../src/xwrapper.py:117
+msgid ""
+"Could not get job data, the task might have been created with an old version "
+"- try recreating the task."
+msgstr ""
+"Tak bisa mendapat data pekerjaan, tugas mungkin telah dibuat dengan versi "
+"lama - cobalah membuat ulang tugas."
+
+#: ../src/xwrapper.py:121
+msgid "Data file too old. Recreate task."
+msgstr "Berkas data terlalu tua. Buat ulang tugas."
+
+#: ../src/xwrapper.py:125
+#, python-format
+msgid "Launching %s.."
+msgstr "Meluncurkan %s.."
+
+#: ../src/xwrapper.py:127
+msgid "output<2: Why am I launched?"
+msgstr "output<2: Mengapa saya diluncurkan?"
+
+#: ../src/xwrapper.py:130
+msgid "len(display)<2: No proper DISPLAY variable"
+msgstr "len(display)<2: Tak ada variable DISPLAY yang benar"
+
+#: ../src/xwrapper.py:155
+msgid "I will never be displayed."
+msgstr "Saya tak akan pernah ditampilkan."
+
+#: ../src/xwrapper.py:158
+msgid "xwrapper.py: completed"
+msgstr "xwrapper.py: komplit"
