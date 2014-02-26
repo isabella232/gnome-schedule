@@ -118,8 +118,8 @@ class TemplateManager:
             if type == "at":
                 t = self.template.gettemplate ("at", int (id))
                 if t != False:
-                    id2, title, command = t
-                    self.parent.at_editor.showedit_template (self.widget, id2, title, command)
+                    id2, title, command, output = t
+                    self.parent.at_editor.showedit_template (self.widget, id2, title, command, output)
 
             elif type == "crontab":
                 t = self.template.gettemplate ("crontab", int (id)  )
