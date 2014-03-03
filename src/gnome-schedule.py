@@ -36,7 +36,7 @@ gettext.install(config.GETTEXT_PACKAGE(), config.GNOMELOCALEDIR(), unicode=1)
 poscorrect_isset = os.getenv ("POSIXLY_CORRECT", False)
 manual_poscorrect = False
 if poscorrect_isset == False:
-    os.putenv ("POSIXLY_CORRECT", "enabled")
+    os.environ['POSIXLY_CORRECT'] = 'enabled'
     manual_poscorrect = True
 
 if __name__ == "__main__":

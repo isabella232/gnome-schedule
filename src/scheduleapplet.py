@@ -28,7 +28,7 @@ import mainWindow
 poscorrect_isset = os.getenv ("POSIXLY_CORRECT", False)
 manual_poscorrect = False
 if poscorrect_isset == False:
-    os.putenv ("POSIXLY_CORRECT", "enabled")
+    os.environ["POSIXLY_CORRECT"] = "enabled"
     manual_poscorrect = True
 
 ##

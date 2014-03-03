@@ -34,8 +34,8 @@ gettext.install(config.GETTEXT_PACKAGE(), config.GNOMELOCALEDIR(), unicode=1)
 
 def check_X (display, xauth):
     # Checking if I can use X
-    os.putenv ('DISPLAY', display)
-    os.putenv ('XAUTHORITY', xauth)
+    os.environ['DISPLAY'] = display
+    os.environ['XAUTHORITY'] = xauth
 
     try:
         import pygtk
@@ -64,7 +64,7 @@ def check_X (display, xauth):
 poscorrect_isset = os.getenv ("POSIXLY_CORRECT", False)
 manual_poscorrect = False
 if poscorrect_isset == False:
-    os.putenv ("POSIXLY_CORRECT", "enabled")
+    os.environ["POSIXLY_CORRECT"] = "enabled"
     manual_poscorrect = True
 
 if (len (sys.argv) < 2):

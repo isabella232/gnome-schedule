@@ -1,4 +1,4 @@
-# dump.py - This just dumps crontab tasks with their info to stdout 
+# dump.py - This just dumps crontab tasks with their info to stdout
 # Copyright (C) 2010  Gaute Hope <eg at gaute dot vetsj dot com>
 #
 # This program is free software; you can redistribute it and/or modify
@@ -38,7 +38,7 @@ gettext.install(config.GETTEXT_PACKAGE(), config.GNOMELOCALEDIR(), unicode=1)
 poscorrect_isset = os.getenv ("POSIXLY_CORRECT", False)
 manual_poscorrect = False
 if poscorrect_isset == False:
-    os.putenv ("POSIXLY_CORRECT", "enabled")
+    os.environ["POSIXLY_CORRECT"] = "enabled"
     manual_poscorrect = True
 
 uid = os.geteuid ()

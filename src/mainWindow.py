@@ -714,7 +714,8 @@ class main:
             os.chmod (path, stat.S_IEXEC | stat.S_IREAD)
 
             # unset POSIXLY_CORRECT if manually set, bug 612459
-            if self.manual_poscorrect: os.unsetenv ('POSIXLY_CORRECT')
+            if self.manual_poscorrect:
+              del os.environ['POSIXLY_CORRECT']
 
             # get terminal and exec params
             terminal = None
@@ -740,7 +741,8 @@ class main:
             tex = terminal.strip () + ' ' + terminalparam.strip () + ' ' + execute
             subprocess.Popen(tex, cwd = self.user_home_dir, shell=True)
 
-            if self.manual_poscorrect: os.putenv ('POSIXLY_CORRECT', 'enabled')
+            if self.manual_poscorrect:
+              os.environ['POSIXLY_CORRECT'] = 'enabled'
 
 
         except Exception, ex:
