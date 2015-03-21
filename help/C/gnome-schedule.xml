@@ -447,7 +447,7 @@ at&gt; <userinput>Ctrl + D</userinput>
 				<guilabel>Task list</guilabel> with one click and by pressing 
       the <guibutton>Delete</guibutton> button in the main window tool bar. Next, you will be asked for confirmation. By answering <guibutton>Yes</guibutton>, the scheduled task will be removed from the <guilabel>Task list</guilabel>.</para>
 		<tip>
-		<para>Non-recurrent tasks disapear automatically from the list when they are done.</para>
+		<para>Non-recurrent tasks disappear automatically from the list when they are done.</para>
 		</tip>
   </sect1>
 
@@ -529,7 +529,7 @@ address of the remote X server:</para>
 <sect2 id="myapp-graphical_apps-sub2">
 <title>Setting DISPLAY variable for tasks that will launch once</title>
 <para>When you are creating or modifying a task, you can define the DISPLAY variable
-in the script text box. Make the definition at the begining of the script.</para>
+in the script text box. Make the definition at the beginning of the script.</para>
 </sect2>
 
 <sect2 id="myapp-graphical_apps-sub3">
