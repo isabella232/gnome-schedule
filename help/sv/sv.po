@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule docs\n"
-"POT-Creation-Date: 2015-03-08 08:31+0000\n"
-"PO-Revision-Date: 2015-03-22 09:12+0100\n"
+"POT-Creation-Date: 2015-03-23 08:36+0000\n"
+"PO-Revision-Date: 2015-03-23 10:10+0100\n"
 "Last-Translator: Josef Andersson <josef.andersson@fripost.org>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
@@ -13,38 +13,58 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 1.7.3\n"
 "X-Project-Style: gnome\n"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: C/gnome-schedule.xml:274(None)
-msgid "@@image: 'figures/gnome-schedule_main.png'; md5=a330f285d64bd1070bf0b2ea61926c40"
-msgstr "@@image: 'figures/gnome-schedule_main.png'; md5=a330f285d64bd1070bf0b2ea61926c40"
+msgid ""
+"@@image: 'figures/gnome-schedule_main.png'; "
+"md5=a330f285d64bd1070bf0b2ea61926c40"
+msgstr ""
+"@@image: 'figures/gnome-schedule_main.png'; "
+"md5=a330f285d64bd1070bf0b2ea61926c40"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: C/gnome-schedule.xml:343(None)
-msgid "@@image: 'figures/gnome-schedule_new_task.png'; md5=c13fbc3a2faa6145c9370a9137dc86ba"
-msgstr "@@image: 'figures/gnome-schedule_new_task.png'; md5=c13fbc3a2faa6145c9370a9137dc86ba"
+msgid ""
+"@@image: 'figures/gnome-schedule_new_task.png'; "
+"md5=c13fbc3a2faa6145c9370a9137dc86ba"
+msgstr ""
+"@@image: 'figures/gnome-schedule_new_task.png'; "
+"md5=c13fbc3a2faa6145c9370a9137dc86ba"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: C/gnome-schedule.xml:373(None)
-msgid "@@image: 'figures/gnome-schedule_new_task_recurrent.png'; md5=7502298e8a4a17232ed9a6d28855426a"
-msgstr "@@image: 'figures/gnome-schedule_new_task_recurrent.png'; md5=7502298e8a4a17232ed9a6d28855426a"
+msgid ""
+"@@image: 'figures/gnome-schedule_new_task_recurrent.png'; "
+"md5=7502298e8a4a17232ed9a6d28855426a"
+msgstr ""
+"@@image: 'figures/gnome-schedule_new_task_recurrent.png'; "
+"md5=7502298e8a4a17232ed9a6d28855426a"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: C/gnome-schedule.xml:418(None)
-msgid "@@image: 'figures/gnome-schedule_new_task_once.png'; md5=a8e20668ea7afd0ada8f6f5e66cdbff8"
-msgstr "@@image: 'figures/gnome-schedule_new_task_once.png'; md5=a8e20668ea7afd0ada8f6f5e66cdbff8"
+msgid ""
+"@@image: 'figures/gnome-schedule_new_task_once.png'; "
+"md5=a8e20668ea7afd0ada8f6f5e66cdbff8"
+msgstr ""
+"@@image: 'figures/gnome-schedule_new_task_once.png'; "
+"md5=a8e20668ea7afd0ada8f6f5e66cdbff8"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: C/gnome-schedule.xml:480(None)
-msgid "@@image: 'figures/gnome-schedule_templates.png'; md5=884d645f5cb300b4a2ad434ad5db2916"
-msgstr "@@image: 'figures/gnome-schedule_templates.png'; md5=884d645f5cb300b4a2ad434ad5db2916"
+msgid ""
+"@@image: 'figures/gnome-schedule_templates.png'; "
+"md5=884d645f5cb300b4a2ad434ad5db2916"
+msgstr ""
+"@@image: 'figures/gnome-schedule_templates.png'; "
+"md5=884d645f5cb300b4a2ad434ad5db2916"
 
 #: C/gnome-schedule.xml:37(title) C/gnome-schedule.xml:136(revnumber)
 msgid "Gnome Schedule User Guide V2.2"
@@ -69,28 +89,110 @@ msgid "GNOME Documentation Project"
 msgstr "Dokumentationsprojekt för GNOME"
 
 #: C/gnome-schedule.xml:2(para)
-msgid "Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License (GFDL), Version 1.1 or any later version published by the Free Software Foundation with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. You can find a copy of the GFDL at this <ulink type=\"help\" url=\"ghelp:fdl\">link</ulink> or in the file COPYING-DOCS distributed with this manual."
-msgstr "Tillstånd att kopiera, distribuera och/eller modifiera detta dokument ges under villkoren i GNU Free Documentation License (GFDL), version 1.1 eller senare, utgivet av Free Software Foundation utan standardavsnitt och omslagstexter. En kopia av GFDL finns att hämta på denna <ulink type=\"help\" url=\"ghelp:fdl\">länk</ulink> eller i filen COPYING-DOCS som medföljer denna handbok."
+msgid ""
+"Permission is granted to copy, distribute and/or modify this document under "
+"the terms of the GNU Free Documentation License (GFDL), Version 1.1 or any "
+"later version published by the Free Software Foundation with no Invariant "
+"Sections, no Front-Cover Texts, and no Back-Cover Texts. You can find a copy "
+"of the GFDL at this <ulink type=\"help\" url=\"ghelp:fdl\">link</ulink> or "
+"in the file COPYING-DOCS distributed with this manual."
+msgstr ""
+"Tillstånd att kopiera, distribuera och/eller modifiera detta dokument ges "
+"under villkoren i GNU Free Documentation License (GFDL), version 1.1 eller "
+"senare, utgivet av Free Software Foundation utan standardavsnitt och "
+"omslagstexter. En kopia av GFDL finns att hämta på denna <ulink type=\"help"
+"\" url=\"ghelp:fdl\">länk</ulink> eller i filen COPYING-DOCS som medföljer "
+"denna handbok."
 
 #: C/gnome-schedule.xml:12(para)
-msgid "This manual is part of a collection of GNOME manuals distributed under the GFDL. If you want to distribute this manual separately from the collection, you can do so by adding a copy of the license to the manual, as described in section 6 of the license."
-msgstr "Denna handbok utgör en av flera GNOME-handböcker som distribueras under villkoren i GFDL. Om du vill distribuera denna handbok separat från övriga handböcker kan du göra detta genom att lägga till en kopia av licensavtalet i handboken enligt instruktionerna i avsnitt 6 i licensavtalet."
+msgid ""
+"This manual is part of a collection of GNOME manuals distributed under the "
+"GFDL. If you want to distribute this manual separately from the collection, "
+"you can do so by adding a copy of the license to the manual, as described in "
+"section 6 of the license."
+msgstr ""
+"Denna handbok utgör en av flera GNOME-handböcker som distribueras under "
+"villkoren i GFDL. Om du vill distribuera denna handbok separat från övriga "
+"handböcker kan du göra detta genom att lägga till en kopia av licensavtalet "
+"i handboken enligt instruktionerna i avsnitt 6 i licensavtalet."
 
 #: C/gnome-schedule.xml:19(para)
-msgid "Many of the names used by companies to distinguish their products and services are claimed as trademarks. Where those names appear in any GNOME documentation, and the members of the GNOME Documentation Project are made aware of those trademarks, then the names are in capital letters or initial capital letters."
-msgstr "Flera namn på produkter och tjänster är registrerade varumärken. I de fall dessa namn förekommer i GNOME-dokumentation - och medlemmarna i GNOME-dokumentationsprojektet är medvetna om dessa varumärken - är de skrivna med versaler eller med inledande versal."
+msgid ""
+"Many of the names used by companies to distinguish their products and "
+"services are claimed as trademarks. Where those names appear in any GNOME "
+"documentation, and the members of the GNOME Documentation Project are made "
+"aware of those trademarks, then the names are in capital letters or initial "
+"capital letters."
+msgstr ""
+"Flera namn på produkter och tjänster är registrerade varumärken. I de fall "
+"dessa namn förekommer i GNOME-dokumentation - och medlemmarna i GNOME-"
+"dokumentationsprojektet är medvetna om dessa varumärken - är de skrivna med "
+"versaler eller med inledande versal."
 
 #: C/gnome-schedule.xml:35(para)
-msgid "DOCUMENT IS PROVIDED ON AN \"AS IS\" BASIS, WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, WITHOUT LIMITATION, WARRANTIES THAT THE DOCUMENT OR MODIFIED VERSION OF THE DOCUMENT IS FREE OF DEFECTS MERCHANTABLE, FIT FOR A PARTICULAR PURPOSE OR NON-INFRINGING. THE ENTIRE RISK AS TO THE QUALITY, ACCURACY, AND PERFORMANCE OF THE DOCUMENT OR MODIFIED VERSION OF THE DOCUMENT IS WITH YOU. SHOULD ANY DOCUMENT OR MODIFIED VERSION PROVE DEFECTIVE IN ANY RESPECT, YOU (NOT THE INITIAL WRITER, AUTHOR OR ANY CONTRIBUTOR) ASSUME THE COST OF ANY NECESSARY SERVICING, REPAIR OR CORRECTION. THIS DISCLAIMER OF WARRANTY CONSTITUTES AN ESSENTIAL PART OF THIS LICENSE. NO USE OF ANY DOCUMENT OR MODIFIED VERSION OF THE DOCUMENT IS AUTHORIZED HEREUNDER EXCEPT UNDER THIS DISCLAIMER; AND"
-msgstr "DOKUMENTET TILLHANDAHÅLLS I \"BEFINTLIGT SKICK\" UTAN NÅGRA SOM HELST GARANTIER, VARE SIG UTTRYCKLIGA ELLER UNDERFÖRSTÅDDA, INKLUSIVE, MEN INTE BEGRÄNSAT TILL, GARANTIER ATT DOKUMENTET ELLER EN MODIFIERAD VERSION AV DOKUMENTET INTE INNEHÅLLER NÅGRA FELAKTIGHETER, ÄR LÄMPLIGT FÖR ETT VISST ÄNDAMÅL ELLER INTE STRIDER MOT LAG. HELA RISKEN VAD GÄLLER KVALITET, EXAKTHET OCH UTFÖRANDE AV DOKUMENTET OCH MODIFIERADE VERSIONER AV DOKUMENTET LIGGER HELT OCH HÅLLET PÅ ANVÄNDAREN. OM ETT DOKUMENT ELLER EN MODIFIERAD VERSION AV ETT DOKUMENT SKULLE VISA SIG INNEHÅLLA FELAKTIGHETER I NÅGOT HÄNSEENDE ÄR DET DU (INTE DEN URSPRUNGLIGA SKRIBENTEN, FÖRFATTAREN ELLER NÅGON ANNAN MEDARBETARE) SOM FÅR STÅ FÖR ALLA EVENTUELLA KOSTNADER FÖR SERVICE, REPARATIONER ELLER KORRIGERINGAR. DENNA GARANTIFRISKRIVNING UTGÖR EN VÄSENTLIG DEL AV DETTA LICENSAVTAL. DETTA INNEBÄR ATT ALL ANVÄNDNING AV ETT DOKUMENT ELLER EN MODIFIERAD VERSION AV ETT DOKUMENT BEVILJAS ENDAST UNDER DENNA ANSVARSFRISKRIVNING;"
+msgid ""
+"DOCUMENT IS PROVIDED ON AN \"AS IS\" BASIS, WITHOUT WARRANTY OF ANY KIND, "
+"EITHER EXPRESSED OR IMPLIED, INCLUDING, WITHOUT LIMITATION, WARRANTIES THAT "
+"THE DOCUMENT OR MODIFIED VERSION OF THE DOCUMENT IS FREE OF DEFECTS "
+"MERCHANTABLE, FIT FOR A PARTICULAR PURPOSE OR NON-INFRINGING. THE ENTIRE "
+"RISK AS TO THE QUALITY, ACCURACY, AND PERFORMANCE OF THE DOCUMENT OR "
+"MODIFIED VERSION OF THE DOCUMENT IS WITH YOU. SHOULD ANY DOCUMENT OR "
+"MODIFIED VERSION PROVE DEFECTIVE IN ANY RESPECT, YOU (NOT THE INITIAL "
+"WRITER, AUTHOR OR ANY CONTRIBUTOR) ASSUME THE COST OF ANY NECESSARY "
+"SERVICING, REPAIR OR CORRECTION. THIS DISCLAIMER OF WARRANTY CONSTITUTES AN "
+"ESSENTIAL PART OF THIS LICENSE. NO USE OF ANY DOCUMENT OR MODIFIED VERSION "
+"OF THE DOCUMENT IS AUTHORIZED HEREUNDER EXCEPT UNDER THIS DISCLAIMER; AND"
+msgstr ""
+"DOKUMENTET TILLHANDAHÅLLS I \"BEFINTLIGT SKICK\" UTAN NÅGRA SOM HELST "
+"GARANTIER, VARE SIG UTTRYCKLIGA ELLER UNDERFÖRSTÅDDA, INKLUSIVE, MEN INTE "
+"BEGRÄNSAT TILL, GARANTIER ATT DOKUMENTET ELLER EN MODIFIERAD VERSION AV "
+"DOKUMENTET INTE INNEHÅLLER NÅGRA FELAKTIGHETER, ÄR LÄMPLIGT FÖR ETT VISST "
+"ÄNDAMÅL ELLER INTE STRIDER MOT LAG. HELA RISKEN VAD GÄLLER KVALITET, "
+"EXAKTHET OCH UTFÖRANDE AV DOKUMENTET OCH MODIFIERADE VERSIONER AV DOKUMENTET "
+"LIGGER HELT OCH HÅLLET PÅ ANVÄNDAREN. OM ETT DOKUMENT ELLER EN MODIFIERAD "
+"VERSION AV ETT DOKUMENT SKULLE VISA SIG INNEHÅLLA FELAKTIGHETER I NÅGOT "
+"HÄNSEENDE ÄR DET DU (INTE DEN URSPRUNGLIGA SKRIBENTEN, FÖRFATTAREN ELLER "
+"NÅGON ANNAN MEDARBETARE) SOM FÅR STÅ FÖR ALLA EVENTUELLA KOSTNADER FÖR "
+"SERVICE, REPARATIONER ELLER KORRIGERINGAR. DENNA GARANTIFRISKRIVNING UTGÖR "
+"EN VÄSENTLIG DEL AV DETTA LICENSAVTAL. DETTA INNEBÄR ATT ALL ANVÄNDNING AV "
+"ETT DOKUMENT ELLER EN MODIFIERAD VERSION AV ETT DOKUMENT BEVILJAS ENDAST "
+"UNDER DENNA ANSVARSFRISKRIVNING;"
 
 #: C/gnome-schedule.xml:55(para)
-msgid "UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY, WHETHER IN TORT (INCLUDING NEGLIGENCE), CONTRACT, OR OTHERWISE, SHALL THE AUTHOR, INITIAL WRITER, ANY CONTRIBUTOR, OR ANY DISTRIBUTOR OF THE DOCUMENT OR MODIFIED VERSION OF THE DOCUMENT, OR ANY SUPPLIER OF ANY OF SUCH PARTIES, BE LIABLE TO ANY PERSON FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES OF ANY CHARACTER INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF GOODWILL, WORK STOPPAGE, COMPUTER FAILURE OR MALFUNCTION, OR ANY AND ALL OTHER DAMAGES OR LOSSES ARISING OUT OF OR RELATING TO USE OF THE DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT, EVEN IF SUCH PARTY SHALL HAVE BEEN INFORMED OF THE POSSIBILITY OF SUCH DAMAGES."
-msgstr "UNDER INGA OMSTÄNDIGHETER ELLER INOM RAMEN FÖR NÅGON LAGSTIFTNING, OAVSETT OM DET GÄLLER KRÄNKNING (INKLUSIVE VÅRDSLÖSHET), KONTRAKT ELLER DYLIKT, SKA FÖRFATTAREN, DEN URSPRUNGLIGA SKRIBENTEN ELLER ANNAN MEDARBETARE ELLER ÅTERFÖRSÄLJARE AV DOKUMENTET ELLER AV EN MODIFIERAD VERSION AV DOKUMENTET ELLER NÅGON LEVERANTÖR TILL NÅGON AV NÄMNDA PARTER STÄLLAS ANSVARIG GENTEMOT NÅGON FÖR NÅGRA DIREKTA, INDIREKTA, SÄRSKILDA ELLER OFÖRUTSEDDA SKADOR ELLER FÖLJDSKADOR AV NÅGOT SLAG, INKLUSIVE, MEN INTE BEGRÄNSAT TILL, SKADOR BETRÄFFANDE FÖRLORAD GOODWILL, HINDER I ARBETET, DATORHAVERI ELLER NÅGRA ANDRA TÄNKBARA SKADOR ELLER FÖRLUSTER SOM KAN UPPKOMMA PÅ GRUND AV ELLER RELATERAT TILL ANVÄNDNINGEN AV DOKUMENTET ELLER MODIFIERADE VERSIONER AV DOKUMENTET, ÄVEN OM PART SKA HA BLIVIT INFORMERAD OM MÖJLIGHETEN TILL SÅDANA SKADOR."
+msgid ""
+"UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY, WHETHER IN TORT (INCLUDING "
+"NEGLIGENCE), CONTRACT, OR OTHERWISE, SHALL THE AUTHOR, INITIAL WRITER, ANY "
+"CONTRIBUTOR, OR ANY DISTRIBUTOR OF THE DOCUMENT OR MODIFIED VERSION OF THE "
+"DOCUMENT, OR ANY SUPPLIER OF ANY OF SUCH PARTIES, BE LIABLE TO ANY PERSON "
+"FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES OF "
+"ANY CHARACTER INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF GOODWILL, "
+"WORK STOPPAGE, COMPUTER FAILURE OR MALFUNCTION, OR ANY AND ALL OTHER DAMAGES "
+"OR LOSSES ARISING OUT OF OR RELATING TO USE OF THE DOCUMENT AND MODIFIED "
+"VERSIONS OF THE DOCUMENT, EVEN IF SUCH PARTY SHALL HAVE BEEN INFORMED OF THE "
+"POSSIBILITY OF SUCH DAMAGES."
+msgstr ""
+"UNDER INGA OMSTÄNDIGHETER ELLER INOM RAMEN FÖR NÅGON LAGSTIFTNING, OAVSETT "
+"OM DET GÄLLER KRÄNKNING (INKLUSIVE VÅRDSLÖSHET), KONTRAKT ELLER DYLIKT, SKA "
+"FÖRFATTAREN, DEN URSPRUNGLIGA SKRIBENTEN ELLER ANNAN MEDARBETARE ELLER "
+"ÅTERFÖRSÄLJARE AV DOKUMENTET ELLER AV EN MODIFIERAD VERSION AV DOKUMENTET "
+"ELLER NÅGON LEVERANTÖR TILL NÅGON AV NÄMNDA PARTER STÄLLAS ANSVARIG GENTEMOT "
+"NÅGON FÖR NÅGRA DIREKTA, INDIREKTA, SÄRSKILDA ELLER OFÖRUTSEDDA SKADOR ELLER "
+"FÖLJDSKADOR AV NÅGOT SLAG, INKLUSIVE, MEN INTE BEGRÄNSAT TILL, SKADOR "
+"BETRÄFFANDE FÖRLORAD GOODWILL, HINDER I ARBETET, DATORHAVERI ELLER NÅGRA "
+"ANDRA TÄNKBARA SKADOR ELLER FÖRLUSTER SOM KAN UPPKOMMA PÅ GRUND AV ELLER "
+"RELATERAT TILL ANVÄNDNINGEN AV DOKUMENTET ELLER MODIFIERADE VERSIONER AV "
+"DOKUMENTET, ÄVEN OM PART SKA HA BLIVIT INFORMERAD OM MÖJLIGHETEN TILL SÅDANA "
+"SKADOR."
 
 #: C/gnome-schedule.xml:28(para)
-msgid "DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT ARE PROVIDED UNDER THE TERMS OF THE GNU FREE DOCUMENTATION LICENSE WITH THE FURTHER UNDERSTANDING THAT: <placeholder-1/>"
-msgstr "DOKUMENTET OCH MODIFIERADE VERSIONER AV DOKUMENTET TILLHANDAHÅLLS UNDER VILLKOREN I GNU FREE DOCUMENTATION LICENSE ENDAST UNDER FÖLJANDE FÖRUTSÄTTNINGAR: <placeholder-1/>"
+msgid ""
+"DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT ARE PROVIDED UNDER THE TERMS "
+"OF THE GNU FREE DOCUMENTATION LICENSE WITH THE FURTHER UNDERSTANDING THAT: "
+"<placeholder-1/>"
+msgstr ""
+"DOKUMENTET OCH MODIFIERADE VERSIONER AV DOKUMENTET TILLHANDAHÅLLS UNDER "
+"VILLKOREN I GNU FREE DOCUMENTATION LICENSE ENDAST UNDER FÖLJANDE "
+"FÖRUTSÄTTNINGAR: <placeholder-1/>"
 
 #: C/gnome-schedule.xml:65(firstname)
 msgid "Rodrigo"
@@ -141,8 +243,16 @@ msgid "Feedback"
 msgstr "Återkoppling"
 
 #: C/gnome-schedule.xml:150(para)
-msgid "To report a bug or make a suggestion regarding the <application>Gnome Schedule</application> application or this manual, follow the directions in the <ulink url=\"ghelp:gnome-feedback\" type=\"help\">GNOME Feedback Page</ulink>."
-msgstr "För att rapportera ett fel eller föreslå någonting angående programmet <application>Gnome schemaläggare</application> eller den här handboken, följ anvisningarna på <ulink url=\"ghelp:gnome-feedback\" type=\"help\">GNOME:s återkopplingssida</ulink>."
+msgid ""
+"To report a bug or make a suggestion regarding the <application>Gnome "
+"Schedule</application> application or this manual, follow the directions in "
+"the <ulink url=\"ghelp:gnome-feedback\" type=\"help\">GNOME Feedback Page</"
+"ulink>."
+msgstr ""
+"För att rapportera ett fel eller föreslå någonting angående programmet "
+"<application>Gnome schemaläggare</application> eller den här handboken, följ "
+"anvisningarna på <ulink url=\"ghelp:gnome-feedback\" type=\"help\">GNOME:s "
+"återkopplingssida</ulink>."
 
 #: C/gnome-schedule.xml:160(primary) C/gnome-schedule.xml:0(application)
 msgid "Gnome Schedule"
@@ -153,20 +263,48 @@ msgid "Introduction"
 msgstr "Introduktion"
 
 #: C/gnome-schedule.xml:172(para)
-msgid "<application>Gnome Schedule</application> is a graphical tool that lets you schedule tasks with ease, to be run unattended at a specified time or periodically. These tasks, also known as jobs, can be either a command with its corresponding parameters or a script file with multiple instructions."
-msgstr "<application>Gnome schemaläggare</application> är ett grafiskt verktyg som låter dig schemalägga aktiviteter på ett enkelt sätt, för att köras utan assistans vid en angiven tid eller periodvis. Dessa aktiviteter, även kända som jobb, kan antingen vara ett kommando med dess motsvarande parametrar eller en skriptfil med flera instruktioner."
+msgid ""
+"<application>Gnome Schedule</application> is a graphical tool that lets you "
+"schedule tasks with ease, to be run unattended at a specified time or "
+"periodically. These tasks, also known as jobs, can be either a command with "
+"its corresponding parameters or a script file with multiple instructions."
+msgstr ""
+"<application>Gnome schemaläggare</application> är ett grafiskt verktyg som "
+"låter dig schemalägga aktiviteter på ett enkelt sätt, för att köras utan "
+"assistans vid en angiven tid eller periodvis. Dessa aktiviteter, även kända "
+"som jobb, kan antingen vara ett kommando med dess motsvarande parametrar "
+"eller en skriptfil med flera instruktioner."
 
 #: C/gnome-schedule.xml:175(para)
-msgid "You can use <application>Gnome Schedule</application> to program repetitive tasks in your daily work that can be automated. You can also run a heavy task at night while you are sleeping, for example, backing up your documents."
-msgstr "Du kan använda <application>Gnome schemaläggare</application> för att programmera återkommande aktiviteter i ditt dagliga arbete som kan automatiseras. Du kan också köra en tung aktivitet nattetid när du sover, till exempel en säkerhetskopiering av dina dokument."
+msgid ""
+"You can use <application>Gnome Schedule</application> to program repetitive "
+"tasks in your daily work that can be automated. You can also run a heavy "
+"task at night while you are sleeping, for example, backing up your documents."
+msgstr ""
+"Du kan använda <application>Gnome schemaläggare</application> för att "
+"programmera återkommande aktiviteter i ditt dagliga arbete som kan "
+"automatiseras. Du kan också köra en tung aktivitet nattetid när du sover, "
+"till exempel en säkerhetskopiering av dina dokument."
 
 #: C/gnome-schedule.xml:179(title)
 msgid "How does <application>Gnome Schedule</application> work?"
 msgstr "Hur fungerar <application>Gnome schemaläggare</application>?"
 
 #: C/gnome-schedule.xml:180(para)
-msgid "<application>Gnome Schedule</application> uses <application>cron</application> and <application>at</application> to program job executions. These are two system services commonly used by Linux-like systems. <application>Gnome Schedule</application> provides a single graphical interface to configure both and present jobs in a way easy to understand for everyone."
-msgstr "<application>Gnome schemaläggare</application> använder <application>cron</application> och <application>at</application> för att programmera jobbkörningar. Det är två systemtjänster som vanligen används av Linux-liknande system. <application>Gnome schemaläggare</application> tillhandahåller ett enda grafiskt gränssnitt för att konfigurera dem båda och presentera jobb på ett enkelt sätt som alla kan förstå."
+msgid ""
+"<application>Gnome Schedule</application> uses <application>cron</"
+"application> and <application>at</application> to program job executions. "
+"These are two system services commonly used by Linux-like systems. "
+"<application>Gnome Schedule</application> provides a single graphical "
+"interface to configure both and present jobs in a way easy to understand for "
+"everyone."
+msgstr ""
+"<application>Gnome schemaläggare</application> använder <application>cron</"
+"application> och <application>at</application> för att programmera "
+"jobbkörningar. Det är två systemtjänster som vanligen används av Linux-"
+"liknande system. <application>Gnome schemaläggare</application> "
+"tillhandahåller ett enda grafiskt gränssnitt för att konfigurera dem båda "
+"och presentera jobb på ett enkelt sätt som alla kan förstå."
 
 #: C/gnome-schedule.xml:186(title)
 msgid "About cron and at"
@@ -178,19 +316,28 @@ msgstr "Cron"
 
 #: C/gnome-schedule.xml:190(para)
 msgid ""
-"If you were to configure <application>cron</application> manually to execute a command, for example every Tuesday, you would have to use the command <command>crontab</command> in this way: <screen>\n"
+"If you were to configure <application>cron</application> manually to execute "
+"a command, for example every Tuesday, you would have to use the command "
+"<command>crontab</command> in this way: <screen>\n"
 "$ <userinput>crontab -e</userinput>\n"
 "<userinput>* * * * 2 &lt;command&gt; --parameters  #comments</userinput>\n"
 "\t      </screen>"
 msgstr ""
-"Om du skulle konfigurera <application>cron</application> manuellt till att köra ett kommando, till exempel varje tisdag, skulle du använda kommandot <command>crontab</command> på det här sättet: <screen>\n"
+"Om du skulle konfigurera <application>cron</application> manuellt till att "
+"köra ett kommando, till exempel varje tisdag, skulle du använda kommandot "
+"<command>crontab</command> på det här sättet: <screen>\n"
 "$ <userinput>crontab -e</userinput>\n"
-"<userinput>* * * * 2 &lt;kommando&gt; --parameters  #kommentarer</userinput>\n"
+"<userinput>* * * * 2 &lt;kommando&gt; --parameters  #kommentarer</"
+"userinput>\n"
 "\t      </screen>"
 
 #: C/gnome-schedule.xml:200(para)
-msgid "See <command>man cron</command> and <command>man crontab</command> for more information about <application>cron</application>"
-msgstr "Se <command>man cron</command> och <command>man crontab</command> för mer information om <application>cron</application>"
+msgid ""
+"See <command>man cron</command> and <command>man crontab</command> for more "
+"information about <application>cron</application>"
+msgstr ""
+"Se <command>man cron</command> och <command>man crontab</command> för mer "
+"information om <application>cron</application>"
 
 #: C/gnome-schedule.xml:205(guilabel)
 msgid "At"
@@ -198,14 +345,18 @@ msgstr "At"
 
 #: C/gnome-schedule.xml:207(para)
 msgid ""
-"If you were to configure <application>at</application> manually to execute a command, for example tomorrow at this time, you would have to use the command <command>at</command> in this way: <screen>\n"
+"If you were to configure <application>at</application> manually to execute a "
+"command, for example tomorrow at this time, you would have to use the "
+"command <command>at</command> in this way: <screen>\n"
 "$ <userinput>at tomorrow</userinput>\n"
 "at&gt; <userinput>&lt;command_1&gt; --parameters </userinput>\n"
 "at&gt; <userinput>&lt;command_2&gt; --parameters </userinput>\n"
 "at&gt; <userinput>Ctrl + D</userinput>\n"
 "        </screen>"
 msgstr ""
-"Om du skulle konfigurera <application>at</application> manuellt till att köra ett kommando, till exempel imorgon vid den här tiden, skulle du använda kommandot <command>at</command> på det här sättet: <screen>\n"
+"Om du skulle konfigurera <application>at</application> manuellt till att "
+"köra ett kommando, till exempel imorgon vid den här tiden, skulle du använda "
+"kommandot <command>at</command> på det här sättet: <screen>\n"
 "$ <userinput>at tomorrow</userinput>\n"
 "at&gt; <userinput>&lt;kommando_1&gt; --parameters </userinput>\n"
 "at&gt; <userinput>&lt;kommando_2&gt; --parameters </userinput>\n"
@@ -213,8 +364,12 @@ msgstr ""
 "        </screen>"
 
 #: C/gnome-schedule.xml:218(para)
-msgid "See <command>man at</command> for more information about <application>at</application>"
-msgstr "Se <command>man at</command> för mer information om <application>at</application>"
+msgid ""
+"See <command>man at</command> for more information about <application>at</"
+"application>"
+msgstr ""
+"Se <command>man at</command> för mer information om <application>at</"
+"application>"
 
 #: C/gnome-schedule.xml:234(title)
 msgid "Getting Started"
@@ -225,24 +380,37 @@ msgid "To Start <application>Gnome Schedule</application>"
 msgstr "Starta <application>Gnome schemaläggare</application>"
 
 #: C/gnome-schedule.xml:238(para)
-msgid "You can start <application>Gnome Schedule</application> in the following ways:"
-msgstr "Du kan starta <application>Gnome schemaläggare</application> på följande sätt:"
+msgid ""
+"You can start <application>Gnome Schedule</application> in the following "
+"ways:"
+msgstr ""
+"Du kan starta <application>Gnome schemaläggare</application> på följande "
+"sätt:"
 
 #: C/gnome-schedule.xml:242(term)
 msgid "<guimenu>Applications</guimenu> menu"
 msgstr "Menyn <guimenu>Program</guimenu>"
 
 #: C/gnome-schedule.xml:244(para)
-msgid "Choose <menuchoice><guisubmenu>System Tools</guisubmenu><guimenuitem>Schedule</guimenuitem></menuchoice>."
-msgstr "Välj <menuchoice><guisubmenu>Systemverktyg</guisubmenu><guimenuitem>Schema</guimenuitem></menuchoice>."
+msgid ""
+"Choose <menuchoice><guisubmenu>System Tools</"
+"guisubmenu><guimenuitem>Schedule</guimenuitem></menuchoice>."
+msgstr ""
+"Välj <menuchoice><guisubmenu>Systemverktyg</guisubmenu><guimenuitem>Schema</"
+"guimenuitem></menuchoice>."
 
 #: C/gnome-schedule.xml:252(term)
 msgid "Command line"
 msgstr "Kommandorad"
 
 #: C/gnome-schedule.xml:254(para)
-msgid "To start <application>Gnome Schedule</application> from a command line, type the following command, then press <keycap>Return</keycap>:"
-msgstr "För att starta <application>Gnome schemaläggare</application> från en kommandorad, ange följande kommando och tryck sedan på <keycap>Retur</keycap>:"
+msgid ""
+"To start <application>Gnome Schedule</application> from a command line, type "
+"the following command, then press <keycap>Return</keycap>:"
+msgstr ""
+"För att starta <application>Gnome schemaläggare</application> från en "
+"kommandorad, ange följande kommando och tryck sedan på <keycap>Retur</"
+"keycap>:"
 
 #: C/gnome-schedule.xml:257(command)
 msgid "gnome-schedule"
@@ -253,29 +421,45 @@ msgid "When You Start <application>Gnome Schedule</application>"
 msgstr "När du startar <application>Gnome schemaläggare</application>"
 
 #: C/gnome-schedule.xml:266(para)
-msgid "When you start <application>Gnome Schedule</application>, the main window is displayed:"
-msgstr "När du startar <application>Gnome schemaläggare</application> kommer huvudfönstret att visas:"
+msgid ""
+"When you start <application>Gnome Schedule</application>, the main window is "
+"displayed:"
+msgstr ""
+"När du startar <application>Gnome schemaläggare</application> kommer "
+"huvudfönstret att visas:"
 
 #: C/gnome-schedule.xml:270(title)
 msgid "Main Window"
 msgstr "Huvudfönster"
 
 #: C/gnome-schedule.xml:277(phrase)
-msgid "Shows <placeholder-1/> main window. Contains title bar, tool bar, and task list."
-msgstr "Visar <placeholder-1/> huvudfönstret. Innehåller titellist, verktygsfält och aktivitetslista."
+msgid ""
+"Shows <placeholder-1/> main window. Contains title bar, tool bar, and task "
+"list."
+msgstr ""
+"Visar <placeholder-1/> huvudfönstret. Innehåller titellist, verktygsfält och "
+"aktivitetslista."
 
 #. for example, the items on the menubar and on the tool bar. This section is optional.
 #: C/gnome-schedule.xml:287(para)
-msgid "The <application>Gnome Schedule</application> main window contains the following elements:"
-msgstr "Huvudfönstret i <application>Gnome schemaläggare</application> innehåller följande element:"
+msgid ""
+"The <application>Gnome Schedule</application> main window contains the "
+"following elements:"
+msgstr ""
+"Huvudfönstret i <application>Gnome schemaläggare</application> innehåller "
+"följande element:"
 
 #: C/gnome-schedule.xml:291(term)
 msgid "The tool bar."
 msgstr "Verktygsfältet."
 
 #: C/gnome-schedule.xml:293(para)
-msgid "The tool bar contains buttons that give you access to every function in the application."
-msgstr "Verktygsfältet innehåller knappar som ger åtkomst till alla alternativ i programmet."
+msgid ""
+"The tool bar contains buttons that give you access to every function in the "
+"application."
+msgstr ""
+"Verktygsfältet innehåller knappar som ger åtkomst till alla alternativ i "
+"programmet."
 
 #: C/gnome-schedule.xml:297(term)
 msgid "Task list."
@@ -286,8 +470,12 @@ msgid "Task:"
 msgstr "Aktivitet:"
 
 #: C/gnome-schedule.xml:303(para)
-msgid "Describes the type of the task: \"Recurrent\", when the task runs repeatedly or \"Once\", when the task is done only once."
-msgstr "Beskriver aktivitetens typ: \"Återkommande\", när aktiviteten körs repetitivt eller \"En gång\", när aktiviteten körs endast en gång."
+msgid ""
+"Describes the type of the task: \"Recurrent\", when the task runs repeatedly "
+"or \"Once\", when the task is done only once."
+msgstr ""
+"Beskriver aktivitetens typ: \"Återkommande\", när aktiviteten körs "
+"repetitivt eller \"En gång\", när aktiviteten körs endast en gång."
 
 #: C/gnome-schedule.xml:306(term)
 msgid "Description:"
@@ -314,12 +502,23 @@ msgid "Shows the command that is going to be executed."
 msgstr "Visar kommandot som kommer att köras."
 
 #: C/gnome-schedule.xml:299(para)
-msgid "The Task list shows information about current scheduled tasks and pending jobs. For every task, the following information is detailed: <placeholder-1/>"
-msgstr "Aktivitetslistan visar information om aktuella schemalagda aktiviteter och väntande jobb. För varje aktivitet visas följande information: <placeholder-1/>"
+msgid ""
+"The Task list shows information about current scheduled tasks and pending "
+"jobs. For every task, the following information is detailed: <placeholder-1/>"
+msgstr ""
+"Aktivitetslistan visar information om aktuella schemalagda aktiviteter och "
+"väntande jobb. För varje aktivitet visas följande information: "
+"<placeholder-1/>"
 
 #: C/gnome-schedule.xml:321(para)
-msgid "You can read a brief description of some of the objects and icons on the <application>Gnome Schedule</application> interface, by pointing them with the mouse and waiting for a few seconds."
-msgstr "Du kan läsa en kort beskrivning för några av objekten och ikonerna i gränssnittet för <application>Gnome schemaläggare</application> genom att peka på dem med musen och vänta ett par sekunder."
+msgid ""
+"You can read a brief description of some of the objects and icons on the "
+"<application>Gnome Schedule</application> interface, by pointing them with "
+"the mouse and waiting for a few seconds."
+msgstr ""
+"Du kan läsa en kort beskrivning för några av objekten och ikonerna i "
+"gränssnittet för <application>Gnome schemaläggare</application> genom att "
+"peka på dem med musen och vänta ett par sekunder."
 
 #: C/gnome-schedule.xml:329(title)
 msgid "Adding a New Scheduled Task"
@@ -330,12 +529,20 @@ msgid "Choosing the type of task to add"
 msgstr "Att välja typen av aktivitet att lägga till"
 
 #: C/gnome-schedule.xml:333(para)
-msgid "You can add a new scheduled task by pressing the <guibutton>New</guibutton> button in the main window tool bar."
-msgstr "Du kan lägga till en ny schemalagd aktivitet genom att trycka på <guibutton>Ny</guibutton>-knappen i huvudfönstrets verktygsfält."
+msgid ""
+"You can add a new scheduled task by pressing the <guibutton>New</guibutton> "
+"button in the main window tool bar."
+msgstr ""
+"Du kan lägga till en ny schemalagd aktivitet genom att trycka på "
+"<guibutton>Ny</guibutton>-knappen i huvudfönstrets verktygsfält."
 
 #: C/gnome-schedule.xml:335(para)
-msgid "The following dialog window will appear letting you to choose the type of task you want to schedule:"
-msgstr "Följande dialogruta kommer att visas för att låta dig välja typ av aktivitet som du vill schemalägga:"
+msgid ""
+"The following dialog window will appear letting you to choose the type of "
+"task you want to schedule:"
+msgstr ""
+"Följande dialogruta kommer att visas för att låta dig välja typ av aktivitet "
+"som du vill schemalägga:"
 
 #: C/gnome-schedule.xml:339(title)
 msgid "Task Type Selection Dialog Window"
@@ -346,16 +553,30 @@ msgid "Shows <placeholder-1/> task type selection dialog window."
 msgstr "Visar <placeholder-1/> dialogrutan för val av aktivitetstyp."
 
 #: C/gnome-schedule.xml:354(para)
-msgid "by pressing the first button you will be able to schedule a task that will be executed periodically."
-msgstr "genom att trycka på första knappen kommer du att kunna schemalägga en aktivitet som kommer att köras periodvis."
+msgid ""
+"by pressing the first button you will be able to schedule a task that will "
+"be executed periodically."
+msgstr ""
+"genom att trycka på första knappen kommer du att kunna schemalägga en "
+"aktivitet som kommer att köras periodvis."
 
 #: C/gnome-schedule.xml:356(para)
-msgid "by pressing the second button you will be able to schedule a task that will only be executed once."
-msgstr "genom att trycka på den andra knappen kommer du kunna schemalägga en aktivitet som endast kommer att köras en gång."
+msgid ""
+"by pressing the second button you will be able to schedule a task that will "
+"only be executed once."
+msgstr ""
+"genom att trycka på den andra knappen kommer du kunna schemalägga en "
+"aktivitet som endast kommer att köras en gång."
 
 #: C/gnome-schedule.xml:358(para)
-msgid "by pressing the third button you will be able to create a task from a template. Templates usage is explained in <xref linkend=\"myapp-templates\"/>."
-msgstr "genom att trycka på den tredje knappen kommer du att kunna skapa en aktivitet från en mall. Mallanvändning förklaras i <xref linkend=\"myapp-templates\"/>."
+msgid ""
+"by pressing the third button you will be able to create a task from a "
+"template. Templates usage is explained in <xref linkend=\"myapp-templates\"/"
+">."
+msgstr ""
+"genom att trycka på den tredje knappen kommer du att kunna skapa en "
+"aktivitet från en mall. Mallanvändning förklaras i <xref linkend=\"myapp-"
+"templates\"/>."
 
 #: C/gnome-schedule.xml:365(title)
 msgid "Adding a scheduled task that will launch recurrently"
@@ -386,8 +607,12 @@ msgid "Command"
 msgstr "Kommando"
 
 #: C/gnome-schedule.xml:388(para)
-msgid "Enter here the command or script that will be periodically executed by this task."
-msgstr "Ange här kommandot eller skriptet som ska köras periodvis av den här aktiviteten."
+msgid ""
+"Enter here the command or script that will be periodically executed by this "
+"task."
+msgstr ""
+"Ange här kommandot eller skriptet som ska köras periodvis av den här "
+"aktiviteten."
 
 #: C/gnome-schedule.xml:392(guilabel)
 msgid "Time &amp; Date"
@@ -398,16 +623,22 @@ msgid "Basic"
 msgstr "Grundläggande"
 
 #: C/gnome-schedule.xml:395(para)
-msgid "Lets you select the frequency for task execution among a list of common intervals."
-msgstr "Låter dig välja frekvensen för aktivitetskörning i från en lista av vanliga intervall."
+msgid ""
+"Lets you select the frequency for task execution among a list of common "
+"intervals."
+msgstr ""
+"Låter dig välja frekvensen för aktivitetskörning i från en lista av vanliga "
+"intervall."
 
 #: C/gnome-schedule.xml:398(term)
 msgid "Advanced"
 msgstr "Avancerat"
 
 #: C/gnome-schedule.xml:399(para)
-msgid "Lets you create custom time expressions in case you need more flexibility."
-msgstr "Låter dig skapa anpassade tidsuttryck i fall att du behöver mer flexibilitet."
+msgid ""
+"Lets you create custom time expressions in case you need more flexibility."
+msgstr ""
+"Låter dig skapa anpassade tidsuttryck i fall att du behöver mer flexibilitet."
 
 #: C/gnome-schedule.xml:403(guilabel)
 msgid "Preview"
@@ -434,52 +665,108 @@ msgid "Modifying a Scheduled Task"
 msgstr "Ändra en schemalagd aktivitet"
 
 #: C/gnome-schedule.xml:434(para)
-msgid "You can modify a scheduled task by selecting it from the <guilabel>Task list</guilabel> with one click and by pressing the <guibutton>Edit</guibutton> button from the main window tool bar. Then, the <guilabel>Edit a Scheduled Task</guilabel> window will be opened showing the task properties."
-msgstr "Du kan ändra en schemalagd aktivitet genom att markera den i <guilabel>aktivitetslistan</guilabel> med ett klick och genom att trycka på knappen <guibutton>Redigera</guibutton> i huvudfönstrets verktygsfält. Fönstret <guilabel>Redigera en schemalagd aktivitet</guilabel> kommer att öppnas och visa aktivitetens egenskaper."
+msgid ""
+"You can modify a scheduled task by selecting it from the <guilabel>Task "
+"list</guilabel> with one click and by pressing the <guibutton>Edit</"
+"guibutton> button from the main window tool bar. Then, the <guilabel>Edit a "
+"Scheduled Task</guilabel> window will be opened showing the task properties."
+msgstr ""
+"Du kan ändra en schemalagd aktivitet genom att markera den i "
+"<guilabel>aktivitetslistan</guilabel> med ett klick och genom att trycka på "
+"knappen <guibutton>Redigera</guibutton> i huvudfönstrets verktygsfält. "
+"Fönstret <guilabel>Redigera en schemalagd aktivitet</guilabel> kommer att "
+"öppnas och visa aktivitetens egenskaper."
 
 #: C/gnome-schedule.xml:436(para)
-msgid "Now, you will be able to modify any field you want. When you have finished you can press <guibutton>Apply</guibutton> button to save the changes or <guibutton>Cancel</guibutton> button to omit them."
-msgstr "Nu kan du ändra de fält som du vill. När du är klar kan du trycka på knappen <guibutton>Verkställ</guibutton> för att spara ändringarna eller knappen <guibutton>Avbryt</guibutton> för att förkasta dem."
+msgid ""
+"Now, you will be able to modify any field you want. When you have finished "
+"you can press <guibutton>Apply</guibutton> button to save the changes or "
+"<guibutton>Cancel</guibutton> button to omit them."
+msgstr ""
+"Nu kan du ändra de fält som du vill. När du är klar kan du trycka på knappen "
+"<guibutton>Verkställ</guibutton> för att spara ändringarna eller knappen "
+"<guibutton>Avbryt</guibutton> för att förkasta dem."
 
 #: C/gnome-schedule.xml:439(para)
-msgid "You can edit a task faster by simply double-clicking on it in the task list."
-msgstr "Du kan redigera en aktivitet snabbare genom att dubbelklicka på den i aktivitetslistan."
+msgid ""
+"You can edit a task faster by simply double-clicking on it in the task list."
+msgstr ""
+"Du kan redigera en aktivitet snabbare genom att dubbelklicka på den i "
+"aktivitetslistan."
 
 #: C/gnome-schedule.xml:445(title)
 msgid "Deleting a Scheduled Task"
 msgstr "Ta bort en schemalagd aktivitet"
 
 #: C/gnome-schedule.xml:446(para)
-msgid "You can delete a scheduled task by selecting it from the <guilabel>Task list</guilabel> with one click and by pressing the <guibutton>Delete</guibutton> button in the main window tool bar. Next, you will be asked for confirmation. By answering <guibutton>Yes</guibutton>, the scheduled task will be removed from the <guilabel>Task list</guilabel>."
-msgstr "Du kan ta bort en schemalagd aktivitet genom att markera den i <guilabel>aktivitetslistan</guilabel> med ett klick och sedan trycka på knappen <guibutton>Ta bort</guibutton> i huvudfönstrets verktygsfält. Härnäst kommer du att bli tillfrågad att bekräfta åtgärden. Genom att trycka på knappen <guibutton>Ja</guibutton>, kommer den schemalagda aktiviteten att tas bort från <guilabel>aktivitetslistan</guilabel>."
+msgid ""
+"You can delete a scheduled task by selecting it from the <guilabel>Task "
+"list</guilabel> with one click and by pressing the <guibutton>Delete</"
+"guibutton> button in the main window tool bar. Next, you will be asked for "
+"confirmation. By answering <guibutton>Yes</guibutton>, the scheduled task "
+"will be removed from the <guilabel>Task list</guilabel>."
+msgstr ""
+"Du kan ta bort en schemalagd aktivitet genom att markera den i "
+"<guilabel>aktivitetslistan</guilabel> med ett klick och sedan trycka på "
+"knappen <guibutton>Ta bort</guibutton> i huvudfönstrets verktygsfält. "
+"Härnäst kommer du att bli tillfrågad att bekräfta åtgärden. Genom att trycka "
+"på knappen <guibutton>Ja</guibutton>, kommer den schemalagda aktiviteten att "
+"tas bort från <guilabel>aktivitetslistan</guilabel>."
 
 #: C/gnome-schedule.xml:450(para)
-msgid "Non-recurrent tasks disapear automatically from the list when they are done."
-msgstr "Ej återkommande aktiviteter försvinner automatiskt från listan när de är utförda."
+msgid ""
+"Non-recurrent tasks disappear automatically from the list when they are done."
+msgstr ""
+"Ej återkommande aktiviteter försvinner automatiskt från listan när de är "
+"utförda."
 
 #: C/gnome-schedule.xml:456(title)
 msgid "Manually Running Scheduled Task"
 msgstr "Köra en schemalagd aktivitet manuellt"
 
 #: C/gnome-schedule.xml:457(para)
-msgid "You can trigger a scheduled task by selecting it from the <guilabel>Task list</guilabel> with one click and by pressing the <guibutton>Run task</guibutton> button in the main window tool bar."
-msgstr "Du kan starta en schemalagd aktivitet genom att markera den i <guilabel>Aktivitetslistan</guilabel> med ett klick och genom att trycka knappen <guibutton>Kör aktivitet</guibutton> i huvudfönstrets verktygsfält."
+msgid ""
+"You can trigger a scheduled task by selecting it from the <guilabel>Task "
+"list</guilabel> with one click and by pressing the <guibutton>Run task</"
+"guibutton> button in the main window tool bar."
+msgstr ""
+"Du kan starta en schemalagd aktivitet genom att markera den i "
+"<guilabel>Aktivitetslistan</guilabel> med ett klick och genom att trycka "
+"knappen <guibutton>Kör aktivitet</guibutton> i huvudfönstrets verktygsfält."
 
 #: C/gnome-schedule.xml:461(para)
-msgid "The task will be executed and its output will be displayed in a terminal window, letting you check if the task is correctly set."
-msgstr "Aktiviteten kommer att köras och dess utdata kommer att visas i ett terminalfönster, vilket låter dig verifiera om aktiviteten är korrekt inställd."
+msgid ""
+"The task will be executed and its output will be displayed in a terminal "
+"window, letting you check if the task is correctly set."
+msgstr ""
+"Aktiviteten kommer att köras och dess utdata kommer att visas i ett "
+"terminalfönster, vilket låter dig verifiera om aktiviteten är korrekt "
+"inställd."
 
 #: C/gnome-schedule.xml:468(title)
 msgid "Using Templates"
 msgstr "Använda mallar"
 
 #: C/gnome-schedule.xml:469(para)
-msgid "<application>Gnome Schedule</application> lets you save tasks as templates in order to reuse it later. This way, you will be able to create new scheduled tasks faster."
-msgstr "<application>Gnome schemaläggare</application> låter dig spara aktiviteter som mallar för att kunna återanvända dem senare. Därmed kommer du att kunna skapa nya schemalagda aktiviteter snabbare."
+msgid ""
+"<application>Gnome Schedule</application> lets you save tasks as templates "
+"in order to reuse it later. This way, you will be able to create new "
+"scheduled tasks faster."
+msgstr ""
+"<application>Gnome schemaläggare</application> låter dig spara aktiviteter "
+"som mallar för att kunna återanvända dem senare. Därmed kommer du att kunna "
+"skapa nya schemalagda aktiviteter snabbare."
 
 #: C/gnome-schedule.xml:470(para)
-msgid "To manage templates press the <guilabel>Template</guilabel> button on the main window tool bar. A new window will show you a list of available templates. From this window you can create, modify, delete and use templates."
-msgstr "För att hantera mallar, tryck på knappen <guilabel>Mall</guilabel> i huvudfönstrets verktygsfält. Ett nytt fönster kommer att visa en lista över tillgängliga mallar. Från detta fönster kan du skapa, ändra, ta bort och använda mallar."
+msgid ""
+"To manage templates press the <guilabel>Template</guilabel> button on the "
+"main window tool bar. A new window will show you a list of available "
+"templates. From this window you can create, modify, delete and use templates."
+msgstr ""
+"För att hantera mallar, tryck på knappen <guilabel>Mall</guilabel> i "
+"huvudfönstrets verktygsfält. Ett nytt fönster kommer att visa en lista över "
+"tillgängliga mallar. Från detta fönster kan du skapa, ändra, ta bort och "
+"använda mallar."
 
 #: C/gnome-schedule.xml:476(title)
 msgid "Template manager window"
@@ -490,40 +777,83 @@ msgid "Shows the \"Manage templates\" window"
 msgstr "Visa fönstret ”Hantera mallar”"
 
 #: C/gnome-schedule.xml:490(para)
-msgid "You can have common tasks saved as templates. So, you will not have to write the same stuff again and again!"
-msgstr "Du kan spara vanliga aktiviteter som mallar. Det innebär att du inte behöver skriva in samma saker igen och igen!"
+msgid ""
+"You can have common tasks saved as templates. So, you will not have to write "
+"the same stuff again and again!"
+msgstr ""
+"Du kan spara vanliga aktiviteter som mallar. Det innebär att du inte behöver "
+"skriva in samma saker igen och igen!"
 
 #: C/gnome-schedule.xml:498(title)
 msgid "Using <application>Gnome Schedule</application> as root"
 msgstr "Använda <application>Gnome schemaläggare</application> som root"
 
 #: C/gnome-schedule.xml:499(para)
-msgid "When you use <application>Gnome Schedule</application> as superuser, you can view, edit and add other users scheduled tasks."
-msgstr "När du använder <application>Gnome schemaläggare</application> som superanvändare kan du visa, redigera och lägga till andra användares schemalagda aktiviteter."
+msgid ""
+"When you use <application>Gnome Schedule</application> as superuser, you can "
+"view, edit and add other users scheduled tasks."
+msgstr ""
+"När du använder <application>Gnome schemaläggare</application> som "
+"superanvändare kan du visa, redigera och lägga till andra användares "
+"schemalagda aktiviteter."
 
 #: C/gnome-schedule.xml:500(para)
-msgid "You can change the user by pressing the <guibutton>Change User</guibutton> button in the main window tool bar. Then, a dialog window will be shown. Choose the desired user from the drop-down list and press <guibutton>OK</guibutton> button. Now the main window will show the scheduled tasks of the selected user."
-msgstr "Du kan byta användare genom att trycka på <guibutton>Byt användare</guibutton>-knappen i huvudfönstrets verktygsfält. En dialogruta kommer att visas. Välj den önskade användaren från rullgardinslistan och tryck på knappen <guibutton>OK</guibutton>. Nu kommer huvudfönstret att visa de schemalagda aktiviteterna för den valda användaren."
+msgid ""
+"You can change the user by pressing the <guibutton>Change User</guibutton> "
+"button in the main window tool bar. Then, a dialog window will be shown. "
+"Choose the desired user from the drop-down list and press <guibutton>OK</"
+"guibutton> button. Now the main window will show the scheduled tasks of the "
+"selected user."
+msgstr ""
+"Du kan byta användare genom att trycka på <guibutton>Byt användare</"
+"guibutton>-knappen i huvudfönstrets verktygsfält. En dialogruta kommer att "
+"visas. Välj den önskade användaren från rullgardinslistan och tryck på "
+"knappen <guibutton>OK</guibutton>. Nu kommer huvudfönstret att visa de "
+"schemalagda aktiviteterna för den valda användaren."
 
 #: C/gnome-schedule.xml:505(para)
-msgid "Please, keep in mind that this option is only available for system administrators."
-msgstr "Kom ihåg att detta alternativ endast är tillgängligt för systemadministratörer."
+msgid ""
+"Please, keep in mind that this option is only available for system "
+"administrators."
+msgstr ""
+"Kom ihåg att detta alternativ endast är tillgängligt för "
+"systemadministratörer."
 
 #: C/gnome-schedule.xml:511(title)
-msgid "Using <application>Gnome Schedule</application> to launch graphical applications"
-msgstr "Använda <application>Gnome schemaläggare</application> för att starta grafiska program"
+msgid ""
+"Using <application>Gnome Schedule</application> to launch graphical "
+"applications"
+msgstr ""
+"Använda <application>Gnome schemaläggare</application> för att starta "
+"grafiska program"
 
 #: C/gnome-schedule.xml:512(para)
-msgid "You can use <application>Gnome Schedule</application> to launch a graphical application automatically, but there are some information you would consider before:"
-msgstr "Du kan använda <application>Gnome schemaläggare </application> för att automatiskt köra ett grafiskt program, men det finns några detaljer som du bör känna till först:"
+msgid ""
+"You can use <application>Gnome Schedule</application> to launch a graphical "
+"application automatically, but there are some information you would consider "
+"before:"
+msgstr ""
+"Du kan använda <application>Gnome schemaläggare </application> för att "
+"automatiskt köra ett grafiskt program, men det finns några detaljer som du "
+"bör känna till först:"
 
 #: C/gnome-schedule.xml:516(title)
 msgid "About DISPLAY environment variable"
 msgstr "Om miljövariabeln DISPLAY"
 
 #: C/gnome-schedule.xml:517(para)
-msgid "When you run a graphical application from the command line you must first set the environment variable DISPLAY. This variable is used to tell your graphical application what X server to use. Normally you will want to use the one installed on your own computer. In that case you need to set the DISPLAY variable in this way:"
-msgstr "När du kör ett grafiskt program från kommandoraden måste du först ställa in miljövariabeln DISPLAY. Den här variabeln används för att berätta för ditt grafiska program vilken X-server som ska användas. Vanligtvis vill du använda den som är installerad på din egna dator. I det fallet behöver du ställa in DISPLAY-variabeln på det här sättet:"
+msgid ""
+"When you run a graphical application from the command line you must first "
+"set the environment variable DISPLAY. This variable is used to tell your "
+"graphical application what X server to use. Normally you will want to use "
+"the one installed on your own computer. In that case you need to set the "
+"DISPLAY variable in this way:"
+msgstr ""
+"När du kör ett grafiskt program från kommandoraden måste du först ställa in "
+"miljövariabeln DISPLAY. Den här variabeln används för att berätta för ditt "
+"grafiska program vilken X-server som ska användas. Vanligtvis vill du "
+"använda den som är installerad på din egna dator. I det fallet behöver du "
+"ställa in DISPLAY-variabeln på det här sättet:"
 
 #: C/gnome-schedule.xml:522(command)
 msgid "DISPLAY=:0.0"
@@ -534,8 +864,12 @@ msgid "where :0.0 means use screen 0 of X server 0 in this computer."
 msgstr "där :0.0 betyder använd skärm 0 för X-server 0 på den här datorn."
 
 #: C/gnome-schedule.xml:524(para)
-msgid "If you want display the application in a remote screen you can specify the IP address of the remote X server:"
-msgstr "Om du vill visa programmet på en fjärrskärm kan du ange IP-adressen för fjärr-X-servern:"
+msgid ""
+"If you want display the application in a remote screen you can specify the "
+"IP address of the remote X server:"
+msgstr ""
+"Om du vill visa programmet på en fjärrskärm kan du ange IP-adressen för "
+"fjärr-X-servern:"
 
 #: C/gnome-schedule.xml:526(command)
 msgid "DISPLAY=192.168.0.25:0.0"
@@ -543,31 +877,60 @@ msgstr "DISPLAY=192.168.0.25:0.0"
 
 #: C/gnome-schedule.xml:530(title)
 msgid "Setting DISPLAY variable for tasks that will launch once"
-msgstr "Ställ in variabeln DISPLAY för aktiviteter som kommer att köras en gång"
+msgstr ""
+"Ställ in variabeln DISPLAY för aktiviteter som kommer att köras en gång"
 
 #: C/gnome-schedule.xml:531(para)
-msgid "When you are creating or modifying a task, you can define the DISPLAY variable in the script text box. Make the definition at the begining of the script."
-msgstr "När du skapar eller ändrar en aktivitet, kan du definiera variabeln DISPLAY i skriptrutan. Ange definitionen i början av skriptet."
+msgid ""
+"When you are creating or modifying a task, you can define the DISPLAY "
+"variable in the script text box. Make the definition at the beginning of the "
+"script."
+msgstr ""
+"När du skapar eller ändrar en aktivitet, kan du definiera variabeln DISPLAY "
+"i skriptrutan. Ange definitionen i början av skriptet."
 
 #: C/gnome-schedule.xml:536(title)
 msgid "Setting DISPLAY variable for tasks that will launch recurrently"
-msgstr "Ställ in variabeln DISPLAY för aktiviteter som kommer att köras återkommande"
+msgstr ""
+"Ställ in variabeln DISPLAY för aktiviteter som kommer att köras återkommande"
 
 #: C/gnome-schedule.xml:537(para)
-msgid "<application>Gnome Schedule</application> does not support yet setting environment variables for recurrent tasks, but it will do soon. In the meantime, you can manually create a script that first defines DISPLAY variable and then calls the graphical application. Finally, you can create a recurrent task to launch the script."
-msgstr "<application>Gnome schemaläggare</application> har inte stöd för att ställa in miljövariabler för återkommande aktiviteter ännu, men kommer att få det snart. Under tiden kan du manuellt skapa ett skript som först definierar variabeln DISPLAY och sedan anropar det grafiska programmet. Slutligen kan du skapa en återkommande aktivitet för att köra skriptet."
+msgid ""
+"<application>Gnome Schedule</application> does not support yet setting "
+"environment variables for recurrent tasks, but it will do soon. In the "
+"meantime, you can manually create a script that first defines DISPLAY "
+"variable and then calls the graphical application. Finally, you can create a "
+"recurrent task to launch the script."
+msgstr ""
+"<application>Gnome schemaläggare</application> har inte stöd för att ställa "
+"in miljövariabler för återkommande aktiviteter ännu, men kommer att få det "
+"snart. Under tiden kan du manuellt skapa ett skript som först definierar "
+"variabeln DISPLAY och sedan anropar det grafiska programmet. Slutligen kan "
+"du skapa en återkommande aktivitet för att köra skriptet."
 
 #: C/gnome-schedule.xml:544(title)
 msgid "About X server"
 msgstr "Om X-server"
 
 #: C/gnome-schedule.xml:545(para)
-msgid "The X server is part of the X Window System. It is in charge of drawing windows on the screen and processing the user input from a keyboard or any other peripheral."
-msgstr "X-servern är en del av X Window System. Den är ansvarig för att rita ut fönster på skärmen och behandla användardata från ett tangentbord eller annan kringutrustning."
+msgid ""
+"The X server is part of the X Window System. It is in charge of drawing "
+"windows on the screen and processing the user input from a keyboard or any "
+"other peripheral."
+msgstr ""
+"X-servern är en del av X Window System. Den är ansvarig för att rita ut "
+"fönster på skärmen och behandla användardata från ett tangentbord eller "
+"annan kringutrustning."
 
 #: C/gnome-schedule.xml:548(para)
-msgid "If you need more information about X server or the X Window System you can read its <ulink url=\"http://en.wikipedia.org/wiki/X_Window_System\" type=\"http\">entry</ulink> in the Wikipedia."
-msgstr "Om du behöver mer information om X-server eller X Window System kan du läsa på denna <ulink url=\"http://en.wikipedia.org/wiki/X_Window_System\" type=\"http\">sida</ulink> hos Wikipedia."
+msgid ""
+"If you need more information about X server or the X Window System you can "
+"read its <ulink url=\"http://en.wikipedia.org/wiki/X_Window_System\" type="
+"\"http\">entry</ulink> in the Wikipedia."
+msgstr ""
+"Om du behöver mer information om X-server eller X Window System kan du läsa "
+"på denna <ulink url=\"http://en.wikipedia.org/wiki/X_Window_System\" type="
+"\"http\">sida</ulink> hos Wikipedia."
 
 #: C/gnome-schedule.xml:574(title)
 msgid "About <application>Gnome Schedule</application>"
@@ -578,24 +941,54 @@ msgid "Authors"
 msgstr "Upphovsmän"
 
 #: C/gnome-schedule.xml:577(para)
-msgid "<application>Gnome Schedule</application> was written by Philip Van Hoof (<email>pvanhoof@gnome.org</email>), Kristof Vansant (<email>de_lupus at pandora dot be</email>) and Gaute Hope (<email>eg@gaute.vetsj.com</email>). To find more information about <application>Gnome Schedule</application>, please visit the <ulink url=\"http://gnome-schedule.sourceforge.net/\" type=\"http\"><application>Gnome Schedule</application> Web Page</ulink>."
-msgstr "<application>Gnome schemaläggare</application> skrevs av Philip Van Hoof (<email>pvanhoof@gnome.org</email>), Kristof Vansant (<email>de_lupus at pandora dot be</email>) och Gaute Hope (<email>eg@gaute.vetsj.com</email>). För att hitta mer information om <application>Gnome schemaläggare</application>, besök <ulink url=\"http://gnome-schedule.sourceforge.net/\" type=\"http\"><application>Gnome schemaläggarens</application> webbsida</ulink>."
+msgid ""
+"<application>Gnome Schedule</application> was written by Philip Van Hoof "
+"(<email>pvanhoof@gnome.org</email>), Kristof Vansant (<email>de_lupus at "
+"pandora dot be</email>) and Gaute Hope (<email>eg@gaute.vetsj.com</email>). "
+"To find more information about <application>Gnome Schedule</application>, "
+"please visit the <ulink url=\"http://gnome-schedule.sourceforge.net/\" type="
+"\"http\"><application>Gnome Schedule</application> Web Page</ulink>."
+msgstr ""
+"<application>Gnome schemaläggare</application> skrevs av Philip Van Hoof "
+"(<email>pvanhoof@gnome.org</email>), Kristof Vansant (<email>de_lupus at "
+"pandora dot be</email>) och Gaute Hope (<email>eg@gaute.vetsj.com</email>). "
+"För att hitta mer information om <application>Gnome schemaläggare</"
+"application>, besök <ulink url=\"http://gnome-schedule.sourceforge.net/\" "
+"type=\"http\"><application>Gnome schemaläggarens</application> webbsida</"
+"ulink>."
 
 #: C/gnome-schedule.xml:586(title)
 msgid "Reporting Bugs"
 msgstr "Rapportera fel"
 
 #: C/gnome-schedule.xml:587(para)
-msgid "To report a bug or make a suggestion regarding this application or this manual, follow the directions in this <ulink url=\"ghelp:gnome-feedback\" type=\"help\">document</ulink>."
-msgstr "För att rapportera ett fel eller föreslå någonting angående det här programmet eller den här handboken, följ anvisningarna i det här <ulink url=\"ghelp:gnome-feedback\" type=\"help\">dokumentet</ulink>."
+msgid ""
+"To report a bug or make a suggestion regarding this application or this "
+"manual, follow the directions in this <ulink url=\"ghelp:gnome-feedback\" "
+"type=\"help\">document</ulink>."
+msgstr ""
+"För att rapportera ett fel eller föreslå någonting angående det här "
+"programmet eller den här handboken, följ anvisningarna i det här <ulink url="
+"\"ghelp:gnome-feedback\" type=\"help\">dokumentet</ulink>."
 
 #: C/gnome-schedule.xml:595(title)
 msgid "License"
 msgstr "Licens"
 
 #: C/gnome-schedule.xml:596(para)
-msgid "This program is distributed under the terms of the GNU General Public license as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version. A copy of this license can be found at this <ulink url=\"ghelp:gpl\" type=\"help\">link</ulink>, or in the file COPYING included with the source code of this program."
-msgstr "Det här programmet distribueras under villkoren för GNU General Public License som publicerats av Free Software Foundation; antingen version 2 av licensen, eller (upp till dig) någon senare version. En kopia av den här licensen kan hittas på den här <ulink url=\"ghelp:gpl\" type=\"help\">länken</ulink>, eller i filen COPYING som inkluderas med källkoden för det här programmet."
+msgid ""
+"This program is distributed under the terms of the GNU General Public "
+"license as published by the Free Software Foundation; either version 2 of "
+"the License, or (at your option) any later version. A copy of this license "
+"can be found at this <ulink url=\"ghelp:gpl\" type=\"help\">link</ulink>, or "
+"in the file COPYING included with the source code of this program."
+msgstr ""
+"Det här programmet distribueras under villkoren för GNU General Public "
+"License som publicerats av Free Software Foundation; antingen version 2 av "
+"licensen, eller (upp till dig) någon senare version. En kopia av den här "
+"licensen kan hittas på den här <ulink url=\"ghelp:gpl\" type=\"help"
+"\">länken</ulink>, eller i filen COPYING som inkluderas med källkoden för "
+"det här programmet."
 
 #. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
 #: C/gnome-schedule.xml:0(None)
@@ -603,4 +996,3 @@ msgid "translator-credits"
 msgstr ""
 "Daniel Nylander <po@danielnylander.se>, 2006\n"
 "Josef Andersson <Josef Andersson@fripost.org>, 2015"
-
