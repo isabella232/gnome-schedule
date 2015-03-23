@@ -1,15 +1,17 @@
 # Czech translation for gnome-schedule help.
 # Copyright (C) 2010 gnome-schedule's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-schedule help.
-# Marek Černocký <marek@manet.cz>, 2010.
+#
+# Marek Černocký <marek@manet.cz>, 2010, 2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule master\n"
-"POT-Creation-Date: 2010-01-07 17:51+0000\n"
-"PO-Revision-Date: 2010-03-11 11:18+0100\n"
+"POT-Creation-Date: 2015-03-23 08:36+0000\n"
+"PO-Revision-Date: 2015-03-23 10:16+0100\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -18,35 +20,54 @@ msgstr ""
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: C/gnome-schedule.xml:274(None)
-msgid "@@image: 'figures/gnome-schedule_main.png'; md5=a330f285d64bd1070bf0b2ea61926c40"
-msgstr "@@image: 'figures/gnome-schedule_main.png'; md5=a330f285d64bd1070bf0b2ea61926c40"
+msgid ""
+"@@image: 'figures/gnome-schedule_main.png'; "
+"md5=a330f285d64bd1070bf0b2ea61926c40"
+msgstr ""
+"@@image: 'figures/gnome-schedule_main.png'; "
+"md5=a330f285d64bd1070bf0b2ea61926c40"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: C/gnome-schedule.xml:343(None)
-msgid "@@image: 'figures/gnome-schedule_new_task.png'; md5=c13fbc3a2faa6145c9370a9137dc86ba"
-msgstr "@@image: 'figures/gnome-schedule_new_task.png'; md5=c13fbc3a2faa6145c9370a9137dc86ba"
+msgid ""
+"@@image: 'figures/gnome-schedule_new_task.png'; "
+"md5=c13fbc3a2faa6145c9370a9137dc86ba"
+msgstr ""
+"@@image: 'figures/gnome-schedule_new_task.png'; "
+"md5=c13fbc3a2faa6145c9370a9137dc86ba"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: C/gnome-schedule.xml:373(None)
-msgid "@@image: 'figures/gnome-schedule_new_task_recurrent.png'; md5=7502298e8a4a17232ed9a6d28855426a"
-msgstr "@@image: 'figures/gnome-schedule_new_task_recurrent.png'; md5=7502298e8a4a17232ed9a6d28855426a"
+msgid ""
+"@@image: 'figures/gnome-schedule_new_task_recurrent.png'; "
+"md5=7502298e8a4a17232ed9a6d28855426a"
+msgstr ""
+"@@image: 'figures/gnome-schedule_new_task_recurrent.png'; "
+"md5=7502298e8a4a17232ed9a6d28855426a"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: C/gnome-schedule.xml:418(None)
-msgid "@@image: 'figures/gnome-schedule_new_task_once.png'; md5=a8e20668ea7afd0ada8f6f5e66cdbff8"
-msgstr "@@image: 'figures/gnome-schedule_new_task_once.png'; md5=a8e20668ea7afd0ada8f6f5e66cdbff8"
+msgid ""
+"@@image: 'figures/gnome-schedule_new_task_once.png'; "
+"md5=a8e20668ea7afd0ada8f6f5e66cdbff8"
+msgstr ""
+"@@image: 'figures/gnome-schedule_new_task_once.png'; "
+"md5=a8e20668ea7afd0ada8f6f5e66cdbff8"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: C/gnome-schedule.xml:480(None)
-msgid "@@image: 'figures/gnome-schedule_templates.png'; md5=884d645f5cb300b4a2ad434ad5db2916"
-msgstr "@@image: 'figures/gnome-schedule_templates.png'; md5=884d645f5cb300b4a2ad434ad5db2916"
+msgid ""
+"@@image: 'figures/gnome-schedule_templates.png'; "
+"md5=884d645f5cb300b4a2ad434ad5db2916"
+msgstr ""
+"@@image: 'figures/gnome-schedule_templates.png'; "
+"md5=884d645f5cb300b4a2ad434ad5db2916"
 
-#: C/gnome-schedule.xml:37(title)
-#: C/gnome-schedule.xml:136(revnumber)
+#: C/gnome-schedule.xml:37(title) C/gnome-schedule.xml:136(revnumber)
 msgid "Gnome Schedule User Guide V2.2"
 msgstr "Uživatelská příručka V2.2 k aplikaci Gnome Schedule"
 
@@ -62,37 +83,110 @@ msgstr "2005-2008"
 msgid "Rodrigo Marcos Fombellida rmarcos@svn.gnome.org"
 msgstr "Rodrigo Marcos Fombellida rmarcos@svn.gnome.org"
 
-#: C/gnome-schedule.xml:55(publishername)
-#: C/gnome-schedule.xml:68(orgname)
-#: C/gnome-schedule.xml:123(para)
-#: C/gnome-schedule.xml:132(para)
+#: C/gnome-schedule.xml:55(publishername) C/gnome-schedule.xml:68(orgname)
+#: C/gnome-schedule.xml:123(para) C/gnome-schedule.xml:132(para)
 #: C/gnome-schedule.xml:141(para)
 msgid "GNOME Documentation Project"
 msgstr "Dokumentační projekt GNOME"
 
 #: C/gnome-schedule.xml:2(para)
-msgid "Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License (GFDL), Version 1.1 or any later version published by the Free Software Foundation with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. You can find a copy of the GFDL at this <ulink type=\"help\" url=\"ghelp:fdl\">link</ulink> or in the file COPYING-DOCS distributed with this manual."
-msgstr "Je povoleno kopírovat, šířit a/nebo upravovat tento dokument za podmínek GNU Free Documentation License, verze 1.1 nebo jakékoli další verze vydané nadací Free Software Foundation; bez neměnných oddílů, bez textů předních desek a bez textů zadních desek. Kopie této licence je zahrnuta v oddílu jménem <ulink type=\"help\" url=\"ghelp:fdl\">GNU Free Documentation License</ulink> nebo v souboru COPYING-DOCS dodávaném s touto příručkou."
+msgid ""
+"Permission is granted to copy, distribute and/or modify this document under "
+"the terms of the GNU Free Documentation License (GFDL), Version 1.1 or any "
+"later version published by the Free Software Foundation with no Invariant "
+"Sections, no Front-Cover Texts, and no Back-Cover Texts. You can find a copy "
+"of the GFDL at this <ulink type=\"help\" url=\"ghelp:fdl\">link</ulink> or "
+"in the file COPYING-DOCS distributed with this manual."
+msgstr ""
+"Je povoleno kopírovat, šířit a/nebo upravovat tento dokument za podmínek GNU "
+"Free Documentation License, verze 1.1 nebo jakékoli další verze vydané "
+"nadací Free Software Foundation; bez neměnných oddílů, bez textů předních "
+"desek a bez textů zadních desek. Kopie této licence je zahrnuta v oddílu "
+"jménem <ulink type=\"help\" url=\"ghelp:fdl\">GNU Free Documentation "
+"License</ulink> nebo v souboru COPYING-DOCS dodávaném s touto příručkou."
 
 #: C/gnome-schedule.xml:12(para)
-msgid "This manual is part of a collection of GNOME manuals distributed under the GFDL. If you want to distribute this manual separately from the collection, you can do so by adding a copy of the license to the manual, as described in section 6 of the license."
-msgstr "Tato příručka je součástí kolekce příruček GNOME, distribuovaných pod licencí GNU FDL. Pokud chcete tento dokument šířit odděleně od kolekce, musíte přiložit kopii licence dle popisu v sekci 6 dané licence."
+msgid ""
+"This manual is part of a collection of GNOME manuals distributed under the "
+"GFDL. If you want to distribute this manual separately from the collection, "
+"you can do so by adding a copy of the license to the manual, as described in "
+"section 6 of the license."
+msgstr ""
+"Tato příručka je součástí kolekce příruček GNOME, distribuovaných pod "
+"licencí GNU FDL. Pokud chcete tento dokument šířit odděleně od kolekce, "
+"musíte přiložit kopii licence dle popisu v sekci 6 dané licence."
 
 #: C/gnome-schedule.xml:19(para)
-msgid "Many of the names used by companies to distinguish their products and services are claimed as trademarks. Where those names appear in any GNOME documentation, and the members of the GNOME Documentation Project are made aware of those trademarks, then the names are in capital letters or initial capital letters."
-msgstr "Mnoho názvů použitých firmami k zviditelnění produktů nebo služeb jsou ochranné známky. Na místech, kde jsou tyto názvy v dokumentaci použity a členové Dokumentačního projektu GNOME jsou si vědomi skutečnosti, že se jedná o ochrannou známku, je takovýto název psán velkými písmeny celý nebo s velkým písmenem na začátku."
+msgid ""
+"Many of the names used by companies to distinguish their products and "
+"services are claimed as trademarks. Where those names appear in any GNOME "
+"documentation, and the members of the GNOME Documentation Project are made "
+"aware of those trademarks, then the names are in capital letters or initial "
+"capital letters."
+msgstr ""
+"Mnoho názvů použitých firmami k zviditelnění produktů nebo služeb jsou "
+"ochranné známky. Na místech, kde jsou tyto názvy v dokumentaci použity a "
+"členové Dokumentačního projektu GNOME jsou si vědomi skutečnosti, že se "
+"jedná o ochrannou známku, je takovýto název psán velkými písmeny celý nebo s "
+"velkým písmenem na začátku."
 
 #: C/gnome-schedule.xml:35(para)
-msgid "DOCUMENT IS PROVIDED ON AN \"AS IS\" BASIS, WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, WITHOUT LIMITATION, WARRANTIES THAT THE DOCUMENT OR MODIFIED VERSION OF THE DOCUMENT IS FREE OF DEFECTS MERCHANTABLE, FIT FOR A PARTICULAR PURPOSE OR NON-INFRINGING. THE ENTIRE RISK AS TO THE QUALITY, ACCURACY, AND PERFORMANCE OF THE DOCUMENT OR MODIFIED VERSION OF THE DOCUMENT IS WITH YOU. SHOULD ANY DOCUMENT OR MODIFIED VERSION PROVE DEFECTIVE IN ANY RESPECT, YOU (NOT THE INITIAL WRITER, AUTHOR OR ANY CONTRIBUTOR) ASSUME THE COST OF ANY NECESSARY SERVICING, REPAIR OR CORRECTION. THIS DISCLAIMER OF WARRANTY CONSTITUTES AN ESSENTIAL PART OF THIS LICENSE. NO USE OF ANY DOCUMENT OR MODIFIED VERSION OF THE DOCUMENT IS AUTHORIZED HEREUNDER EXCEPT UNDER THIS DISCLAIMER; AND"
-msgstr "DOKUMENT JE POSKYTOVÁN V PODOBĚ „JAK JE“ BEZ ZÁRUKY V JAKÉKOLIV PODOBĚ, NEPOSKYTUJÍ SE ANI ODVOZENÉ ZÁRUKY, ZÁRUKY, ŽE DOKUMENT, NEBO JEHO UPRAVENÁ VERZE, JE BEZCHYBNÝ NEBO ZÁRUKY PRODEJNOSTI, VHODNOSTI PRO URČITÝ ÚČEL NEBO NEPORUŠENOSTI. RIZIKO NEKVALITY, NEPŘESNOSTI A ŠPATNÉHO PROVEDENÍ DOKUMENTU, NEBO JEHO UPRAVENÉ VERZE, LEŽÍ NA VÁS. POKUD KVŮLI TOMUTO DOKUMENTU, NEBO JEHO UPRAVENÉ VERZI, NASTANE PROBLÉM, VY (NIKOLIV PŮVODNÍ AUTOR NEBO JAKÝKOLIV PŘISPĚVATEL) PŘEBÍRÁTE JAKÉKOLIV NÁKLADY ZA NUTNÉ ÚPRAVY, OPRAVY ČI SLUŽBY. TOTO PROHLÁŠENÍ O ZÁRUCE PŘEDSTAVUJE ZÁKLADNÍ SOUČÁST TÉTO LICENCE. BEZ TOHOTO PROHLÁŠENÍ NENÍ, PODLE TÉTO DOHODY, POVOLENO UŽÍVÁNÍ ANI ÚPRAVY TOHOTO DOKUMENTU; DÁLE"
+msgid ""
+"DOCUMENT IS PROVIDED ON AN \"AS IS\" BASIS, WITHOUT WARRANTY OF ANY KIND, "
+"EITHER EXPRESSED OR IMPLIED, INCLUDING, WITHOUT LIMITATION, WARRANTIES THAT "
+"THE DOCUMENT OR MODIFIED VERSION OF THE DOCUMENT IS FREE OF DEFECTS "
+"MERCHANTABLE, FIT FOR A PARTICULAR PURPOSE OR NON-INFRINGING. THE ENTIRE "
+"RISK AS TO THE QUALITY, ACCURACY, AND PERFORMANCE OF THE DOCUMENT OR "
+"MODIFIED VERSION OF THE DOCUMENT IS WITH YOU. SHOULD ANY DOCUMENT OR "
+"MODIFIED VERSION PROVE DEFECTIVE IN ANY RESPECT, YOU (NOT THE INITIAL "
+"WRITER, AUTHOR OR ANY CONTRIBUTOR) ASSUME THE COST OF ANY NECESSARY "
+"SERVICING, REPAIR OR CORRECTION. THIS DISCLAIMER OF WARRANTY CONSTITUTES AN "
+"ESSENTIAL PART OF THIS LICENSE. NO USE OF ANY DOCUMENT OR MODIFIED VERSION "
+"OF THE DOCUMENT IS AUTHORIZED HEREUNDER EXCEPT UNDER THIS DISCLAIMER; AND"
+msgstr ""
+"DOKUMENT JE POSKYTOVÁN V PODOBĚ „JAK JE“ BEZ ZÁRUKY V JAKÉKOLIV PODOBĚ, "
+"NEPOSKYTUJÍ SE ANI ODVOZENÉ ZÁRUKY, ZÁRUKY, ŽE DOKUMENT, NEBO JEHO UPRAVENÁ "
+"VERZE, JE BEZCHYBNÝ NEBO ZÁRUKY PRODEJNOSTI, VHODNOSTI PRO URČITÝ ÚČEL NEBO "
+"NEPORUŠENOSTI. RIZIKO NEKVALITY, NEPŘESNOSTI A ŠPATNÉHO PROVEDENÍ DOKUMENTU, "
+"NEBO JEHO UPRAVENÉ VERZE, LEŽÍ NA VÁS. POKUD KVŮLI TOMUTO DOKUMENTU, NEBO "
+"JEHO UPRAVENÉ VERZI, NASTANE PROBLÉM, VY (NIKOLIV PŮVODNÍ AUTOR NEBO "
+"JAKÝKOLIV PŘISPĚVATEL) PŘEBÍRÁTE JAKÉKOLIV NÁKLADY ZA NUTNÉ ÚPRAVY, OPRAVY "
+"ČI SLUŽBY. TOTO PROHLÁŠENÍ O ZÁRUCE PŘEDSTAVUJE ZÁKLADNÍ SOUČÁST TÉTO "
+"LICENCE. BEZ TOHOTO PROHLÁŠENÍ NENÍ, PODLE TÉTO DOHODY, POVOLENO UŽÍVÁNÍ ANI "
+"ÚPRAVY TOHOTO DOKUMENTU; DÁLE"
 
 #: C/gnome-schedule.xml:55(para)
-msgid "UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY, WHETHER IN TORT (INCLUDING NEGLIGENCE), CONTRACT, OR OTHERWISE, SHALL THE AUTHOR, INITIAL WRITER, ANY CONTRIBUTOR, OR ANY DISTRIBUTOR OF THE DOCUMENT OR MODIFIED VERSION OF THE DOCUMENT, OR ANY SUPPLIER OF ANY OF SUCH PARTIES, BE LIABLE TO ANY PERSON FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES OF ANY CHARACTER INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF GOODWILL, WORK STOPPAGE, COMPUTER FAILURE OR MALFUNCTION, OR ANY AND ALL OTHER DAMAGES OR LOSSES ARISING OUT OF OR RELATING TO USE OF THE DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT, EVEN IF SUCH PARTY SHALL HAVE BEEN INFORMED OF THE POSSIBILITY OF SUCH DAMAGES."
-msgstr "ZA ŽÁDNÝCH OKOLNOSTÍ A ŽÁDNÝCH PRÁVNÍCH PŘEDPOKLADŮ, AŤ SE JEDNÁ O PŘEČIN (VČETNĚ NEDBALOSTNÍCH), SMLOUVU NEBO JINÉ, NENÍ AUTOR, PŮVODNÍ PISATEL, KTERÝKOLIV PŘISPĚVATEL NEBO KTERÝKOLIV DISTRIBUTOR TOHOTO DOKUMENTU NEBO UPRAVENÉ VERZE DOKUMENTU NEBO KTERÝKOLIV DODAVATEL NĚKTERÉ Z TĚCHTO STRAN ODPOVĚDNÝ NĚJAKÉ OSOBĚ ZA PŘÍMÉ, NEPŘÍMÉ, SPECIÁLNÍ, NAHODILÉ NEBO NÁSLEDNÉ ŠKODY JAKÉHOKOLIV CHARAKTERU, VČETNĚ, ALE NEJEN, ZA POŠKOZENÍ ZE ZTRÁTY DOBRÉHO JMÉNA, PŘERUŠENÍ PRÁCE, PORUCHY NEBO NESPRÁVNÉ FUNKCE POČÍTAČE NEBO JINÉHO A VŠECH DALŠÍCH ŠKOD NEBO ZTRÁT VYVSTÁVAJÍCÍCH Z NEBO VZTAHUJÍCÍCH SE K POUŽÍVÁNÍ TOHOTO DOKUMENTU NEBO UPRAVENÝCH VERZÍ DOKUMENTU, I KDYŽ BY TAKOVÁTO STRANA BYLA INFORMOVANÁ O MOŽNOSTI TAKOVÉHOTO POŠKOZENÍ."
+msgid ""
+"UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY, WHETHER IN TORT (INCLUDING "
+"NEGLIGENCE), CONTRACT, OR OTHERWISE, SHALL THE AUTHOR, INITIAL WRITER, ANY "
+"CONTRIBUTOR, OR ANY DISTRIBUTOR OF THE DOCUMENT OR MODIFIED VERSION OF THE "
+"DOCUMENT, OR ANY SUPPLIER OF ANY OF SUCH PARTIES, BE LIABLE TO ANY PERSON "
+"FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES OF "
+"ANY CHARACTER INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF GOODWILL, "
+"WORK STOPPAGE, COMPUTER FAILURE OR MALFUNCTION, OR ANY AND ALL OTHER DAMAGES "
+"OR LOSSES ARISING OUT OF OR RELATING TO USE OF THE DOCUMENT AND MODIFIED "
+"VERSIONS OF THE DOCUMENT, EVEN IF SUCH PARTY SHALL HAVE BEEN INFORMED OF THE "
+"POSSIBILITY OF SUCH DAMAGES."
+msgstr ""
+"ZA ŽÁDNÝCH OKOLNOSTÍ A ŽÁDNÝCH PRÁVNÍCH PŘEDPOKLADŮ, AŤ SE JEDNÁ O PŘEČIN "
+"(VČETNĚ NEDBALOSTNÍCH), SMLOUVU NEBO JINÉ, NENÍ AUTOR, PŮVODNÍ PISATEL, "
+"KTERÝKOLIV PŘISPĚVATEL NEBO KTERÝKOLIV DISTRIBUTOR TOHOTO DOKUMENTU NEBO "
+"UPRAVENÉ VERZE DOKUMENTU NEBO KTERÝKOLIV DODAVATEL NĚKTERÉ Z TĚCHTO STRAN "
+"ODPOVĚDNÝ NĚJAKÉ OSOBĚ ZA PŘÍMÉ, NEPŘÍMÉ, SPECIÁLNÍ, NAHODILÉ NEBO NÁSLEDNÉ "
+"ŠKODY JAKÉHOKOLIV CHARAKTERU, VČETNĚ, ALE NEJEN, ZA POŠKOZENÍ ZE ZTRÁTY "
+"DOBRÉHO JMÉNA, PŘERUŠENÍ PRÁCE, PORUCHY NEBO NESPRÁVNÉ FUNKCE POČÍTAČE NEBO "
+"JINÉHO A VŠECH DALŠÍCH ŠKOD NEBO ZTRÁT VYVSTÁVAJÍCÍCH Z NEBO VZTAHUJÍCÍCH SE "
+"K POUŽÍVÁNÍ TOHOTO DOKUMENTU NEBO UPRAVENÝCH VERZÍ DOKUMENTU, I KDYŽ BY "
+"TAKOVÁTO STRANA BYLA INFORMOVANÁ O MOŽNOSTI TAKOVÉHOTO POŠKOZENÍ."
 
 #: C/gnome-schedule.xml:28(para)
-msgid "DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT ARE PROVIDED UNDER THE TERMS OF THE GNU FREE DOCUMENTATION LICENSE WITH THE FURTHER UNDERSTANDING THAT: <placeholder-1/>"
-msgstr "DOKUMENT A JEHO UPRAVENÉ VERZE JSOU ŠÍŘENY V SOULADU SE ZNĚNÍM LICENCE GNU FREE DOCUMENTATION LICENSE S NÁSLEDUJÍCÍM USTANOVENÍM: <placeholder-1/>"
+msgid ""
+"DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT ARE PROVIDED UNDER THE TERMS "
+"OF THE GNU FREE DOCUMENTATION LICENSE WITH THE FURTHER UNDERSTANDING THAT: "
+"<placeholder-1/>"
+msgstr ""
+"DOKUMENT A JEHO UPRAVENÉ VERZE JSOU ŠÍŘENY V SOULADU SE ZNĚNÍM LICENCE GNU "
+"FREE DOCUMENTATION LICENSE S NÁSLEDUJÍCÍM USTANOVENÍM: <placeholder-1/>"
 
 #: C/gnome-schedule.xml:65(firstname)
 msgid "Rodrigo"
@@ -114,8 +208,7 @@ msgstr "Uživatelská příručka V2.0 k aplikaci Gnome Schedule"
 msgid "August 2005"
 msgstr "Srpen 2005"
 
-#: C/gnome-schedule.xml:121(para)
-#: C/gnome-schedule.xml:130(para)
+#: C/gnome-schedule.xml:121(para) C/gnome-schedule.xml:130(para)
 msgid "Rodrigo Marcos Fombellida <email>rmarcos@cvs.gnome.org</email>"
 msgstr "Rodrigo Marcos Fombellida <email>rmarcos@cvs.gnome.org</email>"
 
@@ -144,11 +237,18 @@ msgid "Feedback"
 msgstr "Ohlasy"
 
 #: C/gnome-schedule.xml:150(para)
-msgid "To report a bug or make a suggestion regarding the <application>Gnome Schedule</application> application or this manual, follow the directions in the <ulink url=\"ghelp:gnome-feedback\" type=\"help\">GNOME Feedback Page</ulink>."
-msgstr "Pokud chcete oznámit chybu nebo navrhnout vylepšení vztahující se k aplikaci <application>Gnome Schedule</application> nebo této příručce, postupujte dle instrukcí na <ulink url=\"ghelp:gnome-feedback\" type=\"help\">stránce ohlasy GNOME</ulink>."
+msgid ""
+"To report a bug or make a suggestion regarding the <application>Gnome "
+"Schedule</application> application or this manual, follow the directions in "
+"the <ulink url=\"ghelp:gnome-feedback\" type=\"help\">GNOME Feedback Page</"
+"ulink>."
+msgstr ""
+"Pokud chcete oznámit chybu nebo navrhnout vylepšení vztahující se k aplikaci "
+"<application>Gnome Schedule</application> nebo této příručce, postupujte dle "
+"instrukcí na <ulink url=\"ghelp:gnome-feedback\" type=\"help\">stránce "
+"ohlasy GNOME</ulink>."
 
-#: C/gnome-schedule.xml:160(primary)
-#: C/gnome-schedule.xml:0(application)
+#: C/gnome-schedule.xml:160(primary) C/gnome-schedule.xml:0(application)
 msgid "Gnome Schedule"
 msgstr "Gnome Schedule"
 
@@ -157,20 +257,48 @@ msgid "Introduction"
 msgstr "Úvod"
 
 #: C/gnome-schedule.xml:172(para)
-msgid "<application>Gnome Schedule</application> is a graphical tool that lets you schedule tasks with ease, to be run unattended at a specified time or periodically. These tasks, also known as jobs, can be either a command with its corresponding parameters or a script file with multiple instructions."
-msgstr "<application>Gnome Schedule</application> je grafický nástroj, který vám umožní jednoduše naplánovat úlohy, které se mají bezobslužně spustit v určitý čas nebo spouštět pravidelně. Tyto úlohy, anglicky nazývané tasks nebo jobs, mohou být příkazy s odpovídajícími parametry nebo soubory se skripty obsahujícími více příkazů."
+msgid ""
+"<application>Gnome Schedule</application> is a graphical tool that lets you "
+"schedule tasks with ease, to be run unattended at a specified time or "
+"periodically. These tasks, also known as jobs, can be either a command with "
+"its corresponding parameters or a script file with multiple instructions."
+msgstr ""
+"<application>Gnome Schedule</application> je grafický nástroj, který vám "
+"umožní jednoduše naplánovat úlohy, které se mají bezobslužně spustit v "
+"určitý čas nebo spouštět pravidelně. Tyto úlohy, anglicky nazývané tasks "
+"nebo jobs, mohou být příkazy s odpovídajícími parametry nebo soubory se "
+"skripty obsahujícími více příkazů."
 
 #: C/gnome-schedule.xml:175(para)
-msgid "You can use <application>Gnome Schedule</application> to program repetitive tasks in your daily work that can be automated. You can also run a heavy task at night while you are sleeping, for example, backing up your documents."
-msgstr "Aplikaci <application>Gnome Schedule</application> můžete použít k naprogramování opakovaných úloh své každodenní práce tak, aby se spouštěly automaticky. Můžete také spouštět náročné úlohy v noci, když spíte, např. zálohování svých dokumentů."
+msgid ""
+"You can use <application>Gnome Schedule</application> to program repetitive "
+"tasks in your daily work that can be automated. You can also run a heavy "
+"task at night while you are sleeping, for example, backing up your documents."
+msgstr ""
+"Aplikaci <application>Gnome Schedule</application> můžete použít k "
+"naprogramování opakovaných úloh své každodenní práce tak, aby se spouštěly "
+"automaticky. Můžete také spouštět náročné úlohy v noci, když spíte, např. "
+"zálohování svých dokumentů."
 
 #: C/gnome-schedule.xml:179(title)
 msgid "How does <application>Gnome Schedule</application> work?"
 msgstr "Jak <application>Gnome Schedule</application> pracuje?"
 
 #: C/gnome-schedule.xml:180(para)
-msgid "<application>Gnome Schedule</application> uses <application>cron</application> and <application>at</application> to program job executions. These are two system services commonly used by Linux-like systems. <application>Gnome Schedule</application> provides a single graphical interface to configure both and present jobs in a way easy to understand for everyone."
-msgstr "Aplikace <application>Gnome Schedule</application> používá k programování úloh <application>cron</application> a <application>at</application>. Jedná se o dvě systémové služby běžně používané v systémech Linuxového typu. Aplikace <application>Gnome Schedule</application> poskytuje jednoduché grafické rozhraní k nastavení obou a vytvořené úlohy pak ukazuje jednoduchým způsobem, pochopitelným pro všechny."
+msgid ""
+"<application>Gnome Schedule</application> uses <application>cron</"
+"application> and <application>at</application> to program job executions. "
+"These are two system services commonly used by Linux-like systems. "
+"<application>Gnome Schedule</application> provides a single graphical "
+"interface to configure both and present jobs in a way easy to understand for "
+"everyone."
+msgstr ""
+"Aplikace <application>Gnome Schedule</application> používá k programování "
+"úloh <application>cron</application> a <application>at</application>. Jedná "
+"se o dvě systémové služby běžně používané v systémech Linuxového typu. "
+"Aplikace <application>Gnome Schedule</application> poskytuje jednoduché "
+"grafické rozhraní k nastavení obou a vytvořené úlohy pak ukazuje jednoduchým "
+"způsobem, pochopitelným pro všechny."
 
 #: C/gnome-schedule.xml:186(title)
 msgid "About cron and at"
@@ -182,19 +310,27 @@ msgstr "Cron"
 
 #: C/gnome-schedule.xml:190(para)
 msgid ""
-"If you were to configure <application>cron</application> manually to execute a command, for example every Tuesday, you would have to use the command <command>crontab</command> in this way: <screen>\n"
+"If you were to configure <application>cron</application> manually to execute "
+"a command, for example every Tuesday, you would have to use the command "
+"<command>crontab</command> in this way: <screen>\n"
 "$ <userinput>crontab -e</userinput>\n"
 "<userinput>* * * * 2 &lt;command&gt; --parameters  #comments</userinput>\n"
 "\t      </screen>"
 msgstr ""
-"Pokud hodláte nastavit <application>cron</application> ručně, aby spouštěl příkaz např. každé úterý, museli byste použít příkaz <command>crontab</command> a to takto:<screen>\n"
+"Pokud hodláte nastavit <application>cron</application> ručně, aby spouštěl "
+"příkaz např. každé úterý, museli byste použít příkaz <command>crontab</"
+"command> a to takto:<screen>\n"
 "$ <userinput>crontab -e</userinput>\n"
 "<userinput>* * * * 2 &lt;příkaz&gt; --parametry  #komentář</userinput>\n"
 "\t      </screen>"
 
 #: C/gnome-schedule.xml:200(para)
-msgid "See <command>man cron</command> and <command>man crontab</command> for more information about <application>cron</application>"
-msgstr "Více informací o programu <application>cron</application> najdete v <command>man cron</command> a <command>man crontab</command>"
+msgid ""
+"See <command>man cron</command> and <command>man crontab</command> for more "
+"information about <application>cron</application>"
+msgstr ""
+"Více informací o programu <application>cron</application> najdete v "
+"<command>man cron</command> a <command>man crontab</command>"
 
 #: C/gnome-schedule.xml:205(guilabel)
 msgid "At"
@@ -202,14 +338,18 @@ msgstr "At"
 
 #: C/gnome-schedule.xml:207(para)
 msgid ""
-"If you were to configure <application>at</application> manually to execute a command, for example tomorrow at this time, you would have to use the command <command>at</command> in this way: <screen>\n"
+"If you were to configure <application>at</application> manually to execute a "
+"command, for example tomorrow at this time, you would have to use the "
+"command <command>at</command> in this way: <screen>\n"
 "$ <userinput>at tomorrow</userinput>\n"
 "at&gt; <userinput>&lt;command_1&gt; --parameters </userinput>\n"
 "at&gt; <userinput>&lt;command_2&gt; --parameters </userinput>\n"
 "at&gt; <userinput>Ctrl + D</userinput>\n"
 "        </screen>"
 msgstr ""
-"Pokud hodláte nastavit <application>at</application> ručně, aby spustil příkaz např. zítra touto dobou, museli byste použít příkaz <command>at</command> a to takto:<screen>\n"
+"Pokud hodláte nastavit <application>at</application> ručně, aby spustil "
+"příkaz např. zítra touto dobou, museli byste použít příkaz <command>at</"
+"command> a to takto:<screen>\n"
 "$ <userinput>at tomorrow</userinput>\n"
 "at&gt; <userinput>&lt;příkaz_1&gt; --parametry </userinput>\n"
 "at&gt; <userinput>&lt;příkaz_2&gt; --parametry </userinput>\n"
@@ -217,8 +357,12 @@ msgstr ""
 "        </screen>"
 
 #: C/gnome-schedule.xml:218(para)
-msgid "See <command>man at</command> for more information about <application>at</application>"
-msgstr "Více informací a programu <application>at</application> najdete v <command>man at</command>"
+msgid ""
+"See <command>man at</command> for more information about <application>at</"
+"application>"
+msgstr ""
+"Více informací a programu <application>at</application> najdete v "
+"<command>man at</command>"
 
 #: C/gnome-schedule.xml:234(title)
 msgid "Getting Started"
@@ -229,24 +373,37 @@ msgid "To Start <application>Gnome Schedule</application>"
 msgstr "Jak spustit aplikaci <application>Gnome Schedule</application>"
 
 #: C/gnome-schedule.xml:238(para)
-msgid "You can start <application>Gnome Schedule</application> in the following ways:"
-msgstr "Aplikaci <application>Gnome Schedule</application> můžete spustit následujícími způsoby:"
+msgid ""
+"You can start <application>Gnome Schedule</application> in the following "
+"ways:"
+msgstr ""
+"Aplikaci <application>Gnome Schedule</application> můžete spustit "
+"následujícími způsoby:"
 
 #: C/gnome-schedule.xml:242(term)
 msgid "<guimenu>Applications</guimenu> menu"
 msgstr "Nabídka <guimenu>Aplikace</guimenu>"
 
 #: C/gnome-schedule.xml:244(para)
-msgid "Choose <menuchoice><guisubmenu>System Tools</guisubmenu><guimenuitem>Schedule</guimenuitem></menuchoice>."
-msgstr "Zvolte <menuchoice><guisubmenu>Systémové nástroje</guisubmenu><guimenuitem>Naplánované úlohy</guimenuitem></menuchoice>."
+msgid ""
+"Choose <menuchoice><guisubmenu>System Tools</"
+"guisubmenu><guimenuitem>Schedule</guimenuitem></menuchoice>."
+msgstr ""
+"Zvolte <menuchoice><guisubmenu>Systémové nástroje</"
+"guisubmenu><guimenuitem>Naplánované úlohy</guimenuitem></menuchoice>."
 
 #: C/gnome-schedule.xml:252(term)
 msgid "Command line"
 msgstr "Příkazový řádek"
 
 #: C/gnome-schedule.xml:254(para)
-msgid "To start <application>Gnome Schedule</application> from a command line, type the following command, then press <keycap>Return</keycap>:"
-msgstr "Pokud chcete aplikaci <application>Gnome Schedule</application> spustit z příkazového řádku, napište následující příkaz a zmáčkněte <keycap>Enter</keycap>:"
+msgid ""
+"To start <application>Gnome Schedule</application> from a command line, type "
+"the following command, then press <keycap>Return</keycap>:"
+msgstr ""
+"Pokud chcete aplikaci <application>Gnome Schedule</application> spustit z "
+"příkazového řádku, napište následující příkaz a zmáčkněte <keycap>Enter</"
+"keycap>:"
 
 #: C/gnome-schedule.xml:257(command)
 msgid "gnome-schedule"
@@ -257,29 +414,45 @@ msgid "When You Start <application>Gnome Schedule</application>"
 msgstr "Když spustíte aplikaci <application>Gnome Schedule</application>"
 
 #: C/gnome-schedule.xml:266(para)
-msgid "When you start <application>Gnome Schedule</application>, the main window is displayed:"
-msgstr "Když aplikaci <application>Gnome Schedule</application> spustíte, zobrazí se hlavní okno:"
+msgid ""
+"When you start <application>Gnome Schedule</application>, the main window is "
+"displayed:"
+msgstr ""
+"Když aplikaci <application>Gnome Schedule</application> spustíte, zobrazí se "
+"hlavní okno:"
 
 #: C/gnome-schedule.xml:270(title)
 msgid "Main Window"
 msgstr "Hlavní okno"
 
 #: C/gnome-schedule.xml:277(phrase)
-msgid "Shows <placeholder-1/> main window. Contains title bar, tool bar, and task list."
-msgstr "Ukazuje hlavní okno <placeholder-1/>. Obsahuje záhlaví, lištu nástrojů a seznam úloh."
+msgid ""
+"Shows <placeholder-1/> main window. Contains title bar, tool bar, and task "
+"list."
+msgstr ""
+"Ukazuje hlavní okno <placeholder-1/>. Obsahuje záhlaví, lištu nástrojů a "
+"seznam úloh."
 
 #. for example, the items on the menubar and on the tool bar. This section is optional.
 #: C/gnome-schedule.xml:287(para)
-msgid "The <application>Gnome Schedule</application> main window contains the following elements:"
-msgstr "Hlavní okno aplikace <application>Gnome Schedule</application> obsahuje následující prvky:"
+msgid ""
+"The <application>Gnome Schedule</application> main window contains the "
+"following elements:"
+msgstr ""
+"Hlavní okno aplikace <application>Gnome Schedule</application> obsahuje "
+"následující prvky:"
 
 #: C/gnome-schedule.xml:291(term)
 msgid "The tool bar."
 msgstr "Lišta nástrojů."
 
 #: C/gnome-schedule.xml:293(para)
-msgid "The tool bar contains buttons that give you access to every function in the application."
-msgstr "Lišta nástrojů obsahuje tlačítka, která vám poskytují přístup ke všem funkcím v aplikaci."
+msgid ""
+"The tool bar contains buttons that give you access to every function in the "
+"application."
+msgstr ""
+"Lišta nástrojů obsahuje tlačítka, která vám poskytují přístup ke všem "
+"funkcím v aplikaci."
 
 #: C/gnome-schedule.xml:297(term)
 msgid "Task list."
@@ -290,8 +463,12 @@ msgid "Task:"
 msgstr "Úloha:"
 
 #: C/gnome-schedule.xml:303(para)
-msgid "Describes the type of the task: \"Recurrent\", when the task runs repeatedly or \"Once\", when the task is done only once."
-msgstr "Popisuje typ úlohy: „Opakovaná“, když se spouští opakovaně nebo „Jednou“, když se provede jen jednou."
+msgid ""
+"Describes the type of the task: \"Recurrent\", when the task runs repeatedly "
+"or \"Once\", when the task is done only once."
+msgstr ""
+"Popisuje typ úlohy: „Opakovaná“, když se spouští opakovaně nebo „Jednou“, "
+"když se provede jen jednou."
 
 #: C/gnome-schedule.xml:306(term)
 msgid "Description:"
@@ -318,12 +495,23 @@ msgid "Shows the command that is going to be executed."
 msgstr "Zobrazuje příkaz, který se má spustit."
 
 #: C/gnome-schedule.xml:299(para)
-msgid "The Task list shows information about current scheduled tasks and pending jobs. For every task, the following information is detailed: <placeholder-1/>"
-msgstr "Seznam úloh zobrazuje informace o současných naplánovaných a čekajících úlohách. Pro každou úlohu se zobrazují následující podrobné informace: <placeholder-1/>"
+msgid ""
+"The Task list shows information about current scheduled tasks and pending "
+"jobs. For every task, the following information is detailed: <placeholder-1/>"
+msgstr ""
+"Seznam úloh zobrazuje informace o současných naplánovaných a čekajících "
+"úlohách. Pro každou úlohu se zobrazují následující podrobné informace: "
+"<placeholder-1/>"
 
 #: C/gnome-schedule.xml:321(para)
-msgid "You can read a brief description of some of the objects and icons on the <application>Gnome Schedule</application> interface, by pointing them with the mouse and waiting for a few seconds."
-msgstr "Stručný popis některých objektů a ikon v rozhraní aplikace <application>Gnome Schedule</application> si můžete přečíst tak, že na ně ukážete myší a počkáte pár sekund."
+msgid ""
+"You can read a brief description of some of the objects and icons on the "
+"<application>Gnome Schedule</application> interface, by pointing them with "
+"the mouse and waiting for a few seconds."
+msgstr ""
+"Stručný popis některých objektů a ikon v rozhraní aplikace "
+"<application>Gnome Schedule</application> si můžete přečíst tak, že na ně "
+"ukážete myší a počkáte pár sekund."
 
 #: C/gnome-schedule.xml:329(title)
 msgid "Adding a New Scheduled Task"
@@ -334,12 +522,20 @@ msgid "Choosing the type of task to add"
 msgstr "Výběr typu přidávané úlohy"
 
 #: C/gnome-schedule.xml:333(para)
-msgid "You can add a new scheduled task by pressing the <guibutton>New</guibutton> button in the main window tool bar."
-msgstr "Novou plánovanou úlohu můžete přidat zmáčknutím tlačítka <guibutton>Nová</guibutton> na liště nástrojů hlavního okna."
+msgid ""
+"You can add a new scheduled task by pressing the <guibutton>New</guibutton> "
+"button in the main window tool bar."
+msgstr ""
+"Novou plánovanou úlohu můžete přidat zmáčknutím tlačítka <guibutton>Nová</"
+"guibutton> na liště nástrojů hlavního okna."
 
 #: C/gnome-schedule.xml:335(para)
-msgid "The following dialog window will appear letting you to choose the type of task you want to schedule:"
-msgstr "Objeví se následující dialogové okno, abyste si mohli zvolit typ úlohy, kterou chcete naplánovat:"
+msgid ""
+"The following dialog window will appear letting you to choose the type of "
+"task you want to schedule:"
+msgstr ""
+"Objeví se následující dialogové okno, abyste si mohli zvolit typ úlohy, "
+"kterou chcete naplánovat:"
 
 #: C/gnome-schedule.xml:339(title)
 msgid "Task Type Selection Dialog Window"
@@ -350,16 +546,29 @@ msgid "Shows <placeholder-1/> task type selection dialog window."
 msgstr "Ukazuje dialogové okno aplikace <placeholder-1/> pro výběr typu úlohy."
 
 #: C/gnome-schedule.xml:354(para)
-msgid "by pressing the first button you will be able to schedule a task that will be executed periodically."
-msgstr "po zmáčknutí prvního tlačítka budete moci naplánovat úlohu, která se bude spouštět opakovaně."
+msgid ""
+"by pressing the first button you will be able to schedule a task that will "
+"be executed periodically."
+msgstr ""
+"po zmáčknutí prvního tlačítka budete moci naplánovat úlohu, která se bude "
+"spouštět opakovaně."
 
 #: C/gnome-schedule.xml:356(para)
-msgid "by pressing the second button you will be able to schedule a task that will only be executed once."
-msgstr "po zmáčknutí druhého tlačítka budete moci naplánovat úlohu, která se spustí pouze jednou."
+msgid ""
+"by pressing the second button you will be able to schedule a task that will "
+"only be executed once."
+msgstr ""
+"po zmáčknutí druhého tlačítka budete moci naplánovat úlohu, která se spustí "
+"pouze jednou."
 
 #: C/gnome-schedule.xml:358(para)
-msgid "by pressing the third button you will be able to create a task from a template. Templates usage is explained in <xref linkend=\"myapp-templates\"/>."
-msgstr "po zmáčknutí třetího tlačítka budete moci vytvořit úlohu ze šablony. Použití šablon vysvětluje <xref linkend=\"myapp-templates\"/>."
+msgid ""
+"by pressing the third button you will be able to create a task from a "
+"template. Templates usage is explained in <xref linkend=\"myapp-templates\"/"
+">."
+msgstr ""
+"po zmáčknutí třetího tlačítka budete moci vytvořit úlohu ze šablony. Použití "
+"šablon vysvětluje <xref linkend=\"myapp-templates\"/>."
 
 #: C/gnome-schedule.xml:365(title)
 msgid "Adding a scheduled task that will launch recurrently"
@@ -369,14 +578,14 @@ msgstr "Přidání plánované úlohy, která se spouští opakovaně"
 msgid "Choosing this option, the following dialog window is shown:"
 msgstr "Výběrem této možnosti se zobrazí následující dialogové okno:"
 
-#: C/gnome-schedule.xml:369(title)
-#: C/gnome-schedule.xml:414(title)
+#: C/gnome-schedule.xml:369(title) C/gnome-schedule.xml:414(title)
 msgid "\"Create a New Scheduled Task\" window"
 msgstr "Okno „Vytvořit novou plánovanou úlohu“"
 
 #: C/gnome-schedule.xml:376(phrase)
 msgid "Shows <placeholder-1/> \"Create a New Scheduled Task\" window."
-msgstr "Ukazuje okno „Vytvořit novou plánovanou úlohu“ aplikace <placeholder-1/>"
+msgstr ""
+"Ukazuje okno „Vytvořit novou plánovanou úlohu“ aplikace <placeholder-1/>"
 
 #: C/gnome-schedule.xml:384(term)
 msgid "Description"
@@ -391,8 +600,11 @@ msgid "Command"
 msgstr "Příkaz"
 
 #: C/gnome-schedule.xml:388(para)
-msgid "Enter here the command or script that will be periodically executed by this task."
-msgstr "Zde zadejte příkaz nebo skript, který bude pravidelně spouštěn touto úlohou."
+msgid ""
+"Enter here the command or script that will be periodically executed by this "
+"task."
+msgstr ""
+"Zde zadejte příkaz nebo skript, který bude pravidelně spouštěn touto úlohou."
 
 #: C/gnome-schedule.xml:392(guilabel)
 msgid "Time &amp; Date"
@@ -403,16 +615,23 @@ msgid "Basic"
 msgstr "Základní"
 
 #: C/gnome-schedule.xml:395(para)
-msgid "Lets you select the frequency for task execution among a list of common intervals."
-msgstr "Dovoluje vám vybrat si četnost spouštění úlohy ze seznamu běžných časových úseků."
+msgid ""
+"Lets you select the frequency for task execution among a list of common "
+"intervals."
+msgstr ""
+"Dovoluje vám vybrat si četnost spouštění úlohy ze seznamu běžných časových "
+"úseků."
 
 #: C/gnome-schedule.xml:398(term)
 msgid "Advanced"
 msgstr "Pokročilé"
 
 #: C/gnome-schedule.xml:399(para)
-msgid "Lets you create custom time expressions in case you need more flexibility."
-msgstr "Dovoluje vám vytvořit si vlastní časový výraz v případech, kdy potřebujete větší flexibilitu."
+msgid ""
+"Lets you create custom time expressions in case you need more flexibility."
+msgstr ""
+"Dovoluje vám vytvořit si vlastní časový výraz v případech, kdy potřebujete "
+"větší flexibilitu."
 
 #: C/gnome-schedule.xml:403(guilabel)
 msgid "Preview"
@@ -420,7 +639,8 @@ msgstr "Náhled"
 
 #: C/gnome-schedule.xml:404(para)
 msgid "Lets the user check if the selected frequency is correct."
-msgstr "Dává uživateli možnost zkontrolovat, zda je vybraný časový úsek správný."
+msgstr ""
+"Dává uživateli možnost zkontrolovat, zda je vybraný časový úsek správný."
 
 #: C/gnome-schedule.xml:410(title)
 msgid "Adding a scheduled task that will launch once"
@@ -432,59 +652,114 @@ msgstr "Výběrem této možnosti se zobrazí následující dialogové okno:"
 
 #: C/gnome-schedule.xml:421(phrase)
 msgid "Shows <placeholder-1/> \"Create a New Scheduled Task\" window"
-msgstr "Ukazuje okno „Vytvořit novou plánovanou úlohu“ aplikace <placeholder-1/>"
+msgstr ""
+"Ukazuje okno „Vytvořit novou plánovanou úlohu“ aplikace <placeholder-1/>"
 
 #: C/gnome-schedule.xml:433(title)
 msgid "Modifying a Scheduled Task"
 msgstr "Změna naplánované úlohy"
 
 #: C/gnome-schedule.xml:434(para)
-msgid "You can modify a scheduled task by selecting it from the <guilabel>Task list</guilabel> with one click and by pressing the <guibutton>Edit</guibutton> button from the main window tool bar. Then, the <guilabel>Edit a Scheduled Task</guilabel> window will be opened showing the task properties."
-msgstr "Naplánovanou úlohu můžete upravit tak, že ji vyberete v <guilabel>seznamu úloh</guilabel> jednoduchým kliknutím a pak na liště nástrojů hlavního okna zmáčknete tlačítko <guibutton>Upravit</guibutton>. Následně se otevře okno <guilabel>Upravit naplánovanou úlohu</guilabel>, ve kterém uvidíte vlastnosti úlohy."
+msgid ""
+"You can modify a scheduled task by selecting it from the <guilabel>Task "
+"list</guilabel> with one click and by pressing the <guibutton>Edit</"
+"guibutton> button from the main window tool bar. Then, the <guilabel>Edit a "
+"Scheduled Task</guilabel> window will be opened showing the task properties."
+msgstr ""
+"Naplánovanou úlohu můžete upravit tak, že ji vyberete v <guilabel>seznamu "
+"úloh</guilabel> jednoduchým kliknutím a pak na liště nástrojů hlavního okna "
+"zmáčknete tlačítko <guibutton>Upravit</guibutton>. Následně se otevře okno "
+"<guilabel>Upravit naplánovanou úlohu</guilabel>, ve kterém uvidíte "
+"vlastnosti úlohy."
 
 #: C/gnome-schedule.xml:436(para)
-msgid "Now, you will be able to modify any field you want. When you have finished you can press <guibutton>Apply</guibutton> button to save the changes or <guibutton>Cancel</guibutton> button to omit them."
-msgstr "Nyní můžete upravit kterékoliv pole chcete. Až skončíte, můžete zmáčknout tlačítko <guibutton>Použít</guibutton> pro uložení změn nebo tlačítko <guibutton>Zrušit</guibutton> pro jejich zapomenutí."
+msgid ""
+"Now, you will be able to modify any field you want. When you have finished "
+"you can press <guibutton>Apply</guibutton> button to save the changes or "
+"<guibutton>Cancel</guibutton> button to omit them."
+msgstr ""
+"Nyní můžete upravit kterékoliv pole chcete. Až skončíte, můžete zmáčknout "
+"tlačítko <guibutton>Použít</guibutton> pro uložení změn nebo tlačítko "
+"<guibutton>Zrušit</guibutton> pro jejich zapomenutí."
 
 #: C/gnome-schedule.xml:439(para)
-msgid "You can edit a task faster by simply double-clicking on it in the task list."
-msgstr "Úlohu můžete rychle upravit tak, že na ni prostě dvojitě kliknete v seznamu úloh."
+msgid ""
+"You can edit a task faster by simply double-clicking on it in the task list."
+msgstr ""
+"Úlohu můžete rychle upravit tak, že na ni prostě dvojitě kliknete v seznamu "
+"úloh."
 
 #: C/gnome-schedule.xml:445(title)
 msgid "Deleting a Scheduled Task"
 msgstr "Mazání naplánované úlohy"
 
 #: C/gnome-schedule.xml:446(para)
-msgid "You can delete a scheduled task by selecting it from the <guilabel>Task list</guilabel> with one click and by pressing the <guibutton>Delete</guibutton> button in the main window tool bar. Next, you will be asked for confirmation. By answering <guibutton>Yes</guibutton>, the scheduled task will be removed from the <guilabel>Task list</guilabel>."
-msgstr "Naplánovanou úlohu smažete tak, že ji vyberete v <guilabel>seznamu úloh</guilabel> jednoduchým kliknutím a pak na liště nástrojů v hlavním okně zmáčknete tlačítko <guibutton>Smazat</guibutton>. Následně budete dotázáni na potvrzení. Po odpovědi <guibutton>Ano</guibutton> bude naplánovaná úloha ze <guilabel>seznamu úloh</guilabel> odstraněna."
+msgid ""
+"You can delete a scheduled task by selecting it from the <guilabel>Task "
+"list</guilabel> with one click and by pressing the <guibutton>Delete</"
+"guibutton> button in the main window tool bar. Next, you will be asked for "
+"confirmation. By answering <guibutton>Yes</guibutton>, the scheduled task "
+"will be removed from the <guilabel>Task list</guilabel>."
+msgstr ""
+"Naplánovanou úlohu smažete tak, že ji vyberete v <guilabel>seznamu úloh</"
+"guilabel> jednoduchým kliknutím a pak na liště nástrojů v hlavním okně "
+"zmáčknete tlačítko <guibutton>Smazat</guibutton>. Následně budete dotázáni "
+"na potvrzení. Po odpovědi <guibutton>Ano</guibutton> bude naplánovaná úloha "
+"ze <guilabel>seznamu úloh</guilabel> odstraněna."
 
 #: C/gnome-schedule.xml:450(para)
-msgid "Non-recurrent tasks disapear automatically from the list when they are done."
-msgstr "Úlohy, které se nespouští opakovaně, se po dokončení odstraní ze seznamu automaticky."
+msgid ""
+"Non-recurrent tasks disappear automatically from the list when they are done."
+msgstr ""
+"Úlohy, které se nespouští opakovaně, se po dokončení odstraní ze seznamu "
+"automaticky."
 
 #: C/gnome-schedule.xml:456(title)
 msgid "Manually Running Scheduled Task"
 msgstr "Ruční spuštění naplánované úlohy"
 
 #: C/gnome-schedule.xml:457(para)
-msgid "You can trigger a scheduled task by selecting it from the <guilabel>Task list</guilabel> with one click and by pressing the <guibutton>Run task</guibutton> button in the main window tool bar."
-msgstr "Naplánovanou úlohu můžete spustit tak, že je vyberete v <guilabel>seznamu úloh</guilabel> jednoduchým kliknutím a po té na liště nástrojů hlavního okna zmáčknete tlačítko <guibutton>Spustit úlohu</guibutton>."
+msgid ""
+"You can trigger a scheduled task by selecting it from the <guilabel>Task "
+"list</guilabel> with one click and by pressing the <guibutton>Run task</"
+"guibutton> button in the main window tool bar."
+msgstr ""
+"Naplánovanou úlohu můžete spustit tak, že je vyberete v <guilabel>seznamu "
+"úloh</guilabel> jednoduchým kliknutím a po té na liště nástrojů hlavního "
+"okna zmáčknete tlačítko <guibutton>Spustit úlohu</guibutton>."
 
 #: C/gnome-schedule.xml:461(para)
-msgid "The task will be executed and its output will be displayed in a terminal window, letting you check if the task is correctly set."
-msgstr "Úloha bude spuštěna a její výstup bude zobrazen v terminálovém okně, takže si můžete zkontrolovat, že úloha proběhla v pořádku."
+msgid ""
+"The task will be executed and its output will be displayed in a terminal "
+"window, letting you check if the task is correctly set."
+msgstr ""
+"Úloha bude spuštěna a její výstup bude zobrazen v terminálovém okně, takže "
+"si můžete zkontrolovat, že úloha proběhla v pořádku."
 
 #: C/gnome-schedule.xml:468(title)
 msgid "Using Templates"
 msgstr "Používání šablon"
 
 #: C/gnome-schedule.xml:469(para)
-msgid "<application>Gnome Schedule</application> lets you save tasks as templates in order to reuse it later. This way, you will be able to create new scheduled tasks faster."
-msgstr "Aplikace <application>Gnome Schedule</application> vám dává možnost si uložit úlohu jako šablonu, abyste ji mohli později použít znovu. Díky tomu budete moci vytvářet nové plánované úlohy rychleji."
+msgid ""
+"<application>Gnome Schedule</application> lets you save tasks as templates "
+"in order to reuse it later. This way, you will be able to create new "
+"scheduled tasks faster."
+msgstr ""
+"Aplikace <application>Gnome Schedule</application> vám dává možnost si "
+"uložit úlohu jako šablonu, abyste ji mohli později použít znovu. Díky tomu "
+"budete moci vytvářet nové plánované úlohy rychleji."
 
 #: C/gnome-schedule.xml:470(para)
-msgid "To manage templates press the <guilabel>Template</guilabel> button on the main window tool bar. A new window will show you a list of available templates. From this window you can create, modify, delete and use templates."
-msgstr "Pokud chcete spravovat šablony, zmáčkněte na nástrojové liště hlavního okna tlačítko <guilabel>Šablona</guilabel>. Nové okno vám zobrazí seznam dostupných šablon. Z tohoto okna můžete vytvářet, upravovat, mazat a používat šablony."
+msgid ""
+"To manage templates press the <guilabel>Template</guilabel> button on the "
+"main window tool bar. A new window will show you a list of available "
+"templates. From this window you can create, modify, delete and use templates."
+msgstr ""
+"Pokud chcete spravovat šablony, zmáčkněte na nástrojové liště hlavního okna "
+"tlačítko <guilabel>Šablona</guilabel>. Nové okno vám zobrazí seznam "
+"dostupných šablon. Z tohoto okna můžete vytvářet, upravovat, mazat a "
+"používat šablony."
 
 #: C/gnome-schedule.xml:476(title)
 msgid "Template manager window"
@@ -495,40 +770,83 @@ msgid "Shows the \"Manage templates\" window"
 msgstr "Ukazuje okno „Spravovat šablony“"
 
 #: C/gnome-schedule.xml:490(para)
-msgid "You can have common tasks saved as templates. So, you will not have to write the same stuff again and again!"
-msgstr "Běžné úlohy můžete mít uložené jako šablony. Díky tomu nemusíte stejné věci psát znovu a znovu dokola."
+msgid ""
+"You can have common tasks saved as templates. So, you will not have to write "
+"the same stuff again and again!"
+msgstr ""
+"Běžné úlohy můžete mít uložené jako šablony. Díky tomu nemusíte stejné věci "
+"psát znovu a znovu dokola."
 
 #: C/gnome-schedule.xml:498(title)
 msgid "Using <application>Gnome Schedule</application> as root"
 msgstr "Používání <application>Gnome Schedule</application> jako uživatel root"
 
 #: C/gnome-schedule.xml:499(para)
-msgid "When you use <application>Gnome Schedule</application> as superuser, you can view, edit and add other users scheduled tasks."
-msgstr "Když používáte aplikaci <application>Gnome Schedule</application> jako superuživatel, můžete prohlížet, upravovat a přidávat plánované úlohy pro další uživatele."
+msgid ""
+"When you use <application>Gnome Schedule</application> as superuser, you can "
+"view, edit and add other users scheduled tasks."
+msgstr ""
+"Když používáte aplikaci <application>Gnome Schedule</application> jako "
+"superuživatel, můžete prohlížet, upravovat a přidávat plánované úlohy pro "
+"další uživatele."
 
 #: C/gnome-schedule.xml:500(para)
-msgid "You can change the user by pressing the <guibutton>Change User</guibutton> button in the main window tool bar. Then, a dialog window will be shown. Choose the desired user from the drop-down list and press <guibutton>OK</guibutton> button. Now the main window will show the scheduled tasks of the selected user."
-msgstr "Uživatele můžete změnit zmáčknutím tlačítka <guibutton>Změnit uživatele</guibutton> na liště nástrojů hlavního okna. Následně se zobrazí dialogové okno. Zvolte kýženého uživatele z rozbalovacího seznamu a zmáčkněte tlačítko <guibutton>OK</guibutton>. V hlavním okně se nyní zobrazí naplánované úlohy vybraného uživatele."
+msgid ""
+"You can change the user by pressing the <guibutton>Change User</guibutton> "
+"button in the main window tool bar. Then, a dialog window will be shown. "
+"Choose the desired user from the drop-down list and press <guibutton>OK</"
+"guibutton> button. Now the main window will show the scheduled tasks of the "
+"selected user."
+msgstr ""
+"Uživatele můžete změnit zmáčknutím tlačítka <guibutton>Změnit uživatele</"
+"guibutton> na liště nástrojů hlavního okna. Následně se zobrazí dialogové "
+"okno. Zvolte kýženého uživatele z rozbalovacího seznamu a zmáčkněte tlačítko "
+"<guibutton>OK</guibutton>. V hlavním okně se nyní zobrazí naplánované úlohy "
+"vybraného uživatele."
 
 #: C/gnome-schedule.xml:505(para)
-msgid "Please, keep in mind that this option is only available for system administrators."
-msgstr "Vezměte prosím na vědomí, že tato volba je dostupná pouze pro správce systému."
+msgid ""
+"Please, keep in mind that this option is only available for system "
+"administrators."
+msgstr ""
+"Vezměte prosím na vědomí, že tato volba je dostupná pouze pro správce "
+"systému."
 
 #: C/gnome-schedule.xml:511(title)
-msgid "Using <application>Gnome Schedule</application> to launch graphical applications"
-msgstr "Používání <application>Gnome Schedule</application> ke spouštění grafických aplikací"
+msgid ""
+"Using <application>Gnome Schedule</application> to launch graphical "
+"applications"
+msgstr ""
+"Používání <application>Gnome Schedule</application> ke spouštění grafických "
+"aplikací"
 
 #: C/gnome-schedule.xml:512(para)
-msgid "You can use <application>Gnome Schedule</application> to launch a graphical application automatically, but there are some information you would consider before:"
-msgstr "Aplikaci <application>Gnome Schedule</application> můžete používat k automatickému spouštění grafických aplikací, ale je zde pár věcí, které byste měli brát v úvahu:"
+msgid ""
+"You can use <application>Gnome Schedule</application> to launch a graphical "
+"application automatically, but there are some information you would consider "
+"before:"
+msgstr ""
+"Aplikaci <application>Gnome Schedule</application> můžete používat k "
+"automatickému spouštění grafických aplikací, ale je zde pár věcí, které "
+"byste měli brát v úvahu:"
 
 #: C/gnome-schedule.xml:516(title)
 msgid "About DISPLAY environment variable"
 msgstr "O proměnné prostředí DISPLAY"
 
 #: C/gnome-schedule.xml:517(para)
-msgid "When you run a graphical application from the command line you must first set the environment variable DISPLAY. This variable is used to tell your graphical application what X server to use. Normally you will want to use the one installed on your own computer. In that case you need to set the DISPLAY variable in this way:"
-msgstr "Když spouštíte grafickou aplikaci z příkazového řádku, musíte nejdříve nastavit proměnnou prostředí DISPLAY. Tato proměnná se používá, aby grafické aplikaci řekla, který X server má použít. Normálně budete chtít použít ten jeden, co máte ve svém vlastním počítači nainstalovaný. V takovémto případě potřebujete nastavit proměnnou DISPLAY tímto způsobem:"
+msgid ""
+"When you run a graphical application from the command line you must first "
+"set the environment variable DISPLAY. This variable is used to tell your "
+"graphical application what X server to use. Normally you will want to use "
+"the one installed on your own computer. In that case you need to set the "
+"DISPLAY variable in this way:"
+msgstr ""
+"Když spouštíte grafickou aplikaci z příkazového řádku, musíte nejdříve "
+"nastavit proměnnou prostředí DISPLAY. Tato proměnná se používá, aby grafické "
+"aplikaci řekla, který X server má použít. Normálně budete chtít použít ten "
+"jeden, co máte ve svém vlastním počítači nainstalovaný. V takovémto případě "
+"potřebujete nastavit proměnnou DISPLAY tímto způsobem:"
 
 #: C/gnome-schedule.xml:522(command)
 msgid "DISPLAY=:0.0"
@@ -539,8 +857,12 @@ msgid "where :0.0 means use screen 0 of X server 0 in this computer."
 msgstr "kde :0.0 znamená použít obrazovku 0 z X serveru 0 na tomto počítači."
 
 #: C/gnome-schedule.xml:524(para)
-msgid "If you want display the application in a remote screen you can specify the IP address of the remote X server:"
-msgstr "Když chcete aplikaci zobrazit na vzdálené obrazovce, můžete zadat adresu IP vzdáleného X serveru:"
+msgid ""
+"If you want display the application in a remote screen you can specify the "
+"IP address of the remote X server:"
+msgstr ""
+"Když chcete aplikaci zobrazit na vzdálené obrazovce, můžete zadat adresu IP "
+"vzdáleného X serveru:"
 
 #: C/gnome-schedule.xml:526(command)
 msgid "DISPLAY=192.168.0.25:0.0"
@@ -551,28 +873,54 @@ msgid "Setting DISPLAY variable for tasks that will launch once"
 msgstr "Nastavení proměnné DISPLAY pro úlohy, které se spustí jednou"
 
 #: C/gnome-schedule.xml:531(para)
-msgid "When you are creating or modifying a task, you can define the DISPLAY variable in the script text box. Make the definition at the begining of the script."
-msgstr "Když vytváříte nebo upravujete úlohu, můžete proměnnou DISPLAY definovat v textovém poli pro skript. Definici umístěte na začátek skriptu."
+msgid ""
+"When you are creating or modifying a task, you can define the DISPLAY "
+"variable in the script text box. Make the definition at the beginning of the "
+"script."
+msgstr ""
+"Když vytváříte nebo upravujete úlohu, můžete proměnnou DISPLAY definovat v "
+"textovém poli pro skript. Definici umístěte na začátek skriptu."
 
 #: C/gnome-schedule.xml:536(title)
 msgid "Setting DISPLAY variable for tasks that will launch recurrently"
 msgstr "Nastavení proměnné DISPLAY pro úlohy, které se spouští opakovaně"
 
 #: C/gnome-schedule.xml:537(para)
-msgid "<application>Gnome Schedule</application> does not support yet setting environment variables for recurrent tasks, but it will do soon. In the meantime, you can manually create a script that first defines DISPLAY variable and then calls the graphical application. Finally, you can create a recurrent task to launch the script."
-msgstr "Aplikace <application>Gnome Schedule</application> zatím nepodporuje nastavení proměnné prostředí pro opakovaně spouštěné úlohy, ale k dispozici by to mělo být brzy. Než se tak stane, můžete ručně vytvořit skript, který nejdříve nadefinuje proměnnou DISPLAY a po té zavolá grafickou aplikaci. Nakonec pak vytvoříte opakovanou úlohu, která bude spouštět tento skript."
+msgid ""
+"<application>Gnome Schedule</application> does not support yet setting "
+"environment variables for recurrent tasks, but it will do soon. In the "
+"meantime, you can manually create a script that first defines DISPLAY "
+"variable and then calls the graphical application. Finally, you can create a "
+"recurrent task to launch the script."
+msgstr ""
+"Aplikace <application>Gnome Schedule</application> zatím nepodporuje "
+"nastavení proměnné prostředí pro opakovaně spouštěné úlohy, ale k dispozici "
+"by to mělo být brzy. Než se tak stane, můžete ručně vytvořit skript, který "
+"nejdříve nadefinuje proměnnou DISPLAY a po té zavolá grafickou aplikaci. "
+"Nakonec pak vytvoříte opakovanou úlohu, která bude spouštět tento skript."
 
 #: C/gnome-schedule.xml:544(title)
 msgid "About X server"
 msgstr "O X serveru"
 
 #: C/gnome-schedule.xml:545(para)
-msgid "The X server is part of the X Window System. It is in charge of drawing windows on the screen and processing the user input from a keyboard or any other peripheral."
-msgstr "X server je součástí systému X Window. Jeho úkolem je vykreslování oken na obrazovce a zpracování uživatelského vstupu z klávesnice nebo jiné periférie."
+msgid ""
+"The X server is part of the X Window System. It is in charge of drawing "
+"windows on the screen and processing the user input from a keyboard or any "
+"other peripheral."
+msgstr ""
+"X server je součástí systému X Window. Jeho úkolem je vykreslování oken na "
+"obrazovce a zpracování uživatelského vstupu z klávesnice nebo jiné periférie."
 
 #: C/gnome-schedule.xml:548(para)
-msgid "If you need more information about X server or the X Window System you can read its <ulink url=\"http://en.wikipedia.org/wiki/X_Window_System\" type=\"http\">entry</ulink> in the Wikipedia."
-msgstr "Pokud se chcete o X serveru a systému X Window dovědět více, můžete si přečíst <ulink url=\"http://en.wikipedia.org/wiki/X_Window_System\" type=\"http\">článek</ulink> na Wikipedii."
+msgid ""
+"If you need more information about X server or the X Window System you can "
+"read its <ulink url=\"http://en.wikipedia.org/wiki/X_Window_System\" type="
+"\"http\">entry</ulink> in the Wikipedia."
+msgstr ""
+"Pokud se chcete o X serveru a systému X Window dovědět více, můžete si "
+"přečíst <ulink url=\"http://en.wikipedia.org/wiki/X_Window_System\" type="
+"\"http\">článek</ulink> na Wikipedii."
 
 #: C/gnome-schedule.xml:574(title)
 msgid "About <application>Gnome Schedule</application>"
@@ -583,27 +931,55 @@ msgid "Authors"
 msgstr "Autoři"
 
 #: C/gnome-schedule.xml:577(para)
-msgid "<application>Gnome Schedule</application> was written by Philip Van Hoof (<email>pvanhoof@gnome.org</email>), Kristof Vansant (<email>de_lupus at pandora dot be</email>) and Gaute Hope (<email>eg@gaute.vetsj.com</email>). To find more information about <application>Gnome Schedule</application>, please visit the <ulink url=\"http://gnome-schedule.sourceforge.net/\" type=\"http\"><application>Gnome Schedule</application> Web Page</ulink>."
-msgstr "Aplikaci <application>Gnome Schedule</application> napsali Philip Van Hoof (<email>pvanhoof@gnome.org</email>), Kristof Vansant (<email>de_lupus@pandora.be</email>) a Gaute Hope (<email>eg@gaute.vetsj.com</email>). Pokud chcete o aplikace <application>Gnome Schedule</application> více informací, navštivte prosím <ulink url=\"http://gnome-schedule.sourceforge.net/\" type=\"http\">webovou stránku <application>Gnome Schedule</application></ulink>."
+msgid ""
+"<application>Gnome Schedule</application> was written by Philip Van Hoof "
+"(<email>pvanhoof@gnome.org</email>), Kristof Vansant (<email>de_lupus at "
+"pandora dot be</email>) and Gaute Hope (<email>eg@gaute.vetsj.com</email>). "
+"To find more information about <application>Gnome Schedule</application>, "
+"please visit the <ulink url=\"http://gnome-schedule.sourceforge.net/\" type="
+"\"http\"><application>Gnome Schedule</application> Web Page</ulink>."
+msgstr ""
+"Aplikaci <application>Gnome Schedule</application> napsali Philip Van Hoof "
+"(<email>pvanhoof@gnome.org</email>), Kristof Vansant "
+"(<email>de_lupus@pandora.be</email>) a Gaute Hope (<email>eg@gaute.vetsj."
+"com</email>). Pokud chcete o aplikace <application>Gnome Schedule</"
+"application> více informací, navštivte prosím <ulink url=\"http://gnome-"
+"schedule.sourceforge.net/\" type=\"http\">webovou stránku <application>Gnome "
+"Schedule</application></ulink>."
 
 #: C/gnome-schedule.xml:586(title)
 msgid "Reporting Bugs"
 msgstr "Hlášení chyb"
 
 #: C/gnome-schedule.xml:587(para)
-msgid "To report a bug or make a suggestion regarding this application or this manual, follow the directions in this <ulink url=\"ghelp:gnome-feedback\" type=\"help\">document</ulink>."
-msgstr "Pokud chcete oznámit chybu nebo navrhnout vylepšení vztahující se k této aplikaci nebo této příručce, postupujte dle instrukcí v tomto <ulink url=\"ghelp:gnome-feedback\" type=\"help\">dokumentu</ulink>."
+msgid ""
+"To report a bug or make a suggestion regarding this application or this "
+"manual, follow the directions in this <ulink url=\"ghelp:gnome-feedback\" "
+"type=\"help\">document</ulink>."
+msgstr ""
+"Pokud chcete oznámit chybu nebo navrhnout vylepšení vztahující se k této "
+"aplikaci nebo této příručce, postupujte dle instrukcí v tomto <ulink url="
+"\"ghelp:gnome-feedback\" type=\"help\">dokumentu</ulink>."
 
 #: C/gnome-schedule.xml:595(title)
 msgid "License"
 msgstr "Licence"
 
 #: C/gnome-schedule.xml:596(para)
-msgid "This program is distributed under the terms of the GNU General Public license as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version. A copy of this license can be found at this <ulink url=\"ghelp:gpl\" type=\"help\">link</ulink>, or in the file COPYING included with the source code of this program."
-msgstr "Tento program je šířen podle ustanovení GNU General Public License, vydávané Free Software Foundation; a to buď verze 2 této licence anebo (podle vlastního uvážení) kterékoliv pozdější verze. Kopii této licence naleznete pod tímto <ulink url=\"ghelp:gpl\" type=\"help\">odkazem</ulink> nebo v souboru COPYING přiloženém ke zdrojovým kódům tohoto programu. "
+msgid ""
+"This program is distributed under the terms of the GNU General Public "
+"license as published by the Free Software Foundation; either version 2 of "
+"the License, or (at your option) any later version. A copy of this license "
+"can be found at this <ulink url=\"ghelp:gpl\" type=\"help\">link</ulink>, or "
+"in the file COPYING included with the source code of this program."
+msgstr ""
+"Tento program je šířen podle ustanovení GNU General Public License, vydávané "
+"Free Software Foundation; a to buď verze 2 této licence anebo (podle "
+"vlastního uvážení) kterékoliv pozdější verze. Kopii této licence naleznete "
+"pod tímto <ulink url=\"ghelp:gpl\" type=\"help\">odkazem</ulink> nebo v "
+"souboru COPYING přiloženém ke zdrojovým kódům tohoto programu. "
 
 #. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
 #: C/gnome-schedule.xml:0(None)
 msgid "translator-credits"
 msgstr "Marek Černocký <marek@manet.cz>, 2010"
-
