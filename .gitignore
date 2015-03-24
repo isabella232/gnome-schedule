@@ -47,3 +47,4 @@ src/gnome-schedule
 src/gnome-schedule-export
 src/gnome-schedule-import
 po/gnome-schedule.pot
+compile
