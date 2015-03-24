@@ -42,8 +42,6 @@ else
   AC_MSG_ERROR([You need to have python libglade bindings installed])
 fi
 
-PKG_CHECK_MODULES(GNOMEPYTHON, gnome-python-2.0 >= 2.12.0)
-
 export PYTHONPATH=$PYGTK_DIR:$PYTHONPATH
 dnl check for python-gconf
 AC_MSG_CHECKING(for python gconf)
