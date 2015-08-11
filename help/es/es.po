@@ -4,13 +4,15 @@
 # Francisco Javier F. Serrador <serrador@cvs.gnome.org>, 2006.
 # Rodrigo Marcos Fombellida <rmarcos@svn.gnome.org>, 2008.
 # Jorge González <jorgegonz@svn.gnome.org>, 2008.
+# Daniel Mustieles <daniel.mustieles@gmail.com>, 2015.
 msgid ""
 msgstr ""
 "Project-Id-Version: help.HEAD\n"
-"POT-Creation-Date: 2008-03-19 19:26+0000\n"
-"PO-Revision-Date: 2008-10-19 19:45+0200\n"
-"Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
-"Language-Team: Español <gnome-es-list@gnome.org>\n"
+"POT-Creation-Date: 2015-03-23 08:36+0000\n"
+"PO-Revision-Date: 2015-08-05 \n"
+"Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
+"Language-Team: Spanish <gnome-es-list@gnome.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -722,8 +724,11 @@ msgstr ""
 "eliminará de la <guilabel>Lista de tareas</guilabel>."
 
 #: C/gnome-schedule.xml:450(para)
+#| msgid ""
+#| "Non-recurrent tasks disapear automatically from the list when they are "
+#| "done."
 msgid ""
-"Non-recurrent tasks disapear automatically from the list when they are done."
+"Non-recurrent tasks disappear automatically from the list when they are done."
 msgstr ""
 "Las tareas sin repetición desaparecen automáticamente de la lista cuando se "
 "realizan."
@@ -889,9 +894,13 @@ msgid "Setting DISPLAY variable for tasks that will launch once"
 msgstr "Añadir una tarea programada que se ejecutará una vez"
 
 #: C/gnome-schedule.xml:531(para)
+#| msgid ""
+#| "When you are creating or modifying a task, you can define the DISPLAY "
+#| "variable in the script text box. Make the definition at the begining of "
+#| "the script."
 msgid ""
 "When you are creating or modifying a task, you can define the DISPLAY "
-"variable in the script text box. Make the definition at the begining of the "
+"variable in the script text box. Make the definition at the beginning of the "
 "script."
 msgstr ""
 "Cuando esté creando o modificando una tarea, puede definir la variable "
@@ -998,7 +1007,7 @@ msgstr ""
 "encontrar en <ulink url=\"ghelp:gpl\" type=\"help\">enlace</ulink>, o en el "
 "archivo COPYING incluido con el código fuente de este programa."
 
-#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2.
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
 #: C/gnome-schedule.xml:0(None)
 msgid "translator-credits"
 msgstr ""
