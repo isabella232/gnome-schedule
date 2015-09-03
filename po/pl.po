@@ -4,14 +4,14 @@
 # pomóc w jego rozwijaniu i pielęgnowaniu, napisz do nas:
 # gnomepl@aviary.pl
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-# Piotr Drąg <piotrdrag@gmail.com>, 2011-2013.
-# Aviary.pl <gnomepl@aviary.pl>, 2011-2013.
+# Piotr Drąg <piotrdrag@gmail.com>, 2011-2015.
+# Aviary.pl <gnomepl@aviary.pl>, 2011-2015.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-08-20 23:32+0200\n"
-"PO-Revision-Date: 2013-08-20 23:33+0200\n"
+"POT-Creation-Date: 2015-09-03 02:04+0200\n"
+"PO-Revision-Date: 2015-09-03 02:05+0200\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <gnomepl@aviary.pl>\n"
 "Language: pl\n"
@@ -218,12 +218,12 @@ msgid ""
 "more information about the % character. If you don not want to use it for "
 "redirection it must be properly escaped with the \\ letter."
 msgstr ""
-"Polecenie zawieraj jeden lub więcej znaków %, który jest specjalny dla "
+"Polecenie zawieraj jeden lub więcej znaków „%”, który jest specjalny dla "
 "usługi cron i nie może być używany w Terminarzu GNOME z powodu formatu, jaki "
 "używa do przechowywania dodatkowych informacji w wierszu crontab. Proszę "
-"użyć znaku przekazania |, aby osiągnąć tę samą funkcjonalność. Proszę "
-"zobaczyć podręcznik crontab, aby dowiedzieć się więcej o znaku %. Jeśli nie "
-"ma być używany jako przekazanie, to musi zostać poprzedzony znakami \\."
+"użyć znaku przekazania „|”, aby osiągnąć tę samą funkcjonalność. Podręcznik "
+"crontab zawiera więcej informacji o znaku „%”. Jeśli nie ma być używany jako "
+"przekazanie, to musi zostać poprzedzony znakami „\\”."
 
 #: ../src/crontabEditor.py:455
 msgid ""
@@ -416,13 +416,13 @@ msgstr "Plik nie istnieje."
 
 #: ../src/gnome-schedule-import.py:77
 msgid "Reading from stdin.."
-msgstr "Odczytywanie ze standardowego wejścia..."
+msgstr "Odczytywanie ze standardowego wejścia…"
 
 #. Reading file
 #: ../src/gnome-schedule-import.py:82
 #, python-format
 msgid "Reading file: %s.."
-msgstr "Odczytywanie pliku: %s..."
+msgstr "Odczytywanie pliku: %s…"
 
 #: ../src/gnome-schedule-import.py:84
 #, python-format
@@ -495,7 +495,7 @@ msgstr "Czas:"
 
 #: ../src/gnome-schedule.glade.h:13
 msgid ":"
-msgstr ":"
+msgstr "∶"
 
 #: ../src/gnome-schedule.glade.h:14
 msgid "Task:"
@@ -585,8 +585,7 @@ msgstr "Inne"
 #: ../src/gnome-schedule.glade.h:43
 msgid "See \"man 5 crontab\" for information about the crontab format."
 msgstr ""
-"Proszę zobaczyć \"man 5 crontab\", aby dowiedzieć się więcej o formacie "
-"crontab."
+"Podręcznik „man 5 crontab” zawiera więcej informacji o formacie crontab."
 
 #: ../src/gnome-schedule.glade.h:45
 msgid "Execution at a specific minute, hour, day, weekday or month."
@@ -651,7 +650,7 @@ msgstr "Wyświetl pomoc"
 
 #: ../src/gnome-schedule.glade.h:61
 msgid "About Gnome-schedule"
-msgstr "O programie Terminarz GNOME"
+msgstr "O Terminarzu GNOME"
 
 #: ../src/gnome-schedule.glade.h:62
 msgid "Scheduled and active tasks"
@@ -664,7 +663,7 @@ msgid ""
 "or set your PYTHONPATH correctly.\n"
 "try: export PYTHONPATH= "
 msgstr ""
-"Należy zainstalować pakiet PyGTK lub GTKv2,\n"
+"Należy zainstalować pakiet PyGTK lub GTK+ 2,\n"
 "albo poprawnie ustawić zmienną PYTHONPATH.\n"
 "Proszę spróbować: export PYTHONPATH= "
 
@@ -1100,34 +1099,34 @@ msgstr ""
 "jednorazowe z katalogu, w którym uruchomiono Terminarz GNOME w czasie "
 "tworzenia zadania (zwykle katalog domowy)."
 
-#: ../src/mainWindow.py:733
+#: ../src/mainWindow.py:734
 msgid "No default graphical terminal for GNOME could be found."
 msgstr "Nie odnaleziono domyślnego terminala graficznego dla środowiska GNOME."
 
-#: ../src/mainWindow.py:748
+#: ../src/mainWindow.py:750
 msgid "Please select a task!"
 msgstr "Proszę wybrać zadanie."
 
-#: ../src/mainWindow.py:756
+#: ../src/mainWindow.py:758
 msgid "About Gnome Schedule"
 msgstr "O Terminarzu GNOME"
 
-#: ../src/mainWindow.py:757
+#: ../src/mainWindow.py:759
 msgid "Gnome Schedule"
 msgstr "Terminarz GNOME"
 
-#: ../src/mainWindow.py:759
+#: ../src/mainWindow.py:761
 #, python-format
 msgid "Copyright (c) %(year)s %(name)s."
-msgstr "Copyright (c) %(year)s %(name)s."
+msgstr "Copyright © %(year)s %(name)s."
 
-#: ../src/mainWindow.py:772
+#: ../src/mainWindow.py:774
 msgid "translator-credits"
 msgstr ""
-"Piotr Drąg <piotrdrag@gmail.com>, 2011-2013\n"
-"Aviary.pl <gnomepl@aviary.pl>, 2011-2013"
+"Piotr Drąg <piotrdrag@gmail.com>, 2011-2015\n"
+"Aviary.pl <gnomepl@aviary.pl>, 2011-2015"
 
-#: ../src/mainWindow.py:791
+#: ../src/mainWindow.py:793
 msgid "Could not display help"
 msgstr "Nie można wyświetlić pomocy"
 
@@ -1239,7 +1238,7 @@ msgstr "Plik danych jest za stary. Należy ponownie utworzyć zadanie."
 #: ../src/xwrapper.py:125
 #, python-format
 msgid "Launching %s.."
-msgstr "Uruchamianie %s..."
+msgstr "Uruchamianie „%s”…"
 
 #: ../src/xwrapper.py:127
 msgid "output<2: Why am I launched?"
