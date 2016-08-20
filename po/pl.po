@@ -1,27 +1,23 @@
-# -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-# Aviary.pl
-# Jeśli masz jakiekolwiek uwagi odnoszące się do tłumaczenia lub chcesz
-# pomóc w jego rozwijaniu i pielęgnowaniu, napisz do nas:
-# gnomepl@aviary.pl
-# -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-# Piotr Drąg <piotrdrag@gmail.com>, 2011-2015.
-# Aviary.pl <gnomepl@aviary.pl>, 2011-2015.
+# Polish translation for gnome-schedule.
+# Copyright © 2011-2016 the gnome-schedule authors.
+# This file is distributed under the same license as the gnome-schedule package.
+# Piotr Drąg <piotrdrag@gmail.com>, 2011-2016.
+# Aviary.pl <community-poland@mozilla.org>, 2011-2016.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-03 02:04+0200\n"
-"PO-Revision-Date: 2015-09-03 02:05+0200\n"
+"POT-Creation-Date: 2016-08-20 16:49+0200\n"
+"PO-Revision-Date: 2016-08-20 16:50+0200\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
-"Language-Team: Polish <gnomepl@aviary.pl>\n"
+"Language-Team: Polish <community-poland@mozilla.org>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Poedit-Language: Polish\n"
-"X-Poedit-Country: Poland\n"
 
 #: ../desktop/gnome-schedule.desktop.in.in.h:1
 msgid "Scheduled tasks"
@@ -49,7 +45,7 @@ msgid ""
 "are writable."
 msgstr ""
 "Utworzenie katalogu danych się nie powiodło. Proszę się upewnić, że katalogi "
-"~/.gnome i ~/.gnome/gnome-schedule są zapisywalne."
+"~/.gnome i ~/.gnome/gnome-schedule są zapisywalne."
 
 #: ../src/at.py:145 ../src/crontab.py:162
 #, python-format
@@ -58,7 +54,7 @@ msgid ""
 "schedule are writable."
 msgstr ""
 "Utworzenie katalogu danych się nie powiodło: %s. Proszę się upewnić, że "
-"katalogi ~/.gnome i ~/.gnome/gnome-schedule są zapisywalne."
+"katalogi ~/.gnome i ~/.gnome/gnome-schedule są zapisywalne."
 
 #: ../src/at.py:547
 #, python-format
@@ -68,7 +64,7 @@ msgstr "Ostrzeżenie. Nieznane zadanie: %(preview)s"
 #: ../src/at.py:554
 #, python-format
 msgid "On %(timestring)s"
-msgstr "O %(timestring)s"
+msgstr "O %(timestring)s"
 
 #: ../src/at.py:560 ../src/at.py:565
 msgid "Once"
@@ -76,7 +72,7 @@ msgstr "Raz"
 
 #: ../src/at.py:569
 msgid "Warning: a line in atq's output didn't parse:"
-msgstr "Ostrzeżenie: nie można przetworzyć wiersza w wyjściu atq:"
+msgstr "Ostrzeżenie: nie można przetworzyć wiersza w wyjściu atq:"
 
 #: ../src/at.py:624 ../src/crontab.py:288 ../src/crontab.py:334
 #: ../src/crontabEditor.py:274 ../src/atEditor.py:126 ../src/atEditor.py:522
@@ -116,7 +112,7 @@ msgstr "To nie jest prawidłowy wpis specjalny: %(record)s"
 #: ../src/crontab.py:220 ../src/crontab.py:225 ../src/crontab.py:229
 #, python-format
 msgid "Must be between %(min)s and %(max)s"
-msgstr "Musi wynosić między %(min)s a %(max)s"
+msgstr "Musi wynosić między %(min)s a %(max)s"
 
 #: ../src/crontab.py:227
 #, python-format
@@ -156,8 +152,8 @@ msgstr "dzień tygodnia"
 msgid ""
 "Failed to parse the Day of Month field, possibly due to a bug in crontab."
 msgstr ""
-"Przetworzenie pola dzień miesiąca się nie powiodło, prawdopodobnie z powodu "
-"błędu w pliku crontab."
+"Przetworzenie pola dzień miesiąca się nie powiodło, prawdopodobnie z powodu "
+"błędu w pliku crontab."
 
 #: ../src/crontabEditor.py:68 ../src/crontabEditorHelper.py:87
 #: ../src/gnome-schedule.glade.h:48
@@ -219,10 +215,10 @@ msgid ""
 "redirection it must be properly escaped with the \\ letter."
 msgstr ""
 "Polecenie zawieraj jeden lub więcej znaków „%”, który jest specjalny dla "
-"usługi cron i nie może być używany w Terminarzu GNOME z powodu formatu, jaki "
-"używa do przechowywania dodatkowych informacji w wierszu crontab. Proszę "
+"usługi cron i nie może być używany w Terminarzu GNOME z powodu formatu, jaki "
+"używa do przechowywania dodatkowych informacji w wierszu crontab. Proszę "
 "użyć znaku przekazania „|”, aby osiągnąć tę samą funkcjonalność. Podręcznik "
-"crontab zawiera więcej informacji o znaku „%”. Jeśli nie ma być używany jako "
+"crontab zawiera więcej informacji o znaku „%”. Jeśli nie ma być używany jako "
 "przekazanie, to musi zostać poprzedzony znakami „\\”."
 
 #: ../src/crontabEditor.py:455
@@ -233,7 +229,7 @@ msgid ""
 msgstr ""
 "Uwaga na temat katalogu roboczego wykonanych zadań:\n"
 "\n"
-"Powtarzające się zadania będą wykonywane z katalogu domowego."
+"Powtarzające się zadania będą wykonywane z katalogu domowego."
 
 #: ../src/crontabEditor.py:456 ../src/mainWindow.py:665 ../src/atEditor.py:596
 msgid "_Don't show again"
@@ -275,7 +271,7 @@ msgstr "To jest nieprawidłowe: Przyczyna: %s"
 #. minute
 #: ../src/crontabEditorHelper.py:231 ../src/gnome-schedule.glade.h:44
 msgid "At an exact minute"
-msgstr "O dokładnej minucie"
+msgstr "O dokładnej minucie"
 
 #: ../src/crontabEditorHelper.py:232 ../src/gnome-schedule.glade.h:28
 msgid "Minute:"
@@ -284,7 +280,7 @@ msgstr "Minuta:"
 #. hour
 #: ../src/crontabEditorHelper.py:235
 msgid "At an exact hour"
-msgstr "O dokładnej godzinie"
+msgstr "O dokładnej godzinie"
 
 #: ../src/crontabEditorHelper.py:236 ../src/gnome-schedule.glade.h:27
 msgid "Hour:"
@@ -302,7 +298,7 @@ msgstr "Dzień:"
 #. month
 #: ../src/crontabEditorHelper.py:243
 msgid "In a month"
-msgstr "W miesiącu"
+msgstr "W miesiącu"
 
 #: ../src/crontabEditorHelper.py:244 ../src/gnome-schedule.glade.h:29
 msgid "Month:"
@@ -355,7 +351,7 @@ msgstr "Pomo_c"
 
 #: ../src/gnome-schedule-applet.xml.h:4
 msgid "A_bout"
-msgstr "_O programie"
+msgstr "_O programie"
 
 #: ../src/gnome-schedule-export.py:45
 msgid "Gnome Schedule: Export tasks"
@@ -453,7 +449,7 @@ msgstr "Wybierz szablon"
 
 #: ../src/gnome-schedule.glade.h:2
 msgid "Create a new task from the selected template"
-msgstr "Tworzy nowe zadanie z zaznaczonego szablonu"
+msgstr "Tworzy nowe zadanie z zaznaczonego szablonu"
 
 #: ../src/gnome-schedule.glade.h:3
 msgid "Manage templates"
@@ -524,7 +520,7 @@ msgstr "Opis:"
 
 #: ../src/gnome-schedule.glade.h:20
 msgid "<big>Time &amp; Date</big>"
-msgstr "<big>Czas i data</big>"
+msgstr "<big>Czas i data</big>"
 
 #: ../src/gnome-schedule.glade.h:22
 msgid "Advanced"
@@ -585,20 +581,20 @@ msgstr "Inne"
 #: ../src/gnome-schedule.glade.h:43
 msgid "See \"man 5 crontab\" for information about the crontab format."
 msgstr ""
-"Podręcznik „man 5 crontab” zawiera więcej informacji o formacie crontab."
+"Podręcznik „man 5 crontab” zawiera więcej informacji o formacie crontab."
 
 #: ../src/gnome-schedule.glade.h:45
 msgid "Execution at a specific minute, hour, day, weekday or month."
 msgstr ""
-"Wykonanie o podanej minucie, godzinie, dniu, dniu tygodnia lub miesiącu."
+"Wykonanie o podanej minucie, godzinie, dniu, dniu tygodnia lub miesiącu."
 
 #: ../src/gnome-schedule.glade.h:46
 msgid "In a range"
-msgstr "W zakresie"
+msgstr "W zakresie"
 
 #: ../src/gnome-schedule.glade.h:47
 msgid "Execution in a range."
-msgstr "Wykonanie w zakresie."
+msgstr "Wykonanie w zakresie."
 
 #: ../src/gnome-schedule.glade.h:49
 msgid "Execution at every minute, hour, day, weekday or month."
@@ -650,11 +646,11 @@ msgstr "Wyświetl pomoc"
 
 #: ../src/gnome-schedule.glade.h:61
 msgid "About Gnome-schedule"
-msgstr "O Terminarzu GNOME"
+msgstr "O Terminarzu GNOME"
 
 #: ../src/gnome-schedule.glade.h:62
 msgid "Scheduled and active tasks"
-msgstr "Zaplanowane i aktywne zadania"
+msgstr "Zaplanowane i aktywne zadania"
 
 #: ../src/gnome-schedule.py:63 ../src/scheduleapplet.py:65
 #: ../src/xwrapper.py:51
@@ -696,33 +692,33 @@ msgstr "Co każdą minutę"
 #: ../src/lang.py:189
 #, python-format
 msgid "At minute %(minute)s of every hour"
-msgstr "W %(minute)s minucie każdej godziny"
+msgstr "W %(minute)s minucie każdej godziny"
 
 #: ../src/lang.py:191
 #, python-format
 msgid "At every minute between %(time_from)s and %(time_to)s"
-msgstr "W każdej minucie między %(time_from)s a %(time_to)s"
+msgstr "W każdej minucie między %(time_from)s a %(time_to)s"
 
 #: ../src/lang.py:193
 #, python-format
 msgid "On every day at %(time)s"
-msgstr "W każdym dniu o %(time)s"
+msgstr "W każdym dniu o %(time)s"
 
 #: ../src/lang.py:198
 #, python-format
 msgid "On day %(monthday)s of every month at every full hour"
-msgstr "W dniu %(monthday)s każdego miesiąca o każdej pełnej godzinie"
+msgstr "W dniu %(monthday)s każdego miesiąca o każdej pełnej godzinie"
 
 #: ../src/lang.py:200
 #, python-format
 msgid "On day %(monthday)s of every month at every minute"
-msgstr "W dniu %(monthday)s każdego miesiąca o każdej minucie"
+msgstr "W dniu %(monthday)s każdego miesiąca o każdej minucie"
 
 #: ../src/lang.py:202
 #, python-format
 msgid "On day %(monthday)s of every month at minute %(minute)s of every hour"
 msgstr ""
-"W dniu %(monthday)s każdego miesiąca o minucie %(minute)s każdej godziny"
+"W dniu %(monthday)s każdego miesiąca o minucie %(minute)s każdej godziny"
 
 #: ../src/lang.py:204
 #, python-format
@@ -730,28 +726,28 @@ msgid ""
 "On day %(monthday)s of every month at every minute between %(time_from)s and "
 "%(time_to)s"
 msgstr ""
-"W dniu %(monthday)s każdego miesiąca o każdej minucie między %(time_from)s a "
-"%(time_to)s"
+"W dniu %(monthday)s każdego miesiąca o każdej minucie między %(time_from)s "
+"a %(time_to)s"
 
 #: ../src/lang.py:206
 #, python-format
 msgid "On day %(monthday)s of every month at %(time)s"
-msgstr "W dniu %(monthday)s każdego miesiąca o %(time)s"
+msgstr "W dniu %(monthday)s każdego miesiąca o %(time)s"
 
 #: ../src/lang.py:211
 #, python-format
 msgid "On every day in %(month)s at every full hour"
-msgstr "Każdego dnia w miesiącu %(month)s o każdej pełnej godzinie"
+msgstr "Każdego dnia w miesiącu %(month)s o każdej pełnej godzinie"
 
 #: ../src/lang.py:213
 #, python-format
 msgid "On every day in %(month)s at every minute"
-msgstr "Każdego dnia w miesiącu %(month)s o każdej minucie"
+msgstr "Każdego dnia w miesiącu %(month)s o każdej minucie"
 
 #: ../src/lang.py:215
 #, python-format
 msgid "On every day in %(month)s at minute %(minute)s of every hour"
-msgstr "Każdego dnia w miesiącu %(month)s o minucie %(minute)s każdej godziny"
+msgstr "Każdego dnia w miesiącu %(month)s o minucie %(minute)s każdej godziny"
 
 #: ../src/lang.py:217
 #, python-format
@@ -759,56 +755,56 @@ msgid ""
 "On every day in %(month)s at every minute between %(time_from)s and "
 "%(time_to)s"
 msgstr ""
-"Codziennie w miesiącu %(month)s o każdej minucie między %(time_from)s a "
-"%(time_to)s"
+"Codziennie w miesiącu %(month)s o każdej minucie między %(time_from)s "
+"a %(time_to)s"
 
 #: ../src/lang.py:219
 #, python-format
 msgid "On every day in %(month)s at %(time)s"
-msgstr "Każdego dnia w miesiącu %(month)s o %(time)s"
+msgstr "Każdego dnia w miesiącu %(month)s o %(time)s"
 
 #: ../src/lang.py:224
 #, python-format
 msgid "Every year on %(date)s at every full hour"
-msgstr "Każdego roku w dniu %(date)s o każdej pełnej godzinie"
+msgstr "Każdego roku w dniu %(date)s o każdej pełnej godzinie"
 
 #: ../src/lang.py:226
 #, python-format
 msgid "Every year on %(date)s at every minute"
-msgstr "Każdego roku w dniu %(date)s o każdej minucie"
+msgstr "Każdego roku w dniu %(date)s o każdej minucie"
 
 #: ../src/lang.py:228
 #, python-format
 msgid "Every year on %(date)s at minute %(minute)s of every hour"
-msgstr "Każdego roku w dniu %(date)s o minucie %(minute)s każdej godziny"
+msgstr "Każdego roku w dniu %(date)s o minucie %(minute)s każdej godziny"
 
 #: ../src/lang.py:230
 #, python-format
 msgid ""
 "Every year on %(date)s at every minute between %(time_from)s and %(time_to)s"
 msgstr ""
-"Każdego roku w dniu %(date)s o każdej minucie między %(time_from)s a "
-"%(time_to)s"
+"Każdego roku w dniu %(date)s o każdej minucie między %(time_from)s "
+"a %(time_to)s"
 
 #: ../src/lang.py:232
 #, python-format
 msgid "Every year on %(date)s at %(time)s"
-msgstr "Każdego roku w dniu %(date)s o %(time)s"
+msgstr "Każdego roku w dniu %(date)s o %(time)s"
 
 #: ../src/lang.py:237
 #, python-format
 msgid "On every weekday: %(weekday)s at every full hour"
-msgstr "Każdego dnia tygodnia: %(weekday)s o każdej pełnej godzinie"
+msgstr "Każdego dnia tygodnia: %(weekday)s o każdej pełnej godzinie"
 
 #: ../src/lang.py:239
 #, python-format
 msgid "On every weekday: %(weekday)s at every minute"
-msgstr "Każdego dnia tygodnia: %(weekday)s o każdej minucie"
+msgstr "Każdego dnia tygodnia: %(weekday)s o każdej minucie"
 
 #: ../src/lang.py:241
 #, python-format
 msgid "On every weekday: %(weekday)s at minute %(minute)s of every hour"
-msgstr "Każdego dnia tygodnia: %(weekday)s o minucie %(minute)s każdej godziny"
+msgstr "Każdego dnia tygodnia: %(weekday)s o minucie %(minute)s każdej godziny"
 
 #: ../src/lang.py:243
 #, python-format
@@ -816,13 +812,13 @@ msgid ""
 "On every weekday: %(weekday)s at every minute between %(time_from)s and "
 "%(time_to)s"
 msgstr ""
-"Każdego dnia tygodnia: %(weekday)s o każdej minucie między %(time_from)s a "
-"%(time_to)s"
+"Każdego dnia tygodnia: %(weekday)s o każdej minucie między %(time_from)s "
+"a %(time_to)s"
 
 #: ../src/lang.py:245
 #, python-format
 msgid "On every weekday: %(weekday)s at %(time)s"
-msgstr "Każdego dnia tygodnia: %(weekday)s o %(time)s"
+msgstr "Każdego dnia tygodnia: %(weekday)s o %(time)s"
 
 #: ../src/lang.py:250
 #, python-format
@@ -830,8 +826,8 @@ msgid ""
 "On day %(monthday)s of every month and every weekday: %(weekday)s at every "
 "full hour"
 msgstr ""
-"W dniu %(monthday)s każdego miesiąca i każdego dnia tygodnia: %(weekday)s o "
-"każdej pełnej godzinie"
+"W dniu %(monthday)s każdego miesiąca i każdego dnia tygodnia: %(weekday)s "
+"o każdej pełnej godzinie"
 
 #: ../src/lang.py:252
 #, python-format
@@ -839,8 +835,8 @@ msgid ""
 "On day %(monthday)s of every month and every weekday: %(weekday)s at every "
 "minute"
 msgstr ""
-"W dniu %(monthday)s każdego miesiąca i każdego dnia tygodnia: %(weekday)s o "
-"każdej minucie"
+"W dniu %(monthday)s każdego miesiąca i każdego dnia tygodnia: %(weekday)s "
+"o każdej minucie"
 
 #: ../src/lang.py:254
 #, python-format
@@ -848,8 +844,8 @@ msgid ""
 "On day %(monthday)s of every month and every weekday: %(weekday)s at minute "
 "%(minute)s of every hour"
 msgstr ""
-"W dniu %(monthday)s każdego miesiąca i każdego dnia tygodnia: %(weekday)s o "
-"minucie %(minute)s każdej godziny"
+"W dniu %(monthday)s każdego miesiąca i każdego dnia tygodnia: %(weekday)s "
+"o minucie %(minute)s każdej godziny"
 
 #: ../src/lang.py:256
 #, python-format
@@ -857,36 +853,36 @@ msgid ""
 "On day %(monthday)s of every month and every weekday: %(weekday)s at every "
 "minute between %(time_from)s and %(time_to)s"
 msgstr ""
-"W dniu %(monthday)s każdego miesiąca i każdego dnia tygodnia: %(weekday)s o "
-"każdej minucie między %(time_from)s a %(time_to)s"
+"W dniu %(monthday)s każdego miesiąca i każdego dnia tygodnia: %(weekday)s "
+"o każdej minucie między %(time_from)s a %(time_to)s"
 
 #: ../src/lang.py:258
 #, python-format
 msgid ""
 "On day %(monthday)s of every month and every weekday: %(weekday)s at %(time)s"
 msgstr ""
-"W dniu %(monthday)s każdego miesiąca i każdego dnia tygodnia: %(weekday)s o "
-"%(time)s"
+"W dniu %(monthday)s każdego miesiąca i każdego dnia tygodnia: %(weekday)s "
+"o %(time)s"
 
 #: ../src/lang.py:263
 #, python-format
 msgid "On every weekday: %(weekday)s in %(month)s at every full hour"
 msgstr ""
-"Każdego dnia tygodnia: %(weekday)s w miesiącu %(month)s o każdej pełnej "
+"Każdego dnia tygodnia: %(weekday)s w miesiącu %(month)s o każdej pełnej "
 "minucie"
 
 #: ../src/lang.py:265
 #, python-format
 msgid "On every weekday: %(weekday)s in %(month)s at every minute"
 msgstr ""
-"Każdego dnia tygodnia: %(weekday)s w miesiącu %(month)s o każdej minucie"
+"Każdego dnia tygodnia: %(weekday)s w miesiącu %(month)s o każdej minucie"
 
 #: ../src/lang.py:267
 #, python-format
 msgid ""
 "On every weekday: %(weekday)s in %(month)s at minute %(minute)s of every hour"
 msgstr ""
-"Każdego dnia tygodnia: %(weekday)s w miesiącu %(month)s o minucie %(minute)s "
+"Każdego dnia tygodnia: %(weekday)s w miesiącu %(month)s o minucie %(minute)s "
 "każdej godziny"
 
 #: ../src/lang.py:269
@@ -895,13 +891,13 @@ msgid ""
 "On every weekday: %(weekday)s in %(month)s at every minute between "
 "%(time_from)s and %(time_to)s"
 msgstr ""
-"Każdego dnia tygodnia: %(weekday)s w miesiącu %(month)s o każdej minucie "
-"między %(time_from)s a %(time_to)s"
+"Każdego dnia tygodnia: %(weekday)s w miesiącu %(month)s o każdej minucie "
+"między %(time_from)s a %(time_to)s"
 
 #: ../src/lang.py:271
 #, python-format
 msgid "On every weekday: %(weekday)s in %(month)s at %(time)s"
-msgstr "Każdego dnia tygodnia: %(weekday)s w miesiącu %(month)s o %(time)s"
+msgstr "Każdego dnia tygodnia: %(weekday)s w miesiącu %(month)s o %(time)s"
 
 #: ../src/lang.py:276
 #, python-format
@@ -909,8 +905,8 @@ msgid ""
 "On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
 "every full hour"
 msgstr ""
-"Każdego dnia tygodnia: %(weekday)s w miesiącu %(month)s w dniu %(date)s "
-"każdego roku o każdej pełnej godzinie"
+"Każdego dnia tygodnia: %(weekday)s w miesiącu %(month)s w dniu %(date)s "
+"każdego roku o każdej pełnej godzinie"
 
 #: ../src/lang.py:278
 #, python-format
@@ -918,8 +914,8 @@ msgid ""
 "On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
 "every minute"
 msgstr ""
-"Każdego dnia tygodnia: %(weekday)s w miesiącu %(month)s w dniu %(date)s "
-"każdego roku o każdej minucie"
+"Każdego dnia tygodnia: %(weekday)s w miesiącu %(month)s w dniu %(date)s "
+"każdego roku o każdej minucie"
 
 #: ../src/lang.py:280
 #, python-format
@@ -927,8 +923,8 @@ msgid ""
 "On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
 "minute %(minute)s of every hour"
 msgstr ""
-"Każdego dnia tygodnia: %(weekday)s w miesiącu %(month)s w dniu %(date)s "
-"każdego roku o minucie %(minute)s każdej godziny"
+"Każdego dnia tygodnia: %(weekday)s w miesiącu %(month)s w dniu %(date)s "
+"każdego roku o minucie %(minute)s każdej godziny"
 
 #: ../src/lang.py:282
 #, python-format
@@ -936,8 +932,8 @@ msgid ""
 "On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
 "every minute between %(time_from)s and %(time_to)s"
 msgstr ""
-"Każdego dnia tygodnia: %(weekday)s w miesiącu %(month)s w dniu %(date)s "
-"każdego roku o każdej minucie między %(time_from)s a %(time_to)s"
+"Każdego dnia tygodnia: %(weekday)s w miesiącu %(month)s w dniu %(date)s "
+"każdego roku o każdej minucie między %(time_from)s a %(time_to)s"
 
 #: ../src/lang.py:284
 #, python-format
@@ -945,8 +941,8 @@ msgid ""
 "On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
 "%(time)s"
 msgstr ""
-"Każdego dnia tygodnia: %(weekday)s w miesiącu %(month)s w dniu %(date)s "
-"każdego roku o %(time)s"
+"Każdego dnia tygodnia: %(weekday)s w miesiącu %(month)s w dniu %(date)s "
+"każdego roku o %(time)s"
 
 #: ../src/lang.py:292
 msgid "every minute"
@@ -987,7 +983,7 @@ msgstr "miesiąc: %s"
 #: ../src/lang.py:312
 #, python-format
 msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s"
-msgstr "O %(minute)s, %(hour)s, %(monthday)s, %(month)s"
+msgstr "O %(minute)s, %(hour)s, %(monthday)s, %(month)s"
 
 #: ../src/lang.py:314
 #, python-format
@@ -997,7 +993,7 @@ msgstr "dzień tygodnia: %s"
 #: ../src/lang.py:315
 #, python-format
 msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
-msgstr "O %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
+msgstr "O %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 
 #: ../src/mainWindow.py:70 ../src/examples/dump.py:55
 msgid "Default behaviour"
@@ -1021,7 +1017,7 @@ msgstr "Zadanie jednorazowe"
 
 #: ../src/mainWindow.py:141
 msgid "From template"
-msgstr "Z szablonu"
+msgstr "Z szablonu"
 
 #: ../src/mainWindow.py:160
 msgid "Add a new task"
@@ -1054,7 +1050,7 @@ msgstr "Opis"
 
 #: ../src/mainWindow.py:467 ../src/mainWindow.py:480
 msgid "Date and Time"
-msgstr "Data i czas"
+msgstr "Data i czas"
 
 #: ../src/mainWindow.py:471 ../src/mainWindow.py:484
 msgid "Command preview"
@@ -1078,7 +1074,7 @@ msgid ""
 msgstr ""
 "Na pewno uruchomić to zadanie teraz?\n"
 "\n"
-"Jest to używane do podglądu zadania i uruchamia je raz. Nie wpływa to na "
+"Jest to używane do podglądu zadania i uruchamia je raz. Nie wpływa to na "
 "zwykłe zaplanowane czasy uruchamiania."
 
 #: ../src/mainWindow.py:655
@@ -1093,10 +1089,10 @@ msgid ""
 "directory where Gnome schedule was run from at the time of task creation "
 "(normally the home directory)."
 msgstr ""
-"Uwaga o katalogu roboczym wykonanych zadań:\n"
+"Uwaga o katalogu roboczym wykonanych zadań:\n"
 "\n"
-"Powtarzane zadania będą uruchamiane z katalogu domowego, a zadania "
-"jednorazowe z katalogu, w którym uruchomiono Terminarz GNOME w czasie "
+"Powtarzane zadania będą uruchamiane z katalogu domowego, a zadania "
+"jednorazowe z katalogu, w którym uruchomiono Terminarz GNOME w czasie "
 "tworzenia zadania (zwykle katalog domowy)."
 
 #: ../src/mainWindow.py:734
@@ -1109,7 +1105,7 @@ msgstr "Proszę wybrać zadanie."
 
 #: ../src/mainWindow.py:758
 msgid "About Gnome Schedule"
-msgstr "O Terminarzu GNOME"
+msgstr "O Terminarzu GNOME"
 
 #: ../src/mainWindow.py:759
 msgid "Gnome Schedule"
@@ -1123,8 +1119,8 @@ msgstr "Copyright © %(year)s %(name)s."
 #: ../src/mainWindow.py:774
 msgid "translator-credits"
 msgstr ""
-"Piotr Drąg <piotrdrag@gmail.com>, 2011-2015\n"
-"Aviary.pl <gnomepl@aviary.pl>, 2011-2015"
+"Piotr Drąg <piotrdrag@gmail.com>, 2011-2016\n"
+"Aviary.pl <community-poland@mozilla.org>, 2011-2016"
 
 #: ../src/mainWindow.py:793
 msgid "Could not display help"
@@ -1148,7 +1144,7 @@ msgstr "Zadanie uruchamiane jednokrotnie"
 
 #: ../src/addWindow.py:77
 msgid "A task from a predefined template"
-msgstr "Zadanie z wcześniej określonego szablonu"
+msgstr "Zadanie z wcześniej określonego szablonu"
 
 #: ../src/atEditor.py:82
 msgid "Calendar"
@@ -1160,8 +1156,8 @@ msgid ""
 "a number out of range. Remember an hour only has 60 minutes and a day only "
 "24 hours."
 msgstr ""
-"W jednym lub obu polach godziny i minuty wpisano literę lub liczbę spoza "
-"zakresu. Proszę pamiętać, że godzina ma tylko 60 minut, a dzień ma tylko 24 "
+"W jednym lub obu polach godziny i minuty wpisano literę lub liczbę spoza "
+"zakresu. Proszę pamiętać, że godzina ma tylko 60 minut, a dzień ma tylko 24 "
 "godziny."
 
 #: ../src/atEditor.py:575
@@ -1176,9 +1172,9 @@ msgid ""
 "One-time tasks will be run from the directory where Gnome schedule is run "
 "from (normally the home directory)."
 msgstr ""
-"Uwaga o katalogu roboczym wykonanych zadań:\n"
+"Uwaga o katalogu roboczym wykonanych zadań:\n"
 "\n"
-"Jednorazowe zadania będą uruchamiane z katalogu, w którym uruchomiono "
+"Jednorazowe zadania będą uruchamiane z katalogu, w którym uruchomiono "
 "Terminarz GNOME (zwykle katalog domowy)."
 
 #: ../src/template.py:198 ../src/template.py:212
@@ -1199,7 +1195,7 @@ msgstr "Jednorazowo"
 
 #: ../src/xwrapper.py:60
 msgid "Could not open a connection to X!"
-msgstr "Nie można otworzyć połączenia z X."
+msgstr "Nie można otworzyć połączenia z X."
 
 #: ../src/xwrapper.py:71 ../src/xwrapper.py:79
 msgid "Wrong number of arguments."
@@ -1212,7 +1208,7 @@ msgid ""
 "schedule."
 msgstr ""
 "Skrypt pośredniczący dla Terminarza GNOME (http://gnome-schedule.sf.net) dla "
-"programów uruchamianych z crontab lub pod X. Należy używać przez program "
+"programów uruchamianych z crontab lub pod X. Należy używać przez program "
 "gnome-schedule."
 
 #: ../src/xwrapper.py:87
