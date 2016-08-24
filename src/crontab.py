@@ -759,8 +759,6 @@ class Crontab:
         if preview_len == 0:
             preview_len = self.preview_len
 
-        str = str.replace ("&", "&amp")
-
         if len (str) <= preview_len:
             return str
         else:
