@@ -704,10 +704,9 @@ class main:
             tmp.flush ()
             self.temp_files.append ((tmp, path))
 
-            if self.root == 1:
-                if self.user != "root":
-                    execute = "su " + self.user + " -c \"" + self.user_shell + " " + path
-                    os.chown (path, self.uid, self.gid)
+            if self.root == 1 and self.user != "root":
+                execute = "su " + self.user + " -c \"" + self.user_shell + " " + path
+                os.chown (path, self.uid, self.gid)
             else:
                 execute = self.user_shell + " " + path
 
