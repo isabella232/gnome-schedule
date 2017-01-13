@@ -5,7 +5,8 @@
 # This file is distributed under the same license as the gnome-schedule package.
 # Alex Thomsen Leth <alexl@stofanet.dk>, 2004.
 # Martin Willemoes Hansen <mwh@sysrq.dk>, 2005.
-# Joe Hansen (joedalton2@yahoo.dk), 2010, 2011, 2012.
+# Joe Hansen <joedalton2@yahoo.dk>, 2010, 2011, 2012.
+# Alan Mortensen <alanmortensen.am@gmail.com>, 2017.
 #
 # Husk at tilføje dig i credit-listen (besked id "translator-credits")
 # Bug 611639 indsendt 2. marts 2010
@@ -15,16 +16,18 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-01 17:05+0100\n"
-"PO-Revision-Date: 2012-01-14 15:50+0100\n"
-"Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"schedule&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2013-12-18 21:29+0000\n"
+"PO-Revision-Date: 2017-01-13 19:24+0100\n"
+"Last-Translator: Alan Mortensen <alanmortensen.am@gmail.com>\n"
 "Language-Team: Danish <dansk@klid.dk>\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.8.7.1\n"
 
 #: ../desktop/gnome-schedule.desktop.in.in.h:1
 msgid "Scheduled tasks"
@@ -82,8 +85,8 @@ msgid "Warning: a line in atq's output didn't parse:"
 msgstr "Advarsel: En linje i atq's uddata kunne ikke fortolkes:"
 
 #: ../src/at.py:624 ../src/crontab.py:288 ../src/crontab.py:334
-#: ../src/crontabEditor.py:275 ../src/atEditor.py:127 ../src/atEditor.py:523
-#: ../src/atEditor.py:549
+#: ../src/crontabEditor.py:274 ../src/atEditor.py:126 ../src/atEditor.py:522
+#: ../src/atEditor.py:548
 msgid "Untitled"
 msgstr "Uden titel"
 
@@ -131,7 +134,7 @@ msgstr "%s er ikke et tal"
 msgid "Recurrent"
 msgstr "Tilbagevendende"
 
-#: ../src/crontab.py:455 ../src/crontabEditor.py:74 ../src/lang.py:168
+#: ../src/crontab.py:455 ../src/crontabEditor.py:73 ../src/lang.py:170
 msgid "At reboot"
 msgstr "Ved genstart"
 
@@ -162,48 +165,48 @@ msgstr ""
 "Kunne ikke fortolke feltet månedens dag, sikkert på grund af en fejl i "
 "crontab."
 
-#: ../src/crontabEditor.py:69 ../src/crontabEditorHelper.py:87
+#: ../src/crontabEditor.py:68 ../src/crontabEditorHelper.py:87
 #: ../src/gnome-schedule.glade.h:48
 msgid "Every minute"
 msgstr "Hvert minut"
 
-#: ../src/crontabEditor.py:70 ../src/crontabEditorHelper.py:93
+#: ../src/crontabEditor.py:69 ../src/crontabEditorHelper.py:93
 #: ../src/gnome-schedule.glade.h:21
 msgid "Every hour"
 msgstr "Hver time"
 
-#: ../src/crontabEditor.py:71 ../src/crontabEditorHelper.py:99
+#: ../src/crontabEditor.py:70 ../src/crontabEditorHelper.py:99
 msgid "Every day"
 msgstr "Hver dag"
 
-#: ../src/crontabEditor.py:72 ../src/crontabEditorHelper.py:105
+#: ../src/crontabEditor.py:71 ../src/crontabEditorHelper.py:105
 msgid "Every month"
 msgstr "Hver måned"
 
-#: ../src/crontabEditor.py:73
+#: ../src/crontabEditor.py:72
 msgid "Every week"
 msgstr "Hver uge"
 
 #. add new task
-#: ../src/crontabEditor.py:131 ../src/crontabEditor.py:142
-#: ../src/atEditor.py:129 ../src/atEditor.py:148
+#: ../src/crontabEditor.py:130 ../src/crontabEditor.py:141
+#: ../src/atEditor.py:128 ../src/atEditor.py:147
 msgid "Create a New Scheduled Task"
 msgstr "Opret en ny planlagt opgave"
 
-#: ../src/crontabEditor.py:198 ../src/atEditor.py:166
+#: ../src/crontabEditor.py:197 ../src/atEditor.py:165
 msgid "Edit template"
 msgstr "Rediger skabelon"
 
-#: ../src/crontabEditor.py:223 ../src/atEditor.py:188
+#: ../src/crontabEditor.py:222 ../src/atEditor.py:187
 msgid "New template"
 msgstr "Ny skabelon"
 
-#: ../src/crontabEditor.py:249 ../src/atEditor.py:230
+#: ../src/crontabEditor.py:248 ../src/atEditor.py:229
 msgid "Edit a Scheduled Task"
 msgstr "Rediger en planlagt opgave"
 
-#: ../src/crontabEditor.py:302 ../src/crontabEditor.py:578
-#: ../src/crontabEditor.py:618
+#: ../src/crontabEditor.py:301 ../src/crontabEditor.py:577
+#: ../src/crontabEditor.py:617
 #, python-format
 msgid ""
 "This is an invalid record! The problem could be in the %(field)s field. "
@@ -212,7 +215,7 @@ msgstr ""
 "Dette er en ugyldig post! Problemet kan være ved feltet %(field)s. Grund: "
 "%(reason)s"
 
-#: ../src/crontabEditor.py:307
+#: ../src/crontabEditor.py:306
 msgid ""
 "Your command contains one or more of the character %, this is special for "
 "cron and cannot be used with Gnome-schedule because of the format it uses to "
@@ -230,7 +233,7 @@ msgstr ""
 
 # det er den mappe de eksekverede opgaver betragter som deres
 # arbejdsmappe, den man får ved at skrive pwd
-#: ../src/crontabEditor.py:456
+#: ../src/crontabEditor.py:455
 msgid ""
 "Note about working directory of executed tasks:\n"
 "\n"
@@ -240,11 +243,11 @@ msgstr ""
 "\n"
 "Gentagende opgaver vil blive kørt fra hjemmemappen."
 
-#: ../src/crontabEditor.py:457 ../src/mainWindow.py:666 ../src/atEditor.py:597
+#: ../src/crontabEditor.py:456 ../src/mainWindow.py:665 ../src/atEditor.py:596
 msgid "_Don't show again"
 msgstr "_Vis ikke igen"
 
-#: ../src/crontabEditor.py:458 ../src/mainWindow.py:667 ../src/atEditor.py:598
+#: ../src/crontabEditor.py:457 ../src/mainWindow.py:666 ../src/atEditor.py:597
 msgid "Warning: Working directory of executed tasks"
 msgstr "Advarsel: Arbejdsmappe for kørte opgaver"
 
@@ -399,8 +402,8 @@ msgstr "Eksporter ved opgave: %s"
 #, python-format
 msgid "Finished, exported: %d task total."
 msgid_plural "Finished, exported: %d tasks total."
-msgstr[0] "Færdig, eksporteret: %d opgave i alt"
-msgstr[1] "Færdig, eksporteret: %d opgaver i alt"
+msgstr[0] "Færdig; eksporteret %d opgave i alt."
+msgstr[1] "Færdig; eksporterede %d opgaver i alt."
 
 #: ../src/gnome-schedule-import.py:63
 msgid "Gnome Schedule: Import tasks"
@@ -464,8 +467,8 @@ msgid "Manage templates"
 msgstr "Håndter skabeloner"
 
 #: ../src/gnome-schedule.glade.h:4
-msgid "Create a new template."
-msgstr "Opret en ny skabelon."
+msgid "Create a new template"
+msgstr "Opret en ny skabelon"
 
 #: ../src/gnome-schedule.glade.h:5
 msgid "Edit the selected template"
@@ -479,7 +482,7 @@ msgstr "Slet den valgte skabelon"
 msgid "Task description:"
 msgstr "Opgavebeskrivelse:"
 
-#: ../src/gnome-schedule.glade.h:8 ../src/mainWindow.py:73
+#: ../src/gnome-schedule.glade.h:8 ../src/mainWindow.py:72
 #: ../src/examples/dump.py:57
 msgid "X application"
 msgstr "X-program"
@@ -659,7 +662,7 @@ msgstr "Om Gnomeplanlægning"
 msgid "Scheduled and active tasks"
 msgstr "Planlagte og aktive opgaver"
 
-#: ../src/gnome-schedule.py:66 ../src/scheduleapplet.py:67
+#: ../src/gnome-schedule.py:63 ../src/scheduleapplet.py:65
 #: ../src/xwrapper.py:51
 msgid ""
 "You need to install pyGTK or GTKv2,\n"
@@ -672,61 +675,61 @@ msgstr ""
 
 #. Translators: Date format for expressions like 'January 21'. %B is month, %d is day number.
 #. Run the command 'man strftime' to read more about these and other available specifiers.
-#: ../src/lang.py:124
+#: ../src/lang.py:126
 msgid "%B %d"
 msgstr "%d %B"
 
 #. Translators: Date format for expressions like 'January 21, 2005'. %B is month, %d is day number, %Y is year with century.
 #. Run the command 'man strftime' to read more about these and other available specifiers.
-#: ../src/lang.py:131
+#: ../src/lang.py:133
 msgid "%B %d, %Y"
 msgstr "%d %B, %Y"
 
 #. Translators: Time without seconds. %H is hour, %M is minute.
 #. Run the command 'man strftime' to read more about these and other available specifiers.
-#: ../src/lang.py:141
+#: ../src/lang.py:143
 msgid "%H:%M"
 msgstr "%H:%M"
 
-#: ../src/lang.py:183
+#: ../src/lang.py:185
 msgid "At every full hour"
 msgstr "Hver hele time"
 
-#: ../src/lang.py:185
+#: ../src/lang.py:187
 msgid "At every minute"
 msgstr "Hvert minut"
 
-#: ../src/lang.py:187
+#: ../src/lang.py:189
 #, python-format
 msgid "At minute %(minute)s of every hour"
 msgstr "På det %(minute)s minut hver time"
 
-#: ../src/lang.py:189
+#: ../src/lang.py:191
 #, python-format
 msgid "At every minute between %(time_from)s and %(time_to)s"
 msgstr "Hvert minut mellem %(time_from)s og %(time_to)s"
 
-#: ../src/lang.py:191
+#: ../src/lang.py:193
 #, python-format
 msgid "On every day at %(time)s"
 msgstr "Hver dag klokken %(time)s"
 
-#: ../src/lang.py:196
+#: ../src/lang.py:198
 #, python-format
 msgid "On day %(monthday)s of every month at every full hour"
 msgstr "Den %(monthday)s hver måned, hver hele time"
 
-#: ../src/lang.py:198
+#: ../src/lang.py:200
 #, python-format
 msgid "On day %(monthday)s of every month at every minute"
 msgstr "Den %(monthday)s hver måned, hvert minut"
 
-#: ../src/lang.py:200
+#: ../src/lang.py:202
 #, python-format
 msgid "On day %(monthday)s of every month at minute %(minute)s of every hour"
 msgstr "Den %(monthday)s hver måned, på minut %(minute)s af hver time"
 
-#: ../src/lang.py:202
+#: ../src/lang.py:204
 #, python-format
 msgid ""
 "On day %(monthday)s of every month at every minute between %(time_from)s and "
@@ -734,80 +737,80 @@ msgid ""
 msgstr ""
 "Den %(monthday)s hver måned, hvert minut mellem %(time_from)s og %(time_to)s"
 
-#: ../src/lang.py:204
+#: ../src/lang.py:206
 #, python-format
 msgid "On day %(monthday)s of every month at %(time)s"
 msgstr "Den %(monthday)s i hver måned, klokken %(time)s"
 
-#: ../src/lang.py:209
+#: ../src/lang.py:211
 #, python-format
 msgid "On every day in %(month)s at every full hour"
 msgstr "Hver dag i %(month)s, hver hele time"
 
-#: ../src/lang.py:211
+#: ../src/lang.py:213
 #, python-format
 msgid "On every day in %(month)s at every minute"
 msgstr "Hver dag i %(month)s, hver minut"
 
-#: ../src/lang.py:213
+#: ../src/lang.py:215
 #, python-format
 msgid "On every day in %(month)s at minute %(minute)s of every hour"
 msgstr "Hver dag i %(month)s på det %(minute)s minut i hver time"
 
-#: ../src/lang.py:215
+#: ../src/lang.py:217
 #, python-format
 msgid ""
 "On every day in %(month)s at every minute between %(time_from)s and "
 "%(time_to)s"
 msgstr "Hver dag i %(month)s, hver minut mellem %(time_from)s og %(time_to)s"
 
-#: ../src/lang.py:217
+#: ../src/lang.py:219
 #, python-format
 msgid "On every day in %(month)s at %(time)s"
 msgstr "Hver dag i %(month)s klokken %(time)s"
 
-#: ../src/lang.py:222
+#: ../src/lang.py:224
 #, python-format
 msgid "Every year on %(date)s at every full hour"
 msgstr "Hvert år den %(date)s, hver hele time"
 
-#: ../src/lang.py:224
+#: ../src/lang.py:226
 #, python-format
 msgid "Every year on %(date)s at every minute"
 msgstr "Hvert år den %(date)s, hvert minut"
 
-#: ../src/lang.py:226
+#: ../src/lang.py:228
 #, python-format
 msgid "Every year on %(date)s at minute %(minute)s of every hour"
 msgstr "Hvert år den %(date)s på det %(minute)s minut i hver time"
 
-#: ../src/lang.py:228
+#: ../src/lang.py:230
 #, python-format
 msgid ""
 "Every year on %(date)s at every minute between %(time_from)s and %(time_to)s"
 msgstr "Hvert år den %(date)s, hver minut mellem %(time_from)s og %(time_to)s"
 
-#: ../src/lang.py:230
+#: ../src/lang.py:232
 #, python-format
 msgid "Every year on %(date)s at %(time)s"
 msgstr "Hvert år den %(date)s, klokken %(time)s"
 
-#: ../src/lang.py:235
+#: ../src/lang.py:237
 #, python-format
 msgid "On every weekday: %(weekday)s at every full hour"
 msgstr "På hver ugedag: %(weekday)s, hver hele time"
 
-#: ../src/lang.py:237
+#: ../src/lang.py:239
 #, python-format
 msgid "On every weekday: %(weekday)s at every minute"
 msgstr "På hver ugedag: %(weekday)s, hvert minut"
 
-#: ../src/lang.py:239
+#: ../src/lang.py:241
 #, python-format
 msgid "On every weekday: %(weekday)s at minute %(minute)s of every hour"
 msgstr "På hver ugedag: %(weekday)s på det %(minute)s minut af hver time"
 
-#: ../src/lang.py:241
+#: ../src/lang.py:243
 #, python-format
 msgid ""
 "On every weekday: %(weekday)s at every minute between %(time_from)s and "
@@ -815,12 +818,12 @@ msgid ""
 msgstr ""
 "På hver ugedag: %(weekday)s, hvert minut mellem %(time_from)s og %(time_to)s"
 
-#: ../src/lang.py:243
+#: ../src/lang.py:245
 #, python-format
 msgid "On every weekday: %(weekday)s at %(time)s"
 msgstr "På hver ugedag: %(weekday)s klokken %(time)s"
 
-#: ../src/lang.py:248
+#: ../src/lang.py:250
 #, python-format
 msgid ""
 "On day %(monthday)s of every month and every weekday: %(weekday)s at every "
@@ -829,7 +832,7 @@ msgstr ""
 "På dagen %(monthday)s i hver måned og hver ugedag: %(weekday)s, hver hele "
 "time"
 
-#: ../src/lang.py:250
+#: ../src/lang.py:252
 #, python-format
 msgid ""
 "On day %(monthday)s of every month and every weekday: %(weekday)s at every "
@@ -837,7 +840,7 @@ msgid ""
 msgstr ""
 "På dagen %(monthday)s hver måned og hver ugedag: %(weekday)s, hvert minut"
 
-#: ../src/lang.py:252
+#: ../src/lang.py:254
 #, python-format
 msgid ""
 "On day %(monthday)s of every month and every weekday: %(weekday)s at minute "
@@ -846,7 +849,7 @@ msgstr ""
 "På dagen %(monthday)s hver måned og hver ugedag: %(weekday)s på det "
 "%(minute)s minut hver hele time"
 
-#: ../src/lang.py:254
+#: ../src/lang.py:256
 #, python-format
 msgid ""
 "On day %(monthday)s of every month and every weekday: %(weekday)s at every "
@@ -855,31 +858,31 @@ msgstr ""
 "På dagen %(monthday)s hver måned og hver ugedag: %(weekday)s hvert minut "
 "mellem %(time_from)s og %(time_to)s"
 
-#: ../src/lang.py:256
+#: ../src/lang.py:258
 #, python-format
 msgid ""
 "On day %(monthday)s of every month and every weekday: %(weekday)s at %(time)s"
 msgstr ""
 "På dagen %(monthday)s hver måned og hver ugedag: %(weekday)s klokken %(time)s"
 
-#: ../src/lang.py:261
+#: ../src/lang.py:263
 #, python-format
 msgid "On every weekday: %(weekday)s in %(month)s at every full hour"
 msgstr "På hver ugedag: %(weekday)s i %(month)s, hver hele time"
 
-#: ../src/lang.py:263
+#: ../src/lang.py:265
 #, python-format
 msgid "On every weekday: %(weekday)s in %(month)s at every minute"
 msgstr "På hver ugedag: %(weekday)s i %(month)s, hvert minut"
 
-#: ../src/lang.py:265
+#: ../src/lang.py:267
 #, python-format
 msgid ""
 "On every weekday: %(weekday)s in %(month)s at minute %(minute)s of every hour"
 msgstr ""
 "På hver ugedag: %(weekday)s i %(month)s på det %(minute)s minut, hver time"
 
-#: ../src/lang.py:267
+#: ../src/lang.py:269
 #, python-format
 msgid ""
 "On every weekday: %(weekday)s in %(month)s at every minute between "
@@ -888,12 +891,12 @@ msgstr ""
 "På hver ugedag: %(weekday)s i %(month)s hvert minut mellem %(time_from)s og "
 "%(time_to)s"
 
-#: ../src/lang.py:269
+#: ../src/lang.py:271
 #, python-format
 msgid "On every weekday: %(weekday)s in %(month)s at %(time)s"
 msgstr "På hver ugedag: %(weekday)s i %(month)s klokken %(time)s"
 
-#: ../src/lang.py:274
+#: ../src/lang.py:276
 #, python-format
 msgid ""
 "On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
@@ -902,7 +905,7 @@ msgstr ""
 "På hver ugedag: %(weekday)s i %(month)s og den %(date)s hvert år, hver hele "
 "time"
 
-#: ../src/lang.py:276
+#: ../src/lang.py:278
 #, python-format
 msgid ""
 "On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
@@ -910,7 +913,7 @@ msgid ""
 msgstr ""
 "På hver ugedag: %(weekday)s i %(month)s og den %(date)s hvert år, hvert minut"
 
-#: ../src/lang.py:278
+#: ../src/lang.py:280
 #, python-format
 msgid ""
 "On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
@@ -919,7 +922,7 @@ msgstr ""
 "På hver ugedag: %(weekday)s i %(month)s og den %(date)s hvert år på det "
 "%(minute)s minut i hver time"
 
-#: ../src/lang.py:280
+#: ../src/lang.py:282
 #, python-format
 msgid ""
 "On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
@@ -928,7 +931,7 @@ msgstr ""
 "På hver ugedag %(weekday)s i %(month)s og den %(date)s hvert år, hvert minut "
 "mellem %(time_from)s og %(time_to)s"
 
-#: ../src/lang.py:282
+#: ../src/lang.py:284
 #, python-format
 msgid ""
 "On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
@@ -937,128 +940,128 @@ msgstr ""
 "På hver ugedag: %(weekday)s i %(month)s og den %(date)s hvert år klokken "
 "%(time)s"
 
-#: ../src/lang.py:290
+#: ../src/lang.py:292
 msgid "every minute"
 msgstr "hvert minut"
 
-#: ../src/lang.py:292
+#: ../src/lang.py:294
 #, python-format
 msgid "minute: %s"
 msgstr "minut: %s"
 
-#: ../src/lang.py:295
+#: ../src/lang.py:297
 msgid "every hour"
 msgstr "hver time"
 
-#: ../src/lang.py:297
+#: ../src/lang.py:299
 #, python-format
 msgid "hour: %s"
 msgstr "time: %s"
 
-#: ../src/lang.py:300
+#: ../src/lang.py:302
 msgid "every day of month"
 msgstr "hver dag i måneden"
 
-#: ../src/lang.py:302
+#: ../src/lang.py:304
 #, python-format
 msgid "day of month: %s"
 msgstr "dag i måneden: %s"
 
-#: ../src/lang.py:305
+#: ../src/lang.py:307
 msgid "every month"
 msgstr "hver måned"
 
-#: ../src/lang.py:307
+#: ../src/lang.py:309
 #, python-format
 msgid "month: %s"
 msgstr "måned: %s"
 
-#: ../src/lang.py:310
+#: ../src/lang.py:312
 #, python-format
 msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s"
 msgstr "Klokken %(minute)s, %(hour)s, %(monthday)s, %(month)s"
 
-#: ../src/lang.py:312
+#: ../src/lang.py:314
 #, python-format
 msgid "weekday: %s"
 msgstr "ugedag: %s"
 
-#: ../src/lang.py:313
+#: ../src/lang.py:315
 #, python-format
 msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 msgstr "Klokken %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 
-#: ../src/mainWindow.py:71 ../src/examples/dump.py:55
+#: ../src/mainWindow.py:70 ../src/examples/dump.py:55
 msgid "Default behaviour"
 msgstr "Standardopførsel"
 
-#: ../src/mainWindow.py:72 ../src/examples/dump.py:56
+#: ../src/mainWindow.py:71 ../src/examples/dump.py:56
 msgid "Suppress output"
 msgstr "Undertryk uddata"
 
-#: ../src/mainWindow.py:74 ../src/examples/dump.py:58
+#: ../src/mainWindow.py:73 ../src/examples/dump.py:58
 msgid "X application: suppress output"
 msgstr "X-program: Undertryk uddata"
 
-#: ../src/mainWindow.py:120
+#: ../src/mainWindow.py:119
 msgid "Recurrent task"
 msgstr "Tilbagevendende opgave"
 
-#: ../src/mainWindow.py:131
+#: ../src/mainWindow.py:130
 msgid "One-time task"
 msgstr "Engangsopgave"
 
-#: ../src/mainWindow.py:142
+#: ../src/mainWindow.py:141
 msgid "From template"
 msgstr "Fra skabelon"
 
-#: ../src/mainWindow.py:161
+#: ../src/mainWindow.py:160
 msgid "Add a new task"
 msgstr "Tilføj en ny opgave"
 
-#: ../src/mainWindow.py:286 ../src/mainWindow.py:416
+#: ../src/mainWindow.py:285 ../src/mainWindow.py:415
 #, python-format
 msgid "Editing user: %s"
 msgstr "Redigerer bruger: %s"
 
-#: ../src/mainWindow.py:333 ../src/mainWindow.py:344 ../src/mainWindow.py:355
-#: ../src/mainWindow.py:370 ../src/mainWindow.py:381
-#: ../src/scheduleapplet.py:122
+#: ../src/mainWindow.py:332 ../src/mainWindow.py:343 ../src/mainWindow.py:354
+#: ../src/mainWindow.py:369 ../src/mainWindow.py:380
+#: ../src/scheduleapplet.py:116
 msgid "ERROR: Could not load icon"
 msgstr "FEJL: Kunne ikke indlæse ikon"
 
-#: ../src/mainWindow.py:390 ../src/mainWindow.py:396
+#: ../src/mainWindow.py:389 ../src/mainWindow.py:395
 msgid "ERROR: Could not load glade file"
 msgstr "FEJL: Kunne ikke indlæse glade-fil"
 
-#: ../src/mainWindow.py:451 ../src/template_chooser.py:69
+#: ../src/mainWindow.py:450 ../src/template_chooser.py:69
 #: ../src/template_manager.py:72
 msgid "Task"
 msgstr "Opgave"
 
-#: ../src/mainWindow.py:464 ../src/mainWindow.py:490
+#: ../src/mainWindow.py:463 ../src/mainWindow.py:489
 #: ../src/template_chooser.py:78 ../src/template_manager.py:81
 msgid "Description"
 msgstr "Beskrivelse"
 
-#: ../src/mainWindow.py:468 ../src/mainWindow.py:481
+#: ../src/mainWindow.py:467 ../src/mainWindow.py:480
 msgid "Date and Time"
 msgstr "Dato og tid"
 
-#: ../src/mainWindow.py:472 ../src/mainWindow.py:485
+#: ../src/mainWindow.py:471 ../src/mainWindow.py:484
 msgid "Command preview"
 msgstr "Kommandoforhåndsvisning"
 
 #. print ex
-#: ../src/mainWindow.py:544 ../src/mainWindow.py:607
+#: ../src/mainWindow.py:543 ../src/mainWindow.py:606
 msgid "Please select a task"
 msgstr "Vælg venligst en opgave"
 
-#: ../src/mainWindow.py:551
+#: ../src/mainWindow.py:550
 msgid "Do you want to delete this task?"
 msgstr "Ønsker du at slette denne opgave?"
 
-#: ../src/mainWindow.py:654
+#: ../src/mainWindow.py:653
 msgid ""
 "Are you sure you want to run this task now?\n"
 "\n"
@@ -1070,11 +1073,11 @@ msgstr ""
 "Det bruges til at forhåndsvise opgaven og starter en engangskørsel, dette "
 "påvirker ikke det ellers planlagte kørselstidspunkt."
 
-#: ../src/mainWindow.py:656
+#: ../src/mainWindow.py:655
 msgid "Are you sure you want to run this task?"
 msgstr "Er du sikker på, at du ønsker at køre denne opgave?"
 
-#: ../src/mainWindow.py:665
+#: ../src/mainWindow.py:664
 msgid ""
 "Note about working directory of executed tasks:\n"
 "\n"
@@ -1088,38 +1091,43 @@ msgstr ""
 "mappen hvor Gnomeplanlægning blev kørt fra da opgaven blev oprettet (normalt "
 "hjemmemappen)."
 
-#: ../src/mainWindow.py:727
+#: ../src/mainWindow.py:733
+msgid "No default graphical terminal for GNOME could be found."
+msgstr "Der kunne ikke findes nogen grafisk standardterminal til GNOME."
+
+#: ../src/mainWindow.py:748
 msgid "Please select a task!"
 msgstr "Vælg venligst en opgave!"
 
-#: ../src/mainWindow.py:735
+#: ../src/mainWindow.py:756
 msgid "About Gnome Schedule"
 msgstr "Om Gnomeplanlægning"
 
-#: ../src/mainWindow.py:736
+#: ../src/mainWindow.py:757
 msgid "Gnome Schedule"
 msgstr "Gnomeplanlægning"
 
-#: ../src/mainWindow.py:738
+#: ../src/mainWindow.py:759
 #, python-format
 msgid "Copyright (c) %(year)s %(name)s."
 msgstr "Ophavsret %(year)s %(name)s."
 
-#: ../src/mainWindow.py:751
+#: ../src/mainWindow.py:772
 msgid "translator-credits"
 msgstr ""
 "Joe Hansen, 2010, 2011\n"
 "Alex Thomsen Leth\n"
 "Martin Willemoes Hansen\n"
+"Alan Mortensen\n"
 "\n"
 "Dansk-gruppen <dansk@dansk-gruppen.dk>\n"
 "Mere info: http://www.dansk-gruppen.dk"
 
-#: ../src/mainWindow.py:772
+#: ../src/mainWindow.py:791
 msgid "Could not display help"
 msgstr "Kunne ikke vise hjælp"
 
-#: ../src/scheduleapplet.py:139
+#: ../src/scheduleapplet.py:133
 msgid "ERROR: Could not load menu xml file"
 msgstr "FEJL: Kunne ikke indlæse xml-fil til menuen"
 
@@ -1139,11 +1147,11 @@ msgstr "En opgave som starter en gang"
 msgid "A task from a predefined template"
 msgstr "En opgave fra en prædefineret skabelon"
 
-#: ../src/atEditor.py:83
+#: ../src/atEditor.py:82
 msgid "Calendar"
 msgstr "Kalender"
 
-#: ../src/atEditor.py:515
+#: ../src/atEditor.py:514
 msgid ""
 "In one or both of the fields hour and minute there was entered a letter, or "
 "a number out of range. Remember an hour only has 60 minutes and a day only "
@@ -1153,12 +1161,12 @@ msgstr ""
 "eller et tal uden for det accepterede interval. Husk at en time kun har 60 "
 "minutter og en dag kun 24 timer."
 
-#: ../src/atEditor.py:576
+#: ../src/atEditor.py:575
 #, python-format
 msgid "This is an invalid record! The problem could be: %s"
 msgstr "Dette er en ugyldig post! Problemet kan være: %s"
 
-#: ../src/atEditor.py:596
+#: ../src/atEditor.py:595
 msgid ""
 "Note about working directory of executed tasks:\n"
 "\n"
