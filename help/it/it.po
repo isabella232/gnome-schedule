@@ -697,7 +697,7 @@ msgid ""
 "See <xref linkend=\"myapp-advanced\"/> for more information."
 msgstr ""
 "Permette di creare un espressione temporale personalizzata in caso si abbia "
-"bisogno di maggiore flessibilità. Vedere <xref·linkend=\"myapp-advanced\"/> "
+"bisogno di maggiore flessibilità. Vedere <xref linkend=\"myapp-advanced\"/> "
 "per maggiori informazioni."
 
 #: ../C/gnome-schedule.xml:409(title)
