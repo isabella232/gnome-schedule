@@ -16,9 +16,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "schedule&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-12-18 21:29+0000\n"
+"POT-Creation-Date: 2017-04-08 14:45+0000\n"
 "PO-Revision-Date: 2017-01-13 19:24+0100\n"
 "Last-Translator: Alan Mortensen <alanmortensen.am@gmail.com>\n"
 "Language-Team: Danish <dansk@klid.dk>\n"
@@ -591,7 +591,7 @@ msgstr "Andet"
 
 #: ../src/gnome-schedule.glade.h:43
 msgid "See \"man 5 crontab\" for information about the crontab format."
-msgstr "Se \"man 5 crontab\" for information om crontab-formatet."
+msgstr "Se “man 5 crontab” for information om crontab-formatet."
 
 #: ../src/gnome-schedule.glade.h:45
 msgid "Execution at a specific minute, hour, day, weekday or month."
@@ -1095,24 +1095,24 @@ msgstr ""
 msgid "No default graphical terminal for GNOME could be found."
 msgstr "Der kunne ikke findes nogen grafisk standardterminal til GNOME."
 
-#: ../src/mainWindow.py:748
+#: ../src/mainWindow.py:749
 msgid "Please select a task!"
 msgstr "Vælg venligst en opgave!"
 
-#: ../src/mainWindow.py:756
+#: ../src/mainWindow.py:757
 msgid "About Gnome Schedule"
 msgstr "Om Gnomeplanlægning"
 
-#: ../src/mainWindow.py:757
+#: ../src/mainWindow.py:758
 msgid "Gnome Schedule"
 msgstr "Gnomeplanlægning"
 
-#: ../src/mainWindow.py:759
+#: ../src/mainWindow.py:760
 #, python-format
 msgid "Copyright (c) %(year)s %(name)s."
 msgstr "Ophavsret %(year)s %(name)s."
 
-#: ../src/mainWindow.py:772
+#: ../src/mainWindow.py:773
 msgid "translator-credits"
 msgstr ""
 "Joe Hansen, 2010, 2011\n"
@@ -1123,7 +1123,7 @@ msgstr ""
 "Dansk-gruppen <dansk@dansk-gruppen.dk>\n"
 "Mere info: http://www.dansk-gruppen.dk"
 
-#: ../src/mainWindow.py:791
+#: ../src/mainWindow.py:792
 msgid "Could not display help"
 msgstr "Kunne ikke vise hjælp"
 
