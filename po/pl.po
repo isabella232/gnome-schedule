@@ -1,15 +1,15 @@
 # Polish translation for gnome-schedule.
-# Copyright © 2011-2016 the gnome-schedule authors.
+# Copyright © 2011-2018 the gnome-schedule authors.
 # This file is distributed under the same license as the gnome-schedule package.
-# Piotr Drąg <piotrdrag@gmail.com>, 2011-2016.
-# Aviary.pl <community-poland@mozilla.org>, 2011-2016.
+# Piotr Drąg <piotrdrag@gmail.com>, 2011-2018.
+# Aviary.pl <community-poland@mozilla.org>, 2011-2018.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-schedule\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-20 16:49+0200\n"
-"PO-Revision-Date: 2016-08-20 16:50+0200\n"
+"POT-Creation-Date: 2018-01-22 03:50+0100\n"
+"PO-Revision-Date: 2018-01-22 03:52+0100\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <community-poland@mozilla.org>\n"
 "Language: pl\n"
@@ -445,7 +445,7 @@ msgstr[2] "Ukończono, zaimportowano: %d zadań."
 
 #: ../src/gnome-schedule.glade.h:1
 msgid "Choose template"
-msgstr "Wybierz szablon"
+msgstr "Wybór szablonu"
 
 #: ../src/gnome-schedule.glade.h:2
 msgid "Create a new task from the selected template"
@@ -453,7 +453,7 @@ msgstr "Tworzy nowe zadanie z zaznaczonego szablonu"
 
 #: ../src/gnome-schedule.glade.h:3
 msgid "Manage templates"
-msgstr "Zarządzaj szablonami"
+msgstr "Zarządzanie szablonami"
 
 #: ../src/gnome-schedule.glade.h:4
 msgid "Create a new template"
@@ -503,7 +503,7 @@ msgstr "Dodaj jako szablon"
 
 #: ../src/gnome-schedule.glade.h:16
 msgid "Edit a periodical task"
-msgstr "Modyfikuj zadanie okresowe"
+msgstr "Modyfikacja zadania okresowego"
 
 #: ../src/gnome-schedule.glade.h:17
 msgid "ls -l"
@@ -552,7 +552,7 @@ msgstr "_Użytkownik:"
 
 #: ../src/gnome-schedule.glade.h:35
 msgid "Add a Scheduled Task"
-msgstr "Dodaj zaplanowane zadanie"
+msgstr "Dodanie zaplanowanego zadania"
 
 #: ../src/gnome-schedule.glade.h:36
 msgid "<b>Select the type of the scheduled task:</b>"
@@ -610,7 +610,7 @@ msgstr ""
 
 #: ../src/gnome-schedule.glade.h:52
 msgid "Configure Scheduled Tasks"
-msgstr "Skonfiguruj zaplanowane zadania"
+msgstr "Konfiguracja zaplanowanych zadań"
 
 #: ../src/gnome-schedule.glade.h:53
 msgid "Edit a scheduled task"
@@ -1095,34 +1095,34 @@ msgstr ""
 "jednorazowe z katalogu, w którym uruchomiono Terminarz GNOME w czasie "
 "tworzenia zadania (zwykle katalog domowy)."
 
-#: ../src/mainWindow.py:734
+#: ../src/mainWindow.py:733
 msgid "No default graphical terminal for GNOME could be found."
 msgstr "Nie odnaleziono domyślnego terminala graficznego dla środowiska GNOME."
 
-#: ../src/mainWindow.py:750
+#: ../src/mainWindow.py:749
 msgid "Please select a task!"
 msgstr "Proszę wybrać zadanie."
 
-#: ../src/mainWindow.py:758
+#: ../src/mainWindow.py:757
 msgid "About Gnome Schedule"
 msgstr "O Terminarzu GNOME"
 
-#: ../src/mainWindow.py:759
+#: ../src/mainWindow.py:758
 msgid "Gnome Schedule"
 msgstr "Terminarz GNOME"
 
-#: ../src/mainWindow.py:761
+#: ../src/mainWindow.py:760
 #, python-format
 msgid "Copyright (c) %(year)s %(name)s."
 msgstr "Copyright © %(year)s %(name)s."
 
-#: ../src/mainWindow.py:774
+#: ../src/mainWindow.py:773
 msgid "translator-credits"
 msgstr ""
-"Piotr Drąg <piotrdrag@gmail.com>, 2011-2016\n"
-"Aviary.pl <community-poland@mozilla.org>, 2011-2016"
+"Piotr Drąg <piotrdrag@gmail.com>, 2011-2018\n"
+"Aviary.pl <community-poland@mozilla.org>, 2011-2018"
 
-#: ../src/mainWindow.py:793
+#: ../src/mainWindow.py:792
 msgid "Could not display help"
 msgstr "Nie można wyświetlić pomocy"
 
