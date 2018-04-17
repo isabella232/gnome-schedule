@@ -717,13 +717,13 @@ msgstr ""
 #. Run the command 'man strftime' to read more about these and other available specifiers.
 #: ../src/lang.py:126
 msgid "%B %d"
-msgstr "%d de %B"
+msgstr "%d %B"
 
 #. Translators: Date format for expressions like 'January 21, 2005'. %B is month, %d is day number, %Y is year with century.
 #. Run the command 'man strftime' to read more about these and other available specifiers.
 #: ../src/lang.py:133
 msgid "%B %d, %Y"
-msgstr "%d de %B del %Y"
+msgstr "%d %B del %Y"
 
 #. Translators: Time without seconds. %H is hour, %M is minute.
 #. Run the command 'man strftime' to read more about these and other available specifiers.
