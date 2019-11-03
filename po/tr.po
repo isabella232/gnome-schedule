@@ -1,23 +1,36 @@
+# Turkish translations of gnome-schedule
+# Copyright (C) 2016-2019 gnome-schedule'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the gnome-schedule package
+#
+# Translators:
+# Necdet Yücel <necdetyucel@gmail.com>, 2015.
+# Simge Sezgin <simgesezgin88@gmail.com>, 2015.
+# Sabri Ünal <libreajans@gmail.com>, 2019
+#
+#
+# Inherited header information, do not change
+# -----------------------------------------
 # Turkish translations of gtk+.
 # Copyright (C) Free Software Foundation, Inc.
 #
 # Necdet Yücel <necdetyucel@gmail.com>, 2015.
 # Simge Sezgin <simgesezgin88@gmail.com>, 2015.
-
+# -----------------------------------------
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-schedule\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-12 14:11+0000\n"
-"PO-Revision-Date: 2015-01-16 20:18+0000\n"
-"Last-Translator: Simge Sezgin <simgesezgin88@gmail.com>\n"
+"Project-Id-Version: gnome-schedule master\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-schedule/issues\n"
+"POT-Creation-Date: 2018-06-10 17:11+0000\n"
+"PO-Revision-Date: 2019-10-05 16:36+0300\n"
+"Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
 "Language-Team: Turkish <gnome-turk@gnome.org>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Pootle 2.5.1.1\n"
+"X-Generator: Poedit 2.0.6\n"
 "X-POOTLE-MTIME: 1421439495.000000\n"
 
 #: ../desktop/gnome-schedule.desktop.in.in.h:1
@@ -28,12 +41,19 @@ msgstr "Zamanlanmış görevler"
 msgid "Manage your system tasks"
 msgstr "Sistem görevlerini yönet"
 
+#: ../servers/GNOME_GnomeSchedule.server.in.in.h:1
+msgid "Gnome schedule"
+msgstr "Gnome zamanlama"
+
+#: ../servers/GNOME_GnomeSchedule.server.in.in.h:2
+msgid "Configures your scheduled tasks"
+msgstr "Zamanlanmış görevlerinizi yapılandırır"
+
 #: ../servers/GNOME_GnomeSchedule.server.in.in.h:3
 msgid "System tools"
 msgstr "Sistem araçları"
 
-#: ../src/at.py:112
-#: ../src/crontab.py:62
+#: ../src/at.py:112 ../src/crontab.py:62
 msgid ""
 "Failed to create data dir! Make sure ~/.gnome and ~/.gnome/gnome-schedule "
 "are writable."
@@ -41,8 +61,8 @@ msgstr ""
 "Veri dizini oluşturulamadı! ~/.gnome ve ~/.gnome/gnome-schedule yazılabilir "
 "olduğundan emin olun."
 
-#: ../src/at.py:145
-#: ../src/crontab.py:162
+#: ../src/at.py:145 ../src/crontab.py:162
+#, python-format
 msgid ""
 "Failed to create data dir: %s. Make sure ~/.gnome and ~/.gnome/gnome-"
 "schedule are writable."
@@ -51,24 +71,25 @@ msgstr ""
 "yazılabilir olduğundan emin olun."
 
 #: ../src/at.py:547
+#, python-format
 msgid "Warning! Unknown task: %(preview)s"
-msgstr "Uyarı! Bilinmeyen görev: %(önizle)s"
+msgstr "Uyarı! Bilinmeyen görev: %(preview)s"
 
 #: ../src/at.py:554
+#, python-format
 msgid "On %(timestring)s"
-msgstr "%(zamandizgisi)s"
+msgstr "%(timestring)s"
 
-#: ../src/at.py:560
-#: ../src/at.py:565
+#: ../src/at.py:560 ../src/at.py:565
 msgid "Once"
 msgstr "Bir kere"
 
-#: ../src/at.py:624
-#: ../src/crontab.py:288
-#: ../src/crontab.py:334
-#: ../src/crontabEditor.py:274
-#: ../src/atEditor.py:126
-#: ../src/atEditor.py:522
+#: ../src/at.py:569
+msgid "Warning: a line in atq's output didn't parse:"
+msgstr "Uyarı: atq çıktısındaki satır ayrıştırılamadı:"
+
+#: ../src/at.py:624 ../src/crontab.py:288 ../src/crontab.py:334
+#: ../src/crontabEditor.py:274 ../src/atEditor.py:126 ../src/atEditor.py:522
 #: ../src/atEditor.py:548
 msgid "Untitled"
 msgstr "Başlıksız"
@@ -89,35 +110,35 @@ msgstr "Ayın Günü"
 msgid "Month"
 msgstr "Ay"
 
-#: ../src/crontab.py:192
-#: ../src/gnome-schedule.glade.h:23
+#: ../src/crontab.py:91
+msgid "Weekday"
+msgstr "Haftanın günü"
+
+#: ../src/crontab.py:192 ../src/gnome-schedule.glade.h:23
 msgid "Basic"
 msgstr "Temel"
 
 #: ../src/crontab.py:192
+#, python-format
 msgid "This is not a valid special record: %(record)s"
-msgstr "Bu geçerli özel bir kayıt değildir: %(kayıt)s"
+msgstr "Bu geçerli özel bir kayıt değildir: %(record)s"
 
-#: ../src/crontab.py:220
-#: ../src/crontab.py:225
-#: ../src/crontab.py:229
+#: ../src/crontab.py:220 ../src/crontab.py:225 ../src/crontab.py:229
+#, python-format
 msgid "Must be between %(min)s and %(max)s"
-msgstr "%(asgari)s ve %(azami)s arasında olmalıdır"
+msgstr "%(min)s ve %(max)s arasında olmalıdır"
 
 #: ../src/crontab.py:227
+#, python-format
 msgid "%s is not a number"
 msgstr "%s sayı değildir"
 
-#: ../src/crontab.py:455
-#: ../src/crontab.py:457
-#: ../src/template_chooser.py:106
+#: ../src/crontab.py:455 ../src/crontab.py:457 ../src/template_chooser.py:106
 #: ../src/template_manager.py:111
 msgid "Recurrent"
 msgstr "Tekrarlayan"
 
-#: ../src/crontab.py:455
-#: ../src/crontabEditor.py:73
-#: ../src/lang.py:170
+#: ../src/crontab.py:455 ../src/crontabEditor.py:73 ../src/lang.py:170
 msgid "At reboot"
 msgstr "Yeniden yüklemede"
 
@@ -139,7 +160,7 @@ msgstr "ay"
 
 #: ../src/crontab.py:477
 msgid "weekday"
-msgstr "hafta içi"
+msgstr "haftanın günü"
 
 #: ../src/crontab.py:576
 msgid ""
@@ -147,19 +168,21 @@ msgid ""
 msgstr ""
 "Muhtemelen crontab'daki bir hata dolayısıyla ayın günü alanı ayrıştırılamadı."
 
-#: ../src/crontabEditor.py:68
-#: ../src/crontabEditorHelper.py:87
+#: ../src/crontabEditor.py:68 ../src/crontabEditorHelper.py:87
 #: ../src/gnome-schedule.glade.h:48
 msgid "Every minute"
 msgstr "Her dakika"
 
-#: ../src/crontabEditor.py:70
-#: ../src/crontabEditorHelper.py:99
+#: ../src/crontabEditor.py:69 ../src/crontabEditorHelper.py:93
+#: ../src/gnome-schedule.glade.h:21
+msgid "Every hour"
+msgstr "Her saat"
+
+#: ../src/crontabEditor.py:70 ../src/crontabEditorHelper.py:99
 msgid "Every day"
 msgstr "Her gün"
 
-#: ../src/crontabEditor.py:71
-#: ../src/crontabEditorHelper.py:105
+#: ../src/crontabEditor.py:71 ../src/crontabEditorHelper.py:105
 msgid "Every month"
 msgstr "Her ay"
 
@@ -168,36 +191,32 @@ msgid "Every week"
 msgstr "Her hafta"
 
 #. add new task
-#: ../src/crontabEditor.py:130
-#: ../src/crontabEditor.py:141
-#: ../src/atEditor.py:128
-#: ../src/atEditor.py:147
+#: ../src/crontabEditor.py:130 ../src/crontabEditor.py:141
+#: ../src/atEditor.py:128 ../src/atEditor.py:147
 msgid "Create a New Scheduled Task"
 msgstr "Yeni bir Zamanlanmış Görev Oluştur"
 
-#: ../src/crontabEditor.py:197
-#: ../src/atEditor.py:165
+#: ../src/crontabEditor.py:197 ../src/atEditor.py:165
 msgid "Edit template"
 msgstr "Şablonu düzenle"
 
-#: ../src/crontabEditor.py:222
-#: ../src/atEditor.py:187
+#: ../src/crontabEditor.py:222 ../src/atEditor.py:187
 msgid "New template"
 msgstr "Yeni şablon"
 
-#: ../src/crontabEditor.py:248
-#: ../src/atEditor.py:229
+#: ../src/crontabEditor.py:248 ../src/atEditor.py:229
 msgid "Edit a Scheduled Task"
 msgstr "Zamanlanmış Görevi Düzenle"
 
-#: ../src/crontabEditor.py:301
-#: ../src/crontabEditor.py:577
+#: ../src/crontabEditor.py:301 ../src/crontabEditor.py:577
 #: ../src/crontabEditor.py:617
+#, python-format
 msgid ""
 "This is an invalid record! The problem could be in the %(field)s field. "
 "Reason: %(reason)s"
 msgstr ""
-"Bu geçersiz bir kayıttır! Sorun %(alan)s alanında olabilir. Neden: %(neden)s"
+"Bu geçersiz bir kayıttır! Sorun %(field)s alanında olabilir. Neden: "
+"%(reason)s"
 
 #: ../src/crontabEditor.py:306
 msgid ""
@@ -225,21 +244,21 @@ msgstr ""
 "\n"
 "Tekrarlayan görevler ev dizininden çalıştırılacaktır."
 
-#: ../src/crontabEditor.py:456
-#: ../src/mainWindow.py:665
-#: ../src/atEditor.py:596
+#: ../src/crontabEditor.py:456 ../src/mainWindow.py:665 ../src/atEditor.py:596
 msgid "_Don't show again"
 msgstr "_Tekrar gösterme"
 
-#: ../src/crontabEditor.py:457
-#: ../src/mainWindow.py:666
-#: ../src/atEditor.py:597
+#: ../src/crontabEditor.py:457 ../src/mainWindow.py:666 ../src/atEditor.py:597
 msgid "Warning: Working directory of executed tasks"
 msgstr "Uyarı: Yürütülen görevin çalışma dizini"
 
 #: ../src/crontabEditorHelper.py:111
 msgid "Every weekday"
 msgstr "Her hafta içi"
+
+#: ../src/crontabEditorHelper.py:163
+msgid "Edit minute"
+msgstr "Dakika düzenle"
 
 #: ../src/crontabEditorHelper.py:165
 msgid "Edit hour"
@@ -249,22 +268,25 @@ msgstr "Saat düzenle"
 msgid "Edit day"
 msgstr "Günü düzenle"
 
+#: ../src/crontabEditorHelper.py:169
+msgid "Edit month"
+msgstr "Ayı düzenle"
+
 #: ../src/crontabEditorHelper.py:171
 msgid "Edit weekday"
 msgstr "Hafta içini düzenle"
 
 #: ../src/crontabEditorHelper.py:185
+#, python-format
 msgid "This is invalid. Reason: %s"
 msgstr "Geçersiz. Neden: %s"
 
 #. minute
-#: ../src/crontabEditorHelper.py:231
-#: ../src/gnome-schedule.glade.h:44
+#: ../src/crontabEditorHelper.py:231 ../src/gnome-schedule.glade.h:44
 msgid "At an exact minute"
 msgstr "Tam dakikasında"
 
-#: ../src/crontabEditorHelper.py:232
-#: ../src/gnome-schedule.glade.h:28
+#: ../src/crontabEditorHelper.py:232 ../src/gnome-schedule.glade.h:28
 msgid "Minute:"
 msgstr "Dakika:"
 
@@ -273,18 +295,16 @@ msgstr "Dakika:"
 msgid "At an exact hour"
 msgstr "Tam saatinde"
 
-#: ../src/crontabEditorHelper.py:236
-#: ../src/gnome-schedule.glade.h:27
+#: ../src/crontabEditorHelper.py:236 ../src/gnome-schedule.glade.h:27
 msgid "Hour:"
 msgstr "Saat:"
 
 #. day
 #: ../src/crontabEditorHelper.py:239
 msgid "On a day"
-msgstr "Bir günde"
+msgstr "Günde"
 
-#: ../src/crontabEditorHelper.py:240
-#: ../src/gnome-schedule.glade.h:26
+#: ../src/crontabEditorHelper.py:240 ../src/gnome-schedule.glade.h:26
 msgid "Day:"
 msgstr "Gün:"
 
@@ -293,20 +313,26 @@ msgstr "Gün:"
 msgid "In a month"
 msgstr "Bir ayda"
 
-#: ../src/crontabEditorHelper.py:244
-#: ../src/gnome-schedule.glade.h:29
+#: ../src/crontabEditorHelper.py:244 ../src/gnome-schedule.glade.h:29
 msgid "Month:"
 msgstr "Ay:"
 
 #. weekday
 #: ../src/crontabEditorHelper.py:247
 msgid "On a weekday"
-msgstr "Hafta içi"
+msgstr "Haftanın bir gününde"
 
-#: ../src/crontabEditorHelper.py:253
-#: ../src/gnome-schedule.glade.h:50
+#: ../src/crontabEditorHelper.py:248 ../src/gnome-schedule.glade.h:30
+msgid "Weekday:"
+msgstr "Haftanın günü:"
+
+#: ../src/crontabEditorHelper.py:253 ../src/gnome-schedule.glade.h:50
 msgid "In a step width"
 msgstr "Bir aralıkta"
+
+#: ../src/crontabEditorHelper.py:255 ../src/gnome-schedule.glade.h:41
+msgid "Minutes:"
+msgstr "Dakika:"
 
 #: ../src/crontabEditorHelper.py:257
 msgid "Hours:"
@@ -318,7 +344,11 @@ msgstr "Gün:"
 
 #: ../src/crontabEditorHelper.py:261
 msgid "Months:"
-msgstr "Aylar:"
+msgstr "Ay:"
+
+#: ../src/crontabEditorHelper.py:263
+msgid "Weekdays:"
+msgstr "Haftanın günü:"
 
 #: ../src/gnome-schedule-applet.xml.h:1
 msgid "_Manage tasks"
@@ -341,6 +371,7 @@ msgid "Gnome Schedule: Export tasks"
 msgstr "Gnome Zamanlama: Görevleri dışarı aktar"
 
 #: ../src/gnome-schedule-export.py:47
+#, python-format
 msgid "Usage: %s [output file]"
 msgstr "Kullanım: %s [çıktı dosyası]"
 
@@ -353,18 +384,22 @@ msgid "File exists already."
 msgstr "Dosya zaten var."
 
 #: ../src/gnome-schedule-export.py:81
+#, python-format
 msgid "Could not open file for writing: %s"
 msgstr "Yazmak için dosya açılamadı: %s"
 
 #: ../src/gnome-schedule-export.py:91
+#, python-format
 msgid "Exporting crontab task: %s"
 msgstr "Crontab görevi dıları aktarılıyor: %s"
 
 #: ../src/gnome-schedule-export.py:103
+#, python-format
 msgid "Exporting at task: %s"
 msgstr "Görevde dışarı aktarma: %s"
 
 #: ../src/gnome-schedule-export.py:113
+#, python-format
 msgid "Finished, exported: %d task total."
 msgid_plural "Finished, exported: %d tasks total."
 msgstr[0] "Bitti, dışarı aktarıldı: %d toplam görev."
@@ -374,8 +409,13 @@ msgid "Gnome Schedule: Import tasks"
 msgstr "Gnome Zamanlama: Görevleri içeri aktar"
 
 #: ../src/gnome-schedule-import.py:65
+#, python-format
 msgid "Usage: %s [input file]"
 msgstr "Kullanım: %s [girdi dosyası]"
+
+#: ../src/gnome-schedule-import.py:66
+msgid "       No file means import from stdin."
+msgstr "       Stdin'den hiçbir dosyanın içeriği aktarılmadığı anlamına gelir."
 
 #: ../src/gnome-schedule-import.py:72
 msgid "File does not exist."
@@ -387,18 +427,27 @@ msgstr "stdin'den okunuyor.."
 
 #. Reading file
 #: ../src/gnome-schedule-import.py:82
+#, python-format
 msgid "Reading file: %s.."
 msgstr "Dosya okunuyor: %s.."
 
 #: ../src/gnome-schedule-import.py:84
+#, python-format
 msgid "Could not open file for reading: %s"
 msgstr "Dosya okumak için açılamadı: %s"
 
 #: ../src/gnome-schedule-import.py:95
+#, python-format
 msgid "Importing crontab task: %s"
 msgstr "Crontab görevi içeri aktarılıyor: %s"
 
+#: ../src/gnome-schedule-import.py:107
+#, python-format
+msgid "Importing at task: %s"
+msgstr "Görevde içeri aktarma: %s"
+
 #: ../src/gnome-schedule-import.py:111
+#, python-format
 msgid "Finished, imported: %d task total."
 msgid_plural "Finished, imported: %d tasks total."
 msgstr[0] "Bitti, içeri aktarıldı: %d toplam görev."
@@ -419,15 +468,27 @@ msgstr "Şablonları yönet"
 msgid "Create a new template"
 msgstr "Yeni bir şablon oluştur"
 
+#: ../src/gnome-schedule.glade.h:5
+msgid "Edit the selected template"
+msgstr "Seçilen şablonu düzenle"
+
+#: ../src/gnome-schedule.glade.h:6
+msgid "Delete the selected template"
+msgstr "Seçilen şablonu sil"
+
 #: ../src/gnome-schedule.glade.h:7
 msgid "Task description:"
 msgstr "Görev açıklaması:"
 
-#: ../src/gnome-schedule.glade.h:8
-#: ../src/mainWindow.py:72
+#: ../src/gnome-schedule.glade.h:8 ../src/mainWindow.py:72
 #: ../src/examples/dump.py:57
 msgid "X application"
 msgstr "X uygulaması"
+
+#. This comes before the time and date input boxes in the One-time task editor
+#: ../src/gnome-schedule.glade.h:10
+msgid "Execute at:"
+msgstr "Şu tarihte yürüt:"
 
 #: ../src/gnome-schedule.glade.h:11
 msgid "Date:"
@@ -436,6 +497,10 @@ msgstr "Tarih:"
 #: ../src/gnome-schedule.glade.h:12
 msgid "Time:"
 msgstr "Zaman:"
+
+#: ../src/gnome-schedule.glade.h:13
+msgid ":"
+msgstr ":"
 
 #: ../src/gnome-schedule.glade.h:14
 msgid "Task:"
@@ -453,8 +518,7 @@ msgstr "Periyodik bir görevi düzenle"
 msgid "ls -l"
 msgstr "ls -l"
 
-#: ../src/gnome-schedule.glade.h:18
-#: ../src/template.py:198
+#: ../src/gnome-schedule.glade.h:18 ../src/template.py:198
 #: ../src/template.py:212
 msgid "Command:"
 msgstr "Komut:"
@@ -462,6 +526,10 @@ msgstr "Komut:"
 #: ../src/gnome-schedule.glade.h:19
 msgid "Description:"
 msgstr "Tanımlama:"
+
+#: ../src/gnome-schedule.glade.h:20
+msgid "<big>Time &amp; Date</big>"
+msgstr "<big>Saat &amp; Tarih</big>"
 
 #: ../src/gnome-schedule.glade.h:22
 msgid "Advanced"
@@ -479,6 +547,10 @@ msgstr "*"
 msgid "<big>Preview</big>"
 msgstr "<big>Önizleme</big>"
 
+#: ../src/gnome-schedule.glade.h:32
+msgid "Change User"
+msgstr "Kullanıcı Değiştir"
+
 #: ../src/gnome-schedule.glade.h:33
 msgid "<b>Choose the user whose tasks you want to modify</b>"
 msgstr "<b>Değiştirmek istediğin görevlerin kullanıcılarını seç</b>"
@@ -491,13 +563,25 @@ msgstr "_Kullanıcı:"
 msgid "Add a Scheduled Task"
 msgstr "Zamanlanmış Görev Ekle"
 
+#: ../src/gnome-schedule.glade.h:36
+msgid "<b>Select the type of the scheduled task:</b>"
+msgstr "<b>Zamanlanmış görevin türünü seç:</b>"
+
 #: ../src/gnome-schedule.glade.h:37
 msgid "Time expression help"
 msgstr "Zaman ifadesi yardım"
 
+#: ../src/gnome-schedule.glade.h:38
+msgid "Expression:"
+msgstr "İfade:"
+
 #: ../src/gnome-schedule.glade.h:39
 msgid "To:"
 msgstr "Şuna kadar:"
+
+#: ../src/gnome-schedule.glade.h:40
+msgid "From:"
+msgstr "Şundan:"
 
 #: ../src/gnome-schedule.glade.h:42
 msgid "Other"
@@ -515,9 +599,20 @@ msgstr "Belirli dakika, saat, gün, hafta içi günleri ya da ayda yürütme."
 msgid "In a range"
 msgstr "Bir aralıkta"
 
+#: ../src/gnome-schedule.glade.h:47
+msgid "Execution in a range."
+msgstr "Bir aralıkta yürütme."
+
 #: ../src/gnome-schedule.glade.h:49
 msgid "Execution at every minute, hour, day, weekday or month."
 msgstr "Her dakika, saat, gün, hafta içi günleri ya da ayda yürütme."
+
+#: ../src/gnome-schedule.glade.h:51
+msgid ""
+"Execution at a step width. For example every five minutes, hours, days, "
+"weekdays or months."
+msgstr ""
+"Bir aralıkta yürütme. Örneğin her 5 dakika, saat, gün, haftaiçi ya da ayda."
 
 #: ../src/gnome-schedule.glade.h:52
 msgid "Configure Scheduled Tasks"
@@ -531,9 +626,17 @@ msgstr "Zamanlanmış bir görevi düzenle"
 msgid "Delete a scheduled task"
 msgstr "Zamanlanmış bir görevi sil"
 
+#: ../src/gnome-schedule.glade.h:55
+msgid "Run selected task"
+msgstr "Seçilen görevi çalıştır"
+
 #: ../src/gnome-schedule.glade.h:56
 msgid "Run task"
 msgstr "Görev çalıştır"
+
+#: ../src/gnome-schedule.glade.h:57
+msgid "Templates"
+msgstr "Şablonlar"
 
 #: ../src/gnome-schedule.glade.h:58
 msgid "Change edit mode"
@@ -555,6 +658,23 @@ msgstr "Gnome-zamanlama Hakkında"
 msgid "Scheduled and active tasks"
 msgstr "Zamanlanmış ve aktif görevler"
 
+#: ../src/gnome-schedule.py:63 ../src/scheduleapplet.py:65
+#: ../src/xwrapper.py:51
+msgid ""
+"You need to install pyGTK or GTKv2,\n"
+"or set your PYTHONPATH correctly.\n"
+"try: export PYTHONPATH= "
+msgstr ""
+"PyGTK ya da GTKv2 kurmanız ya da\n"
+"PYTHONPATH değişkeninizi düzgün ayarlamanız gerekiyor.\n"
+"dene: PYTHONPATH dışarı aktar= "
+
+#. Translators: Date format for expressions like 'January 21'. %B is month, %d is day number.
+#. Run the command 'man strftime' to read more about these and other available specifiers.
+#: ../src/lang.py:126
+msgid "%B %d"
+msgstr "%B %d"
+
 #. Translators: Date format for expressions like 'January 21, 2005'. %B is month, %d is day number, %Y is year with century.
 #. Run the command 'man strftime' to read more about these and other available specifiers.
 #: ../src/lang.py:133
@@ -569,203 +689,278 @@ msgstr "%H:%M"
 
 #: ../src/lang.py:185
 msgid "At every full hour"
-msgstr "Her tam saatte"
+msgstr "Her saat başında"
 
 #: ../src/lang.py:187
 msgid "At every minute"
 msgstr "Her dakikada"
 
 #: ../src/lang.py:189
+#, python-format
 msgid "At minute %(minute)s of every hour"
-msgstr "Her saatin %(dakika)s dakikasında"
+msgstr "Her saatin %(minute)s. dakikasında"
 
 #: ../src/lang.py:191
+#, python-format
 msgid "At every minute between %(time_from)s and %(time_to)s"
-msgstr "%(zamandan)s ve %(zamana)s arasındaki her dakikada"
+msgstr "%(time_from)s ve %(time_to)s arasındaki her dakikada"
 
 #: ../src/lang.py:193
+#, python-format
 msgid "On every day at %(time)s"
-msgstr "Her gün %(zaman)s'da"
+msgstr "Her gün %(time)s saatinde"
 
 #: ../src/lang.py:198
+#, python-format
 msgid "On day %(monthday)s of every month at every full hour"
-msgstr "Her ayın %(ayıngünü)s gününde her tam saatte"
+msgstr "Her ayın %(monthday)s. gününde, her saat başında"
+
+#: ../src/lang.py:200
+#, python-format
+msgid "On day %(monthday)s of every month at every minute"
+msgstr "Her ayın %(monthday)s. gününde, her dakikada"
 
 #: ../src/lang.py:202
+#, python-format
 msgid "On day %(monthday)s of every month at minute %(minute)s of every hour"
-msgstr "Her ayın %(ayıngünü)s gününde her saatin %(dakika)s dakikasında"
+msgstr "Her ayın %(monthday)s. gününde, her saatin %(minute)s. dakikasında"
+
+#: ../src/lang.py:204
+#, python-format
+msgid ""
+"On day %(monthday)s of every month at every minute between %(time_from)s and "
+"%(time_to)s"
+msgstr ""
+"Her ayın %(monthday)s. gününde, %(time_from)s ile %(time_to)s arasındaki her "
+"dakikada"
 
 #: ../src/lang.py:206
+#, python-format
 msgid "On day %(monthday)s of every month at %(time)s"
-msgstr "Her ayın %(ayıngünü)s gününde %(zaman)s'da"
+msgstr "Her ayın %(monthday)s. gününde, %(time)s saatinde"
 
 #: ../src/lang.py:211
+#, python-format
 msgid "On every day in %(month)s at every full hour"
-msgstr "%(ay)s ayının her gününde her tam saatte"
+msgstr "%(month)s ayının her gününde, her saat başında"
 
 #: ../src/lang.py:213
+#, python-format
 msgid "On every day in %(month)s at every minute"
-msgstr "%(ay)s ayının her gününde her tam dakikada"
+msgstr "%(month)s ayının her gününde, her dakikada"
 
 #: ../src/lang.py:215
+#, python-format
 msgid "On every day in %(month)s at minute %(minute)s of every hour"
-msgstr "%(ay)s ayının her gününde her saatin %s(dakika)s dakikasında"
+msgstr "%(month)s ayının her gününde, her saatin %(minute)s. dakikasında"
 
 #: ../src/lang.py:217
+#, python-format
 msgid ""
 "On every day in %(month)s at every minute between %(time_from)s and "
 "%(time_to)s"
 msgstr ""
-"%(ay)s ayının her gününde %(zamandan)s ve %(zamana)s arasındaki her dakikada"
+"%(month)s ayının her gününde, %(time_from)s ile %(time_to)s arasındaki her "
+"dakikada"
+
+#: ../src/lang.py:219
+#, python-format
+msgid "On every day in %(month)s at %(time)s"
+msgstr "%(month)s ayının her gününde, %(time)s saatinde"
 
 #: ../src/lang.py:224
+#, python-format
 msgid "Every year on %(date)s at every full hour"
-msgstr "%(tarih)s tarihinde her yıl her tam saatte"
+msgstr "Her yılın %(date)s tarihinde, her saat başında"
 
 #: ../src/lang.py:226
+#, python-format
 msgid "Every year on %(date)s at every minute"
-msgstr "%(tarih)s tarihinde her yıl her dakikada"
+msgstr "Her yılın %(date)s tarihinde, her dakikada"
 
 #: ../src/lang.py:228
+#, python-format
 msgid "Every year on %(date)s at minute %(minute)s of every hour"
-msgstr "%(tarih)s tarihinde her yılın her saatinin %(dakika)s dakikasında"
+msgstr "Her yılın %(date)s tarihinde, her saatinin %(minute)s. dakikasında"
 
 #: ../src/lang.py:230
+#, python-format
 msgid ""
 "Every year on %(date)s at every minute between %(time_from)s and %(time_to)s"
 msgstr ""
-"%(zamandan)s ve %(zamana)s arasındaki %(tarih)s tarihinde her yılın her "
-"dakikasında"
+"Her yılın %(date)s tarihinde, %(time_from)s ile %(time_to)s arasındaki her "
+"dakikada"
 
 #: ../src/lang.py:232
+#, python-format
 msgid "Every year on %(date)s at %(time)s"
-msgstr "%(tarih)s tarihinde her yıl %(zaman)s"
+msgstr "Her yılın %(date)s tarihinde, %(time)s saatinde"
 
+# Weekday: haftanın günü olarak çevirmek daha doğru. Hafta içini vurgulamıyor, haftanın günü crontab değerini vurguluyor
 #: ../src/lang.py:237
+#, python-format
 msgid "On every weekday: %(weekday)s at every full hour"
-msgstr "Her hafta içi: %(haftaiçi)s her tam saatte"
+msgstr "Her hafta içi: %(weekday)s her saat başında"
 
 #: ../src/lang.py:239
+#, python-format
 msgid "On every weekday: %(weekday)s at every minute"
-msgstr "Her hafta içi: %(haftaiçi)s her dakikada"
+msgstr "Her haftanın %(weekday)s gününde, her dakikada"
 
 #: ../src/lang.py:241
+#, python-format
 msgid "On every weekday: %(weekday)s at minute %(minute)s of every hour"
-msgstr "Her hafta içi: %(haftaiçi)s her saatin %(dakika)s dakikasında"
+msgstr "Her haftanın %(weekday)s gününde, her saatin %(minute)s. dakikasında"
 
 #: ../src/lang.py:243
+#, python-format
 msgid ""
 "On every weekday: %(weekday)s at every minute between %(time_from)s and "
 "%(time_to)s"
 msgstr ""
-"Her hafta içi: %(haftaiçi)s %(zamandan)s ve %(zamana)s arasındaki her "
-"dakikada"
+"Her haftanın %(weekday)s gününde, %(time_from)s ile %(time_to)s arasındaki "
+"her dakikada"
 
 #: ../src/lang.py:245
+#, python-format
 msgid "On every weekday: %(weekday)s at %(time)s"
-msgstr "Her hafta içi: %(haftaiçi)s %(zaman)s"
+msgstr "Her haftanın %(weekday)s gününde, %(time)s saatinde"
 
 #: ../src/lang.py:250
+#, python-format
 msgid ""
 "On day %(monthday)s of every month and every weekday: %(weekday)s at every "
 "full hour"
 msgstr ""
-"Her ay ve hafta içinin %(ayıngünü)s gününde: %(haftaiçi)s her tam saatte"
+"Her ayın %(monthday)s. gününde ve her haftanın %(weekday)s gününde her saat "
+"başında"
 
 #: ../src/lang.py:252
+#, python-format
 msgid ""
 "On day %(monthday)s of every month and every weekday: %(weekday)s at every "
 "minute"
-msgstr "Her ay ve hafta içinin %(ayıngünü)s gününde: %(haftaiçi) her dakikada"
+msgstr ""
+"Her ayın %(monthday)s. gününde ve her haftanın %(weekday)s gününde her "
+"dakikada"
 
 #: ../src/lang.py:254
+#, python-format
 msgid ""
 "On day %(monthday)s of every month and every weekday: %(weekday)s at minute "
 "%(minute)s of every hour"
 msgstr ""
-"Her ay ve hafta içinin %(ayıngünü)s gününde: %(haftaiçi)s her saatin "
-"%(dakika)s dakikasında"
+"Her ayın %(monthday)s. gününde ve her haftanın %(weekday)s gününde, her "
+"saatin %(minute)s. dakikasında"
 
 #: ../src/lang.py:256
+#, python-format
 msgid ""
 "On day %(monthday)s of every month and every weekday: %(weekday)s at every "
 "minute between %(time_from)s and %(time_to)s"
 msgstr ""
-"Her ay ve hafta içinin %(ayıngünü)s gününde: %(haftaiçi)s %(zamandan) ve "
-"%(zamana)s arasındaki her dakika"
+"Her ayın %(monthday)s. gününde ve her haftanın %(weekday)s gününde, "
+"%(time_from)s ile %(time_to)s saatleri arasında"
 
 #: ../src/lang.py:258
+#, python-format
 msgid ""
 "On day %(monthday)s of every month and every weekday: %(weekday)s at %(time)s"
-msgstr "Her ay ve hafta içinin %(ayıngünü)s gününde: %(haftaiçi)s %(zaman)s da"
+msgstr ""
+"Her ayın %(monthday)s. gününde ve her haftanın %(weekday)s gününde %(time)s "
+"saatinde"
 
 #: ../src/lang.py:263
+#, python-format
 msgid "On every weekday: %(weekday)s in %(month)s at every full hour"
-msgstr "Her hafta içi: %(ay)s ayının %(haftaiçi)s her tam saatinde"
+msgstr "%(month)s ayının her %(weekday)s gününe, her saat başında"
 
 #: ../src/lang.py:265
+#, python-format
 msgid "On every weekday: %(weekday)s in %(month)s at every minute"
-msgstr "Her hafta içi: %(ay)s ayının %(haftaiçi)s her dakikasında"
+msgstr "%(month)s ayının her %(weekday)s gününe, her dakikasında"
 
 #: ../src/lang.py:267
+#, python-format
 msgid ""
 "On every weekday: %(weekday)s in %(month)s at minute %(minute)s of every hour"
 msgstr ""
-"Her hafta içi: %(ay)s ayının %(haftaiçi)s her saatinin %(dakika)s dakikasında"
+"%(month)s ayının her %(weekday)s gününe,her saatin %(minute)s. dakikasında"
 
 #: ../src/lang.py:269
+#, python-format
 msgid ""
 "On every weekday: %(weekday)s in %(month)s at every minute between "
 "%(time_from)s and %(time_to)s"
 msgstr ""
-"Her hafta içi: %(ay)s ayının %(haftaiçi)s %(zamandan)s ve %(zamana)s "
+"%(month)s ayının her %(weekday)s gününe, %(time_from)s ile %(time_to)s "
 "arasındaki her dakikasında"
 
 #: ../src/lang.py:271
+#, python-format
 msgid "On every weekday: %(weekday)s in %(month)s at %(time)s"
-msgstr "Her hafta içi: %(ay)s ayının %(haftaiçi)s %(zaman)s"
+msgstr "%(month)s ayının her %(weekday)s gününe, %(time)s saatinde"
 
 #: ../src/lang.py:276
+#, python-format
 msgid ""
 "On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
 "every full hour"
 msgstr ""
-"Her hafta içi: %(ay)s ayı %(haftaiçi)s ve her yıl %(tarih)s tarihinde her "
-"tam saatte"
+"%(month)s ayının her %(weekday)s gününe ilave olarak, her yılın  %(date)s "
+"tarihinde, her saat başında"
+
+#: ../src/lang.py:278
+#, python-format
+msgid ""
+"On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
+"every minute"
+msgstr ""
+"%(month)s ayının her %(weekday)s gününe ilave olarak, her yılın  %(date)s "
+"tarihinde, her dakikasında"
 
 #: ../src/lang.py:280
+#, python-format
 msgid ""
 "On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
 "minute %(minute)s of every hour"
 msgstr ""
-"Her hafta içi: %(ay)s ayı %(haftaiçi)s ve her yıl %(tarih)s tarihinde her "
-"saatin %(dakika)s dakikasında"
+"%(month)s ayının her %(weekday)s gününe ilave olarak, her yılın  %(date)s "
+"tarihinde, her saatin %(minute)s. dakikasında"
 
 #: ../src/lang.py:282
+#, python-format
 msgid ""
 "On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
 "every minute between %(time_from)s and %(time_to)s"
 msgstr ""
-"Her hafta içi: %(ay)s ayı %(haftaiçi)s ve her yıl %(tarih)s tarihinde "
-"%(zamandan)s ve %(zamana)s arasındaki her dakikada"
+"%(month)s ayının her %(weekday)s gününe ilave olarak, her yılın  %(date)s "
+"tarihinde, %(time_from)s ile %(time_to)s arasındaki her dakikada"
 
 #: ../src/lang.py:284
+#, python-format
 msgid ""
 "On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
 "%(time)s"
 msgstr ""
-"Her hafta içi: %(ay)s ayı %(haftaiçi)s ve her yıl %(tarih)s tarihinde "
-"%(zaman)s"
+"%(month)s ayının her %(weekday)s gününe ilave olarak, her yılın  %(date)s "
+"tarihinde, %(time)s saatinde"
 
 #: ../src/lang.py:292
 msgid "every minute"
 msgstr "her dakika"
+
+#: ../src/lang.py:294
+#, python-format
+msgid "minute: %s"
+msgstr "dakika: %s"
 
 #: ../src/lang.py:297
 msgid "every hour"
 msgstr "her saat"
 
 #: ../src/lang.py:299
+#, python-format
 msgid "hour: %s"
 msgstr "saat: %s"
 
@@ -774,6 +969,7 @@ msgid "every day of month"
 msgstr "ayın her günü"
 
 #: ../src/lang.py:304
+#, python-format
 msgid "day of month: %s"
 msgstr "ayın günü: %s"
 
@@ -782,57 +978,88 @@ msgid "every month"
 msgstr "her ay"
 
 #: ../src/lang.py:309
+#, python-format
 msgid "month: %s"
 msgstr "ay: %s"
 
 #: ../src/lang.py:312
+#, python-format
 msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s"
-msgstr "%(dakika)s, %(saat)s, %(aygün)s, %(ay)s"
+msgstr "%(minute)s, %(hour)s, %(monthday)s, %(month)s"
 
 #: ../src/lang.py:314
+#, python-format
 msgid "weekday: %s"
-msgstr "haftaiçi: %s"
+msgstr "haftanın günü: %s"
 
 #: ../src/lang.py:315
+#, python-format
 msgid "At %(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
-msgstr "%(dakika)s, %(saat)s, %(aygün)s, %(ay)s, %(haftaiçi)s"
+msgstr "%(minute)s, %(hour)s, %(monthday)s, %(month)s, %(weekday)s"
 
-#: ../src/mainWindow.py:71
-#: ../src/examples/dump.py:56
+#: ../src/mainWindow.py:70 ../src/examples/dump.py:55
+msgid "Default behaviour"
+msgstr "Öntanımlı davranış"
+
+#: ../src/mainWindow.py:71 ../src/examples/dump.py:56
 msgid "Suppress output"
 msgstr "Çıktıyı bastır"
+
+#: ../src/mainWindow.py:73 ../src/examples/dump.py:58
+msgid "X application: suppress output"
+msgstr "X uygulaması: çıktıyı bastırın"
+
+#: ../src/mainWindow.py:119
+msgid "Recurrent task"
+msgstr "Tekrarlayan görev"
+
+#: ../src/mainWindow.py:130
+msgid "One-time task"
+msgstr "Tek seferlik görev"
+
+#: ../src/mainWindow.py:141
+msgid "From template"
+msgstr "Şablondan"
 
 #: ../src/mainWindow.py:160
 msgid "Add a new task"
 msgstr "Yeni bir görev ekle"
 
-#: ../src/mainWindow.py:285
-#: ../src/mainWindow.py:415
+#: ../src/mainWindow.py:285 ../src/mainWindow.py:415
+#, python-format
 msgid "Editing user: %s"
 msgstr "Kullanıcı düzenleniyor: %s"
 
-#: ../src/mainWindow.py:332
-#: ../src/mainWindow.py:343
-#: ../src/mainWindow.py:354
-#: ../src/mainWindow.py:369
-#: ../src/mainWindow.py:380
+#: ../src/mainWindow.py:332 ../src/mainWindow.py:343 ../src/mainWindow.py:354
+#: ../src/mainWindow.py:369 ../src/mainWindow.py:380
 #: ../src/scheduleapplet.py:116
 msgid "ERROR: Could not load icon"
 msgstr "HATA: Simge yüklenemedi"
 
-#: ../src/mainWindow.py:467
-#: ../src/mainWindow.py:480
+#: ../src/mainWindow.py:389 ../src/mainWindow.py:395
+msgid "ERROR: Could not load glade file"
+msgstr "HATA: Glade dosyası yüklenemedi"
+
+#: ../src/mainWindow.py:450 ../src/template_chooser.py:69
+#: ../src/template_manager.py:72
+msgid "Task"
+msgstr "Görev"
+
+#: ../src/mainWindow.py:463 ../src/mainWindow.py:489
+#: ../src/template_chooser.py:78 ../src/template_manager.py:81
+msgid "Description"
+msgstr "Tanımlama"
+
+#: ../src/mainWindow.py:467 ../src/mainWindow.py:480
 msgid "Date and Time"
 msgstr "Tarih ve Saat"
 
-#: ../src/mainWindow.py:471
-#: ../src/mainWindow.py:484
+#: ../src/mainWindow.py:471 ../src/mainWindow.py:484
 msgid "Command preview"
 msgstr "Komut önizle"
 
 #. print ex
-#: ../src/mainWindow.py:543
-#: ../src/mainWindow.py:606
+#: ../src/mainWindow.py:543 ../src/mainWindow.py:606
 msgid "Please select a task"
 msgstr "Lütfen bir görev seçin"
 
@@ -861,40 +1088,44 @@ msgid ""
 "Note about working directory of executed tasks:\n"
 "\n"
 "Recurrent tasks will be run from the home directory, one-time tasks from the "
-"directory where Gnome schedule was run from at the time of task creation ("
-"normally the home directory)."
+"directory where Gnome schedule was run from at the time of task creation "
+"(normally the home directory)."
 msgstr ""
 "Yürütülen görevlerin çalışma dizinine dikkat edin:\n"
 "\n"
-"Tekrarlayan görevler ev dizininden, tek seferlik görevler Gnome zamanlamanın "
+"Tekrarlayan görevler ev dizininden, tek seferlik görevler GNOME zamanlamanın "
 "görev oluşturma zamanında çalıştırıldığı dizinden (normalde ev dizini) "
 "çalıştırılacaktır."
 
-#: ../src/mainWindow.py:734
+#: ../src/mainWindow.py:733
 msgid "No default graphical terminal for GNOME could be found."
 msgstr "GNOME için öntanımlı grafiksel terminal bulunamadı."
 
-#: ../src/mainWindow.py:750
+#: ../src/mainWindow.py:749
 msgid "Please select a task!"
 msgstr "Lütfen bir görev seçin!"
 
-#: ../src/mainWindow.py:758
+#: ../src/mainWindow.py:757
 msgid "About Gnome Schedule"
 msgstr "Gnome Zamanlama Hakkında"
 
-#: ../src/mainWindow.py:759
+#: ../src/mainWindow.py:758
 msgid "Gnome Schedule"
 msgstr "Gnome Zamanlama"
 
-#: ../src/mainWindow.py:761
+#: ../src/mainWindow.py:760
+#, python-format
 msgid "Copyright (c) %(year)s %(name)s."
-msgstr "Telif Hakkı (c) %(yıl)s %(ad)s."
+msgstr "Telif hakkı (c) %(year) s %(name) s."
 
-#: ../src/mainWindow.py:774
+#: ../src/mainWindow.py:773
 msgid "translator-credits"
-msgstr "Simge Sezgin"
+msgstr ""
+"Necdet Yücel\n"
+"Simge Sezgin\n"
+"Sabri Ünal"
 
-#: ../src/mainWindow.py:793
+#: ../src/mainWindow.py:792
 msgid "Could not display help"
 msgstr "Yardım görüntülenemedi"
 
@@ -902,9 +1133,17 @@ msgstr "Yardım görüntülenemedi"
 msgid "ERROR: Could not load menu xml file"
 msgstr "HATA: menü xml dosyası yüklenemedi"
 
+#: ../src/setuserWindow.py:84
+msgid "No such user"
+msgstr "Böyle bir kullanıcı yok"
+
 #: ../src/addWindow.py:51
 msgid "A task that launches recurrently"
 msgstr "Tekrarlı başlayan görev"
+
+#: ../src/addWindow.py:64
+msgid "A task that launches one time"
+msgstr "Bir kez başlayan görev"
 
 #: ../src/addWindow.py:77
 msgid "A task from a predefined template"
@@ -925,11 +1164,23 @@ msgstr ""
 "olduğunu hatırlayın."
 
 #: ../src/atEditor.py:575
+#, python-format
 msgid "This is an invalid record! The problem could be: %s"
 msgstr "Geçersiz kayıt! Sorun şu olabilir: %s"
 
-#: ../src/template.py:198
-#: ../src/template.py:212
+#: ../src/atEditor.py:595
+msgid ""
+"Note about working directory of executed tasks:\n"
+"\n"
+"One-time tasks will be run from the directory where Gnome schedule is run "
+"from (normally the home directory)."
+msgstr ""
+"Yürütülen görevlerin çalışma dizinine dikkat edin:\n"
+"\n"
+"Tek seferlik görevler GNOME zamanlamanın çalıştırılacağı dizinden "
+"çalıştırılacaktır (normalde ev dizini)."
+
+#: ../src/template.py:198 ../src/template.py:212
 msgid "Title:"
 msgstr "Başlık:"
 
@@ -937,13 +1188,11 @@ msgstr "Başlık:"
 msgid "Run:"
 msgstr "Çalıştır:"
 
-#: ../src/template_chooser.py:40
-#: ../src/template_manager.py:37
+#: ../src/template_chooser.py:40 ../src/template_manager.py:37
 msgid "Use template"
 msgstr "Şablonu kullan"
 
-#: ../src/template_chooser.py:97
-#: ../src/template_manager.py:102
+#: ../src/template_chooser.py:97 ../src/template_manager.py:102
 msgid "One-time"
 msgstr "Tek-sefer"
 
@@ -951,27 +1200,24 @@ msgstr "Tek-sefer"
 msgid "Could not open a connection to X!"
 msgstr "X'e bağlantı açılamadı!"
 
-#: ../src/xwrapper.py:71
-#: ../src/xwrapper.py:79
+#: ../src/xwrapper.py:71 ../src/xwrapper.py:79
 msgid "Wrong number of arguments."
 msgstr "Yanlış değişken sayısı."
 
-#: ../src/xwrapper.py:73
-#: ../src/xwrapper.py:81
+#: ../src/xwrapper.py:73 ../src/xwrapper.py:81
 msgid ""
 "Wrapper script for Gnome-schedule (http://gnome-schedule.sf.net) for "
 "applications to be run from crontab or at under X. Use through gnome-"
 "schedule."
 msgstr ""
 "X altında ya da crontab'dan çalıştırılacak uygulamalar için (http://gnome-"
-"schedule.sf.net) Gnome-zamanlama sarıcı betiği"
+"schedule.sf.net) Gnome-zamanlama sarıcı betiği."
 
 #: ../src/xwrapper.py:87
 msgid "Unknown type of job."
 msgstr "Bilinmeyen iş türü."
 
-#: ../src/xwrapper.py:106
-#: ../src/xwrapper.py:110
+#: ../src/xwrapper.py:106 ../src/xwrapper.py:110
 msgid "Invalid job id."
 msgstr "Geçersiz iş kimliği."
 
@@ -983,7 +1229,12 @@ msgstr ""
 "İş verisi alınamadı, görev eski sürüm ile oluşturulmuştu - görevi yeniden "
 "oluşturmayı deneyin."
 
+#: ../src/xwrapper.py:121
+msgid "Data file too old. Recreate task."
+msgstr "Tarih dosyası çok eski. Görevi yeniden oluşturun."
+
 #: ../src/xwrapper.py:125
+#, python-format
 msgid "Launching %s.."
 msgstr "Başlatılıyor %s.."
 
@@ -1002,221 +1253,3 @@ msgstr "Asla görüntüleyemeyeceğim."
 #: ../src/xwrapper.py:158
 msgid "xwrapper.py: completed"
 msgstr "xwrapper.py: tamamlandı"
-
-#: ../servers/GNOME_GnomeSchedule.server.in.in.h:1
-msgid "Gnome schedule"
-msgstr "Gnome zamanlama"
-
-#: ../servers/GNOME_GnomeSchedule.server.in.in.h:2
-msgid "Configures your scheduled tasks"
-msgstr "Zamanlanmış görevlerinizi yapılandırır"
-
-#: ../src/at.py:569
-msgid "Warning: a line in atq's output didn't parse:"
-msgstr "Uyarı: atq çıktısındaki satır ayrıştırılamadı:"
-
-#: ../src/crontab.py:91
-msgid "Weekday"
-msgstr "Hafta içi"
-
-#: ../src/crontabEditor.py:69
-#: ../src/crontabEditorHelper.py:93
-#: ../src/gnome-schedule.glade.h:21
-msgid "Every hour"
-msgstr "Her saat"
-
-#: ../src/crontabEditorHelper.py:163
-msgid "Edit minute"
-msgstr "Dakika düzenle"
-
-#: ../src/crontabEditorHelper.py:169
-msgid "Edit month"
-msgstr "Ayı düzenle"
-
-#: ../src/crontabEditorHelper.py:248
-#: ../src/gnome-schedule.glade.h:30
-msgid "Weekday:"
-msgstr "Hafta içi:"
-
-#: ../src/crontabEditorHelper.py:255
-#: ../src/gnome-schedule.glade.h:41
-msgid "Minutes:"
-msgstr "Dakika:"
-
-#: ../src/crontabEditorHelper.py:263
-msgid "Weekdays:"
-msgstr "Hafta içi:"
-
-#: ../src/gnome-schedule-import.py:66
-msgid "       No file means import from stdin."
-msgstr "       Stdin'den hiçbir dosyanın içeriği aktarılmadığı anlamına gelir."
-
-#: ../src/gnome-schedule-import.py:107
-msgid "Importing at task: %s"
-msgstr "Görevde içeri aktarma: %s"
-
-#: ../src/gnome-schedule.glade.h:5
-msgid "Edit the selected template"
-msgstr "Seçilen şablonu düzenle"
-
-#: ../src/gnome-schedule.glade.h:6
-msgid "Delete the selected template"
-msgstr "Seçilen şablonu sil"
-
-#. This comes before the time and date input boxes in the One-time task editor
-#: ../src/gnome-schedule.glade.h:10
-msgid "Execute at:"
-msgstr "Şu tarihte yürüt:"
-
-#: ../src/gnome-schedule.glade.h:13
-msgid ":"
-msgstr ":"
-
-#: ../src/gnome-schedule.glade.h:20
-msgid "<big>Time &amp; Date</big>"
-msgstr "<big>Saat &amp; Tarih</big>"
-
-#: ../src/gnome-schedule.glade.h:32
-msgid "Change User"
-msgstr "Kullanıcı Değiştir"
-
-#: ../src/gnome-schedule.glade.h:36
-msgid "<b>Select the type of the scheduled task:</b>"
-msgstr "<b>Zamanlanmış görevin türünü seç:</b>"
-
-#: ../src/gnome-schedule.glade.h:38
-msgid "Expression:"
-msgstr "İfade:"
-
-#: ../src/gnome-schedule.glade.h:40
-msgid "From:"
-msgstr "Şundan:"
-
-#: ../src/gnome-schedule.glade.h:47
-msgid "Execution in a range."
-msgstr "Bir aralıkta yürütme."
-
-#: ../src/gnome-schedule.glade.h:51
-msgid ""
-"Execution at a step width. For example every five minutes, hours, days, "
-"weekdays or months."
-msgstr ""
-"Bir aralıkta yürütme. Örneğin her 5 dakika, saat, gün, haftaiçi ya da ayda."
-
-#: ../src/gnome-schedule.glade.h:55
-msgid "Run selected task"
-msgstr "Seçilen görevi çalıştır"
-
-#: ../src/gnome-schedule.glade.h:57
-msgid "Templates"
-msgstr "Şablonlar"
-
-#: ../src/gnome-schedule.py:63
-#: ../src/scheduleapplet.py:65
-#: ../src/xwrapper.py:51
-msgid ""
-"You need to install pyGTK or GTKv2,\n"
-"or set your PYTHONPATH correctly.\n"
-"try: export PYTHONPATH= "
-msgstr ""
-"PyGTK ya da GTKv2 kurmanız ya da\n"
-"PYTHONPATH değişkeninizi düzgün ayarlamanız gerekiyor.\n"
-"dene: PYTHONPATH dışarı aktar= "
-
-#. Translators: Date format for expressions like 'January 21'. %B is month, %d is day number.
-#. Run the command 'man strftime' to read more about these and other available specifiers.
-#: ../src/lang.py:126
-msgid "%B %d"
-msgstr "%B %d"
-
-#: ../src/lang.py:200
-msgid "On day %(monthday)s of every month at every minute"
-msgstr "Her ayın %(ayıngünü)s gününde her dakikada"
-
-#: ../src/lang.py:204
-msgid ""
-"On day %(monthday)s of every month at every minute between %(time_from)s and "
-"%(time_to)s"
-msgstr ""
-"Her ayın %(ayıngünü)s gününde %(zamandan)s ve %(zamana)s arasındaki her "
-"dakikada"
-
-#: ../src/lang.py:219
-msgid "On every day in %(month)s at %(time)s"
-msgstr "%(ay)s ayının her gününde %(zaman)s zamanında"
-
-#: ../src/lang.py:278
-msgid ""
-"On every weekday: %(weekday)s in %(month)s and on %(date)s every year at "
-"every minute"
-msgstr ""
-"Her hafta içi: %(ay)s ayı %(haftaiçi)s ve her yıl %(tarih)s tarihinde her "
-"dakikada"
-
-#: ../src/lang.py:294
-msgid "minute: %s"
-msgstr "dakika: %s"
-
-#: ../src/mainWindow.py:70
-#: ../src/examples/dump.py:55
-msgid "Default behaviour"
-msgstr "Öntanımlı davranış"
-
-#: ../src/mainWindow.py:73
-#: ../src/examples/dump.py:58
-msgid "X application: suppress output"
-msgstr "X uygulaması: çıktıyı bastırın"
-
-#: ../src/mainWindow.py:119
-msgid "Recurrent task"
-msgstr "Tekrarlayan görev"
-
-#: ../src/mainWindow.py:130
-msgid "One-time task"
-msgstr "Tek seferlik görev"
-
-#: ../src/mainWindow.py:141
-msgid "From template"
-msgstr "Şablondan"
-
-#: ../src/mainWindow.py:389
-#: ../src/mainWindow.py:395
-msgid "ERROR: Could not load glade file"
-msgstr "HATA: Glade dosyası yüklenemedi"
-
-#: ../src/mainWindow.py:450
-#: ../src/template_chooser.py:69
-#: ../src/template_manager.py:72
-msgid "Task"
-msgstr "Görev"
-
-#: ../src/mainWindow.py:463
-#: ../src/mainWindow.py:489
-#: ../src/template_chooser.py:78
-#: ../src/template_manager.py:81
-msgid "Description"
-msgstr "Tanımlama"
-
-#: ../src/setuserWindow.py:84
-msgid "No such user"
-msgstr "Böyle bir kullanıcı yok"
-
-#: ../src/addWindow.py:64
-msgid "A task that launches one time"
-msgstr "Bir kez başlayan görev"
-
-#: ../src/atEditor.py:595
-msgid ""
-"Note about working directory of executed tasks:\n"
-"\n"
-"One-time tasks will be run from the directory where Gnome schedule is run "
-"from (normally the home directory)."
-msgstr ""
-"Yürütülen görevlerin çalışma dizinine dikkat edin:\n"
-"\n"
-"Tek seferlik görevler Gnome zamanlamanın çalıştırılacağı dizinden "
-"çalıştırılacaktır (normalde ev dizini)."
-
-#: ../src/xwrapper.py:121
-msgid "Data file too old. Recreate task."
-msgstr "Tarih dosyası çok eski. Görevi yeniden oluşturun."
