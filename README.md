@@ -42,7 +42,7 @@ INSTALL from source:
 * The following commands will install `gnome-schedule` on a system that has `Python` and `automake-1.7` and some tools like `gmake` installed.
 
 ```
- $ git clone git://git.gnome.org/git/gnome-schedule
+ $ git clone https://gitlab.gnome.org/GNOME/gnome-schedule.git
  $ pushd gnome-schedule
  $ ./autogen.sh --prefix=/usr/local
  $ make
