@@ -75,7 +75,7 @@ msgstr "Una vegada"
 
 #: ../src/at.py:569
 msgid "Warning: a line in atq's output didn't parse:"
-msgstr "Avís: no s'ha pogut analitzar una línia de la sortida de l'atq"
+msgstr "Avís: no s'ha pogut analitzar una línia de la sortida de l'atq:"
 
 #: ../src/at.py:624 ../src/crontab.py:288 ../src/crontab.py:334
 #: ../src/crontabEditor.py:274 ../src/atEditor.py:126 ../src/atEditor.py:522
@@ -222,7 +222,7 @@ msgstr ""
 "emmagatzemar informació addicional a la línia crontab. Utilitzeu el caràcter"
 " redirector | per a assolir la mateixa funcionalitat. Consulteu el manual de"
 " crontab per a més informació sobre el caràcter %. Si no voleu utilitzar-lo "
-"per a redireccionar, l'heu d'alterar amb el caràcter \\."
+"per a redirigir, l'heu d'escapar amb el caràcter \\."
 
 #: ../src/crontabEditor.py:455
 msgid ""
@@ -406,7 +406,7 @@ msgstr "Ús: %s [fitxer d'entrada]"
 
 #: ../src/gnome-schedule-import.py:66
 msgid "       No file means import from stdin."
-msgstr "Cap fitxer significa importar d'stdin."
+msgstr "Cap fitxer significa importar de stdin."
 
 #: ../src/gnome-schedule-import.py:72
 msgid "File does not exist."
@@ -414,7 +414,7 @@ msgstr "El fitxer no existeix."
 
 #: ../src/gnome-schedule-import.py:77
 msgid "Reading from stdin.."
-msgstr "S'està llegint des d'stdin..."
+msgstr "S'està llegint des de stdin..."
 
 #. Reading file
 #: ../src/gnome-schedule-import.py:82
@@ -582,7 +582,7 @@ msgstr "Un altre"
 #: ../src/gnome-schedule.glade.h:43
 msgid "See \"man 5 crontab\" for information about the crontab format."
 msgstr ""
-"Vegeu «man 5 crontab» per obtenir informació quant al format del crontab."
+"Vegeu «man 5 crontab» per a obtenir informació quant al format del crontab."
 
 #: ../src/gnome-schedule.glade.h:45
 msgid "Execution at a specific minute, hour, day, weekday or month."
@@ -669,7 +669,7 @@ msgstr ""
 #. specifiers.
 #: ../src/lang.py:126
 msgid "%B %d"
-msgstr "%d %B"
+msgstr "%-d %B"
 
 #. Translators: Date format for expressions like 'January 21, 2005'. %B is
 #. month, %d is day number, %Y is year with century.
@@ -677,7 +677,7 @@ msgstr "%d %B"
 #. specifiers.
 #: ../src/lang.py:133
 msgid "%B %d, %Y"
-msgstr "%d %B del %Y"
+msgstr "%-d %B del %Y"
 
 #. Translators: Time without seconds. %H is hour, %M is minute.
 #. Run the command 'man strftime' to read more about these and other available
